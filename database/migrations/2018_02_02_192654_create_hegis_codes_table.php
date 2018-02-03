@@ -14,7 +14,8 @@ class CreateHEGISCodesTable extends Migration
     public function up()
     {
         Schema::create('hegis_codes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('hegis_code');
+            $table->string('major');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateHEGISCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('h_e_g_i_s_codes');
+        Schema::dropIfExists('hegis_codes');
     }
 }

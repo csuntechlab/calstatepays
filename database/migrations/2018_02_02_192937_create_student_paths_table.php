@@ -14,7 +14,8 @@ class CreateStudentPathsTable extends Migration
     public function up()
     {
         Schema::create('student_paths', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id');
+            $table->string('path_name');
             $table->timestamps();
         });
     }

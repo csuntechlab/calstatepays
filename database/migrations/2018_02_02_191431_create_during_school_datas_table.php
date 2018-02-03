@@ -14,7 +14,16 @@ class CreateDuringSchoolDatasTable extends Migration
     public function up()
     {
         Schema::create('during_school_datas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('university_id');
+            $table->integer('student_path');
+            $table->string('entry_status');
+            $table->integer('potential_num_students');
+            $table->integer('num_students_non_year');
+            $table->integer('median_earnings_non_year');
+            $table->integer('num_students_enrolled');
+            $table->integer('num_students_full_year');
+            $table->integer('median_earnings_full_year');
+            $table->integer('year');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateMajorPathsTable extends Migration
     {
         Schema::create('major_paths', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('student_path');
+            $table->integer('university_majors_id');
+            $table->string('entry_status');
+            $table->integer('years');
             $table->timestamps();
         });
     }

@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Population extends Model
 {
+    public $primaryKey = 'id';
+
+    protected $fillable = [
+        'population_found',
+        'population_size',
+        'percentage_found'
+    ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

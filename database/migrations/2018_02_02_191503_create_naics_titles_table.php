@@ -14,7 +14,8 @@ class CreateNAICSTitlesTable extends Migration
     public function up()
     {
         Schema::create('naics_titles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('naics_code');
+            $table->string('naics_title');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateNAICSTitlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('n_a_i_c_s_titles');
+        Schema::dropIfExists('naics_titles');
     }
 }

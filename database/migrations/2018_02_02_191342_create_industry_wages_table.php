@@ -14,7 +14,9 @@ class CreateIndustryWagesTable extends Migration
     public function up()
     {
         Schema::create('industry_wages', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id');
+            $table->integer('avg_annual_wage_5')->nullable();
+            $table->integer('avg_annual_wage_10')->nullable();
             $table->timestamps();
         });
     }
