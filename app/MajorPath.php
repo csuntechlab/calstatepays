@@ -32,6 +32,6 @@ class MajorPath extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function majorPathWage() {
-        return $this->hasOne('App\MajorPathWage','id','id');
+        return $this->hasOne('App\MajorPathWage','major_path_id','id');
     }
 }

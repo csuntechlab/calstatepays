@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class MajorPathWage extends Model
 {
     protected $fillable = [
-        'id',
+        'major_path_id',
         'avg_annual_wage',
         '25th',
         '50th',

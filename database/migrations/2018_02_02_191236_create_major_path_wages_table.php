@@ -14,7 +14,7 @@ class CreateMajorPathWagesTable extends Migration
     public function up()
     {
         Schema::create('major_path_wages', function (Blueprint $table) {
-            $table->integer('id');
+            $table->integer('major_path_id');
             $table->integer('avg_annual_wage')->nullable();
             $table->integer('25th')->nullable();
             $table->integer('50th')->nullable();
