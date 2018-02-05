@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2f4155937d589f7b9e8b3598a2fa852",
+    "content-hash": "3e4b7dbeec4b3ec2563ee33dd88f6258",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -54,6 +54,45 @@
                 "webprofiler"
             ],
             "time": "2017-07-21T11:56:48+00:00"
+        },
+        {
+            "name": "csun-metalab/laravel-force-https",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/csun-metalab/laravel-force-https.git",
+                "reference": "87d1e4505d27733ce9b2956d27cf33714cc0c9d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/csun-metalab/laravel-force-https/zipball/87d1e4505d27733ce9b2956d27cf33714cc0c9d8",
+                "reference": "87d1e4505d27733ce9b2956d27cf33714cc0c9d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/ForceHttps/"
+                ],
+                "psr-4": {
+                    "CSUNMetaLab\\ForceHttps\\": "src/ForceHttps/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fritz",
+                    "email": "mattf@burbankparanormal.com"
+                }
+            ],
+            "description": "A small Composer package for Laravel 5.0 and above to force HTTPS in the URL",
+            "time": "2018-01-30T19:32:22+00:00"
         },
         {
             "name": "csun-metalab/laravel-proxypass",
