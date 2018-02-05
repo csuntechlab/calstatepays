@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,34 +18,34 @@ class IndustryPathType extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function studentPath() {
-        return $this->hasOne('App\StudentPath','id','student_path');
+        return $this->hasOne('App\Models\StudentPath','id','student_path');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function naicsTitle() {
-        return $this->hasOne('App\NAICSTitle','naics_code','naics_code');
+        return $this->hasOne('App\Models\NAICSTitle','naics_code','naics_code');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function universityMajor() {
-        return $this->hasOne('App\UniversityMajor','id','university_majors_id');
+        return $this->hasOne('App\Models\UniversityMajor','id','university_majors_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function population() {
-        return $this->hasOne('App\Population','id','population_sample_id');
+        return $this->hasOne('App\Models\Population','id','population_sample_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function industryWage() {
-        return $this->hasOne('App\IndustryWage','id','id');
+        return $this->hasOne('App\Models\IndustryWage','id','id');
     }
 }
