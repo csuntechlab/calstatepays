@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AggrigateDataController extends Controller
+class AggregateDataController extends Controller
 {
     //
 }
