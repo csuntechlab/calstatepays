@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2f4155937d589f7b9e8b3598a2fa852",
+    "content-hash": "ece095ec8f846acb85855add7d5b0bc8",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -57,16 +57,16 @@
         },
         {
             "name": "csun-metalab/laravel-proxypass",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/csun-metalab/laravel-proxypass.git",
-                "reference": "78a1e21a9262ea82e9a048aae8aac8b0ad2122ed"
+                "reference": "dc64a99045e45ffaf39dd128a996d9f7e8ad49f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/csun-metalab/laravel-proxypass/zipball/78a1e21a9262ea82e9a048aae8aac8b0ad2122ed",
-                "reference": "78a1e21a9262ea82e9a048aae8aac8b0ad2122ed",
+                "url": "https://api.github.com/repos/csun-metalab/laravel-proxypass/zipball/dc64a99045e45ffaf39dd128a996d9f7e8ad49f7",
+                "reference": "dc64a99045e45ffaf39dd128a996d9f7e8ad49f7",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 }
             ],
             "description": "Composer package for Laravel that resolves the correct absolute URLs when behind a proxy",
-            "time": "2017-06-06T00:22:50+00:00"
+            "time": "2017-11-08T18:56:10+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
