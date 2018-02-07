@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,13 +18,13 @@ class MajorPathWage extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function majorPath() {
-    return $this->hasOne('App\MajorPath','id','id');
+    return $this->hasOne('App\Models\MajorPath','id','id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function population() {
-        return $this->hasOne('App\Population','id','population_sample_id');
+        return $this->hasOne('App\Models\Population','id','population_sample_id');
     }
 }
