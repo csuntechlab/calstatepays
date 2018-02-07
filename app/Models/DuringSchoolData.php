@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,13 +22,13 @@ class DuringSchoolData extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function university() {
-        return $this->hasOne('App\University','id','university_id');
+        return $this->hasOne('App\Models\University','id','university_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function studentPath() {
-        return $this->hasOne('App\StudentPath','id','student_path'  );
+        return $this->hasOne('App\Models\StudentPath','id','student_path'  );
     }
 }

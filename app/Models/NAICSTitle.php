@@ -1,12 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NaicsTitle extends Model
+class NAICSTitle extends Model
 {
-    public $table = "naics_titles";
     public $primaryKey = 'naics_code';
     public $incrementing = false;
 
@@ -18,11 +17,6 @@ class NaicsTitle extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function industryPathTypes() {
-        return $this->hasMany('App\IndustryPathType','naics_code');
-    }
-
-    public function industryWage()
-    {
-        return $this->hasManyThrough('App\IndustryWage','App\IndustryPathType','naics_code','id');
+        return $this->hasMany('App\Models\IndustryPathType');
     }
 }

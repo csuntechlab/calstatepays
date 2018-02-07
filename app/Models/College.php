@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +14,6 @@ class College extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function universityMajors() {
-        return $this->hasMany('App\UniversityMajor','id','id' );
+        return $this->hasMany('App\Models\UniversityMajor','id','id' );
     }
 }
