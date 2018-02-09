@@ -9,32 +9,22 @@ use App\Models\MajorPath;
 class AggregateDataController extends Controller
 {
     public function getAverageIncomeByStudentPath(){
-        $paths = MajorPath::where('student_path',1)
-            ->with('majorPathWage')
-            ->get();
-        $averages=[];
-        foreach ($paths as $path){
-            array_push($averages, $path->majorPathWage->avg_annual_wage);
-        }
-        $bachelors_degree_avg = array_sum($averages)/count($averages);
+        $paths = MajorPath::
+            with('majorPathWage')
+            ->get()->groupBy('student_path');
+        $averages=['1'=>[],'2'=>[],'3'=>[]];
+        foreach ($paths as $path_number => $path){
+            foreach($path as $wage){
+                array_push($averages[$path_number], $wage->majorPathWage->avg_annual_wage);
+            }
+            $averages[$path_number] = array_sum($averages[$path_number])/count($averages[$path_number]);
 
-        $paths = MajorPath::where('student_path',2)
-            ->with('majorPathWage')
-            ->get();
-        $averages=[];
-        foreach ($paths as $path){
-            array_push($averages, $path->majorPathWage->avg_annual_wage);
         }
-        $some_college_avg = array_sum($averages)/count($averages);
 
-        $paths = MajorPath::where('student_path',3)
-            ->with('majorPathWage')
-            ->get();
-        $averages=[];
-        foreach ($paths as $path){
-            array_push($averages, $path->majorPathWage->avg_annual_wage);
-        }
-        $master_avg = array_sum($averages)/count($averages);
+        $some_college_avg       = $averages[1];
+        $bachelors_degree_avg   = $averages[2];
+        $master_avg             = $averages[3];
+
         $averages = [
             'some_college_avg' => $some_college_avg,
             'bachelors_avg' => $bachelors_degree_avg,
