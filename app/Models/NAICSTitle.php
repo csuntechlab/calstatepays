@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NAICSTitle extends Model
+class NaicsTitle extends Model
 {
     public $primaryKey = 'naics_code';
     public $incrementing = false;
@@ -18,5 +18,9 @@ class NAICSTitle extends Model
      */
     public function industryPathTypes() {
         return $this->hasMany('App\Models\IndustryPathType');
+    }
+    public function industryWage()
+    {
+        return $this->hasManyThrough('App\Models\IndustryWage','App\Models\IndustryPathType','naics_code','id');
     }
 }

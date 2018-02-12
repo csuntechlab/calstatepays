@@ -8,7 +8,7 @@ class IndustryPathType extends Model
 {
     public $primaryKey = 'id';
     protected $fillable = [
-        'entry_stat',
+        'entry_status',
         'naics_code',
         'student_path',
         'population_sample_id',
@@ -25,7 +25,7 @@ class IndustryPathType extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function naicsTitle() {
-        return $this->hasOne('App\Models\NAICSTitle','naics_code','naics_code');
+        return $this->hasOne('App\Models\NaicsTitle','naics_code','naics_code');
     }
 
     /**
