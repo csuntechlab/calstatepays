@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MajorPathWage extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
         'major_path_id',
         'avg_annual_wage',
