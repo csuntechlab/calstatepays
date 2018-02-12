@@ -25,7 +25,7 @@ class IndustryPathType extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function naicsTitle() {
-        return $this->hasOne('App\NaicsTitle','naics_code','naics_code');
+        return $this->hasOne('App\Models\NaicsTitle','naics_code','naics_code');
     }
 
     /**
