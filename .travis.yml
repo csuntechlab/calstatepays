@@ -1,0 +1,23 @@
+language: php
+php:
+- 7.1
+before_script:
+- composer self-update
+- composer install --no-interaction
+- cat .env.travis >> .env
+- phpenv config-rm xdebug.ini
+script:
+- vendor/bin/phpunit
+branches:
+  only:
+  - dev
+  - demo
+  - master
+notifications:
+  email: false
+  slack:
+    rooms:
+      secure: mQHNQ7yYvkg3RVkBrD0Sbw84/HR1vCm4pECmwmSJfhb34wq06wWojGupwDS79j93SyaUt5k+iAUhVVtcJKa1WctcS2nlOkEAr1vk3txYoa3Z684Tbdu9mh/7RRTP6YvPBlMp5GIlbdB0CFwQTvwc7ToKFike69ZuNhYz1iZMVIaDDc7iQbHywNeDg3lo+NgauD9zVBYjW+P1HgmV8gR53G3CjwrkOPJIu9M2mWa7n4NoFyd/ozTyH6YXuxf3W3rMqtKDCRJ4Hguu7ufj4igpU4lQS0veEwiq03rkofEaKvXxLySV1Bmv5ALpt6E1PTlU77cXMGjbSLi7OJEm0dVZ45YOHLxv/+3xsmv+kCq9UmotoZvqmsiGhPEcXaF11Nzi9v6QVhxVlo8uY+4f2qQmTwizVYV/RkRxManUb/2Ljl8Zfph4LAMXXS9z+NczDjNRfguMeVhjcuAS/IFDWLiKq8UA3uiYVzWrIqENBpA9UrGOlK38RhcEOyCXrVp70dIgEpm0engNe3X8T4BRiPPXxr01mx5OPzK0TRqrDILY9gDMIsktRsVIwRchByp9PVQjukwEwkeWCX2wUtakarQnwofOUZbBTo/iw4cz9+Szm26tUCNHnisqIsDfQoyTKD+pVUqxs3a46coNkvV+2tG7xtCOJKlC1A+KMz+KBSvF1BI=
+before_install:
+- openssl aes-256-cbc -K $encrypted_0a02e400871b_key -iv $encrypted_0a02e400871b_iv
+  -in .env.enc -out .env -d

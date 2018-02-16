@@ -7,11 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-debugbar": "^2.4",
+        "csun-metalab/laravel-force-https": "^1.0",
         "csun-metalab/laravel-proxypass": "^1.0",
         "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
+        "maatwebsite/excel": "~2.1.0",
         "tiesa/ldap": "dev-master"
     },
     "require-dev": {
@@ -21,7 +23,8 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "app/Models"
         ],
         "psr-4": {
             "App\\": "app/"

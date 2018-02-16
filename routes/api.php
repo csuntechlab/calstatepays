@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('aggregate/income/student-path','AggregateDataController@getAverageIncomeByStudentPath')
+            ->name('student-path-avg');
+Route::get('aggregate/income/industry','AggregateDataController@getAverageIncomeByIndustry')->name('avg_income_industry');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
