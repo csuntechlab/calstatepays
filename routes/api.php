@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('import-export-view', 'ExcelController@importExportView')->name('import.export.view');
-Route::post('import-file', 'ExcelController@importFile')->name('importFile');
+Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
+Route::post('import-file', 'ExcelController@importFile.blade.php')->name('importFile.blade.php');
