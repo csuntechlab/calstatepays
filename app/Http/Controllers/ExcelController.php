@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Excel;
+use Illuminate\Support\Collection;
 
 class ExcelController extends Controller
 {
@@ -15,16 +16,20 @@ class ExcelController extends Controller
         if($request->hasFile('imported_file')){
             $path = $request->file('imported_file')->getRealPath();
             $data = \Excel::load($path)->get();
+            return $this->mapHegisDataFromCsv($data);
         } else{
             dd('The Request has no path');
         }
     }
 
-    public function mapHegisDataFromCsv(){
-        $hegisData = [
-            'Campus' => '',
-            'Major' => '',
-            'Hegis_Code' => '',
-        ];
+    public function mapHegisDataFromCsv(Collection $data){
+        $data->map(function($row){
+            return [
+                'hegis_code' => $row['program_code'],
+                'major' => $row['major'],
+                'university' => $row['campus']
+            ];
+        });
+        return $data;
     }
 }
