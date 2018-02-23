@@ -1,14 +1,16 @@
 <template>
-	<div>
+	<div class="container-fluid">
 		<navigation></navigation>
-		<div class="container-fluid">
 			<router-view></router-view>
-		</div>
 	</div>
 </template>
 <script>
-	import navigation from './components/global/navigation.vue'
+	import navigation from './components/global/navigation.vue';
+	import footer from './components/global/footer.vue';
 	export default {
-		components: { navigation }
+		components: { 
+			navigation,
+			footer,
+		}
 	}
 </script>
