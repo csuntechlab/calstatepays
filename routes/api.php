@@ -19,3 +19,6 @@ Route::get('aggregate/income/industry','AggregateDataController@getAverageIncome
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('import-export-view', 'ExcelController@importExportView')->name('import.export.view');
+Route::post('import-file', 'ExcelController@importFile')->name('importFile');
