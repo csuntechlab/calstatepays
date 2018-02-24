@@ -23,7 +23,7 @@ class ExcelController extends Controller
     }
 
     public function mapHegisDataFromCsv(Collection $data){
-        $data->map(function($row){
+        $data = $data->map(function($row){
             return [
                 'hegis_code' => $row['program_code'],
                 'major' => $row['major'],
