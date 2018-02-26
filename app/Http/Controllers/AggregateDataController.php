@@ -14,9 +14,7 @@ class AggregateDataController extends Controller
         $paths = MajorPath::
             with('majorPathWage')->get()
             ->groupBy('student_path');
-//        dd($paths);
         foreach ($paths as $path_number => $path) {
-//            dd($path[0]['years']);
         }
 
         $averages=[
@@ -26,7 +24,6 @@ class AggregateDataController extends Controller
         ];
         foreach ($paths as $path_number => $path){
             foreach($path as $wage){
-                dd($averages[$path_number][$path[$path_number]['years']]);
                 array_push($averages[$path_number][$path[$path_number]['years']], $wage->majorPathWage->avg_annual_wage);
             }
             $averages[$path_number][$path->year] = array_sum($averages[$path_number])/count($averages[$path_number]);
