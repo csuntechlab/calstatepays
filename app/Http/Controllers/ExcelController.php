@@ -17,7 +17,7 @@ class ExcelController extends Controller
         if($request->hasFile('imported_file')){
             $path = $request->file('imported_file')->getRealPath();
             $data = \Excel::load($path)->get();
-            return $this->mapHegisDataFromCsv($data);
+            return $this->mapUniversityDataFromCsv($data);
         } else{
             dd('The Request has no path');
         }
@@ -29,6 +29,16 @@ class ExcelController extends Controller
                 'hegis_code' => $row['program_code'],
                 'major' => $row['major'],
                 'university' => $row['campus']
+            ];
+        });
+        return $data;
+    }
+
+    public function mapUniversityDataFromCsv(Collection $data){
+        $data = $data->map(function($row){
+            return [
+                'id' => $row['id'],
+                'university' => $row['university_name']
             ];
         });
         return $data;
