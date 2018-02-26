@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class HEGISCode extends Model
 {
     public $primaryKey = 'hegis_code';
+    protected $table = 'hegis_codes';
     protected $fillable = [
         'hegis_code',
         'major',
