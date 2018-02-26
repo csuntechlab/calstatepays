@@ -54,4 +54,12 @@ class AggregateDataController extends Controller
       }
 		return $naicsTitles;
     }
+
+    //This function will return a view of //https://drive.google.com/drive/u/1/folders/1zSyC6k31otujgetuOGcRYRpHJ_Z5KS_b
+    public function getAggregateCollegesPFRE(Request $request){
+        //Request will hold POST for $major, $age, $educationLevel, yearsCommCollege, $annualEarnings
+        //Given the above variables, query database for:
+        //Cost of Degree, Estimated 4-year income, ROI
+        //This function returns a view and the above data
+    }
 }
