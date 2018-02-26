@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Excel;
 use Illuminate\Support\Collection;
-use App\Models\HEGISCode;
 
 class ExcelController extends Controller
 {
@@ -32,7 +31,6 @@ class ExcelController extends Controller
                 'university' => $row['campus']
             ];
         });
-        HEGISCode::truncate();
         return $data;
     }
 }
