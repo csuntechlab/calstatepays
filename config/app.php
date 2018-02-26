@@ -170,6 +170,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         CSUNMetaLab\ForceHttps\Providers\ForceHttpsServiceProvider::class,
 
         /*
