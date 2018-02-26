@@ -9,7 +9,8 @@ class HEGISCode extends Model
     public $primaryKey = 'hegis_code';
     protected $fillable = [
         'hegis_code',
-        'major'
+        'major',
+        'university'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
