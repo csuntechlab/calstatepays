@@ -14,7 +14,7 @@ class AddUniversityColumnToHegisCodesTable extends Migration
     public function up()
     {
         Schema::table('hegis_codes', function (Blueprint $table) {
-            $table->string('university');
+            $table->string('university')->default('N/A');
         });
     }
 
