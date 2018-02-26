@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Aggregate/TopTenMajors','AggregateDataController@getAggregateTopTenMajors')->name('aggregate.top.majors');
