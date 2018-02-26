@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\ExcelController;
 
 class Hegis_Codes_TableSeeder extends Seeder
 {
@@ -13,11 +12,12 @@ class Hegis_Codes_TableSeeder extends Seeder
      */
     public function run()
     {
-
-        DB::table('hegis_codes')->insert([
+        $json = File::get("database/data/hegis_codes.json");
+        $data = json_decode($json);
+        /*DB::table('hegis_codes')->insert([
             'hegis_code' => ,
             'major' => ,
             'university' =>
-        ]);
+        ]);*/
     }
 }

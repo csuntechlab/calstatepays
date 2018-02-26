@@ -12,6 +12,7 @@ class ExcelController extends Controller
         return view('importFile');
     }
 
+
     public function importFile(Request $request){
         if($request->hasFile('imported_file')){
             $path = $request->file('imported_file')->getRealPath();
