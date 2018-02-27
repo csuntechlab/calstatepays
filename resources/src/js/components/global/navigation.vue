@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-fixed-top navbar-expand-md navbar-light">
     <div class="d-flex w-100">
       <router-link class="navbar-brand" to="/">
-				<img :src="'/img/grad-hat.png'" class="img--logo" alt="Cal State Pays logo">
+				<img :src="'/img/learnearn-logo.png'" class="img__logo" alt="Cal State Pays logo">
 			</router-link>
     </div>
     <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
@@ -20,7 +20,7 @@
         </ul>
     </div>
     <span class="navbar-text small text-truncate mt-1 w-100 text-right">
-    	<img :src="'/img/csumetro.png'" class="img--logo" alt="Cal State Pays logo">
+    	<img :src="'/img/csumetro.png'" class="img__logo--side" alt="Cal State Pays logo">
     </span>
 </nav>
 	</header>

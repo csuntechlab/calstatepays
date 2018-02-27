@@ -1,9 +1,8 @@
+@import "node_modules/bootstrap/dist/css/bootstrap";
 
-// Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap.scss";
-// Variables
 @import "variables";
 @import "base";
+@import "type";
 @import "images";
 @import "navbar";
 @import "footer";

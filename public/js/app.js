@@ -50845,9 +50845,9 @@ var render = function() {
               { staticClass: "navbar-brand", attrs: { to: "/" } },
               [
                 _c("img", {
-                  staticClass: "img--logo",
+                  staticClass: "img__logo",
                   attrs: {
-                    src: "/img/grad-hat.png",
+                    src: "/img/learnearn-logo.png",
                     alt: "Cal State Pays logo"
                   }
                 })
@@ -50866,7 +50866,7 @@ var render = function() {
           },
           [
             _c("img", {
-              staticClass: "img--logo",
+              staticClass: "img__logo--side",
               attrs: { src: "/img/csumetro.png", alt: "Cal State Pays logo" }
             })
           ]
@@ -50981,6 +50981,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50992,17 +50999,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "footer",
-    [
-      _c("container-fluid", [
-        _c("p", [_vm._v("CSU Student Success Dashboard")])
-      ])
-    ],
-    1
-  )
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", [
+      _c("div", { staticClass: "footer__links" }, [
+        _c("p", { staticClass: "footer__link text--white h5" }, [
+          _c("strong", [_vm._v("CSU Student Success Dashboard")])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "footer__link text--gray h6" }, [
+          _vm._v("CalState.edu")
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "footer__link text--gray h6", attrs: { href: "#" } },
+          [_vm._v("FAQ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "footer__links pull-right" }, [
+        _c("p", { staticClass: "footer__link text--white h5" }, [
+          _c("strong", [_vm._v("California State University")])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "footer__link text--white h5" }, [
+          _c("strong", [_vm._v(" Office Of The Chancellor")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "footer__link text--gray h6", attrs: { href: "#" } },
+          [_vm._v("Contact Us")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -12,17 +12,24 @@ class AggregateDataController extends Controller
 {
     public function getAverageIncomeByStudentPath(){
         $paths = MajorPath::
-            with('majorPathWage')
-            ->get()->groupBy('student_path');
-        $averages=['1'=>[],'2'=>[],'3'=>[]];
-        foreach ($paths as $path_number => $path){
-            foreach($path as $wage){
-                array_push($averages[$path_number], $wage->majorPathWage->avg_annual_wage);
-            }
-            $averages[$path_number] = array_sum($averages[$path_number])/count($averages[$path_number]);
-
+            with('majorPathWage')->get()
+            ->groupBy('student_path');
+        foreach ($paths as $path_number => $path) {
         }
 
+        $averages=[
+            '1'=>['2'=>[123],'5'=>[],'10'=>[]],
+            '2'=>['2'=>[321],'5'=>[],'10'=>[]],
+            '3'=>['2'=>[213],'5'=>[],'10'=>[]]
+        ];
+        foreach ($paths as $path_number => $path){
+            foreach($path as $wage){
+                array_push($averages[$path_number][$path[$path_number]['years']], $wage->majorPathWage->avg_annual_wage);
+            }
+            $averages[$path_number][$path->year] = array_sum($averages[$path_number])/count($averages[$path_number]);
+
+        }
+        dd($averages);
         $some_college_avg       = $averages[1];
         $bachelors_degree_avg   = $averages[2];
         $master_avg             = $averages[3];
@@ -34,6 +41,7 @@ class AggregateDataController extends Controller
         ];
         return ($averages);
     }
+
     public function getAverageIncomeByIndustry()
     {
 		$naicsTitles =  NaicsTitle::with('industryWage')->get()->keyBy('naics_code');

@@ -1,3 +1,24 @@
+
 body {
-    font-family: 'Montserrat', 'Open Sans';
+  font-family: 'Montserrat', 'Open Sans';
+  font-size: modular-scale(0);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.h5 { font-size: 1rem;}
+.h6{ font-size: 0.9rem;}
+
+p,ul,ol,a { margin-bottom: 0px;}
+.pull-right{ 
+  float: right !important; 
+  text-align: right;
+}
+
+
+
+
+
+
