@@ -57,7 +57,8 @@ class AggregateDataController extends Controller
 
     //This function will return a view of https://drive.google.com/drive/u/1/folders/1zSyC6k31otujgetuOGcRYRpHJ_Z5KS_b
     //FRE.png
-    public function getAggregateCollegesPFRE(Request $request){
+    public function getAggregateCollegesPFRE(Request $request)
+    {
         //Request will hold POST for $major, $ageRange, $educationLevel, yearsCommCollege, $annualEarnings
         $major = $request->major;
         $ageRange = $request->ageRange;
@@ -70,7 +71,18 @@ class AggregateDataController extends Controller
         //This function returns a view and the above data
     }
 
-    public function getAggregateCollegesPFREView(){
+    public function getAggregateCollegesPFREView()
+    {
         //return PFRE view
+    }
+  
+    // Function populates bar graph: https://drive.google.com/drive/u/1/folders/1zSyC6k31otujgetuOGcRYRpHJ_Z5KS_b
+    // LandingPage.png
+    public function getAggregateTopTenMajors()
+    {
+        //Query Database for majors with highest number of students at exit for all universities
+        //Rank above query in ASC order
+        //Using these 10 majors, query for average earnings 5 years after exit
+        //return json of 10 majors with population and earnings
     }
 }
