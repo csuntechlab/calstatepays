@@ -17,7 +17,7 @@ class ExcelController extends Controller
         if($request->hasFile('imported_file')){
             $path = $request->file('imported_file')->getRealPath();
             $data = \Excel::load($path)->get();
-            dd($this->mapStudentPathDataFromCsv($data));
+            return $this->mapStudentPathDataFromCsv($data);
         } else{
             dd('The Request has no path');
         }
