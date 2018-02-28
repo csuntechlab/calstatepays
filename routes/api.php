@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 Route::get('aggregate/income/student-path','AggregateDataController@getAverageIncomeByStudentPath')
             ->name('student-path-avg');
 Route::get('aggregate/income/industry','AggregateDataController@getAverageIncomeByIndustry')->name('avg_income_industry');
+Route::get('/Aggregate/TopTenMajors','AggregateDataController@getAggregateTopTenMajors')->name('aggregate.top.majors');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
