@@ -64,8 +64,13 @@ class AggregateDataController extends Controller
         $educationLevel = $request->educationLevel;
         $yearsOfCommCollege = $request->yearsOfCommCollege;
         $annualEarnings = $request->annualEarnings;
+        //Validate all input variables
         //Given the above variables, query database for:
         //Cost of Degree, Estimated 4-year income, ROI
         //This function returns a view and the above data
+    }
+
+    public function getAggregateCollegesPFREView(){
+        //return PFRE view
     }
 }
