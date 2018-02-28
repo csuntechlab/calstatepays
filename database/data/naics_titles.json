@@ -1,0 +1,98 @@
+[
+  {
+    "naics_code": "21",
+    "naics_title": "Mining, Quarrying and Oil & Gas Extraction"
+  },
+  {
+    "naics_code": "11",
+    "naics_title": "Agriculture, Forestry,Fishing and Hunting"
+  },
+  {
+    "naics_code": "22",
+    "naics_title": "Utilities"
+  },
+  {
+    "naics_code": "55",
+    "naics_title": "Management of Companies and Enterprises"
+  },
+  {
+    "naics_code": 48,
+    "naics_title": "Transportation and Warehousing"
+  },
+  {
+    "naics_code": 49,
+    "naics_title": "Transportation and Warehousing"
+  },
+  {
+    "naics_code": "23",
+    "naics_title": "Construction"
+  },
+  {
+    "naics_code": "71",
+    "naics_title": "Arts, Entertainment, and Recreation"
+  },
+  {
+    "naics_code": "53",
+    "naics_title": "Real Estate, Rental and Leasing"
+  },
+  {
+    "naics_code": "72",
+    "naics_title": "Accommodation and Food Services"
+  },
+  {
+    "naics_code": "81",
+    "naics_title": "Other Services(except Public Administration)"
+  },
+  {
+    "naics_code": "42",
+    "naics_title": "Wholesale Trade"
+  },
+  {
+    "naics_code": "56",
+    "naics_title": "Administrative & Support, Waste Management and Remediation Services"
+  },
+  {
+    "naics_code": 31,
+    "naics_title": "Manufacturing"
+  },
+  {
+    "naics_code": 32,
+    "naics_title": "Manufacturing"
+  },
+  {
+    "naics_code": 33,
+    "naics_title": "Manufacturing"
+  },
+  {
+    "naics_code": 44,
+    "naics_title": "Retail Trade"
+  },
+  {
+    "naics_code": 45,
+    "naics_title": "Retail Trade"
+  },
+  {
+    "naics_code": "92",
+    "naics_title": "Public Administration"
+  },
+  {
+    "naics_code": "51",
+    "naics_title": "Information"
+  },
+  {
+    "naics_code": "52",
+    "naics_title": "Finance and Insurance"
+  },
+  {
+    "naics_code": "54",
+    "naics_title": "Professional, Scientific,and Technical Services"
+  },
+  {
+    "naics_code": "62",
+    "naics_title": "Health Care and Social Assistance"
+  },
+  {
+    "naics_code": "61",
+    "naics_title": "Educational Services"
+  }
+]
