@@ -43,4 +43,13 @@ class ExcelController extends Controller
         });
         return $data;
     }
+
+    /*public function mapStudentPathDataFromCsv(Collection $data){
+        $data = $data->map(function($row){
+            return[
+                ''
+            ]
+        });
+        return $data;
+    }*/
 }
