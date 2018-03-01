@@ -8,11 +8,12 @@
     </div>
     <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
+                <hr class="hr-nav">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//codeply.com">Majors</a>
+                <a class="nav-link" href="#">Majors</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">PFRE</a>

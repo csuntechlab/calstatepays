@@ -50820,6 +50820,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50888,18 +50889,18 @@ var staticRenderFns = [
       },
       [
         _c("ul", { staticClass: "navbar-nav" }, [
-          _c("li", { staticClass: "nav-item active" }, [
+          _c("li", { staticClass: "nav-item" }, [
             _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
               _vm._v("Home")
-            ])
+            ]),
+            _vm._v(" "),
+            _c("hr", { staticClass: "hr-nav" })
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              { staticClass: "nav-link", attrs: { href: "//codeply.com" } },
-              [_vm._v("Majors")]
-            )
+            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+              _vm._v("Majors")
+            ])
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "nav-item" }, [
@@ -51008,33 +51009,36 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("footer", [
       _c("div", { staticClass: "footer__links" }, [
-        _c("p", { staticClass: "footer__link text--white h5" }, [
+        _c("p", { staticClass: "footer__link text-white" }, [
           _c("strong", [_vm._v("CSU Student Success Dashboard")])
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "footer__link text--gray h6" }, [
+        _c("p", { staticClass: "footer__link text-gray" }, [
           _vm._v("CalState.edu")
         ]),
         _vm._v(" "),
         _c(
           "a",
-          { staticClass: "footer__link text--gray h6", attrs: { href: "#" } },
+          { staticClass: "footer__link text-gray", attrs: { href: "#" } },
           [_vm._v("FAQ")]
         )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "footer__links pull-right" }, [
-        _c("p", { staticClass: "footer__link text--white h5" }, [
+        _c("p", { staticClass: "footer__link text-white text-right" }, [
           _c("strong", [_vm._v("California State University")])
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "footer__link text--white h5" }, [
+        _c("p", { staticClass: "footer__link text-white text-right" }, [
           _c("strong", [_vm._v(" Office Of The Chancellor")])
         ]),
         _vm._v(" "),
         _c(
           "a",
-          { staticClass: "footer__link text--gray h6", attrs: { href: "#" } },
+          {
+            staticClass: "footer__link text-gray pull-right",
+            attrs: { href: "#" }
+          },
           [_vm._v("Contact Us")]
         )
       ])

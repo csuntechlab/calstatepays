@@ -9996,40 +9996,11 @@ a.text-dark:focus {
 
 
 
-body {
-  font-family: 'Montserrat', 'Open Sans';
-  font-size: modular-scale(0);
-  font-weight: 400;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.h5 {
-  font-size: 1rem;
-}
-
-.h6 {
-  font-size: 0.9rem;
-}
-
-p,
-ul,
-ol,
-a {
-  margin-bottom: 0px;
-}
-
-.pull-right {
-  float: right !important;
-  text-align: right;
-}
-
-.text--gray {
+.text-gray {
   color: #777777;
 }
 
-.text--white {
+.text-white {
   color: #f7f7f7;
 }
 
@@ -10045,6 +10016,16 @@ a {
 
 .navbar {
   height: 80px;
+  font-family: 'Open Sans';
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.hr-nav {
+  border-top: 3px solid #D00D2D;
+  margin: 0px;
 }
 
 footer {
