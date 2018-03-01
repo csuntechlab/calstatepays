@@ -50671,7 +50671,7 @@ exports = module.exports = __webpack_require__(47)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\t* {\n\t\tborder-style: solid;\n\t\tborder-width: 1px;\n\t}*/\n.bg { \n\t    /* The image used */\n\t    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n\n\t    /* Full height */\n\t    height: 100%; \n\n\t    /* Center and scale the image nicely */\n\t    background-position: center;\n\t    background-repeat: no-repeat;\n\t    background-size: cover;\n}  \n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\t* {\n\t\tborder-style: solid;\n\t\tborder-width: 1px;\n\t}*/\n.bg { \n\t    /* The image used */\n\t    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n\n\t    /* Full height */\n\t    height: 100%; \n\n\t    /* Center and scale the image nicely */\n\t    background-position: center;\n\t    background-repeat: no-repeat;\n\t    background-size: cover;\n}  \n", ""]);
 
 // exports
 
@@ -51055,6 +51055,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -51084,44 +51102,76 @@ var staticRenderFns = [
         _c("div", { staticClass: "container-fluid no-gutters" }, [
           _c("div", { staticClass: "row", staticStyle: { height: "300px" } }, [
             _c("div", { staticClass: "col" }, [
-              _c("h4", [_vm._v("More Education, More Income")]),
+              _c("div", { staticClass: "row" }, [
+                _c("h4", [_vm._v("More Education, More Income")])
+              ]),
               _vm._v(" "),
-              _c("img", {
-                staticStyle: { height: "100%" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              })
+              _c("div", { staticClass: "row" }, [
+                _c("img", {
+                  staticStyle: { height: "300px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed minus voluptatibus iste quod odio illo harum mollitia, adipisci, laboriosam porro, obcaecati repudiandae animi autem magni beatae. Sint, nostrum assumenda nulla."
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col" }, [
-              _c("h4", [_vm._v("More Education, More Income")]),
+              _c("div", { staticClass: "row" }, [
+                _c("h4", [_vm._v("More Education, More Income")])
+              ]),
               _vm._v(" "),
-              _c("img", {
-                staticStyle: { height: "100%" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              })
+              _c("div", { staticClass: "row" }, [
+                _c("img", {
+                  staticStyle: { height: "300px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus culpa rem ipsa, corporis, ullam quas similique totam dolores tenetur aliquam quasi accusantium deleniti fugit, illo aspernatur accusamus velit deserunt cumque."
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col" }, [
-              _c("h4", [_vm._v("More Education, More Income")]),
+              _c("div", { staticClass: "row" }, [
+                _c("h4", [_vm._v("More Education, More Income")])
+              ]),
               _vm._v(" "),
-              _c("img", {
-                staticStyle: { height: "100%" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              })
+              _c("div", { staticClass: "row" }, [
+                _c("img", {
+                  staticStyle: { height: "300px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque praesentium sequi, enim blanditiis dolorum repellat necessitatibus eum quis ratione quia, quae, quisquam corrupti ipsum sapiente! Facilis impedit error obcaecati, illum."
+                  )
+                ])
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row", staticStyle: { height: "300px" } }, [
-            _vm._v("\n\t\t\t\tbanner\n\t\t\t")
           ])
         ])
       ])
