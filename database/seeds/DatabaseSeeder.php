@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(Hegis_Codes_TableSeeder::class);
         $this->call(Universities_TableSeeder::class);
+        $this->call(Student_Paths_TableSeeder::class);
     }
 }
