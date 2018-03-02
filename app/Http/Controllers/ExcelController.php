@@ -47,7 +47,7 @@ class ExcelController extends Controller
     public function mapNaicsDataFromCsv(Collection $data){
         $data = $data->map(function($row){
             return [
-                'naics_code' => $row['naics_code'],
+                'naics_code'  => $row['naics_code'],
                 'naics_title' => $row['naics_title']
             ];
         });
