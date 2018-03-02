@@ -16,7 +16,7 @@ class Naics_Titles_TableSeeder extends Seeder
         $data = json_decode($json);
         foreach($data as $row){
             DB::table('naics_titles')->insert([
-                'naics_code'              => $row->naics_code,
+                'naics_code'  => $row->naics_code,
                 'naics_title' => $row->naics_title
             ]);
         };
