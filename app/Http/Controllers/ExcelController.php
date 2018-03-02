@@ -17,7 +17,8 @@ class ExcelController extends Controller
         if($request->hasFile('imported_file')){
             $path = $request->file('imported_file')->getRealPath();
             $data = \Excel::load($path)->get();
-            return $this->mapStudentPathDataFromCsv($data);
+            return $this->mapNaicsDataFromCsv($data);
+
         } else{
             dd('The Request has no path');
         }
@@ -44,9 +45,19 @@ class ExcelController extends Controller
         return $data;
     }
 
+    public function mapNaicsDataFromCsv(Collection $data){
+        $data = $data->map(function($row){
+            return [
+                'naics_code'  => $row['naics_code'],
+                'naics_title' => $row['naics_title']
+              ];
+        });
+        return $data;
+    }
+
     public function mapStudentPathDataFromCsv(Collection $data){
         $data = $data->map(function($row){
-            return[
+            return [
                 'path_name' => $row['path']
             ];
         });
