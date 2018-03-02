@@ -1,14 +1,17 @@
 <template>
-	<div>
+	<div class="container-fluid">
 		<navigation></navigation>
-		<div class="container-fluid">
-			<router-view></router-view>
-		</div>
+		<router-view></router-view>
+		<csu-footer></csu-footer>
 	</div>
 </template>
 <script>
-	import navigation from './components/global/navigation.vue'
+	import navigation from './components/global/navigation.vue';
+	import csuFooter from './components/global/csu-footer.vue';
 	export default {
-		components: { navigation }
+		components: { 
+			navigation,
+			csuFooter,
+		}
 	}
 </script>
