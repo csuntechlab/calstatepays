@@ -7,42 +7,37 @@
 				</div>
 			</div>
 			<div class="container-fluid no-gutters">
-				<div class="row" style="height: 300px;">
-					<div class="col">
-						<div class="row">
-							<h4>More Education, More Income</h4>
-						</div>
-						<div class="row">
-							<img src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px"></img>
-						</div>
-						<div class="row">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed minus voluptatibus iste quod odio illo harum mollitia, adipisci, laboriosam porro, obcaecati repudiandae animi autem magni beatae. Sint, nostrum assumenda nulla.</p>
-						</div>
+				<div class="row">
+					<div class="col col-md-4 col-sm-12 text-center">
+						<h4 class="py-3">More Education, More Income</h4>
+						<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px;"></img>
+						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
+						<p><strong>Explore More Information</strong></p>
 					</div>
-					<div class="col">
-						<div class="row">
-							<h4>More Education, More Income</h4>
-						</div>
-						<div class="row">
-							<img src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px"></img>
-						</div>
-						<div class="row">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus culpa rem ipsa, corporis, ullam quas similique totam dolores tenetur aliquam quasi accusantium deleniti fugit, illo aspernatur accusamus velit deserunt cumque.</p>
-						</div>
+					<div class="col col-md-4 col-sm-12 text-center">
+						<h4 class="py-3">More Education, More Income</h4>
+						<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px;"></img>
+						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
+						<p><strong>Explore More Information</strong></p>
 					</div>
-					<div class="col">
-						<div class="row">
-							<h4>More Education, More Income</h4>
-						</div>
-						<div class="row">
-							<img src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px"></img>
-						</div>
-						<div class="row">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque praesentium sequi, enim blanditiis dolorum repellat necessitatibus eum quis ratione quia, quae, quisquam corrupti ipsum sapiente! Facilis impedit error obcaecati, illum.</p>
-						</div>
+					<div class="col col-md-4 col-sm-12 text-center">
+						<h4 class="py-3">More Education, More Income</h4>
+						<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 300px;"></img>
+						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
+						<p><strong>Explore More Information</strong></p>
 					</div>
 				</div>
-			</div>		
+			</div>
+			<div class="row">
+				<div class="col text-center">
+					<img src="../../../../../assets/images/cal-states-pays-banner.png" alt="">
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col text-center">
+					<img src="../../../../../assets/images/strada-logo-color.png" alt="">
+				</div>
+			</div>	
 		</div>
 	</div>
 </template>
@@ -68,5 +63,9 @@
 	    background-position: center;
 	    background-repeat: no-repeat;
 	    background-size: cover;
-	}  
+	}
+
+	.center-item {
+		justify-content: center;
+	}
 </style>
