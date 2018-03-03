@@ -51265,6 +51265,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -51599,8 +51601,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
-    [_c("navigation"), _vm._v(" "), _c("router-view")],
+    [
+      _c(
+        "div",
+        { staticClass: "container-fluid" },
+        [_c("navigation"), _vm._v(" "), _c("router-view")],
+        1
+      ),
+      _vm._v(" "),
+      _c("csu-footer")
+    ],
     1
   )
 }

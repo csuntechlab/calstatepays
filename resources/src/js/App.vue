@@ -1,8 +1,10 @@
 <template>
-	<div class="container-fluid">
-		<navigation></navigation>
-		<router-view></router-view>
-		<!-- <csu-footer class="footer"></csu-footer> -->
+	<div>
+		<div class="container-fluid">
+			<navigation></navigation>
+			<router-view></router-view>
+		</div>
+		<csu-footer></csu-footer>
 	</div>
 </template>
 <script>
