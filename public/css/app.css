@@ -13077,6 +13077,7 @@ body {
 }
 
 .container-fluid {
+  margin-top: 60px;
   padding-left: 0px;
 }
 
@@ -13090,6 +13091,14 @@ body {
   margin-top: 0px;
 }
 
+.bg {
+  background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .navbar,
 nav {
   height: 60px;
@@ -13100,6 +13109,7 @@ nav {
   z-index: 500;
   -webkit-box-shadow: 0 6px 6px -6px #999;
   box-shadow: 0 6px 6px -6px #999;
+  top: 0;
 }
 
 .nav-link {
@@ -13108,6 +13118,7 @@ nav {
 
 .nav-logo-secondary {
   max-height: 50px;
+  width: 50px;
 }
 
 .hr-nav {

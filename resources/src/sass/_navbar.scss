@@ -7,13 +7,15 @@
 	z-index: 500;
 	-webkit-box-shadow: 0 6px 6px -6px #999;
     -moz-box-shadow: 0 6px 6px -6px #999;
-    box-shadow: 0 6px 6px -6px #999;
+	box-shadow: 0 6px 6px -6px #999;
+	top: 0;
 }
 .nav-link{
 	padding: 16px 0px; 
 }
 .nav-logo-secondary{
 	max-height: 50px;
+	width: 50px;
 }
 .hr-nav{
 	border-top: 3px solid $red;

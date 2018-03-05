@@ -21,7 +21,7 @@
         </ul>
     </div>
     <span class="navbar-text small mt-1 w-100 text-right">
-		<img src="../../../../assets/images/strada-logo-color.png" class="nav-logo-secondary" alt="">
+		<img src="img/strada-gray.svg" class="nav-logo-secondary" alt="">
     </span>
 </nav>
 	</header>

@@ -22286,7 +22286,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(15);
-module.exports = __webpack_require__(63);
+module.exports = __webpack_require__(61);
 
 
 /***/ }),
@@ -22301,7 +22301,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -50671,7 +50671,7 @@ exports = module.exports = __webpack_require__(47)(false);
 
 
 // module
-exports.push([module.i, "\n.bg { \n    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n    height: 100%; \n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n\n\n", ""]);
+exports.push([module.i, "\n.bg { \n    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n    height: 100%; \n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n", ""]);
 
 // exports
 
@@ -51063,10 +51063,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -51085,141 +51081,118 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "section" }, [
-        _c("div", { staticClass: "row bg" }, [
-          _c("div", { staticClass: "col", staticStyle: { height: "400px" } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container-fluid no-gutters" }, [
-          _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "container-fluid no-gutters" }, [
+      _c("div", { staticClass: "row bg" }, [
+        _c("div", { staticClass: "col", staticStyle: { height: "400px" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("More Education, More Income")
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
+              attrs: {
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+              }
+            }),
+            _vm._v(" "),
             _c(
-              "div",
-              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+              "p",
+              {
+                staticClass:
+                  "home__content pt-4 text-center col-md-8 offset-md-2"
+              },
               [
-                _c("h5", { staticClass: "pt-5 home__heading" }, [
-                  _vm._v("More Education, More Income")
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "py-2",
-                  staticStyle: { height: "400px" },
-                  attrs: {
-                    src:
-                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "home__content pt-4 text-center col-md-8 offset-md-2"
-                  },
-                  [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "home__link" }, [
-                  _vm._v("Explore More Information "),
-                  _c("i", { staticClass: "fa fa-arrow-right" })
-                ])
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+                )
               ]
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
-              [
-                _c("h5", { staticClass: "pt-5 home__heading" }, [
-                  _vm._v("Personal Return On Education")
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "py-2",
-                  staticStyle: { height: "400px" },
-                  attrs: {
-                    src:
-                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "pt-4 text-center col-md-8 offset-md-2" },
-                  [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "home__link" }, [
-                  _vm._v("Find Your Return "),
-                  _c("i", { staticClass: "fa fa-arrow-right" })
-                ])
-              ]
-            ),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Explore More Information "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("Personal Return On Education")
+            ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
-              [
-                _c("h5", { staticClass: "pt-5 home__heading" }, [
-                  _vm._v("Top Ten Majors by Size")
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "py-2",
-                  staticStyle: { height: "400px" },
-                  attrs: {
-                    src:
-                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "pt-4 text-center col-md-8 offset-md-2" },
-                  [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "home__link" }, [
-                  _vm._v("Explore Different Majors "),
-                  _c("i", { staticClass: "fa fa-arrow-right" })
-                ])
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col text-center" }, [
             _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
               attrs: {
-                src: __webpack_require__(52),
-                alt: ""
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
               }
-            })
-          ])
-        ]),
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "pt-4 text-center col-md-8 offset-md-2" }, [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Find Your Return "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col text-center" }, [
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("Top Ten Majors by Size")
+            ]),
+            _vm._v(" "),
             _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
               attrs: {
-                src: __webpack_require__(53),
-                alt: ""
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
               }
-            })
-          ])
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "pt-4 text-center col-md-8 offset-md-2" }, [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Explore Different Majors "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col text-center" }, [
+          _c("img", {
+            attrs: { src: "img/cal-states-pays-banner.png", alt: "" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col text-center" }, [
+          _c("img", { attrs: { src: "img/strada-logo-color.png", alt: "" } })
         ])
       ])
     ])
@@ -51236,26 +51209,14 @@ if (false) {
 
 /***/ }),
 /* 52 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/cal-states-pays-banner.png?eb6d8ce8a6cd20007e6b26492d638a5c";
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/strada-logo-color.png?92be8ca6d05cd795aa6d51ad02506726";
-
-/***/ }),
-/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51294,14 +51255,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -51323,15 +51284,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(57)
+var __vue_script__ = __webpack_require__(55)
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51370,7 +51331,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51407,7 +51368,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 58 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51493,10 +51454,7 @@ var staticRenderFns = [
       [
         _c("img", {
           staticClass: "nav-logo-secondary",
-          attrs: {
-            src: __webpack_require__(53),
-            alt: ""
-          }
+          attrs: { src: "img/strada-gray.svg", alt: "" }
         })
       ]
     )
@@ -51512,15 +51470,15 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(58)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51559,7 +51517,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51582,7 +51540,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 61 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51644,7 +51602,7 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51654,12 +51612,9 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "div",
-        { staticClass: "container-fluid" },
-        [_c("navigation"), _vm._v(" "), _c("router-view")],
-        1
-      ),
+      _c("navigation"),
+      _vm._v(" "),
+      _c("router-view"),
       _vm._v(" "),
       _c("csu-footer")
     ],
@@ -51677,7 +51632,7 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */
+/* 61 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
