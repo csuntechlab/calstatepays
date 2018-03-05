@@ -41,13 +41,3 @@
 
 	}
 </script>
-
-<style>
-	.bg { 
-	    background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
-	    height: 100%; 
-	    background-position: center;
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	}
-</style>
