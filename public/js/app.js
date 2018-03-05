@@ -22286,7 +22286,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(15);
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(63);
 
 
 /***/ }),
@@ -22301,7 +22301,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -50615,7 +50615,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\src\\js\\router\\views\\home\\index.vue"
+Component.options.__file = "resources/src/js/router/views/home/index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50624,9 +50624,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-15f59300", Component.options)
+    hotAPI.createRecord("data-v-28376a34", Component.options)
   } else {
-    hotAPI.reload("data-v-15f59300", Component.options)
+    hotAPI.reload("data-v-28376a34", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50647,13 +50647,13 @@ var content = __webpack_require__(46);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(48)("52cd9cd9", content, false, {});
+var update = __webpack_require__(48)("254865f0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-15f59300\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-15f59300\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-28376a34\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-28376a34\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -50671,7 +50671,7 @@ exports = module.exports = __webpack_require__(47)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\t* {\n\t\tborder-style: solid;\n\t\tborder-width: 1px;\n\t}*/\n.bg { \n\t    /* The image used */\n\t    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n\n\t    /* Full height */\n\t    height: 100%; \n\n\t    /* Center and scale the image nicely */\n\t    background-position: center;\n\t    background-repeat: no-repeat;\n\t    background-size: cover;\n}\n.center-item {\n\t\t-webkit-box-pack: center;\n\t\t    -ms-flex-pack: center;\n\t\t        justify-content: center;\n}\n", ""]);
+exports.push([module.i, "\n.bg { \n    background-image: url(\"https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg\");\n    height: 100%; \n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n\n\n", ""]);
 
 // exports
 
@@ -51067,7 +51067,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -51089,81 +51088,115 @@ var staticRenderFns = [
     return _c("div", [
       _c("div", { staticClass: "section" }, [
         _c("div", { staticClass: "row bg" }, [
-          _c("div", { staticClass: "col", staticStyle: { height: "400px" } }, [
-            _vm._v("\n\t\t\t\tVIDEO\n\t\t\t")
-          ])
+          _c("div", { staticClass: "col", staticStyle: { height: "400px" } })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-fluid no-gutters" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col col-md-4 col-sm-12 text-center" }, [
-              _c("h4", { staticClass: "py-3" }, [
-                _vm._v("More Education, More Income")
-              ]),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "py-2",
-                staticStyle: { height: "300px" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-center" }, [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [_c("strong", [_vm._v("Explore More Information")])])
-            ]),
+            _c(
+              "div",
+              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+              [
+                _c("h5", { staticClass: "pt-5 home__heading" }, [
+                  _vm._v("More Education, More Income")
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "py-2",
+                  staticStyle: { height: "400px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "home__content pt-4 text-center col-md-8 offset-md-2"
+                  },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "home__link" }, [
+                  _vm._v("Explore More Information "),
+                  _c("i", { staticClass: "fa fa-arrow-right" })
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "col col-md-4 col-sm-12 text-center" }, [
-              _c("h4", { staticClass: "py-3" }, [
-                _vm._v("More Education, More Income")
-              ]),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "py-2",
-                staticStyle: { height: "300px" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-center" }, [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [_c("strong", [_vm._v("Explore More Information")])])
-            ]),
+            _c(
+              "div",
+              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+              [
+                _c("h5", { staticClass: "pt-5 home__heading" }, [
+                  _vm._v("Personal Return On Education")
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "py-2",
+                  staticStyle: { height: "400px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "pt-4 text-center col-md-8 offset-md-2" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "home__link" }, [
+                  _vm._v("Find Your Return "),
+                  _c("i", { staticClass: "fa fa-arrow-right" })
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "col col-md-4 col-sm-12 text-center" }, [
-              _c("h4", { staticClass: "py-3" }, [
-                _vm._v("More Education, More Income")
-              ]),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "py-2",
-                staticStyle: { height: "300px" },
-                attrs: {
-                  src:
-                    "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-center" }, [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [_c("strong", [_vm._v("Explore More Information")])])
-            ])
+            _c(
+              "div",
+              { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+              [
+                _c("h5", { staticClass: "pt-5 home__heading" }, [
+                  _vm._v("Top Ten Majors by Size")
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "py-2",
+                  staticStyle: { height: "400px" },
+                  attrs: {
+                    src:
+                      "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "pt-4 text-center col-md-8 offset-md-2" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "home__link" }, [
+                  _vm._v("Explore Different Majors "),
+                  _c("i", { staticClass: "fa fa-arrow-right" })
+                ])
+              ]
+            )
           ])
         ]),
         _vm._v(" "),
@@ -51171,7 +51204,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col text-center" }, [
             _c("img", {
               attrs: {
-                src: __webpack_require__(65),
+                src: __webpack_require__(52),
                 alt: ""
               }
             })
@@ -51182,7 +51215,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col text-center" }, [
             _c("img", {
               attrs: {
-                src: __webpack_require__(66),
+                src: __webpack_require__(53),
                 alt: ""
               }
             })
@@ -51197,20 +51230,32 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-15f59300", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-28376a34", module.exports)
   }
 }
 
 /***/ }),
 /* 52 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/cal-states-pays-banner.png?eb6d8ce8a6cd20007e6b26492d638a5c";
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/strada-logo-color.png?92be8ca6d05cd795aa6d51ad02506726";
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(53)
+var __vue_script__ = __webpack_require__(55)
 /* template */
-var __vue_template__ = __webpack_require__(60)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51227,7 +51272,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\src\\js\\App.vue"
+Component.options.__file = "resources/src/js/App.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51236,9 +51281,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ae18d3ea", Component.options)
+    hotAPI.createRecord("data-v-6e99997e", Component.options)
   } else {
-    hotAPI.reload("data-v-ae18d3ea", Component.options)
+    hotAPI.reload("data-v-6e99997e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51249,14 +51294,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -51278,15 +51323,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(57)
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(58)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51303,7 +51348,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\src\\js\\components\\global\\navigation.vue"
+Component.options.__file = "resources/src/js/components/global/navigation.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51312,9 +51357,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-17d50e0d", Component.options)
+    hotAPI.createRecord("data-v-6f1572cc", Component.options)
   } else {
-    hotAPI.reload("data-v-17d50e0d", Component.options)
+    hotAPI.reload("data-v-6f1572cc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51325,7 +51370,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51362,7 +51407,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51397,18 +51442,7 @@ var render = function() {
         _vm._v(" "),
         _vm._m(0),
         _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "navbar-text small text-truncate mt-1 w-100 text-right"
-          },
-          [
-            _c("img", {
-              staticClass: "img__logo--side",
-              attrs: { src: "/img/csumetro.png", alt: "Cal State Pays logo" }
-            })
-          ]
-        )
+        _vm._m(1)
       ]
     )
   ])
@@ -51448,6 +51482,24 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      { staticClass: "navbar-text small mt-1 w-100 text-right" },
+      [
+        _c("img", {
+          staticClass: "nav-logo-secondary",
+          attrs: {
+            src: __webpack_require__(53),
+            alt: ""
+          }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -51455,20 +51507,20 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-17d50e0d", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6f1572cc", module.exports)
   }
 }
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(59)
+var __vue_template__ = __webpack_require__(61)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51485,7 +51537,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\src\\js\\components\\global\\csu-footer.vue"
+Component.options.__file = "resources/src/js/components/global/csu-footer.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51494,9 +51546,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-df58fa48", Component.options)
+    hotAPI.createRecord("data-v-40f3bb69", Component.options)
   } else {
-    hotAPI.reload("data-v-df58fa48", Component.options)
+    hotAPI.reload("data-v-40f3bb69", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51507,7 +51559,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51530,7 +51582,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51587,12 +51639,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-df58fa48", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-40f3bb69", module.exports)
   }
 }
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51620,30 +51672,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-ae18d3ea", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6e99997e", module.exports)
   }
 }
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/cal-states-pays-banner.png?59e18b482021fd310109a863ff5dcaa0";
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/strada-logo-color.png?d3bc756952765b2bbb5297e10217910a";
 
 /***/ })
 /******/ ]);

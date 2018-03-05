@@ -1,9 +1,19 @@
-.navbar{
-	height: 80px;
-	font-family: 'Open Sans';
+.navbar, nav{
+	height: 60px;
+	font-family: $font-brand;
+	position: fixed;
+	background: $white;
+	width: 100%;
+	z-index: 500;
+	-webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 6px 6px -6px #999;
+    box-shadow: 0 6px 6px -6px #999;
 }
 .nav-link{
-	font-size: 16px;
+	padding: 16px 0px; 
+}
+.nav-logo-secondary{
+	max-height: 50px;
 }
 .hr-nav{
 	border-top: 3px solid $red;

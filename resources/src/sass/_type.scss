@@ -1,4 +1,21 @@
 .text-gray { color: $gray }
 .text-white { color: $white }
 
+.home__heading {
+    font-weight: 600;
+}
+.home__link {
+    font-weight: 500;
+}
+.home__content {
+    font-weight: 400;
+}
+body {
+    font-family: $font-base;
+    background: $white;
+}
+.container-fluid{
+    padding-left: 0px;
+
+}
 

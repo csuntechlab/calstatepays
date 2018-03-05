@@ -20,8 +20,8 @@
             </li>
         </ul>
     </div>
-    <span class="navbar-text small text-truncate mt-1 w-100 text-right">
-    	<img :src="'/img/csumetro.png'" class="img__logo--side" alt="Cal State Pays logo">
+    <span class="navbar-text small mt-1 w-100 text-right">
+		<img src="../../../../assets/images/strada-logo-color.png" class="nav-logo-secondary" alt="">
     </span>
 </nav>
 	</header>
