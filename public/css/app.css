@@ -13091,6 +13091,10 @@ body {
   margin-top: 0px;
 }
 
+.img__banner {
+  max-width: 60%;
+}
+
 .bg {
   background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
   height: 100%;
@@ -13114,6 +13118,11 @@ nav {
 
 .nav-link {
   padding: 16px 0px;
+}
+
+.nav-logo {
+  max-height: 60px;
+  width: 120px;
 }
 
 .nav-logo-secondary {

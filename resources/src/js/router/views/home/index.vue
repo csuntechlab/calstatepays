@@ -1,5 +1,5 @@
 <template>
-	<div class="container-fluid no-gutters">
+	<div>
 		<div class="row bg">
 			<div class="col" style="height: 400px;">
 			</div>
@@ -25,15 +25,10 @@
 				</div>
 			</div>
 		<div class="row">
-			<div class="col text-center">
-				<img src="img/cal-states-pays-banner.png" alt="">
+			<div class="col-md-6 offset-md-3">
+				<img src="img/calstatepays-banner.svg" alt="">
 			</div>
-		</div>	
-		<div class="row">
-			<div class="col text-center">
-				<img src="img/strada-logo-color.png" alt="">
-			</div>
-		</div>	
+		</div>		
 	</div>
 </template>
 <script>
