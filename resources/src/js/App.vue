@@ -1,7 +1,9 @@
 <template>
-	<div class="container-fluid">
+	<div>
 		<navigation></navigation>
-		<router-view></router-view>
+		<div class="container-fluid no-gutters">
+			<router-view></router-view>
+		</div>
 		<csu-footer></csu-footer>
 	</div>
 </template>

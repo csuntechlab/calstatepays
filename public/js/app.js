@@ -50643,6 +50643,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50654,9 +50682,122 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n\tHome Page\n")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "row bg" }, [
+        _c("div", { staticClass: "col", staticStyle: { height: "400px" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("More Education, More Income")
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
+              attrs: {
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass:
+                  "home__content pt-4 text-center col-md-8 offset-md-2"
+              },
+              [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Explore More Information "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("Personal Return On Education")
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
+              attrs: {
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "pt-4 text-center col-md-8 offset-md-2" }, [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Find Your Return "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col col-md-4 col-sm-12 text-center text-gray" },
+          [
+            _c("h5", { staticClass: "pt-5 home__heading" }, [
+              _vm._v("Top Ten Majors by Size")
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "py-2",
+              staticStyle: { height: "400px" },
+              attrs: {
+                src: "https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png"
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "pt-4 text-center col-md-8 offset-md-2" }, [
+              _vm._v(
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "home__link" }, [
+              _vm._v("Explore Different Majors "),
+              _c("i", { staticClass: "fa fa-arrow-right" })
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6 offset-md-3" }, [
+          _c("img", { attrs: { src: "img/calstatepays-banner.svg", alt: "" } })
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -50723,6 +50864,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
+//
+//
 //
 //
 //
@@ -50821,6 +50964,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50835,20 +50980,20 @@ var render = function() {
   return _c("header", [
     _c(
       "nav",
-      { staticClass: "navbar navbar-fixed-top navbar-expand-md navbar-light" },
+      { staticClass: "navbar navbar-expand-md navbar-light col col-12" },
       [
         _c(
           "div",
-          { staticClass: "d-flex w-100" },
+          { staticClass: "col col-md-5" },
           [
             _c(
               "router-link",
               { staticClass: "navbar-brand", attrs: { to: "/" } },
               [
                 _c("img", {
-                  staticClass: "img__logo",
+                  staticClass: "nav-logo",
                   attrs: {
-                    src: "/img/learnearn-logo.png",
+                    src: "/img/calstatepays.svg",
                     alt: "Cal State Pays logo"
                   }
                 })
@@ -50858,20 +51003,7 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "navbar-text small text-truncate mt-1 w-100 text-right"
-          },
-          [
-            _c("img", {
-              staticClass: "img__logo--side",
-              attrs: { src: "/img/csumetro.png", alt: "Cal State Pays logo" }
-            })
-          ]
-        )
+        _vm._m(0)
       ]
     )
   ])
@@ -50884,31 +51016,44 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "navbar-collapse collapse justify-content-center",
+        staticClass: "collapse navbar-collapse col col-md-7",
         attrs: { id: "collapsingNavbar" }
       },
       [
-        _c("ul", { staticClass: "navbar-nav" }, [
-          _c("li", { staticClass: "nav-item" }, [
-            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-              _vm._v("Home")
+        _c("div", { staticClass: "justify-content-end col col-md-6" }, [
+          _c("ul", { staticClass: "navbar-nav " }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                _vm._v("Home")
+              ]),
+              _vm._v(" "),
+              _c("hr", { staticClass: "hr-nav" })
             ]),
             _vm._v(" "),
-            _c("hr", { staticClass: "hr-nav" })
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-              _vm._v("Majors")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-              _vm._v("PFRE")
+            _c("li", { staticClass: "nav-item" }, [
+              _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                _vm._v("Majors")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                _vm._v("PFRE")
+              ])
             ])
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "span",
+          { staticClass: "navbar-text small mt-1 w-100 col col-md-6" },
+          [
+            _c("img", {
+              staticClass: "nav-logo-secondary pull-right",
+              attrs: { src: "img/strada-gray.svg", alt: "" }
+            })
+          ]
+        )
       ]
     )
   }
@@ -51007,7 +51152,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", [
+    return _c("footer", { staticClass: "footer" }, [
       _c("div", { staticClass: "footer__links" }, [
         _c("p", { staticClass: "footer__link text-white" }, [
           _c("strong", [_vm._v("CSU Student Success Dashboard")])
@@ -51064,11 +51209,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
     [
       _c("navigation"),
       _vm._v(" "),
-      _c("router-view"),
+      _c(
+        "div",
+        { staticClass: "container-fluid no-gutters" },
+        [_c("router-view")],
+        1
+      ),
       _vm._v(" "),
       _c("csu-footer")
     ],

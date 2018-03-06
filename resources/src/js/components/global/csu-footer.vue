@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="footer">
         <div class="footer__links">
             <p class="footer__link text-white" ><strong>CSU Student Success Dashboard</strong></p>
             <p class="footer__link text-gray">CalState.edu</p>
