@@ -10,6 +10,8 @@ use App\Models\NaicsTitle;
 
 class AggregateDataController extends Controller
 {
+
+
     public function getAverageIncomeByStudentPath(){
         $paths = MajorPath::
             with('majorPathWage')->get()
@@ -57,7 +59,7 @@ class AggregateDataController extends Controller
 
     //This function will return a view of https://drive.google.com/drive/u/1/folders/1zSyC6k31otujgetuOGcRYRpHJ_Z5KS_b
     //FRE.png
-    public function getAggregateCollegesPFRE(Request $request)
+    public function getAggregateUniversitiesPFRE(Request $request)
     {
         //Request will hold POST for $major, $ageRange, $educationLevel, yearsCommCollege, $annualEarnings
         $major = $request->major;
@@ -69,11 +71,34 @@ class AggregateDataController extends Controller
         //Given the above variables, query database for:
         //Cost of Degree, Estimated 4-year income, ROI
         //This function returns a view and the above data
+
+
     }
 
-    public function getAggregateCollegesPFREView()
+    public function getAggregateUniversitiesPFREGraphData()
     {
-        //return PFRE view
+        //For now, this will return a hardcoded array for front end to use
+        $data = [
+            'some_college' => [
+                '18' => -5000,
+                '23' => 20000,
+                '27' => 22000,
+                '32' => 26000,
+                '36' => 31000,
+                '40' => 38000,
+                '47' => 40000,
+            ],
+            'bachelors' => [
+                '18' => -5000,
+                '23' => -5000,
+                '27' => 40000,
+                '32' => 50000,
+                '36' => 60000,
+                '40' => 70000,
+                '47' => 80000,
+            ]
+        ];
+        return $data;
     }
   
     // Function populates bar graph: https://drive.google.com/drive/u/1/folders/1zSyC6k31otujgetuOGcRYRpHJ_Z5KS_b
