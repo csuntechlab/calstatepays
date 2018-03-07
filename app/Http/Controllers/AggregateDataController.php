@@ -79,7 +79,7 @@ class AggregateDataController extends Controller
     {
         //For now, this will return a hardcoded array for front end to use
         $data = [
-            'some' => [
+            'some_college' => [
                 '18' => -5000,
                 '23' => 20000,
                 '27' => 22000,
@@ -88,7 +88,7 @@ class AggregateDataController extends Controller
                 '40' => 38000,
                 '47' => 40000,
             ],
-            'bacc' => [
+            'bachelors' => [
                 '18' => -5000,
                 '23' => -5000,
                 '27' => 40000,
