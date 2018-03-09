@@ -79,30 +79,30 @@ class AggregateDataController extends Controller
     {
         //For now, this will return a hardcoded array for front end to use
         $data = [
-            'some_college' => [
-                'x' => ['18', '23', '27', '32', '36', '40', '47'],
-                'y' => [-5000, 20000, 22000, 26000, 31000, 38000, 40000]
+            'x-axis' => [
+                'data' => [ 18, 23, 27, 32, 36, 40, 47],
             ],
-            'bachelors' => [
-                'x' => ['18', '23', '27', '32', '36', '40', '47'],
-                'y' => [-5000, -5000, 40000, 50000, 60000, 70000, 80000]
-            ]
+            'y-axis' => [
+                'some_college'     => [-5000, 20000, 22000, 26000, 31000, 38000, 40000],
+                'bachelors'        => [-5000, -5000, 40000, 50000, 60000, 70000, 80000],
+            ],
         ];
         return $data;
     }
+
     //MEMI stands for More Education More Income
     public function getAggregateUniversitiesMEMIGraphData()
     {
         //For now, this will return a hardcoded array for front end to use
         $data = [
-
+            'x-axis' => [
+                'data' => [ 2, 4, 6, 8, 10, 12, 14, 16],
             ],
-            [
-            'bachelors'=> [
-                'x' => [1,1,1,1,1],
-                'y' => [2,2,2,2,2]
+            'y-axis' => [
+                'some_college'     => [18000, 21000, 27000, 28000, 29500, 33700, 37000],
+                'bachelors'        => [25000, 29000, 40000, 47000, 60000, 61000, 68000],
+                'post_bach_degree' => [40000, 45000, 53000, 60000, 69000, 85000, 90000],
             ],
-            ''
         ];
         return $data;
     }
