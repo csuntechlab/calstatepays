@@ -17,7 +17,7 @@
                             <a class="nav-link" href="#">Majors</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PFRE</a>
+                            <router-link class="nav-link" to="/pfre">PFRE</router-link>
                         </li>
                     </ul>
                 </div>
