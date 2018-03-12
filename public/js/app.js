@@ -50687,15 +50687,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			industries: [{
 				title: "Tech",
 				percentage: 50,
-				rank: 1
+				rank: 1,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
 			}, {
 				title: "Retail",
 				percentage: 25,
-				rank: 2
+				rank: 2,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+
 			}, {
 				title: "Med",
 				percentage: 20,
-				rank: 3
+				rank: 3,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+			}, {
+				title: "Chem",
+				percentage: 5,
+				rank: 4,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+			}, {
+				title: "Plumbing",
+				percentage: 5,
+				rank: 4,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+			}, {
+				title: "Water",
+				percentage: 5,
+				rank: 4,
+				image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
 			}]
 		};
 	}
@@ -50779,14 +50798,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['industries'],
-    components: {
-        carouselCard: __WEBPACK_IMPORTED_MODULE_0__carousel_card_vue___default.a
-    }
+	props: ['industries'],
+	data: function data() {
+		return {
+			industryRange: {
+				min: 0,
+				max: 3
+			}
+		};
+	},
+
+	components: {
+		carouselCard: __WEBPACK_IMPORTED_MODULE_0__carousel_card_vue___default.a
+	},
+	methods: {
+		previousIndustries: function previousIndustries() {
+			if (this.industryRange.min != 0) {
+				this.industryRange.min -= 1;
+				this.industryRange.max -= 1;
+			}
+		},
+		nextIndustries: function nextIndustries() {
+			if (this.industryRange.max === this.industries.length) {
+				this.industryRange.min = 0;
+				this.industryRange.max = 3;
+			} else {
+				this.industryRange.min += 1;
+				this.industryRange.max += 1;
+			}
+		}
+	}
 });
 
 /***/ }),
@@ -50875,7 +50925,7 @@ exports = module.exports = __webpack_require__(51)(false);
 
 
 // module
-exports.push([module.i, "\n.card {\n    width: 200px;\n    height: 150px;\n}\n", ""]);
+exports.push([module.i, "\n.card {\n    background-position: center;\n    background-size: contain;\n}\n.info {\n    color: white;\n    -ms-flex-item-align: end;\n        align-self: flex-end;\n}\n", ""]);
 
 // exports
 
@@ -51240,7 +51290,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['percentage', 'title'],
+    props: ['percentage', 'title', 'image'],
     data: function data() {
         return {
             // title: this.title,
@@ -51256,13 +51306,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card mx-3" }, [
-    _c("div", { staticClass: "info" }, [
-      _c("h3", [_vm._v(_vm._s(_vm.percentage) + "%")]),
-      _vm._v(" "),
-      _c("h4", [_vm._v(_vm._s(_vm.title))])
-    ])
-  ])
+  return _c(
+    "div",
+    {
+      staticClass: "card w-25 h-100 mx-3",
+      style: { backgroundImage: "url(" + _vm.image + ")" }
+    },
+    [
+      _c("div", { staticClass: "info" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.percentage) + "%")]),
+        _vm._v(" "),
+        _c("h4", [_vm._v(_vm._s(_vm.title))])
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51287,45 +51344,66 @@ var render = function() {
       "div",
       { staticClass: "row industry-carousel" },
       [
-        _vm._m(0),
+        _c(
+          "a",
+          {
+            staticClass: "slide-arrows",
+            attrs: { href: "" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.previousIndustries()
+              }
+            }
+          },
+          [
+            _c("span", {
+              staticClass: "fa-angle-left",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
+        ),
         _vm._v(" "),
-        _vm._l(_vm.industries, function(industry, index) {
-          return _c("carousel-card", {
-            key: index,
-            attrs: { percentage: industry.percentage, title: industry.title }
-          })
-        }),
+        _vm._l(
+          _vm.industries.slice(_vm.industryRange.min, _vm.industryRange.max),
+          function(industry, index) {
+            return _c("carousel-card", {
+              key: index,
+              staticClass: "animated slideInLeft",
+              attrs: {
+                percentage: industry.percentage,
+                image: industry.image,
+                title: industry.title
+              }
+            })
+          }
+        ),
         _vm._v(" "),
-        _vm._m(1)
+        _c(
+          "a",
+          {
+            staticClass: "slide-arrows",
+            attrs: { href: "" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.nextIndustries()
+              }
+            }
+          },
+          [
+            _c("span", {
+              staticClass: "fa-angle-right",
+              attrs: { "aria-hidden": "true" }
+            })
+          ]
+        )
       ],
       2
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "slide-arrows", attrs: { href: "" } }, [
-      _c("span", {
-        staticClass: "fa-angle-left",
-        attrs: { "aria-hidden": "true" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "slide-arrows", attrs: { href: "" } }, [
-      _c("span", {
-        staticClass: "fa-angle-right",
-        attrs: { "aria-hidden": "true" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -51888,12 +51966,10 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("navigation"),
-      _vm._v(" "),
       _c(
         "div",
         { staticClass: "container-fluid no-gutters" },
-        [_c("router-view")],
+        [_c("navigation"), _vm._v(" "), _c("router-view")],
         1
       ),
       _vm._v(" "),
@@ -51962,7 +52038,7 @@ exports = module.exports = __webpack_require__(51)(false);
 
 
 // module
-exports.push([module.i, "\n.industry-carousel {\n\t\tmax-width: 90%;\n}\n.slide-arrows {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-align: center;\n\t\t    -ms-flex-align: center;\n\t\t        align-items: center;\n  \t\t-webkit-box-pack: center;\n  \t\t    -ms-flex-pack: center;\n  \t\t        justify-content: center;\n\t\twidth: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.industry-carousel {\n\t\theight: 200px;\n}\n.slide-arrows {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-align: center;\n\t\t    -ms-flex-align: center;\n\t\t        align-items: center;\n  \t\t-webkit-box-pack: center;\n  \t\t    -ms-flex-pack: center;\n  \t\t        justify-content: center;\n\t\twidth: 50px;\n}\n", ""]);
 
 // exports
 

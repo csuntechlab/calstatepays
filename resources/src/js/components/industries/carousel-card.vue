@@ -1,5 +1,5 @@
 <template>
-    <div class="card mx-3">  
+    <div class="card w-25 h-100 mx-3" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">  
         <div class="info">
             <h3>{{percentage}}%</h3>
             <h4>{{title}}</h4>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    props: ['percentage', 'title'],
+    props: ['percentage', 'title', 'image'],
     data() {
         return {
             // title: this.title,
@@ -20,7 +20,11 @@ export default {
 
 <style>
     .card {
-        width: 200px;
-        height: 150px;
+        background-position: center;
+        background-size: contain;
+    }
+    .info {
+        color: white;
+        align-self: flex-end;
     }
 </style>
