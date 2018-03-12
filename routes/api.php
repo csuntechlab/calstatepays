@@ -27,6 +27,7 @@ Route::get('industry/naics_titles', 'IndustryController@getAllIndustryNaicsTitle
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
 Route::post('import-file', 'ExcelController@importFile')->name('importFile');
 
+//Middleware
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
