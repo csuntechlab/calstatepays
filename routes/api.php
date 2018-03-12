@@ -21,5 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Data Routes
+Route::get('industry/naics_titles', 'IndustriesController@getAllIndustryNaicsTitles')->name('industry.naics_titles');
+
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
 Route::post('import-file', 'ExcelController@importFile')->name('importFile');
