@@ -9,7 +9,12 @@ class IndustryController extends Controller
 {
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all();
-        dd($allNaicsTitles);
+        $allNaicsTitles = NaicsTitle::get()->map(function ($item, $key){
+            return [
+                'naics_code' => $item['naics_code'],
+                'title'      => $item['naics_title']
+            ];
+        });
+        return $allNaicsTitles->toArray();
     }
 }
