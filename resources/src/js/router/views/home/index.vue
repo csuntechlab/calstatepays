@@ -28,11 +28,43 @@
 			<div class="col-md-6 offset-md-3">
 				<img src="img/calstatepays-banner.svg" alt="">
 			</div>
-		</div>		
+		</div>
+		<carousel :industries="industries"></carousel>				
 	</div>
 </template>
 <script>
-	export default {
+	import carousel from '../../../components/industries/carousel.vue';
 
+	export default {
+		components: {
+			carousel
+		},
+
+		data() {
+			return {
+				industries: [
+					{
+						title: "Tech",
+						percentage: 50,
+						rank: 1
+					},
+					{
+						title: "Retail",
+						percentage: 25,
+						rank: 2
+					},
+					{
+						title: "Med",
+						percentage: 20,
+						rank: 3
+					},
+					// {
+					// 	title: "Chem",
+					// 	percentage: 5,
+					// 	rank: 4
+					// },
+				]
+			}
+		}
 	}
 </script>
