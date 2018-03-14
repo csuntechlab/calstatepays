@@ -22,8 +22,10 @@ export default {
          return {
                 title: {
                     text: this.major,
+                    left: 'center',
                     textStyle: {
                         color: '#777777',
+                        fontFamily: 'Montserrat',
                     }
                 },
                 tooltip: {
