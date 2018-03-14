@@ -40,13 +40,7 @@ export default {
                 legend: {
                     data: ['line']
                 },
-                yAxis: {
-                    axisLabel: {
-                        formatter: function (val) {
-                            return '$' + val;
-                        }
-                    }
-                },
+                yAxis: {},
                 series: [
                         {
                     type: 'line',
@@ -91,10 +85,3 @@ export default {
   }
 }
 </script>
-<style>
-.echarts {
-  min-height: 500px;
-  min-width: 100%;
-  color: blue;
-}
-</style>
