@@ -21,6 +21,7 @@
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
+    "vue-echarts": "^3.0.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   }

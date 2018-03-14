@@ -13315,6 +13315,10 @@ textarea {
   margin-top: 2rem;
 }
 
+.form--title {
+  font-weight: 300;
+}
+
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
