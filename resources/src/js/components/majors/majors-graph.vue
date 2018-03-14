@@ -38,7 +38,13 @@ export default {
                 legend: {
                     data: ['line']
                 },
-                yAxis: {},
+                yAxis: {
+                    axisLabel: {
+                        formatter: function (val) {
+                            return '$' + val;
+                        }
+                    }
+                },
                 series: [
                         {
                     type: 'line',
