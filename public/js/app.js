@@ -87542,8 +87542,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return {
                 title: {
                     text: this.major,
+                    left: 'center',
                     textStyle: {
-                        color: '#777777'
+                        color: '#777777',
+                        fontFamily: 'Montserrat'
                     }
                 },
                 tooltip: {
