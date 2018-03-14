@@ -22,6 +22,7 @@ export default {
     .card {
         background-position: center;
         background-size: contain;
+        flex-direction: row;
     }
     .info {
         color: white;
