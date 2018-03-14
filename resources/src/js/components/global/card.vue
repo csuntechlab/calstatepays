@@ -3,7 +3,7 @@
       <div class="col col-3">
         <pfre-form></pfre-form>
       </div>
-      <div class="col col-10 offset-md-1">
+      <div class="col col-10 mx-4">
         <img src="img/pfregraph.png" alt="">
       </div>
   </div>
