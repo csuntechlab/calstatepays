@@ -9,16 +9,19 @@
                     <majors-graph></majors-graph>
                 </div>
             </card>
+            <card-add></card-add>
         </div>
   </div>
 </template>
 <script>
 import card from '../../../components/global/card';
+import cardAdd from '../../../components/global/card-add.vue';
 import majorsForm from '../../../components/majors/majors-form.vue';
 import majorsGraph from '../../../components/majors/majors-graph.vue';
 export default {
     components: { 
         card,
+        cardAdd,
         majorsForm,
         majorsGraph
     }
