@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use StudentPath;
+use App\Models\StudentPath;
 
 class StudentPathController extends Controller
 {
@@ -11,7 +11,7 @@ class StudentPathController extends Controller
     {
         $allStudentPaths = StudentPath::all()->map(function ($path){
             return [
-                'id'   => $path['path'],
+                'id'   => $path['id'],
                 'name' => $path['path_name']
             ];
         });
