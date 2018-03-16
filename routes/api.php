@@ -23,7 +23,7 @@ Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')
 
 //Data Routes
 //Industry
-Route::get('industry/naics_titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics_titles');
+Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
 // File Routes
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
