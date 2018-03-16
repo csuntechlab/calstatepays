@@ -17,8 +17,8 @@ Route::get('aggregate/income/student-path','AggregateDataController@getAverageIn
 Route::get('aggregate/income/industry','AggregateDataController@getAverageIncomeByIndustry')->name('avg_income_industry');
 Route::get('/Aggregate/TopTenMajors','AggregateDataController@getAggregateTopTenMajors')->name('aggregate.top.majors');
 
-Route::get('university/hegiscodes', 'UniversityController@getAllHegisCodes')
-    ->name('university.hegiscodes');
+Route::get('university/hegis-codes', 'MajorController@getAllHegisCodes')
+    ->name('university.hegis-codes');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
