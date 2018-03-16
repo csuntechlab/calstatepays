@@ -22,6 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
 Route::post('import-file', 'ExcelController@importFile')->name('importFile');
 
-//Student_Paths
 Route::get('aggregate/income/student-path','AggregateDataController@getAverageIncomeByStudentPath')
     ->name('student-path-avg');
+
+//Student Path
+Route::get('student-path', 'StudentPathController@getAllStudentPaths')->name('student-paths');
