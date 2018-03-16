@@ -18,10 +18,12 @@ Route::get('aggregate/income/student-path','AggregateDataController@getAverageIn
 Route::get('aggregate/income/industry','AggregateDataController@getAverageIncomeByIndustry')->name('avg_income_industry');
 Route::get('/Aggregate/TopTenMajors','AggregateDataController@getAggregateTopTenMajors')->name('aggregate.top.majors');
 
+Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')
+    ->name('major.hegis-codes');
 
 //Data Routes
 //Industry
-Route::get('industry/naics_titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics_titles');
+Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
 // File Routes
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');
