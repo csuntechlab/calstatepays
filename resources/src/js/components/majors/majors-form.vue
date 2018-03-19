@@ -1,6 +1,6 @@
 <template>
     <form class="form--inverted">
-        <div class="form__group">
+        <div class="form__group" v-if="!form.formWasSubmitted">
             <div class="row row--condensed">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
@@ -14,25 +14,37 @@
             </div>
             <div class="row row--condensed">
                 <div class="col col-md-8 py-4">
-                    <button type="button" class="btn btn-success">Submit</button>
+                    <button type="button" @click="submitForm" class="btn btn-success">Submit</button>
                 </div>
             </div>
+        </div>
+        <div class="form__group" v-else>
+            <input type="radio" name="allDegrees" id="allDegrees" v-model="form.degree" value="allDegrees">
+            <label for="allDegrees">All</label>
+            <input type="radio" name="bachelors" id="bachelors" v-model="form.degree" value="bachelors">
+            <label for="bachelors">Bachelor's Degree</label>
+            <input type="radio" name="postBacc" id="postBacc" v-model="form.degree" value="postBacc">
+            <label for="postBacc">Post Bacc Degree</label>
         </div>
     </form>
 </template>
 <script>
 import { updateForm } from '../../utils/index';
-import ECharts from 'vue-echarts/components/ECharts';
 export default {
   data(){
       return {
           form: {
-              major: null,
+                major: null,
+                formWasSubmitted: false,
+                degree: '',
           }
       }
   },
   methods: {
-      updateForm
+        updateForm,
+        submitForm(){
+            this.form.formWasSubmitted = true;
+        }
   },
 }
 </script>

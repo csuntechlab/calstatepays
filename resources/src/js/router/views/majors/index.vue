@@ -6,7 +6,7 @@
                     <majors-form></majors-form>
                 </div>
                 <div class="col col-9">
-                    <majors-graph></majors-graph>
+                    <majors-graph-wrapper></majors-graph-wrapper>
                 </div>
             </card>
             <card-add></card-add>
@@ -17,13 +17,13 @@
 import card from '../../../components/global/card';
 import cardAdd from '../../../components/global/card-add.vue';
 import majorsForm from '../../../components/majors/majors-form.vue';
-import majorsGraph from '../../../components/majors/majors-graph.vue';
+import majorsGraphWrapper from '../../../components/majors/majors-graph-wrapper.vue';
 export default {
     components: { 
         card,
         cardAdd,
         majorsForm,
-        majorsGraph
+        majorsGraphWrapper
     }
 }
 </script>
