@@ -1,73 +1,139 @@
 <template>
-	<div class="container">
-		<div class="row industry-carousel">
-			<a href="" class="slide-arrows" @click.prevent="previousIndustries()">
-				<span class="fa-angle-left" aria-hidden="true"></span>				
-			</a>
-
-			<carousel-card v-for="(industry, index) in industries.slice(industryRange.min, industryRange.max)"
-			class="animated slideInLeft" 
-			:key="index" 
-			:percentage="industry.percentage"
-			:image="industry.image"
-			:title="industry.title"></carousel-card>
-			<!-- <carousel-card :percentage="100" :title="'Test'"></carousel-card>
-			<carousel-card :percentage="100" :title="'Test'"></carousel-card>
-			<carousel-card :percentage="100" :title="'Test'"></carousel-card> -->
-
-			<a href="" class="slide-arrows" @click.prevent="nextIndustries()">
-				<span class="fa-angle-right" aria-hidden="true"></span>				
-			</a>
-		</div>
-	</div>
+  <div class="carousel-view">
+	  <transition-group name="carousel-list" class="carousel-list" tag="div">
+		  <carousel-card
+		  v-for="(carouselCard, index) in carouselCards"
+		  class="carouselCard"
+		  :data="carouselCard"
+		  :key="index"></carousel-card>
+		  <!-- <div v-for="(carouselCard,index) in carouselCards" :key="index">
+			  {{carouselCard.title}}
+		  </div> -->
+	  </transition-group>
+	<div class='carousel-controls'>
+      <button class='carousel-controls__button' @click="previous">prev</button>
+      <button class='carousel-controls__button' @click="next">next</button>
+    </div>
+  </div>
 </template>
 
 <script>
-import carouselCard from './carousel-card.vue';
+import carouselCard from "./carousel-card.vue";
 
 export default {
-	props: ['industries'],
-	data() {
-		return {
-			industryRange: {
-				min: 0,
-				max: 3
-			}
-		}
-	},
-    components: {
-        carouselCard,
+  data() {
+    return {
+      carouselCards: [
+        {
+          title: "Tech",
+          percentage: 50,
+          rank: 1,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        },
+        {
+          title: "Retail",
+          percentage: 25,
+          rank: 2,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        },
+        {
+          title: "Med",
+          percentage: 20,
+          rank: 3,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        },
+        {
+          title: "Chem",
+          percentage: 5,
+          rank: 4,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        },
+        {
+          title: "Plumbing",
+          percentage: 5,
+          rank: 4,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        },
+        {
+          title: "Water",
+          percentage: 5,
+          rank: 4,
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+        }
+      ]
+    };
+  },
+methods: {
+    next () {
+      const first = this.carouselCards.shift()
+      this.carouselCards = this.carouselCards.concat(first)
     },
-	methods: {
-		previousIndustries() {
-			if (this.industryRange.min != 0) {
-				this.industryRange.min -= 1
-				this.industryRange.max -= 1
-			}
-		},
-		nextIndustries() {
-			if (this.industryRange.max === this.industries.length) {
-				this.industryRange.min = 0;
-				this.industryRange.max = 3;
-			} 
-			else {
-				this.industryRange.min += 1
-				this.industryRange.max += 1
-			}
-		}
-	}
-}
+    previous () {
+      const last = this.carouselCards.pop()
+      this.carouselCards = [last].concat(this.carouselCards)
+    }
+  },
+  components: {
+    carouselCard
+  }
+};
 </script>
 
 <style>
-	.industry-carousel {
-		height: 200px;
-	}
+.carousel-view {
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  justify-content: center;
+  align-items: center;
+}
 
-	.slide-arrows {
-		display: flex;
-		align-items: center;
-  		justify-content: center;
-		width: 50px;
-	}
+.carousel-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45em;
+  min-height: 25em;
+  /* border: 1em dashed #BACAB9; */
+  overflow: hidden;
+  /* background-color: #83B4AE; */
+}
+.carouselCard {
+  transform: translateX(5) scale(1.0, 1.0);
+  height: 20em;
+  /* border: 0.6em dashed #A47565; */
+  /* border-radius: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  opacity: 1;
+  margin: 1em;
+  flex: 0 0 20em;
+}
+.carousel-list-enter-active {
+	transition: all .3s ease;
+}
+
+.carousel-list-move {
+	transition: transform 1s;
+}
+
+.carousel-list-complete-leave-active {
+  position: absolute;
+}
+
+.carousel-list-enter {
+	transform: translateX(10px);
+}
+.carouselCard:first-of-type {
+  opacity: 0;
+}
+.carouselCard:last-of-type {
+  opacity: 0;
+}
+/* * {
+  border: 1px solid #000000;
+} */
 </style>
