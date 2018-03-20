@@ -12,7 +12,6 @@ class LearnAndEarnController extends Controller
     {
         $client = new Client(); //GuzzleHttp\Client
         $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/major-data/'. $schoolId .'/'. $majorId);
-//        $result = $client->get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
         return $result;
     }
 }
