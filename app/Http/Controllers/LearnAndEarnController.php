@@ -11,7 +11,7 @@ class LearnAndEarnController extends Controller
     public function getCollegeMajor($schoolId, $majorId)
     {
         $client = new Client(); //GuzzleHttp\Client
-        $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/major-data/'. $schoolId .'/'. $majorId);
+        $result = $client->get(env('LEARNANDEARNMAJORS'). $schoolId .'/'. $majorId);
         return $result;
     }
 }
