@@ -24,8 +24,8 @@ Route::get('aggregate/income/student-path','AggregateDataController@getAverageIn
 //Data Routes
 
 //Learn and Earn Routes
-
 Route::get('/learn-and-earn/industry/{schoolId}/{industryTitle}', 'LearnAndEarnController@getCollegeMajor');
+Route::get('/learn-and-earn/major-data/{schoolId}/{majorId}', 'LearnAndEarnController@getCollegeMajor');
 
 //Major
 Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')
