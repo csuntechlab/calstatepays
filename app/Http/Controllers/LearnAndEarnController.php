@@ -15,10 +15,10 @@ class LearnAndEarnController extends Controller
         return $result;
     }
 
-    public function getIndustryData($schoolId, $industryTitle)
+    public function getIndustryData($collegeId, $industryTitle)
     {
         $client = new Client();
-        $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/industry-data/'. $schoolId .'/'. $industryTitle);
+        $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/industry-data/'. $collegeId .'/'. $industryTitle);
         return $result;
     }
 }
