@@ -1,0 +1,18 @@
+.campuses-container{
+    display: flex;
+    align-items: left; 
+    flex-wrap: wrap;
+}
+
+.row{
+    padding-left: 2.5rem;
+    padding-top: 2.5rem;
+}
+
+.campus{
+    display: flex;
+    height: 350px;
+    align-self: center;
+    margin: 0.5rem;
+    justify-content: center;
+}

@@ -13154,3 +13154,32 @@ footer,
   margin-bottom: 0rem;
 }
 
+.campuses-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row {
+  padding-left: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.campus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 350px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+

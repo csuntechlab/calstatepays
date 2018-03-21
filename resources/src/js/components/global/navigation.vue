@@ -22,7 +22,9 @@
                     </ul>
                 </div>
                 <span class="navbar-text small mt-1 w-100 col col-md-6">
-                    <img src="img/strada-gray.svg" class="nav-logo-secondary pull-right" alt="">
+                    <router-link to="/research">
+                        <img src="img/strada-gray.svg" class="nav-logo-secondary pull-right" alt="">
+                    </router-link>
                 </span>
             </div>
         </nav>
