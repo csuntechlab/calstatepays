@@ -1,42 +1,55 @@
 <template>
-  <div class="campuses-container">
-    <div class="align-items-start row col-md-12">
-            <div id="csun" class="card campus col-md-4">
-                <h3>California State University Northridge</h3>  
+    <div>
+        <header id="research-main-banner">
+            <div class="banner-center">
+                <h2>
+                    We Gathered Data Across 7 CSUs in the Metro LA Area
+                </h2>
+                <button class="btn btn-primary">
+                    Take a Look
+                </button>
             </div>
-            <div id="csulb" class="card campus col-md-4">
-                <h3>California State University Long Beach</h3> 
+        </header>
+        <section class="campuses-container mx-4">
+            <div class="row col-12">
+                <div class="col-md-4 py-3">
+                    <div id="csun" class="card campus">
+                        <h3>California State University Northridge</h3>
+                    </div>  
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csulb" class="card campus">
+                        <h3>California State University Long Beach</h3>
+                    </div> 
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csula" class="card campus">
+                        <h3>California State University Los Angeles</h3>
+                    </div>  
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csuf" class="card campus">
+                        <h3>California State University Fullerton</h3>
+                    </div> 
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csudh" class="card campus">
+                        <h3>California State University Dominguez Hills</h3>
+                    </div>  
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csuci" class="card campus">
+                        <h3>California State University Channel Island</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3">
+                    <div id="csup" class="card campus">
+                        <h3>California State University Pomona</h3>
+                    </div>
+                </div>
             </div>
-            <div id="csula" class="card campus col-md-4">
-                <h3>California State University Los Angeles</h3>  
-            </div>
+        </section>
     </div>
-<div class="row col-md-12">
-    <div class="col col-md-4">
-        <div id="csuf" class="card campus">
-           <h3>California State University Fullerton</h3> 
-       </div>
-   </div>
-   <div class="col col-md-4">
-    <div id="csudh" class="card campus">
-      <h3>California State University Dominguez Hills</h3>  
-  </div>
-</div>
-<div class="col col-md-4">
-    <div id="csuci" class="card campus">
-        <h3>California State University Channel Island</h3>
-    </div>
-</div>
-</div>
-<div class="row col-md-12">
-    <div class="col col-md-4">
-        <div id="csup" class="card campus">
-            <h3>California State University Pomona</h3>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 </template>
 <script>
 export default {
