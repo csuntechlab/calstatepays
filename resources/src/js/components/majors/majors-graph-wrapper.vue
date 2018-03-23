@@ -1,6 +1,7 @@
 <template>
     <div>
         <majors-graph :index="index" :yData="yData"></majors-graph>
+        <button @click="changeIndex">Switch</button>
     </div>
 </template>
 <script>
