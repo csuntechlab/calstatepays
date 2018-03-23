@@ -2472,16 +2472,14 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .form-control:valid,
 .form-control.is-valid,
-.was-validated
-.custom-select:valid,
+.was-validated .custom-select:valid,
 .custom-select.is-valid {
   border-color: #28a745;
 }
 
 .was-validated .form-control:valid:focus,
 .form-control.is-valid:focus,
-.was-validated
-.custom-select:valid:focus,
+.was-validated .custom-select:valid:focus,
 .custom-select.is-valid:focus {
   border-color: #28a745;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
@@ -2492,10 +2490,8 @@ select.form-control-lg:not([size]):not([multiple]),
 .was-validated .form-control:valid ~ .valid-tooltip,
 .form-control.is-valid ~ .valid-feedback,
 .form-control.is-valid ~ .valid-tooltip,
-.was-validated
-.custom-select:valid ~ .valid-feedback,
-.was-validated
-.custom-select:valid ~ .valid-tooltip,
+.was-validated .custom-select:valid ~ .valid-feedback,
+.was-validated .custom-select:valid ~ .valid-tooltip,
 .custom-select.is-valid ~ .valid-feedback,
 .custom-select.is-valid ~ .valid-tooltip {
   display: block;
@@ -2589,16 +2585,14 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .form-control:invalid,
 .form-control.is-invalid,
-.was-validated
-.custom-select:invalid,
+.was-validated .custom-select:invalid,
 .custom-select.is-invalid {
   border-color: #dc3545;
 }
 
 .was-validated .form-control:invalid:focus,
 .form-control.is-invalid:focus,
-.was-validated
-.custom-select:invalid:focus,
+.was-validated .custom-select:invalid:focus,
 .custom-select.is-invalid:focus {
   border-color: #dc3545;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
@@ -2609,10 +2603,8 @@ select.form-control-lg:not([size]):not([multiple]),
 .was-validated .form-control:invalid ~ .invalid-tooltip,
 .form-control.is-invalid ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-tooltip,
-.was-validated
-.custom-select:invalid ~ .invalid-feedback,
-.was-validated
-.custom-select:invalid ~ .invalid-tooltip,
+.was-validated .custom-select:invalid ~ .invalid-feedback,
+.was-validated .custom-select:invalid ~ .invalid-tooltip,
 .custom-select.is-invalid ~ .invalid-feedback,
 .custom-select.is-invalid ~ .invalid-tooltip {
   display: block;
@@ -13154,6 +13146,16 @@ footer,
   margin-bottom: 0rem;
 }
 
+#csun,
+#csulb,
+#csula,
+#csuf,
+#csudh,
+#csuci,
+#csup {
+  background-size: cover;
+}
+
 .campuses-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13181,5 +13183,56 @@ footer,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  border-radius: 5%;
+  position: relative;
+  padding: 1.75em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFF;
+}
+
+.campus h3 {
+  position: absolute;
+  bottom: .5rem;
+  font-size: 1rem;
+  letter-spacing: .014rem;
+  line-height: 140%;
+}
+
+#csun {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(https://csunshinetoday.csun.edu/wp-content/uploads/OviattLibraryBanners.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://csunshinetoday.csun.edu/wp-content/uploads/OviattLibraryBanners.jpg);
+}
+
+#csulb {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(https://www.usnews.com/img/college-photo_7336.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://www.usnews.com/img/college-photo_7336.jpg);
+}
+
+#csula {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+#csuf {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+#csudh {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+#csuci {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+
+#csup {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 }
 

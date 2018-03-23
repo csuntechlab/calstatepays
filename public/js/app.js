@@ -50903,22 +50903,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -50938,62 +50922,50 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "campuses-container" }, [
+      _c("div", { staticClass: "align-items-start row col-md-12" }, [
+        _c(
+          "div",
+          { staticClass: "card campus col-md-4", attrs: { id: "csun" } },
+          [_c("h3", [_vm._v("California State University Northridge")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card campus col-md-4", attrs: { id: "csulb" } },
+          [_c("h3", [_vm._v("California State University Long Beach")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card campus col-md-4", attrs: { id: "csula" } },
+          [_c("h3", [_vm._v("California State University Los Angeles")])]
+        )
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "row col-md-12" }, [
         _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSUN\n          ")
+          _c("div", { staticClass: "card campus", attrs: { id: "csuf" } }, [
+            _c("h3", [_vm._v("California State University Fullerton")])
           ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
+          _c("div", { staticClass: "card campus", attrs: { id: "csudh" } }, [
+            _c("h3", [_vm._v("California State University Dominguez Hills")])
           ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
+          _c("div", { staticClass: "card campus", attrs: { id: "csuci" } }, [
+            _c("h3", [_vm._v("California State University Channel Island")])
           ])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row col-md-12" }, [
         _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSUN\n          ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row col-md-12" }, [
-        _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSUN\n          ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-md-4" }, [
-          _c("div", { staticClass: "card campus" }, [
-            _vm._v("\n              CSULB\n          ")
+          _c("div", { staticClass: "card campus", attrs: { id: "csup" } }, [
+            _c("h3", [_vm._v("California State University Pomona")])
           ])
         ])
       ])

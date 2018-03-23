@@ -1,3 +1,10 @@
+
+$unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+$available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+%background-cover {
+    background-size: cover;
+}
+
 .campuses-container{
     display: flex;
     align-items: left; 
@@ -15,4 +22,56 @@
     align-self: center;
     margin: 0.5rem;
     justify-content: center;
+    font-family: $font-base;
+    text-transform: uppercase;
+    border-radius: 5%;
+    position: relative;
+    padding: 1.75em;
+    box-sizing: border-box;
+    color: $white;
+    h3 {
+        position: absolute;
+        bottom: .5rem;
+        font-size: 1rem;
+        letter-spacing: .014rem;
+        line-height: 140%;
+    }
+}
+
+#csun {
+    background-image: 
+        $available-campus, 
+        url(https://csunshinetoday.csun.edu/wp-content/uploads/OviattLibraryBanners.jpg);
+    @extend %background-cover;
+}
+#csulb {
+    background-image: 
+        $unavailable-campus, 
+        url(https://www.usnews.com/img/college-photo_7336.jpg);
+    @extend %background-cover;
+}
+#csula {
+    background-image: 
+        $unavailable-campus;
+    @extend %background-cover;
+}
+#csuf {
+    background-image: 
+        $unavailable-campus;
+    @extend %background-cover;
+}
+#csudh {
+    background-image: 
+        $unavailable-campus;
+    @extend %background-cover;
+}
+#csuci {
+    background-image: 
+        $unavailable-campus;
+    @extend %background-cover;
+}
+#csup {
+    background-image: 
+        $unavailable-campus;
+    @extend %background-cover;
 }
