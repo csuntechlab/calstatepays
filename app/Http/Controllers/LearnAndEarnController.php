@@ -11,7 +11,14 @@ class LearnAndEarnController extends Controller
     public function getCollegeMajor($schoolId, $majorId)
     {
         $client = new Client(); //GuzzleHttp\Client
-        $result = $client->get(env('LEARNANDEARNMAJORS'). $schoolId .'/'. $majorId);
+        $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/'. $schoolId .'/'. $majorId);
+        return $result;
+    }
+
+    public function getIndustryData($collegeId, $industryTitle)
+    {
+        $client = new Client();
+        $result = $client->get(env('LEARNANDEARN_URL') .'/industry-data/'. $collegeId .'/'. $industryTitle);
         return $result;
     }
 }
