@@ -11,14 +11,14 @@ class LearnAndEarnController extends Controller
     public function getCollegeMajor($schoolId, $majorId)
     {
         $client = new Client(); //GuzzleHttp\Client
-        $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/major-data/'. $schoolId .'/'. $majorId);
+        $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/'. $schoolId .'/'. $majorId);
         return $result;
     }
 
     public function getIndustryData($collegeId, $industryTitle)
     {
         $client = new Client();
-        $result = $client->get('https://www.metalab.csun.edu/learnandearn/api/industry-data/'. $collegeId .'/'. $industryTitle);
+        $result = $client->get(env('LEARNANDEARN_URL') .'/industry-data/'. $collegeId .'/'. $industryTitle);
         return $result;
     }
 }
