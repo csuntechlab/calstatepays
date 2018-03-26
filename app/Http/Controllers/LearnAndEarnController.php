@@ -16,6 +16,12 @@ class LearnAndEarnController extends Controller
         foreach($result as $major){
             unset($major->created_at);
             unset($major->updated_at);
+            unset($major->id);
+
+            if($major->education_level == "problem")
+                $major->education_level = "some_college";
+            if($major->education_level == "success")
+                $major->education_level = "bachelors";
         }
         return $result;
     }
