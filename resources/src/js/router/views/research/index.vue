@@ -10,7 +10,7 @@
                 </button>
             </div>
         </header>
-        <section class="campuses-container mx-4">
+        <section class="campuses-container mx-5">
             <div class="row col-12">
                 <div class="col-md-4 py-3">
                     <div id="csun" class="card campus">

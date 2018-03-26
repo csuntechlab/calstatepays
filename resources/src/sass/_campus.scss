@@ -1,17 +1,12 @@
-
 $unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 
-%background-cover {
-    background-size: cover;
-}
-
 #research-main-banner {
-    text-align: center;
-    position: relative;
     background-image:
      $available-campus,
-     url(https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80);
+     url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
+    text-align: center;
+    position: relative;
     height: 50vh;
     .banner-center{
         position: absolute;
@@ -39,7 +34,7 @@ $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 
 .campus{
     display: flex;
-    height: 350px;
+    height: 370px;
     align-self: center;
     justify-content: center;
     font-family: $font-base;
@@ -62,37 +57,40 @@ $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 #csun {
     background-image: 
         $available-campus, 
-        url(https://csunshinetoday.csun.edu/wp-content/uploads/OviattLibraryBanners.jpg);
-    @extend %background-cover;
+        url('https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg');
 }
 #csulb {
     background-image: 
         $unavailable-campus, 
-        url(https://www.usnews.com/img/college-photo_7336.jpg);
-    @extend %background-cover;
+        url('https://www.metalab.csun.edu/learnandearn/imgs/csulb.jpg');
 }
 #csula {
     background-image: 
-        $unavailable-campus;
-    @extend %background-cover;
+        $unavailable-campus,
+        url('https://www.metalab.csun.edu/learnandearn/imgs/csula.jpg');
 }
 #csuf {
     background-image: 
-        $unavailable-campus;
-    @extend %background-cover;
+        $unavailable-campus,
+        url('https://www.metalab.csun.edu/learnandearn/imgs/csuf.jpg');
 }
 #csudh {
     background-image: 
-        $unavailable-campus;
-    @extend %background-cover;
+        $unavailable-campus,
+         url('https://www.metalab.csun.edu/learnandearn/imgs/csudh.jpg');
 }
 #csuci {
     background-image: 
-        $unavailable-campus;
-    @extend %background-cover;
+        $unavailable-campus,
+         url('https://www.metalab.csun.edu/learnandearn/imgs/csuci.jpg');
 }
 #csup {
     background-image: 
-        $unavailable-campus;
-    @extend %background-cover;
+        $unavailable-campus,
+         url('https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg');
+}
+
+#csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
+    background-size: cover;
+    background-position: center;
 }
