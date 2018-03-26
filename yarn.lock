@@ -6776,6 +6776,9 @@ vue-echarts@^3.0.4:
     echarts "^4.0.4"
     lodash "^4.17.4"
     resize-detector "^0.1.2"
+vue-carousel@^0.6.9:
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.6.9.tgz#b5cdd0abefdc8ae99fe48ecde1d765869f91df6d"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
