@@ -28,7 +28,7 @@
 			<div class="col-md-6 offset-md-3">
 				<img src="img/calstatepays-banner.svg" alt="">
 			</div>
-		</div>		
+		</div>
 	</div>
 </template>
 <script>
