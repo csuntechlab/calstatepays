@@ -26,6 +26,19 @@ class LearnAndEarnController extends Controller
     {
         $client = new Client();
         $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/' . $universityId);
+        $result = \GuzzleHttp\json_decode($result->getBody());
+        $newResult = [];
+        $index = 0;
+        foreach($result as $majorList) {
+            foreach($majorList->majors as $key=>$major) {
+                $ids = explode(":", $major->value);
+                $newResult[$index]['major'] = $major->label;
+                $newResult[$index]['majorId'] = $ids[0];
+                $newResult[$index]['schoolId'] = $ids[1];
+                $index += 1;
+            }
+        }
+        $result = $newResult;
         return $result;
     } 
 
