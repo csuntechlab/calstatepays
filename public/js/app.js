@@ -94193,7 +94193,7 @@ var render = function() {
     [
       _c("majors-graph", { attrs: { index: _vm.index, yData: _vm.yData } }),
       _vm._v(" "),
-      _c("button", { on: { click: _vm.changeIndex } })
+      _c("button", { on: { click: _vm.changeIndex } }, [_vm._v("Switch")])
     ],
     1
   )
