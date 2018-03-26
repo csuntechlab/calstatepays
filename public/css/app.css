@@ -13070,15 +13070,6 @@ a.text-dark:focus {
   padding-right: 0px !important;
 }
 
-.btn {
-  border-radius: 2.5rem;
-  width: 100%;
-  font-family: "Open Sans";
-  font-size: 0.9rem;
-  height: 45px;
-  font-weight: 300;
-}
-
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13089,6 +13080,17 @@ a.text-dark:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-add {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  min-height: 15vh;
 }
 
 .text-gray {
@@ -13171,7 +13173,7 @@ nav {
 }
 
 .hr-nav {
-  border-top: 3px solid #D00D2D;
+  border-bottom: 3px solid #D00D2D;
   margin: 0px;
 }
 
@@ -13315,6 +13317,10 @@ textarea {
   margin-top: 2rem;
 }
 
+.form--title {
+  font-weight: 300;
+}
+
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -13323,5 +13329,47 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.25rem 0rem;
+}
+
+.btn {
+  border-radius: 3rem;
+  width: 100%;
+  font-family: "Open Sans";
+  font-size: 0.9rem;
+  height: 45px;
+  font-weight: 300;
+}
+
+.btn:focus {
+  outline: none;
+  border: none;
+}
+
+.btn:active {
+  outline: none;
+  border: none;
+}
+
+.btn-success {
+  background: #2BAE67;
+}
+
+.btn-add {
+  color: #2BAE67;
+  font-size: 3rem;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  outline: none;
+}
+
+.btn-plus {
+  display: block;
+}
+
+.echarts {
+  min-height: 50vh;
+  min-width: 100%;
+  color: blue;
 }
 
