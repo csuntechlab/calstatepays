@@ -13085,12 +13085,23 @@ a.text-dark:focus {
           justify-content: center;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .card-add {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   min-height: 15vh;
+}
+
+.row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .text-gray {
@@ -13371,5 +13382,27 @@ textarea {
   min-height: 50vh;
   min-width: 100%;
   color: blue;
+}
+
+.industry-carousel {
+  background-position: center;
+  background-size: cover;
+  height: 10em;
+  border-radius: 1rem;
+}
+
+.industry-carousel-card {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.info-wrapper {
+  color: white;
+  padding: 17% 20%;
+  border-radius: 1rem;
+  line-height: 3px;
+}
+
+.industry-info {
+  margin-top: 10%;
 }
 
