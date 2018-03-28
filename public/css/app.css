@@ -13387,8 +13387,14 @@ textarea {
 .industry-carousel {
   background-position: center;
   background-size: cover;
-  height: 10em;
+  height: 8em;
+  width: 42em;
   border-radius: 1rem;
+}
+
+.industry-carousel-card {
+  height: 8em;
+  width: 14em;
 }
 
 .info-wrapper {
@@ -13401,5 +13407,11 @@ textarea {
 
 .industry-info {
   margin-top: 20%;
+}
+
+.row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
