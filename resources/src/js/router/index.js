@@ -17,7 +17,6 @@ const router = new VueRouter({
 		{ path: '/', component: home },
 		{ path: '/pfre', component: pfre },
 		{ path: '/majors', component: majors },
-		{ path: '/industries', component: industries }
 	]
 });
 

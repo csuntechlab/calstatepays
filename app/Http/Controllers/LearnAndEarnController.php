@@ -21,4 +21,12 @@ class LearnAndEarnController extends Controller
         $result = $client->get(env('LEARNANDEARN_URL') .'/industry-data/'. $collegeId .'/'. $industryTitle);
         return $result;
     }
+
+    public function getMajorNames($universityId)
+    {
+        $client = new Client();
+        $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/' . $universityId);
+        return $result;
+    } 
+
 }
