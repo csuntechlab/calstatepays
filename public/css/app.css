@@ -13391,18 +13391,15 @@ textarea {
   border-radius: 1rem;
 }
 
-.industry-carousel-card {
+.info-wrapper {
+  color: white;
+  padding: 12% 0% 12% 10%;
+  border-radius: 1rem;
+  line-height: 3px;
   background: rgba(0, 0, 0, 0.5);
 }
 
-.info-wrapper {
-  color: white;
-  padding: 17% 20%;
-  border-radius: 1rem;
-  line-height: 3px;
-}
-
 .industry-info {
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
