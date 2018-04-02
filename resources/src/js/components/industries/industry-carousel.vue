@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
-    <carousel :navigationEnabled="true" :perPage=3 class="industry-carousel">
-      <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel mx-2" v-bind:style="{ backgroundImage: 'url(' + industry.image + ')' }">
-        <industry-carousel-card :data="industry"></industry-carousel-card> 
+  <div>
+    <carousel :navigationEnabled="true" :perPage=3 class="industry-carousel" :navigationClickTargetSize=20>
+      <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel mx-1" v-bind:style="{ backgroundImage: 'url(' + industry.image + ')' }">
+        <industry-carousel-card :data="industry" class="industry-carousel-card"></industry-carousel-card> 
       </slide>
     </carousel>
     <br>
@@ -82,10 +82,4 @@ export default {
 }
 </script>
 
-<style>
-.industry-carousel {
-  background-position: center;
-  background-size: contain;
-  height: 10em;
-}
-</style>
+

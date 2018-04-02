@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="form__group" v-else>
+            <p class="h2 text-gray my-5">Applied Math</p>
             <input type="radio" name="allDegrees" id="allDegrees" v-model="form.degree" value="allDegrees">
             <label for="allDegrees">All</label>
             <input type="radio" name="bachelors" id="bachelors" v-model="form.degree" value="bachelors">
