@@ -6,10 +6,16 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    flex-direction: column;
 }
 
 .card-add{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     min-height: 15vh;
+}
+
+
+.row{
+    flex-direction: row;
 }

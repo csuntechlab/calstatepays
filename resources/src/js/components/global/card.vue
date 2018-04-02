@@ -4,8 +4,6 @@
   </div>
 </template>
 <script>
-import pfreForm from '../pfre/pfre-form.vue';
 export default {
-  components: { pfreForm },
 }
 </script>
