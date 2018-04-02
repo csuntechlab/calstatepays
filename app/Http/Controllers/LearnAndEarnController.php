@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
+
 class LearnAndEarnController extends Controller
 {
     public function getCollegeMajor($schoolId, $majorId)
@@ -14,14 +15,15 @@ class LearnAndEarnController extends Controller
         $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/'. $schoolId .'/'. $majorId);
         return $result;
     }
-
+    
     public function getIndustryData($collegeId, $industryTitle)
     {
         $client = new Client();
         $result = $client->get(env('LEARNANDEARN_URL') .'/industry-data/'. $collegeId .'/'. $industryTitle);
         return $result;
     }
-
+    
+    
     public function getMajorNames($universityId)
     {
         $client = new Client();
@@ -38,8 +40,13 @@ class LearnAndEarnController extends Controller
                 $index += 1;
             }
         }
+        usort($newResult, array($this, "compareByMajor"));
         $result = $newResult;
         return $result;
     } 
-
+    
+    function compareByMajor($a, $b) {
+        return strcmp($a['major'], $b['major']);
+    }
+    
 }
