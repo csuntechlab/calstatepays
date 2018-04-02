@@ -4,14 +4,19 @@ import store from '../store';
 
 //PAGES
 import home from './views/home/index.vue';
-import research from './views/research/index.vue';
+import pfre from './views/pfre/index.vue';
+import majors from './views/majors/index.vue';
+import industries from './views/industries/index.vue';
+
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
 
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/research', component: research }
+		{ path: '/majors', component: majors },
+		{ path: '/pfre', component: pfre },
+		{ path: '/industries', component: industries}
 	]
 });
 

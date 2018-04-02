@@ -10,14 +10,17 @@
                 <div class="justify-content-end col col-md-6" >
                     <ul class="navbar-nav ">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                            <hr class="hr-nav">
+                            <router-link class="nav-link" exact-active-class="hr-nav" to="/">Home
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Majors</a>
+                            <router-link class="nav-link" active-class="hr-nav" to="/majors">Majors
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PFRE</a>
+                            <router-link class="nav-link" active-class="hr-nav" to="/pfre">
+                            PFRE
+                            </router-link>
                         </li>
                     </ul>
                 </div>

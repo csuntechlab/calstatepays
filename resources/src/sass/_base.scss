@@ -1,0 +1,13 @@
+.wrapper{
+    display: flex;
+    min-height: calc(88vh);
+    background: $light-gray;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-fluid{
+    padding-right: 0px !important;
+}
+

@@ -1,0 +1,97 @@
+// FORMS
+//
+
+label {
+  display: block;
+  margin-bottom: 0px;
+  font-family: $font-brand;
+  font-weight: regular;
+  color: $darker-gray;
+}
+.label--radio{
+  color: $gray;
+  float: left;
+}
+
+.label--required {
+  &::after {
+    margin-left: 2px;
+    color: $gold;
+    content: "*";
+  }
+}
+
+.currency {
+  position: relative;
+
+  input[type="text"] {
+    padding-left: 30px;
+  }
+
+  &::after{
+    content: "$";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="search"],
+input[type="password"] {
+  font-family: $font-brand;
+  display: block;
+  width: 100%;
+  padding: 0px;
+  color: $gray;
+  border: 0;
+  border-bottom: 2px solid $gray;
+
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="time"],
+input[type="search"],
+input[type="submit"],
+input[type="password"] {
+  height: 30px;
+}
+
+input[type="radio"]{
+  float: right;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form__group {
+  margin-bottom: .5rem;
+  margin-top: 2rem;
+}
+
+.form--title{
+  font-weight: 300;
+}
+
+
+
+.row--condensed{
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0rem;
+}
