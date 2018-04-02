@@ -40,13 +40,9 @@ class LearnAndEarnController extends Controller
                 $index += 1;
             }
         }
-        usort($newResult, array($this, "compareByMajor"));
-        $result = $newResult;
-        return $result;
+        usort($newResult, function ($a, $b) {
+            return strcmp($a['major'], $b['major']);
+        });
+        return $newResult;
     } 
-    
-    function compareByMajor($a, $b) {
-        return strcmp($a['major'], $b['major']);
-    }
-    
 }
