@@ -76200,18 +76200,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pfre_pfre_form_vue__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pfre_pfre_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__pfre_pfre_form_vue__);
 //
 //
 //
 //
 //
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: { pfreForm: __WEBPACK_IMPORTED_MODULE_0__pfre_pfre_form_vue___default.a }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 147 */
@@ -76837,7 +76832,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -76937,6 +76931,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -77004,6 +76999,10 @@ var render = function() {
           ])
         ])
       : _c("div", { staticClass: "form__group" }, [
+          _c("p", { staticClass: "h2 text-gray my-5" }, [
+            _vm._v("Applied Math")
+          ]),
+          _vm._v(" "),
           _c("input", {
             directives: [
               {
@@ -94622,7 +94621,7 @@ var render = function() {
             _c("div", { staticClass: "row m-1" }, [
               _c(
                 "div",
-                { staticClass: "col col-md-3 col-sm-12 my-5" },
+                { staticClass: "col col-md-3 col-sm-12 my-3" },
                 [_c("majors-form")],
                 1
               ),

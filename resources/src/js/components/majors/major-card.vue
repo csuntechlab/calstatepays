@@ -1,7 +1,6 @@
 <template>
     <div class="wrapper">
         <div class="col col-md-12">
-           
             <card>
                 <div class="container-fluid my-0">
                     <div class="row">
@@ -10,7 +9,7 @@
                         </div>
                     </div>
                     <div class="row m-1">
-                        <div class="col col-md-3 col-sm-12 my-5">
+                        <div class="col col-md-3 col-sm-12 my-3">
                             <majors-form></majors-form>
                         </div>
                         <div class="col col-9">
