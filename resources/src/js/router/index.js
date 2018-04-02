@@ -15,10 +15,10 @@ Vue.use(VueRouter);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/majors', component: majors },
 		{ path: '/pfre', component: pfre },
 		{ path: '/industries', component: industries},
-		{ path: '/research', component: research }
+		{ path: '/research', component: research },
+		{ path: '/majors', component: majors },
 	]
 });
 
