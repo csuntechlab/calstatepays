@@ -35,6 +35,7 @@ $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 .campus{
     display: flex;
     height: 370px;
+    min-width: 340px;
     align-self: center;
     justify-content: center;
     font-family: $font-base;

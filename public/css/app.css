@@ -13238,6 +13238,7 @@ footer,
   display: -ms-flexbox;
   display: flex;
   height: 370px;
+  min-width: 340px;
   -ms-flex-item-align: center;
       align-self: center;
   -webkit-box-pack: center;
