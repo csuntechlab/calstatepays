@@ -12,6 +12,17 @@ class LearnAndEarnController extends Controller
     {
         $client = new Client(); //GuzzleHttp\Client
         $result = $client->get(env('LEARNANDEARN_URL') . '/major-data/'. $schoolId .'/'. $majorId);
+        $result = \GuzzleHttp\json_decode($result->getBody());
+        foreach($result as $major){
+            unset($major->created_at);
+            unset($major->updated_at);
+            unset($major->id);
+
+            if($major->education_level == "problem")
+                $major->education_level = "some_college";
+            if($major->education_level == "success")
+                $major->education_level = "bachelors";
+        }
         return $result;
     }
 
