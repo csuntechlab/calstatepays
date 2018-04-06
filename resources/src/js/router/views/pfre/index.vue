@@ -6,7 +6,8 @@
             <pfre-form></pfre-form>
           </div>
           <div class="col col-10 offset-md-1">
-            <img src="img/pfregraph.png" alt="">
+            <!-- <img src="img/pfregraph.png" alt=""> -->
+            <pfre-progress></pfre-progress>
           </div>
         </card>
       </div>
@@ -15,9 +16,10 @@
 <script>
 import card from '../../../components/global/card';
 import pfreForm from '../../../components/pfre/pfre-form.vue';
+import pfreProgress from '../../../components/pfre/pfre-progress.vue';
 
 export default {
-  components: { card, pfreForm }
+  components: { card, pfreForm, pfreProgress }
 }
 </script>
  
