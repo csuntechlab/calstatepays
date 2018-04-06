@@ -6769,6 +6769,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-carousel@^0.6.9:
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.6.9.tgz#b5cdd0abefdc8ae99fe48ecde1d765869f91df6d"
+
 vue-echarts@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/vue-echarts/-/vue-echarts-3.0.4.tgz#63b3ef5fc19cdf5e45e251d3f442069d0836013e"
@@ -6776,9 +6780,6 @@ vue-echarts@^3.0.4:
     echarts "^4.0.4"
     lodash "^4.17.4"
     resize-detector "^0.1.2"
-vue-carousel@^0.6.9:
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.6.9.tgz#b5cdd0abefdc8ae99fe48ecde1d765869f91df6d"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
@@ -6827,6 +6828,10 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.1.10:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
+
+vuetify@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.0.12.tgz#4a4ffd7f35f26a1d4ad4043f9b1ace37be7db462"
 
 vuex@^3.0.1:
   version "3.0.1"
