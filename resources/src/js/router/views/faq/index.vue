@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row align-items-center justify-content-center">
-			<h1 class="pt-5 home__heading text-gray">FAQ</h1>
+			<h1 class="pt-3 home__heading text-gray">FAQ</h1>
 		</div>
 		<div class="row align-items-center justify-content-center">
 			<div class = "col col-md-9">

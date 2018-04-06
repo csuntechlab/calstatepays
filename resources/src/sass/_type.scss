@@ -19,3 +19,10 @@ body {
     padding-left: 0px;
 }
 
+.expansion-panel__header{
+  font-weight: 600;
+}
+
+.expansion-panel__body div{
+  color: $gray;
+}
