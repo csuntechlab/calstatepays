@@ -31,11 +31,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   data() {
     return {
       test: 50,
     }
+  },
+  computed: {
+     ...mapGetters([
+       'getTest'
+    ]),
   }
 }
 </script>
