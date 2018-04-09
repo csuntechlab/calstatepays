@@ -23,17 +23,17 @@
       <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="50" color="red"></v-progress-linear> 
       <div class="progress-footer">
         <span class="col-4">
-          <p class="float-left">{{earnings.minimum}}</p>  
+          <p class="float-left">{{earnings.minimum | currency}}</p>  
         </span>
         <span class="col-4">
-          <p class="text-center">{{earnings.average}}</p>  
+          <p class="text-center">{{earnings.average | currency}}</p>  
         </span>
         <span class="col-4">
-          <p class="float-right">{{earnings.maximum}}</p>  
+          <p class="float-right">{{earnings.maximum | currency}}</p>  
         </span>
       </div> 
       <div>
-        <p class="font-weight-bold">Estimated Earnings 5 Years After Exit: {{earnings.actual}}</p>
+        <p class="font-weight-bold">Estimated Earnings 5 Years After Exit: {{earnings.actual | currency}}</p>
       </div>  
     </div>
     <div class="row">
@@ -41,23 +41,24 @@
       <v-progress-linear class="pfre-bar" value="15" height="50" color="light-green"></v-progress-linear>
       <div class="progress-footer">
         <span class="col-4">
-          <p class="float-left">{{returnOnInvestment.minimum}}</p>  
+          <p class="float-left">{{returnOnInvestment.minimum | percentage}}</p>  
         </span>
         <span class="col-4">
-          <p class="text-center">{{returnOnInvestment.average}}</p>  
+          <p class="text-center">{{returnOnInvestment.average | percentage}}</p>  
         </span>
         <span class="col-4">
-          <p class="float-right">{{returnOnInvestment.maximum}}</p>  
+          <p class="float-right">{{returnOnInvestment.maximum | percentage}}</p>  
         </span>
       </div>   
       <div>
-        <p class="font-weight-bold">FRE - Financial Return on Education: {{returnOnInvestment.actual}}</p>
+        <p class="font-weight-bold">FRE - Financial Return on Education: {{returnOnInvestment.actual | percentage}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {currency, percentage} from '../../filters';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -77,21 +78,7 @@ export default {
        'earnings',
        'returnOnInvestment'
     ]),
-  }
+  },
+  filters: {percentage, currency}
 }
 </script>
-
-<style>
-  .pfre-bar {
-    border-radius: 50px;
-    margin: 0;
-  }
-  .progress-footer {
-    display: flex;
-    width: 95%;
-  }
-  .center {
-   margin: 0 auto !important;
-   float: none !important;
-}
-</style>

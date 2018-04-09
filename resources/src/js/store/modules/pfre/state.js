@@ -17,9 +17,9 @@ export default {
     },
     returnOnInvestment: {
         minimum: 0,
-        average: 7.5,
-        maximum: 15,
-        actual: 8.3,
+        average: .075,
+        maximum: .15,
+        actual: .083,
     }
 };
 
