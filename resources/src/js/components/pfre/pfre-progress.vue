@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <h5 class="pagination-centered">Years</h5>
-      <v-progress-linear class="pfre-bar" :value="(years.actual/years.end) * 100" height="50" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" :value="(years.actual/years.end) * 100" height="45" color="light-green"></v-progress-linear>
       <div class="progress-footer col-12">
         <span class="col-4">
           <p class="float-left">{{years.start}}</p>  
@@ -15,12 +15,12 @@
         </span>
       </div>
       <div>
-        <p class="font-weight-bold">Estimated time to degree: {{years.actual}}</p>
+        <p class="font-weight-bold mb-0">Estimated time to degree: {{years.actual}}</p>
       </div>
     </div>
     <div class="row">
       <h5 class="pagination-centered">Earnings</h5>      
-      <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="50" color="red"></v-progress-linear> 
+      <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="45" color="green"></v-progress-linear> 
       <div class="progress-footer">
         <span class="col-4">
           <p class="float-left">{{earnings.minimum | currency}}</p>  
@@ -33,12 +33,12 @@
         </span>
       </div> 
       <div>
-        <p class="font-weight-bold">Estimated Earnings 5 Years After Exit: {{earnings.actual | currency}}</p>
+        <p class="font-weight-bold mb-0">Estimated Earnings 5 Years After Exit: {{earnings.actual | currency}}</p>
       </div>  
     </div>
     <div class="row">
       <h5 class="pagination-centered">Return On Investment</h5>
-      <v-progress-linear class="pfre-bar" value="15" height="50" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" value="15" height="45" color="light-green"></v-progress-linear>
       <div class="progress-footer">
         <span class="col-4">
           <p class="float-left">{{returnOnInvestment.minimum | percentage}}</p>  
@@ -51,7 +51,7 @@
         </span>
       </div>   
       <div>
-        <p class="font-weight-bold">FRE - Financial Return on Education: {{returnOnInvestment.actual | percentage}}</p>
+        <p class="font-weight-bold mb-0">FRE - Financial Return on Education: {{returnOnInvestment.actual | percentage}}</p>
       </div>
     </div>
   </div>
