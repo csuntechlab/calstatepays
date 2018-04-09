@@ -1406,7 +1406,7 @@ var ZImage = __webpack_require__(74);
 
 exports.Image = ZImage;
 
-var Group = __webpack_require__(29);
+var Group = __webpack_require__(30);
 
 exports.Group = Group;
 
@@ -5523,11 +5523,11 @@ module.exports = _default;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(31);
+var Displayable = __webpack_require__(32);
 
 var zrUtil = __webpack_require__(0);
 
-var PathProxy = __webpack_require__(32);
+var PathProxy = __webpack_require__(33);
 
 var pathContain = __webpack_require__(193);
 
@@ -7536,7 +7536,7 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(13);
 
-var componentUtil = __webpack_require__(33);
+var componentUtil = __webpack_require__(34);
 
 var _clazz = __webpack_require__(16);
 
@@ -9173,7 +9173,7 @@ var OrdinalScale = __webpack_require__(234);
 
 var IntervalScale = __webpack_require__(49);
 
-var Scale = __webpack_require__(35);
+var Scale = __webpack_require__(36);
 
 var numberUtil = __webpack_require__(7);
 
@@ -10668,7 +10668,7 @@ var _clazz = __webpack_require__(16);
 
 var enableClassCheck = _clazz.enableClassCheck;
 
-var _sourceType = __webpack_require__(34);
+var _sourceType = __webpack_require__(35);
 
 var SOURCE_FORMAT_ORIGINAL = _sourceType.SOURCE_FORMAT_ORIGINAL;
 var SERIES_LAYOUT_BY_COLUMN = _sourceType.SERIES_LAYOUT_BY_COLUMN;
@@ -10820,7 +10820,7 @@ var parseDate = _number.parseDate;
 
 var Source = __webpack_require__(25);
 
-var _sourceType = __webpack_require__(34);
+var _sourceType = __webpack_require__(35);
 
 var SOURCE_FORMAT_TYPED_ARRAY = _sourceType.SOURCE_FORMAT_TYPED_ARRAY;
 var SOURCE_FORMAT_ARRAY_ROWS = _sourceType.SOURCE_FORMAT_ARRAY_ROWS;
@@ -22079,2460 +22079,6 @@ module.exports = Vue$3;
 
 /***/ }),
 /* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var Element = __webpack_require__(65);
-
-var BoundingRect = __webpack_require__(11);
-
-/**
- * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点上
- * @module zrender/graphic/Group
- * @example
- *     var Group = require('zrender/container/Group');
- *     var Circle = require('zrender/graphic/shape/Circle');
- *     var g = new Group();
- *     g.position[0] = 100;
- *     g.position[1] = 100;
- *     g.add(new Circle({
- *         style: {
- *             x: 100,
- *             y: 100,
- *             r: 20,
- *         }
- *     }));
- *     zr.add(g);
- */
-
-/**
- * @alias module:zrender/graphic/Group
- * @constructor
- * @extends module:zrender/mixin/Transformable
- * @extends module:zrender/mixin/Eventful
- */
-var Group = function (opts) {
-  opts = opts || {};
-  Element.call(this, opts);
-
-  for (var key in opts) {
-    if (opts.hasOwnProperty(key)) {
-      this[key] = opts[key];
-    }
-  }
-
-  this._children = [];
-  this.__storage = null;
-  this.__dirty = true;
-};
-
-Group.prototype = {
-  constructor: Group,
-  isGroup: true,
-
-  /**
-   * @type {string}
-   */
-  type: 'group',
-
-  /**
-   * 所有子孙元素是否响应鼠标事件
-   * @name module:/zrender/container/Group#silent
-   * @type {boolean}
-   * @default false
-   */
-  silent: false,
-
-  /**
-   * @return {Array.<module:zrender/Element>}
-   */
-  children: function () {
-    return this._children.slice();
-  },
-
-  /**
-   * 获取指定 index 的儿子节点
-   * @param  {number} idx
-   * @return {module:zrender/Element}
-   */
-  childAt: function (idx) {
-    return this._children[idx];
-  },
-
-  /**
-   * 获取指定名字的儿子节点
-   * @param  {string} name
-   * @return {module:zrender/Element}
-   */
-  childOfName: function (name) {
-    var children = this._children;
-
-    for (var i = 0; i < children.length; i++) {
-      if (children[i].name === name) {
-        return children[i];
-      }
-    }
-  },
-
-  /**
-   * @return {number}
-   */
-  childCount: function () {
-    return this._children.length;
-  },
-
-  /**
-   * 添加子节点到最后
-   * @param {module:zrender/Element} child
-   */
-  add: function (child) {
-    if (child && child !== this && child.parent !== this) {
-      this._children.push(child);
-
-      this._doAdd(child);
-    }
-
-    return this;
-  },
-
-  /**
-   * 添加子节点在 nextSibling 之前
-   * @param {module:zrender/Element} child
-   * @param {module:zrender/Element} nextSibling
-   */
-  addBefore: function (child, nextSibling) {
-    if (child && child !== this && child.parent !== this && nextSibling && nextSibling.parent === this) {
-      var children = this._children;
-      var idx = children.indexOf(nextSibling);
-
-      if (idx >= 0) {
-        children.splice(idx, 0, child);
-
-        this._doAdd(child);
-      }
-    }
-
-    return this;
-  },
-  _doAdd: function (child) {
-    if (child.parent) {
-      child.parent.remove(child);
-    }
-
-    child.parent = this;
-    var storage = this.__storage;
-    var zr = this.__zr;
-
-    if (storage && storage !== child.__storage) {
-      storage.addToStorage(child);
-
-      if (child instanceof Group) {
-        child.addChildrenToStorage(storage);
-      }
-    }
-
-    zr && zr.refresh();
-  },
-
-  /**
-   * 移除子节点
-   * @param {module:zrender/Element} child
-   */
-  remove: function (child) {
-    var zr = this.__zr;
-    var storage = this.__storage;
-    var children = this._children;
-    var idx = zrUtil.indexOf(children, child);
-
-    if (idx < 0) {
-      return this;
-    }
-
-    children.splice(idx, 1);
-    child.parent = null;
-
-    if (storage) {
-      storage.delFromStorage(child);
-
-      if (child instanceof Group) {
-        child.delChildrenFromStorage(storage);
-      }
-    }
-
-    zr && zr.refresh();
-    return this;
-  },
-
-  /**
-   * 移除所有子节点
-   */
-  removeAll: function () {
-    var children = this._children;
-    var storage = this.__storage;
-    var child;
-    var i;
-
-    for (i = 0; i < children.length; i++) {
-      child = children[i];
-
-      if (storage) {
-        storage.delFromStorage(child);
-
-        if (child instanceof Group) {
-          child.delChildrenFromStorage(storage);
-        }
-      }
-
-      child.parent = null;
-    }
-
-    children.length = 0;
-    return this;
-  },
-
-  /**
-   * 遍历所有子节点
-   * @param  {Function} cb
-   * @param  {}   context
-   */
-  eachChild: function (cb, context) {
-    var children = this._children;
-
-    for (var i = 0; i < children.length; i++) {
-      var child = children[i];
-      cb.call(context, child, i);
-    }
-
-    return this;
-  },
-
-  /**
-   * 深度优先遍历所有子孙节点
-   * @param  {Function} cb
-   * @param  {}   context
-   */
-  traverse: function (cb, context) {
-    for (var i = 0; i < this._children.length; i++) {
-      var child = this._children[i];
-      cb.call(context, child);
-
-      if (child.type === 'group') {
-        child.traverse(cb, context);
-      }
-    }
-
-    return this;
-  },
-  addChildrenToStorage: function (storage) {
-    for (var i = 0; i < this._children.length; i++) {
-      var child = this._children[i];
-      storage.addToStorage(child);
-
-      if (child instanceof Group) {
-        child.addChildrenToStorage(storage);
-      }
-    }
-  },
-  delChildrenFromStorage: function (storage) {
-    for (var i = 0; i < this._children.length; i++) {
-      var child = this._children[i];
-      storage.delFromStorage(child);
-
-      if (child instanceof Group) {
-        child.delChildrenFromStorage(storage);
-      }
-    }
-  },
-  dirty: function () {
-    this.__dirty = true;
-    this.__zr && this.__zr.refresh();
-    return this;
-  },
-
-  /**
-   * @return {module:zrender/core/BoundingRect}
-   */
-  getBoundingRect: function (includeChildren) {
-    // TODO Caching
-    var rect = null;
-    var tmpRect = new BoundingRect(0, 0, 0, 0);
-    var children = includeChildren || this._children;
-    var tmpMat = [];
-
-    for (var i = 0; i < children.length; i++) {
-      var child = children[i];
-
-      if (child.ignore || child.invisible) {
-        continue;
-      }
-
-      var childRect = child.getBoundingRect();
-      var transform = child.getLocalTransform(tmpMat); // TODO
-      // The boundingRect cacluated by transforming original
-      // rect may be bigger than the actual bundingRect when rotation
-      // is used. (Consider a circle rotated aginst its center, where
-      // the actual boundingRect should be the same as that not be
-      // rotated.) But we can not find better approach to calculate
-      // actual boundingRect yet, considering performance.
-
-      if (transform) {
-        tmpRect.copy(childRect);
-        tmpRect.applyTransform(transform);
-        rect = rect || tmpRect.clone();
-        rect.union(tmpRect);
-      } else {
-        rect = rect || childRect.clone();
-        rect.union(childRect);
-      }
-    }
-
-    return rect || tmpRect;
-  }
-};
-zrUtil.inherits(Group, Element);
-var _default = Group;
-module.exports = _default;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports) {
-
-var dpr = 1; // If in browser environment
-
-if (typeof window !== 'undefined') {
-  dpr = Math.max(window.devicePixelRatio || 1, 1);
-}
-/**
- * config默认配置项
- * @exports zrender/config
- * @author Kener (@Kener-林峰, kener.linfeng@gmail.com)
- */
-
-/**
- * debug日志选项：catchBrushException为true下有效
- * 0 : 不生成debug数据，发布用
- * 1 : 异常抛出，调试用
- * 2 : 控制台输出，调试用
- */
-
-
-var debugMode = 0; // retina 屏幕优化
-
-var devicePixelRatio = dpr;
-exports.debugMode = debugMode;
-exports.devicePixelRatio = devicePixelRatio;
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var Style = __webpack_require__(70);
-
-var Element = __webpack_require__(65);
-
-var RectText = __webpack_require__(185);
-
-/**
- * 可绘制的图形基类
- * Base class of all displayable graphic objects
- * @module zrender/graphic/Displayable
- */
-
-/**
- * @alias module:zrender/graphic/Displayable
- * @extends module:zrender/Element
- * @extends module:zrender/graphic/mixin/RectText
- */
-function Displayable(opts) {
-  opts = opts || {};
-  Element.call(this, opts); // Extend properties
-
-  for (var name in opts) {
-    if (opts.hasOwnProperty(name) && name !== 'style') {
-      this[name] = opts[name];
-    }
-  }
-  /**
-   * @type {module:zrender/graphic/Style}
-   */
-
-
-  this.style = new Style(opts.style, this);
-  this._rect = null; // Shapes for cascade clipping.
-
-  this.__clipPaths = []; // FIXME Stateful must be mixined after style is setted
-  // Stateful.call(this, opts);
-}
-
-Displayable.prototype = {
-  constructor: Displayable,
-  type: 'displayable',
-
-  /**
-   * Displayable 是否为脏，Painter 中会根据该标记判断是否需要是否需要重新绘制
-   * Dirty flag. From which painter will determine if this displayable object needs brush
-   * @name module:zrender/graphic/Displayable#__dirty
-   * @type {boolean}
-   */
-  __dirty: true,
-
-  /**
-   * 图形是否可见，为true时不绘制图形，但是仍能触发鼠标事件
-   * If ignore drawing of the displayable object. Mouse event will still be triggered
-   * @name module:/zrender/graphic/Displayable#invisible
-   * @type {boolean}
-   * @default false
-   */
-  invisible: false,
-
-  /**
-   * @name module:/zrender/graphic/Displayable#z
-   * @type {number}
-   * @default 0
-   */
-  z: 0,
-
-  /**
-   * @name module:/zrender/graphic/Displayable#z
-   * @type {number}
-   * @default 0
-   */
-  z2: 0,
-
-  /**
-   * z层level，决定绘画在哪层canvas中
-   * @name module:/zrender/graphic/Displayable#zlevel
-   * @type {number}
-   * @default 0
-   */
-  zlevel: 0,
-
-  /**
-   * 是否可拖拽
-   * @name module:/zrender/graphic/Displayable#draggable
-   * @type {boolean}
-   * @default false
-   */
-  draggable: false,
-
-  /**
-   * 是否正在拖拽
-   * @name module:/zrender/graphic/Displayable#draggable
-   * @type {boolean}
-   * @default false
-   */
-  dragging: false,
-
-  /**
-   * 是否相应鼠标事件
-   * @name module:/zrender/graphic/Displayable#silent
-   * @type {boolean}
-   * @default false
-   */
-  silent: false,
-
-  /**
-   * If enable culling
-   * @type {boolean}
-   * @default false
-   */
-  culling: false,
-
-  /**
-   * Mouse cursor when hovered
-   * @name module:/zrender/graphic/Displayable#cursor
-   * @type {string}
-   */
-  cursor: 'pointer',
-
-  /**
-   * If hover area is bounding rect
-   * @name module:/zrender/graphic/Displayable#rectHover
-   * @type {string}
-   */
-  rectHover: false,
-
-  /**
-   * Render the element progressively when the value >= 0,
-   * usefull for large data.
-   * @type {boolean}
-   */
-  progressive: false,
-
-  /**
-   * @type {boolean}
-   */
-  incremental: false,
-  // inplace is used with incremental
-  inplace: false,
-  beforeBrush: function (ctx) {},
-  afterBrush: function (ctx) {},
-
-  /**
-   * 图形绘制方法
-   * @param {CanvasRenderingContext2D} ctx
-   */
-  // Interface
-  brush: function (ctx, prevEl) {},
-
-  /**
-   * 获取最小包围盒
-   * @return {module:zrender/core/BoundingRect}
-   */
-  // Interface
-  getBoundingRect: function () {},
-
-  /**
-   * 判断坐标 x, y 是否在图形上
-   * If displayable element contain coord x, y
-   * @param  {number} x
-   * @param  {number} y
-   * @return {boolean}
-   */
-  contain: function (x, y) {
-    return this.rectContain(x, y);
-  },
-
-  /**
-   * @param  {Function} cb
-   * @param  {}   context
-   */
-  traverse: function (cb, context) {
-    cb.call(context, this);
-  },
-
-  /**
-   * 判断坐标 x, y 是否在图形的包围盒上
-   * If bounding rect of element contain coord x, y
-   * @param  {number} x
-   * @param  {number} y
-   * @return {boolean}
-   */
-  rectContain: function (x, y) {
-    var coord = this.transformCoordToLocal(x, y);
-    var rect = this.getBoundingRect();
-    return rect.contain(coord[0], coord[1]);
-  },
-
-  /**
-   * 标记图形元素为脏，并且在下一帧重绘
-   * Mark displayable element dirty and refresh next frame
-   */
-  dirty: function () {
-    this.__dirty = true;
-    this._rect = null;
-    this.__zr && this.__zr.refresh();
-  },
-
-  /**
-   * 图形是否会触发事件
-   * If displayable object binded any event
-   * @return {boolean}
-   */
-  // TODO, 通过 bind 绑定的事件
-  // isSilent: function () {
-  //     return !(
-  //         this.hoverable || this.draggable
-  //         || this.onmousemove || this.onmouseover || this.onmouseout
-  //         || this.onmousedown || this.onmouseup || this.onclick
-  //         || this.ondragenter || this.ondragover || this.ondragleave
-  //         || this.ondrop
-  //     );
-  // },
-
-  /**
-   * Alias for animate('style')
-   * @param {boolean} loop
-   */
-  animateStyle: function (loop) {
-    return this.animate('style', loop);
-  },
-  attrKV: function (key, value) {
-    if (key !== 'style') {
-      Element.prototype.attrKV.call(this, key, value);
-    } else {
-      this.style.set(value);
-    }
-  },
-
-  /**
-   * @param {Object|string} key
-   * @param {*} value
-   */
-  setStyle: function (key, value) {
-    this.style.set(key, value);
-    this.dirty(false);
-    return this;
-  },
-
-  /**
-   * Use given style object
-   * @param  {Object} obj
-   */
-  useStyle: function (obj) {
-    this.style = new Style(obj, this);
-    this.dirty(false);
-    return this;
-  }
-};
-zrUtil.inherits(Displayable, Element);
-zrUtil.mixin(Displayable, RectText); // zrUtil.mixin(Displayable, Stateful);
-
-var _default = Displayable;
-module.exports = _default;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var curve = __webpack_require__(20);
-
-var vec2 = __webpack_require__(6);
-
-var bbox = __webpack_require__(78);
-
-var BoundingRect = __webpack_require__(11);
-
-var _config = __webpack_require__(30);
-
-var dpr = _config.devicePixelRatio;
-
-/**
- * Path 代理，可以在`buildPath`中用于替代`ctx`, 会保存每个path操作的命令到pathCommands属性中
- * 可以用于 isInsidePath 判断以及获取boundingRect
- *
- * @module zrender/core/PathProxy
- * @author Yi Shen (http://www.github.com/pissang)
- */
-// TODO getTotalLength, getPointAtLength
-var CMD = {
-  M: 1,
-  L: 2,
-  C: 3,
-  Q: 4,
-  A: 5,
-  Z: 6,
-  // Rect
-  R: 7
-}; // var CMD_MEM_SIZE = {
-//     M: 3,
-//     L: 3,
-//     C: 7,
-//     Q: 5,
-//     A: 9,
-//     R: 5,
-//     Z: 1
-// };
-
-var min = [];
-var max = [];
-var min2 = [];
-var max2 = [];
-var mathMin = Math.min;
-var mathMax = Math.max;
-var mathCos = Math.cos;
-var mathSin = Math.sin;
-var mathSqrt = Math.sqrt;
-var mathAbs = Math.abs;
-var hasTypedArray = typeof Float32Array != 'undefined';
-/**
- * @alias module:zrender/core/PathProxy
- * @constructor
- */
-
-var PathProxy = function (notSaveData) {
-  this._saveData = !(notSaveData || false);
-
-  if (this._saveData) {
-    /**
-     * Path data. Stored as flat array
-     * @type {Array.<Object>}
-     */
-    this.data = [];
-  }
-
-  this._ctx = null;
-};
-/**
- * 快速计算Path包围盒（并不是最小包围盒）
- * @return {Object}
- */
-
-
-PathProxy.prototype = {
-  constructor: PathProxy,
-  _xi: 0,
-  _yi: 0,
-  _x0: 0,
-  _y0: 0,
-  // Unit x, Unit y. Provide for avoiding drawing that too short line segment
-  _ux: 0,
-  _uy: 0,
-  _len: 0,
-  _lineDash: null,
-  _dashOffset: 0,
-  _dashIdx: 0,
-  _dashSum: 0,
-
-  /**
-   * @readOnly
-   */
-  setScale: function (sx, sy) {
-    this._ux = mathAbs(1 / dpr / sx) || 0;
-    this._uy = mathAbs(1 / dpr / sy) || 0;
-  },
-  getContext: function () {
-    return this._ctx;
-  },
-
-  /**
-   * @param  {CanvasRenderingContext2D} ctx
-   * @return {module:zrender/core/PathProxy}
-   */
-  beginPath: function (ctx) {
-    this._ctx = ctx;
-    ctx && ctx.beginPath();
-    ctx && (this.dpr = ctx.dpr); // Reset
-
-    if (this._saveData) {
-      this._len = 0;
-    }
-
-    if (this._lineDash) {
-      this._lineDash = null;
-      this._dashOffset = 0;
-    }
-
-    return this;
-  },
-
-  /**
-   * @param  {number} x
-   * @param  {number} y
-   * @return {module:zrender/core/PathProxy}
-   */
-  moveTo: function (x, y) {
-    this.addData(CMD.M, x, y);
-    this._ctx && this._ctx.moveTo(x, y); // x0, y0, xi, yi 是记录在 _dashedXXXXTo 方法中使用
-    // xi, yi 记录当前点, x0, y0 在 closePath 的时候回到起始点。
-    // 有可能在 beginPath 之后直接调用 lineTo，这时候 x0, y0 需要
-    // 在 lineTo 方法中记录，这里先不考虑这种情况，dashed line 也只在 IE10- 中不支持
-
-    this._x0 = x;
-    this._y0 = y;
-    this._xi = x;
-    this._yi = y;
-    return this;
-  },
-
-  /**
-   * @param  {number} x
-   * @param  {number} y
-   * @return {module:zrender/core/PathProxy}
-   */
-  lineTo: function (x, y) {
-    var exceedUnit = mathAbs(x - this._xi) > this._ux || mathAbs(y - this._yi) > this._uy // Force draw the first segment
-    || this._len < 5;
-    this.addData(CMD.L, x, y);
-
-    if (this._ctx && exceedUnit) {
-      this._needsDash() ? this._dashedLineTo(x, y) : this._ctx.lineTo(x, y);
-    }
-
-    if (exceedUnit) {
-      this._xi = x;
-      this._yi = y;
-    }
-
-    return this;
-  },
-
-  /**
-   * @param  {number} x1
-   * @param  {number} y1
-   * @param  {number} x2
-   * @param  {number} y2
-   * @param  {number} x3
-   * @param  {number} y3
-   * @return {module:zrender/core/PathProxy}
-   */
-  bezierCurveTo: function (x1, y1, x2, y2, x3, y3) {
-    this.addData(CMD.C, x1, y1, x2, y2, x3, y3);
-
-    if (this._ctx) {
-      this._needsDash() ? this._dashedBezierTo(x1, y1, x2, y2, x3, y3) : this._ctx.bezierCurveTo(x1, y1, x2, y2, x3, y3);
-    }
-
-    this._xi = x3;
-    this._yi = y3;
-    return this;
-  },
-
-  /**
-   * @param  {number} x1
-   * @param  {number} y1
-   * @param  {number} x2
-   * @param  {number} y2
-   * @return {module:zrender/core/PathProxy}
-   */
-  quadraticCurveTo: function (x1, y1, x2, y2) {
-    this.addData(CMD.Q, x1, y1, x2, y2);
-
-    if (this._ctx) {
-      this._needsDash() ? this._dashedQuadraticTo(x1, y1, x2, y2) : this._ctx.quadraticCurveTo(x1, y1, x2, y2);
-    }
-
-    this._xi = x2;
-    this._yi = y2;
-    return this;
-  },
-
-  /**
-   * @param  {number} cx
-   * @param  {number} cy
-   * @param  {number} r
-   * @param  {number} startAngle
-   * @param  {number} endAngle
-   * @param  {boolean} anticlockwise
-   * @return {module:zrender/core/PathProxy}
-   */
-  arc: function (cx, cy, r, startAngle, endAngle, anticlockwise) {
-    this.addData(CMD.A, cx, cy, r, r, startAngle, endAngle - startAngle, 0, anticlockwise ? 0 : 1);
-    this._ctx && this._ctx.arc(cx, cy, r, startAngle, endAngle, anticlockwise);
-    this._xi = mathCos(endAngle) * r + cx;
-    this._yi = mathSin(endAngle) * r + cx;
-    return this;
-  },
-  // TODO
-  arcTo: function (x1, y1, x2, y2, radius) {
-    if (this._ctx) {
-      this._ctx.arcTo(x1, y1, x2, y2, radius);
-    }
-
-    return this;
-  },
-  // TODO
-  rect: function (x, y, w, h) {
-    this._ctx && this._ctx.rect(x, y, w, h);
-    this.addData(CMD.R, x, y, w, h);
-    return this;
-  },
-
-  /**
-   * @return {module:zrender/core/PathProxy}
-   */
-  closePath: function () {
-    this.addData(CMD.Z);
-    var ctx = this._ctx;
-    var x0 = this._x0;
-    var y0 = this._y0;
-
-    if (ctx) {
-      this._needsDash() && this._dashedLineTo(x0, y0);
-      ctx.closePath();
-    }
-
-    this._xi = x0;
-    this._yi = y0;
-    return this;
-  },
-
-  /**
-   * Context 从外部传入，因为有可能是 rebuildPath 完之后再 fill。
-   * stroke 同样
-   * @param {CanvasRenderingContext2D} ctx
-   * @return {module:zrender/core/PathProxy}
-   */
-  fill: function (ctx) {
-    ctx && ctx.fill();
-    this.toStatic();
-  },
-
-  /**
-   * @param {CanvasRenderingContext2D} ctx
-   * @return {module:zrender/core/PathProxy}
-   */
-  stroke: function (ctx) {
-    ctx && ctx.stroke();
-    this.toStatic();
-  },
-
-  /**
-   * 必须在其它绘制命令前调用
-   * Must be invoked before all other path drawing methods
-   * @return {module:zrender/core/PathProxy}
-   */
-  setLineDash: function (lineDash) {
-    if (lineDash instanceof Array) {
-      this._lineDash = lineDash;
-      this._dashIdx = 0;
-      var lineDashSum = 0;
-
-      for (var i = 0; i < lineDash.length; i++) {
-        lineDashSum += lineDash[i];
-      }
-
-      this._dashSum = lineDashSum;
-    }
-
-    return this;
-  },
-
-  /**
-   * 必须在其它绘制命令前调用
-   * Must be invoked before all other path drawing methods
-   * @return {module:zrender/core/PathProxy}
-   */
-  setLineDashOffset: function (offset) {
-    this._dashOffset = offset;
-    return this;
-  },
-
-  /**
-   *
-   * @return {boolean}
-   */
-  len: function () {
-    return this._len;
-  },
-
-  /**
-   * 直接设置 Path 数据
-   */
-  setData: function (data) {
-    var len = data.length;
-
-    if (!(this.data && this.data.length == len) && hasTypedArray) {
-      this.data = new Float32Array(len);
-    }
-
-    for (var i = 0; i < len; i++) {
-      this.data[i] = data[i];
-    }
-
-    this._len = len;
-  },
-
-  /**
-   * 添加子路径
-   * @param {module:zrender/core/PathProxy|Array.<module:zrender/core/PathProxy>} path
-   */
-  appendPath: function (path) {
-    if (!(path instanceof Array)) {
-      path = [path];
-    }
-
-    var len = path.length;
-    var appendSize = 0;
-    var offset = this._len;
-
-    for (var i = 0; i < len; i++) {
-      appendSize += path[i].len();
-    }
-
-    if (hasTypedArray && this.data instanceof Float32Array) {
-      this.data = new Float32Array(offset + appendSize);
-    }
-
-    for (var i = 0; i < len; i++) {
-      var appendPathData = path[i].data;
-
-      for (var k = 0; k < appendPathData.length; k++) {
-        this.data[offset++] = appendPathData[k];
-      }
-    }
-
-    this._len = offset;
-  },
-
-  /**
-   * 填充 Path 数据。
-   * 尽量复用而不申明新的数组。大部分图形重绘的指令数据长度都是不变的。
-   */
-  addData: function (cmd) {
-    if (!this._saveData) {
-      return;
-    }
-
-    var data = this.data;
-
-    if (this._len + arguments.length > data.length) {
-      // 因为之前的数组已经转换成静态的 Float32Array
-      // 所以不够用时需要扩展一个新的动态数组
-      this._expandData();
-
-      data = this.data;
-    }
-
-    for (var i = 0; i < arguments.length; i++) {
-      data[this._len++] = arguments[i];
-    }
-
-    this._prevCmd = cmd;
-  },
-  _expandData: function () {
-    // Only if data is Float32Array
-    if (!(this.data instanceof Array)) {
-      var newData = [];
-
-      for (var i = 0; i < this._len; i++) {
-        newData[i] = this.data[i];
-      }
-
-      this.data = newData;
-    }
-  },
-
-  /**
-   * If needs js implemented dashed line
-   * @return {boolean}
-   * @private
-   */
-  _needsDash: function () {
-    return this._lineDash;
-  },
-  _dashedLineTo: function (x1, y1) {
-    var dashSum = this._dashSum;
-    var offset = this._dashOffset;
-    var lineDash = this._lineDash;
-    var ctx = this._ctx;
-    var x0 = this._xi;
-    var y0 = this._yi;
-    var dx = x1 - x0;
-    var dy = y1 - y0;
-    var dist = mathSqrt(dx * dx + dy * dy);
-    var x = x0;
-    var y = y0;
-    var dash;
-    var nDash = lineDash.length;
-    var idx;
-    dx /= dist;
-    dy /= dist;
-
-    if (offset < 0) {
-      // Convert to positive offset
-      offset = dashSum + offset;
-    }
-
-    offset %= dashSum;
-    x -= offset * dx;
-    y -= offset * dy;
-
-    while (dx > 0 && x <= x1 || dx < 0 && x >= x1 || dx == 0 && (dy > 0 && y <= y1 || dy < 0 && y >= y1)) {
-      idx = this._dashIdx;
-      dash = lineDash[idx];
-      x += dx * dash;
-      y += dy * dash;
-      this._dashIdx = (idx + 1) % nDash; // Skip positive offset
-
-      if (dx > 0 && x < x0 || dx < 0 && x > x0 || dy > 0 && y < y0 || dy < 0 && y > y0) {
-        continue;
-      }
-
-      ctx[idx % 2 ? 'moveTo' : 'lineTo'](dx >= 0 ? mathMin(x, x1) : mathMax(x, x1), dy >= 0 ? mathMin(y, y1) : mathMax(y, y1));
-    } // Offset for next lineTo
-
-
-    dx = x - x1;
-    dy = y - y1;
-    this._dashOffset = -mathSqrt(dx * dx + dy * dy);
-  },
-  // Not accurate dashed line to
-  _dashedBezierTo: function (x1, y1, x2, y2, x3, y3) {
-    var dashSum = this._dashSum;
-    var offset = this._dashOffset;
-    var lineDash = this._lineDash;
-    var ctx = this._ctx;
-    var x0 = this._xi;
-    var y0 = this._yi;
-    var t;
-    var dx;
-    var dy;
-    var cubicAt = curve.cubicAt;
-    var bezierLen = 0;
-    var idx = this._dashIdx;
-    var nDash = lineDash.length;
-    var x;
-    var y;
-    var tmpLen = 0;
-
-    if (offset < 0) {
-      // Convert to positive offset
-      offset = dashSum + offset;
-    }
-
-    offset %= dashSum; // Bezier approx length
-
-    for (t = 0; t < 1; t += 0.1) {
-      dx = cubicAt(x0, x1, x2, x3, t + 0.1) - cubicAt(x0, x1, x2, x3, t);
-      dy = cubicAt(y0, y1, y2, y3, t + 0.1) - cubicAt(y0, y1, y2, y3, t);
-      bezierLen += mathSqrt(dx * dx + dy * dy);
-    } // Find idx after add offset
-
-
-    for (; idx < nDash; idx++) {
-      tmpLen += lineDash[idx];
-
-      if (tmpLen > offset) {
-        break;
-      }
-    }
-
-    t = (tmpLen - offset) / bezierLen;
-
-    while (t <= 1) {
-      x = cubicAt(x0, x1, x2, x3, t);
-      y = cubicAt(y0, y1, y2, y3, t); // Use line to approximate dashed bezier
-      // Bad result if dash is long
-
-      idx % 2 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      t += lineDash[idx] / bezierLen;
-      idx = (idx + 1) % nDash;
-    } // Finish the last segment and calculate the new offset
-
-
-    idx % 2 !== 0 && ctx.lineTo(x3, y3);
-    dx = x3 - x;
-    dy = y3 - y;
-    this._dashOffset = -mathSqrt(dx * dx + dy * dy);
-  },
-  _dashedQuadraticTo: function (x1, y1, x2, y2) {
-    // Convert quadratic to cubic using degree elevation
-    var x3 = x2;
-    var y3 = y2;
-    x2 = (x2 + 2 * x1) / 3;
-    y2 = (y2 + 2 * y1) / 3;
-    x1 = (this._xi + 2 * x1) / 3;
-    y1 = (this._yi + 2 * y1) / 3;
-
-    this._dashedBezierTo(x1, y1, x2, y2, x3, y3);
-  },
-
-  /**
-   * 转成静态的 Float32Array 减少堆内存占用
-   * Convert dynamic array to static Float32Array
-   */
-  toStatic: function () {
-    var data = this.data;
-
-    if (data instanceof Array) {
-      data.length = this._len;
-
-      if (hasTypedArray) {
-        this.data = new Float32Array(data);
-      }
-    }
-  },
-
-  /**
-   * @return {module:zrender/core/BoundingRect}
-   */
-  getBoundingRect: function () {
-    min[0] = min[1] = min2[0] = min2[1] = Number.MAX_VALUE;
-    max[0] = max[1] = max2[0] = max2[1] = -Number.MAX_VALUE;
-    var data = this.data;
-    var xi = 0;
-    var yi = 0;
-    var x0 = 0;
-    var y0 = 0;
-
-    for (var i = 0; i < data.length;) {
-      var cmd = data[i++];
-
-      if (i == 1) {
-        // 如果第一个命令是 L, C, Q
-        // 则 previous point 同绘制命令的第一个 point
-        //
-        // 第一个命令为 Arc 的情况下会在后面特殊处理
-        xi = data[i];
-        yi = data[i + 1];
-        x0 = xi;
-        y0 = yi;
-      }
-
-      switch (cmd) {
-        case CMD.M:
-          // moveTo 命令重新创建一个新的 subpath, 并且更新新的起点
-          // 在 closePath 的时候使用
-          x0 = data[i++];
-          y0 = data[i++];
-          xi = x0;
-          yi = y0;
-          min2[0] = x0;
-          min2[1] = y0;
-          max2[0] = x0;
-          max2[1] = y0;
-          break;
-
-        case CMD.L:
-          bbox.fromLine(xi, yi, data[i], data[i + 1], min2, max2);
-          xi = data[i++];
-          yi = data[i++];
-          break;
-
-        case CMD.C:
-          bbox.fromCubic(xi, yi, data[i++], data[i++], data[i++], data[i++], data[i], data[i + 1], min2, max2);
-          xi = data[i++];
-          yi = data[i++];
-          break;
-
-        case CMD.Q:
-          bbox.fromQuadratic(xi, yi, data[i++], data[i++], data[i], data[i + 1], min2, max2);
-          xi = data[i++];
-          yi = data[i++];
-          break;
-
-        case CMD.A:
-          // TODO Arc 判断的开销比较大
-          var cx = data[i++];
-          var cy = data[i++];
-          var rx = data[i++];
-          var ry = data[i++];
-          var startAngle = data[i++];
-          var endAngle = data[i++] + startAngle; // TODO Arc 旋转
-
-          var psi = data[i++];
-          var anticlockwise = 1 - data[i++];
-
-          if (i == 1) {
-            // 直接使用 arc 命令
-            // 第一个命令起点还未定义
-            x0 = mathCos(startAngle) * rx + cx;
-            y0 = mathSin(startAngle) * ry + cy;
-          }
-
-          bbox.fromArc(cx, cy, rx, ry, startAngle, endAngle, anticlockwise, min2, max2);
-          xi = mathCos(endAngle) * rx + cx;
-          yi = mathSin(endAngle) * ry + cy;
-          break;
-
-        case CMD.R:
-          x0 = xi = data[i++];
-          y0 = yi = data[i++];
-          var width = data[i++];
-          var height = data[i++]; // Use fromLine
-
-          bbox.fromLine(x0, y0, x0 + width, y0 + height, min2, max2);
-          break;
-
-        case CMD.Z:
-          xi = x0;
-          yi = y0;
-          break;
-      } // Union
-
-
-      vec2.min(min, min, min2);
-      vec2.max(max, max, max2);
-    } // No data
-
-
-    if (i === 0) {
-      min[0] = min[1] = max[0] = max[1] = 0;
-    }
-
-    return new BoundingRect(min[0], min[1], max[0] - min[0], max[1] - min[1]);
-  },
-
-  /**
-   * Rebuild path from current data
-   * Rebuild path will not consider javascript implemented line dash.
-   * @param {CanvasRenderingContext2D} ctx
-   */
-  rebuildPath: function (ctx) {
-    var d = this.data;
-    var x0, y0;
-    var xi, yi;
-    var x, y;
-    var ux = this._ux;
-    var uy = this._uy;
-    var len = this._len;
-
-    for (var i = 0; i < len;) {
-      var cmd = d[i++];
-
-      if (i == 1) {
-        // 如果第一个命令是 L, C, Q
-        // 则 previous point 同绘制命令的第一个 point
-        //
-        // 第一个命令为 Arc 的情况下会在后面特殊处理
-        xi = d[i];
-        yi = d[i + 1];
-        x0 = xi;
-        y0 = yi;
-      }
-
-      switch (cmd) {
-        case CMD.M:
-          x0 = xi = d[i++];
-          y0 = yi = d[i++];
-          ctx.moveTo(xi, yi);
-          break;
-
-        case CMD.L:
-          x = d[i++];
-          y = d[i++]; // Not draw too small seg between
-
-          if (mathAbs(x - xi) > ux || mathAbs(y - yi) > uy || i === len - 1) {
-            ctx.lineTo(x, y);
-            xi = x;
-            yi = y;
-          }
-
-          break;
-
-        case CMD.C:
-          ctx.bezierCurveTo(d[i++], d[i++], d[i++], d[i++], d[i++], d[i++]);
-          xi = d[i - 2];
-          yi = d[i - 1];
-          break;
-
-        case CMD.Q:
-          ctx.quadraticCurveTo(d[i++], d[i++], d[i++], d[i++]);
-          xi = d[i - 2];
-          yi = d[i - 1];
-          break;
-
-        case CMD.A:
-          var cx = d[i++];
-          var cy = d[i++];
-          var rx = d[i++];
-          var ry = d[i++];
-          var theta = d[i++];
-          var dTheta = d[i++];
-          var psi = d[i++];
-          var fs = d[i++];
-          var r = rx > ry ? rx : ry;
-          var scaleX = rx > ry ? 1 : rx / ry;
-          var scaleY = rx > ry ? ry / rx : 1;
-          var isEllipse = Math.abs(rx - ry) > 1e-3;
-          var endAngle = theta + dTheta;
-
-          if (isEllipse) {
-            ctx.translate(cx, cy);
-            ctx.rotate(psi);
-            ctx.scale(scaleX, scaleY);
-            ctx.arc(0, 0, r, theta, endAngle, 1 - fs);
-            ctx.scale(1 / scaleX, 1 / scaleY);
-            ctx.rotate(-psi);
-            ctx.translate(-cx, -cy);
-          } else {
-            ctx.arc(cx, cy, r, theta, endAngle, 1 - fs);
-          }
-
-          if (i == 1) {
-            // 直接使用 arc 命令
-            // 第一个命令起点还未定义
-            x0 = mathCos(theta) * rx + cx;
-            y0 = mathSin(theta) * ry + cy;
-          }
-
-          xi = mathCos(endAngle) * rx + cx;
-          yi = mathSin(endAngle) * ry + cy;
-          break;
-
-        case CMD.R:
-          x0 = xi = d[i];
-          y0 = yi = d[i + 1];
-          ctx.rect(d[i++], d[i++], d[i++], d[i++]);
-          break;
-
-        case CMD.Z:
-          ctx.closePath();
-          xi = x0;
-          yi = y0;
-      }
-    }
-  }
-};
-PathProxy.CMD = CMD;
-var _default = PathProxy;
-module.exports = _default;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var _clazz = __webpack_require__(16);
-
-var parseClassType = _clazz.parseClassType;
-var base = 0;
-/**
- * @public
- * @param {string} type
- * @return {string}
- */
-
-function getUID(type) {
-  // Considering the case of crossing js context,
-  // use Math.random to make id as unique as possible.
-  return [type || '', base++, Math.random().toFixed(5)].join('_');
-}
-/**
- * @inner
- */
-
-
-function enableSubTypeDefaulter(entity) {
-  var subTypeDefaulters = {};
-
-  entity.registerSubTypeDefaulter = function (componentType, defaulter) {
-    componentType = parseClassType(componentType);
-    subTypeDefaulters[componentType.main] = defaulter;
-  };
-
-  entity.determineSubType = function (componentType, option) {
-    var type = option.type;
-
-    if (!type) {
-      var componentTypeMain = parseClassType(componentType).main;
-
-      if (entity.hasSubTypes(componentType) && subTypeDefaulters[componentTypeMain]) {
-        type = subTypeDefaulters[componentTypeMain](option);
-      }
-    }
-
-    return type;
-  };
-
-  return entity;
-}
-/**
- * Topological travel on Activity Network (Activity On Vertices).
- * Dependencies is defined in Model.prototype.dependencies, like ['xAxis', 'yAxis'].
- *
- * If 'xAxis' or 'yAxis' is absent in componentTypeList, just ignore it in topology.
- *
- * If there is circle dependencey, Error will be thrown.
- *
- */
-
-
-function enableTopologicalTravel(entity, dependencyGetter) {
-  /**
-   * @public
-   * @param {Array.<string>} targetNameList Target Component type list.
-   *                                           Can be ['aa', 'bb', 'aa.xx']
-   * @param {Array.<string>} fullNameList By which we can build dependency graph.
-   * @param {Function} callback Params: componentType, dependencies.
-   * @param {Object} context Scope of callback.
-   */
-  entity.topologicalTravel = function (targetNameList, fullNameList, callback, context) {
-    if (!targetNameList.length) {
-      return;
-    }
-
-    var result = makeDepndencyGraph(fullNameList);
-    var graph = result.graph;
-    var stack = result.noEntryList;
-    var targetNameSet = {};
-    zrUtil.each(targetNameList, function (name) {
-      targetNameSet[name] = true;
-    });
-
-    while (stack.length) {
-      var currComponentType = stack.pop();
-      var currVertex = graph[currComponentType];
-      var isInTargetNameSet = !!targetNameSet[currComponentType];
-
-      if (isInTargetNameSet) {
-        callback.call(context, currComponentType, currVertex.originalDeps.slice());
-        delete targetNameSet[currComponentType];
-      }
-
-      zrUtil.each(currVertex.successor, isInTargetNameSet ? removeEdgeAndAdd : removeEdge);
-    }
-
-    zrUtil.each(targetNameSet, function () {
-      throw new Error('Circle dependency may exists');
-    });
-
-    function removeEdge(succComponentType) {
-      graph[succComponentType].entryCount--;
-
-      if (graph[succComponentType].entryCount === 0) {
-        stack.push(succComponentType);
-      }
-    } // Consider this case: legend depends on series, and we call
-    // chart.setOption({series: [...]}), where only series is in option.
-    // If we do not have 'removeEdgeAndAdd', legendModel.mergeOption will
-    // not be called, but only sereis.mergeOption is called. Thus legend
-    // have no chance to update its local record about series (like which
-    // name of series is available in legend).
-
-
-    function removeEdgeAndAdd(succComponentType) {
-      targetNameSet[succComponentType] = true;
-      removeEdge(succComponentType);
-    }
-  };
-  /**
-   * DepndencyGraph: {Object}
-   * key: conponentType,
-   * value: {
-   *     successor: [conponentTypes...],
-   *     originalDeps: [conponentTypes...],
-   *     entryCount: {number}
-   * }
-   */
-
-
-  function makeDepndencyGraph(fullNameList) {
-    var graph = {};
-    var noEntryList = [];
-    zrUtil.each(fullNameList, function (name) {
-      var thisItem = createDependencyGraphItem(graph, name);
-      var originalDeps = thisItem.originalDeps = dependencyGetter(name);
-      var availableDeps = getAvailableDependencies(originalDeps, fullNameList);
-      thisItem.entryCount = availableDeps.length;
-
-      if (thisItem.entryCount === 0) {
-        noEntryList.push(name);
-      }
-
-      zrUtil.each(availableDeps, function (dependentName) {
-        if (zrUtil.indexOf(thisItem.predecessor, dependentName) < 0) {
-          thisItem.predecessor.push(dependentName);
-        }
-
-        var thatItem = createDependencyGraphItem(graph, dependentName);
-
-        if (zrUtil.indexOf(thatItem.successor, dependentName) < 0) {
-          thatItem.successor.push(name);
-        }
-      });
-    });
-    return {
-      graph: graph,
-      noEntryList: noEntryList
-    };
-  }
-
-  function createDependencyGraphItem(graph, name) {
-    if (!graph[name]) {
-      graph[name] = {
-        predecessor: [],
-        successor: []
-      };
-    }
-
-    return graph[name];
-  }
-
-  function getAvailableDependencies(originalDeps, fullNameList) {
-    var availableDeps = [];
-    zrUtil.each(originalDeps, function (dep) {
-      zrUtil.indexOf(fullNameList, dep) >= 0 && availableDeps.push(dep);
-    });
-    return availableDeps;
-  }
-}
-
-exports.getUID = getUID;
-exports.enableSubTypeDefaulter = enableSubTypeDefaulter;
-exports.enableTopologicalTravel = enableTopologicalTravel;
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports) {
-
-// Avoid typo.
-var SOURCE_FORMAT_ORIGINAL = 'original';
-var SOURCE_FORMAT_ARRAY_ROWS = 'arrayRows';
-var SOURCE_FORMAT_OBJECT_ROWS = 'objectRows';
-var SOURCE_FORMAT_KEYED_COLUMNS = 'keyedColumns';
-var SOURCE_FORMAT_UNKNOWN = 'unknown'; // ??? CHANGE A NAME
-
-var SOURCE_FORMAT_TYPED_ARRAY = 'typedArray';
-var SERIES_LAYOUT_BY_COLUMN = 'column';
-var SERIES_LAYOUT_BY_ROW = 'row';
-exports.SOURCE_FORMAT_ORIGINAL = SOURCE_FORMAT_ORIGINAL;
-exports.SOURCE_FORMAT_ARRAY_ROWS = SOURCE_FORMAT_ARRAY_ROWS;
-exports.SOURCE_FORMAT_OBJECT_ROWS = SOURCE_FORMAT_OBJECT_ROWS;
-exports.SOURCE_FORMAT_KEYED_COLUMNS = SOURCE_FORMAT_KEYED_COLUMNS;
-exports.SOURCE_FORMAT_UNKNOWN = SOURCE_FORMAT_UNKNOWN;
-exports.SOURCE_FORMAT_TYPED_ARRAY = SOURCE_FORMAT_TYPED_ARRAY;
-exports.SERIES_LAYOUT_BY_COLUMN = SERIES_LAYOUT_BY_COLUMN;
-exports.SERIES_LAYOUT_BY_ROW = SERIES_LAYOUT_BY_ROW;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var clazzUtil = __webpack_require__(16);
-
-/**
- * // Scale class management
- * @module echarts/scale/Scale
- */
-
-/**
- * @param {Object} [setting]
- */
-function Scale(setting) {
-  this._setting = setting || {};
-  /**
-   * Extent
-   * @type {Array.<number>}
-   * @protected
-   */
-
-  this._extent = [Infinity, -Infinity];
-  /**
-   * Step is calculated in adjustExtent
-   * @type {Array.<number>}
-   * @protected
-   */
-
-  this._interval = 0;
-  this.init && this.init.apply(this, arguments);
-}
-/**
- * Parse input val to valid inner number.
- * @param {*} val
- * @return {number}
- */
-
-
-Scale.prototype.parse = function (val) {
-  // Notice: This would be a trap here, If the implementation
-  // of this method depends on extent, and this method is used
-  // before extent set (like in dataZoom), it would be wrong.
-  // Nevertheless, parse does not depend on extent generally.
-  return val;
-};
-
-Scale.prototype.getSetting = function (name) {
-  return this._setting[name];
-};
-
-Scale.prototype.contain = function (val) {
-  var extent = this._extent;
-  return val >= extent[0] && val <= extent[1];
-};
-/**
- * Normalize value to linear [0, 1], return 0.5 if extent span is 0
- * @param {number} val
- * @return {number}
- */
-
-
-Scale.prototype.normalize = function (val) {
-  var extent = this._extent;
-
-  if (extent[1] === extent[0]) {
-    return 0.5;
-  }
-
-  return (val - extent[0]) / (extent[1] - extent[0]);
-};
-/**
- * Scale normalized value
- * @param {number} val
- * @return {number}
- */
-
-
-Scale.prototype.scale = function (val) {
-  var extent = this._extent;
-  return val * (extent[1] - extent[0]) + extent[0];
-};
-/**
- * Set extent from data
- * @param {Array.<number>} other
- */
-
-
-Scale.prototype.unionExtent = function (other) {
-  var extent = this._extent;
-  other[0] < extent[0] && (extent[0] = other[0]);
-  other[1] > extent[1] && (extent[1] = other[1]); // not setExtent because in log axis it may transformed to power
-  // this.setExtent(extent[0], extent[1]);
-};
-/**
- * Set extent from data
- * @param {module:echarts/data/List} data
- * @param {string} dim
- */
-
-
-Scale.prototype.unionExtentFromData = function (data, dim) {
-  this.unionExtent(data.getApproximateExtent(dim));
-};
-/**
- * Get extent
- * @return {Array.<number>}
- */
-
-
-Scale.prototype.getExtent = function () {
-  return this._extent.slice();
-};
-/**
- * Set extent
- * @param {number} start
- * @param {number} end
- */
-
-
-Scale.prototype.setExtent = function (start, end) {
-  var thisExtent = this._extent;
-
-  if (!isNaN(start)) {
-    thisExtent[0] = start;
-  }
-
-  if (!isNaN(end)) {
-    thisExtent[1] = end;
-  }
-};
-/**
- * @return {Array.<string>}
- */
-
-
-Scale.prototype.getTicksLabels = function () {
-  var labels = [];
-  var ticks = this.getTicks();
-
-  for (var i = 0; i < ticks.length; i++) {
-    labels.push(this.getLabel(ticks[i]));
-  }
-
-  return labels;
-};
-/**
- * When axis extent depends on data and no data exists,
- * axis ticks should not be drawn, which is named 'blank'.
- */
-
-
-Scale.prototype.isBlank = function () {
-  return this._isBlank;
-},
-/**
- * When axis extent depends on data and no data exists,
- * axis ticks should not be drawn, which is named 'blank'.
- */
-Scale.prototype.setBlank = function (isBlank) {
-  this._isBlank = isBlank;
-};
-clazzUtil.enableClassExtend(Scale);
-clazzUtil.enableClassManagement(Scale, {
-  registerWhenExtend: true
-});
-var _default = Scale;
-module.exports = _default;
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var graphic = __webpack_require__(3);
-
-var BoundingRect = __webpack_require__(11);
-
-// Symbol factory
-
-/**
- * Triangle shape
- * @inner
- */
-var Triangle = graphic.extendShape({
-  type: 'triangle',
-  shape: {
-    cx: 0,
-    cy: 0,
-    width: 0,
-    height: 0
-  },
-  buildPath: function (path, shape) {
-    var cx = shape.cx;
-    var cy = shape.cy;
-    var width = shape.width / 2;
-    var height = shape.height / 2;
-    path.moveTo(cx, cy - height);
-    path.lineTo(cx + width, cy + height);
-    path.lineTo(cx - width, cy + height);
-    path.closePath();
-  }
-});
-/**
- * Diamond shape
- * @inner
- */
-
-var Diamond = graphic.extendShape({
-  type: 'diamond',
-  shape: {
-    cx: 0,
-    cy: 0,
-    width: 0,
-    height: 0
-  },
-  buildPath: function (path, shape) {
-    var cx = shape.cx;
-    var cy = shape.cy;
-    var width = shape.width / 2;
-    var height = shape.height / 2;
-    path.moveTo(cx, cy - height);
-    path.lineTo(cx + width, cy);
-    path.lineTo(cx, cy + height);
-    path.lineTo(cx - width, cy);
-    path.closePath();
-  }
-});
-/**
- * Pin shape
- * @inner
- */
-
-var Pin = graphic.extendShape({
-  type: 'pin',
-  shape: {
-    // x, y on the cusp
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
-  },
-  buildPath: function (path, shape) {
-    var x = shape.x;
-    var y = shape.y;
-    var w = shape.width / 5 * 3; // Height must be larger than width
-
-    var h = Math.max(w, shape.height);
-    var r = w / 2; // Dist on y with tangent point and circle center
-
-    var dy = r * r / (h - r);
-    var cy = y - h + r + dy;
-    var angle = Math.asin(dy / r); // Dist on x with tangent point and circle center
-
-    var dx = Math.cos(angle) * r;
-    var tanX = Math.sin(angle);
-    var tanY = Math.cos(angle);
-    var cpLen = r * 0.6;
-    var cpLen2 = r * 0.7;
-    path.moveTo(x - dx, cy + dy);
-    path.arc(x, cy, r, Math.PI - angle, Math.PI * 2 + angle);
-    path.bezierCurveTo(x + dx - tanX * cpLen, cy + dy + tanY * cpLen, x, y - cpLen2, x, y);
-    path.bezierCurveTo(x, y - cpLen2, x - dx + tanX * cpLen, cy + dy + tanY * cpLen, x - dx, cy + dy);
-    path.closePath();
-  }
-});
-/**
- * Arrow shape
- * @inner
- */
-
-var Arrow = graphic.extendShape({
-  type: 'arrow',
-  shape: {
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
-  },
-  buildPath: function (ctx, shape) {
-    var height = shape.height;
-    var width = shape.width;
-    var x = shape.x;
-    var y = shape.y;
-    var dx = width / 3 * 2;
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + dx, y + height);
-    ctx.lineTo(x, y + height / 4 * 3);
-    ctx.lineTo(x - dx, y + height);
-    ctx.lineTo(x, y);
-    ctx.closePath();
-  }
-});
-/**
- * Map of path contructors
- * @type {Object.<string, module:zrender/graphic/Path>}
- */
-
-var symbolCtors = {
-  line: graphic.Line,
-  rect: graphic.Rect,
-  roundRect: graphic.Rect,
-  square: graphic.Rect,
-  circle: graphic.Circle,
-  diamond: Diamond,
-  pin: Pin,
-  arrow: Arrow,
-  triangle: Triangle
-};
-var symbolShapeMakers = {
-  line: function (x, y, w, h, shape) {
-    // FIXME
-    shape.x1 = x;
-    shape.y1 = y + h / 2;
-    shape.x2 = x + w;
-    shape.y2 = y + h / 2;
-  },
-  rect: function (x, y, w, h, shape) {
-    shape.x = x;
-    shape.y = y;
-    shape.width = w;
-    shape.height = h;
-  },
-  roundRect: function (x, y, w, h, shape) {
-    shape.x = x;
-    shape.y = y;
-    shape.width = w;
-    shape.height = h;
-    shape.r = Math.min(w, h) / 4;
-  },
-  square: function (x, y, w, h, shape) {
-    var size = Math.min(w, h);
-    shape.x = x;
-    shape.y = y;
-    shape.width = size;
-    shape.height = size;
-  },
-  circle: function (x, y, w, h, shape) {
-    // Put circle in the center of square
-    shape.cx = x + w / 2;
-    shape.cy = y + h / 2;
-    shape.r = Math.min(w, h) / 2;
-  },
-  diamond: function (x, y, w, h, shape) {
-    shape.cx = x + w / 2;
-    shape.cy = y + h / 2;
-    shape.width = w;
-    shape.height = h;
-  },
-  pin: function (x, y, w, h, shape) {
-    shape.x = x + w / 2;
-    shape.y = y + h / 2;
-    shape.width = w;
-    shape.height = h;
-  },
-  arrow: function (x, y, w, h, shape) {
-    shape.x = x + w / 2;
-    shape.y = y + h / 2;
-    shape.width = w;
-    shape.height = h;
-  },
-  triangle: function (x, y, w, h, shape) {
-    shape.cx = x + w / 2;
-    shape.cy = y + h / 2;
-    shape.width = w;
-    shape.height = h;
-  }
-};
-var symbolBuildProxies = {};
-zrUtil.each(symbolCtors, function (Ctor, name) {
-  symbolBuildProxies[name] = new Ctor();
-});
-var SymbolClz = graphic.extendShape({
-  type: 'symbol',
-  shape: {
-    symbolType: '',
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
-  },
-  beforeBrush: function () {
-    var style = this.style;
-    var shape = this.shape; // FIXME
-
-    if (shape.symbolType === 'pin' && style.textPosition === 'inside') {
-      style.textPosition = ['50%', '40%'];
-      style.textAlign = 'center';
-      style.textVerticalAlign = 'middle';
-    }
-  },
-  buildPath: function (ctx, shape, inBundle) {
-    var symbolType = shape.symbolType;
-    var proxySymbol = symbolBuildProxies[symbolType];
-
-    if (shape.symbolType !== 'none') {
-      if (!proxySymbol) {
-        // Default rect
-        symbolType = 'rect';
-        proxySymbol = symbolBuildProxies[symbolType];
-      }
-
-      symbolShapeMakers[symbolType](shape.x, shape.y, shape.width, shape.height, proxySymbol.shape);
-      proxySymbol.buildPath(ctx, proxySymbol.shape, inBundle);
-    }
-  }
-}); // Provide setColor helper method to avoid determine if set the fill or stroke outside
-
-function symbolPathSetColor(color, innerColor) {
-  if (this.type !== 'image') {
-    var symbolStyle = this.style;
-    var symbolShape = this.shape;
-
-    if (symbolShape && symbolShape.symbolType === 'line') {
-      symbolStyle.stroke = color;
-    } else if (this.__isEmptyBrush) {
-      symbolStyle.stroke = color;
-      symbolStyle.fill = innerColor || '#fff';
-    } else {
-      // FIXME 判断图形默认是填充还是描边，使用 onlyStroke ?
-      symbolStyle.fill && (symbolStyle.fill = color);
-      symbolStyle.stroke && (symbolStyle.stroke = color);
-    }
-
-    this.dirty(false);
-  }
-}
-/**
- * Create a symbol element with given symbol configuration: shape, x, y, width, height, color
- * @param {string} symbolType
- * @param {number} x
- * @param {number} y
- * @param {number} w
- * @param {number} h
- * @param {string} color
- * @param {boolean} [keepAspect=false] whether to keep the ratio of w/h,
- *                            for path and image only.
- */
-
-
-function createSymbol(symbolType, x, y, w, h, color, keepAspect) {
-  // TODO Support image object, DynamicImage.
-  var isEmpty = symbolType.indexOf('empty') === 0;
-
-  if (isEmpty) {
-    symbolType = symbolType.substr(5, 1).toLowerCase() + symbolType.substr(6);
-  }
-
-  var symbolPath;
-
-  if (symbolType.indexOf('image://') === 0) {
-    symbolPath = graphic.makeImage(symbolType.slice(8), new BoundingRect(x, y, w, h), keepAspect ? 'center' : 'cover');
-  } else if (symbolType.indexOf('path://') === 0) {
-    symbolPath = graphic.makePath(symbolType.slice(7), {}, new BoundingRect(x, y, w, h), keepAspect ? 'center' : 'cover');
-  } else {
-    symbolPath = new SymbolClz({
-      shape: {
-        symbolType: symbolType,
-        x: x,
-        y: y,
-        width: w,
-        height: h
-      }
-    });
-  }
-
-  symbolPath.__isEmptyBrush = isEmpty;
-  symbolPath.setColor = symbolPathSetColor;
-  symbolPath.setColor(color);
-  return symbolPath;
-}
-
-exports.createSymbol = createSymbol;
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var Model = __webpack_require__(13);
-
-var each = zrUtil.each;
-var curry = zrUtil.curry; // Build axisPointerModel, mergin tooltip.axisPointer model for each axis.
-// allAxesInfo should be updated when setOption performed.
-
-function collect(ecModel, api) {
-  var result = {
-    /**
-     * key: makeKey(axis.model)
-     * value: {
-     *      axis,
-     *      coordSys,
-     *      axisPointerModel,
-     *      triggerTooltip,
-     *      involveSeries,
-     *      snap,
-     *      seriesModels,
-     *      seriesDataCount
-     * }
-     */
-    axesInfo: {},
-    seriesInvolved: false,
-
-    /**
-     * key: makeKey(coordSys.model)
-     * value: Object: key makeKey(axis.model), value: axisInfo
-     */
-    coordSysAxesInfo: {},
-    coordSysMap: {}
-  };
-  collectAxesInfo(result, ecModel, api); // Check seriesInvolved for performance, in case too many series in some chart.
-
-  result.seriesInvolved && collectSeriesInfo(result, ecModel);
-  return result;
-}
-
-function collectAxesInfo(result, ecModel, api) {
-  var globalTooltipModel = ecModel.getComponent('tooltip');
-  var globalAxisPointerModel = ecModel.getComponent('axisPointer'); // links can only be set on global.
-
-  var linksOption = globalAxisPointerModel.get('link', true) || [];
-  var linkGroups = []; // Collect axes info.
-
-  each(api.getCoordinateSystems(), function (coordSys) {
-    // Some coordinate system do not support axes, like geo.
-    if (!coordSys.axisPointerEnabled) {
-      return;
-    }
-
-    var coordSysKey = makeKey(coordSys.model);
-    var axesInfoInCoordSys = result.coordSysAxesInfo[coordSysKey] = {};
-    result.coordSysMap[coordSysKey] = coordSys; // Set tooltip (like 'cross') is a convienent way to show axisPointer
-    // for user. So we enable seting tooltip on coordSys model.
-
-    var coordSysModel = coordSys.model;
-    var baseTooltipModel = coordSysModel.getModel('tooltip', globalTooltipModel);
-    each(coordSys.getAxes(), curry(saveTooltipAxisInfo, false, null)); // If axis tooltip used, choose tooltip axis for each coordSys.
-    // Notice this case: coordSys is `grid` but not `cartesian2D` here.
-
-    if (coordSys.getTooltipAxes && globalTooltipModel // If tooltip.showContent is set as false, tooltip will not
-    // show but axisPointer will show as normal.
-    && baseTooltipModel.get('show')) {
-      // Compatible with previous logic. But series.tooltip.trigger: 'axis'
-      // or series.data[n].tooltip.trigger: 'axis' are not support any more.
-      var triggerAxis = baseTooltipModel.get('trigger') === 'axis';
-      var cross = baseTooltipModel.get('axisPointer.type') === 'cross';
-      var tooltipAxes = coordSys.getTooltipAxes(baseTooltipModel.get('axisPointer.axis'));
-
-      if (triggerAxis || cross) {
-        each(tooltipAxes.baseAxes, curry(saveTooltipAxisInfo, cross ? 'cross' : true, triggerAxis));
-      }
-
-      if (cross) {
-        each(tooltipAxes.otherAxes, curry(saveTooltipAxisInfo, 'cross', false));
-      }
-    } // fromTooltip: true | false | 'cross'
-    // triggerTooltip: true | false | null
-
-
-    function saveTooltipAxisInfo(fromTooltip, triggerTooltip, axis) {
-      var axisPointerModel = axis.model.getModel('axisPointer', globalAxisPointerModel);
-      var axisPointerShow = axisPointerModel.get('show');
-
-      if (!axisPointerShow || axisPointerShow === 'auto' && !fromTooltip && !isHandleTrigger(axisPointerModel)) {
-        return;
-      }
-
-      if (triggerTooltip == null) {
-        triggerTooltip = axisPointerModel.get('triggerTooltip');
-      }
-
-      axisPointerModel = fromTooltip ? makeAxisPointerModel(axis, baseTooltipModel, globalAxisPointerModel, ecModel, fromTooltip, triggerTooltip) : axisPointerModel;
-      var snap = axisPointerModel.get('snap');
-      var key = makeKey(axis.model);
-      var involveSeries = triggerTooltip || snap || axis.type === 'category'; // If result.axesInfo[key] exist, override it (tooltip has higher priority).
-
-      var axisInfo = result.axesInfo[key] = {
-        key: key,
-        axis: axis,
-        coordSys: coordSys,
-        axisPointerModel: axisPointerModel,
-        triggerTooltip: triggerTooltip,
-        involveSeries: involveSeries,
-        snap: snap,
-        useHandle: isHandleTrigger(axisPointerModel),
-        seriesModels: []
-      };
-      axesInfoInCoordSys[key] = axisInfo;
-      result.seriesInvolved |= involveSeries;
-      var groupIndex = getLinkGroupIndex(linksOption, axis);
-
-      if (groupIndex != null) {
-        var linkGroup = linkGroups[groupIndex] || (linkGroups[groupIndex] = {
-          axesInfo: {}
-        });
-        linkGroup.axesInfo[key] = axisInfo;
-        linkGroup.mapper = linksOption[groupIndex].mapper;
-        axisInfo.linkGroup = linkGroup;
-      }
-    }
-  });
-}
-
-function makeAxisPointerModel(axis, baseTooltipModel, globalAxisPointerModel, ecModel, fromTooltip, triggerTooltip) {
-  var tooltipAxisPointerModel = baseTooltipModel.getModel('axisPointer');
-  var volatileOption = {};
-  each(['type', 'snap', 'lineStyle', 'shadowStyle', 'label', 'animation', 'animationDurationUpdate', 'animationEasingUpdate', 'z'], function (field) {
-    volatileOption[field] = zrUtil.clone(tooltipAxisPointerModel.get(field));
-  }); // category axis do not auto snap, otherwise some tick that do not
-  // has value can not be hovered. value/time/log axis default snap if
-  // triggered from tooltip and trigger tooltip.
-
-  volatileOption.snap = axis.type !== 'category' && !!triggerTooltip; // Compatibel with previous behavior, tooltip axis do not show label by default.
-  // Only these properties can be overrided from tooltip to axisPointer.
-
-  if (tooltipAxisPointerModel.get('type') === 'cross') {
-    volatileOption.type = 'line';
-  }
-
-  var labelOption = volatileOption.label || (volatileOption.label = {}); // Follow the convention, do not show label when triggered by tooltip by default.
-
-  labelOption.show == null && (labelOption.show = false);
-
-  if (fromTooltip === 'cross') {
-    // When 'cross', both axes show labels.
-    var tooltipAxisPointerLabelShow = tooltipAxisPointerModel.get('label.show');
-    labelOption.show = tooltipAxisPointerLabelShow != null ? tooltipAxisPointerLabelShow : true; // If triggerTooltip, this is a base axis, which should better not use cross style
-    // (cross style is dashed by default)
-
-    if (!triggerTooltip) {
-      var crossStyle = volatileOption.lineStyle = tooltipAxisPointerModel.get('crossStyle');
-      crossStyle && zrUtil.defaults(labelOption, crossStyle.textStyle);
-    }
-  }
-
-  return axis.model.getModel('axisPointer', new Model(volatileOption, globalAxisPointerModel, ecModel));
-}
-
-function collectSeriesInfo(result, ecModel) {
-  // Prepare data for axis trigger
-  ecModel.eachSeries(function (seriesModel) {
-    // Notice this case: this coordSys is `cartesian2D` but not `grid`.
-    var coordSys = seriesModel.coordinateSystem;
-    var seriesTooltipTrigger = seriesModel.get('tooltip.trigger', true);
-    var seriesTooltipShow = seriesModel.get('tooltip.show', true);
-
-    if (!coordSys || seriesTooltipTrigger === 'none' || seriesTooltipTrigger === false || seriesTooltipTrigger === 'item' || seriesTooltipShow === false || seriesModel.get('axisPointer.show', true) === false) {
-      return;
-    }
-
-    each(result.coordSysAxesInfo[makeKey(coordSys.model)], function (axisInfo) {
-      var axis = axisInfo.axis;
-
-      if (coordSys.getAxis(axis.dim) === axis) {
-        axisInfo.seriesModels.push(seriesModel);
-        axisInfo.seriesDataCount == null && (axisInfo.seriesDataCount = 0);
-        axisInfo.seriesDataCount += seriesModel.getData().count();
-      }
-    });
-  }, this);
-}
-/**
- * For example:
- * {
- *     axisPointer: {
- *         links: [{
- *             xAxisIndex: [2, 4],
- *             yAxisIndex: 'all'
- *         }, {
- *             xAxisId: ['a5', 'a7'],
- *             xAxisName: 'xxx'
- *         }]
- *     }
- * }
- */
-
-
-function getLinkGroupIndex(linksOption, axis) {
-  var axisModel = axis.model;
-  var dim = axis.dim;
-
-  for (var i = 0; i < linksOption.length; i++) {
-    var linkOption = linksOption[i] || {};
-
-    if (checkPropInLink(linkOption[dim + 'AxisId'], axisModel.id) || checkPropInLink(linkOption[dim + 'AxisIndex'], axisModel.componentIndex) || checkPropInLink(linkOption[dim + 'AxisName'], axisModel.name)) {
-      return i;
-    }
-  }
-}
-
-function checkPropInLink(linkPropValue, axisPropValue) {
-  return linkPropValue === 'all' || zrUtil.isArray(linkPropValue) && zrUtil.indexOf(linkPropValue, axisPropValue) >= 0 || linkPropValue === axisPropValue;
-}
-
-function fixValue(axisModel) {
-  var axisInfo = getAxisInfo(axisModel);
-
-  if (!axisInfo) {
-    return;
-  }
-
-  var axisPointerModel = axisInfo.axisPointerModel;
-  var scale = axisInfo.axis.scale;
-  var option = axisPointerModel.option;
-  var status = axisPointerModel.get('status');
-  var value = axisPointerModel.get('value'); // Parse init value for category and time axis.
-
-  if (value != null) {
-    value = scale.parse(value);
-  }
-
-  var useHandle = isHandleTrigger(axisPointerModel); // If `handle` used, `axisPointer` will always be displayed, so value
-  // and status should be initialized.
-
-  if (status == null) {
-    option.status = useHandle ? 'show' : 'hide';
-  }
-
-  var extent = scale.getExtent().slice();
-  extent[0] > extent[1] && extent.reverse();
-
-  if ( // Pick a value on axis when initializing.
-  value == null // If both `handle` and `dataZoom` are used, value may be out of axis extent,
-  // where we should re-pick a value to keep `handle` displaying normally.
-  || value > extent[1]) {
-    // Make handle displayed on the end of the axis when init, which looks better.
-    value = extent[1];
-  }
-
-  if (value < extent[0]) {
-    value = extent[0];
-  }
-
-  option.value = value;
-
-  if (useHandle) {
-    option.status = axisInfo.axis.scale.isBlank() ? 'hide' : 'show';
-  }
-}
-
-function getAxisInfo(axisModel) {
-  var coordSysAxesInfo = (axisModel.ecModel.getComponent('axisPointer') || {}).coordSysAxesInfo;
-  return coordSysAxesInfo && coordSysAxesInfo.axesInfo[makeKey(axisModel)];
-}
-
-function getAxisPointerModel(axisModel) {
-  var axisInfo = getAxisInfo(axisModel);
-  return axisInfo && axisInfo.axisPointerModel;
-}
-
-function isHandleTrigger(axisPointerModel) {
-  return !!axisPointerModel.get('handle.show');
-}
-/**
- * @param {module:echarts/model/Model} model
- * @return {string} unique key
- */
-
-
-function makeKey(model) {
-  return model.type + '||' + model.id;
-}
-
-exports.collect = collect;
-exports.fixValue = fixValue;
-exports.getAxisInfo = getAxisInfo;
-exports.getAxisPointerModel = getAxisPointerModel;
-exports.makeKey = makeKey;
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(10);
-var normalizeHeaderName = __webpack_require__(120);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
-
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(54);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(54);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
-};
-
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-});
-
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53)))
-
-/***/ }),
-/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25477,6 +23023,2460 @@ var index_esm = {
 
 
 /***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var Element = __webpack_require__(65);
+
+var BoundingRect = __webpack_require__(11);
+
+/**
+ * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点上
+ * @module zrender/graphic/Group
+ * @example
+ *     var Group = require('zrender/container/Group');
+ *     var Circle = require('zrender/graphic/shape/Circle');
+ *     var g = new Group();
+ *     g.position[0] = 100;
+ *     g.position[1] = 100;
+ *     g.add(new Circle({
+ *         style: {
+ *             x: 100,
+ *             y: 100,
+ *             r: 20,
+ *         }
+ *     }));
+ *     zr.add(g);
+ */
+
+/**
+ * @alias module:zrender/graphic/Group
+ * @constructor
+ * @extends module:zrender/mixin/Transformable
+ * @extends module:zrender/mixin/Eventful
+ */
+var Group = function (opts) {
+  opts = opts || {};
+  Element.call(this, opts);
+
+  for (var key in opts) {
+    if (opts.hasOwnProperty(key)) {
+      this[key] = opts[key];
+    }
+  }
+
+  this._children = [];
+  this.__storage = null;
+  this.__dirty = true;
+};
+
+Group.prototype = {
+  constructor: Group,
+  isGroup: true,
+
+  /**
+   * @type {string}
+   */
+  type: 'group',
+
+  /**
+   * 所有子孙元素是否响应鼠标事件
+   * @name module:/zrender/container/Group#silent
+   * @type {boolean}
+   * @default false
+   */
+  silent: false,
+
+  /**
+   * @return {Array.<module:zrender/Element>}
+   */
+  children: function () {
+    return this._children.slice();
+  },
+
+  /**
+   * 获取指定 index 的儿子节点
+   * @param  {number} idx
+   * @return {module:zrender/Element}
+   */
+  childAt: function (idx) {
+    return this._children[idx];
+  },
+
+  /**
+   * 获取指定名字的儿子节点
+   * @param  {string} name
+   * @return {module:zrender/Element}
+   */
+  childOfName: function (name) {
+    var children = this._children;
+
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].name === name) {
+        return children[i];
+      }
+    }
+  },
+
+  /**
+   * @return {number}
+   */
+  childCount: function () {
+    return this._children.length;
+  },
+
+  /**
+   * 添加子节点到最后
+   * @param {module:zrender/Element} child
+   */
+  add: function (child) {
+    if (child && child !== this && child.parent !== this) {
+      this._children.push(child);
+
+      this._doAdd(child);
+    }
+
+    return this;
+  },
+
+  /**
+   * 添加子节点在 nextSibling 之前
+   * @param {module:zrender/Element} child
+   * @param {module:zrender/Element} nextSibling
+   */
+  addBefore: function (child, nextSibling) {
+    if (child && child !== this && child.parent !== this && nextSibling && nextSibling.parent === this) {
+      var children = this._children;
+      var idx = children.indexOf(nextSibling);
+
+      if (idx >= 0) {
+        children.splice(idx, 0, child);
+
+        this._doAdd(child);
+      }
+    }
+
+    return this;
+  },
+  _doAdd: function (child) {
+    if (child.parent) {
+      child.parent.remove(child);
+    }
+
+    child.parent = this;
+    var storage = this.__storage;
+    var zr = this.__zr;
+
+    if (storage && storage !== child.__storage) {
+      storage.addToStorage(child);
+
+      if (child instanceof Group) {
+        child.addChildrenToStorage(storage);
+      }
+    }
+
+    zr && zr.refresh();
+  },
+
+  /**
+   * 移除子节点
+   * @param {module:zrender/Element} child
+   */
+  remove: function (child) {
+    var zr = this.__zr;
+    var storage = this.__storage;
+    var children = this._children;
+    var idx = zrUtil.indexOf(children, child);
+
+    if (idx < 0) {
+      return this;
+    }
+
+    children.splice(idx, 1);
+    child.parent = null;
+
+    if (storage) {
+      storage.delFromStorage(child);
+
+      if (child instanceof Group) {
+        child.delChildrenFromStorage(storage);
+      }
+    }
+
+    zr && zr.refresh();
+    return this;
+  },
+
+  /**
+   * 移除所有子节点
+   */
+  removeAll: function () {
+    var children = this._children;
+    var storage = this.__storage;
+    var child;
+    var i;
+
+    for (i = 0; i < children.length; i++) {
+      child = children[i];
+
+      if (storage) {
+        storage.delFromStorage(child);
+
+        if (child instanceof Group) {
+          child.delChildrenFromStorage(storage);
+        }
+      }
+
+      child.parent = null;
+    }
+
+    children.length = 0;
+    return this;
+  },
+
+  /**
+   * 遍历所有子节点
+   * @param  {Function} cb
+   * @param  {}   context
+   */
+  eachChild: function (cb, context) {
+    var children = this._children;
+
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      cb.call(context, child, i);
+    }
+
+    return this;
+  },
+
+  /**
+   * 深度优先遍历所有子孙节点
+   * @param  {Function} cb
+   * @param  {}   context
+   */
+  traverse: function (cb, context) {
+    for (var i = 0; i < this._children.length; i++) {
+      var child = this._children[i];
+      cb.call(context, child);
+
+      if (child.type === 'group') {
+        child.traverse(cb, context);
+      }
+    }
+
+    return this;
+  },
+  addChildrenToStorage: function (storage) {
+    for (var i = 0; i < this._children.length; i++) {
+      var child = this._children[i];
+      storage.addToStorage(child);
+
+      if (child instanceof Group) {
+        child.addChildrenToStorage(storage);
+      }
+    }
+  },
+  delChildrenFromStorage: function (storage) {
+    for (var i = 0; i < this._children.length; i++) {
+      var child = this._children[i];
+      storage.delFromStorage(child);
+
+      if (child instanceof Group) {
+        child.delChildrenFromStorage(storage);
+      }
+    }
+  },
+  dirty: function () {
+    this.__dirty = true;
+    this.__zr && this.__zr.refresh();
+    return this;
+  },
+
+  /**
+   * @return {module:zrender/core/BoundingRect}
+   */
+  getBoundingRect: function (includeChildren) {
+    // TODO Caching
+    var rect = null;
+    var tmpRect = new BoundingRect(0, 0, 0, 0);
+    var children = includeChildren || this._children;
+    var tmpMat = [];
+
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+
+      if (child.ignore || child.invisible) {
+        continue;
+      }
+
+      var childRect = child.getBoundingRect();
+      var transform = child.getLocalTransform(tmpMat); // TODO
+      // The boundingRect cacluated by transforming original
+      // rect may be bigger than the actual bundingRect when rotation
+      // is used. (Consider a circle rotated aginst its center, where
+      // the actual boundingRect should be the same as that not be
+      // rotated.) But we can not find better approach to calculate
+      // actual boundingRect yet, considering performance.
+
+      if (transform) {
+        tmpRect.copy(childRect);
+        tmpRect.applyTransform(transform);
+        rect = rect || tmpRect.clone();
+        rect.union(tmpRect);
+      } else {
+        rect = rect || childRect.clone();
+        rect.union(childRect);
+      }
+    }
+
+    return rect || tmpRect;
+  }
+};
+zrUtil.inherits(Group, Element);
+var _default = Group;
+module.exports = _default;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+var dpr = 1; // If in browser environment
+
+if (typeof window !== 'undefined') {
+  dpr = Math.max(window.devicePixelRatio || 1, 1);
+}
+/**
+ * config默认配置项
+ * @exports zrender/config
+ * @author Kener (@Kener-林峰, kener.linfeng@gmail.com)
+ */
+
+/**
+ * debug日志选项：catchBrushException为true下有效
+ * 0 : 不生成debug数据，发布用
+ * 1 : 异常抛出，调试用
+ * 2 : 控制台输出，调试用
+ */
+
+
+var debugMode = 0; // retina 屏幕优化
+
+var devicePixelRatio = dpr;
+exports.debugMode = debugMode;
+exports.devicePixelRatio = devicePixelRatio;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var Style = __webpack_require__(70);
+
+var Element = __webpack_require__(65);
+
+var RectText = __webpack_require__(185);
+
+/**
+ * 可绘制的图形基类
+ * Base class of all displayable graphic objects
+ * @module zrender/graphic/Displayable
+ */
+
+/**
+ * @alias module:zrender/graphic/Displayable
+ * @extends module:zrender/Element
+ * @extends module:zrender/graphic/mixin/RectText
+ */
+function Displayable(opts) {
+  opts = opts || {};
+  Element.call(this, opts); // Extend properties
+
+  for (var name in opts) {
+    if (opts.hasOwnProperty(name) && name !== 'style') {
+      this[name] = opts[name];
+    }
+  }
+  /**
+   * @type {module:zrender/graphic/Style}
+   */
+
+
+  this.style = new Style(opts.style, this);
+  this._rect = null; // Shapes for cascade clipping.
+
+  this.__clipPaths = []; // FIXME Stateful must be mixined after style is setted
+  // Stateful.call(this, opts);
+}
+
+Displayable.prototype = {
+  constructor: Displayable,
+  type: 'displayable',
+
+  /**
+   * Displayable 是否为脏，Painter 中会根据该标记判断是否需要是否需要重新绘制
+   * Dirty flag. From which painter will determine if this displayable object needs brush
+   * @name module:zrender/graphic/Displayable#__dirty
+   * @type {boolean}
+   */
+  __dirty: true,
+
+  /**
+   * 图形是否可见，为true时不绘制图形，但是仍能触发鼠标事件
+   * If ignore drawing of the displayable object. Mouse event will still be triggered
+   * @name module:/zrender/graphic/Displayable#invisible
+   * @type {boolean}
+   * @default false
+   */
+  invisible: false,
+
+  /**
+   * @name module:/zrender/graphic/Displayable#z
+   * @type {number}
+   * @default 0
+   */
+  z: 0,
+
+  /**
+   * @name module:/zrender/graphic/Displayable#z
+   * @type {number}
+   * @default 0
+   */
+  z2: 0,
+
+  /**
+   * z层level，决定绘画在哪层canvas中
+   * @name module:/zrender/graphic/Displayable#zlevel
+   * @type {number}
+   * @default 0
+   */
+  zlevel: 0,
+
+  /**
+   * 是否可拖拽
+   * @name module:/zrender/graphic/Displayable#draggable
+   * @type {boolean}
+   * @default false
+   */
+  draggable: false,
+
+  /**
+   * 是否正在拖拽
+   * @name module:/zrender/graphic/Displayable#draggable
+   * @type {boolean}
+   * @default false
+   */
+  dragging: false,
+
+  /**
+   * 是否相应鼠标事件
+   * @name module:/zrender/graphic/Displayable#silent
+   * @type {boolean}
+   * @default false
+   */
+  silent: false,
+
+  /**
+   * If enable culling
+   * @type {boolean}
+   * @default false
+   */
+  culling: false,
+
+  /**
+   * Mouse cursor when hovered
+   * @name module:/zrender/graphic/Displayable#cursor
+   * @type {string}
+   */
+  cursor: 'pointer',
+
+  /**
+   * If hover area is bounding rect
+   * @name module:/zrender/graphic/Displayable#rectHover
+   * @type {string}
+   */
+  rectHover: false,
+
+  /**
+   * Render the element progressively when the value >= 0,
+   * usefull for large data.
+   * @type {boolean}
+   */
+  progressive: false,
+
+  /**
+   * @type {boolean}
+   */
+  incremental: false,
+  // inplace is used with incremental
+  inplace: false,
+  beforeBrush: function (ctx) {},
+  afterBrush: function (ctx) {},
+
+  /**
+   * 图形绘制方法
+   * @param {CanvasRenderingContext2D} ctx
+   */
+  // Interface
+  brush: function (ctx, prevEl) {},
+
+  /**
+   * 获取最小包围盒
+   * @return {module:zrender/core/BoundingRect}
+   */
+  // Interface
+  getBoundingRect: function () {},
+
+  /**
+   * 判断坐标 x, y 是否在图形上
+   * If displayable element contain coord x, y
+   * @param  {number} x
+   * @param  {number} y
+   * @return {boolean}
+   */
+  contain: function (x, y) {
+    return this.rectContain(x, y);
+  },
+
+  /**
+   * @param  {Function} cb
+   * @param  {}   context
+   */
+  traverse: function (cb, context) {
+    cb.call(context, this);
+  },
+
+  /**
+   * 判断坐标 x, y 是否在图形的包围盒上
+   * If bounding rect of element contain coord x, y
+   * @param  {number} x
+   * @param  {number} y
+   * @return {boolean}
+   */
+  rectContain: function (x, y) {
+    var coord = this.transformCoordToLocal(x, y);
+    var rect = this.getBoundingRect();
+    return rect.contain(coord[0], coord[1]);
+  },
+
+  /**
+   * 标记图形元素为脏，并且在下一帧重绘
+   * Mark displayable element dirty and refresh next frame
+   */
+  dirty: function () {
+    this.__dirty = true;
+    this._rect = null;
+    this.__zr && this.__zr.refresh();
+  },
+
+  /**
+   * 图形是否会触发事件
+   * If displayable object binded any event
+   * @return {boolean}
+   */
+  // TODO, 通过 bind 绑定的事件
+  // isSilent: function () {
+  //     return !(
+  //         this.hoverable || this.draggable
+  //         || this.onmousemove || this.onmouseover || this.onmouseout
+  //         || this.onmousedown || this.onmouseup || this.onclick
+  //         || this.ondragenter || this.ondragover || this.ondragleave
+  //         || this.ondrop
+  //     );
+  // },
+
+  /**
+   * Alias for animate('style')
+   * @param {boolean} loop
+   */
+  animateStyle: function (loop) {
+    return this.animate('style', loop);
+  },
+  attrKV: function (key, value) {
+    if (key !== 'style') {
+      Element.prototype.attrKV.call(this, key, value);
+    } else {
+      this.style.set(value);
+    }
+  },
+
+  /**
+   * @param {Object|string} key
+   * @param {*} value
+   */
+  setStyle: function (key, value) {
+    this.style.set(key, value);
+    this.dirty(false);
+    return this;
+  },
+
+  /**
+   * Use given style object
+   * @param  {Object} obj
+   */
+  useStyle: function (obj) {
+    this.style = new Style(obj, this);
+    this.dirty(false);
+    return this;
+  }
+};
+zrUtil.inherits(Displayable, Element);
+zrUtil.mixin(Displayable, RectText); // zrUtil.mixin(Displayable, Stateful);
+
+var _default = Displayable;
+module.exports = _default;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var curve = __webpack_require__(20);
+
+var vec2 = __webpack_require__(6);
+
+var bbox = __webpack_require__(78);
+
+var BoundingRect = __webpack_require__(11);
+
+var _config = __webpack_require__(31);
+
+var dpr = _config.devicePixelRatio;
+
+/**
+ * Path 代理，可以在`buildPath`中用于替代`ctx`, 会保存每个path操作的命令到pathCommands属性中
+ * 可以用于 isInsidePath 判断以及获取boundingRect
+ *
+ * @module zrender/core/PathProxy
+ * @author Yi Shen (http://www.github.com/pissang)
+ */
+// TODO getTotalLength, getPointAtLength
+var CMD = {
+  M: 1,
+  L: 2,
+  C: 3,
+  Q: 4,
+  A: 5,
+  Z: 6,
+  // Rect
+  R: 7
+}; // var CMD_MEM_SIZE = {
+//     M: 3,
+//     L: 3,
+//     C: 7,
+//     Q: 5,
+//     A: 9,
+//     R: 5,
+//     Z: 1
+// };
+
+var min = [];
+var max = [];
+var min2 = [];
+var max2 = [];
+var mathMin = Math.min;
+var mathMax = Math.max;
+var mathCos = Math.cos;
+var mathSin = Math.sin;
+var mathSqrt = Math.sqrt;
+var mathAbs = Math.abs;
+var hasTypedArray = typeof Float32Array != 'undefined';
+/**
+ * @alias module:zrender/core/PathProxy
+ * @constructor
+ */
+
+var PathProxy = function (notSaveData) {
+  this._saveData = !(notSaveData || false);
+
+  if (this._saveData) {
+    /**
+     * Path data. Stored as flat array
+     * @type {Array.<Object>}
+     */
+    this.data = [];
+  }
+
+  this._ctx = null;
+};
+/**
+ * 快速计算Path包围盒（并不是最小包围盒）
+ * @return {Object}
+ */
+
+
+PathProxy.prototype = {
+  constructor: PathProxy,
+  _xi: 0,
+  _yi: 0,
+  _x0: 0,
+  _y0: 0,
+  // Unit x, Unit y. Provide for avoiding drawing that too short line segment
+  _ux: 0,
+  _uy: 0,
+  _len: 0,
+  _lineDash: null,
+  _dashOffset: 0,
+  _dashIdx: 0,
+  _dashSum: 0,
+
+  /**
+   * @readOnly
+   */
+  setScale: function (sx, sy) {
+    this._ux = mathAbs(1 / dpr / sx) || 0;
+    this._uy = mathAbs(1 / dpr / sy) || 0;
+  },
+  getContext: function () {
+    return this._ctx;
+  },
+
+  /**
+   * @param  {CanvasRenderingContext2D} ctx
+   * @return {module:zrender/core/PathProxy}
+   */
+  beginPath: function (ctx) {
+    this._ctx = ctx;
+    ctx && ctx.beginPath();
+    ctx && (this.dpr = ctx.dpr); // Reset
+
+    if (this._saveData) {
+      this._len = 0;
+    }
+
+    if (this._lineDash) {
+      this._lineDash = null;
+      this._dashOffset = 0;
+    }
+
+    return this;
+  },
+
+  /**
+   * @param  {number} x
+   * @param  {number} y
+   * @return {module:zrender/core/PathProxy}
+   */
+  moveTo: function (x, y) {
+    this.addData(CMD.M, x, y);
+    this._ctx && this._ctx.moveTo(x, y); // x0, y0, xi, yi 是记录在 _dashedXXXXTo 方法中使用
+    // xi, yi 记录当前点, x0, y0 在 closePath 的时候回到起始点。
+    // 有可能在 beginPath 之后直接调用 lineTo，这时候 x0, y0 需要
+    // 在 lineTo 方法中记录，这里先不考虑这种情况，dashed line 也只在 IE10- 中不支持
+
+    this._x0 = x;
+    this._y0 = y;
+    this._xi = x;
+    this._yi = y;
+    return this;
+  },
+
+  /**
+   * @param  {number} x
+   * @param  {number} y
+   * @return {module:zrender/core/PathProxy}
+   */
+  lineTo: function (x, y) {
+    var exceedUnit = mathAbs(x - this._xi) > this._ux || mathAbs(y - this._yi) > this._uy // Force draw the first segment
+    || this._len < 5;
+    this.addData(CMD.L, x, y);
+
+    if (this._ctx && exceedUnit) {
+      this._needsDash() ? this._dashedLineTo(x, y) : this._ctx.lineTo(x, y);
+    }
+
+    if (exceedUnit) {
+      this._xi = x;
+      this._yi = y;
+    }
+
+    return this;
+  },
+
+  /**
+   * @param  {number} x1
+   * @param  {number} y1
+   * @param  {number} x2
+   * @param  {number} y2
+   * @param  {number} x3
+   * @param  {number} y3
+   * @return {module:zrender/core/PathProxy}
+   */
+  bezierCurveTo: function (x1, y1, x2, y2, x3, y3) {
+    this.addData(CMD.C, x1, y1, x2, y2, x3, y3);
+
+    if (this._ctx) {
+      this._needsDash() ? this._dashedBezierTo(x1, y1, x2, y2, x3, y3) : this._ctx.bezierCurveTo(x1, y1, x2, y2, x3, y3);
+    }
+
+    this._xi = x3;
+    this._yi = y3;
+    return this;
+  },
+
+  /**
+   * @param  {number} x1
+   * @param  {number} y1
+   * @param  {number} x2
+   * @param  {number} y2
+   * @return {module:zrender/core/PathProxy}
+   */
+  quadraticCurveTo: function (x1, y1, x2, y2) {
+    this.addData(CMD.Q, x1, y1, x2, y2);
+
+    if (this._ctx) {
+      this._needsDash() ? this._dashedQuadraticTo(x1, y1, x2, y2) : this._ctx.quadraticCurveTo(x1, y1, x2, y2);
+    }
+
+    this._xi = x2;
+    this._yi = y2;
+    return this;
+  },
+
+  /**
+   * @param  {number} cx
+   * @param  {number} cy
+   * @param  {number} r
+   * @param  {number} startAngle
+   * @param  {number} endAngle
+   * @param  {boolean} anticlockwise
+   * @return {module:zrender/core/PathProxy}
+   */
+  arc: function (cx, cy, r, startAngle, endAngle, anticlockwise) {
+    this.addData(CMD.A, cx, cy, r, r, startAngle, endAngle - startAngle, 0, anticlockwise ? 0 : 1);
+    this._ctx && this._ctx.arc(cx, cy, r, startAngle, endAngle, anticlockwise);
+    this._xi = mathCos(endAngle) * r + cx;
+    this._yi = mathSin(endAngle) * r + cx;
+    return this;
+  },
+  // TODO
+  arcTo: function (x1, y1, x2, y2, radius) {
+    if (this._ctx) {
+      this._ctx.arcTo(x1, y1, x2, y2, radius);
+    }
+
+    return this;
+  },
+  // TODO
+  rect: function (x, y, w, h) {
+    this._ctx && this._ctx.rect(x, y, w, h);
+    this.addData(CMD.R, x, y, w, h);
+    return this;
+  },
+
+  /**
+   * @return {module:zrender/core/PathProxy}
+   */
+  closePath: function () {
+    this.addData(CMD.Z);
+    var ctx = this._ctx;
+    var x0 = this._x0;
+    var y0 = this._y0;
+
+    if (ctx) {
+      this._needsDash() && this._dashedLineTo(x0, y0);
+      ctx.closePath();
+    }
+
+    this._xi = x0;
+    this._yi = y0;
+    return this;
+  },
+
+  /**
+   * Context 从外部传入，因为有可能是 rebuildPath 完之后再 fill。
+   * stroke 同样
+   * @param {CanvasRenderingContext2D} ctx
+   * @return {module:zrender/core/PathProxy}
+   */
+  fill: function (ctx) {
+    ctx && ctx.fill();
+    this.toStatic();
+  },
+
+  /**
+   * @param {CanvasRenderingContext2D} ctx
+   * @return {module:zrender/core/PathProxy}
+   */
+  stroke: function (ctx) {
+    ctx && ctx.stroke();
+    this.toStatic();
+  },
+
+  /**
+   * 必须在其它绘制命令前调用
+   * Must be invoked before all other path drawing methods
+   * @return {module:zrender/core/PathProxy}
+   */
+  setLineDash: function (lineDash) {
+    if (lineDash instanceof Array) {
+      this._lineDash = lineDash;
+      this._dashIdx = 0;
+      var lineDashSum = 0;
+
+      for (var i = 0; i < lineDash.length; i++) {
+        lineDashSum += lineDash[i];
+      }
+
+      this._dashSum = lineDashSum;
+    }
+
+    return this;
+  },
+
+  /**
+   * 必须在其它绘制命令前调用
+   * Must be invoked before all other path drawing methods
+   * @return {module:zrender/core/PathProxy}
+   */
+  setLineDashOffset: function (offset) {
+    this._dashOffset = offset;
+    return this;
+  },
+
+  /**
+   *
+   * @return {boolean}
+   */
+  len: function () {
+    return this._len;
+  },
+
+  /**
+   * 直接设置 Path 数据
+   */
+  setData: function (data) {
+    var len = data.length;
+
+    if (!(this.data && this.data.length == len) && hasTypedArray) {
+      this.data = new Float32Array(len);
+    }
+
+    for (var i = 0; i < len; i++) {
+      this.data[i] = data[i];
+    }
+
+    this._len = len;
+  },
+
+  /**
+   * 添加子路径
+   * @param {module:zrender/core/PathProxy|Array.<module:zrender/core/PathProxy>} path
+   */
+  appendPath: function (path) {
+    if (!(path instanceof Array)) {
+      path = [path];
+    }
+
+    var len = path.length;
+    var appendSize = 0;
+    var offset = this._len;
+
+    for (var i = 0; i < len; i++) {
+      appendSize += path[i].len();
+    }
+
+    if (hasTypedArray && this.data instanceof Float32Array) {
+      this.data = new Float32Array(offset + appendSize);
+    }
+
+    for (var i = 0; i < len; i++) {
+      var appendPathData = path[i].data;
+
+      for (var k = 0; k < appendPathData.length; k++) {
+        this.data[offset++] = appendPathData[k];
+      }
+    }
+
+    this._len = offset;
+  },
+
+  /**
+   * 填充 Path 数据。
+   * 尽量复用而不申明新的数组。大部分图形重绘的指令数据长度都是不变的。
+   */
+  addData: function (cmd) {
+    if (!this._saveData) {
+      return;
+    }
+
+    var data = this.data;
+
+    if (this._len + arguments.length > data.length) {
+      // 因为之前的数组已经转换成静态的 Float32Array
+      // 所以不够用时需要扩展一个新的动态数组
+      this._expandData();
+
+      data = this.data;
+    }
+
+    for (var i = 0; i < arguments.length; i++) {
+      data[this._len++] = arguments[i];
+    }
+
+    this._prevCmd = cmd;
+  },
+  _expandData: function () {
+    // Only if data is Float32Array
+    if (!(this.data instanceof Array)) {
+      var newData = [];
+
+      for (var i = 0; i < this._len; i++) {
+        newData[i] = this.data[i];
+      }
+
+      this.data = newData;
+    }
+  },
+
+  /**
+   * If needs js implemented dashed line
+   * @return {boolean}
+   * @private
+   */
+  _needsDash: function () {
+    return this._lineDash;
+  },
+  _dashedLineTo: function (x1, y1) {
+    var dashSum = this._dashSum;
+    var offset = this._dashOffset;
+    var lineDash = this._lineDash;
+    var ctx = this._ctx;
+    var x0 = this._xi;
+    var y0 = this._yi;
+    var dx = x1 - x0;
+    var dy = y1 - y0;
+    var dist = mathSqrt(dx * dx + dy * dy);
+    var x = x0;
+    var y = y0;
+    var dash;
+    var nDash = lineDash.length;
+    var idx;
+    dx /= dist;
+    dy /= dist;
+
+    if (offset < 0) {
+      // Convert to positive offset
+      offset = dashSum + offset;
+    }
+
+    offset %= dashSum;
+    x -= offset * dx;
+    y -= offset * dy;
+
+    while (dx > 0 && x <= x1 || dx < 0 && x >= x1 || dx == 0 && (dy > 0 && y <= y1 || dy < 0 && y >= y1)) {
+      idx = this._dashIdx;
+      dash = lineDash[idx];
+      x += dx * dash;
+      y += dy * dash;
+      this._dashIdx = (idx + 1) % nDash; // Skip positive offset
+
+      if (dx > 0 && x < x0 || dx < 0 && x > x0 || dy > 0 && y < y0 || dy < 0 && y > y0) {
+        continue;
+      }
+
+      ctx[idx % 2 ? 'moveTo' : 'lineTo'](dx >= 0 ? mathMin(x, x1) : mathMax(x, x1), dy >= 0 ? mathMin(y, y1) : mathMax(y, y1));
+    } // Offset for next lineTo
+
+
+    dx = x - x1;
+    dy = y - y1;
+    this._dashOffset = -mathSqrt(dx * dx + dy * dy);
+  },
+  // Not accurate dashed line to
+  _dashedBezierTo: function (x1, y1, x2, y2, x3, y3) {
+    var dashSum = this._dashSum;
+    var offset = this._dashOffset;
+    var lineDash = this._lineDash;
+    var ctx = this._ctx;
+    var x0 = this._xi;
+    var y0 = this._yi;
+    var t;
+    var dx;
+    var dy;
+    var cubicAt = curve.cubicAt;
+    var bezierLen = 0;
+    var idx = this._dashIdx;
+    var nDash = lineDash.length;
+    var x;
+    var y;
+    var tmpLen = 0;
+
+    if (offset < 0) {
+      // Convert to positive offset
+      offset = dashSum + offset;
+    }
+
+    offset %= dashSum; // Bezier approx length
+
+    for (t = 0; t < 1; t += 0.1) {
+      dx = cubicAt(x0, x1, x2, x3, t + 0.1) - cubicAt(x0, x1, x2, x3, t);
+      dy = cubicAt(y0, y1, y2, y3, t + 0.1) - cubicAt(y0, y1, y2, y3, t);
+      bezierLen += mathSqrt(dx * dx + dy * dy);
+    } // Find idx after add offset
+
+
+    for (; idx < nDash; idx++) {
+      tmpLen += lineDash[idx];
+
+      if (tmpLen > offset) {
+        break;
+      }
+    }
+
+    t = (tmpLen - offset) / bezierLen;
+
+    while (t <= 1) {
+      x = cubicAt(x0, x1, x2, x3, t);
+      y = cubicAt(y0, y1, y2, y3, t); // Use line to approximate dashed bezier
+      // Bad result if dash is long
+
+      idx % 2 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      t += lineDash[idx] / bezierLen;
+      idx = (idx + 1) % nDash;
+    } // Finish the last segment and calculate the new offset
+
+
+    idx % 2 !== 0 && ctx.lineTo(x3, y3);
+    dx = x3 - x;
+    dy = y3 - y;
+    this._dashOffset = -mathSqrt(dx * dx + dy * dy);
+  },
+  _dashedQuadraticTo: function (x1, y1, x2, y2) {
+    // Convert quadratic to cubic using degree elevation
+    var x3 = x2;
+    var y3 = y2;
+    x2 = (x2 + 2 * x1) / 3;
+    y2 = (y2 + 2 * y1) / 3;
+    x1 = (this._xi + 2 * x1) / 3;
+    y1 = (this._yi + 2 * y1) / 3;
+
+    this._dashedBezierTo(x1, y1, x2, y2, x3, y3);
+  },
+
+  /**
+   * 转成静态的 Float32Array 减少堆内存占用
+   * Convert dynamic array to static Float32Array
+   */
+  toStatic: function () {
+    var data = this.data;
+
+    if (data instanceof Array) {
+      data.length = this._len;
+
+      if (hasTypedArray) {
+        this.data = new Float32Array(data);
+      }
+    }
+  },
+
+  /**
+   * @return {module:zrender/core/BoundingRect}
+   */
+  getBoundingRect: function () {
+    min[0] = min[1] = min2[0] = min2[1] = Number.MAX_VALUE;
+    max[0] = max[1] = max2[0] = max2[1] = -Number.MAX_VALUE;
+    var data = this.data;
+    var xi = 0;
+    var yi = 0;
+    var x0 = 0;
+    var y0 = 0;
+
+    for (var i = 0; i < data.length;) {
+      var cmd = data[i++];
+
+      if (i == 1) {
+        // 如果第一个命令是 L, C, Q
+        // 则 previous point 同绘制命令的第一个 point
+        //
+        // 第一个命令为 Arc 的情况下会在后面特殊处理
+        xi = data[i];
+        yi = data[i + 1];
+        x0 = xi;
+        y0 = yi;
+      }
+
+      switch (cmd) {
+        case CMD.M:
+          // moveTo 命令重新创建一个新的 subpath, 并且更新新的起点
+          // 在 closePath 的时候使用
+          x0 = data[i++];
+          y0 = data[i++];
+          xi = x0;
+          yi = y0;
+          min2[0] = x0;
+          min2[1] = y0;
+          max2[0] = x0;
+          max2[1] = y0;
+          break;
+
+        case CMD.L:
+          bbox.fromLine(xi, yi, data[i], data[i + 1], min2, max2);
+          xi = data[i++];
+          yi = data[i++];
+          break;
+
+        case CMD.C:
+          bbox.fromCubic(xi, yi, data[i++], data[i++], data[i++], data[i++], data[i], data[i + 1], min2, max2);
+          xi = data[i++];
+          yi = data[i++];
+          break;
+
+        case CMD.Q:
+          bbox.fromQuadratic(xi, yi, data[i++], data[i++], data[i], data[i + 1], min2, max2);
+          xi = data[i++];
+          yi = data[i++];
+          break;
+
+        case CMD.A:
+          // TODO Arc 判断的开销比较大
+          var cx = data[i++];
+          var cy = data[i++];
+          var rx = data[i++];
+          var ry = data[i++];
+          var startAngle = data[i++];
+          var endAngle = data[i++] + startAngle; // TODO Arc 旋转
+
+          var psi = data[i++];
+          var anticlockwise = 1 - data[i++];
+
+          if (i == 1) {
+            // 直接使用 arc 命令
+            // 第一个命令起点还未定义
+            x0 = mathCos(startAngle) * rx + cx;
+            y0 = mathSin(startAngle) * ry + cy;
+          }
+
+          bbox.fromArc(cx, cy, rx, ry, startAngle, endAngle, anticlockwise, min2, max2);
+          xi = mathCos(endAngle) * rx + cx;
+          yi = mathSin(endAngle) * ry + cy;
+          break;
+
+        case CMD.R:
+          x0 = xi = data[i++];
+          y0 = yi = data[i++];
+          var width = data[i++];
+          var height = data[i++]; // Use fromLine
+
+          bbox.fromLine(x0, y0, x0 + width, y0 + height, min2, max2);
+          break;
+
+        case CMD.Z:
+          xi = x0;
+          yi = y0;
+          break;
+      } // Union
+
+
+      vec2.min(min, min, min2);
+      vec2.max(max, max, max2);
+    } // No data
+
+
+    if (i === 0) {
+      min[0] = min[1] = max[0] = max[1] = 0;
+    }
+
+    return new BoundingRect(min[0], min[1], max[0] - min[0], max[1] - min[1]);
+  },
+
+  /**
+   * Rebuild path from current data
+   * Rebuild path will not consider javascript implemented line dash.
+   * @param {CanvasRenderingContext2D} ctx
+   */
+  rebuildPath: function (ctx) {
+    var d = this.data;
+    var x0, y0;
+    var xi, yi;
+    var x, y;
+    var ux = this._ux;
+    var uy = this._uy;
+    var len = this._len;
+
+    for (var i = 0; i < len;) {
+      var cmd = d[i++];
+
+      if (i == 1) {
+        // 如果第一个命令是 L, C, Q
+        // 则 previous point 同绘制命令的第一个 point
+        //
+        // 第一个命令为 Arc 的情况下会在后面特殊处理
+        xi = d[i];
+        yi = d[i + 1];
+        x0 = xi;
+        y0 = yi;
+      }
+
+      switch (cmd) {
+        case CMD.M:
+          x0 = xi = d[i++];
+          y0 = yi = d[i++];
+          ctx.moveTo(xi, yi);
+          break;
+
+        case CMD.L:
+          x = d[i++];
+          y = d[i++]; // Not draw too small seg between
+
+          if (mathAbs(x - xi) > ux || mathAbs(y - yi) > uy || i === len - 1) {
+            ctx.lineTo(x, y);
+            xi = x;
+            yi = y;
+          }
+
+          break;
+
+        case CMD.C:
+          ctx.bezierCurveTo(d[i++], d[i++], d[i++], d[i++], d[i++], d[i++]);
+          xi = d[i - 2];
+          yi = d[i - 1];
+          break;
+
+        case CMD.Q:
+          ctx.quadraticCurveTo(d[i++], d[i++], d[i++], d[i++]);
+          xi = d[i - 2];
+          yi = d[i - 1];
+          break;
+
+        case CMD.A:
+          var cx = d[i++];
+          var cy = d[i++];
+          var rx = d[i++];
+          var ry = d[i++];
+          var theta = d[i++];
+          var dTheta = d[i++];
+          var psi = d[i++];
+          var fs = d[i++];
+          var r = rx > ry ? rx : ry;
+          var scaleX = rx > ry ? 1 : rx / ry;
+          var scaleY = rx > ry ? ry / rx : 1;
+          var isEllipse = Math.abs(rx - ry) > 1e-3;
+          var endAngle = theta + dTheta;
+
+          if (isEllipse) {
+            ctx.translate(cx, cy);
+            ctx.rotate(psi);
+            ctx.scale(scaleX, scaleY);
+            ctx.arc(0, 0, r, theta, endAngle, 1 - fs);
+            ctx.scale(1 / scaleX, 1 / scaleY);
+            ctx.rotate(-psi);
+            ctx.translate(-cx, -cy);
+          } else {
+            ctx.arc(cx, cy, r, theta, endAngle, 1 - fs);
+          }
+
+          if (i == 1) {
+            // 直接使用 arc 命令
+            // 第一个命令起点还未定义
+            x0 = mathCos(theta) * rx + cx;
+            y0 = mathSin(theta) * ry + cy;
+          }
+
+          xi = mathCos(endAngle) * rx + cx;
+          yi = mathSin(endAngle) * ry + cy;
+          break;
+
+        case CMD.R:
+          x0 = xi = d[i];
+          y0 = yi = d[i + 1];
+          ctx.rect(d[i++], d[i++], d[i++], d[i++]);
+          break;
+
+        case CMD.Z:
+          ctx.closePath();
+          xi = x0;
+          yi = y0;
+      }
+    }
+  }
+};
+PathProxy.CMD = CMD;
+var _default = PathProxy;
+module.exports = _default;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var _clazz = __webpack_require__(16);
+
+var parseClassType = _clazz.parseClassType;
+var base = 0;
+/**
+ * @public
+ * @param {string} type
+ * @return {string}
+ */
+
+function getUID(type) {
+  // Considering the case of crossing js context,
+  // use Math.random to make id as unique as possible.
+  return [type || '', base++, Math.random().toFixed(5)].join('_');
+}
+/**
+ * @inner
+ */
+
+
+function enableSubTypeDefaulter(entity) {
+  var subTypeDefaulters = {};
+
+  entity.registerSubTypeDefaulter = function (componentType, defaulter) {
+    componentType = parseClassType(componentType);
+    subTypeDefaulters[componentType.main] = defaulter;
+  };
+
+  entity.determineSubType = function (componentType, option) {
+    var type = option.type;
+
+    if (!type) {
+      var componentTypeMain = parseClassType(componentType).main;
+
+      if (entity.hasSubTypes(componentType) && subTypeDefaulters[componentTypeMain]) {
+        type = subTypeDefaulters[componentTypeMain](option);
+      }
+    }
+
+    return type;
+  };
+
+  return entity;
+}
+/**
+ * Topological travel on Activity Network (Activity On Vertices).
+ * Dependencies is defined in Model.prototype.dependencies, like ['xAxis', 'yAxis'].
+ *
+ * If 'xAxis' or 'yAxis' is absent in componentTypeList, just ignore it in topology.
+ *
+ * If there is circle dependencey, Error will be thrown.
+ *
+ */
+
+
+function enableTopologicalTravel(entity, dependencyGetter) {
+  /**
+   * @public
+   * @param {Array.<string>} targetNameList Target Component type list.
+   *                                           Can be ['aa', 'bb', 'aa.xx']
+   * @param {Array.<string>} fullNameList By which we can build dependency graph.
+   * @param {Function} callback Params: componentType, dependencies.
+   * @param {Object} context Scope of callback.
+   */
+  entity.topologicalTravel = function (targetNameList, fullNameList, callback, context) {
+    if (!targetNameList.length) {
+      return;
+    }
+
+    var result = makeDepndencyGraph(fullNameList);
+    var graph = result.graph;
+    var stack = result.noEntryList;
+    var targetNameSet = {};
+    zrUtil.each(targetNameList, function (name) {
+      targetNameSet[name] = true;
+    });
+
+    while (stack.length) {
+      var currComponentType = stack.pop();
+      var currVertex = graph[currComponentType];
+      var isInTargetNameSet = !!targetNameSet[currComponentType];
+
+      if (isInTargetNameSet) {
+        callback.call(context, currComponentType, currVertex.originalDeps.slice());
+        delete targetNameSet[currComponentType];
+      }
+
+      zrUtil.each(currVertex.successor, isInTargetNameSet ? removeEdgeAndAdd : removeEdge);
+    }
+
+    zrUtil.each(targetNameSet, function () {
+      throw new Error('Circle dependency may exists');
+    });
+
+    function removeEdge(succComponentType) {
+      graph[succComponentType].entryCount--;
+
+      if (graph[succComponentType].entryCount === 0) {
+        stack.push(succComponentType);
+      }
+    } // Consider this case: legend depends on series, and we call
+    // chart.setOption({series: [...]}), where only series is in option.
+    // If we do not have 'removeEdgeAndAdd', legendModel.mergeOption will
+    // not be called, but only sereis.mergeOption is called. Thus legend
+    // have no chance to update its local record about series (like which
+    // name of series is available in legend).
+
+
+    function removeEdgeAndAdd(succComponentType) {
+      targetNameSet[succComponentType] = true;
+      removeEdge(succComponentType);
+    }
+  };
+  /**
+   * DepndencyGraph: {Object}
+   * key: conponentType,
+   * value: {
+   *     successor: [conponentTypes...],
+   *     originalDeps: [conponentTypes...],
+   *     entryCount: {number}
+   * }
+   */
+
+
+  function makeDepndencyGraph(fullNameList) {
+    var graph = {};
+    var noEntryList = [];
+    zrUtil.each(fullNameList, function (name) {
+      var thisItem = createDependencyGraphItem(graph, name);
+      var originalDeps = thisItem.originalDeps = dependencyGetter(name);
+      var availableDeps = getAvailableDependencies(originalDeps, fullNameList);
+      thisItem.entryCount = availableDeps.length;
+
+      if (thisItem.entryCount === 0) {
+        noEntryList.push(name);
+      }
+
+      zrUtil.each(availableDeps, function (dependentName) {
+        if (zrUtil.indexOf(thisItem.predecessor, dependentName) < 0) {
+          thisItem.predecessor.push(dependentName);
+        }
+
+        var thatItem = createDependencyGraphItem(graph, dependentName);
+
+        if (zrUtil.indexOf(thatItem.successor, dependentName) < 0) {
+          thatItem.successor.push(name);
+        }
+      });
+    });
+    return {
+      graph: graph,
+      noEntryList: noEntryList
+    };
+  }
+
+  function createDependencyGraphItem(graph, name) {
+    if (!graph[name]) {
+      graph[name] = {
+        predecessor: [],
+        successor: []
+      };
+    }
+
+    return graph[name];
+  }
+
+  function getAvailableDependencies(originalDeps, fullNameList) {
+    var availableDeps = [];
+    zrUtil.each(originalDeps, function (dep) {
+      zrUtil.indexOf(fullNameList, dep) >= 0 && availableDeps.push(dep);
+    });
+    return availableDeps;
+  }
+}
+
+exports.getUID = getUID;
+exports.enableSubTypeDefaulter = enableSubTypeDefaulter;
+exports.enableTopologicalTravel = enableTopologicalTravel;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+// Avoid typo.
+var SOURCE_FORMAT_ORIGINAL = 'original';
+var SOURCE_FORMAT_ARRAY_ROWS = 'arrayRows';
+var SOURCE_FORMAT_OBJECT_ROWS = 'objectRows';
+var SOURCE_FORMAT_KEYED_COLUMNS = 'keyedColumns';
+var SOURCE_FORMAT_UNKNOWN = 'unknown'; // ??? CHANGE A NAME
+
+var SOURCE_FORMAT_TYPED_ARRAY = 'typedArray';
+var SERIES_LAYOUT_BY_COLUMN = 'column';
+var SERIES_LAYOUT_BY_ROW = 'row';
+exports.SOURCE_FORMAT_ORIGINAL = SOURCE_FORMAT_ORIGINAL;
+exports.SOURCE_FORMAT_ARRAY_ROWS = SOURCE_FORMAT_ARRAY_ROWS;
+exports.SOURCE_FORMAT_OBJECT_ROWS = SOURCE_FORMAT_OBJECT_ROWS;
+exports.SOURCE_FORMAT_KEYED_COLUMNS = SOURCE_FORMAT_KEYED_COLUMNS;
+exports.SOURCE_FORMAT_UNKNOWN = SOURCE_FORMAT_UNKNOWN;
+exports.SOURCE_FORMAT_TYPED_ARRAY = SOURCE_FORMAT_TYPED_ARRAY;
+exports.SERIES_LAYOUT_BY_COLUMN = SERIES_LAYOUT_BY_COLUMN;
+exports.SERIES_LAYOUT_BY_ROW = SERIES_LAYOUT_BY_ROW;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var clazzUtil = __webpack_require__(16);
+
+/**
+ * // Scale class management
+ * @module echarts/scale/Scale
+ */
+
+/**
+ * @param {Object} [setting]
+ */
+function Scale(setting) {
+  this._setting = setting || {};
+  /**
+   * Extent
+   * @type {Array.<number>}
+   * @protected
+   */
+
+  this._extent = [Infinity, -Infinity];
+  /**
+   * Step is calculated in adjustExtent
+   * @type {Array.<number>}
+   * @protected
+   */
+
+  this._interval = 0;
+  this.init && this.init.apply(this, arguments);
+}
+/**
+ * Parse input val to valid inner number.
+ * @param {*} val
+ * @return {number}
+ */
+
+
+Scale.prototype.parse = function (val) {
+  // Notice: This would be a trap here, If the implementation
+  // of this method depends on extent, and this method is used
+  // before extent set (like in dataZoom), it would be wrong.
+  // Nevertheless, parse does not depend on extent generally.
+  return val;
+};
+
+Scale.prototype.getSetting = function (name) {
+  return this._setting[name];
+};
+
+Scale.prototype.contain = function (val) {
+  var extent = this._extent;
+  return val >= extent[0] && val <= extent[1];
+};
+/**
+ * Normalize value to linear [0, 1], return 0.5 if extent span is 0
+ * @param {number} val
+ * @return {number}
+ */
+
+
+Scale.prototype.normalize = function (val) {
+  var extent = this._extent;
+
+  if (extent[1] === extent[0]) {
+    return 0.5;
+  }
+
+  return (val - extent[0]) / (extent[1] - extent[0]);
+};
+/**
+ * Scale normalized value
+ * @param {number} val
+ * @return {number}
+ */
+
+
+Scale.prototype.scale = function (val) {
+  var extent = this._extent;
+  return val * (extent[1] - extent[0]) + extent[0];
+};
+/**
+ * Set extent from data
+ * @param {Array.<number>} other
+ */
+
+
+Scale.prototype.unionExtent = function (other) {
+  var extent = this._extent;
+  other[0] < extent[0] && (extent[0] = other[0]);
+  other[1] > extent[1] && (extent[1] = other[1]); // not setExtent because in log axis it may transformed to power
+  // this.setExtent(extent[0], extent[1]);
+};
+/**
+ * Set extent from data
+ * @param {module:echarts/data/List} data
+ * @param {string} dim
+ */
+
+
+Scale.prototype.unionExtentFromData = function (data, dim) {
+  this.unionExtent(data.getApproximateExtent(dim));
+};
+/**
+ * Get extent
+ * @return {Array.<number>}
+ */
+
+
+Scale.prototype.getExtent = function () {
+  return this._extent.slice();
+};
+/**
+ * Set extent
+ * @param {number} start
+ * @param {number} end
+ */
+
+
+Scale.prototype.setExtent = function (start, end) {
+  var thisExtent = this._extent;
+
+  if (!isNaN(start)) {
+    thisExtent[0] = start;
+  }
+
+  if (!isNaN(end)) {
+    thisExtent[1] = end;
+  }
+};
+/**
+ * @return {Array.<string>}
+ */
+
+
+Scale.prototype.getTicksLabels = function () {
+  var labels = [];
+  var ticks = this.getTicks();
+
+  for (var i = 0; i < ticks.length; i++) {
+    labels.push(this.getLabel(ticks[i]));
+  }
+
+  return labels;
+};
+/**
+ * When axis extent depends on data and no data exists,
+ * axis ticks should not be drawn, which is named 'blank'.
+ */
+
+
+Scale.prototype.isBlank = function () {
+  return this._isBlank;
+},
+/**
+ * When axis extent depends on data and no data exists,
+ * axis ticks should not be drawn, which is named 'blank'.
+ */
+Scale.prototype.setBlank = function (isBlank) {
+  this._isBlank = isBlank;
+};
+clazzUtil.enableClassExtend(Scale);
+clazzUtil.enableClassManagement(Scale, {
+  registerWhenExtend: true
+});
+var _default = Scale;
+module.exports = _default;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var graphic = __webpack_require__(3);
+
+var BoundingRect = __webpack_require__(11);
+
+// Symbol factory
+
+/**
+ * Triangle shape
+ * @inner
+ */
+var Triangle = graphic.extendShape({
+  type: 'triangle',
+  shape: {
+    cx: 0,
+    cy: 0,
+    width: 0,
+    height: 0
+  },
+  buildPath: function (path, shape) {
+    var cx = shape.cx;
+    var cy = shape.cy;
+    var width = shape.width / 2;
+    var height = shape.height / 2;
+    path.moveTo(cx, cy - height);
+    path.lineTo(cx + width, cy + height);
+    path.lineTo(cx - width, cy + height);
+    path.closePath();
+  }
+});
+/**
+ * Diamond shape
+ * @inner
+ */
+
+var Diamond = graphic.extendShape({
+  type: 'diamond',
+  shape: {
+    cx: 0,
+    cy: 0,
+    width: 0,
+    height: 0
+  },
+  buildPath: function (path, shape) {
+    var cx = shape.cx;
+    var cy = shape.cy;
+    var width = shape.width / 2;
+    var height = shape.height / 2;
+    path.moveTo(cx, cy - height);
+    path.lineTo(cx + width, cy);
+    path.lineTo(cx, cy + height);
+    path.lineTo(cx - width, cy);
+    path.closePath();
+  }
+});
+/**
+ * Pin shape
+ * @inner
+ */
+
+var Pin = graphic.extendShape({
+  type: 'pin',
+  shape: {
+    // x, y on the cusp
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  buildPath: function (path, shape) {
+    var x = shape.x;
+    var y = shape.y;
+    var w = shape.width / 5 * 3; // Height must be larger than width
+
+    var h = Math.max(w, shape.height);
+    var r = w / 2; // Dist on y with tangent point and circle center
+
+    var dy = r * r / (h - r);
+    var cy = y - h + r + dy;
+    var angle = Math.asin(dy / r); // Dist on x with tangent point and circle center
+
+    var dx = Math.cos(angle) * r;
+    var tanX = Math.sin(angle);
+    var tanY = Math.cos(angle);
+    var cpLen = r * 0.6;
+    var cpLen2 = r * 0.7;
+    path.moveTo(x - dx, cy + dy);
+    path.arc(x, cy, r, Math.PI - angle, Math.PI * 2 + angle);
+    path.bezierCurveTo(x + dx - tanX * cpLen, cy + dy + tanY * cpLen, x, y - cpLen2, x, y);
+    path.bezierCurveTo(x, y - cpLen2, x - dx + tanX * cpLen, cy + dy + tanY * cpLen, x - dx, cy + dy);
+    path.closePath();
+  }
+});
+/**
+ * Arrow shape
+ * @inner
+ */
+
+var Arrow = graphic.extendShape({
+  type: 'arrow',
+  shape: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  buildPath: function (ctx, shape) {
+    var height = shape.height;
+    var width = shape.width;
+    var x = shape.x;
+    var y = shape.y;
+    var dx = width / 3 * 2;
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + dx, y + height);
+    ctx.lineTo(x, y + height / 4 * 3);
+    ctx.lineTo(x - dx, y + height);
+    ctx.lineTo(x, y);
+    ctx.closePath();
+  }
+});
+/**
+ * Map of path contructors
+ * @type {Object.<string, module:zrender/graphic/Path>}
+ */
+
+var symbolCtors = {
+  line: graphic.Line,
+  rect: graphic.Rect,
+  roundRect: graphic.Rect,
+  square: graphic.Rect,
+  circle: graphic.Circle,
+  diamond: Diamond,
+  pin: Pin,
+  arrow: Arrow,
+  triangle: Triangle
+};
+var symbolShapeMakers = {
+  line: function (x, y, w, h, shape) {
+    // FIXME
+    shape.x1 = x;
+    shape.y1 = y + h / 2;
+    shape.x2 = x + w;
+    shape.y2 = y + h / 2;
+  },
+  rect: function (x, y, w, h, shape) {
+    shape.x = x;
+    shape.y = y;
+    shape.width = w;
+    shape.height = h;
+  },
+  roundRect: function (x, y, w, h, shape) {
+    shape.x = x;
+    shape.y = y;
+    shape.width = w;
+    shape.height = h;
+    shape.r = Math.min(w, h) / 4;
+  },
+  square: function (x, y, w, h, shape) {
+    var size = Math.min(w, h);
+    shape.x = x;
+    shape.y = y;
+    shape.width = size;
+    shape.height = size;
+  },
+  circle: function (x, y, w, h, shape) {
+    // Put circle in the center of square
+    shape.cx = x + w / 2;
+    shape.cy = y + h / 2;
+    shape.r = Math.min(w, h) / 2;
+  },
+  diamond: function (x, y, w, h, shape) {
+    shape.cx = x + w / 2;
+    shape.cy = y + h / 2;
+    shape.width = w;
+    shape.height = h;
+  },
+  pin: function (x, y, w, h, shape) {
+    shape.x = x + w / 2;
+    shape.y = y + h / 2;
+    shape.width = w;
+    shape.height = h;
+  },
+  arrow: function (x, y, w, h, shape) {
+    shape.x = x + w / 2;
+    shape.y = y + h / 2;
+    shape.width = w;
+    shape.height = h;
+  },
+  triangle: function (x, y, w, h, shape) {
+    shape.cx = x + w / 2;
+    shape.cy = y + h / 2;
+    shape.width = w;
+    shape.height = h;
+  }
+};
+var symbolBuildProxies = {};
+zrUtil.each(symbolCtors, function (Ctor, name) {
+  symbolBuildProxies[name] = new Ctor();
+});
+var SymbolClz = graphic.extendShape({
+  type: 'symbol',
+  shape: {
+    symbolType: '',
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  beforeBrush: function () {
+    var style = this.style;
+    var shape = this.shape; // FIXME
+
+    if (shape.symbolType === 'pin' && style.textPosition === 'inside') {
+      style.textPosition = ['50%', '40%'];
+      style.textAlign = 'center';
+      style.textVerticalAlign = 'middle';
+    }
+  },
+  buildPath: function (ctx, shape, inBundle) {
+    var symbolType = shape.symbolType;
+    var proxySymbol = symbolBuildProxies[symbolType];
+
+    if (shape.symbolType !== 'none') {
+      if (!proxySymbol) {
+        // Default rect
+        symbolType = 'rect';
+        proxySymbol = symbolBuildProxies[symbolType];
+      }
+
+      symbolShapeMakers[symbolType](shape.x, shape.y, shape.width, shape.height, proxySymbol.shape);
+      proxySymbol.buildPath(ctx, proxySymbol.shape, inBundle);
+    }
+  }
+}); // Provide setColor helper method to avoid determine if set the fill or stroke outside
+
+function symbolPathSetColor(color, innerColor) {
+  if (this.type !== 'image') {
+    var symbolStyle = this.style;
+    var symbolShape = this.shape;
+
+    if (symbolShape && symbolShape.symbolType === 'line') {
+      symbolStyle.stroke = color;
+    } else if (this.__isEmptyBrush) {
+      symbolStyle.stroke = color;
+      symbolStyle.fill = innerColor || '#fff';
+    } else {
+      // FIXME 判断图形默认是填充还是描边，使用 onlyStroke ?
+      symbolStyle.fill && (symbolStyle.fill = color);
+      symbolStyle.stroke && (symbolStyle.stroke = color);
+    }
+
+    this.dirty(false);
+  }
+}
+/**
+ * Create a symbol element with given symbol configuration: shape, x, y, width, height, color
+ * @param {string} symbolType
+ * @param {number} x
+ * @param {number} y
+ * @param {number} w
+ * @param {number} h
+ * @param {string} color
+ * @param {boolean} [keepAspect=false] whether to keep the ratio of w/h,
+ *                            for path and image only.
+ */
+
+
+function createSymbol(symbolType, x, y, w, h, color, keepAspect) {
+  // TODO Support image object, DynamicImage.
+  var isEmpty = symbolType.indexOf('empty') === 0;
+
+  if (isEmpty) {
+    symbolType = symbolType.substr(5, 1).toLowerCase() + symbolType.substr(6);
+  }
+
+  var symbolPath;
+
+  if (symbolType.indexOf('image://') === 0) {
+    symbolPath = graphic.makeImage(symbolType.slice(8), new BoundingRect(x, y, w, h), keepAspect ? 'center' : 'cover');
+  } else if (symbolType.indexOf('path://') === 0) {
+    symbolPath = graphic.makePath(symbolType.slice(7), {}, new BoundingRect(x, y, w, h), keepAspect ? 'center' : 'cover');
+  } else {
+    symbolPath = new SymbolClz({
+      shape: {
+        symbolType: symbolType,
+        x: x,
+        y: y,
+        width: w,
+        height: h
+      }
+    });
+  }
+
+  symbolPath.__isEmptyBrush = isEmpty;
+  symbolPath.setColor = symbolPathSetColor;
+  symbolPath.setColor(color);
+  return symbolPath;
+}
+
+exports.createSymbol = createSymbol;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var Model = __webpack_require__(13);
+
+var each = zrUtil.each;
+var curry = zrUtil.curry; // Build axisPointerModel, mergin tooltip.axisPointer model for each axis.
+// allAxesInfo should be updated when setOption performed.
+
+function collect(ecModel, api) {
+  var result = {
+    /**
+     * key: makeKey(axis.model)
+     * value: {
+     *      axis,
+     *      coordSys,
+     *      axisPointerModel,
+     *      triggerTooltip,
+     *      involveSeries,
+     *      snap,
+     *      seriesModels,
+     *      seriesDataCount
+     * }
+     */
+    axesInfo: {},
+    seriesInvolved: false,
+
+    /**
+     * key: makeKey(coordSys.model)
+     * value: Object: key makeKey(axis.model), value: axisInfo
+     */
+    coordSysAxesInfo: {},
+    coordSysMap: {}
+  };
+  collectAxesInfo(result, ecModel, api); // Check seriesInvolved for performance, in case too many series in some chart.
+
+  result.seriesInvolved && collectSeriesInfo(result, ecModel);
+  return result;
+}
+
+function collectAxesInfo(result, ecModel, api) {
+  var globalTooltipModel = ecModel.getComponent('tooltip');
+  var globalAxisPointerModel = ecModel.getComponent('axisPointer'); // links can only be set on global.
+
+  var linksOption = globalAxisPointerModel.get('link', true) || [];
+  var linkGroups = []; // Collect axes info.
+
+  each(api.getCoordinateSystems(), function (coordSys) {
+    // Some coordinate system do not support axes, like geo.
+    if (!coordSys.axisPointerEnabled) {
+      return;
+    }
+
+    var coordSysKey = makeKey(coordSys.model);
+    var axesInfoInCoordSys = result.coordSysAxesInfo[coordSysKey] = {};
+    result.coordSysMap[coordSysKey] = coordSys; // Set tooltip (like 'cross') is a convienent way to show axisPointer
+    // for user. So we enable seting tooltip on coordSys model.
+
+    var coordSysModel = coordSys.model;
+    var baseTooltipModel = coordSysModel.getModel('tooltip', globalTooltipModel);
+    each(coordSys.getAxes(), curry(saveTooltipAxisInfo, false, null)); // If axis tooltip used, choose tooltip axis for each coordSys.
+    // Notice this case: coordSys is `grid` but not `cartesian2D` here.
+
+    if (coordSys.getTooltipAxes && globalTooltipModel // If tooltip.showContent is set as false, tooltip will not
+    // show but axisPointer will show as normal.
+    && baseTooltipModel.get('show')) {
+      // Compatible with previous logic. But series.tooltip.trigger: 'axis'
+      // or series.data[n].tooltip.trigger: 'axis' are not support any more.
+      var triggerAxis = baseTooltipModel.get('trigger') === 'axis';
+      var cross = baseTooltipModel.get('axisPointer.type') === 'cross';
+      var tooltipAxes = coordSys.getTooltipAxes(baseTooltipModel.get('axisPointer.axis'));
+
+      if (triggerAxis || cross) {
+        each(tooltipAxes.baseAxes, curry(saveTooltipAxisInfo, cross ? 'cross' : true, triggerAxis));
+      }
+
+      if (cross) {
+        each(tooltipAxes.otherAxes, curry(saveTooltipAxisInfo, 'cross', false));
+      }
+    } // fromTooltip: true | false | 'cross'
+    // triggerTooltip: true | false | null
+
+
+    function saveTooltipAxisInfo(fromTooltip, triggerTooltip, axis) {
+      var axisPointerModel = axis.model.getModel('axisPointer', globalAxisPointerModel);
+      var axisPointerShow = axisPointerModel.get('show');
+
+      if (!axisPointerShow || axisPointerShow === 'auto' && !fromTooltip && !isHandleTrigger(axisPointerModel)) {
+        return;
+      }
+
+      if (triggerTooltip == null) {
+        triggerTooltip = axisPointerModel.get('triggerTooltip');
+      }
+
+      axisPointerModel = fromTooltip ? makeAxisPointerModel(axis, baseTooltipModel, globalAxisPointerModel, ecModel, fromTooltip, triggerTooltip) : axisPointerModel;
+      var snap = axisPointerModel.get('snap');
+      var key = makeKey(axis.model);
+      var involveSeries = triggerTooltip || snap || axis.type === 'category'; // If result.axesInfo[key] exist, override it (tooltip has higher priority).
+
+      var axisInfo = result.axesInfo[key] = {
+        key: key,
+        axis: axis,
+        coordSys: coordSys,
+        axisPointerModel: axisPointerModel,
+        triggerTooltip: triggerTooltip,
+        involveSeries: involveSeries,
+        snap: snap,
+        useHandle: isHandleTrigger(axisPointerModel),
+        seriesModels: []
+      };
+      axesInfoInCoordSys[key] = axisInfo;
+      result.seriesInvolved |= involveSeries;
+      var groupIndex = getLinkGroupIndex(linksOption, axis);
+
+      if (groupIndex != null) {
+        var linkGroup = linkGroups[groupIndex] || (linkGroups[groupIndex] = {
+          axesInfo: {}
+        });
+        linkGroup.axesInfo[key] = axisInfo;
+        linkGroup.mapper = linksOption[groupIndex].mapper;
+        axisInfo.linkGroup = linkGroup;
+      }
+    }
+  });
+}
+
+function makeAxisPointerModel(axis, baseTooltipModel, globalAxisPointerModel, ecModel, fromTooltip, triggerTooltip) {
+  var tooltipAxisPointerModel = baseTooltipModel.getModel('axisPointer');
+  var volatileOption = {};
+  each(['type', 'snap', 'lineStyle', 'shadowStyle', 'label', 'animation', 'animationDurationUpdate', 'animationEasingUpdate', 'z'], function (field) {
+    volatileOption[field] = zrUtil.clone(tooltipAxisPointerModel.get(field));
+  }); // category axis do not auto snap, otherwise some tick that do not
+  // has value can not be hovered. value/time/log axis default snap if
+  // triggered from tooltip and trigger tooltip.
+
+  volatileOption.snap = axis.type !== 'category' && !!triggerTooltip; // Compatibel with previous behavior, tooltip axis do not show label by default.
+  // Only these properties can be overrided from tooltip to axisPointer.
+
+  if (tooltipAxisPointerModel.get('type') === 'cross') {
+    volatileOption.type = 'line';
+  }
+
+  var labelOption = volatileOption.label || (volatileOption.label = {}); // Follow the convention, do not show label when triggered by tooltip by default.
+
+  labelOption.show == null && (labelOption.show = false);
+
+  if (fromTooltip === 'cross') {
+    // When 'cross', both axes show labels.
+    var tooltipAxisPointerLabelShow = tooltipAxisPointerModel.get('label.show');
+    labelOption.show = tooltipAxisPointerLabelShow != null ? tooltipAxisPointerLabelShow : true; // If triggerTooltip, this is a base axis, which should better not use cross style
+    // (cross style is dashed by default)
+
+    if (!triggerTooltip) {
+      var crossStyle = volatileOption.lineStyle = tooltipAxisPointerModel.get('crossStyle');
+      crossStyle && zrUtil.defaults(labelOption, crossStyle.textStyle);
+    }
+  }
+
+  return axis.model.getModel('axisPointer', new Model(volatileOption, globalAxisPointerModel, ecModel));
+}
+
+function collectSeriesInfo(result, ecModel) {
+  // Prepare data for axis trigger
+  ecModel.eachSeries(function (seriesModel) {
+    // Notice this case: this coordSys is `cartesian2D` but not `grid`.
+    var coordSys = seriesModel.coordinateSystem;
+    var seriesTooltipTrigger = seriesModel.get('tooltip.trigger', true);
+    var seriesTooltipShow = seriesModel.get('tooltip.show', true);
+
+    if (!coordSys || seriesTooltipTrigger === 'none' || seriesTooltipTrigger === false || seriesTooltipTrigger === 'item' || seriesTooltipShow === false || seriesModel.get('axisPointer.show', true) === false) {
+      return;
+    }
+
+    each(result.coordSysAxesInfo[makeKey(coordSys.model)], function (axisInfo) {
+      var axis = axisInfo.axis;
+
+      if (coordSys.getAxis(axis.dim) === axis) {
+        axisInfo.seriesModels.push(seriesModel);
+        axisInfo.seriesDataCount == null && (axisInfo.seriesDataCount = 0);
+        axisInfo.seriesDataCount += seriesModel.getData().count();
+      }
+    });
+  }, this);
+}
+/**
+ * For example:
+ * {
+ *     axisPointer: {
+ *         links: [{
+ *             xAxisIndex: [2, 4],
+ *             yAxisIndex: 'all'
+ *         }, {
+ *             xAxisId: ['a5', 'a7'],
+ *             xAxisName: 'xxx'
+ *         }]
+ *     }
+ * }
+ */
+
+
+function getLinkGroupIndex(linksOption, axis) {
+  var axisModel = axis.model;
+  var dim = axis.dim;
+
+  for (var i = 0; i < linksOption.length; i++) {
+    var linkOption = linksOption[i] || {};
+
+    if (checkPropInLink(linkOption[dim + 'AxisId'], axisModel.id) || checkPropInLink(linkOption[dim + 'AxisIndex'], axisModel.componentIndex) || checkPropInLink(linkOption[dim + 'AxisName'], axisModel.name)) {
+      return i;
+    }
+  }
+}
+
+function checkPropInLink(linkPropValue, axisPropValue) {
+  return linkPropValue === 'all' || zrUtil.isArray(linkPropValue) && zrUtil.indexOf(linkPropValue, axisPropValue) >= 0 || linkPropValue === axisPropValue;
+}
+
+function fixValue(axisModel) {
+  var axisInfo = getAxisInfo(axisModel);
+
+  if (!axisInfo) {
+    return;
+  }
+
+  var axisPointerModel = axisInfo.axisPointerModel;
+  var scale = axisInfo.axis.scale;
+  var option = axisPointerModel.option;
+  var status = axisPointerModel.get('status');
+  var value = axisPointerModel.get('value'); // Parse init value for category and time axis.
+
+  if (value != null) {
+    value = scale.parse(value);
+  }
+
+  var useHandle = isHandleTrigger(axisPointerModel); // If `handle` used, `axisPointer` will always be displayed, so value
+  // and status should be initialized.
+
+  if (status == null) {
+    option.status = useHandle ? 'show' : 'hide';
+  }
+
+  var extent = scale.getExtent().slice();
+  extent[0] > extent[1] && extent.reverse();
+
+  if ( // Pick a value on axis when initializing.
+  value == null // If both `handle` and `dataZoom` are used, value may be out of axis extent,
+  // where we should re-pick a value to keep `handle` displaying normally.
+  || value > extent[1]) {
+    // Make handle displayed on the end of the axis when init, which looks better.
+    value = extent[1];
+  }
+
+  if (value < extent[0]) {
+    value = extent[0];
+  }
+
+  option.value = value;
+
+  if (useHandle) {
+    option.status = axisInfo.axis.scale.isBlank() ? 'hide' : 'show';
+  }
+}
+
+function getAxisInfo(axisModel) {
+  var coordSysAxesInfo = (axisModel.ecModel.getComponent('axisPointer') || {}).coordSysAxesInfo;
+  return coordSysAxesInfo && coordSysAxesInfo.axesInfo[makeKey(axisModel)];
+}
+
+function getAxisPointerModel(axisModel) {
+  var axisInfo = getAxisInfo(axisModel);
+  return axisInfo && axisInfo.axisPointerModel;
+}
+
+function isHandleTrigger(axisPointerModel) {
+  return !!axisPointerModel.get('handle.show');
+}
+/**
+ * @param {module:echarts/model/Model} model
+ * @return {string} unique key
+ */
+
+
+function makeKey(model) {
+  return model.type + '||' + model.id;
+}
+
+exports.collect = collect;
+exports.fixValue = fixValue;
+exports.getAxisInfo = getAxisInfo;
+exports.getAxisPointerModel = getAxisPointerModel;
+exports.makeKey = makeKey;
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(10);
+var normalizeHeaderName = __webpack_require__(120);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(54);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(54);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53)))
+
+/***/ }),
 /* 40 */
 /***/ (function(module, exports) {
 
@@ -26332,7 +26332,7 @@ var assert = _util.assert;
 
 var Source = __webpack_require__(25);
 
-var _sourceType = __webpack_require__(34);
+var _sourceType = __webpack_require__(35);
 
 var SOURCE_FORMAT_ORIGINAL = _sourceType.SOURCE_FORMAT_ORIGINAL;
 var SOURCE_FORMAT_ARRAY_ROWS = _sourceType.SOURCE_FORMAT_ARRAY_ROWS;
@@ -27411,7 +27411,7 @@ var numberUtil = __webpack_require__(7);
 
 var formatUtil = __webpack_require__(12);
 
-var Scale = __webpack_require__(35);
+var Scale = __webpack_require__(36);
 
 var helper = __webpack_require__(94);
 
@@ -38448,8 +38448,9 @@ module.exports = Cancel;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pfre__ = __webpack_require__(328);
 
 
 
@@ -38463,7 +38464,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 	strict: "development" !== 'production',
 	modules: {
-		Majors: __WEBPACK_IMPORTED_MODULE_2__modules_majors__["a" /* default */]
+		Majors: __WEBPACK_IMPORTED_MODULE_2__modules_majors__["a" /* default */],
+		Pfre: __WEBPACK_IMPORTED_MODULE_3__modules_pfre__["a" /* default */]
 	}
 }));
 
@@ -40742,7 +40744,7 @@ module.exports = _default;
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(30);
+var _config = __webpack_require__(31);
 
 var debugMode = _config.debugMode;
 
@@ -41285,7 +41287,7 @@ module.exports = _default;
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(31);
+var Displayable = __webpack_require__(32);
 
 var BoundingRect = __webpack_require__(11);
 
@@ -43717,9 +43719,9 @@ var _util = __webpack_require__(0);
 
 var each = _util.each;
 
-var Group = __webpack_require__(29);
+var Group = __webpack_require__(30);
 
-var componentUtil = __webpack_require__(33);
+var componentUtil = __webpack_require__(34);
 
 var clazzUtil = __webpack_require__(16);
 
@@ -43983,7 +43985,7 @@ var List = __webpack_require__(90);
 
 var createDimensions = __webpack_require__(91);
 
-var _sourceType = __webpack_require__(34);
+var _sourceType = __webpack_require__(35);
 
 var SOURCE_FORMAT_ORIGINAL = _sourceType.SOURCE_FORMAT_ORIGINAL;
 
@@ -46960,7 +46962,7 @@ module.exports = Symbol;
 
 var zrUtil = __webpack_require__(0);
 
-var _symbol = __webpack_require__(36);
+var _symbol = __webpack_require__(37);
 
 var createSymbol = _symbol.createSymbol;
 
@@ -47466,7 +47468,7 @@ var _number = __webpack_require__(7);
 var isRadianAroundZero = _number.isRadianAroundZero;
 var remRadian = _number.remRadian;
 
-var _symbol = __webpack_require__(36);
+var _symbol = __webpack_require__(37);
 
 var createSymbol = _symbol.createSymbol;
 
@@ -48102,7 +48104,7 @@ var __DEV__ = _config.__DEV__;
 
 var echarts = __webpack_require__(5);
 
-var axisPointerModelHelper = __webpack_require__(37);
+var axisPointerModelHelper = __webpack_require__(38);
 
 /**
  * Base class of AxisView.
@@ -72299,7 +72301,7 @@ Popper.Defaults = Defaults;
 var utils = __webpack_require__(10);
 var bind = __webpack_require__(52);
 var Axios = __webpack_require__(119);
-var defaults = __webpack_require__(38);
+var defaults = __webpack_require__(39);
 
 /**
  * Create an instance of Axios
@@ -72382,7 +72384,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(38);
+var defaults = __webpack_require__(39);
 var utils = __webpack_require__(10);
 var InterceptorManager = __webpack_require__(128);
 var dispatchRequest = __webpack_require__(129);
@@ -72923,7 +72925,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(10);
 var transformData = __webpack_require__(130);
 var isCancel = __webpack_require__(56);
-var defaults = __webpack_require__(38);
+var defaults = __webpack_require__(39);
 var isAbsoluteURL = __webpack_require__(131);
 var combineURLs = __webpack_require__(132);
 
@@ -76448,6 +76450,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(29);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -76462,13 +76467,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapGetters */])(['progressPercentage'])),
   components: { card: __WEBPACK_IMPORTED_MODULE_0__components_global_card___default.a, pfreForm: __WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue___default.a, pfreProgress: __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue___default.a }
 });
 
@@ -76935,7 +76941,7 @@ exports = module.exports = __webpack_require__(61)(false);
 
 
 // module
-exports.push([module.i, "\n.progress-footer {\n  /* display: flex; */\n  width: 95%;\n}\n", ""]);
+exports.push([module.i, "\n.pfre-bar {\n    border-radius: 50px;\n    margin: 0;\n}\n.progress-footer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 95%;\n}\n.center {\n   margin: 0 auto !important;\n   float: none !important;\n}\n", ""]);
 
 // exports
 
@@ -76979,9 +76985,36 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -77020,11 +77053,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      test: 50
+      userYears: {
+        start: 0,
+        middle: 0,
+        end: 0,
+        actual: 0
+      }
     };
   },
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['getTest']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['years', 'earnings', 'returnOnInvestment']))
 });
 
 /***/ }),
@@ -77043,11 +77081,39 @@ var render = function() {
         _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Years")]),
         _vm._v(" "),
         _c("v-progress-linear", {
-          staticStyle: { "border-radius": "50px" },
-          attrs: { value: _vm.test, height: "50", color: "light-green" }
+          staticClass: "pfre-bar",
+          attrs: {
+            value: _vm.years.actual / _vm.years.end * 100,
+            height: "50",
+            color: "light-green"
+          }
         }),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "progress-footer col-12" }, [
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-left" }, [
+              _vm._v(_vm._s(_vm.years.start))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(_vm.years.middle))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-right" }, [
+              _vm._v(_vm._s(_vm.years.end))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("p", { staticClass: "font-weight-bold" }, [
+            _vm._v("Estimated time to degree: " + _vm._s(_vm.years.actual))
+          ])
+        ])
       ],
       1
     ),
@@ -77056,14 +77122,45 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Years")]),
+        _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Earnings")]),
         _vm._v(" "),
         _c("v-progress-linear", {
-          staticStyle: { "border-radius": "50px" },
-          attrs: { value: _vm.test, height: "50", color: "red" }
+          staticClass: "pfre-bar",
+          attrs: {
+            value: _vm.earnings.actual / _vm.earnings.maximum * 100,
+            height: "50",
+            color: "red"
+          }
         }),
         _vm._v(" "),
-        _vm._m(1)
+        _c("div", { staticClass: "progress-footer" }, [
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-left" }, [
+              _vm._v(_vm._s(_vm.earnings.minimum))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(_vm.earnings.average))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-right" }, [
+              _vm._v(_vm._s(_vm.earnings.maximum))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("p", { staticClass: "font-weight-bold" }, [
+            _vm._v(
+              "Estimated Earnings 5 Years After Exit: " +
+                _vm._s(_vm.earnings.actual)
+            )
+          ])
+        ])
       ],
       1
     ),
@@ -77072,57 +77169,49 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Years")]),
+        _c("h5", { staticClass: "pagination-centered" }, [
+          _vm._v("Return On Investment")
+        ]),
         _vm._v(" "),
         _c("v-progress-linear", {
-          staticStyle: { "border-radius": "50px" },
+          staticClass: "pfre-bar",
           attrs: { value: "15", height: "50", color: "light-green" }
         }),
         _vm._v(" "),
-        _vm._m(2)
+        _c("div", { staticClass: "progress-footer" }, [
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-left" }, [
+              _vm._v(_vm._s(_vm.returnOnInvestment.minimum))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(_vm.returnOnInvestment.average))
+            ])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "col-4" }, [
+            _c("p", { staticClass: "float-right" }, [
+              _vm._v(_vm._s(_vm.returnOnInvestment.maximum))
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("p", { staticClass: "font-weight-bold" }, [
+            _vm._v(
+              "FRE - Financial Return on Education: " +
+                _vm._s(_vm.returnOnInvestment.actual)
+            )
+          ])
+        ])
       ],
       1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "progress-footer" }, [
-      _c("span", { staticClass: "float-left" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "justify-content-center" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "float-right" }, [_vm._v("2")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "progress-footer" }, [
-      _c("span", { staticClass: "float-left" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "justify-content-center" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "float-right" }, [_vm._v("2")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "progress-footer" }, [
-      _c("span", { staticClass: "float-left" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "justify-content-center" }, [_vm._v("2")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "float-right" }, [_vm._v("2")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -77853,7 +77942,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -78700,7 +78789,7 @@ var util = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var Group = __webpack_require__(29);
+var Group = __webpack_require__(30);
 
 var timsort = __webpack_require__(40);
 
@@ -79681,7 +79770,7 @@ module.exports = _default;
 /* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _config = __webpack_require__(30);
+var _config = __webpack_require__(31);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
@@ -80691,7 +80780,7 @@ module.exports = _default;
 
 var util = __webpack_require__(0);
 
-var _config = __webpack_require__(30);
+var _config = __webpack_require__(31);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
@@ -81762,7 +81851,7 @@ module.exports = _default;
 
 var Path = __webpack_require__(9);
 
-var PathProxy = __webpack_require__(32);
+var PathProxy = __webpack_require__(33);
 
 var transformPath = __webpack_require__(198);
 
@@ -82174,7 +82263,7 @@ exports.mergePath = mergePath;
 /* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PathProxy = __webpack_require__(32);
+var PathProxy = __webpack_require__(33);
 
 var line = __webpack_require__(194);
 
@@ -82759,7 +82848,7 @@ exports.containStroke = containStroke;
 /* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PathProxy = __webpack_require__(32);
+var PathProxy = __webpack_require__(33);
 
 var _vector = __webpack_require__(6);
 
@@ -82864,7 +82953,7 @@ module.exports = _default;
 /* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Displayable = __webpack_require__(31);
+var Displayable = __webpack_require__(32);
 
 var zrUtil = __webpack_require__(0);
 
@@ -83697,7 +83786,7 @@ var _util = __webpack_require__(0);
 
 var inherits = _util.inherits;
 
-var Displayble = __webpack_require__(31);
+var Displayble = __webpack_require__(32);
 
 var BoundingRect = __webpack_require__(11);
 
@@ -84966,9 +85055,9 @@ module.exports = _default;
 /* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Group = __webpack_require__(29);
+var Group = __webpack_require__(30);
 
-var componentUtil = __webpack_require__(33);
+var componentUtil = __webpack_require__(34);
 
 var clazzUtil = __webpack_require__(16);
 
@@ -85406,7 +85495,7 @@ var _task = __webpack_require__(46);
 
 var createTask = _task.createTask;
 
-var _component = __webpack_require__(33);
+var _component = __webpack_require__(34);
 
 var getUID = _component.getUID;
 
@@ -86122,7 +86211,7 @@ var _createDimensions = __webpack_require__(91);
 
 exports.createDimensions = _createDimensions;
 
-var _symbol = __webpack_require__(36);
+var _symbol = __webpack_require__(37);
 
 exports.createSymbol = _symbol.createSymbol;
 
@@ -86334,7 +86423,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var Scale = __webpack_require__(35);
+var Scale = __webpack_require__(36);
 
 var OrdinalMeta = __webpack_require__(93);
 
@@ -86943,7 +87032,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var Scale = __webpack_require__(35);
+var Scale = __webpack_require__(36);
 
 var numberUtil = __webpack_require__(7);
 
@@ -91451,7 +91540,7 @@ var echarts = __webpack_require__(5);
 
 var zrUtil = __webpack_require__(0);
 
-var axisPointerModelHelper = __webpack_require__(37);
+var axisPointerModelHelper = __webpack_require__(38);
 
 var axisTrigger = __webpack_require__(274);
 
@@ -91501,7 +91590,7 @@ var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 
-var modelHelper = __webpack_require__(37);
+var modelHelper = __webpack_require__(38);
 
 var findPointFromSeries = __webpack_require__(106);
 
@@ -92155,7 +92244,7 @@ var clazzUtil = __webpack_require__(16);
 
 var graphic = __webpack_require__(3);
 
-var axisPointerModelHelper = __webpack_require__(37);
+var axisPointerModelHelper = __webpack_require__(38);
 
 var eventTool = __webpack_require__(24);
 
@@ -94208,7 +94297,7 @@ var echarts = __webpack_require__(5);
 
 var zrUtil = __webpack_require__(0);
 
-var _symbol = __webpack_require__(36);
+var _symbol = __webpack_require__(37);
 
 var createSymbol = _symbol.createSymbol;
 
@@ -113882,6 +113971,80 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(330);
+// PFRE STORE
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
+    getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */]
+});
+
+/***/ }),
+/* 329 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// PFRE STATE
+
+// everything in the state needs to be initially set to 0.
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    years: {
+        start: 2,
+        middle: 7,
+        end: 12,
+        actual: 4
+    },
+    earnings: {
+        minimum: 20000,
+        average: 50000,
+        maximum: 100000,
+        actual: 67000
+    },
+    returnOnInvestment: {
+        minimum: 0,
+        average: 7.5,
+        maximum: 15,
+        actual: 8.3
+    }
+});
+
+/***/ }),
+/* 330 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// PFRE GETTERS
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    years: function years(state) {
+        return state.years;
+    },
+    earnings: function earnings(state) {
+        return state.earnings;
+    },
+    returnOnInvestment: function returnOnInvestment(state) {
+        return state.returnOnInvestment;
+    }
+});
 
 /***/ })
 /******/ ]);

@@ -1,5 +1,7 @@
 // PFRE GETTERS
 
 export default {
-    getTest: state => state.test;
+    years: state => state.years,
+    earnings: state => state.earnings,
+    returnOnInvestment: state => state.returnOnInvestment
 }
