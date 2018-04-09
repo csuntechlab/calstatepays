@@ -13134,6 +13134,14 @@ body {
   padding-left: 0px;
 }
 
+.expansion-panel__header {
+  font-weight: 600;
+}
+
+.expansion-panel__body div {
+  color: #777777;
+}
+
 .img__logo {
   padding-top: 10px;
   max-height: 50px;

@@ -8,8 +8,9 @@ import Vue from 'vue';
 import axios from 'axios';
 import router from './router';
 import store from './store';
+import Vuetify from 'vuetify';
 
-
+Vue.use(Vuetify)
 
 import App from './App.vue';
 /**
@@ -25,7 +26,8 @@ const vm = new Vue({
     router,
     render: h => h(App),
     created(){
-        this.$store.dispatch('getMajorData');
+        this.$store.dispatch('fetchMajors');
+        this.$store.dispatch('fetchIndustries');
     }
 });
 

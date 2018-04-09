@@ -4,8 +4,8 @@ import _majors from '../../mutation-types/majors';
 
 export default{
 
-    getMajorData({commit, dispatch}){
-        Major.getMajorsAPI(
+    fetchMajors({commit, dispatch}){
+        Major.fetchMajorsAPI(
             (success) => {
                 commit(_majors.FETCH_MAJORS, success);
             },

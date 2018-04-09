@@ -7,6 +7,7 @@ import home from './views/home/index.vue';
 import pfre from './views/pfre/index.vue';
 import majors from './views/majors/index.vue';
 import industries from './views/industries/index.vue';
+import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
 
 // INIT VUE-ROUTER
@@ -17,6 +18,7 @@ const router = new VueRouter({
 		{ path: '/', component: home },
 		{ path: '/pfre', component: pfre },
 		{ path: '/industries', component: industries},
+		{ path: '/faq', component: faq},
 		{ path: '/research', component: research },
 		{ path: '/majors', component: majors },
 	]
