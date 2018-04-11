@@ -5,8 +5,8 @@
           <div class="col col-3">
             <pfre-form></pfre-form>
           </div>
-          <div class="col col-10 offset-md-1">
-            <img src="img/pfregraph.png" alt="">
+          <div class="col-3">
+            <pfre-info></pfre-info>
           </div>
         </card>
       </div>
@@ -15,9 +15,10 @@
 <script>
 import card from '../../../components/global/card';
 import pfreForm from '../../../components/pfre/pfre-form.vue';
+import pfreInfo from '../../../components/pfre/pfre-info.vue';
 
 export default {
-  components: { card, pfreForm }
+  components: { card, pfreForm, pfreInfo }
 }
 </script>
  

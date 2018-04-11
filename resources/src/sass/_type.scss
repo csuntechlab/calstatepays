@@ -26,3 +26,9 @@ body {
 .expansion-panel__body div{
   color: $gray;
 }
+
+.info-bubble{
+    background: $light-gray;
+    border-radius: 15px;
+    float: right;
+}

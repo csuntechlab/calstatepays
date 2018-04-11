@@ -31,5 +31,18 @@
 
 .btn-plus{
     display: block;
-   
+}
+
+.btn-info{
+    color: $white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.btn-info:focus{
+    outline: none;
+}
+
+input[type="button"]:focus{
+    outline:none;
 }
