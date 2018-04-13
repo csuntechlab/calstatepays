@@ -5,7 +5,7 @@
           <div class="col col-3">
             <pfre-form></pfre-form>
           </div>
-          <div class="col col-10 offset-md-1">
+          <div class="col col-6">
             <pfre-progress></pfre-progress>
           </div>
         </card>
@@ -19,11 +19,6 @@ import pfreProgress from '../../../components/pfre/pfre-progress.vue';
 import { mapGetters } from 'vuex';
 
 export default {
-  computed: {
-    ...mapGetters([
-      'progressPercentage'
-    ]),
-  },
   components: { card, pfreForm, pfreProgress }
 }
 </script>

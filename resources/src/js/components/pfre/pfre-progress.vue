@@ -79,6 +79,6 @@ export default {
        'returnOnInvestment'
     ]),
   },
-  filters: {percentage, currency}
+  filters: { percentage, currency }
 }
 </script>
