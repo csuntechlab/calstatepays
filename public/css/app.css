@@ -13215,25 +13215,35 @@ footer,
 }
 
 #research-main-banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
+  background-image: url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   text-align: center;
   position: relative;
   height: 50vh;
 }
 
-#research-main-banner .banner-center {
+#research-main-banner h2 {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #FFF;
+  color: #000;
   font-family: "Montserrat";
+  font-weight: 200;
 }
 
-#research-main-banner .banner-center h2 {
-  font-weight: 200;
+#research-main-banner .csu-wrapper {
+  display: block;
+  position: absolute;
+  bottom: 20%;
+}
+
+#research-main-banner .csu-wrapper figure img {
+  width: 10rem;
+}
+
+#research-main-banner .csu-wrapper figure figcaption {
+  font-family: "Montserrat";
 }
 
 .campuses-container {

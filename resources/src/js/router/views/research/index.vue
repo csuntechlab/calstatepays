@@ -1,18 +1,41 @@
 <template>
     <div>
         <header id="research-main-banner">
-            <div class="banner-center">
-                <h2>
-                    We Gathered Data Across 7 CSUs in the Metro LA Area
-                </h2>
-                <div class="col col-md-6 offset-md-3 col-lg-4 offset-lg-4  col-sm-12">
-                    <button class="btn btn-success">
-                        Take a Look
-                    </button>
-                </div>
+            <h2>
+                We Gathered Data Across 7 CSUs in the Metro LA Area
+            </h2>
+            <div class="csu-wrapper inline-flex">
+                <figure>
+                    <img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
+                    <figcaption>Long Beach</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/poly_seal.svg" alt="CSU Pomona Seal">
+                    <figcaption>Pomona</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/dominguez_seal.svg" alt="CSU Dominguez Hills Seal">
+                    <figcaption>Dominguez Hills</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/northridge_seal.svg" alt="CSU Northridge Seal">
+                    <figcaption>Northridge</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/channel_islands_seal.svg" alt="CSU Channel Islands Seal">
+                    <figcaption>Channel Islands</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/fulleton_seal.svg" alt="CSU Fullerton Seal">
+                    <figcaption>Fullerton</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/csuseals/los_angeles_seal.svg" alt="CSU Los Angeles Seal">
+                    <figcaption>Los Angeles</figcaption>
+                </figure> 
             </div>
         </header>
-        <section class="campuses-container mx-5">
+        <main class="campuses-container mx-5">
             <div class="row col-12">
                 <div class="col-lg-4 col-md-6 py-3">
                     <div id="csun" class=" campus">
@@ -50,7 +73,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </main>
     </div>
 </template>
 <script>

@@ -3,20 +3,30 @@ $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 
 #research-main-banner {
     background-image:
-     $available-campus,
      url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
     text-align: center;
     position: relative;
     height: 50vh;
-    .banner-center{
+    h2 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: $white;
+        color: $black;
         font-family: $font-base;
-        h2{
-            font-weight: 200;
+        font-weight: 200;
+    }
+    .csu-wrapper {
+        display: block;
+        position: absolute;
+        bottom: 20%;
+        figure {
+            img {
+                width: 10rem;
+            }
+            figcaption {
+                font-family: $font-base;
+            }
         }
     }
 }
