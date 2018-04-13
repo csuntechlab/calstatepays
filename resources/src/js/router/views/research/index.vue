@@ -4,7 +4,7 @@
             <h2>
                 We Gathered Data Across 7 CSUs in the Metro LA Area
             </h2>
-            <div class="csu-wrapper inline-flex">
+            <div class="csu-wrapper d-inline-flex">
                 <figure>
                     <img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
                     <figcaption>Long Beach</figcaption>

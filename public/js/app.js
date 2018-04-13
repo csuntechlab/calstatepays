@@ -97150,7 +97150,7 @@ var staticRenderFns = [
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "csu-wrapper inline-flex" }, [
+        _c("div", { staticClass: "csu-wrapper d-inline-flex" }, [
           _c("figure", [
             _c("img", {
               attrs: {
