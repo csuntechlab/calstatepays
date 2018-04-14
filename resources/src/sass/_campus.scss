@@ -1,6 +1,6 @@
 $unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 $available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-$white-filter: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+$white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
 
 #research-main-banner {
     background-image:
@@ -19,11 +19,8 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2
         font-weight: 400;
     }
     .csu-wrapper {
-        display: block;
-        position: absolute;
-        left: 50%;
+        width: 90%;
         bottom: 5%;
-        transform: translate(-50%, 0);
         figure {
             img {
                 width: 6.5rem;
@@ -31,7 +28,6 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2
             figcaption {
                 font-family: $font-base;
                 text-transform: uppercase;
-                width: 10rem;
             }
         }
     }

@@ -13215,8 +13215,8 @@ footer,
 }
 
 #research-main-banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   text-align: center;
   position: relative;
   height: 50vh;
@@ -13234,12 +13234,8 @@ footer,
 }
 
 #research-main-banner .csu-wrapper {
-  display: block;
-  position: absolute;
-  left: 50%;
+  width: 90%;
   bottom: 5%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
 }
 
 #research-main-banner .csu-wrapper figure img {
@@ -13249,7 +13245,6 @@ footer,
 #research-main-banner .csu-wrapper figure figcaption {
   font-family: "Montserrat";
   text-transform: uppercase;
-  width: 10rem;
 }
 
 .campuses-container {
