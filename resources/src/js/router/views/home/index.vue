@@ -1,33 +1,79 @@
 <template>
 	<div>
-		<div class="row bg">
-			<div class="col" style="height: 400px;">
+		<div class="bg mh-90">
+			<div class="row p-0 text-center">
+				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
+				<div class="row p-0 m-5">
+					<div class="col-md-4 text-center">
+						<i class="fa fa-graduation-cap"></i>
+						<h3>Do college graduates earn more?</h3>
+						<p class="p-4">It pays to go to college. Earningsfor graduates are significantly higher than non-graduates</p>
+						<button class="home-btn home-btn__degrees">
+							Compare Degree Levels
+						</button>
+					</div>
+					<div class="col-md-4 text-center">
+						<i class="fa fa-usd"></i>
+						<h3>What is your financial return?</h3>
+						<p class="p-4">Education cost money but in the long term you will earn more. Find your return on education.</p>
+						<button class="home-btn home-btn__pfre">
+							Financial Return on Education
+						</button>
+					</div>
+					<div class="col-md-4 text-center">
+						<i class="fa fa-line-chart"></i>
+						<h3>Which majors earn the most?</h3>
+						<p class="p-4">Find out which majors has the highest earn and the most students.</p>
+						<button class="home-btn home-btn__majors">
+							Compare Majors
+						</button>
+					</div>
+				</div>
+				<div class="row p-0 pt-3">
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/channel_islands_seal.svg" alt="">
+						<figcaption>Channel Islands</figcaption>
+					</figure>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/dominguez_seal.svg" alt="">
+						<figcaption>Dominguez Hills</figcaption>
+					</figure>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/fullerton_seal.svg" alt="">
+						<figcaption>Fullerton</figcaption>
+					</figure>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/long_beach_seal.svg" alt="">
+						<figcaption>Long Beach</figcaption>
+					</figure>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/los_angeles_seal.svg" alt="">
+						<figcaption>Los Angeles</figcaption>
+					</figure>
+					<div class="col-md col-sm-4">
+					</div>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/northridge_seal.svg" alt="">
+						<figcaption>Northridge</figcaption>
+					</figure>
+
+					<figure class="col-md col-sm-4 text-center">
+						<img class="csu-seals" src="../../../../../../public/img/csuseals/poly_seal.svg" alt="">
+						<figcaption>Pomona</figcaption>
+					</figure>
+				</div>
 			</div>
 		</div>
-			<div class="row">
-				<div class="col col-md-4 col-sm-12 text-center text-gray">
-					<h5 class="pt-5 home__heading">More Education, More Income</h5>
-					<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 400px;"></img>
-					<p class="home__content pt-4 text-center col-md-8 offset-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
-					<p class="home__link">Explore More Information <i class="fa fa-arrow-right"></i></p>
-				</div>
-				<div class="col col-md-4 col-sm-12 text-center text-gray">
-					<h5 class="pt-5 home__heading">Personal Return On Education</h5>
-					<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 400px;"></img>
-					<p class="pt-4 text-center col-md-8 offset-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
-					<router-link to="/pfre" class="home__link">Find Your Return <i class="fa fa-arrow-right"></i></router-link>
-				</div>
-				<div class="col col-md-4 col-sm-12 text-center text-gray">
-					<h5 class="pt-5 home__heading">Top Ten Majors by Size</h5>
-					<img class="py-2" src="https://i.gyazo.com/cb929c9e6ed7eb5ac11531007d11f0ad.png" style="height: 400px;"></img>
-					<p class="pt-4 text-center col-md-8 offset-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veritatis esse numquam, atque saepe ducimus voluptates accusamus, eos assumenda, autem praesentium facilis optio odio ea? Consectetur ipsam a, architecto quam!</p>
-					<p class="home__link">Explore Different Majors <i class="fa fa-arrow-right"></i></p>
-				</div>
-			</div>
 		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<img src="img/calstatepays-banner.svg" alt="">
-			</div>
+			<div class="learn-how"></div>
+		</div>
+		<div class="row p-0">
+			<div class="video-placeholder"></div>
 		</div>
 	</div>
 </template>
@@ -36,3 +82,4 @@
 
 	}
 </script>
+
