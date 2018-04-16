@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="bg mh-90">
-			<div class="row p-0 text-center">
+			<div class="row p-0 text-center pt-9">
 				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row p-0 m-5">
 					<div class="col-md-4 text-center">
@@ -29,7 +29,7 @@
 						</button>
 					</div>
 				</div>
-				<div class="row p-0 pt-3">
+				<div class="row p-0 mt-5">
 					<figure class="col-md col-sm-4 text-center">
 						<img class="csu-seals" src="../../../../../../public/img/csuseals/channel_islands_seal.svg" alt="">
 						<figcaption>Channel Islands</figcaption>
@@ -54,9 +54,7 @@
 						<img class="csu-seals" src="../../../../../../public/img/csuseals/los_angeles_seal.svg" alt="">
 						<figcaption>Los Angeles</figcaption>
 					</figure>
-					<div class="col-md col-sm-4">
-					</div>
-
+	
 					<figure class="col-md col-sm-4 text-center">
 						<img class="csu-seals" src="../../../../../../public/img/csuseals/northridge_seal.svg" alt="">
 						<figcaption>Northridge</figcaption>
@@ -70,7 +68,12 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="learn-how"></div>
+			<div class="learn-how text-center">
+				<h1>Learn How</h1>
+				<a href="">
+					<i class="fa fa-angle-down" aria-hidden="true" style="font-size: 6rem"></i>
+				</a>
+			</div>
 		</div>
 		<div class="row p-0">
 			<div class="video-placeholder"></div>
