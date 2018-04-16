@@ -13143,6 +13143,10 @@ body {
   color: #777777;
 }
 
+figcaption {
+  font-size: 1.5rem;
+}
+
 .img__logo {
   padding-top: 10px;
   max-height: 50px;

@@ -85,9 +85,3 @@
 		
 	}
 </script>
-
-<style>
-	figcaption {
-		font-size: 1.5rem;
-	}
-</style>
