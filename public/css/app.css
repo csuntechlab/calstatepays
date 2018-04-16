@@ -28263,7 +28263,6 @@ table.table tfoot tr td {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: calc(88vh);
   background: #f7f7f7;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -28272,6 +28271,7 @@ table.table tfoot tr td {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  height: 100vh;
 }
 
 .container-fluid {
@@ -28412,10 +28412,6 @@ nav {
 
 footer,
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   font-family: "Open Sans";
   width: 100%;
   height: 80px;
