@@ -76587,7 +76587,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card col col-md-10 offset-md-1 d-flex flex-row" },
+    { staticClass: "csu-card col col-md-10 offset-md-1 d-flex flex-row" },
     [_vm._t("default")],
     2
   )
@@ -78296,7 +78296,7 @@ var render = function() {
       "div",
       { staticClass: "col col-md-12" },
       [
-        _c("card", { staticClass: "my-4" }, [
+        _c("card", [
           _c("div", { staticClass: "col col-3" }, [_c("pfre-form")], 1),
           _vm._v(" "),
           _c("div", { staticClass: "col col-6" }, [_c("pfre-progress")], 1)
@@ -78468,6 +78468,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['onPlus']
@@ -78483,13 +78486,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card card-add col col-md-10 offset-md-1 d-flex flex-row" },
+    {
+      staticClass: "csu-card card-add col col-md-10 offset-md-1 d-flex flex-row"
+    },
     [
-      _c("button", { staticClass: "btn btn-add" }, [
-        _c("i", {
-          staticClass: "fa fa-plus-circle btn-plus",
-          on: { click: _vm.onPlus }
-        })
+      _c("div", { staticClass: "col col-1" }, [
+        _c("button", { staticClass: "btn-add" }, [
+          _c("i", {
+            staticClass: "fa fa-plus-circle",
+            on: { click: _vm.onPlus }
+          })
+        ])
       ])
     ]
   )
@@ -96420,20 +96427,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
-    _c(
-      "div",
-      { staticClass: "col col-md-12" },
-      [
-        _vm._l(_vm.cards, function(item) {
-          return _c("major-card", { key: item.major, staticClass: "my-2" })
-        }),
-        _vm._v(" "),
-        _c("card-add", { attrs: { onPlus: _vm.onPlus } })
-      ],
-      2
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "wrapper", staticStyle: { "padding-bottom": "0px" } },
+    [
+      _c(
+        "div",
+        { staticClass: "col col-md-12" },
+        [
+          _vm._l(_vm.cards, function(item) {
+            return _c("major-card", { key: item.major, staticClass: "my-2" })
+          }),
+          _vm._v(" "),
+          _c("card-add", { attrs: { onPlus: _vm.onPlus } })
+        ],
+        2
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

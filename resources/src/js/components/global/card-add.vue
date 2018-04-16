@@ -1,8 +1,11 @@
 <template>
-    <div class="card card-add col col-md-10 offset-md-1 d-flex flex-row">
-            <button class="btn btn-add">
-                <i class="fa fa-plus-circle btn-plus" @click="onPlus"></i>
+    <div class="csu-card card-add col col-md-10 offset-md-1 d-flex flex-row">
+        <div class="col col-1">
+
+            <button class="btn-add">
+                <i class="fa fa-plus-circle" @click="onPlus"></i>
             </button>
+        </div>
     </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-bottom: 0px;">
         <div class="col col-md-12">
             <major-card class="my-2" v-for="item in cards" :key="item.major"></major-card>
             <card-add :onPlus="onPlus"></card-add>

@@ -28267,8 +28267,8 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
   min-height: calc(100vh - 120px);
+  padding: 60px 0px;
 }
 
 .container-fluid {
@@ -28281,13 +28281,14 @@ html {
           box-sizing: border-box;
 }
 
-.card {
+.csu-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: #FFF;
   border-radius: 50px;
-  min-height: calc(70vh);
+  height: 750px;
+  margin-bottom: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -28305,7 +28306,9 @@ html {
 .card-add {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  min-height: 15vh;
+  height: 150px;
+  margin-bottom: 0px;
+  margin-top: 50px;
 }
 
 .row {
@@ -28760,10 +28763,6 @@ textarea {
   outline: none;
 }
 
-.btn-plus {
-  display: block;
-}
-
 .home-btn {
   border-radius: 5rem;
   width: 70%;
@@ -28786,7 +28785,7 @@ textarea {
 }
 
 .echarts {
-  min-height: 50vh;
+  min-height: 80%;
   min-width: 100%;
   color: blue;
 }
