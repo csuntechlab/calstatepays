@@ -79085,7 +79085,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 legend: {
                     data: ['line']
                 },
-                yAxis: {},
+                yAxis: {
+                    max: 150000
+                },
                 series: [{
                     type: 'line',
                     name: 'Some College',

@@ -44,7 +44,9 @@ export default {
             legend: {
                 data: ['line']
             },
-            yAxis: {},
+            yAxis: {
+                max: 150000
+            },
             series: [
             {
                 type: 'line',
