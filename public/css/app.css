@@ -13569,6 +13569,22 @@ textarea {
   color: blue;
 }
 
+.pfre-bar {
+  border-radius: 50px;
+  margin: 0 !important;
+}
+
+.progress-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+}
+
+.progress-linear__bar__determinate {
+  border-radius: 50px;
+}
+
 .industry-carousel {
   background-position: center;
   background-size: cover;

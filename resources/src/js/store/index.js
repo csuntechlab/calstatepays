@@ -5,6 +5,7 @@ import Vuex from 'vuex';
 import Majors from './modules/majors';
 import Industries from './modules/industries'
 
+import Pfre from './modules/pfre';
 // INIT VUEX
 Vue.use(Vuex);
 
@@ -14,5 +15,6 @@ export default new Vuex.Store({
 	modules: {
 		Majors,
 		Industries,
+		Pfre
 	}
 });
