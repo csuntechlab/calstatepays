@@ -17,4 +17,9 @@ class IndustryController extends Controller
         });
         return $allNaicsTitles->toArray();
     }
+
+    public function getIndustryImages()
+    {
+
+    }
 }

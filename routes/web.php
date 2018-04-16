@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('/industry/images', '')
+
 Route::get('/Aggregate/PFRE', 'AggregateDataController@getAggregateUniversitiesPFREGraphData')
     ->name('aggregate.PFRE.view');
 Route::post('/Aggregate/PFRE', 'AggregateDataController@getAggregateUniversitiesPFRE')
