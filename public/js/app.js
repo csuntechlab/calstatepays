@@ -78381,7 +78381,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -78566,8 +78565,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
-//
-//
 //
 //
 //
@@ -96374,38 +96371,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
-    _c(
-      "div",
-      { staticClass: "col col-md-12" },
-      [
-        _c("card", [
-          _c("div", { staticClass: "container-fluid my-0" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
-            ]),
+  return _c(
+    "div",
+    { staticClass: "col col-md-12" },
+    [
+      _c("card", [
+        _c("div", { staticClass: "container-fluid my-0" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row m-1" }, [
+            _c(
+              "div",
+              { staticClass: "col col-md-3 col-sm-12 my-3" },
+              [_c("majors-form")],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "row m-1" }, [
-              _c(
-                "div",
-                { staticClass: "col col-md-3 col-sm-12 my-3" },
-                [_c("majors-form")],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col col-9" },
-                [_c("majors-graph-wrapper")],
-                1
-              )
-            ])
+            _c(
+              "div",
+              { staticClass: "col col-9" },
+              [_c("majors-graph-wrapper")],
+              1
+            )
           ])
         ])
-      ],
-      1
-    )
-  ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -96431,7 +96426,7 @@ var render = function() {
       { staticClass: "col col-md-12" },
       [
         _vm._l(_vm.cards, function(item) {
-          return _c("major-card", { key: item.major, staticClass: "my-4" })
+          return _c("major-card", { key: item.major, staticClass: "my-2" })
         }),
         _vm._v(" "),
         _c("card-add", { attrs: { onPlus: _vm.onPlus } })
