@@ -13113,6 +13113,7 @@ a.text-dark:focus {
 }
 
 .home__heading {
+  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -13142,6 +13143,10 @@ body {
   color: #777777;
 }
 
+figcaption {
+  font-size: 1.5rem;
+}
+
 .img__logo {
   padding-top: 10px;
   max-height: 50px;
@@ -13157,11 +13162,49 @@ body {
 }
 
 .bg {
-  background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
-  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
+  height: 55em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.video-placeholder {
+  background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
+  height: 50em;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.learn-how {
+  background-color: white;
+  height: 10em;
+}
+
+.fa-graduation-cap {
+  font-size: 6em;
+  color: #476A6F;
+  padding-bottom: .1em;
+}
+
+.fa-usd {
+  font-size: 6em;
+  color: #2BAE67;
+  padding-bottom: .1em;
+}
+
+.fa-line-chart {
+  font-size: 6em;
+  color: #ECA400;
+  padding-bottom: .1em;
+}
+
+.csu-seals {
+  height: 10rem;
+  widows: 10rem;
 }
 
 .navbar,
@@ -13497,6 +13540,27 @@ textarea {
 
 .btn-plus {
   display: block;
+}
+
+.home-btn {
+  border-radius: 5rem;
+  width: 70%;
+  font-size: 0.9rem;
+  font-family: "Open Sans";
+  height: 45px;
+  color: white;
+}
+
+.home-btn__degrees {
+  background: #476A6F;
+}
+
+.home-btn__pfre {
+  background: #2BAE67;
+}
+
+.home-btn__majors {
+  background: #ECA400;
 }
 
 .echarts {

@@ -1,3 +1,6 @@
+// MAJORS GETTERS
+
 export default {
-    majorsYears: state => state.years
+    majors: state => state.majors,
+    majorsYears: state => state.years,
 }
