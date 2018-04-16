@@ -18,22 +18,22 @@ export default {
     return {
       industries: [
         {
-          title: "Tech",
+          title: "Food",
           percentage: 50,
           rank: 1,
           image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
         },
         {
-          title: "Retail",
+          title: "Education",
           percentage: 25,
           rank: 2,
-          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+          image: "https://i.gyazo.com/8424987981d698cbb018287201ea2fc8.jpg"
         },
         {
-          title: "Med",
+          title: "Medicine",
           percentage: 20,
           rank: 3,
-          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+          image: "https://i.gyazo.com/5c726f14961f864bf8857676c4a29e63.jpg"
         },
         {
           title: "Chem",

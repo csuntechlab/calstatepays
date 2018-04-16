@@ -2,6 +2,7 @@
 .text-white { color: $white }
 
 .home__heading {
+    font-size: 4rem;
     font-weight: 600;
 }
 .home__link {
@@ -25,4 +26,8 @@ body {
 
 .expansion-panel__body div{
   color: $gray;
+}
+
+figcaption {
+	font-size: 1.5rem;    
 }
