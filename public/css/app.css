@@ -13234,8 +13234,9 @@ footer,
 }
 
 #research-main-banner .csu-wrapper {
-  width: 90%;
-  bottom: 5%;
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
 }
 
 #research-main-banner .csu-wrapper figure img {

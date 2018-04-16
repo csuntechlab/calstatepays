@@ -19,8 +19,9 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8
         font-weight: 400;
     }
     .csu-wrapper {
-        width: 90%;
-        bottom: 5%;
+        position: absolute;
+        width: 100%;
+        bottom: 1rem;
         figure {
             img {
                 width: 6.5rem;
