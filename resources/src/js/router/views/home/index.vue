@@ -70,19 +70,24 @@
 		<div class="row">
 			<div class="learn-how text-center">
 				<h1>Learn How</h1>
-				<a href="">
+				<a href="#video-section">
 					<i class="fa fa-angle-down" aria-hidden="true" style="font-size: 6rem"></i>
 				</a>
 			</div>
 		</div>
-		<div class="row p-0">
+		<div id="video-section" class="row p-0">
 			<div class="video-placeholder"></div>
 		</div>
 	</div>
 </template>
 <script>
 	export default {
-
+		
 	}
 </script>
 
+<style>
+	figcaption {
+		font-size: 1.5rem;
+	}
+</style>
