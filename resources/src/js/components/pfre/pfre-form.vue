@@ -71,7 +71,7 @@
             </div>
             <div class="row row--condensed">
                 <div class="col col-md-8 py-4">
-                    <button type="button" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-success" @click="fetchMockData()">Submit</button>
                 </div>
             </div>
         </div>
@@ -79,6 +79,8 @@
 </template>
 <script>
 import { updateForm } from '../../utils/index';
+import { mapActions } from 'vuex';
+
 export default {
   data(){
       return {
@@ -92,7 +94,10 @@ export default {
       }
   },
   methods: {
-      updateForm
+    ...mapActions([
+      'fetchMockData'
+    ]),
+    updateForm
   }
 }
 </script>

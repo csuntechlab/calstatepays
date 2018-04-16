@@ -13162,8 +13162,8 @@ figcaption {
 }
 
 .bg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?28db3a6d9f64cc569dfdf7da89a469eb);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?28db3a6d9f64cc569dfdf7da89a469eb);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
   height: 55em;
   background-position: center;
   background-repeat: no-repeat;
