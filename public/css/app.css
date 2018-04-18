@@ -13198,7 +13198,7 @@ figcaption {
 
 .fa-line-chart {
   font-size: 6em;
-  color: #ECA400 !important;
+  color: #ECA400;
   padding-bottom: .1em;
 }
 
@@ -13397,7 +13397,7 @@ label {
 
 .label--required::after {
   margin-left: 2px;
-  color: #ECA400 !important;
+  color: #ECA400;
   content: "*";
 }
 
@@ -13572,7 +13572,7 @@ textarea {
 }
 
 .home-btn__majors {
-  background: #ECA400 !important;
+  background: #ECA400;
 }
 
 .echarts {
@@ -13584,10 +13584,19 @@ textarea {
 .pfre-bar {
   border-radius: 50px;
   margin: 0 !important;
+  background-color: light-gray !important;
 }
 
 .pfre-year {
   background-color: #ECA400 !important;
+}
+
+.pfre-earnings {
+  background-color: #279D5D !important;
+}
+
+.pfre-fre {
+  background-color: #476A6F !important;
 }
 
 .progress-footer {

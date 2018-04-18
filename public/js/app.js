@@ -78137,7 +78137,7 @@ var render = function() {
         _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Years")]),
         _vm._v(" "),
         _c("v-progress-linear", {
-          staticClass: "pfre-bar pfre-year",
+          staticClass: "pfre-bar",
           attrs: {
             value: _vm.years.actual / _vm.years.end * 100,
             height: "45",
@@ -78185,7 +78185,7 @@ var render = function() {
           attrs: {
             value: _vm.earnings.actual / _vm.earnings.maximum * 100,
             height: "45",
-            color: "green"
+            color: "pfre-earnings"
           }
         }),
         _vm._v(" "),
@@ -78231,7 +78231,7 @@ var render = function() {
         _vm._v(" "),
         _c("v-progress-linear", {
           staticClass: "pfre-bar",
-          attrs: { value: "15", height: "45", color: "light-green" }
+          attrs: { value: "15", height: "45", color: "pfre-fre" }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "progress-footer" }, [

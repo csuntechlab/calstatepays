@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <h5 class="pagination-centered">Years</h5>
-      <v-progress-linear class="pfre-bar pfre-year" :value="(years.actual/years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" :value="(years.actual/years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
       <div class="progress-footer col-12">
         <span class="col-4">
           <p class="float-left">{{years.start}}</p>  
@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <h5 class="pagination-centered">Earnings</h5>      
-      <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="45" color="green"></v-progress-linear> 
+      <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="45" color="pfre-earnings"></v-progress-linear> 
       <div class="progress-footer">
         <span class="col-4">
           <p class="float-left">{{earnings.minimum | currency}}</p>  
@@ -38,7 +38,7 @@
     </div>
     <div class="row">
       <h5 class="pagination-centered">Return On Investment</h5>
-      <v-progress-linear class="pfre-bar" value="15" height="45" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" value="15" height="45" color="pfre-fre"></v-progress-linear>
       <div class="progress-footer">
         <span class="col-4">
           <p class="float-left">{{returnOnInvestment.minimum | percentage}}</p>  
