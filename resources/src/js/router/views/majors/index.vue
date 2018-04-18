@@ -1,11 +1,10 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-bottom: 0px;">
         <div class="col col-md-12">
-           
-            <major-card class="my-4" v-for="item in cards" :key="item.major"></major-card>
+            <major-card class="my-2" v-for="item in cards" :key="item.major"></major-card>
             <card-add :onPlus="onPlus"></card-add>
         </div>
-  </div>
+    </div>
 </template>
 <script>
 import cardAdd from '../../../components/global/card-add.vue';

@@ -29,7 +29,23 @@
     outline: none;
 }
 
-.btn-plus{
-    display: block;
-   
+
+.home-btn {
+    border-radius: 5rem;
+    width: 70%;
+    font-size: 0.9rem;
+    font-family: $font-brand;
+    height: 45px;
+    color: white;
+}
+.home-btn__degrees{
+    background: $oxford;
+}
+
+.home-btn__pfre{
+    background: $green;
+}
+
+.home-btn__majors{
+    background: $gold;
 }

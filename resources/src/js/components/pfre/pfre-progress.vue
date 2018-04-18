@@ -2,56 +2,56 @@
   <div>
     <div class="row">
       <h5 class="pagination-centered">Years</h5>
-      <v-progress-linear class="pfre-bar" :value="(years.actual/years.end) * 100" height="45" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" :value="(pfreData.years.actual/pfreData.years.end) * 100" height="45" color="light-green"></v-progress-linear>
       <div class="progress-footer col-12">
         <span class="col-4">
-          <p class="float-left">{{years.start}}</p>  
+          <p class="float-left">{{pfreData.years.start}}</p>  
         </span>
         <span class="col-4">
-          <p class="text-center">{{years.middle}}</p>  
+          <p class="text-center">{{pfreData.years.middle}}</p>  
         </span>
         <span class="col-4">
-          <p class="float-right">{{years.end}}</p>  
+          <p class="float-right">{{pfreData.years.end}}</p>  
         </span>
       </div>
       <div>
-        <p class="font-weight-bold mb-0">Estimated time to degree: {{years.actual}}</p>
+        <p class="font-weight-bold mb-0">Estimated time to degree: {{pfreData.years.actual}}</p>
       </div>
     </div>
     <div class="row">
       <h5 class="pagination-centered">Earnings</h5>      
-      <v-progress-linear class="pfre-bar" :value="(earnings.actual/earnings.maximum) * 100" height="45" color="green"></v-progress-linear> 
+      <v-progress-linear class="pfre-bar" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="45" color="green"></v-progress-linear> 
       <div class="progress-footer">
         <span class="col-4">
-          <p class="float-left">{{earnings.minimum | currency}}</p>  
+          <p class="float-left">{{pfreData.earnings.minimum | currency}}</p>  
         </span>
         <span class="col-4">
-          <p class="text-center">{{earnings.average | currency}}</p>  
+          <p class="text-center">{{pfreData.earnings.average | currency}}</p>  
         </span>
         <span class="col-4">
-          <p class="float-right">{{earnings.maximum | currency}}</p>  
+          <p class="float-right">{{pfreData.earnings.maximum | currency}}</p>  
         </span>
       </div> 
       <div>
-        <p class="font-weight-bold mb-0">Estimated Earnings 5 Years After Exit: {{earnings.actual | currency}}</p>
+        <p class="font-weight-bold mb-0">Estimated Earnings 5 Years After Exit: {{pfreData.earnings.actual | currency}}</p>
       </div>  
     </div>
     <div class="row">
       <h5 class="pagination-centered">Return On Investment</h5>
-      <v-progress-linear class="pfre-bar" value="15" height="45" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100)) * 100" height="45" color="light-green"></v-progress-linear>
       <div class="progress-footer">
         <span class="col-4">
-          <p class="float-left">{{returnOnInvestment.minimum | percentage}}</p>  
+          <p class="float-left">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  
         </span>
         <span class="col-4">
-          <p class="text-center">{{returnOnInvestment.average | percentage}}</p>  
+          <p class="text-center">{{pfreData.returnOnInvestment.average | percentage}}</p>  
         </span>
         <span class="col-4">
-          <p class="float-right">{{returnOnInvestment.maximum | percentage}}</p>  
+          <p class="float-right">{{pfreData.returnOnInvestment.maximum | percentage}}</p>  
         </span>
       </div>   
       <div>
-        <p class="font-weight-bold mb-0">FRE - Financial Return on Education: {{returnOnInvestment.actual | percentage}}</p>
+        <p class="font-weight-bold mb-0">FRE - Financial Return on Education: {{pfreData.returnOnInvestment.actual | percentage}}</p>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
 
 <script>
 import {currency, percentage} from '../../filters';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -74,10 +74,13 @@ export default {
   },
   computed: {
      ...mapGetters([
-       'years',
-       'earnings',
-       'returnOnInvestment'
+       'pfreData'
     ]),
+  },
+  methods: {
+    ...mapActions([
+      'fetchMockData'
+    ])
   },
   filters: { percentage, currency }
 }
