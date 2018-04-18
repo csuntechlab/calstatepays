@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 110);
+/******/ 	return __webpack_require__(__webpack_require__.s = 111);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1390,19 +1390,19 @@ module.exports = function normalizeComponent (
 
 var zrUtil = __webpack_require__(0);
 
-var pathTool = __webpack_require__(213);
+var pathTool = __webpack_require__(216);
 
 var colorTool = __webpack_require__(24);
 
-var matrix = __webpack_require__(18);
+var matrix = __webpack_require__(19);
 
 var vector = __webpack_require__(6);
 
 var Path = __webpack_require__(9);
 
-var Transformable = __webpack_require__(66);
+var Transformable = __webpack_require__(67);
 
-var ZImage = __webpack_require__(74);
+var ZImage = __webpack_require__(75);
 
 exports.Image = ZImage;
 
@@ -1410,55 +1410,55 @@ var Group = __webpack_require__(31);
 
 exports.Group = Group;
 
-var Text = __webpack_require__(220);
+var Text = __webpack_require__(223);
 
 exports.Text = Text;
 
-var Circle = __webpack_require__(221);
+var Circle = __webpack_require__(224);
 
 exports.Circle = Circle;
 
-var Sector = __webpack_require__(222);
+var Sector = __webpack_require__(225);
 
 exports.Sector = Sector;
 
-var Ring = __webpack_require__(223);
+var Ring = __webpack_require__(226);
 
 exports.Ring = Ring;
 
-var Polygon = __webpack_require__(224);
+var Polygon = __webpack_require__(227);
 
 exports.Polygon = Polygon;
 
-var Polyline = __webpack_require__(227);
+var Polyline = __webpack_require__(230);
 
 exports.Polyline = Polyline;
 
-var Rect = __webpack_require__(228);
+var Rect = __webpack_require__(231);
 
 exports.Rect = Rect;
 
-var Line = __webpack_require__(229);
+var Line = __webpack_require__(232);
 
 exports.Line = Line;
 
-var BezierCurve = __webpack_require__(230);
+var BezierCurve = __webpack_require__(233);
 
 exports.BezierCurve = BezierCurve;
 
-var Arc = __webpack_require__(231);
+var Arc = __webpack_require__(234);
 
 exports.Arc = Arc;
 
-var CompoundPath = __webpack_require__(232);
+var CompoundPath = __webpack_require__(235);
 
 exports.CompoundPath = CompoundPath;
 
-var LinearGradient = __webpack_require__(233);
+var LinearGradient = __webpack_require__(236);
 
 exports.LinearGradient = LinearGradient;
 
-var RadialGradient = __webpack_require__(234);
+var RadialGradient = __webpack_require__(237);
 
 exports.RadialGradient = RadialGradient;
 
@@ -1466,7 +1466,7 @@ var BoundingRect = __webpack_require__(11);
 
 exports.BoundingRect = BoundingRect;
 
-var IncrementalDisplayable = __webpack_require__(235);
+var IncrementalDisplayable = __webpack_require__(238);
 
 exports.IncrementalDisplayable = IncrementalDisplayable;
 var round = Math.round;
@@ -2511,7 +2511,7 @@ var _config = __webpack_require__(4);
 
 var __DEV__ = _config.__DEV__;
 
-var zrender = __webpack_require__(63);
+var zrender = __webpack_require__(64);
 
 var zrUtil = __webpack_require__(0);
 
@@ -2523,25 +2523,25 @@ var timsort = __webpack_require__(41);
 
 var Eventful = __webpack_require__(23);
 
-var GlobalModel = __webpack_require__(77);
+var GlobalModel = __webpack_require__(78);
 
-var ExtensionAPI = __webpack_require__(85);
+var ExtensionAPI = __webpack_require__(86);
 
 var CoordinateSystemManager = __webpack_require__(46);
 
-var OptionManager = __webpack_require__(239);
+var OptionManager = __webpack_require__(242);
 
-var backwardCompat = __webpack_require__(240);
+var backwardCompat = __webpack_require__(243);
 
-var dataStack = __webpack_require__(242);
+var dataStack = __webpack_require__(245);
 
 var ComponentModel = __webpack_require__(17);
 
-var SeriesModel = __webpack_require__(86);
+var SeriesModel = __webpack_require__(87);
 
-var ComponentView = __webpack_require__(244);
+var ComponentView = __webpack_require__(247);
 
-var ChartView = __webpack_require__(87);
+var ChartView = __webpack_require__(88);
 
 var graphic = __webpack_require__(3);
 
@@ -2551,17 +2551,17 @@ var _throttle = __webpack_require__(48);
 
 var throttle = _throttle.throttle;
 
-var seriesColor = __webpack_require__(245);
+var seriesColor = __webpack_require__(248);
 
-var aria = __webpack_require__(246);
+var aria = __webpack_require__(249);
 
-var loadingDefault = __webpack_require__(248);
+var loadingDefault = __webpack_require__(251);
 
-var Scheduler = __webpack_require__(249);
+var Scheduler = __webpack_require__(252);
 
-var lightTheme = __webpack_require__(250);
+var lightTheme = __webpack_require__(253);
 
-var darkTheme = __webpack_require__(251);
+var darkTheme = __webpack_require__(254);
 
 /*!
  * ECharts, a free, powerful charting and visualization library.
@@ -4535,7 +4535,7 @@ exports.setCanvasCreator = setCanvasCreator;
 exports.registerMap = registerMap;
 exports.getMap = getMap;
 exports.dataTool = dataTool;
-var ___ec_export = __webpack_require__(252);
+var ___ec_export = __webpack_require__(255);
 (function () {
     for (var key in ___ec_export) {
         if (___ec_export.hasOwnProperty(key)) {
@@ -5529,9 +5529,9 @@ var zrUtil = __webpack_require__(0);
 
 var PathProxy = __webpack_require__(34);
 
-var pathContain = __webpack_require__(214);
+var pathContain = __webpack_require__(217);
 
-var Pattern = __webpack_require__(72);
+var Pattern = __webpack_require__(73);
 
 var getCanvasPattern = Pattern.prototype.getCanvasPattern;
 var abs = Math.abs;
@@ -5882,7 +5882,7 @@ module.exports = _default;
 
 
 var bind = __webpack_require__(52);
-var isBuffer = __webpack_require__(118);
+var isBuffer = __webpack_require__(119);
 
 /*global toString:true*/
 
@@ -6190,7 +6190,7 @@ module.exports = {
 
 var vec2 = __webpack_require__(6);
 
-var matrix = __webpack_require__(18);
+var matrix = __webpack_require__(19);
 
 /**
  * @module echarts/core/BoundingRect
@@ -6378,7 +6378,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var textContain = __webpack_require__(19);
+var textContain = __webpack_require__(20);
 
 var numberUtil = __webpack_require__(7);
 
@@ -6576,13 +6576,13 @@ var _clazz = __webpack_require__(16);
 var enableClassExtend = _clazz.enableClassExtend;
 var enableClassCheck = _clazz.enableClassCheck;
 
-var lineStyleMixin = __webpack_require__(210);
+var lineStyleMixin = __webpack_require__(213);
 
-var areaStyleMixin = __webpack_require__(211);
+var areaStyleMixin = __webpack_require__(214);
 
-var textStyleMixin = __webpack_require__(212);
+var textStyleMixin = __webpack_require__(215);
 
-var itemStyleMixin = __webpack_require__(236);
+var itemStyleMixin = __webpack_require__(239);
 
 /**
  * @module echarts/model/Model
@@ -7549,7 +7549,7 @@ var makeInner = _model.makeInner;
 
 var layout = __webpack_require__(14);
 
-var boxLayoutMixin = __webpack_require__(237);
+var boxLayoutMixin = __webpack_require__(240);
 
 /**
  * Component model
@@ -7740,1778 +7740,6 @@ module.exports = _default;
 
 /***/ }),
 /* 18 */
-/***/ (function(module, exports) {
-
-/**
- * 3x2矩阵操作类
- * @exports zrender/tool/matrix
- */
-var ArrayCtor = typeof Float32Array === 'undefined' ? Array : Float32Array;
-/**
- * Create a identity matrix.
- * @return {Float32Array|Array.<number>}
- */
-
-function create() {
-  var out = new ArrayCtor(6);
-  identity(out);
-  return out;
-}
-/**
- * 设置矩阵为单位矩阵
- * @param {Float32Array|Array.<number>} out
- */
-
-
-function identity(out) {
-  out[0] = 1;
-  out[1] = 0;
-  out[2] = 0;
-  out[3] = 1;
-  out[4] = 0;
-  out[5] = 0;
-  return out;
-}
-/**
- * 复制矩阵
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} m
- */
-
-
-function copy(out, m) {
-  out[0] = m[0];
-  out[1] = m[1];
-  out[2] = m[2];
-  out[3] = m[3];
-  out[4] = m[4];
-  out[5] = m[5];
-  return out;
-}
-/**
- * 矩阵相乘
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} m1
- * @param {Float32Array|Array.<number>} m2
- */
-
-
-function mul(out, m1, m2) {
-  // Consider matrix.mul(m, m2, m);
-  // where out is the same as m2.
-  // So use temp variable to escape error.
-  var out0 = m1[0] * m2[0] + m1[2] * m2[1];
-  var out1 = m1[1] * m2[0] + m1[3] * m2[1];
-  var out2 = m1[0] * m2[2] + m1[2] * m2[3];
-  var out3 = m1[1] * m2[2] + m1[3] * m2[3];
-  var out4 = m1[0] * m2[4] + m1[2] * m2[5] + m1[4];
-  var out5 = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
-  out[0] = out0;
-  out[1] = out1;
-  out[2] = out2;
-  out[3] = out3;
-  out[4] = out4;
-  out[5] = out5;
-  return out;
-}
-/**
- * 平移变换
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} a
- * @param {Float32Array|Array.<number>} v
- */
-
-
-function translate(out, a, v) {
-  out[0] = a[0];
-  out[1] = a[1];
-  out[2] = a[2];
-  out[3] = a[3];
-  out[4] = a[4] + v[0];
-  out[5] = a[5] + v[1];
-  return out;
-}
-/**
- * 旋转变换
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} a
- * @param {number} rad
- */
-
-
-function rotate(out, a, rad) {
-  var aa = a[0];
-  var ac = a[2];
-  var atx = a[4];
-  var ab = a[1];
-  var ad = a[3];
-  var aty = a[5];
-  var st = Math.sin(rad);
-  var ct = Math.cos(rad);
-  out[0] = aa * ct + ab * st;
-  out[1] = -aa * st + ab * ct;
-  out[2] = ac * ct + ad * st;
-  out[3] = -ac * st + ct * ad;
-  out[4] = ct * atx + st * aty;
-  out[5] = ct * aty - st * atx;
-  return out;
-}
-/**
- * 缩放变换
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} a
- * @param {Float32Array|Array.<number>} v
- */
-
-
-function scale(out, a, v) {
-  var vx = v[0];
-  var vy = v[1];
-  out[0] = a[0] * vx;
-  out[1] = a[1] * vy;
-  out[2] = a[2] * vx;
-  out[3] = a[3] * vy;
-  out[4] = a[4] * vx;
-  out[5] = a[5] * vy;
-  return out;
-}
-/**
- * 求逆矩阵
- * @param {Float32Array|Array.<number>} out
- * @param {Float32Array|Array.<number>} a
- */
-
-
-function invert(out, a) {
-  var aa = a[0];
-  var ac = a[2];
-  var atx = a[4];
-  var ab = a[1];
-  var ad = a[3];
-  var aty = a[5];
-  var det = aa * ad - ab * ac;
-
-  if (!det) {
-    return null;
-  }
-
-  det = 1.0 / det;
-  out[0] = ad * det;
-  out[1] = -ab * det;
-  out[2] = -ac * det;
-  out[3] = aa * det;
-  out[4] = (ac * aty - ad * atx) * det;
-  out[5] = (ab * atx - aa * aty) * det;
-  return out;
-}
-/**
- * Clone a new matrix.
- * @param {Float32Array|Array.<number>} a
- */
-
-
-function clone(a) {
-  var b = create();
-  copy(b, a);
-  return b;
-}
-
-exports.create = create;
-exports.identity = identity;
-exports.copy = copy;
-exports.mul = mul;
-exports.translate = translate;
-exports.rotate = rotate;
-exports.scale = scale;
-exports.invert = invert;
-exports.clone = clone;
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var BoundingRect = __webpack_require__(11);
-
-var imageHelper = __webpack_require__(42);
-
-var _util = __webpack_require__(0);
-
-var getContext = _util.getContext;
-var extend = _util.extend;
-var retrieve2 = _util.retrieve2;
-var retrieve3 = _util.retrieve3;
-var trim = _util.trim;
-var textWidthCache = {};
-var textWidthCacheCounter = 0;
-var TEXT_CACHE_MAX = 5000;
-var STYLE_REG = /\{([a-zA-Z0-9_]+)\|([^}]*)\}/g;
-var DEFAULT_FONT = '12px sans-serif'; // Avoid assign to an exported variable, for transforming to cjs.
-
-var methods = {};
-
-function $override(name, fn) {
-  methods[name] = fn;
-}
-/**
- * @public
- * @param {string} text
- * @param {string} font
- * @return {number} width
- */
-
-
-function getWidth(text, font) {
-  font = font || DEFAULT_FONT;
-  var key = text + ':' + font;
-
-  if (textWidthCache[key]) {
-    return textWidthCache[key];
-  }
-
-  var textLines = (text + '').split('\n');
-  var width = 0;
-
-  for (var i = 0, l = textLines.length; i < l; i++) {
-    // textContain.measureText may be overrided in SVG or VML
-    width = Math.max(measureText(textLines[i], font).width, width);
-  }
-
-  if (textWidthCacheCounter > TEXT_CACHE_MAX) {
-    textWidthCacheCounter = 0;
-    textWidthCache = {};
-  }
-
-  textWidthCacheCounter++;
-  textWidthCache[key] = width;
-  return width;
-}
-/**
- * @public
- * @param {string} text
- * @param {string} font
- * @param {string} [textAlign='left']
- * @param {string} [textVerticalAlign='top']
- * @param {Array.<number>} [textPadding]
- * @param {Object} [rich]
- * @param {Object} [truncate]
- * @return {Object} {x, y, width, height, lineHeight}
- */
-
-
-function getBoundingRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) {
-  return rich ? getRichTextRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) : getPlainTextRect(text, font, textAlign, textVerticalAlign, textPadding, truncate);
-}
-
-function getPlainTextRect(text, font, textAlign, textVerticalAlign, textPadding, truncate) {
-  var contentBlock = parsePlainText(text, font, textPadding, truncate);
-  var outerWidth = getWidth(text, font);
-
-  if (textPadding) {
-    outerWidth += textPadding[1] + textPadding[3];
-  }
-
-  var outerHeight = contentBlock.outerHeight;
-  var x = adjustTextX(0, outerWidth, textAlign);
-  var y = adjustTextY(0, outerHeight, textVerticalAlign);
-  var rect = new BoundingRect(x, y, outerWidth, outerHeight);
-  rect.lineHeight = contentBlock.lineHeight;
-  return rect;
-}
-
-function getRichTextRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) {
-  var contentBlock = parseRichText(text, {
-    rich: rich,
-    truncate: truncate,
-    font: font,
-    textAlign: textAlign,
-    textPadding: textPadding
-  });
-  var outerWidth = contentBlock.outerWidth;
-  var outerHeight = contentBlock.outerHeight;
-  var x = adjustTextX(0, outerWidth, textAlign);
-  var y = adjustTextY(0, outerHeight, textVerticalAlign);
-  return new BoundingRect(x, y, outerWidth, outerHeight);
-}
-/**
- * @public
- * @param {number} x
- * @param {number} width
- * @param {string} [textAlign='left']
- * @return {number} Adjusted x.
- */
-
-
-function adjustTextX(x, width, textAlign) {
-  // FIXME Right to left language
-  if (textAlign === 'right') {
-    x -= width;
-  } else if (textAlign === 'center') {
-    x -= width / 2;
-  }
-
-  return x;
-}
-/**
- * @public
- * @param {number} y
- * @param {number} height
- * @param {string} [textVerticalAlign='top']
- * @return {number} Adjusted y.
- */
-
-
-function adjustTextY(y, height, textVerticalAlign) {
-  if (textVerticalAlign === 'middle') {
-    y -= height / 2;
-  } else if (textVerticalAlign === 'bottom') {
-    y -= height;
-  }
-
-  return y;
-}
-/**
- * @public
- * @param {stirng} textPosition
- * @param {Object} rect {x, y, width, height}
- * @param {number} distance
- * @return {Object} {x, y, textAlign, textVerticalAlign}
- */
-
-
-function adjustTextPositionOnRect(textPosition, rect, distance) {
-  var x = rect.x;
-  var y = rect.y;
-  var height = rect.height;
-  var width = rect.width;
-  var halfHeight = height / 2;
-  var textAlign = 'left';
-  var textVerticalAlign = 'top';
-
-  switch (textPosition) {
-    case 'left':
-      x -= distance;
-      y += halfHeight;
-      textAlign = 'right';
-      textVerticalAlign = 'middle';
-      break;
-
-    case 'right':
-      x += distance + width;
-      y += halfHeight;
-      textVerticalAlign = 'middle';
-      break;
-
-    case 'top':
-      x += width / 2;
-      y -= distance;
-      textAlign = 'center';
-      textVerticalAlign = 'bottom';
-      break;
-
-    case 'bottom':
-      x += width / 2;
-      y += height + distance;
-      textAlign = 'center';
-      break;
-
-    case 'inside':
-      x += width / 2;
-      y += halfHeight;
-      textAlign = 'center';
-      textVerticalAlign = 'middle';
-      break;
-
-    case 'insideLeft':
-      x += distance;
-      y += halfHeight;
-      textVerticalAlign = 'middle';
-      break;
-
-    case 'insideRight':
-      x += width - distance;
-      y += halfHeight;
-      textAlign = 'right';
-      textVerticalAlign = 'middle';
-      break;
-
-    case 'insideTop':
-      x += width / 2;
-      y += distance;
-      textAlign = 'center';
-      break;
-
-    case 'insideBottom':
-      x += width / 2;
-      y += height - distance;
-      textAlign = 'center';
-      textVerticalAlign = 'bottom';
-      break;
-
-    case 'insideTopLeft':
-      x += distance;
-      y += distance;
-      break;
-
-    case 'insideTopRight':
-      x += width - distance;
-      y += distance;
-      textAlign = 'right';
-      break;
-
-    case 'insideBottomLeft':
-      x += distance;
-      y += height - distance;
-      textVerticalAlign = 'bottom';
-      break;
-
-    case 'insideBottomRight':
-      x += width - distance;
-      y += height - distance;
-      textAlign = 'right';
-      textVerticalAlign = 'bottom';
-      break;
-  }
-
-  return {
-    x: x,
-    y: y,
-    textAlign: textAlign,
-    textVerticalAlign: textVerticalAlign
-  };
-}
-/**
- * Show ellipsis if overflow.
- *
- * @public
- * @param  {string} text
- * @param  {string} containerWidth
- * @param  {string} font
- * @param  {number} [ellipsis='...']
- * @param  {Object} [options]
- * @param  {number} [options.maxIterations=3]
- * @param  {number} [options.minChar=0] If truncate result are less
- *                  then minChar, ellipsis will not show, which is
- *                  better for user hint in some cases.
- * @param  {number} [options.placeholder=''] When all truncated, use the placeholder.
- * @return {string}
- */
-
-
-function truncateText(text, containerWidth, font, ellipsis, options) {
-  if (!containerWidth) {
-    return '';
-  }
-
-  var textLines = (text + '').split('\n');
-  options = prepareTruncateOptions(containerWidth, font, ellipsis, options); // FIXME
-  // It is not appropriate that every line has '...' when truncate multiple lines.
-
-  for (var i = 0, len = textLines.length; i < len; i++) {
-    textLines[i] = truncateSingleLine(textLines[i], options);
-  }
-
-  return textLines.join('\n');
-}
-
-function prepareTruncateOptions(containerWidth, font, ellipsis, options) {
-  options = extend({}, options);
-  options.font = font;
-  var ellipsis = retrieve2(ellipsis, '...');
-  options.maxIterations = retrieve2(options.maxIterations, 2);
-  var minChar = options.minChar = retrieve2(options.minChar, 0); // FIXME
-  // Other languages?
-
-  options.cnCharWidth = getWidth('国', font); // FIXME
-  // Consider proportional font?
-
-  var ascCharWidth = options.ascCharWidth = getWidth('a', font);
-  options.placeholder = retrieve2(options.placeholder, ''); // Example 1: minChar: 3, text: 'asdfzxcv', truncate result: 'asdf', but not: 'a...'.
-  // Example 2: minChar: 3, text: '维度', truncate result: '维', but not: '...'.
-
-  var contentWidth = containerWidth = Math.max(0, containerWidth - 1); // Reserve some gap.
-
-  for (var i = 0; i < minChar && contentWidth >= ascCharWidth; i++) {
-    contentWidth -= ascCharWidth;
-  }
-
-  var ellipsisWidth = getWidth(ellipsis);
-
-  if (ellipsisWidth > contentWidth) {
-    ellipsis = '';
-    ellipsisWidth = 0;
-  }
-
-  contentWidth = containerWidth - ellipsisWidth;
-  options.ellipsis = ellipsis;
-  options.ellipsisWidth = ellipsisWidth;
-  options.contentWidth = contentWidth;
-  options.containerWidth = containerWidth;
-  return options;
-}
-
-function truncateSingleLine(textLine, options) {
-  var containerWidth = options.containerWidth;
-  var font = options.font;
-  var contentWidth = options.contentWidth;
-
-  if (!containerWidth) {
-    return '';
-  }
-
-  var lineWidth = getWidth(textLine, font);
-
-  if (lineWidth <= containerWidth) {
-    return textLine;
-  }
-
-  for (var j = 0;; j++) {
-    if (lineWidth <= contentWidth || j >= options.maxIterations) {
-      textLine += options.ellipsis;
-      break;
-    }
-
-    var subLength = j === 0 ? estimateLength(textLine, contentWidth, options.ascCharWidth, options.cnCharWidth) : lineWidth > 0 ? Math.floor(textLine.length * contentWidth / lineWidth) : 0;
-    textLine = textLine.substr(0, subLength);
-    lineWidth = getWidth(textLine, font);
-  }
-
-  if (textLine === '') {
-    textLine = options.placeholder;
-  }
-
-  return textLine;
-}
-
-function estimateLength(text, contentWidth, ascCharWidth, cnCharWidth) {
-  var width = 0;
-  var i = 0;
-
-  for (var len = text.length; i < len && width < contentWidth; i++) {
-    var charCode = text.charCodeAt(i);
-    width += 0 <= charCode && charCode <= 127 ? ascCharWidth : cnCharWidth;
-  }
-
-  return i;
-}
-/**
- * @public
- * @param {string} font
- * @return {number} line height
- */
-
-
-function getLineHeight(font) {
-  // FIXME A rough approach.
-  return getWidth('国', font);
-}
-/**
- * @public
- * @param {string} text
- * @param {string} font
- * @return {Object} width
- */
-
-
-function measureText(text, font) {
-  return methods.measureText(text, font);
-} // Avoid assign to an exported variable, for transforming to cjs.
-
-
-methods.measureText = function (text, font) {
-  var ctx = getContext();
-  ctx.font = font || DEFAULT_FONT;
-  return ctx.measureText(text);
-};
-/**
- * @public
- * @param {string} text
- * @param {string} font
- * @param {Object} [truncate]
- * @return {Object} block: {lineHeight, lines, height, outerHeight}
- *  Notice: for performance, do not calculate outerWidth util needed.
- */
-
-
-function parsePlainText(text, font, padding, truncate) {
-  text != null && (text += '');
-  var lineHeight = getLineHeight(font);
-  var lines = text ? text.split('\n') : [];
-  var height = lines.length * lineHeight;
-  var outerHeight = height;
-
-  if (padding) {
-    outerHeight += padding[0] + padding[2];
-  }
-
-  if (text && truncate) {
-    var truncOuterHeight = truncate.outerHeight;
-    var truncOuterWidth = truncate.outerWidth;
-
-    if (truncOuterHeight != null && outerHeight > truncOuterHeight) {
-      text = '';
-      lines = [];
-    } else if (truncOuterWidth != null) {
-      var options = prepareTruncateOptions(truncOuterWidth - (padding ? padding[1] + padding[3] : 0), font, truncate.ellipsis, {
-        minChar: truncate.minChar,
-        placeholder: truncate.placeholder
-      }); // FIXME
-      // It is not appropriate that every line has '...' when truncate multiple lines.
-
-      for (var i = 0, len = lines.length; i < len; i++) {
-        lines[i] = truncateSingleLine(lines[i], options);
-      }
-    }
-  }
-
-  return {
-    lines: lines,
-    height: height,
-    outerHeight: outerHeight,
-    lineHeight: lineHeight
-  };
-}
-/**
- * For example: 'some text {a|some text}other text{b|some text}xxx{c|}xxx'
- * Also consider 'bbbb{a|xxx\nzzz}xxxx\naaaa'.
- *
- * @public
- * @param {string} text
- * @param {Object} style
- * @return {Object} block
- * {
- *      width,
- *      height,
- *      lines: [{
- *          lineHeight,
- *          width,
- *          tokens: [[{
- *              styleName,
- *              text,
- *              width,      // include textPadding
- *              height,     // include textPadding
- *              textWidth, // pure text width
- *              textHeight, // pure text height
- *              lineHeihgt,
- *              font,
- *              textAlign,
- *              textVerticalAlign
- *          }], [...], ...]
- *      }, ...]
- * }
- * If styleName is undefined, it is plain text.
- */
-
-
-function parseRichText(text, style) {
-  var contentBlock = {
-    lines: [],
-    width: 0,
-    height: 0
-  };
-  text != null && (text += '');
-
-  if (!text) {
-    return contentBlock;
-  }
-
-  var lastIndex = STYLE_REG.lastIndex = 0;
-  var result;
-
-  while ((result = STYLE_REG.exec(text)) != null) {
-    var matchedIndex = result.index;
-
-    if (matchedIndex > lastIndex) {
-      pushTokens(contentBlock, text.substring(lastIndex, matchedIndex));
-    }
-
-    pushTokens(contentBlock, result[2], result[1]);
-    lastIndex = STYLE_REG.lastIndex;
-  }
-
-  if (lastIndex < text.length) {
-    pushTokens(contentBlock, text.substring(lastIndex, text.length));
-  }
-
-  var lines = contentBlock.lines;
-  var contentHeight = 0;
-  var contentWidth = 0; // For `textWidth: 100%`
-
-  var pendingList = [];
-  var stlPadding = style.textPadding;
-  var truncate = style.truncate;
-  var truncateWidth = truncate && truncate.outerWidth;
-  var truncateHeight = truncate && truncate.outerHeight;
-
-  if (stlPadding) {
-    truncateWidth != null && (truncateWidth -= stlPadding[1] + stlPadding[3]);
-    truncateHeight != null && (truncateHeight -= stlPadding[0] + stlPadding[2]);
-  } // Calculate layout info of tokens.
-
-
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
-    var lineHeight = 0;
-    var lineWidth = 0;
-
-    for (var j = 0; j < line.tokens.length; j++) {
-      var token = line.tokens[j];
-      var tokenStyle = token.styleName && style.rich[token.styleName] || {}; // textPadding should not inherit from style.
-
-      var textPadding = token.textPadding = tokenStyle.textPadding; // textFont has been asigned to font by `normalizeStyle`.
-
-      var font = token.font = tokenStyle.font || style.font; // textHeight can be used when textVerticalAlign is specified in token.
-
-      var tokenHeight = token.textHeight = retrieve2( // textHeight should not be inherited, consider it can be specified
-      // as box height of the block.
-      tokenStyle.textHeight, getLineHeight(font));
-      textPadding && (tokenHeight += textPadding[0] + textPadding[2]);
-      token.height = tokenHeight;
-      token.lineHeight = retrieve3(tokenStyle.textLineHeight, style.textLineHeight, tokenHeight);
-      token.textAlign = tokenStyle && tokenStyle.textAlign || style.textAlign;
-      token.textVerticalAlign = tokenStyle && tokenStyle.textVerticalAlign || 'middle';
-
-      if (truncateHeight != null && contentHeight + token.lineHeight > truncateHeight) {
-        return {
-          lines: [],
-          width: 0,
-          height: 0
-        };
-      }
-
-      token.textWidth = getWidth(token.text, font);
-      var tokenWidth = tokenStyle.textWidth;
-      var tokenWidthNotSpecified = tokenWidth == null || tokenWidth === 'auto'; // Percent width, can be `100%`, can be used in drawing separate
-      // line when box width is needed to be auto.
-
-      if (typeof tokenWidth === 'string' && tokenWidth.charAt(tokenWidth.length - 1) === '%') {
-        token.percentWidth = tokenWidth;
-        pendingList.push(token);
-        tokenWidth = 0; // Do not truncate in this case, because there is no user case
-        // and it is too complicated.
-      } else {
-        if (tokenWidthNotSpecified) {
-          tokenWidth = token.textWidth; // FIXME: If image is not loaded and textWidth is not specified, calling
-          // `getBoundingRect()` will not get correct result.
-
-          var textBackgroundColor = tokenStyle.textBackgroundColor;
-          var bgImg = textBackgroundColor && textBackgroundColor.image; // Use cases:
-          // (1) If image is not loaded, it will be loaded at render phase and call
-          // `dirty()` and `textBackgroundColor.image` will be replaced with the loaded
-          // image, and then the right size will be calculated here at the next tick.
-          // See `graphic/helper/text.js`.
-          // (2) If image loaded, and `textBackgroundColor.image` is image src string,
-          // use `imageHelper.findExistImage` to find cached image.
-          // `imageHelper.findExistImage` will always be called here before
-          // `imageHelper.createOrUpdateImage` in `graphic/helper/text.js#renderRichText`
-          // which ensures that image will not be rendered before correct size calcualted.
-
-          if (bgImg) {
-            bgImg = imageHelper.findExistImage(bgImg);
-
-            if (imageHelper.isImageReady(bgImg)) {
-              tokenWidth = Math.max(tokenWidth, bgImg.width * tokenHeight / bgImg.height);
-            }
-          }
-        }
-
-        var paddingW = textPadding ? textPadding[1] + textPadding[3] : 0;
-        tokenWidth += paddingW;
-        var remianTruncWidth = truncateWidth != null ? truncateWidth - lineWidth : null;
-
-        if (remianTruncWidth != null && remianTruncWidth < tokenWidth) {
-          if (!tokenWidthNotSpecified || remianTruncWidth < paddingW) {
-            token.text = '';
-            token.textWidth = tokenWidth = 0;
-          } else {
-            token.text = truncateText(token.text, remianTruncWidth - paddingW, font, truncate.ellipsis, {
-              minChar: truncate.minChar
-            });
-            token.textWidth = getWidth(token.text, font);
-            tokenWidth = token.textWidth + paddingW;
-          }
-        }
-      }
-
-      lineWidth += token.width = tokenWidth;
-      tokenStyle && (lineHeight = Math.max(lineHeight, token.lineHeight));
-    }
-
-    line.width = lineWidth;
-    line.lineHeight = lineHeight;
-    contentHeight += lineHeight;
-    contentWidth = Math.max(contentWidth, lineWidth);
-  }
-
-  contentBlock.outerWidth = contentBlock.width = retrieve2(style.textWidth, contentWidth);
-  contentBlock.outerHeight = contentBlock.height = retrieve2(style.textHeight, contentHeight);
-
-  if (stlPadding) {
-    contentBlock.outerWidth += stlPadding[1] + stlPadding[3];
-    contentBlock.outerHeight += stlPadding[0] + stlPadding[2];
-  }
-
-  for (var i = 0; i < pendingList.length; i++) {
-    var token = pendingList[i];
-    var percentWidth = token.percentWidth; // Should not base on outerWidth, because token can not be placed out of padding.
-
-    token.width = parseInt(percentWidth, 10) / 100 * contentWidth;
-  }
-
-  return contentBlock;
-}
-
-function pushTokens(block, str, styleName) {
-  var isEmptyStr = str === '';
-  var strs = str.split('\n');
-  var lines = block.lines;
-
-  for (var i = 0; i < strs.length; i++) {
-    var text = strs[i];
-    var token = {
-      styleName: styleName,
-      text: text,
-      isLineHolder: !text && !isEmptyStr
-    }; // The first token should be appended to the last line.
-
-    if (!i) {
-      var tokens = (lines[lines.length - 1] || (lines[0] = {
-        tokens: []
-      })).tokens; // Consider cases:
-      // (1) ''.split('\n') => ['', '\n', ''], the '' at the first item
-      // (which is a placeholder) should be replaced by new token.
-      // (2) A image backage, where token likes {a|}.
-      // (3) A redundant '' will affect textAlign in line.
-      // (4) tokens with the same tplName should not be merged, because
-      // they should be displayed in different box (with border and padding).
-
-      var tokensLen = tokens.length;
-      tokensLen === 1 && tokens[0].isLineHolder ? tokens[0] = token : // Consider text is '', only insert when it is the "lineHolder" or
-      // "emptyStr". Otherwise a redundant '' will affect textAlign in line.
-      (text || !tokensLen || isEmptyStr) && tokens.push(token);
-    } // Other tokens always start a new line.
-    else {
-        // If there is '', insert it as a placeholder.
-        lines.push({
-          tokens: [token]
-        });
-      }
-  }
-}
-
-function makeFont(style) {
-  // FIXME in node-canvas fontWeight is before fontStyle
-  // Use `fontSize` `fontFamily` to check whether font properties are defined.
-  var font = (style.fontSize || style.fontFamily) && [style.fontStyle, style.fontWeight, (style.fontSize || 12) + 'px', // If font properties are defined, `fontFamily` should not be ignored.
-  style.fontFamily || 'sans-serif'].join(' ');
-  return font && trim(font) || style.textFont || style.font;
-}
-
-exports.DEFAULT_FONT = DEFAULT_FONT;
-exports.$override = $override;
-exports.getWidth = getWidth;
-exports.getBoundingRect = getBoundingRect;
-exports.adjustTextX = adjustTextX;
-exports.adjustTextY = adjustTextY;
-exports.adjustTextPositionOnRect = adjustTextPositionOnRect;
-exports.truncateText = truncateText;
-exports.getLineHeight = getLineHeight;
-exports.measureText = measureText;
-exports.parsePlainText = parsePlainText;
-exports.parseRichText = parseRichText;
-exports.makeFont = makeFont;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _vector = __webpack_require__(6);
-
-var v2Create = _vector.create;
-var v2DistSquare = _vector.distSquare;
-
-/**
- * 曲线辅助模块
- * @module zrender/core/curve
- * @author pissang(https://www.github.com/pissang)
- */
-var mathPow = Math.pow;
-var mathSqrt = Math.sqrt;
-var EPSILON = 1e-8;
-var EPSILON_NUMERIC = 1e-4;
-var THREE_SQRT = mathSqrt(3);
-var ONE_THIRD = 1 / 3; // 临时变量
-
-var _v0 = v2Create();
-
-var _v1 = v2Create();
-
-var _v2 = v2Create();
-
-function isAroundZero(val) {
-  return val > -EPSILON && val < EPSILON;
-}
-
-function isNotAroundZero(val) {
-  return val > EPSILON || val < -EPSILON;
-}
-/**
- * 计算三次贝塞尔值
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} p3
- * @param  {number} t
- * @return {number}
- */
-
-
-function cubicAt(p0, p1, p2, p3, t) {
-  var onet = 1 - t;
-  return onet * onet * (onet * p0 + 3 * t * p1) + t * t * (t * p3 + 3 * onet * p2);
-}
-/**
- * 计算三次贝塞尔导数值
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} p3
- * @param  {number} t
- * @return {number}
- */
-
-
-function cubicDerivativeAt(p0, p1, p2, p3, t) {
-  var onet = 1 - t;
-  return 3 * (((p1 - p0) * onet + 2 * (p2 - p1) * t) * onet + (p3 - p2) * t * t);
-}
-/**
- * 计算三次贝塞尔方程根，使用盛金公式
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} p3
- * @param  {number} val
- * @param  {Array.<number>} roots
- * @return {number} 有效根数目
- */
-
-
-function cubicRootAt(p0, p1, p2, p3, val, roots) {
-  // Evaluate roots of cubic functions
-  var a = p3 + 3 * (p1 - p2) - p0;
-  var b = 3 * (p2 - p1 * 2 + p0);
-  var c = 3 * (p1 - p0);
-  var d = p0 - val;
-  var A = b * b - 3 * a * c;
-  var B = b * c - 9 * a * d;
-  var C = c * c - 3 * b * d;
-  var n = 0;
-
-  if (isAroundZero(A) && isAroundZero(B)) {
-    if (isAroundZero(b)) {
-      roots[0] = 0;
-    } else {
-      var t1 = -c / b; //t1, t2, t3, b is not zero
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-    }
-  } else {
-    var disc = B * B - 4 * A * C;
-
-    if (isAroundZero(disc)) {
-      var K = B / A;
-      var t1 = -b / a + K; // t1, a is not zero
-
-      var t2 = -K / 2; // t2, t3
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-
-      if (t2 >= 0 && t2 <= 1) {
-        roots[n++] = t2;
-      }
-    } else if (disc > 0) {
-      var discSqrt = mathSqrt(disc);
-      var Y1 = A * b + 1.5 * a * (-B + discSqrt);
-      var Y2 = A * b + 1.5 * a * (-B - discSqrt);
-
-      if (Y1 < 0) {
-        Y1 = -mathPow(-Y1, ONE_THIRD);
-      } else {
-        Y1 = mathPow(Y1, ONE_THIRD);
-      }
-
-      if (Y2 < 0) {
-        Y2 = -mathPow(-Y2, ONE_THIRD);
-      } else {
-        Y2 = mathPow(Y2, ONE_THIRD);
-      }
-
-      var t1 = (-b - (Y1 + Y2)) / (3 * a);
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-    } else {
-      var T = (2 * A * b - 3 * a * B) / (2 * mathSqrt(A * A * A));
-      var theta = Math.acos(T) / 3;
-      var ASqrt = mathSqrt(A);
-      var tmp = Math.cos(theta);
-      var t1 = (-b - 2 * ASqrt * tmp) / (3 * a);
-      var t2 = (-b + ASqrt * (tmp + THREE_SQRT * Math.sin(theta))) / (3 * a);
-      var t3 = (-b + ASqrt * (tmp - THREE_SQRT * Math.sin(theta))) / (3 * a);
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-
-      if (t2 >= 0 && t2 <= 1) {
-        roots[n++] = t2;
-      }
-
-      if (t3 >= 0 && t3 <= 1) {
-        roots[n++] = t3;
-      }
-    }
-  }
-
-  return n;
-}
-/**
- * 计算三次贝塞尔方程极限值的位置
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} p3
- * @param  {Array.<number>} extrema
- * @return {number} 有效数目
- */
-
-
-function cubicExtrema(p0, p1, p2, p3, extrema) {
-  var b = 6 * p2 - 12 * p1 + 6 * p0;
-  var a = 9 * p1 + 3 * p3 - 3 * p0 - 9 * p2;
-  var c = 3 * p1 - 3 * p0;
-  var n = 0;
-
-  if (isAroundZero(a)) {
-    if (isNotAroundZero(b)) {
-      var t1 = -c / b;
-
-      if (t1 >= 0 && t1 <= 1) {
-        extrema[n++] = t1;
-      }
-    }
-  } else {
-    var disc = b * b - 4 * a * c;
-
-    if (isAroundZero(disc)) {
-      extrema[0] = -b / (2 * a);
-    } else if (disc > 0) {
-      var discSqrt = mathSqrt(disc);
-      var t1 = (-b + discSqrt) / (2 * a);
-      var t2 = (-b - discSqrt) / (2 * a);
-
-      if (t1 >= 0 && t1 <= 1) {
-        extrema[n++] = t1;
-      }
-
-      if (t2 >= 0 && t2 <= 1) {
-        extrema[n++] = t2;
-      }
-    }
-  }
-
-  return n;
-}
-/**
- * 细分三次贝塞尔曲线
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} p3
- * @param  {number} t
- * @param  {Array.<number>} out
- */
-
-
-function cubicSubdivide(p0, p1, p2, p3, t, out) {
-  var p01 = (p1 - p0) * t + p0;
-  var p12 = (p2 - p1) * t + p1;
-  var p23 = (p3 - p2) * t + p2;
-  var p012 = (p12 - p01) * t + p01;
-  var p123 = (p23 - p12) * t + p12;
-  var p0123 = (p123 - p012) * t + p012; // Seg0
-
-  out[0] = p0;
-  out[1] = p01;
-  out[2] = p012;
-  out[3] = p0123; // Seg1
-
-  out[4] = p0123;
-  out[5] = p123;
-  out[6] = p23;
-  out[7] = p3;
-}
-/**
- * 投射点到三次贝塞尔曲线上，返回投射距离。
- * 投射点有可能会有一个或者多个，这里只返回其中距离最短的一个。
- * @param {number} x0
- * @param {number} y0
- * @param {number} x1
- * @param {number} y1
- * @param {number} x2
- * @param {number} y2
- * @param {number} x3
- * @param {number} y3
- * @param {number} x
- * @param {number} y
- * @param {Array.<number>} [out] 投射点
- * @return {number}
- */
-
-
-function cubicProjectPoint(x0, y0, x1, y1, x2, y2, x3, y3, x, y, out) {
-  // http://pomax.github.io/bezierinfo/#projections
-  var t;
-  var interval = 0.005;
-  var d = Infinity;
-  var prev;
-  var next;
-  var d1;
-  var d2;
-  _v0[0] = x;
-  _v0[1] = y; // 先粗略估计一下可能的最小距离的 t 值
-  // PENDING
-
-  for (var _t = 0; _t < 1; _t += 0.05) {
-    _v1[0] = cubicAt(x0, x1, x2, x3, _t);
-    _v1[1] = cubicAt(y0, y1, y2, y3, _t);
-    d1 = v2DistSquare(_v0, _v1);
-
-    if (d1 < d) {
-      t = _t;
-      d = d1;
-    }
-  }
-
-  d = Infinity; // At most 32 iteration
-
-  for (var i = 0; i < 32; i++) {
-    if (interval < EPSILON_NUMERIC) {
-      break;
-    }
-
-    prev = t - interval;
-    next = t + interval; // t - interval
-
-    _v1[0] = cubicAt(x0, x1, x2, x3, prev);
-    _v1[1] = cubicAt(y0, y1, y2, y3, prev);
-    d1 = v2DistSquare(_v1, _v0);
-
-    if (prev >= 0 && d1 < d) {
-      t = prev;
-      d = d1;
-    } else {
-      // t + interval
-      _v2[0] = cubicAt(x0, x1, x2, x3, next);
-      _v2[1] = cubicAt(y0, y1, y2, y3, next);
-      d2 = v2DistSquare(_v2, _v0);
-
-      if (next <= 1 && d2 < d) {
-        t = next;
-        d = d2;
-      } else {
-        interval *= 0.5;
-      }
-    }
-  } // t
-
-
-  if (out) {
-    out[0] = cubicAt(x0, x1, x2, x3, t);
-    out[1] = cubicAt(y0, y1, y2, y3, t);
-  } // console.log(interval, i);
-
-
-  return mathSqrt(d);
-}
-/**
- * 计算二次方贝塞尔值
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} t
- * @return {number}
- */
-
-
-function quadraticAt(p0, p1, p2, t) {
-  var onet = 1 - t;
-  return onet * (onet * p0 + 2 * t * p1) + t * t * p2;
-}
-/**
- * 计算二次方贝塞尔导数值
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} t
- * @return {number}
- */
-
-
-function quadraticDerivativeAt(p0, p1, p2, t) {
-  return 2 * ((1 - t) * (p1 - p0) + t * (p2 - p1));
-}
-/**
- * 计算二次方贝塞尔方程根
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} t
- * @param  {Array.<number>} roots
- * @return {number} 有效根数目
- */
-
-
-function quadraticRootAt(p0, p1, p2, val, roots) {
-  var a = p0 - 2 * p1 + p2;
-  var b = 2 * (p1 - p0);
-  var c = p0 - val;
-  var n = 0;
-
-  if (isAroundZero(a)) {
-    if (isNotAroundZero(b)) {
-      var t1 = -c / b;
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-    }
-  } else {
-    var disc = b * b - 4 * a * c;
-
-    if (isAroundZero(disc)) {
-      var t1 = -b / (2 * a);
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-    } else if (disc > 0) {
-      var discSqrt = mathSqrt(disc);
-      var t1 = (-b + discSqrt) / (2 * a);
-      var t2 = (-b - discSqrt) / (2 * a);
-
-      if (t1 >= 0 && t1 <= 1) {
-        roots[n++] = t1;
-      }
-
-      if (t2 >= 0 && t2 <= 1) {
-        roots[n++] = t2;
-      }
-    }
-  }
-
-  return n;
-}
-/**
- * 计算二次贝塞尔方程极限值
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @return {number}
- */
-
-
-function quadraticExtremum(p0, p1, p2) {
-  var divider = p0 + p2 - 2 * p1;
-
-  if (divider === 0) {
-    // p1 is center of p0 and p2
-    return 0.5;
-  } else {
-    return (p0 - p1) / divider;
-  }
-}
-/**
- * 细分二次贝塞尔曲线
- * @memberOf module:zrender/core/curve
- * @param  {number} p0
- * @param  {number} p1
- * @param  {number} p2
- * @param  {number} t
- * @param  {Array.<number>} out
- */
-
-
-function quadraticSubdivide(p0, p1, p2, t, out) {
-  var p01 = (p1 - p0) * t + p0;
-  var p12 = (p2 - p1) * t + p1;
-  var p012 = (p12 - p01) * t + p01; // Seg0
-
-  out[0] = p0;
-  out[1] = p01;
-  out[2] = p012; // Seg1
-
-  out[3] = p012;
-  out[4] = p12;
-  out[5] = p2;
-}
-/**
- * 投射点到二次贝塞尔曲线上，返回投射距离。
- * 投射点有可能会有一个或者多个，这里只返回其中距离最短的一个。
- * @param {number} x0
- * @param {number} y0
- * @param {number} x1
- * @param {number} y1
- * @param {number} x2
- * @param {number} y2
- * @param {number} x
- * @param {number} y
- * @param {Array.<number>} out 投射点
- * @return {number}
- */
-
-
-function quadraticProjectPoint(x0, y0, x1, y1, x2, y2, x, y, out) {
-  // http://pomax.github.io/bezierinfo/#projections
-  var t;
-  var interval = 0.005;
-  var d = Infinity;
-  _v0[0] = x;
-  _v0[1] = y; // 先粗略估计一下可能的最小距离的 t 值
-  // PENDING
-
-  for (var _t = 0; _t < 1; _t += 0.05) {
-    _v1[0] = quadraticAt(x0, x1, x2, _t);
-    _v1[1] = quadraticAt(y0, y1, y2, _t);
-    var d1 = v2DistSquare(_v0, _v1);
-
-    if (d1 < d) {
-      t = _t;
-      d = d1;
-    }
-  }
-
-  d = Infinity; // At most 32 iteration
-
-  for (var i = 0; i < 32; i++) {
-    if (interval < EPSILON_NUMERIC) {
-      break;
-    }
-
-    var prev = t - interval;
-    var next = t + interval; // t - interval
-
-    _v1[0] = quadraticAt(x0, x1, x2, prev);
-    _v1[1] = quadraticAt(y0, y1, y2, prev);
-    var d1 = v2DistSquare(_v1, _v0);
-
-    if (prev >= 0 && d1 < d) {
-      t = prev;
-      d = d1;
-    } else {
-      // t + interval
-      _v2[0] = quadraticAt(x0, x1, x2, next);
-      _v2[1] = quadraticAt(y0, y1, y2, next);
-      var d2 = v2DistSquare(_v2, _v0);
-
-      if (next <= 1 && d2 < d) {
-        t = next;
-        d = d2;
-      } else {
-        interval *= 0.5;
-      }
-    }
-  } // t
-
-
-  if (out) {
-    out[0] = quadraticAt(x0, x1, x2, t);
-    out[1] = quadraticAt(y0, y1, y2, t);
-  } // console.log(interval, i);
-
-
-  return mathSqrt(d);
-}
-
-exports.cubicAt = cubicAt;
-exports.cubicDerivativeAt = cubicDerivativeAt;
-exports.cubicRootAt = cubicRootAt;
-exports.cubicExtrema = cubicExtrema;
-exports.cubicSubdivide = cubicSubdivide;
-exports.cubicProjectPoint = cubicProjectPoint;
-exports.quadraticAt = quadraticAt;
-exports.quadraticDerivativeAt = quadraticDerivativeAt;
-exports.quadraticRootAt = quadraticRootAt;
-exports.quadraticExtremum = quadraticExtremum;
-exports.quadraticSubdivide = quadraticSubdivide;
-exports.quadraticProjectPoint = quadraticProjectPoint;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _config = __webpack_require__(4);
-
-var __DEV__ = _config.__DEV__;
-
-var zrUtil = __webpack_require__(0);
-
-var textContain = __webpack_require__(19);
-
-var OrdinalScale = __webpack_require__(255);
-
-var IntervalScale = __webpack_require__(50);
-
-var Scale = __webpack_require__(37);
-
-var numberUtil = __webpack_require__(7);
-
-var _barGrid = __webpack_require__(256);
-
-var calBarWidthAndOffset = _barGrid.calBarWidthAndOffset;
-
-__webpack_require__(257);
-
-__webpack_require__(258);
-
-/**
- * Get axis scale extent before niced.
- * Item of returned array can only be number (including Infinity and NaN).
- */
-function getScaleExtent(scale, model) {
-  var scaleType = scale.type;
-  var min = model.getMin();
-  var max = model.getMax();
-  var fixMin = min != null;
-  var fixMax = max != null;
-  var originalExtent = scale.getExtent();
-  var axisDataLen;
-  var boundaryGap;
-  var span;
-
-  if (scaleType === 'ordinal') {
-    axisDataLen = model.getCategories().length;
-  } else {
-    boundaryGap = model.get('boundaryGap');
-
-    if (!zrUtil.isArray(boundaryGap)) {
-      boundaryGap = [boundaryGap || 0, boundaryGap || 0];
-    }
-
-    if (typeof boundaryGap[0] === 'boolean') {
-      boundaryGap = [0, 0];
-    }
-
-    boundaryGap[0] = numberUtil.parsePercent(boundaryGap[0], 1);
-    boundaryGap[1] = numberUtil.parsePercent(boundaryGap[1], 1);
-    span = originalExtent[1] - originalExtent[0] || Math.abs(originalExtent[0]);
-  } // Notice: When min/max is not set (that is, when there are null/undefined,
-  // which is the most common case), these cases should be ensured:
-  // (1) For 'ordinal', show all axis.data.
-  // (2) For others:
-  //      + `boundaryGap` is applied (if min/max set, boundaryGap is
-  //      disabled).
-  //      + If `needCrossZero`, min/max should be zero, otherwise, min/max should
-  //      be the result that originalExtent enlarged by boundaryGap.
-  // (3) If no data, it should be ensured that `scale.setBlank` is set.
-  // FIXME
-  // (1) When min/max is 'dataMin' or 'dataMax', should boundaryGap be able to used?
-  // (2) When `needCrossZero` and all data is positive/negative, should it be ensured
-  // that the results processed by boundaryGap are positive/negative?
-
-
-  if (min == null) {
-    min = scaleType === 'ordinal' ? axisDataLen ? 0 : NaN : originalExtent[0] - boundaryGap[0] * span;
-  }
-
-  if (max == null) {
-    max = scaleType === 'ordinal' ? axisDataLen ? axisDataLen - 1 : NaN : originalExtent[1] + boundaryGap[1] * span;
-  }
-
-  if (min === 'dataMin') {
-    min = originalExtent[0];
-  } else if (typeof min === 'function') {
-    min = min({
-      min: originalExtent[0],
-      max: originalExtent[1]
-    });
-  }
-
-  if (max === 'dataMax') {
-    max = originalExtent[1];
-  } else if (typeof max === 'function') {
-    max = max({
-      min: originalExtent[0],
-      max: originalExtent[1]
-    });
-  }
-
-  (min == null || !isFinite(min)) && (min = NaN);
-  (max == null || !isFinite(max)) && (max = NaN);
-  scale.setBlank(zrUtil.eqNaN(min) || zrUtil.eqNaN(max)); // Evaluate if axis needs cross zero
-
-  if (model.getNeedCrossZero()) {
-    // Axis is over zero and min is not set
-    if (min > 0 && max > 0 && !fixMin) {
-      min = 0;
-    } // Axis is under zero and max is not set
-
-
-    if (min < 0 && max < 0 && !fixMax) {
-      max = 0;
-    }
-  } // If bars are placed on a base axis of type time or interval account for axis boundary overflow and current axis
-  // is base axis
-  // FIXME
-  // (1) Consider support value axis, where below zero and axis `onZero` should be handled properly.
-  // (2) Refactor the logic with `barGrid`. Is it not need to `calBarWidthAndOffset` twice with different extent?
-  //     Should not depend on series type `bar`?
-  // (3) Fix that might overlap when using dataZoom.
-  // (4) Consider other chart types using `barGrid`?
-  // See #6728, #4862, `test/bar-overflow-time-plot.html`
-
-
-  var ecModel = model.ecModel;
-
-  if (ecModel && scaleType === 'time'
-  /*|| scaleType === 'interval' */
-  ) {
-    var barSeriesModels = [];
-    var isBaseAxisAndHasBarSeries;
-    ecModel.eachSeriesByType('bar', function (seriesModel) {
-      if (seriesModel.coordinateSystem && seriesModel.coordinateSystem.type === 'cartesian2d') {
-        barSeriesModels.push(seriesModel);
-        isBaseAxisAndHasBarSeries |= seriesModel.getBaseAxis() === model.axis;
-      }
-    });
-
-    if (isBaseAxisAndHasBarSeries) {
-      // Adjust axis min and max to account for overflow
-      var adjustedScale = adjustScaleForOverflow(min, max, model, barSeriesModels);
-      min = adjustedScale.min;
-      max = adjustedScale.max;
-    }
-  }
-
-  return [min, max];
-}
-
-function adjustScaleForOverflow(min, max, model, barSeriesModels) {
-  // Get Axis Length
-  var axisExtent = model.axis.getExtent();
-  var axisLength = axisExtent[1] - axisExtent[0]; // Calculate placement of bars on axis
-
-  var barWidthAndOffset = calBarWidthAndOffset(barSeriesModels); // Get bars on current base axis and calculate min and max overflow
-
-  var baseAxisKey = model.axis.dim + model.axis.index;
-  var barsOnCurrentAxis = barWidthAndOffset[baseAxisKey];
-
-  if (barsOnCurrentAxis === undefined) {
-    return {
-      min: min,
-      max: max
-    };
-  }
-
-  var minOverflow = Infinity;
-  zrUtil.each(barsOnCurrentAxis, function (item) {
-    minOverflow = Math.min(item.offset, minOverflow);
-  });
-  var maxOverflow = -Infinity;
-  zrUtil.each(barsOnCurrentAxis, function (item) {
-    maxOverflow = Math.max(item.offset + item.width, maxOverflow);
-  });
-  minOverflow = Math.abs(minOverflow);
-  maxOverflow = Math.abs(maxOverflow);
-  var totalOverFlow = minOverflow + maxOverflow; // Calulate required buffer based on old range and overflow
-
-  var oldRange = max - min;
-  var oldRangePercentOfNew = 1 - (minOverflow + maxOverflow) / axisLength;
-  var overflowBuffer = oldRange / oldRangePercentOfNew - oldRange;
-  max += overflowBuffer * (maxOverflow / totalOverFlow);
-  min -= overflowBuffer * (minOverflow / totalOverFlow);
-  return {
-    min: min,
-    max: max
-  };
-}
-
-function niceScaleExtent(scale, model) {
-  var extent = getScaleExtent(scale, model);
-  var fixMin = model.getMin() != null;
-  var fixMax = model.getMax() != null;
-  var splitNumber = model.get('splitNumber');
-
-  if (scale.type === 'log') {
-    scale.base = model.get('logBase');
-  }
-
-  var scaleType = scale.type;
-  scale.setExtent(extent[0], extent[1]);
-  scale.niceExtent({
-    splitNumber: splitNumber,
-    fixMin: fixMin,
-    fixMax: fixMax,
-    minInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('minInterval') : null,
-    maxInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('maxInterval') : null
-  }); // If some one specified the min, max. And the default calculated interval
-  // is not good enough. He can specify the interval. It is often appeared
-  // in angle axis with angle 0 - 360. Interval calculated in interval scale is hard
-  // to be 60.
-  // FIXME
-
-  var interval = model.get('interval');
-
-  if (interval != null) {
-    scale.setInterval && scale.setInterval(interval);
-  }
-}
-/**
- * @param {module:echarts/model/Model} model
- * @param {string} [axisType] Default retrieve from model.type
- * @return {module:echarts/scale/*}
- */
-
-
-function createScaleByModel(model, axisType) {
-  axisType = axisType || model.get('type');
-
-  if (axisType) {
-    switch (axisType) {
-      // Buildin scale
-      case 'category':
-        return new OrdinalScale(model.getOrdinalMeta ? model.getOrdinalMeta() : model.getCategories(), [Infinity, -Infinity]);
-
-      case 'value':
-        return new IntervalScale();
-      // Extended scale, like time and log
-
-      default:
-        return (Scale.getClass(axisType) || IntervalScale).create(model);
-    }
-  }
-}
-/**
- * Check if the axis corss 0
- */
-
-
-function ifAxisCrossZero(axis) {
-  var dataExtent = axis.scale.getExtent();
-  var min = dataExtent[0];
-  var max = dataExtent[1];
-  return !(min > 0 && max > 0 || min < 0 && max < 0);
-}
-/**
- * @param {Array.<number>} tickCoords In axis self coordinate.
- * @param {Array.<string>} labels
- * @param {string} font
- * @param {number} axisRotate 0: towards right horizontally, clock-wise is negative.
- * @param {number} [labelRotate=0] 0: towards right horizontally, clock-wise is negative.
- * @return {number}
- */
-
-
-function getAxisLabelInterval(tickCoords, labels, font, axisRotate, labelRotate) {
-  var textSpaceTakenRect;
-  var autoLabelInterval = 0;
-  var accumulatedLabelInterval = 0;
-  var rotation = (axisRotate - labelRotate) / 180 * Math.PI;
-  var step = 1;
-
-  if (labels.length > 40) {
-    // Simple optimization for large amount of labels
-    step = Math.floor(labels.length / 40);
-  }
-
-  for (var i = 0; i < tickCoords.length; i += step) {
-    var tickCoord = tickCoords[i]; // Not precise, do not consider align and vertical align
-    // and each distance from axis line yet.
-
-    var rect = textContain.getBoundingRect(labels[i], font, 'center', 'top');
-    rect.x += tickCoord * Math.cos(rotation);
-    rect.y += tickCoord * Math.sin(rotation); // Magic number
-
-    rect.width *= 1.3;
-    rect.height *= 1.3;
-
-    if (!textSpaceTakenRect) {
-      textSpaceTakenRect = rect.clone();
-    } // There is no space for current label;
-    else if (textSpaceTakenRect.intersect(rect)) {
-        accumulatedLabelInterval++;
-        autoLabelInterval = Math.max(autoLabelInterval, accumulatedLabelInterval);
-      } else {
-        textSpaceTakenRect.union(rect); // Reset
-
-        accumulatedLabelInterval = 0;
-      }
-  }
-
-  if (autoLabelInterval === 0 && step > 1) {
-    return step;
-  }
-
-  return (autoLabelInterval + 1) * step - 1;
-}
-/**
- * @param {Object} axis
- * @param {Function} labelFormatter
- * @return {Array.<string>}
- */
-
-
-function getFormattedLabels(axis, labelFormatter) {
-  var scale = axis.scale;
-  var labels = scale.getTicksLabels();
-  var ticks = scale.getTicks();
-
-  if (typeof labelFormatter === 'string') {
-    labelFormatter = function (tpl) {
-      return function (val) {
-        return tpl.replace('{value}', val != null ? val : '');
-      };
-    }(labelFormatter); // Consider empty array
-
-
-    return zrUtil.map(labels, labelFormatter);
-  } else if (typeof labelFormatter === 'function') {
-    return zrUtil.map(ticks, function (tick, idx) {
-      return labelFormatter(getAxisRawValue(axis, tick), idx);
-    }, this);
-  } else {
-    return labels;
-  }
-}
-
-function getAxisRawValue(axis, value) {
-  // In category axis with data zoom, tick is not the original
-  // index of axis.data. So tick should not be exposed to user
-  // in category axis.
-  return axis.type === 'category' ? axis.scale.getLabel(value) : value;
-}
-
-exports.getScaleExtent = getScaleExtent;
-exports.niceScaleExtent = niceScaleExtent;
-exports.createScaleByModel = createScaleByModel;
-exports.ifAxisCrossZero = ifAxisCrossZero;
-exports.getAxisLabelInterval = getAxisLabelInterval;
-exports.getFormattedLabels = getFormattedLabels;
-exports.getAxisRawValue = getAxisRawValue;
-
-/***/ }),
-/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9519,8 +7747,8 @@ exports.getAxisRawValue = getAxisRawValue;
 /* unused harmony export install */
 /* unused harmony export mapState */
 /* unused harmony export mapMutations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
-/* unused harmony export mapActions */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
 /* unused harmony export createNamespacedHelpers */
 /**
  * vuex v3.0.1
@@ -10456,6 +8684,1778 @@ var index_esm = {
 
 
 /***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+/**
+ * 3x2矩阵操作类
+ * @exports zrender/tool/matrix
+ */
+var ArrayCtor = typeof Float32Array === 'undefined' ? Array : Float32Array;
+/**
+ * Create a identity matrix.
+ * @return {Float32Array|Array.<number>}
+ */
+
+function create() {
+  var out = new ArrayCtor(6);
+  identity(out);
+  return out;
+}
+/**
+ * 设置矩阵为单位矩阵
+ * @param {Float32Array|Array.<number>} out
+ */
+
+
+function identity(out) {
+  out[0] = 1;
+  out[1] = 0;
+  out[2] = 0;
+  out[3] = 1;
+  out[4] = 0;
+  out[5] = 0;
+  return out;
+}
+/**
+ * 复制矩阵
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} m
+ */
+
+
+function copy(out, m) {
+  out[0] = m[0];
+  out[1] = m[1];
+  out[2] = m[2];
+  out[3] = m[3];
+  out[4] = m[4];
+  out[5] = m[5];
+  return out;
+}
+/**
+ * 矩阵相乘
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} m1
+ * @param {Float32Array|Array.<number>} m2
+ */
+
+
+function mul(out, m1, m2) {
+  // Consider matrix.mul(m, m2, m);
+  // where out is the same as m2.
+  // So use temp variable to escape error.
+  var out0 = m1[0] * m2[0] + m1[2] * m2[1];
+  var out1 = m1[1] * m2[0] + m1[3] * m2[1];
+  var out2 = m1[0] * m2[2] + m1[2] * m2[3];
+  var out3 = m1[1] * m2[2] + m1[3] * m2[3];
+  var out4 = m1[0] * m2[4] + m1[2] * m2[5] + m1[4];
+  var out5 = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
+  out[0] = out0;
+  out[1] = out1;
+  out[2] = out2;
+  out[3] = out3;
+  out[4] = out4;
+  out[5] = out5;
+  return out;
+}
+/**
+ * 平移变换
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} a
+ * @param {Float32Array|Array.<number>} v
+ */
+
+
+function translate(out, a, v) {
+  out[0] = a[0];
+  out[1] = a[1];
+  out[2] = a[2];
+  out[3] = a[3];
+  out[4] = a[4] + v[0];
+  out[5] = a[5] + v[1];
+  return out;
+}
+/**
+ * 旋转变换
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} a
+ * @param {number} rad
+ */
+
+
+function rotate(out, a, rad) {
+  var aa = a[0];
+  var ac = a[2];
+  var atx = a[4];
+  var ab = a[1];
+  var ad = a[3];
+  var aty = a[5];
+  var st = Math.sin(rad);
+  var ct = Math.cos(rad);
+  out[0] = aa * ct + ab * st;
+  out[1] = -aa * st + ab * ct;
+  out[2] = ac * ct + ad * st;
+  out[3] = -ac * st + ct * ad;
+  out[4] = ct * atx + st * aty;
+  out[5] = ct * aty - st * atx;
+  return out;
+}
+/**
+ * 缩放变换
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} a
+ * @param {Float32Array|Array.<number>} v
+ */
+
+
+function scale(out, a, v) {
+  var vx = v[0];
+  var vy = v[1];
+  out[0] = a[0] * vx;
+  out[1] = a[1] * vy;
+  out[2] = a[2] * vx;
+  out[3] = a[3] * vy;
+  out[4] = a[4] * vx;
+  out[5] = a[5] * vy;
+  return out;
+}
+/**
+ * 求逆矩阵
+ * @param {Float32Array|Array.<number>} out
+ * @param {Float32Array|Array.<number>} a
+ */
+
+
+function invert(out, a) {
+  var aa = a[0];
+  var ac = a[2];
+  var atx = a[4];
+  var ab = a[1];
+  var ad = a[3];
+  var aty = a[5];
+  var det = aa * ad - ab * ac;
+
+  if (!det) {
+    return null;
+  }
+
+  det = 1.0 / det;
+  out[0] = ad * det;
+  out[1] = -ab * det;
+  out[2] = -ac * det;
+  out[3] = aa * det;
+  out[4] = (ac * aty - ad * atx) * det;
+  out[5] = (ab * atx - aa * aty) * det;
+  return out;
+}
+/**
+ * Clone a new matrix.
+ * @param {Float32Array|Array.<number>} a
+ */
+
+
+function clone(a) {
+  var b = create();
+  copy(b, a);
+  return b;
+}
+
+exports.create = create;
+exports.identity = identity;
+exports.copy = copy;
+exports.mul = mul;
+exports.translate = translate;
+exports.rotate = rotate;
+exports.scale = scale;
+exports.invert = invert;
+exports.clone = clone;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var BoundingRect = __webpack_require__(11);
+
+var imageHelper = __webpack_require__(42);
+
+var _util = __webpack_require__(0);
+
+var getContext = _util.getContext;
+var extend = _util.extend;
+var retrieve2 = _util.retrieve2;
+var retrieve3 = _util.retrieve3;
+var trim = _util.trim;
+var textWidthCache = {};
+var textWidthCacheCounter = 0;
+var TEXT_CACHE_MAX = 5000;
+var STYLE_REG = /\{([a-zA-Z0-9_]+)\|([^}]*)\}/g;
+var DEFAULT_FONT = '12px sans-serif'; // Avoid assign to an exported variable, for transforming to cjs.
+
+var methods = {};
+
+function $override(name, fn) {
+  methods[name] = fn;
+}
+/**
+ * @public
+ * @param {string} text
+ * @param {string} font
+ * @return {number} width
+ */
+
+
+function getWidth(text, font) {
+  font = font || DEFAULT_FONT;
+  var key = text + ':' + font;
+
+  if (textWidthCache[key]) {
+    return textWidthCache[key];
+  }
+
+  var textLines = (text + '').split('\n');
+  var width = 0;
+
+  for (var i = 0, l = textLines.length; i < l; i++) {
+    // textContain.measureText may be overrided in SVG or VML
+    width = Math.max(measureText(textLines[i], font).width, width);
+  }
+
+  if (textWidthCacheCounter > TEXT_CACHE_MAX) {
+    textWidthCacheCounter = 0;
+    textWidthCache = {};
+  }
+
+  textWidthCacheCounter++;
+  textWidthCache[key] = width;
+  return width;
+}
+/**
+ * @public
+ * @param {string} text
+ * @param {string} font
+ * @param {string} [textAlign='left']
+ * @param {string} [textVerticalAlign='top']
+ * @param {Array.<number>} [textPadding]
+ * @param {Object} [rich]
+ * @param {Object} [truncate]
+ * @return {Object} {x, y, width, height, lineHeight}
+ */
+
+
+function getBoundingRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) {
+  return rich ? getRichTextRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) : getPlainTextRect(text, font, textAlign, textVerticalAlign, textPadding, truncate);
+}
+
+function getPlainTextRect(text, font, textAlign, textVerticalAlign, textPadding, truncate) {
+  var contentBlock = parsePlainText(text, font, textPadding, truncate);
+  var outerWidth = getWidth(text, font);
+
+  if (textPadding) {
+    outerWidth += textPadding[1] + textPadding[3];
+  }
+
+  var outerHeight = contentBlock.outerHeight;
+  var x = adjustTextX(0, outerWidth, textAlign);
+  var y = adjustTextY(0, outerHeight, textVerticalAlign);
+  var rect = new BoundingRect(x, y, outerWidth, outerHeight);
+  rect.lineHeight = contentBlock.lineHeight;
+  return rect;
+}
+
+function getRichTextRect(text, font, textAlign, textVerticalAlign, textPadding, rich, truncate) {
+  var contentBlock = parseRichText(text, {
+    rich: rich,
+    truncate: truncate,
+    font: font,
+    textAlign: textAlign,
+    textPadding: textPadding
+  });
+  var outerWidth = contentBlock.outerWidth;
+  var outerHeight = contentBlock.outerHeight;
+  var x = adjustTextX(0, outerWidth, textAlign);
+  var y = adjustTextY(0, outerHeight, textVerticalAlign);
+  return new BoundingRect(x, y, outerWidth, outerHeight);
+}
+/**
+ * @public
+ * @param {number} x
+ * @param {number} width
+ * @param {string} [textAlign='left']
+ * @return {number} Adjusted x.
+ */
+
+
+function adjustTextX(x, width, textAlign) {
+  // FIXME Right to left language
+  if (textAlign === 'right') {
+    x -= width;
+  } else if (textAlign === 'center') {
+    x -= width / 2;
+  }
+
+  return x;
+}
+/**
+ * @public
+ * @param {number} y
+ * @param {number} height
+ * @param {string} [textVerticalAlign='top']
+ * @return {number} Adjusted y.
+ */
+
+
+function adjustTextY(y, height, textVerticalAlign) {
+  if (textVerticalAlign === 'middle') {
+    y -= height / 2;
+  } else if (textVerticalAlign === 'bottom') {
+    y -= height;
+  }
+
+  return y;
+}
+/**
+ * @public
+ * @param {stirng} textPosition
+ * @param {Object} rect {x, y, width, height}
+ * @param {number} distance
+ * @return {Object} {x, y, textAlign, textVerticalAlign}
+ */
+
+
+function adjustTextPositionOnRect(textPosition, rect, distance) {
+  var x = rect.x;
+  var y = rect.y;
+  var height = rect.height;
+  var width = rect.width;
+  var halfHeight = height / 2;
+  var textAlign = 'left';
+  var textVerticalAlign = 'top';
+
+  switch (textPosition) {
+    case 'left':
+      x -= distance;
+      y += halfHeight;
+      textAlign = 'right';
+      textVerticalAlign = 'middle';
+      break;
+
+    case 'right':
+      x += distance + width;
+      y += halfHeight;
+      textVerticalAlign = 'middle';
+      break;
+
+    case 'top':
+      x += width / 2;
+      y -= distance;
+      textAlign = 'center';
+      textVerticalAlign = 'bottom';
+      break;
+
+    case 'bottom':
+      x += width / 2;
+      y += height + distance;
+      textAlign = 'center';
+      break;
+
+    case 'inside':
+      x += width / 2;
+      y += halfHeight;
+      textAlign = 'center';
+      textVerticalAlign = 'middle';
+      break;
+
+    case 'insideLeft':
+      x += distance;
+      y += halfHeight;
+      textVerticalAlign = 'middle';
+      break;
+
+    case 'insideRight':
+      x += width - distance;
+      y += halfHeight;
+      textAlign = 'right';
+      textVerticalAlign = 'middle';
+      break;
+
+    case 'insideTop':
+      x += width / 2;
+      y += distance;
+      textAlign = 'center';
+      break;
+
+    case 'insideBottom':
+      x += width / 2;
+      y += height - distance;
+      textAlign = 'center';
+      textVerticalAlign = 'bottom';
+      break;
+
+    case 'insideTopLeft':
+      x += distance;
+      y += distance;
+      break;
+
+    case 'insideTopRight':
+      x += width - distance;
+      y += distance;
+      textAlign = 'right';
+      break;
+
+    case 'insideBottomLeft':
+      x += distance;
+      y += height - distance;
+      textVerticalAlign = 'bottom';
+      break;
+
+    case 'insideBottomRight':
+      x += width - distance;
+      y += height - distance;
+      textAlign = 'right';
+      textVerticalAlign = 'bottom';
+      break;
+  }
+
+  return {
+    x: x,
+    y: y,
+    textAlign: textAlign,
+    textVerticalAlign: textVerticalAlign
+  };
+}
+/**
+ * Show ellipsis if overflow.
+ *
+ * @public
+ * @param  {string} text
+ * @param  {string} containerWidth
+ * @param  {string} font
+ * @param  {number} [ellipsis='...']
+ * @param  {Object} [options]
+ * @param  {number} [options.maxIterations=3]
+ * @param  {number} [options.minChar=0] If truncate result are less
+ *                  then minChar, ellipsis will not show, which is
+ *                  better for user hint in some cases.
+ * @param  {number} [options.placeholder=''] When all truncated, use the placeholder.
+ * @return {string}
+ */
+
+
+function truncateText(text, containerWidth, font, ellipsis, options) {
+  if (!containerWidth) {
+    return '';
+  }
+
+  var textLines = (text + '').split('\n');
+  options = prepareTruncateOptions(containerWidth, font, ellipsis, options); // FIXME
+  // It is not appropriate that every line has '...' when truncate multiple lines.
+
+  for (var i = 0, len = textLines.length; i < len; i++) {
+    textLines[i] = truncateSingleLine(textLines[i], options);
+  }
+
+  return textLines.join('\n');
+}
+
+function prepareTruncateOptions(containerWidth, font, ellipsis, options) {
+  options = extend({}, options);
+  options.font = font;
+  var ellipsis = retrieve2(ellipsis, '...');
+  options.maxIterations = retrieve2(options.maxIterations, 2);
+  var minChar = options.minChar = retrieve2(options.minChar, 0); // FIXME
+  // Other languages?
+
+  options.cnCharWidth = getWidth('国', font); // FIXME
+  // Consider proportional font?
+
+  var ascCharWidth = options.ascCharWidth = getWidth('a', font);
+  options.placeholder = retrieve2(options.placeholder, ''); // Example 1: minChar: 3, text: 'asdfzxcv', truncate result: 'asdf', but not: 'a...'.
+  // Example 2: minChar: 3, text: '维度', truncate result: '维', but not: '...'.
+
+  var contentWidth = containerWidth = Math.max(0, containerWidth - 1); // Reserve some gap.
+
+  for (var i = 0; i < minChar && contentWidth >= ascCharWidth; i++) {
+    contentWidth -= ascCharWidth;
+  }
+
+  var ellipsisWidth = getWidth(ellipsis);
+
+  if (ellipsisWidth > contentWidth) {
+    ellipsis = '';
+    ellipsisWidth = 0;
+  }
+
+  contentWidth = containerWidth - ellipsisWidth;
+  options.ellipsis = ellipsis;
+  options.ellipsisWidth = ellipsisWidth;
+  options.contentWidth = contentWidth;
+  options.containerWidth = containerWidth;
+  return options;
+}
+
+function truncateSingleLine(textLine, options) {
+  var containerWidth = options.containerWidth;
+  var font = options.font;
+  var contentWidth = options.contentWidth;
+
+  if (!containerWidth) {
+    return '';
+  }
+
+  var lineWidth = getWidth(textLine, font);
+
+  if (lineWidth <= containerWidth) {
+    return textLine;
+  }
+
+  for (var j = 0;; j++) {
+    if (lineWidth <= contentWidth || j >= options.maxIterations) {
+      textLine += options.ellipsis;
+      break;
+    }
+
+    var subLength = j === 0 ? estimateLength(textLine, contentWidth, options.ascCharWidth, options.cnCharWidth) : lineWidth > 0 ? Math.floor(textLine.length * contentWidth / lineWidth) : 0;
+    textLine = textLine.substr(0, subLength);
+    lineWidth = getWidth(textLine, font);
+  }
+
+  if (textLine === '') {
+    textLine = options.placeholder;
+  }
+
+  return textLine;
+}
+
+function estimateLength(text, contentWidth, ascCharWidth, cnCharWidth) {
+  var width = 0;
+  var i = 0;
+
+  for (var len = text.length; i < len && width < contentWidth; i++) {
+    var charCode = text.charCodeAt(i);
+    width += 0 <= charCode && charCode <= 127 ? ascCharWidth : cnCharWidth;
+  }
+
+  return i;
+}
+/**
+ * @public
+ * @param {string} font
+ * @return {number} line height
+ */
+
+
+function getLineHeight(font) {
+  // FIXME A rough approach.
+  return getWidth('国', font);
+}
+/**
+ * @public
+ * @param {string} text
+ * @param {string} font
+ * @return {Object} width
+ */
+
+
+function measureText(text, font) {
+  return methods.measureText(text, font);
+} // Avoid assign to an exported variable, for transforming to cjs.
+
+
+methods.measureText = function (text, font) {
+  var ctx = getContext();
+  ctx.font = font || DEFAULT_FONT;
+  return ctx.measureText(text);
+};
+/**
+ * @public
+ * @param {string} text
+ * @param {string} font
+ * @param {Object} [truncate]
+ * @return {Object} block: {lineHeight, lines, height, outerHeight}
+ *  Notice: for performance, do not calculate outerWidth util needed.
+ */
+
+
+function parsePlainText(text, font, padding, truncate) {
+  text != null && (text += '');
+  var lineHeight = getLineHeight(font);
+  var lines = text ? text.split('\n') : [];
+  var height = lines.length * lineHeight;
+  var outerHeight = height;
+
+  if (padding) {
+    outerHeight += padding[0] + padding[2];
+  }
+
+  if (text && truncate) {
+    var truncOuterHeight = truncate.outerHeight;
+    var truncOuterWidth = truncate.outerWidth;
+
+    if (truncOuterHeight != null && outerHeight > truncOuterHeight) {
+      text = '';
+      lines = [];
+    } else if (truncOuterWidth != null) {
+      var options = prepareTruncateOptions(truncOuterWidth - (padding ? padding[1] + padding[3] : 0), font, truncate.ellipsis, {
+        minChar: truncate.minChar,
+        placeholder: truncate.placeholder
+      }); // FIXME
+      // It is not appropriate that every line has '...' when truncate multiple lines.
+
+      for (var i = 0, len = lines.length; i < len; i++) {
+        lines[i] = truncateSingleLine(lines[i], options);
+      }
+    }
+  }
+
+  return {
+    lines: lines,
+    height: height,
+    outerHeight: outerHeight,
+    lineHeight: lineHeight
+  };
+}
+/**
+ * For example: 'some text {a|some text}other text{b|some text}xxx{c|}xxx'
+ * Also consider 'bbbb{a|xxx\nzzz}xxxx\naaaa'.
+ *
+ * @public
+ * @param {string} text
+ * @param {Object} style
+ * @return {Object} block
+ * {
+ *      width,
+ *      height,
+ *      lines: [{
+ *          lineHeight,
+ *          width,
+ *          tokens: [[{
+ *              styleName,
+ *              text,
+ *              width,      // include textPadding
+ *              height,     // include textPadding
+ *              textWidth, // pure text width
+ *              textHeight, // pure text height
+ *              lineHeihgt,
+ *              font,
+ *              textAlign,
+ *              textVerticalAlign
+ *          }], [...], ...]
+ *      }, ...]
+ * }
+ * If styleName is undefined, it is plain text.
+ */
+
+
+function parseRichText(text, style) {
+  var contentBlock = {
+    lines: [],
+    width: 0,
+    height: 0
+  };
+  text != null && (text += '');
+
+  if (!text) {
+    return contentBlock;
+  }
+
+  var lastIndex = STYLE_REG.lastIndex = 0;
+  var result;
+
+  while ((result = STYLE_REG.exec(text)) != null) {
+    var matchedIndex = result.index;
+
+    if (matchedIndex > lastIndex) {
+      pushTokens(contentBlock, text.substring(lastIndex, matchedIndex));
+    }
+
+    pushTokens(contentBlock, result[2], result[1]);
+    lastIndex = STYLE_REG.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    pushTokens(contentBlock, text.substring(lastIndex, text.length));
+  }
+
+  var lines = contentBlock.lines;
+  var contentHeight = 0;
+  var contentWidth = 0; // For `textWidth: 100%`
+
+  var pendingList = [];
+  var stlPadding = style.textPadding;
+  var truncate = style.truncate;
+  var truncateWidth = truncate && truncate.outerWidth;
+  var truncateHeight = truncate && truncate.outerHeight;
+
+  if (stlPadding) {
+    truncateWidth != null && (truncateWidth -= stlPadding[1] + stlPadding[3]);
+    truncateHeight != null && (truncateHeight -= stlPadding[0] + stlPadding[2]);
+  } // Calculate layout info of tokens.
+
+
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    var lineHeight = 0;
+    var lineWidth = 0;
+
+    for (var j = 0; j < line.tokens.length; j++) {
+      var token = line.tokens[j];
+      var tokenStyle = token.styleName && style.rich[token.styleName] || {}; // textPadding should not inherit from style.
+
+      var textPadding = token.textPadding = tokenStyle.textPadding; // textFont has been asigned to font by `normalizeStyle`.
+
+      var font = token.font = tokenStyle.font || style.font; // textHeight can be used when textVerticalAlign is specified in token.
+
+      var tokenHeight = token.textHeight = retrieve2( // textHeight should not be inherited, consider it can be specified
+      // as box height of the block.
+      tokenStyle.textHeight, getLineHeight(font));
+      textPadding && (tokenHeight += textPadding[0] + textPadding[2]);
+      token.height = tokenHeight;
+      token.lineHeight = retrieve3(tokenStyle.textLineHeight, style.textLineHeight, tokenHeight);
+      token.textAlign = tokenStyle && tokenStyle.textAlign || style.textAlign;
+      token.textVerticalAlign = tokenStyle && tokenStyle.textVerticalAlign || 'middle';
+
+      if (truncateHeight != null && contentHeight + token.lineHeight > truncateHeight) {
+        return {
+          lines: [],
+          width: 0,
+          height: 0
+        };
+      }
+
+      token.textWidth = getWidth(token.text, font);
+      var tokenWidth = tokenStyle.textWidth;
+      var tokenWidthNotSpecified = tokenWidth == null || tokenWidth === 'auto'; // Percent width, can be `100%`, can be used in drawing separate
+      // line when box width is needed to be auto.
+
+      if (typeof tokenWidth === 'string' && tokenWidth.charAt(tokenWidth.length - 1) === '%') {
+        token.percentWidth = tokenWidth;
+        pendingList.push(token);
+        tokenWidth = 0; // Do not truncate in this case, because there is no user case
+        // and it is too complicated.
+      } else {
+        if (tokenWidthNotSpecified) {
+          tokenWidth = token.textWidth; // FIXME: If image is not loaded and textWidth is not specified, calling
+          // `getBoundingRect()` will not get correct result.
+
+          var textBackgroundColor = tokenStyle.textBackgroundColor;
+          var bgImg = textBackgroundColor && textBackgroundColor.image; // Use cases:
+          // (1) If image is not loaded, it will be loaded at render phase and call
+          // `dirty()` and `textBackgroundColor.image` will be replaced with the loaded
+          // image, and then the right size will be calculated here at the next tick.
+          // See `graphic/helper/text.js`.
+          // (2) If image loaded, and `textBackgroundColor.image` is image src string,
+          // use `imageHelper.findExistImage` to find cached image.
+          // `imageHelper.findExistImage` will always be called here before
+          // `imageHelper.createOrUpdateImage` in `graphic/helper/text.js#renderRichText`
+          // which ensures that image will not be rendered before correct size calcualted.
+
+          if (bgImg) {
+            bgImg = imageHelper.findExistImage(bgImg);
+
+            if (imageHelper.isImageReady(bgImg)) {
+              tokenWidth = Math.max(tokenWidth, bgImg.width * tokenHeight / bgImg.height);
+            }
+          }
+        }
+
+        var paddingW = textPadding ? textPadding[1] + textPadding[3] : 0;
+        tokenWidth += paddingW;
+        var remianTruncWidth = truncateWidth != null ? truncateWidth - lineWidth : null;
+
+        if (remianTruncWidth != null && remianTruncWidth < tokenWidth) {
+          if (!tokenWidthNotSpecified || remianTruncWidth < paddingW) {
+            token.text = '';
+            token.textWidth = tokenWidth = 0;
+          } else {
+            token.text = truncateText(token.text, remianTruncWidth - paddingW, font, truncate.ellipsis, {
+              minChar: truncate.minChar
+            });
+            token.textWidth = getWidth(token.text, font);
+            tokenWidth = token.textWidth + paddingW;
+          }
+        }
+      }
+
+      lineWidth += token.width = tokenWidth;
+      tokenStyle && (lineHeight = Math.max(lineHeight, token.lineHeight));
+    }
+
+    line.width = lineWidth;
+    line.lineHeight = lineHeight;
+    contentHeight += lineHeight;
+    contentWidth = Math.max(contentWidth, lineWidth);
+  }
+
+  contentBlock.outerWidth = contentBlock.width = retrieve2(style.textWidth, contentWidth);
+  contentBlock.outerHeight = contentBlock.height = retrieve2(style.textHeight, contentHeight);
+
+  if (stlPadding) {
+    contentBlock.outerWidth += stlPadding[1] + stlPadding[3];
+    contentBlock.outerHeight += stlPadding[0] + stlPadding[2];
+  }
+
+  for (var i = 0; i < pendingList.length; i++) {
+    var token = pendingList[i];
+    var percentWidth = token.percentWidth; // Should not base on outerWidth, because token can not be placed out of padding.
+
+    token.width = parseInt(percentWidth, 10) / 100 * contentWidth;
+  }
+
+  return contentBlock;
+}
+
+function pushTokens(block, str, styleName) {
+  var isEmptyStr = str === '';
+  var strs = str.split('\n');
+  var lines = block.lines;
+
+  for (var i = 0; i < strs.length; i++) {
+    var text = strs[i];
+    var token = {
+      styleName: styleName,
+      text: text,
+      isLineHolder: !text && !isEmptyStr
+    }; // The first token should be appended to the last line.
+
+    if (!i) {
+      var tokens = (lines[lines.length - 1] || (lines[0] = {
+        tokens: []
+      })).tokens; // Consider cases:
+      // (1) ''.split('\n') => ['', '\n', ''], the '' at the first item
+      // (which is a placeholder) should be replaced by new token.
+      // (2) A image backage, where token likes {a|}.
+      // (3) A redundant '' will affect textAlign in line.
+      // (4) tokens with the same tplName should not be merged, because
+      // they should be displayed in different box (with border and padding).
+
+      var tokensLen = tokens.length;
+      tokensLen === 1 && tokens[0].isLineHolder ? tokens[0] = token : // Consider text is '', only insert when it is the "lineHolder" or
+      // "emptyStr". Otherwise a redundant '' will affect textAlign in line.
+      (text || !tokensLen || isEmptyStr) && tokens.push(token);
+    } // Other tokens always start a new line.
+    else {
+        // If there is '', insert it as a placeholder.
+        lines.push({
+          tokens: [token]
+        });
+      }
+  }
+}
+
+function makeFont(style) {
+  // FIXME in node-canvas fontWeight is before fontStyle
+  // Use `fontSize` `fontFamily` to check whether font properties are defined.
+  var font = (style.fontSize || style.fontFamily) && [style.fontStyle, style.fontWeight, (style.fontSize || 12) + 'px', // If font properties are defined, `fontFamily` should not be ignored.
+  style.fontFamily || 'sans-serif'].join(' ');
+  return font && trim(font) || style.textFont || style.font;
+}
+
+exports.DEFAULT_FONT = DEFAULT_FONT;
+exports.$override = $override;
+exports.getWidth = getWidth;
+exports.getBoundingRect = getBoundingRect;
+exports.adjustTextX = adjustTextX;
+exports.adjustTextY = adjustTextY;
+exports.adjustTextPositionOnRect = adjustTextPositionOnRect;
+exports.truncateText = truncateText;
+exports.getLineHeight = getLineHeight;
+exports.measureText = measureText;
+exports.parsePlainText = parsePlainText;
+exports.parseRichText = parseRichText;
+exports.makeFont = makeFont;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _vector = __webpack_require__(6);
+
+var v2Create = _vector.create;
+var v2DistSquare = _vector.distSquare;
+
+/**
+ * 曲线辅助模块
+ * @module zrender/core/curve
+ * @author pissang(https://www.github.com/pissang)
+ */
+var mathPow = Math.pow;
+var mathSqrt = Math.sqrt;
+var EPSILON = 1e-8;
+var EPSILON_NUMERIC = 1e-4;
+var THREE_SQRT = mathSqrt(3);
+var ONE_THIRD = 1 / 3; // 临时变量
+
+var _v0 = v2Create();
+
+var _v1 = v2Create();
+
+var _v2 = v2Create();
+
+function isAroundZero(val) {
+  return val > -EPSILON && val < EPSILON;
+}
+
+function isNotAroundZero(val) {
+  return val > EPSILON || val < -EPSILON;
+}
+/**
+ * 计算三次贝塞尔值
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} p3
+ * @param  {number} t
+ * @return {number}
+ */
+
+
+function cubicAt(p0, p1, p2, p3, t) {
+  var onet = 1 - t;
+  return onet * onet * (onet * p0 + 3 * t * p1) + t * t * (t * p3 + 3 * onet * p2);
+}
+/**
+ * 计算三次贝塞尔导数值
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} p3
+ * @param  {number} t
+ * @return {number}
+ */
+
+
+function cubicDerivativeAt(p0, p1, p2, p3, t) {
+  var onet = 1 - t;
+  return 3 * (((p1 - p0) * onet + 2 * (p2 - p1) * t) * onet + (p3 - p2) * t * t);
+}
+/**
+ * 计算三次贝塞尔方程根，使用盛金公式
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} p3
+ * @param  {number} val
+ * @param  {Array.<number>} roots
+ * @return {number} 有效根数目
+ */
+
+
+function cubicRootAt(p0, p1, p2, p3, val, roots) {
+  // Evaluate roots of cubic functions
+  var a = p3 + 3 * (p1 - p2) - p0;
+  var b = 3 * (p2 - p1 * 2 + p0);
+  var c = 3 * (p1 - p0);
+  var d = p0 - val;
+  var A = b * b - 3 * a * c;
+  var B = b * c - 9 * a * d;
+  var C = c * c - 3 * b * d;
+  var n = 0;
+
+  if (isAroundZero(A) && isAroundZero(B)) {
+    if (isAroundZero(b)) {
+      roots[0] = 0;
+    } else {
+      var t1 = -c / b; //t1, t2, t3, b is not zero
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+    }
+  } else {
+    var disc = B * B - 4 * A * C;
+
+    if (isAroundZero(disc)) {
+      var K = B / A;
+      var t1 = -b / a + K; // t1, a is not zero
+
+      var t2 = -K / 2; // t2, t3
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+
+      if (t2 >= 0 && t2 <= 1) {
+        roots[n++] = t2;
+      }
+    } else if (disc > 0) {
+      var discSqrt = mathSqrt(disc);
+      var Y1 = A * b + 1.5 * a * (-B + discSqrt);
+      var Y2 = A * b + 1.5 * a * (-B - discSqrt);
+
+      if (Y1 < 0) {
+        Y1 = -mathPow(-Y1, ONE_THIRD);
+      } else {
+        Y1 = mathPow(Y1, ONE_THIRD);
+      }
+
+      if (Y2 < 0) {
+        Y2 = -mathPow(-Y2, ONE_THIRD);
+      } else {
+        Y2 = mathPow(Y2, ONE_THIRD);
+      }
+
+      var t1 = (-b - (Y1 + Y2)) / (3 * a);
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+    } else {
+      var T = (2 * A * b - 3 * a * B) / (2 * mathSqrt(A * A * A));
+      var theta = Math.acos(T) / 3;
+      var ASqrt = mathSqrt(A);
+      var tmp = Math.cos(theta);
+      var t1 = (-b - 2 * ASqrt * tmp) / (3 * a);
+      var t2 = (-b + ASqrt * (tmp + THREE_SQRT * Math.sin(theta))) / (3 * a);
+      var t3 = (-b + ASqrt * (tmp - THREE_SQRT * Math.sin(theta))) / (3 * a);
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+
+      if (t2 >= 0 && t2 <= 1) {
+        roots[n++] = t2;
+      }
+
+      if (t3 >= 0 && t3 <= 1) {
+        roots[n++] = t3;
+      }
+    }
+  }
+
+  return n;
+}
+/**
+ * 计算三次贝塞尔方程极限值的位置
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} p3
+ * @param  {Array.<number>} extrema
+ * @return {number} 有效数目
+ */
+
+
+function cubicExtrema(p0, p1, p2, p3, extrema) {
+  var b = 6 * p2 - 12 * p1 + 6 * p0;
+  var a = 9 * p1 + 3 * p3 - 3 * p0 - 9 * p2;
+  var c = 3 * p1 - 3 * p0;
+  var n = 0;
+
+  if (isAroundZero(a)) {
+    if (isNotAroundZero(b)) {
+      var t1 = -c / b;
+
+      if (t1 >= 0 && t1 <= 1) {
+        extrema[n++] = t1;
+      }
+    }
+  } else {
+    var disc = b * b - 4 * a * c;
+
+    if (isAroundZero(disc)) {
+      extrema[0] = -b / (2 * a);
+    } else if (disc > 0) {
+      var discSqrt = mathSqrt(disc);
+      var t1 = (-b + discSqrt) / (2 * a);
+      var t2 = (-b - discSqrt) / (2 * a);
+
+      if (t1 >= 0 && t1 <= 1) {
+        extrema[n++] = t1;
+      }
+
+      if (t2 >= 0 && t2 <= 1) {
+        extrema[n++] = t2;
+      }
+    }
+  }
+
+  return n;
+}
+/**
+ * 细分三次贝塞尔曲线
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} p3
+ * @param  {number} t
+ * @param  {Array.<number>} out
+ */
+
+
+function cubicSubdivide(p0, p1, p2, p3, t, out) {
+  var p01 = (p1 - p0) * t + p0;
+  var p12 = (p2 - p1) * t + p1;
+  var p23 = (p3 - p2) * t + p2;
+  var p012 = (p12 - p01) * t + p01;
+  var p123 = (p23 - p12) * t + p12;
+  var p0123 = (p123 - p012) * t + p012; // Seg0
+
+  out[0] = p0;
+  out[1] = p01;
+  out[2] = p012;
+  out[3] = p0123; // Seg1
+
+  out[4] = p0123;
+  out[5] = p123;
+  out[6] = p23;
+  out[7] = p3;
+}
+/**
+ * 投射点到三次贝塞尔曲线上，返回投射距离。
+ * 投射点有可能会有一个或者多个，这里只返回其中距离最短的一个。
+ * @param {number} x0
+ * @param {number} y0
+ * @param {number} x1
+ * @param {number} y1
+ * @param {number} x2
+ * @param {number} y2
+ * @param {number} x3
+ * @param {number} y3
+ * @param {number} x
+ * @param {number} y
+ * @param {Array.<number>} [out] 投射点
+ * @return {number}
+ */
+
+
+function cubicProjectPoint(x0, y0, x1, y1, x2, y2, x3, y3, x, y, out) {
+  // http://pomax.github.io/bezierinfo/#projections
+  var t;
+  var interval = 0.005;
+  var d = Infinity;
+  var prev;
+  var next;
+  var d1;
+  var d2;
+  _v0[0] = x;
+  _v0[1] = y; // 先粗略估计一下可能的最小距离的 t 值
+  // PENDING
+
+  for (var _t = 0; _t < 1; _t += 0.05) {
+    _v1[0] = cubicAt(x0, x1, x2, x3, _t);
+    _v1[1] = cubicAt(y0, y1, y2, y3, _t);
+    d1 = v2DistSquare(_v0, _v1);
+
+    if (d1 < d) {
+      t = _t;
+      d = d1;
+    }
+  }
+
+  d = Infinity; // At most 32 iteration
+
+  for (var i = 0; i < 32; i++) {
+    if (interval < EPSILON_NUMERIC) {
+      break;
+    }
+
+    prev = t - interval;
+    next = t + interval; // t - interval
+
+    _v1[0] = cubicAt(x0, x1, x2, x3, prev);
+    _v1[1] = cubicAt(y0, y1, y2, y3, prev);
+    d1 = v2DistSquare(_v1, _v0);
+
+    if (prev >= 0 && d1 < d) {
+      t = prev;
+      d = d1;
+    } else {
+      // t + interval
+      _v2[0] = cubicAt(x0, x1, x2, x3, next);
+      _v2[1] = cubicAt(y0, y1, y2, y3, next);
+      d2 = v2DistSquare(_v2, _v0);
+
+      if (next <= 1 && d2 < d) {
+        t = next;
+        d = d2;
+      } else {
+        interval *= 0.5;
+      }
+    }
+  } // t
+
+
+  if (out) {
+    out[0] = cubicAt(x0, x1, x2, x3, t);
+    out[1] = cubicAt(y0, y1, y2, y3, t);
+  } // console.log(interval, i);
+
+
+  return mathSqrt(d);
+}
+/**
+ * 计算二次方贝塞尔值
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} t
+ * @return {number}
+ */
+
+
+function quadraticAt(p0, p1, p2, t) {
+  var onet = 1 - t;
+  return onet * (onet * p0 + 2 * t * p1) + t * t * p2;
+}
+/**
+ * 计算二次方贝塞尔导数值
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} t
+ * @return {number}
+ */
+
+
+function quadraticDerivativeAt(p0, p1, p2, t) {
+  return 2 * ((1 - t) * (p1 - p0) + t * (p2 - p1));
+}
+/**
+ * 计算二次方贝塞尔方程根
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} t
+ * @param  {Array.<number>} roots
+ * @return {number} 有效根数目
+ */
+
+
+function quadraticRootAt(p0, p1, p2, val, roots) {
+  var a = p0 - 2 * p1 + p2;
+  var b = 2 * (p1 - p0);
+  var c = p0 - val;
+  var n = 0;
+
+  if (isAroundZero(a)) {
+    if (isNotAroundZero(b)) {
+      var t1 = -c / b;
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+    }
+  } else {
+    var disc = b * b - 4 * a * c;
+
+    if (isAroundZero(disc)) {
+      var t1 = -b / (2 * a);
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+    } else if (disc > 0) {
+      var discSqrt = mathSqrt(disc);
+      var t1 = (-b + discSqrt) / (2 * a);
+      var t2 = (-b - discSqrt) / (2 * a);
+
+      if (t1 >= 0 && t1 <= 1) {
+        roots[n++] = t1;
+      }
+
+      if (t2 >= 0 && t2 <= 1) {
+        roots[n++] = t2;
+      }
+    }
+  }
+
+  return n;
+}
+/**
+ * 计算二次贝塞尔方程极限值
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @return {number}
+ */
+
+
+function quadraticExtremum(p0, p1, p2) {
+  var divider = p0 + p2 - 2 * p1;
+
+  if (divider === 0) {
+    // p1 is center of p0 and p2
+    return 0.5;
+  } else {
+    return (p0 - p1) / divider;
+  }
+}
+/**
+ * 细分二次贝塞尔曲线
+ * @memberOf module:zrender/core/curve
+ * @param  {number} p0
+ * @param  {number} p1
+ * @param  {number} p2
+ * @param  {number} t
+ * @param  {Array.<number>} out
+ */
+
+
+function quadraticSubdivide(p0, p1, p2, t, out) {
+  var p01 = (p1 - p0) * t + p0;
+  var p12 = (p2 - p1) * t + p1;
+  var p012 = (p12 - p01) * t + p01; // Seg0
+
+  out[0] = p0;
+  out[1] = p01;
+  out[2] = p012; // Seg1
+
+  out[3] = p012;
+  out[4] = p12;
+  out[5] = p2;
+}
+/**
+ * 投射点到二次贝塞尔曲线上，返回投射距离。
+ * 投射点有可能会有一个或者多个，这里只返回其中距离最短的一个。
+ * @param {number} x0
+ * @param {number} y0
+ * @param {number} x1
+ * @param {number} y1
+ * @param {number} x2
+ * @param {number} y2
+ * @param {number} x
+ * @param {number} y
+ * @param {Array.<number>} out 投射点
+ * @return {number}
+ */
+
+
+function quadraticProjectPoint(x0, y0, x1, y1, x2, y2, x, y, out) {
+  // http://pomax.github.io/bezierinfo/#projections
+  var t;
+  var interval = 0.005;
+  var d = Infinity;
+  _v0[0] = x;
+  _v0[1] = y; // 先粗略估计一下可能的最小距离的 t 值
+  // PENDING
+
+  for (var _t = 0; _t < 1; _t += 0.05) {
+    _v1[0] = quadraticAt(x0, x1, x2, _t);
+    _v1[1] = quadraticAt(y0, y1, y2, _t);
+    var d1 = v2DistSquare(_v0, _v1);
+
+    if (d1 < d) {
+      t = _t;
+      d = d1;
+    }
+  }
+
+  d = Infinity; // At most 32 iteration
+
+  for (var i = 0; i < 32; i++) {
+    if (interval < EPSILON_NUMERIC) {
+      break;
+    }
+
+    var prev = t - interval;
+    var next = t + interval; // t - interval
+
+    _v1[0] = quadraticAt(x0, x1, x2, prev);
+    _v1[1] = quadraticAt(y0, y1, y2, prev);
+    var d1 = v2DistSquare(_v1, _v0);
+
+    if (prev >= 0 && d1 < d) {
+      t = prev;
+      d = d1;
+    } else {
+      // t + interval
+      _v2[0] = quadraticAt(x0, x1, x2, next);
+      _v2[1] = quadraticAt(y0, y1, y2, next);
+      var d2 = v2DistSquare(_v2, _v0);
+
+      if (next <= 1 && d2 < d) {
+        t = next;
+        d = d2;
+      } else {
+        interval *= 0.5;
+      }
+    }
+  } // t
+
+
+  if (out) {
+    out[0] = quadraticAt(x0, x1, x2, t);
+    out[1] = quadraticAt(y0, y1, y2, t);
+  } // console.log(interval, i);
+
+
+  return mathSqrt(d);
+}
+
+exports.cubicAt = cubicAt;
+exports.cubicDerivativeAt = cubicDerivativeAt;
+exports.cubicRootAt = cubicRootAt;
+exports.cubicExtrema = cubicExtrema;
+exports.cubicSubdivide = cubicSubdivide;
+exports.cubicProjectPoint = cubicProjectPoint;
+exports.quadraticAt = quadraticAt;
+exports.quadraticDerivativeAt = quadraticDerivativeAt;
+exports.quadraticRootAt = quadraticRootAt;
+exports.quadraticExtremum = quadraticExtremum;
+exports.quadraticSubdivide = quadraticSubdivide;
+exports.quadraticProjectPoint = quadraticProjectPoint;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _config = __webpack_require__(4);
+
+var __DEV__ = _config.__DEV__;
+
+var zrUtil = __webpack_require__(0);
+
+var textContain = __webpack_require__(20);
+
+var OrdinalScale = __webpack_require__(258);
+
+var IntervalScale = __webpack_require__(50);
+
+var Scale = __webpack_require__(37);
+
+var numberUtil = __webpack_require__(7);
+
+var _barGrid = __webpack_require__(259);
+
+var calBarWidthAndOffset = _barGrid.calBarWidthAndOffset;
+
+__webpack_require__(260);
+
+__webpack_require__(261);
+
+/**
+ * Get axis scale extent before niced.
+ * Item of returned array can only be number (including Infinity and NaN).
+ */
+function getScaleExtent(scale, model) {
+  var scaleType = scale.type;
+  var min = model.getMin();
+  var max = model.getMax();
+  var fixMin = min != null;
+  var fixMax = max != null;
+  var originalExtent = scale.getExtent();
+  var axisDataLen;
+  var boundaryGap;
+  var span;
+
+  if (scaleType === 'ordinal') {
+    axisDataLen = model.getCategories().length;
+  } else {
+    boundaryGap = model.get('boundaryGap');
+
+    if (!zrUtil.isArray(boundaryGap)) {
+      boundaryGap = [boundaryGap || 0, boundaryGap || 0];
+    }
+
+    if (typeof boundaryGap[0] === 'boolean') {
+      boundaryGap = [0, 0];
+    }
+
+    boundaryGap[0] = numberUtil.parsePercent(boundaryGap[0], 1);
+    boundaryGap[1] = numberUtil.parsePercent(boundaryGap[1], 1);
+    span = originalExtent[1] - originalExtent[0] || Math.abs(originalExtent[0]);
+  } // Notice: When min/max is not set (that is, when there are null/undefined,
+  // which is the most common case), these cases should be ensured:
+  // (1) For 'ordinal', show all axis.data.
+  // (2) For others:
+  //      + `boundaryGap` is applied (if min/max set, boundaryGap is
+  //      disabled).
+  //      + If `needCrossZero`, min/max should be zero, otherwise, min/max should
+  //      be the result that originalExtent enlarged by boundaryGap.
+  // (3) If no data, it should be ensured that `scale.setBlank` is set.
+  // FIXME
+  // (1) When min/max is 'dataMin' or 'dataMax', should boundaryGap be able to used?
+  // (2) When `needCrossZero` and all data is positive/negative, should it be ensured
+  // that the results processed by boundaryGap are positive/negative?
+
+
+  if (min == null) {
+    min = scaleType === 'ordinal' ? axisDataLen ? 0 : NaN : originalExtent[0] - boundaryGap[0] * span;
+  }
+
+  if (max == null) {
+    max = scaleType === 'ordinal' ? axisDataLen ? axisDataLen - 1 : NaN : originalExtent[1] + boundaryGap[1] * span;
+  }
+
+  if (min === 'dataMin') {
+    min = originalExtent[0];
+  } else if (typeof min === 'function') {
+    min = min({
+      min: originalExtent[0],
+      max: originalExtent[1]
+    });
+  }
+
+  if (max === 'dataMax') {
+    max = originalExtent[1];
+  } else if (typeof max === 'function') {
+    max = max({
+      min: originalExtent[0],
+      max: originalExtent[1]
+    });
+  }
+
+  (min == null || !isFinite(min)) && (min = NaN);
+  (max == null || !isFinite(max)) && (max = NaN);
+  scale.setBlank(zrUtil.eqNaN(min) || zrUtil.eqNaN(max)); // Evaluate if axis needs cross zero
+
+  if (model.getNeedCrossZero()) {
+    // Axis is over zero and min is not set
+    if (min > 0 && max > 0 && !fixMin) {
+      min = 0;
+    } // Axis is under zero and max is not set
+
+
+    if (min < 0 && max < 0 && !fixMax) {
+      max = 0;
+    }
+  } // If bars are placed on a base axis of type time or interval account for axis boundary overflow and current axis
+  // is base axis
+  // FIXME
+  // (1) Consider support value axis, where below zero and axis `onZero` should be handled properly.
+  // (2) Refactor the logic with `barGrid`. Is it not need to `calBarWidthAndOffset` twice with different extent?
+  //     Should not depend on series type `bar`?
+  // (3) Fix that might overlap when using dataZoom.
+  // (4) Consider other chart types using `barGrid`?
+  // See #6728, #4862, `test/bar-overflow-time-plot.html`
+
+
+  var ecModel = model.ecModel;
+
+  if (ecModel && scaleType === 'time'
+  /*|| scaleType === 'interval' */
+  ) {
+    var barSeriesModels = [];
+    var isBaseAxisAndHasBarSeries;
+    ecModel.eachSeriesByType('bar', function (seriesModel) {
+      if (seriesModel.coordinateSystem && seriesModel.coordinateSystem.type === 'cartesian2d') {
+        barSeriesModels.push(seriesModel);
+        isBaseAxisAndHasBarSeries |= seriesModel.getBaseAxis() === model.axis;
+      }
+    });
+
+    if (isBaseAxisAndHasBarSeries) {
+      // Adjust axis min and max to account for overflow
+      var adjustedScale = adjustScaleForOverflow(min, max, model, barSeriesModels);
+      min = adjustedScale.min;
+      max = adjustedScale.max;
+    }
+  }
+
+  return [min, max];
+}
+
+function adjustScaleForOverflow(min, max, model, barSeriesModels) {
+  // Get Axis Length
+  var axisExtent = model.axis.getExtent();
+  var axisLength = axisExtent[1] - axisExtent[0]; // Calculate placement of bars on axis
+
+  var barWidthAndOffset = calBarWidthAndOffset(barSeriesModels); // Get bars on current base axis and calculate min and max overflow
+
+  var baseAxisKey = model.axis.dim + model.axis.index;
+  var barsOnCurrentAxis = barWidthAndOffset[baseAxisKey];
+
+  if (barsOnCurrentAxis === undefined) {
+    return {
+      min: min,
+      max: max
+    };
+  }
+
+  var minOverflow = Infinity;
+  zrUtil.each(barsOnCurrentAxis, function (item) {
+    minOverflow = Math.min(item.offset, minOverflow);
+  });
+  var maxOverflow = -Infinity;
+  zrUtil.each(barsOnCurrentAxis, function (item) {
+    maxOverflow = Math.max(item.offset + item.width, maxOverflow);
+  });
+  minOverflow = Math.abs(minOverflow);
+  maxOverflow = Math.abs(maxOverflow);
+  var totalOverFlow = minOverflow + maxOverflow; // Calulate required buffer based on old range and overflow
+
+  var oldRange = max - min;
+  var oldRangePercentOfNew = 1 - (minOverflow + maxOverflow) / axisLength;
+  var overflowBuffer = oldRange / oldRangePercentOfNew - oldRange;
+  max += overflowBuffer * (maxOverflow / totalOverFlow);
+  min -= overflowBuffer * (minOverflow / totalOverFlow);
+  return {
+    min: min,
+    max: max
+  };
+}
+
+function niceScaleExtent(scale, model) {
+  var extent = getScaleExtent(scale, model);
+  var fixMin = model.getMin() != null;
+  var fixMax = model.getMax() != null;
+  var splitNumber = model.get('splitNumber');
+
+  if (scale.type === 'log') {
+    scale.base = model.get('logBase');
+  }
+
+  var scaleType = scale.type;
+  scale.setExtent(extent[0], extent[1]);
+  scale.niceExtent({
+    splitNumber: splitNumber,
+    fixMin: fixMin,
+    fixMax: fixMax,
+    minInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('minInterval') : null,
+    maxInterval: scaleType === 'interval' || scaleType === 'time' ? model.get('maxInterval') : null
+  }); // If some one specified the min, max. And the default calculated interval
+  // is not good enough. He can specify the interval. It is often appeared
+  // in angle axis with angle 0 - 360. Interval calculated in interval scale is hard
+  // to be 60.
+  // FIXME
+
+  var interval = model.get('interval');
+
+  if (interval != null) {
+    scale.setInterval && scale.setInterval(interval);
+  }
+}
+/**
+ * @param {module:echarts/model/Model} model
+ * @param {string} [axisType] Default retrieve from model.type
+ * @return {module:echarts/scale/*}
+ */
+
+
+function createScaleByModel(model, axisType) {
+  axisType = axisType || model.get('type');
+
+  if (axisType) {
+    switch (axisType) {
+      // Buildin scale
+      case 'category':
+        return new OrdinalScale(model.getOrdinalMeta ? model.getOrdinalMeta() : model.getCategories(), [Infinity, -Infinity]);
+
+      case 'value':
+        return new IntervalScale();
+      // Extended scale, like time and log
+
+      default:
+        return (Scale.getClass(axisType) || IntervalScale).create(model);
+    }
+  }
+}
+/**
+ * Check if the axis corss 0
+ */
+
+
+function ifAxisCrossZero(axis) {
+  var dataExtent = axis.scale.getExtent();
+  var min = dataExtent[0];
+  var max = dataExtent[1];
+  return !(min > 0 && max > 0 || min < 0 && max < 0);
+}
+/**
+ * @param {Array.<number>} tickCoords In axis self coordinate.
+ * @param {Array.<string>} labels
+ * @param {string} font
+ * @param {number} axisRotate 0: towards right horizontally, clock-wise is negative.
+ * @param {number} [labelRotate=0] 0: towards right horizontally, clock-wise is negative.
+ * @return {number}
+ */
+
+
+function getAxisLabelInterval(tickCoords, labels, font, axisRotate, labelRotate) {
+  var textSpaceTakenRect;
+  var autoLabelInterval = 0;
+  var accumulatedLabelInterval = 0;
+  var rotation = (axisRotate - labelRotate) / 180 * Math.PI;
+  var step = 1;
+
+  if (labels.length > 40) {
+    // Simple optimization for large amount of labels
+    step = Math.floor(labels.length / 40);
+  }
+
+  for (var i = 0; i < tickCoords.length; i += step) {
+    var tickCoord = tickCoords[i]; // Not precise, do not consider align and vertical align
+    // and each distance from axis line yet.
+
+    var rect = textContain.getBoundingRect(labels[i], font, 'center', 'top');
+    rect.x += tickCoord * Math.cos(rotation);
+    rect.y += tickCoord * Math.sin(rotation); // Magic number
+
+    rect.width *= 1.3;
+    rect.height *= 1.3;
+
+    if (!textSpaceTakenRect) {
+      textSpaceTakenRect = rect.clone();
+    } // There is no space for current label;
+    else if (textSpaceTakenRect.intersect(rect)) {
+        accumulatedLabelInterval++;
+        autoLabelInterval = Math.max(autoLabelInterval, accumulatedLabelInterval);
+      } else {
+        textSpaceTakenRect.union(rect); // Reset
+
+        accumulatedLabelInterval = 0;
+      }
+  }
+
+  if (autoLabelInterval === 0 && step > 1) {
+    return step;
+  }
+
+  return (autoLabelInterval + 1) * step - 1;
+}
+/**
+ * @param {Object} axis
+ * @param {Function} labelFormatter
+ * @return {Array.<string>}
+ */
+
+
+function getFormattedLabels(axis, labelFormatter) {
+  var scale = axis.scale;
+  var labels = scale.getTicksLabels();
+  var ticks = scale.getTicks();
+
+  if (typeof labelFormatter === 'string') {
+    labelFormatter = function (tpl) {
+      return function (val) {
+        return tpl.replace('{value}', val != null ? val : '');
+      };
+    }(labelFormatter); // Consider empty array
+
+
+    return zrUtil.map(labels, labelFormatter);
+  } else if (typeof labelFormatter === 'function') {
+    return zrUtil.map(ticks, function (tick, idx) {
+      return labelFormatter(getAxisRawValue(axis, tick), idx);
+    }, this);
+  } else {
+    return labels;
+  }
+}
+
+function getAxisRawValue(axis, value) {
+  // In category axis with data zoom, tick is not the original
+  // index of axis.data. So tick should not be exposed to user
+  // in category axis.
+  return axis.type === 'category' ? axis.scale.getLabel(value) : value;
+}
+
+exports.getScaleExtent = getScaleExtent;
+exports.niceScaleExtent = niceScaleExtent;
+exports.createScaleByModel = createScaleByModel;
+exports.ifAxisCrossZero = ifAxisCrossZero;
+exports.getAxisLabelInterval = getAxisLabelInterval;
+exports.getFormattedLabels = getFormattedLabels;
+exports.getAxisRawValue = getAxisRawValue;
+
+/***/ }),
 /* 23 */
 /***/ (function(module, exports) {
 
@@ -10792,7 +10792,7 @@ module.exports = _default;
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(68);
+var LRU = __webpack_require__(69);
 
 var kCSSColorTable = {
   'transparent': [0, 0, 0, 0],
@@ -12209,7 +12209,7 @@ exports.isDimensionStacked = isDimensionStacked;
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(117);
+module.exports = __webpack_require__(118);
 
 /***/ }),
 /* 30 */
@@ -23026,7 +23026,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(135).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(136).setImmediate))
 
 /***/ }),
 /* 31 */
@@ -23034,7 +23034,7 @@ module.exports = Vue$3;
 
 var zrUtil = __webpack_require__(0);
 
-var Element = __webpack_require__(65);
+var Element = __webpack_require__(66);
 
 var BoundingRect = __webpack_require__(11);
 
@@ -23380,11 +23380,11 @@ exports.devicePixelRatio = devicePixelRatio;
 
 var zrUtil = __webpack_require__(0);
 
-var Style = __webpack_require__(70);
+var Style = __webpack_require__(71);
 
-var Element = __webpack_require__(65);
+var Element = __webpack_require__(66);
 
-var RectText = __webpack_require__(206);
+var RectText = __webpack_require__(209);
 
 /**
  * 可绘制的图形基类
@@ -23639,11 +23639,11 @@ module.exports = _default;
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var curve = __webpack_require__(20);
+var curve = __webpack_require__(21);
 
 var vec2 = __webpack_require__(6);
 
-var bbox = __webpack_require__(78);
+var bbox = __webpack_require__(79);
 
 var BoundingRect = __webpack_require__(11);
 
@@ -25390,7 +25390,7 @@ exports.makeKey = makeKey;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(10);
-var normalizeHeaderName = __webpack_require__(120);
+var normalizeHeaderName = __webpack_require__(121);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -26155,7 +26155,7 @@ module.exports = sort;
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LRU = __webpack_require__(68);
+var LRU = __webpack_require__(69);
 
 var globalImageCache = new LRU(50);
 /**
@@ -26319,7 +26319,7 @@ var _model = __webpack_require__(1);
 var makeInner = _model.makeInner;
 var getDataItemValue = _model.getDataItemValue;
 
-var _referHelper = __webpack_require__(84);
+var _referHelper = __webpack_require__(85);
 
 var getCoordSysDefineBySeries = _referHelper.getCoordSysDefineBySeries;
 
@@ -27419,7 +27419,7 @@ var formatUtil = __webpack_require__(12);
 
 var Scale = __webpack_require__(37);
 
-var helper = __webpack_require__(94);
+var helper = __webpack_require__(95);
 
 /**
  * Interval scale
@@ -38199,12 +38199,12 @@ process.umask = function() { return 0; };
 
 
 var utils = __webpack_require__(10);
-var settle = __webpack_require__(121);
-var buildURL = __webpack_require__(123);
-var parseHeaders = __webpack_require__(124);
-var isURLSameOrigin = __webpack_require__(125);
+var settle = __webpack_require__(122);
+var buildURL = __webpack_require__(124);
+var parseHeaders = __webpack_require__(125);
+var isURLSameOrigin = __webpack_require__(126);
 var createError = __webpack_require__(55);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(126);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(127);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -38301,7 +38301,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(127);
+      var cookies = __webpack_require__(128);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -38385,7 +38385,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(122);
+var enhanceError = __webpack_require__(123);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -38448,10 +38448,10 @@ module.exports = Cancel;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_industries__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pfre__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_industries__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pfre__ = __webpack_require__(152);
 
 
 
@@ -38497,14 +38497,25 @@ var FETCH_INDUSTRIES = 'industries/FETCH_INDUSTRIES';
 
 /***/ }),
 /* 61 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var FETCH_MOCK_DATA = 'pfre/FETCH_MOCK_DATA';
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    FETCH_MOCK_DATA: FETCH_MOCK_DATA
+});
+
+/***/ }),
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(166)
+var __vue_script__ = __webpack_require__(169)
 /* template */
-var __vue_template__ = __webpack_require__(167)
+var __vue_template__ = __webpack_require__(170)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38543,7 +38554,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38563,24 +38574,24 @@ function updateForm(field, data, parent) {
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(64);
+var guid = __webpack_require__(65);
 
 var env = __webpack_require__(8);
 
 var zrUtil = __webpack_require__(0);
 
-var Handler = __webpack_require__(198);
+var Handler = __webpack_require__(201);
 
-var Storage = __webpack_require__(200);
+var Storage = __webpack_require__(203);
 
-var Painter = __webpack_require__(204);
+var Painter = __webpack_require__(207);
 
-var Animation = __webpack_require__(207);
+var Animation = __webpack_require__(210);
 
-var HandlerProxy = __webpack_require__(208);
+var HandlerProxy = __webpack_require__(211);
 
 /*!
 * ZRender, a high performance 2d drawing library.
@@ -39022,7 +39033,7 @@ exports.getInstance = getInstance;
 exports.registerPainter = registerPainter;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports) {
 
 /**
@@ -39039,16 +39050,16 @@ function _default() {
 module.exports = _default;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var guid = __webpack_require__(64);
+var guid = __webpack_require__(65);
 
 var Eventful = __webpack_require__(23);
 
-var Transformable = __webpack_require__(66);
+var Transformable = __webpack_require__(67);
 
-var Animatable = __webpack_require__(201);
+var Animatable = __webpack_require__(204);
 
 var zrUtil = __webpack_require__(0);
 
@@ -39313,10 +39324,10 @@ var _default = Element;
 module.exports = _default;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var matrix = __webpack_require__(18);
+var matrix = __webpack_require__(19);
 
 var vector = __webpack_require__(6);
 
@@ -39601,10 +39612,10 @@ var _default = Transformable;
 module.exports = _default;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Clip = __webpack_require__(202);
+var Clip = __webpack_require__(205);
 
 var color = __webpack_require__(24);
 
@@ -40250,7 +40261,7 @@ var _default = Animator;
 module.exports = _default;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 // Simple LRU cache use doubly linked list
@@ -40457,7 +40468,7 @@ var _default = LRU;
 module.exports = _default;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(32);
@@ -40484,10 +40495,10 @@ var _default = log;
 module.exports = _default;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fixShadow = __webpack_require__(71);
+var fixShadow = __webpack_require__(72);
 
 var STYLE_COMMON_PROPS = [['shadowBlur', 0], ['shadowOffsetX', 0], ['shadowOffsetY', 0], ['shadowColor', '#000'], ['lineCap', 'butt'], ['lineJoin', 'miter'], ['miterLimit', 10]]; // var SHADOW_PROPS = STYLE_COMMON_PROPS.slice(0, 4);
 // var LINE_PROPS = STYLE_COMMON_PROPS.slice(4);
@@ -40943,7 +40954,7 @@ var _default = Style;
 module.exports = _default;
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 var SHADOW_PROPS = {
@@ -40969,7 +40980,7 @@ function _default(ctx, propName, value) {
 module.exports = _default;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 var Pattern = function (image, repeat) {
@@ -40989,7 +41000,7 @@ var _default = Pattern;
 module.exports = _default;
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports) {
 
 var _default = typeof window !== 'undefined' && (window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || // https://github.com/ecomfe/zrender/issues/189#issuecomment-224919809
@@ -41000,7 +41011,7 @@ window.msRequestAnimationFrame && window.msRequestAnimationFrame.bind(window) ||
 module.exports = _default;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Displayable = __webpack_require__(33);
@@ -41097,7 +41108,7 @@ var _default = ZImage;
 module.exports = _default;
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -41109,13 +41120,13 @@ var normalizeCssArray = _util.normalizeCssArray;
 var isString = _util.isString;
 var isObject = _util.isObject;
 
-var textContain = __webpack_require__(19);
+var textContain = __webpack_require__(20);
 
-var roundRectHelper = __webpack_require__(76);
+var roundRectHelper = __webpack_require__(77);
 
 var imageHelper = __webpack_require__(42);
 
-var fixShadow = __webpack_require__(71);
+var fixShadow = __webpack_require__(72);
 
 // TODO: Have not support 'start', 'end' yet.
 var VALID_TEXT_ALIGN = {
@@ -41535,7 +41546,7 @@ exports.getFill = getFill;
 exports.needDrawText = needDrawText;
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 function buildPath(ctx, shape) {
@@ -41621,7 +41632,7 @@ function buildPath(ctx, shape) {
 exports.buildPath = buildPath;
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -41650,9 +41661,9 @@ var Model = __webpack_require__(13);
 
 var ComponentModel = __webpack_require__(17);
 
-var globalDefault = __webpack_require__(238);
+var globalDefault = __webpack_require__(241);
 
-var colorPaletteMixin = __webpack_require__(83);
+var colorPaletteMixin = __webpack_require__(84);
 
 var _sourceHelper = __webpack_require__(45);
 
@@ -42313,12 +42324,12 @@ var _default = GlobalModel;
 module.exports = _default;
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var vec2 = __webpack_require__(6);
 
-var curve = __webpack_require__(20);
+var curve = __webpack_require__(21);
 
 /**
  * @author Yi Shen(https://github.com/pissang)
@@ -42539,7 +42550,7 @@ exports.fromQuadratic = fromQuadratic;
 exports.fromArc = fromArc;
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 var PI2 = Math.PI * 2;
@@ -42557,7 +42568,7 @@ function normalizeRadian(angle) {
 exports.normalizeRadian = normalizeRadian;
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 function windingLine(x0, y0, x1, y1, x, y) {
@@ -42584,7 +42595,7 @@ function windingLine(x0, y0, x1, y1, x, y) {
 module.exports = windingLine;
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var env = __webpack_require__(8);
@@ -42645,12 +42656,12 @@ function _default(orignalBrush) {
 module.exports = _default;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var smoothSpline = __webpack_require__(225);
+var smoothSpline = __webpack_require__(228);
 
-var smoothBezier = __webpack_require__(226);
+var smoothBezier = __webpack_require__(229);
 
 function buildPath(ctx, shape, closePath) {
   var points = shape.points;
@@ -42687,7 +42698,7 @@ function buildPath(ctx, shape, closePath) {
 exports.buildPath = buildPath;
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _model = __webpack_require__(1);
@@ -42754,7 +42765,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -42882,7 +42893,7 @@ function isCategory(axisModel) {
 exports.getCoordSysDefineBySeries = getCoordSysDefineBySeries;
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -42899,7 +42910,7 @@ var _default = ExtensionAPI;
 module.exports = _default;
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -42921,9 +42932,9 @@ var modelUtil = __webpack_require__(1);
 
 var ComponentModel = __webpack_require__(17);
 
-var colorPaletteMixin = __webpack_require__(83);
+var colorPaletteMixin = __webpack_require__(84);
 
-var dataFormatMixin = __webpack_require__(243);
+var dataFormatMixin = __webpack_require__(246);
 
 var _layout = __webpack_require__(14);
 
@@ -43428,7 +43439,7 @@ var _default = SeriesModel;
 module.exports = _default;
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -43447,7 +43458,7 @@ var _task = __webpack_require__(47);
 
 var createTask = _task.createTask;
 
-var createRenderPlanner = __webpack_require__(88);
+var createRenderPlanner = __webpack_require__(89);
 
 var inner = modelUtil.makeInner();
 var renderPlanner = createRenderPlanner();
@@ -43666,7 +43677,7 @@ var _default = Chart;
 module.exports = _default;
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _model = __webpack_require__(1);
@@ -43692,14 +43703,14 @@ function _default() {
 module.exports = _default;
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var List = __webpack_require__(90);
+var List = __webpack_require__(91);
 
-var createDimensions = __webpack_require__(91);
+var createDimensions = __webpack_require__(92);
 
 var _sourceType = __webpack_require__(36);
 
@@ -43715,7 +43726,7 @@ var getDataItemValue = _model.getDataItemValue;
 
 var CoordinateSystem = __webpack_require__(46);
 
-var _referHelper = __webpack_require__(84);
+var _referHelper = __webpack_require__(85);
 
 var getCoordSysDefineBySeries = _referHelper.getCoordSysDefineBySeries;
 
@@ -43824,7 +43835,7 @@ var _default = createListFromArray;
 module.exports = _default;
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var _config = __webpack_require__(4);
@@ -43835,7 +43846,7 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(13);
 
-var DataDiffer = __webpack_require__(254);
+var DataDiffer = __webpack_require__(257);
 
 var Source = __webpack_require__(26);
 
@@ -45720,10 +45731,10 @@ module.exports = _default;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var completeDimensions = __webpack_require__(92);
+var completeDimensions = __webpack_require__(93);
 
 /**
  * Substitute `completeDimensions`.
@@ -45755,7 +45766,7 @@ function _default(source, opt) {
 module.exports = _default;
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -46015,7 +46026,7 @@ var _default = completeDimensions;
 module.exports = _default;
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -46148,7 +46159,7 @@ var _default = OrdinalMeta;
 module.exports = _default;
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var numberUtil = __webpack_require__(7);
@@ -46260,12 +46271,12 @@ exports.fixExtent = fixExtent;
 exports.intervalScaleGetTicks = intervalScaleGetTicks;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
 var _default = {
   /**
@@ -46340,14 +46351,14 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var numberUtil = __webpack_require__(7);
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
 var linearMap = numberUtil.linearMap;
 
@@ -46609,7 +46620,7 @@ var _default = Axis;
 module.exports = _default;
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 /**
@@ -46646,10 +46657,10 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(264);
+var freeGlobal = __webpack_require__(267);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -46661,10 +46672,10 @@ module.exports = root;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(98);
+var root = __webpack_require__(99);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -46673,7 +46684,7 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -46688,7 +46699,7 @@ var _number = __webpack_require__(7);
 
 var parsePercent = _number.parsePercent;
 
-var _labelHelper = __webpack_require__(277);
+var _labelHelper = __webpack_require__(280);
 
 var getDefaultLabel = _labelHelper.getDefaultLabel;
 
@@ -47002,7 +47013,7 @@ var _default = SymbolClz;
 module.exports = _default;
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataStackHelper = __webpack_require__(28);
@@ -47089,16 +47100,16 @@ exports.prepareDataCoordInfo = prepareDataCoordInfo;
 exports.getStackedOnPoint = getStackedOnPoint;
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(17);
 
-var axisModelCreator = __webpack_require__(289);
+var axisModelCreator = __webpack_require__(292);
 
-var axisModelCommonMixin = __webpack_require__(95);
+var axisModelCommonMixin = __webpack_require__(96);
 
 var AxisModel = ComponentModel.extend({
   type: 'cartesian2dAxis',
@@ -47163,7 +47174,7 @@ var _default = AxisModel;
 module.exports = _default;
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -47188,7 +47199,7 @@ var _symbol = __webpack_require__(38);
 
 var createSymbol = _symbol.createSymbol;
 
-var matrixUtil = __webpack_require__(18);
+var matrixUtil = __webpack_require__(19);
 
 var _vector = __webpack_require__(6);
 
@@ -47811,7 +47822,7 @@ var _default = AxisBuilder;
 module.exports = _default;
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -47914,7 +47925,7 @@ var _default = AxisView;
 module.exports = _default;
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -47987,7 +47998,7 @@ function layout(gridModel, axisModel, opt) {
 exports.layout = layout;
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -48044,7 +48055,7 @@ function _default(finder, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -48172,22 +48183,22 @@ exports.register = register;
 exports.unregister = unregister;
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(3);
 
-var textContain = __webpack_require__(19);
+var textContain = __webpack_require__(20);
 
 var formatUtil = __webpack_require__(12);
 
-var matrix = __webpack_require__(18);
+var matrix = __webpack_require__(19);
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
-var AxisBuilder = __webpack_require__(103);
+var AxisBuilder = __webpack_require__(104);
 
 /**
  * @param {module:echarts/model/Model} axisPointerModel
@@ -48397,15 +48408,15 @@ exports.makeRectShape = makeRectShape;
 exports.makeSectorShape = makeSectorShape;
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(312)
+var __vue_script__ = __webpack_require__(315)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(320)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48444,15 +48455,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(111);
-module.exports = __webpack_require__(339);
+__webpack_require__(112);
+module.exports = __webpack_require__(342);
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48461,18 +48472,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(333);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(112);
+__webpack_require__(113);
 
 
 
@@ -48504,10 +48515,10 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony default export */ __webpack_exports__["default"] = (vm);
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window._ = __webpack_require__(113);
+window._ = __webpack_require__(114);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -48518,7 +48529,7 @@ window._ = __webpack_require__(113);
 try {
   window.$ = window.jQuery = __webpack_require__(51);
 
-  __webpack_require__(115);
+  __webpack_require__(116);
 } catch (e) {}
 
 /**
@@ -48546,7 +48557,7 @@ if (token) {
 }
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -65635,10 +65646,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(114)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(115)(module)))
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -65666,7 +65677,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -65675,7 +65686,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-	 true ? factory(exports, __webpack_require__(51), __webpack_require__(116)) :
+	 true ? factory(exports, __webpack_require__(51), __webpack_require__(117)) :
 	typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
 	(factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -69566,7 +69577,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72012,7 +72023,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(15)))
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72020,7 +72031,7 @@ Popper.Defaults = Defaults;
 
 var utils = __webpack_require__(10);
 var bind = __webpack_require__(52);
-var Axios = __webpack_require__(119);
+var Axios = __webpack_require__(120);
 var defaults = __webpack_require__(40);
 
 /**
@@ -72055,14 +72066,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(57);
-axios.CancelToken = __webpack_require__(133);
+axios.CancelToken = __webpack_require__(134);
 axios.isCancel = __webpack_require__(56);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(134);
+axios.spread = __webpack_require__(135);
 
 module.exports = axios;
 
@@ -72071,7 +72082,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 /*!
@@ -72098,7 +72109,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72106,8 +72117,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(40);
 var utils = __webpack_require__(10);
-var InterceptorManager = __webpack_require__(128);
-var dispatchRequest = __webpack_require__(129);
+var InterceptorManager = __webpack_require__(129);
+var dispatchRequest = __webpack_require__(130);
 
 /**
  * Create a new instance of Axios
@@ -72184,7 +72195,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72203,7 +72214,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72236,7 +72247,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72264,7 +72275,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72339,7 +72350,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72399,7 +72410,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72474,7 +72485,7 @@ module.exports = (
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72517,7 +72528,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72577,7 +72588,7 @@ module.exports = (
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72636,18 +72647,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(10);
-var transformData = __webpack_require__(130);
+var transformData = __webpack_require__(131);
 var isCancel = __webpack_require__(56);
 var defaults = __webpack_require__(40);
-var isAbsoluteURL = __webpack_require__(131);
-var combineURLs = __webpack_require__(132);
+var isAbsoluteURL = __webpack_require__(132);
+var combineURLs = __webpack_require__(133);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -72729,7 +72740,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72756,7 +72767,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72777,7 +72788,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72798,7 +72809,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72862,7 +72873,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72896,7 +72907,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -72949,7 +72960,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(136);
+__webpack_require__(137);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -72963,7 +72974,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -73156,25 +73167,25 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(53)))
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__);
 
 
@@ -73198,7 +73209,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75828,14 +75839,14 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(144);
 
 
 
@@ -75850,7 +75861,7 @@ if (inBrowser && window.Vue) {
 });
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75863,7 +75874,7 @@ if (inBrowser && window.Vue) {
 });
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75879,7 +75890,7 @@ if (inBrowser && window.Vue) {
 });
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75894,11 +75905,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }));
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_majors__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_majors__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__ = __webpack_require__(59);
 //MAJORS ACTIONS
 
@@ -75918,7 +75929,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 });
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75938,14 +75949,14 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 });
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(150);
 
 
 
@@ -75960,7 +75971,7 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 });
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75972,7 +75983,7 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 });
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -75985,7 +75996,7 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 });
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76000,11 +76011,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }));
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_industries__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_industries__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__ = __webpack_require__(60);
 //MAJORS ACTIONS
 
@@ -76024,7 +76035,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 });
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76044,23 +76055,29 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(success, error) {
 });
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(156);
 // PFRE STORE
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-    getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */]
+    getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
+    mutations: __WEBPACK_IMPORTED_MODULE_2__mutations__["a" /* default */],
+    actions: __WEBPACK_IMPORTED_MODULE_3__actions__["a" /* default */]
 });
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76069,55 +76086,86 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(success, error) {
 // everything in the state needs to be initially set to 0.
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    years: {
-        start: 2,
-        middle: 7,
-        end: 12,
-        actual: 4
-    },
-    earnings: {
-        minimum: 20000,
-        average: 50000,
-        maximum: 100000,
-        actual: 67000
-    },
-    returnOnInvestment: {
-        minimum: 0,
-        average: .075,
-        maximum: .15,
-        actual: .083
+    pfreData: {
+        years: {
+            start: 2,
+            middle: 7,
+            end: 12,
+            actual: 0
+        },
+        earnings: {
+            minimum: 20000,
+            average: 50000,
+            maximum: 100000,
+            actual: 0
+        },
+        returnOnInvestment: {
+            minimum: 0,
+            average: .075,
+            maximum: .15,
+            actual: 0
+        }
     }
 });
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // PFRE GETTERS
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    years: function years(state) {
-        return state.years;
-    },
-    earnings: function earnings(state) {
-        return state.earnings;
-    },
-    returnOnInvestment: function returnOnInvestment(state) {
-        return state.returnOnInvestment;
+    pfreData: function pfreData(state) {
+        return state.pfreData;
     }
 });
 
 /***/ }),
-/* 154 */
+/* 155 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__ = __webpack_require__(61);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// PFRE MUTATIONS
+
+
+/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].FETCH_MOCK_DATA, function (state) {
+    state.pfreData.years.actual = Math.floor(Math.random() * Math.floor(13));
+    state.pfreData.earnings.actual = Math.floor(Math.random() * Math.floor(45000));
+    state.pfreData.returnOnInvestment.actual = (Math.random() * (0 - .15) + .15).toFixed(2);
+}));
+
+/***/ }),
+/* 156 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__ = __webpack_require__(61);
+// PFRE ACTIONS
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    fetchMockData: function fetchMockData(_ref) {
+        var commit = _ref.commit,
+            dispatch = _ref.dispatch;
+
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].FETCH_MOCK_DATA);
+    }
+});
+
+/***/ }),
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(155)
+var __vue_script__ = __webpack_require__(158)
 /* template */
-var __vue_template__ = __webpack_require__(156)
+var __vue_template__ = __webpack_require__(159)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -76156,7 +76204,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76247,7 +76295,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -76325,7 +76373,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(157),
+                  src: __webpack_require__(160),
                   alt: ""
                 }
               }),
@@ -76337,7 +76385,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(158),
+                  src: __webpack_require__(161),
                   alt: ""
                 }
               }),
@@ -76349,7 +76397,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(159),
+                  src: __webpack_require__(162),
                   alt: ""
                 }
               }),
@@ -76361,7 +76409,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(160),
+                  src: __webpack_require__(163),
                   alt: ""
                 }
               }),
@@ -76373,7 +76421,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(161),
+                  src: __webpack_require__(164),
                   alt: ""
                 }
               }),
@@ -76385,7 +76433,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(162),
+                  src: __webpack_require__(165),
                   alt: ""
                 }
               }),
@@ -76397,7 +76445,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "csu-seals",
                 attrs: {
-                  src: __webpack_require__(163),
+                  src: __webpack_require__(166),
                   alt: ""
                 }
               }),
@@ -76438,57 +76486,57 @@ if (false) {
 }
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/channel_islands_seal.svg?0abf850f8e5670aadfbd04b08e939055";
 
 /***/ }),
-/* 158 */
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/dominguez_seal.svg?27d4e13bdb820c33a32b55be3f463191";
 
 /***/ }),
-/* 159 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/fullerton_seal.svg?f597c792213eddb9cdc06c203d7c7ba5";
 
 /***/ }),
-/* 160 */
+/* 163 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/long_beach_seal.svg?a06cf7092d1c3f429b0818d57296a2c6";
 
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/los_angeles_seal.svg?1626d8796f0f2ad8e61430af259dce18";
 
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/northridge_seal.svg?13d47315dc06f652d05351d34b0e4113";
 
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/poly_seal.svg?06d9d9cd02d33b5d7ae68bdc728afe1b";
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(165)
+var __vue_script__ = __webpack_require__(168)
 /* template */
-var __vue_template__ = __webpack_require__(176)
+var __vue_template__ = __webpack_require__(179)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -76527,18 +76575,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_pfre_pfre_form_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_progress_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(18);
 //
 //
 //
@@ -76564,7 +76612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 166 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76578,7 +76626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 167 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -76603,15 +76651,15 @@ if (false) {
 }
 
 /***/ }),
-/* 168 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(169)
+var __vue_script__ = __webpack_require__(172)
 /* template */
-var __vue_template__ = __webpack_require__(170)
+var __vue_template__ = __webpack_require__(173)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -76650,12 +76698,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 169 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(18);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -76735,6 +76786,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -76750,13 +76803,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    methods: {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchMockData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */]
-    }
+    })
 });
 
 /***/ }),
-/* 170 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -76911,26 +76964,27 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "row row--condensed" }, [
+        _c("div", { staticClass: "col col-md-8 py-4" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.fetchMockData()
+                }
+              }
+            },
+            [_vm._v("Submit")]
+          )
+        ])
+      ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row row--condensed" }, [
-      _c("div", { staticClass: "col col-md-8 py-4" }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-success", attrs: { type: "button" } },
-          [_vm._v("Submit")]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -76941,15 +76995,15 @@ if (false) {
 }
 
 /***/ }),
-/* 171 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(172)
+var __vue_script__ = __webpack_require__(175)
 /* template */
-var __vue_template__ = __webpack_require__(175)
+var __vue_template__ = __webpack_require__(178)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -76988,13 +77042,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 172 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(18);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -77072,18 +77126,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     };
   },
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['years', 'earnings', 'returnOnInvestment'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchMockData'])),
   filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] }
 });
 
 /***/ }),
-/* 173 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return percentage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return currency; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_numeral__);
 // FILTERS
 
@@ -77099,7 +77154,7 @@ var currency = function currency(data) {
 
 
 /***/ }),
-/* 174 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
@@ -78122,7 +78177,7 @@ return numeral;
 
 
 /***/ }),
-/* 175 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -78148,26 +78203,28 @@ var render = function() {
         _c("div", { staticClass: "progress-footer col-12" }, [
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-left" }, [
-              _vm._v(_vm._s(_vm.years.start))
+              _vm._v(_vm._s(_vm.pfreData.years.start))
             ])
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "text-center" }, [
-              _vm._v(_vm._s(_vm.years.middle))
+              _vm._v(_vm._s(_vm.pfreData.years.middle))
             ])
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-right" }, [
-              _vm._v(_vm._s(_vm.years.end))
+              _vm._v(_vm._s(_vm.pfreData.years.end))
             ])
           ])
         ]),
         _vm._v(" "),
         _c("div", [
           _c("p", { staticClass: "font-weight-bold mb-0" }, [
-            _vm._v("Estimated time to degree: " + _vm._s(_vm.years.actual))
+            _vm._v(
+              "Estimated time to degree: " + _vm._s(_vm.pfreData.years.actual)
+            )
           ])
         ])
       ],
@@ -78192,19 +78249,19 @@ var render = function() {
         _c("div", { staticClass: "progress-footer" }, [
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-left" }, [
-              _vm._v(_vm._s(_vm._f("currency")(_vm.earnings.minimum)))
+              _vm._v(_vm._s(_vm._f("currency")(_vm.pfreData.earnings.minimum)))
             ])
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "text-center" }, [
-              _vm._v(_vm._s(_vm._f("currency")(_vm.earnings.average)))
+              _vm._v(_vm._s(_vm._f("currency")(_vm.pfreData.earnings.average)))
             ])
           ]),
           _vm._v(" "),
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-right" }, [
-              _vm._v(_vm._s(_vm._f("currency")(_vm.earnings.maximum)))
+              _vm._v(_vm._s(_vm._f("currency")(_vm.pfreData.earnings.maximum)))
             ])
           ])
         ]),
@@ -78213,7 +78270,7 @@ var render = function() {
           _c("p", { staticClass: "font-weight-bold mb-0" }, [
             _vm._v(
               "Estimated Earnings 5 Years After Exit: " +
-                _vm._s(_vm._f("currency")(_vm.earnings.actual))
+                _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
             )
           ])
         ])
@@ -78238,7 +78295,9 @@ var render = function() {
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-left" }, [
               _vm._v(
-                _vm._s(_vm._f("percentage")(_vm.returnOnInvestment.minimum))
+                _vm._s(
+                  _vm._f("percentage")(_vm.pfreData.returnOnInvestment.minimum)
+                )
               )
             ])
           ]),
@@ -78246,7 +78305,9 @@ var render = function() {
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "text-center" }, [
               _vm._v(
-                _vm._s(_vm._f("percentage")(_vm.returnOnInvestment.average))
+                _vm._s(
+                  _vm._f("percentage")(_vm.pfreData.returnOnInvestment.average)
+                )
               )
             ])
           ]),
@@ -78254,7 +78315,9 @@ var render = function() {
           _c("span", { staticClass: "col-4" }, [
             _c("p", { staticClass: "float-right" }, [
               _vm._v(
-                _vm._s(_vm._f("percentage")(_vm.returnOnInvestment.maximum))
+                _vm._s(
+                  _vm._f("percentage")(_vm.pfreData.returnOnInvestment.maximum)
+                )
               )
             ])
           ])
@@ -78264,7 +78327,9 @@ var render = function() {
           _c("p", { staticClass: "font-weight-bold mb-0" }, [
             _vm._v(
               "FRE - Financial Return on Education: " +
-                _vm._s(_vm._f("percentage")(_vm.returnOnInvestment.actual))
+                _vm._s(
+                  _vm._f("percentage")(_vm.pfreData.returnOnInvestment.actual)
+                )
             )
           ])
         ])
@@ -78284,7 +78349,7 @@ if (false) {
 }
 
 /***/ }),
-/* 176 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -78317,15 +78382,15 @@ if (false) {
 }
 
 /***/ }),
-/* 177 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(178)
+var __vue_script__ = __webpack_require__(181)
 /* template */
-var __vue_template__ = __webpack_require__(319)
+var __vue_template__ = __webpack_require__(322)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78364,14 +78429,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 178 */
+/* 181 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__);
 //
 //
@@ -78410,15 +78475,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 179 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(180)
+var __vue_script__ = __webpack_require__(183)
 /* template */
-var __vue_template__ = __webpack_require__(181)
+var __vue_template__ = __webpack_require__(184)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78457,7 +78522,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 180 */
+/* 183 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78475,7 +78540,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 181 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -78506,15 +78571,15 @@ if (false) {
 }
 
 /***/ }),
-/* 182 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(183)
+var __vue_script__ = __webpack_require__(186)
 /* template */
-var __vue_template__ = __webpack_require__(318)
+var __vue_template__ = __webpack_require__(321)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78553,18 +78618,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 183 */
+/* 186 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__global_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_form_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
 //
 //
@@ -78605,15 +78670,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 184 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(185)
+var __vue_script__ = __webpack_require__(188)
 /* template */
-var __vue_template__ = __webpack_require__(186)
+var __vue_template__ = __webpack_require__(189)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78652,13 +78717,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 185 */
+/* 188 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(18);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -78712,11 +78777,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.form.formWasSubmitted = true;
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])(['majors']))
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majors']))
 });
 
 /***/ }),
-/* 186 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -78862,15 +78927,15 @@ if (false) {
 }
 
 /***/ }),
-/* 187 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(188)
+var __vue_script__ = __webpack_require__(191)
 /* template */
-var __vue_template__ = __webpack_require__(311)
+var __vue_template__ = __webpack_require__(314)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78909,12 +78974,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 188 */
+/* 191 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__);
 //
 //
@@ -78947,15 +79012,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 189 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(190)
+var __vue_script__ = __webpack_require__(193)
 /* template */
-var __vue_template__ = __webpack_require__(310)
+var __vue_template__ = __webpack_require__(313)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78994,22 +79059,22 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 190 */
+/* 193 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(18);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -79032,7 +79097,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["b" /* mapGetters */])(['majorsYears']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorsYears']), {
         polar: function polar() {
             return {
                 title: {
@@ -79055,7 +79120,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 legend: {
                     data: ['line']
                 },
-                yAxis: {},
+                yAxis: {
+                    max: 150000
+                },
                 series: [{
                     type: 'line',
                     name: 'Some College',
@@ -79097,19 +79164,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(192)
+  __webpack_require__(195)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(197)
+var __vue_script__ = __webpack_require__(200)
 /* template */
-var __vue_template__ = __webpack_require__(272)
+var __vue_template__ = __webpack_require__(275)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79148,17 +79215,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(193);
+var content = __webpack_require__(196);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(195)("09e563c0", content, false, {});
+var update = __webpack_require__(198)("09e563c0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -79174,10 +79241,10 @@ if(false) {
 }
 
 /***/ }),
-/* 193 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(194)(false);
+exports = module.exports = __webpack_require__(197)(false);
 // imports
 
 
@@ -79188,7 +79255,7 @@ exports.push([module.i, "\n.echarts {\n  width: 600px;\n  height: 400px;\n}\n", 
 
 
 /***/ }),
-/* 194 */
+/* 197 */
 /***/ (function(module, exports) {
 
 /*
@@ -79270,7 +79337,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 195 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -79289,7 +79356,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(196)
+var listToStyles = __webpack_require__(199)
 
 /*
 type StyleObject = {
@@ -79498,7 +79565,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 196 */
+/* 199 */
 /***/ (function(module, exports) {
 
 /**
@@ -79531,16 +79598,16 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 197 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_debounce__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -79778,14 +79845,14 @@ var EVENTS = ['legendselectchanged', 'legendselected', 'legendunselected', 'data
 });
 
 /***/ }),
-/* 198 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
 var vec2 = __webpack_require__(6);
 
-var Draggable = __webpack_require__(199);
+var Draggable = __webpack_require__(202);
 
 var Eventful = __webpack_require__(23);
 
@@ -80108,7 +80175,7 @@ var _default = Handler;
 module.exports = _default;
 
 /***/ }),
-/* 199 */
+/* 202 */
 /***/ (function(module, exports) {
 
 // TODO Draggable for group
@@ -80192,7 +80259,7 @@ var _default = Draggable;
 module.exports = _default;
 
 /***/ }),
-/* 200 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -80429,12 +80496,12 @@ var _default = Storage;
 module.exports = _default;
 
 /***/ }),
-/* 201 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Animator = __webpack_require__(67);
+var Animator = __webpack_require__(68);
 
-var log = __webpack_require__(69);
+var log = __webpack_require__(70);
 
 var _util = __webpack_require__(0);
 
@@ -80688,10 +80755,10 @@ var _default = Animatable;
 module.exports = _default;
 
 /***/ }),
-/* 202 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var easingFuncs = __webpack_require__(203);
+var easingFuncs = __webpack_require__(206);
 
 /**
  * 动画主控制器
@@ -80794,7 +80861,7 @@ var _default = Clip;
 module.exports = _default;
 
 /***/ }),
-/* 203 */
+/* 206 */
 /***/ (function(module, exports) {
 
 /**
@@ -81177,7 +81244,7 @@ var _default = easing;
 module.exports = _default;
 
 /***/ }),
-/* 204 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(32);
@@ -81186,17 +81253,17 @@ var devicePixelRatio = _config.devicePixelRatio;
 
 var util = __webpack_require__(0);
 
-var log = __webpack_require__(69);
+var log = __webpack_require__(70);
 
 var BoundingRect = __webpack_require__(11);
 
 var timsort = __webpack_require__(41);
 
-var Layer = __webpack_require__(205);
+var Layer = __webpack_require__(208);
 
-var requestAnimationFrame = __webpack_require__(73);
+var requestAnimationFrame = __webpack_require__(74);
 
-var Image = __webpack_require__(74);
+var Image = __webpack_require__(75);
 
 var env = __webpack_require__(8);
 
@@ -82185,7 +82252,7 @@ var _default = Painter;
 module.exports = _default;
 
 /***/ }),
-/* 205 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -82194,9 +82261,9 @@ var _config = __webpack_require__(32);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
-var Style = __webpack_require__(70);
+var Style = __webpack_require__(71);
 
-var Pattern = __webpack_require__(72);
+var Pattern = __webpack_require__(73);
 
 /**
  * @module zrender/Layer
@@ -82423,10 +82490,10 @@ var _default = Layer;
 module.exports = _default;
 
 /***/ }),
-/* 206 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var textHelper = __webpack_require__(75);
+var textHelper = __webpack_require__(76);
 
 var BoundingRect = __webpack_require__(11);
 
@@ -82483,7 +82550,7 @@ var _default = RectText;
 module.exports = _default;
 
 /***/ }),
-/* 207 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -82492,9 +82559,9 @@ var _event = __webpack_require__(25);
 
 var Dispatcher = _event.Dispatcher;
 
-var requestAnimationFrame = __webpack_require__(73);
+var requestAnimationFrame = __webpack_require__(74);
 
-var Animator = __webpack_require__(67);
+var Animator = __webpack_require__(68);
 
 /**
  * 动画主类, 调度和管理所有动画控制器
@@ -82735,7 +82802,7 @@ var _default = Animation;
 module.exports = _default;
 
 /***/ }),
-/* 208 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _event = __webpack_require__(25);
@@ -82750,7 +82817,7 @@ var Eventful = __webpack_require__(23);
 
 var env = __webpack_require__(8);
 
-var GestureMgr = __webpack_require__(209);
+var GestureMgr = __webpack_require__(212);
 
 var TOUCH_CLICK_DELAY = 300;
 var mouseHandlerNames = ['click', 'dblclick', 'mousewheel', 'mouseout', 'mouseup', 'mousedown', 'mousemove', 'contextmenu'];
@@ -83073,7 +83140,7 @@ var _default = HandlerDomProxy;
 module.exports = _default;
 
 /***/ }),
-/* 209 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eventUtil = __webpack_require__(25);
@@ -83177,7 +83244,7 @@ var _default = GestureMgr;
 module.exports = _default;
 
 /***/ }),
-/* 210 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -83204,7 +83271,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 211 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -83218,10 +83285,10 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var textContain = __webpack_require__(19);
+var textContain = __webpack_require__(20);
 
 var graphicUtil = __webpack_require__(3);
 
@@ -83256,14 +83323,14 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
 var PathProxy = __webpack_require__(34);
 
-var transformPath = __webpack_require__(219);
+var transformPath = __webpack_require__(222);
 
 // command chars
 var cc = ['m', 'M', 'l', 'L', 'v', 'V', 'h', 'H', 'z', 'Z', 'c', 'C', 'q', 'Q', 't', 'T', 's', 'S', 'a', 'A'];
@@ -83670,26 +83737,26 @@ exports.extendFromString = extendFromString;
 exports.mergePath = mergePath;
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(34);
 
-var line = __webpack_require__(215);
+var line = __webpack_require__(218);
 
-var cubic = __webpack_require__(216);
+var cubic = __webpack_require__(219);
 
-var quadratic = __webpack_require__(217);
+var quadratic = __webpack_require__(220);
 
-var arc = __webpack_require__(218);
+var arc = __webpack_require__(221);
 
-var _util = __webpack_require__(79);
+var _util = __webpack_require__(80);
 
 var normalizeRadian = _util.normalizeRadian;
 
-var curve = __webpack_require__(20);
+var curve = __webpack_require__(21);
 
-var windingLine = __webpack_require__(80);
+var windingLine = __webpack_require__(81);
 
 var CMD = PathProxy.CMD;
 var PI2 = Math.PI * 2;
@@ -84070,7 +84137,7 @@ exports.contain = contain;
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 215 */
+/* 218 */
 /***/ (function(module, exports) {
 
 /**
@@ -84114,10 +84181,10 @@ function containStroke(x0, y0, x1, y1, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 216 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var curve = __webpack_require__(20);
+var curve = __webpack_require__(21);
 
 /**
  * 三次贝塞尔曲线描边包含判断
@@ -84152,10 +84219,10 @@ function containStroke(x0, y0, x1, y1, x2, y2, x3, y3, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 217 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curve = __webpack_require__(20);
+var _curve = __webpack_require__(21);
 
 var quadraticProjectPoint = _curve.quadraticProjectPoint;
 
@@ -84190,10 +84257,10 @@ function containStroke(x0, y0, x1, y1, x2, y2, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 218 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(79);
+var _util = __webpack_require__(80);
 
 var normalizeRadian = _util.normalizeRadian;
 var PI2 = Math.PI * 2;
@@ -84255,7 +84322,7 @@ function containStroke(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidth
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 219 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(34);
@@ -84360,16 +84427,16 @@ function _default(path, m) {
 module.exports = _default;
 
 /***/ }),
-/* 220 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Displayable = __webpack_require__(33);
 
 var zrUtil = __webpack_require__(0);
 
-var textContain = __webpack_require__(19);
+var textContain = __webpack_require__(20);
 
-var textHelper = __webpack_require__(75);
+var textHelper = __webpack_require__(76);
 
 /**
  * @alias zrender/graphic/Text
@@ -84436,7 +84503,7 @@ var _default = Text;
 module.exports = _default;
 
 /***/ }),
-/* 221 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84473,12 +84540,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 222 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
-var fixClipWithShadow = __webpack_require__(81);
+var fixClipWithShadow = __webpack_require__(82);
 
 /**
  * 扇形
@@ -84522,7 +84589,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 223 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84553,12 +84620,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 224 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
-var polyHelper = __webpack_require__(82);
+var polyHelper = __webpack_require__(83);
 
 /**
  * 多边形
@@ -84579,7 +84646,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 225 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(6);
@@ -84652,7 +84719,7 @@ function _default(points, isLoop) {
 module.exports = _default;
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(6);
@@ -84761,12 +84828,12 @@ function _default(points, smooth, isLoop, constraint) {
 module.exports = _default;
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
-var polyHelper = __webpack_require__(82);
+var polyHelper = __webpack_require__(83);
 
 /**
  * @module zrender/graphic/shape/Polyline
@@ -84790,12 +84857,12 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
-var roundRectHelper = __webpack_require__(76);
+var roundRectHelper = __webpack_require__(77);
 
 /**
  * 矩形
@@ -84835,7 +84902,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84894,14 +84961,14 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
 var vec2 = __webpack_require__(6);
 
-var _curve = __webpack_require__(20);
+var _curve = __webpack_require__(21);
 
 var quadraticSubdivide = _curve.quadraticSubdivide;
 var cubicSubdivide = _curve.cubicSubdivide;
@@ -85012,7 +85079,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85052,7 +85119,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85113,7 +85180,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85152,7 +85219,7 @@ var _default = LinearGradient;
 module.exports = _default;
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85189,7 +85256,7 @@ var _default = RadialGradient;
 module.exports = _default;
 
 /***/ }),
-/* 235 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -85341,7 +85408,7 @@ var _default = IncrementalDisplayble;
 module.exports = _default;
 
 /***/ }),
-/* 236 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -85362,7 +85429,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 237 */
+/* 240 */
 /***/ (function(module, exports) {
 
 var _default = {
@@ -85380,7 +85447,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 238 */
+/* 241 */
 /***/ (function(module, exports) {
 
 var platform = ''; // Navigator not exists in node
@@ -85436,7 +85503,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85855,7 +85922,7 @@ var _default = OptionManager;
 module.exports = _default;
 
 /***/ }),
-/* 240 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -85864,7 +85931,7 @@ var each = _util.each;
 var isArray = _util.isArray;
 var isObject = _util.isObject;
 
-var compatStyle = __webpack_require__(241);
+var compatStyle = __webpack_require__(244);
 
 var _model = __webpack_require__(1);
 
@@ -85964,7 +86031,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 241 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -86248,7 +86315,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 242 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -86353,7 +86420,7 @@ function calculateStack(stackInfoList) {
 module.exports = _default;
 
 /***/ }),
-/* 243 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(27);
@@ -86462,7 +86529,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 244 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Group = __webpack_require__(31);
@@ -86506,7 +86573,7 @@ var _default = Component;
 module.exports = _default;
 
 /***/ }),
-/* 245 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Gradient = __webpack_require__(44);
@@ -86550,12 +86617,12 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 246 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var lang = __webpack_require__(247);
+var lang = __webpack_require__(250);
 
 var _dataProvider = __webpack_require__(27);
 
@@ -86690,7 +86757,7 @@ function _default(dom, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 247 */
+/* 250 */
 /***/ (function(module, exports) {
 
 var _default = {
@@ -86793,7 +86860,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 248 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -86891,7 +86958,7 @@ function _default(api, opts) {
 module.exports = _default;
 
 /***/ }),
-/* 249 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -86909,9 +86976,9 @@ var _component = __webpack_require__(35);
 
 var getUID = _component.getUID;
 
-var GlobalModel = __webpack_require__(77);
+var GlobalModel = __webpack_require__(78);
 
-var ExtensionAPI = __webpack_require__(85);
+var ExtensionAPI = __webpack_require__(86);
 
 var _model = __webpack_require__(1);
 
@@ -87369,7 +87436,7 @@ var _default = Scheduler;
 module.exports = _default;
 
 /***/ }),
-/* 250 */
+/* 253 */
 /***/ (function(module, exports) {
 
 var colorAll = ['#37A2DA', '#32C5E9', '#67E0E3', '#9FE6B8', '#FFDB5C', '#ff9f7f', '#fb7293', '#E062AE', '#E690D1', '#e7bcf3', '#9d96f5', '#8378EA', '#96BFFF'];
@@ -87380,7 +87447,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 251 */
+/* 254 */
 /***/ (function(module, exports) {
 
 var contrastColor = '#eee';
@@ -87516,14 +87583,14 @@ var _default = theme;
 module.exports = _default;
 
 /***/ }),
-/* 252 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrender = __webpack_require__(63);
+var zrender = __webpack_require__(64);
 
 exports.zrender = zrender;
 
-var matrix = __webpack_require__(18);
+var matrix = __webpack_require__(19);
 
 exports.matrix = matrix;
 
@@ -87554,15 +87621,15 @@ var _throttle = __webpack_require__(48);
 var throttle = _throttle.throttle;
 exports.throttle = _throttle.throttle;
 
-var ecHelper = __webpack_require__(253);
+var ecHelper = __webpack_require__(256);
 
 exports.helper = ecHelper;
 
-var parseGeoJSON = __webpack_require__(259);
+var parseGeoJSON = __webpack_require__(262);
 
 exports.parseGeoJSON = parseGeoJSON;
 
-var _List = __webpack_require__(90);
+var _List = __webpack_require__(91);
 
 exports.List = _List;
 
@@ -87570,7 +87637,7 @@ var _Model = __webpack_require__(13);
 
 exports.Model = _Model;
 
-var _Axis = __webpack_require__(96);
+var _Axis = __webpack_require__(97);
 
 exports.Axis = _Axis;
 
@@ -87590,16 +87657,16 @@ exports.parseGeoJson = parseGeoJson;
 exports.util = ecUtil;
 
 /***/ }),
-/* 253 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var createListFromArray = __webpack_require__(89);
+var createListFromArray = __webpack_require__(90);
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
-var axisModelCommonMixin = __webpack_require__(95);
+var axisModelCommonMixin = __webpack_require__(96);
 
 var Model = __webpack_require__(13);
 
@@ -87613,11 +87680,11 @@ var _dataStackHelper = __webpack_require__(28);
 var enableDataStack = _dataStackHelper.enableDataStack;
 var isDimensionStacked = _dataStackHelper.isDimensionStacked;
 
-var _completeDimensions = __webpack_require__(92);
+var _completeDimensions = __webpack_require__(93);
 
 exports.completeDimensions = _completeDimensions;
 
-var _createDimensions = __webpack_require__(91);
+var _createDimensions = __webpack_require__(92);
 
 exports.createDimensions = _createDimensions;
 
@@ -87698,7 +87765,7 @@ exports.createScale = createScale;
 exports.mixinAxisModelCommonMethods = mixinAxisModelCommonMethods;
 
 /***/ }),
-/* 254 */
+/* 257 */
 /***/ (function(module, exports) {
 
 function defaultKeyGetter(item) {
@@ -87828,14 +87895,14 @@ var _default = DataDiffer;
 module.exports = _default;
 
 /***/ }),
-/* 255 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var Scale = __webpack_require__(37);
 
-var OrdinalMeta = __webpack_require__(93);
+var OrdinalMeta = __webpack_require__(94);
 
 /**
  * Linear continuous scale
@@ -87937,7 +88004,7 @@ var _default = OrdinalScale;
 module.exports = _default;
 
 /***/ }),
-/* 256 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88243,7 +88310,7 @@ exports.calBarWidthAndOffset = calBarWidthAndOffset;
 exports.layout = layout;
 
 /***/ }),
-/* 257 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88252,7 +88319,7 @@ var numberUtil = __webpack_require__(7);
 
 var formatUtil = __webpack_require__(12);
 
-var scaleHelper = __webpack_require__(94);
+var scaleHelper = __webpack_require__(95);
 
 var IntervalScale = __webpack_require__(50);
 
@@ -88437,7 +88504,7 @@ var _default = TimeScale;
 module.exports = _default;
 
 /***/ }),
-/* 258 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88608,12 +88675,12 @@ var _default = LogScale;
 module.exports = _default;
 
 /***/ }),
-/* 259 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Region = __webpack_require__(260);
+var Region = __webpack_require__(263);
 
 /**
  * Parse and decode geo json
@@ -88728,16 +88795,16 @@ function _default(geoJson) {
 module.exports = _default;
 
 /***/ }),
-/* 260 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BoundingRect = __webpack_require__(11);
 
-var bbox = __webpack_require__(78);
+var bbox = __webpack_require__(79);
 
 var vec2 = __webpack_require__(6);
 
-var polygonContain = __webpack_require__(261);
+var polygonContain = __webpack_require__(264);
 
 /**
  * @module echarts/coord/geo/Region
@@ -88896,10 +88963,10 @@ var _default = Region;
 module.exports = _default;
 
 /***/ }),
-/* 261 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var windingLine = __webpack_require__(80);
+var windingLine = __webpack_require__(81);
 
 var EPSILON = 1e-8;
 
@@ -88934,12 +89001,12 @@ function contain(points, x, y) {
 exports.contain = contain;
 
 /***/ }),
-/* 262 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(97),
-    now = __webpack_require__(263),
-    toNumber = __webpack_require__(265);
+var isObject = __webpack_require__(98),
+    now = __webpack_require__(266),
+    toNumber = __webpack_require__(268);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -89128,10 +89195,10 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 263 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(98);
+var root = __webpack_require__(99);
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -89157,7 +89224,7 @@ module.exports = now;
 
 
 /***/ }),
-/* 264 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -89168,11 +89235,11 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
-/* 265 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(97),
-    isSymbol = __webpack_require__(266);
+var isObject = __webpack_require__(98),
+    isSymbol = __webpack_require__(269);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -89240,11 +89307,11 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 266 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(267),
-    isObjectLike = __webpack_require__(270);
+var baseGetTag = __webpack_require__(270),
+    isObjectLike = __webpack_require__(273);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -89275,12 +89342,12 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 267 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(99),
-    getRawTag = __webpack_require__(268),
-    objectToString = __webpack_require__(269);
+var Symbol = __webpack_require__(100),
+    getRawTag = __webpack_require__(271),
+    objectToString = __webpack_require__(272);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -89309,10 +89376,10 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 268 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(99);
+var Symbol = __webpack_require__(100);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -89361,7 +89428,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 269 */
+/* 272 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -89389,7 +89456,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 270 */
+/* 273 */
 /***/ (function(module, exports) {
 
 /**
@@ -89424,7 +89491,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 271 */
+/* 274 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89697,7 +89764,7 @@ function resetTriggers (elem) {
 
 
 /***/ }),
-/* 272 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89717,22 +89784,22 @@ if (false) {
 }
 
 /***/ }),
-/* 273 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(274);
+__webpack_require__(277);
 
-__webpack_require__(275);
+__webpack_require__(278);
 
-var visualSymbol = __webpack_require__(280);
+var visualSymbol = __webpack_require__(283);
 
-var layoutPoints = __webpack_require__(281);
+var layoutPoints = __webpack_require__(284);
 
-var dataSample = __webpack_require__(282);
+var dataSample = __webpack_require__(285);
 
-__webpack_require__(283);
+__webpack_require__(286);
 
 // In case developer forget to include grid component
 echarts.registerVisual(visualSymbol('line', 'circle', 'line'));
@@ -89741,16 +89808,16 @@ echarts.registerLayout(layoutPoints('line')); // Down sample after filter
 echarts.registerProcessor(echarts.PRIORITY.PROCESSOR.STATISTIC, dataSample('line'));
 
 /***/ }),
-/* 274 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
 
 var __DEV__ = _config.__DEV__;
 
-var createListFromArray = __webpack_require__(89);
+var createListFromArray = __webpack_require__(90);
 
-var SeriesModel = __webpack_require__(86);
+var SeriesModel = __webpack_require__(87);
 
 var _default = SeriesModel.extend({
   type: 'series.line',
@@ -89818,7 +89885,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 275 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -89827,24 +89894,24 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(276);
+var SymbolDraw = __webpack_require__(279);
 
-var SymbolClz = __webpack_require__(100);
+var SymbolClz = __webpack_require__(101);
 
-var lineAnimationDiff = __webpack_require__(278);
+var lineAnimationDiff = __webpack_require__(281);
 
 var graphic = __webpack_require__(3);
 
 var modelUtil = __webpack_require__(1);
 
-var _poly = __webpack_require__(279);
+var _poly = __webpack_require__(282);
 
 var Polyline = _poly.Polyline;
 var Polygon = _poly.Polygon;
 
-var ChartView = __webpack_require__(87);
+var ChartView = __webpack_require__(88);
 
-var _helper = __webpack_require__(101);
+var _helper = __webpack_require__(102);
 
 var prepareDataCoordInfo = _helper.prepareDataCoordInfo;
 var getStackedOnPoint = _helper.getStackedOnPoint;
@@ -90486,12 +90553,12 @@ var _default = ChartView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 276 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(3);
 
-var SymbolClz = __webpack_require__(100);
+var SymbolClz = __webpack_require__(101);
 
 var _util = __webpack_require__(0);
 
@@ -90675,7 +90742,7 @@ var _default = SymbolDraw;
 module.exports = _default;
 
 /***/ }),
-/* 277 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(27);
@@ -90708,10 +90775,10 @@ function getDefaultLabel(data, dataIndex) {
 exports.getDefaultLabel = getDefaultLabel;
 
 /***/ }),
-/* 278 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _helper = __webpack_require__(101);
+var _helper = __webpack_require__(102);
 
 var prepareDataCoordInfo = _helper.prepareDataCoordInfo;
 var getStackedOnPoint = _helper.getStackedOnPoint;
@@ -90866,14 +90933,14 @@ function _default(oldData, newData, oldStackedOnPoints, newStackedOnPoints, oldC
 module.exports = _default;
 
 /***/ }),
-/* 279 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
 var vec2 = __webpack_require__(6);
 
-var fixClipWithShadow = __webpack_require__(81);
+var fixClipWithShadow = __webpack_require__(82);
 
 // Poly path support NaN point
 var vec2Min = vec2.min;
@@ -91206,7 +91273,7 @@ exports.Polyline = Polyline;
 exports.Polygon = Polygon;
 
 /***/ }),
-/* 280 */
+/* 283 */
 /***/ (function(module, exports) {
 
 function _default(seriesType, defaultSymbolType, legendSymbol) {
@@ -91264,14 +91331,14 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
 module.exports = _default;
 
 /***/ }),
-/* 281 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
 
 var map = _util.map;
 
-var createRenderPlanner = __webpack_require__(88);
+var createRenderPlanner = __webpack_require__(89);
 
 var _dataStackHelper = __webpack_require__(28);
 
@@ -91342,7 +91409,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 282 */
+/* 285 */
 /***/ (function(module, exports) {
 
 var samplers = {
@@ -91436,7 +91503,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 283 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -91445,9 +91512,9 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(3);
 
-__webpack_require__(284);
+__webpack_require__(287);
 
-__webpack_require__(291);
+__webpack_require__(294);
 
 // Grid view
 echarts.extendComponentView({
@@ -91475,7 +91542,7 @@ echarts.registerPreprocessor(function (option) {
 });
 
 /***/ }),
-/* 284 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -91490,15 +91557,15 @@ var _layout = __webpack_require__(14);
 
 var getLayoutRect = _layout.getLayoutRect;
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
-var Cartesian2D = __webpack_require__(285);
+var Cartesian2D = __webpack_require__(288);
 
-var Axis2D = __webpack_require__(287);
+var Axis2D = __webpack_require__(290);
 
 var CoordinateSystem = __webpack_require__(46);
 
-__webpack_require__(288);
+__webpack_require__(291);
 
 /**
  * Grid is a region which contains at most 4 cartesian systems
@@ -92076,12 +92143,12 @@ var _default = Grid;
 module.exports = _default;
 
 /***/ }),
-/* 285 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Cartesian = __webpack_require__(286);
+var Cartesian = __webpack_require__(289);
 
 function Cartesian2D(name) {
   Cartesian.call(this, name);
@@ -92181,7 +92248,7 @@ var _default = Cartesian2D;
 module.exports = _default;
 
 /***/ }),
-/* 286 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -92286,12 +92353,12 @@ var _default = Cartesian;
 module.exports = _default;
 
 /***/ }),
-/* 287 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Axis = __webpack_require__(96);
+var Axis = __webpack_require__(97);
 
 /**
  * Extend axis 2d
@@ -92410,10 +92477,10 @@ var _default = Axis2D;
 module.exports = _default;
 
 /***/ }),
-/* 288 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(102);
+__webpack_require__(103);
 
 var ComponentModel = __webpack_require__(17);
 
@@ -92449,12 +92516,12 @@ var _default = ComponentModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 289 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var axisDefault = __webpack_require__(290);
+var axisDefault = __webpack_require__(293);
 
 var ComponentModel = __webpack_require__(17);
 
@@ -92463,7 +92530,7 @@ var _layout = __webpack_require__(14);
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
 
-var OrdinalMeta = __webpack_require__(93);
+var OrdinalMeta = __webpack_require__(94);
 
 // FIXME axisType is fixed ?
 var AXIS_TYPES = ['value', 'category', 'time', 'log'];
@@ -92529,7 +92596,7 @@ function _default(axisName, BaseAxisModelClass, axisTypeDefaulter, extraDefaultO
 module.exports = _default;
 
 /***/ }),
-/* 290 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -92695,26 +92762,26 @@ var _default = axisDefault;
 module.exports = _default;
 
 /***/ }),
-/* 291 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(102);
+__webpack_require__(103);
 
-__webpack_require__(292);
+__webpack_require__(295);
 
 /***/ }),
-/* 292 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(3);
 
-var AxisBuilder = __webpack_require__(103);
+var AxisBuilder = __webpack_require__(104);
 
-var AxisView = __webpack_require__(104);
+var AxisView = __webpack_require__(105);
 
-var cartesianAxisHelper = __webpack_require__(105);
+var cartesianAxisHelper = __webpack_require__(106);
 
 var ifIgnoreOnTick = AxisBuilder.ifIgnoreOnTick;
 var getInterval = AxisBuilder.getInterval;
@@ -92908,16 +92975,16 @@ CartesianAxisView.extend({
 });
 
 /***/ }),
-/* 293 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(294);
+__webpack_require__(297);
 
-__webpack_require__(300);
+__webpack_require__(303);
 
-__webpack_require__(301);
+__webpack_require__(304);
 
 // FIXME Better way to pack data in graphic element
 
@@ -92943,7 +93010,7 @@ echarts.registerAction({
 function () {});
 
 /***/ }),
-/* 294 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -92952,13 +93019,13 @@ var zrUtil = __webpack_require__(0);
 
 var axisPointerModelHelper = __webpack_require__(39);
 
-var axisTrigger = __webpack_require__(295);
+var axisTrigger = __webpack_require__(298);
 
-__webpack_require__(296);
+__webpack_require__(299);
 
-__webpack_require__(297);
+__webpack_require__(300);
 
-__webpack_require__(298);
+__webpack_require__(301);
 
 // CartesianAxisPointer is not supposed to be required here. But consider
 // echarts.simple.js and online build tooltip, which only require gridSimple,
@@ -92991,7 +93058,7 @@ echarts.registerAction({
 }, axisTrigger);
 
 /***/ }),
-/* 295 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93002,7 +93069,7 @@ var makeInner = _model.makeInner;
 
 var modelHelper = __webpack_require__(39);
 
-var findPointFromSeries = __webpack_require__(106);
+var findPointFromSeries = __webpack_require__(107);
 
 var each = zrUtil.each;
 var curry = zrUtil.curry;
@@ -93389,7 +93456,7 @@ function illegalPoint(point) {
 module.exports = _default;
 
 /***/ }),
-/* 296 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -93480,12 +93547,12 @@ var _default = AxisPointerModel;
 module.exports = _default;
 
 /***/ }),
-/* 297 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-var globalListener = __webpack_require__(107);
+var globalListener = __webpack_require__(108);
 
 var AxisPointerView = echarts.extendComponentView({
   type: 'axisPointer',
@@ -93527,18 +93594,18 @@ var _default = AxisPointerView;
 module.exports = _default;
 
 /***/ }),
-/* 298 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(3);
 
-var BaseAxisPointer = __webpack_require__(299);
+var BaseAxisPointer = __webpack_require__(302);
 
-var viewHelper = __webpack_require__(108);
+var viewHelper = __webpack_require__(109);
 
-var cartesianAxisHelper = __webpack_require__(105);
+var cartesianAxisHelper = __webpack_require__(106);
 
-var AxisView = __webpack_require__(104);
+var AxisView = __webpack_require__(105);
 
 var CartesianAxisPointer = BaseAxisPointer.extend({
   /**
@@ -93645,7 +93712,7 @@ var _default = CartesianAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 299 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -94138,7 +94205,7 @@ var _default = BaseAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 300 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -94221,7 +94288,7 @@ var _default = echarts.extendComponentModel({
 module.exports = _default;
 
 /***/ }),
-/* 301 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -94230,7 +94297,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var TooltipContent = __webpack_require__(302);
+var TooltipContent = __webpack_require__(305);
 
 var formatUtil = __webpack_require__(12);
 
@@ -94238,17 +94305,17 @@ var numberUtil = __webpack_require__(7);
 
 var graphic = __webpack_require__(3);
 
-var findPointFromSeries = __webpack_require__(106);
+var findPointFromSeries = __webpack_require__(107);
 
 var layoutUtil = __webpack_require__(14);
 
 var Model = __webpack_require__(13);
 
-var globalListener = __webpack_require__(107);
+var globalListener = __webpack_require__(108);
 
-var axisHelper = __webpack_require__(21);
+var axisHelper = __webpack_require__(22);
 
-var axisPointerViewHelper = __webpack_require__(108);
+var axisPointerViewHelper = __webpack_require__(109);
 
 var bind = zrUtil.bind;
 var each = zrUtil.each;
@@ -94942,7 +95009,7 @@ function isCenterAlign(align) {
 module.exports = _default;
 
 /***/ }),
-/* 302 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -95179,7 +95246,7 @@ var _default = TooltipContent;
 module.exports = _default;
 
 /***/ }),
-/* 303 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -95375,18 +95442,18 @@ echarts.extendComponentView({
 });
 
 /***/ }),
-/* 304 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(305);
+__webpack_require__(308);
 
-__webpack_require__(306);
+__webpack_require__(309);
 
-__webpack_require__(307);
+__webpack_require__(310);
 
-var legendFilter = __webpack_require__(309);
+var legendFilter = __webpack_require__(312);
 
 var Component = __webpack_require__(17);
 
@@ -95399,7 +95466,7 @@ Component.registerSubTypeDefaulter('legend', function () {
 });
 
 /***/ }),
-/* 305 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -95620,7 +95687,7 @@ var _default = LegendModel;
 module.exports = _default;
 
 /***/ }),
-/* 306 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -95696,7 +95763,7 @@ echarts.registerAction('legendSelect', 'legendselected', zrUtil.curry(legendSele
 echarts.registerAction('legendUnSelect', 'legendunselected', zrUtil.curry(legendSelectActionHandler, 'unSelect'));
 
 /***/ }),
-/* 307 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -95713,7 +95780,7 @@ var createSymbol = _symbol.createSymbol;
 
 var graphic = __webpack_require__(3);
 
-var _listComponent = __webpack_require__(308);
+var _listComponent = __webpack_require__(311);
 
 var makeBackground = _listComponent.makeBackground;
 
@@ -95992,7 +96059,7 @@ function dispatchDownplayAction(seriesModel, dataName, api) {
 module.exports = _default;
 
 /***/ }),
-/* 308 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _layout = __webpack_require__(14);
@@ -96051,7 +96118,7 @@ exports.layout = layout;
 exports.makeBackground = makeBackground;
 
 /***/ }),
-/* 309 */
+/* 312 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -96077,7 +96144,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 310 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96097,7 +96164,7 @@ if (false) {
 }
 
 /***/ }),
-/* 311 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96125,14 +96192,14 @@ if (false) {
 }
 
 /***/ }),
-/* 312 */
+/* 315 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__);
 //
 //
@@ -96209,7 +96276,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 313 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -96220,15 +96287,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.VueCarousel=e():t.VueCarousel=e()}(this,function(){return function(t){function e(i){if(n[i])return n[i].exports;var r=n[i]={exports:{},id:i,loaded:!1};return t[i].call(r.exports,r,r.exports,e),r.loaded=!0,r.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.Slide=e.Carousel=void 0;var r=n(1),a=i(r),o=n(44),s=i(o),u=function(t){t.component("carousel",a.default),t.component("slide",s.default)};e.default={install:u},e.Carousel=a.default,e.Slide=s.default},function(t,e,n){function i(t){n(2)}var r=n(7)(n(8),n(49),i,null,null);t.exports=r.exports},function(t,e,n){var i=n(3);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("80564c20",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel{position:relative}.VueCarousel-wrapper{width:100%;position:relative;overflow:hidden}.VueCarousel-inner{display:flex;flex-direction:row;backface-visibility:hidden}",""])},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var n=this[e];n[2]?t.push("@media "+n[2]+"{"+n[1]+"}"):t.push(n[1])}return t.join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var i={},r=0;r<this.length;r++){var a=this[r][0];"number"==typeof a&&(i[a]=!0)}for(r=0;r<e.length;r++){var o=e[r];"number"==typeof o[0]&&i[o[0]]||(n&&!o[2]?o[2]=n:n&&(o[2]="("+o[2]+") and ("+n+")"),t.push(o))}},t}},function(t,e,n){function i(t){for(var e=0;e<t.length;e++){var n=t[e],i=d[n.id];if(i){i.refs++;for(var r=0;r<i.parts.length;r++)i.parts[r](n.parts[r]);for(;r<n.parts.length;r++)i.parts.push(a(n.parts[r]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{for(var o=[],r=0;r<n.parts.length;r++)o.push(a(n.parts[r]));d[n.id]={id:n.id,refs:1,parts:o}}}}function r(){var t=document.createElement("style");return t.type="text/css",l.appendChild(t),t}function a(t){var e,n,i=document.querySelector("style["+m+'~="'+t.id+'"]');if(i){if(p)return g;i.parentNode.removeChild(i)}if(b){var a=h++;i=f||(f=r()),e=o.bind(null,i,a,!1),n=o.bind(null,i,a,!0)}else i=r(),e=s.bind(null,i),n=function(){i.parentNode.removeChild(i)};return e(t),function(i){if(i){if(i.css===t.css&&i.media===t.media&&i.sourceMap===t.sourceMap)return;e(t=i)}else n()}}function o(t,e,n,i){var r=n?"":i.css;if(t.styleSheet)t.styleSheet.cssText=C(e,r);else{var a=document.createTextNode(r),o=t.childNodes;o[e]&&t.removeChild(o[e]),o.length?t.insertBefore(a,o[e]):t.appendChild(a)}}function s(t,e){var n=e.css,i=e.media,r=e.sourceMap;if(i&&t.setAttribute("media",i),v.ssrId&&t.setAttribute(ssridKey,e.id),r&&(n+="\n/*# sourceURL="+r.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}var u="undefined"!=typeof document,c=n(6),d={},l=u&&(document.head||document.getElementsByTagName("head")[0]),f=null,h=0,p=!1,g=function(){},v=null,m="data-vue-ssr-id",b="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());t.exports=function(t,e,n,r){p=n,v=r||{};var a=c(t,e);return i(a),function(e){for(var n=[],r=0;r<a.length;r++){var o=a[r],s=d[o.id];s.refs--,n.push(s)}e?(a=c(t,e),i(a)):a=[];for(var r=0;r<n.length;r++){var s=n[r];if(0===s.refs){for(var u=0;u<s.parts.length;u++)s.parts[u]();delete d[s.id]}}}};var C=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}()},function(t,e){t.exports=function(t,e){for(var n=[],i={},r=0;r<e.length;r++){var a=e[r],o=a[0],s=a[1],u=a[2],c=a[3],d={id:t+":"+r,css:s,media:u,sourceMap:c};i[o]?i[o].parts.push(d):n.push(i[o]={id:o,parts:[d]})}return n}},function(t,e){t.exports=function(t,e,n,i,r){var a,o=t=t||{},s=typeof t.default;"object"!==s&&"function"!==s||(a=t,o=t.default);var u="function"==typeof o?o.options:o;e&&(u.render=e.render,u.staticRenderFns=e.staticRenderFns),i&&(u._scopeId=i);var c;if(r?(c=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(r)},u._ssrRegister=c):n&&(c=n),c){var d=u.functional,l=d?u.render:u.beforeCreate;d?u.render=function(t,e){return c.call(e),l(t,e)}:u.beforeCreate=l?[].concat(l,c):[c]}return{esModule:a,exports:o,options:u}}},function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var r,a=n(9),o=i(a),s=n(28),u=i(s),c=n(32),d=i(c),l=n(33),f=i(l),h=n(34),p=i(h),g=n(39),v=i(g),m=n(44),b=i(m);e.default={name:"carousel",beforeUpdate:function(){this.computeCarouselWidth()},components:{Navigation:p.default,Pagination:v.default,Slide:b.default},data:function(){return{browserWidth:null,carouselWidth:null,currentPage:0,dragging:!1,dragMomentum:0,dragOffset:0,dragStartY:0,dragStartX:0,isTouch:"undefined"!=typeof window&&"ontouchstart"in window,offset:0,refreshRate:16,slideCount:0}},mixins:[d.default],props:{easing:{type:String,default:"ease"},minSwipeDistance:{type:Number,default:8},navigationClickTargetSize:{type:Number,default:8},mouseDrag:{type:Boolean,default:!0},navigationEnabled:{type:Boolean,default:!1},navigationNextLabel:{type:String,default:"▶"},navigationPrevLabel:{type:String,default:"◀"},paginationActiveColor:{type:String,default:"#000000"},paginationColor:{type:String,default:"#efefef"},paginationEnabled:{type:Boolean,default:!0},paginationPadding:{type:Number,default:10},paginationSize:{type:Number,default:10},perPage:{type:Number,default:2},perPageCustom:{type:Array},resistanceCoef:{type:Number,default:20},scrollPerPage:{type:Boolean,default:!1},speed:{type:Number,default:500},loop:{type:Boolean,default:!1},navigateTo:{type:Number,default:0},spacePadding:{type:Number,default:0}},watch:{navigateTo:function(t){t!==this.currentPage&&this.goToPage(t)}},computed:{breakpointSlidesPerPage:function(){if(!this.perPageCustom)return this.perPage;var t=this.perPageCustom,e=this.browserWidth,n=t.sort(function(t,e){return t[0]>e[0]?-1:1}),i=n.filter(function(t){return e>=t[0]}),r=i[0]&&i[0][1];return r||this.perPage},canAdvanceForward:function(){return this.loop||this.currentPage<this.pageCount-1},canAdvanceBackward:function(){return this.loop||this.currentPage>0},currentPerPage:function(){return!this.perPageCustom||this.$isServer?this.perPage:this.breakpointSlidesPerPage},currentOffset:function(){return(this.offset+this.dragOffset)*-1},isHidden:function(){return this.carouselWidth<=0},maxOffset:function(){return this.slideWidth*this.slideCount-this.carouselWidth},pageCount:function(){return Math.ceil(this.slideCount/this.currentPerPage)},slideWidth:function(){var t=this.carouselWidth-2*this.spacePadding,e=this.currentPerPage;return t/e},transitionStyle:function(){return this.speed/1e3+"s "+this.easing+" transform"},padding:function t(){var t=this.spacePadding;return t>0&&t}},methods:(r={getNextPage:function(){return this.currentPage<this.pageCount-1?this.currentPage+1:this.loop?0:this.currentPage},getPreviousPage:function(){return this.currentPage>0?this.currentPage-1:this.loop?this.pageCount-1:this.currentPage},advancePage:function(t){t&&"backward"===t&&this.canAdvanceBackward?this.goToPage(this.getPreviousPage(),"navigation"):(!t||t&&"backward"!==t)&&this.canAdvanceForward&&this.goToPage(this.getNextPage(),"navigation")},attachMutationObserver:function(){var t=this,e=window.MutationObserver||window.WebKitMutationObserver||window.MozMutationObserver;if(e){var n={attributes:!0,data:!0};this.mutationObserver=new e(function(){t.$nextTick(function(){t.computeCarouselWidth()})}),this.$parent.$el&&this.mutationObserver.observe(this.$parent.$el,n)}},detachMutationObserver:function(){this.mutationObserver&&this.mutationObserver.disconnect()},getBrowserWidth:function(){return this.browserWidth=window.innerWidth,this.browserWidth},getCarouselWidth:function(){return this.carouselWidth=this.$el&&this.$el.clientWidth||0,this.carouselWidth},getSlideCount:function(){this.slideCount=this.$slots&&this.$slots.default&&this.$slots.default.filter(function(t){return t.tag&&t.tag.indexOf("slide")>-1}).length||0},goToPage:function(t,e){t>=0&&t<=this.pageCount&&(this.offset=Math.min(this.slideWidth*this.currentPerPage*t,this.maxOffset),this.currentPage=t,this.$emit("pagechange",{page:this.currentPage,componentName:e}))},handleNavigation:function(t){this.$emit("navigationclick",t)},onStart:function(t){var e=this;if(document.addEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),MutationObserver){var n={attributes:!0,data:!0};this.mutationObserver=new MutationObserver(function(){e.$nextTick(function(){e.computeCarouselWidth()})}),this.$parent.$el&&this.mutationObserver.observe(this.$parent.$el,n)}}},(0,o.default)(r,"detachMutationObserver",function(){this.mutationObserver&&this.mutationObserver.disconnect()}),(0,o.default)(r,"getBrowserWidth",function(){return this.browserWidth=window.innerWidth,this.browserWidth}),(0,o.default)(r,"getCarouselWidth",function(){return this.carouselWidth=this.$el&&this.$el.clientWidth||0,this.carouselWidth}),(0,o.default)(r,"getSlideCount",function(){this.slideCount=this.$slots&&this.$slots.default&&this.$slots.default.filter(function(t){return t.tag&&t.tag.indexOf("slide")>-1}).length||0}),(0,o.default)(r,"goToPage",function(t){t>=0&&t<=this.pageCount&&(this.offset=Math.min(this.slideWidth*this.currentPerPage*t,this.maxOffset),this.currentPage=t,this.$emit("pageChange",this.currentPage))}),(0,o.default)(r,"onStart",function(t){document.addEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.addEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0),this.startTime=t.timeStamp,this.dragging=!0,this.dragStartX=this.isTouch?t.touches[0].clientX:t.clientX,this.dragStartY=this.isTouch?t.touches[0].clientY:t.clientY}),(0,o.default)(r,"onEnd",function(t){var e=this.isTouch?t.changedTouches[0].clientX:t.clientX,n=this.dragStartX-e;if(this.dragMomentum=n/(t.timeStamp-this.startTime),0!==this.minSwipeDistance&&Math.abs(n)>=this.minSwipeDistance){var i=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth;this.dragOffset=this.dragOffset+(0,u.default)(n)*(i/2)}this.offset+=this.dragOffset,this.dragOffset=0,this.dragging=!1,this.render(),document.removeEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.removeEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0)}),(0,o.default)(r,"onDrag",function(t){var e=this.isTouch?t.touches[0].clientX:t.clientX,n=this.isTouch?t.touches[0].clientY:t.clientY,i=this.dragStartX-e,r=this.dragStartY-n;if(!(this.isTouch&&Math.abs(i)<Math.abs(r))){t.preventDefault(),t.stopImmediatePropagation(),this.dragOffset=i;var a=this.offset+this.dragOffset;a<0?this.dragOffset=-Math.sqrt(-this.resistanceCoef*this.dragOffset):a>this.maxOffset&&(this.dragOffset=Math.sqrt(this.resistanceCoef*this.dragOffset))}}),(0,o.default)(r,"onResize",function(){var t=this;this.computeCarouselWidth(),this.dragging=!0,this.render(),setTimeout(function(){t.dragging=!1},this.refreshRate)}),(0,o.default)(r,"render",function(){this.offset+=Math.max(-this.currentPerPage+1,Math.min(Math.round(this.dragMomentum),this.currentPerPage-1))*this.slideWidth;var t=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth;this.offset=t*Math.round(this.offset/t),this.offset=Math.max(0,Math.min(this.offset,this.maxOffset)),this.currentPage=Math.round(this.offset/this.slideWidth/this.currentPerPage)}),(0,o.default)(r,"computeCarouselWidth",function(){this.getSlideCount(),this.getBrowserWidth(),this.getCarouselWidth(),this.setCurrentPageInBounds()}),(0,o.default)(r,"setCurrentPageInBounds",function(){if(!this.canAdvanceForward){var t=this.pageCount-1;this.currentPage=t>=0?t:0,this.offset=Math.max(0,Math.min(this.offset,this.maxOffset))}}),r),mounted:function(){this.$isServer||(window.addEventListener("resize",(0,f.default)(this.onResize,this.refreshRate)),(this.isTouch||this.mouseDrag)&&this.$refs["VueCarousel-wrapper"].addEventListener(this.isTouch?"touchstart":"mousedown",this.onStart)),this.attachMutationObserver(),this.computeCarouselWidth()},beforeDestroy:function(){this.$isServer||(this.detachMutationObserver(),window.removeEventListener("resize",this.getBrowserWidth),this.$refs["VueCarousel-wrapper"].removeEventListener(this.isTouch?"touchstart":"mousedown",this.onStart))}}},function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}e.__esModule=!0;var r=n(10),a=i(r);e.default=function(t,e,n){return e in t?(0,a.default)(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},function(t,e,n){t.exports={default:n(11),__esModule:!0}},function(t,e,n){n(12);var i=n(15).Object;t.exports=function(t,e,n){return i.defineProperty(t,e,n)}},function(t,e,n){var i=n(13);i(i.S+i.F*!n(23),"Object",{defineProperty:n(19).f})},function(t,e,n){var i=n(14),r=n(15),a=n(16),o=n(18),s="prototype",u=function(t,e,n){var c,d,l,f=t&u.F,h=t&u.G,p=t&u.S,g=t&u.P,v=t&u.B,m=t&u.W,b=h?r:r[e]||(r[e]={}),C=b[s],y=h?i:p?i[e]:(i[e]||{})[s];h&&(n=e);for(c in n)d=!f&&y&&void 0!==y[c],d&&c in b||(l=d?y[c]:n[c],b[c]=h&&"function"!=typeof y[c]?n[c]:v&&d?a(l,i):m&&y[c]==l?function(t){var e=function(e,n,i){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,i)}return t.apply(this,arguments)};return e[s]=t[s],e}(l):g&&"function"==typeof l?a(Function.call,l):l,g&&((b.virtual||(b.virtual={}))[c]=l,t&u.R&&C&&!C[c]&&o(C,c,l)))};u.F=1,u.G=2,u.S=4,u.P=8,u.B=16,u.W=32,u.U=64,u.R=128,t.exports=u},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e){var n=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=n)},function(t,e,n){var i=n(17);t.exports=function(t,e,n){if(i(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,i){return t.call(e,n,i)};case 3:return function(n,i,r){return t.call(e,n,i,r)}}return function(){return t.apply(e,arguments)}}},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var i=n(19),r=n(27);t.exports=n(23)?function(t,e,n){return i.f(t,e,r(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var i=n(20),r=n(22),a=n(26),o=Object.defineProperty;e.f=n(23)?Object.defineProperty:function(t,e,n){if(i(t),e=a(e,!0),i(n),r)try{return o(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){var i=n(21);t.exports=function(t){if(!i(t))throw TypeError(t+" is not an object!");return t}},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e,n){t.exports=!n(23)&&!n(24)(function(){return 7!=Object.defineProperty(n(25)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){t.exports=!n(24)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var i=n(21),r=n(14).document,a=i(r)&&i(r.createElement);t.exports=function(t){return a?r.createElement(t):{}}},function(t,e,n){var i=n(21);t.exports=function(t,e){if(!i(t))return t;var n,r;if(e&&"function"==typeof(n=t.toString)&&!i(r=n.call(t)))return r;if("function"==typeof(n=t.valueOf)&&!i(r=n.call(t)))return r;if(!e&&"function"==typeof(n=t.toString)&&!i(r=n.call(t)))return r;throw TypeError("Can't convert object to primitive value")}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e,n){t.exports={default:n(29),__esModule:!0}},function(t,e,n){n(30),t.exports=n(15).Math.sign},function(t,e,n){var i=n(13);i(i.S,"Math",{sign:n(31)})},function(t,e){t.exports=Math.sign||function(t){return 0==(t=+t)||t!=t?t:t<0?-1:1}},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n={props:{autoplay:{type:Boolean,default:!1},autoplayTimeout:{type:Number,default:2e3},autoplayHoverPause:{type:Boolean,default:!0}},data:function(){return{autoplayInterval:null}},destroyed:function(){this.$isServer||(this.$el.removeEventListener("mouseenter",this.pauseAutoplay),this.$el.removeEventListener("mouseleave",this.startAutoplay))},methods:{pauseAutoplay:function(){this.autoplayInterval&&(this.autoplayInterval=clearInterval(this.autoplayInterval))},startAutoplay:function(){this.autoplay&&(this.autoplayInterval=setInterval(this.advancePage,this.autoplayTimeout))}},mounted:function(){!this.$isServer&&this.autoplayHoverPause&&(this.$el.addEventListener("mouseenter",this.pauseAutoplay),this.$el.addEventListener("mouseleave",this.startAutoplay)),this.startAutoplay()}};e.default=n},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=function(t,e,n){var i=void 0;return function(){var r=void 0,a=function(){i=null,n||t.apply(r)},o=n&&!i;clearTimeout(i),i=setTimeout(a,e),o&&t.apply(r)}};e.default=n},function(t,e,n){function i(t){n(35)}var r=n(7)(n(37),n(38),i,"data-v-7fed18e9",null);t.exports=r.exports},function(t,e,n){var i=n(36);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("a1957e6c",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-navigation-button[data-v-7fed18e9]{position:absolute;top:50%;box-sizing:border-box;color:#000;text-decoration:none}.VueCarousel-navigation-next[data-v-7fed18e9]{right:0;transform:translateY(-50%) translateX(100%)}.VueCarousel-navigation-prev[data-v-7fed18e9]{left:0;transform:translateY(-50%) translateX(-100%)}.VueCarousel-navigation--disabled[data-v-7fed18e9]{opacity:.5;cursor:default}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"navigation",data:function(){return{parentContainer:this.$parent}},props:{clickTargetSize:{type:Number,default:8},nextLabel:{type:String,default:"▶"},prevLabel:{type:String,default:"◀"}},computed:{canAdvanceForward:function(){return this.parentContainer.canAdvanceForward||!1},canAdvanceBackward:function(){return this.parentContainer.canAdvanceBackward||!1}},methods:{triggerPageAdvance:function(t){t?this.$parent.advancePage(t):this.$parent.advancePage()}}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel-navigation"},[n("a",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-prev",class:{"VueCarousel-navigation--disabled":!t.canAdvanceBackward},style:"padding: "+t.clickTargetSize+"px; margin-right: -"+t.clickTargetSize+"px;",attrs:{href:"#"},domProps:{innerHTML:t._s(t.prevLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance("backward")}}}),t._v(" "),n("a",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-next",class:{"VueCarousel-navigation--disabled":!t.canAdvanceForward},style:"padding: "+t.clickTargetSize+"px; margin-left: -"+t.clickTargetSize+"px;",attrs:{href:"#"},domProps:{innerHTML:t._s(t.nextLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance()}}})])},staticRenderFns:[]}},function(t,e,n){function i(t){n(40)}var r=n(7)(n(42),n(43),i,"data-v-7e42136f",null);t.exports=r.exports},function(t,e,n){var i=n(41);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("3ea8dd5f",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-pagination[data-v-7e42136f]{width:100%;float:left;text-align:center}.VueCarousel-dot-container[data-v-7e42136f]{display:inline-block;margin:0 auto}.VueCarousel-dot[data-v-7e42136f]{float:left;cursor:pointer}.VueCarousel-dot-inner[data-v-7e42136f]{border-radius:100%}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"pagination",data:function(){return{parentContainer:this.$parent}},methods:{goToPage:function(t){this.$emit("paginationclick",t)}}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{directives:[{name:"show",rawName:"v-show",value:t.parentContainer.pageCount>1,expression:"parentContainer.pageCount > 1"}],staticClass:"VueCarousel-pagination"},[n("div",{staticClass:"VueCarousel-dot-container"},t._l(t.parentContainer.pageCount,function(e,i){return n("div",{staticClass:"VueCarousel-dot",class:{"VueCarousel-dot--active":i===t.parentContainer.currentPage},style:"\n        margin-top: "+2*t.parentContainer.paginationPadding+"px;\n        padding: "+t.parentContainer.paginationPadding+"px;\n      ",on:{click:function(e){t.goToPage(i)}}},[n("div",{staticClass:"VueCarousel-dot-inner",style:"\n          width: "+t.parentContainer.paginationSize+"px;\n          height: "+t.parentContainer.paginationSize+"px;\n          background: "+(i===t.parentContainer.currentPage?t.parentContainer.paginationActiveColor:t.parentContainer.paginationColor)+";\n        "})])}))])},staticRenderFns:[]}},function(t,e,n){function i(t){n(45)}var r=n(7)(n(47),n(48),i,null,null);t.exports=r.exports},function(t,e,n){var i=n(46);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("e8ab14d8",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-slide{flex-basis:inherit;flex-grow:0;flex-shrink:0;user-select:none;backface-visibility:hidden;-webkit-touch-callout:none}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"slide",data:function(){return{width:null}},mounted:function(){this.$isServer||this.$el.addEventListener("dragstart",function(t){return t.preventDefault()})}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel-slide"},[t._t("default")],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel"},[n("div",{ref:"VueCarousel-wrapper",staticClass:"VueCarousel-wrapper"},[n("div",{staticClass:"VueCarousel-inner",style:"\n        transform: translate3d("+t.currentOffset+"px, 0, 0);\n        transition: "+(t.dragging?"none":t.transitionStyle)+";\n        flex-basis: "+t.slideWidth+"px;\n        visibility: "+(t.slideWidth?"visible":"hidden")+";\n        padding-left: "+t.padding+"px;\n        padding-right: "+t.padding+"px;\n      "},[t._t("default")],2)]),t._v(" "),t.paginationEnabled&&t.pageCount>0?n("pagination",{on:{paginationclick:function(e){t.goToPage(e,"pagination")}}}):t._e(),t._v(" "),t.navigationEnabled?n("navigation",{attrs:{clickTargetSize:t.navigationClickTargetSize,nextLabel:t.navigationNextLabel,prevLabel:t.navigationPrevLabel},on:{navigationclick:t.handleNavigation}}):t._e()],1)},staticRenderFns:[]}}])});
 
 /***/ }),
-/* 314 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(315)
+var __vue_script__ = __webpack_require__(318)
 /* template */
-var __vue_template__ = __webpack_require__(316)
+var __vue_template__ = __webpack_require__(319)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96267,7 +96334,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 315 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96286,7 +96353,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 316 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96312,7 +96379,7 @@ if (false) {
 }
 
 /***/ }),
-/* 317 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96367,7 +96434,7 @@ if (false) {
 }
 
 /***/ }),
-/* 318 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96418,7 +96485,7 @@ if (false) {
 }
 
 /***/ }),
-/* 319 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96451,15 +96518,15 @@ if (false) {
 }
 
 /***/ }),
-/* 320 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(321)
+var __vue_script__ = __webpack_require__(324)
 /* template */
-var __vue_template__ = __webpack_require__(322)
+var __vue_template__ = __webpack_require__(325)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96498,12 +96565,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 321 */
+/* 324 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_industries_industry_carousel_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_industries_industry_carousel_vue__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_industries_industry_carousel_vue__);
 //
 //
@@ -96526,7 +96593,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 322 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96546,15 +96613,15 @@ if (false) {
 }
 
 /***/ }),
-/* 323 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(324)
+var __vue_script__ = __webpack_require__(327)
 /* template */
-var __vue_template__ = __webpack_require__(325)
+var __vue_template__ = __webpack_require__(328)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96593,7 +96660,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 324 */
+/* 327 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96700,7 +96767,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 325 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97078,15 +97145,15 @@ if (false) {
 }
 
 /***/ }),
-/* 326 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(327)
+var __vue_script__ = __webpack_require__(330)
 /* template */
-var __vue_template__ = __webpack_require__(328)
+var __vue_template__ = __webpack_require__(331)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97125,7 +97192,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 327 */
+/* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97212,7 +97279,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 328 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97376,7 +97443,7 @@ if (false) {
 }
 
 /***/ }),
-/* 329 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -115008,15 +115075,15 @@ function install(Vue) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 330 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(331)
+var __vue_script__ = __webpack_require__(334)
 /* template */
-var __vue_template__ = __webpack_require__(338)
+var __vue_template__ = __webpack_require__(341)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115055,14 +115122,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 331 */
+/* 334 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -115084,15 +115151,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 332 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(333)
+var __vue_script__ = __webpack_require__(336)
 /* template */
-var __vue_template__ = __webpack_require__(334)
+var __vue_template__ = __webpack_require__(337)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115131,7 +115198,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 333 */
+/* 336 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115175,7 +115242,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 334 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115301,15 +115368,15 @@ if (false) {
 }
 
 /***/ }),
-/* 335 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(336)
+var __vue_script__ = __webpack_require__(339)
 /* template */
-var __vue_template__ = __webpack_require__(337)
+var __vue_template__ = __webpack_require__(340)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115348,7 +115415,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 336 */
+/* 339 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115371,7 +115438,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 337 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115433,7 +115500,7 @@ if (false) {
 }
 
 /***/ }),
-/* 338 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115468,7 +115535,7 @@ if (false) {
 }
 
 /***/ }),
-/* 339 */
+/* 342 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
