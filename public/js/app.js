@@ -76589,7 +76589,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card col col-md-10 offset-md-1 d-flex flex-row" },
+    { staticClass: "csu-card col col-md-10 offset-md-1 d-flex flex-row" },
     [_vm._t("default")],
     2
   )
@@ -78326,7 +78326,7 @@ var render = function() {
       "div",
       { staticClass: "col col-md-12" },
       [
-        _c("card", { staticClass: "my-4" }, [
+        _c("card", [
           _c("div", { staticClass: "col col-3" }, [_c("pfre-form")], 1),
           _vm._v(" "),
           _c("div", { staticClass: "col col-6" }, [_c("pfre-progress")], 1)
@@ -78403,7 +78403,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__);
-//
 //
 //
 //
@@ -78499,6 +78498,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['onPlus']
@@ -78514,13 +78516,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card card-add col col-md-10 offset-md-1 d-flex flex-row" },
+    {
+      staticClass: "csu-card card-add col col-md-10 offset-md-1 d-flex flex-row"
+    },
     [
-      _c("button", { staticClass: "btn btn-add" }, [
-        _c("i", {
-          staticClass: "fa fa-plus-circle btn-plus",
-          on: { click: _vm.onPlus }
-        })
+      _c("div", { staticClass: "col col-1" }, [
+        _c("button", { staticClass: "btn-add" }, [
+          _c("i", {
+            staticClass: "fa fa-plus-circle",
+            on: { click: _vm.onPlus }
+          })
+        ])
       ])
     ]
   )
@@ -78596,8 +78602,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
-//
-//
 //
 //
 //
@@ -96406,38 +96410,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
-    _c(
-      "div",
-      { staticClass: "col col-md-12" },
-      [
-        _c("card", [
-          _c("div", { staticClass: "container-fluid my-0" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
-            ]),
+  return _c(
+    "div",
+    { staticClass: "col col-md-12" },
+    [
+      _c("card", [
+        _c("div", { staticClass: "container-fluid my-0" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row m-1" }, [
+            _c(
+              "div",
+              { staticClass: "col col-md-3 col-sm-12 my-3" },
+              [_c("majors-form")],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "row m-1" }, [
-              _c(
-                "div",
-                { staticClass: "col col-md-3 col-sm-12 my-3" },
-                [_c("majors-form")],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col col-9" },
-                [_c("majors-graph-wrapper")],
-                1
-              )
-            ])
+            _c(
+              "div",
+              { staticClass: "col col-9" },
+              [_c("majors-graph-wrapper")],
+              1
+            )
           ])
         ])
-      ],
-      1
-    )
-  ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -96457,20 +96459,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
-    _c(
-      "div",
-      { staticClass: "col col-md-12" },
-      [
-        _vm._l(_vm.cards, function(item) {
-          return _c("major-card", { key: item.major, staticClass: "my-4" })
-        }),
-        _vm._v(" "),
-        _c("card-add", { attrs: { onPlus: _vm.onPlus } })
-      ],
-      2
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "wrapper", staticStyle: { "padding-bottom": "0px" } },
+    [
+      _c(
+        "div",
+        { staticClass: "col col-md-12" },
+        [
+          _vm._l(_vm.cards, function(item) {
+            return _c("major-card", { key: item.major, staticClass: "my-2" })
+          }),
+          _vm._v(" "),
+          _c("card-add", { attrs: { onPlus: _vm.onPlus } })
+        ],
+        2
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -96739,349 +96745,335 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "wrapper" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row align-items-center justify-content-center" },
-      [
-        _c(
-          "div",
-          { staticClass: "col col-md-9" },
-          [
-            _c(
-              "v-container",
-              [
-                _c(
-                  "v-layout",
-                  { attrs: { row: "", wrap: "" } },
-                  [
-                    _c(
-                      "v-flex",
-                      { attrs: { xs12: "", lg5: "", "mb-3": "" } },
-                      [
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v("I can not find my CSU.")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
-                                )
-                              ])
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col col-md-9" },
+        [
+          _c(
+            "v-container",
+            [
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", lg5: "", "mb-3": "" } },
+                    [
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v("I can not find my CSU.")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
+                              )
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "How many students were followed-up in this study?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [
                                 _vm._v(
-                                  "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
+                                  "How many students were followed-up in this study?"
                                 )
-                              ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
+                              )
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v("Were all students found?")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v("Were all students found?")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v("I can not find my major.")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [
                                 _vm._v(
-                                  "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
+                                  "I can not find an industry I’m interested in."
                                 )
-                              ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
+                              )
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v("I can not find my major.")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v("Are lapses in employment included?")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v('What does "After Education Exit" mean?')]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", lg5: "", "offset-lg2": "" } },
+                    [
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v('What does "Some College" mean?')]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v('What does "Data Not Available" mean?')]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
+                              )
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [
                                 _vm._v(
-                                  "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
+                                  "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
                                 )
-                              ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
+                              )
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "I can not find an industry I’m interested in."
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [
                                 _vm._v(
-                                  "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
+                                  "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
                                 )
-                              ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
+                              )
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v("Are lapses in employment included?")]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [
                                 _vm._v(
-                                  "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
+                                  "Are the earnings shown adjusted for inflation?"
                                 )
-                              ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v("Yes, they are adjusted to 2012 dollars.")
                             ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    'What does "After Education Exit" mean?'
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
-                                )
-                              ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-expansion-panel",
+                        { attrs: { popout: "" } },
+                        [
+                          _c("v-expansion-panel-content", [
+                            _c(
+                              "div",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v("Where did the earnings data come from?")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "p-sm-4" }, [
+                              _vm._v(
+                                "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
+                              )
                             ])
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-flex",
-                      { attrs: { xs12: "", lg5: "", "offset-lg2": "" } },
-                      [
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v('What does "Some College" mean?')]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v('What does "Data Not Available" mean?')]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "Are the earnings shown adjusted for inflation?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  "Yes, they are adjusted to 2012 dollars."
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-expansion-panel",
-                          { attrs: { popout: "" } },
-                          [
-                            _c("v-expansion-panel-content", [
-                              _c(
-                                "div",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [
-                                  _vm._v(
-                                    "Where did the earnings data come from?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "p-sm-4" }, [
-                                _vm._v(
-                                  "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
-                                )
-                              ])
-                            ])
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ]
-    )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -97089,15 +97081,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row align-items-center justify-content-center" },
-      [
-        _c("h1", { staticClass: "pt-3 home__heading text-gray" }, [
-          _vm._v("FAQ")
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "pt-3 home__heading text-gray" }, [_vm._v("FAQ")])
+    ])
   }
 ]
 render._withStripped = true

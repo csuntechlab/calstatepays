@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
       <div class="col col-md-12">
-        <card class="my-4">
+        <card>
           <div class="col col-3">
             <pfre-form></pfre-form>
           </div>
