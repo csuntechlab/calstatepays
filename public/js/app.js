@@ -115557,7 +115557,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", { staticClass: "footer" }, [
-      _c("div", { staticClass: "footer__links" }, [
+      _c("div", { staticClass: "footer__links pl-4" }, [
         _c("p", { staticClass: "footer__link text-white" }, [
           _c("strong", [_vm._v("CSU Student Success Dashboard")])
         ]),
@@ -115573,7 +115573,7 @@ var staticRenderFns = [
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "footer__links pull-right" }, [
+      _c("div", { staticClass: "footer__links pr-4 ml-auto" }, [
         _c("p", { staticClass: "footer__link text-white text-right" }, [
           _c("strong", [_vm._v("California State University")])
         ]),
