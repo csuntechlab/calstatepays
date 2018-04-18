@@ -9,6 +9,21 @@ use Image;
 
 class IndustryController extends Controller
 {
+    private $industries = [
+        'administration', 'agriculture', 'art',
+        'company', 'construction',
+        'education', 'estate',
+        'finance', 'food',
+        'health',
+        'manufacturing',
+        'oil',
+        'professional',
+        'retail',
+        'transportation',
+        'utilities',
+        'waste', 'wholesale'
+    ];
+
     public function getAllIndustryNaicsTitles()
     {
         $allNaicsTitles = NaicsTitle::get()->map(function ($item, $key){
@@ -20,9 +35,11 @@ class IndustryController extends Controller
         return $allNaicsTitles->toArray();
     }
 
-    public function getAllImage()
+    public function getAllImages()
     {
+        //Return all images for every industry
         $partialImagePaths = Storage::disk('public')->files('images');
+        dd($partialImagePaths);
         $industryImages = collect($partialImagePaths)->map(function($path){
             $industryName = basename($path, '.jpg');
             return [
@@ -35,6 +52,14 @@ class IndustryController extends Controller
 
     public function getImage($industry)
     {
-
+        $partialImagePaths = Storage::disk('public')->files('images');
+        $industryName = strtolower($industry);
+        /*if(in_array($industryName, $this->industries)){
+            $industryData = collect($partialImagePaths)->filter(function($value{
+                $collectionIndustryName = basename($path, '.jpg');
+            });
+        }*/
+        //return
+        return 'false';
     }
 }
