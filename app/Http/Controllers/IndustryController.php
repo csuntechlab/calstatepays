@@ -20,21 +20,21 @@ class IndustryController extends Controller
         return $allNaicsTitles->toArray();
     }
 
-    public function getIndustryImages()
+    public function getAllImage()
     {
-        $imageNames = Storage::disk('public')->files('images');
-        dd(preg_mastch('/',$imageNames[0]));
-        $imageNames = collect($imageNames)->map(function($image){
+        $partialImagePaths = Storage::disk('public')->files('images');
+        $industryImages = collect($partialImagePaths)->map(function($path){
+            $industryName = basename($path, '.jpg');
             return [
-                'image_path' => Storage_Path('app/public/') . $image
+                'name'       => ucwords($industryName),
+                'image_path' => Storage_Path('app/public/') . $path
             ];
         });
-        return $imageNames;
-        /*foreach($imageNames as $name){
-            $imagePath = Storage_Path('app/public/') . $name;
+        return $industryImages;
+    }
 
-        }
-        $image1 =  Image::make($imagePath . $imageNames[0])->response('jpg');
-        return $image1;*/
+    public function getImage($industry)
+    {
+
     }
 }
