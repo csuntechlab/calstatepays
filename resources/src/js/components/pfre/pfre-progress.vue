@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <h5 class="pagination-centered">Years</h5>
-      <v-progress-linear class="pfre-bar" :value="(years.actual/years.end) * 100" height="45" color="light-green"></v-progress-linear>
+      <v-progress-linear class="pfre-bar pfre-year" :value="(years.actual/years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
       <div class="progress-footer col-12">
         <span class="col-4">
           <p class="float-left">{{years.start}}</p>  

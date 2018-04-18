@@ -78137,11 +78137,11 @@ var render = function() {
         _c("h5", { staticClass: "pagination-centered" }, [_vm._v("Years")]),
         _vm._v(" "),
         _c("v-progress-linear", {
-          staticClass: "pfre-bar",
+          staticClass: "pfre-bar pfre-year",
           attrs: {
             value: _vm.years.actual / _vm.years.end * 100,
             height: "45",
-            color: "light-green"
+            color: "pfre-year"
           }
         }),
         _vm._v(" "),
@@ -79061,11 +79061,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     name: 'Some College',
                     data: this.yData[this.index + 0],
                     lineStyle: {
-                        color: '#2BAE67',
+                        color: '#476A6F',
                         width: 4
                     },
                     itemStyle: {
-                        color: '#2BAE67'
+                        color: '#476A6F'
                     }
                 }, {
                     type: 'line',
@@ -79083,11 +79083,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     name: 'Post Bacc Degree',
                     data: this.yData[this.index + 2],
                     lineStyle: {
-                        color: '#D00D2D',
+                        color: '#279D5D',
                         width: 4
                     },
                     itemStyle: {
-                        color: '#D00D2D'
+                        color: '#279D5D'
                     }
                 }],
                 animationDuration: 2000
