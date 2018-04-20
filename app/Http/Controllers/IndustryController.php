@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IndustryPathType;
+use App\Models\Population;
 use Illuminate\Http\Request;
 use App\Models\NaicsTitle;
 use App\Models\UniversityMajor;
+use App\Models\College;
 
 class IndustryController extends Controller
 {
@@ -57,5 +60,11 @@ class IndustryController extends Controller
 
         });
         return $industryPopulations;
+    }
+
+    public function getEverything()
+    {
+        return Population::all();
+
     }
 }
