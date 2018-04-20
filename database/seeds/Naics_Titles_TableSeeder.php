@@ -17,7 +17,8 @@ class Naics_Titles_TableSeeder extends Seeder
         foreach($data as $row){
             DB::table('naics_titles')->insert([
                 'naics_code'  => $row->naics_code,
-                'naics_title' => $row->naics_title
+                'naics_title' => $row->naics_title,
+                'image'       => $row->image
             ]);
         };
     }
