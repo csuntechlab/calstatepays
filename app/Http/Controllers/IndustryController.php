@@ -31,7 +31,7 @@ class IndustryController extends Controller
         return $industries;
     }
 
-    public function getIndustryData($hegis_code, $university_id)
+    public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
         $university_major = UniversityMajor::where('hegis_code', $hegis_code)
                                             ->where('university_id', $university_id)
@@ -44,7 +44,7 @@ class IndustryController extends Controller
                                                ->get();
 
 
-        $industryPopulations = $industryPopulations->sortBy('population.percentage_found')
+        $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){
             $index++;
