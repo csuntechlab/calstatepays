@@ -28376,9 +28376,9 @@ figcaption {
 }
 
 .bg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
-  height: 55em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+  min-height: 83vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28395,7 +28395,7 @@ figcaption {
 
 .learn-how {
   background-color: white;
-  height: 10em;
+  min-height: 11vh;
 }
 
 .fa-graduation-cap {
@@ -28416,9 +28416,19 @@ figcaption {
   padding-bottom: .1em;
 }
 
-.csu-seals {
-  height: 10rem;
-  widows: 10rem;
+.csu-wrapper {
+  max-width: 100rem;
+}
+
+.csu-wrapper figure img {
+  width: 75%;
+}
+
+.csu-wrapper figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
 .navbar,
@@ -28473,35 +28483,15 @@ footer,
 #research-main-banner {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
-  text-align: center;
-  position: relative;
-  height: 50vh;
+  background-size: cover;
+  min-height: 45vh;
 }
 
 #research-main-banner h2 {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
   color: #000;
+  font-size: 3.75rem;
   font-family: "Montserrat";
   font-weight: 400;
-}
-
-#research-main-banner .csu-wrapper {
-  position: absolute;
-  width: 100%;
-  bottom: 1rem;
-}
-
-#research-main-banner .csu-wrapper figure img {
-  width: 6.5rem;
-}
-
-#research-main-banner .csu-wrapper figure figcaption {
-  font-family: "Montserrat";
-  text-transform: uppercase;
 }
 
 .campuses-container {
@@ -28513,11 +28503,6 @@ footer,
           align-items: left;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.row {
-  padding-left: 2.5rem;
-  padding-top: 2.5rem;
 }
 
 .campus {

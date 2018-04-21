@@ -4,7 +4,7 @@
 			<div class="row p-0 text-center pt-9">
 				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row p-0 m-5">
-					<div class="col-md-4 text-center">
+					<div class="col-md-4 text-center my-3">
 						<i class="fa fa-graduation-cap"></i>
 						<h3>Do college graduates earn more?</h3>
 						<p class="p-4">It pays to go to college. Earningsfor graduates are significantly higher than non-graduates</p>
@@ -12,7 +12,7 @@
 							Compare Degree Levels
 						</button>
 					</div>
-					<div class="col-md-4 text-center">
+					<div class="col-md-4 text-center my-3">
 						<i class="fa fa-usd"></i>
 						<h3>What is your financial return?</h3>
 						<p class="p-4">Education cost money but in the long term you will earn more. Find your return on education.</p>
@@ -20,7 +20,7 @@
 							Financial Return on Education
 						</button>
 					</div>
-					<div class="col-md-4 text-center">
+					<div class="col-md-4 text-center my-3">
 						<i class="fa fa-line-chart"></i>
 						<h3>Which majors earn the most?</h3>
 						<p class="p-4">Find out which majors has the highest earn and the most students.</p>
@@ -29,49 +29,49 @@
 						</button>
 					</div>
 				</div>
-				<div class="row p-0 mt-5">
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/channel_islands_seal.svg" alt="">
-						<figcaption>Channel Islands</figcaption>
+				<div class="row mt-5 csu-wrapper">
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
+            <figcaption>Long Beach</figcaption>
 					</figure>
 
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/dominguez_seal.svg" alt="">
-						<figcaption>Dominguez Hills</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/poly_seal.svg" alt="CSU Pomona Seal">
+            <figcaption>Pomona</figcaption>
 					</figure>
 
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/fullerton_seal.svg" alt="">
-						<figcaption>Fullerton</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/dominguez_seal.svg" alt="CSU Dominguez Hills Seal">
+            <figcaption>Dominguez Hills</figcaption>
 					</figure>
 
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/long_beach_seal.svg" alt="">
-						<figcaption>Long Beach</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/northridge_seal.svg" alt="CSU Northridge Seal">
+            <figcaption>Northridge</figcaption>
 					</figure>
 
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/los_angeles_seal.svg" alt="">
-						<figcaption>Los Angeles</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/channel_islands_seal.svg" alt="CSU Channel Islands Seal">
+            <figcaption>Channel Islands</figcaption>
 					</figure>
 	
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/northridge_seal.svg" alt="">
-						<figcaption>Northridge</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/fulleton_seal.svg" alt="CSU Fullerton Seal">
+            <figcaption>Fullerton</figcaption>
 					</figure>
 
-					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/poly_seal.svg" alt="">
-						<figcaption>Pomona</figcaption>
+					<figure class="col-md col-sm-4 col-4 text-center">
+						<img src="img/csuseals/los_angeles_seal.svg" alt="CSU Los Angeles Seal">
+             <figcaption>Los Angeles</figcaption>
 					</figure>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="learn-how text-center">
+		<div class="learn-how row">
+			<div class="text-center">
 				<h1>Learn How</h1>
 				<a href="#video-section">
-					<i class="fa fa-angle-down" aria-hidden="true" style="font-size: 6rem"></i>
+					<i class="fa fa-angle-down" aria-hidden="true" style="font-size: 5rem; line-height: 1rem;"></i>
 				</a>
 			</div>
 		</div>

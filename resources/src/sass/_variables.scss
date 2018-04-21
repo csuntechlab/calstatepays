@@ -15,5 +15,12 @@ $dark-gray: #3a3335;
 $darker-gray: #363636;
 $white: #FFF;
 $black: #000;
+
+//Fonts
 $font-base: 'Montserrat';
 $font-brand: 'Open Sans';
+
+//Filters
+$unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+$available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+$white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
