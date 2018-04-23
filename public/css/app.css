@@ -28376,8 +28376,8 @@ figcaption {
 }
 
 .bg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?218d4b00cb259b7b95d33584ecb82de8);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
   height: 55em;
   background-position: center;
   background-repeat: no-repeat;
@@ -28793,6 +28793,19 @@ textarea {
 .pfre-bar {
   border-radius: 50px;
   margin: 0 !important;
+  background-color: light-gray !important;
+}
+
+.pfre-year {
+  background-color: #ECA400 !important;
+}
+
+.pfre-earnings {
+  background-color: #279D5D !important;
+}
+
+.pfre-fre {
+  background-color: #476A6F !important;
 }
 
 .progress-footer {

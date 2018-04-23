@@ -5,12 +5,26 @@
 }
 .pfre-bar {
   border-radius: 50px;
-  margin: 0 !important;  
+  margin: 0 !important;
+  background-color: light-gray !important;
 }
+
+.pfre-year {
+	background-color: $gold !important;
+}
+
+.pfre-earnings {
+	background-color: $dark-green !important;
+}
+
+.pfre-fre {
+	background-color: $oxford !important;
+}
+
 .progress-footer {
   display: flex;
   width: 95%;
 }
 .progress-linear__bar__determinate {
-  border-radius: 50px
+  border-radius: 50px;
 }
