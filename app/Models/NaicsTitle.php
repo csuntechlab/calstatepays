@@ -11,7 +11,8 @@ class NaicsTitle extends Model
 
     protected $fillable = [
         'naics_code',
-        'naics_title'
+        'naics_title',
+        'image'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

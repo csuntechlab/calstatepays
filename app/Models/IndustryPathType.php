@@ -14,6 +14,10 @@ class IndustryPathType extends Model
         'population_sample_id',
         'university_majors_id'
     ];
+
+    /*protected $with = [
+        'population'
+    ];*/
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

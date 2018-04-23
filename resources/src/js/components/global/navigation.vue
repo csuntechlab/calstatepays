@@ -19,7 +19,12 @@
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link" active-class="hr-nav" to="/pfre">
-                            PFRE
+                            FRE
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" active-class="hr-nav" to="/about">
+                            About
                             </router-link>
                         </li>
                     </ul>
