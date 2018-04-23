@@ -10,7 +10,7 @@ import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 import App from './App.vue';
 /**

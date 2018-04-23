@@ -21,7 +21,7 @@ export default {
           title: "Food",
           percentage: 50,
           rank: 1,
-          image: https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
+          image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
         },
         {
           title: "Education",

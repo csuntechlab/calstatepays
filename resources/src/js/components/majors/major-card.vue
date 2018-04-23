@@ -2,12 +2,12 @@
     <div class="col col-md-12">
         <card>
             <div class="container-fluid my-0">
-                <div class="row">
+                <div class="row p-0">
                     <div class="mt-5">
                         <industry-carousel></industry-carousel>				
                     </div>
                 </div>
-                <div class="row m-1">
+                <div class="row m-1 p-0">
                     <div class="col col-md-3 col-sm-12 my-3">
                         <majors-form></majors-form>
                     </div>

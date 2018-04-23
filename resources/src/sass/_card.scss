@@ -1,13 +1,13 @@
 .csu-card{
     display: flex;
+    flex-direction: row;
     background: $white;
     border-radius: 50px;
-    height: 750px;
+    height: 650px;
     margin-bottom: 50px;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    flex-direction: column;
 }
 
 .card-add{
@@ -16,6 +16,7 @@
     height: 150px;
     margin-bottom: 0px;
     margin-top: 50px;
+    padding-top: 50px;
 }
 
 
