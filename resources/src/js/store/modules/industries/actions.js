@@ -11,6 +11,14 @@ export default {
             },
             (error) => console.log(error),
         );
+    },
+
+    fetchIndustryImages({commit, dispatch}) {
+        Industry.fetchIndustryImages(
+            (success) => {
+            commit(
+            }
+        )
     }
 
 }

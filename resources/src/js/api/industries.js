@@ -4,6 +4,13 @@ const fetchIndustriesAPI = (success, error) => {
         response => success(response.data),
         response => error(response)
     );
+};
+
+const fetchIndustryImageAPI = (success, error) => {
+    axios.get('/industry/2201/1153').then(
+        response => success(response.data),
+        response => error(response)
+    );
 }
 
 export default {

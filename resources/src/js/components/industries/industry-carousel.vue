@@ -74,6 +74,11 @@ export default {
       ]
     }
   },
+
+  computed: {
+    ...mapGetters([ 'industries'])
+  },
+
   components: {
     industryCarouselCard,
     Carousel,
