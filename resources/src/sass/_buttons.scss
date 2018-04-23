@@ -35,9 +35,11 @@
 
 .btn-info{
     color: $white;
-    width: 3rem;
-    height: 3rem;
+    width: 3.25rem;
+    height: 3.25rem;
     border-radius: 50%;
+    float: left;
+    margin-top: 2.5rem;
 }
 .btn-info:focus{
     outline: none;
@@ -45,4 +47,23 @@
 
 input[type="button"]:focus{
     outline:none;
+}
+.home-btn {
+    border-radius: 5rem;
+    width: 70%;
+    font-size: 0.9rem;
+    font-family: $font-brand;
+    height: 45px;
+    color: white;
+}
+.home-btn__degrees{
+    background: $oxford;
+}
+
+.home-btn__pfre{
+    background: $green;
+}
+
+.home-btn__majors{
+    background: $gold;
 }

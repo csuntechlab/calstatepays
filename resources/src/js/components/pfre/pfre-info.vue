@@ -1,26 +1,30 @@
 <template>
   <div>
-    <button class="btn-info" type="button">
-      <i class="fa fa-question"></i>
-    </button>
-    <div class="info-bubble">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-      Consequatur nisi repellat ad! Vel dolorum cum eaque, 
-      id voluptatibus non ratione in libero nam officia nulla dolore rem odit corporis quod.
+    <div class="col-6">
+      <button class="btn-info" type="button" @click="toggleInfo(infoKey)">
+        <i class="fa fa-question"></i>
+      </button>
+    </div>
+    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
+      <slot></slot>
     </div>
   </div>
 </template>
 <script>
+
+import { mapActions, mapGetters } from 'vuex';
 export default {
-  data(){
-      return {
-          showInfo: false,
-      }
-  },
+  props: ['infoKey'],
   methods: {
-      toggleInfo(){
-          this.showInfo = !this.showInfo;
-      }
+    ...mapActions([
+      'toggleInfo'
+    ]),
   },
+  computed: {
+    ...mapGetters([
+      'pfreShowInfo',
+      'pfreInfoKey'
+    ])
+  }
 }
 </script>

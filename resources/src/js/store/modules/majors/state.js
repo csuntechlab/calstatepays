@@ -1,4 +1,4 @@
-// IMPOUND STATE
+// MAJORS STATE
 //
 
 export default {

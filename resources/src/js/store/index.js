@@ -3,6 +3,8 @@ import Vuex from 'vuex';
 
 //MODULES
 import Majors from './modules/majors';
+import Industries from './modules/industries'
+import Pfre from './modules/pfre';
 
 // INIT VUEX
 Vue.use(Vuex);
@@ -11,6 +13,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	strict: process.env.NODE_ENV !== 'production',
 	modules: {
-		Majors
+		Majors,
+		Industries,
+		Pfre
 	}
 });

@@ -1,3 +1,4 @@
+$white-filter: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
 .img__logo{
 	padding-top: 10px;
 	max-height: 50px;
@@ -10,9 +11,46 @@
 	max-width: 60%;
 }
 .bg { 
-	    background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
-	    height: 100%; 
-	    background-position: center;
-	    background-repeat: no-repeat;
-	    background-size: cover;
-	}
+	background-image: $white-filter, url("../../../public/img/money-pig.jpg");
+	height: 55em; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.video-placeholder {
+	background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
+	height: 50em;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.learn-how {
+	background-color: white;
+	height: 10em;
+}
+
+.fa-graduation-cap {
+	font-size: 6em;
+	color: $oxford;
+	padding-bottom: .1em;
+}
+
+.fa-usd {
+	font-size: 6em;
+	color: $green;
+	padding-bottom: .1em;	
+}
+
+.fa-line-chart {
+	font-size: 6em;
+	color: $gold;
+	padding-bottom: .1em;	
+}
+
+.csu-seals {
+	height: 10rem;
+	widows: 10rem;
+}

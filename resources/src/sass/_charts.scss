@@ -1,5 +1,22 @@
 .echarts {
-  min-height: 50vh;
+  min-height: 80%;
   min-width: 100%;
   color: blue;
+}
+
+.pfre-bar {
+  border-radius: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.progress-footer {
+  display: flex;
+}
+
+.progress-wrapper{
+  margin-top: 60px;
+}
+
+.progress-linear__bar__determinate {
+  border-radius: 50px
 }

@@ -28260,10 +28260,6 @@ table.table tfoot tr td {
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: calc(88vh);
   background: #EBEBEB;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -28271,38 +28267,49 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: 60px 0px;
 }
 
 .container-fluid {
   padding-right: 0px !important;
 }
 
-.card {
+html {
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.csu-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background: #FFF;
   border-radius: 50px;
-  min-height: calc(70vh);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 650px;
+  margin-bottom: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .card-add {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  min-height: 15vh;
+  height: 150px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .row {
@@ -28321,6 +28328,7 @@ table.table tfoot tr td {
 }
 
 .home__heading {
+  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -28350,10 +28358,87 @@ body {
   color: #777777;
 }
 
-.info-bubble {
+.pfre-info {
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 100px;
   background: #EBEBEB;
   border-radius: 15px;
   float: right;
+  width: 10rem;
+}
+
+.pfre-info {
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 100px;
+  background: #EBEBEB;
+  border-radius: 15px;
+  float: right;
+  width: 10rem;
+  top: 100%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 8px;
+}
+
+.pfre-info::after {
+  content: " ";
+  position: absolute;
+  top: 10%;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 6px solid #EBEBEB;
+  border-bottom: 6px solid transparent;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.pfre-info--show {
+  position: absolute;
+  margin-left: 80px;
+  background: #EBEBEB;
+  border-radius: 15px;
+  float: right;
+  width: 10rem;
+  top: 45%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 8px;
+}
+
+.pfre-info--show::after {
+  content: " ";
+  position: absolute;
+  top: 45%;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 6px solid #EBEBEB;
+  border-bottom: 6px solid transparent;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.info {
+  margin-top: 100px;
+}
+
+.pfre-info__content {
+  background: #EBEBEB;
+  border-radius: 15px;
+  float: right;
+}
+
+.pfre-info__wrapper {
+  margin-top: 90px;
+}
+
+figcaption {
+  font-size: 1.5rem;
 }
 
 .img__logo {
@@ -28371,11 +28456,49 @@ body {
 }
 
 .bg {
-  background-image: url("https://i.gyazo.com/5c5d06bc31eef4555907e703c4a3baa2.jpg");
-  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url(/images/money-pig.jpg?28db3a6d9f64cc569dfdf7da89a469eb);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(/images/money-pig.jpg?28db3a6d9f64cc569dfdf7da89a469eb);
+  height: 55em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.video-placeholder {
+  background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
+  height: 50em;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.learn-how {
+  background-color: white;
+  height: 10em;
+}
+
+.fa-graduation-cap {
+  font-size: 6em;
+  color: #476A6F;
+  padding-bottom: .1em;
+}
+
+.fa-usd {
+  font-size: 6em;
+  color: #2BAE67;
+  padding-bottom: .1em;
+}
+
+.fa-line-chart {
+  font-size: 6em;
+  color: #ECA400;
+  padding-bottom: .1em;
+}
+
+.csu-seals {
+  height: 10rem;
+  widows: 10rem;
 }
 
 .navbar,
@@ -28392,7 +28515,7 @@ nav {
 }
 
 .nav-link {
-  padding: 16px 0px;
+  padding: 18px 0px;
 }
 
 .nav-logo {
@@ -28413,7 +28536,6 @@ nav {
 footer,
 .footer {
   font-family: "Open Sans";
-  bottom: 0;
   width: 100%;
   height: 80px;
   background-color: #000;
@@ -28429,25 +28551,37 @@ footer,
 }
 
 #research-main-banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   text-align: center;
   position: relative;
   height: 50vh;
 }
 
-#research-main-banner .banner-center {
+#research-main-banner h2 {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  color: #FFF;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  color: #000;
   font-family: "Montserrat";
+  font-weight: 400;
 }
 
-#research-main-banner .banner-center h2 {
-  font-weight: 200;
+#research-main-banner .csu-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+}
+
+#research-main-banner .csu-wrapper figure img {
+  width: 6.5rem;
+}
+
+#research-main-banner .csu-wrapper figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
 }
 
 .campuses-container {
@@ -28667,6 +28801,10 @@ textarea {
   font-weight: 300;
 }
 
+.form--inverted {
+  margin-top: 100px;
+}
+
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -28715,9 +28853,11 @@ textarea {
 
 .btn-info {
   color: #FFF;
-  width: 3rem;
-  height: 3rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
+  float: left;
+  margin-top: 2.5rem;
 }
 
 .btn-info:focus {
@@ -28728,10 +28868,50 @@ input[type="button"]:focus {
   outline: none;
 }
 
+.home-btn {
+  border-radius: 5rem;
+  width: 70%;
+  font-size: 0.9rem;
+  font-family: "Open Sans";
+  height: 45px;
+  color: white;
+}
+
+.home-btn__degrees {
+  background: #476A6F;
+}
+
+.home-btn__pfre {
+  background: #2BAE67;
+}
+
+.home-btn__majors {
+  background: #ECA400;
+}
+
 .echarts {
-  min-height: 50vh;
+  min-height: 80%;
   min-width: 100%;
   color: blue;
+}
+
+.pfre-bar {
+  border-radius: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.progress-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.progress-wrapper {
+  margin-top: 60px;
+}
+
+.progress-linear__bar__determinate {
+  border-radius: 50px;
 }
 
 .industry-carousel {
