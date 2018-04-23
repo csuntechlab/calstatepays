@@ -38638,11 +38638,11 @@ var FETCH_MAJORS = 'majors/FETCH_MAJORS';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var FETCH_INDUSTRIES = 'industries/FETCH_INDUSTRIES';
+/*const FETCH_INDUSTRIES = 'industries/FETCH_INDUSTRIES';*/
 var FETCH_INDUSTRY_IMAGES = 'industries/FETCH_INDUSTRY_IMAGES';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    FETCH_INDUSTRIES: FETCH_INDUSTRIES,
+    /*FETCH_INDUSTRIES,*/
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES
 });
 
@@ -48648,7 +48648,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   },
   created: function created() {
     this.$store.dispatch('fetchMajors');
-    this.$store.dispatch('fetchIndustries');
+    /*this.$store.dispatch('fetchIndustryImages');*/
   }
 });
 
@@ -76268,18 +76268,14 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__ = __webpack_require__(60);
-var _industries$FETCH_IND;
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //MAJORS MUTATIONS
 
 
-/* harmony default export */ __webpack_exports__["a"] = (_industries$FETCH_IND = {}, _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
+/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, function (state, payload) {
     state.industries = payload;
-}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, function (state, payload) {
-    state.industries = payload;
-}), _industries$FETCH_IND);
+}));
 
 /***/ }),
 /* 149 */
@@ -76293,30 +76289,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchIndustries: function fetchIndustries(_ref) {
+
+    /*    fetchIndustries({ commit, dispatch }) {
+            Industry.fetchIndustriesAPI(
+                (success) => {
+                    commit(_industries.FETCH_INDUSTRIES, success);
+                },
+                (error) => console.log(error),
+            );
+        },*/
+
+    fetchIndustryImages: function fetchIndustryImages(_ref) {
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
-
-        __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(function (success) {
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
-        }, function (error) {
-            return console.log(error);
-        });
-    },
-
-
-    /*fetchIndustryImages({commit, dispatch}) {
-        Industry.fetchIndustryImagesAPI(
-            (success) => {
-            console.log(success);
-            },
-            (error) => console.log(error),
-        );
-    }*/
-
-    fetchIndustryImages: function fetchIndustryImages(_ref2) {
-        var commit = _ref2.commit,
-            dispatch = _ref2.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryImagesAPI(function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, success);
@@ -76335,13 +76320,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 
-var fetchIndustriesAPI = function fetchIndustriesAPI(success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/learn-and-earn/industry/1/information').then(function (response) {
-        return success(response.data);
-    }, function (response) {
-        return error(response);
-    });
-};
+/*const fetchIndustriesAPI = (success, error) => {
+    axios.get('api/learn-and-earn/industry/1/information').then(
+        response => success(response.data),
+        response => error(response)
+    );
+};*/
 
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(success, error) {
     __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/industry/22021/1153').then(function (response) {
@@ -76352,7 +76336,7 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(success, error) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchIndustriesAPI: fetchIndustriesAPI,
+    /*fetchIndustriesAPI,*/
     fetchIndustryImagesAPI: fetchIndustryImagesAPI
 });
 
@@ -79020,12 +79004,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchIndustryImages']), {
+    methods: {
         updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
             this.form.formWasSubmitted = true;
         }
-    }),
+    },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majors']))
 });
 
@@ -79060,24 +79044,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row row--condensed" }, [
-            _c("div", { staticClass: "col col-md-8 py-4" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.submitForm($event)
-                    }
-                  }
-                },
-                [_vm._v("Submit")]
-              )
-            ])
-          ])
+          _c("div", { staticClass: "row row--condensed" })
         ])
       : _c("div", { staticClass: "form__group" }, [
           _c("p", { staticClass: "h2 text-gray my-5" }, [
@@ -79162,20 +79129,7 @@ var render = function() {
           _c("label", { attrs: { for: "postBacc" } }, [
             _vm._v("Post Bacc Degree")
           ])
-        ]),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.fetchIndustryImages($event)
-          }
-        }
-      },
-      [_vm._v("click me")]
-    )
+        ])
   ])
 }
 var staticRenderFns = []
@@ -96504,59 +96458,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      industries: [{
-        title: "Food",
-        percentage: 50,
-        rank: 1,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Education",
-        percentage: 25,
-        rank: 2,
-        image: "https://i.gyazo.com/8424987981d698cbb018287201ea2fc8.jpg"
-      }, {
-        title: "Medicine",
-        percentage: 20,
-        rank: 3,
-        image: "https://i.gyazo.com/5c726f14961f864bf8857676c4a29e63.jpg"
-      }, {
-        title: "Chem",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Plumbing",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Water",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Food",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Electric",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }, {
-        title: "Air",
-        percentage: 5,
-        rank: 4,
-        image: "https://i.gyazo.com/86f0d4d90da4d7495d3c2c7303aeee5c.jpg"
-      }]
-    };
-  },
-
 
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries'])),
+
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
+
+  created: function created() {
+    this.fetchIndustryImages();
+  },
+
 
   components: {
     industryCarouselCard: __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default.a,
@@ -96638,7 +96548,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['data']
+  props: ['industry']
 
 });
 
@@ -96652,10 +96562,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "info-wrapper" }, [
     _c("p", { staticClass: "text-white h4 industry-info" }, [
-      _vm._v(_vm._s(_vm.data.percentage) + "%")
+      _vm._v(_vm._s(_vm.industry.percentage) + "%")
     ]),
     _vm._v(" "),
-    _c("p", { staticStyle: {} }, [_vm._v(_vm._s(_vm.data.title.toUpperCase()))])
+    _vm.industry
+      ? _c("p", { staticStyle: {} }, [_vm._v(_vm._s(_vm.industry.title))])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -96700,7 +96612,7 @@ var render = function() {
             [
               _c("industry-carousel-card", {
                 staticClass: "industry-carousel-card",
-                attrs: { data: industry }
+                attrs: { industry: industry }
               })
             ],
             1

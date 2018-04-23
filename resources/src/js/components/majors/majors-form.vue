@@ -13,9 +13,9 @@
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-md-8 py-4">
+                <!--<div class="col col-md-8 py-4">
                     <button type="button" @click.prevent="submitForm" class="btn btn-success">Submit</button>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="form__group" v-else>
@@ -27,12 +27,12 @@
             <input type="radio" name="postBacc" id="postBacc" v-model="form.degree" value="postBacc">
             <label for="postBacc">Post Bacc Degree</label>
         </div>
-        <button @click.prevent="fetchIndustryImages">click me</button>
+        <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
     </form>
 </template>
 <script>
 import { updateForm } from '../../utils/index';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters} from 'vuex';
 export default {
   data(){
       return {
@@ -44,9 +44,6 @@ export default {
       }
   },
   methods: {
-        ...mapActions([
-            'fetchIndustryImages'
-        ]),
         updateForm,
         submitForm(){
             this.form.formWasSubmitted = true;
