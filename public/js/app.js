@@ -77289,11 +77289,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -78382,7 +78377,7 @@ var render = function() {
             attrs: {
               value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
               height: "45",
-              color: "light-green"
+              color: "pfre-year"
             }
           }),
           _vm._v(" "),
@@ -78444,7 +78439,7 @@ var render = function() {
                 _vm.pfreData.earnings.maximum *
                 100,
               height: "45",
-              color: "green"
+              color: "pfre-earnings"
             }
           }),
           _vm._v(" "),
@@ -78516,7 +78511,7 @@ var render = function() {
                 (_vm.pfreData.returnOnInvestment.maximum * 100) *
                 100,
               height: "45",
-              color: "light-green"
+              color: "pfre-fre"
             }
           }),
           _vm._v(" "),
