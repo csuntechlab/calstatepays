@@ -13,12 +13,22 @@ export default {
         );
     },
 
-    fetchIndustryImages({commit, dispatch}) {
-        Industry.fetchIndustryImages(
+    /*fetchIndustryImages({commit, dispatch}) {
+        Industry.fetchIndustryImagesAPI(
             (success) => {
-            commit(
-            }
-        )
+            console.log(success);
+            },
+            (error) => console.log(error),
+        );
+    }*/
+
+    fetchIndustryImages({commit, dispatch}) {
+        Industry.fetchIndustryImagesAPI(
+            (success) => {
+            commit(_industries.FETCH_INDUSTRY_IMAGES, success);
+        },
+         (error) => console.log(error),
+        );
     }
 
 }

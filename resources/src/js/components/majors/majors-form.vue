@@ -27,11 +27,12 @@
             <input type="radio" name="postBacc" id="postBacc" v-model="form.degree" value="postBacc">
             <label for="postBacc">Post Bacc Degree</label>
         </div>
+        <button @click.prevent="fetchIndustryImages">click me</button>
     </form>
 </template>
 <script>
 import { updateForm } from '../../utils/index';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 export default {
   data(){
       return {
@@ -43,6 +44,9 @@ export default {
       }
   },
   methods: {
+        ...mapActions([
+            'fetchIndustryImages'
+        ]),
         updateForm,
         submitForm(){
             this.form.formWasSubmitted = true;
