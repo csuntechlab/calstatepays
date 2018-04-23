@@ -8,6 +8,5 @@ const fetchIndustryImagesAPI = (success, error) => {
 };
 
 export default {
-    /*fetchIndustriesAPI,*/
     fetchIndustryImagesAPI,
 }
