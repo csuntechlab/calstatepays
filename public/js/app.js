@@ -38638,11 +38638,9 @@ var FETCH_MAJORS = 'majors/FETCH_MAJORS';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/*const FETCH_INDUSTRIES = 'industries/FETCH_INDUSTRIES';*/
 var FETCH_INDUSTRY_IMAGES = 'industries/FETCH_INDUSTRY_IMAGES';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    /*FETCH_INDUSTRIES,*/
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES
 });
 
@@ -76289,16 +76287,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-
-    /*    fetchIndustries({ commit, dispatch }) {
-            Industry.fetchIndustriesAPI(
-                (success) => {
-                    commit(_industries.FETCH_INDUSTRIES, success);
-                },
-                (error) => console.log(error),
-            );
-        },*/
-
     fetchIndustryImages: function fetchIndustryImages(_ref) {
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
