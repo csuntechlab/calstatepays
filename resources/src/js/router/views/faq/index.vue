@@ -1,10 +1,10 @@
 <template>
-	<div>
-		<div class="row align-items-center justify-content-center">
+	<div class="wrapper">
+		<div class="row">
 			<h1 class="pt-3 home__heading text-gray">FAQ</h1>
 		</div>
-		<div class="row align-items-center justify-content-center">
-			<div class = "col col-md-9">
+		<div class="row">
+			<div class="col col-md-9">
 				<v-container>
 					<v-layout row wrap>
 						<v-flex xs12 lg5 mb-3>

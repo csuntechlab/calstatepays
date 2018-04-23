@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div >
 		<navigation></navigation>
 		<div class="container-fluid no-gutters">
 			<router-view></router-view>
