@@ -14,7 +14,7 @@ class AddImagePathToNaicsTitlesTable extends Migration
     public function up()
     {
         Schema::table('naics_titles', function (Blueprint $table) {
-            $table->string('image')->after('naics_title');
+            $table->string('image')->nullable()->after('naics_title');
         });
     }
 
