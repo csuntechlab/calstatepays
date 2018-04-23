@@ -78194,7 +78194,7 @@ var render = function() {
         _c("v-progress-linear", {
           staticClass: "pfre-bar",
           attrs: {
-            value: _vm.years.actual / _vm.years.end * 100,
+            value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
             height: "45",
             color: "pfre-year"
           }
@@ -78240,7 +78240,10 @@ var render = function() {
         _c("v-progress-linear", {
           staticClass: "pfre-bar",
           attrs: {
-            value: _vm.earnings.actual / _vm.earnings.maximum * 100,
+            value:
+              _vm.pfreData.earnings.actual /
+              _vm.pfreData.earnings.maximum *
+              100,
             height: "45",
             color: "pfre-earnings"
           }
