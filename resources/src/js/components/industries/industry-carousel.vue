@@ -28,7 +28,7 @@ export default {
   },
 
   created(){
-    this.fetchIndustryImages()
+//    this.fetchIndustryImages('22021')
   },
 
 

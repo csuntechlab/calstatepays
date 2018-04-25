@@ -4,8 +4,9 @@ import _industries from '../../mutation-types/industries';
 
 export default {
 
-    fetchIndustryImages({commit, dispatch}) {
+    fetchIndustryImages({commit, dispatch},payload) {
         Industry.fetchIndustryImagesAPI(
+            payload,
             (success) => {
             commit(_industries.FETCH_INDUSTRY_IMAGES, success);
         },

@@ -76287,11 +76287,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchIndustryImages: function fetchIndustryImages(_ref) {
+    fetchIndustryImages: function fetchIndustryImages(_ref, payload) {
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
 
-        __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryImagesAPI(function (success) {
+        __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, success);
         }, function (error) {
             return console.log(error);
@@ -76308,15 +76308,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 
-/*const fetchIndustriesAPI = (success, error) => {
-    axios.get('api/learn-and-earn/industry/1/information').then(
-        response => success(response.data),
-        response => error(response)
-    );
-};*/
-
-var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/industry/22021/1153').then(function (response) {
+var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
+    console.log(payload);
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/industry/' + payload.major + '/1153').then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -76324,7 +76318,6 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(success, error) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    /*fetchIndustriesAPI,*/
     fetchIndustryImagesAPI: fetchIndustryImagesAPI
 });
 
@@ -78978,6 +78971,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -78992,12 +78986,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchIndustryImages']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
+            console.log('working');
             this.form.formWasSubmitted = true;
+            this.fetchIndustryImages(this.form);
         }
-    },
+    }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majors']))
 });
 
@@ -79022,7 +79018,14 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "select",
-                { attrs: { name: "majors", id: "majors" } },
+                {
+                  attrs: { name: "majors", id: "majors" },
+                  on: {
+                    input: function($event) {
+                      _vm.updateForm("major", $event.target.value)
+                    }
+                  }
+                },
                 _vm._l(_vm.majors, function(major) {
                   return _c("option", { domProps: { value: major.majorId } }, [
                     _vm._v(_vm._s(major.major))
@@ -79032,7 +79035,19 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row row--condensed" })
+          _c("div", { staticClass: "row row--condensed" }, [
+            _c("div", { staticClass: "col col-md-8 py-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button" },
+                  on: { click: _vm.submitForm }
+                },
+                [_vm._v("Submit")]
+              )
+            ])
+          ])
         ])
       : _c("div", { staticClass: "form__group" }, [
           _c("p", { staticClass: "h2 text-gray my-5" }, [
@@ -96452,7 +96467,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
 
   created: function created() {
-    this.fetchIndustryImages();
+    //    this.fetchIndustryImages('22021')
   },
 
 
