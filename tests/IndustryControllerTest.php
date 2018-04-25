@@ -29,7 +29,6 @@ class IndustryControllerTest extends TestCase
             );
         }
         $data = $this->IndustryController->getAllIndustryNaicsTitles();
-//        dd($data);
         foreach($data as $key => $title ) {
             $this->assertEquals($key,$title['naics_code']);
             $this->assertEquals('Title',$title['title']);
