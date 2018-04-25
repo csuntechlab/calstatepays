@@ -34,15 +34,19 @@ return [
     'connections' => [
 
         'sqlite' => [
+            'driver'   => 'sqlite',
+            'database' => storage_path('database.sqlite'),
+            'prefix'   => '',
+        ],
+        'tests' => [
             'driver' => 'sqlite',
             'database' => ':memory:',
             'prefix' => '',
         ],
         'sqlite_testing' => [
-            'driver' => 'sqlite',
-            'database' => database_path('testing.sqlite'),
-            'prefix' => '',
-            'strict' => false
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
         ],
         'mysql' => [
             'driver' => 'mysql',
