@@ -1,7 +1,7 @@
 // PFRE GETTERS
 
 export default {
-    years: state => state.years,
-    earnings: state => state.earnings,
-    returnOnInvestment: state => state.returnOnInvestment
+    pfreData: state => state.pfreData,
+    pfreShowInfo: state => state.pfreShowInfo,
+    pfreInfoKey: state => state.pfreInfoKey,
 }

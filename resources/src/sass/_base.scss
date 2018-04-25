@@ -1,13 +1,16 @@
 .wrapper{
-    display: flex;
-    min-height: calc(88vh);
     background: $light-gray;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    min-height: calc(100vh - 120px);
+    padding: 60px 0px;
 }
 
 .container-fluid{
     padding-right: 0px !important;
 }
 
+html {
+  min-height: 100vh;
+  box-sizing: border-box;
+}

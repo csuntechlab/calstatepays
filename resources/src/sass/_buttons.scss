@@ -31,9 +31,23 @@
 
 .btn-plus{
     display: block;
-   
 }
 
+.btn-info{
+    color: $white;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    float: left;
+    margin-top: 2.5rem;
+}
+.btn-info:focus{
+    outline: none;
+}
+
+input[type="button"]:focus{
+    outline:none;
+}
 .home-btn {
     border-radius: 5rem;
     width: 70%;

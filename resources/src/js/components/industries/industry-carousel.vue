@@ -25,12 +25,12 @@ export default {
           'fetchIndustryImages'
       ]),
 
+
   },
 
   created(){
 //    this.fetchIndustryImages('22021')
   },
-
 
   components: {
     industryCarouselCard,

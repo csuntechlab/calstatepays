@@ -9,6 +9,7 @@ import majors from './views/majors/index.vue';
 import industries from './views/industries/index.vue';
 import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
+import about from './views/about/index.vue';
 
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
@@ -21,6 +22,7 @@ const router = new VueRouter({
 		{ path: '/faq', component: faq},
 		{ path: '/research', component: research },
 		{ path: '/majors', component: majors },
+		{ path: '/about', component: about },
 	]
 });
 

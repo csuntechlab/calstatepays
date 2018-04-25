@@ -1,18 +1,22 @@
-.card{
+.csu-card{
     display: flex;
+    flex-direction: row;
     background: $white;
     border-radius: 50px;
-    min-height: calc(70vh);
-    align-items: center;
+    height: 650px;
+    margin-bottom: 50px;
     justify-content: center;
+    align-items: flex-start;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    flex-direction: column;
 }
 
 .card-add{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    min-height: 15vh;
+    height: 150px;
+    margin-bottom: 0px;
+    margin-top: 50px;
+    padding-top: 50px;
 }
 
 

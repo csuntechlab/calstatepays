@@ -1,5 +1,5 @@
 <template>
-  <div class="card col col-md-10 offset-md-1 d-flex flex-row">
+  <div class="csu-card col col-md-10 offset-md-1">
     <slot></slot>
   </div>
 </template>

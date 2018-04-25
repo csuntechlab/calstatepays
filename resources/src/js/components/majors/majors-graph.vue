@@ -44,18 +44,20 @@ export default {
             legend: {
                 data: ['line']
             },
-            yAxis: {},
+            yAxis: {
+                max: 150000
+            },
             series: [
             {
                 type: 'line',
                 name: 'Some College',
                 data: this.yData[this.index + 0],
                 lineStyle: {
-                    color: '#2BAE67',
+                    color: '#476A6F',
                     width: 4
                 },
                 itemStyle: {
-                    color: '#2BAE67'
+                    color: '#476A6F'
                 },
             },
             {
@@ -75,11 +77,11 @@ export default {
                 name: 'Post Bacc Degree',
                 data: this.yData[this.index + 2],
                 lineStyle: {
-                    color: '#D00D2D',
+                    color: '#279D5D',
                     width: 4
                 },
                 itemStyle: {
-                    color: '#D00D2D'
+                    color: '#279D5D'
                 }
             }
             ],
