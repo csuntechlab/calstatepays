@@ -13,7 +13,8 @@ class IndustryController extends Controller
         $allNaicsTitles = NaicsTitle::get()->map(function ($item, $key){
             return [
                 'naics_code' => $item['naics_code'],
-                'title'      => $item['naics_title']
+                'title'      => $item['naics_title'],
+                'image'      => $item['image']
             ];
         });
         return $allNaicsTitles->toArray();
