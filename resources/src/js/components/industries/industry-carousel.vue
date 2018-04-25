@@ -25,12 +25,10 @@ export default {
       ...mapActions([
           'fetchIndustryImages'
       ]),
-
-
   },
 
   created(){
-//    this.fetchIndustryImages('22021')
+
   },
 
   components: {
