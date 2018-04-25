@@ -116152,7 +116152,7 @@ if (false) {
 /* 348 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n.bg { \n    ^\n      Invalid CSS after \".bg {\": expected \"}\", was \"<<<<<<< HEAD\"\n      in /home/vagrant/Code/CSU-Metro-LA/resources/src/sass/_images.scss (line 13, column 6)\n    at runLoaders (/home/vagrant/Code/CSU-Metro-LA/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /home/vagrant/Code/CSU-Metro-LA/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/vagrant/Code/CSU-Metro-LA/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/home/vagrant/Code/CSU-Metro-LA/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/home/vagrant/Code/CSU-Metro-LA/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/home/vagrant/Code/CSU-Metro-LA/node_modules/neo-async/async.js:7974:18)\n    at options.error (/home/vagrant/Code/CSU-Metro-LA/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
