@@ -6,6 +6,7 @@
       </slide>
     </carousel>
     <br>
+    <br>
   </div>
 </template>
 
