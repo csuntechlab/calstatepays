@@ -96780,9 +96780,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
 
-  created: function created() {
-    //    this.fetchIndustryImages('22021')
-  },
+  created: function created() {},
 
 
   components: {
@@ -116051,6 +116049,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -116062,48 +116061,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("footer", { staticClass: "footer" }, [
+    _c(
+      "div",
+      { staticClass: "footer__links pl-4" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          { staticClass: "footer__link text-gray", attrs: { to: "/research" } },
+          [_vm._v("Power Users")]
+        ),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          { staticClass: "footer__link text-gray", attrs: { to: "/faq" } },
+          [_vm._v("FAQ")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer" }, [
-      _c("div", { staticClass: "footer__links pl-4" }, [
-        _c("p", { staticClass: "footer__link text-white" }, [
-          _c("strong", [_vm._v("CSU Student Success Dashboard")])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "footer__link text-gray" }, [
-          _vm._v("CalState.edu")
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "footer__link text-gray", attrs: { href: "#" } },
-          [_vm._v("FAQ")]
-        )
+    return _c("p", { staticClass: "footer__link text-white" }, [
+      _c("strong", [_vm._v("CSU Student Success Dashboard")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "footer__links pr-4 ml-auto" }, [
+      _c("p", { staticClass: "footer__link text-white text-right" }, [
+        _c("strong", [_vm._v("California State University")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "footer__links pr-4 ml-auto" }, [
-        _c("p", { staticClass: "footer__link text-white text-right" }, [
-          _c("strong", [_vm._v("California State University")])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "footer__link text-white text-right" }, [
-          _c("strong", [_vm._v(" Office Of The Chancellor")])
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "footer__link text-gray pull-right",
-            attrs: { href: "#" }
-          },
-          [_vm._v("Contact Us")]
-        )
-      ])
+      _c("p", { staticClass: "footer__link text-white text-right" }, [
+        _c("strong", [_vm._v(" Office Of The Chancellor")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "footer__link text-gray pull-right",
+          attrs: { href: "#" }
+        },
+        [_vm._v("Contact Us")]
+      )
     ])
   }
 ]
