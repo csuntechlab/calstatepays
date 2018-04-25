@@ -5,16 +5,17 @@
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <select 
-                    name="majors" 
-                    id="majors">
+                    <select
+                    name="majors"
+                    id="majors"
+                    @input="updateForm('major', $event.target.value)">
                     <option v-for="major in majors" :value="major.majorId">{{ major.major }}</option>
                     </select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-md-8 py-4">
-                    <button type="button" @click.prevent="submitForm" class="btn btn-success">Submit</button>
+                    <button type="button" @click="submitForm" class="btn btn-success">Submit</button>
                 </div>
             </div>
         </div>
@@ -27,11 +28,12 @@
             <input type="radio" name="postBacc" id="postBacc" v-model="form.degree" value="postBacc">
             <label for="postBacc">Post Bacc Degree</label>
         </div>
+        <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
     </form>
 </template>
 <script>
 import { updateForm } from '../../utils/index';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions} from 'vuex';
 export default {
   data(){
       return {
@@ -43,9 +45,14 @@ export default {
       }
   },
   methods: {
+      ...mapActions([
+         'fetchIndustryImages'
+      ]),
         updateForm,
         submitForm(){
+            console.log('working');
             this.form.formWasSubmitted = true;
+            this.fetchIndustryImages(this.form);
         }
   },
   computed: {
