@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+/*$factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -20,5 +20,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});*/
+
+$factory->define(App\Models\Population::class, function (Faker\Generator $faker){
+    $population_found = $faker->numberBetween(500, 1500);
+    $population_size  = $faker->numberBetween(2000,4700);
+    $percentage_found = $population_found/$population_size;
+    return [
+        'id' => 'placeholder',
+        'population_found' => $population_found,
+        'population_size' => $population_size,
+        'percentage_found' => $population_found
     ];
 });
