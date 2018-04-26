@@ -19,4 +19,6 @@ class MajorController extends Controller
         });
         return $allHegisCodes->toArray();
     }
+
+    public function
 }
