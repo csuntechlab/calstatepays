@@ -15,11 +15,11 @@ class Major_Path_Wages_TableSeeder extends Seeder
         $data = json_decode($json);
         foreach($data as $row){
             DB::table('major_path_wages')->insert([
-                'major_path_id'            => $row->major_path_id,
-                'avg_annual_wage'    => $row->avg_annual_wage,
-                '25th'    => $row->_25th,
-                '50th' => $row->_50th,
-                '75th' => $row->_75th,
+                'major_path_id'        => $row->major_path_id,
+                'avg_annual_wage'      => $row->avg_annual_wage,
+                '_25th'                => $row->_25th,
+                '_50th'                => $row->_50th,
+                '_75th'                => $row->_75th,
                 'population_sample_id' => $row->population_sample_id
             ]);
         };

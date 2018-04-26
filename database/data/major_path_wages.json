@@ -2,72 +2,72 @@
   {
     "major_path_id": 101,
     "avg_annual_wage": 28380,
-    "25th": 14567,
-    "50th": 29099,
-    "75th" : 41476,
+    "_25th": 14567,
+    "_50th": 29099,
+    "_75th" : 41476,
     "population_sample_id":701
   },
   {
     "major_path_id": 102,
     "avg_annual_wage": 39491,
-    "25th": 31094,
-    "50th": 42419,
-    "75th" : 53779,
+    "_25th": 31094,
+    "_50th": 42419,
+    "_75th" : 53779,
     "population_sample_id":702
   },
   {
     "major_path_id": 103,
     "avg_annual_wage": 49693,
-    "25th": 31094,
-    "50th": 33871,
-    "75th" : 84116,
+    "_25th": 31094,
+    "_50th": 33871,
+    "_75th" : 84116,
     "population_sample_id":703
   }, {
     "major_path_id": 104,
     "avg_annual_wage": 35620,
-    "25th": 23743,
-    "50th": 36003,
-    "75th" : 47115,
+    "_25th": 23743,
+    "_50th": 36003,
+    "_75th" : 47115,
     "population_sample_id": 704
 },
   {
     "major_path_id": 105,
     "avg_annual_wage": 38533,
-    "25th": 21746,
-    "50th": 37827,
-    "75th" : 56028,
+    "_25th": 21746,
+    "_50th": 37827,
+    "_75th" : 56028,
     "population_sample_id": 705
   },
   {
     "major_path_id": 106,
     "avg_annual_wage": 47949,
-    "25th": 23673,
-    "50th": 51620,
-    "75th" : 68554,
+    "_25th": 23673,
+    "_50th": 51620,
+    "_75th" : 68554,
     "population_sample_id": 706
   },
   {
     "major_path_id": 107,
     "avg_annual_wage": 50497,
-    "25th": 24837,
-    "50th": 52814,
-    "75th" : 73842,
+    "_25th": 24837,
+    "_50th": 52814,
+    "_75th" : 73842,
     "population_sample_id": 707
   },
   {
     "major_path_id": 108,
     "avg_annual_wage": 53135,
-    "25th": 24192,
-    "50th": 53182,
-    "75th" : 82031,
+    "_25th": 24192,
+    "_50th": 53182,
+    "_75th" : 82031,
     "population_sample_id":708
   },
   {
     "major_path_id": 109,
     "avg_annual_wage": 58254,
-    "25th": 32182,
-    "50th": 55291,
-    "75th" : 87291,
+    "_25th": 32182,
+    "_50th": 55291,
+    "_75th" : 87291,
     "population_sample_id":709
   },
 
@@ -77,73 +77,73 @@
   {
     "major_path_id": 110,
     "avg_annual_wage": 24549,
-    "25th": 12433,
-    "50th": 23616,
-    "75th" : 37600,
+    "_25th": 12433,
+    "_50th": 23616,
+    "_75th" : 37600,
     "population_sample_id":710
   },
   {
     "major_path_id": 111,
     "avg_annual_wage": 26971,
-    "25th": 14206,
-    "50th": 26065,
-    "75th" : 40644,
+    "_25th": 14206,
+    "_50th": 26065,
+    "_75th" : 40644,
     "population_sample_id":711
   },
   {
     "major_path_id": 112,
     "avg_annual_wage": 36657,
-    "25th": 14704,
-    "50th": 34431,
-    "75th" : 60838,
+    "_25th": 14704,
+    "_50th": 34431,
+    "_75th" : 60838,
     "population_sample_id":712
   },
   {
     "major_path_id": 113,
     "avg_annual_wage": 33823,
-    "25th": 22367,
-    "50th": 33971,
-    "75th" : 45131,
+    "_25th": 22367,
+    "_50th": 33971,
+    "_75th" : 45131,
     "population_sample_id":713
   },
   {
     "major_path_id": 114,
     "avg_annual_wage": 43567,
-    "25th": 30263,
-    "50th": 43641,
-    "75th" : 56799,
+    "_25th": 30263,
+    "_50th": 43641,
+    "_75th" : 56799,
     "population_sample_id":714
   },
   {
     "major_path_id": 115,
     "avg_annual_wage": 53251,
-    "25th": 32815,
-    "50th": 53712,
-    "75th" : 73226,
+    "_25th": 32815,
+    "_50th": 53712,
+    "_75th" : 73226,
     "population_sample_id":715
   },
   {
     "major_path_id": 116,
     "avg_annual_wage": 54978,
-    "25th": 34912,
-    "50th": 55812,
-    "75th" : 74212,
+    "_25th": 34912,
+    "_50th": 55812,
+    "_75th" : 74212,
     "population_sample_id":716
   },
     {
     "major_path_id": 117,
     "avg_annual_wage": 58284,
-    "25th": 35821,
-    "50th": 55813,
-    "75th" :83219 ,
+    "_25th": 35821,
+    "_50th": 55813,
+    "_75th" :83219 ,
     "population_sample_id":717
   },
   {
     "major_path_id": 118,
     "avg_annual_wage":61408,
-    "25th":  38122,
-    "50th": 59182,
-    "75th" : 86920,
+    "_25th":  38122,
+    "_50th": 59182,
+    "_75th" : 86920,
     "population_sample_id":718
   },
 
@@ -154,73 +154,73 @@
   {
     "major_path_id": 119,
     "avg_annual_wage": 30904,
-    "25th": 17266,
-    "50th": 28693,
-    "75th": 46754,
+    "_25th": 17266,
+    "_50th": 28693,
+    "_75th": 46754,
     "population_sample_id":719
-  }
+  },
   {
     "major_path_id": 120,
     "avg_annual_wage": 36539,
-    "25th": 20521,
-    "50th": 36443,
-    "75th": 52655,
+    "_25th": 20521,
+    "_50th": 36443,
+    "_75th": 52655,
     "population_sample_id":720
   },
   {
     "major_path_id": 121,
     "avg_annual_wage": 45764,
-    "25th": 28649,
-    "50th": 43730,
-    "75th": 64913,
+    "_25th": 28649,
+    "_50th": 43730,
+    "_75th": 64913,
     "population_sample_id":721
   },
   {
     "major_path_id": 122,
     "avg_annual_wage": 49296,
-    "25th": 38003,
-    "50th": 50027,
-    "75th": 59858,
+    "_25th": 38003,
+    "_50th": 50027,
+    "_75th": 59858,
     "population_sample_id":722
   },
   {
     "major_path_id": 123,
     "avg_annual_wage": 55030,
-    "25th": 39153,
-    "50th": 52635,
-    "75th": 73302,
+    "_25th": 39153,
+    "_50th": 52635,
+    "_75th": 73302,
     "population_sample_id":723
   },
   {
     "major_path_id": 124,
     "avg_annual_wage": 50238,
-    "25th": 21232,
-    "50th": 50238,
-    "75th": 79244,
+    "_25th": 21232,
+    "_50th": 50238,
+    "_75th": 79244,
     "population_sample_id":724
   },
   {
     "major_path_id": 125,
     "avg_annual_wage": 59010,
-    "25th": 39182,
-    "50th": 55928,
-    "75th": 81921,
+    "_25th": 39182,
+    "_50th": 55928,
+    "_75th": 81921,
     "population_sample_id":725
   },
   {
     "major_path_id": 126,
     "avg_annual_wage": 68951,
-    "25th": 42912,
-    "50th": 72914,
-    "75th": 91028,
+    "_25th": 42912,
+    "_50th": 72914,
+    "_75th": 91028,
     "population_sample_id":726
   },
   {
     "major_path_id": 127,
     "avg_annual_wage": 73346,
-    "25th": 50183,
-    "50th": 74028,
-    "75th": 95827,
+    "_25th": 50183,
+    "_50th": 74028,
+    "_75th": 95827,
     "population_sample_id":727
   }
 
