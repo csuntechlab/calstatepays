@@ -10,7 +10,7 @@ import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 import App from './App.vue';
 /**
@@ -27,7 +27,7 @@ const vm = new Vue({
     render: h => h(App),
     created(){
         this.$store.dispatch('fetchMajors');
-        this.$store.dispatch('fetchIndustries');
+        /*this.$store.dispatch('fetchIndustryImages');*/
     }
 });
 

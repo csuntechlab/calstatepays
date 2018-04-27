@@ -8,13 +8,14 @@ $sage: #7EB09B;
 $light-green: #2FBF71;
 $green: #2BAE67;
 $dark-green: #279D5D;
-$light-gray: #f7f7f7;
+$light-gray: #EBEBEB;
 $lightest-gray: #f7f7f7;
 $gray: #777777;
 $dark-gray: #3a3335;
 $darker-gray: #363636;
 $white: #FFF;
 $black: #000;
+$blue-light: #4DB7C6;
 
 //Fonts
 $font-base: 'Montserrat';
@@ -28,3 +29,6 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8
 //Break Points
 $break-small: 425px;
 $break-large: 1200px;
+
+//Borders
+$border-radius: 3px;

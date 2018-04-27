@@ -3,6 +3,8 @@
 // everything in the state needs to be initially set to 0.
 
 export default {
+    pfreShowInfo: false,
+    pfreInfoKey: null,
     pfreData: {
         years: {
             start: 2,

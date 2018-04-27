@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "college_name": "Social & Behavioral Sciences",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": 6,
+    "college_name": "Arts Media & Communication",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": 13,
+    "college_name": "Business & Economics",
+    "created_at": null,
+    "updated_at": null
+  }
+]
