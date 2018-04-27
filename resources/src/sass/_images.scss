@@ -34,7 +34,7 @@
 }
 
 .learn-how {
-	background-color: white;
+	background-color: $white;
 	min-height: 11vh;
 	@media screen and (max-width: $break-small) {
 		display: none;
@@ -52,26 +52,27 @@
 .fa-graduation-cap {
 	font-size: 6em;
 	color: $oxford;
-	padding-bottom: .1em;
+	padding-bottom: .1rem;
 }
 
 .fa-usd {
 	font-size: 6em;
 	color: $green;
-	padding-bottom: .1em;	
+	padding-bottom: .1rem;	
 }
 
 .fa-line-chart {
 	font-size: 6em;
 	color: $gold;
-	padding-bottom: .1em;	
+	padding-bottom: .1rem;	
 }
 
 .csu-wrapper {
 	max-width: 100rem;
 	figure {
 		img {
-		width: 75%;
+		width: 90%;
+		max-height: 7.25rem;
 		}
 		figcaption {
       font-family: $font-base;

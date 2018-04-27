@@ -4,6 +4,9 @@
 .home__heading {
     font-size: 4rem;
     font-weight: 600;
+    @media screen and (max-width: $break-small) {
+        font-size: 2.5rem;
+    }
 }
 .home__link {
     font-weight: 500;

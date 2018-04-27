@@ -76394,7 +76394,7 @@ var staticRenderFns = [
     return _c("div", [
       _c("div", { staticClass: "bg mh-90" }, [
         _c("div", { staticClass: "row p-0 text-center pt-9" }, [
-          _c("h1", { staticClass: "my-4 home__heading" }, [
+          _c("h1", { staticClass: "m-4 home__heading" }, [
             _vm._v("Discover Your Earnings After College")
           ]),
           _vm._v(" "),
@@ -76406,12 +76406,12 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "p-4" }, [
                 _vm._v(
-                  "It pays to go to college. Earningsfor graduates are significantly higher than non-graduates"
+                  "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
                 )
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                _vm._v("\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t")
+                _vm._v("\n\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t")
               ])
             ]),
             _vm._v(" "),
@@ -76428,7 +76428,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__pfre" }, [
                 _vm._v(
-                  "\n\t\t\t\t\t\t\tFinancial Return on Education\n\t\t\t\t\t\t"
+                  "\n\t\t\t\t\t\tFinancial Return on Education\n\t\t\t\t\t"
                 )
               ])
             ]),
@@ -76445,7 +76445,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                _vm._v("\n\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t")
               ])
             ])
           ]),
@@ -76575,7 +76575,7 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row p-0", attrs: { id: "video-section" } }, [
+      _c("div", { staticClass: "row", attrs: { id: "video-section" } }, [
         _c("div", { staticClass: "video-placeholder" })
       ])
     ])

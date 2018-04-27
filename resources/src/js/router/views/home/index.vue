@@ -2,12 +2,12 @@
 	<div>
 		<div class="bg mh-90">
 			<div class="row p-0 text-center pt-9">
-				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
+				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row p-0 fa-wrapper">
 					<div class="col-md-4 text-center my-3">
 						<i class="fa fa-graduation-cap"></i>
 						<h3>Do college graduates earn more?</h3>
-						<p class="p-4">It pays to go to college. Earningsfor graduates are significantly higher than non-graduates</p>
+						<p class="p-4">It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
 						<button class="home-btn home-btn__degrees">
 							Compare Degree Levels
 						</button>
@@ -30,43 +30,43 @@
 					</div>
 				</div>
 				<div class="container">
-				<div class="row csu-wrapper">
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
-            <figcaption>Long Beach</figcaption>
-					</figure>
+					<div class="row csu-wrapper">
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
+							<figcaption>Long Beach</figcaption>
+						</figure>
 
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/poly_seal.svg" alt="CSU Pomona Seal">
-            <figcaption>Pomona</figcaption>
-					</figure>
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/poly_seal.svg" alt="CSU Pomona Seal">
+							<figcaption>Pomona</figcaption>
+						</figure>
 
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/dominguez_seal.svg" alt="CSU Dominguez Hills Seal">
-            <figcaption>Dominguez Hills</figcaption>
-					</figure>
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/dominguez_seal.svg" alt="CSU Dominguez Hills Seal">
+							<figcaption>Dominguez Hills</figcaption>
+						</figure>
 
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/northridge_seal.svg" alt="CSU Northridge Seal">
-            <figcaption>Northridge</figcaption>
-					</figure>
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/northridge_seal.svg" alt="CSU Northridge Seal">
+							<figcaption>Northridge</figcaption>
+						</figure>
 
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/channel_islands_seal.svg" alt="CSU Channel Islands Seal">
-            <figcaption>Channel Islands</figcaption>
-					</figure>
-	
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/fulleton_seal.svg" alt="CSU Fullerton Seal">
-            <figcaption>Fullerton</figcaption>
-					</figure>
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/channel_islands_seal.svg" alt="CSU Channel Islands Seal">
+							<figcaption>Channel Islands</figcaption>
+						</figure>
 
-					<figure class="col-md col-sm-4 col-4 text-center">
-						<img src="img/csuseals/los_angeles_seal.svg" alt="CSU Los Angeles Seal">
-             <figcaption>Los Angeles</figcaption>
-					</figure>
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/fulleton_seal.svg" alt="CSU Fullerton Seal">
+							<figcaption>Fullerton</figcaption>
+						</figure>
+
+						<figure class="col-md col-sm-4 col-4 text-center">
+							<img src="img/csuseals/los_angeles_seal.svg" alt="CSU Los Angeles Seal">
+							<figcaption>Los Angeles</figcaption>
+						</figure>
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 		<div class="learn-how row">
@@ -77,13 +77,13 @@
 				</a>
 			</div>
 		</div>
-		<div id="video-section" class="row p-0">
+		<div id="video-section" class="row">
 			<div class="video-placeholder"></div>
 		</div>
 	</div>
 </template>
 <script>
-	export default {
-		
-	}
+export default {
+
+}
 </script>
