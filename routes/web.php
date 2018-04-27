@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/industry/images', 'IndustryController@getAllImages');
 Route::get('/industry/{hegis_code}/{university_id}', 'IndustryController@getIndustryPopulationByRank');
 
 Route::get('/Aggregate/PFRE', 'AggregateDataController@getAggregateUniversitiesPFREGraphData')
