@@ -37,7 +37,7 @@
             </div>
         </header>
         <main class="campuses-container mx-5">
-            <div class="row col-12">
+            <div class="row">
                 <div class="col-lg-4 col-md-6 py-3">
                     <div id="csun" class=" campus">
                         <h3>California State University Northridge</h3>

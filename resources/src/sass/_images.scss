@@ -15,6 +15,10 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	@media screen and (max-width: $break-small) {
+		background-size: contain;
+		background-position: 0 0;
+	}
 }
 
 .video-placeholder {
@@ -24,11 +28,25 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
+	border-top: .3rem solid;
+	border-bottom: .3rem solid;
 }
 
 .learn-how {
 	background-color: white;
 	min-height: 11vh;
+	@media screen and (max-width: $break-small) {
+		display: none;
+	}
+}
+
+.fa-wrapper {
+	@media screen and (max-width: $break-small) {
+		background: $white;
+		border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
+		border-top: .3rem solid;
+	}
 }
 
 .fa-graduation-cap {
@@ -56,10 +74,10 @@
 		width: 75%;
 		}
 		figcaption {
-	      font-family: $font-base;
-	      text-transform: uppercase;
-	      font-size: 1rem;
-	      line-height: 1rem;
+      font-family: $font-base;
+      text-transform: uppercase;
+      font-size: 1rem;
+      line-height: 1rem;
 	  }
 	}
 }

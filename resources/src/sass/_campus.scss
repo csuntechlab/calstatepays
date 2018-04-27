@@ -4,10 +4,11 @@
      url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
     background-size: cover;
     min-height: 45vh;
+    padding: 0 1.5rem;
     h2 {
         color: $black;
         font-size: 3.75rem;
-        max-width: 80%;
+        max-width: 64rem;
         font-family: $font-base;
         font-weight: 400;
     }

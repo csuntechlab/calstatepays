@@ -28384,6 +28384,13 @@ figcaption {
   background-size: cover;
 }
 
+@media screen and (max-width: 425px) {
+  .bg {
+    background-size: contain;
+    background-position: 0 0;
+  }
+}
+
 .video-placeholder {
   background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
   height: 50em;
@@ -28391,11 +28398,32 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
+     border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+  border-top: .3rem solid;
+  border-bottom: .3rem solid;
 }
 
 .learn-how {
   background-color: white;
   min-height: 11vh;
+}
+
+@media screen and (max-width: 425px) {
+  .learn-how {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .fa-wrapper {
+    background: #FFF;
+    -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
+       border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+    border-top: .3rem solid;
+  }
 }
 
 .fa-graduation-cap {
@@ -28485,11 +28513,13 @@ footer,
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-size: cover;
   min-height: 45vh;
+  padding: 0 1.5rem;
 }
 
 #research-main-banner h2 {
   color: #000;
   font-size: 3.75rem;
+  max-width: 64rem;
   font-family: "Montserrat";
   font-weight: 400;
 }

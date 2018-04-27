@@ -3,7 +3,7 @@
 		<div class="bg mh-90">
 			<div class="row p-0 text-center pt-9">
 				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
-				<div class="row p-0 m-5">
+				<div class="row p-0 fa-wrapper">
 					<div class="col-md-4 text-center my-3">
 						<i class="fa fa-graduation-cap"></i>
 						<h3>Do college graduates earn more?</h3>
@@ -29,7 +29,8 @@
 						</button>
 					</div>
 				</div>
-				<div class="row mt-5 csu-wrapper">
+				<div class="container">
+				<div class="row csu-wrapper">
 					<figure class="col-md col-sm-4 col-4 text-center">
 						<img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
             <figcaption>Long Beach</figcaption>
@@ -65,6 +66,7 @@
              <figcaption>Los Angeles</figcaption>
 					</figure>
 				</div>
+			</div>
 			</div>
 		</div>
 		<div class="learn-how row">
