@@ -9,10 +9,10 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['index', 'yData'],
-    data: function () {
+    props: ['majorDataSelected', 'majorId'],
+    data(){
         return {
-            major: 'Applied Math',
+            xAxis: ['2', '5', '10', '15'],
         }
     },
     components: {
@@ -20,73 +20,94 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'majorsYears'
+            'majorsYears',
+            'majorById'
         ]),
-    polar(){
-        return {
-            title: {
-                text: this.major,
-                left: 'center',
-                textStyle: {
-                    color: '#777777',
-                    fontFamily: 'Montserrat',
-                }
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross'
-                }
-            },
-            xAxis: {
-                data: this.majorsYears
-            },
-            legend: {
-                data: ['line']
-            },
-            yAxis: {
-                max: 150000
-            },
-            series: [
-            {
-                type: 'line',
-                name: 'Some College',
-                data: this.yData[this.index + 0],
-                lineStyle: {
-                    color: '#476A6F',
-                    width: 4
-                },
-                itemStyle: {
-                    color: '#476A6F'
-                },
-            },
-            {
-                type: 'line',
-                name: "Bachelor's Degree",
-                data: this.yData[this.index + 1],
-                lineStyle: {
-                    color: '#EDAC17',
-                    width: 4
-                },
-                itemStyle: {
-                    color: '#EDAC17'
-                }
-            },
-            {
-                type: 'line',
-                name: 'Post Bacc Degree',
-                data: this.yData[this.index + 2],
-                lineStyle: {
-                    color: '#279D5D',
-                    width: 4
-                },
-                itemStyle: {
-                    color: '#279D5D'
+        someCollegeEarnings(){
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected.map((earningsData) => Number(earningsData.average_income));
+            }
+            return null;
+        },
+        selectedMajor(){
+            if(this.majorId){
+                return this.majorById(this.majorId);
+            }  
+            return null;
+        },
+        majorName(){
+            if(this.selectedMajor){
+                return this.selectedMajor.major;
+            }
+        },
+        polar(){
+            if(this.someCollegeEarnings){
+                return {
+                    title: {
+                        text: this.majorName,
+                    left: 'center',
+                    textStyle: {
+                        color: '#777777',
+                        fontFamily: 'Montserrat',
+                    }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross'
+                        }
+                    },
+                    xAxis: {
+                        data: this.xAxis
+                    },
+                    legend: {
+                        data: ['line']
+                    },
+                    yAxis: {
+                        max: 150000
+                    },
+                    series: [
+                        {
+                            type: 'line',
+                            name: 'Some College',
+                            data: this.someCollegeEarnings[0],
+                            lineStyle: {
+                                color: '#476A6F',
+                                width: 4
+                            },
+                            itemStyle: {
+                                color: '#476A6F'
+                            },
+                        },
+                        {
+                            type: 'line',
+                            name: "Bachelor's Degree",
+                            data: this.someCollegeEarnings[1],
+                            lineStyle: {
+                                color: '#EDAC17',
+                                width: 4
+                            },
+                            itemStyle: {
+                                color: '#EDAC17'
+                            }
+                        },
+                        {
+                            type: 'line',
+                            name: 'Post Bacc Degree',
+                            data:  this.someCollegeEarnings[2],
+                            lineStyle: {
+                                color: '#279D5D',
+                                width: 4
+                            },
+                            itemStyle: {
+                                color: '#279D5D'
+                            }
+                        }
+                    ],
+                    animationDuration: 2000
                 }
             }
-            ],
-                animationDuration: 2000
-            }
+            return null;
         }
   }
 }

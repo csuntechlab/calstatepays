@@ -5,7 +5,14 @@ const fetchMajorsAPI = (success, error) => {
         response => error(response)
     );
 }
+const fetchMajorDataAPI = (payload, success, error) => {
+    axios.get(`api/learn-and-earn/major-data/${payload.schoolId}/${payload.majorId}`).then(
+        response => success(response.data),
+        response => error(response)
+    );
+}
 
 export default {
-    fetchMajorsAPI
+    fetchMajorsAPI,
+    fetchMajorDataAPI
 }

@@ -2,5 +2,9 @@
 
 export default {
     majors: state => state.majors,
-    majorsYears: state => state.years,
+    majorData: state => state.majorData,
+    majorById: (state) => (id) => {
+        const index = state.majors.findIndex(major => major.majorId === id);
+        return state.majors[index];
+    },
 }

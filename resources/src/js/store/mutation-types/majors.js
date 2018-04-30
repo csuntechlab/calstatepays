@@ -1,6 +1,10 @@
 const FETCH_MAJORS = 'majors/FETCH_MAJORS';
+const FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
+const CREATE_MAJOR_KEY = 'majors/CREATE_MAJOR_KEY';
 
 
 export default {
     FETCH_MAJORS,
+    FETCH_MAJOR_DATA,
+    CREATE_MAJOR_KEY
 }

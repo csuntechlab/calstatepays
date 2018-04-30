@@ -1,15 +1,17 @@
 <template>
     <div>
-        <majors-graph :index="index" :yData="yData"></majors-graph>
+        <majors-graph :majorDataSelected="majorDataSelected" :sampleData="sampleData"></majors-graph>
         <button @click="changeIndex">Switch</button>
     </div>
 </template>
 <script>
 import majorsGraph from './majors-graph.vue';
-export default {
-    data(){
+import { mapGetters, mapActions } from 'vuex';
+export default {    
+    props: ['majorId'],
+    data(){ 
         return {
-            index: 0,
+            yearsAfter: 2,
             yData: [
                 [20000, 33000, 38000, 41000],
                 [35000, 42000, 58000, 72000],
@@ -28,6 +30,47 @@ export default {
                 this.index = 0;
             }
         }
+    },
+    computed: {
+        ...mapGetters([
+            'majorData',
+        ]),
+        majorDataSelected(){
+            if(this.majorData.length > 0){
+                return this.majorData.filter((dataSet) => dataSet.education_level == 'some_college');
+            }
+            return [{
+                average_income: 0,
+                education_level: "some_college",
+                major_id: "10021",
+                school_id:"1153",
+                years_after:"2"
+            },
+            {
+                average_income: 0,
+                education_level: "some_college",
+                major_id: "10021",
+                school_id:"1153",
+                years_after:"2"
+            },
+            {
+                average_income: 0,
+                education_level: "some_college",
+                major_id: "10021",
+                school_id:"1153",
+                years_after:"2"
+            }
+            ]
+        },
+        sampleData(){
+            return [20000,40000,60000]
+        },
+        major(){
+            if(this.majorId){
+                return this.majorById(this.majorId);
+            }  
+            return null;
+        },
     },
     components: {
         majorsGraph
