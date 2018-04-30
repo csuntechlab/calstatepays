@@ -12,7 +12,7 @@ export default {
     props: ['majorDataSelected', 'majorId'],
     data(){
         return {
-            xAxis: ['2', '5', '10', '15'],
+            xAxis: ['2', '5', '10'],
         }
     },
     components: {
@@ -25,9 +25,18 @@ export default {
         ]),
         someCollegeEarnings(){
             if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected.map((earningsData) => Number(earningsData.average_income));
+                return this.majorDataSelected[0].map((earningsData) => Number(earningsData.average_income));
             }
             return null;
+        },
+        bachelorsEarnings(){
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected[1].map((earningsData) => Number(earningsData.average_income));
+            }
+            return null;
+        },
+        mastersEarnings(){
+            return [40000, 70000, 100000]
         },
         selectedMajor(){
             if(this.majorId){
@@ -70,7 +79,19 @@ export default {
                         {
                             type: 'line',
                             name: 'Some College',
-                            data: this.someCollegeEarnings[0],
+                            data: this.someCollegeEarnings,
+                            lineStyle: {
+                                color: '#476A6F',
+                                width: 4
+                            },
+                            itemStyle: {
+                                color: '#476A6F'
+                            },
+                        },
+                        {
+                            type: 'line',
+                            name: 'Some College',
+                            data: this.bachelorsEarnings,
                             lineStyle: {
                                 color: '#476A6F',
                                 width: 4
@@ -82,7 +103,7 @@ export default {
                         {
                             type: 'line',
                             name: "Bachelor's Degree",
-                            data: this.someCollegeEarnings[1],
+                            data: this.bachelorsEarnings,
                             lineStyle: {
                                 color: '#EDAC17',
                                 width: 4
@@ -94,7 +115,7 @@ export default {
                         {
                             type: 'line',
                             name: 'Post Bacc Degree',
-                            data:  this.someCollegeEarnings[2],
+                            data:  this.mastersEarnings,
                             lineStyle: {
                                 color: '#279D5D',
                                 width: 4

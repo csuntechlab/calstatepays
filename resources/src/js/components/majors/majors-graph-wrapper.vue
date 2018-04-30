@@ -1,6 +1,6 @@
 <template>
     <div>
-        <majors-graph :majorDataSelected="majorDataSelected" :sampleData="sampleData"></majors-graph>
+        <majors-graph :majorDataSelected="majorDataSelected" :majorId="majorId"></majors-graph>
         <button @click="changeIndex">Switch</button>
     </div>
 </template>
@@ -37,33 +37,12 @@ export default {
         ]),
         majorDataSelected(){
             if(this.majorData.length > 0){
-                return this.majorData.filter((dataSet) => dataSet.education_level == 'some_college');
+                return [
+                    this.majorData.filter((dataSet) => dataSet.education_level == 'some_college'),
+                    this.majorData.filter((dataSet) => dataSet.education_level == 'bachelors'),
+                ]
             }
-            return [{
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id:"1153",
-                years_after:"2"
-            },
-            {
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id:"1153",
-                years_after:"2"
-            },
-            {
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id:"1153",
-                years_after:"2"
-            }
-            ]
-        },
-        sampleData(){
-            return [20000,40000,60000]
+            return [];
         },
         major(){
             if(this.majorId){

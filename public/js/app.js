@@ -79093,32 +79093,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData']), {
         majorDataSelected: function majorDataSelected() {
             if (this.majorData.length > 0) {
-                return this.majorData.filter(function (dataSet) {
+                return [this.majorData.filter(function (dataSet) {
                     return dataSet.education_level == 'some_college';
-                });
+                }), this.majorData.filter(function (dataSet) {
+                    return dataSet.education_level == 'bachelors';
+                })];
             }
-            return [{
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id: "1153",
-                years_after: "2"
-            }, {
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id: "1153",
-                years_after: "2"
-            }, {
-                average_income: 0,
-                education_level: "some_college",
-                major_id: "10021",
-                school_id: "1153",
-                years_after: "2"
-            }];
-        },
-        sampleData: function sampleData() {
-            return [20000, 40000, 60000];
+            return [];
         },
         major: function major() {
             if (this.majorId) {
@@ -79212,7 +79193,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     props: ['majorDataSelected', 'majorId'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10', '15']
+            xAxis: ['2', '5', '10']
         };
     },
 
@@ -79222,11 +79203,22 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorsYears', 'majorById']), {
         someCollegeEarnings: function someCollegeEarnings() {
             if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected.map(function (earningsData) {
+                return this.majorDataSelected[0].map(function (earningsData) {
                     return Number(earningsData.average_income);
                 });
             }
             return null;
+        },
+        bachelorsEarnings: function bachelorsEarnings() {
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[1].map(function (earningsData) {
+                    return Number(earningsData.average_income);
+                });
+            }
+            return null;
+        },
+        mastersEarnings: function mastersEarnings() {
+            return [40000, 70000, 100000];
         },
         selectedMajor: function selectedMajor() {
             if (this.majorId) {
@@ -79268,7 +79260,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     series: [{
                         type: 'line',
                         name: 'Some College',
-                        data: this.someCollegeEarnings[0],
+                        data: this.someCollegeEarnings,
+                        lineStyle: {
+                            color: '#476A6F',
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: '#476A6F'
+                        }
+                    }, {
+                        type: 'line',
+                        name: 'Some College',
+                        data: this.bachelorsEarnings,
                         lineStyle: {
                             color: '#476A6F',
                             width: 4
@@ -79279,7 +79282,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     }, {
                         type: 'line',
                         name: "Bachelor's Degree",
-                        data: this.someCollegeEarnings[1],
+                        data: this.bachelorsEarnings,
                         lineStyle: {
                             color: '#EDAC17',
                             width: 4
@@ -79290,7 +79293,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     }, {
                         type: 'line',
                         name: 'Post Bacc Degree',
-                        data: this.someCollegeEarnings[2],
+                        data: this.mastersEarnings,
                         lineStyle: {
                             color: '#279D5D',
                             width: 4
@@ -96321,7 +96324,7 @@ var render = function() {
       _c("majors-graph", {
         attrs: {
           majorDataSelected: _vm.majorDataSelected,
-          sampleData: _vm.sampleData
+          majorId: _vm.majorId
         }
       }),
       _vm._v(" "),
