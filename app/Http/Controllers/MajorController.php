@@ -24,7 +24,7 @@ class MajorController extends Controller
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = UniversityMajor::where('hegis_code', $hegis_code)
                                             ->where('university_id', $university_id)
-                                            ->first();
+                                            ->firstOrFail();
         $major_paths = $university_major->majorPaths();
         $major_paths_wage = $major_paths->with('majorPathWage')->get();
 
