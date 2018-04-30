@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\MajorPathWage;
+use App\Models\Population;
 
 class Major_Paths_TableSeeder extends Seeder
 {
@@ -21,6 +23,9 @@ class Major_Paths_TableSeeder extends Seeder
                 'entry_status'         => $row->entry_status,
                 'years'                => $row->years
             ]);
+            // Creating a row for each table in the for loop allows relationship id's to reference eachother
+            factory(MajorPathWage::class)->create(['major_path_id'=> $row->id, 'population_sample_id' => $row->id]);
+            factory(Population::class)->create(['id' => $row->id]);
         };
     }
 }

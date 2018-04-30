@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HEGISCode;
+use App\Models\UniversityMajor;
 
 class MajorController extends Controller
 {
@@ -20,4 +21,11 @@ class MajorController extends Controller
         return $allHegisCodes->toArray();
     }
 
+    public function getMajorEarnings($hegis_code, $university_id){
+        $university_major = UniversityMajor::where('hegis_code', $hegis_code)
+                                            ->where('university_id', $university_id)
+                                            ->first();
+        $major_paths = $university_major->majorPaths();
+        dd($major_paths->where());
+    }
 }
