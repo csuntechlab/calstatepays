@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "student_path": 1,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 2,
+    "student_path": 1,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 3,
+    "student_path": 1,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 4,
+    "student_path": 2,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 5,
+    "student_path": 2,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 6,
+    "student_path": 2,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 7,
+    "student_path": 3,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 8,
+    "student_path": 3,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 9,
+    "student_path": 3,
+    "university_majors_id": 1001,
+    "entry_status": "All",
+    "years": 10
+  },
+
+
+
+
+  {
+    "id": 10,
+    "student_path": 1,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 11,
+    "student_path": 1,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 12,
+    "student_path": 1,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 13,
+    "student_path": 2,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 14,
+    "student_path": 2,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 15,
+    "student_path": 2,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 16,
+    "student_path": 3,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 17,
+    "student_path": 3,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 18,
+    "student_path": 3,
+    "university_majors_id": 1005,
+    "entry_status": "All",
+    "years": 10
+  },
+
+
+
+
+
+  {
+    "id": 19,
+    "student_path": 1,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 20,
+    "student_path": 1,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 21,
+    "student_path": 1,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 22,
+    "student_path": 2,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 23,
+    "student_path": 2,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 24,
+    "student_path": 2,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 10
+  },
+  {
+    "id": 25,
+    "student_path": 3,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 2
+  },
+  {
+    "id": 26,
+    "student_path": 3,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 5
+  },
+  {
+    "id": 27,
+    "student_path": 3,
+    "university_majors_id": 1011,
+    "entry_status": "All",
+    "years": 10
+  }
+]

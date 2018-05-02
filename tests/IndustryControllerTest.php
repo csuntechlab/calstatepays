@@ -19,15 +19,7 @@ class IndustryControllerTest extends TestCase
 
     public function testGetAllIndustryNaicsTitles()
     {
-        for($i=0;$i<10;$i++){
-            NaicsTitle::create(
-                [
-                    'naics_code'    => $i,
-                    'naics_title'   => 'Title',
-                    'image'         => 'image.jpg'
-                ]
-            );
-        }
+        $this->artisan("db:seed");
         $data = $this->IndustryController->getAllIndustryNaicsTitles();
         foreach($data as $key => $title ) {
             $this->assertEquals($key,$title['naics_code']);
