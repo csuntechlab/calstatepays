@@ -18,7 +18,7 @@ $factory->define(App\Models\IndustryPathType::class, function (Faker\Generator $
         'entry_status' => "All",
         'naics_code' => $faker->numberBetween(1, 99),
         'student_path' => 4,
-        'population_sample_id'=> $faker->unique()->numberBetween(1, 999),
+        'population_sample_id'=> $params['population_sample_id'],
         'university_majors_id' => $params['university_majors_id']
     ];
 });

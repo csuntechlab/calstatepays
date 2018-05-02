@@ -21,36 +21,39 @@ class IndustryControllerTest extends TestCase
         $this->IndustryController = new IndustryController;
     }
 
-    // public function testGetAllIndustryNaicsTitles()
-    // {
-    //     for($i=0;$i<10;$i++){
-    //         NaicsTitle::create(
-    //             [
-    //                 'naics_code'    => $i,
-    //                 'naics_title'   => 'Title',
-    //                 'image'         => 'image.jpg'
-    //             ]
-    //         );
-    //     }
-    //     $data = $this->IndustryController->getAllIndustryNaicsTitles();
-    //     foreach($data as $key => $title ) {
-    //         $this->assertEquals($key,$title['naics_code']);
-    //         $this->assertEquals('Title',$title['title']);
-    //         $this->assertEquals('image.jpg',$title['image']);
-    //     }
-    // }
+    public function testGetAllIndustryNaicsTitles()
+    {
+        $this->artisan("db:seed");
+        $response = $this->json('GET', '/api/industry/naics-titles');
+        $response->assertStatus(200);
+    }
 
     public function testGetIndustryPopulationByRank()
     {
 
-        // factory(UniversityMajor::class, 5)->create();  
         $json = File::get("database/data/university_majors.json");  
-        dd($json); 
-        // factory(IndustryPathType::class, 5)->create(['university_majors_id' => 1]);
-        // factory(Population::class, 5)->create();
-           
-        // $response = $this->IndustryController->getIndustryPopulationByRank(24511,1153);       
-        // dd($response);
+        $universityMajorData = json_decode($json);
+        foreach($universityMajorData as $row) 
+        {
+            UniversityMajor::create(
+                [
+                    'hegis_code' => $row->hegis_code,
+                    'colledge_id' => $row->college_id,
+                    'university_id' => $row->university_id
+                ]
+            );
+            factory(IndustryPathType::class, 1)->create(['university_majors_id' => $row->id, 'population_sample_id' => $row->id]);
+            factory(Population::class, 1)->create(['id' => $row->id]);            
+        }
+        // dd(UniversityMajor::all());
+        // dd(IndustryPathType::all());
+        // dd(Population::all());
+        
+        
+        $response = $this->IndustryController->getIndustryPopulationByRank(22021,1153);  
+        // $response = $this->json('GET', '/api/student-paths');  
+        dd($response);
+        $response = json_decode($response->getContent(), true);  
     }
 }
 
