@@ -20,12 +20,9 @@ class IndustryControllerTest extends TestCase
     public function testGetAllIndustryNaicsTitles()
     {
         $this->artisan("db:seed");
-        $data = $this->IndustryController->getAllIndustryNaicsTitles();
-        foreach($data as $key => $title ) {
-            $this->assertEquals($key,$title['naics_code']);
-            $this->assertEquals('Title',$title['title']);
-            $this->assertEquals('image.jpg',$title['image']);
-        }
+        $response = $this->json('GET', '/api/industry/naics-titles');
+        $response->assertStatus(200);
+        dd($response>count());
     }
 
 }
