@@ -38480,12 +38480,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 "use strict";
 var FETCH_MAJORS = 'majors/FETCH_MAJORS';
 var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
-var CREATE_MAJOR_KEY = 'majors/CREATE_MAJOR_KEY';
+var FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
     FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
-    CREATE_MAJOR_KEY: CREATE_MAJOR_KEY
+    FETCH_UNIVERSITIES: FETCH_UNIVERSITIES
+
 });
 
 /***/ }),
@@ -48561,7 +48562,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   },
   created: function created() {
     this.$store.dispatch('fetchMajors');
-    /*this.$store.dispatch('fetchIndustryImages');*/
+    this.$store.dispatch('fetchUniversities');
   }
 });
 
@@ -75926,7 +75927,8 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     majors: [],
-    majorData: []
+    majorData: [],
+    universities: []
 });
 
 /***/ }),
@@ -75939,6 +75941,9 @@ if (inBrowser && window.Vue) {
 /* harmony default export */ __webpack_exports__["a"] = ({
     majors: function majors(state) {
         return state.majors;
+    },
+    universities: function universities(state) {
+        return state.universities;
     },
     majorData: function majorData(state) {
         return state.majorData;
@@ -75967,10 +75972,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
-    state.majors = payload;
+    payload.forEach(function (major) {
+        console.log(major);
+        delete major.hegis_code;
+        state.majors.push(major);
+    });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     payload.forEach(function (dataSet) {
         return state.majorData.push(dataSet);
+    });
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
+    payload.forEach(function (university) {
+        university.name = university.university_name;
+        delete university.university_name;
+        state.universities.push(university);
     });
 }), _majors$FETCH_MAJORS$);
 
@@ -75996,9 +76011,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    fetchMajorData: function fetchMajorData(_ref2, payload) {
+    fetchUniversities: function fetchUniversities(_ref2) {
         var commit = _ref2.commit,
             dispatch = _ref2.dispatch;
+
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUniversitiesAPI(function (success) {
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, success);
+        }, function (error) {
+            return console.log(error);
+        });
+    },
+    fetchMajorData: function fetchMajorData(_ref3, payload) {
+        var commit = _ref3.commit,
+            dispatch = _ref3.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
@@ -76031,9 +76056,18 @@ var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
     });
 };
 
+var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/university').then(function (response) {
+        return success(response.data);
+    }, function (response) {
+        return error(response);
+    });
+};
+
 /* harmony default export */ __webpack_exports__["a"] = ({
     fetchMajorsAPI: fetchMajorsAPI,
-    fetchMajorDataAPI: fetchMajorDataAPI
+    fetchMajorDataAPI: fetchMajorDataAPI,
+    fetchUniversitiesAPI: fetchUniversitiesAPI
 });
 
 /***/ }),
@@ -76132,6 +76166,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
+    console.log(payload);
     __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/industry/' + payload.majorId + '/1153').then(function (response) {
         return success(response.data);
     }, function (response) {
@@ -78969,6 +79004,20 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -78984,7 +79033,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             form: {
                 majorId: null,
                 formWasSubmitted: false,
-                schoolId: '1153'
+                schoolId: null
             }
         };
     },
@@ -78997,7 +79046,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.fetchMajorData(this.form);
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors', 'universities']), {
+        filteredMajors: function filteredMajors() {
+            var _this = this;
+
+            if (this.form.schoolId) {
+                return this.majors.filter(function (major) {
+                    return major.schoolId === _this.form.schoolId;
+                });
+            }
+            return this.majors;
+        }
+    }),
     components: {
         card: __WEBPACK_IMPORTED_MODULE_0__global_card___default.a,
         majorsGraphWrapper: __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue___default.a,
@@ -96576,6 +96636,50 @@ var render = function() {
                   ? _c("div", { staticClass: "form__group" }, [
                       _c("div", { staticClass: "row row--condensed" }, [
                         _c("h5", { staticClass: "form--title" }, [
+                          _vm._v("Choose A Campus")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col col-12" }, [
+                          _c("label", { attrs: { for: "campus" } }, [
+                            _vm._v("Campus:")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              attrs: {
+                                name: "universities",
+                                id: "universities"
+                              },
+                              on: {
+                                input: function($event) {
+                                  _vm.updateForm(
+                                    "schoolId",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("All Campuses")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.universities, function(university) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: university.id } },
+                                  [_vm._v(_vm._s(university.name))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row row--condensed" }, [
+                        _c("h5", { staticClass: "form--title" }, [
                           _vm._v("Choose A Major")
                         ]),
                         _vm._v(" "),
@@ -96594,13 +96698,20 @@ var render = function() {
                                 }
                               }
                             },
-                            _vm._l(_vm.majors, function(major) {
-                              return _c(
-                                "option",
-                                { domProps: { value: major.majorId } },
-                                [_vm._v(_vm._s(major.major))]
-                              )
-                            })
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("-- Select a Major --")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.filteredMajors, function(major) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: major.majorId } },
+                                  [_vm._v(_vm._s(major.major))]
+                                )
+                              })
+                            ],
+                            2
                           )
                         ])
                       ]),

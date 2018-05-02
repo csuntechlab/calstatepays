@@ -12,7 +12,15 @@ const fetchMajorDataAPI = (payload, success, error) => {
     );
 }
 
+const fetchUniversitiesAPI = (success, error) => {
+    axios.get(`api/university`).then(
+        response => success(response.data),
+        response => error(response)
+    );
+}
+
 export default {
     fetchMajorsAPI,
-    fetchMajorDataAPI
+    fetchMajorDataAPI,
+    fetchUniversitiesAPI,
 }

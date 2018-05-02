@@ -13,6 +13,15 @@ export default{
         );
     },
 
+    fetchUniversities({ commit, dispatch }) {
+        Major.fetchUniversitiesAPI(
+            (success) => {
+                commit(_majors.FETCH_UNIVERSITIES, success);
+            },
+            (error) => console.log(error),
+        );
+    },
+
     fetchMajorData({ commit, dispatch }, payload) {
         Major.fetchMajorDataAPI(
             payload,

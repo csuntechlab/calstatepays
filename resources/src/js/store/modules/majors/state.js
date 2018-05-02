@@ -3,6 +3,7 @@
 
 export default {
     majors: [],
-    majorData: []
+    majorData: [],
+    universities: [],
 };
 

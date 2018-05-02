@@ -12,6 +12,19 @@
                          <form class="form--inverted">
                             <div class="form__group" v-if="!form.formWasSubmitted">
                                 <div class="row row--condensed">
+                                    <h5 class="form--title">Choose A Campus</h5>
+                                    <div class="col col-12">
+                                        <label for="campus">Campus:</label>
+                                        <select
+                                        name="universities"
+                                        id="universities"
+                                        @input="updateForm('schoolId', $event.target.value)">
+                                        <option value="">All Campuses</option>
+                                        <option v-for="university in universities" :value="university.id">{{ university.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row row--condensed">
                                     <h5 class="form--title">Choose A Major</h5>
                                     <div class="col col-12">
                                         <label for="Major">Major:</label>
@@ -19,7 +32,8 @@
                                         name="majors"
                                         id="majors"
                                         @input="updateForm('majorId', $event.target.value)">
-                                        <option v-for="major in majors" :value="major.majorId">{{ major.major }}</option>
+                                        <option value="">-- Select a Major --</option>
+                                        <option v-for="major in filteredMajors" :value="major.majorId">{{ major.major }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -56,7 +70,7 @@ import majorsGraphWrapper from './majors-graph-wrapper.vue';
 import industryCarousel from "../industries/industry-carousel.vue";
 
 import { updateForm } from '../../utils/index';
-import { mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data(){
@@ -64,7 +78,7 @@ export default {
           form: {
                 majorId: null,
                 formWasSubmitted: false,
-                schoolId: '1153'
+                schoolId: null,
             }
         }
     },
@@ -83,7 +97,14 @@ export default {
     computed: {
         ...mapGetters([
             'majors',
-        ])
+            'universities',
+        ]),
+        filteredMajors(){
+            if(this.form.schoolId){
+                return this.majors.filter((major) => major.schoolId === this.form.schoolId);
+            }
+            return this.majors;
+        }
     },
     components: { 
         card,
