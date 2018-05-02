@@ -38,8 +38,8 @@ Route::get('industry/{hegis_code}/{university_id}', 'IndustryController@getIndus
 //Student Path
 Route::get('student-path', 'StudentPathController@getAllStudentPaths')->name('student-paths');
 
-/*//University
-Route::get('/university', 'UniversityController');*/
+//University
+Route::get('/university', 'UniversityController@getAllUniversities');
 
 // File Routes
 Route::get('import-export-view', 'ExcelController@showImportExportView')->name('import.export.view');

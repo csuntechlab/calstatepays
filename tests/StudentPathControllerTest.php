@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class UniversityControllerTest extends TestCase
+class StudentPathControllerTest extends TestCase
 {
     use DatabaseMigrations;
     /**
@@ -15,15 +15,15 @@ class UniversityControllerTest extends TestCase
      *
      * @return void
      */
-    public function testGetAllUniversities()
+    public function testGetAllStudentPaths()
     {
         $this->artisan('db:seed');
-        $response = $this->json('GET', '/api/university');
+        $response = $this->json('GET','/api/student-path');
         $response->assertStatus(200);
         $response->assertJsonStructure([
-            '0' =>[
+            '0' => [
                 'id',
-                'university_name'
+                'name'
             ]
         ]);
     }

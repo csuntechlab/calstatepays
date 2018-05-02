@@ -9,6 +9,7 @@ class UniversityController extends Controller
 {
     public function getAllUniversities()
     {
-        return 0;
+        $universities = University::all();
+        return $universities;
     }
 }
