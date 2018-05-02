@@ -32,7 +32,6 @@ class IndustryController extends Controller
                                                ->with('naicsTitle')
                                                ->get();
 
-
         $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){
