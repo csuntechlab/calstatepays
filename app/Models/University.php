@@ -8,6 +8,11 @@ class University extends Model
 {
     public $primaryKey = 'id';
 
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+
     protected $fillable = [
         'university_name'
     ];
