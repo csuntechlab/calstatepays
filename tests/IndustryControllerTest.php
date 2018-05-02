@@ -21,8 +21,14 @@ class IndustryControllerTest extends TestCase
     {
         $this->artisan("db:seed");
         $response = $this->json('GET', '/api/industry/naics-titles');
+        $response->assertJsonStructure([
+            '0'=> [
+                'naics_code',
+                'title',
+                'image'
+            ]
+        ]);
         $response->assertStatus(200);
-        dd($response>count());
     }
 
 }
