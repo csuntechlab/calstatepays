@@ -35,17 +35,16 @@ class IndustryController extends Controller
     {
         $university_major = UniversityMajor::where('hegis_code', $hegis_code)
                                             ->where('university_id', $university_id)
-                                            ->with('industryPathTypes')
                                             ->first();
-        $industryPathTypes = $university_major->industryPathTypes;
-        dd($industryPathTypes);        
+        $industryPathTypes = $university_major->industryPathTypes();
+
+        //dd($industryPathTypes->where('entry_status', 'All')->where('student_path', 4)->with('population')->with('naicsTitle')->get());
         $industryPopulations = $industryPathTypes->where('entry_status', 'All')
                                                ->where('student_path', 4)
                                                ->with('population')
                                                ->with('naicsTitle')
                                                ->get();
-
-
+        dd($industryPopulations->sortByDesc('population.percentage_found')->values());
         $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){
@@ -58,6 +57,7 @@ class IndustryController extends Controller
             ];
 
         });
+        /*dd($industryPopulations);*/
         return $industryPopulations;
     }
 }

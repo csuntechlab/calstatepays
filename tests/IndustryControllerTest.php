@@ -35,25 +35,22 @@ class IndustryControllerTest extends TestCase
         $universityMajorData = json_decode($json);
         foreach($universityMajorData as $row) 
         {
-            UniversityMajor::create(
+            $university = UniversityMajor::create(
                 [
                     'hegis_code' => $row->hegis_code,
                     'colledge_id' => $row->college_id,
                     'university_id' => $row->university_id
                 ]
             );
-            factory(IndustryPathType::class, 1)->create(['university_majors_id' => $row->id, 'population_sample_id' => $row->id]);
-            factory(Population::class, 1)->create(['id' => $row->id]);            
+            factory(IndustryPathType::class, 1)->create(['university_majors_id' => $university->id, 'population_sample_id' => $university->id]);
+            factory(Population::class, 1)->create(['id' => $university->id]);
+            factory(NaicsTitle::class)->create();
         }
-        // dd(UniversityMajor::all());
-        // dd(IndustryPathType::all());
-        // dd(Population::all());
-        
-        
-        $response = $this->IndustryController->getIndustryPopulationByRank(22021,1153);  
-        // $response = $this->json('GET', '/api/student-paths');  
+         //dd(UniversityMajor::all());
+             /*dd(IndustryPathType::all());*/
+         //dd(Population::all());
+         $response = $this->json('GET', 'industry/22021/1153');
         dd($response);
-        $response = json_decode($response->getContent(), true);  
     }
 }
 
