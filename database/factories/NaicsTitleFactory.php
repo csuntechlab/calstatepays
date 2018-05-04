@@ -6,7 +6,7 @@ $factory->define(App\Models\NaicsTitle::class, function (Faker\Generator $faker)
     $row = $faker->unique()->randomElement($data);
     return [
         'naics_code' => $row['naics_code'],
-        'naics_title' => $row->['naics_title'],
-        'image' => $row->image
+        'naics_title' => $row['naics_title'],
+        'image' => $row['image']
     ];
 });
