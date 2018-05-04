@@ -1,22 +1,12 @@
 <?php
+$json = File::get("database/data/university_majors.json");
+$data = json_decode($json, true);
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
-
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\UniversityMajor::class, function (Faker\Generator $faker) {
-
+$factory->define(App\Models\UniversityMajor::class, function (Faker\Generator $faker) use($data){
+    $row = $faker->unique()->randomElement($data);
     return [
-        'hegis_code' => $faker->unique()->numberBetween(1000, 25000),
-        'college_id' => $faker->numberBetween(1, 99),
-        'university_id' => 1153,
+        'hegis_code' => $row['hegis_code'],
+        'college_id' => $row['college_id'],
+        'university_id' => $row['university_id']
     ];
 });

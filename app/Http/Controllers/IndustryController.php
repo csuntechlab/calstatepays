@@ -17,7 +17,7 @@ class IndustryController extends Controller
                 'image'      => $item['image']
             ];
         });
-        return $allNaicsTitles->toArray();
+        return $allNaicsTitles;
     }
 
     public function getAllImages()
@@ -38,13 +38,11 @@ class IndustryController extends Controller
                                             ->first();
         $industryPathTypes = $university_major->industryPathTypes();
 
-        //dd($industryPathTypes->where('entry_status', 'All')->where('student_path', 4)->with('population')->with('naicsTitle')->get());
         $industryPopulations = $industryPathTypes->where('entry_status', 'All')
                                                ->where('student_path', 4)
                                                ->with('population')
                                                ->with('naicsTitle')
                                                ->get();
-        dd($industryPopulations->sortByDesc('population.percentage_found')->values());
         $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){
@@ -57,7 +55,6 @@ class IndustryController extends Controller
             ];
 
         });
-        /*dd($industryPopulations);*/
         return $industryPopulations;
     }
 }

@@ -1,24 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
-
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\IndustryPathType::class, function (Faker\Generator $faker, $params) {
-
+$factory->define(App\Models\IndustryPathType::class, function (Faker\Generator $faker){
     return [
         'entry_status' => "All",
-        'naics_code' => $faker->numberBetween(1, 99),
+        'naics_code' => $faker->numberBetween(1,80),
         'student_path' => 4,
-        'population_sample_id'=> $params['population_sample_id'],
-        'university_majors_id' => $params['university_majors_id']
+        'population_sample_id'=> $faker->unique()->numberBetween(1, \App\Models\Population::count()),
+        'university_majors_id' => $faker->numberBetween(1, \App\Models\UniversityMajor::count())
     ];
 });
