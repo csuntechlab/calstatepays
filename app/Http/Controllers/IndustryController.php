@@ -20,17 +20,6 @@ class IndustryController extends Controller
         return $allNaicsTitles;
     }
 
-    public function getAllImages()
-    {
-        $industries = collect(NaicsTitle::all())->map(function($industry){
-            return[
-                'name'  => $industry->naics_title,
-                'image' => $industry->image
-            ];
-        });
-        return $industries;
-    }
-
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
         $university_major = UniversityMajor::where('hegis_code', $hegis_code)
@@ -43,6 +32,7 @@ class IndustryController extends Controller
                                                ->with('population')
                                                ->with('naicsTitle')
                                                ->get();
+
         $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){

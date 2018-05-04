@@ -7,19 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class MajorPathWage extends Model
 {
     public $timestamps = false;
+    public $incrementing = false;
+    public $primaryKey = 'major_path_id';
+
     protected $fillable = [
         'major_path_id',
         'avg_annual_wage',
-        '25th',
-        '50th',
-        '75th',
+        '_25th',
+        '_50th',
+        '_75th',
         'population_sample_id'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function majorPath() {
-    return $this->hasOne('App\Models\MajorPath','id','id');
+    return $this->hasOne('App\Models\MajorPath','id','major_path_id');
     }
 
     /**

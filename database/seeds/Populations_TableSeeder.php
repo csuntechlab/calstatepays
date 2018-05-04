@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Population;
 
 class Populations_TableSeeder extends Seeder
 {

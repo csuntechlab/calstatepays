@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /storage/debugbar
+/storage/database.sqlite
 /vendor
 /.idea
 /.vagrant
