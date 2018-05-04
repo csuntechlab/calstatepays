@@ -1,0 +1,229 @@
+[
+  {
+    "major_path_id": 1,
+    "avg_annual_wage": 28380,
+    "_25th": 14567,
+    "_50th": 29099,
+    "_75th" : 41476,
+    "population_sample_id":701
+  },
+  {
+    "major_path_id": 2,
+    "avg_annual_wage": 39491,
+    "_25th": 31094,
+    "_50th": 42419,
+    "_75th" : 53779,
+    "population_sample_id":702
+  },
+  {
+    "major_path_id": 3,
+    "avg_annual_wage": 49693,
+    "_25th": 31094,
+    "_50th": 33871,
+    "_75th" : 84116,
+    "population_sample_id":703
+  }, {
+    "major_path_id": 4,
+    "avg_annual_wage": 35620,
+    "_25th": 23743,
+    "_50th": 36003,
+    "_75th" : 47115,
+    "population_sample_id": 704
+},
+  {
+    "major_path_id": 5,
+    "avg_annual_wage": 38533,
+    "_25th": 21746,
+    "_50th": 37827,
+    "_75th" : 56028,
+    "population_sample_id": 705
+  },
+  {
+    "major_path_id": 6,
+    "avg_annual_wage": 47949,
+    "_25th": 23673,
+    "_50th": 51620,
+    "_75th" : 68554,
+    "population_sample_id": 706
+  },
+  {
+    "major_path_id": 7,
+    "avg_annual_wage": 50497,
+    "_25th": 24837,
+    "_50th": 52814,
+    "_75th" : 73842,
+    "population_sample_id": 707
+  },
+  {
+    "major_path_id": 8,
+    "avg_annual_wage": 53135,
+    "_25th": 24192,
+    "_50th": 53182,
+    "_75th" : 82031,
+    "population_sample_id":708
+  },
+  {
+    "major_path_id": 9,
+    "avg_annual_wage": 58254,
+    "_25th": 32182,
+    "_50th": 55291,
+    "_75th" : 87291,
+    "population_sample_id":709
+  },
+
+
+
+
+  {
+    "major_path_id": 10,
+    "avg_annual_wage": 24549,
+    "_25th": 12433,
+    "_50th": 23616,
+    "_75th" : 37600,
+    "population_sample_id":710
+  },
+  {
+    "major_path_id": 11,
+    "avg_annual_wage": 26971,
+    "_25th": 14206,
+    "_50th": 26065,
+    "_75th" : 40644,
+    "population_sample_id":711
+  },
+  {
+    "major_path_id": 12,
+    "avg_annual_wage": 36657,
+    "_25th": 14704,
+    "_50th": 34431,
+    "_75th" : 60838,
+    "population_sample_id":712
+  },
+  {
+    "major_path_id": 13,
+    "avg_annual_wage": 33823,
+    "_25th": 22367,
+    "_50th": 33971,
+    "_75th" : 45131,
+    "population_sample_id":713
+  },
+  {
+    "major_path_id": 14,
+    "avg_annual_wage": 43567,
+    "_25th": 30263,
+    "_50th": 43641,
+    "_75th" : 56799,
+    "population_sample_id":714
+  },
+  {
+    "major_path_id": 15,
+    "avg_annual_wage": 53251,
+    "_25th": 32815,
+    "_50th": 53712,
+    "_75th" : 73226,
+    "population_sample_id":715
+  },
+  {
+    "major_path_id": 16,
+    "avg_annual_wage": 54978,
+    "_25th": 34912,
+    "_50th": 55812,
+    "_75th" : 74212,
+    "population_sample_id":716
+  },
+    {
+    "major_path_id": 17,
+    "avg_annual_wage": 58284,
+    "_25th": 35821,
+    "_50th": 55813,
+    "_75th" :83219 ,
+    "population_sample_id":717
+  },
+  {
+    "major_path_id": 18,
+    "avg_annual_wage":61408,
+    "_25th":  38122,
+    "_50th": 59182,
+    "_75th" : 86920,
+    "population_sample_id":718
+  },
+
+
+
+
+
+  {
+    "major_path_id": 19,
+    "avg_annual_wage": 30904,
+    "_25th": 17266,
+    "_50th": 28693,
+    "_75th": 46754,
+    "population_sample_id":719
+  },
+  {
+    "major_path_id": 20,
+    "avg_annual_wage": 36539,
+    "_25th": 20521,
+    "_50th": 36443,
+    "_75th": 52655,
+    "population_sample_id":720
+  },
+  {
+    "major_path_id": 21,
+    "avg_annual_wage": 45764,
+    "_25th": 28649,
+    "_50th": 43730,
+    "_75th": 64913,
+    "population_sample_id":721
+  },
+  {
+    "major_path_id": 22,
+    "avg_annual_wage": 49296,
+    "_25th": 38003,
+    "_50th": 50027,
+    "_75th": 59858,
+    "population_sample_id":722
+  },
+  {
+    "major_path_id": 23,
+    "avg_annual_wage": 55030,
+    "_25th": 39153,
+    "_50th": 52635,
+    "_75th": 73302,
+    "population_sample_id":723
+  },
+  {
+    "major_path_id": 24,
+    "avg_annual_wage": 50238,
+    "_25th": 21232,
+    "_50th": 50238,
+    "_75th": 79244,
+    "population_sample_id":724
+  },
+  {
+    "major_path_id": 25,
+    "avg_annual_wage": 59010,
+    "_25th": 39182,
+    "_50th": 55928,
+    "_75th": 81921,
+    "population_sample_id":725
+  },
+  {
+    "major_path_id": 26,
+    "avg_annual_wage": 68951,
+    "_25th": 42912,
+    "_50th": 72914,
+    "_75th": 91028,
+    "population_sample_id":726
+  },
+  {
+    "major_path_id": 27,
+    "avg_annual_wage": 73346,
+    "_25th": 50183,
+    "_50th": 74028,
+    "_75th": 95827,
+    "population_sample_id":727
+  }
+
+
+
+]

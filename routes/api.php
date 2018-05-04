@@ -29,8 +29,8 @@ Route::get('/learn-and-earn/major-data/{universityId}/{majorId}', 'LearnAndEarnC
 Route::get('/learn-and-earn/major-data/{universityId}', 'LearnAndEarnController@getMajorNames');
 
 //Major
-Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')
-    ->name('major.hegis-codes');
+Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')->name('major.hegis-codes');
+Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 
 //Industry
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
