@@ -23,7 +23,7 @@
 
 .video-placeholder {
 	background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
-	height: 50em;
+	height: 80vh;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -31,6 +31,9 @@
 	border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
 	border-top: .3rem solid;
 	border-bottom: .3rem solid;
+	@media screen and (max-width: $break-small) {
+		height: 45vh;
+	}
 }
 
 .learn-how {
@@ -46,6 +49,11 @@
 		background: $white;
 		border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
 		border-top: .3rem solid;
+	}
+	div {
+		p {
+			margin-bottom: 0rem;
+		}
 	}
 }
 
@@ -78,7 +86,8 @@
       font-family: $font-base;
       text-transform: uppercase;
       font-size: 1rem;
-      line-height: 1rem;
+      line-height: 1.5rem;
+      margin-top: .5rem;
 	  }
 	}
 }

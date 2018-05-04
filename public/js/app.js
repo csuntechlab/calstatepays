@@ -76368,11 +76368,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -76398,29 +76393,33 @@ var staticRenderFns = [
             _vm._v("Discover Your Earnings After College")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row p-0 fa-wrapper" }, [
+          _c("div", { staticClass: "row px-4 py-2 fa-wrapper" }, [
             _c("div", { staticClass: "col-md-4 text-center my-3" }, [
               _c("i", { staticClass: "fa fa-graduation-cap" }),
               _vm._v(" "),
-              _c("h3", [_vm._v("Do college graduates earn more?")]),
+              _c("h3", { staticClass: "pt-3" }, [
+                _vm._v("Do college graduates earn more?")
+              ]),
               _vm._v(" "),
-              _c("p", { staticClass: "p-4" }, [
+              _c("p", { staticClass: "py-3" }, [
                 _vm._v(
                   "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
                 )
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                _vm._v("\n\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t")
+                _vm._v("\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t")
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-4 text-center my-3" }, [
               _c("i", { staticClass: "fa fa-usd" }),
               _vm._v(" "),
-              _c("h3", [_vm._v("What is your financial return?")]),
+              _c("h3", { staticClass: "pt-3" }, [
+                _vm._v("What is your financial return?")
+              ]),
               _vm._v(" "),
-              _c("p", { staticClass: "p-4" }, [
+              _c("p", { staticClass: "py-3" }, [
                 _vm._v(
                   "Education cost money but in the long term you will earn more. Find your return on education."
                 )
@@ -76428,7 +76427,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__pfre" }, [
                 _vm._v(
-                  "\n\t\t\t\t\t\tFinancial Return on Education\n\t\t\t\t\t"
+                  "\n\t\t\t\t\t\t\tFinancial Return on Education\n\t\t\t\t\t\t"
                 )
               ])
             ]),
@@ -76436,22 +76435,24 @@ var staticRenderFns = [
             _c("div", { staticClass: "col-md-4 text-center my-3" }, [
               _c("i", { staticClass: "fa fa-line-chart" }),
               _vm._v(" "),
-              _c("h3", [_vm._v("Which majors earn the most?")]),
+              _c("h3", { staticClass: "pt-3" }, [
+                _vm._v("Which majors earn the most?")
+              ]),
               _vm._v(" "),
-              _c("p", { staticClass: "p-4" }, [
+              _c("p", { staticClass: "py-3" }, [
                 _vm._v(
                   "Find out which majors has the highest earn and the most students."
                 )
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                _vm._v("\n\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t")
+                _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
               ])
             ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row csu-wrapper" }, [
+            _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
               _c(
                 "figure",
                 { staticClass: "col-md col-sm-4 col-4 text-center" },

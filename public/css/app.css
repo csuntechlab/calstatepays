@@ -28479,7 +28479,7 @@ figcaption {
 
 .video-placeholder {
   background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
-  height: 50em;
+  height: 80vh;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -28489,6 +28489,12 @@ figcaption {
      border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
   border-top: .3rem solid;
   border-bottom: .3rem solid;
+}
+
+@media screen and (max-width: 425px) {
+  .video-placeholder {
+    height: 45vh;
+  }
 }
 
 .learn-how {
@@ -28510,6 +28516,10 @@ figcaption {
        border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
     border-top: .3rem solid;
   }
+}
+
+.fa-wrapper div p {
+  margin-bottom: 0rem;
 }
 
 .fa-graduation-cap {
@@ -28543,7 +28553,8 @@ figcaption {
   font-family: "Montserrat";
   text-transform: uppercase;
   font-size: 1rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
+  margin-top: .5rem;
 }
 
 .navbar,
