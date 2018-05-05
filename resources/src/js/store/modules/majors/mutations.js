@@ -4,7 +4,7 @@ import _majors from '../../mutation-types/majors';
 export default {
     [_majors.FETCH_MAJORS](state, payload){
         payload.forEach((major) => {
-            console.log(major);
+            major.majorId = major.hegis_code;
             delete major.hegis_code;
             state.majors.push(major);
         });

@@ -75942,18 +75942,27 @@ if (inBrowser && window.Vue) {
     majors: function majors(state) {
         return state.majors;
     },
-    universities: function universities(state) {
-        return state.universities;
-    },
-    majorData: function majorData(state) {
-        return state.majorData;
-    },
     majorById: function majorById(state) {
         return function (id) {
             var index = state.majors.findIndex(function (major) {
                 return major.majorId === id;
             });
             return state.majors[index];
+        };
+    },
+    majorData: function majorData(state) {
+        return state.majorData;
+    },
+    universities: function universities(state) {
+        return state.universities;
+    },
+
+    universityById: function universityById(state, getters) {
+        return function (id) {
+            var index = getters.universities.findIndex(function (campus) {
+                return campus.id == id;
+            });
+            return getters.universities[index];
         };
     }
 });
@@ -75973,7 +75982,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
     payload.forEach(function (major) {
-        console.log(major);
+        major.majorId = major.hegis_code;
         delete major.hegis_code;
         state.majors.push(major);
     });
@@ -76042,7 +76051,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/learn-and-earn/major-data/1153').then(function (response) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/major/hegis-codes').then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -76149,6 +76158,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
+            success.forEach(function (industry) {
+                return industry['majorId'] = payload.majorId;
+            });
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, success);
         }, function (error) {
             return console.log(error);
@@ -76166,7 +76178,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    console.log(payload);
     __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/industry/' + payload.majorId + '/1153').then(function (response) {
         return success(response.data);
     }, function (response) {
@@ -79033,7 +79044,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             form: {
                 majorId: null,
                 formWasSubmitted: false,
-                schoolId: null
+                schoolId: null,
+                educationLevel: "allDegrees"
             }
         };
     },
@@ -79041,21 +79053,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_3__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
-            // this.form.formWasSubmitted = true;
+            this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
             this.fetchMajorData(this.form);
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors', 'universities']), {
-        filteredMajors: function filteredMajors() {
-            var _this = this;
-
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors', 'universities', 'universityById']), {
+        campus: function campus() {
             if (this.form.schoolId) {
-                return this.majors.filter(function (major) {
-                    return major.schoolId === _this.form.schoolId;
-                });
+                return this.universityById(this.form.schoolId);
             }
-            return this.majors;
+            return null;
         }
     }),
     components: {
@@ -79133,7 +79141,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorId'],
+    props: ['form'],
     data: function data() {
         return {
             yearsAfter: 2,
@@ -79150,20 +79158,56 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData']), {
-        majorDataSelected: function majorDataSelected() {
-            if (this.majorData.length > 0) {
-                return [this.majorData.filter(function (dataSet) {
-                    return dataSet.education_level == 'some_college';
-                }), this.majorData.filter(function (dataSet) {
-                    return dataSet.education_level == 'bachelors';
-                })];
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData', 'majorById']), {
+        majorDataByMajor: function majorDataByMajor() {
+            var _this = this;
+
+            if (this.form.majorId && this.majorData.length > 0) {
+                return this.majorData.filter(function (dataSet) {
+                    return dataSet.major_id == _this.form.majorId;
+                });
             }
             return [];
         },
+        majorDataSelected: function majorDataSelected() {
+            if (this.majorDataByMajor.length > 0 && this.form.majorId) {
+                if (this.form.educationLevel == "allDegrees") {
+                    return [this.majorDataByMajor.filter(function (dataSet) {
+                        return dataSet.education_level == 'some_college';
+                    }).map(function (dataSet) {
+                        return dataSet.average_income;
+                    }), this.majorDataByMajor.filter(function (dataSet) {
+                        return dataSet.education_level == 'bachelors';
+                    }).map(function (dataSet) {
+                        return dataSet.average_income;
+                    }), [40000, 50000, 90000]];
+                } else if (this.form.educationLevel == "bachelors") {
+                    return [[20000, 30000, 50000],
+                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
+                    this.majorDataByMajor.filter(function (dataSet) {
+                        return dataSet.education_level == 'bachelors';
+                    }).map(function (dataSet) {
+                        return dataSet.average_income;
+                    }),
+                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
+                    [50000, 70000, 100000]];
+                } else if (this.form.educationLevel == "someCollege") {
+                    return [[10000, 20000, 40000],
+                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
+                    this.majorDataByMajor.filter(function (dataSet) {
+                        return dataSet.education_level == 'some_college';
+                    }).map(function (dataSet) {
+                        return dataSet.average_income;
+                    }),
+                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
+                    [40000, 60000, 90000]];
+                }
+            }
+            return [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+        },
         major: function major() {
-            if (this.majorId) {
-                return this.majorById(this.majorId);
+            if (this.form.majorId) {
+                return this.majorById(this.form.majorId);
             }
             return null;
         }
@@ -79260,25 +79304,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorsYears', 'majorById']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorById']), {
         someCollegeEarnings: function someCollegeEarnings() {
             if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected[0].map(function (earningsData) {
-                    return Number(earningsData.average_income);
-                });
+                return this.majorDataSelected[0];
             }
             return null;
         },
         bachelorsEarnings: function bachelorsEarnings() {
             if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected[1].map(function (earningsData) {
-                    return Number(earningsData.average_income);
-                });
+                return this.majorDataSelected[1];
             }
             return null;
         },
         mastersEarnings: function mastersEarnings() {
-            return [40000, 70000, 100000];
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[2];
+            }
+            return null;
         },
         selectedMajor: function selectedMajor() {
             if (this.majorId) {
@@ -79321,17 +79364,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         type: 'line',
                         name: 'Some College',
                         data: this.someCollegeEarnings,
-                        lineStyle: {
-                            color: '#476A6F',
-                            width: 4
-                        },
-                        itemStyle: {
-                            color: '#476A6F'
-                        }
-                    }, {
-                        type: 'line',
-                        name: 'Some College',
-                        data: this.bachelorsEarnings,
                         lineStyle: {
                             color: '#476A6F',
                             width: 4
@@ -96384,7 +96416,7 @@ var render = function() {
       _c("majors-graph", {
         attrs: {
           majorDataSelected: _vm.majorDataSelected,
-          majorId: _vm.majorId
+          majorId: _vm.form.majorId
         }
       }),
       _vm._v(" "),
@@ -96434,14 +96466,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['form'],
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries']), {
+    selectedIndustries: function selectedIndustries() {
+      var _this = this;
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries'])),
+      if (this.form.majorId) {
+        return this.industries.filter(function (industry) {
+          return industry.majorId == _this.form.majorId;
+        });
+      }
+      return [];
+    }
+  }),
 
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
-
-  created: function created() {},
-
-
   components: {
     industryCarouselCard: __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default.a,
     Carousel: __WEBPACK_IMPORTED_MODULE_0_vue_carousel__["Carousel"],
@@ -96575,7 +96614,7 @@ var render = function() {
             navigationClickTargetSize: 20
           }
         },
-        _vm._l(_vm.industries, function(industry, index) {
+        _vm._l(_vm.selectedIndustries, function(industry, index) {
           return _c(
             "slide",
             {
@@ -96626,7 +96665,12 @@ var render = function() {
       _c("card", [
         _c("div", { staticClass: "container-fluid my-0" }, [
           _c("div", { staticClass: "row p-0" }, [
-            _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
+            _c(
+              "div",
+              { staticClass: "mt-5" },
+              [_c("industry-carousel", { attrs: { form: _vm.form } })],
+              1
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row m-1 p-0" }, [
@@ -96703,7 +96747,7 @@ var render = function() {
                                 _vm._v("-- Select a Major --")
                               ]),
                               _vm._v(" "),
-                              _vm._l(_vm.filteredMajors, function(major) {
+                              _vm._l(_vm.majors, function(major) {
                                 return _c(
                                   "option",
                                   { domProps: { value: major.majorId } },
@@ -96740,22 +96784,23 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.degree,
-                            expression: "form.degree"
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
                           }
                         ],
                         attrs: {
                           type: "radio",
                           name: "allDegrees",
                           id: "allDegrees",
+                          checked: "",
                           value: "allDegrees"
                         },
                         domProps: {
-                          checked: _vm._q(_vm.form.degree, "allDegrees")
+                          checked: _vm._q(_vm.form.educationLevel, "allDegrees")
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "degree", "allDegrees")
+                            _vm.$set(_vm.form, "educationLevel", "allDegrees")
                           }
                         }
                       }),
@@ -96769,8 +96814,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.degree,
-                            expression: "form.degree"
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
                           }
                         ],
                         attrs: {
@@ -96780,11 +96825,11 @@ var render = function() {
                           value: "bachelors"
                         },
                         domProps: {
-                          checked: _vm._q(_vm.form.degree, "bachelors")
+                          checked: _vm._q(_vm.form.educationLevel, "bachelors")
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "degree", "bachelors")
+                            _vm.$set(_vm.form, "educationLevel", "bachelors")
                           }
                         }
                       }),
@@ -96798,28 +96843,31 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.degree,
-                            expression: "form.degree"
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
                           }
                         ],
                         attrs: {
                           type: "radio",
-                          name: "postBacc",
-                          id: "postBacc",
-                          value: "postBacc"
+                          name: "someCollege",
+                          id: "someCollege",
+                          value: "someCollege"
                         },
                         domProps: {
-                          checked: _vm._q(_vm.form.degree, "postBacc")
+                          checked: _vm._q(
+                            _vm.form.educationLevel,
+                            "someCollege"
+                          )
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "degree", "postBacc")
+                            _vm.$set(_vm.form, "educationLevel", "someCollege")
                           }
                         }
                       }),
                       _vm._v(" "),
                       _c("label", { attrs: { for: "postBacc" } }, [
-                        _vm._v("Post Bacc Degree")
+                        _vm._v("Some College")
                       ])
                     ])
               ])
@@ -96828,11 +96876,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col col-9" },
-              [
-                _c("majors-graph-wrapper", {
-                  attrs: { majorId: _vm.form.majorId }
-                })
-              ],
+              [_c("majors-graph-wrapper", { attrs: { form: _vm.form } })],
               1
             )
           ])

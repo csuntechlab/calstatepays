@@ -20,23 +20,25 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'majorsYears',
             'majorById'
         ]),
         someCollegeEarnings(){
             if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[0].map((earningsData) => Number(earningsData.average_income));
+                return this.majorDataSelected[0];
             }
             return null;
         },
         bachelorsEarnings(){
             if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[1].map((earningsData) => Number(earningsData.average_income));
+                return this.majorDataSelected[1];
             }
             return null;
         },
         mastersEarnings(){
-            return [40000, 70000, 100000]
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected[2];
+            }
+            return null;
         },
         selectedMajor(){
             if(this.majorId){
@@ -80,18 +82,6 @@ export default {
                             type: 'line',
                             name: 'Some College',
                             data: this.someCollegeEarnings,
-                            lineStyle: {
-                                color: '#476A6F',
-                                width: 4
-                            },
-                            itemStyle: {
-                                color: '#476A6F'
-                            },
-                        },
-                        {
-                            type: 'line',
-                            name: 'Some College',
-                            data: this.bachelorsEarnings,
                             lineStyle: {
                                 color: '#476A6F',
                                 width: 4

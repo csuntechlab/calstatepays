@@ -4,7 +4,7 @@
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
-                        <industry-carousel></industry-carousel>				
+                        <industry-carousel :form="form"></industry-carousel>				
                     </div>
                 </div>
                 <div class="row m-1 p-0">
@@ -33,7 +33,7 @@
                                         id="majors"
                                         @input="updateForm('majorId', $event.target.value)">
                                         <option value="">-- Select a Major --</option>
-                                        <option v-for="major in filteredMajors" :value="major.majorId">{{ major.major }}</option>
+                                        <option v-for="major in majors" :value="major.majorId">{{ major.major }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -45,18 +45,18 @@
                             </div>
                             <div class="form__group" v-else>
                                 <p class="h2 text-gray my-5">Applied Math</p>
-                                <input type="radio" name="allDegrees" id="allDegrees" v-model="form.degree" value="allDegrees">
+                                <input type="radio" name="allDegrees" id="allDegrees" v-model="form.educationLevel" checked value="allDegrees">
                                 <label for="allDegrees">All</label>
-                                <input type="radio" name="bachelors" id="bachelors" v-model="form.degree" value="bachelors">
+                                <input type="radio" name="bachelors" id="bachelors" v-model="form.educationLevel" value="bachelors">
                                 <label for="bachelors">Bachelor's Degree</label>
-                                <input type="radio" name="postBacc" id="postBacc" v-model="form.degree" value="postBacc">
-                                <label for="postBacc">Post Bacc Degree</label>
+                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="someCollege">
+                                <label for="postBacc">Some College</label>
                             </div>
                             <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
                         </form>
                     </div>
                     <div class="col col-9">
-                        <majors-graph-wrapper :majorId="form.majorId"></majors-graph-wrapper>
+                        <majors-graph-wrapper :form="form"></majors-graph-wrapper>
                     </div>
                 </div>
             </div>
@@ -79,6 +79,7 @@ export default {
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,
+                educationLevel: "allDegrees",
             }
         }
     },
@@ -89,7 +90,7 @@ export default {
         ]),
         updateForm,
         submitForm(){
-            // this.form.formWasSubmitted = true;
+            this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
             this.fetchMajorData(this.form);
         }
@@ -98,13 +99,14 @@ export default {
         ...mapGetters([
             'majors',
             'universities',
+            'universityById',
         ]),
-        filteredMajors(){
+        campus(){
             if(this.form.schoolId){
-                return this.majors.filter((major) => major.schoolId === this.form.schoolId);
+                return this.universityById(this.form.schoolId);
             }
-            return this.majors;
-        }
+            return null;
+        },
     },
     components: { 
         card,
