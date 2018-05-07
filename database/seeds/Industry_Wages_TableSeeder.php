@@ -11,8 +11,6 @@ class Industry_Wages_TableSeeder extends Seeder
      */
     public function run()
     {
-        factory(app\Models\IndustryWage::class)->create()->each(function($u) {
-            $u->save(factory(app\Models\IndustryWage::class)->make());
-        });
+        //factory(app\Models\IndustryWage::class)->create();
     }
 }
