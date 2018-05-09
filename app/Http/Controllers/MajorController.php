@@ -34,6 +34,7 @@ class MajorController extends Controller
                 $post_bacc[$years] = $this->extractWageByYearKey($data);
             }
         }
+
         $majorData = [
             'major_id' =>$hegis_code,
             'university_id' => $university_id,
