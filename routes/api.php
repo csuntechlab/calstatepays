@@ -12,17 +12,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-//Aggregate Routes - These are routes that pull data for ALL universities
-Route::get('aggregate/income/student-path','AggregateDataController@getAverageIncomeByStudentPath')
-            ->name('student-path-avg');
-
-Route::get('aggregate/income/industry','AggregateDataController@getAverageIncomeByIndustry')->name('avg_income_industry');
-Route::get('/Aggregate/TopTenMajors','AggregateDataController@getAggregateTopTenMajors')->name('aggregate.top.majors');
-Route::get('aggregate/income/student-path','AggregateDataController@getAverageIncomeByStudentPath')
-    ->name('student-path-avg');
-//Data Routes
-
 //Learn and Earn Routes
 Route::get('/learn-and-earn/industry/{collegeId}/{industryTitle}', 'LearnAndEarnController@getIndustryData');
 Route::get('/learn-and-earn/major-data/{universityId}/{majorId}', 'LearnAndEarnController@getCollegeMajor');
