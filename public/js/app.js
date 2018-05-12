@@ -75945,13 +75945,21 @@ if (inBrowser && window.Vue) {
     majorById: function majorById(state) {
         return function (id) {
             var index = state.majors.findIndex(function (major) {
-                return major.majorId === id;
+                return major.majorId === Number(id);
             });
             return state.majors[index];
         };
     },
     majorData: function majorData(state) {
         return state.majorData;
+    },
+    majorDataByMajorId: function majorDataByMajorId(state, getters) {
+        return function (id) {
+            var index = getters.majorData.findIndex(function (dataSet) {
+                return dataSet.major_id == id;
+            });
+            return getters.majorData[index];
+        };
     },
     universities: function universities(state) {
         return state.universities;
@@ -75987,9 +75995,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.majors.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
-    payload.forEach(function (dataSet) {
-        return state.majorData.push(dataSet);
-    });
+    state.majorData.push(payload);
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
     payload.forEach(function (university) {
         university.name = university.university_name;
@@ -76058,7 +76064,9 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
     });
 };
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/learn-and-earn/major-data/' + payload.schoolId + '/' + payload.majorId).then(function (response) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/major/' + payload.majorId + '/' + payload.schoolId).then(
+    // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
+    function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -79029,6 +79037,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -79158,49 +79168,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData', 'majorById']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData', 'majorById', 'majorDataByMajorId']), {
         majorDataByMajor: function majorDataByMajor() {
-            var _this = this;
-
             if (this.form.majorId && this.majorData.length > 0) {
-                return this.majorData.filter(function (dataSet) {
-                    return dataSet.major_id == _this.form.majorId;
-                });
+                return this.majorDataByMajorId(this.form.majorId);
             }
-            return [];
+            return null;
         },
         majorDataSelected: function majorDataSelected() {
-            if (this.majorDataByMajor.length > 0 && this.form.majorId) {
+            if (this.majorDataByMajor && this.form.majorId) {
                 if (this.form.educationLevel == "allDegrees") {
-                    return [this.majorDataByMajor.filter(function (dataSet) {
-                        return dataSet.education_level == 'some_college';
-                    }).map(function (dataSet) {
-                        return dataSet.average_income;
-                    }), this.majorDataByMajor.filter(function (dataSet) {
-                        return dataSet.education_level == 'bachelors';
-                    }).map(function (dataSet) {
-                        return dataSet.average_income;
-                    }), [40000, 50000, 90000]];
-                } else if (this.form.educationLevel == "bachelors") {
-                    return [[20000, 30000, 50000],
-                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                    this.majorDataByMajor.filter(function (dataSet) {
-                        return dataSet.education_level == 'bachelors';
-                    }).map(function (dataSet) {
-                        return dataSet.average_income;
-                    }),
-                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                    [50000, 70000, 100000]];
-                } else if (this.form.educationLevel == "someCollege") {
-                    return [[10000, 20000, 40000],
-                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                    this.majorDataByMajor.filter(function (dataSet) {
-                        return dataSet.education_level == 'some_college';
-                    }).map(function (dataSet) {
-                        return dataSet.average_income;
-                    }),
-                    //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                    [40000, 60000, 90000]];
+                    return [[this.majorDataByMajor.some_college['2']._50th, this.majorDataByMajor.some_college['5']._50th, this.majorDataByMajor.some_college['10']._50th], [this.majorDataByMajor.bachelors['2']._50th, this.majorDataByMajor.bachelors['5']._50th, this.majorDataByMajor.bachelors['10']._50th], [this.majorDataByMajor.post_bacc['2']._50th, this.majorDataByMajor.post_bacc['5']._50th, this.majorDataByMajor.post_bacc['10']._50th]];
+                } else {
+                    return [[this.majorDataByMajor[this.form.educationLevel]['2']._25th, this.majorDataByMajor[this.form.educationLevel]['5']._25th, this.majorDataByMajor[this.form.educationLevel]['10']._25th], [this.majorDataByMajor[this.form.educationLevel]['2']._50th, this.majorDataByMajor[this.form.educationLevel]['5']._50th, this.majorDataByMajor[this.form.educationLevel]['10']._50th], [this.majorDataByMajor[this.form.educationLevel]['2']._75th, this.majorDataByMajor[this.form.educationLevel]['5']._75th, this.majorDataByMajor[this.form.educationLevel]['10']._75th]];
                 }
             }
             return [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
@@ -96851,23 +96831,52 @@ var render = function() {
                           type: "radio",
                           name: "someCollege",
                           id: "someCollege",
-                          value: "someCollege"
+                          value: "some_college"
                         },
                         domProps: {
                           checked: _vm._q(
                             _vm.form.educationLevel,
-                            "someCollege"
+                            "some_college"
                           )
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "educationLevel", "someCollege")
+                            _vm.$set(_vm.form, "educationLevel", "some_college")
                           }
                         }
                       }),
                       _vm._v(" "),
                       _c("label", { attrs: { for: "postBacc" } }, [
                         _vm._v("Some College")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          name: "someCollege",
+                          id: "someCollege",
+                          value: "post_bacc"
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.educationLevel, "post_bacc")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.form, "educationLevel", "post_bacc")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "postBacc" } }, [
+                        _vm._v("Post Bacc")
                       ])
                     ])
               ])

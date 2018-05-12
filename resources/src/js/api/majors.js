@@ -6,7 +6,8 @@ const fetchMajorsAPI = (success, error) => {
     );
 }
 const fetchMajorDataAPI = (payload, success, error) => {
-    axios.get(`api/learn-and-earn/major-data/${payload.schoolId}/${payload.majorId}`).then(
+    axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
+        // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
         response => success(response.data),
         response => error(response)
     );

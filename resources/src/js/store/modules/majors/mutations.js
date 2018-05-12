@@ -11,7 +11,7 @@ export default {
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
-        payload.forEach((dataSet) => state.majorData.push(dataSet));
+       state.majorData.push(payload);
     },
 
     [_majors.FETCH_UNIVERSITIES](state, payload) {

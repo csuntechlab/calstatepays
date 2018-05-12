@@ -49,8 +49,10 @@
                                 <label for="allDegrees">All</label>
                                 <input type="radio" name="bachelors" id="bachelors" v-model="form.educationLevel" value="bachelors">
                                 <label for="bachelors">Bachelor's Degree</label>
-                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="someCollege">
+                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="some_college">
                                 <label for="postBacc">Some College</label>
+                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="post_bacc">
+                                <label for="postBacc">Post Bacc</label>
                             </div>
                             <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
                         </form>

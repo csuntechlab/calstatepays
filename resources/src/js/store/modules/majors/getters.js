@@ -3,10 +3,14 @@
 export default {
     majors: state => state.majors,
     majorById: (state) => (id) => {
-        const index = state.majors.findIndex((major) => major.majorId === id);
+        const index = state.majors.findIndex((major) => major.majorId === Number(id));
         return state.majors[index];
     },
     majorData: state => state.majorData,
+    majorDataByMajorId: (state, getters) => (id) => {
+        const index = getters.majorData.findIndex(dataSet => dataSet.major_id == id);
+        return getters.majorData[index];
+    },
     universities: state => state.universities,
 
     universityById: (state, getters) => (id) => {

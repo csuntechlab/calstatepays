@@ -35,38 +35,55 @@ export default {
         ...mapGetters([
             'majorData',
             'majorById',
+            'majorDataByMajorId'
         ]),
         majorDataByMajor(){
             if (this.form.majorId && this.majorData.length > 0){
-                return this.majorData.filter((dataSet) => dataSet.major_id == this.form.majorId);
+                return this.majorDataByMajorId(this.form.majorId)
             }
-            return [];
+            return null;
         },
         majorDataSelected(){
-            if(this.majorDataByMajor.length > 0 && this.form.majorId){
+            if(this.majorDataByMajor && this.form.majorId){
                 if(this.form.educationLevel == "allDegrees"){
                     return [
-                        this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'some_college').map((dataSet) => dataSet.average_income),
-                        this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'bachelors').map((dataSet) => dataSet.average_income),
-                        [40000, 50000, 90000],
+                        [
+                            this.majorDataByMajor.some_college['2']._50th,
+                            this.majorDataByMajor.some_college['5']._50th,
+                            this.majorDataByMajor.some_college['10']._50th,
+                        ],
+                        [
+                            this.majorDataByMajor.bachelors['2']._50th,
+                            this.majorDataByMajor.bachelors['5']._50th,
+                            this.majorDataByMajor.bachelors['10']._50th,
+                        ],
+                        [
+                            this.majorDataByMajor.post_bacc['2']._50th,
+                            this.majorDataByMajor.post_bacc['5']._50th,
+                            this.majorDataByMajor.post_bacc['10']._50th,
+                        ],
+                        // this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'some_college').map((dataSet) => dataSet.average_income),
+                        // this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'bachelors').map((dataSet) => dataSet.average_income),
+                        // [40000, 50000, 90000],
                         //TODO: REPLACE THESE HARDCODED VALUES WITH ADV DEGREE VALUES WHEN WE GET DATA --TONY
                     ]
-                } else if(this.form.educationLevel == "bachelors"){
+                } else {
                     return [
-                        [20000,30000,50000],
-                        //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                        this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'bachelors').map((dataSet) => dataSet.average_income),
-                        //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                        [50000,70000,100000]
-                    ]
-                }
-                else if(this.form.educationLevel == "someCollege"){
-                    return [
-                        [10000,20000,40000],
-                        //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                        this.majorDataByMajor.filter((dataSet) => dataSet.education_level == 'some_college').map((dataSet) => dataSet.average_income),
-                        //TODO: REPLACE THESE HARDCODED VALUES WITH 25th percentile VALUES WHEN WE GET DATA --TONY
-                        [40000,60000,90000]
+                        [
+                            this.majorDataByMajor[this.form.educationLevel]['2']._25th,
+                            this.majorDataByMajor[this.form.educationLevel]['5']._25th,
+                            this.majorDataByMajor[this.form.educationLevel]['10']._25th,
+                        ],
+                        [
+                            this.majorDataByMajor[this.form.educationLevel]['2']._50th,
+                            this.majorDataByMajor[this.form.educationLevel]['5']._50th,
+                            this.majorDataByMajor[this.form.educationLevel]['10']._50th,
+                        ],
+                        [
+                            this.majorDataByMajor[this.form.educationLevel]['2']._75th,
+                            this.majorDataByMajor[this.form.educationLevel]['5']._75th,
+                            this.majorDataByMajor[this.form.educationLevel]['10']._75th,
+                        ],
                     ]
                 }
             } 
