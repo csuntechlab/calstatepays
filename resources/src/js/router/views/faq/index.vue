@@ -1,8 +1,10 @@
 <template>
 	<div class="wrapper">
-		<div class="row">
-			<h1 class="pt-3 home__heading text-gray">FAQ</h1>
+		<div class="white-filter">
+		<div class="faq-banner row" style="background-image: url(/images/faq-banner.jpg)">
+			<h1 class="pt-3 home__heading">FAQ</h1>
 		</div>
+	</div>
 		<div class="row">
 			<div class="col col-md-9">
 				<v-container>
