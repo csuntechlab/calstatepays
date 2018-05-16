@@ -34,3 +34,27 @@
 .progress-linear__bar__determinate {
   border-radius: 50px;
 }
+
+.legend-green {
+  height: 15px;
+  width: 15px;
+  margin-left: 5px;
+  float: left;
+  background-color: $green;
+}
+
+.legend-gold {
+  height: 15px;
+  width: 15px;
+  margin-left: 5px;
+  float: left;
+  background-color: $gold;
+}
+
+.legend-oxford {
+  height: 15px;
+  width: 15px;
+  margin-left: 5px;
+  float: left;
+  background-color: $oxford;
+}
