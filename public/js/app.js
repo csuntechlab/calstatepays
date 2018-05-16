@@ -78787,9 +78787,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             cards: [{
-                major: 'Applied Math'
-            }, {
-                major: 'Accounting'
+                major: null
             }]
         };
     },
@@ -78801,7 +78799,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         onPlus: function onPlus() {
-            this.cards.push({ major: 'Sing Malaling' });
+            this.cards.push({ major: null });
         }
     }
 });
@@ -79146,28 +79144,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['form'],
-    data: function data() {
-        return {
-            yearsAfter: 2,
-            yData: [[20000, 33000, 38000, 41000], [35000, 42000, 58000, 72000], [65000, 85000, 92000, 99000], [10000, 13000, 38000, 41000], [35000, 62000, 98000, 102000], [90000, 99000, 101000, 130000]]
-        };
-    },
-
-    methods: {
-        changeIndex: function changeIndex() {
-            if (this.index == 0) {
-                this.index = 3;
-            } else {
-                this.index = 0;
-            }
-        }
-    },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData', 'majorById', 'majorDataByMajorId']), {
         majorDataByMajor: function majorDataByMajor() {
             if (this.form.majorId && this.majorData.length > 0) {
@@ -96398,9 +96379,7 @@ var render = function() {
           majorDataSelected: _vm.majorDataSelected,
           majorId: _vm.form.majorId
         }
-      }),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.changeIndex } }, [_vm._v("Switch")])
+      })
     ],
     1
   )
