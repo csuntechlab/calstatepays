@@ -48,13 +48,13 @@ class MajorController extends Controller
     public function extractWageByYearKey($array){
         switch ($array['years']) {
             case 2:
-                $studentPathArray['2'] = $array['major_path_wage'];
+                $studentPathArray = $array['major_path_wage'];
                 break;
             case 5:
-                $studentPathArray['5'] = $array['major_path_wage'];
+                $studentPathArray = $array['major_path_wage'];
                 break;
             case 10:
-                $studentPathArray['10'] = $array['major_path_wage'];
+                $studentPathArray = $array['major_path_wage'];
                 break;
         }
         return $studentPathArray;
