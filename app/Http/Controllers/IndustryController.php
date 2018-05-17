@@ -17,7 +17,7 @@ class IndustryController extends Controller
                 'image'      => $item['image']
             ];
         });
-        return $allNaicsTitles->toArray();
+        return $allNaicsTitles;
     }
 
     public function getIndustryPopulationByRank($hegis_code, $university_id)
@@ -26,6 +26,7 @@ class IndustryController extends Controller
                                             ->where('university_id', $university_id)
                                             ->first();
         $industryPathTypes = $university_major->industryPathTypes();
+
         $industryPopulations = $industryPathTypes->where('entry_status', 'All')
                                                ->where('student_path', 4)
                                                ->with('population')

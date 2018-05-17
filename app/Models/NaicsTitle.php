@@ -18,7 +18,7 @@ class NaicsTitle extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function industryPathTypes() {
-        return $this->hasMany('App\Models\IndustryPathType');
+        return $this->hasMany('App\Models\IndustryPathType', 'naics_code','naics_code');
     }
     public function industryWage()
     {
