@@ -68,10 +68,9 @@ class MajorControllerTest extends TestCase
         ];
         $returnedArray = $this->controller->extractWageByYearKey($testData);
         $this->assertEquals([
-            '10'=> [
                 'avg_wage' => 50000,
                 '25th'     => 30000,
                 '50th'     => 45000,
-                '75th'     => 60000]], $returnedArray);
+                '75th'     => 60000], $returnedArray);
     }
 }

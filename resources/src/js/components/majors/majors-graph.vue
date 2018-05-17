@@ -22,7 +22,7 @@ export default {
         ...mapGetters([
             'majorById'
         ]),
-        someCollegeEarnings(){
+        mastersEarnings(){
             if(this.majorDataSelected.length > 0){
                 return this.majorDataSelected[0];
             }
@@ -34,11 +34,11 @@ export default {
             }
             return null;
         },
-        mastersEarnings(){
+        someCollegeEarnings(){
             if(this.majorDataSelected.length > 0){
                 return this.majorDataSelected[2];
             }
-            return null;
+        return null;
         },
         selectedMajor(){
             if(this.majorId){
