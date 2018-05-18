@@ -35,26 +35,32 @@
   border-radius: 50px;
 }
 
-.legend-green {
+$colorList: (
+  light-oxford: $light-oxford, 
+  oxford: $oxford,
+  dark-oxford: $dark-oxford,
+  light-green: $light-green,
+green: $green,
+  dark-green:$dark-green,
+  lightest-gold: $lightest-gold,
+  light-gold: $light-gold,
+  gold: $gold
+);
+
+%legend {
   height: 15px;
   width: 15px;
   margin-left: 5px;
   float: left;
-  background-color: $green;
+}
+  
+@mixin legend-color-mixin($legend-color) {
+  @each $color, $value in $colorList {
+    .legend-#{$color} {
+      @extend %legend;
+      background-color: $value;
+    }
+  }
 }
 
-.legend-gold {
-  height: 15px;
-  width: 15px;
-  margin-left: 5px;
-  float: left;
-  background-color: $gold;
-}
-
-.legend-oxford {
-  height: 15px;
-  width: 15px;
-  margin-left: 5px;
-  float: left;
-  background-color: $oxford;
-}
+@include legend-color-mixin($colorList);
