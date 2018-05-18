@@ -16,7 +16,7 @@ class CreateNAICSTitlesTable extends Migration
         Schema::create('naics_titles', function (Blueprint $table) {
             $table->integer('naics_code');
             $table->string('naics_title');
-            $table->string('image')->nullable()->after('naics_title');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

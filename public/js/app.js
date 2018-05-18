@@ -802,115 +802,6 @@ exports.noop = noop;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -1385,12 +1276,121 @@ exports.setAttribute = setAttribute;
 exports.getAttribute = getAttribute;
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var pathTool = __webpack_require__(219);
+var pathTool = __webpack_require__(216);
 
 var colorTool = __webpack_require__(24);
 
@@ -1410,55 +1410,55 @@ var Group = __webpack_require__(31);
 
 exports.Group = Group;
 
-var Text = __webpack_require__(226);
+var Text = __webpack_require__(223);
 
 exports.Text = Text;
 
-var Circle = __webpack_require__(227);
+var Circle = __webpack_require__(224);
 
 exports.Circle = Circle;
 
-var Sector = __webpack_require__(228);
+var Sector = __webpack_require__(225);
 
 exports.Sector = Sector;
 
-var Ring = __webpack_require__(229);
+var Ring = __webpack_require__(226);
 
 exports.Ring = Ring;
 
-var Polygon = __webpack_require__(230);
+var Polygon = __webpack_require__(227);
 
 exports.Polygon = Polygon;
 
-var Polyline = __webpack_require__(233);
+var Polyline = __webpack_require__(230);
 
 exports.Polyline = Polyline;
 
-var Rect = __webpack_require__(234);
+var Rect = __webpack_require__(231);
 
 exports.Rect = Rect;
 
-var Line = __webpack_require__(235);
+var Line = __webpack_require__(232);
 
 exports.Line = Line;
 
-var BezierCurve = __webpack_require__(236);
+var BezierCurve = __webpack_require__(233);
 
 exports.BezierCurve = BezierCurve;
 
-var Arc = __webpack_require__(237);
+var Arc = __webpack_require__(234);
 
 exports.Arc = Arc;
 
-var CompoundPath = __webpack_require__(238);
+var CompoundPath = __webpack_require__(235);
 
 exports.CompoundPath = CompoundPath;
 
-var LinearGradient = __webpack_require__(239);
+var LinearGradient = __webpack_require__(236);
 
 exports.LinearGradient = LinearGradient;
 
-var RadialGradient = __webpack_require__(240);
+var RadialGradient = __webpack_require__(237);
 
 exports.RadialGradient = RadialGradient;
 
@@ -1466,7 +1466,7 @@ var BoundingRect = __webpack_require__(11);
 
 exports.BoundingRect = BoundingRect;
 
-var IncrementalDisplayable = __webpack_require__(241);
+var IncrementalDisplayable = __webpack_require__(238);
 
 exports.IncrementalDisplayable = IncrementalDisplayable;
 var round = Math.round;
@@ -2501,7 +2501,7 @@ if (typeof dev === 'undefined') {
 
 var __DEV__ = dev;
 exports.__DEV__ = __DEV__;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 5 */
@@ -2529,39 +2529,39 @@ var ExtensionAPI = __webpack_require__(87);
 
 var CoordinateSystemManager = __webpack_require__(46);
 
-var OptionManager = __webpack_require__(245);
+var OptionManager = __webpack_require__(242);
 
-var backwardCompat = __webpack_require__(246);
+var backwardCompat = __webpack_require__(243);
 
-var dataStack = __webpack_require__(248);
+var dataStack = __webpack_require__(245);
 
 var ComponentModel = __webpack_require__(18);
 
 var SeriesModel = __webpack_require__(88);
 
-var ComponentView = __webpack_require__(250);
+var ComponentView = __webpack_require__(247);
 
 var ChartView = __webpack_require__(89);
 
 var graphic = __webpack_require__(3);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 var _throttle = __webpack_require__(48);
 
 var throttle = _throttle.throttle;
 
-var seriesColor = __webpack_require__(251);
+var seriesColor = __webpack_require__(248);
 
-var aria = __webpack_require__(252);
+var aria = __webpack_require__(249);
 
-var loadingDefault = __webpack_require__(254);
+var loadingDefault = __webpack_require__(251);
 
-var Scheduler = __webpack_require__(255);
+var Scheduler = __webpack_require__(252);
 
-var lightTheme = __webpack_require__(256);
+var lightTheme = __webpack_require__(253);
 
-var darkTheme = __webpack_require__(257);
+var darkTheme = __webpack_require__(254);
 
 /*!
  * ECharts, a free, powerful charting and visualization library.
@@ -4535,7 +4535,7 @@ exports.setCanvasCreator = setCanvasCreator;
 exports.registerMap = registerMap;
 exports.getMap = getMap;
 exports.dataTool = dataTool;
-var ___ec_export = __webpack_require__(258);
+var ___ec_export = __webpack_require__(255);
 (function () {
     for (var key in ___ec_export) {
         if (___ec_export.hasOwnProperty(key)) {
@@ -5529,7 +5529,7 @@ var zrUtil = __webpack_require__(0);
 
 var PathProxy = __webpack_require__(34);
 
-var pathContain = __webpack_require__(220);
+var pathContain = __webpack_require__(217);
 
 var Pattern = __webpack_require__(74);
 
@@ -6561,727 +6561,6 @@ exports.getTextRect = getTextRect;
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var env = __webpack_require__(8);
-
-var _model = __webpack_require__(2);
-
-var makeInner = _model.makeInner;
-
-var _clazz = __webpack_require__(17);
-
-var enableClassExtend = _clazz.enableClassExtend;
-var enableClassCheck = _clazz.enableClassCheck;
-
-var lineStyleMixin = __webpack_require__(216);
-
-var areaStyleMixin = __webpack_require__(217);
-
-var textStyleMixin = __webpack_require__(218);
-
-var itemStyleMixin = __webpack_require__(242);
-
-/**
- * @module echarts/model/Model
- */
-var mixin = zrUtil.mixin;
-var inner = makeInner();
-/**
- * @alias module:echarts/model/Model
- * @constructor
- * @param {Object} option
- * @param {module:echarts/model/Model} [parentModel]
- * @param {module:echarts/model/Global} [ecModel]
- */
-
-function Model(option, parentModel, ecModel) {
-  /**
-   * @type {module:echarts/model/Model}
-   * @readOnly
-   */
-  this.parentModel = parentModel;
-  /**
-   * @type {module:echarts/model/Global}
-   * @readOnly
-   */
-
-  this.ecModel = ecModel;
-  /**
-   * @type {Object}
-   * @protected
-   */
-
-  this.option = option; // Simple optimization
-  // if (this.init) {
-  //     if (arguments.length <= 4) {
-  //         this.init(option, parentModel, ecModel, extraOpt);
-  //     }
-  //     else {
-  //         this.init.apply(this, arguments);
-  //     }
-  // }
-}
-
-Model.prototype = {
-  constructor: Model,
-
-  /**
-   * Model 的初始化函数
-   * @param {Object} option
-   */
-  init: null,
-
-  /**
-   * 从新的 Option merge
-   */
-  mergeOption: function (option) {
-    zrUtil.merge(this.option, option, true);
-  },
-
-  /**
-   * @param {string|Array.<string>} path
-   * @param {boolean} [ignoreParent=false]
-   * @return {*}
-   */
-  get: function (path, ignoreParent) {
-    if (path == null) {
-      return this.option;
-    }
-
-    return doGet(this.option, this.parsePath(path), !ignoreParent && getParent(this, path));
-  },
-
-  /**
-   * @param {string} key
-   * @param {boolean} [ignoreParent=false]
-   * @return {*}
-   */
-  getShallow: function (key, ignoreParent) {
-    var option = this.option;
-    var val = option == null ? option : option[key];
-    var parentModel = !ignoreParent && getParent(this, key);
-
-    if (val == null && parentModel) {
-      val = parentModel.getShallow(key);
-    }
-
-    return val;
-  },
-
-  /**
-   * @param {string|Array.<string>} [path]
-   * @param {module:echarts/model/Model} [parentModel]
-   * @return {module:echarts/model/Model}
-   */
-  getModel: function (path, parentModel) {
-    var obj = path == null ? this.option : doGet(this.option, path = this.parsePath(path));
-    var thisParentModel;
-    parentModel = parentModel || (thisParentModel = getParent(this, path)) && thisParentModel.getModel(path);
-    return new Model(obj, parentModel, this.ecModel);
-  },
-
-  /**
-   * If model has option
-   */
-  isEmpty: function () {
-    return this.option == null;
-  },
-  restoreData: function () {},
-  // Pending
-  clone: function () {
-    var Ctor = this.constructor;
-    return new Ctor(zrUtil.clone(this.option));
-  },
-  setReadOnly: function (properties) {// clazzUtil.setReadOnly(this, properties);
-  },
-  // If path is null/undefined, return null/undefined.
-  parsePath: function (path) {
-    if (typeof path === 'string') {
-      path = path.split('.');
-    }
-
-    return path;
-  },
-
-  /**
-   * @param {Function} getParentMethod
-   *        param {Array.<string>|string} path
-   *        return {module:echarts/model/Model}
-   */
-  customizeGetParent: function (getParentMethod) {
-    inner(this).getParent = getParentMethod;
-  },
-  isAnimationEnabled: function () {
-    if (!env.node) {
-      if (this.option.animation != null) {
-        return !!this.option.animation;
-      } else if (this.parentModel) {
-        return this.parentModel.isAnimationEnabled();
-      }
-    }
-  }
-};
-
-function doGet(obj, pathArr, parentModel) {
-  for (var i = 0; i < pathArr.length; i++) {
-    // Ignore empty
-    if (!pathArr[i]) {
-      continue;
-    } // obj could be number/string/... (like 0)
-
-
-    obj = obj && typeof obj === 'object' ? obj[pathArr[i]] : null;
-
-    if (obj == null) {
-      break;
-    }
-  }
-
-  if (obj == null && parentModel) {
-    obj = parentModel.get(pathArr);
-  }
-
-  return obj;
-} // `path` can be null/undefined
-
-
-function getParent(model, path) {
-  var getParentMethod = inner(model).getParent;
-  return getParentMethod ? getParentMethod.call(model, path) : model.parentModel;
-} // Enable Model.extend.
-
-
-enableClassExtend(Model);
-enableClassCheck(Model);
-mixin(Model, lineStyleMixin);
-mixin(Model, areaStyleMixin);
-mixin(Model, textStyleMixin);
-mixin(Model, itemStyleMixin);
-var _default = Model;
-module.exports = _default;
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-var BoundingRect = __webpack_require__(11);
-
-var _number = __webpack_require__(7);
-
-var parsePercent = _number.parsePercent;
-
-var formatUtil = __webpack_require__(12);
-
-// Layout helpers for each component positioning
-var each = zrUtil.each;
-/**
- * @public
- */
-
-var LOCATION_PARAMS = ['left', 'right', 'top', 'bottom', 'width', 'height'];
-/**
- * @public
- */
-
-var HV_NAMES = [['width', 'left', 'right'], ['height', 'top', 'bottom']];
-
-function boxLayout(orient, group, gap, maxWidth, maxHeight) {
-  var x = 0;
-  var y = 0;
-
-  if (maxWidth == null) {
-    maxWidth = Infinity;
-  }
-
-  if (maxHeight == null) {
-    maxHeight = Infinity;
-  }
-
-  var currentLineMaxSize = 0;
-  group.eachChild(function (child, idx) {
-    var position = child.position;
-    var rect = child.getBoundingRect();
-    var nextChild = group.childAt(idx + 1);
-    var nextChildRect = nextChild && nextChild.getBoundingRect();
-    var nextX;
-    var nextY;
-
-    if (orient === 'horizontal') {
-      var moveX = rect.width + (nextChildRect ? -nextChildRect.x + rect.x : 0);
-      nextX = x + moveX; // Wrap when width exceeds maxWidth or meet a `newline` group
-      // FIXME compare before adding gap?
-
-      if (nextX > maxWidth || child.newline) {
-        x = 0;
-        nextX = moveX;
-        y += currentLineMaxSize + gap;
-        currentLineMaxSize = rect.height;
-      } else {
-        // FIXME: consider rect.y is not `0`?
-        currentLineMaxSize = Math.max(currentLineMaxSize, rect.height);
-      }
-    } else {
-      var moveY = rect.height + (nextChildRect ? -nextChildRect.y + rect.y : 0);
-      nextY = y + moveY; // Wrap when width exceeds maxHeight or meet a `newline` group
-
-      if (nextY > maxHeight || child.newline) {
-        x += currentLineMaxSize + gap;
-        y = 0;
-        nextY = moveY;
-        currentLineMaxSize = rect.width;
-      } else {
-        currentLineMaxSize = Math.max(currentLineMaxSize, rect.width);
-      }
-    }
-
-    if (child.newline) {
-      return;
-    }
-
-    position[0] = x;
-    position[1] = y;
-    orient === 'horizontal' ? x = nextX + gap : y = nextY + gap;
-  });
-}
-/**
- * VBox or HBox layouting
- * @param {string} orient
- * @param {module:zrender/container/Group} group
- * @param {number} gap
- * @param {number} [width=Infinity]
- * @param {number} [height=Infinity]
- */
-
-
-var box = boxLayout;
-/**
- * VBox layouting
- * @param {module:zrender/container/Group} group
- * @param {number} gap
- * @param {number} [width=Infinity]
- * @param {number} [height=Infinity]
- */
-
-var vbox = zrUtil.curry(boxLayout, 'vertical');
-/**
- * HBox layouting
- * @param {module:zrender/container/Group} group
- * @param {number} gap
- * @param {number} [width=Infinity]
- * @param {number} [height=Infinity]
- */
-
-var hbox = zrUtil.curry(boxLayout, 'horizontal');
-/**
- * If x or x2 is not specified or 'center' 'left' 'right',
- * the width would be as long as possible.
- * If y or y2 is not specified or 'middle' 'top' 'bottom',
- * the height would be as long as possible.
- *
- * @param {Object} positionInfo
- * @param {number|string} [positionInfo.x]
- * @param {number|string} [positionInfo.y]
- * @param {number|string} [positionInfo.x2]
- * @param {number|string} [positionInfo.y2]
- * @param {Object} containerRect {width, height}
- * @param {string|number} margin
- * @return {Object} {width, height}
- */
-
-function getAvailableSize(positionInfo, containerRect, margin) {
-  var containerWidth = containerRect.width;
-  var containerHeight = containerRect.height;
-  var x = parsePercent(positionInfo.x, containerWidth);
-  var y = parsePercent(positionInfo.y, containerHeight);
-  var x2 = parsePercent(positionInfo.x2, containerWidth);
-  var y2 = parsePercent(positionInfo.y2, containerHeight);
-  (isNaN(x) || isNaN(parseFloat(positionInfo.x))) && (x = 0);
-  (isNaN(x2) || isNaN(parseFloat(positionInfo.x2))) && (x2 = containerWidth);
-  (isNaN(y) || isNaN(parseFloat(positionInfo.y))) && (y = 0);
-  (isNaN(y2) || isNaN(parseFloat(positionInfo.y2))) && (y2 = containerHeight);
-  margin = formatUtil.normalizeCssArray(margin || 0);
-  return {
-    width: Math.max(x2 - x - margin[1] - margin[3], 0),
-    height: Math.max(y2 - y - margin[0] - margin[2], 0)
-  };
-}
-/**
- * Parse position info.
- *
- * @param {Object} positionInfo
- * @param {number|string} [positionInfo.left]
- * @param {number|string} [positionInfo.top]
- * @param {number|string} [positionInfo.right]
- * @param {number|string} [positionInfo.bottom]
- * @param {number|string} [positionInfo.width]
- * @param {number|string} [positionInfo.height]
- * @param {number|string} [positionInfo.aspect] Aspect is width / height
- * @param {Object} containerRect
- * @param {string|number} [margin]
- *
- * @return {module:zrender/core/BoundingRect}
- */
-
-
-function getLayoutRect(positionInfo, containerRect, margin) {
-  margin = formatUtil.normalizeCssArray(margin || 0);
-  var containerWidth = containerRect.width;
-  var containerHeight = containerRect.height;
-  var left = parsePercent(positionInfo.left, containerWidth);
-  var top = parsePercent(positionInfo.top, containerHeight);
-  var right = parsePercent(positionInfo.right, containerWidth);
-  var bottom = parsePercent(positionInfo.bottom, containerHeight);
-  var width = parsePercent(positionInfo.width, containerWidth);
-  var height = parsePercent(positionInfo.height, containerHeight);
-  var verticalMargin = margin[2] + margin[0];
-  var horizontalMargin = margin[1] + margin[3];
-  var aspect = positionInfo.aspect; // If width is not specified, calculate width from left and right
-
-  if (isNaN(width)) {
-    width = containerWidth - right - horizontalMargin - left;
-  }
-
-  if (isNaN(height)) {
-    height = containerHeight - bottom - verticalMargin - top;
-  }
-
-  if (aspect != null) {
-    // If width and height are not given
-    // 1. Graph should not exceeds the container
-    // 2. Aspect must be keeped
-    // 3. Graph should take the space as more as possible
-    // FIXME
-    // Margin is not considered, because there is no case that both
-    // using margin and aspect so far.
-    if (isNaN(width) && isNaN(height)) {
-      if (aspect > containerWidth / containerHeight) {
-        width = containerWidth * 0.8;
-      } else {
-        height = containerHeight * 0.8;
-      }
-    } // Calculate width or height with given aspect
-
-
-    if (isNaN(width)) {
-      width = aspect * height;
-    }
-
-    if (isNaN(height)) {
-      height = width / aspect;
-    }
-  } // If left is not specified, calculate left from right and width
-
-
-  if (isNaN(left)) {
-    left = containerWidth - right - width - horizontalMargin;
-  }
-
-  if (isNaN(top)) {
-    top = containerHeight - bottom - height - verticalMargin;
-  } // Align left and top
-
-
-  switch (positionInfo.left || positionInfo.right) {
-    case 'center':
-      left = containerWidth / 2 - width / 2 - margin[3];
-      break;
-
-    case 'right':
-      left = containerWidth - width - horizontalMargin;
-      break;
-  }
-
-  switch (positionInfo.top || positionInfo.bottom) {
-    case 'middle':
-    case 'center':
-      top = containerHeight / 2 - height / 2 - margin[0];
-      break;
-
-    case 'bottom':
-      top = containerHeight - height - verticalMargin;
-      break;
-  } // If something is wrong and left, top, width, height are calculated as NaN
-
-
-  left = left || 0;
-  top = top || 0;
-
-  if (isNaN(width)) {
-    // Width may be NaN if only one value is given except width
-    width = containerWidth - horizontalMargin - left - (right || 0);
-  }
-
-  if (isNaN(height)) {
-    // Height may be NaN if only one value is given except height
-    height = containerHeight - verticalMargin - top - (bottom || 0);
-  }
-
-  var rect = new BoundingRect(left + margin[3], top + margin[0], width, height);
-  rect.margin = margin;
-  return rect;
-}
-/**
- * Position a zr element in viewport
- *  Group position is specified by either
- *  {left, top}, {right, bottom}
- *  If all properties exists, right and bottom will be igonred.
- *
- * Logic:
- *     1. Scale (against origin point in parent coord)
- *     2. Rotate (against origin point in parent coord)
- *     3. Traslate (with el.position by this method)
- * So this method only fixes the last step 'Traslate', which does not affect
- * scaling and rotating.
- *
- * If be called repeatly with the same input el, the same result will be gotten.
- *
- * @param {module:zrender/Element} el Should have `getBoundingRect` method.
- * @param {Object} positionInfo
- * @param {number|string} [positionInfo.left]
- * @param {number|string} [positionInfo.top]
- * @param {number|string} [positionInfo.right]
- * @param {number|string} [positionInfo.bottom]
- * @param {number|string} [positionInfo.width] Only for opt.boundingModel: 'raw'
- * @param {number|string} [positionInfo.height] Only for opt.boundingModel: 'raw'
- * @param {Object} containerRect
- * @param {string|number} margin
- * @param {Object} [opt]
- * @param {Array.<number>} [opt.hv=[1,1]] Only horizontal or only vertical.
- * @param {Array.<number>} [opt.boundingMode='all']
- *        Specify how to calculate boundingRect when locating.
- *        'all': Position the boundingRect that is transformed and uioned
- *               both itself and its descendants.
- *               This mode simplies confine the elements in the bounding
- *               of their container (e.g., using 'right: 0').
- *        'raw': Position the boundingRect that is not transformed and only itself.
- *               This mode is useful when you want a element can overflow its
- *               container. (Consider a rotated circle needs to be located in a corner.)
- *               In this mode positionInfo.width/height can only be number.
- */
-
-
-function positionElement(el, positionInfo, containerRect, margin, opt) {
-  var h = !opt || !opt.hv || opt.hv[0];
-  var v = !opt || !opt.hv || opt.hv[1];
-  var boundingMode = opt && opt.boundingMode || 'all';
-
-  if (!h && !v) {
-    return;
-  }
-
-  var rect;
-
-  if (boundingMode === 'raw') {
-    rect = el.type === 'group' ? new BoundingRect(0, 0, +positionInfo.width || 0, +positionInfo.height || 0) : el.getBoundingRect();
-  } else {
-    rect = el.getBoundingRect();
-
-    if (el.needLocalTransform()) {
-      var transform = el.getLocalTransform(); // Notice: raw rect may be inner object of el,
-      // which should not be modified.
-
-      rect = rect.clone();
-      rect.applyTransform(transform);
-    }
-  } // The real width and height can not be specified but calculated by the given el.
-
-
-  positionInfo = getLayoutRect(zrUtil.defaults({
-    width: rect.width,
-    height: rect.height
-  }, positionInfo), containerRect, margin); // Because 'tranlate' is the last step in transform
-  // (see zrender/core/Transformable#getLocalTransform),
-  // we can just only modify el.position to get final result.
-
-  var elPos = el.position;
-  var dx = h ? positionInfo.x - rect.x : 0;
-  var dy = v ? positionInfo.y - rect.y : 0;
-  el.attr('position', boundingMode === 'raw' ? [dx, dy] : [elPos[0] + dx, elPos[1] + dy]);
-}
-/**
- * @param {Object} option Contains some of the properties in HV_NAMES.
- * @param {number} hvIdx 0: horizontal; 1: vertical.
- */
-
-
-function sizeCalculable(option, hvIdx) {
-  return option[HV_NAMES[hvIdx][0]] != null || option[HV_NAMES[hvIdx][1]] != null && option[HV_NAMES[hvIdx][2]] != null;
-}
-/**
- * Consider Case:
- * When defulat option has {left: 0, width: 100}, and we set {right: 0}
- * through setOption or media query, using normal zrUtil.merge will cause
- * {right: 0} does not take effect.
- *
- * @example
- * ComponentModel.extend({
- *     init: function () {
- *         ...
- *         var inputPositionParams = layout.getLayoutParams(option);
- *         this.mergeOption(inputPositionParams);
- *     },
- *     mergeOption: function (newOption) {
- *         newOption && zrUtil.merge(thisOption, newOption, true);
- *         layout.mergeLayoutParam(thisOption, newOption);
- *     }
- * });
- *
- * @param {Object} targetOption
- * @param {Object} newOption
- * @param {Object|string} [opt]
- * @param {boolean|Array.<boolean>} [opt.ignoreSize=false] Used for the components
- *  that width (or height) should not be calculated by left and right (or top and bottom).
- */
-
-
-function mergeLayoutParam(targetOption, newOption, opt) {
-  !zrUtil.isObject(opt) && (opt = {});
-  var ignoreSize = opt.ignoreSize;
-  !zrUtil.isArray(ignoreSize) && (ignoreSize = [ignoreSize, ignoreSize]);
-  var hResult = merge(HV_NAMES[0], 0);
-  var vResult = merge(HV_NAMES[1], 1);
-  copy(HV_NAMES[0], targetOption, hResult);
-  copy(HV_NAMES[1], targetOption, vResult);
-
-  function merge(names, hvIdx) {
-    var newParams = {};
-    var newValueCount = 0;
-    var merged = {};
-    var mergedValueCount = 0;
-    var enoughParamNumber = 2;
-    each(names, function (name) {
-      merged[name] = targetOption[name];
-    });
-    each(names, function (name) {
-      // Consider case: newOption.width is null, which is
-      // set by user for removing width setting.
-      hasProp(newOption, name) && (newParams[name] = merged[name] = newOption[name]);
-      hasValue(newParams, name) && newValueCount++;
-      hasValue(merged, name) && mergedValueCount++;
-    });
-
-    if (ignoreSize[hvIdx]) {
-      // Only one of left/right is premitted to exist.
-      if (hasValue(newOption, names[1])) {
-        merged[names[2]] = null;
-      } else if (hasValue(newOption, names[2])) {
-        merged[names[1]] = null;
-      }
-
-      return merged;
-    } // Case: newOption: {width: ..., right: ...},
-    // or targetOption: {right: ...} and newOption: {width: ...},
-    // There is no conflict when merged only has params count
-    // little than enoughParamNumber.
-
-
-    if (mergedValueCount === enoughParamNumber || !newValueCount) {
-      return merged;
-    } // Case: newOption: {width: ..., right: ...},
-    // Than we can make sure user only want those two, and ignore
-    // all origin params in targetOption.
-    else if (newValueCount >= enoughParamNumber) {
-        return newParams;
-      } else {
-        // Chose another param from targetOption by priority.
-        for (var i = 0; i < names.length; i++) {
-          var name = names[i];
-
-          if (!hasProp(newParams, name) && hasProp(targetOption, name)) {
-            newParams[name] = targetOption[name];
-            break;
-          }
-        }
-
-        return newParams;
-      }
-  }
-
-  function hasProp(obj, name) {
-    return obj.hasOwnProperty(name);
-  }
-
-  function hasValue(obj, name) {
-    return obj[name] != null && obj[name] !== 'auto';
-  }
-
-  function copy(names, target, source) {
-    each(names, function (name) {
-      target[name] = source[name];
-    });
-  }
-}
-/**
- * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
- * @param {Object} source
- * @return {Object} Result contains those props.
- */
-
-
-function getLayoutParams(source) {
-  return copyLayoutParams({}, source);
-}
-/**
- * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
- * @param {Object} source
- * @return {Object} Result contains those props.
- */
-
-
-function copyLayoutParams(target, source) {
-  source && target && each(LOCATION_PARAMS, function (name) {
-    source.hasOwnProperty(name) && (target[name] = source[name]);
-  });
-  return target;
-}
-
-exports.LOCATION_PARAMS = LOCATION_PARAMS;
-exports.HV_NAMES = HV_NAMES;
-exports.box = box;
-exports.vbox = vbox;
-exports.hbox = hbox;
-exports.getAvailableSize = getAvailableSize;
-exports.getLayoutRect = getLayoutRect;
-exports.positionElement = positionElement;
-exports.sizeCalculable = sizeCalculable;
-exports.mergeLayoutParam = mergeLayoutParam;
-exports.getLayoutParams = getLayoutParams;
-exports.copyLayoutParams = copyLayoutParams;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8226,6 +7505,727 @@ var index_esm = {
 
 
 /***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var env = __webpack_require__(8);
+
+var _model = __webpack_require__(1);
+
+var makeInner = _model.makeInner;
+
+var _clazz = __webpack_require__(17);
+
+var enableClassExtend = _clazz.enableClassExtend;
+var enableClassCheck = _clazz.enableClassCheck;
+
+var lineStyleMixin = __webpack_require__(213);
+
+var areaStyleMixin = __webpack_require__(214);
+
+var textStyleMixin = __webpack_require__(215);
+
+var itemStyleMixin = __webpack_require__(239);
+
+/**
+ * @module echarts/model/Model
+ */
+var mixin = zrUtil.mixin;
+var inner = makeInner();
+/**
+ * @alias module:echarts/model/Model
+ * @constructor
+ * @param {Object} option
+ * @param {module:echarts/model/Model} [parentModel]
+ * @param {module:echarts/model/Global} [ecModel]
+ */
+
+function Model(option, parentModel, ecModel) {
+  /**
+   * @type {module:echarts/model/Model}
+   * @readOnly
+   */
+  this.parentModel = parentModel;
+  /**
+   * @type {module:echarts/model/Global}
+   * @readOnly
+   */
+
+  this.ecModel = ecModel;
+  /**
+   * @type {Object}
+   * @protected
+   */
+
+  this.option = option; // Simple optimization
+  // if (this.init) {
+  //     if (arguments.length <= 4) {
+  //         this.init(option, parentModel, ecModel, extraOpt);
+  //     }
+  //     else {
+  //         this.init.apply(this, arguments);
+  //     }
+  // }
+}
+
+Model.prototype = {
+  constructor: Model,
+
+  /**
+   * Model 的初始化函数
+   * @param {Object} option
+   */
+  init: null,
+
+  /**
+   * 从新的 Option merge
+   */
+  mergeOption: function (option) {
+    zrUtil.merge(this.option, option, true);
+  },
+
+  /**
+   * @param {string|Array.<string>} path
+   * @param {boolean} [ignoreParent=false]
+   * @return {*}
+   */
+  get: function (path, ignoreParent) {
+    if (path == null) {
+      return this.option;
+    }
+
+    return doGet(this.option, this.parsePath(path), !ignoreParent && getParent(this, path));
+  },
+
+  /**
+   * @param {string} key
+   * @param {boolean} [ignoreParent=false]
+   * @return {*}
+   */
+  getShallow: function (key, ignoreParent) {
+    var option = this.option;
+    var val = option == null ? option : option[key];
+    var parentModel = !ignoreParent && getParent(this, key);
+
+    if (val == null && parentModel) {
+      val = parentModel.getShallow(key);
+    }
+
+    return val;
+  },
+
+  /**
+   * @param {string|Array.<string>} [path]
+   * @param {module:echarts/model/Model} [parentModel]
+   * @return {module:echarts/model/Model}
+   */
+  getModel: function (path, parentModel) {
+    var obj = path == null ? this.option : doGet(this.option, path = this.parsePath(path));
+    var thisParentModel;
+    parentModel = parentModel || (thisParentModel = getParent(this, path)) && thisParentModel.getModel(path);
+    return new Model(obj, parentModel, this.ecModel);
+  },
+
+  /**
+   * If model has option
+   */
+  isEmpty: function () {
+    return this.option == null;
+  },
+  restoreData: function () {},
+  // Pending
+  clone: function () {
+    var Ctor = this.constructor;
+    return new Ctor(zrUtil.clone(this.option));
+  },
+  setReadOnly: function (properties) {// clazzUtil.setReadOnly(this, properties);
+  },
+  // If path is null/undefined, return null/undefined.
+  parsePath: function (path) {
+    if (typeof path === 'string') {
+      path = path.split('.');
+    }
+
+    return path;
+  },
+
+  /**
+   * @param {Function} getParentMethod
+   *        param {Array.<string>|string} path
+   *        return {module:echarts/model/Model}
+   */
+  customizeGetParent: function (getParentMethod) {
+    inner(this).getParent = getParentMethod;
+  },
+  isAnimationEnabled: function () {
+    if (!env.node) {
+      if (this.option.animation != null) {
+        return !!this.option.animation;
+      } else if (this.parentModel) {
+        return this.parentModel.isAnimationEnabled();
+      }
+    }
+  }
+};
+
+function doGet(obj, pathArr, parentModel) {
+  for (var i = 0; i < pathArr.length; i++) {
+    // Ignore empty
+    if (!pathArr[i]) {
+      continue;
+    } // obj could be number/string/... (like 0)
+
+
+    obj = obj && typeof obj === 'object' ? obj[pathArr[i]] : null;
+
+    if (obj == null) {
+      break;
+    }
+  }
+
+  if (obj == null && parentModel) {
+    obj = parentModel.get(pathArr);
+  }
+
+  return obj;
+} // `path` can be null/undefined
+
+
+function getParent(model, path) {
+  var getParentMethod = inner(model).getParent;
+  return getParentMethod ? getParentMethod.call(model, path) : model.parentModel;
+} // Enable Model.extend.
+
+
+enableClassExtend(Model);
+enableClassCheck(Model);
+mixin(Model, lineStyleMixin);
+mixin(Model, areaStyleMixin);
+mixin(Model, textStyleMixin);
+mixin(Model, itemStyleMixin);
+var _default = Model;
+module.exports = _default;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+var BoundingRect = __webpack_require__(11);
+
+var _number = __webpack_require__(7);
+
+var parsePercent = _number.parsePercent;
+
+var formatUtil = __webpack_require__(12);
+
+// Layout helpers for each component positioning
+var each = zrUtil.each;
+/**
+ * @public
+ */
+
+var LOCATION_PARAMS = ['left', 'right', 'top', 'bottom', 'width', 'height'];
+/**
+ * @public
+ */
+
+var HV_NAMES = [['width', 'left', 'right'], ['height', 'top', 'bottom']];
+
+function boxLayout(orient, group, gap, maxWidth, maxHeight) {
+  var x = 0;
+  var y = 0;
+
+  if (maxWidth == null) {
+    maxWidth = Infinity;
+  }
+
+  if (maxHeight == null) {
+    maxHeight = Infinity;
+  }
+
+  var currentLineMaxSize = 0;
+  group.eachChild(function (child, idx) {
+    var position = child.position;
+    var rect = child.getBoundingRect();
+    var nextChild = group.childAt(idx + 1);
+    var nextChildRect = nextChild && nextChild.getBoundingRect();
+    var nextX;
+    var nextY;
+
+    if (orient === 'horizontal') {
+      var moveX = rect.width + (nextChildRect ? -nextChildRect.x + rect.x : 0);
+      nextX = x + moveX; // Wrap when width exceeds maxWidth or meet a `newline` group
+      // FIXME compare before adding gap?
+
+      if (nextX > maxWidth || child.newline) {
+        x = 0;
+        nextX = moveX;
+        y += currentLineMaxSize + gap;
+        currentLineMaxSize = rect.height;
+      } else {
+        // FIXME: consider rect.y is not `0`?
+        currentLineMaxSize = Math.max(currentLineMaxSize, rect.height);
+      }
+    } else {
+      var moveY = rect.height + (nextChildRect ? -nextChildRect.y + rect.y : 0);
+      nextY = y + moveY; // Wrap when width exceeds maxHeight or meet a `newline` group
+
+      if (nextY > maxHeight || child.newline) {
+        x += currentLineMaxSize + gap;
+        y = 0;
+        nextY = moveY;
+        currentLineMaxSize = rect.width;
+      } else {
+        currentLineMaxSize = Math.max(currentLineMaxSize, rect.width);
+      }
+    }
+
+    if (child.newline) {
+      return;
+    }
+
+    position[0] = x;
+    position[1] = y;
+    orient === 'horizontal' ? x = nextX + gap : y = nextY + gap;
+  });
+}
+/**
+ * VBox or HBox layouting
+ * @param {string} orient
+ * @param {module:zrender/container/Group} group
+ * @param {number} gap
+ * @param {number} [width=Infinity]
+ * @param {number} [height=Infinity]
+ */
+
+
+var box = boxLayout;
+/**
+ * VBox layouting
+ * @param {module:zrender/container/Group} group
+ * @param {number} gap
+ * @param {number} [width=Infinity]
+ * @param {number} [height=Infinity]
+ */
+
+var vbox = zrUtil.curry(boxLayout, 'vertical');
+/**
+ * HBox layouting
+ * @param {module:zrender/container/Group} group
+ * @param {number} gap
+ * @param {number} [width=Infinity]
+ * @param {number} [height=Infinity]
+ */
+
+var hbox = zrUtil.curry(boxLayout, 'horizontal');
+/**
+ * If x or x2 is not specified or 'center' 'left' 'right',
+ * the width would be as long as possible.
+ * If y or y2 is not specified or 'middle' 'top' 'bottom',
+ * the height would be as long as possible.
+ *
+ * @param {Object} positionInfo
+ * @param {number|string} [positionInfo.x]
+ * @param {number|string} [positionInfo.y]
+ * @param {number|string} [positionInfo.x2]
+ * @param {number|string} [positionInfo.y2]
+ * @param {Object} containerRect {width, height}
+ * @param {string|number} margin
+ * @return {Object} {width, height}
+ */
+
+function getAvailableSize(positionInfo, containerRect, margin) {
+  var containerWidth = containerRect.width;
+  var containerHeight = containerRect.height;
+  var x = parsePercent(positionInfo.x, containerWidth);
+  var y = parsePercent(positionInfo.y, containerHeight);
+  var x2 = parsePercent(positionInfo.x2, containerWidth);
+  var y2 = parsePercent(positionInfo.y2, containerHeight);
+  (isNaN(x) || isNaN(parseFloat(positionInfo.x))) && (x = 0);
+  (isNaN(x2) || isNaN(parseFloat(positionInfo.x2))) && (x2 = containerWidth);
+  (isNaN(y) || isNaN(parseFloat(positionInfo.y))) && (y = 0);
+  (isNaN(y2) || isNaN(parseFloat(positionInfo.y2))) && (y2 = containerHeight);
+  margin = formatUtil.normalizeCssArray(margin || 0);
+  return {
+    width: Math.max(x2 - x - margin[1] - margin[3], 0),
+    height: Math.max(y2 - y - margin[0] - margin[2], 0)
+  };
+}
+/**
+ * Parse position info.
+ *
+ * @param {Object} positionInfo
+ * @param {number|string} [positionInfo.left]
+ * @param {number|string} [positionInfo.top]
+ * @param {number|string} [positionInfo.right]
+ * @param {number|string} [positionInfo.bottom]
+ * @param {number|string} [positionInfo.width]
+ * @param {number|string} [positionInfo.height]
+ * @param {number|string} [positionInfo.aspect] Aspect is width / height
+ * @param {Object} containerRect
+ * @param {string|number} [margin]
+ *
+ * @return {module:zrender/core/BoundingRect}
+ */
+
+
+function getLayoutRect(positionInfo, containerRect, margin) {
+  margin = formatUtil.normalizeCssArray(margin || 0);
+  var containerWidth = containerRect.width;
+  var containerHeight = containerRect.height;
+  var left = parsePercent(positionInfo.left, containerWidth);
+  var top = parsePercent(positionInfo.top, containerHeight);
+  var right = parsePercent(positionInfo.right, containerWidth);
+  var bottom = parsePercent(positionInfo.bottom, containerHeight);
+  var width = parsePercent(positionInfo.width, containerWidth);
+  var height = parsePercent(positionInfo.height, containerHeight);
+  var verticalMargin = margin[2] + margin[0];
+  var horizontalMargin = margin[1] + margin[3];
+  var aspect = positionInfo.aspect; // If width is not specified, calculate width from left and right
+
+  if (isNaN(width)) {
+    width = containerWidth - right - horizontalMargin - left;
+  }
+
+  if (isNaN(height)) {
+    height = containerHeight - bottom - verticalMargin - top;
+  }
+
+  if (aspect != null) {
+    // If width and height are not given
+    // 1. Graph should not exceeds the container
+    // 2. Aspect must be keeped
+    // 3. Graph should take the space as more as possible
+    // FIXME
+    // Margin is not considered, because there is no case that both
+    // using margin and aspect so far.
+    if (isNaN(width) && isNaN(height)) {
+      if (aspect > containerWidth / containerHeight) {
+        width = containerWidth * 0.8;
+      } else {
+        height = containerHeight * 0.8;
+      }
+    } // Calculate width or height with given aspect
+
+
+    if (isNaN(width)) {
+      width = aspect * height;
+    }
+
+    if (isNaN(height)) {
+      height = width / aspect;
+    }
+  } // If left is not specified, calculate left from right and width
+
+
+  if (isNaN(left)) {
+    left = containerWidth - right - width - horizontalMargin;
+  }
+
+  if (isNaN(top)) {
+    top = containerHeight - bottom - height - verticalMargin;
+  } // Align left and top
+
+
+  switch (positionInfo.left || positionInfo.right) {
+    case 'center':
+      left = containerWidth / 2 - width / 2 - margin[3];
+      break;
+
+    case 'right':
+      left = containerWidth - width - horizontalMargin;
+      break;
+  }
+
+  switch (positionInfo.top || positionInfo.bottom) {
+    case 'middle':
+    case 'center':
+      top = containerHeight / 2 - height / 2 - margin[0];
+      break;
+
+    case 'bottom':
+      top = containerHeight - height - verticalMargin;
+      break;
+  } // If something is wrong and left, top, width, height are calculated as NaN
+
+
+  left = left || 0;
+  top = top || 0;
+
+  if (isNaN(width)) {
+    // Width may be NaN if only one value is given except width
+    width = containerWidth - horizontalMargin - left - (right || 0);
+  }
+
+  if (isNaN(height)) {
+    // Height may be NaN if only one value is given except height
+    height = containerHeight - verticalMargin - top - (bottom || 0);
+  }
+
+  var rect = new BoundingRect(left + margin[3], top + margin[0], width, height);
+  rect.margin = margin;
+  return rect;
+}
+/**
+ * Position a zr element in viewport
+ *  Group position is specified by either
+ *  {left, top}, {right, bottom}
+ *  If all properties exists, right and bottom will be igonred.
+ *
+ * Logic:
+ *     1. Scale (against origin point in parent coord)
+ *     2. Rotate (against origin point in parent coord)
+ *     3. Traslate (with el.position by this method)
+ * So this method only fixes the last step 'Traslate', which does not affect
+ * scaling and rotating.
+ *
+ * If be called repeatly with the same input el, the same result will be gotten.
+ *
+ * @param {module:zrender/Element} el Should have `getBoundingRect` method.
+ * @param {Object} positionInfo
+ * @param {number|string} [positionInfo.left]
+ * @param {number|string} [positionInfo.top]
+ * @param {number|string} [positionInfo.right]
+ * @param {number|string} [positionInfo.bottom]
+ * @param {number|string} [positionInfo.width] Only for opt.boundingModel: 'raw'
+ * @param {number|string} [positionInfo.height] Only for opt.boundingModel: 'raw'
+ * @param {Object} containerRect
+ * @param {string|number} margin
+ * @param {Object} [opt]
+ * @param {Array.<number>} [opt.hv=[1,1]] Only horizontal or only vertical.
+ * @param {Array.<number>} [opt.boundingMode='all']
+ *        Specify how to calculate boundingRect when locating.
+ *        'all': Position the boundingRect that is transformed and uioned
+ *               both itself and its descendants.
+ *               This mode simplies confine the elements in the bounding
+ *               of their container (e.g., using 'right: 0').
+ *        'raw': Position the boundingRect that is not transformed and only itself.
+ *               This mode is useful when you want a element can overflow its
+ *               container. (Consider a rotated circle needs to be located in a corner.)
+ *               In this mode positionInfo.width/height can only be number.
+ */
+
+
+function positionElement(el, positionInfo, containerRect, margin, opt) {
+  var h = !opt || !opt.hv || opt.hv[0];
+  var v = !opt || !opt.hv || opt.hv[1];
+  var boundingMode = opt && opt.boundingMode || 'all';
+
+  if (!h && !v) {
+    return;
+  }
+
+  var rect;
+
+  if (boundingMode === 'raw') {
+    rect = el.type === 'group' ? new BoundingRect(0, 0, +positionInfo.width || 0, +positionInfo.height || 0) : el.getBoundingRect();
+  } else {
+    rect = el.getBoundingRect();
+
+    if (el.needLocalTransform()) {
+      var transform = el.getLocalTransform(); // Notice: raw rect may be inner object of el,
+      // which should not be modified.
+
+      rect = rect.clone();
+      rect.applyTransform(transform);
+    }
+  } // The real width and height can not be specified but calculated by the given el.
+
+
+  positionInfo = getLayoutRect(zrUtil.defaults({
+    width: rect.width,
+    height: rect.height
+  }, positionInfo), containerRect, margin); // Because 'tranlate' is the last step in transform
+  // (see zrender/core/Transformable#getLocalTransform),
+  // we can just only modify el.position to get final result.
+
+  var elPos = el.position;
+  var dx = h ? positionInfo.x - rect.x : 0;
+  var dy = v ? positionInfo.y - rect.y : 0;
+  el.attr('position', boundingMode === 'raw' ? [dx, dy] : [elPos[0] + dx, elPos[1] + dy]);
+}
+/**
+ * @param {Object} option Contains some of the properties in HV_NAMES.
+ * @param {number} hvIdx 0: horizontal; 1: vertical.
+ */
+
+
+function sizeCalculable(option, hvIdx) {
+  return option[HV_NAMES[hvIdx][0]] != null || option[HV_NAMES[hvIdx][1]] != null && option[HV_NAMES[hvIdx][2]] != null;
+}
+/**
+ * Consider Case:
+ * When defulat option has {left: 0, width: 100}, and we set {right: 0}
+ * through setOption or media query, using normal zrUtil.merge will cause
+ * {right: 0} does not take effect.
+ *
+ * @example
+ * ComponentModel.extend({
+ *     init: function () {
+ *         ...
+ *         var inputPositionParams = layout.getLayoutParams(option);
+ *         this.mergeOption(inputPositionParams);
+ *     },
+ *     mergeOption: function (newOption) {
+ *         newOption && zrUtil.merge(thisOption, newOption, true);
+ *         layout.mergeLayoutParam(thisOption, newOption);
+ *     }
+ * });
+ *
+ * @param {Object} targetOption
+ * @param {Object} newOption
+ * @param {Object|string} [opt]
+ * @param {boolean|Array.<boolean>} [opt.ignoreSize=false] Used for the components
+ *  that width (or height) should not be calculated by left and right (or top and bottom).
+ */
+
+
+function mergeLayoutParam(targetOption, newOption, opt) {
+  !zrUtil.isObject(opt) && (opt = {});
+  var ignoreSize = opt.ignoreSize;
+  !zrUtil.isArray(ignoreSize) && (ignoreSize = [ignoreSize, ignoreSize]);
+  var hResult = merge(HV_NAMES[0], 0);
+  var vResult = merge(HV_NAMES[1], 1);
+  copy(HV_NAMES[0], targetOption, hResult);
+  copy(HV_NAMES[1], targetOption, vResult);
+
+  function merge(names, hvIdx) {
+    var newParams = {};
+    var newValueCount = 0;
+    var merged = {};
+    var mergedValueCount = 0;
+    var enoughParamNumber = 2;
+    each(names, function (name) {
+      merged[name] = targetOption[name];
+    });
+    each(names, function (name) {
+      // Consider case: newOption.width is null, which is
+      // set by user for removing width setting.
+      hasProp(newOption, name) && (newParams[name] = merged[name] = newOption[name]);
+      hasValue(newParams, name) && newValueCount++;
+      hasValue(merged, name) && mergedValueCount++;
+    });
+
+    if (ignoreSize[hvIdx]) {
+      // Only one of left/right is premitted to exist.
+      if (hasValue(newOption, names[1])) {
+        merged[names[2]] = null;
+      } else if (hasValue(newOption, names[2])) {
+        merged[names[1]] = null;
+      }
+
+      return merged;
+    } // Case: newOption: {width: ..., right: ...},
+    // or targetOption: {right: ...} and newOption: {width: ...},
+    // There is no conflict when merged only has params count
+    // little than enoughParamNumber.
+
+
+    if (mergedValueCount === enoughParamNumber || !newValueCount) {
+      return merged;
+    } // Case: newOption: {width: ..., right: ...},
+    // Than we can make sure user only want those two, and ignore
+    // all origin params in targetOption.
+    else if (newValueCount >= enoughParamNumber) {
+        return newParams;
+      } else {
+        // Chose another param from targetOption by priority.
+        for (var i = 0; i < names.length; i++) {
+          var name = names[i];
+
+          if (!hasProp(newParams, name) && hasProp(targetOption, name)) {
+            newParams[name] = targetOption[name];
+            break;
+          }
+        }
+
+        return newParams;
+      }
+  }
+
+  function hasProp(obj, name) {
+    return obj.hasOwnProperty(name);
+  }
+
+  function hasValue(obj, name) {
+    return obj[name] != null && obj[name] !== 'auto';
+  }
+
+  function copy(names, target, source) {
+    each(names, function (name) {
+      target[name] = source[name];
+    });
+  }
+}
+/**
+ * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
+ * @param {Object} source
+ * @return {Object} Result contains those props.
+ */
+
+
+function getLayoutParams(source) {
+  return copyLayoutParams({}, source);
+}
+/**
+ * Retrieve 'left', 'right', 'top', 'bottom', 'width', 'height' from object.
+ * @param {Object} source
+ * @return {Object} Result contains those props.
+ */
+
+
+function copyLayoutParams(target, source) {
+  source && target && each(LOCATION_PARAMS, function (name) {
+    source.hasOwnProperty(name) && (target[name] = source[name]);
+  });
+  return target;
+}
+
+exports.LOCATION_PARAMS = LOCATION_PARAMS;
+exports.HV_NAMES = HV_NAMES;
+exports.box = box;
+exports.vbox = vbox;
+exports.hbox = hbox;
+exports.getAvailableSize = getAvailableSize;
+exports.getLayoutRect = getLayoutRect;
+exports.positionElement = positionElement;
+exports.sizeCalculable = sizeCalculable;
+exports.mergeLayoutParam = mergeLayoutParam;
+exports.getLayoutParams = getLayoutParams;
+exports.copyLayoutParams = copyLayoutParams;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8479,7 +8479,7 @@ exports.setReadOnly = setReadOnly;
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
 var componentUtil = __webpack_require__(35);
 
@@ -8488,13 +8488,13 @@ var _clazz = __webpack_require__(17);
 var enableClassManagement = _clazz.enableClassManagement;
 var parseClassType = _clazz.parseClassType;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 
-var layout = __webpack_require__(14);
+var layout = __webpack_require__(15);
 
-var boxLayoutMixin = __webpack_require__(243);
+var boxLayoutMixin = __webpack_require__(240);
 
 /**
  * Component model
@@ -10114,7 +10114,7 @@ var zrUtil = __webpack_require__(0);
 
 var textContain = __webpack_require__(20);
 
-var OrdinalScale = __webpack_require__(261);
+var OrdinalScale = __webpack_require__(258);
 
 var IntervalScale = __webpack_require__(50);
 
@@ -10122,13 +10122,13 @@ var Scale = __webpack_require__(37);
 
 var numberUtil = __webpack_require__(7);
 
-var _barGrid = __webpack_require__(262);
+var _barGrid = __webpack_require__(259);
 
 var calBarWidthAndOffset = _barGrid.calBarWidthAndOffset;
 
-__webpack_require__(263);
+__webpack_require__(260);
 
-__webpack_require__(264);
+__webpack_require__(261);
 
 /**
  * Get axis scale extent before niced.
@@ -11754,7 +11754,7 @@ var assert = _util.assert;
 var each = _util.each;
 var isObject = _util.isObject;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var getDataItemValue = _model.getDataItemValue;
 var isDataItemOption = _model.isDataItemOption;
@@ -23026,7 +23026,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(137).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(137).setImmediate))
 
 /***/ }),
 /* 31 */
@@ -23384,7 +23384,7 @@ var Style = __webpack_require__(72);
 
 var Element = __webpack_require__(67);
 
-var RectText = __webpack_require__(212);
+var RectText = __webpack_require__(209);
 
 /**
  * 可绘制的图形基类
@@ -25092,7 +25092,7 @@ exports.createSymbol = createSymbol;
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
 var each = zrUtil.each;
 var curry = zrUtil.curry; // Build axisPointerModel, mergin tooltip.axisPointer model for each axis.
@@ -26314,7 +26314,7 @@ var _config = __webpack_require__(4);
 
 var __DEV__ = _config.__DEV__;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 var getDataItemValue = _model.getDataItemValue;
@@ -38448,7 +38448,7 @@ module.exports = Cancel;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_industries__ = __webpack_require__(147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pfre__ = __webpack_require__(153);
@@ -38479,9 +38479,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 
 "use strict";
 var FETCH_MAJORS = 'majors/FETCH_MAJORS';
+var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
+var FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    FETCH_MAJORS: FETCH_MAJORS
+    FETCH_MAJORS: FETCH_MAJORS,
+    FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
+    FETCH_UNIVERSITIES: FETCH_UNIVERSITIES
+
 });
 
 /***/ }),
@@ -38513,7 +38518,7 @@ var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(170)
 /* template */
@@ -38580,7 +38585,7 @@ function updateForm(field, data, parent) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(175)
 /* template */
@@ -38632,15 +38637,15 @@ var env = __webpack_require__(8);
 
 var zrUtil = __webpack_require__(0);
 
-var Handler = __webpack_require__(204);
+var Handler = __webpack_require__(201);
 
-var Storage = __webpack_require__(206);
+var Storage = __webpack_require__(203);
 
-var Painter = __webpack_require__(210);
+var Painter = __webpack_require__(207);
 
-var Animation = __webpack_require__(213);
+var Animation = __webpack_require__(210);
 
-var HandlerProxy = __webpack_require__(214);
+var HandlerProxy = __webpack_require__(211);
 
 /*!
 * ZRender, a high performance 2d drawing library.
@@ -39108,7 +39113,7 @@ var Eventful = __webpack_require__(23);
 
 var Transformable = __webpack_require__(68);
 
-var Animatable = __webpack_require__(207);
+var Animatable = __webpack_require__(204);
 
 var zrUtil = __webpack_require__(0);
 
@@ -39664,7 +39669,7 @@ module.exports = _default;
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Clip = __webpack_require__(208);
+var Clip = __webpack_require__(205);
 
 var color = __webpack_require__(24);
 
@@ -41704,13 +41709,13 @@ var merge = _util.merge;
 var extend = _util.extend;
 var mixin = _util.mixin;
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
 var ComponentModel = __webpack_require__(18);
 
-var globalDefault = __webpack_require__(244);
+var globalDefault = __webpack_require__(241);
 
 var colorPaletteMixin = __webpack_require__(85);
 
@@ -42708,9 +42713,9 @@ module.exports = _default;
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var smoothSpline = __webpack_require__(231);
+var smoothSpline = __webpack_require__(228);
 
-var smoothBezier = __webpack_require__(232);
+var smoothBezier = __webpack_require__(229);
 
 function buildPath(ctx, shape, closePath) {
   var points = shape.points;
@@ -42750,7 +42755,7 @@ exports.buildPath = buildPath;
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 var normalizeToArray = _model.normalizeToArray;
@@ -42977,15 +42982,15 @@ var encodeHTML = _format.encodeHTML;
 var addCommas = _format.addCommas;
 var getTooltipMarker = _format.getTooltipMarker;
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 var ComponentModel = __webpack_require__(18);
 
 var colorPaletteMixin = __webpack_require__(85);
 
-var dataFormatMixin = __webpack_require__(249);
+var dataFormatMixin = __webpack_require__(246);
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
@@ -43501,7 +43506,7 @@ var componentUtil = __webpack_require__(35);
 
 var clazzUtil = __webpack_require__(17);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 var _task = __webpack_require__(47);
 
@@ -43729,7 +43734,7 @@ module.exports = _default;
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 
@@ -43769,7 +43774,7 @@ var _dimensionHelper = __webpack_require__(49);
 
 var getDimensionTypeByAxis = _dimensionHelper.getDimensionTypeByAxis;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var getDataItemValue = _model.getDataItemValue;
 
@@ -43893,9 +43898,9 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
-var DataDiffer = __webpack_require__(260);
+var DataDiffer = __webpack_require__(257);
 
 var Source = __webpack_require__(26);
 
@@ -45777,7 +45782,7 @@ listProto.TRANSFERABLE_METHODS = ['cloneShallow', 'downSample', 'map']; // Metho
 listProto.CHANGABLE_METHODS = ['filterSelf', 'selectRange'];
 var _default = List;
 module.exports = _default;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 93 */
@@ -45828,7 +45833,7 @@ var extend = _util.extend;
 var isObject = _util.isObject;
 var clone = _util.clone;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -46709,7 +46714,7 @@ module.exports = isObject;
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(270);
+var freeGlobal = __webpack_require__(267);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -46748,7 +46753,7 @@ var _number = __webpack_require__(7);
 
 var parsePercent = _number.parsePercent;
 
-var _labelHelper = __webpack_require__(283);
+var _labelHelper = __webpack_require__(280);
 
 var getDefaultLabel = _labelHelper.getDefaultLabel;
 
@@ -47156,7 +47161,7 @@ var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(18);
 
-var axisModelCreator = __webpack_require__(295);
+var axisModelCreator = __webpack_require__(292);
 
 var axisModelCommonMixin = __webpack_require__(97);
 
@@ -47237,7 +47242,7 @@ var formatUtil = __webpack_require__(12);
 
 var graphic = __webpack_require__(3);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
 var _number = __webpack_require__(7);
 
@@ -48052,7 +48057,7 @@ exports.layout = layout;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 /**
  * @param {Object} finder contains {seriesIndex, dataIndex, dataIndexInside}
@@ -48111,7 +48116,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 var inner = makeInner();
@@ -48461,11 +48466,11 @@ exports.makeSectorShape = makeSectorShape;
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(318)
+var __vue_script__ = __webpack_require__(315)
 /* template */
-var __vue_template__ = __webpack_require__(323)
+var __vue_template__ = __webpack_require__(320)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48508,7 +48513,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(113);
-module.exports = __webpack_require__(348);
+module.exports = __webpack_require__(345);
 
 
 /***/ }),
@@ -48523,9 +48528,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -48557,7 +48562,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   },
   created: function created() {
     this.$store.dispatch('fetchMajors');
-    /*this.$store.dispatch('fetchIndustryImages');*/
+    this.$store.dispatch('fetchUniversities');
   }
 });
 
@@ -65695,7 +65700,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(116)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(116)(module)))
 
 /***/ }),
 /* 116 */
@@ -65829,6 +65834,7 @@ var Util = function ($$$1) {
 
   function transitionEndEmulator(duration) {
     var _this = this;
+<<<<<<< HEAD
 
     var called = false;
     $$$1(this).one(Util.TRANSITION_END, function () {
@@ -65846,6 +65852,25 @@ var Util = function ($$$1) {
     transition = transitionEndTest();
     $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
 
+=======
+
+    var called = false;
+    $$$1(this).one(Util.TRANSITION_END, function () {
+      called = true;
+    });
+    setTimeout(function () {
+      if (!called) {
+        Util.triggerTransitionEnd(_this);
+      }
+    }, duration);
+    return this;
+  }
+
+  function setTransitionEndSupport() {
+    transition = transitionEndTest();
+    $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
     if (Util.supportsTransitionEnd()) {
       $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
@@ -66205,6 +66230,7 @@ var Button = function ($$$1) {
         if (!data) {
           data = new Button(this);
           $$$1(this).data(DATA_KEY, data);
+<<<<<<< HEAD
         }
 
         if (config === 'toggle') {
@@ -66227,6 +66253,532 @@ var Button = function ($$$1) {
    * ------------------------------------------------------------------------
    */
 
+
+  $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+    event.preventDefault();
+    var button = event.target;
+
+    if (!$$$1(button).hasClass(ClassName.BUTTON)) {
+      button = $$$1(button).closest(Selector.BUTTON);
+    }
+
+    Button._jQueryInterface.call($$$1(button), 'toggle');
+  }).on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+    var button = $$$1(event.target).closest(Selector.BUTTON)[0];
+    $$$1(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
+  });
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $$$1.fn[NAME] = Button._jQueryInterface;
+  $$$1.fn[NAME].Constructor = Button;
+
+  $$$1.fn[NAME].noConflict = function () {
+    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Button._jQueryInterface;
+  };
+
+  return Button;
+}($);
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): carousel.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+var Carousel = function ($$$1) {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+=======
+        }
+
+        if (config === 'toggle') {
+          data[config]();
+        }
+      });
+    };
+
+    _createClass(Button, null, [{
+      key: "VERSION",
+      get: function get() {
+        return VERSION;
+      }
+    }]);
+    return Button;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
+   * ------------------------------------------------------------------------
+   */
+  var NAME = 'carousel';
+  var VERSION = '4.0.0';
+  var DATA_KEY = 'bs.carousel';
+  var EVENT_KEY = "." + DATA_KEY;
+  var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
+  var TRANSITION_DURATION = 600;
+  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
+
+  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
+
+<<<<<<< HEAD
+  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
+
+  var Default = {
+    interval: 5000,
+    keyboard: true,
+    slide: false,
+    pause: 'hover',
+    wrap: true
+  };
+  var DefaultType = {
+    interval: '(number|boolean)',
+    keyboard: 'boolean',
+    slide: '(boolean|string)',
+    pause: '(string|boolean)',
+    wrap: 'boolean'
+  };
+  var Direction = {
+    NEXT: 'next',
+    PREV: 'prev',
+    LEFT: 'left',
+    RIGHT: 'right'
+  };
+  var Event = {
+    SLIDE: "slide" + EVENT_KEY,
+    SLID: "slid" + EVENT_KEY,
+    KEYDOWN: "keydown" + EVENT_KEY,
+    MOUSEENTER: "mouseenter" + EVENT_KEY,
+    MOUSELEAVE: "mouseleave" + EVENT_KEY,
+    TOUCHEND: "touchend" + EVENT_KEY,
+    LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
+    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
+  };
+  var ClassName = {
+    CAROUSEL: 'carousel',
+    ACTIVE: 'active',
+    SLIDE: 'slide',
+    RIGHT: 'carousel-item-right',
+    LEFT: 'carousel-item-left',
+    NEXT: 'carousel-item-next',
+    PREV: 'carousel-item-prev',
+    ITEM: 'carousel-item'
+  };
+  var Selector = {
+    ACTIVE: '.active',
+    ACTIVE_ITEM: '.active.carousel-item',
+    ITEM: '.carousel-item',
+    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
+    INDICATORS: '.carousel-indicators',
+    DATA_SLIDE: '[data-slide], [data-slide-to]',
+    DATA_RIDE: '[data-ride="carousel"]'
+    /**
+     * ------------------------------------------------------------------------
+     * Class Definition
+     * ------------------------------------------------------------------------
+     */
+
+  };
+
+  var Carousel =
+  /*#__PURE__*/
+  function () {
+    function Carousel(element, config) {
+      this._items = null;
+      this._interval = null;
+      this._activeElement = null;
+      this._isPaused = false;
+      this._isSliding = false;
+      this.touchTimeout = null;
+      this._config = this._getConfig(config);
+      this._element = $$$1(element)[0];
+      this._indicatorsElement = $$$1(this._element).find(Selector.INDICATORS)[0];
+
+      this._addEventListeners();
+    } // Getters
+
+
+    var _proto = Carousel.prototype;
+
+    // Public
+    _proto.next = function next() {
+      if (!this._isSliding) {
+        this._slide(Direction.NEXT);
+      }
+    };
+
+    _proto.nextWhenVisible = function nextWhenVisible() {
+      // Don't call next when the page isn't visible
+      // or the carousel or its parent isn't visible
+      if (!document.hidden && $$$1(this._element).is(':visible') && $$$1(this._element).css('visibility') !== 'hidden') {
+        this.next();
+      }
+    };
+
+    _proto.prev = function prev() {
+      if (!this._isSliding) {
+        this._slide(Direction.PREV);
+      }
+    };
+
+    _proto.pause = function pause(event) {
+      if (!event) {
+        this._isPaused = true;
+      }
+
+      if ($$$1(this._element).find(Selector.NEXT_PREV)[0] && Util.supportsTransitionEnd()) {
+        Util.triggerTransitionEnd(this._element);
+        this.cycle(true);
+      }
+
+      clearInterval(this._interval);
+      this._interval = null;
+    };
+
+    _proto.cycle = function cycle(event) {
+      if (!event) {
+        this._isPaused = false;
+      }
+
+      if (this._interval) {
+        clearInterval(this._interval);
+        this._interval = null;
+      }
+
+      if (this._config.interval && !this._isPaused) {
+        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
+      }
+    };
+
+    _proto.to = function to(index) {
+      var _this = this;
+
+      this._activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
+
+      var activeIndex = this._getItemIndex(this._activeElement);
+
+      if (index > this._items.length - 1 || index < 0) {
+        return;
+      }
+
+      if (this._isSliding) {
+        $$$1(this._element).one(Event.SLID, function () {
+          return _this.to(index);
+        });
+        return;
+      }
+
+      if (activeIndex === index) {
+        this.pause();
+        this.cycle();
+        return;
+      }
+
+      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
+
+      this._slide(direction, this._items[index]);
+    };
+
+    _proto.dispose = function dispose() {
+      $$$1(this._element).off(EVENT_KEY);
+      $$$1.removeData(this._element, DATA_KEY);
+      this._items = null;
+      this._config = null;
+      this._element = null;
+      this._interval = null;
+      this._isPaused = null;
+      this._isSliding = null;
+      this._activeElement = null;
+      this._indicatorsElement = null;
+    }; // Private
+
+
+    _proto._getConfig = function _getConfig(config) {
+      config = _extends({}, Default, config);
+      Util.typeCheckConfig(NAME, config, DefaultType);
+      return config;
+    };
+
+    _proto._addEventListeners = function _addEventListeners() {
+      var _this2 = this;
+
+      if (this._config.keyboard) {
+        $$$1(this._element).on(Event.KEYDOWN, function (event) {
+          return _this2._keydown(event);
+        });
+      }
+
+      if (this._config.pause === 'hover') {
+        $$$1(this._element).on(Event.MOUSEENTER, function (event) {
+          return _this2.pause(event);
+        }).on(Event.MOUSELEAVE, function (event) {
+          return _this2.cycle(event);
+        });
+
+        if ('ontouchstart' in document.documentElement) {
+          // If it's a touch-enabled device, mouseenter/leave are fired as
+          // part of the mouse compatibility events on first tap - the carousel
+          // would stop cycling until user tapped out of it;
+          // here, we listen for touchend, explicitly pause the carousel
+          // (as if it's the second time we tap on it, mouseenter compat event
+          // is NOT fired) and after a timeout (to allow for mouse compatibility
+          // events to fire) we explicitly restart cycling
+          $$$1(this._element).on(Event.TOUCHEND, function () {
+            _this2.pause();
+
+            if (_this2.touchTimeout) {
+              clearTimeout(_this2.touchTimeout);
+            }
+
+            _this2.touchTimeout = setTimeout(function (event) {
+              return _this2.cycle(event);
+            }, TOUCHEVENT_COMPAT_WAIT + _this2._config.interval);
+          });
+        }
+      }
+    };
+
+    _proto._keydown = function _keydown(event) {
+      if (/input|textarea/i.test(event.target.tagName)) {
+        return;
+      }
+
+      switch (event.which) {
+        case ARROW_LEFT_KEYCODE:
+          event.preventDefault();
+          this.prev();
+          break;
+
+        case ARROW_RIGHT_KEYCODE:
+          event.preventDefault();
+          this.next();
+          break;
+
+        default:
+      }
+    };
+
+    _proto._getItemIndex = function _getItemIndex(element) {
+      this._items = $$$1.makeArray($$$1(element).parent().find(Selector.ITEM));
+      return this._items.indexOf(element);
+    };
+
+    _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
+      var isNextDirection = direction === Direction.NEXT;
+      var isPrevDirection = direction === Direction.PREV;
+
+      var activeIndex = this._getItemIndex(activeElement);
+
+      var lastItemIndex = this._items.length - 1;
+      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
+
+      if (isGoingToWrap && !this._config.wrap) {
+        return activeElement;
+      }
+
+      var delta = direction === Direction.PREV ? -1 : 1;
+      var itemIndex = (activeIndex + delta) % this._items.length;
+      return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
+    };
+
+    _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
+      var targetIndex = this._getItemIndex(relatedTarget);
+
+      var fromIndex = this._getItemIndex($$$1(this._element).find(Selector.ACTIVE_ITEM)[0]);
+
+      var slideEvent = $$$1.Event(Event.SLIDE, {
+        relatedTarget: relatedTarget,
+        direction: eventDirectionName,
+        from: fromIndex,
+        to: targetIndex
+      });
+      $$$1(this._element).trigger(slideEvent);
+      return slideEvent;
+    };
+
+    _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
+      if (this._indicatorsElement) {
+        $$$1(this._indicatorsElement).find(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
+
+        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
+
+        if (nextIndicator) {
+          $$$1(nextIndicator).addClass(ClassName.ACTIVE);
+        }
+      }
+    };
+
+    _proto._slide = function _slide(direction, element) {
+      var _this3 = this;
+
+      var activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
+
+      var activeElementIndex = this._getItemIndex(activeElement);
+
+      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
+
+      var nextElementIndex = this._getItemIndex(nextElement);
+
+      var isCycling = Boolean(this._interval);
+      var directionalClassName;
+      var orderClassName;
+      var eventDirectionName;
+
+      if (direction === Direction.NEXT) {
+        directionalClassName = ClassName.LEFT;
+        orderClassName = ClassName.NEXT;
+        eventDirectionName = Direction.LEFT;
+      } else {
+        directionalClassName = ClassName.RIGHT;
+        orderClassName = ClassName.PREV;
+        eventDirectionName = Direction.RIGHT;
+      }
+
+      if (nextElement && $$$1(nextElement).hasClass(ClassName.ACTIVE)) {
+        this._isSliding = false;
+        return;
+      }
+
+      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
+
+      if (slideEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      if (!activeElement || !nextElement) {
+        // Some weirdness is happening, so we bail
+        return;
+      }
+
+      this._isSliding = true;
+
+      if (isCycling) {
+        this.pause();
+      }
+
+      this._setActiveIndicatorElement(nextElement);
+
+      var slidEvent = $$$1.Event(Event.SLID, {
+        relatedTarget: nextElement,
+        direction: eventDirectionName,
+        from: activeElementIndex,
+        to: nextElementIndex
+      });
+
+      if (Util.supportsTransitionEnd() && $$$1(this._element).hasClass(ClassName.SLIDE)) {
+        $$$1(nextElement).addClass(orderClassName);
+        Util.reflow(nextElement);
+        $$$1(activeElement).addClass(directionalClassName);
+        $$$1(nextElement).addClass(directionalClassName);
+        $$$1(activeElement).one(Util.TRANSITION_END, function () {
+          $$$1(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
+          $$$1(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
+          _this3._isSliding = false;
+          setTimeout(function () {
+            return $$$1(_this3._element).trigger(slidEvent);
+          }, 0);
+        }).emulateTransitionEnd(TRANSITION_DURATION);
+      } else {
+        $$$1(activeElement).removeClass(ClassName.ACTIVE);
+        $$$1(nextElement).addClass(ClassName.ACTIVE);
+        this._isSliding = false;
+        $$$1(this._element).trigger(slidEvent);
+      }
+
+      if (isCycling) {
+        this.cycle();
+      }
+    }; // Static
+
+
+    Carousel._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var data = $$$1(this).data(DATA_KEY);
+
+        var _config = _extends({}, Default, $$$1(this).data());
+
+        if (typeof config === 'object') {
+          _config = _extends({}, _config, config);
+        }
+
+        var action = typeof config === 'string' ? config : _config.slide;
+
+        if (!data) {
+          data = new Carousel(this, _config);
+          $$$1(this).data(DATA_KEY, data);
+        }
+
+        if (typeof config === 'number') {
+          data.to(config);
+        } else if (typeof action === 'string') {
+          if (typeof data[action] === 'undefined') {
+            throw new TypeError("No method named \"" + action + "\"");
+          }
+
+          data[action]();
+        } else if (_config.interval) {
+          data.pause();
+          data.cycle();
+        }
+      });
+    };
+
+    Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
+      var selector = Util.getSelectorFromElement(this);
+
+      if (!selector) {
+        return;
+      }
+
+      var target = $$$1(selector)[0];
+
+      if (!target || !$$$1(target).hasClass(ClassName.CAROUSEL)) {
+        return;
+      }
+
+      var config = _extends({}, $$$1(target).data(), $$$1(this).data());
+      var slideIndex = this.getAttribute('data-slide-to');
+
+      if (slideIndex) {
+        config.interval = false;
+      }
+
+      Carousel._jQueryInterface.call($$$1(target), config);
+
+      if (slideIndex) {
+        $$$1(target).data(DATA_KEY).to(slideIndex);
+      }
+
+      event.preventDefault();
+    };
+
+    _createClass(Carousel, null, [{
+      key: "VERSION",
+      get: function get() {
+        return VERSION;
+      }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default;
+      }
+    }]);
+    return Carousel;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+=======
 
   $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
     event.preventDefault();
@@ -66695,10 +67247,51 @@ var Carousel = function ($$$1) {
       if (!target || !$$$1(target).hasClass(ClassName.CAROUSEL)) {
         return;
       }
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 
       var config = _extends({}, $$$1(target).data(), $$$1(this).data());
       var slideIndex = this.getAttribute('data-slide-to');
 
+<<<<<<< HEAD
+  $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
+  $$$1(window).on(Event.LOAD_DATA_API, function () {
+    $$$1(Selector.DATA_RIDE).each(function () {
+      var $carousel = $$$1(this);
+
+      Carousel._jQueryInterface.call($carousel, $carousel.data());
+    });
+  });
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $$$1.fn[NAME] = Carousel._jQueryInterface;
+  $$$1.fn[NAME].Constructor = Carousel;
+
+  $$$1.fn[NAME].noConflict = function () {
+    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Carousel._jQueryInterface;
+  };
+
+  return Carousel;
+}($);
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): collapse.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+var Collapse = function ($$$1) {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+=======
       if (slideIndex) {
         config.interval = false;
       }
@@ -66770,6 +67363,7 @@ var Collapse = function ($$$1) {
    * Constants
    * ------------------------------------------------------------------------
    */
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
   var NAME = 'collapse';
   var VERSION = '4.0.0';
   var DATA_KEY = 'bs.collapse';
@@ -66899,10 +67493,17 @@ var Collapse = function ($$$1) {
       }
 
       var dimension = this._getDimension();
+<<<<<<< HEAD
 
       $$$1(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
       this._element.style[dimension] = 0;
 
+=======
+
+      $$$1(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
+      this._element.style[dimension] = 0;
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
       if (this._triggerArray.length > 0) {
         $$$1(this._triggerArray).removeClass(ClassName.COLLAPSED).attr('aria-expanded', true);
       }
@@ -66922,6 +67523,7 @@ var Collapse = function ($$$1) {
         complete();
         return;
       }
+<<<<<<< HEAD
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
       var scrollSize = "scroll" + capitalizedDimension;
@@ -66954,6 +67556,40 @@ var Collapse = function ($$$1) {
           var trigger = this._triggerArray[i];
           var selector = Util.getSelectorFromElement(trigger);
 
+=======
+
+      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
+      var scrollSize = "scroll" + capitalizedDimension;
+      $$$1(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
+      this._element.style[dimension] = this._element[scrollSize] + "px";
+    };
+
+    _proto.hide = function hide() {
+      var _this2 = this;
+
+      if (this._isTransitioning || !$$$1(this._element).hasClass(ClassName.SHOW)) {
+        return;
+      }
+
+      var startEvent = $$$1.Event(Event.HIDE);
+      $$$1(this._element).trigger(startEvent);
+
+      if (startEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      var dimension = this._getDimension();
+
+      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
+      Util.reflow(this._element);
+      $$$1(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
+
+      if (this._triggerArray.length > 0) {
+        for (var i = 0; i < this._triggerArray.length; i++) {
+          var trigger = this._triggerArray[i];
+          var selector = Util.getSelectorFromElement(trigger);
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
           if (selector !== null) {
             var $elem = $$$1(selector);
 
@@ -67057,12 +67693,21 @@ var Collapse = function ($$$1) {
         if (!data && _config.toggle && /show|hide/.test(config)) {
           _config.toggle = false;
         }
+<<<<<<< HEAD
 
         if (!data) {
           data = new Collapse(this, _config);
           $this.data(DATA_KEY, data);
         }
 
+=======
+
+        if (!data) {
+          data = new Collapse(this, _config);
+          $this.data(DATA_KEY, data);
+        }
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
             throw new TypeError("No method named \"" + config + "\"");
@@ -67401,6 +68046,7 @@ var Dropdown = function ($$$1) {
       return popperConfig;
     }; // Static
 
+<<<<<<< HEAD
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -67408,6 +68054,15 @@ var Dropdown = function ($$$1) {
 
         var _config = typeof config === 'object' ? config : null;
 
+=======
+
+    Dropdown._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var data = $$$1(this).data(DATA_KEY);
+
+        var _config = typeof config === 'object' ? config : null;
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (!data) {
           data = new Dropdown(this, _config);
           $$$1(this).data(DATA_KEY, data);
@@ -68002,6 +68657,7 @@ var Modal = function ($$$1) {
       this._element.style.paddingLeft = '';
       this._element.style.paddingRight = '';
     };
+<<<<<<< HEAD
 
     _proto._checkScrollbar = function _checkScrollbar() {
       var rect = document.body.getBoundingClientRect();
@@ -68040,6 +68696,46 @@ var Modal = function ($$$1) {
       }
     };
 
+=======
+
+    _proto._checkScrollbar = function _checkScrollbar() {
+      var rect = document.body.getBoundingClientRect();
+      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+      this._scrollbarWidth = this._getScrollbarWidth();
+    };
+
+    _proto._setScrollbar = function _setScrollbar() {
+      var _this9 = this;
+
+      if (this._isBodyOverflowing) {
+        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
+        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+        // Adjust fixed content padding
+        $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
+          var actualPadding = $$$1(element)[0].style.paddingRight;
+          var calculatedPadding = $$$1(element).css('padding-right');
+          $$$1(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
+        }); // Adjust sticky content margin
+
+        $$$1(Selector.STICKY_CONTENT).each(function (index, element) {
+          var actualMargin = $$$1(element)[0].style.marginRight;
+          var calculatedMargin = $$$1(element).css('margin-right');
+          $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
+        }); // Adjust navbar-toggler margin
+
+        $$$1(Selector.NAVBAR_TOGGLER).each(function (index, element) {
+          var actualMargin = $$$1(element)[0].style.marginRight;
+          var calculatedMargin = $$$1(element).css('margin-right');
+          $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) + _this9._scrollbarWidth + "px");
+        }); // Adjust body padding
+
+        var actualPadding = document.body.style.paddingRight;
+        var calculatedPadding = $$$1('body').css('padding-right');
+        $$$1('body').data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
+      }
+    };
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
       $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
@@ -68408,10 +69104,17 @@ var Tooltip = function ($$$1) {
             },
             flip: {
               behavior: this.config.fallbackPlacement
+<<<<<<< HEAD
             },
             arrow: {
               element: Selector.ARROW
             },
+=======
+            },
+            arrow: {
+              element: Selector.ARROW
+            },
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
             preventOverflow: {
               boundariesElement: this.config.boundary
             }
@@ -68550,10 +69253,17 @@ var Tooltip = function ($$$1) {
         $element[html ? 'html' : 'text'](content);
       }
     };
+<<<<<<< HEAD
 
     _proto.getTitle = function getTitle() {
       var title = this.element.getAttribute('data-original-title');
 
+=======
+
+    _proto.getTitle = function getTitle() {
+      var title = this.element.getAttribute('data-original-title');
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
       if (!title) {
         title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
       }
@@ -68831,6 +69541,7 @@ var Tooltip = function ($$$1) {
 
   return Tooltip;
 }($, Popper);
+<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -68839,6 +69550,16 @@ var Tooltip = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
+=======
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): popover.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var Popover = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -69024,6 +69745,7 @@ var Popover = function ($$$1) {
 
   return Popover;
 }($);
+<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -69032,6 +69754,16 @@ var Popover = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
+=======
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): scrollspy.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var ScrollSpy = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -69215,6 +69947,7 @@ var ScrollSpy = function ($$$1) {
 
         return;
       }
+<<<<<<< HEAD
 
       if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
         this._activeTarget = null;
@@ -69227,6 +69960,20 @@ var ScrollSpy = function ($$$1) {
       for (var i = this._offsets.length; i--;) {
         var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
+=======
+
+      if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
+        this._activeTarget = null;
+
+        this._clear();
+
+        return;
+      }
+
+      for (var i = this._offsets.length; i--;) {
+        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (isActiveTarget) {
           this._activate(this._targets[i]);
         }
@@ -69335,6 +70082,7 @@ var ScrollSpy = function ($$$1) {
 
   return ScrollSpy;
 }($);
+<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -69343,6 +70091,16 @@ var ScrollSpy = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
+=======
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): tab.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var Tab = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -69519,6 +70277,7 @@ var Tab = function ($$$1) {
 
         element.setAttribute('aria-expanded', true);
       }
+<<<<<<< HEAD
 
       if (callback) {
         callback();
@@ -69536,6 +70295,25 @@ var Tab = function ($$$1) {
           $this.data(DATA_KEY, data);
         }
 
+=======
+
+      if (callback) {
+        callback();
+      }
+    }; // Static
+
+
+    Tab._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var $this = $$$1(this);
+        var data = $this.data(DATA_KEY);
+
+        if (!data) {
+          data = new Tab(this);
+          $this.data(DATA_KEY, data);
+        }
+
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
             throw new TypeError("No method named \"" + config + "\"");
@@ -72069,7 +72847,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(16)))
 
 /***/ }),
 /* 119 */
@@ -73020,7 +73798,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 138 */
@@ -73213,7 +73991,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(53)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(53)))
 
 /***/ }),
 /* 139 */
@@ -73230,13 +74008,13 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__);
 
 
@@ -75922,7 +76700,8 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     majors: [],
-    years: ['2', '5', '10', '15']
+    majorData: [],
+    universities: []
 });
 
 /***/ }),
@@ -75936,8 +76715,36 @@ if (inBrowser && window.Vue) {
     majors: function majors(state) {
         return state.majors;
     },
-    majorsYears: function majorsYears(state) {
-        return state.years;
+    majorById: function majorById(state) {
+        return function (id) {
+            var index = state.majors.findIndex(function (major) {
+                return major.majorId === Number(id);
+            });
+            return state.majors[index];
+        };
+    },
+    majorData: function majorData(state) {
+        return state.majorData;
+    },
+    majorDataByMajorId: function majorDataByMajorId(state, getters) {
+        return function (id) {
+            var index = getters.majorData.findIndex(function (dataSet) {
+                return dataSet.major_id == id;
+            });
+            return getters.majorData[index];
+        };
+    },
+    universities: function universities(state) {
+        return state.universities;
+    },
+
+    universityById: function universityById(state, getters) {
+        return function (id) {
+            var index = getters.universities.findIndex(function (campus) {
+                return campus.id == id;
+            });
+            return getters.universities[index];
+        };
     }
 });
 
@@ -75947,14 +76754,28 @@ if (inBrowser && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__ = __webpack_require__(59);
+var _majors$FETCH_MAJORS$;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //MAJORS MUTATIONS
 
 
-/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
-    state.majors = payload;
-}));
+/* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
+    payload.forEach(function (major) {
+        major.majorId = major.hegis_code;
+        delete major.hegis_code;
+        state.majors.push(major);
+    });
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
+    state.majorData.push(payload);
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
+    payload.forEach(function (university) {
+        university.name = university.university_name;
+        delete university.university_name;
+        state.universities.push(university);
+    });
+}), _majors$FETCH_MAJORS$);
 
 /***/ }),
 /* 145 */
@@ -75977,6 +76798,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, function (error) {
             return console.log(error);
         });
+    },
+    fetchUniversities: function fetchUniversities(_ref2) {
+        var commit = _ref2.commit,
+            dispatch = _ref2.dispatch;
+
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUniversitiesAPI(function (success) {
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, success);
+        }, function (error) {
+            return console.log(error);
+        });
+    },
+    fetchMajorData: function fetchMajorData(_ref3, payload) {
+        var commit = _ref3.commit,
+            dispatch = _ref3.dispatch;
+
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
+        }, function (error) {
+            return console.log(error);
+        });
     }
 });
 
@@ -75989,7 +76830,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/learn-and-earn/major-data/1153').then(function (response) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/major/hegis-codes').then(function (response) {
+        return success(response.data);
+    }, function (response) {
+        return error(response);
+    });
+};
+var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/major/' + payload.majorId + '/' + payload.schoolId).then(
+    // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
+    function (response) {
+        return success(response.data);
+    }, function (response) {
+        return error(response);
+    });
+};
+
+var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/university').then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -75997,7 +76855,9 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchMajorsAPI: fetchMajorsAPI
+    fetchMajorsAPI: fetchMajorsAPI,
+    fetchMajorDataAPI: fetchMajorDataAPI,
+    fetchUniversitiesAPI: fetchUniversitiesAPI
 });
 
 /***/ }),
@@ -76079,6 +76939,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
+            success.forEach(function (industry) {
+                return industry['majorId'] = payload.majorId;
+            });
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_IMAGES, success);
         }, function (error) {
             return console.log(error);
@@ -76096,8 +76959,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    console.log(payload);
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/industry/' + payload.major + '/1153').then(function (response) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/industry/' + payload.majorId + '/1153').then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -76241,7 +77103,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(159)
 /* template */
@@ -76612,7 +77474,7 @@ module.exports = "/fonts/poly_seal.svg?06d9d9cd02d33b5d7ae68bdc728afe1b";
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(169)
 /* template */
@@ -76668,7 +77530,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_info_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(13);
 //
 //
 //
@@ -76744,7 +77606,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(173)
 /* template */
@@ -76793,7 +77655,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -77089,7 +77951,7 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -77163,7 +78025,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(178)
 /* template */
@@ -77212,7 +78074,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -78630,11 +79492,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(184)
 /* template */
-var __vue_template__ = __webpack_require__(325)
+var __vue_template__ = __webpack_require__(322)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78698,9 +79560,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             cards: [{
-                major: 'Applied Math'
-            }, {
-                major: 'Accounting'
+                major: null
             }]
         };
     },
@@ -78711,7 +79571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         onPlus: function onPlus() {
-            this.cards.push({ major: 'Sing Malaling' });
+            this.cards.push({ major: null });
         }
     }
 });
@@ -78721,7 +79581,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(186)
 /* template */
@@ -78824,11 +79684,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(189)
 /* template */
-var __vue_template__ = __webpack_require__(324)
+var __vue_template__ = __webpack_require__(321)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -78874,6 +79734,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__global_card__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_form_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__ = __webpack_require__(193);
@@ -78882,6 +79743,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__major_legend_vue__);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_index__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(13);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 //
 //
 //
@@ -78905,6 +79787,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+<<<<<<< HEAD
 //
 
 
@@ -78980,6 +79863,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+=======
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 //
 //
 //
@@ -79013,6 +79898,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+
+
+
+
+
+
 
 
 
@@ -79020,154 +79911,28 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             form: {
-                major: null,
+                majorId: null,
                 formWasSubmitted: false,
-                degree: ''
+                schoolId: null,
+                educationLevel: "allDegrees"
             }
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchIndustryImages']), {
-        updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */],
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
+        updateForm: __WEBPACK_IMPORTED_MODULE_3__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
-            console.log('working');
             this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
+            this.fetchMajorData(this.form);
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majors']))
-});
-
-/***/ }),
-/* 192 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "form--inverted" }, [
-    !_vm.form.formWasSubmitted
-      ? _c("div", { staticClass: "form__group" }, [
-          _c("div", { staticClass: "row row--condensed" }, [
-            _c("h5", { staticClass: "form--title" }, [
-              _vm._v("Choose A Major")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col col-12" }, [
-              _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  attrs: { name: "majors", id: "majors" },
-                  on: {
-                    input: function($event) {
-                      _vm.updateForm("major", $event.target.value)
-                    }
-                  }
-                },
-                _vm._l(_vm.majors, function(major) {
-                  return _c("option", { domProps: { value: major.majorId } }, [
-                    _vm._v(_vm._s(major.major))
-                  ])
-                })
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row row--condensed" }, [
-            _c("div", { staticClass: "col col-md-8 py-4" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  attrs: { type: "button" },
-                  on: { click: _vm.submitForm }
-                },
-                [_vm._v("Submit")]
-              )
-            ])
-          ])
-        ])
-      : _c("div", { staticClass: "form__group" }, [
-          _c("p", { staticClass: "h2 text-gray my-5" }, [
-            _vm._v("Applied Math")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.degree,
-                expression: "form.degree"
-              }
-            ],
-            attrs: {
-              type: "radio",
-              name: "allDegrees",
-              id: "allDegrees",
-              value: "allDegrees"
-            },
-            domProps: { checked: _vm._q(_vm.form.degree, "allDegrees") },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "degree", "allDegrees")
-              }
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors', 'universities', 'universityById']), {
+        campus: function campus() {
+            if (this.form.schoolId) {
+                return this.universityById(this.form.schoolId);
             }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "allDegrees" } }, [_vm._v("All")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.degree,
-                expression: "form.degree"
-              }
-            ],
-            attrs: {
-              type: "radio",
-              name: "bachelors",
-              id: "bachelors",
-              value: "bachelors"
-            },
-            domProps: { checked: _vm._q(_vm.form.degree, "bachelors") },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "degree", "bachelors")
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "bachelors" } }, [
-            _vm._v("Bachelor's Degree")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.degree,
-                expression: "form.degree"
-              }
-            ],
-            attrs: {
-              type: "radio",
-              name: "postBacc",
-              id: "postBacc",
-              value: "postBacc"
-            },
-            domProps: { checked: _vm._q(_vm.form.degree, "postBacc") },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "degree", "postBacc")
-              }
-            }
+<<<<<<< HEAD
           }),
           _vm._v(" "),
           _c("label", { attrs: { for: "postBacc" } }, [
@@ -79185,17 +79950,28 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-cc395636", module.exports)
   }
 }
+=======
+            return null;
+        }
+    }),
+    components: {
+        card: __WEBPACK_IMPORTED_MODULE_0__global_card___default.a,
+        majorsGraphWrapper: __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue___default.a,
+        industryCarousel: __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue___default.a
+    }
+});
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 
 /***/ }),
-/* 193 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(194)
+var __vue_script__ = __webpack_require__(191)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(314)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79234,53 +80010,65 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 194 */
+/* 191 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
 //
 //
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            index: 0,
-            yData: [[20000, 33000, 38000, 41000], [35000, 42000, 58000, 72000], [65000, 85000, 92000, 99000], [10000, 13000, 38000, 41000], [35000, 62000, 98000, 102000], [90000, 99000, 101000, 130000]]
-        };
-    },
-
-    methods: {
-        changeIndex: function changeIndex() {
-            if (this.index == 0) {
-                this.index = 3;
-            } else {
-                this.index = 0;
+    props: ['form'],
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['majorData', 'majorById', 'majorDataByMajorId']), {
+        majorDataByMajor: function majorDataByMajor() {
+            if (this.form.majorId && this.majorData.length > 0) {
+                return this.majorDataByMajorId(this.form.majorId);
             }
+            return null;
+        },
+        majorDataSelected: function majorDataSelected() {
+            if (this.majorDataByMajor && this.form.majorId) {
+                if (this.form.educationLevel == "allDegrees") {
+                    return [[this.majorDataByMajor.post_bacc['2'].avg_annual_wage, this.majorDataByMajor.post_bacc['5'].avg_annual_wage, this.majorDataByMajor.post_bacc['10'].avg_annual_wage], [this.majorDataByMajor.bachelors['2'].avg_annual_wage, this.majorDataByMajor.bachelors['5'].avg_annual_wage, this.majorDataByMajor.bachelors['10'].avg_annual_wage], [this.majorDataByMajor.some_college['2'].avg_annual_wage, this.majorDataByMajor.some_college['5'].avg_annual_wage, this.majorDataByMajor.some_college['10'].avg_annual_wage]];
+                } else {
+                    return [[this.majorDataByMajor[this.form.educationLevel]['2']._75th, this.majorDataByMajor[this.form.educationLevel]['5']._75th, this.majorDataByMajor[this.form.educationLevel]['10']._75th], [this.majorDataByMajor[this.form.educationLevel]['2']._50th, this.majorDataByMajor[this.form.educationLevel]['5']._50th, this.majorDataByMajor[this.form.educationLevel]['10']._50th], [this.majorDataByMajor[this.form.educationLevel]['2']._25th, this.majorDataByMajor[this.form.educationLevel]['5']._25th, this.majorDataByMajor[this.form.educationLevel]['10']._25th]];
+                }
+            }
+            return [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+        },
+        major: function major() {
+            if (this.form.majorId) {
+                return this.majorById(this.form.majorId);
+            }
+            return null;
         }
-    },
+    }),
     components: {
         majorsGraph: __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default.a
     }
 });
 
 /***/ }),
-/* 195 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(196)
+var __vue_script__ = __webpack_require__(193)
 /* template */
-var __vue_template__ = __webpack_require__(316)
+var __vue_template__ = __webpack_require__(313)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79319,22 +80107,22 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 196 */
+/* 193 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -79348,95 +80136,128 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['index', 'yData'],
+    props: ['majorDataSelected', 'majorId'],
     data: function data() {
         return {
-            major: 'Applied Math'
+            xAxis: ['2', '5', '10']
         };
     },
+
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorsYears']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorById']), {
+        mastersEarnings: function mastersEarnings() {
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[0];
+            }
+            return null;
+        },
+        bachelorsEarnings: function bachelorsEarnings() {
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[1];
+            }
+            return null;
+        },
+        someCollegeEarnings: function someCollegeEarnings() {
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[2];
+            }
+            return null;
+        },
+        selectedMajor: function selectedMajor() {
+            if (this.majorId) {
+                return this.majorById(this.majorId);
+            }
+            return null;
+        },
+        majorName: function majorName() {
+            if (this.selectedMajor) {
+                return this.selectedMajor.major;
+            }
+        },
         polar: function polar() {
-            return {
-                title: {
-                    text: this.major,
-                    left: 'center',
-                    textStyle: {
-                        color: '#777777',
-                        fontFamily: 'Montserrat'
-                    }
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                xAxis: {
-                    data: this.majorsYears
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    max: 150000
-                },
-                series: [{
-                    type: 'line',
-                    name: 'Some College',
-                    data: this.yData[this.index + 0],
-                    lineStyle: {
-                        color: '#476A6F',
-                        width: 4
+            if (this.someCollegeEarnings) {
+                return {
+                    title: {
+                        text: this.majorName,
+                        left: 'center',
+                        textStyle: {
+                            color: '#777777',
+                            fontFamily: 'Montserrat'
+                        }
                     },
-                    itemStyle: {
-                        color: '#476A6F'
-                    }
-                }, {
-                    type: 'line',
-                    name: "Bachelor's Degree",
-                    data: this.yData[this.index + 1],
-                    lineStyle: {
-                        color: '#EDAC17',
-                        width: 4
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross'
+                        }
                     },
-                    itemStyle: {
-                        color: '#EDAC17'
-                    }
-                }, {
-                    type: 'line',
-                    name: 'Post Bacc Degree',
-                    data: this.yData[this.index + 2],
-                    lineStyle: {
-                        color: '#279D5D',
-                        width: 4
+                    xAxis: {
+                        data: this.xAxis
                     },
-                    itemStyle: {
-                        color: '#279D5D'
-                    }
-                }],
-                animationDuration: 2000
-            };
+                    legend: {
+                        data: ['line']
+                    },
+                    yAxis: {
+                        max: 150000
+                    },
+                    series: [{
+                        type: 'line',
+                        name: 'Some College',
+                        data: this.someCollegeEarnings,
+                        lineStyle: {
+                            color: '#476A6F',
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: '#476A6F'
+                        }
+                    }, {
+                        type: 'line',
+                        name: "Bachelor's Degree",
+                        data: this.bachelorsEarnings,
+                        lineStyle: {
+                            color: '#EDAC17',
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: '#EDAC17'
+                        }
+                    }, {
+                        type: 'line',
+                        name: 'Post Bacc Degree',
+                        data: this.mastersEarnings,
+                        lineStyle: {
+                            color: '#279D5D',
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: '#279D5D'
+                        }
+                    }],
+                    animationDuration: 2000
+                };
+            }
+            return null;
         }
     })
 });
 
 /***/ }),
-/* 197 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(198)
+  __webpack_require__(195)
 }
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(203)
+var __vue_script__ = __webpack_require__(200)
 /* template */
-var __vue_template__ = __webpack_require__(278)
+var __vue_template__ = __webpack_require__(275)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79475,17 +80296,21 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 198 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(199);
+var content = __webpack_require__(196);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
 var update = __webpack_require__(201)("fe975bc6", content, false, {});
+=======
+var update = __webpack_require__(198)("fe975bc6", content, false, {});
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -79501,10 +80326,10 @@ if(false) {
 }
 
 /***/ }),
-/* 199 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(200)(false);
+exports = module.exports = __webpack_require__(197)(false);
 // imports
 
 
@@ -79515,7 +80340,7 @@ exports.push([module.i, "\n.echarts {\n  width: 600px;\n  height: 400px;\n}\n", 
 
 
 /***/ }),
-/* 200 */
+/* 197 */
 /***/ (function(module, exports) {
 
 /*
@@ -79597,7 +80422,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 201 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -79616,7 +80441,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(202)
+var listToStyles = __webpack_require__(199)
 
 /*
 type StyleObject = {
@@ -79825,7 +80650,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 202 */
+/* 199 */
 /***/ (function(module, exports) {
 
 /**
@@ -79858,16 +80683,16 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 203 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_debounce__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -80105,14 +80930,14 @@ var EVENTS = ['legendselectchanged', 'legendselected', 'legendunselected', 'data
 });
 
 /***/ }),
-/* 204 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
 var vec2 = __webpack_require__(6);
 
-var Draggable = __webpack_require__(205);
+var Draggable = __webpack_require__(202);
 
 var Eventful = __webpack_require__(23);
 
@@ -80435,7 +81260,7 @@ var _default = Handler;
 module.exports = _default;
 
 /***/ }),
-/* 205 */
+/* 202 */
 /***/ (function(module, exports) {
 
 // TODO Draggable for group
@@ -80519,7 +81344,7 @@ var _default = Draggable;
 module.exports = _default;
 
 /***/ }),
-/* 206 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -80756,7 +81581,7 @@ var _default = Storage;
 module.exports = _default;
 
 /***/ }),
-/* 207 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Animator = __webpack_require__(69);
@@ -81015,10 +81840,10 @@ var _default = Animatable;
 module.exports = _default;
 
 /***/ }),
-/* 208 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var easingFuncs = __webpack_require__(209);
+var easingFuncs = __webpack_require__(206);
 
 /**
  * 动画主控制器
@@ -81121,7 +81946,7 @@ var _default = Clip;
 module.exports = _default;
 
 /***/ }),
-/* 209 */
+/* 206 */
 /***/ (function(module, exports) {
 
 /**
@@ -81504,7 +82329,7 @@ var _default = easing;
 module.exports = _default;
 
 /***/ }),
-/* 210 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(32);
@@ -81519,7 +82344,7 @@ var BoundingRect = __webpack_require__(11);
 
 var timsort = __webpack_require__(41);
 
-var Layer = __webpack_require__(211);
+var Layer = __webpack_require__(208);
 
 var requestAnimationFrame = __webpack_require__(75);
 
@@ -82512,7 +83337,7 @@ var _default = Painter;
 module.exports = _default;
 
 /***/ }),
-/* 211 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -82750,7 +83575,7 @@ var _default = Layer;
 module.exports = _default;
 
 /***/ }),
-/* 212 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textHelper = __webpack_require__(77);
@@ -82810,7 +83635,7 @@ var _default = RectText;
 module.exports = _default;
 
 /***/ }),
-/* 213 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -83062,7 +83887,7 @@ var _default = Animation;
 module.exports = _default;
 
 /***/ }),
-/* 214 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _event = __webpack_require__(25);
@@ -83077,7 +83902,7 @@ var Eventful = __webpack_require__(23);
 
 var env = __webpack_require__(8);
 
-var GestureMgr = __webpack_require__(215);
+var GestureMgr = __webpack_require__(212);
 
 var TOUCH_CLICK_DELAY = 300;
 var mouseHandlerNames = ['click', 'dblclick', 'mousewheel', 'mouseout', 'mouseup', 'mousedown', 'mousemove', 'contextmenu'];
@@ -83400,7 +84225,7 @@ var _default = HandlerDomProxy;
 module.exports = _default;
 
 /***/ }),
-/* 215 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eventUtil = __webpack_require__(25);
@@ -83504,7 +84329,7 @@ var _default = GestureMgr;
 module.exports = _default;
 
 /***/ }),
-/* 216 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -83531,7 +84356,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 217 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -83545,7 +84370,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 218 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textContain = __webpack_require__(20);
@@ -83583,14 +84408,14 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 219 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
 
 var PathProxy = __webpack_require__(34);
 
-var transformPath = __webpack_require__(225);
+var transformPath = __webpack_require__(222);
 
 // command chars
 var cc = ['m', 'M', 'l', 'L', 'v', 'V', 'h', 'H', 'z', 'Z', 'c', 'C', 'q', 'Q', 't', 'T', 's', 'S', 'a', 'A'];
@@ -83997,18 +84822,18 @@ exports.extendFromString = extendFromString;
 exports.mergePath = mergePath;
 
 /***/ }),
-/* 220 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(34);
 
-var line = __webpack_require__(221);
+var line = __webpack_require__(218);
 
-var cubic = __webpack_require__(222);
+var cubic = __webpack_require__(219);
 
-var quadratic = __webpack_require__(223);
+var quadratic = __webpack_require__(220);
 
-var arc = __webpack_require__(224);
+var arc = __webpack_require__(221);
 
 var _util = __webpack_require__(81);
 
@@ -84397,7 +85222,7 @@ exports.contain = contain;
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 221 */
+/* 218 */
 /***/ (function(module, exports) {
 
 /**
@@ -84441,7 +85266,7 @@ function containStroke(x0, y0, x1, y1, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 222 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var curve = __webpack_require__(21);
@@ -84479,7 +85304,7 @@ function containStroke(x0, y0, x1, y1, x2, y2, x3, y3, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 223 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _curve = __webpack_require__(21);
@@ -84517,7 +85342,7 @@ function containStroke(x0, y0, x1, y1, x2, y2, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 224 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(81);
@@ -84582,7 +85407,7 @@ function containStroke(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidth
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 225 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(34);
@@ -84687,7 +85512,7 @@ function _default(path, m) {
 module.exports = _default;
 
 /***/ }),
-/* 226 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Displayable = __webpack_require__(33);
@@ -84763,7 +85588,7 @@ var _default = Text;
 module.exports = _default;
 
 /***/ }),
-/* 227 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84800,7 +85625,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 228 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84849,7 +85674,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 229 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84880,7 +85705,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 230 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -84906,7 +85731,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 231 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(6);
@@ -84979,7 +85804,7 @@ function _default(points, isLoop) {
 module.exports = _default;
 
 /***/ }),
-/* 232 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(6);
@@ -85088,7 +85913,7 @@ function _default(points, smooth, isLoop, constraint) {
 module.exports = _default;
 
 /***/ }),
-/* 233 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85117,7 +85942,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 234 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85162,7 +85987,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 235 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85221,7 +86046,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 236 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85339,7 +86164,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 237 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85379,7 +86204,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 238 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -85440,7 +86265,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 239 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85479,7 +86304,7 @@ var _default = LinearGradient;
 module.exports = _default;
 
 /***/ }),
-/* 240 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85516,7 +86341,7 @@ var _default = RadialGradient;
 module.exports = _default;
 
 /***/ }),
-/* 241 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -85668,7 +86493,7 @@ var _default = IncrementalDisplayble;
 module.exports = _default;
 
 /***/ }),
-/* 242 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(43);
@@ -85689,7 +86514,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 243 */
+/* 240 */
 /***/ (function(module, exports) {
 
 var _default = {
@@ -85707,7 +86532,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 244 */
+/* 241 */
 /***/ (function(module, exports) {
 
 var platform = ''; // Navigator not exists in node
@@ -85763,12 +86588,12 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 245 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 var ComponentModel = __webpack_require__(18);
 
@@ -86182,7 +87007,7 @@ var _default = OptionManager;
 module.exports = _default;
 
 /***/ }),
-/* 246 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -86191,9 +87016,9 @@ var each = _util.each;
 var isArray = _util.isArray;
 var isObject = _util.isObject;
 
-var compatStyle = __webpack_require__(247);
+var compatStyle = __webpack_require__(244);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -86291,12 +87116,12 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 247 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
 var each = zrUtil.each;
 var isObject = zrUtil.isObject;
@@ -86575,7 +87400,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 248 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -86680,7 +87505,7 @@ function calculateStack(stackInfoList) {
 module.exports = _default;
 
 /***/ }),
-/* 249 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(27);
@@ -86789,7 +87614,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 250 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Group = __webpack_require__(31);
@@ -86833,7 +87658,7 @@ var _default = Component;
 module.exports = _default;
 
 /***/ }),
-/* 251 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Gradient = __webpack_require__(44);
@@ -86877,12 +87702,12 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 252 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var lang = __webpack_require__(253);
+var lang = __webpack_require__(250);
 
 var _dataProvider = __webpack_require__(27);
 
@@ -87017,7 +87842,7 @@ function _default(dom, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 253 */
+/* 250 */
 /***/ (function(module, exports) {
 
 var _default = {
@@ -87120,7 +87945,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 254 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -87218,7 +88043,7 @@ function _default(api, opts) {
 module.exports = _default;
 
 /***/ }),
-/* 255 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -87240,7 +88065,7 @@ var GlobalModel = __webpack_require__(79);
 
 var ExtensionAPI = __webpack_require__(87);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -87696,7 +88521,7 @@ var _default = Scheduler;
 module.exports = _default;
 
 /***/ }),
-/* 256 */
+/* 253 */
 /***/ (function(module, exports) {
 
 var colorAll = ['#37A2DA', '#32C5E9', '#67E0E3', '#9FE6B8', '#FFDB5C', '#ff9f7f', '#fb7293', '#E062AE', '#E690D1', '#e7bcf3', '#9d96f5', '#8378EA', '#96BFFF'];
@@ -87707,7 +88532,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 257 */
+/* 254 */
 /***/ (function(module, exports) {
 
 var contrastColor = '#eee';
@@ -87843,7 +88668,7 @@ var _default = theme;
 module.exports = _default;
 
 /***/ }),
-/* 258 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrender = __webpack_require__(65);
@@ -87881,11 +88706,11 @@ var _throttle = __webpack_require__(48);
 var throttle = _throttle.throttle;
 exports.throttle = _throttle.throttle;
 
-var ecHelper = __webpack_require__(259);
+var ecHelper = __webpack_require__(256);
 
 exports.helper = ecHelper;
 
-var parseGeoJSON = __webpack_require__(265);
+var parseGeoJSON = __webpack_require__(262);
 
 exports.parseGeoJSON = parseGeoJSON;
 
@@ -87893,7 +88718,7 @@ var _List = __webpack_require__(92);
 
 exports.List = _List;
 
-var _Model = __webpack_require__(13);
+var _Model = __webpack_require__(14);
 
 exports.Model = _Model;
 
@@ -87917,7 +88742,7 @@ exports.parseGeoJson = parseGeoJson;
 exports.util = ecUtil;
 
 /***/ }),
-/* 259 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -87928,9 +88753,9 @@ var axisHelper = __webpack_require__(22);
 
 var axisModelCommonMixin = __webpack_require__(97);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutRect = _layout.getLayoutRect;
 exports.getLayoutRect = _layout.getLayoutRect;
@@ -88025,7 +88850,7 @@ exports.createScale = createScale;
 exports.mixinAxisModelCommonMethods = mixinAxisModelCommonMethods;
 
 /***/ }),
-/* 260 */
+/* 257 */
 /***/ (function(module, exports) {
 
 function defaultKeyGetter(item) {
@@ -88155,7 +88980,7 @@ var _default = DataDiffer;
 module.exports = _default;
 
 /***/ }),
-/* 261 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88264,7 +89089,7 @@ var _default = OrdinalScale;
 module.exports = _default;
 
 /***/ }),
-/* 262 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88570,7 +89395,7 @@ exports.calBarWidthAndOffset = calBarWidthAndOffset;
 exports.layout = layout;
 
 /***/ }),
-/* 263 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88764,7 +89589,7 @@ var _default = TimeScale;
 module.exports = _default;
 
 /***/ }),
-/* 264 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88935,12 +89760,12 @@ var _default = LogScale;
 module.exports = _default;
 
 /***/ }),
-/* 265 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Region = __webpack_require__(266);
+var Region = __webpack_require__(263);
 
 /**
  * Parse and decode geo json
@@ -89055,7 +89880,7 @@ function _default(geoJson) {
 module.exports = _default;
 
 /***/ }),
-/* 266 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BoundingRect = __webpack_require__(11);
@@ -89064,7 +89889,7 @@ var bbox = __webpack_require__(80);
 
 var vec2 = __webpack_require__(6);
 
-var polygonContain = __webpack_require__(267);
+var polygonContain = __webpack_require__(264);
 
 /**
  * @module echarts/coord/geo/Region
@@ -89223,7 +90048,7 @@ var _default = Region;
 module.exports = _default;
 
 /***/ }),
-/* 267 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var windingLine = __webpack_require__(82);
@@ -89261,12 +90086,12 @@ function contain(points, x, y) {
 exports.contain = contain;
 
 /***/ }),
-/* 268 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(99),
-    now = __webpack_require__(269),
-    toNumber = __webpack_require__(271);
+    now = __webpack_require__(266),
+    toNumber = __webpack_require__(268);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -89455,7 +90280,7 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 269 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(100);
@@ -89484,7 +90309,7 @@ module.exports = now;
 
 
 /***/ }),
-/* 270 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -89492,14 +90317,14 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
-/* 271 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(99),
-    isSymbol = __webpack_require__(272);
+    isSymbol = __webpack_require__(269);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -89567,11 +90392,11 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 272 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(273),
-    isObjectLike = __webpack_require__(276);
+var baseGetTag = __webpack_require__(270),
+    isObjectLike = __webpack_require__(273);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -89602,12 +90427,12 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 273 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(101),
-    getRawTag = __webpack_require__(274),
-    objectToString = __webpack_require__(275);
+    getRawTag = __webpack_require__(271),
+    objectToString = __webpack_require__(272);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -89636,7 +90461,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 274 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(101);
@@ -89688,7 +90513,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 275 */
+/* 272 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -89716,7 +90541,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 276 */
+/* 273 */
 /***/ (function(module, exports) {
 
 /**
@@ -89751,7 +90576,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 277 */
+/* 274 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90024,7 +90849,7 @@ function resetTriggers (elem) {
 
 
 /***/ }),
-/* 278 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -90044,22 +90869,22 @@ if (false) {
 }
 
 /***/ }),
-/* 279 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(280);
+__webpack_require__(277);
 
-__webpack_require__(281);
+__webpack_require__(278);
 
-var visualSymbol = __webpack_require__(286);
+var visualSymbol = __webpack_require__(283);
 
-var layoutPoints = __webpack_require__(287);
+var layoutPoints = __webpack_require__(284);
 
-var dataSample = __webpack_require__(288);
+var dataSample = __webpack_require__(285);
 
-__webpack_require__(289);
+__webpack_require__(286);
 
 // In case developer forget to include grid component
 echarts.registerVisual(visualSymbol('line', 'circle', 'line'));
@@ -90068,7 +90893,7 @@ echarts.registerLayout(layoutPoints('line')); // Down sample after filter
 echarts.registerProcessor(echarts.PRIORITY.PROCESSOR.STATISTIC, dataSample('line'));
 
 /***/ }),
-/* 280 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -90145,7 +90970,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 281 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -90154,17 +90979,17 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(282);
+var SymbolDraw = __webpack_require__(279);
 
 var SymbolClz = __webpack_require__(102);
 
-var lineAnimationDiff = __webpack_require__(284);
+var lineAnimationDiff = __webpack_require__(281);
 
 var graphic = __webpack_require__(3);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(1);
 
-var _poly = __webpack_require__(285);
+var _poly = __webpack_require__(282);
 
 var Polyline = _poly.Polyline;
 var Polygon = _poly.Polygon;
@@ -90813,7 +91638,7 @@ var _default = ChartView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 282 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(3);
@@ -91002,7 +91827,7 @@ var _default = SymbolDraw;
 module.exports = _default;
 
 /***/ }),
-/* 283 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(27);
@@ -91035,7 +91860,7 @@ function getDefaultLabel(data, dataIndex) {
 exports.getDefaultLabel = getDefaultLabel;
 
 /***/ }),
-/* 284 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _helper = __webpack_require__(103);
@@ -91193,7 +92018,7 @@ function _default(oldData, newData, oldStackedOnPoints, newStackedOnPoints, oldC
 module.exports = _default;
 
 /***/ }),
-/* 285 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(9);
@@ -91533,7 +92358,7 @@ exports.Polyline = Polyline;
 exports.Polygon = Polygon;
 
 /***/ }),
-/* 286 */
+/* 283 */
 /***/ (function(module, exports) {
 
 function _default(seriesType, defaultSymbolType, legendSymbol) {
@@ -91591,7 +92416,7 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
 module.exports = _default;
 
 /***/ }),
-/* 287 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -91669,7 +92494,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 288 */
+/* 285 */
 /***/ (function(module, exports) {
 
 var samplers = {
@@ -91763,7 +92588,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 289 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -91772,9 +92597,9 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(3);
 
-__webpack_require__(290);
+__webpack_require__(287);
 
-__webpack_require__(297);
+__webpack_require__(294);
 
 // Grid view
 echarts.extendComponentView({
@@ -91802,7 +92627,7 @@ echarts.registerPreprocessor(function (option) {
 });
 
 /***/ }),
-/* 290 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -91813,19 +92638,19 @@ var zrUtil = __webpack_require__(0);
 
 var BoundingRect = __webpack_require__(11);
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutRect = _layout.getLayoutRect;
 
 var axisHelper = __webpack_require__(22);
 
-var Cartesian2D = __webpack_require__(291);
+var Cartesian2D = __webpack_require__(288);
 
-var Axis2D = __webpack_require__(293);
+var Axis2D = __webpack_require__(290);
 
 var CoordinateSystem = __webpack_require__(46);
 
-__webpack_require__(294);
+__webpack_require__(291);
 
 /**
  * Grid is a region which contains at most 4 cartesian systems
@@ -92403,12 +93228,12 @@ var _default = Grid;
 module.exports = _default;
 
 /***/ }),
-/* 291 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Cartesian = __webpack_require__(292);
+var Cartesian = __webpack_require__(289);
 
 function Cartesian2D(name) {
   Cartesian.call(this, name);
@@ -92508,7 +93333,7 @@ var _default = Cartesian2D;
 module.exports = _default;
 
 /***/ }),
-/* 292 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -92613,7 +93438,7 @@ var _default = Cartesian;
 module.exports = _default;
 
 /***/ }),
-/* 293 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -92737,7 +93562,7 @@ var _default = Axis2D;
 module.exports = _default;
 
 /***/ }),
-/* 294 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(104);
@@ -92776,16 +93601,16 @@ var _default = ComponentModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 295 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var axisDefault = __webpack_require__(296);
+var axisDefault = __webpack_require__(293);
 
 var ComponentModel = __webpack_require__(18);
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
@@ -92856,7 +93681,7 @@ function _default(axisName, BaseAxisModelClass, axisTypeDefaulter, extraDefaultO
 module.exports = _default;
 
 /***/ }),
-/* 296 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93022,15 +93847,15 @@ var _default = axisDefault;
 module.exports = _default;
 
 /***/ }),
-/* 297 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(104);
 
-__webpack_require__(298);
+__webpack_require__(295);
 
 /***/ }),
-/* 298 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93235,16 +94060,16 @@ CartesianAxisView.extend({
 });
 
 /***/ }),
-/* 299 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(300);
+__webpack_require__(297);
 
-__webpack_require__(306);
+__webpack_require__(303);
 
-__webpack_require__(307);
+__webpack_require__(304);
 
 // FIXME Better way to pack data in graphic element
 
@@ -93270,7 +94095,7 @@ echarts.registerAction({
 function () {});
 
 /***/ }),
-/* 300 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -93279,13 +94104,13 @@ var zrUtil = __webpack_require__(0);
 
 var axisPointerModelHelper = __webpack_require__(39);
 
-var axisTrigger = __webpack_require__(301);
+var axisTrigger = __webpack_require__(298);
 
-__webpack_require__(302);
+__webpack_require__(299);
 
-__webpack_require__(303);
+__webpack_require__(300);
 
-__webpack_require__(304);
+__webpack_require__(301);
 
 // CartesianAxisPointer is not supposed to be required here. But consider
 // echarts.simple.js and online build tooltip, which only require gridSimple,
@@ -93318,12 +94143,12 @@ echarts.registerAction({
 }, axisTrigger);
 
 /***/ }),
-/* 301 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 
@@ -93716,7 +94541,7 @@ function illegalPoint(point) {
 module.exports = _default;
 
 /***/ }),
-/* 302 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -93807,7 +94632,7 @@ var _default = AxisPointerModel;
 module.exports = _default;
 
 /***/ }),
-/* 303 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -93854,12 +94679,12 @@ var _default = AxisPointerView;
 module.exports = _default;
 
 /***/ }),
-/* 304 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(3);
 
-var BaseAxisPointer = __webpack_require__(305);
+var BaseAxisPointer = __webpack_require__(302);
 
 var viewHelper = __webpack_require__(110);
 
@@ -93972,7 +94797,7 @@ var _default = CartesianAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 305 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -93987,7 +94812,7 @@ var eventTool = __webpack_require__(25);
 
 var throttleUtil = __webpack_require__(48);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var makeInner = _model.makeInner;
 var inner = makeInner();
@@ -94465,7 +95290,7 @@ var _default = BaseAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 306 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -94548,7 +95373,7 @@ var _default = echarts.extendComponentModel({
 module.exports = _default;
 
 /***/ }),
-/* 307 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -94557,7 +95382,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var TooltipContent = __webpack_require__(308);
+var TooltipContent = __webpack_require__(305);
 
 var formatUtil = __webpack_require__(12);
 
@@ -94567,9 +95392,9 @@ var graphic = __webpack_require__(3);
 
 var findPointFromSeries = __webpack_require__(108);
 
-var layoutUtil = __webpack_require__(14);
+var layoutUtil = __webpack_require__(15);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
 var globalListener = __webpack_require__(109);
 
@@ -95269,7 +96094,7 @@ function isCenterAlign(align) {
 module.exports = _default;
 
 /***/ }),
-/* 308 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -95506,14 +96331,14 @@ var _default = TooltipContent;
 module.exports = _default;
 
 /***/ }),
-/* 309 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
 var graphic = __webpack_require__(3);
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutRect = _layout.getLayoutRect;
 // Model
@@ -95702,18 +96527,18 @@ echarts.extendComponentView({
 });
 
 /***/ }),
-/* 310 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
-__webpack_require__(311);
+__webpack_require__(308);
 
-__webpack_require__(312);
+__webpack_require__(309);
 
-__webpack_require__(313);
+__webpack_require__(310);
 
-var legendFilter = __webpack_require__(315);
+var legendFilter = __webpack_require__(312);
 
 var Component = __webpack_require__(18);
 
@@ -95726,16 +96551,16 @@ Component.registerSubTypeDefaulter('legend', function () {
 });
 
 /***/ }),
-/* 311 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(13);
+var Model = __webpack_require__(14);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(1);
 
 var isNameSpecified = _model.isNameSpecified;
 var LegendModel = echarts.extendComponentModel({
@@ -95947,7 +96772,7 @@ var _default = LegendModel;
 module.exports = _default;
 
 /***/ }),
-/* 312 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(5);
@@ -96023,7 +96848,7 @@ echarts.registerAction('legendSelect', 'legendselected', zrUtil.curry(legendSele
 echarts.registerAction('legendUnSelect', 'legendunselected', zrUtil.curry(legendSelectActionHandler, 'unSelect'));
 
 /***/ }),
-/* 313 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -96040,11 +96865,11 @@ var createSymbol = _symbol.createSymbol;
 
 var graphic = __webpack_require__(3);
 
-var _listComponent = __webpack_require__(314);
+var _listComponent = __webpack_require__(311);
 
 var makeBackground = _listComponent.makeBackground;
 
-var layoutUtil = __webpack_require__(14);
+var layoutUtil = __webpack_require__(15);
 
 var curry = zrUtil.curry;
 var each = zrUtil.each;
@@ -96319,10 +97144,10 @@ function dispatchDownplayAction(seriesModel, dataName, api) {
 module.exports = _default;
 
 /***/ }),
-/* 314 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _layout = __webpack_require__(14);
+var _layout = __webpack_require__(15);
 
 var getLayoutRect = _layout.getLayoutRect;
 var layoutBox = _layout.box;
@@ -96378,7 +97203,7 @@ exports.layout = layout;
 exports.makeBackground = makeBackground;
 
 /***/ }),
-/* 315 */
+/* 312 */
 /***/ (function(module, exports) {
 
 function _default(ecModel) {
@@ -96404,7 +97229,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 316 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96424,7 +97249,7 @@ if (false) {
 }
 
 /***/ }),
-/* 317 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96434,9 +97259,12 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("majors-graph", { attrs: { index: _vm.index, yData: _vm.yData } }),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.changeIndex } }, [_vm._v("Switch")])
+      _c("majors-graph", {
+        attrs: {
+          majorDataSelected: _vm.majorDataSelected,
+          majorId: _vm.form.majorId
+        }
+      })
     ],
     1
   )
@@ -96452,16 +97280,16 @@ if (false) {
 }
 
 /***/ }),
-/* 318 */
+/* 315 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -96482,14 +97310,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['form'],
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries']), {
+    selectedIndustries: function selectedIndustries() {
+      var _this = this;
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries'])),
+      if (this.form.majorId) {
+        return this.industries.filter(function (industry) {
+          return industry.majorId == _this.form.majorId;
+        });
+      }
+      return [];
+    }
+  }),
 
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
-
-  created: function created() {},
-
-
   components: {
     industryCarouselCard: __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default.a,
     Carousel: __WEBPACK_IMPORTED_MODULE_0_vue_carousel__["Carousel"],
@@ -96498,7 +97333,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 319 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -96509,15 +97344,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.VueCarousel=e():t.VueCarousel=e()}(this,function(){return function(t){function e(i){if(n[i])return n[i].exports;var r=n[i]={exports:{},id:i,loaded:!1};return t[i].call(r.exports,r,r.exports,e),r.loaded=!0,r.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.Slide=e.Carousel=void 0;var r=n(1),a=i(r),o=n(44),s=i(o),u=function(t){t.component("carousel",a.default),t.component("slide",s.default)};e.default={install:u},e.Carousel=a.default,e.Slide=s.default},function(t,e,n){function i(t){n(2)}var r=n(7)(n(8),n(49),i,null,null);t.exports=r.exports},function(t,e,n){var i=n(3);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("80564c20",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel{position:relative}.VueCarousel-wrapper{width:100%;position:relative;overflow:hidden}.VueCarousel-inner{display:flex;flex-direction:row;backface-visibility:hidden}",""])},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var n=this[e];n[2]?t.push("@media "+n[2]+"{"+n[1]+"}"):t.push(n[1])}return t.join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var i={},r=0;r<this.length;r++){var a=this[r][0];"number"==typeof a&&(i[a]=!0)}for(r=0;r<e.length;r++){var o=e[r];"number"==typeof o[0]&&i[o[0]]||(n&&!o[2]?o[2]=n:n&&(o[2]="("+o[2]+") and ("+n+")"),t.push(o))}},t}},function(t,e,n){function i(t){for(var e=0;e<t.length;e++){var n=t[e],i=d[n.id];if(i){i.refs++;for(var r=0;r<i.parts.length;r++)i.parts[r](n.parts[r]);for(;r<n.parts.length;r++)i.parts.push(a(n.parts[r]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{for(var o=[],r=0;r<n.parts.length;r++)o.push(a(n.parts[r]));d[n.id]={id:n.id,refs:1,parts:o}}}}function r(){var t=document.createElement("style");return t.type="text/css",l.appendChild(t),t}function a(t){var e,n,i=document.querySelector("style["+m+'~="'+t.id+'"]');if(i){if(p)return g;i.parentNode.removeChild(i)}if(b){var a=h++;i=f||(f=r()),e=o.bind(null,i,a,!1),n=o.bind(null,i,a,!0)}else i=r(),e=s.bind(null,i),n=function(){i.parentNode.removeChild(i)};return e(t),function(i){if(i){if(i.css===t.css&&i.media===t.media&&i.sourceMap===t.sourceMap)return;e(t=i)}else n()}}function o(t,e,n,i){var r=n?"":i.css;if(t.styleSheet)t.styleSheet.cssText=C(e,r);else{var a=document.createTextNode(r),o=t.childNodes;o[e]&&t.removeChild(o[e]),o.length?t.insertBefore(a,o[e]):t.appendChild(a)}}function s(t,e){var n=e.css,i=e.media,r=e.sourceMap;if(i&&t.setAttribute("media",i),v.ssrId&&t.setAttribute(ssridKey,e.id),r&&(n+="\n/*# sourceURL="+r.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}var u="undefined"!=typeof document,c=n(6),d={},l=u&&(document.head||document.getElementsByTagName("head")[0]),f=null,h=0,p=!1,g=function(){},v=null,m="data-vue-ssr-id",b="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());t.exports=function(t,e,n,r){p=n,v=r||{};var a=c(t,e);return i(a),function(e){for(var n=[],r=0;r<a.length;r++){var o=a[r],s=d[o.id];s.refs--,n.push(s)}e?(a=c(t,e),i(a)):a=[];for(var r=0;r<n.length;r++){var s=n[r];if(0===s.refs){for(var u=0;u<s.parts.length;u++)s.parts[u]();delete d[s.id]}}}};var C=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}()},function(t,e){t.exports=function(t,e){for(var n=[],i={},r=0;r<e.length;r++){var a=e[r],o=a[0],s=a[1],u=a[2],c=a[3],d={id:t+":"+r,css:s,media:u,sourceMap:c};i[o]?i[o].parts.push(d):n.push(i[o]={id:o,parts:[d]})}return n}},function(t,e){t.exports=function(t,e,n,i,r){var a,o=t=t||{},s=typeof t.default;"object"!==s&&"function"!==s||(a=t,o=t.default);var u="function"==typeof o?o.options:o;e&&(u.render=e.render,u.staticRenderFns=e.staticRenderFns),i&&(u._scopeId=i);var c;if(r?(c=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),n&&n.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(r)},u._ssrRegister=c):n&&(c=n),c){var d=u.functional,l=d?u.render:u.beforeCreate;d?u.render=function(t,e){return c.call(e),l(t,e)}:u.beforeCreate=l?[].concat(l,c):[c]}return{esModule:a,exports:o,options:u}}},function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var r,a=n(9),o=i(a),s=n(28),u=i(s),c=n(32),d=i(c),l=n(33),f=i(l),h=n(34),p=i(h),g=n(39),v=i(g),m=n(44),b=i(m);e.default={name:"carousel",beforeUpdate:function(){this.computeCarouselWidth()},components:{Navigation:p.default,Pagination:v.default,Slide:b.default},data:function(){return{browserWidth:null,carouselWidth:null,currentPage:0,dragging:!1,dragMomentum:0,dragOffset:0,dragStartY:0,dragStartX:0,isTouch:"undefined"!=typeof window&&"ontouchstart"in window,offset:0,refreshRate:16,slideCount:0}},mixins:[d.default],props:{easing:{type:String,default:"ease"},minSwipeDistance:{type:Number,default:8},navigationClickTargetSize:{type:Number,default:8},mouseDrag:{type:Boolean,default:!0},navigationEnabled:{type:Boolean,default:!1},navigationNextLabel:{type:String,default:"▶"},navigationPrevLabel:{type:String,default:"◀"},paginationActiveColor:{type:String,default:"#000000"},paginationColor:{type:String,default:"#efefef"},paginationEnabled:{type:Boolean,default:!0},paginationPadding:{type:Number,default:10},paginationSize:{type:Number,default:10},perPage:{type:Number,default:2},perPageCustom:{type:Array},resistanceCoef:{type:Number,default:20},scrollPerPage:{type:Boolean,default:!1},speed:{type:Number,default:500},loop:{type:Boolean,default:!1},navigateTo:{type:Number,default:0},spacePadding:{type:Number,default:0}},watch:{navigateTo:function(t){t!==this.currentPage&&this.goToPage(t)}},computed:{breakpointSlidesPerPage:function(){if(!this.perPageCustom)return this.perPage;var t=this.perPageCustom,e=this.browserWidth,n=t.sort(function(t,e){return t[0]>e[0]?-1:1}),i=n.filter(function(t){return e>=t[0]}),r=i[0]&&i[0][1];return r||this.perPage},canAdvanceForward:function(){return this.loop||this.currentPage<this.pageCount-1},canAdvanceBackward:function(){return this.loop||this.currentPage>0},currentPerPage:function(){return!this.perPageCustom||this.$isServer?this.perPage:this.breakpointSlidesPerPage},currentOffset:function(){return(this.offset+this.dragOffset)*-1},isHidden:function(){return this.carouselWidth<=0},maxOffset:function(){return this.slideWidth*this.slideCount-this.carouselWidth},pageCount:function(){return Math.ceil(this.slideCount/this.currentPerPage)},slideWidth:function(){var t=this.carouselWidth-2*this.spacePadding,e=this.currentPerPage;return t/e},transitionStyle:function(){return this.speed/1e3+"s "+this.easing+" transform"},padding:function t(){var t=this.spacePadding;return t>0&&t}},methods:(r={getNextPage:function(){return this.currentPage<this.pageCount-1?this.currentPage+1:this.loop?0:this.currentPage},getPreviousPage:function(){return this.currentPage>0?this.currentPage-1:this.loop?this.pageCount-1:this.currentPage},advancePage:function(t){t&&"backward"===t&&this.canAdvanceBackward?this.goToPage(this.getPreviousPage(),"navigation"):(!t||t&&"backward"!==t)&&this.canAdvanceForward&&this.goToPage(this.getNextPage(),"navigation")},attachMutationObserver:function(){var t=this,e=window.MutationObserver||window.WebKitMutationObserver||window.MozMutationObserver;if(e){var n={attributes:!0,data:!0};this.mutationObserver=new e(function(){t.$nextTick(function(){t.computeCarouselWidth()})}),this.$parent.$el&&this.mutationObserver.observe(this.$parent.$el,n)}},detachMutationObserver:function(){this.mutationObserver&&this.mutationObserver.disconnect()},getBrowserWidth:function(){return this.browserWidth=window.innerWidth,this.browserWidth},getCarouselWidth:function(){return this.carouselWidth=this.$el&&this.$el.clientWidth||0,this.carouselWidth},getSlideCount:function(){this.slideCount=this.$slots&&this.$slots.default&&this.$slots.default.filter(function(t){return t.tag&&t.tag.indexOf("slide")>-1}).length||0},goToPage:function(t,e){t>=0&&t<=this.pageCount&&(this.offset=Math.min(this.slideWidth*this.currentPerPage*t,this.maxOffset),this.currentPage=t,this.$emit("pagechange",{page:this.currentPage,componentName:e}))},handleNavigation:function(t){this.$emit("navigationclick",t)},onStart:function(t){var e=this;if(document.addEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),MutationObserver){var n={attributes:!0,data:!0};this.mutationObserver=new MutationObserver(function(){e.$nextTick(function(){e.computeCarouselWidth()})}),this.$parent.$el&&this.mutationObserver.observe(this.$parent.$el,n)}}},(0,o.default)(r,"detachMutationObserver",function(){this.mutationObserver&&this.mutationObserver.disconnect()}),(0,o.default)(r,"getBrowserWidth",function(){return this.browserWidth=window.innerWidth,this.browserWidth}),(0,o.default)(r,"getCarouselWidth",function(){return this.carouselWidth=this.$el&&this.$el.clientWidth||0,this.carouselWidth}),(0,o.default)(r,"getSlideCount",function(){this.slideCount=this.$slots&&this.$slots.default&&this.$slots.default.filter(function(t){return t.tag&&t.tag.indexOf("slide")>-1}).length||0}),(0,o.default)(r,"goToPage",function(t){t>=0&&t<=this.pageCount&&(this.offset=Math.min(this.slideWidth*this.currentPerPage*t,this.maxOffset),this.currentPage=t,this.$emit("pageChange",this.currentPage))}),(0,o.default)(r,"onStart",function(t){document.addEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.addEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0),this.startTime=t.timeStamp,this.dragging=!0,this.dragStartX=this.isTouch?t.touches[0].clientX:t.clientX,this.dragStartY=this.isTouch?t.touches[0].clientY:t.clientY}),(0,o.default)(r,"onEnd",function(t){var e=this.isTouch?t.changedTouches[0].clientX:t.clientX,n=this.dragStartX-e;if(this.dragMomentum=n/(t.timeStamp-this.startTime),0!==this.minSwipeDistance&&Math.abs(n)>=this.minSwipeDistance){var i=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth;this.dragOffset=this.dragOffset+(0,u.default)(n)*(i/2)}this.offset+=this.dragOffset,this.dragOffset=0,this.dragging=!1,this.render(),document.removeEventListener(this.isTouch?"touchend":"mouseup",this.onEnd,!0),document.removeEventListener(this.isTouch?"touchmove":"mousemove",this.onDrag,!0)}),(0,o.default)(r,"onDrag",function(t){var e=this.isTouch?t.touches[0].clientX:t.clientX,n=this.isTouch?t.touches[0].clientY:t.clientY,i=this.dragStartX-e,r=this.dragStartY-n;if(!(this.isTouch&&Math.abs(i)<Math.abs(r))){t.preventDefault(),t.stopImmediatePropagation(),this.dragOffset=i;var a=this.offset+this.dragOffset;a<0?this.dragOffset=-Math.sqrt(-this.resistanceCoef*this.dragOffset):a>this.maxOffset&&(this.dragOffset=Math.sqrt(this.resistanceCoef*this.dragOffset))}}),(0,o.default)(r,"onResize",function(){var t=this;this.computeCarouselWidth(),this.dragging=!0,this.render(),setTimeout(function(){t.dragging=!1},this.refreshRate)}),(0,o.default)(r,"render",function(){this.offset+=Math.max(-this.currentPerPage+1,Math.min(Math.round(this.dragMomentum),this.currentPerPage-1))*this.slideWidth;var t=this.scrollPerPage?this.slideWidth*this.currentPerPage:this.slideWidth;this.offset=t*Math.round(this.offset/t),this.offset=Math.max(0,Math.min(this.offset,this.maxOffset)),this.currentPage=Math.round(this.offset/this.slideWidth/this.currentPerPage)}),(0,o.default)(r,"computeCarouselWidth",function(){this.getSlideCount(),this.getBrowserWidth(),this.getCarouselWidth(),this.setCurrentPageInBounds()}),(0,o.default)(r,"setCurrentPageInBounds",function(){if(!this.canAdvanceForward){var t=this.pageCount-1;this.currentPage=t>=0?t:0,this.offset=Math.max(0,Math.min(this.offset,this.maxOffset))}}),r),mounted:function(){this.$isServer||(window.addEventListener("resize",(0,f.default)(this.onResize,this.refreshRate)),(this.isTouch||this.mouseDrag)&&this.$refs["VueCarousel-wrapper"].addEventListener(this.isTouch?"touchstart":"mousedown",this.onStart)),this.attachMutationObserver(),this.computeCarouselWidth()},beforeDestroy:function(){this.$isServer||(this.detachMutationObserver(),window.removeEventListener("resize",this.getBrowserWidth),this.$refs["VueCarousel-wrapper"].removeEventListener(this.isTouch?"touchstart":"mousedown",this.onStart))}}},function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{default:t}}e.__esModule=!0;var r=n(10),a=i(r);e.default=function(t,e,n){return e in t?(0,a.default)(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},function(t,e,n){t.exports={default:n(11),__esModule:!0}},function(t,e,n){n(12);var i=n(15).Object;t.exports=function(t,e,n){return i.defineProperty(t,e,n)}},function(t,e,n){var i=n(13);i(i.S+i.F*!n(23),"Object",{defineProperty:n(19).f})},function(t,e,n){var i=n(14),r=n(15),a=n(16),o=n(18),s="prototype",u=function(t,e,n){var c,d,l,f=t&u.F,h=t&u.G,p=t&u.S,g=t&u.P,v=t&u.B,m=t&u.W,b=h?r:r[e]||(r[e]={}),C=b[s],y=h?i:p?i[e]:(i[e]||{})[s];h&&(n=e);for(c in n)d=!f&&y&&void 0!==y[c],d&&c in b||(l=d?y[c]:n[c],b[c]=h&&"function"!=typeof y[c]?n[c]:v&&d?a(l,i):m&&y[c]==l?function(t){var e=function(e,n,i){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,i)}return t.apply(this,arguments)};return e[s]=t[s],e}(l):g&&"function"==typeof l?a(Function.call,l):l,g&&((b.virtual||(b.virtual={}))[c]=l,t&u.R&&C&&!C[c]&&o(C,c,l)))};u.F=1,u.G=2,u.S=4,u.P=8,u.B=16,u.W=32,u.U=64,u.R=128,t.exports=u},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e){var n=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=n)},function(t,e,n){var i=n(17);t.exports=function(t,e,n){if(i(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,i){return t.call(e,n,i)};case 3:return function(n,i,r){return t.call(e,n,i,r)}}return function(){return t.apply(e,arguments)}}},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var i=n(19),r=n(27);t.exports=n(23)?function(t,e,n){return i.f(t,e,r(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var i=n(20),r=n(22),a=n(26),o=Object.defineProperty;e.f=n(23)?Object.defineProperty:function(t,e,n){if(i(t),e=a(e,!0),i(n),r)try{return o(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){var i=n(21);t.exports=function(t){if(!i(t))throw TypeError(t+" is not an object!");return t}},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e,n){t.exports=!n(23)&&!n(24)(function(){return 7!=Object.defineProperty(n(25)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){t.exports=!n(24)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var i=n(21),r=n(14).document,a=i(r)&&i(r.createElement);t.exports=function(t){return a?r.createElement(t):{}}},function(t,e,n){var i=n(21);t.exports=function(t,e){if(!i(t))return t;var n,r;if(e&&"function"==typeof(n=t.toString)&&!i(r=n.call(t)))return r;if("function"==typeof(n=t.valueOf)&&!i(r=n.call(t)))return r;if(!e&&"function"==typeof(n=t.toString)&&!i(r=n.call(t)))return r;throw TypeError("Can't convert object to primitive value")}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e,n){t.exports={default:n(29),__esModule:!0}},function(t,e,n){n(30),t.exports=n(15).Math.sign},function(t,e,n){var i=n(13);i(i.S,"Math",{sign:n(31)})},function(t,e){t.exports=Math.sign||function(t){return 0==(t=+t)||t!=t?t:t<0?-1:1}},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n={props:{autoplay:{type:Boolean,default:!1},autoplayTimeout:{type:Number,default:2e3},autoplayHoverPause:{type:Boolean,default:!0}},data:function(){return{autoplayInterval:null}},destroyed:function(){this.$isServer||(this.$el.removeEventListener("mouseenter",this.pauseAutoplay),this.$el.removeEventListener("mouseleave",this.startAutoplay))},methods:{pauseAutoplay:function(){this.autoplayInterval&&(this.autoplayInterval=clearInterval(this.autoplayInterval))},startAutoplay:function(){this.autoplay&&(this.autoplayInterval=setInterval(this.advancePage,this.autoplayTimeout))}},mounted:function(){!this.$isServer&&this.autoplayHoverPause&&(this.$el.addEventListener("mouseenter",this.pauseAutoplay),this.$el.addEventListener("mouseleave",this.startAutoplay)),this.startAutoplay()}};e.default=n},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=function(t,e,n){var i=void 0;return function(){var r=void 0,a=function(){i=null,n||t.apply(r)},o=n&&!i;clearTimeout(i),i=setTimeout(a,e),o&&t.apply(r)}};e.default=n},function(t,e,n){function i(t){n(35)}var r=n(7)(n(37),n(38),i,"data-v-7fed18e9",null);t.exports=r.exports},function(t,e,n){var i=n(36);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("a1957e6c",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-navigation-button[data-v-7fed18e9]{position:absolute;top:50%;box-sizing:border-box;color:#000;text-decoration:none}.VueCarousel-navigation-next[data-v-7fed18e9]{right:0;transform:translateY(-50%) translateX(100%)}.VueCarousel-navigation-prev[data-v-7fed18e9]{left:0;transform:translateY(-50%) translateX(-100%)}.VueCarousel-navigation--disabled[data-v-7fed18e9]{opacity:.5;cursor:default}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"navigation",data:function(){return{parentContainer:this.$parent}},props:{clickTargetSize:{type:Number,default:8},nextLabel:{type:String,default:"▶"},prevLabel:{type:String,default:"◀"}},computed:{canAdvanceForward:function(){return this.parentContainer.canAdvanceForward||!1},canAdvanceBackward:function(){return this.parentContainer.canAdvanceBackward||!1}},methods:{triggerPageAdvance:function(t){t?this.$parent.advancePage(t):this.$parent.advancePage()}}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel-navigation"},[n("a",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-prev",class:{"VueCarousel-navigation--disabled":!t.canAdvanceBackward},style:"padding: "+t.clickTargetSize+"px; margin-right: -"+t.clickTargetSize+"px;",attrs:{href:"#"},domProps:{innerHTML:t._s(t.prevLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance("backward")}}}),t._v(" "),n("a",{staticClass:"VueCarousel-navigation-button VueCarousel-navigation-next",class:{"VueCarousel-navigation--disabled":!t.canAdvanceForward},style:"padding: "+t.clickTargetSize+"px; margin-left: -"+t.clickTargetSize+"px;",attrs:{href:"#"},domProps:{innerHTML:t._s(t.nextLabel)},on:{click:function(e){e.preventDefault(),t.triggerPageAdvance()}}})])},staticRenderFns:[]}},function(t,e,n){function i(t){n(40)}var r=n(7)(n(42),n(43),i,"data-v-7e42136f",null);t.exports=r.exports},function(t,e,n){var i=n(41);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("3ea8dd5f",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-pagination[data-v-7e42136f]{width:100%;float:left;text-align:center}.VueCarousel-dot-container[data-v-7e42136f]{display:inline-block;margin:0 auto}.VueCarousel-dot[data-v-7e42136f]{float:left;cursor:pointer}.VueCarousel-dot-inner[data-v-7e42136f]{border-radius:100%}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"pagination",data:function(){return{parentContainer:this.$parent}},methods:{goToPage:function(t){this.$emit("paginationclick",t)}}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{directives:[{name:"show",rawName:"v-show",value:t.parentContainer.pageCount>1,expression:"parentContainer.pageCount > 1"}],staticClass:"VueCarousel-pagination"},[n("div",{staticClass:"VueCarousel-dot-container"},t._l(t.parentContainer.pageCount,function(e,i){return n("div",{staticClass:"VueCarousel-dot",class:{"VueCarousel-dot--active":i===t.parentContainer.currentPage},style:"\n        margin-top: "+2*t.parentContainer.paginationPadding+"px;\n        padding: "+t.parentContainer.paginationPadding+"px;\n      ",on:{click:function(e){t.goToPage(i)}}},[n("div",{staticClass:"VueCarousel-dot-inner",style:"\n          width: "+t.parentContainer.paginationSize+"px;\n          height: "+t.parentContainer.paginationSize+"px;\n          background: "+(i===t.parentContainer.currentPage?t.parentContainer.paginationActiveColor:t.parentContainer.paginationColor)+";\n        "})])}))])},staticRenderFns:[]}},function(t,e,n){function i(t){n(45)}var r=n(7)(n(47),n(48),i,null,null);t.exports=r.exports},function(t,e,n){var i=n(46);"string"==typeof i&&(i=[[t.id,i,""]]),i.locals&&(t.exports=i.locals);n(5)("e8ab14d8",i,!0,{})},function(t,e,n){e=t.exports=n(4)(),e.push([t.id,".VueCarousel-slide{flex-basis:inherit;flex-grow:0;flex-shrink:0;user-select:none;backface-visibility:hidden;-webkit-touch-callout:none}",""])},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={name:"slide",data:function(){return{width:null}},mounted:function(){this.$isServer||this.$el.addEventListener("dragstart",function(t){return t.preventDefault()})}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel-slide"},[t._t("default")],2)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"VueCarousel"},[n("div",{ref:"VueCarousel-wrapper",staticClass:"VueCarousel-wrapper"},[n("div",{staticClass:"VueCarousel-inner",style:"\n        transform: translate3d("+t.currentOffset+"px, 0, 0);\n        transition: "+(t.dragging?"none":t.transitionStyle)+";\n        flex-basis: "+t.slideWidth+"px;\n        visibility: "+(t.slideWidth?"visible":"hidden")+";\n        padding-left: "+t.padding+"px;\n        padding-right: "+t.padding+"px;\n      "},[t._t("default")],2)]),t._v(" "),t.paginationEnabled&&t.pageCount>0?n("pagination",{on:{paginationclick:function(e){t.goToPage(e,"pagination")}}}):t._e(),t._v(" "),t.navigationEnabled?n("navigation",{attrs:{clickTargetSize:t.navigationClickTargetSize,nextLabel:t.navigationNextLabel,prevLabel:t.navigationPrevLabel},on:{navigationclick:t.handleNavigation}}):t._e()],1)},staticRenderFns:[]}}])});
 
 /***/ }),
-/* 320 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(321)
+var __vue_script__ = __webpack_require__(318)
 /* template */
-var __vue_template__ = __webpack_require__(322)
+var __vue_template__ = __webpack_require__(319)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96556,7 +97391,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 321 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96575,7 +97410,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 322 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96603,7 +97438,7 @@ if (false) {
 }
 
 /***/ }),
-/* 323 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96623,7 +97458,7 @@ var render = function() {
             navigationClickTargetSize: 20
           }
         },
-        _vm._l(_vm.industries, function(industry, index) {
+        _vm._l(_vm.selectedIndustries, function(industry, index) {
           return _c(
             "slide",
             {
@@ -96660,7 +97495,7 @@ if (false) {
 }
 
 /***/ }),
-/* 324 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96674,21 +97509,252 @@ var render = function() {
       _c("card", [
         _c("div", { staticClass: "container-fluid my-0" }, [
           _c("div", { staticClass: "row p-0" }, [
-            _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
+            _c(
+              "div",
+              { staticClass: "mt-5" },
+              [_c("industry-carousel", { attrs: { form: _vm.form } })],
+              1
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row m-1 p-0" }, [
-            _c(
-              "div",
-              { staticClass: "col col-md-3 col-sm-12 my-3" },
-              [_c("majors-form")],
-              1
-            ),
+            _c("div", { staticClass: "col col-md-3 col-sm-12 my-3" }, [
+              _c("form", { staticClass: "form--inverted" }, [
+                !_vm.form.formWasSubmitted
+                  ? _c("div", { staticClass: "form__group" }, [
+                      _c("div", { staticClass: "row row--condensed" }, [
+                        _c("h5", { staticClass: "form--title" }, [
+                          _vm._v("Choose A Campus")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col col-12" }, [
+                          _c("label", { attrs: { for: "campus" } }, [
+                            _vm._v("Campus:")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              attrs: {
+                                name: "universities",
+                                id: "universities"
+                              },
+                              on: {
+                                input: function($event) {
+                                  _vm.updateForm(
+                                    "schoolId",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("All Campuses")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.universities, function(university) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: university.id } },
+                                  [_vm._v(_vm._s(university.name))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row row--condensed" }, [
+                        _c("h5", { staticClass: "form--title" }, [
+                          _vm._v("Choose A Major")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col col-12" }, [
+                          _c("label", { attrs: { for: "Major" } }, [
+                            _vm._v("Major:")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "select",
+                            {
+                              attrs: { name: "majors", id: "majors" },
+                              on: {
+                                input: function($event) {
+                                  _vm.updateForm("majorId", $event.target.value)
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("-- Select a Major --")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.majors, function(major) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: major.majorId } },
+                                  [_vm._v(_vm._s(major.major))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row row--condensed" }, [
+                        _c("div", { staticClass: "col col-md-8 py-4" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-success",
+                              attrs: { type: "button" },
+                              on: { click: _vm.submitForm }
+                            },
+                            [_vm._v("Submit")]
+                          )
+                        ])
+                      ])
+                    ])
+                  : _c("div", { staticClass: "form__group" }, [
+                      _c("p", { staticClass: "h2 text-gray my-5" }, [
+                        _vm._v("Applied Math")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          name: "allDegrees",
+                          id: "allDegrees",
+                          checked: "",
+                          value: "allDegrees"
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.educationLevel, "allDegrees")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.form, "educationLevel", "allDegrees")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "allDegrees" } }, [
+                        _vm._v("All")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          name: "someCollege",
+                          id: "someCollege",
+                          value: "some_college"
+                        },
+                        domProps: {
+                          checked: _vm._q(
+                            _vm.form.educationLevel,
+                            "some_college"
+                          )
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.form, "educationLevel", "some_college")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "postBacc" } }, [
+                        _vm._v("Some College")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          name: "bachelors",
+                          id: "bachelors",
+                          value: "bachelors"
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.educationLevel, "bachelors")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.form, "educationLevel", "bachelors")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "bachelors" } }, [
+                        _vm._v("Bachelor's Degree")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.educationLevel,
+                            expression: "form.educationLevel"
+                          }
+                        ],
+                        attrs: {
+                          type: "radio",
+                          name: "post_bacc",
+                          id: "post_bacc",
+                          value: "post_bacc"
+                        },
+                        domProps: {
+                          checked: _vm._q(_vm.form.educationLevel, "post_bacc")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.form, "educationLevel", "post_bacc")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "postBacc" } }, [
+                        _vm._v("Post Bacc")
+                      ])
+                    ])
+              ])
+            ]),
             _vm._v(" "),
             _c(
               "div",
+<<<<<<< HEAD
               { staticClass: "col col-7" },
               [_c("majors-graph-wrapper")],
+=======
+              { staticClass: "col col-9" },
+              [_c("majors-graph-wrapper", { attrs: { form: _vm.form } })],
+>>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
               1
             ),
             _vm._v(" "),
@@ -96716,7 +97782,7 @@ if (false) {
 }
 
 /***/ }),
-/* 325 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96753,15 +97819,15 @@ if (false) {
 }
 
 /***/ }),
-/* 326 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(327)
+var __vue_script__ = __webpack_require__(324)
 /* template */
-var __vue_template__ = __webpack_require__(328)
+var __vue_template__ = __webpack_require__(325)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96800,7 +97866,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 327 */
+/* 324 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96828,7 +97894,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 328 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96848,15 +97914,15 @@ if (false) {
 }
 
 /***/ }),
-/* 329 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(330)
+var __vue_script__ = __webpack_require__(327)
 /* template */
-var __vue_template__ = __webpack_require__(331)
+var __vue_template__ = __webpack_require__(328)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96895,7 +97961,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 330 */
+/* 327 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97002,7 +98068,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 331 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97360,15 +98426,15 @@ if (false) {
 }
 
 /***/ }),
-/* 332 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(333)
+var __vue_script__ = __webpack_require__(330)
 /* template */
-var __vue_template__ = __webpack_require__(334)
+var __vue_template__ = __webpack_require__(331)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97407,7 +98473,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 333 */
+/* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97494,7 +98560,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 334 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97658,15 +98724,15 @@ if (false) {
 }
 
 /***/ }),
-/* 335 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(336)
+var __vue_script__ = __webpack_require__(333)
 /* template */
-var __vue_template__ = __webpack_require__(337)
+var __vue_template__ = __webpack_require__(334)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97705,7 +98771,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 336 */
+/* 333 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97717,7 +98783,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 337 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97737,7 +98803,7 @@ if (false) {
 }
 
 /***/ }),
-/* 338 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -115369,15 +116435,15 @@ function install(Vue) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 339 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(340)
+var __vue_script__ = __webpack_require__(337)
 /* template */
-var __vue_template__ = __webpack_require__(347)
+var __vue_template__ = __webpack_require__(344)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115416,14 +116482,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 340 */
+/* 337 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -115445,15 +116511,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 341 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(342)
+var __vue_script__ = __webpack_require__(339)
 /* template */
-var __vue_template__ = __webpack_require__(343)
+var __vue_template__ = __webpack_require__(340)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115492,7 +116558,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 342 */
+/* 339 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115541,7 +116607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 343 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115687,15 +116753,15 @@ if (false) {
 }
 
 /***/ }),
-/* 344 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(345)
+var __vue_script__ = __webpack_require__(342)
 /* template */
-var __vue_template__ = __webpack_require__(346)
+var __vue_template__ = __webpack_require__(343)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -115734,7 +116800,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 345 */
+/* 342 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115758,7 +116824,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 346 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115835,7 +116901,7 @@ if (false) {
 }
 
 /***/ }),
-/* 347 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115870,7 +116936,7 @@ if (false) {
 }
 
 /***/ }),
-/* 348 */
+/* 345 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
