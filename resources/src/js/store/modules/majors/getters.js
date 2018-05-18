@@ -8,7 +8,7 @@ export default {
     },
     majorData: state => state.majorData,
     majorDataByMajorId: (state, getters) => (id) => {
-        const index = getters.majorData.findIndex(dataSet => dataSet.major_id == id);
+        const index = getters.majorData.findIndex(dataSet => dataSet.majorId == id);
         return getters.majorData[index];
     },
     universities: state => state.universities,
