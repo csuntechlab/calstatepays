@@ -54,19 +54,13 @@
                                 <input type="radio" name="post_bacc" id="post_bacc" v-model="form.educationLevel" value="post_bacc">
                                 <label for="postBacc">Post Bacc</label>
                             </div>
-                            <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
                         </form>
                     </div>
-<<<<<<< HEAD
                     <div class="col col-7">
-                        <majors-graph-wrapper></majors-graph-wrapper>
-=======
-                    <div class="col col-9">
                         <majors-graph-wrapper :form="form"></majors-graph-wrapper>
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
-                        <major-legend class=""></major-legend>
+                        <major-legend :form="form"></major-legend>
                     </div>
                 </div>
             </div>

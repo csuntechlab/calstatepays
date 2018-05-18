@@ -802,6 +802,115 @@ exports.noop = noop;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -1274,115 +1383,6 @@ exports.makeInner = makeInner;
 exports.parseFinder = parseFinder;
 exports.setAttribute = setAttribute;
 exports.getAttribute = getAttribute;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
 
 /***/ }),
 /* 3 */
@@ -2545,7 +2545,7 @@ var ChartView = __webpack_require__(89);
 
 var graphic = __webpack_require__(3);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var _throttle = __webpack_require__(48);
 
@@ -7512,7 +7512,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 
@@ -8488,7 +8488,7 @@ var _clazz = __webpack_require__(17);
 var enableClassManagement = _clazz.enableClassManagement;
 var parseClassType = _clazz.parseClassType;
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 
@@ -11754,7 +11754,7 @@ var assert = _util.assert;
 var each = _util.each;
 var isObject = _util.isObject;
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var getDataItemValue = _model.getDataItemValue;
 var isDataItemOption = _model.isDataItemOption;
@@ -26314,7 +26314,7 @@ var _config = __webpack_require__(4);
 
 var __DEV__ = _config.__DEV__;
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 var getDataItemValue = _model.getDataItemValue;
@@ -38518,7 +38518,7 @@ var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(170)
 /* template */
@@ -38585,7 +38585,7 @@ function updateForm(field, data, parent) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(175)
 /* template */
@@ -41709,7 +41709,7 @@ var merge = _util.merge;
 var extend = _util.extend;
 var mixin = _util.mixin;
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var Model = __webpack_require__(14);
 
@@ -42755,7 +42755,7 @@ exports.buildPath = buildPath;
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 var normalizeToArray = _model.normalizeToArray;
@@ -42982,7 +42982,7 @@ var encodeHTML = _format.encodeHTML;
 var addCommas = _format.addCommas;
 var getTooltipMarker = _format.getTooltipMarker;
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var ComponentModel = __webpack_require__(18);
 
@@ -43506,7 +43506,7 @@ var componentUtil = __webpack_require__(35);
 
 var clazzUtil = __webpack_require__(17);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var _task = __webpack_require__(47);
 
@@ -43734,7 +43734,7 @@ module.exports = _default;
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 
@@ -43774,7 +43774,7 @@ var _dimensionHelper = __webpack_require__(49);
 
 var getDimensionTypeByAxis = _dimensionHelper.getDimensionTypeByAxis;
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var getDataItemValue = _model.getDataItemValue;
 
@@ -45833,7 +45833,7 @@ var extend = _util.extend;
 var isObject = _util.isObject;
 var clone = _util.clone;
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -48057,7 +48057,7 @@ exports.layout = layout;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 /**
  * @param {Object} finder contains {seriesIndex, dataIndex, dataIndexInside}
@@ -48116,7 +48116,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(8);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 var inner = makeInner();
@@ -48466,7 +48466,7 @@ exports.makeSectorShape = makeSectorShape;
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(315)
 /* template */
@@ -48513,7 +48513,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(113);
-module.exports = __webpack_require__(345);
+module.exports = __webpack_require__(348);
 
 
 /***/ }),
@@ -48528,9 +48528,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -65834,7 +65834,6 @@ var Util = function ($$$1) {
 
   function transitionEndEmulator(duration) {
     var _this = this;
-<<<<<<< HEAD
 
     var called = false;
     $$$1(this).one(Util.TRANSITION_END, function () {
@@ -65852,25 +65851,6 @@ var Util = function ($$$1) {
     transition = transitionEndTest();
     $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
 
-=======
-
-    var called = false;
-    $$$1(this).one(Util.TRANSITION_END, function () {
-      called = true;
-    });
-    setTimeout(function () {
-      if (!called) {
-        Util.triggerTransitionEnd(_this);
-      }
-    }, duration);
-    return this;
-  }
-
-  function setTransitionEndSupport() {
-    transition = transitionEndTest();
-    $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
     if (Util.supportsTransitionEnd()) {
       $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
@@ -66230,7 +66210,6 @@ var Button = function ($$$1) {
         if (!data) {
           data = new Button(this);
           $$$1(this).data(DATA_KEY, data);
-<<<<<<< HEAD
         }
 
         if (config === 'toggle') {
@@ -66253,532 +66232,6 @@ var Button = function ($$$1) {
    * ------------------------------------------------------------------------
    */
 
-
-  $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    event.preventDefault();
-    var button = event.target;
-
-    if (!$$$1(button).hasClass(ClassName.BUTTON)) {
-      button = $$$1(button).closest(Selector.BUTTON);
-    }
-
-    Button._jQueryInterface.call($$$1(button), 'toggle');
-  }).on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    var button = $$$1(event.target).closest(Selector.BUTTON)[0];
-    $$$1(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $$$1.fn[NAME] = Button._jQueryInterface;
-  $$$1.fn[NAME].Constructor = Button;
-
-  $$$1.fn[NAME].noConflict = function () {
-    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Button._jQueryInterface;
-  };
-
-  return Button;
-}($);
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): carousel.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-var Carousel = function ($$$1) {
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-=======
-        }
-
-        if (config === 'toggle') {
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Button, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION;
-      }
-    }]);
-    return Button;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
-   * ------------------------------------------------------------------------
-   */
-  var NAME = 'carousel';
-  var VERSION = '4.0.0';
-  var DATA_KEY = 'bs.carousel';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
-  var TRANSITION_DURATION = 600;
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
-
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
-
-<<<<<<< HEAD
-  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
-
-  var Default = {
-    interval: 5000,
-    keyboard: true,
-    slide: false,
-    pause: 'hover',
-    wrap: true
-  };
-  var DefaultType = {
-    interval: '(number|boolean)',
-    keyboard: 'boolean',
-    slide: '(boolean|string)',
-    pause: '(string|boolean)',
-    wrap: 'boolean'
-  };
-  var Direction = {
-    NEXT: 'next',
-    PREV: 'prev',
-    LEFT: 'left',
-    RIGHT: 'right'
-  };
-  var Event = {
-    SLIDE: "slide" + EVENT_KEY,
-    SLID: "slid" + EVENT_KEY,
-    KEYDOWN: "keydown" + EVENT_KEY,
-    MOUSEENTER: "mouseenter" + EVENT_KEY,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY,
-    TOUCHEND: "touchend" + EVENT_KEY,
-    LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
-  };
-  var ClassName = {
-    CAROUSEL: 'carousel',
-    ACTIVE: 'active',
-    SLIDE: 'slide',
-    RIGHT: 'carousel-item-right',
-    LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
-    PREV: 'carousel-item-prev',
-    ITEM: 'carousel-item'
-  };
-  var Selector = {
-    ACTIVE: '.active',
-    ACTIVE_ITEM: '.active.carousel-item',
-    ITEM: '.carousel-item',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
-    INDICATORS: '.carousel-indicators',
-    DATA_SLIDE: '[data-slide], [data-slide-to]',
-    DATA_RIDE: '[data-ride="carousel"]'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Carousel =
-  /*#__PURE__*/
-  function () {
-    function Carousel(element, config) {
-      this._items = null;
-      this._interval = null;
-      this._activeElement = null;
-      this._isPaused = false;
-      this._isSliding = false;
-      this.touchTimeout = null;
-      this._config = this._getConfig(config);
-      this._element = $$$1(element)[0];
-      this._indicatorsElement = $$$1(this._element).find(Selector.INDICATORS)[0];
-
-      this._addEventListeners();
-    } // Getters
-
-
-    var _proto = Carousel.prototype;
-
-    // Public
-    _proto.next = function next() {
-      if (!this._isSliding) {
-        this._slide(Direction.NEXT);
-      }
-    };
-
-    _proto.nextWhenVisible = function nextWhenVisible() {
-      // Don't call next when the page isn't visible
-      // or the carousel or its parent isn't visible
-      if (!document.hidden && $$$1(this._element).is(':visible') && $$$1(this._element).css('visibility') !== 'hidden') {
-        this.next();
-      }
-    };
-
-    _proto.prev = function prev() {
-      if (!this._isSliding) {
-        this._slide(Direction.PREV);
-      }
-    };
-
-    _proto.pause = function pause(event) {
-      if (!event) {
-        this._isPaused = true;
-      }
-
-      if ($$$1(this._element).find(Selector.NEXT_PREV)[0] && Util.supportsTransitionEnd()) {
-        Util.triggerTransitionEnd(this._element);
-        this.cycle(true);
-      }
-
-      clearInterval(this._interval);
-      this._interval = null;
-    };
-
-    _proto.cycle = function cycle(event) {
-      if (!event) {
-        this._isPaused = false;
-      }
-
-      if (this._interval) {
-        clearInterval(this._interval);
-        this._interval = null;
-      }
-
-      if (this._config.interval && !this._isPaused) {
-        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
-      }
-    };
-
-    _proto.to = function to(index) {
-      var _this = this;
-
-      this._activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
-
-      var activeIndex = this._getItemIndex(this._activeElement);
-
-      if (index > this._items.length - 1 || index < 0) {
-        return;
-      }
-
-      if (this._isSliding) {
-        $$$1(this._element).one(Event.SLID, function () {
-          return _this.to(index);
-        });
-        return;
-      }
-
-      if (activeIndex === index) {
-        this.pause();
-        this.cycle();
-        return;
-      }
-
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
-
-      this._slide(direction, this._items[index]);
-    };
-
-    _proto.dispose = function dispose() {
-      $$$1(this._element).off(EVENT_KEY);
-      $$$1.removeData(this._element, DATA_KEY);
-      this._items = null;
-      this._config = null;
-      this._element = null;
-      this._interval = null;
-      this._isPaused = null;
-      this._isSliding = null;
-      this._activeElement = null;
-      this._indicatorsElement = null;
-    }; // Private
-
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default, config);
-      Util.typeCheckConfig(NAME, config, DefaultType);
-      return config;
-    };
-
-    _proto._addEventListeners = function _addEventListeners() {
-      var _this2 = this;
-
-      if (this._config.keyboard) {
-        $$$1(this._element).on(Event.KEYDOWN, function (event) {
-          return _this2._keydown(event);
-        });
-      }
-
-      if (this._config.pause === 'hover') {
-        $$$1(this._element).on(Event.MOUSEENTER, function (event) {
-          return _this2.pause(event);
-        }).on(Event.MOUSELEAVE, function (event) {
-          return _this2.cycle(event);
-        });
-
-        if ('ontouchstart' in document.documentElement) {
-          // If it's a touch-enabled device, mouseenter/leave are fired as
-          // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
-          // here, we listen for touchend, explicitly pause the carousel
-          // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
-          $$$1(this._element).on(Event.TOUCHEND, function () {
-            _this2.pause();
-
-            if (_this2.touchTimeout) {
-              clearTimeout(_this2.touchTimeout);
-            }
-
-            _this2.touchTimeout = setTimeout(function (event) {
-              return _this2.cycle(event);
-            }, TOUCHEVENT_COMPAT_WAIT + _this2._config.interval);
-          });
-        }
-      }
-    };
-
-    _proto._keydown = function _keydown(event) {
-      if (/input|textarea/i.test(event.target.tagName)) {
-        return;
-      }
-
-      switch (event.which) {
-        case ARROW_LEFT_KEYCODE:
-          event.preventDefault();
-          this.prev();
-          break;
-
-        case ARROW_RIGHT_KEYCODE:
-          event.preventDefault();
-          this.next();
-          break;
-
-        default:
-      }
-    };
-
-    _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = $$$1.makeArray($$$1(element).parent().find(Selector.ITEM));
-      return this._items.indexOf(element);
-    };
-
-    _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
-      var isPrevDirection = direction === Direction.PREV;
-
-      var activeIndex = this._getItemIndex(activeElement);
-
-      var lastItemIndex = this._items.length - 1;
-      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
-
-      if (isGoingToWrap && !this._config.wrap) {
-        return activeElement;
-      }
-
-      var delta = direction === Direction.PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
-      return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
-    };
-
-    _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      var targetIndex = this._getItemIndex(relatedTarget);
-
-      var fromIndex = this._getItemIndex($$$1(this._element).find(Selector.ACTIVE_ITEM)[0]);
-
-      var slideEvent = $$$1.Event(Event.SLIDE, {
-        relatedTarget: relatedTarget,
-        direction: eventDirectionName,
-        from: fromIndex,
-        to: targetIndex
-      });
-      $$$1(this._element).trigger(slideEvent);
-      return slideEvent;
-    };
-
-    _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
-      if (this._indicatorsElement) {
-        $$$1(this._indicatorsElement).find(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
-
-        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
-
-        if (nextIndicator) {
-          $$$1(nextIndicator).addClass(ClassName.ACTIVE);
-        }
-      }
-    };
-
-    _proto._slide = function _slide(direction, element) {
-      var _this3 = this;
-
-      var activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
-
-      var activeElementIndex = this._getItemIndex(activeElement);
-
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
-
-      var nextElementIndex = this._getItemIndex(nextElement);
-
-      var isCycling = Boolean(this._interval);
-      var directionalClassName;
-      var orderClassName;
-      var eventDirectionName;
-
-      if (direction === Direction.NEXT) {
-        directionalClassName = ClassName.LEFT;
-        orderClassName = ClassName.NEXT;
-        eventDirectionName = Direction.LEFT;
-      } else {
-        directionalClassName = ClassName.RIGHT;
-        orderClassName = ClassName.PREV;
-        eventDirectionName = Direction.RIGHT;
-      }
-
-      if (nextElement && $$$1(nextElement).hasClass(ClassName.ACTIVE)) {
-        this._isSliding = false;
-        return;
-      }
-
-      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
-
-      if (slideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (!activeElement || !nextElement) {
-        // Some weirdness is happening, so we bail
-        return;
-      }
-
-      this._isSliding = true;
-
-      if (isCycling) {
-        this.pause();
-      }
-
-      this._setActiveIndicatorElement(nextElement);
-
-      var slidEvent = $$$1.Event(Event.SLID, {
-        relatedTarget: nextElement,
-        direction: eventDirectionName,
-        from: activeElementIndex,
-        to: nextElementIndex
-      });
-
-      if (Util.supportsTransitionEnd() && $$$1(this._element).hasClass(ClassName.SLIDE)) {
-        $$$1(nextElement).addClass(orderClassName);
-        Util.reflow(nextElement);
-        $$$1(activeElement).addClass(directionalClassName);
-        $$$1(nextElement).addClass(directionalClassName);
-        $$$1(activeElement).one(Util.TRANSITION_END, function () {
-          $$$1(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
-          $$$1(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
-          _this3._isSliding = false;
-          setTimeout(function () {
-            return $$$1(_this3._element).trigger(slidEvent);
-          }, 0);
-        }).emulateTransitionEnd(TRANSITION_DURATION);
-      } else {
-        $$$1(activeElement).removeClass(ClassName.ACTIVE);
-        $$$1(nextElement).addClass(ClassName.ACTIVE);
-        this._isSliding = false;
-        $$$1(this._element).trigger(slidEvent);
-      }
-
-      if (isCycling) {
-        this.cycle();
-      }
-    }; // Static
-
-
-    Carousel._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $$$1(this).data(DATA_KEY);
-
-        var _config = _extends({}, Default, $$$1(this).data());
-
-        if (typeof config === 'object') {
-          _config = _extends({}, _config, config);
-        }
-
-        var action = typeof config === 'string' ? config : _config.slide;
-
-        if (!data) {
-          data = new Carousel(this, _config);
-          $$$1(this).data(DATA_KEY, data);
-        }
-
-        if (typeof config === 'number') {
-          data.to(config);
-        } else if (typeof action === 'string') {
-          if (typeof data[action] === 'undefined') {
-            throw new TypeError("No method named \"" + action + "\"");
-          }
-
-          data[action]();
-        } else if (_config.interval) {
-          data.pause();
-          data.cycle();
-        }
-      });
-    };
-
-    Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      var selector = Util.getSelectorFromElement(this);
-
-      if (!selector) {
-        return;
-      }
-
-      var target = $$$1(selector)[0];
-
-      if (!target || !$$$1(target).hasClass(ClassName.CAROUSEL)) {
-        return;
-      }
-
-      var config = _extends({}, $$$1(target).data(), $$$1(this).data());
-      var slideIndex = this.getAttribute('data-slide-to');
-
-      if (slideIndex) {
-        config.interval = false;
-      }
-
-      Carousel._jQueryInterface.call($$$1(target), config);
-
-      if (slideIndex) {
-        $$$1(target).data(DATA_KEY).to(slideIndex);
-      }
-
-      event.preventDefault();
-    };
-
-    _createClass(Carousel, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default;
-      }
-    }]);
-    return Carousel;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-=======
 
   $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
     event.preventDefault();
@@ -67247,51 +66700,10 @@ var Carousel = function ($$$1) {
       if (!target || !$$$1(target).hasClass(ClassName.CAROUSEL)) {
         return;
       }
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 
       var config = _extends({}, $$$1(target).data(), $$$1(this).data());
       var slideIndex = this.getAttribute('data-slide-to');
 
-<<<<<<< HEAD
-  $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
-  $$$1(window).on(Event.LOAD_DATA_API, function () {
-    $$$1(Selector.DATA_RIDE).each(function () {
-      var $carousel = $$$1(this);
-
-      Carousel._jQueryInterface.call($carousel, $carousel.data());
-    });
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $$$1.fn[NAME] = Carousel._jQueryInterface;
-  $$$1.fn[NAME].Constructor = Carousel;
-
-  $$$1.fn[NAME].noConflict = function () {
-    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Carousel._jQueryInterface;
-  };
-
-  return Carousel;
-}($);
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): collapse.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-var Collapse = function ($$$1) {
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-=======
       if (slideIndex) {
         config.interval = false;
       }
@@ -67363,7 +66775,6 @@ var Collapse = function ($$$1) {
    * Constants
    * ------------------------------------------------------------------------
    */
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
   var NAME = 'collapse';
   var VERSION = '4.0.0';
   var DATA_KEY = 'bs.collapse';
@@ -67493,17 +66904,10 @@ var Collapse = function ($$$1) {
       }
 
       var dimension = this._getDimension();
-<<<<<<< HEAD
 
       $$$1(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
       this._element.style[dimension] = 0;
 
-=======
-
-      $$$1(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
-      this._element.style[dimension] = 0;
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
       if (this._triggerArray.length > 0) {
         $$$1(this._triggerArray).removeClass(ClassName.COLLAPSED).attr('aria-expanded', true);
       }
@@ -67523,7 +66927,6 @@ var Collapse = function ($$$1) {
         complete();
         return;
       }
-<<<<<<< HEAD
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
       var scrollSize = "scroll" + capitalizedDimension;
@@ -67556,40 +66959,6 @@ var Collapse = function ($$$1) {
           var trigger = this._triggerArray[i];
           var selector = Util.getSelectorFromElement(trigger);
 
-=======
-
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
-      $$$1(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
-    };
-
-    _proto.hide = function hide() {
-      var _this2 = this;
-
-      if (this._isTransitioning || !$$$1(this._element).hasClass(ClassName.SHOW)) {
-        return;
-      }
-
-      var startEvent = $$$1.Event(Event.HIDE);
-      $$$1(this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      var dimension = this._getDimension();
-
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      Util.reflow(this._element);
-      $$$1(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
-
-      if (this._triggerArray.length > 0) {
-        for (var i = 0; i < this._triggerArray.length; i++) {
-          var trigger = this._triggerArray[i];
-          var selector = Util.getSelectorFromElement(trigger);
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
           if (selector !== null) {
             var $elem = $$$1(selector);
 
@@ -67693,21 +67062,12 @@ var Collapse = function ($$$1) {
         if (!data && _config.toggle && /show|hide/.test(config)) {
           _config.toggle = false;
         }
-<<<<<<< HEAD
 
         if (!data) {
           data = new Collapse(this, _config);
           $this.data(DATA_KEY, data);
         }
 
-=======
-
-        if (!data) {
-          data = new Collapse(this, _config);
-          $this.data(DATA_KEY, data);
-        }
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
             throw new TypeError("No method named \"" + config + "\"");
@@ -68046,7 +67406,6 @@ var Dropdown = function ($$$1) {
       return popperConfig;
     }; // Static
 
-<<<<<<< HEAD
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -68054,15 +67413,6 @@ var Dropdown = function ($$$1) {
 
         var _config = typeof config === 'object' ? config : null;
 
-=======
-
-    Dropdown._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $$$1(this).data(DATA_KEY);
-
-        var _config = typeof config === 'object' ? config : null;
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (!data) {
           data = new Dropdown(this, _config);
           $$$1(this).data(DATA_KEY, data);
@@ -68657,7 +68007,6 @@ var Modal = function ($$$1) {
       this._element.style.paddingLeft = '';
       this._element.style.paddingRight = '';
     };
-<<<<<<< HEAD
 
     _proto._checkScrollbar = function _checkScrollbar() {
       var rect = document.body.getBoundingClientRect();
@@ -68696,46 +68045,6 @@ var Modal = function ($$$1) {
       }
     };
 
-=======
-
-    _proto._checkScrollbar = function _checkScrollbar() {
-      var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
-      this._scrollbarWidth = this._getScrollbarWidth();
-    };
-
-    _proto._setScrollbar = function _setScrollbar() {
-      var _this9 = this;
-
-      if (this._isBodyOverflowing) {
-        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        // Adjust fixed content padding
-        $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
-          var actualPadding = $$$1(element)[0].style.paddingRight;
-          var calculatedPadding = $$$1(element).css('padding-right');
-          $$$1(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
-        }); // Adjust sticky content margin
-
-        $$$1(Selector.STICKY_CONTENT).each(function (index, element) {
-          var actualMargin = $$$1(element)[0].style.marginRight;
-          var calculatedMargin = $$$1(element).css('margin-right');
-          $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
-        }); // Adjust navbar-toggler margin
-
-        $$$1(Selector.NAVBAR_TOGGLER).each(function (index, element) {
-          var actualMargin = $$$1(element)[0].style.marginRight;
-          var calculatedMargin = $$$1(element).css('margin-right');
-          $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) + _this9._scrollbarWidth + "px");
-        }); // Adjust body padding
-
-        var actualPadding = document.body.style.paddingRight;
-        var calculatedPadding = $$$1('body').css('padding-right');
-        $$$1('body').data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
-      }
-    };
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
       $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
@@ -69104,17 +68413,10 @@ var Tooltip = function ($$$1) {
             },
             flip: {
               behavior: this.config.fallbackPlacement
-<<<<<<< HEAD
             },
             arrow: {
               element: Selector.ARROW
             },
-=======
-            },
-            arrow: {
-              element: Selector.ARROW
-            },
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
             preventOverflow: {
               boundariesElement: this.config.boundary
             }
@@ -69253,17 +68555,10 @@ var Tooltip = function ($$$1) {
         $element[html ? 'html' : 'text'](content);
       }
     };
-<<<<<<< HEAD
 
     _proto.getTitle = function getTitle() {
       var title = this.element.getAttribute('data-original-title');
 
-=======
-
-    _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
       if (!title) {
         title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
       }
@@ -69541,7 +68836,6 @@ var Tooltip = function ($$$1) {
 
   return Tooltip;
 }($, Popper);
-<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -69550,16 +68844,6 @@ var Tooltip = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
-=======
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): popover.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var Popover = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -69745,7 +69029,6 @@ var Popover = function ($$$1) {
 
   return Popover;
 }($);
-<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -69754,16 +69037,6 @@ var Popover = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
-=======
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): scrollspy.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var ScrollSpy = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -69947,7 +69220,6 @@ var ScrollSpy = function ($$$1) {
 
         return;
       }
-<<<<<<< HEAD
 
       if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
         this._activeTarget = null;
@@ -69960,20 +69232,6 @@ var ScrollSpy = function ($$$1) {
       for (var i = this._offsets.length; i--;) {
         var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
-=======
-
-      if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
-        this._activeTarget = null;
-
-        this._clear();
-
-        return;
-      }
-
-      for (var i = this._offsets.length; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (isActiveTarget) {
           this._activate(this._targets[i]);
         }
@@ -70082,7 +69340,6 @@ var ScrollSpy = function ($$$1) {
 
   return ScrollSpy;
 }($);
-<<<<<<< HEAD
 
 /**
  * --------------------------------------------------------------------------
@@ -70091,16 +69348,6 @@ var ScrollSpy = function ($$$1) {
  * --------------------------------------------------------------------------
  */
 
-=======
-
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): tab.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 var Tab = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
@@ -70277,7 +69524,6 @@ var Tab = function ($$$1) {
 
         element.setAttribute('aria-expanded', true);
       }
-<<<<<<< HEAD
 
       if (callback) {
         callback();
@@ -70295,25 +69541,6 @@ var Tab = function ($$$1) {
           $this.data(DATA_KEY, data);
         }
 
-=======
-
-      if (callback) {
-        callback();
-      }
-    }; // Static
-
-
-    Tab._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $this = $$$1(this);
-        var data = $this.data(DATA_KEY);
-
-        if (!data) {
-          data = new Tab(this);
-          $this.data(DATA_KEY, data);
-        }
-
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
             throw new TypeError("No method named \"" + config + "\"");
@@ -74008,13 +73235,13 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_majors_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_industries_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_faq_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_about_index_vue__);
 
 
@@ -77103,7 +76330,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(159)
 /* template */
@@ -77474,7 +76701,7 @@ module.exports = "/fonts/poly_seal.svg?06d9d9cd02d33b5d7ae68bdc728afe1b";
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(169)
 /* template */
@@ -77606,7 +76833,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(173)
 /* template */
@@ -78025,7 +77252,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(178)
 /* template */
@@ -79492,11 +78719,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(184)
 /* template */
-var __vue_template__ = __webpack_require__(322)
+var __vue_template__ = __webpack_require__(325)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79581,7 +78808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(186)
 /* template */
@@ -79684,11 +78911,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(189)
 /* template */
-var __vue_template__ = __webpack_require__(321)
+var __vue_template__ = __webpack_require__(324)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -79734,22 +78961,14 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__global_card__);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_form_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__major_legend_vue__);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_index__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_legend_vue__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__major_legend_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_index__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -79763,7 +78982,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 //
 //
 //
@@ -79787,117 +79005,42 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-<<<<<<< HEAD
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        card: __WEBPACK_IMPORTED_MODULE_0__global_card___default.a,
-        majorsForm: __WEBPACK_IMPORTED_MODULE_1__majors_form_vue___default.a,
-        majorsGraphWrapper: __WEBPACK_IMPORTED_MODULE_2__majors_graph_wrapper_vue___default.a,
-        industryCarousel: __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default.a,
-        majorLegend: __WEBPACK_IMPORTED_MODULE_4__major_legend_vue___default.a
-    }
-});
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(191)
-/* template */
-var __vue_template__ = __webpack_require__(192)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\src\\js\\components\\majors\\majors-form.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cc395636", Component.options)
-  } else {
-    hotAPI.reload("data-v-cc395636", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 191 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(16);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-=======
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -79919,55 +79062,36 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
-        updateForm: __WEBPACK_IMPORTED_MODULE_3__utils_index__["a" /* updateForm */],
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
+        updateForm: __WEBPACK_IMPORTED_MODULE_4__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
             this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
             this.fetchMajorData(this.form);
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['majors', 'universities', 'universityById']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majors', 'universities', 'universityById']), {
         campus: function campus() {
             if (this.form.schoolId) {
                 return this.universityById(this.form.schoolId);
             }
-<<<<<<< HEAD
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "postBacc" } }, [
-            _vm._v("Post Bacc Degree")
-          ])
-        ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-cc395636", module.exports)
-  }
-}
-=======
             return null;
         }
     }),
     components: {
         card: __WEBPACK_IMPORTED_MODULE_0__global_card___default.a,
         majorsGraphWrapper: __WEBPACK_IMPORTED_MODULE_1__majors_graph_wrapper_vue___default.a,
-        industryCarousel: __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue___default.a
+        industryCarousel: __WEBPACK_IMPORTED_MODULE_2__industries_industry_carousel_vue___default.a,
+        majorLegend: __WEBPACK_IMPORTED_MODULE_3__major_legend_vue___default.a
     }
 });
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 
 /***/ }),
 /* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(191)
 /* template */
@@ -80064,7 +79188,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(193)
 /* template */
@@ -80253,7 +79377,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(195)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(200)
 /* template */
@@ -80306,11 +79430,7 @@ var content = __webpack_require__(196);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-<<<<<<< HEAD
-var update = __webpack_require__(201)("fe975bc6", content, false, {});
-=======
 var update = __webpack_require__(198)("fe975bc6", content, false, {});
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -86593,7 +85713,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var ComponentModel = __webpack_require__(18);
 
@@ -87018,7 +86138,7 @@ var isObject = _util.isObject;
 
 var compatStyle = __webpack_require__(244);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -87121,7 +86241,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var each = zrUtil.each;
 var isObject = zrUtil.isObject;
@@ -88065,7 +87185,7 @@ var GlobalModel = __webpack_require__(79);
 
 var ExtensionAPI = __webpack_require__(87);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -90987,7 +90107,7 @@ var lineAnimationDiff = __webpack_require__(281);
 
 var graphic = __webpack_require__(3);
 
-var modelUtil = __webpack_require__(1);
+var modelUtil = __webpack_require__(2);
 
 var _poly = __webpack_require__(282);
 
@@ -94148,7 +93268,7 @@ echarts.registerAction({
 
 var zrUtil = __webpack_require__(0);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 
@@ -94812,7 +93932,7 @@ var eventTool = __webpack_require__(25);
 
 var throttleUtil = __webpack_require__(48);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var makeInner = _model.makeInner;
 var inner = makeInner();
@@ -96560,7 +95680,7 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(14);
 
-var _model = __webpack_require__(1);
+var _model = __webpack_require__(2);
 
 var isNameSpecified = _model.isNameSpecified;
 var LegendModel = echarts.extendComponentModel({
@@ -97348,7 +96468,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(318)
 /* template */
@@ -97496,6 +96616,135 @@ if (false) {
 
 /***/ }),
 /* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(322)
+/* template */
+var __vue_template__ = __webpack_require__(323)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-legend.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e8c102fa", Component.options)
+  } else {
+    hotAPI.reload("data-v-e8c102fa", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 322 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['form'],
+    data: function data() {
+        return {
+            isAll: true
+        };
+    }
+});
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.form.educationLevel == "allDegrees"
+      ? _c("div", [
+          _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+            _vm._v("Graduation Level: ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-oxford m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-gold m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-green m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+        ])
+      : _c("div", [
+          _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+            _vm._v("Percentile: ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-green m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-gold m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "legend-oxford m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+        ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e8c102fa", module.exports)
+  }
+}
+
+/***/ }),
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97748,20 +96997,15 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-<<<<<<< HEAD
               { staticClass: "col col-7" },
-              [_c("majors-graph-wrapper")],
-=======
-              { staticClass: "col col-9" },
               [_c("majors-graph-wrapper", { attrs: { form: _vm.form } })],
->>>>>>> f4ae616ff9689e111f3357e3da02cf32e854c766
               1
             ),
             _vm._v(" "),
             _c(
               "div",
               { staticClass: "col-2 mt-4 pt-5 pl-0" },
-              [_c("major-legend", {})],
+              [_c("major-legend", { attrs: { form: _vm.form } })],
               1
             )
           ])
@@ -97782,7 +97026,7 @@ if (false) {
 }
 
 /***/ }),
-/* 322 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97819,15 +97063,15 @@ if (false) {
 }
 
 /***/ }),
-/* 323 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(324)
+var __vue_script__ = __webpack_require__(327)
 /* template */
-var __vue_template__ = __webpack_require__(325)
+var __vue_template__ = __webpack_require__(328)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97866,7 +97110,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 324 */
+/* 327 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97894,7 +97138,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 325 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97914,15 +97158,15 @@ if (false) {
 }
 
 /***/ }),
-/* 326 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(327)
+var __vue_script__ = __webpack_require__(330)
 /* template */
-var __vue_template__ = __webpack_require__(328)
+var __vue_template__ = __webpack_require__(331)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97961,7 +97205,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 327 */
+/* 330 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98068,7 +97312,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 328 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -98426,15 +97670,15 @@ if (false) {
 }
 
 /***/ }),
-/* 329 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(330)
+var __vue_script__ = __webpack_require__(333)
 /* template */
-var __vue_template__ = __webpack_require__(331)
+var __vue_template__ = __webpack_require__(334)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -98473,7 +97717,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 330 */
+/* 333 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98560,7 +97804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 331 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -98724,15 +97968,15 @@ if (false) {
 }
 
 /***/ }),
-/* 332 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(333)
+var __vue_script__ = __webpack_require__(336)
 /* template */
-var __vue_template__ = __webpack_require__(334)
+var __vue_template__ = __webpack_require__(337)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -98771,7 +98015,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 333 */
+/* 336 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98783,7 +98027,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 334 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -98803,7 +98047,7 @@ if (false) {
 }
 
 /***/ }),
-/* 335 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -116435,15 +115679,15 @@ function install(Vue) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 336 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(337)
+var __vue_script__ = __webpack_require__(340)
 /* template */
-var __vue_template__ = __webpack_require__(344)
+var __vue_template__ = __webpack_require__(347)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116482,14 +115726,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 337 */
+/* 340 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(341);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -116511,15 +115755,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 338 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(339)
+var __vue_script__ = __webpack_require__(342)
 /* template */
-var __vue_template__ = __webpack_require__(340)
+var __vue_template__ = __webpack_require__(343)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116558,7 +115802,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 339 */
+/* 342 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116607,7 +115851,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 340 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -116753,15 +115997,15 @@ if (false) {
 }
 
 /***/ }),
-/* 341 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(342)
+var __vue_script__ = __webpack_require__(345)
 /* template */
-var __vue_template__ = __webpack_require__(343)
+var __vue_template__ = __webpack_require__(346)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116800,7 +116044,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 342 */
+/* 345 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116824,7 +116068,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 343 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -116901,7 +116145,7 @@ if (false) {
 }
 
 /***/ }),
-/* 344 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -116936,142 +116180,10 @@ if (false) {
 }
 
 /***/ }),
-/* 345 */
+/* 348 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(359)
-/* template */
-var __vue_template__ = __webpack_require__(360)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\src\\js\\components\\majors\\major-legend.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e8c102fa", Component.options)
-  } else {
-    hotAPI.reload("data-v-e8c102fa", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 359 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            isAll: true
-        };
-    }
-});
-
-/***/ }),
-/* 360 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.isAll
-      ? _c("div", [
-          _c("div", { staticClass: "legend-green m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-gold m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-oxford m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
-        ])
-      : _c("div", [
-          _c("h5", { staticClass: "font-weight-bold pb-2" }, [
-            _vm._v("Percentile: ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-green m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-gold m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-oxford m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-        ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-e8c102fa", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
