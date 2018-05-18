@@ -25,9 +25,9 @@ export default {
                 if(this.form.educationLevel == "allDegrees"){
                     return [
                         [
-                            this.majorDataByMajor.post_bacc['2'].avg_annual_wage,
-                            this.majorDataByMajor.post_bacc['5'].avg_annual_wage,
-                            this.majorDataByMajor.post_bacc['10'].avg_annual_wage,
+                            this.majorDataByMajor.postBacc['2'].avg_annual_wage,
+                            this.majorDataByMajor.postBacc['5'].avg_annual_wage,
+                            this.majorDataByMajor.postBacc['10'].avg_annual_wage,
                         ],
                         [
                             this.majorDataByMajor.bachelors['2'].avg_annual_wage,
@@ -35,9 +35,9 @@ export default {
                             this.majorDataByMajor.bachelors['10'].avg_annual_wage,
                         ],
                         [
-                            this.majorDataByMajor.some_college['2'].avg_annual_wage,
-                            this.majorDataByMajor.some_college['5'].avg_annual_wage,
-                            this.majorDataByMajor.some_college['10'].avg_annual_wage,
+                            this.majorDataByMajor.someCollege['2'].avg_annual_wage,
+                            this.majorDataByMajor.someCollege['5'].avg_annual_wage,
+                            this.majorDataByMajor.someCollege['10'].avg_annual_wage,
                         ],
                     ]
                 } else {

@@ -75956,7 +75956,7 @@ if (inBrowser && window.Vue) {
     majorDataByMajorId: function majorDataByMajorId(state, getters) {
         return function (id) {
             var index = getters.majorData.findIndex(function (dataSet) {
-                return dataSet.major_id == id;
+                return dataSet.majorId == id;
             });
             return getters.majorData[index];
         };
@@ -79164,7 +79164,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         majorDataSelected: function majorDataSelected() {
             if (this.majorDataByMajor && this.form.majorId) {
                 if (this.form.educationLevel == "allDegrees") {
-                    return [[this.majorDataByMajor.post_bacc['2'].avg_annual_wage, this.majorDataByMajor.post_bacc['5'].avg_annual_wage, this.majorDataByMajor.post_bacc['10'].avg_annual_wage], [this.majorDataByMajor.bachelors['2'].avg_annual_wage, this.majorDataByMajor.bachelors['5'].avg_annual_wage, this.majorDataByMajor.bachelors['10'].avg_annual_wage], [this.majorDataByMajor.some_college['2'].avg_annual_wage, this.majorDataByMajor.some_college['5'].avg_annual_wage, this.majorDataByMajor.some_college['10'].avg_annual_wage]];
+                    return [[this.majorDataByMajor.postBacc['2'].avg_annual_wage, this.majorDataByMajor.postBacc['5'].avg_annual_wage, this.majorDataByMajor.postBacc['10'].avg_annual_wage], [this.majorDataByMajor.bachelors['2'].avg_annual_wage, this.majorDataByMajor.bachelors['5'].avg_annual_wage, this.majorDataByMajor.bachelors['10'].avg_annual_wage], [this.majorDataByMajor.someCollege['2'].avg_annual_wage, this.majorDataByMajor.someCollege['5'].avg_annual_wage, this.majorDataByMajor.someCollege['10'].avg_annual_wage]];
                 } else {
                     return [[this.majorDataByMajor[this.form.educationLevel]['2']._75th, this.majorDataByMajor[this.form.educationLevel]['5']._75th, this.majorDataByMajor[this.form.educationLevel]['10']._75th], [this.majorDataByMajor[this.form.educationLevel]['2']._50th, this.majorDataByMajor[this.form.educationLevel]['5']._50th, this.majorDataByMajor[this.form.educationLevel]['10']._50th], [this.majorDataByMajor[this.form.educationLevel]['2']._25th, this.majorDataByMajor[this.form.educationLevel]['5']._25th, this.majorDataByMajor[this.form.educationLevel]['10']._25th]];
                 }
@@ -96683,6 +96683,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['form'],
@@ -96717,20 +96729,52 @@ var render = function() {
           _c("div", { staticClass: "legend-green m-0" }),
           _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
         ])
-      : _c("div", [
-          _c("h5", { staticClass: "font-weight-bold pb-2" }, [
-            _vm._v("Percentile: ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-green m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-gold m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "legend-oxford m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-        ])
+      : _vm.form.educationLevel == "someCollege"
+        ? _c("div", [
+            _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+              _vm._v("Percentile: ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "legend-light-oxford m-0" }),
+            _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "legend-oxford m-0" }),
+            _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "legend-dark-oxford m-0" }),
+            _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+          ])
+        : _vm.form.educationLevel == "bachelors"
+          ? _c("div", [
+              _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+                _vm._v("Percentile: ")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "legend-lightest-gold m-0" }),
+              _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "legend-light-gold m-0" }),
+              _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "legend-gold m-0" }),
+              _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+            ])
+          : _vm.form.educationLevel == "postBacc"
+            ? _c("div", [
+                _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+                  _vm._v("Percentile: ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "legend-light-green m-0" }),
+                _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "legend-green m-0" }),
+                _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "legend-dark-green m-0" }),
+                _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+              ])
+            : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -96915,17 +96959,17 @@ var render = function() {
                           type: "radio",
                           name: "someCollege",
                           id: "someCollege",
-                          value: "some_college"
+                          value: "someCollege"
                         },
                         domProps: {
                           checked: _vm._q(
                             _vm.form.educationLevel,
-                            "some_college"
+                            "someCollege"
                           )
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "educationLevel", "some_college")
+                            _vm.$set(_vm.form, "educationLevel", "someCollege")
                           }
                         }
                       }),
@@ -96974,16 +97018,16 @@ var render = function() {
                         ],
                         attrs: {
                           type: "radio",
-                          name: "post_bacc",
-                          id: "post_bacc",
-                          value: "post_bacc"
+                          name: "postBacc",
+                          id: "postBacc",
+                          value: "postBacc"
                         },
                         domProps: {
-                          checked: _vm._q(_vm.form.educationLevel, "post_bacc")
+                          checked: _vm._q(_vm.form.educationLevel, "postBacc")
                         },
                         on: {
                           change: function($event) {
-                            _vm.$set(_vm.form, "educationLevel", "post_bacc")
+                            _vm.$set(_vm.form, "educationLevel", "postBacc")
                           }
                         }
                       }),
