@@ -36,15 +36,15 @@
 }
 
 $colorList: (
-  light-oxford: $light-oxford, 
+  oxford-25: $oxford-25, 
   oxford: $oxford,
-  dark-oxford: $dark-oxford,
-  light-green: $light-green,
+  oxford-75: $oxford-75,
+  green-25: $green-25,
 green: $green,
-  dark-green:$dark-green,
-  lightest-gold: $lightest-gold,
-  light-gold: $light-gold,
-  gold: $gold
+  green-75:$green-75,
+  gold-25: $gold-25,
+  gold: $gold,
+  gold-75: $gold-75
 );
 
 %legend {

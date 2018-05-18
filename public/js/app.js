@@ -96735,13 +96735,13 @@ var render = function() {
               _vm._v("Percentile: ")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-light-oxford m-0" }),
+            _c("div", { staticClass: "legend-oxford-25 m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
             _vm._v(" "),
             _c("div", { staticClass: "legend-oxford m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-dark-oxford m-0" }),
+            _c("div", { staticClass: "legend-oxford-75 m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
           ])
         : _vm.form.educationLevel == "bachelors"
@@ -96750,13 +96750,13 @@ var render = function() {
                 _vm._v("Percentile: ")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-lightest-gold m-0" }),
+              _c("div", { staticClass: "legend-gold-25 m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-light-gold m-0" }),
+              _c("div", { staticClass: "legend-gold m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold m-0" }),
+              _c("div", { staticClass: "legend-gold-75 m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
             ])
           : _vm.form.educationLevel == "postBacc"
@@ -96765,13 +96765,13 @@ var render = function() {
                   _vm._v("Percentile: ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-light-green m-0" }),
+                _c("div", { staticClass: "legend-green-25 m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
                 _vm._v(" "),
                 _c("div", { staticClass: "legend-green m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-dark-green m-0" }),
+                _c("div", { staticClass: "legend-green-75 m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
               ])
             : _vm._e()

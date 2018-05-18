@@ -28920,22 +28920,22 @@ input[type="button"]:focus {
   border-radius: 50px;
 }
 
-.legend-light-oxford,
+.legend-oxford-25,
 .legend-oxford,
-.legend-dark-oxford,
-.legend-light-green,
+.legend-oxford-75,
+.legend-green-25,
 .legend-green,
-.legend-dark-green,
-.legend-lightest-gold,
-.legend-light-gold,
-.legend-gold {
+.legend-green-75,
+.legend-gold-25,
+.legend-gold,
+.legend-gold-75 {
   height: 15px;
   width: 15px;
   margin-left: 5px;
   float: left;
 }
 
-.legend-light-oxford {
+.legend-oxford-25 {
   background-color: #A1F0FB;
 }
 
@@ -28943,32 +28943,32 @@ input[type="button"]:focus {
   background-color: #476A6F;
 }
 
-.legend-dark-oxford {
+.legend-oxford-75 {
   background-color: #375255;
 }
 
-.legend-light-green {
-  background-color: #2FBF71;
+.legend-green-25 {
+  background-color: #3EFA94;
 }
 
 .legend-green {
   background-color: #2BAE67;
 }
 
-.legend-dark-green {
-  background-color: #279D5D;
+.legend-green-75 {
+  background-color: #1B6E41;
 }
 
-.legend-lightest-gold {
+.legend-gold-25 {
   background-color: #F2C55C;
-}
-
-.legend-light-gold {
-  background-color: #EDAC17;
 }
 
 .legend-gold {
   background-color: #ECA400;
+}
+
+.legend-gold-75 {
+  background-color: #6C4B00;
 }
 
 .industry-carousel {
