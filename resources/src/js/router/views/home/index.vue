@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="bg mh-90">
-			<div class="row p-0 text-center pt-9">
+			<div class="row p-0 text-center pt-9"><fieldset disabled="disabled"></fieldset>
 				<h1 class="my-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row p-0 m-5">
 					<div class="col-md-4 text-center">

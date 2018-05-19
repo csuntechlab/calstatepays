@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-expand-md navbar-light col col-12">
             <div class="col col-md-5">
                 <router-link class="navbar-brand" to="/">
-				    <img :src="'/img/calstatepays.svg'" class="nav-logo" alt="Cal State Pays logo">
+				    <img :src="'img/calstatepays.svg'" class="nav-logo" alt="Cal State Pays logo">
 			    </router-link>
             </div>
             <div class="collapse navbar-collapse col col-md-7" id="collapsingNavbar">

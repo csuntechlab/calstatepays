@@ -57,7 +57,7 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6
 
 .faq-banner {
 	height: 30vh;
-	/*background-image:$white-filter;*/
+	background: $white-filter, url('/CSU-Metro-LA/public/images/faq-banner.jpg');
 	background-size: cover;
 	background-position: center;
 	margin-top: -60px;

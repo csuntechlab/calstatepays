@@ -1,10 +1,8 @@
 <template>
 	<div class="wrapper">
-		<div class="white-filter">
-		<div class="faq-banner row" style="background-image: url(/images/faq-banner.jpg)">
+		<div class="faq-banner row">
 			<h1 class="pt-3 home__heading">FAQ</h1>
 		</div>
-	</div>
 		<div class="row">
 			<div class="col col-md-9">
 				<v-container>
