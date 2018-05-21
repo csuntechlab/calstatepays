@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorDataSelected', 'majorId'],
+    props: ['majorDataSelected', 'majorId', 'educationLevel'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -51,7 +51,30 @@ export default {
                 return this.selectedMajor.major;
             }
         },
+        toolTipTitles1(){
+            let title="Some College"
+            if(this.educationLevel !== "allDegrees"){
+                title="25th Percentile"
+            }
+            return title
+        },
+        toolTipTitles2(){
+            let title="Bachelor's Degree"
+            if(this.educationLevel !== "allDegrees"){
+                title="50th Percentile"
+            }
+            return title
+        },
+        toolTipTitles3(){
+            let title="Post Bacc"
+            if(this.educationLevel !== "allDegrees"){
+                title="75th Percentile"
+            }
+            return title
+        },
+
         polar(){
+
             if(this.someCollegeEarnings){
                 return {
                     title: {
@@ -80,7 +103,7 @@ export default {
                     series: [
                         {
                             type: 'line',
-                            name: 'Some College',
+                            name: this.toolTipTitles1,
                             data: this.someCollegeEarnings,
                             lineStyle: {
                                 color: '#476A6F',
@@ -92,7 +115,7 @@ export default {
                         },
                         {
                             type: 'line',
-                            name: "Bachelor's Degree",
+                            name: this.toolTipTitles2,
                             data: this.bachelorsEarnings,
                             lineStyle: {
                                 color: '#EDAC17',
@@ -104,7 +127,7 @@ export default {
                         },
                         {
                             type: 'line',
-                            name: 'Post Bacc Degree',
+                            name:  this.toolTipTitles3,
                             data:  this.mastersEarnings,
                             lineStyle: {
                                 color: '#279D5D',

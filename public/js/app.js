@@ -48592,9 +48592,9 @@ window._ = __webpack_require__(116);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(51);
+    window.$ = window.jQuery = __webpack_require__(51);
 
-  __webpack_require__(118);
+    __webpack_require__(118);
 } catch (e) {}
 
 /**
@@ -48616,9 +48616,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /***/ }),
@@ -76669,43 +76669,43 @@ if (false) {
 /* 162 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/channel_islands_seal.svg?0abf850f8e5670aadfbd04b08e939055";
+module.exports = "/fonts/channel_islands_seal.svg?e2f114c389e43d179e2cbfe9444af31f";
 
 /***/ }),
 /* 163 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/dominguez_seal.svg?83dce8f727d1bc7752c95b3e6a08a7a8";
+module.exports = "/fonts/dominguez_seal.svg?72a463a498a5523528fd3af75fe809c9";
 
 /***/ }),
 /* 164 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/fullerton_seal.svg?f597c792213eddb9cdc06c203d7c7ba5";
+module.exports = "/fonts/fullerton_seal.svg?4d972c7a01c15235877b27c55815e3f1";
 
 /***/ }),
 /* 165 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/long_beach_seal.svg?a06cf7092d1c3f429b0818d57296a2c6";
+module.exports = "/fonts/long_beach_seal.svg?d86283a9000af404a5cb544e8e1df277";
 
 /***/ }),
 /* 166 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/los_angeles_seal.svg?27fb8fd77ab3fb1dcc4abdc5fe3491fe";
+module.exports = "/fonts/los_angeles_seal.svg?ddb510172eb7e1b13d49cd31c570ed41";
 
 /***/ }),
 /* 167 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/northridge_seal.svg?1ba404160b73dfa4865b5e9c2449eb4b";
+module.exports = "/fonts/northridge_seal.svg?f638be41220b5483feda30bcadf74b71";
 
 /***/ }),
 /* 168 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/poly_seal.svg?06d9d9cd02d33b5d7ae68bdc728afe1b";
+module.exports = "/fonts/poly_seal.svg?c2ad61669ab4c8ec1f216538eb3d6380";
 
 /***/ }),
 /* 169 */
@@ -79280,7 +79280,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorDataSelected', 'majorId'],
+    props: ['majorDataSelected', 'majorId', 'educationLevel'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10']
@@ -79320,7 +79320,29 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return this.selectedMajor.major;
             }
         },
+        toolTipTitles1: function toolTipTitles1() {
+            var title = "Some College";
+            if (this.educationLevel !== "allDegrees") {
+                title = "25th Percentile";
+            }
+            return title;
+        },
+        toolTipTitles2: function toolTipTitles2() {
+            var title = "Bachelor's Degree";
+            if (this.educationLevel !== "allDegrees") {
+                title = "50th Percentile";
+            }
+            return title;
+        },
+        toolTipTitles3: function toolTipTitles3() {
+            var title = "Post Bacc";
+            if (this.educationLevel !== "allDegrees") {
+                title = "75th Percentile";
+            }
+            return title;
+        },
         polar: function polar() {
+
             if (this.someCollegeEarnings) {
                 return {
                     title: {
@@ -79348,7 +79370,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     },
                     series: [{
                         type: 'line',
-                        name: 'Some College',
+                        name: this.toolTipTitles1,
                         data: this.someCollegeEarnings,
                         lineStyle: {
                             color: '#476A6F',
@@ -79359,7 +79381,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         }
                     }, {
                         type: 'line',
-                        name: "Bachelor's Degree",
+                        name: this.toolTipTitles2,
                         data: this.bachelorsEarnings,
                         lineStyle: {
                             color: '#EDAC17',
@@ -79370,7 +79392,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         }
                     }, {
                         type: 'line',
-                        name: 'Post Bacc Degree',
+                        name: this.toolTipTitles3,
                         data: this.mastersEarnings,
                         lineStyle: {
                             color: '#279D5D',
@@ -96402,7 +96424,8 @@ var render = function() {
       _c("majors-graph", {
         attrs: {
           majorDataSelected: _vm.majorDataSelected,
-          majorId: _vm.form.majorId
+          majorId: _vm.form.majorId,
+          educationLevel: _vm.form.educationLevel
         }
       })
     ],
