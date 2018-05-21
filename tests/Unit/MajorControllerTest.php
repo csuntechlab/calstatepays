@@ -47,11 +47,11 @@ class MajorControllerTest extends TestCase
         $response = $this->get('/api/major/'.$this->validMajorId.'/'.$this->validUniversity);
         $response->assertStatus(200);
         $response->assertJsonStructure([
-            'major_id',
-            'university_id',
-            'some_college',
+            'majorId',
+            'universityId',
+            'someCollege',
             'bachelors',
-            'post_bacc'
+            'postBacc'
         ]);
     }
 
