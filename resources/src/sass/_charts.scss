@@ -34,3 +34,33 @@
 .progress-linear__bar__determinate {
   border-radius: 50px;
 }
+
+$colorList: (
+  oxford-25: $oxford-25, 
+  oxford: $oxford,
+  oxford-75: $oxford-75,
+  green-25: $green-25,
+green: $green,
+  green-75:$green-75,
+  gold-25: $gold-25,
+  gold: $gold,
+  gold-75: $gold-75
+);
+
+%legend {
+  height: 15px;
+  width: 15px;
+  margin-left: 5px;
+  float: left;
+}
+  
+@mixin legend-color-mixin($legend-color) {
+  @each $color, $value in $colorList {
+    .legend-#{$color} {
+      @extend %legend;
+      background-color: $value;
+    }
+  }
+}
+
+@include legend-color-mixin($colorList);

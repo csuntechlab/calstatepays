@@ -45,17 +45,20 @@
                                 <p class="h2 text-gray my-5">Applied Math</p>
                                 <input type="radio" name="allDegrees" id="allDegrees" v-model="form.educationLevel" checked value="allDegrees">
                                 <label for="allDegrees">All</label>
-                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="some_college">
+                                <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="someCollege">
                                 <label for="postBacc">Some College</label>
                                 <input type="radio" name="bachelors" id="bachelors" v-model="form.educationLevel" value="bachelors">
                                 <label for="bachelors">Bachelor's Degree</label>
-                                <input type="radio" name="post_bacc" id="post_bacc" v-model="form.educationLevel" value="post_bacc">
+                                <input type="radio" name="postBacc" id="postBacc" v-model="form.educationLevel" value="postBacc">
                                 <label for="postBacc">Post Bacc</label>
                             </div>
                         </form>
                     </div>
-                    <div class="col col-9">
+                    <div class="col col-7">
                         <majors-graph-wrapper :form="form"></majors-graph-wrapper>
+                    </div>
+                    <div class="col-2 mt-4 pt-5 pl-0">
+                        <major-legend :form="form"></major-legend>
                     </div>
                 </div>
             </div>
@@ -68,6 +71,8 @@ import vSelect from 'vue-select';
 import card from '../global/card';
 import majorsGraphWrapper from './majors-graph-wrapper.vue';
 import industryCarousel from "../industries/industry-carousel.vue";
+import majorLegend from './major-legend.vue';
+
 
 import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
@@ -119,7 +124,8 @@ export default {
         vSelect,
         card,
         majorsGraphWrapper,
-        industryCarousel
+        industryCarousel,
+        majorLegend        
     }
 }
 </script>

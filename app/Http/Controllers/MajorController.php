@@ -36,11 +36,11 @@ class MajorController extends Controller
         }
 
         $majorData = [
-            'major_id' =>$hegis_code,
-            'university_id' => $university_id,
-            'some_college'=> $someCollege,
+            'majorId' =>$hegis_code,
+            'universityId' => $university_id,
+            'someCollege'=> $someCollege,
             'bachelors' => $bachelors,
-            'post_bacc' => $post_bacc
+            'postBacc' => $post_bacc
         ];
         return $majorData;
     }

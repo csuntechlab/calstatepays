@@ -22,8 +22,7 @@ export default {
     },
     components: { 
         majorCard,
-        cardAdd
-
+        cardAdd,
     },
     methods: {
         onPlus(){
