@@ -9,7 +9,8 @@ class StudentBackground extends Model
     public $primary = 'id';
 
     protected $fillable = [
-        'age_range',
+        'age_range_id',
+        'age_range_name',
         'education_level',
         'investment_id',
         'university_major_id'

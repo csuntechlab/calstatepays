@@ -15,9 +15,10 @@ class CreateStudentBackgroundTable extends Migration
     {
         Schema::create('student_background', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('university_major_id');
-            $table->string('age_range');
+            $table->integer('age_range_id');
+            $table->string('age_range_name');
             $table->string('education_level');
+            $table->string('university_major_id');
             $table->integer('investment_id');
         });
     }
