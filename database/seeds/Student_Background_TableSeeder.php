@@ -10,14 +10,13 @@ class Student_Background_TableSeeder extends Seeder
     {
         $earnings = [
             'age_range_id' => [
-                0,1,2,3,4
+                0,1,2,3
             ],
             'age_range_name' => [
-                '0',
-                '0 - 20000',
-                '20000 - 45000',
-                '45000 - 60000',
-                '60000 - 90000'
+                '0 - 19',
+                '20 - 23',
+                '24 - 30',
+                '30 +'
             ]
         ];
         for($i = 0;$i < 5;$i++){
