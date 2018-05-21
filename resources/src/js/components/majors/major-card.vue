@@ -15,13 +15,6 @@
                                     <h5 class="form--title">Choose A Campus</h5>
                                     <div class="col col-12">
                                         <label for="campus">Campus:</label>
-                                        <!-- <select
-                                        name="universities"
-                                        id="universities"
-                                        @input="updateForm('schoolId', $event.target.value)">
-                                        <option value="">All Campuses</option>
-                                        <option v-for="university in universities" :value="university.id">{{ university.name }}</option>
-                                        </select> -->
                                         <v-select 
                                             label="name" 
                                             :options="universities"
@@ -34,13 +27,6 @@
                                     <h5 class="form--title">Choose A Major</h5>
                                     <div class="col col-12">
                                         <label for="Major">Major:</label>
-                                        <!-- <select
-                                        name="majors"
-                                        id="majors"
-                                        @input="updateForm('majorId', $event.target.value)">
-                                        <option value="">-- Select a Major --</option>
-                                        <option v-for="major in majors" :value="major.majorId">{{ major.major }}</option>
-                                        </select> -->
                                         <v-select 
                                             label="major" 
                                             :options="majors"
@@ -66,7 +52,6 @@
                                 <input type="radio" name="post_bacc" id="post_bacc" v-model="form.educationLevel" value="post_bacc">
                                 <label for="postBacc">Post Bacc</label>
                             </div>
-                            <!--<button @click.prevent="fetchIndustryImages">click me</button>-->
                         </form>
                     </div>
                     <div class="col col-9">
