@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class StudentBackground extends Model
 {
     public $primary = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'age_range_id',

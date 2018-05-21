@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Populations_TableSeeder::class);
         $this->call(University_Majors_TableSeeder::class);
         $this->call(Major_Paths_TableSeeder::class);
-        /*$this->call(Major_Path_Wages_TableSeeder::class);*/
+        $this->call(Student_Background_TableSeeder::class);
     }
 }

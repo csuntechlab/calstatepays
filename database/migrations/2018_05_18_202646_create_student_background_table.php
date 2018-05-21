@@ -13,7 +13,7 @@ class CreateStudentBackgroundTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_background', function (Blueprint $table) {
+        Schema::create('student_backgrounds', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('age_range_id');
             $table->string('age_range_name');
@@ -30,6 +30,6 @@ class CreateStudentBackgroundTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_background');
+        Schema::dropIfExists('student_backgrounds');
     }
 }
