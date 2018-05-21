@@ -13,7 +13,6 @@
 			<div style="background:blue; height: 100px; width: 100%;"></div>
 			</div>
 		</div>
-		
 </template>
 <script>
 	export default {

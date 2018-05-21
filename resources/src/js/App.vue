@@ -1,9 +1,9 @@
 <template>
 	<div >
 		<navigation></navigation>
-		<div class="container-fluid no-gutters">
+		<main class="container-fluid no-gutters content-wrapper">
 			<router-view></router-view>
-		</div>
+		</main>
 		<csu-footer></csu-footer>
 	</div>
 </template>

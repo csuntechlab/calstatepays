@@ -36,7 +36,7 @@
                 </figure>
             </div>
         </header>
-        <main class="campuses-container mx-5">
+        <main class="campuses-container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 py-3">
                     <div id="csun" class=" campus">

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="bg mh-90">
-			<div class="row p-0 text-center pt-9">
+			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row px-4 py-2 fa-wrapper">
 					<div class="col-md-4 text-center my-3">
@@ -29,7 +29,6 @@
 						</button>
 					</div>
 				</div>
-				<div class="container">
 					<div class="row mt-2 csu-wrapper">
                 <figure class="col-md col-sm-4 col-4 text-center">
                     <img src="img/csuseals/long_beach_seal.svg" alt="CSU Long Beach Seal">
@@ -60,7 +59,6 @@
                     <img src="img/csuseals/los_angeles_seal.svg" alt="CSU Los Angeles Seal">
                     <figcaption>Los Angeles</figcaption>
                 </figure>
-            </div>
 				</div>
 			</div>
 		</div>

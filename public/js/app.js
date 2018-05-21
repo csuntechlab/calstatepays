@@ -76366,8 +76366,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -76388,7 +76386,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", { staticClass: "bg mh-90" }, [
-        _c("div", { staticClass: "row p-0 text-center pt-9" }, [
+        _c("div", { staticClass: "p-0 text-center pt-9" }, [
           _c("h1", { staticClass: "m-4 home__heading" }, [
             _vm._v("Discover Your Earnings After College")
           ]),
@@ -76451,112 +76449,82 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/long_beach_seal.svg",
-                      alt: "CSU Long Beach Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Long Beach")])
-                ]
-              ),
+          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/long_beach_seal.svg",
+                  alt: "CSU Long Beach Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/poly_seal.svg",
-                      alt: "CSU Pomona Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Pomona")])
-                ]
-              ),
+              _c("figcaption", [_vm._v("Long Beach")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/poly_seal.svg",
+                  alt: "CSU Pomona Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/dominguez_seal.svg",
-                      alt: "CSU Dominguez Hills Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Dominguez Hills")])
-                ]
-              ),
+              _c("figcaption", [_vm._v("Pomona")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/dominguez_seal.svg",
+                  alt: "CSU Dominguez Hills Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/northridge_seal.svg",
-                      alt: "CSU Northridge Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Northridge")])
-                ]
-              ),
+              _c("figcaption", [_vm._v("Dominguez Hills")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/northridge_seal.svg",
+                  alt: "CSU Northridge Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/channel_islands_seal.svg",
-                      alt: "CSU Channel Islands Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Channel Islands")])
-                ]
-              ),
+              _c("figcaption", [_vm._v("Northridge")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/channel_islands_seal.svg",
+                  alt: "CSU Channel Islands Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/fulleton_seal.svg",
-                      alt: "CSU Fullerton Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Fullerton")])
-                ]
-              ),
+              _c("figcaption", [_vm._v("Channel Islands")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/fulleton_seal.svg",
+                  alt: "CSU Fullerton Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "img/csuseals/los_angeles_seal.svg",
-                      alt: "CSU Los Angeles Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Los Angeles")])
-                ]
-              )
+              _c("figcaption", [_vm._v("Fullerton")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "img/csuseals/los_angeles_seal.svg",
+                  alt: "CSU Los Angeles Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Los Angeles")])
             ])
           ])
         ])
@@ -78584,7 +78552,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
+  return _c("div", { staticClass: "wrapper graph-content" }, [
     _c(
       "div",
       { staticClass: "col col-md-12" },
@@ -96694,24 +96662,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "wrapper", staticStyle: { "padding-bottom": "0px" } },
-    [
-      _c(
-        "div",
-        { staticClass: "col col-md-12" },
-        [
-          _vm._l(_vm.cards, function(item) {
-            return _c("major-card", { key: item.major, staticClass: "my-2" })
-          }),
-          _vm._v(" "),
-          _c("card-add", { attrs: { onPlus: _vm.onPlus } })
-        ],
-        2
-      )
-    ]
-  )
+  return _c("div", { staticClass: "wrapper graph-content" }, [
+    _c(
+      "div",
+      { staticClass: "col col-md-12" },
+      [
+        _vm._l(_vm.cards, function(item) {
+          return _c("major-card", { key: item.major, staticClass: "my-2" })
+        }),
+        _vm._v(" "),
+        _c("card-add", { attrs: { onPlus: _vm.onPlus } })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -97575,7 +97539,7 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("main", { staticClass: "campuses-container mx-5" }, [
+      _c("main", { staticClass: "campuses-container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
             _c("div", { staticClass: " campus", attrs: { id: "csun" } }, [
@@ -97685,7 +97649,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -115641,7 +115604,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "row d-md-flex align-items-center" }, [
         _c(
           "div",
           { staticClass: "col-6 col-md-3 order-2 order-md-1" },
@@ -115970,8 +115933,8 @@ var render = function() {
       _c("navigation"),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "container-fluid no-gutters" },
+        "main",
+        { staticClass: "container-fluid no-gutters content-wrapper" },
         [_c("router-view")],
         1
       ),
