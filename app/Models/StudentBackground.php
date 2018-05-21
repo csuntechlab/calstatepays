@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Maturity extends Model
+class StudentBackground extends Model
 {
     public $primary = 'id';
 

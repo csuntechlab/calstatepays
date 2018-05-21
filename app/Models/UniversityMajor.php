@@ -13,6 +13,10 @@ class UniversityMajor extends Model
         'college_id',
         'university_id'
     ];
+
+    public function studentBackground(){
+        return $this->hasMany('App\Models\StudentBackground','university_major_id','id');
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

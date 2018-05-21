@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaturitiesTable extends Migration
+class CreateStudentBackgroundTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateMaturitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('maturities', function (Blueprint $table) {
+        Schema::create('student_background', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('university_major_id');
             $table->string('age_range');
             $table->string('education_level');
             $table->integer('investment_id');
