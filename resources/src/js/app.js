@@ -9,6 +9,7 @@ import axios from 'axios';
 import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
+import vSelect from 'vue-select';
 
 Vue.use(Vuetify);
 
