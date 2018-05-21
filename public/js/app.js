@@ -97688,6 +97688,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -97699,9 +97713,96 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("h1", { staticClass: "pt-3 home__heading text-gray" }, [
+          _vm._v("FAQ")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
+          ),
+          _c("br"),
+          _vm._v(
+            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticStyle: { background: "blue", height: "100px", width: "100%" }
+        })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -115512,6 +115613,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -115523,135 +115639,166 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("header", [
-    _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-md navbar-light col col-12" },
-      [
+  return _c("header", { staticClass: "site-header" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
-          { staticClass: "col col-md-5" },
+          { staticClass: "col-6 col-md-3 order-2 order-md-1" },
           [
-            _c(
-              "router-link",
-              { staticClass: "navbar-brand", attrs: { to: "/" } },
-              [
-                _c("img", {
-                  staticClass: "nav-logo",
-                  attrs: {
-                    src: "/img/calstatepays.svg",
-                    alt: "Cal State Pays logo"
-                  }
-                })
-              ]
-            )
+            _c("router-link", { attrs: { to: "/" } }, [
+              _c("img", {
+                staticClass: "float-md-left nav-logo mx-auto d-block",
+                attrs: {
+                  src: "img/calstatepays.svg",
+                  alt: "Cal State Pays logo"
+                }
+              })
+            ])
           ],
           1
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "collapse navbar-collapse col col-md-7",
-            attrs: { id: "collapsingNavbar" }
-          },
-          [
-            _c("div", { staticClass: "justify-content-end col col-md-6" }, [
-              _c("ul", { staticClass: "navbar-nav " }, [
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { "exact-active-class": "hr-nav", to: "/" }
-                      },
-                      [_vm._v("Home\n                            ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { "active-class": "hr-nav", to: "/majors" }
-                      },
-                      [_vm._v("Majors\n                            ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { "active-class": "hr-nav", to: "/pfre" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            FRE\n                            "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { "active-class": "hr-nav", to: "/about" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            About\n                            "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
+        _c("div", { staticClass: "col-3 col-md-6 order-6 order-md-2" }, [
+          _c("nav", { staticClass: "navbar navbar-expand-md navbar-light" }, [
+            _vm._m(0),
             _vm._v(" "),
             _c(
-              "span",
-              { staticClass: "navbar-text small mt-1 w-100 col col-md-6" },
+              "div",
+              {
+                staticClass: "collapse navbar-collapse justify-content-center",
+                attrs: { id: "collapsingNavbar" }
+              },
               [
-                _c("router-link", { attrs: { to: "/research" } }, [
-                  _c("img", {
-                    staticClass: "nav-logo-secondary pull-right",
-                    attrs: { src: "img/strada-gray.svg", alt: "" }
-                  })
-                ])
-              ],
-              1
+                _c(
+                  "ul",
+                  { staticClass: "navbar-nav d-flex justify-content-center" },
+                  [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { "exact-active-class": "hr-nav", to: "/" }
+                          },
+                          [_vm._v("Home\n                                    ")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { "active-class": "hr-nav", to: "/majors" }
+                          },
+                          [
+                            _vm._v(
+                              "Majors\n                                    "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { "active-class": "hr-nav", to: "/pfre" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    FRE\n                                    "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { "active-class": "hr-nav", to: "/about" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    About\n                                    "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ]
             )
-          ]
-        )
-      ]
-    )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3 col-md-3 order-1 order-md-3" }, [
+          _c(
+            "div",
+            { staticClass: "navbar-text small mt-1 w-100" },
+            [
+              _c("router-link", { attrs: { to: "/research" } }, [
+                _c("img", {
+                  staticClass: "float-right nav-logo-secondary mx-auto d-block",
+                  attrs: { src: "img/strada-gray.svg", alt: "" }
+                })
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div")
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#collapsingNavbar",
+          "aria-controls": "collapsingNavbar",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

@@ -1,5 +1,6 @@
-.navbar, nav{
-	height: 60px;
+.site-header {
+	// background: blue;
+	// height: 60px;
 	font-family: $font-brand;
 	position: fixed;
 	background: $white;
@@ -10,6 +11,11 @@
 	box-shadow: 0 6px 6px -6px #999;
 	top: 0;
 }
+
+.navbar, nav{
+
+}
+
 .nav-link{
 	padding: 18px 0px; 
 }
