@@ -29,6 +29,6 @@ class CreateStudentBackgroundTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maturities');
+        Schema::dropIfExists('student_background');
     }
 }
