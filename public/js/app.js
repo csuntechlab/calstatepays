@@ -63982,7 +63982,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: ''
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
+    }
+});
 
 /***/ }),
 /* 323 */
@@ -63992,147 +64001,143 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("header", { attrs: { id: "research-main-banner" } }, [
+      _c("h2", [
+        _vm._v(
+          "\n            We Gathered Data Across 7 CSUs in the Metro LA Area\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-md-center csu-wrapper" }, [
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/long_beach_seal.svg",
+              alt: "CSU Long Beach Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Long Beach")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/poly_seal.svg",
+              alt: "CSU Pomona Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Pomona")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/dominguez_seal.svg",
+              alt: "CSU Dominguez Hills Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Dominguez Hills")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/northridge_seal.svg",
+              alt: "CSU Northridge Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Northridge")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/channel_islands_seal.svg",
+              alt: "CSU Channel Islands Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Channel Islands")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/fulleton_seal.svg",
+              alt: "CSU Fullerton Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Fullerton")])
+        ]),
+        _vm._v(" "),
+        _c("figure", { staticClass: "col" }, [
+          _c("img", {
+            attrs: {
+              src: this.url + "img/csuseals/los_angeles_seal.svg",
+              alt: "CSU Los Angeles Seal"
+            }
+          }),
+          _vm._v(" "),
+          _c("figcaption", [_vm._v("Los Angeles")])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("header", { attrs: { id: "research-main-banner" } }, [
-        _c("h2", [
-          _vm._v(
-            "\n            We Gathered Data Across 7 CSUs in the Metro LA Area\n        "
-          )
+    return _c("main", { staticClass: "campuses-container mx-5" }, [
+      _c("div", { staticClass: "row col-12" }, [
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csun" } }, [
+            _c("h3", [_vm._v("California State University Northridge")])
+          ])
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row justify-content-md-center csu-wrapper" },
-          [
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col" }, [
-              _c("img", {
-                attrs: {
-                  src: "img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("main", { staticClass: "campuses-container mx-5" }, [
-        _c("div", { staticClass: "row col-12" }, [
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csun" } }, [
-              _c("h3", [_vm._v("California State University Northridge")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csulb" } }, [
-              _c("h3", [_vm._v("California State University Long Beach")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csula" } }, [
-              _c("h3", [_vm._v("California State University Los Angeles")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csuf" } }, [
-              _c("h3", [_vm._v("California State University Fullerton")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csudh" } }, [
-              _c("h3", [_vm._v("California State University Dominguez Hills")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csuci" } }, [
-              _c("h3", [_vm._v("California State University Channel Island")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
-            _c("div", { staticClass: " campus", attrs: { id: "csup" } }, [
-              _c("h3", [_vm._v("California State University Pomona")])
-            ])
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csulb" } }, [
+            _c("h3", [_vm._v("California State University Long Beach")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csula" } }, [
+            _c("h3", [_vm._v("California State University Los Angeles")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csuf" } }, [
+            _c("h3", [_vm._v("California State University Fullerton")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csudh" } }, [
+            _c("h3", [_vm._v("California State University Dominguez Hills")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csuci" } }, [
+            _c("h3", [_vm._v("California State University Channel Island")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 py-3" }, [
+          _c("div", { staticClass: " campus", attrs: { id: "csup" } }, [
+            _c("h3", [_vm._v("California State University Pomona")])
           ])
         ])
       ])
@@ -82164,7 +82169,10 @@ var render = function() {
                 _c("router-link", { attrs: { to: "/research" } }, [
                   _c("img", {
                     staticClass: "nav-logo-secondary pull-right",
-                    attrs: { src: "img/strada-gray.svg", alt: "" }
+                    attrs: {
+                      src: this.url + "/img/strada-gray.svg",
+                      alt: "Strada Logo"
+                    }
                   })
                 ])
               ],

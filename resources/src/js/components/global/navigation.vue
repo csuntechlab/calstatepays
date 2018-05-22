@@ -31,7 +31,7 @@
                 </div>
                 <span class="navbar-text small mt-1 w-100 col col-md-6">
                     <router-link to="/research">
-                        <img src="img/strada-gray.svg" class="nav-logo-secondary pull-right" alt="">
+                        <img :src="this.url + '/img/strada-gray.svg'" class="nav-logo-secondary pull-right" alt="Strada Logo">
                     </router-link>
                 </span>
             </div>
