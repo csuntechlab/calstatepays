@@ -1,6 +1,6 @@
 <template>
     <div>
-        <majors-graph :majorDataSelected="majorDataSelected" :majorId="form.majorId"></majors-graph>
+        <majors-graph :majorDataSelected="majorDataSelected" :majorId="form.majorId" :educationLevel="form.educationLevel"></majors-graph>
     </div>
 </template>
 <script>
