@@ -2519,7 +2519,7 @@ var colorTool = __webpack_require__(24);
 
 var env = __webpack_require__(8);
 
-var timsort = __webpack_require__(41);
+var timsort = __webpack_require__(40);
 
 var Eventful = __webpack_require__(23);
 
@@ -2527,7 +2527,7 @@ var GlobalModel = __webpack_require__(79);
 
 var ExtensionAPI = __webpack_require__(87);
 
-var CoordinateSystemManager = __webpack_require__(46);
+var CoordinateSystemManager = __webpack_require__(45);
 
 var OptionManager = __webpack_require__(231);
 
@@ -2547,7 +2547,7 @@ var graphic = __webpack_require__(3);
 
 var modelUtil = __webpack_require__(2);
 
-var _throttle = __webpack_require__(48);
+var _throttle = __webpack_require__(47);
 
 var throttle = _throttle.throttle;
 
@@ -8877,7 +8877,7 @@ exports.clone = clone;
 
 var BoundingRect = __webpack_require__(11);
 
-var imageHelper = __webpack_require__(42);
+var imageHelper = __webpack_require__(41);
 
 var _util = __webpack_require__(0);
 
@@ -10116,7 +10116,7 @@ var textContain = __webpack_require__(20);
 
 var OrdinalScale = __webpack_require__(247);
 
-var IntervalScale = __webpack_require__(50);
+var IntervalScale = __webpack_require__(49);
 
 var Scale = __webpack_require__(36);
 
@@ -25380,12 +25380,6 @@ exports.makeKey = makeKey;
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(115);
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -25483,7 +25477,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports) {
 
 // https://github.com/mziccard/node-timsort
@@ -26152,7 +26146,7 @@ function sort(array, compare, lo, hi) {
 module.exports = sort;
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var LRU = __webpack_require__(70);
@@ -26245,7 +26239,7 @@ exports.createOrUpdateImage = createOrUpdateImage;
 exports.isImageReady = isImageReady;
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -26284,7 +26278,7 @@ function _default(properties) {
 module.exports = _default;
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports) {
 
 /**
@@ -26307,7 +26301,7 @@ var _default = Gradient;
 module.exports = _default;
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(4);
@@ -26859,7 +26853,7 @@ exports.prepareSource = prepareSource;
 exports.guessOrdinal = guessOrdinal;
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -26902,7 +26896,7 @@ var _default = CoordinateSystemManager;
 module.exports = _default;
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -27139,7 +27133,7 @@ taskProto.setOutputEnd = function (end) {
 exports.createTask = createTask;
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports) {
 
 var ORIGIN_METHOD = '\0__throttleOriginMethod';
@@ -27292,7 +27286,7 @@ exports.createOrUpdate = createOrUpdate;
 exports.clear = clear;
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -27410,7 +27404,7 @@ exports.summarizeDimensions = summarizeDimensions;
 exports.getDimensionTypeByAxis = getDimensionTypeByAxis;
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var numberUtil = __webpack_require__(7);
@@ -27611,6 +27605,12 @@ IntervalScale.create = function () {
 
 var _default = IntervalScale;
 module.exports = _default;
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(115);
 
 /***/ }),
 /* 51 */
@@ -30711,7 +30711,7 @@ var BoundingRect = __webpack_require__(11);
 
 var zrUtil = __webpack_require__(0);
 
-var imageHelper = __webpack_require__(42);
+var imageHelper = __webpack_require__(41);
 
 /**
  * @alias zrender/graphic/Image
@@ -30815,7 +30815,7 @@ var textContain = __webpack_require__(20);
 
 var roundRectHelper = __webpack_require__(78);
 
-var imageHelper = __webpack_require__(42);
+var imageHelper = __webpack_require__(41);
 
 var fixShadow = __webpack_require__(73);
 
@@ -31356,7 +31356,7 @@ var globalDefault = __webpack_require__(230);
 
 var colorPaletteMixin = __webpack_require__(85);
 
-var _sourceHelper = __webpack_require__(45);
+var _sourceHelper = __webpack_require__(44);
 
 var resetSourceDefaulter = _sourceHelper.resetSourceDefaulter;
 
@@ -32632,11 +32632,11 @@ var _layout = __webpack_require__(15);
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
 
-var _task = __webpack_require__(47);
+var _task = __webpack_require__(46);
 
 var createTask = _task.createTask;
 
-var _sourceHelper = __webpack_require__(45);
+var _sourceHelper = __webpack_require__(44);
 
 var prepareSource = _sourceHelper.prepareSource;
 var getSource = _sourceHelper.getSource;
@@ -33145,7 +33145,7 @@ var clazzUtil = __webpack_require__(16);
 
 var modelUtil = __webpack_require__(2);
 
-var _task = __webpack_require__(47);
+var _task = __webpack_require__(46);
 
 var createTask = _task.createTask;
 
@@ -33407,7 +33407,7 @@ var _sourceType = __webpack_require__(35);
 
 var SOURCE_FORMAT_ORIGINAL = _sourceType.SOURCE_FORMAT_ORIGINAL;
 
-var _dimensionHelper = __webpack_require__(49);
+var _dimensionHelper = __webpack_require__(48);
 
 var getDimensionTypeByAxis = _dimensionHelper.getDimensionTypeByAxis;
 
@@ -33415,7 +33415,7 @@ var _model = __webpack_require__(2);
 
 var getDataItemValue = _model.getDataItemValue;
 
-var CoordinateSystem = __webpack_require__(46);
+var CoordinateSystem = __webpack_require__(45);
 
 var _referHelper = __webpack_require__(86);
 
@@ -33546,7 +33546,7 @@ var _dataProvider = __webpack_require__(27);
 var defaultDimValueGetters = _dataProvider.defaultDimValueGetters;
 var DefaultDataProvider = _dataProvider.DefaultDataProvider;
 
-var _dimensionHelper = __webpack_require__(49);
+var _dimensionHelper = __webpack_require__(48);
 
 var summarizeDimensions = _dimensionHelper.summarizeDimensions;
 
@@ -35474,13 +35474,13 @@ var _model = __webpack_require__(2);
 
 var normalizeToArray = _model.normalizeToArray;
 
-var _sourceHelper = __webpack_require__(45);
+var _sourceHelper = __webpack_require__(44);
 
 var guessOrdinal = _sourceHelper.guessOrdinal;
 
 var Source = __webpack_require__(26);
 
-var _dimensionHelper = __webpack_require__(49);
+var _dimensionHelper = __webpack_require__(48);
 
 var OTHER_DIMENSIONS = _dimensionHelper.OTHER_DIMENSIONS;
 
@@ -38161,7 +38161,7 @@ module.exports = __webpack_require__(337);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(57);
@@ -38218,7 +38218,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(39);
+window.axios = __webpack_require__(50);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -38259,7 +38259,7 @@ if (url) {
 var utils = __webpack_require__(10);
 var bind = __webpack_require__(51);
 var Axios = __webpack_require__(117);
-var defaults = __webpack_require__(40);
+var defaults = __webpack_require__(39);
 
 /**
  * Create an instance of Axios
@@ -38342,7 +38342,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(40);
+var defaults = __webpack_require__(39);
 var utils = __webpack_require__(10);
 var InterceptorManager = __webpack_require__(126);
 var dispatchRequest = __webpack_require__(127);
@@ -38883,7 +38883,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(10);
 var transformData = __webpack_require__(128);
 var isCancel = __webpack_require__(55);
-var defaults = __webpack_require__(40);
+var defaults = __webpack_require__(39);
 var isAbsoluteURL = __webpack_require__(129);
 var combineURLs = __webpack_require__(130);
 
@@ -42226,7 +42226,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// import axios from 'axios';
 var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
     window.axios.get('api/major/hegis-codes').then(function (response) {
         return success(response.data);
@@ -42352,12 +42351,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-
-
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/industry/' + payload.majorId + '/1153').then(function (response) {
+    window.axios.get("api/industry/" + payload.majorId + "/1153").then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -46629,7 +46624,7 @@ var env = __webpack_require__(8);
 
 var Group = __webpack_require__(30);
 
-var timsort = __webpack_require__(41);
+var timsort = __webpack_require__(40);
 
 // Use timsort because in most case elements are partially sorted
 // https://jsfiddle.net/pissang/jr4x7mdm/8/
@@ -47618,7 +47613,7 @@ var log = __webpack_require__(71);
 
 var BoundingRect = __webpack_require__(11);
 
-var timsort = __webpack_require__(41);
+var timsort = __webpack_require__(40);
 
 var Layer = __webpack_require__(197);
 
@@ -49608,7 +49603,7 @@ module.exports = _default;
 /* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var makeStyleMapper = __webpack_require__(43);
+var makeStyleMapper = __webpack_require__(42);
 
 var getLineStyle = makeStyleMapper([['lineWidth', 'width'], ['stroke', 'color'], ['opacity'], ['shadowBlur'], ['shadowOffsetX'], ['shadowOffsetY'], ['shadowColor']]);
 var _default = {
@@ -49635,7 +49630,7 @@ module.exports = _default;
 /* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var makeStyleMapper = __webpack_require__(43);
+var makeStyleMapper = __webpack_require__(42);
 
 var getAreaStyle = makeStyleMapper([['fill', 'color'], ['shadowBlur'], ['shadowOffsetX'], ['shadowOffsetY'], ['opacity'], ['shadowColor']]);
 var _default = {
@@ -51546,7 +51541,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var Gradient = __webpack_require__(44);
+var Gradient = __webpack_require__(43);
 
 /**
  * x, y, x2, y2 are all percent from 0 to 1
@@ -51585,7 +51580,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var Gradient = __webpack_require__(44);
+var Gradient = __webpack_require__(43);
 
 /**
  * x, y, r are all percent from 0 to 1
@@ -51772,7 +51767,7 @@ module.exports = _default;
 /* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var makeStyleMapper = __webpack_require__(43);
+var makeStyleMapper = __webpack_require__(42);
 
 var getItemStyle = makeStyleMapper([['fill', 'color'], ['stroke', 'borderColor'], ['lineWidth', 'borderWidth'], ['opacity'], ['shadowBlur'], ['shadowOffsetX'], ['shadowOffsetY'], ['shadowColor'], ['textPosition'], ['textAlign']]);
 var _default = {
@@ -52937,7 +52932,7 @@ module.exports = _default;
 /* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Gradient = __webpack_require__(44);
+var Gradient = __webpack_require__(43);
 
 var _default = {
   createOnAllSeries: true,
@@ -53329,7 +53324,7 @@ var isFunction = _util.isFunction;
 var createHashMap = _util.createHashMap;
 var noop = _util.noop;
 
-var _task = __webpack_require__(47);
+var _task = __webpack_require__(46);
 
 var createTask = _task.createTask;
 
@@ -53977,7 +53972,7 @@ var formatUtil = __webpack_require__(12);
 
 exports.format = formatUtil;
 
-var _throttle = __webpack_require__(48);
+var _throttle = __webpack_require__(47);
 
 var throttle = _throttle.throttle;
 exports.throttle = _throttle.throttle;
@@ -54682,7 +54677,7 @@ var formatUtil = __webpack_require__(12);
 
 var scaleHelper = __webpack_require__(96);
 
-var IntervalScale = __webpack_require__(50);
+var IntervalScale = __webpack_require__(49);
 
 // [About UTC and local time zone]:
 // In most cases, `number.parseDate` will treat input data string as local time
@@ -54874,7 +54869,7 @@ var Scale = __webpack_require__(36);
 
 var numberUtil = __webpack_require__(7);
 
-var IntervalScale = __webpack_require__(50);
+var IntervalScale = __webpack_require__(49);
 
 /**
  * Log scale
@@ -57924,7 +57919,7 @@ var Cartesian2D = __webpack_require__(277);
 
 var Axis2D = __webpack_require__(279);
 
-var CoordinateSystem = __webpack_require__(46);
+var CoordinateSystem = __webpack_require__(45);
 
 __webpack_require__(280);
 
@@ -60086,7 +60081,7 @@ var axisPointerModelHelper = __webpack_require__(38);
 
 var eventTool = __webpack_require__(25);
 
-var throttleUtil = __webpack_require__(48);
+var throttleUtil = __webpack_require__(47);
 
 var _model = __webpack_require__(2);
 
@@ -63047,8 +63042,8 @@ var render = function() {
                       ])
                     ])
                   : _c("div", { staticClass: "form__group" }, [
-                      _c("p", { staticClass: "h2 text-gray my-5" }, [
-                        _vm._v("Applied Math")
+                      _c("p", { staticClass: "h3 text-gray my-5" }, [
+                        _vm._v("Select a Degree Level")
                       ]),
                       _vm._v(" "),
                       _c("input", {
