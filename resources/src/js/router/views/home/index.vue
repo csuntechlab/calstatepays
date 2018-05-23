@@ -31,37 +31,37 @@
 				</div>
 				<div class="row p-0 mt-5">
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/channel_islands_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/channel_islands_seal.svg'" alt="">
 						<figcaption>Channel Islands</figcaption>
 					</figure>
 
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/dominguez_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/dominguez_seal.svg'" alt="">
 						<figcaption>Dominguez Hills</figcaption>
 					</figure>
 
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/fullerton_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/fullerton_seal.svg'" alt="">
 						<figcaption>Fullerton</figcaption>
 					</figure>
 
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/long_beach_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/long_beach_seal.svg'" alt="">
 						<figcaption>Long Beach</figcaption>
 					</figure>
 
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/los_angeles_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/los_angeles_seal.svg'" alt="">
 						<figcaption>Los Angeles</figcaption>
 					</figure>
 	
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/northridge_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/northridge_seal.svg'" alt="">
 						<figcaption>Northridge</figcaption>
 					</figure>
 
 					<figure class="col-md col-sm-4 text-center">
-						<img class="csu-seals" src="../../../../../../public/img/csuseals/poly_seal.svg" alt="">
+						<img class="csu-seals" :src="this.url + '/img/csuseals/poly_seal.svg'" alt="">
 						<figcaption>Pomona</figcaption>
 					</figure>
 				</div>
@@ -82,6 +82,13 @@
 </template>
 <script>
 	export default {
-		
+	    data () {
+	        return {
+	            url: ''
+			}
+		},
+		created () {
+		    this.url = window.baseUrl;
+		}
 	}
 </script>
