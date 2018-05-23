@@ -79283,10 +79283,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     props: ['majorDataSelected', 'majorId', 'educationLevel'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10']
+            xAxis: ['2', '5', '10'],
+            graphColors: {
+                color1: '#000',
+                color2: '#000',
+                color3: '#FFF'
+            }
         };
     },
 
+    //    watch: {
+    //        this.educationLevel()
+    //        {
+    //            console.log("Sup dawg");
+    //        }
+    //    },
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
@@ -79321,6 +79332,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         },
         toolTipTitles1: function toolTipTitles1() {
+
             var title = "Some College";
             if (this.educationLevel !== "allDegrees") {
                 title = "25th Percentile";
@@ -79340,6 +79352,45 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 title = "75th Percentile";
             }
             return title;
+        },
+        toolColors1: function toolColors1() {
+            var color = '#476A6F';
+            if (this.educationLevel === 'someCollege') {
+                color = '#A1F0FB';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#F2C55C';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#3EFA94';
+            }
+            return color;
+        },
+        toolColors2: function toolColors2() {
+            var color = '#EDAC17';
+            if (this.educationLevel === 'someCollege') {
+                color = '#476A6F';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#ECA400';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#2BAE67';
+            }
+            return color;
+        },
+        toolColors3: function toolColors3() {
+            var color = '#279D5D';
+            if (this.educationLevel === 'someCollege') {
+                color = '#375255';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#6C4B00';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#1B6E41';
+            }
+            return color;
         },
         polar: function polar() {
 
@@ -79373,33 +79424,33 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                         name: this.toolTipTitles1,
                         data: this.someCollegeEarnings,
                         lineStyle: {
-                            color: '#476A6F',
+                            color: this.toolColors1,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#476A6F'
+                            color: this.toolColors1
                         }
                     }, {
                         type: 'line',
                         name: this.toolTipTitles2,
                         data: this.bachelorsEarnings,
                         lineStyle: {
-                            color: '#EDAC17',
+                            color: this.toolColors2,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#EDAC17'
+                            color: this.toolColors2
                         }
                     }, {
                         type: 'line',
                         name: this.toolTipTitles3,
                         data: this.mastersEarnings,
                         lineStyle: {
-                            color: '#279D5D',
+                            color: this.toolColors3,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#279D5D'
+                            color: this.toolColors3
                         }
                     }],
                     animationDuration: 2000
