@@ -11,7 +11,7 @@ class HEGISCode extends Model
     protected $fillable = [
         'hegis_code',
         'major',
-        'university'
+        'university',
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

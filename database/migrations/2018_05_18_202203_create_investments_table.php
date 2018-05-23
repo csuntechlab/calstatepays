@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniversityMajorsTable extends Migration
+class CreateInvestmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateUniversityMajorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('university_majors', function (Blueprint $table) {
+        Schema::create('investments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('hegis_code');
-            $table->integer('college_id')->nullable();
-            $table->integer('university_id');
-            $table->timestamps();
+            $table->integer('annual_earnings');
+            $table->integer('annual_financial_aid');
+            $table->integer('time_to_degree');
+            $table->integer('earnings_5_years');
+            $table->decimal('roi');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateUniversityMajorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('university_majors');
+        Schema::dropIfExists('investments');
     }
 }

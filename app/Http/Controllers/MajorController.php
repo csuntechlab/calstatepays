@@ -22,62 +22,41 @@ class MajorController extends Controller
     }
 
     public function getMajorEarnings($hegis_code, $university_id){
-        $university_major = UniversityMajor::where('hegis_code', $hegis_code)
-                                            ->where('university_id', $university_id)
-                                            ->firstOrFail();
-        $major_paths = $university_major->majorPaths();
-        $major_paths_wage = $major_paths->with('majorPathWage')->get();
+        $university_major = UniversityMajor::AllMajorPathWages($hegis_code, $university_id);
 
-        $someCollege = [];
-        $bachelors = [];
-        $post_bacc = [];
-        $dataArray = $major_paths_wage->toArray();
-        foreach($dataArray as $data) {
+        foreach($university_major as $data) {
+            $years = $data['years'];
             if ($data['student_path'] == 1) {
-                switch ($data['years']) {
-                    case 2:
-                        $someCollege['2'] = $data['major_path_wage'];
-                        break;
-                    case 5:
-                        $someCollege['5'] = $data['major_path_wage'];
-                        break;
-                    case 10:
-                        $someCollege['10'] = $data['major_path_wage'];
-                        break;
-                }
+                $someCollege[$years] = $this->extractWageByYearKey($data);
             } else if ($data['student_path'] == 2) {
-                switch ($data['years']) {
-                    case 2:
-                        $bachelors['2'] = $data['major_path_wage'];
-                        break;
-                    case 5:
-                        $bachelors['5'] = $data['major_path_wage'];
-                        break;
-                    case 10:
-                        $bachelors['10'] = $data['major_path_wage'];
-                        break;
-                }
+                $bachelors[$years] = $this->extractWageByYearKey($data);
             } else if ($data['student_path'] == 3) {
-                switch ($data['years']) {
-                    case 2:
-                        $post_bacc['2'] = $data['major_path_wage'];
-                        break;
-                    case 5:
-                        $post_bacc['5'] = $data['major_path_wage'];
-                        break;
-                    case 10:
-                        $post_bacc['10'] = $data['major_path_wage'];
-                        break;
-                }
+                $post_bacc[$years] = $this->extractWageByYearKey($data);
             }
         }
+
         $majorData = [
-            'major_id' =>$hegis_code,
-            'university_id' => $university_id,
-            'some_college'=> $someCollege,
+            'majorId' =>$hegis_code,
+            'universityId' => $university_id,
+            'someCollege'=> $someCollege,
             'bachelors' => $bachelors,
-            'post_bacc' => $post_bacc
+            'postBacc' => $post_bacc
         ];
         return $majorData;
+    }
+
+    public function extractWageByYearKey($array){
+        switch ($array['years']) {
+            case 2:
+                $studentPathArray = $array['major_path_wage'];
+                break;
+            case 5:
+                $studentPathArray = $array['major_path_wage'];
+                break;
+            case 10:
+                $studentPathArray = $array['major_path_wage'];
+                break;
+        }
+        return $studentPathArray;
     }
 }

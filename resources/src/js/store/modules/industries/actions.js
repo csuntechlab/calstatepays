@@ -8,9 +8,10 @@ export default {
         Industry.fetchIndustryImagesAPI(
             payload,
             (success) => {
-            commit(_industries.FETCH_INDUSTRY_IMAGES, success);
-        },
-         (error) => console.log(error),
+                success.forEach((industry) => industry['majorId'] = payload.majorId);
+                commit(_industries.FETCH_INDUSTRY_IMAGES, success);
+            },
+            (error) => console.log(error),
         );
     }
 

@@ -9,6 +9,7 @@ import axios from 'axios';
 import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
+import vSelect from 'vue-select';
 
 Vue.use(Vuetify);
 
@@ -27,7 +28,7 @@ const vm = new Vue({
     render: h => h(App),
     created(){
         this.$store.dispatch('fetchMajors');
-        /*this.$store.dispatch('fetchIndustryImages');*/
+        this.$store.dispatch('fetchUniversities');
     }
 });
 

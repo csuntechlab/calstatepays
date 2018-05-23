@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="csu-metro-url" content="{{url('/') }}">
+        <meta name="app-url" content="{{ url('/') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>CSU: Metro LA</title>
         <meta name="description" content="Cal State Pays">

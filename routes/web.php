@@ -14,10 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/industry/{hegis_code}/{university_id}', 'IndustryController@getIndustryPopulationByRank');
-
-Route::get('/Aggregate/PFRE', 'AggregateDataController@getAggregateUniversitiesPFREGraphData')
-    ->name('aggregate.PFRE.view');
-Route::post('/Aggregate/PFRE', 'AggregateDataController@getAggregateUniversitiesPFRE')
-    ->name('aggregate.PFRE');

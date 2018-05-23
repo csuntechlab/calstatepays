@@ -4,7 +4,7 @@
             <div class="row d-md-flex align-items-center">
                 <div class="col-6 col-md-3 order-2 order-md-1">
                     <router-link class="" to="/">
-                        <img :src="'img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
+                        <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
                     </router-link>
                 </div>
                 <div class="col-3 col-md-6 order-6 order-md-2">
@@ -42,7 +42,7 @@
                 <div class="col-3 col-md-3 order-1 order-md-3">
                     <div class="navbar-text small mt-1 w-100">
                         <router-link to="/research">
-                            <img src="img/strada-gray.svg" class="float-right nav-logo-secondary mx-auto d-block" alt="">
+                            <img :src="this.url + '/img/strada-gray.svg'" class="float-right nav-logo-secondary mx-auto d-block" alt="">
                         </router-link>
                     </div>
                     <div>
@@ -54,7 +54,14 @@
 	</header>
 </template>
 <script>
-export default{
-
+export default {
+    data () {
+        return {
+            url: ''
+        }
+    },
+    created () {
+        this.url = window.baseUrl;
+    }
 }
 </script>

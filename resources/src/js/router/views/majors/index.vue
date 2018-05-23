@@ -15,22 +15,18 @@ export default {
         return {
             cards: [
                 {
-                    major: 'Applied Math'
+                    major: null
                 },
-                 {
-                    major: 'Accounting'
-                }
             ]
         }
     },
     components: { 
         majorCard,
-        cardAdd
-
+        cardAdd,
     },
     methods: {
         onPlus(){
-            this.cards.push({major: 'Sing Malaling'});
+            this.cards.push({major: null});
         }
     }
 }
