@@ -14,7 +14,7 @@ class IndustryController extends Controller
             return [
                 'naics_code' => $item['naics_code'],
                 'title'      => $item['naics_title'],
-                'image'      => $item['image']
+                'image'      => asset($item['image'])
             ];
         });
         return $allNaicsTitles;
@@ -41,7 +41,7 @@ class IndustryController extends Controller
                 'title'                  => $industry->naicsTitle->naics_title,
                 'percentage'             => $industry->population->percentage_found,
                 'rank'                   => $index,
-                'image'                  => $industry->naicsTitle->image
+                'image'                  => asset($industry->naicsTitle->image)
             ];
 
         });

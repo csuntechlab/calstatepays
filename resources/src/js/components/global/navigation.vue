@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-expand-md navbar-light col col-12">
             <div class="col col-md-5">
                 <router-link class="navbar-brand" to="/">
-				    <img :src="'/img/calstatepays.svg'" class="nav-logo" alt="Cal State Pays logo">
+				    <img :src="this.url + '/img/calstatepays.svg'" class="nav-logo" alt="Cal State Pays logo">
 			    </router-link>
             </div>
             <div class="collapse navbar-collapse col col-md-7" id="collapsingNavbar">
@@ -23,7 +23,7 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" active-class="hr-nav" to="/about">
+                            <router-link class="nav-link" active-class="hr-nav" to="/faq">
                             About
                             </router-link>
                         </li>
@@ -31,7 +31,7 @@
                 </div>
                 <span class="navbar-text small mt-1 w-100 col col-md-6">
                     <router-link to="/research">
-                        <img src="img/strada-gray.svg" class="nav-logo-secondary pull-right" alt="">
+                        <img :src="this.url + '/img/strada-gray.svg'" class="nav-logo-secondary pull-right" alt="Strada Logo">
                     </router-link>
                 </span>
             </div>
@@ -39,7 +39,14 @@
 	</header>
 </template>
 <script>
-export default{
-
+export default {
+    data () {
+        return {
+            url: ''
+        }
+    },
+    created () {
+        this.url = window.baseUrl;
+    }
 }
 </script>

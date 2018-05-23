@@ -1,17 +1,3 @@
-window._ = require('lodash');
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
-} catch (e) {}
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -34,4 +20,17 @@ if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+/**
+ * Let's add the app-url to axios and save it for future use.
+ *
+ */
+let url = document.head.querySelector('meta[name="app-url"]');
+
+if (url) {
+    window.axios.defaults.baseUrl = url.content;
+    window.baseUrl = url.content;
+} else {
+    console.error('Please set the app URL as a meta tag');
 }
