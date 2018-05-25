@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AnnualEarning extends Model
+class AnnualFinancialAid extends Model
 {
     public $primaryKey = 'id';
     public $timestamps = false;
 
-    protected $fillable = [
-        'name'
+    protected $incrementing = [
+        'name',
     ];
 }

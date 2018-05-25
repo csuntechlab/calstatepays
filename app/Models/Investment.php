@@ -14,7 +14,6 @@ class Investment extends Model
         'student_background_id',
         'annual_earnings_id',
         'annual_financial_aid_id',
-        'annual_financial_aid_name',
         'time_to_degree',
         'earnings_5_years',
         'roi'
@@ -22,5 +21,9 @@ class Investment extends Model
 
     public function annualEarning(){
         return $this->hasOne('App\Models\AnnualEarning', 'id', 'annual_earnings_name');
+    }
+
+    public function annualFinancialAid(){
+        return $this->hasOne('App\Models\AnnualFinancialAid', 'id', 'annual_financial_aid_id');
     }
 }
