@@ -12,7 +12,6 @@ class StudentBackground extends Model
     protected $fillable = [
         'university_major_id',
         'age_range_id',
-        'age_range_name',
         'education_level'
     ];
 
@@ -20,4 +19,7 @@ class StudentBackground extends Model
         return $this->hasMany('App\Models\Investment','student_background_id','id');
     }
 
+    public function age(){
+        return $this->hasOne('App\Models\Age');
+    }
 }
