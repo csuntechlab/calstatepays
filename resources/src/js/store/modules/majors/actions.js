@@ -2,7 +2,7 @@
 import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
 
-export default{
+export default {
 
     fetchMajors({commit, dispatch}){
         Major.fetchMajorsAPI(
@@ -32,6 +32,17 @@ export default{
             (error) => console.log(error),
         );
     },
+
+    fetchIndustryImages({ commit, dispatch }, payload) {
+        Major.fetchIndustryImagesAPI(
+            payload,
+            (success) => {
+                success.forEach((industry) => industry['majorId'] = payload.majorId);
+                commit(_majors.FETCH_INDUSTRY_IMAGES, success);
+            },
+            (error) => console.log(error),
+        );
+    }, 
 
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);

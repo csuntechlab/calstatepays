@@ -37,15 +37,8 @@ export default {
     props: ['index'],
     computed: {
         ...mapGetters([
-
             'universityById',
         ]),
-        campus(){
-            if(this.form.schoolId){
-                return this.universityById(this.form.schoolId);
-            }
-            return null;
-        },
     },
     components: { 
         majorForm,
