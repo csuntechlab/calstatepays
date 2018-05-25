@@ -13,7 +13,6 @@ class StudentBackground extends Model
         'university_major_id',
         'age_range_id',
         'age_range_name',
-        'education_level_id',
         'education_level_name'
     ];
 
