@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         
             <title>@yield('title') | Project Name</title>
             <meta name="description" content="@yield('description')">
@@ -16,7 +15,7 @@
         {!! HTML::style('css/app.css') !!}
     </head>
     <body>
-
+        
         {{-- APP CONTENT BEGINS --}}
         @include('layouts.partials.header')
             <div class="wrapper">
