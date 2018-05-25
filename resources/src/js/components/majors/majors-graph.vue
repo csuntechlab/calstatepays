@@ -9,12 +9,23 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorDataSelected', 'majorId'],
+    props: ['majorDataSelected', 'majorId', 'educationLevel'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
+            graphColors: {
+               color1: '#000',
+               color2: '#000',
+               color3: '#FFF',
+            }
         }
     },
+//    watch: {
+//        this.educationLevel()
+//        {
+//            console.log("Sup dawg");
+//        }
+//    },
     components: {
         'chart': ECharts
     },
@@ -51,7 +62,72 @@ export default {
                 return this.selectedMajor.major;
             }
         },
+        toolTipTitles1(){
+
+            let title="Some College"
+            if(this.educationLevel !== "allDegrees"){
+                title="25th Percentile"
+            }
+            return title
+        },
+        toolTipTitles2(){
+            let title="Bachelor's Degree"
+            if(this.educationLevel !== "allDegrees"){
+                title="50th Percentile"
+            }
+            return title
+        },
+        toolTipTitles3(){
+            let title="Post Bacc"
+            if(this.educationLevel !== "allDegrees"){
+                title="75th Percentile"
+            }
+            return title
+        },
+        toolColors1(){
+            let color='#476A6F'
+                if(this.educationLevel === 'someCollege'){
+                    color='#A1F0FB'
+                }
+                if(this.educationLevel === 'bachelors'){
+                    color='#F2C55C'
+                }
+                if(this.educationLevel === 'postBacc'){
+                    color='#3EFA94'
+                }
+            return color
+        },
+        toolColors2(){
+            let color='#EDAC17'
+                if(this.educationLevel === 'someCollege'){
+                    color='#476A6F'
+                }
+                if(this.educationLevel === 'bachelors'){
+                    color='#ECA400'
+
+                }
+                if(this.educationLevel === 'postBacc'){
+                    color='#2BAE67'
+
+                }
+            return color
+        },
+        toolColors3(){
+            let color='#279D5D'
+                if(this.educationLevel === 'someCollege'){
+                    color='#375255'
+                }
+                if(this.educationLevel === 'bachelors'){
+                    color='#6C4B00'
+                }
+                if(this.educationLevel === 'postBacc'){
+                    color='#1B6E41'
+                }
+            return color
+        },
+
         polar(){
+
             if(this.someCollegeEarnings){
                 return {
                     title: {
@@ -80,38 +156,38 @@ export default {
                     series: [
                         {
                             type: 'line',
-                            name: 'Some College',
+                            name: this.toolTipTitles1,
                             data: this.someCollegeEarnings,
                             lineStyle: {
-                                color: '#476A6F',
+                                color: this.toolColors1,
                                 width: 4
                             },
                             itemStyle: {
-                                color: '#476A6F'
+                                color: this.toolColors1
                             },
                         },
                         {
                             type: 'line',
-                            name: "Bachelor's Degree",
+                            name: this.toolTipTitles2,
                             data: this.bachelorsEarnings,
                             lineStyle: {
-                                color: '#EDAC17',
+                                color: this.toolColors2,
                                 width: 4
                             },
                             itemStyle: {
-                                color: '#EDAC17'
+                                color: this.toolColors2
                             }
                         },
                         {
                             type: 'line',
-                            name: 'Post Bacc Degree',
+                            name:  this.toolTipTitles3,
                             data:  this.mastersEarnings,
                             lineStyle: {
-                                color: '#279D5D',
+                                color: this.toolColors3,
                                 width: 4
                             },
                             itemStyle: {
-                                color: '#279D5D'
+                                color: this.toolColors3
                             }
                         }
                     ],

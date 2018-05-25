@@ -45406,13 +45406,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorDataSelected', 'majorId'],
+    props: ['majorDataSelected', 'majorId', 'educationLevel'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10']
+            xAxis: ['2', '5', '10'],
+            graphColors: {
+                color1: '#000',
+                color2: '#000',
+                color3: '#FFF'
+            }
         };
     },
 
+    //    watch: {
+    //        this.educationLevel()
+    //        {
+    //            console.log("Sup dawg");
+    //        }
+    //    },
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
@@ -45446,7 +45457,69 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return this.selectedMajor.major;
             }
         },
+        toolTipTitles1: function toolTipTitles1() {
+
+            var title = "Some College";
+            if (this.educationLevel !== "allDegrees") {
+                title = "25th Percentile";
+            }
+            return title;
+        },
+        toolTipTitles2: function toolTipTitles2() {
+            var title = "Bachelor's Degree";
+            if (this.educationLevel !== "allDegrees") {
+                title = "50th Percentile";
+            }
+            return title;
+        },
+        toolTipTitles3: function toolTipTitles3() {
+            var title = "Post Bacc";
+            if (this.educationLevel !== "allDegrees") {
+                title = "75th Percentile";
+            }
+            return title;
+        },
+        toolColors1: function toolColors1() {
+            var color = '#476A6F';
+            if (this.educationLevel === 'someCollege') {
+                color = '#A1F0FB';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#F2C55C';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#3EFA94';
+            }
+            return color;
+        },
+        toolColors2: function toolColors2() {
+            var color = '#EDAC17';
+            if (this.educationLevel === 'someCollege') {
+                color = '#476A6F';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#ECA400';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#2BAE67';
+            }
+            return color;
+        },
+        toolColors3: function toolColors3() {
+            var color = '#279D5D';
+            if (this.educationLevel === 'someCollege') {
+                color = '#375255';
+            }
+            if (this.educationLevel === 'bachelors') {
+                color = '#6C4B00';
+            }
+            if (this.educationLevel === 'postBacc') {
+                color = '#1B6E41';
+            }
+            return color;
+        },
         polar: function polar() {
+
             if (this.someCollegeEarnings) {
                 return {
                     title: {
@@ -45474,36 +45547,36 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     },
                     series: [{
                         type: 'line',
-                        name: 'Some College',
+                        name: this.toolTipTitles1,
                         data: this.someCollegeEarnings,
                         lineStyle: {
-                            color: '#476A6F',
+                            color: this.toolColors1,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#476A6F'
+                            color: this.toolColors1
                         }
                     }, {
                         type: 'line',
-                        name: "Bachelor's Degree",
+                        name: this.toolTipTitles2,
                         data: this.bachelorsEarnings,
                         lineStyle: {
-                            color: '#EDAC17',
+                            color: this.toolColors2,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#EDAC17'
+                            color: this.toolColors2
                         }
                     }, {
                         type: 'line',
-                        name: 'Post Bacc Degree',
+                        name: this.toolTipTitles3,
                         data: this.mastersEarnings,
                         lineStyle: {
-                            color: '#279D5D',
+                            color: this.toolColors3,
                             width: 4
                         },
                         itemStyle: {
-                            color: '#279D5D'
+                            color: this.toolColors3
                         }
                     }],
                     animationDuration: 2000
@@ -62528,7 +62601,8 @@ var render = function() {
       _c("majors-graph", {
         attrs: {
           majorDataSelected: _vm.majorDataSelected,
-          majorId: _vm.form.majorId
+          majorId: _vm.form.majorId,
+          educationLevel: _vm.form.educationLevel
         }
       })
     ],
