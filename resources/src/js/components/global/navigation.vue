@@ -18,11 +18,13 @@
                         <div class="collapse navbar-collapse justify-content-center" id="collapsingNavbar">
                             <ul class="navbar-nav d-flex justify-content-center">
                                 <li class="nav-item">
-                                    <router-link class="nav-link" exact-active-class="hr-nav" to="/">Home
+                                    <router-link class="nav-link" exact-active-class="hr-nav" to="/">
+                                        Home
                                     </router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" to="/majors">Majors
+                                    <router-link class="nav-link" active-class="hr-nav" to="/majors">
+                                        Majors
                                     </router-link>
                                 </li>
                                 <li class="nav-item">

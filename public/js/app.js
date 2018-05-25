@@ -64201,16 +64201,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -64222,96 +64212,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "row" })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("h1", { staticClass: "pt-3 home__heading text-gray" }, [
-          _vm._v("FAQ")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum modi hic id error labore ullam fugit iste dolor, temporibus "
-          ),
-          _c("br"),
-          _vm._v(
-            "dignissimos quidem adipisci eaque earum nam animi rem aspernatur alias."
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", {
-          staticStyle: { background: "blue", height: "100px", width: "100%" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -82137,6 +82040,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -82202,7 +82107,11 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { "exact-active-class": "hr-nav", to: "/" }
                           },
-                          [_vm._v("Home\n                                    ")]
+                          [
+                            _vm._v(
+                              "\n                                        Home\n                                    "
+                            )
+                          ]
                         )
                       ],
                       1
@@ -82220,7 +82129,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "Majors\n                                    "
+                              "\n                                        Majors\n                                    "
                             )
                           ]
                         )
