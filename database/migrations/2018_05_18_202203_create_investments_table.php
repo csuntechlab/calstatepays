@@ -17,7 +17,6 @@ class CreateInvestmentsTable extends Migration
             $table->increments('id');
             $table->integer('student_background_id');
             $table->integer('annual_earnings_id');
-            $table->string('annual_earnings_name');
             $table->integer('annual_financial_aid_id');
             $table->string('annual_financial_aid_name');
             $table->integer('time_to_degree');

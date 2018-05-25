@@ -13,7 +13,6 @@ class Investment extends Model
     protected $fillable = [
         'student_background_id',
         'annual_earnings_id',
-        'annual_earnings_name',
         'annual_financial_aid_id',
         'annual_financial_aid_name',
         'time_to_degree',
@@ -21,5 +20,7 @@ class Investment extends Model
         'roi'
     ];
 
-
+    public function annualEarning(){
+        return $this->hasOne('App\Models\AnnualEarning', 'id', 'annual_earnings_name');
+    }
 }

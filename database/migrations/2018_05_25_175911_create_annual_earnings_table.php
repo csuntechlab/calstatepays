@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAgeTable extends Migration
+class CreateAnnualEarningsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAgeTable extends Migration
      */
     public function up()
     {
-        Schema::create('age', function (Blueprint $table) {
+        Schema::create('annual_earnings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('age_range_name');
+            $table->string('annual_earnings_name');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateAgeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('age');
+        Schema::dropIfExists('annual_earnings');
     }
 }

@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Age extends Model
+class AnnualEarning extends Model
 {
     public $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [
-        'age_range_name'
+        'annual_earnings_name'
     ];
 }
