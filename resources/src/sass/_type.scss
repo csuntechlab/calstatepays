@@ -4,6 +4,9 @@
 .home__heading {
     font-size: 4rem;
     font-weight: 600;
+    @media screen and (max-width: $break-small) {
+        font-size: 2.5rem;
+    }
 }
 .home__link {
     font-weight: 500;
@@ -15,10 +18,10 @@ body {
     font-family: $font-base;
     background: $white;
 }
-.container-fluid{
-    margin-top: 60px;
-    padding-left: 0px;
-}
+// .container-fluid{
+//     margin-top: 60px;
+//     padding-left: 0px;
+// }
 
 .expansion-panel__header{
   font-weight: 600;

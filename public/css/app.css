@@ -26973,20 +26973,18 @@ table.table tfoot tr td {
   }
 }
 
-.wrapper {
-  background: #EBEBEB;
+.content-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-height: calc(100vh - 120px);
-  padding: 60px 0px;
+  margin-top: 5rem;
 }
 
-.container-fluid {
-  padding-right: 0px !important;
+.graph-content {
+  background-color: #EBEBEB;
 }
 
 html {
@@ -27046,6 +27044,12 @@ html {
   font-weight: 600;
 }
 
+@media screen and (max-width: 767px) {
+  .home__heading {
+    font-size: 2.5rem;
+  }
+}
+
 .home__link {
   font-weight: 500;
 }
@@ -27057,11 +27061,6 @@ html {
 body {
   font-family: "Montserrat";
   background: #FFF;
-}
-
-.container-fluid {
-  margin-top: 60px;
-  padding-left: 0px;
 }
 
 .expansion-panel__header {
@@ -27170,60 +27169,106 @@ figcaption {
 }
 
 .bg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
-  height: 55em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+  min-height: 83vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .bg {
+    background-size: contain;
+    background-position: 0 0;
+  }
 }
 
 .video-placeholder {
   background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
-  height: 50em;
+  height: 80vh;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
+     border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+  border-top: .3rem solid;
+  border-bottom: .3rem solid;
+}
+
+@media screen and (max-width: 767px) {
+  .video-placeholder {
+    height: 45vh;
+  }
 }
 
 .learn-how {
-  background-color: white;
-  height: 10em;
+  background-color: #FFF;
+  min-height: 11vh;
+}
+
+@media screen and (max-width: 767px) {
+  .learn-how {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fa-wrapper {
+    background: #FFF;
+    -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
+       border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+    border-top: .3rem solid;
+  }
+}
+
+.fa-wrapper div p {
+  margin-bottom: 0rem;
 }
 
 .fa-graduation-cap {
   font-size: 6em;
   color: #476A6F;
-  padding-bottom: .1em;
+  padding-bottom: .1rem;
 }
 
 .fa-usd {
   font-size: 6em;
   color: #2BAE67;
-  padding-bottom: .1em;
+  padding-bottom: .1rem;
 }
 
 .fa-line-chart {
   font-size: 6em;
   color: #ECA400;
-  padding-bottom: .1em;
+  padding-bottom: .1rem;
 }
 
-.csu-seals {
-  height: 10rem;
-  widows: 10rem;
+.csu-wrapper figure img {
+  width: 90%;
+  max-height: 7.25rem;
 }
 
-.navbar, nav {
-  height: 60px;
+.csu-wrapper figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-size: .85rem;
+  line-height: 1.5rem;
+  margin-top: .5rem;
+}
+
+.site-header {
+  min-height: 5rem;
   font-family: "Open Sans";
   position: fixed;
   background: #FFF;
   width: 100%;
   z-index: 500;
   -webkit-box-shadow: 0 6px 6px -6px #999;
-  box-shadow: 0 6px 6px -6px #999;
+          box-shadow: 0 6px 6px -6px #999;
   top: 0;
 }
 
@@ -27249,7 +27294,7 @@ figcaption {
 footer, .footer {
   font-family: "Open Sans";
   width: 100%;
-  height: 80px;
+  height: 100%;
   background-color: #000;
 }
 
@@ -27265,35 +27310,17 @@ footer, .footer {
 #research-main-banner {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
-  text-align: center;
-  position: relative;
-  height: 50vh;
+  background-size: cover;
+  min-height: 45vh;
+  padding: 0 1.5rem;
 }
 
 #research-main-banner h2 {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
   color: #000;
+  font-size: 3.75rem;
+  max-width: 64rem;
   font-family: "Montserrat";
   font-weight: 400;
-}
-
-#research-main-banner .csu-wrapper {
-  position: absolute;
-  width: 100%;
-  bottom: 1rem;
-}
-
-#research-main-banner .csu-wrapper figure img {
-  width: 6.5rem;
-}
-
-#research-main-banner .csu-wrapper figure figcaption {
-  font-family: "Montserrat";
-  text-transform: uppercase;
 }
 
 .campuses-container {
@@ -27305,11 +27332,6 @@ footer, .footer {
           align-items: left;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.row {
-  padding-left: 2.5rem;
-  padding-top: 2.5rem;
 }
 
 .campus {

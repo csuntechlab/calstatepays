@@ -16,17 +16,33 @@ $darker-gray: #363636;
 $white: #FFF;
 $black: #000;
 $blue-light: #4DB7C6;
+$oxford-25: #A1F0FB;
+$oxford-75: #375255;
+$green-25: #3EFA94;
+$green-75: #1B6E41;
+$gold-25: #F2C55C;
+$gold-75: #6C4B00;
+$oxford-25: #A1F0FB;
+$oxford-75: #375255;
+$green-25: #3EFA94;
+$green-75: #1B6E41;
+$gold-25: #F2C55C;
+$gold-75: #6C4B00;
+//Fonts
 $font-base: 'Montserrat';
 $font-brand: 'Open Sans';
+
+//Filters
+$unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+$available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+$white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+
+//Break Points
+$break-small: 767px;
+$break-large: 1200px;
+
+//Borders
 $border-radius: 3px;
 
 
-$oxford-25: #A1F0FB;
-$oxford-75: #375255;
-
-$green-25: #3EFA94;
-$green-75: #1B6E41;
-
-$gold-25: #F2C55C;
-$gold-75: #6C4B00;
 

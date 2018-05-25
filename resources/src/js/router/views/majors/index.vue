@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" style="padding-bottom: 0px;">
+    <div class="wrapper graph-content">
         <div class="col col-md-12">
             <major-card class="my-2" v-for="(majorCard, index) in majorCards" :key="index" :index=index></major-card>
             <card-add :onPlus="onPlus"></card-add>
