@@ -42126,6 +42126,11 @@ if (inBrowser && window.Vue) {
             return getters.majorData[index];
         };
     },
+    industries: function industries(state) {
+        return function (index) {
+            return state.majorCards[index].industries;
+        };
+    },
     universities: function universities(state) {
         return state.universities;
     },
@@ -45069,7 +45074,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['index'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById', 'industries']), {
+        selectedIndustries: function selectedIndustries() {
+            return this.industries(this.index);
+        }
+    }),
     components: {
         majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
         card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
@@ -62826,8 +62835,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(12);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 //
 //
 //
@@ -62846,21 +62853,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['form'],
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['industries']), {
-    selectedIndustries: function selectedIndustries() {
-      var _this = this;
+  props: ['industries'],
 
-      if (this.form.majorId) {
-        return this.industries.filter(function (industry) {
-          return industry.majorId == _this.form.majorId;
-        });
-      }
-      return [];
-    }
-  }),
-
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages'])),
   components: {
     industryCarouselCard: __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default.a,
     Carousel: __WEBPACK_IMPORTED_MODULE_0_vue_carousel__["Carousel"],
@@ -62994,7 +62988,7 @@ var render = function() {
             navigationClickTargetSize: 20
           }
         },
-        _vm._l(_vm.selectedIndustries, function(industry, index) {
+        _vm._l(_vm.industries, function(industry, index) {
           return _c(
             "slide",
             {
@@ -63218,7 +63212,16 @@ var render = function() {
       _c("card", [
         _c("div", { staticClass: "container-fluid my-0" }, [
           _c("div", { staticClass: "row p-0" }, [
-            _c("div", { staticClass: "mt-5" }, [_c("industry-carousel")], 1)
+            _c(
+              "div",
+              { staticClass: "mt-5" },
+              [
+                _c("industry-carousel", {
+                  attrs: { industries: _vm.selectedIndustries }
+                })
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row m-1 p-0" }, [

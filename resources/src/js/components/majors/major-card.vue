@@ -4,7 +4,7 @@
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
-                        <industry-carousel></industry-carousel>				
+                        <industry-carousel :industries="selectedIndustries"></industry-carousel>				
                     </div>
                 </div>
                 <div class="row m-1 p-0">
@@ -38,7 +38,11 @@ export default {
     computed: {
         ...mapGetters([
             'universityById',
+            'industries',
         ]),
+        selectedIndustries() {
+            return this.industries(this.index);
+        }
     },
     components: { 
         majorForm,

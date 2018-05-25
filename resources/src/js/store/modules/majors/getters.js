@@ -11,6 +11,7 @@ export default {
         const index = getters.majorData.findIndex(dataSet => dataSet.majorId == id);
         return getters.majorData[index];
     },
+    industries: state => index => state.majorCards[index].industries,
     universities: state => state.universities,
     universityById: (state, getters) => (id) => {
         const index = getters.universities.findIndex(campus => campus.id == id);
