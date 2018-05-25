@@ -51,9 +51,11 @@ import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+    props: ['index'],
     data(){
       return {
           form: {
+                cardIndex: this.index,
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,

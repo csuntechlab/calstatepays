@@ -9,7 +9,7 @@
                 </div>
                 <div class="row m-1 p-0">
                     <div class="col col-md-3 col-sm-12 my-3">
-                         <major-form></major-form>
+                         <major-form :index="index"></major-form>
                     </div>
                     <div class="col col-7">
                         <majors-graph-wrapper></majors-graph-wrapper>
@@ -34,6 +34,7 @@ import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+    props: ['index'],
     computed: {
         ...mapGetters([
 

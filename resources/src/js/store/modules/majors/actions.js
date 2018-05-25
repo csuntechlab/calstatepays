@@ -26,6 +26,7 @@ export default{
         Major.fetchMajorDataAPI(
             payload,
             (success) => {
+                success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
             },
             (error) => console.log(error),

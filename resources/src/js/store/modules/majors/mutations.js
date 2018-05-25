@@ -11,7 +11,10 @@ export default {
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
-       state.majorData.push(payload);
+        console.log("Mutations ", payload);
+        let index = payload.cardIndex;
+        state.majorCards[index].majorData = payload;
+        console.log(state.majorCards[index]);
     },
 
     [_majors.FETCH_UNIVERSITIES](state, payload) {

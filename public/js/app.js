@@ -42173,7 +42173,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.majors.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
-    state.majorData.push(payload);
+    console.log("Mutations ", payload);
+    var index = payload.cardIndex;
+    state.majorCards[index].majorData = payload;
+    console.log(state.majorCards[index]);
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
     payload.forEach(function (university) {
         university.name = university.university_name;
@@ -42223,6 +42226,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref3.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
+            success.cardIndex = payload.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
         }, function (error) {
             return console.log(error);
@@ -45161,6 +45165,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['index'],
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById']), {
         campus: function campus() {
             if (this.form.schoolId) {
@@ -45290,9 +45295,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['index'],
     data: function data() {
         return {
             form: {
+                cardIndex: this.index,
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,
@@ -63322,7 +63329,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col col-md-3 col-sm-12 my-3" },
-              [_c("major-form")],
+              [_c("major-form", { attrs: { index: _vm.index } })],
               1
             ),
             _vm._v(" "),
