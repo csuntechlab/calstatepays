@@ -30,6 +30,10 @@ export default{
             },
             (error) => console.log(error),
         );
+    },
+
+    addMajorCard({commit}) {
+        commit(_majors.ADD_MAJOR_CARD);
     }
     
 }

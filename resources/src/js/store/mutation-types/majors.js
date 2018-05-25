@@ -1,11 +1,12 @@
 const FETCH_MAJORS = 'majors/FETCH_MAJORS';
 const FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
 const FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
+const ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 
 
 export default {
     FETCH_MAJORS,
     FETCH_MAJOR_DATA,
     FETCH_UNIVERSITIES,
-    
+    ADD_MAJOR_CARD
 }

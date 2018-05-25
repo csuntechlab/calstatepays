@@ -3,7 +3,11 @@
 
 export default {
     majors: [],
-    majorData: [],
     universities: [],
+    majorCards:[
+        {
+            majorData: [],
+        }
+    ]
 };
 

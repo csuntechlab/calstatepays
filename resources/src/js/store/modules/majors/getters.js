@@ -12,9 +12,9 @@ export default {
         return getters.majorData[index];
     },
     universities: state => state.universities,
-
     universityById: (state, getters) => (id) => {
         const index = getters.universities.findIndex(campus => campus.id == id);
         return getters.universities[index];
     },
+    majorCards: state => state.majorCards,
 }

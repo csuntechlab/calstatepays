@@ -22,5 +22,10 @@ export default {
         }); 
     },
 
+    [_majors.ADD_MAJOR_CARD](state) {
+        state.majorCards.push({
+            majorData: []
+        });
+    }
 
 }
