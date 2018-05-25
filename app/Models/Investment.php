@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,6 +8,7 @@ class Investment extends Model
 {
     //
     public $primary = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'student_background_id',
