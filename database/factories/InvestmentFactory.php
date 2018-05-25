@@ -4,9 +4,7 @@ $factory->define(App\Models\Investment::class, function (Faker\Generator $faker,
     return [
         'student_background_id'     => $param['student_background_id'],
         'annual_earnings_id'        => $param['annual_earnings_id'],
-        'annual_earnings_name'      => $param['annual_earnings_name'],
         'annual_financial_aid_id'   => $param['annual_financial_aid_id'],
-        'annual_financial_aid_name' => $param['annual_financial_aid_name'],
         'time_to_degree'            => $faker->numberBetween(2,12),
         'earnings_5_years'          => $faker->numberBetween(30000,90000),
         'roi'                       => $faker->randomFloat(2,2,15)
