@@ -24,11 +24,13 @@ export default {
     },
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
-        state.industries = payload;
+        let index = payload.cardIndex;
+        state.majorCards[index].industries = payload;
     },
 
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
+            industries: [],
             majorData: []
         });
     }
