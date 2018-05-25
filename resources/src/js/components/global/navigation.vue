@@ -1,41 +1,58 @@
 <template>
-	<header>
-		<nav class="navbar navbar-expand-md navbar-light col col-12">
-            <div class="col col-md-5">
-                <router-link class="navbar-brand" to="/">
-				    <img :src="this.url + '/img/calstatepays.svg'" class="nav-logo" alt="Cal State Pays logo">
-			    </router-link>
-            </div>
-            <div class="collapse navbar-collapse col col-md-7" id="collapsingNavbar">
-                <div class="justify-content-end col col-md-6" >
-                    <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <router-link class="nav-link" exact-active-class="hr-nav" to="/">Home
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" active-class="hr-nav" to="/majors">Majors
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" active-class="hr-nav" to="/pfre">
-                            FRE
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" active-class="hr-nav" to="/faq">
-                            About
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
-                <span class="navbar-text small mt-1 w-100 col col-md-6">
-                    <router-link to="/research">
-                        <img :src="this.url + '/img/strada-gray.svg'" class="nav-logo-secondary pull-right" alt="Strada Logo">
+	<header class="site-header">
+        <div class="container-fluid"> 
+            <div class="row d-md-flex align-items-center">
+                <div class="col-6 col-md-3 order-2 order-md-1">
+                    <router-link class="" to="/">
+                        <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
                     </router-link>
-                </span>
+                </div>
+                <div class="col-3 col-md-6 order-6 order-md-2">
+
+                    <nav class="navbar navbar-expand-md navbar-light">
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-center" id="collapsingNavbar">
+                            <ul class="navbar-nav d-flex justify-content-center">
+                                <li class="nav-item">
+                                    <router-link class="nav-link" exact-active-class="hr-nav" to="/">
+                                        Home
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" active-class="hr-nav" to="/majors">
+                                        Majors
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" active-class="hr-nav" to="/pfre">
+                                    FRE
+                                    </router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" active-class="hr-nav" to="/about">
+                                    About
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-3 col-md-3 order-1 order-md-3">
+                    <div class="navbar-text small mt-1 w-100">
+                        <router-link to="/research">
+                            <img :src="this.url + '/img/strada-gray.svg'" class="float-right nav-logo-secondary mx-auto d-block" alt="">
+                        </router-link>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
 	</header>
 </template>
 <script>
