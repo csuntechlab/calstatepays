@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentBackgroundTable extends Migration
+class CreateAnnualEarningsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateStudentBackgroundTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_backgrounds', function (Blueprint $table) {
+        Schema::create('annual_earnings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('university_major_id');
-            $table->integer('age_range_id');
-            $table->string('education_level');
+            $table->string('name');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateStudentBackgroundTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_backgrounds');
+        Schema::dropIfExists('annual_earnings');
     }
 }

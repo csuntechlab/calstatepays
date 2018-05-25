@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper graph-content">
       <div class="col col-md-12">
         <card>
           <div class="col col-3">

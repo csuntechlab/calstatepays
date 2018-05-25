@@ -1,13 +1,11 @@
-.wrapper{
-    background: $light-gray;
+.content-wrapper{
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 120px);
-    padding: 60px 0px;
+    margin-top: 5rem;
 }
 
-.container-fluid{
-    padding-right: 0px !important;
+.graph-content{
+    background-color: $light-gray;
 }
 
 html {

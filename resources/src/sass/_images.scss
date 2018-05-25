@@ -10,45 +10,69 @@
 	max-width: 60%;
 }
 .bg { 
-
 	background-image: $white-filter, url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
-
-	height: 55em; 
+	min-height: 83vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	@media screen and (max-width: $break-small) {
+		background-size: contain;
+		background-position: 0 0;
+	}
 }
 
 .video-placeholder {
 	background-image: url("https://i.gyazo.com/e29caca65320df8b8781d2c420159b1b.jpg");
-	height: 50em;
+	height: 80vh;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
+	border-top: .3rem solid;
+	border-bottom: .3rem solid;
+	@media screen and (max-width: $break-small) {
+		height: 45vh;
+	}
 }
 
 .learn-how {
-	background-color: white;
-	height: 10em;
+	background-color: $white;
+	min-height: 11vh;
+	@media screen and (max-width: $break-small) {
+		display: none;
+	}
+}
+
+.fa-wrapper {
+	@media screen and (max-width: $break-small) {
+		background: $white;
+		border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
+		border-top: .3rem solid;
+	}
+	div {
+		p {
+			margin-bottom: 0rem;
+		}
+	}
 }
 
 .fa-graduation-cap {
 	font-size: 6em;
 	color: $oxford;
-	padding-bottom: .1em;
+	padding-bottom: .1rem;
 }
 
 .fa-usd {
 	font-size: 6em;
 	color: $green;
-	padding-bottom: .1em;	
+	padding-bottom: .1rem;	
 }
 
 .fa-line-chart {
 	font-size: 6em;
 	color: $gold;
-	padding-bottom: .1em;	
+	padding-bottom: .1rem;	
 }
 
 .csu-seals {
@@ -62,4 +86,19 @@
 	background-position: center;
 	height: 35vh;
 	margin-top: -60px;
+}
+.csu-wrapper {
+	figure {
+		img {
+		width: 90%;
+		max-height: 7.25rem;
+		}
+		figcaption {
+      font-family: $font-base;
+      text-transform: uppercase;
+      font-size: .85rem;
+      line-height: 1.5rem;
+      margin-top: .5rem;
+	  }
+	}
 }

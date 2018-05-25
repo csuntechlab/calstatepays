@@ -1,36 +1,16 @@
-$unavailable-campus: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-$available-campus: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-$white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
-
 #research-main-banner {
     background-image:
      $white-filter,
      url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
-    text-align: center;
-    position: relative;
-    height: 50vh;
+    background-size: cover;
+    min-height: 45vh;
+    padding: 0 1.5rem;
     h2 {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, 0);
         color: $black;
+        font-size: 3.75rem;
+        max-width: 64rem;
         font-family: $font-base;
         font-weight: 400;
-    }
-    .csu-wrapper {
-        position: absolute;
-        width: 100%;
-        bottom: 1rem;
-        figure {
-            img {
-                width: 6.5rem;
-            }
-            figcaption {
-                font-family: $font-base;
-                text-transform: uppercase;
-            }
-        }
     }
 }
 
@@ -38,11 +18,6 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8
     display: flex;
     align-items: left; 
     flex-wrap: wrap;
-}
-
-.row{
-    padding-left: 2.5rem;
-    padding-top: 2.5rem;
 }
 
 .campus{
