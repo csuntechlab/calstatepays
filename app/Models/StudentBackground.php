@@ -18,7 +18,7 @@ class StudentBackground extends Model
     ];
 
     public function investment(){
-        return $this->hasMany('App\Models\Investment','id','investment_id');
+        return $this->hasMany('App\Models\Investment','student_background_id','id');
     }
 
 }
