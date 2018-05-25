@@ -1,4 +1,3 @@
-$white-filter: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
 .img__logo{
 	padding-top: 10px;
 	max-height: 50px;
@@ -55,4 +54,12 @@ $white-filter: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6
 .csu-seals {
 	height: 10rem;
 	widows: 10rem;
+}
+
+.faq-banner {
+	background-image:$white-filter, url('../img/faq-banner.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 35vh;
+	margin-top: -60px;
 }
