@@ -10,13 +10,15 @@ class StudentBackground extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'university_major_id',
         'age_range_id',
-        'education_level',
-        'investment_id',
-        'university_major_id'
+        'age_range_name',
+        'education_level_id',
+        'education_level_name'
     ];
 
     public function investment(){
         return $this->hasMany('App\Models\Investment','id','investment_id');
     }
+
 }
