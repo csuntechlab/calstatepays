@@ -12,7 +12,7 @@
                          <major-form :index="index"></major-form>
                     </div>
                     <div class="col col-7">
-                        <majors-graph-wrapper></majors-graph-wrapper>
+                        <majors-graph :majorData="selectedMajorData"></majors-graph>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
                         <major-legend></major-legend>
@@ -25,7 +25,7 @@
 <script>
 import majorForm from './major-form.vue';
 import card from '../global/card';
-import majorsGraphWrapper from './majors-graph-wrapper.vue';
+import majorsGraph from './majors-graph.vue';
 import industryCarousel from "../industries/industry-carousel.vue";
 import majorLegend from './major-legend.vue';
 
@@ -39,7 +39,11 @@ export default {
         ...mapGetters([
             'universityById',
             'industries',
+            'majorData'
         ]),
+        selectedMajorData() {
+            return this.majorData(this.index);
+        },
         selectedIndustries() {
             return this.industries(this.index);
         }
@@ -47,7 +51,7 @@ export default {
     components: { 
         majorForm,
         card,
-        majorsGraphWrapper,
+        majorsGraph,
         industryCarousel,
         majorLegend        
     }

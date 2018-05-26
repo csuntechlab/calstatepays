@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorDataSelected', 'majorId', 'educationLevel'],
+    props: ['majorData'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -20,12 +20,6 @@ export default {
             }
         }
     },
-//    watch: {
-//        this.educationLevel()
-//        {
-//            console.log("Sup dawg");
-//        }
-//    },
     components: {
         'chart': ECharts
     },
@@ -34,33 +28,16 @@ export default {
             'majorById'
         ]),
         mastersEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[0];
-            }
-            return null;
+            return this.majorData.postBacc;
         },
         bachelorsEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[1];
-            }
-            return null;
+            return this.majorData.bachelors;
         },
         someCollegeEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[2];
-            }
-        return null;
-        },
-        selectedMajor(){
-            if(this.majorId){
-                return this.majorById(this.majorId);
-            }  
-            return null;
+            return this.majorData.someCollege;
         },
         majorName(){
-            if(this.selectedMajor){
-                return this.selectedMajor.major;
-            }
+            return "Testarino";
         },
         toolTipTitles1(){
 
