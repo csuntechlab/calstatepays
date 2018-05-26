@@ -73,4 +73,25 @@ class MajorControllerTest extends TestCase
                 '50th'     => 45000,
                 '75th'     => 60000], $returnedArray);
     }
+
+    //FRE - Financial Return On Investment, this function populates FRE page bar charts
+    public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
+    {
+        $major = 5011;
+        $university = 1153;
+        $age_range = 1;
+        $education_level = 'FTT';
+        $annual_earnings = 2;
+        $financial_aid = 3;
+        $response = $this->get("/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+        $response->assertJsonStructure([
+            'majorId',
+            'universityId',
+            'fre' => [
+                'timeToDegree',
+                'earningsYearFive',
+                'returnOnInvestment'
+            ]
+        ]);
+    }
 }
