@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper graph-content">
         <div class="col col-md-12">
-            <major-card class="my-2" v-for="item in cards" :key="item.major"></major-card>
+            <major-card class="my-2" v-for="(majorCard, index) in majorCards" :key="index" :index=index></major-card>
             <card-add :onPlus="onPlus"></card-add>
         </div>
     </div>
@@ -9,16 +9,13 @@
 <script>
 import cardAdd from '../../../components/global/card-add.vue';
 import majorCard from "../../../components/majors/major-card.vue";
+import { mapGetters } from 'vuex';
 
 export default {
-    data(){
-        return {
-            cards: [
-                {
-                    major: null
-                },
-            ]
-        }
+    computed: {
+        ...mapGetters([
+            'majorCards'
+        ])
     },
     components: { 
         majorCard,
@@ -26,7 +23,7 @@ export default {
     },
     methods: {
         onPlus(){
-            this.cards.push({major: null});
+            this.$store.dispatch('addMajorCard');
         }
     }
 }
