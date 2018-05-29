@@ -27313,6 +27313,7 @@ footer, .footer {
   background-size: cover;
   min-height: 45vh;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 #research-main-banner h2 {
@@ -27339,7 +27340,7 @@ footer, .footer {
   display: -ms-flexbox;
   display: flex;
   height: 370px;
-  min-width: 340px;
+  min-width: 30vw;
   -ms-flex-item-align: center;
       align-self: center;
   -webkit-box-pack: center;
