@@ -44,17 +44,17 @@ class University_Majors_TableSeeder extends Seeder
         //Each University_Major row will have 8 related StudentBackground rows, each StudentBackground row will have 24
         //related Investment rows,so then each University_Major row has 576 possible combinations for Investment data.
         foreach($data as $row){
-            DB::table('university_majors')->insert([
-                'id'            => $row->id,
+            $university_major = DB::table('university_majors');
+            $university_major->insert([
                 'hegis_code'    => $row->hegis_code,
-                'college_id'    => $row->college_id,
+                'college_id'    => 1,
                 'university_id' => $row-> university_id
             ]);
-
+            $university_major = $university_major->first();
             foreach($age_ranges as $age_range){
                 foreach($education_levels as $education_level){
                     $student_background = factory(StudentBackground::class)->create([
-                        'university_major_id' => $row->id,
+                        'university_major_id' => $university_major->id,
                         'age_range_id' => $age_range['age_range_id'],
                         'education_level' => $education_level
                     ]);
