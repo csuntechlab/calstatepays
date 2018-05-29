@@ -139,15 +139,15 @@ export default {
                 series: [
                     {
                         type: 'line',
-                        name: this.toolTipTitles1,
-                        data: this.someCollegeEarnings,
+                        name:  this.toolTipTitles3,
+                        data:  this.mastersEarnings,
                         lineStyle: {
-                            color: this.toolColors1,
+                            color: this.toolColors3,
                             width: 4
                         },
                         itemStyle: {
-                            color: this.toolColors1
-                        },
+                            color: this.toolColors3
+                        }
                     },
                     {
                         type: 'line',
@@ -163,15 +163,15 @@ export default {
                     },
                     {
                         type: 'line',
-                        name:  this.toolTipTitles3,
-                        data:  this.mastersEarnings,
+                        name: this.toolTipTitles1,
+                        data: this.someCollegeEarnings,
                         lineStyle: {
-                            color: this.toolColors3,
+                            color: this.toolColors1,
                             width: 4
                         },
                         itemStyle: {
-                            color: this.toolColors3
-                        }
+                            color: this.toolColors1
+                        },
                     }
                 ],
                 animationDuration: 2000

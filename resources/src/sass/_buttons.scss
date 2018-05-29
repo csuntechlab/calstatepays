@@ -56,6 +56,13 @@ input[type="button"]:focus{
     height: 45px;
     color: white;
 }
+.button-link {
+    .home-btn__degrees, .home-btn__pfre, .home-btn__majors {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
 .home-btn__degrees{
     background: $oxford;
 }
