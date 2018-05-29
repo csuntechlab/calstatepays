@@ -42185,6 +42185,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].educationLevel = payload.educationLevel;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
+        educationLevel: 'allDegrees',
         industries: [],
         majorData: []
     });
@@ -45577,20 +45578,20 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['educationLevel']), {
         mastersEarnings: function mastersEarnings() {
-            if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected[0];
+            if (this.majorData.length > 0) {
+                return this.majorData[0];
             }
             return null;
         },
         bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected[1];
+            if (this.majorData.length > 0) {
+                return this.majorData[1];
             }
             return null;
         },
         someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorDataSelected.length > 0) {
-                return this.majorDataSelected[2];
+            if (this.majorData.length > 0) {
+                return this.majorData[2];
             }
             return null;
         },

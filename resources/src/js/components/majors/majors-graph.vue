@@ -28,20 +28,20 @@ export default {
             'educationLevel'
         ]),
         mastersEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[0];
+            if(this.majorData.length > 0){
+                return this.majorData[0];
             }
             return null;
         },
         bachelorsEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[1];
+            if(this.majorData.length > 0){
+                return this.majorData[1];
             }
             return null;
         },
         someCollegeEarnings(){
-            if(this.majorDataSelected.length > 0){
-                return this.majorDataSelected[2];
+            if(this.majorData.length > 0){
+                return this.majorData[2];
             }
             return null;
         },

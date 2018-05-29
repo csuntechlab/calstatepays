@@ -35,6 +35,7 @@ export default {
 
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
+            educationLevel: 'allDegrees',
             industries: [],
             majorData: []
         });
