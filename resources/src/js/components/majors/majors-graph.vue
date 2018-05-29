@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorData', 'educationLevel'],
+    props: ['majorData', 'educationLevel', 'majorId'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -43,7 +43,10 @@ export default {
             return null;
         },
         majorName(){
-            return "Testarino";
+            if(this.majorData.length > 0){
+                return this.$store.getters.majorNameById(this.majorId);
+            }
+            return null;
         },
         toolTipTitles1(){
             let title="Some College"

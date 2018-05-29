@@ -6,6 +6,10 @@ export default {
         const index = state.majors.findIndex((major) => major.majorId === Number(id));
         return state.majors[index];
     },
+    majorNameById: (state, getters) => id => {
+        const major = getters.majorById(id);
+        return major.major;
+    },
     majorData: state => index => state.majorCards[index].majorData,
     industries: state => index => state.majorCards[index].industries,
     educationLevel: state => index => state.majorCards[index].educationLevel,

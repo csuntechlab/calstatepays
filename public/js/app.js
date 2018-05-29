@@ -42118,6 +42118,12 @@ if (inBrowser && window.Vue) {
             return state.majors[index];
         };
     },
+    majorNameById: function majorNameById(state, getters) {
+        return function (id) {
+            var major = getters.majorById(id);
+            return major.major;
+        };
+    },
     majorData: function majorData(state) {
         return function (index) {
             return state.majorCards[index].majorData;
@@ -45559,7 +45565,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel'],
+    props: ['majorData', 'educationLevel', 'majorId'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
@@ -45594,7 +45600,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return null;
         },
         majorName: function majorName() {
-            return "Testarino";
+            if (this.majorData.length > 0) {
+                return this.$store.getters.majorNameById(this.majorId);
+            }
+            return null;
         },
         toolTipTitles1: function toolTipTitles1() {
             var title = "Some College";
@@ -82500,7 +82509,8 @@ var render = function() {
   return _c("majors-graph", {
     attrs: {
       majorData: _vm.parsedMajorData,
-      educationLevel: this.educationLevel
+      educationLevel: this.educationLevel,
+      majorId: _vm.majorData.majorId
     }
   })
 }
