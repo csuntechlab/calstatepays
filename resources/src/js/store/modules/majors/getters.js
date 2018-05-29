@@ -8,6 +8,7 @@ export default {
     },
     majorData: state => index => state.majorCards[index].majorData,
     industries: state => index => state.majorCards[index].industries,
+    educationLevel: state => index => state.majorCards[index].educationLevel,
     universities: state => state.universities,
     universityById: (state, getters) => (id) => {
         const index = getters.universities.findIndex(campus => campus.id == id);

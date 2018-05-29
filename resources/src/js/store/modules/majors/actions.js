@@ -45,6 +45,10 @@ export default {
         );
     }, 
 
+    toggleEducationLevel({commit}, payload) {
+        commit(_majors.TOGGLE_EDUCATION_LEVEL, payload);
+    },
+
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);
     }

@@ -12,10 +12,10 @@
                          <major-form :index="index"></major-form>
                     </div>
                     <div class="col col-7">
-                        <majors-graph :majorData="selectedMajorData"></majors-graph>
+                        <majors-graph :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></majors-graph>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
-                        <major-legend></major-legend>
+                        <major-legend :educationLevel="selectedEducationLevel"></major-legend>
                     </div>
                 </div>
             </div>
@@ -39,13 +39,17 @@ export default {
         ...mapGetters([
             'universityById',
             'industries',
-            'majorData'
+            'majorData',
+            'educationLevel'
         ]),
         selectedMajorData() {
             return this.majorData(this.index);
         },
         selectedIndustries() {
             return this.industries(this.index);
+        },
+        selectedEducationLevel() {
+            return this.educationLevel(this.index);
         }
     },
     components: { 

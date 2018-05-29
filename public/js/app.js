@@ -28128,6 +28128,7 @@ var FETCH_MAJORS = 'majors/FETCH_MAJORS';
 var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
 var FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
+var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -28135,6 +28136,7 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
     FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
     FETCH_UNIVERSITIES: FETCH_UNIVERSITIES,
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
+    TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     ADD_MAJOR_CARD: ADD_MAJOR_CARD
 });
 
@@ -42092,7 +42094,8 @@ if (inBrowser && window.Vue) {
     universities: [],
     majorCards: [{
         industries: [],
-        majorData: []
+        majorData: [],
+        educationLevel: 'allDegrees'
     }]
 });
 
@@ -42123,6 +42126,11 @@ if (inBrowser && window.Vue) {
     industries: function industries(state) {
         return function (index) {
             return state.majorCards[index].industries;
+        };
+    },
+    educationLevel: function educationLevel(state) {
+        return function (index) {
+            return state.majorCards[index].educationLevel;
         };
     },
     universities: function universities(state) {
@@ -42172,6 +42180,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].industries = payload;
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_EDUCATION_LEVEL, function (state, payload) {
+    var index = payload.cardIndex;
+    state.majorCards[index].educationLevel = payload.educationLevel;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
         industries: [],
@@ -42236,8 +42247,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    addMajorCard: function addMajorCard(_ref5) {
+    toggleEducationLevel: function toggleEducationLevel(_ref5, payload) {
         var commit = _ref5.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TOGGLE_EDUCATION_LEVEL, payload);
+    },
+    addMajorCard: function addMajorCard(_ref6) {
+        var commit = _ref6.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD);
     }
@@ -45068,12 +45084,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['index'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel']), {
         selectedMajorData: function selectedMajorData() {
             return this.majorData(this.index);
         },
         selectedIndustries: function selectedIndustries() {
             return this.industries(this.index);
+        },
+        selectedEducationLevel: function selectedEducationLevel() {
+            return this.educationLevel(this.index);
         }
     }),
     components: {
@@ -45223,6 +45242,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             } else {
                 this.form[field] = null;
             }
+        },
+        toggleEducationLevel: function toggleEducationLevel() {
+            this.$store.dispatch('toggleEducationLevel', {
+                cardIndex: this.form.cardIndex,
+                educationLevel: this.form.educationLevel
+            });
         }
     }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'universities'])),
@@ -45335,9 +45360,14 @@ var render = function() {
               checked: _vm._q(_vm.form.educationLevel, "allDegrees")
             },
             on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "educationLevel", "allDegrees")
-              }
+              change: [
+                function($event) {
+                  _vm.$set(_vm.form, "educationLevel", "allDegrees")
+                },
+                function($event) {
+                  _vm.toggleEducationLevel()
+                }
+              ]
             }
           }),
           _vm._v(" "),
@@ -45362,9 +45392,14 @@ var render = function() {
               checked: _vm._q(_vm.form.educationLevel, "someCollege")
             },
             on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "educationLevel", "someCollege")
-              }
+              change: [
+                function($event) {
+                  _vm.$set(_vm.form, "educationLevel", "someCollege")
+                },
+                function($event) {
+                  _vm.toggleEducationLevel()
+                }
+              ]
             }
           }),
           _vm._v(" "),
@@ -45387,9 +45422,14 @@ var render = function() {
             },
             domProps: { checked: _vm._q(_vm.form.educationLevel, "bachelors") },
             on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "educationLevel", "bachelors")
-              }
+              change: [
+                function($event) {
+                  _vm.$set(_vm.form, "educationLevel", "bachelors")
+                },
+                function($event) {
+                  _vm.toggleEducationLevel()
+                }
+              ]
             }
           }),
           _vm._v(" "),
@@ -45414,9 +45454,14 @@ var render = function() {
             },
             domProps: { checked: _vm._q(_vm.form.educationLevel, "postBacc") },
             on: {
-              change: function($event) {
-                _vm.$set(_vm.form, "educationLevel", "postBacc")
-              }
+              change: [
+                function($event) {
+                  _vm.$set(_vm.form, "educationLevel", "postBacc")
+                },
+                function($event) {
+                  _vm.toggleEducationLevel()
+                }
+              ]
             }
           }),
           _vm._v(" "),
@@ -62952,7 +62997,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['form'],
+    props: ['educationLevel'],
     data: function data() {
         return {
             isAll: true
@@ -62969,7 +63014,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.form.educationLevel == "allDegrees"
+    _vm.educationLevel == "allDegrees"
       ? _c("div", [
           _c("h5", { staticClass: "font-weight-bold pb-2" }, [
             _vm._v("Graduation Level: ")
@@ -62984,7 +63029,7 @@ var render = function() {
           _c("div", { staticClass: "legend-green m-0" }),
           _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
         ])
-      : _vm.form.educationLevel == "someCollege"
+      : _vm.educationLevel == "someCollege"
         ? _c("div", [
             _c("h5", { staticClass: "font-weight-bold pb-2" }, [
               _vm._v("Percentile: ")
@@ -62999,7 +63044,7 @@ var render = function() {
             _c("div", { staticClass: "legend-oxford-75 m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
           ])
-        : _vm.form.educationLevel == "bachelors"
+        : _vm.educationLevel == "bachelors"
           ? _c("div", [
               _c("h5", { staticClass: "font-weight-bold pb-2" }, [
                 _vm._v("Percentile: ")
@@ -63014,7 +63059,7 @@ var render = function() {
               _c("div", { staticClass: "legend-gold-75 m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
             ])
-          : _vm.form.educationLevel == "postBacc"
+          : _vm.educationLevel == "postBacc"
             ? _c("div", [
                 _c("h5", { staticClass: "font-weight-bold pb-2" }, [
                   _vm._v("Percentile: ")
@@ -63082,7 +63127,10 @@ var render = function() {
               { staticClass: "col col-7" },
               [
                 _c("majors-graph", {
-                  attrs: { majorData: _vm.selectedMajorData }
+                  attrs: {
+                    majorData: _vm.selectedMajorData,
+                    educationLevel: _vm.selectedEducationLevel
+                  }
                 })
               ],
               1
@@ -63091,7 +63139,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-2 mt-4 pt-5 pl-0" },
-              [_c("major-legend")],
+              [
+                _c("major-legend", {
+                  attrs: { educationLevel: _vm.selectedEducationLevel }
+                })
+              ],
               1
             )
           ])

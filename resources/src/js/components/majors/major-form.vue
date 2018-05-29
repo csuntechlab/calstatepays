@@ -33,13 +33,13 @@
         </div>
         <div class="form__group" v-else>
             <p class="h3 text-gray my-5">Select a Degree Level</p>
-            <input type="radio" name="allDegrees" id="allDegrees" v-model="form.educationLevel" checked value="allDegrees">
+            <input type="radio" name="allDegrees" id="allDegrees" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label for="allDegrees">All</label>
-            <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" value="someCollege">
+            <input type="radio" name="someCollege" id="someCollege" v-model="form.educationLevel" @change="toggleEducationLevel()" value="someCollege">
             <label for="postBacc">Some College</label>
-            <input type="radio" name="bachelors" id="bachelors" v-model="form.educationLevel" value="bachelors">
+            <input type="radio" name="bachelors" id="bachelors" v-model="form.educationLevel" @change="toggleEducationLevel()" value="bachelors">
             <label for="bachelors">Bachelor's Degree</label>
-            <input type="radio" name="postBacc" id="postBacc" v-model="form.educationLevel" value="postBacc">
+            <input type="radio" name="postBacc" id="postBacc" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">
             <label for="postBacc">Post Bacc</label>
         </div>
     </form>
@@ -66,7 +66,7 @@ export default {
     methods: {
         ...mapActions([
             'fetchIndustryImages',
-            'fetchMajorData'
+            'fetchMajorData',
         ]),
         updateForm,
         submitForm(){
@@ -80,6 +80,12 @@ export default {
             } else {
                 this.form[field] = null;
             }
+        },
+        toggleEducationLevel() {
+            this.$store.dispatch('toggleEducationLevel', {
+                cardIndex: this.form.cardIndex,
+                educationLevel: this.form.educationLevel
+            })
         }
     },
     computed: {

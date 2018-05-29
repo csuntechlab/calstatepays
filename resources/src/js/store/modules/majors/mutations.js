@@ -28,6 +28,11 @@ export default {
         state.majorCards[index].industries = payload;
     },
 
+    [_majors.TOGGLE_EDUCATION_LEVEL](state, payload) {
+        let index = payload.cardIndex;
+        state.majorCards[index].educationLevel = payload.educationLevel;
+    },
+
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
             industries: [],

@@ -8,6 +8,7 @@ export default {
         {
             industries: [],
             majorData: [],
+            educationLevel: 'allDegrees'
         }
     ]
 };
