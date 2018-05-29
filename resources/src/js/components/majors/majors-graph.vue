@@ -25,16 +25,25 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'majorById'
+            'educationLevel'
         ]),
         mastersEarnings(){
-            return this.majorData.postBacc;
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected[0];
+            }
+            return null;
         },
         bachelorsEarnings(){
-            return this.majorData.bachelors;
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected[1];
+            }
+            return null;
         },
         someCollegeEarnings(){
-            return this.majorData.someCollege;
+            if(this.majorDataSelected.length > 0){
+                return this.majorDataSelected[2];
+            }
+            return null;
         },
         majorName(){
             return "Testarino";
@@ -104,8 +113,7 @@ export default {
         },
 
         polar(){
-
-            if(this.someCollegeEarnings){
+            // if(this.someCollegeEarnings){
                 return {
                     title: {
                         text: this.majorName,
@@ -169,7 +177,7 @@ export default {
                         }
                     ],
                     animationDuration: 2000
-                }
+                // }
             }
             return null;
         }

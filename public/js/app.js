@@ -45040,12 +45040,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__global_card__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__ = __webpack_require__(175);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__major_legend_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_index__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -45082,9 +45084,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['index'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel']), {
         selectedMajorData: function selectedMajorData() {
             return this.majorData(this.index);
         },
@@ -45098,9 +45101,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
         card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
+        majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
         majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
-        industryCarousel: __WEBPACK_IMPORTED_MODULE_3__industries_industry_carousel_vue___default.a,
-        majorLegend: __WEBPACK_IMPORTED_MODULE_4__major_legend_vue___default.a
+        industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
+        majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
     }
 });
 
@@ -45571,15 +45575,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['majorById']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['educationLevel']), {
         mastersEarnings: function mastersEarnings() {
-            return this.majorData.postBacc;
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[0];
+            }
+            return null;
         },
         bachelorsEarnings: function bachelorsEarnings() {
-            return this.majorData.bachelors;
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[1];
+            }
+            return null;
         },
         someCollegeEarnings: function someCollegeEarnings() {
-            return this.majorData.someCollege;
+            if (this.majorDataSelected.length > 0) {
+                return this.majorDataSelected[2];
+            }
+            return null;
         },
         majorName: function majorName() {
             return "Testarino";
@@ -45646,69 +45659,68 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return color;
         },
         polar: function polar() {
-
-            if (this.someCollegeEarnings) {
-                return {
-                    title: {
-                        text: this.majorName,
-                        left: 'center',
-                        textStyle: {
-                            color: '#777777',
-                            fontFamily: 'Montserrat'
-                        }
+            // if(this.someCollegeEarnings){
+            return {
+                title: {
+                    text: this.majorName,
+                    left: 'center',
+                    textStyle: {
+                        color: '#777777',
+                        fontFamily: 'Montserrat'
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross'
+                    }
+                },
+                xAxis: {
+                    data: this.xAxis
+                },
+                legend: {
+                    data: ['line']
+                },
+                yAxis: {
+                    max: 150000
+                },
+                series: [{
+                    type: 'line',
+                    name: this.toolTipTitles1,
+                    data: this.someCollegeEarnings,
+                    lineStyle: {
+                        color: this.toolColors1,
+                        width: 4
                     },
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            type: 'cross'
-                        }
+                    itemStyle: {
+                        color: this.toolColors1
+                    }
+                }, {
+                    type: 'line',
+                    name: this.toolTipTitles2,
+                    data: this.bachelorsEarnings,
+                    lineStyle: {
+                        color: this.toolColors2,
+                        width: 4
                     },
-                    xAxis: {
-                        data: this.xAxis
+                    itemStyle: {
+                        color: this.toolColors2
+                    }
+                }, {
+                    type: 'line',
+                    name: this.toolTipTitles3,
+                    data: this.mastersEarnings,
+                    lineStyle: {
+                        color: this.toolColors3,
+                        width: 4
                     },
-                    legend: {
-                        data: ['line']
-                    },
-                    yAxis: {
-                        max: 150000
-                    },
-                    series: [{
-                        type: 'line',
-                        name: this.toolTipTitles1,
-                        data: this.someCollegeEarnings,
-                        lineStyle: {
-                            color: this.toolColors1,
-                            width: 4
-                        },
-                        itemStyle: {
-                            color: this.toolColors1
-                        }
-                    }, {
-                        type: 'line',
-                        name: this.toolTipTitles2,
-                        data: this.bachelorsEarnings,
-                        lineStyle: {
-                            color: this.toolColors2,
-                            width: 4
-                        },
-                        itemStyle: {
-                            color: this.toolColors2
-                        }
-                    }, {
-                        type: 'line',
-                        name: this.toolTipTitles3,
-                        data: this.mastersEarnings,
-                        lineStyle: {
-                            color: this.toolColors3,
-                            width: 4
-                        },
-                        itemStyle: {
-                            color: this.toolColors3
-                        }
-                    }],
-                    animationDuration: 2000
-                };
-            }
+                    itemStyle: {
+                        color: this.toolColors3
+                    }
+                }],
+                animationDuration: 2000
+                // }
+            };
             return null;
         }
     })
@@ -63126,7 +63138,7 @@ var render = function() {
               "div",
               { staticClass: "col col-7" },
               [
-                _c("majors-graph", {
+                _c("major-graph-wrapper", {
                   attrs: {
                     majorData: _vm.selectedMajorData,
                     educationLevel: _vm.selectedEducationLevel
@@ -82396,6 +82408,110 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(335)
+/* template */
+var __vue_template__ = __webpack_require__(336)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-graph-wrapper.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ee37b0e4", Component.options)
+  } else {
+    hotAPI.reload("data-v-ee37b0e4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 335 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__);
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['majorData', 'educationLevel'],
+    computed: {
+        parsedMajorData: function parsedMajorData() {
+            if (this.majorData.length == 0) {
+                return [];
+            }
+            if (this.educationLevel == "allDegrees") {
+                return [[this.majorData.postBacc['2'].avg_annual_wage, this.majorData.postBacc['5'].avg_annual_wage, this.majorData.postBacc['10'].avg_annual_wage], [this.majorData.bachelors['2'].avg_annual_wage, this.majorData.bachelors['5'].avg_annual_wage, this.majorData.bachelors['10'].avg_annual_wage], [this.majorData.someCollege['2'].avg_annual_wage, this.majorData.someCollege['5'].avg_annual_wage, this.majorData.someCollege['10'].avg_annual_wage]];
+            } else {
+                return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
+            }
+        }
+    },
+    components: {
+        majorsGraph: __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default.a
+    }
+});
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("majors-graph", { attrs: { majorData: _vm.parsedMajorData } })
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ee37b0e4", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

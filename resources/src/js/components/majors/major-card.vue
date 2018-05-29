@@ -12,7 +12,7 @@
                          <major-form :index="index"></major-form>
                     </div>
                     <div class="col col-7">
-                        <majors-graph :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></majors-graph>
+                        <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
                         <major-legend :educationLevel="selectedEducationLevel"></major-legend>
@@ -26,6 +26,7 @@
 import majorForm from './major-form.vue';
 import card from '../global/card';
 import majorsGraph from './majors-graph.vue';
+import majorGraphWrapper from './major-graph-wrapper.vue';
 import industryCarousel from "../industries/industry-carousel.vue";
 import majorLegend from './major-legend.vue';
 
@@ -55,6 +56,7 @@ export default {
     components: { 
         majorForm,
         card,
+        majorGraphWrapper,
         majorsGraph,
         industryCarousel,
         majorLegend        
