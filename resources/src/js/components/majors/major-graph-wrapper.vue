@@ -1,5 +1,5 @@
 <template>
-    <majors-graph :majorData="parsedMajorData"></majors-graph>
+    <majors-graph :majorData="parsedMajorData" :educationLevel="this.educationLevel"></majors-graph>
 </template>
 
 <script>

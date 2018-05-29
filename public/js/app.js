@@ -45548,8 +45548,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(13);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 //
 //
 //
@@ -45561,7 +45559,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData'],
+    props: ['majorData', 'educationLevel'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
@@ -45576,7 +45574,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["c" /* mapGetters */])(['educationLevel']), {
+    computed: {
         mastersEarnings: function mastersEarnings() {
             if (this.majorData.length > 0) {
                 return this.majorData[0];
@@ -45599,7 +45597,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return "Testarino";
         },
         toolTipTitles1: function toolTipTitles1() {
-
             var title = "Some College";
             if (this.educationLevel !== "allDegrees") {
                 title = "25th Percentile";
@@ -45660,7 +45657,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return color;
         },
         polar: function polar() {
-            // if(this.someCollegeEarnings){
             return {
                 title: {
                     text: this.majorName,
@@ -45720,11 +45716,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     }
                 }],
                 animationDuration: 2000
-                // }
             };
             return null;
         }
-    })
+    }
 });
 
 /***/ }),
@@ -82502,7 +82497,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("majors-graph", { attrs: { majorData: _vm.parsedMajorData } })
+  return _c("majors-graph", {
+    attrs: {
+      majorData: _vm.parsedMajorData,
+      educationLevel: this.educationLevel
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true

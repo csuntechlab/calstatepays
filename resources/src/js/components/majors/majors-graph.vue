@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorData'],
+    props: ['majorData', 'educationLevel'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -24,9 +24,6 @@ export default {
         'chart': ECharts
     },
     computed: {
-        ...mapGetters([
-            'educationLevel'
-        ]),
         mastersEarnings(){
             if(this.majorData.length > 0){
                 return this.majorData[0];
@@ -49,7 +46,6 @@ export default {
             return "Testarino";
         },
         toolTipTitles1(){
-
             let title="Some College"
             if(this.educationLevel !== "allDegrees"){
                 title="25th Percentile"
@@ -113,71 +109,69 @@ export default {
         },
 
         polar(){
-            // if(this.someCollegeEarnings){
-                return {
-                    title: {
-                        text: this.majorName,
-                    left: 'center',
-                    textStyle: {
-                        color: '#777777',
-                        fontFamily: 'Montserrat',
+            return {
+                title: {
+                    text: this.majorName,
+                left: 'center',
+                textStyle: {
+                    color: '#777777',
+                    fontFamily: 'Montserrat',
+                }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross'
                     }
+                },
+                xAxis: {
+                    data: this.xAxis
+                },
+                legend: {
+                    data: ['line']
+                },
+                yAxis: {
+                    max: 150000
+                },
+                series: [
+                    {
+                        type: 'line',
+                        name: this.toolTipTitles1,
+                        data: this.someCollegeEarnings,
+                        lineStyle: {
+                            color: this.toolColors1,
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: this.toolColors1
+                        },
                     },
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            type: 'cross'
+                    {
+                        type: 'line',
+                        name: this.toolTipTitles2,
+                        data: this.bachelorsEarnings,
+                        lineStyle: {
+                            color: this.toolColors2,
+                            width: 4
+                        },
+                        itemStyle: {
+                            color: this.toolColors2
                         }
                     },
-                    xAxis: {
-                        data: this.xAxis
-                    },
-                    legend: {
-                        data: ['line']
-                    },
-                    yAxis: {
-                        max: 150000
-                    },
-                    series: [
-                        {
-                            type: 'line',
-                            name: this.toolTipTitles1,
-                            data: this.someCollegeEarnings,
-                            lineStyle: {
-                                color: this.toolColors1,
-                                width: 4
-                            },
-                            itemStyle: {
-                                color: this.toolColors1
-                            },
+                    {
+                        type: 'line',
+                        name:  this.toolTipTitles3,
+                        data:  this.mastersEarnings,
+                        lineStyle: {
+                            color: this.toolColors3,
+                            width: 4
                         },
-                        {
-                            type: 'line',
-                            name: this.toolTipTitles2,
-                            data: this.bachelorsEarnings,
-                            lineStyle: {
-                                color: this.toolColors2,
-                                width: 4
-                            },
-                            itemStyle: {
-                                color: this.toolColors2
-                            }
-                        },
-                        {
-                            type: 'line',
-                            name:  this.toolTipTitles3,
-                            data:  this.mastersEarnings,
-                            lineStyle: {
-                                color: this.toolColors3,
-                                width: 4
-                            },
-                            itemStyle: {
-                                color: this.toolColors3
-                            }
+                        itemStyle: {
+                            color: this.toolColors3
                         }
-                    ],
-                    animationDuration: 2000
-                // }
+                    }
+                ],
+                animationDuration: 2000
             }
             return null;
         }
