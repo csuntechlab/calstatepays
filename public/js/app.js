@@ -62940,28 +62940,28 @@ var render = function() {
             _vm._v("Graduation Level: ")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "legend-oxford m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")]),
+          _c("div", { staticClass: "legend-green m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")]),
           _vm._v(" "),
           _c("div", { staticClass: "legend-gold m-0" }),
           _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")]),
           _vm._v(" "),
-          _c("div", { staticClass: "legend-green m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+          _c("div", { staticClass: "legend-oxford m-0" }),
+          _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
         ])
-      : _vm.form.educationLevel == "someCollege"
+      : _vm.form.educationLevel == "postBacc"
         ? _c("div", [
             _c("h5", { staticClass: "font-weight-bold pb-2" }, [
               _vm._v("Percentile: ")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford-25 m-0" }),
+            _c("div", { staticClass: "legend-green-25 m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford m-0" }),
+            _c("div", { staticClass: "legend-green m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford-75 m-0" }),
+            _c("div", { staticClass: "legend-green-75 m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
           ])
         : _vm.form.educationLevel == "bachelors"
@@ -62979,19 +62979,19 @@ var render = function() {
               _c("div", { staticClass: "legend-gold-75 m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
             ])
-          : _vm.form.educationLevel == "postBacc"
+          : _vm.form.educationLevel == "someCollege"
             ? _c("div", [
                 _c("h5", { staticClass: "font-weight-bold pb-2" }, [
                   _vm._v("Percentile: ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green-25 m-0" }),
+                _c("div", { staticClass: "legend-oxford-25 m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green m-0" }),
+                _c("div", { staticClass: "legend-oxford m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green-75 m-0" }),
+                _c("div", { staticClass: "legend-oxford-75 m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
               ])
             : _vm._e()
