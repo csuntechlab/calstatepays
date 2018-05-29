@@ -20,6 +20,8 @@ Route::get('/learn-and-earn/major-data/{universityId}', 'LearnAndEarnController@
 //Major
 Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')->name('major.hegis-codes');
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
+Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
+    'MajorController@getFREData');
 
 //Industry
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
