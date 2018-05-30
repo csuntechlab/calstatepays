@@ -127,7 +127,28 @@ class University_Majors_TableSeeder extends Seeder
                     $population->population_size = $population_size;
                     $population->percentage_found = ($population_found/$population_size) * 100;
                     $population->save();
-                    factory(MajorPathWage::class)->create(['major_path_id'=> $majorPath->id, 'population_sample_id' => $population->id]);
+                    //factory(MajorPathWage::class)->create(['major_path_id'=> $majorPath->id, 'population_sample_id' => $population->id]);
+                    $major_path_wage = new MajorPathWage();
+                    if($year['years'] == 2){
+                        $base_wage = $faker->numberBetween(30000,35000);
+                    }elseif ($year['years'] == 5){
+                        $base_wage = $faker->numberBetween(40000,50000);
+                    }else {
+                        $base_wage = $faker->numberBetween(70000,85000);
+                    }
+
+                    if($student_path['student_path'] == 2){
+                        $base_wage += 10000;
+                    } elseif($student_path['student_path'] == 3){
+                        $base_wage += 25000;
+                    }
+                    $major_path_wage->avg_annual_wage = $base_wage;
+                    $major_path_wage->_25th = $base_wage - 5000;
+                    $major_path_wage->_50th = $base_wage;
+                    $major_path_wage->_75th = $base_wage + 10000;
+                    $major_path_wage->major_path_id = $majorPath->id;
+                    $major_path_wage->population_sample_id = $population->id;
+                    $major_path_wage->save();
                 }
             }
 
