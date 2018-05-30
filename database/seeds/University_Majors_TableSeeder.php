@@ -9,6 +9,7 @@ use App\Models\MajorPathWage;
 use App\Models\Population;
 use App\Models\IndustryPathType;
 use App\Models\IndustryWage;
+use Faker\Factory as Faker;
 class University_Majors_TableSeeder extends Seeder
 {
     /**
@@ -118,17 +119,31 @@ class University_Majors_TableSeeder extends Seeder
                     $majorPath->years  = $year['years'];
                     $majorPath->save();
 
-                    factory(MajorPathWage::class)->create(['major_path_id'=> $majorPath->id, 'population_sample_id' => $majorPath->id]);
-                    factory(Population::class)->create(['id' => $majorPath->id])->id;
+                    $faker = Faker::create();
+                    $population_found = $faker->numberBetween(500, 1500);
+                    $population_size = $faker->numberBetween(5000, 9000);
+                    $population = new Population();
+                    $population->population_found = $population_found;
+                    $population->population_size = $population_size;
+                    $population->percentage_found = ($population_found/$population_size) * 100;
+                    $population->save();
+                    factory(MajorPathWage::class)->create(['major_path_id'=> $majorPath->id, 'population_sample_id' => $population->id]);
                 }
             }
 
             foreach($naics as $naic){
-                $population = factory(Population::class)->create()->id;
+                $faker = Faker::create();
+                $population_found = $faker->numberBetween(500, 1500);
+                $population_size = $faker->numberBetween(5000, 9000);
+                $population = new Population();
+                $population->population_found = $population_found;
+                $population->population_size = $population_size;
+                $population->percentage_found = ($population_found/$population_size) * 100;
+                $population->save();
                 factory(IndustryPathType::class)->create([
                     'naics_code'           => $naic['code'],
                     'university_majors_id' => $university_major->id,
-                    'population_sample_id' => $population
+                    'population_sample_id' => $population->id
                 ]);
             }
         };
