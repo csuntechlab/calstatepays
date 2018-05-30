@@ -35,12 +35,12 @@
             <p class="h3 text-gray my-5">Select a Degree Level</p>
             <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label :for="'allDegrees-' + form.cardIndex">All</label>
-            <input type="radio" name="someCollege" :id="'someCollege-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="someCollege">
-            <label :for="'someCollege-' + form.cardIndex">Some College</label>
-            <input type="radio" name="bachelors" :id="'bachelors-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="bachelors">
-            <label :for="'bachelors-' + form.cardIndex">Bachelor's Degree</label>
             <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">
             <label :for="'postBacc-' + form.cardIndex">Post Bacc</label>
+            <input type="radio" name="bachelors" :id="'bachelors-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="bachelors">
+            <label :for="'bachelors-' + form.cardIndex">Bachelor's Degree</label>
+            <input type="radio" name="someCollege" :id="'someCollege-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="someCollege">
+            <label :for="'someCollege-' + form.cardIndex">Some College</label>
         </div>
     </form>
 </template>
