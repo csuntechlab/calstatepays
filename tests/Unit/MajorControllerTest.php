@@ -26,7 +26,6 @@ class MajorControllerTest extends TestCase
         $this->controller = new MajorController();
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Major_Paths_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
     }
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()

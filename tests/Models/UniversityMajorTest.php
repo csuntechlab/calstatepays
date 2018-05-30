@@ -17,7 +17,7 @@ class UniversityMajorTest extends TestCase
     {
         parent::setUp();
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Major_Paths_TableSeeder');
+
     }
 
     public function test_withMajorPathWage_returns_related_table_data()
