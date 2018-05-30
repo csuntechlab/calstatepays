@@ -17,6 +17,7 @@ class CreateUniversityMajorsTable extends Migration
             $table->increments('id');
             $table->integer('hegis_code');
             $table->integer('college_id')->nullable();
+            $table->integer('field_of_study_id')->default(0);
             $table->integer('university_id');
             $table->timestamps();
         });
