@@ -4,7 +4,7 @@
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
-                        <industry-carousel :industries="selectedIndustries"></industry-carousel>				
+                        <industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
                     </div>
                 </div>
                 <div class="row m-1 p-0">
@@ -43,6 +43,12 @@ export default {
             'majorData',
             'educationLevel'
         ]),
+        isEmpty(){
+            //Check whether the form field was fired off, toggle carousel on
+            if(this.industries(this.index).length === 0){
+                return false;
+            } return true;
+        },
         selectedMajorData() {
             return this.majorData(this.index);
         },
