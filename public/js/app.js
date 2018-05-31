@@ -63059,8 +63059,8 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("p", { staticClass: "text-grey h6 industry-info align-center" }, [
-        _vm._v("Common Industry Of Employment")
+      _c("h3", { staticClass: "industry-title" }, [
+        _vm._v("Industry By Employment")
       ]),
       _vm._v(" "),
       _c(
