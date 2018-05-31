@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFieldOfStudyTable extends Migration
+class CreateHegisCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateFieldOfStudyTable extends Migration
      */
     public function up()
     {
-        Schema::create('field_of_studies', function(Blueprint $table){
-            $table->integer('id');
-            $table->string('name');
-            $table->integer('hegis_category_id');
+        Schema::create('hegis_categories', function(Blueprint $table){
+           $table->integer('category_id');
+           $table->string('category_name');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateFieldOfStudyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('field_of_studies');
+        Schema::dropIfExists('hegis_categories');
     }
 }
