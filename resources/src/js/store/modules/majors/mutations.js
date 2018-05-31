@@ -11,7 +11,8 @@ export default {
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
-       state.majorData.push(payload);
+        let index = payload.cardIndex;
+        state.majorCards[index].majorData = payload;
     },
 
     [_majors.FETCH_UNIVERSITIES](state, payload) {
@@ -22,5 +23,22 @@ export default {
         }); 
     },
 
+    [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
+        let index = payload.cardIndex;
+        state.majorCards[index].industries = payload;
+    },
+
+    [_majors.TOGGLE_EDUCATION_LEVEL](state, payload) {
+        let index = payload.cardIndex;
+        state.majorCards[index].educationLevel = payload.educationLevel;
+    },
+
+    [_majors.ADD_MAJOR_CARD](state) {
+        state.majorCards.push({
+            educationLevel: 'allDegrees',
+            industries: [],
+            majorData: []
+        });
+    }
 
 }

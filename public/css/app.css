@@ -27605,6 +27605,11 @@ input[type="button"]:focus {
   color: white;
 }
 
+.button-link .home-btn__degrees, .button-link .home-btn__pfre, .button-link .home-btn__majors {
+  text-decoration: none;
+  color: #FFF;
+}
+
 .home-btn__degrees {
   background: #476A6F;
 }

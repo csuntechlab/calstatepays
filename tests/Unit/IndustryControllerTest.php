@@ -16,11 +16,8 @@ class IndustryControllerTest extends TestCase
         parent::setUp();
 
         //Build 4 tables which are related to each other.
-        $this->a = factory(UniversityMajor::class,3)->create();
-        $this->b = factory(Population::class, 20)->create();
-        $this->c = factory(NaicsTitle::class, 18)->create()->each(function ($naicsTitle) {
-            $naicsTitle->industryPathTypes()->save(factory(IndustryPathType::class)->make());
-        });
+        $this->seed('University_Majors_TableSeeder');
+        factory(NaicsTitle::class, 18)->create();
     }
 
     public function testGetAllIndustryNaicsTitles()

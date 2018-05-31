@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class MajorPath extends Model
 {
     public $timestamps = false;
+    public $incrementing = true;
     public $primaryKey = 'id';
     protected $fillable = [
         'student_path',
