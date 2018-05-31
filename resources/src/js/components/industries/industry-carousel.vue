@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p class="text-grey h6 industry-info align-center">Common Industry Of Employment</p>
     <carousel :navigationEnabled="true" :perPage=3 class="industry-carousel" :navigationClickTargetSize=20>
       <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel mx-1" v-bind:style="{ backgroundImage: 'url(' + industry.image + ')' }">
         <industry-carousel-card :industry="industry" class="industry-carousel-card"></industry-carousel-card>
