@@ -13,6 +13,10 @@ class FieldOfStudy extends Model
         'id',
         'name',
         'hegis_category_id',
-        'hegis_category_name'
     ];
+
+    public function hegisCategory(){
+        return $this->hasOne('App\Models\HEGISCategory', 'category_id', 'hegis_category_id');
+    }
+
 }
