@@ -45180,6 +45180,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     props: ['index'],
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel']), {
         isEmpty: function isEmpty() {
+            //Check whether the form field was fired off, toggle carousel on
             if (this.industries(this.index).length === 0) {
                 return false;
             }return true;
@@ -63338,6 +63339,14 @@ var render = function() {
               { staticClass: "col-2 mt-4 pt-5 pl-0" },
               [
                 _c("major-legend", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
                   attrs: { educationLevel: _vm.selectedEducationLevel }
                 })
               ],

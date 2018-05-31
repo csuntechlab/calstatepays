@@ -15,7 +15,7 @@
                         <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
-                        <major-legend :educationLevel="selectedEducationLevel"></major-legend>
+                        <major-legend v-show="isEmpty" :educationLevel="selectedEducationLevel"></major-legend>
                     </div>
                 </div>
             </div>
