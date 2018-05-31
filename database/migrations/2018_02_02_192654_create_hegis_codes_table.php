@@ -15,6 +15,7 @@ class CreateHEGISCodesTable extends Migration
     {
         Schema::create('hegis_codes', function (Blueprint $table) {
             $table->integer('hegis_code');
+            $table->integer('hegis_category_id');
             $table->string('major');
             $table->string('university')->default('N/A');
             $table->timestamps();
