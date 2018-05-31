@@ -1,51 +1,53 @@
 <template>
     <div>
         <div class="row">
-            <header id="research-main-banner">
-                <div class="row">
-                    <h2 class="text-center">
-                        We Gathered Data Across 7 CSUs in the Metro LA Area
-                    </h2>
-                </div>
-                <div class="row mt-2 csu-wrapper">
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/long_beach_seal.svg'" alt="CSU Long Beach Seal">
-                        <figcaption>Long Beach</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/poly_seal.svg'" alt="CSU Pomona Seal">
-                        <figcaption>Pomona</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/dominguez_seal.svg'" alt="CSU Dominguez Hills Seal">
-                        <figcaption>Dominguez Hills</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/northridge_seal.svg'" alt="CSU Northridge Seal">
-                        <figcaption>Northridge</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/channel_islands_seal.svg'" alt="CSU Channel Islands Seal">
-                        <figcaption>Channel Islands</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/fulleton_seal.svg'" alt="CSU Fullerton Seal">
-                        <figcaption>Fullerton</figcaption>
-                    </figure>
-                    <figure class="col-md col-sm-4 col-4 text-center">
-                        <img :src="this.url + '/img/csuseals/los_angeles_seal.svg'" alt="CSU Los Angeles Seal">
-                        <figcaption>Los Angeles</figcaption>
-                    </figure>
-                </div>
-                <div class="row">
-                    <button class="btn btn-success col-3 col-md-2">
-    -                   All Campuses
-    -               </button>
+            <header id="research-main-banner" class="row">
+                <div class="col align-self-center">
+                    <div class="row">
+                        <h2 class="text-center">
+                            We Gathered Data Across 7 CSUs in the Metro LA Area
+                        </h2>
+                    </div>
+                    <div class="row mt-2 csu-wrapper">
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/long_beach_seal.svg'" alt="CSU Long Beach Seal">
+                            <figcaption>Long Beach</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/poly_seal.svg'" alt="CSU Pomona Seal">
+                            <figcaption>Pomona</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/dominguez_seal.svg'" alt="CSU Dominguez Hills Seal">
+                            <figcaption>Dominguez Hills</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/northridge_seal.svg'" alt="CSU Northridge Seal">
+                            <figcaption>Northridge</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/channel_islands_seal.svg'" alt="CSU Channel Islands Seal">
+                            <figcaption>Channel Islands</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/fulleton_seal.svg'" alt="CSU Fullerton Seal">
+                            <figcaption>Fullerton</figcaption>
+                        </figure>
+                        <figure class="col-md col-sm-4 col-4 text-center">
+                            <img :src="this.url + '/img/csuseals/los_angeles_seal.svg'" alt="CSU Los Angeles Seal">
+                            <figcaption>Los Angeles</figcaption>
+                        </figure>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-success mb-3">
+        -                   All Campuses
+        -               </button>
+                    </div>
                 </div>
             </header>
         </div>
         
-        <main class="campuses-container c">
+        <main class="campuses-container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
                     <div id="csun" class=" campus">
