@@ -1,38 +1,117 @@
 [
     {
-        "category_name": "Undeclared",
-        "category_id": 0
+        "name": "Undeclared",
+        "id": 0,
+        "field_of_study_id": 0
     },
     {
-        "category_name": "Natural Sciences",
-        "category_id": 1
+        "name": "Agriculture",
+        "id": 1,
+        "field_of_study_id": 1
     },
     {
-        "category_name": "Social Sciences",
-        "category_id": 2
+        "name": "Biological Sciences",
+        "id": 4,
+        "field_of_study_id": 1
     },
     {
-        "category_name": "Humanities",
-        "category_id": 3
+        "name": "Mathematics",
+        "id": 17,
+        "field_of_study_id": 1
     },
     {
-        "category_name": "Arts, Music, and Communication",
-        "category_id": 4
+        "name": "Physical Science",
+        "id": 19,
+        "field_of_study_id": 1
     },
     {
-        "category_name": "Health Professions",
-        "category_id": 5
+        "name": "Psychology",
+        "id": 20,
+        "field_of_study_id": 2
     },
     {
-        "category_name": "Engineering",
-        "category_id": 6
+        "name": "Military Science",
+        "id": 18,
+        "field_of_study_id": 2
     },
     {
-        "category_name": "Business",
-        "category_id": 7
+        "name": "Public Affairs",
+        "id": 21,
+        "field_of_study_id": 2
     },
     {
-        "category_name": "Interdisciplinary",
-        "category_id": 8
+        "name": "Social Sciences",
+        "id": 22,
+        "field_of_study_id": 2
+    },
+    {
+        "name": "Foreign Languages",
+        "id": 11,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Letters",
+        "id": 15,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Library",
+        "id": 16,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Communications",
+        "id": 6,
+        "field_of_study_id": 4
+    },
+    {
+        "name": "Fine and Applied Arts",
+        "id": 10,
+        "field_of_study_id": 4
+    },
+    {
+        "name": "Health Professions",
+        "id": 12,
+        "field_of_study_id": 5
+    },
+    {
+        "name": "Home Economics",
+        "id": 13,
+        "field_of_study_id": 5
+    },
+    {
+        "name": "Architecture",
+        "id": 2,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Information Sciences",
+        "id": 7,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Engineering",
+        "id": 9,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Business-Management",
+        "id": 5,
+        "field_of_study_id": 7
+    },
+    {
+        "name": "Area Studies",
+        "id": 3,
+        "field_of_study_id": 8
+    },
+    {
+        "name": "Education",
+        "id": 8,
+        "field_of_study_id": 8
+    },
+    {
+        "name": "Interdisciplinary",
+        "id": 49,
+        "field_of_study_id": 8
     }
 ]

@@ -15,8 +15,9 @@ class Hegis_Categories_TableSeeder extends Seeder
         $data = json_decode($json);
         foreach($data as $row){
             DB::table('hegis_categories')->insert([
-                'category_name' => $row->category_name,
-                'category_id'   => $row->category_id
+                'name'              => $row->name,
+                'id'                => $row->id,
+                'field_of_study_id' => $row->field_of_study_id
             ]);
         };
     }

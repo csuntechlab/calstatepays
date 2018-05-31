@@ -8,8 +8,14 @@ class HEGISCategory extends Model
 {
     public $timestamps = false;
     protected $table = 'hegis_categories';
+
     protected $fillable = [
-        'category_id',
-        'category_name'
+        'id',
+        'name',
+        'field_of_study_id',
     ];
+
+    public function hegisCategory(){
+        return $this->hasOne('App\Models\HEGISCategory', 'id', 'field_of_study_id');
+    }
 }

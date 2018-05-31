@@ -18,7 +18,6 @@ class Field_Of_Studies_TableSeeder extends Seeder
             DB::table('field_of_studies')->insert([
                 'name'                 => $row->name,
                 'id'                   => $row->id,
-                'hegis_category_id'    => $row->hegis_category_id,
             ]);
         }
     }

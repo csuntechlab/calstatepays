@@ -14,8 +14,9 @@ class CreateHegisCategoryTable extends Migration
     public function up()
     {
         Schema::create('hegis_categories', function(Blueprint $table){
-           $table->integer('category_id');
-           $table->string('category_name');
+           $table->integer('id');
+           $table->string('name');
+           $table->integer('field_of_study_id');
         });
     }
 

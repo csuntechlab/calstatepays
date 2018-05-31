@@ -1,121 +1,38 @@
 [
     {
         "name": "Undeclared",
-        "id": 0,
-        "hegis_category_id": 0
+        "id": 0
     },
     {
-        "name": "Agriculture",
-        "id": 1,
-        "hegis_category_id": 1
-    },
-    {
-        "name": "Biological Sciences",
-        "id": 4,
-        "hegis_category_id": 1
-    },
-    {
-        "name": "Mathematics",
-        "id": 17,
-        "hegis_category_id": 1
-        
-    },
-    {
-        "name": "Physical Science",
-        "id": 19,
-        "hegis_category_id": 1
-    },
-    {
-        "name": "Psychology",
-        "id": 20,
-        "hegis_category_id": 2
-    },
-    {
-        "name": "Military Science",
-        "id": 18,
-        "hegis_category_id": 2
-    },
-    {
-        "name": "Public Affairs",
-        "id": 21,
-        "hegis_category_id": 2
+        "name": "Natural Sciences",
+        "id": 1
     },
     {
         "name": "Social Sciences",
-        "id": 22,
-        "hegis_category_id": 2
+        "id": 2
     },
     {
-        "name": "Foreign Languages",
-        "id": 11,
-        "hegis_category_id": 3
+        "name": "Humanities",
+        "id": 3
     },
     {
-        "name": "Letters",
-        "id": 15,
-        "hegis_category_id": 3
-    },
-    {
-        "name": "Library",
-        "id": 16,
-        "hegis_category_id": 3
-    },
-    {
-        "name": "Communications",
-        "id": 6,
-        "hegis_category_id": 4
-    },
-    {
-        "name": "Fine and Applied Arts",
-        "id": 10,
-        "hegis_category_id": 4
+        "name": "Arts, Music, and Communication",
+        "id": 4
     },
     {
         "name": "Health Professions",
-        "id": 12,
-        "hegis_category_id": 5
-    },
-    {
-        "name": "Home Economics",
-        "id": 13,
-        "hegis_category_id": 5
-    },
-    {
-        "name": "Architecture",
-        "id": 2,
-        "hegis_category_id": 6
-    },
-    {
-        "name": "Information Sciences",
-        "id": 7,
-        "hegis_category_id": 6
+        "id": 5
     },
     {
         "name": "Engineering",
-        "id": 9,
-        "hegis_category_id": 6
+        "id": 6
     },
     {
-        "name": "Business-Management",
-        "id": 5,
-        "hegis_category_id": 7
-    },
-    {
-        "name": "Area Studies",
-        "id": 3,
-        "hegis_category_id": 8
-        
-    },
-    {
-        "name": "Education",
-        "id": 8,
-        "hegis_category_id": 8
-        
+        "name": "Business",
+        "id": 7
     },
     {
         "name": "Interdisciplinary",
-        "id": 49,
-        "hegis_category_id": 8
-        
+        "id": 8
     }
 ]

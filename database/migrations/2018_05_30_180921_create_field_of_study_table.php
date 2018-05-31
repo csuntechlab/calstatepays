@@ -16,7 +16,6 @@ class CreateFieldOfStudyTable extends Migration
         Schema::create('field_of_studies', function(Blueprint $table){
             $table->integer('id');
             $table->string('name');
-            $table->integer('hegis_category_id');
         });
     }
 
