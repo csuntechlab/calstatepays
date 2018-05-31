@@ -39,7 +39,7 @@ class IndustryController extends Controller
             $index++;
             return [
                 'title'                  => $industry->naicsTitle->naics_title,
-                'percentage'             => $industry->population->percentage_found,
+                'percentage'             => round($industry->population->percentage_found),
                 'rank'                   => $index,
                 'image'                  => asset($industry->naicsTitle->image)
             ];
