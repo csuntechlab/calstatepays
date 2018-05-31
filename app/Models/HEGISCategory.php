@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class HEGISCategory extends Model
 {
     public $timestamps = false;
-    public $table = 'field_of_studies';
-
+    protected $table = 'hegis_categories';
     protected $fillable = [
         'category_id',
         'category_name'

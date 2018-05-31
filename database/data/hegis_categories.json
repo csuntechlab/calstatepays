@@ -1,0 +1,38 @@
+[
+    {
+        "category_name": "Undeclared",
+        "category_id": 0
+    },
+    {
+        "category_name": "Natural Sciences",
+        "category_id": 1
+    },
+    {
+        "category_name": "Social Sciences",
+        "category_id": 2
+    },
+    {
+        "category_name": "Humanities",
+        "category_id": 3
+    },
+    {
+        "category_name": "Arts, Music, and Communication",
+        "category_id": 4
+    },
+    {
+        "category_name": "Health Professions",
+        "category_id": 5
+    },
+    {
+        "category_name": "Engineering",
+        "category_id": 6
+    },
+    {
+        "category_name": "Business",
+        "category_id": 7
+    },
+    {
+        "category_name": "Interdisciplinary",
+        "category_id": 8
+    }
+]
