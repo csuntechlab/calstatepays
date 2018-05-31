@@ -63344,6 +63344,14 @@ var render = function() {
               { staticClass: "col-2 mt-4 pt-5 pl-0" },
               [
                 _c("major-legend", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
                   attrs: { educationLevel: _vm.selectedEducationLevel }
                 })
               ],
