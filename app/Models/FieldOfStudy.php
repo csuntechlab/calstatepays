@@ -8,11 +8,11 @@ class FieldOfStudy extends Model
 {
     public $timestamps = false;
     public $table = 'field_of_studies';
-
     protected $fillable = [
-        'id',
-        'name',
-        'hegis_category_id',
-        'hegis_category_name'
-    ];
+            'id',
+            'name'
+        ];
+    public function hegisCategory(){
+        return $this->hasMany('App\Models\HEGISCategory', 'field_of_study_id', 'id');
+    }
 }

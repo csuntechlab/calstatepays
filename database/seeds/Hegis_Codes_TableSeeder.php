@@ -17,8 +17,8 @@ class Hegis_Codes_TableSeeder extends Seeder
         foreach($data as $row){
                 DB::table('hegis_codes')->insert([
                     'hegis_code' => $row->hegis_code,
+                    'hegis_category_id' => $row->hegis_category_id,
                     'major'      => $row->major,
-                    'university' => $row->university
                 ]);
         };
     }

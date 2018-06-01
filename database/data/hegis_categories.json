@@ -1,0 +1,117 @@
+[
+    {
+        "name": "Undeclared",
+        "id": 0,
+        "field_of_study_id": 0
+    },
+    {
+        "name": "Agriculture",
+        "id": 1,
+        "field_of_study_id": 1
+    },
+    {
+        "name": "Biological Sciences",
+        "id": 4,
+        "field_of_study_id": 1
+    },
+    {
+        "name": "Mathematics",
+        "id": 17,
+        "field_of_study_id": 1
+    },
+    {
+        "name": "Physical Science",
+        "id": 19,
+        "field_of_study_id": 1
+    },
+    {
+        "name": "Psychology",
+        "id": 20,
+        "field_of_study_id": 2
+    },
+    {
+        "name": "Military Science",
+        "id": 18,
+        "field_of_study_id": 2
+    },
+    {
+        "name": "Public Affairs",
+        "id": 21,
+        "field_of_study_id": 2
+    },
+    {
+        "name": "Social Sciences",
+        "id": 22,
+        "field_of_study_id": 2
+    },
+    {
+        "name": "Foreign Languages",
+        "id": 11,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Letters",
+        "id": 15,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Library",
+        "id": 16,
+        "field_of_study_id": 3
+    },
+    {
+        "name": "Communications",
+        "id": 6,
+        "field_of_study_id": 4
+    },
+    {
+        "name": "Fine and Applied Arts",
+        "id": 10,
+        "field_of_study_id": 4
+    },
+    {
+        "name": "Health Professions",
+        "id": 12,
+        "field_of_study_id": 5
+    },
+    {
+        "name": "Home Economics",
+        "id": 13,
+        "field_of_study_id": 5
+    },
+    {
+        "name": "Architecture",
+        "id": 2,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Information Sciences",
+        "id": 7,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Engineering",
+        "id": 9,
+        "field_of_study_id": 6
+    },
+    {
+        "name": "Business-Management",
+        "id": 5,
+        "field_of_study_id": 7
+    },
+    {
+        "name": "Area Studies",
+        "id": 3,
+        "field_of_study_id": 8
+    },
+    {
+        "name": "Education",
+        "id": 8,
+        "field_of_study_id": 8
+    },
+    {
+        "name": "Interdisciplinary",
+        "id": 49,
+        "field_of_study_id": 8
+    }
+]
