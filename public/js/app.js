@@ -82338,7 +82338,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-md-flex align-items-center" }, [
+      _c("div", { staticClass: "row d-md-flex" }, [
         _c(
           "div",
           { staticClass: "col-6 col-md-3 order-2 order-md-1" },
