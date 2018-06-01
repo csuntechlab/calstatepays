@@ -20,8 +20,4 @@ class HEGISCode extends Model
     public function universityMajors() {
         return $this->hasMany('App\Models\UniversityMajor','hegis_code','hegis_code');
     }
-
-    public function hegisCategory() {
-        return $this->hasOne('App\Models\HEGISCategory', 'id', 'hegis_category_id');
-    }
 }

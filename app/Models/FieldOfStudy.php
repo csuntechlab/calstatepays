@@ -12,5 +12,7 @@ class FieldOfStudy extends Model
             'id',
             'name'
         ];
-
+    public function hegisCategory(){
+        return $this->hasMany('App\Models\HEGISCategory', 'field_of_study_id', 'id');
+    }
 }
