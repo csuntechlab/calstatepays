@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<div class="row banner faq-banner">
+		<div class="row banner faq-banner align-items-center">
 			<h1 class="pt-3 home__heading">FAQ</h1>
 		</div>
 		<div class="row">

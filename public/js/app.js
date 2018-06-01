@@ -63894,9 +63894,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row banner faq-banner" }, [
-      _c("h1", { staticClass: "pt-3 home__heading" }, [_vm._v("FAQ")])
-    ])
+    return _c(
+      "div",
+      { staticClass: "row banner faq-banner align-items-center" },
+      [_c("h1", { staticClass: "pt-3 home__heading" }, [_vm._v("FAQ")])]
+    )
   }
 ]
 render._withStripped = true

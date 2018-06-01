@@ -27260,6 +27260,12 @@ figcaption {
   height: 35vh;
 }
 
+@media screen and (max-width: 767px) {
+  .faq-banner {
+    background-position: 40%;
+  }
+}
+
 .csu-wrapper figure img {
   width: 90%;
   max-height: 7.25rem;
@@ -27308,7 +27314,7 @@ footer, .footer {
   font-family: "Open Sans";
   width: 100%;
   height: 100%;
-  background-color: #D00D2D;
+  background-color: #000;
 }
 
 .footer__links {
