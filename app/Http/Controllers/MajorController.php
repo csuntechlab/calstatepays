@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FieldOfStudy;
 use Illuminate\Http\Request;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
@@ -80,5 +81,16 @@ class MajorController extends Controller
                 'returnOnInvestment' => $freData->roi
             ]
         ];
+    }
+
+    public function filterByFieldOfStudy($fieldOfStudyId)
+    {
+        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
+                                    ->where('id', $fieldOfStudyId)->first();
+        $hegisData = $fieldOfStudy->hegisCategory->map(function($items){
+            $items = $items->hegisCode;
+            foreach($item as $item)
+        });
+        return $hegisData;
     }
 }

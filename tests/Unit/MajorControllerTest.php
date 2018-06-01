@@ -93,4 +93,14 @@ class MajorControllerTest extends TestCase
             ]
         ]);
     }
+
+    public function test_filterByFieldOfStudy()
+    {
+        //Given I have a field of study id 6 (engineering)
+        $engineeringId = 6;
+        //When I call the function with the fos id
+        $data = $this->json('GET', "/api/major/hegis-codes/$engineeringId")
+        //Then I expect to see a count of 10 hegis codes
+        $this->assertEquals(10,count($data));
+    }
 }
