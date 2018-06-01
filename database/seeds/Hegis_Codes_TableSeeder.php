@@ -19,7 +19,6 @@ class Hegis_Codes_TableSeeder extends Seeder
                     'hegis_code' => $row->hegis_code,
                     'hegis_category_id' => $row->hegis_category_id,
                     'major'      => $row->major,
-                    'university' => $row->university
                 ]);
         };
     }

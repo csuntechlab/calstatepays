@@ -17,8 +17,6 @@ class CreateHEGISCodesTable extends Migration
             $table->integer('hegis_code');
             $table->integer('hegis_category_id');
             $table->string('major');
-            $table->string('university')->default('N/A');
-            $table->timestamps();
         });
     }
 

@@ -8,6 +8,7 @@ class HEGISCode extends Model
 {
     public $primaryKey = 'hegis_code';
     protected $table = 'hegis_codes';
+    public $timestamps = false;
     protected $fillable = [
         'hegis_code',
         'hegis_category_id',
