@@ -45445,7 +45445,7 @@ var render = function() {
             ])
           ])
         : _c("div", { staticClass: "form__group" }, [
-            _c("p", { staticClass: "h3 text-gray my-5" }, [
+            _c("p", { staticClass: "h3 majors-header my-5" }, [
               _vm._v("Select a Degree Level")
             ]),
             _vm._v(" "),
@@ -45737,8 +45737,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     text: this.majorName,
                     left: 'center',
                     textStyle: {
-                        color: '#777777',
-                        fontFamily: 'Montserrat'
+                        fontWeight: '600',
+                        color: "#777"
                     }
                 },
                 tooltip: {
@@ -62927,6 +62927,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -63058,6 +63059,10 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("h4", { staticClass: "industry-title" }, [
+        _vm._v("Industry By Employment")
+      ]),
+      _vm._v(" "),
       _c(
         "carousel",
         {
@@ -63206,7 +63211,7 @@ var render = function() {
   return _c("div", [
     _vm.educationLevel == "allDegrees"
       ? _c("div", [
-          _c("h5", { staticClass: "font-weight-bold pb-2" }, [
+          _c("h5", { staticClass: "majors-header" }, [
             _vm._v("Graduation Level: ")
           ]),
           _vm._v(" "),
