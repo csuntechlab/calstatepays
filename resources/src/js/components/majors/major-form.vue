@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="form__group" v-else>
-            <p class="h3 text-gray my-5">Select a Degree Level</p>
+            <p class="h3 majors-header my-5">Select a Degree Level</p>
             <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label :for="'allDegrees-' + form.cardIndex">All</label>
             <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">

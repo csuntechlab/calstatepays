@@ -117,7 +117,8 @@ export default {
                     text: this.majorName,
                 left: 'center',
                 textStyle: {
-                    fontWeight: 'bold',
+                    fontWeight: '600',
+                    color: "#777"
                 }
                 },
                 tooltip: {

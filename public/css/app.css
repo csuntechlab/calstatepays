@@ -27149,6 +27149,11 @@ body {
   margin-top: 90px;
 }
 
+.majors-header {
+  color: gray;
+  font-weight: 600;
+}
+
 figcaption {
   font-size: 1.5rem;
 }
@@ -27719,6 +27724,7 @@ input[type="button"]:focus {
 .industry-title {
   color: grey;
   text-align: center;
+  font-weight: 600;
 }
 
 .info-wrapper {
