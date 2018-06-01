@@ -62917,7 +62917,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['form'],
+    props: ['educationLevel'],
     data: function data() {
         return {
             isAll: true
@@ -62934,7 +62934,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.form.educationLevel == "allDegrees"
+    _vm.educationLevel == "allDegrees"
       ? _c("div", [
           _c("h5", { staticClass: "font-weight-bold pb-2" }, [
             _vm._v("Graduation Level: ")
@@ -62949,50 +62949,50 @@ var render = function() {
           _c("div", { staticClass: "legend-oxford m-0" }),
           _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
         ])
-      : _vm.form.educationLevel == "postBacc"
+      : _vm.educationLevel == "someCollege"
         ? _c("div", [
             _c("h5", { staticClass: "font-weight-bold pb-2" }, [
               _vm._v("Percentile: ")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-green-25 m-0" }),
-            _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+            _c("div", { staticClass: "legend-oxford-75 m-0" }),
+            _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-green m-0" }),
+            _c("div", { staticClass: "legend-oxford m-0" }),
             _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-green-75 m-0" }),
-            _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+            _c("div", { staticClass: "legend-oxford-25 m-0" }),
+            _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
           ])
-        : _vm.form.educationLevel == "bachelors"
+        : _vm.educationLevel == "bachelors"
           ? _c("div", [
               _c("h5", { staticClass: "font-weight-bold pb-2" }, [
                 _vm._v("Percentile: ")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold-25 m-0" }),
-              _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+              _c("div", { staticClass: "legend-gold-75 m-0" }),
+              _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
               _vm._v(" "),
               _c("div", { staticClass: "legend-gold m-0" }),
               _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold-75 m-0" }),
-              _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+              _c("div", { staticClass: "legend-gold-25 m-0" }),
+              _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
             ])
-          : _vm.form.educationLevel == "someCollege"
+          : _vm.educationLevel == "postBacc"
             ? _c("div", [
                 _c("h5", { staticClass: "font-weight-bold pb-2" }, [
                   _vm._v("Percentile: ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-oxford-25 m-0" }),
-                _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")]),
+                _c("div", { staticClass: "legend-green-75 m-0" }),
+                _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-oxford m-0" }),
+                _c("div", { staticClass: "legend-green m-0" }),
                 _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-oxford-75 m-0" }),
-                _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+                _c("div", { staticClass: "legend-green-25 m-0" }),
+                _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
               ])
             : _vm._e()
   ])
