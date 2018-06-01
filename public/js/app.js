@@ -82316,15 +82316,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            url: ''
+            url: '',
+            isShowing: false
         };
+    },
+
+    methods: {
+        toggleShowNav: function toggleShowNav() {
+            this.isShowing = !this.isShowing;
+        }
     },
     created: function created() {
         this.url = window.baseUrl;
@@ -82341,14 +82345,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-md-flex align-items-center" }, [
+      _c("div", { staticClass: "row d-md-flex" }, [
         _c(
           "div",
           { staticClass: "col-6 col-md-3 order-2 order-md-1" },
           [
             _c("router-link", { attrs: { to: "/" } }, [
               _c("img", {
-                staticClass: "float-md-left nav-logo mx-auto d-block",
+                staticClass: "float-md-left nav-logo mx-auto d-block my-2",
                 attrs: {
                   src: this.url + "/img/calstatepays.svg",
                   alt: "Cal State Pays logo"
@@ -82361,13 +82365,26 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "col-3 col-md-6 order-6 order-md-2" }, [
           _c("nav", { staticClass: "navbar navbar-expand-md navbar-light" }, [
-            _vm._m(0),
+            _c(
+              "button",
+              {
+                staticClass: "navbar-toggler",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.toggleShowNav()
+                  }
+                }
+              },
+              [_c("span", { staticClass: "navbar-toggler-icon" })]
+            ),
             _vm._v(" "),
             _c(
               "div",
               {
                 staticClass: "collapse navbar-collapse justify-content-center",
-                attrs: { id: "collapsingNavbar" }
+                class: _vm.isShowing ? "show" : "",
+                attrs: { id: "tempNav" }
               },
               [
                 _c(
@@ -82426,7 +82443,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    FRE\n                                    "
+                              "\n                                        FRE\n                                    "
                             )
                           ]
                         )
@@ -82446,7 +82463,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                                    About\n                                    "
+                              "\n                                        About\n                                    "
                             )
                           ]
                         )
@@ -82468,41 +82485,21 @@ var render = function() {
               _c("router-link", { attrs: { to: "/research" } }, [
                 _c("img", {
                   staticClass: "float-right nav-logo-secondary mx-auto d-block",
-                  attrs: { src: this.url + "/img/strada-gray.svg", alt: "" }
+                  attrs: {
+                    src: this.url + "/img/strada-gray.svg",
+                    alt: "Strada Logo"
+                  }
                 })
               ])
             ],
             1
-          ),
-          _vm._v(" "),
-          _c("div")
+          )
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-toggle": "collapse",
-          "data-target": "#collapsingNavbar",
-          "aria-controls": "collapsingNavbar",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
