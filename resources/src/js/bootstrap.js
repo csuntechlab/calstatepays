@@ -29,7 +29,7 @@ if (token) {
 let url = document.head.querySelector('meta[name="app-url"]');
 
 if (url) {
-    window.axios.defaults.baseUrl = url.content;
+    window.axios.defaults.baseURL = url.content;
     window.baseUrl = url.content;
 } else {
     console.error('Please set the app URL as a meta tag');
