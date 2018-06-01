@@ -45179,7 +45179,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['index'],
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel']), {
-<<<<<<< HEAD
+        isEmpty: function isEmpty() {
+            //Check whether the form field was fired off, toggle carousel on
+            if (this.industries(this.index).length === 0) {
+                return false;
+            }return true;
+        },
         selectedMajorData: function selectedMajorData() {
             return this.majorData(this.index);
         },
@@ -45344,428 +45349,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 cardIndex: this.form.cardIndex,
                 educationLevel: this.form.educationLevel
             });
-=======
-        isEmpty: function isEmpty() {
-            //Check whether the form field was fired off, toggle carousel on
-            if (this.industries(this.index).length === 0) {
-                return false;
-            }return true;
-        },
-        selectedMajorData: function selectedMajorData() {
-            return this.majorData(this.index);
-        },
-        selectedIndustries: function selectedIndustries() {
-            return this.industries(this.index);
-        },
-        selectedEducationLevel: function selectedEducationLevel() {
-            return this.educationLevel(this.index);
->>>>>>> dev
-        }
-    }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'universities'])),
-    components: {
-<<<<<<< HEAD
-        vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
-=======
-        majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
-        card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
-        majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
-        majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
-        industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
-        majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
->>>>>>> dev
-    }
-});
-
-/***/ }),
-<<<<<<< HEAD
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "form--inverted",
-      attrs: { id: "'majorForm-' + form.cardIndex" }
-    },
-    [
-      !_vm.form.formWasSubmitted
-        ? _c("div", { staticClass: "form__group" }, [
-            _c("div", { staticClass: "row row--condensed" }, [
-              _c("h5", { staticClass: "form--title" }, [
-                _vm._v("Choose A Campus")
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c("label", { attrs: { for: "campus" } }, [
-                    _vm._v("Campus:")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    attrs: { label: "name", options: _vm.universities },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
-              _c("h5", { staticClass: "form--title" }, [
-                _vm._v("Choose A Major")
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    attrs: { label: "major", options: _vm.majors },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("majorId", "majorId", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("majorId", "majorId", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
-              _c("div", { staticClass: "col col-md-8 py-4" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { type: "button" },
-                    on: { click: _vm.submitForm }
-                  },
-                  [_vm._v("Submit")]
-                )
-              ])
-            ])
-          ])
-        : _c("div", { staticClass: "form__group" }, [
-            _c("p", { staticClass: "h3 text-gray my-5" }, [
-              _vm._v("Select a Degree Level")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "allDegrees",
-                id: "allDegrees-" + _vm.form.cardIndex,
-                checked: "",
-                value: "allDegrees"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "allDegrees")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "allDegrees")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              { attrs: { for: "allDegrees-" + _vm.form.cardIndex } },
-              [_vm._v("All")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "postBacc",
-                id: "postBacc-" + _vm.form.cardIndex,
-                value: "postBacc"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "postBacc")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "postBacc")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "postBacc-" + _vm.form.cardIndex } }, [
-              _vm._v("Post Bacc")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "bachelors",
-                id: "bachelors-" + _vm.form.cardIndex,
-                value: "bachelors"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "bachelors")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "bachelors")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "bachelors-" + _vm.form.cardIndex } }, [
-              _vm._v("Bachelor's Degree")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "someCollege",
-                id: "someCollege-" + _vm.form.cardIndex,
-                value: "someCollege"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "someCollege")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "someCollege")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              { attrs: { for: "someCollege-" + _vm.form.cardIndex } },
-              [_vm._v("Some College")]
-            )
-          ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5bfce872", module.exports)
-=======
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(174)
-/* template */
-var __vue_template__ = __webpack_require__(175)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/components/majors/major-form.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5bfce872", Component.options)
-  } else {
-    hotAPI.reload("data-v-5bfce872", Component.options)
->>>>>>> dev
-  }
-}
-
-/***/ }),
-<<<<<<< HEAD
-/* 176 */
-=======
-/* 174 */
->>>>>>> dev
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(13);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['index'],
-    data: function data() {
-        return {
-            form: {
-                cardIndex: this.index,
-                majorId: null,
-                formWasSubmitted: false,
-                schoolId: null,
-                educationLevel: "allDegrees"
-            }
-        };
-    },
-
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
-        updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */],
-        submitForm: function submitForm() {
-            this.form.formWasSubmitted = true;
-            this.fetchIndustryImages(this.form);
-            this.fetchMajorData(this.form);
-        },
-        updateSelect: function updateSelect(field, dataKey, data) {
-            if (data) {
-                this.form[field] = data[dataKey];
-            } else {
-                this.form[field] = null;
-            }
-        },
-        toggleEducationLevel: function toggleEducationLevel() {
-            this.$store.dispatch('toggleEducationLevel', {
-                cardIndex: this.form.cardIndex,
-                educationLevel: this.form.educationLevel
-            });
         }
     }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'universities'])),
@@ -46026,7 +45609,6 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
->>>>>>> dev
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_line__ = __webpack_require__(259);
@@ -63715,8 +63297,6 @@ var render = function() {
               { staticClass: "mt-5" },
               [
                 _c("industry-carousel", {
-<<<<<<< HEAD
-=======
                   directives: [
                     {
                       name: "show",
@@ -63725,7 +63305,6 @@ var render = function() {
                       expression: "isEmpty"
                     }
                   ],
->>>>>>> dev
                   attrs: { industries: _vm.selectedIndustries }
                 })
               ],
@@ -63760,8 +63339,6 @@ var render = function() {
               { staticClass: "col-2 mt-4 pt-5 pl-0" },
               [
                 _c("major-legend", {
-<<<<<<< HEAD
-=======
                   directives: [
                     {
                       name: "show",
@@ -63770,7 +63347,6 @@ var render = function() {
                       expression: "isEmpty"
                     }
                   ],
->>>>>>> dev
                   attrs: { educationLevel: _vm.selectedEducationLevel }
                 })
               ],
