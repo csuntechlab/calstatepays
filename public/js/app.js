@@ -82345,7 +82345,7 @@ var render = function() {
           [
             _c("router-link", { attrs: { to: "/" } }, [
               _c("img", {
-                staticClass: "float-md-left nav-logo mx-auto d-block",
+                staticClass: "float-md-left nav-logo mx-auto d-block my-2",
                 attrs: {
                   src: this.url + "/img/calstatepays.svg",
                   alt: "Cal State Pays logo"
