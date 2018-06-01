@@ -5,6 +5,7 @@
     background-size: cover;
     min-height: 45vh;
     padding: 0 1.5rem;
+    width: 100%;
     h2 {
         color: $black;
         font-size: 3.75rem;
@@ -23,7 +24,7 @@
 .campus{
     display: flex;
     height: 370px;
-    min-width: 340px;
+    min-width: 30vw;
     align-self: center;
     justify-content: center;
     font-family: $font-base;

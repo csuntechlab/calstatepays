@@ -3,7 +3,13 @@
 
 export default {
     majors: [],
-    majorData: [],
     universities: [],
+    majorCards:[
+        {
+            industries: [],
+            majorData: [],
+            educationLevel: 'allDegrees'
+        }
+    ]
 };
 

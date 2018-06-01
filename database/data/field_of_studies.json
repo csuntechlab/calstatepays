@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Undeclared",
+        "id": 0
+    },
+    {
+        "name": "Natural Sciences",
+        "id": 1
+    },
+    {
+        "name": "Social Sciences",
+        "id": 2
+    },
+    {
+        "name": "Humanities",
+        "id": 3
+    },
+    {
+        "name": "Arts, Music, and Communication",
+        "id": 4
+    },
+    {
+        "name": "Health Professions",
+        "id": 5
+    },
+    {
+        "name": "Engineering",
+        "id": 6
+    },
+    {
+        "name": "Business",
+        "id": 7
+    },
+    {
+        "name": "Interdisciplinary",
+        "id": 8
+    }
+]

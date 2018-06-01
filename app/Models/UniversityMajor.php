@@ -11,8 +11,13 @@ class UniversityMajor extends Model
     protected $fillable = [
         'hegis_code',
         'college_id',
-        'university_id'
+        'university_id',
+        'field_of_study_id'
     ];
+
+    public function fieldOfStudy(){
+        return $this->hasOne('App\Models\FieldOfStudy', 'id', 'field_of_study_id');
+    }
 
     public function studentBackground(){
         return $this->hasMany('App\Models\StudentBackground','university_major_id','id');
