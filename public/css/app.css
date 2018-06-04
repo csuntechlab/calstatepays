@@ -27003,7 +27003,7 @@ html {
           flex-direction: row;
   background: #FFF;
   border-radius: 50px;
-  height: 650px;
+  min-height: 80vh;
   margin-bottom: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -27554,10 +27554,6 @@ textarea {
   font-weight: 300;
 }
 
-.form--inverted {
-  margin-top: 100px;
-}
-
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -27675,10 +27671,6 @@ input[type="button"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.progress-wrapper {
-  margin-top: 60px;
 }
 
 .progress-linear__bar__determinate {
