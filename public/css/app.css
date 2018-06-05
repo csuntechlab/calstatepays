@@ -27146,7 +27146,13 @@ body {
   .pfre-info--show {
     -webkit-transform: translate(0);
             transform: translate(0);
+    margin-left: 0;
     position: static;
+    width: auto;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 

@@ -43382,8 +43382,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "col-6" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-11 col-md-6" }, [
       _c(
         "button",
         {
@@ -43402,7 +43402,7 @@ var render = function() {
     _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
       ? _c(
           "div",
-          { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
+          { class: _vm.infoKey ? "pfre-info--show col-10" : "pfre-info" },
           [_vm._t("default")],
           2
         )
@@ -44677,7 +44677,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-md-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
             _vm._v(
@@ -44748,7 +44748,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-md-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
             _vm._v(
@@ -44836,7 +44836,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-md-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
             _vm._v(

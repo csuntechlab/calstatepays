@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <div class="col-6">
+  <div class="row">
+    <div class="col-11 col-md-6">
       <button class="btn-info" type="button" @click="toggleInfo(infoKey)">
         <i class="fa fa-question"></i>
       </button>
     </div>
-    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
+    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show col-10' : 'pfre-info'"> 
       <slot></slot>
     </div>
   </div>

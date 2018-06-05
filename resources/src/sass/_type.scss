@@ -99,7 +99,11 @@ body {
   @media screen and (max-width: $break-small) {
         // background: green;
         transform: translate(0);
+        margin-left: 0;
         position: static;
+        width: auto;
+        float: none;
+        display: flex;
   }
 }
 
