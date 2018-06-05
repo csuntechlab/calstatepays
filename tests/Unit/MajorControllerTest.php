@@ -23,10 +23,7 @@ class MajorControllerTest extends TestCase
 
     public function setUp(){
         parent::setUp();
-        $this->controller = new MajorController();
-        $this->seed('Hegis_Codes_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
+        $this->seed('DatabaseSeeder');
     }
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
@@ -94,13 +91,17 @@ class MajorControllerTest extends TestCase
         ]);
     }
 
-    public function test_filterByFieldOfStudy()
+    public function test_filterByFieldOfStudy_returns_all_related_hegis_codes_in_json_format()
     {
-        //Given I have a field of study id 6 (engineering)
         $engineeringId = 6;
-        //When I call the function with the fos id
-        $data = $this->json('GET', "/api/major/hegis-codes/$engineeringId")
-        //Then I expect to see a count of 10 hegis codes
-        $this->assertEquals(10,count($data));
+        $countOfRelatedHegisCOdes = 10;
+        $response = $this->json('GET', "/api/major/hegis-codes/$engineeringId");
+        $response->assertJsonStructure([
+            'fieldOfStudyId',
+            'fieldOfStudyName',
+            'hegisData'
+        ]);
+        $response = $response->getOriginalContent();
+        $this->assertCount($countOfRelatedHegisCOdes, $response['hegisData']);
     }
 }

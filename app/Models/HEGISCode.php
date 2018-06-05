@@ -13,7 +13,6 @@ class HEGISCode extends Model
         'hegis_code',
         'hegis_category_id',
         'major',
-        'university',
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
