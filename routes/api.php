@@ -12,11 +12,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//Learn and Earn Routes
-Route::get('/learn-and-earn/industry/{collegeId}/{industryTitle}', 'LearnAndEarnController@getIndustryData');
-Route::get('/learn-and-earn/major-data/{universityId}/{majorId}', 'LearnAndEarnController@getCollegeMajor');
-Route::get('/learn-and-earn/major-data/{universityId}', 'LearnAndEarnController@getMajorNames');
-
 //Major
 Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')->name('major.hegis-codes');
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
