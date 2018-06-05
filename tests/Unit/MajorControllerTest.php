@@ -24,6 +24,7 @@ class MajorControllerTest extends TestCase
     public function setUp(){
         parent::setUp();
         $this->seed('DatabaseSeeder');
+        $this->controller = new MajorController();
     }
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
