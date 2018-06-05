@@ -2,7 +2,7 @@
   <div class="row pt-5 wrapper graph-content">
       <div class="col-12">
         <card class="container">
-          <div class="container-fluid">
+          <div class="container-fluid p-0">
             <div class="row">
               <div class="col-12 col-md-3">
                 <pfre-form></pfre-form>

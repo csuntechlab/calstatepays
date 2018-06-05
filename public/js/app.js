@@ -44628,10 +44628,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "progress-wrapper" }, [
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-md-9" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
           _vm._v(" "),
@@ -44680,17 +44680,19 @@ var render = function() {
         { staticClass: "col-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
-            _vm._v("Information regarding Time to Degree Displayed Here.")
+            _vm._v(
+              "The estimated time it would take for you to complete your degree if you choose this major."
+            )
           ])
         ],
         1
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-md-9" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
           _vm._v(" "),
@@ -44749,17 +44751,19 @@ var render = function() {
         { staticClass: "col-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
-            _vm._v("You're gonna make so much money, like so much.")
+            _vm._v(
+              "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
+            )
           ])
         ],
         1
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-md-9" },
         [
           _c("h5", { staticClass: "text-center" }, [
             _vm._v("Return On Investment")
@@ -44835,7 +44839,9 @@ var render = function() {
         { staticClass: "col-3" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
-            _vm._v("Tell your Financial Advisor he's no longer needed.")
+            _vm._v(
+              "Your estimated financial return on your education investment."
+            )
           ])
         ],
         1
@@ -44867,7 +44873,7 @@ var render = function() {
       { staticClass: "col-12" },
       [
         _c("card", { staticClass: "container" }, [
-          _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "container-fluid p-0" }, [
             _c("div", { staticClass: "row" }, [
               _c(
                 "div",

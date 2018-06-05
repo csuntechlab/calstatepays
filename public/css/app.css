@@ -27136,6 +27136,20 @@ body {
           transform: translateY(-50%);
 }
 
+@media screen and (max-width: 767px) {
+  .pfre-info--show::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pfre-info--show {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    position: static;
+  }
+}
+
 .info {
   margin-top: 100px;
 }
@@ -27554,6 +27568,10 @@ textarea {
   font-weight: 300;
 }
 
+.form--inverted {
+  margin-top: 100px;
+}
+
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -27605,7 +27623,6 @@ textarea {
   height: 3.25rem;
   border-radius: 50%;
   float: left;
-  margin-top: 2.5rem;
 }
 
 .btn-info:focus {

@@ -1,7 +1,7 @@
 <template>
   <div class="progress-wrapper">
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-9">
         <h5 class="text-center">Years</h5>
         <v-progress-linear class="pfre-bar" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
         <div class="progress-footer">
@@ -20,11 +20,11 @@
         </div>
       </div>
       <div class="col-3">
-        <pfre-info infoKey="timeToDegree">Information regarding Time to Degree Displayed Here.</pfre-info>
+        <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
       </div>
     </div>
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-9">
         <h5 class="text-center">Earnings</h5>      
         <v-progress-linear class="pfre-bar" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="45" color="pfre-earnings"></v-progress-linear> 
         <div class="progress-footer">
@@ -43,11 +43,11 @@
         </div>  
       </div>
       <div class="col-3">
-        <pfre-info infoKey="earnings">You're gonna make so much money, like so much.</pfre-info>
+        <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
       </div>
     </div>
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-9">
         <h5 class="text-center">Return On Investment</h5>
         <v-progress-linear class="pfre-bar" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100)) * 100" height="45" color="pfre-fre"></v-progress-linear>
         <div class="progress-footer">
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="col-3">
-        <pfre-info infoKey="return">Tell your Financial Advisor he's no longer needed.</pfre-info>
+        <pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
       </div>
     </div>
   </div>

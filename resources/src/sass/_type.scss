@@ -71,7 +71,7 @@ body {
 }
 
 .pfre-info--show {
-position: absolute;
+    position: absolute;
     margin-left: 80px;
     background: $light-gray;
     border-radius: 15px;
@@ -92,7 +92,14 @@ position: absolute;
     border-right: 6px solid $light-gray;
     border-bottom: 6px solid transparent;
     transform: translateY(-50%);
-    
+    @media screen and (max-width: $break-small) {
+        display: none;
+    }
+  }
+  @media screen and (max-width: $break-small) {
+        // background: green;
+        transform: translate(0);
+        position: static;
   }
 }
 
