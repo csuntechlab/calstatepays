@@ -26987,6 +26987,10 @@ table.table tfoot tr td {
   background-color: #EBEBEB;
 }
 
+.card-padding {
+  padding-top: 3rem;
+}
+
 html {
   min-height: 100vh;
   -webkit-box-sizing: border-box;
