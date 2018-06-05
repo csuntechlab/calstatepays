@@ -13,6 +13,12 @@
                     </v-select>
                 </div>
             </div>
+            <!--<div class="row row&#45;&#45;condensed">
+                <h5 class="form&#45;&#45;title">Choose a Discipline</h5>
+                <div class="col col-12">
+                    <label></label>
+                </div>
+            </div>-->
             <div class="row row--condensed">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
@@ -91,7 +97,8 @@ export default {
     computed: {
         ...mapGetters([
             'majors',
-            'universities',
+            /*'fieldOfStudy',*/
+            'universities'
         ])
     },
     components: {
