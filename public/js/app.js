@@ -43315,7 +43315,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-md-8 py-4" }, [
+        _c("div", { staticClass: "py-4" }, [
           _c(
             "button",
             {
@@ -44867,12 +44867,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row pt-5 wrapper graph-content" }, [
+  return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
       { staticClass: "col-12" },
       [
-        _c("card", { staticClass: "container" }, [
+        _c("card", { staticClass: "container row align-items-center" }, [
           _c("div", { staticClass: "container-fluid p-0" }, [
             _c("div", { staticClass: "row" }, [
               _c(
@@ -63405,7 +63405,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper graph-content" }, [
+  return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
       { staticClass: "col col-md-12" },

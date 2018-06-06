@@ -1,7 +1,7 @@
 <template>
-  <div class="row pt-5 wrapper graph-content">
+  <div class="row wrapper graph-content card-padding">
       <div class="col-12">
-        <card class="container">
+        <card class="container row align-items-center">
           <div class="container-fluid p-0">
             <div class="row">
               <div class="col-12 col-md-3">

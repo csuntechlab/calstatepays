@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-md-8 py-4">
+                <div class="py-4">
                     <button type="button" class="btn btn-success" @click="fetchMockData()">Submit</button>
                 </div>
             </div>
