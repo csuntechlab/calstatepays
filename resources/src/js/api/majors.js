@@ -10,7 +10,14 @@ const fetchFieldOfStudiesAPI = (success, error) => {
         response => success(response.data),
         response => error(response)
     );
-}
+};
+
+const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
+    window.axios.get(`api/major/hegis-codes/${payload}`).then(
+        response => success(response.data),
+        response => error(response)
+    );
+};
 
 const fetchMajorDataAPI = (payload, success, error) => {
     window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
@@ -37,6 +44,7 @@ const fetchIndustryImagesAPI = (payload, success, error) => {
 export default {
     fetchMajorsAPI,
     fetchFieldOfStudiesAPI,
+    fetchUpdatedMajorsByFieldAPI,
     fetchMajorDataAPI,
     fetchUniversitiesAPI,
     fetchIndustryImagesAPI

@@ -18,6 +18,15 @@ export default {
         });
     },
 
+    [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
+        payload.forEach((major) => {
+            major.majorId = major.hegisCode;
+            delete major.hegisCode;
+            console.log(major);
+            state.majors.push(major);
+        });
+    },
+
     [_majors.FETCH_MAJOR_DATA](state, payload) {
         let index = payload.cardIndex;
         state.majorCards[index].majorData = payload;

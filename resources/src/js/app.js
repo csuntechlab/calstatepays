@@ -27,7 +27,7 @@ const vm = new Vue({
     router,
     render: h => h(App),
     created(){
-        this.$store.dispatch('fetchMajors');
+        /*this.$store.dispatch('fetchMajors');*/
         this.$store.dispatch('fetchFieldOfStudies');
         this.$store.dispatch('fetchUniversities');
     }

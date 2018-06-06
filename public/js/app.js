@@ -28126,6 +28126,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 "use strict";
 var FETCH_MAJORS = 'majors/FETCH_MAJORS';
 var FETCH_FIELD_OF_STUDIES = 'majors/FETCH_FIELD_OF_STUDIES';
+var FETCH_UPDATED_MAJORS_BY_FIELD = 'majors/FETCH_UPDATED_MAJORS_BY_FIELD';
 var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
 var FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
@@ -28135,6 +28136,7 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
     FETCH_FIELD_OF_STUDIES: FETCH_FIELD_OF_STUDIES,
+    FETCH_UPDATED_MAJORS_BY_FIELD: FETCH_UPDATED_MAJORS_BY_FIELD,
     FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
     FETCH_UNIVERSITIES: FETCH_UNIVERSITIES,
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
@@ -38241,7 +38243,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     return h(__WEBPACK_IMPORTED_MODULE_6__App_vue___default.a);
   },
   created: function created() {
-    this.$store.dispatch('fetchMajors');
+    /*this.$store.dispatch('fetchMajors');*/
     this.$store.dispatch('fetchFieldOfStudies');
     this.$store.dispatch('fetchUniversities');
   }
@@ -42143,6 +42145,7 @@ if (inBrowser && window.Vue) {
     majors: [],
     universities: [],
     fieldOfStudy: [],
+    majorsByField: [],
     majorCards: [{
         industries: [],
         majorData: [],
@@ -42234,6 +42237,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         delete fieldOfStudy.name;
         state.fieldOfStudy.push(fieldOfStudy);
     });
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
+    payload.forEach(function (major) {
+        major.majorId = major.hegisCode;
+        delete major.hegisCode;
+        console.log(major);
+        state.majors.push(major);
+    });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].majorData = payload;
@@ -42289,9 +42299,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    fetchUniversities: function fetchUniversities(_ref3) {
+    fetchUpdatedMajorsByField: function fetchUpdatedMajorsByField(_ref3, payload) {
         var commit = _ref3.commit,
             dispatch = _ref3.dispatch;
+
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
+        }, function (error) {
+            return console.log(error);
+        });
+    },
+    fetchUniversities: function fetchUniversities(_ref4) {
+        var commit = _ref4.commit,
+            dispatch = _ref4.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUniversitiesAPI(function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, success);
@@ -42299,9 +42319,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    fetchMajorData: function fetchMajorData(_ref4, payload) {
-        var commit = _ref4.commit,
-            dispatch = _ref4.dispatch;
+    fetchMajorData: function fetchMajorData(_ref5, payload) {
+        var commit = _ref5.commit,
+            dispatch = _ref5.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
             success.cardIndex = payload.cardIndex;
@@ -42310,9 +42330,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    fetchIndustryImages: function fetchIndustryImages(_ref5, payload) {
-        var commit = _ref5.commit,
-            dispatch = _ref5.dispatch;
+    fetchIndustryImages: function fetchIndustryImages(_ref6, payload) {
+        var commit = _ref6.commit,
+            dispatch = _ref6.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
             success.cardIndex = payload.cardIndex;
@@ -42324,13 +42344,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    toggleEducationLevel: function toggleEducationLevel(_ref6, payload) {
-        var commit = _ref6.commit;
+    toggleEducationLevel: function toggleEducationLevel(_ref7, payload) {
+        var commit = _ref7.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TOGGLE_EDUCATION_LEVEL, payload);
     },
-    addMajorCard: function addMajorCard(_ref7) {
-        var commit = _ref7.commit;
+    addMajorCard: function addMajorCard(_ref8) {
+        var commit = _ref8.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD);
     }
@@ -42351,6 +42371,14 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 
 var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
     window.axios.get('api/major/field-of-study').then(function (response) {
+        return success(response.data);
+    }, function (response) {
+        return error(response);
+    });
+};
+
+var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
+    window.axios.get('api/major/hegis-codes/' + payload).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -42386,6 +42414,7 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, e
 /* harmony default export */ __webpack_exports__["a"] = ({
     fetchMajorsAPI: fetchMajorsAPI,
     fetchFieldOfStudiesAPI: fetchFieldOfStudiesAPI,
+    fetchUpdatedMajorsByFieldAPI: fetchUpdatedMajorsByFieldAPI,
     fetchMajorDataAPI: fetchMajorDataAPI,
     fetchUniversitiesAPI: fetchUniversitiesAPI,
     fetchIndustryImagesAPI: fetchIndustryImagesAPI
@@ -45376,7 +45405,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchMajorData']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
             this.form.formWasSubmitted = true;
@@ -45386,6 +45415,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         updateSelect: function updateSelect(field, dataKey, data) {
             if (data) {
                 this.form[field] = data[dataKey];
+
+                if (field == 'fieldOfStudyId') {
+                    this.fetchUpdatedMajorsByField(this.form.fieldOfStudyId);
+                }
             } else {
                 this.form[field] = null;
             }

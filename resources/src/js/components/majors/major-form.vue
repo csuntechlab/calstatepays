@@ -30,7 +30,7 @@
                 <div class="col col-12">
                     <label for="Major">Major:</label>
                     <v-select 
-                        label="major" 
+                        label="major"
                         :options="majors"
                         @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)">
@@ -79,6 +79,7 @@ export default {
     methods: {
         ...mapActions([
             'fetchIndustryImages',
+            'fetchUpdatedMajorsByField',
             'fetchMajorData',
         ]),
         updateForm,
@@ -90,6 +91,10 @@ export default {
         updateSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
+
+                if(field == 'fieldOfStudyId'){
+                    this.fetchUpdatedMajorsByField(this.form.fieldOfStudyId);
+                }
             } else {
                 this.form[field] = null;
             }

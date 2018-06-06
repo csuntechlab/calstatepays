@@ -108,9 +108,7 @@ class MajorController extends Controller
             }
         }
         return [
-            'fieldOfStudyId'   => $fieldOfStudyId,
-            'fieldOfStudyName' => $fieldOfStudy->name,
-            'hegisData'        => array_collapse($data)
+            array_collapse($data)
         ];
     }
 

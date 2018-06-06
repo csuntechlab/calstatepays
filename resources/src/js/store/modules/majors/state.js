@@ -5,6 +5,7 @@ export default {
     majors: [],
     universities: [],
     fieldOfStudy:[],
+    majorsByField:[],
     majorCards:[
         {
             industries: [],

@@ -22,6 +22,16 @@ export default {
         );
     },
 
+    fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
+        Major.fetchUpdatedMajorsByFieldAPI(
+            payload,
+            (success) => {
+                commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
+            },
+            (error) => console.log(error),
+        );
+    },
+
     fetchUniversities({ commit, dispatch }) {
         Major.fetchUniversitiesAPI(
             (success) => {
