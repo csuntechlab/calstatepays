@@ -19,11 +19,11 @@ export default {
     },
 
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
-        payload.forEach((major) => {
+        payload[0].forEach((major) => {
             major.majorId = major.hegisCode;
             delete major.hegisCode;
-            console.log(major);
             state.majors.push(major);
+            console.log(state.majorsByField);
         });
     },
 

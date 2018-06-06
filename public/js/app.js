@@ -42238,11 +42238,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.fieldOfStudy.push(fieldOfStudy);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
-    payload.forEach(function (major) {
+    payload[0].forEach(function (major) {
         major.majorId = major.hegisCode;
         delete major.hegisCode;
-        console.log(major);
         state.majors.push(major);
+        console.log(state.majorsByField);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
