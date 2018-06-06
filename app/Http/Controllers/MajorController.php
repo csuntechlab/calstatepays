@@ -22,6 +22,12 @@ class MajorController extends Controller
         return $allHegisCodes->toArray();
     }
 
+    public function getAllFieldOfStudies()
+    {
+        $fieldOfStudies = FieldOfStudy::all();
+        return $fieldOfStudies;
+    }
+
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = UniversityMajor::AllMajorPathWages($hegis_code, 1153);
 

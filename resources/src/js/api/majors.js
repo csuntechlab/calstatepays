@@ -6,7 +6,7 @@ const fetchMajorsAPI = (success, error) => {
 }
 
 const fetchFieldOfStudiesAPI = (success, error) => {
-    window.axios.get('api/major/hegis-codes').then(
+    window.axios.get(`api/major/field-of-study`).then(
         response => success(response.data),
         response => error(response)
     );
@@ -36,6 +36,7 @@ const fetchIndustryImagesAPI = (payload, success, error) => {
 
 export default {
     fetchMajorsAPI,
+    fetchFieldOfStudiesAPI,
     fetchMajorDataAPI,
     fetchUniversitiesAPI,
     fetchIndustryImagesAPI

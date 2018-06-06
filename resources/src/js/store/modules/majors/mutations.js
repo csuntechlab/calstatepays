@@ -10,6 +10,14 @@ export default {
         });
     },
 
+    [_majors.FETCH_FIELD_OF_STUDIES](state, payload){
+        payload.forEach((fieldOfStudy) => {
+            fieldOfStudy.discipline = fieldOfStudy.name;
+            delete fieldOfStudy.name;
+            state.fieldOfStudy.push(fieldOfStudy);
+        });
+    },
+
     [_majors.FETCH_MAJOR_DATA](state, payload) {
         let index = payload.cardIndex;
         state.majorCards[index].majorData = payload;
