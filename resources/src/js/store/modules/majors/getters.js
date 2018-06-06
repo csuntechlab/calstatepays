@@ -14,7 +14,7 @@ export default {
     industries: state => index => state.majorCards[index].industries,
     educationLevel: state => index => state.majorCards[index].educationLevel,
     universities: state => state.universities,
-    fieldOfStudy: state=> state.fieldOfStudy,
+    fieldOfStudies: state => state.fieldOfStudy,
     universityById: (state, getters) => (id) => {
         const index = getters.universities.findIndex(campus => campus.id == id);
         return getters.universities[index];

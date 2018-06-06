@@ -42193,7 +42193,7 @@ if (inBrowser && window.Vue) {
     universities: function universities(state) {
         return state.universities;
     },
-    fieldOfStudy: function fieldOfStudy(state) {
+    fieldOfStudies: function fieldOfStudies(state) {
         return state.fieldOfStudy;
     },
     universityById: function universityById(state, getters) {
@@ -45370,7 +45370,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,
-                /*fieldOfStudyId:null,*/
+                fieldOfStudyId: null,
                 educationLevel: "allDegrees"
             }
         };
@@ -45397,9 +45397,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             });
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors',
-    /*'fieldOfStudy',*/
-    'universities'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities'])),
     components: {
         vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
@@ -45443,6 +45441,35 @@ var render = function() {
                       },
                       change: function($event) {
                         _vm.updateSelect("schoolId", "id", $event)
+                      }
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row row--condensed" }, [
+              _c("h5", { staticClass: "form--title" }, [
+                _vm._v("Choose a Discipline")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col col-12" },
+                [
+                  _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                    _vm._v("Discipline:")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: { label: "discipline", options: _vm.fieldOfStudies },
+                    on: {
+                      input: function($event) {
+                        _vm.updateSelect("fieldOfStudyId", "id", $event)
+                      },
+                      change: function($event) {
+                        _vm.updateSelect("fieldOfStudyId", "id", $event)
                       }
                     }
                   })

@@ -13,18 +13,18 @@
                     </v-select>
                 </div>
             </div>
-            <!--<div class="row row&#45;&#45;condensed">
-                <h5 class="form&#45;&#45;title">Choose a Discipline</h5>
+            <div class="row row--condensed">
+                <h5 class="form--title">Choose a Discipline</h5>
                 <div class="col col-12">
                     <label for="fieldOfStudy">Discipline:</label>
                     <v-select
-                            label="fieldOfStudy"
-                            :options="fieldOfStudy"
+                            label="discipline"
+                            :options="fieldOfStudies"
                             @input="updateSelect('fieldOfStudyId', 'id', $event)"
                             @change="updateSelect('fieldOfStudyId', 'id', $event)">
                     </v-select>
                 </div>
-            </div>-->
+            </div>
             <div class="row row--condensed">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
@@ -71,7 +71,7 @@ export default {
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,
-                /*fieldOfStudyId:null,*/
+                fieldOfStudyId:null,
                 educationLevel: "allDegrees",
             }
         }
@@ -104,7 +104,7 @@ export default {
     computed: {
         ...mapGetters([
             'majors',
-            /*'fieldOfStudy',*/
+            'fieldOfStudies',
             'universities'
         ])
     },
