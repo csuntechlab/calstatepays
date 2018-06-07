@@ -71,7 +71,7 @@
             </div>
             <div class="row row--condensed">
                 <div class="col col-md-8 py-4">
-                    <button type="button" class="btn btn-success" @click="fetchMockData()">Submit</button>
+                    <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
                 </div>
             </div>
         </div>
@@ -90,12 +90,13 @@ export default {
               education: null,
               earnings: null,
               financialAid: null,
+              university: 1121
           }
       }
   },
   methods: {
     ...mapActions([
-      'fetchMockData'
+      'fetchFreData'
     ]),
     updateForm
   }
