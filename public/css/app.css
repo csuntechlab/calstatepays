@@ -27696,6 +27696,18 @@ input[type="button"]:focus {
   float: left;
 }
 
+.progress-median:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px dotted #17A2B8;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
 .legend-oxford-25 {
   background-color: #A1F0FB;
 }
