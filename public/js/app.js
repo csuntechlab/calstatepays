@@ -38204,13 +38204,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(135);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(324);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(323);
->>>>>>> c5be2b21761eafe9d58543c83acdb3ba72d15b48
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
@@ -39446,13 +39441,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(136);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__ = __webpack_require__(149);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__ = __webpack_require__(148);
->>>>>>> c5be2b21761eafe9d58543c83acdb3ba72d15b48
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_home_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_home_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_pfre_index_vue__);
@@ -42484,12 +42474,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_pfre__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__ = __webpack_require__(60);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__ = __webpack_require__(61);
->>>>>>> c5be2b21761eafe9d58543c83acdb3ba72d15b48
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__ = __webpack_require__(61);
 // PFRE ACTIONS
 
 
@@ -42526,7 +42512,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
     console.log(payload);
     console.log(payload.major);
-    window.axios.get("api/major/" + payload.major + "/" + payload.university + "/" + payload.age + "/" + payload.education + "/" + payload.earnings + "/" + payload.financialAid)
+    window.axios.get("api/major/" + payload.majorId + "/" + payload.university + "/" + payload.age + "/" + payload.education + "/" + payload.earnings + "/" + payload.financialAid)
     //, {
     // params: {
     //     'major':payload.major,
@@ -43214,26 +43200,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 age: null,
                 education: null,
                 earnings: null,
-<<<<<<< HEAD
-                financialAid: null,
-                university: 1121
-            }
-        };
-    },
-
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData']), {
-        updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */]
-    })
-=======
                 financialAid: null
             },
             ageRanges: ['18-19', '20-24', '24-26', '26 +'],
             financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
-            earningRanges: ['0', '0 - 5,000', '5,000 - 15,000', '15,000']
+            earningRanges: ['0', '0 - 5,000', '5,000 - 15,000', '15,000 +']
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchMockData']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchFreData']), {
         updateSelect: function updateSelect(field, dataKey, data) {
             if (data) {
                 this.form[field] = data[dataKey];
@@ -43248,7 +43223,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     components: {
         vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
->>>>>>> c5be2b21761eafe9d58543c83acdb3ba72d15b48
 });
 
 /***/ }),

@@ -1,7 +1,7 @@
 const fetchFreDataAPI = (payload, success, error) => {
     console.log(payload);
     console.log(payload.major);
-    window.axios.get(`api/major/${payload.major}/${payload.university}/${payload.age}/${payload.education}/${payload.earnings}/${payload.financialAid}`)
+    window.axios.get(`api/major/${payload.majorId}/${payload.university}/${payload.age}/${payload.education}/${payload.earnings}/${payload.financialAid}`)
 //, {
     // params: {
     //     'major':payload.major,
