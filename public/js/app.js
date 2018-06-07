@@ -42945,6 +42945,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -44873,6 +44876,10 @@ var render = function() {
       { staticClass: "col-12" },
       [
         _c("card", { staticClass: "container row align-items-center" }, [
+          _c("div", { staticClass: "text-center col-12" }, [
+            _c("h2", [_vm._v("Financial Return on Education")])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "container-fluid p-0" }, [
             _c("div", { staticClass: "row" }, [
               _c(
