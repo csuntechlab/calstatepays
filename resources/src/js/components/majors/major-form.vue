@@ -60,7 +60,7 @@ export default {
                 formWasSubmitted: false,
                 schoolId: null,
                 educationLevel: "allDegrees",
-            }
+            },
         }
     },
     methods: {
