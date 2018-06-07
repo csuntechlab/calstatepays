@@ -27562,6 +27562,11 @@ textarea {
   margin-top: 100px;
 }
 
+.form__group-error {
+  font-weight: 600;
+  color: red;
+}
+
 .row--condensed {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
