@@ -7,6 +7,7 @@ export default {
     fetchMajors({commit, dispatch}){
         Major.fetchMajorsAPI(
             (success) => {
+                commit(_majors.RESET_MAJOR_SELECTIONS);
                 commit(_majors.FETCH_MAJORS, success);
             },
             (error) => console.log(error),
@@ -20,6 +21,10 @@ export default {
             },
             (error) => console.log(error),
         );
+    },
+
+    clearMajorSelection({commit}){
+                commit(_majors.RESET_MAJOR_SELECTIONS);
     },
 
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {

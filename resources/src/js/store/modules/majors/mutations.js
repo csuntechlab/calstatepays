@@ -19,17 +19,21 @@ export default {
     },
 
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
+        state.majors = [];
         payload[0].forEach((major) => {
             major.majorId = major.hegisCode;
             delete major.hegisCode;
             state.majors.push(major);
-            console.log(state.majorsByField);
         });
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
         let index = payload.cardIndex;
         state.majorCards[index].majorData = payload;
+    },
+
+    [_majors.RESET_MAJOR_SELECTIONS](state) {
+        state.majors = [];
     },
 
     [_majors.FETCH_UNIVERSITIES](state, payload) {

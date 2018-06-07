@@ -81,17 +81,18 @@ export default {
             'fetchIndustryImages',
             'fetchUpdatedMajorsByField',
             'fetchMajorData',
+            'fetchMajors'
         ]),
         updateForm,
         submitForm(){
             this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
             this.fetchMajorData(this.form);
+            this.fetchMajors();
         },
         updateSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
-
                 if(field == 'fieldOfStudyId'){
                     this.fetchUpdatedMajorsByField(this.form.fieldOfStudyId);
                 }
