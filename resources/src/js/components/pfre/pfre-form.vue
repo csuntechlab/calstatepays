@@ -96,9 +96,9 @@ export default {
             earnings: null,
             financialAid: null,
         },
-        ageRanges: ['18-20', '21-23', '24-28'],
-        financialAidRanges: ['$1000', '$1500', '$2000', '$2500', '$3000'],
-        earningRanges: ['$1000', '$1500', '$2000', '$2500', '$3000']
+        ageRanges: ['18-19', '20-24', '24-26', '26 +'],
+        financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
+        earningRanges: ['0', '0 - 5,000', '5,000 - 15,000', '15,000']
       }
     },
     methods: {
