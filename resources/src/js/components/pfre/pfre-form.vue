@@ -5,21 +5,23 @@
                 <h3 class="text-gray" v-if="form.major">{{ form.major }}</h3>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <input 
-                    type="text"
-                    id="major"
-                    :value="form.major"
-                    @input="updateForm('major', $event.target.value)">
+                    <v-select 
+                        label="major" 
+                        :options="majors"
+                        @input="updateSelect('majorId', 'majorId', $event)" 
+                        @change="updateSelect('majorId', 'majorId', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="age">Age Range:</label>
-                    <input 
-                    type="text"
-                    id="age"
-                    :value="form.age"
-                    @input="updateForm('age', $event.target.value)">
+                    <v-select 
+                        label="age" 
+                        :options="ageRanges"
+                        @input="updateSelect('age', 'age', $event)" 
+                        @change="updateSelect('age', 'age', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
@@ -52,21 +54,23 @@
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="earnings">Estimated Annual Earnings During School</label>
-                    <input 
-                    type="text"
-                    id="earnings"
-                    :value="form.earnings"
-                    @input="updateForm('earnings', $event.target.value)">
+                    <v-select 
+                        label="earnings" 
+                        :options="earningRanges"
+                        @input="updateSelect('earnings', 'earnings', $event)" 
+                        @change="updateSelect('earnings', 'earnings', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="financialAid">Estimated Annual Financial Aid</label>
-                    <input 
-                    type="text"
-                    id="financialAid"
-                    :value="form.financialAid"
-                    @input="updateForm('financialAid', $event.target.value)">
+                    <v-select 
+                        label="fincialAid" 
+                        :options="financialAidRanges"
+                        @input="updateSelect('financialAid', 'financialAid', $event)" 
+                        @change="updateSelect('financialAid', 'financialAid', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
@@ -78,27 +82,46 @@
     </form>
 </template>
 <script>
+import vSelect from 'vue-select';
 import { updateForm } from '../../utils/index';
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data(){
       return {
-          form: {
-              major: null,
-              age: null,
-              education: null,
-              earnings: null,
-              financialAid: null,
-          }
+        form: {
+            majorId: null,
+            age: null,
+            education: null,
+            earnings: null,
+            financialAid: null,
+        },
+        ageRanges: ['18-20', '21-23', '24-28'],
+        financialAidRanges: ['$1000', '$1500', '$2000', '$2500', '$3000'],
+        earningRanges: ['$1000', '$1500', '$2000', '$2500', '$3000']
       }
-  },
-  methods: {
-    ...mapActions([
-      'fetchMockData'
-    ]),
-    updateForm
-  }
+    },
+    methods: {
+        ...mapActions([
+            'fetchMockData'
+        ]),
+        updateSelect(field, dataKey, data) {
+            if(data) {
+                this.form[field] = data[dataKey];
+            } else {
+                this.form[field] = null;
+            }
+        },
+        updateForm
+    },
+    computed: {
+        ...mapGetters([
+            'majors'
+        ])
+    },
+    components: {
+        vSelect
+    }
 }
 </script>
 

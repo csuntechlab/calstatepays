@@ -43050,8 +43050,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_select__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -43133,6 +43135,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
@@ -43141,18 +43148,33 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             form: {
-                major: null,
+                majorId: null,
                 age: null,
                 education: null,
                 earnings: null,
                 financialAid: null
-            }
+            },
+            ageRanges: ['18-20', '21-23', '24-28'],
+            financialAidRanges: ['$1000', '$1500', '$2000', '$2500', '$3000'],
+            earningRanges: ['$1000', '$1500', '$2000', '$2500', '$3000']
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchMockData']), {
-        updateForm: __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* updateForm */]
-    })
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchMockData']), {
+        updateSelect: function updateSelect(field, dataKey, data) {
+            if (data) {
+                this.form[field] = data[dataKey];
+            } else {
+                this.form[field] = null;
+            }
+        },
+
+        updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */]
+    }),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors'])),
+    components: {
+        vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
+    }
 });
 
 /***/ }),
@@ -43172,35 +43194,49 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "col col-12" }, [
-          _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", id: "major" },
-            domProps: { value: _vm.form.major },
-            on: {
-              input: function($event) {
-                _vm.updateForm("major", $event.target.value)
+        _c(
+          "div",
+          { staticClass: "col col-12" },
+          [
+            _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
+            _vm._v(" "),
+            _c("v-select", {
+              attrs: { label: "major", options: _vm.majors },
+              on: {
+                input: function($event) {
+                  _vm.updateSelect("majorId", "majorId", $event)
+                },
+                change: function($event) {
+                  _vm.updateSelect("majorId", "majorId", $event)
+                }
               }
-            }
-          })
-        ])
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-12" }, [
-          _c("label", { attrs: { for: "age" } }, [_vm._v("Age Range:")]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", id: "age" },
-            domProps: { value: _vm.form.age },
-            on: {
-              input: function($event) {
-                _vm.updateForm("age", $event.target.value)
+        _c(
+          "div",
+          { staticClass: "col col-12" },
+          [
+            _c("label", { attrs: { for: "age" } }, [_vm._v("Age Range:")]),
+            _vm._v(" "),
+            _c("v-select", {
+              attrs: { label: "age", options: _vm.ageRanges },
+              on: {
+                input: function($event) {
+                  _vm.updateSelect("age", "age", $event)
+                },
+                change: function($event) {
+                  _vm.updateSelect("age", "age", $event)
+                }
               }
-            }
-          })
-        ])
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
@@ -43276,39 +43312,53 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-12" }, [
-          _c("label", { attrs: { for: "earnings" } }, [
-            _vm._v("Estimated Annual Earnings During School")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", id: "earnings" },
-            domProps: { value: _vm.form.earnings },
-            on: {
-              input: function($event) {
-                _vm.updateForm("earnings", $event.target.value)
+        _c(
+          "div",
+          { staticClass: "col col-12" },
+          [
+            _c("label", { attrs: { for: "earnings" } }, [
+              _vm._v("Estimated Annual Earnings During School")
+            ]),
+            _vm._v(" "),
+            _c("v-select", {
+              attrs: { label: "earnings", options: _vm.earningRanges },
+              on: {
+                input: function($event) {
+                  _vm.updateSelect("earnings", "earnings", $event)
+                },
+                change: function($event) {
+                  _vm.updateSelect("earnings", "earnings", $event)
+                }
               }
-            }
-          })
-        ])
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-12" }, [
-          _c("label", { attrs: { for: "financialAid" } }, [
-            _vm._v("Estimated Annual Financial Aid")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            attrs: { type: "text", id: "financialAid" },
-            domProps: { value: _vm.form.financialAid },
-            on: {
-              input: function($event) {
-                _vm.updateForm("financialAid", $event.target.value)
+        _c(
+          "div",
+          { staticClass: "col col-12" },
+          [
+            _c("label", { attrs: { for: "financialAid" } }, [
+              _vm._v("Estimated Annual Financial Aid")
+            ]),
+            _vm._v(" "),
+            _c("v-select", {
+              attrs: { label: "fincialAid", options: _vm.financialAidRanges },
+              on: {
+                input: function($event) {
+                  _vm.updateSelect("financialAid", "financialAid", $event)
+                },
+                change: function($event) {
+                  _vm.updateSelect("financialAid", "financialAid", $event)
+                }
               }
-            }
-          })
-        ])
+            })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
