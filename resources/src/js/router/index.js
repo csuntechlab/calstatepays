@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Vuelidate from 'vuelidate'
 import store from '../store';
 
 //PAGES
@@ -13,6 +14,7 @@ import about from './views/about/index.vue';
 
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 const router = new VueRouter({
 	routes: [
