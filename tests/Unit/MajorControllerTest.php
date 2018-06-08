@@ -97,12 +97,7 @@ class MajorControllerTest extends TestCase
         $engineeringId = 6;
         $countOfRelatedHegisCOdes = 10;
         $response = $this->json('GET', "/api/major/hegis-codes/$engineeringId");
-        $response->assertJsonStructure([
-            'fieldOfStudyId',
-            'fieldOfStudyName',
-            'hegisData'
-        ]);
         $response = $response->getOriginalContent();
-        $this->assertCount($countOfRelatedHegisCOdes, $response['hegisData']);
+        $this->assertCount($countOfRelatedHegisCOdes, $response[0]);
     }
 }

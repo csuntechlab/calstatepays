@@ -13,6 +13,30 @@ export default {
         );
     },
 
+    fetchFieldOfStudies({commit, dispatch}){
+        Major.fetchFieldOfStudiesAPI(
+            (success) => {
+                commit(_majors.FETCH_FIELD_OF_STUDIES, success);
+            },
+            (error) => console.log(error),
+        );
+    },
+
+    clearMajorSelection({commit}){
+                commit(_majors.RESET_MAJOR_SELECTIONS);
+    },
+
+    fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
+        Major.fetchUpdatedMajorsByFieldAPI(
+            payload.fieldOfStudyId,
+            (success) => {
+                success.cardIndex = payload.cardIndex;
+                commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
+            },
+            (error) => console.log(error),
+        );
+    },
+
     fetchUniversities({ commit, dispatch }) {
         Major.fetchUniversitiesAPI(
             (success) => {

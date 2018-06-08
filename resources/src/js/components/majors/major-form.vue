@@ -15,15 +15,35 @@
                 </div>
             </div>
             <div class="row row--condensed">
+                <h5 class="form--title">Choose a Discipline</h5>
+                <div class="col col-12">
+                    <label for="fieldOfStudy">Discipline:</label>
+                    <v-select
+                            label="discipline"
+                            :options="fieldOfStudies"
+                            @input="updateSelect('fieldOfStudyId', 'id', $event)"
+                            @change="updateSelect('fieldOfStudyId', 'id', $event)">
+                    </v-select>
+                </div>
+            </div>
+            <div class="row row--condensed">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
-                    <label for="Major">Major:</label>                    
+                    <label for="Major">Major:</label>
                     <label for="Major" v-show="this.$v.$error">(Required)</label>
-                    <v-select 
-                        label="major" 
+                    <v-select
+                        label="major"
+                        v-if="this.form.fieldOfStudyId == null"
                         :options="majors"
-                        @input="updateSelect('majorId', 'majorId', $event)" 
+                        @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)">
+                    </v-select>
+                    <v-select
+                            label="major"
+                            v-else
+                            :options="selectedMajorsByField"
+                            @input="updateSelect('majorId', 'majorId', $event)"
+                            @change="updateSelect('majorId', 'majorId', $event)">
                     </v-select>
                 </div>
             </div>
@@ -62,6 +82,7 @@ export default {
                 majorId: null,
                 formWasSubmitted: false,
                 schoolId: null,
+                fieldOfStudyId: null,
                 educationLevel: "allDegrees",
             },
         }
@@ -69,6 +90,7 @@ export default {
     methods: {
         ...mapActions([
             'fetchIndustryImages',
+            'fetchUpdatedMajorsByField',
             'fetchMajorData',
         ]),
         updateForm,
@@ -83,8 +105,14 @@ export default {
         updateSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
+                this.handleFieldOfStudyMajors(field);
             } else {
                 this.form[field] = null;
+            }
+        },
+        handleFieldOfStudyMajors(field){
+            if(field == 'fieldOfStudyId'){
+                this.fetchUpdatedMajorsByField(this.form);
             }
         },
         toggleEducationLevel() {
@@ -97,8 +125,13 @@ export default {
     computed: {
         ...mapGetters([
             'majors',
+            'fieldOfStudies',
             'universities',
-        ])
+            'majorsByField',
+        ]),
+        selectedMajorsByField(){
+            return this.majorsByField(this.index);
+        }
     },
     validations: {
         form: {

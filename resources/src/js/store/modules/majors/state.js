@@ -2,10 +2,12 @@
 //
 
 export default {
-    majors: [],
+    majors:[],
     universities: [],
-    majorCards:[
+    fieldOfStudy: [],
+    majorCards: [
         {
+            majorsByField: [],
             industries: [],
             majorData: [],
             educationLevel: 'allDegrees'
