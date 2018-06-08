@@ -1,6 +1,6 @@
 <template>
     <form class="form--inverted" id="'majorForm-' + form.cardIndex">
-        <div class="form__group" v-if="!form.formWasSubmitted">
+        <div class="form__group" v-if="!selectedFormWasSubmitted">
             <div class="row row--condensed">
                 <h5 class="form--title">Choose A Campus</h5>
                 <div class="col col-12">
@@ -90,6 +90,7 @@ export default {
     methods: {
         ...mapActions([
             'fetchIndustryImages',
+            'toggleFormWasSubmitted',
             'fetchUpdatedMajorsByField',
             'fetchMajorData',
         ]),
@@ -97,7 +98,7 @@ export default {
         submitForm(){
             this.$v.$touch();
             if(!this.$v.$invalid) {
-                this.form.formWasSubmitted = true;
+                this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
             }
@@ -120,7 +121,7 @@ export default {
                 cardIndex: this.form.cardIndex,
                 educationLevel: this.form.educationLevel
             })
-        }
+        },
     },
     computed: {
         ...mapGetters([
@@ -128,9 +129,13 @@ export default {
             'fieldOfStudies',
             'universities',
             'majorsByField',
+            'formWasSubmitted',
         ]),
         selectedMajorsByField(){
             return this.majorsByField(this.index);
+        },
+        selectedFormWasSubmitted(){
+            return this.formWasSubmitted(this.index);
         }
     },
     validations: {

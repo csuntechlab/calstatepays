@@ -21,4 +21,5 @@ export default {
     },
     majorCards: state => state.majorCards,
     majorsByField: state => index => state.majorCards[index].majorsByField,
+    formWasSubmitted:state=> index => state.majorCards[index].formWasSubmitted,
 }

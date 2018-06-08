@@ -28321,6 +28321,7 @@ var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
 var FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
 var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
+var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -28332,6 +28333,7 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
     FETCH_UNIVERSITIES: FETCH_UNIVERSITIES,
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
+    TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
     ADD_MAJOR_CARD: ADD_MAJOR_CARD
 });
 
@@ -43175,6 +43177,7 @@ function h(tag, key, args) {
     universities: [],
     fieldOfStudy: [],
     majorCards: [{
+        formWasSubmitted: false,
         majorsByField: [],
         industries: [],
         majorData: [],
@@ -43243,6 +43246,11 @@ function h(tag, key, args) {
         return function (index) {
             return state.majorCards[index].majorsByField;
         };
+    },
+    formWasSubmitted: function formWasSubmitted(state) {
+        return function (index) {
+            return state.majorCards[index].formWasSubmitted;
+        };
     }
 });
 
@@ -43296,12 +43304,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_EDUCATION_LEVEL, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].educationLevel = payload.educationLevel;
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_FORM_WAS_SUBMITTED, function (state, payload) {
+    var index = payload;
+    state.majorCards[index].formWasSubmitted = true;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
         majorsByField: [],
         educationLevel: 'allDegrees',
         industries: [],
-        majorData: []
+        majorData: [],
+        formWasSubmitted: false
     });
 }), _majors$FETCH_MAJORS$);
 
@@ -43393,8 +43405,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TOGGLE_EDUCATION_LEVEL, payload);
     },
-    addMajorCard: function addMajorCard(_ref9) {
+    toggleFormWasSubmitted: function toggleFormWasSubmitted(_ref9, payload) {
         var commit = _ref9.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TOGGLE_FORM_WAS_SUBMITTED, payload);
+    },
+    addMajorCard: function addMajorCard(_ref10) {
+        var commit = _ref10.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD);
     }
@@ -46554,12 +46571,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'toggleFormWasSubmitted', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
             this.$v.$touch();
             if (!this.$v.$invalid) {
-                this.form.formWasSubmitted = true;
+                this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
             }
@@ -46584,9 +46601,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             });
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted']), {
         selectedMajorsByField: function selectedMajorsByField() {
             return this.majorsByField(this.index);
+        },
+        selectedFormWasSubmitted: function selectedFormWasSubmitted() {
+            return this.formWasSubmitted(this.index);
         }
     }),
     validations: {
@@ -47382,7 +47402,7 @@ var render = function() {
       attrs: { id: "'majorForm-' + form.cardIndex" }
     },
     [
-      !_vm.form.formWasSubmitted
+      !_vm.selectedFormWasSubmitted
         ? _c("div", { staticClass: "form__group" }, [
             _c("div", { staticClass: "row row--condensed" }, [
               _c("h5", { staticClass: "form--title" }, [
