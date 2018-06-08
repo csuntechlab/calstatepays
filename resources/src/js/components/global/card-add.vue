@@ -1,5 +1,5 @@
 <template>
-    <div class="csu-card card-add col col-md-10 offset-md-1 d-flex flex-row">
+    <div class="card-add col col-md-10 offset-md-1 d-flex flex-row">
         <div class="col col-1">
 
             <button class="btn-add">

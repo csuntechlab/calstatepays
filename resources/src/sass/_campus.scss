@@ -23,8 +23,8 @@
 
 .campus{
     display: flex;
-    height: 370px;
-    min-width: 30vw;
+    height: 25rem;
+    min-width: 20vw;
     align-self: center;
     justify-content: center;
     font-family: $font-base;
@@ -39,7 +39,7 @@
         bottom: 1rem;
         font-size: 1.3rem;
         line-height: 140%;
-        font-weight: 400;
+        font-weight: bold;
     }
 }
 

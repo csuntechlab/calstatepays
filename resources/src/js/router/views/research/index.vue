@@ -4,9 +4,9 @@
             <header id="research-main-banner" class="row">
                 <div class="col align-self-center">
                     <div class="row">
-                        <h2 class="text-center">
+                        <h1 class="text-center home__heading">
                             We Gathered Data Across 7 CSUs in the Metro LA Area
-                        </h2>
+                        </h1>
                     </div>
                     <div class="row mt-2 csu-wrapper">
                         <figure class="col-md col-sm-4 col-4 text-center">
@@ -48,38 +48,38 @@
         </div>
         
         <main class="campuses-container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+            <div class="row justify-content-start justify-content-xl-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csun" class=" campus">
                         <h3>California State University Northridge</h3>
                     </div>  
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csulb" class=" campus">
                         <h3>California State University Long Beach</h3>
                     </div> 
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csula" class=" campus">
                         <h3>California State University Los Angeles</h3>
                     </div>  
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csuf" class=" campus">
                         <h3>California State University Fullerton</h3>
                     </div> 
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csudh" class=" campus">
                         <h3>California State University Dominguez Hills</h3>
                     </div>  
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csuci" class=" campus">
                         <h3>California State University Channel Island</h3>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-lx-3 py-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
                     <div id="csup" class=" campus">
                         <h3>California State University Pomona</h3>
                     </div>
