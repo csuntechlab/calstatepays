@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
-		<div class="row">
-			<h1 class="pt-3 home__heading text-gray">FAQ</h1>
+		<div class="row banner faq-banner align-items-center">
+			<h1 class="pt-3 home__heading">FAQ</h1>
 		</div>
 		<div class="row">
 			<div class="col col-md-9">

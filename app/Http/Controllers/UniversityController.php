@@ -9,7 +9,8 @@ class UniversityController extends Controller
 {
     public function getAllUniversities()
     {
-        $universities = University::all();
-        return $universities;
+        /*$universities = University::all();*/
+        $universities = University::where('id',"001153")->first();
+        return [0 => $universities];
     }
 }

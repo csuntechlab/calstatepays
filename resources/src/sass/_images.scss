@@ -75,6 +75,20 @@
 	padding-bottom: .1rem;	
 }
 
+.csu-seals {
+	height: 10rem;
+	widows: 10rem;
+}
+
+.faq-banner {
+	background-image:$white-filter, url('../img/faq-banner.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 35vh;
+	@media screen and (max-width: $break-small) {
+		background-position: 40%;
+	}
+}
 .csu-wrapper {
 	figure {
 		img {
