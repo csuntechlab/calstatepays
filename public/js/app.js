@@ -42988,7 +42988,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "csu-card col col-md-10 offset-md-1" },
+    { staticClass: "csu-card col col-lg-10" },
     [_vm._t("default")],
     2
   )
@@ -43179,7 +43179,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
         updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */]
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'majorNameById']), {
+        selectedMajorName: function selectedMajorName() {
+            if (this.form.majorId == null) {
+                return '';
+            } else {
+                return this.majorNameById(this.form.majorId);
+            }
+        }
+    }),
     components: {
         vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
@@ -43197,7 +43205,7 @@ var render = function() {
     _c("div", { staticClass: "fre-major-title" }, [
       _vm.form.majorId
         ? _c("h3", { staticClass: "text-gray" }, [
-            _vm._v(_vm._s(_vm.form.majorId))
+            _vm._v(_vm._s(_vm.selectedMajorName))
           ])
         : _vm._e()
     ]),
@@ -45129,20 +45137,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "card-add col col-md-10 offset-md-1 d-flex flex-row" },
-    [
-      _c("div", { staticClass: "col col-1" }, [
-        _c("button", { staticClass: "btn-add" }, [
-          _c("i", {
-            staticClass: "fa fa-plus-circle",
-            on: { click: _vm.onPlus }
-          })
-        ])
+  return _c("div", { staticClass: "card-add col col-lg-10 d-flex flex-row" }, [
+    _c("div", { staticClass: "col col-1" }, [
+      _c("button", { staticClass: "btn-add" }, [
+        _c("i", { staticClass: "fa fa-plus-circle", on: { click: _vm.onPlus } })
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

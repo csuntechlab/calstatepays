@@ -1,7 +1,7 @@
 <template>
     <form class="form--inverted">
             <div class="fre-major-title">
-                <h3 class="text-gray" v-if="form.majorId">{{ form.majorId }}</h3>
+                <h3 class="text-gray" v-if="form.majorId">{{ selectedMajorName }}</h3>
             </div>
             <div class="form__group">
             <div class="row row--condensed">    
@@ -118,8 +118,17 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'majors'
-        ])
+            'majors',
+            'majorNameById'
+        ]),
+        selectedMajorName() {
+            if(this.form.majorId == null) {
+                return ''
+            }
+            else {
+                return this.majorNameById(this.form.majorId)
+            }
+        }
     },
     components: {
         vSelect
