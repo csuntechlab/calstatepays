@@ -42453,6 +42453,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.pfreData.earnings.actual = Math.floor(Math.random() * Math.floor(45000));
     state.pfreData.returnOnInvestment.actual = (Math.random() * (0 - .15) + .15).toFixed(2);
 }), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].FETCH_FRE_DATA, function (state, payload) {
+    console.log(payload.fre);
     state.pfreData.years.actual = payload.fre.timeToDegree;
     state.pfreData.earnings.actual = payload.fre.earningsYearFive;
     state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
@@ -44860,8 +44861,7 @@ var render = function() {
               value:
                 _vm.pfreData.returnOnInvestment.actual *
                 100 /
-                (_vm.pfreData.returnOnInvestment.maximum * 100) *
-                100,
+                (_vm.pfreData.returnOnInvestment.maximum * 100),
               height: "45",
               color: "pfre-fre"
             }
@@ -44910,7 +44910,9 @@ var render = function() {
               _vm._v(
                 "FRE - Financial Return on Education: " +
                   _vm._s(
-                    _vm._f("percentage")(_vm.pfreData.returnOnInvestment.actual)
+                    _vm._f("percentage")(
+                      _vm.pfreData.returnOnInvestment.actual / 100
+                    )
                   )
               )
             ])
