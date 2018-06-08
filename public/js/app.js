@@ -43200,7 +43200,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 age: null,
                 education: null,
                 earnings: null,
-                financialAid: null
+                financialAid: null,
+                university: 1153
             },
             ageRanges: ['18-19', '20-24', '24-26', '26 +'],
             financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
@@ -43209,9 +43210,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
 
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchFreData']), {
-        updateSelect: function updateSelect(field, dataKey, data) {
+        updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
             if (data) {
                 this.form[field] = data[dataKey];
+            } else {
+                this.form[field] = null;
+            }
+        },
+        updateSelect: function updateSelect(field, data) {
+            if (data) {
+                this.form[field] = data;
             } else {
                 this.form[field] = null;
             }
@@ -43252,10 +43260,10 @@ var render = function() {
               attrs: { label: "major", options: _vm.majors },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("majorId", "majorId", $event)
+                  _vm.updateGrandfatherSelect("majorId", "majorId", $event)
                 },
                 change: function($event) {
-                  _vm.updateSelect("majorId", "majorId", $event)
+                  _vm.updateGrandfatherSelect("majorId", "majorId", $event)
                 }
               }
             })
@@ -43275,10 +43283,10 @@ var render = function() {
               attrs: { label: "age", options: _vm.ageRanges },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("age", "age", $event)
+                  _vm.updateSelect("age", $event)
                 },
                 change: function($event) {
-                  _vm.updateSelect("age", "age", $event)
+                  _vm.updateSelect("age", $event)
                 }
               }
             })
@@ -43372,10 +43380,10 @@ var render = function() {
               attrs: { label: "earnings", options: _vm.earningRanges },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("earnings", "earnings", $event)
+                  _vm.updateSelect("earnings", $event)
                 },
                 change: function($event) {
-                  _vm.updateSelect("earnings", "earnings", $event)
+                  _vm.updateSelect("earnings", $event)
                 }
               }
             })
@@ -43397,10 +43405,10 @@ var render = function() {
               attrs: { label: "fincialAid", options: _vm.financialAidRanges },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("financialAid", "financialAid", $event)
+                  _vm.updateSelect("financialAid", $event)
                 },
                 change: function($event) {
-                  _vm.updateSelect("financialAid", "financialAid", $event)
+                  _vm.updateSelect("financialAid", $event)
                 }
               }
             })

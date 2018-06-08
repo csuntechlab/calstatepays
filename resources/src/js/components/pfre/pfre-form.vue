@@ -8,8 +8,8 @@
                     <v-select 
                         label="major" 
                         :options="majors"
-                        @input="updateSelect('majorId', 'majorId', $event)" 
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @input="updateGrandfatherSelect('majorId', 'majorId', $event)" 
+                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)">
                     </v-select>
                 </div>
             </div>
@@ -19,8 +19,8 @@
                     <v-select 
                         label="age" 
                         :options="ageRanges"
-                        @input="updateSelect('age', 'age', $event)" 
-                        @change="updateSelect('age', 'age', $event)">
+                        @input="updateSelect('age', $event)" 
+                        @change="updateSelect('age', $event)">
                     </v-select>
                 </div>
             </div>
@@ -57,8 +57,8 @@
                     <v-select 
                         label="earnings" 
                         :options="earningRanges"
-                        @input="updateSelect('earnings', 'earnings', $event)" 
-                        @change="updateSelect('earnings', 'earnings', $event)">
+                        @input="updateSelect('earnings', $event)" 
+                        @change="updateSelect('earnings', $event)">
                     </v-select>
                 </div>
             </div>
@@ -68,8 +68,8 @@
                     <v-select 
                         label="fincialAid" 
                         :options="financialAidRanges"
-                        @input="updateSelect('financialAid', 'financialAid', $event)" 
-                        @change="updateSelect('financialAid', 'financialAid', $event)">
+                        @input="updateSelect('financialAid', $event)" 
+                        @change="updateSelect('financialAid', $event)">
                     </v-select>
                 </div>
             </div>
@@ -95,6 +95,7 @@ export default {
             education: null,
             earnings: null,
             financialAid: null,
+            university: 1153
         },
         ageRanges: ['18-19', '20-24', '24-26', '26 +'],
         financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
@@ -105,14 +106,21 @@ export default {
         ...mapActions([
             'fetchFreData'
         ]),
-        updateSelect(field, dataKey, data) {
+        updateGrandfatherSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
             } else {
                 this.form[field] = null;
             }
         },
-        updateForm
+        updateSelect(field, data) {
+             if(data) {
+                this.form[field] = data;
+            } else {
+                this.form[field] = null;
+            }
+        },
+        updateForm 
     },
     computed: {
         ...mapGetters([
