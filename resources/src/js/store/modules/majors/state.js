@@ -7,6 +7,7 @@ export default {
     fieldOfStudy: [],
     majorCards: [
         {
+            formWasSubmitted: false,
             majorsByField: [],
             industries: [],
             majorData: [],

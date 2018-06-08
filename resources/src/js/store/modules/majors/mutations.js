@@ -55,12 +55,18 @@ export default {
         state.majorCards[index].educationLevel = payload.educationLevel;
     },
 
+    [_majors.TOGGLE_FORM_WAS_SUBMITTED](state, payload) {
+        let index = payload;
+        state.majorCards[index].formWasSubmitted = true;
+    },
+
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
             majorsByField: [],
             educationLevel: 'allDegrees',
             industries: [],
-            majorData: []
+            majorData: [],
+            formWasSubmitted: false,
         });
     }
 
