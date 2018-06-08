@@ -19,7 +19,7 @@
           <p class="font-weight-bold mb-0 text-center">Estimated time to degree: {{pfreData.years.actual}}</p>
         </div>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-3 align-self-md-center">
         <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
       </div>
     </div>
@@ -42,7 +42,7 @@
           <p class="font-weight-bold mb-0 text-center">Estimated Earnings 5 Years After Exit: {{pfreData.earnings.actual | currency}}</p>
         </div>  
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-3 align-self-md-center">
         <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
       </div>
     </div>
@@ -65,7 +65,7 @@
           <p class="font-weight-bold mb-0 text-center">FRE - Financial Return on Education: {{pfreData.returnOnInvestment.actual | percentage}}</p>
         </div>
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-3 align-self-md-center">
         <pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
       </div>
     </div>

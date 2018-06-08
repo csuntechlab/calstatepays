@@ -97,3 +97,15 @@ textarea {
   align-items: center;
   padding: 0.25rem 0rem;
 }
+
+.fre-major-title {
+  
+  height: 4rem;
+  h3 {
+    margin-bottom: 0;
+    line-height: 1;
+    color: $gray;
+    text-align:center;
+    font-weight: 600;
+  }
+}

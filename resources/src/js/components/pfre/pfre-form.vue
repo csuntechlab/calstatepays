@@ -1,8 +1,10 @@
 <template>
     <form class="form--inverted">
-        <div class="form__group">
-            <div class="row row--condensed">
+            <div class="fre-major-title">
                 <h3 class="text-gray" v-if="form.major">{{ form.major }}</h3>
+            </div>
+            <div class="form__group">
+            <div class="row row--condensed">    
                 <div class="col col-12">
                     <label for="Major">Major:</label>
                     <input 

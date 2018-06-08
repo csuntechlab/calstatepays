@@ -43139,6 +43139,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -43170,14 +43172,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "form--inverted" }, [
+    _c("div", { staticClass: "fre-major-title" }, [
+      _vm.form.major
+        ? _c("h3", { staticClass: "text-gray" }, [
+            _vm._v(_vm._s(_vm.form.major))
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "form__group" }, [
       _c("div", { staticClass: "row row--condensed" }, [
-        _vm.form.major
-          ? _c("h3", { staticClass: "text-gray" }, [
-              _vm._v(_vm._s(_vm.form.major))
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c("div", { staticClass: "col col-12" }, [
           _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
           _vm._v(" "),
@@ -43405,7 +43409,7 @@ var render = function() {
     _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
       ? _c(
           "div",
-          { class: _vm.infoKey ? "pfre-info--show col-10" : "pfre-info" },
+          { class: _vm.infoKey ? "pfre-info--show col-10 my-2" : "pfre-info" },
           [_vm._t("default")],
           2
         )
@@ -44680,7 +44684,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3" },
+        { staticClass: "col-12 col-md-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
             _vm._v(
@@ -44751,7 +44755,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3" },
+        { staticClass: "col-12 col-md-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
             _vm._v(
@@ -44839,7 +44843,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3" },
+        { staticClass: "col-12 col-md-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
             _vm._v(
@@ -44884,14 +44888,14 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c(
                 "div",
-                { staticClass: "col-12 col-md-3" },
+                { staticClass: "col-12 col-md-3 align-self-center" },
                 [_c("pfre-form")],
                 1
               ),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-12 col-md-9" },
+                { staticClass: "col-12 col-md-9 align-self-center" },
                 [_c("pfre-progress")],
                 1
               )

@@ -27588,6 +27588,18 @@ textarea {
   padding: 0.25rem 0rem;
 }
 
+.fre-major-title {
+  height: 4rem;
+}
+
+.fre-major-title h3 {
+  margin-bottom: 0;
+  line-height: 1;
+  color: #777777;
+  text-align: center;
+  font-weight: 600;
+}
+
 .btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -27625,8 +27637,8 @@ textarea {
 
 .btn-info {
   color: #FFF;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   float: left;
 }
