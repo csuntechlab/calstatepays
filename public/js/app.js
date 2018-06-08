@@ -45708,7 +45708,7 @@ var render = function() {
           _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
           _vm._v(" "),
           _c("v-progress-linear", {
-            staticClass: "pfre-bar",
+            staticClass: "pfre-bar progress-median",
             attrs: {
               value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
               height: "45",
@@ -45767,7 +45767,7 @@ var render = function() {
           _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
           _vm._v(" "),
           _c("v-progress-linear", {
-            staticClass: "pfre-bar",
+            staticClass: "pfre-bar progress-median",
             attrs: {
               value:
                 _vm.pfreData.earnings.actual /
@@ -45838,7 +45838,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("v-progress-linear", {
-            staticClass: "pfre-bar",
+            staticClass: "pfre-bar progress-median",
             attrs: {
               value:
                 _vm.pfreData.returnOnInvestment.actual *
