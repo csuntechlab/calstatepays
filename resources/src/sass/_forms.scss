@@ -99,13 +99,17 @@ textarea {
 }
 
 .fre-major-title {
-  
+  display: none;
   height: 4rem;
   h3 {
     margin-bottom: 0;
     line-height: 1;
     color: $gray;
     text-align:center;
-    font-weight: 600;
+    font-weight: normal;
+    
+  }
+  @media screen and (max-width: $break-small) {
+        display: block;
   }
 }

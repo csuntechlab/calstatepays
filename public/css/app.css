@@ -27115,21 +27115,21 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  margin-left: 80px;
   background: #EBEBEB;
   border-radius: 15px;
   float: right;
   width: 10rem;
-  top: 45%;
+  top: 27%;
+  left: 33%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  padding: 8px;
+  padding: .5rem;
 }
 
 .pfre-info--show::after {
   content: " ";
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: -6px;
   width: 0;
   height: 0;
@@ -27589,6 +27589,7 @@ textarea {
 }
 
 .fre-major-title {
+  display: none;
   height: 4rem;
 }
 
@@ -27597,7 +27598,13 @@ textarea {
   line-height: 1;
   color: #777777;
   text-align: center;
-  font-weight: 600;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 767px) {
+  .fre-major-title {
+    display: block;
+  }
 }
 
 .btn {
@@ -27641,6 +27648,12 @@ textarea {
   height: 2.5rem;
   border-radius: 50%;
   float: left;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-info {
+    float: right;
+  }
 }
 
 .btn-info:focus {

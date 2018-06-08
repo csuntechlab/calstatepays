@@ -43389,7 +43389,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
     _c("div", { staticClass: "col-11 col-md-6" }, [
       _c(
         "button",

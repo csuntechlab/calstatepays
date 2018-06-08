@@ -72,19 +72,19 @@ body {
 
 .pfre-info--show {
     position: absolute;
-    margin-left: 80px;
     background: $light-gray;
     border-radius: 15px;
     float: right;
     width: 10rem;
-    top: 45%;
+    top: 27%;
+    left: 33%;
     transform: translateY(-50%);
-    padding: 8px;
+    padding: .5rem;
 
   &::after {
     content: " ";
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: -6px;
     width: 0;
     height: 0;
@@ -97,7 +97,6 @@ body {
     }
   }
   @media screen and (max-width: $break-small) {
-        // background: green;
         transform: translate(0);
         margin-left: 0;
         position: static;

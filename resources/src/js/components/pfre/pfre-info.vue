@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row justify-content-md-start mx-2">
     <div class="col-11 col-md-6">
       <button class="btn-info" type="button" @click="toggleInfo(infoKey)">
         <i class="fa fa-question"></i>
