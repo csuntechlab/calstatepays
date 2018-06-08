@@ -42456,6 +42456,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.pfreData.years = payload.timeToDegree;
     state.pfreData.earnings = payload.earningsYearFive;
     state.pfreData.returnOnInvestment = payload.returnOnInvestment;
+    console.log(state.pfreData.years);
 }), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].TOGGLE_INFO, function (state, payload) {
     if (!state.pfreShowInfo) {
         state.pfreInfoKey = payload;
@@ -42510,20 +42511,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
-    console.log(payload);
-    console.log(payload.major);
-    window.axios.get("api/major/" + payload.majorId + "/" + payload.university + "/" + payload.age + "/" + payload.education + "/" + payload.earnings + "/" + payload.financialAid)
-    //, {
-    // params: {
-    //     'major':payload.major,
-    //     'age_range': payload.age,
-    //     'education_level': payload.education,
-    //     'annual_earnings':  payload.earnings,
-    //     'financial_aid': payload.financialAid,
-    //     'university': state.university,
-    // }
-    // })
-    .then(function (response) {
+    window.axios.get("api/major/" + payload.majorId + "/" + payload.university + "/" + payload.age + "/" + payload.education + "/" + payload.earnings + "/" + payload.financialAid).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -43201,11 +43189,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 education: null,
                 earnings: null,
                 financialAid: null,
+                //drop down for university hasn't been created yet
                 university: 1153
             },
-            ageRanges: ['18-19', '20-24', '24-26', '26 +'],
-            financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
-            earningRanges: ['0', '0 - 5,000', '5,000 - 15,000', '15,000 +']
+            ageRanges: [{ age: '18-19', value: 1 }, { age: '20-24', value: 2 }, { age: '24-26', value: 3 }, { age: '26 +', value: 4 }],
+            earningRanges: [{ earn: '0', value: 1 }, { earn: '0 - 20,000', value: 2 }, { earn: '30,000 - 45,000', value: 3 }, { earn: '45,000 - 60,000', value: 4 }, { earn: '60,000 +', value: 5 }],
+            financialAidRanges: [{ finAid: '0', value: 1 }, { finAid: '0 - 5,000', value: 2 }, { finAid: '5,000 - 15,000', value: 3 }, { finAid: '15,000 +', value: 4 }]
         };
     },
 
@@ -43219,13 +43208,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         updateSelect: function updateSelect(field, data) {
             if (data) {
-                this.form[field] = data;
+                this.form[field] = data.value;
             } else {
                 this.form[field] = null;
             }
-        },
-
-        updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */]
+        }
     }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors'])),
     components: {
@@ -43317,14 +43304,14 @@ var render = function() {
               }
             ],
             staticClass: "mx-2 mt-1",
-            attrs: { type: "radio", id: "freshman", value: "freshman" },
-            domProps: { checked: _vm._q(_vm.form.education, "freshman") },
+            attrs: { type: "radio", id: "freshman", value: "FTF" },
+            domProps: { checked: _vm._q(_vm.form.education, "FTF") },
             on: {
               input: function($event) {
-                _vm.updateForm("education", $event.target.value)
+                _vm.updateSelect("education", $event.target)
               },
               change: function($event) {
-                _vm.$set(_vm.form, "education", "freshman")
+                _vm.$set(_vm.form, "education", "FTF")
               }
             }
           })
@@ -43351,14 +43338,14 @@ var render = function() {
               }
             ],
             staticClass: "mx-2 mt-1",
-            attrs: { type: "radio", id: "transfer", value: "transfer" },
-            domProps: { checked: _vm._q(_vm.form.education, "transfer") },
+            attrs: { type: "radio", id: "transfer", value: "FTT" },
+            domProps: { checked: _vm._q(_vm.form.education, "FTT") },
             on: {
               input: function($event) {
-                _vm.updateForm("education", $event.target.value)
+                _vm.updateSelect("education", $event.target)
               },
               change: function($event) {
-                _vm.$set(_vm.form, "education", "transfer")
+                _vm.$set(_vm.form, "education", "FTT")
               }
             }
           })
@@ -43377,7 +43364,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
-              attrs: { label: "earnings", options: _vm.earningRanges },
+              attrs: { label: "earn", options: _vm.earningRanges },
               on: {
                 input: function($event) {
                   _vm.updateSelect("earnings", $event)
@@ -43402,7 +43389,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
-              attrs: { label: "fincialAid", options: _vm.financialAidRanges },
+              attrs: { label: "finAid", options: _vm.financialAidRanges },
               on: {
                 input: function($event) {
                   _vm.updateSelect("financialAid", $event)
@@ -43672,7 +43659,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
 
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData'])),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchMockData'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData'])),
   filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
   components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
 });

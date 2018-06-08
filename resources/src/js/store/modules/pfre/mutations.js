@@ -12,6 +12,7 @@ export default {
         state.pfreData.years = payload.timeToDegree;
         state.pfreData.earnings = payload.earningsYearFive;
         state.pfreData.returnOnInvestment = payload.returnOnInvestment;
+        console.log(state.pfreData.years);
     },
 
     [_pfre.TOGGLE_INFO] (state, payload){

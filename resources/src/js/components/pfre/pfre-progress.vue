@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchMockData'
+      'fetchFreData'
     ])
   },
   filters: { percentage, currency },
