@@ -7,7 +7,6 @@ export default {
     fetchMajors({commit, dispatch}){
         Major.fetchMajorsAPI(
             (success) => {
-                commit(_majors.RESET_MAJOR_SELECTIONS);
                 commit(_majors.FETCH_MAJORS, success);
             },
             (error) => console.log(error),
@@ -29,8 +28,9 @@ export default {
 
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
         Major.fetchUpdatedMajorsByFieldAPI(
-            payload,
+            payload.fieldOfStudyId,
             (success) => {
+                success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
             },
             (error) => console.log(error),

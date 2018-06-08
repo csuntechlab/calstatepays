@@ -19,11 +19,12 @@ export default {
     },
 
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
-        state.majors = [];
+        let index = payload.cardIndex;
+        state.majorCards[index].majorsByField = [];
         payload[0].forEach((major) => {
             major.majorId = major.hegisCode;
             delete major.hegisCode;
-            state.majors.push(major);
+            state.majorCards[index].majorsByField.push(major);
         });
     },
 
@@ -41,7 +42,7 @@ export default {
             university.name = university.university_name;
             delete university.university_name;
             state.universities.push(university);
-        }); 
+        });
     },
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
@@ -56,6 +57,7 @@ export default {
 
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
+            majorsByField: [],
             educationLevel: 'allDegrees',
             industries: [],
             majorData: []

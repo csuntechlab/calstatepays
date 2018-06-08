@@ -20,4 +20,5 @@ export default {
         return getters.universities[index];
     },
     majorCards: state => state.majorCards,
+    majorsByField: state => index => state.majorCards[index].majorsByField,
 }

@@ -42147,8 +42147,8 @@ if (inBrowser && window.Vue) {
     majors: [],
     universities: [],
     fieldOfStudy: [],
-    majorsByField: [],
     majorCards: [{
+        majorsByField: [],
         industries: [],
         majorData: [],
         educationLevel: 'allDegrees'
@@ -42211,6 +42211,11 @@ if (inBrowser && window.Vue) {
     },
     majorCards: function majorCards(state) {
         return state.majorCards;
+    },
+    majorsByField: function majorsByField(state) {
+        return function (index) {
+            return state.majorCards[index].majorsByField;
+        };
     }
 });
 
@@ -42240,11 +42245,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.fieldOfStudy.push(fieldOfStudy);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
-    state.majors = [];
+    var index = payload.cardIndex;
+    state.majorCards[index].majorsByField = [];
     payload[0].forEach(function (major) {
         major.majorId = major.hegisCode;
         delete major.hegisCode;
-        state.majors.push(major);
+        state.majorCards[index].majorsByField.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
@@ -42265,6 +42271,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].educationLevel = payload.educationLevel;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
+        majorsByField: [],
         educationLevel: 'allDegrees',
         industries: [],
         majorData: []
@@ -42288,7 +42295,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorsAPI(function (success) {
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].RESET_MAJOR_SELECTIONS);
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJORS, success);
         }, function (error) {
             return console.log(error);
@@ -42313,7 +42319,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref4.commit,
             dispatch = _ref4.dispatch;
 
-        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload.fieldOfStudyId, function (success) {
+            success.cardIndex = payload.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
             return console.log(error);
@@ -45395,6 +45402,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -45410,27 +45425,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 formWasSubmitted: false,
                 schoolId: null,
                 fieldOfStudyId: null,
+                /*isFieldOfStudySelected: false,*/
                 educationLevel: "allDegrees"
             }
         };
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchUpdatedMajorsByField', 'fetchMajorData', 'fetchMajors']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_1__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
             this.form.formWasSubmitted = true;
             this.fetchIndustryImages(this.form);
             this.fetchMajorData(this.form);
-            this.fetchMajors();
         },
         updateSelect: function updateSelect(field, dataKey, data) {
             if (data) {
                 this.form[field] = data[dataKey];
-                if (field == 'fieldOfStudyId') {
-                    this.fetchUpdatedMajorsByField(this.form.fieldOfStudyId);
-                }
+                this.handleFieldOfStudyMajors(field);
             } else {
                 this.form[field] = null;
+            }
+        },
+        handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
+            if (field == 'fieldOfStudyId') {
+                this.fetchUpdatedMajorsByField(this.form);
             }
         },
         toggleEducationLevel: function toggleEducationLevel() {
@@ -45440,7 +45458,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             });
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField']), {
+        selectedMajorsByField: function selectedMajorsByField() {
+            return this.majorsByField(this.index);
+        }
+    }),
     components: {
         vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
@@ -45532,17 +45554,32 @@ var render = function() {
                 [
                   _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
                   _vm._v(" "),
-                  _c("v-select", {
-                    attrs: { label: "major", options: _vm.majors },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("majorId", "majorId", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("majorId", "majorId", $event)
-                      }
-                    }
-                  })
+                  this.form.fieldOfStudyId == null
+                    ? _c("v-select", {
+                        attrs: { label: "major", options: _vm.majors },
+                        on: {
+                          input: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          },
+                          change: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          }
+                        }
+                      })
+                    : _c("v-select", {
+                        attrs: {
+                          label: "major",
+                          options: _vm.selectedMajorsByField
+                        },
+                        on: {
+                          input: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          },
+                          change: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          }
+                        }
+                      })
                 ],
                 1
               )
