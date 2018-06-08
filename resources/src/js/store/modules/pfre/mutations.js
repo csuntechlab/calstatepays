@@ -9,10 +9,9 @@ export default {
     },
 
     [_pfre.FETCH_FRE_DATA](state, payload) {
-        state.pfreData.years = payload.timeToDegree;
-        state.pfreData.earnings = payload.earningsYearFive;
-        state.pfreData.returnOnInvestment = payload.returnOnInvestment;
-        console.log(state.pfreData.years);
+        state.pfreData.years.actual = payload.fre.timeToDegree;
+        state.pfreData.earnings.actual = payload.fre.earningsYearFive;
+        state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
     },
 
     [_pfre.TOGGLE_INFO] (state, payload){
