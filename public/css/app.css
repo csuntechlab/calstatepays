@@ -27366,8 +27366,8 @@ footer, .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 370px;
-  min-width: 30vw;
+  height: 25rem;
+  min-width: 20vw;
   -ms-flex-item-align: center;
       align-self: center;
   -webkit-box-pack: center;
@@ -27388,12 +27388,12 @@ footer, .footer {
   bottom: 1rem;
   font-size: 1.3rem;
   line-height: 140%;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 #csun {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.65))), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.65)), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
 }
 
 #csulb {
@@ -27693,6 +27693,18 @@ input[type="button"]:focus {
   width: 15px;
   margin-left: 5px;
   float: left;
+}
+
+.progress-median:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px dotted #17A2B8;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .legend-oxford-25 {

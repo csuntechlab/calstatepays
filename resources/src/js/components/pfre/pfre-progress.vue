@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-9">
         <h5 class="text-center">Years</h5>
-        <v-progress-linear class="pfre-bar" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.years.start}}</p>  
@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-9">
         <h5 class="text-center">Earnings</h5>      
-        <v-progress-linear class="pfre-bar" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="45" color="pfre-earnings"></v-progress-linear> 
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="45" color="pfre-earnings"></v-progress-linear> 
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>  
@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-9">
         <h5 class="text-center">Return On Investment</h5>
-        <v-progress-linear class="pfre-bar" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100)) * 100" height="45" color="pfre-fre"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="45" color="pfre-fre"></v-progress-linear>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  
@@ -62,7 +62,7 @@
           </span>
         </div>   
         <div>
-          <p class="font-weight-bold mb-0 text-center">FRE - Financial Return on Education: {{pfreData.returnOnInvestment.actual | percentage}}</p>
+          <p class="font-weight-bold mb-0 text-center">FRE - Financial Return on Education: {{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
         </div>
       </div>
       <div class="col-3">
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchMockData'
+      'fetchFreData'
     ])
   },
   filters: { percentage, currency },

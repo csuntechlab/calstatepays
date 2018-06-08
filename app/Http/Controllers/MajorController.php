@@ -93,7 +93,7 @@ class MajorController extends Controller
     {
         $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
                                     ->where('id', $fieldOfStudyId)->first();
-        $hegisCategory = $fieldOfStudy->hegisCategory()->get();
+        $hegisCategory = $fieldOfStudy->hegisCategory;
 
         foreach($hegisCategory as $category){
             $hegisCodes = $category->hegisCode;

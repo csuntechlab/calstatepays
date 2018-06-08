@@ -8,7 +8,14 @@ export default {
         state.pfreData.returnOnInvestment.actual = (Math.random() * (0 - .15) + .15).toFixed(2);
     },
 
-    [_pfre.TOGGLE_INFO](state, payload){
+    [_pfre.FETCH_FRE_DATA](state, payload) {
+        console.log(payload.fre);
+        state.pfreData.years.actual = payload.fre.timeToDegree;
+        state.pfreData.earnings.actual = payload.fre.earningsYearFive;
+        state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
+    },
+
+    [_pfre.TOGGLE_INFO] (state, payload){
         if(!state.pfreShowInfo){
             state.pfreInfoKey = payload;
             state.pfreShowInfo = true;

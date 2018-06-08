@@ -5,21 +5,23 @@
                 <h3 class="text-gray" v-if="form.major">{{ form.major }}</h3>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <input 
-                    type="text"
-                    id="major"
-                    :value="form.major"
-                    @input="updateForm('major', $event.target.value)">
+                    <v-select 
+                        label="major" 
+                        :options="majors"
+                        @input="updateGrandfatherSelect('majorId', 'majorId', $event)" 
+                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="age">Age Range:</label>
-                    <input 
-                    type="text"
-                    id="age"
-                    :value="form.age"
-                    @input="updateForm('age', $event.target.value)">
+                    <v-select 
+                        label="age" 
+                        :options="ageRanges"
+                        @input="updateSelect('age', $event)" 
+                        @change="updateSelect('age', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
@@ -31,8 +33,8 @@
                     type="radio"
                     id="freshman"
                     v-model="form.education"
-                    value="freshman"
-                    @input="updateForm('education', $event.target.value)">
+                    value="FTF"
+                    @input="updateSelect('education', $event.target)">
                 </div>  
                 <div class="col col-3"></div>
             </div>
@@ -44,61 +46,90 @@
                     type="radio"
                     id="transfer"
                     v-model="form.education"
-                    value="transfer"
-                    @input="updateForm('education', $event.target.value)">
+                    value="FTT"
+                    @input="updateSelect('education', $event.target)">
                 </div>  
                 <div class="col col-3"></div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="earnings">Estimated Annual Earnings During School</label>
-                    <input 
-                    type="text"
-                    id="earnings"
-                    :value="form.earnings"
-                    @input="updateForm('earnings', $event.target.value)">
+                    <v-select 
+                        label="earn" 
+                        :options="earningRanges"
+                        @input="updateSelect('earnings', $event)" 
+                        @change="updateSelect('earnings', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="financialAid">Estimated Annual Financial Aid</label>
-                    <input 
-                    type="text"
-                    id="financialAid"
-                    :value="form.financialAid"
-                    @input="updateForm('financialAid', $event.target.value)">
+                    <v-select 
+                        label="finAid" 
+                        :options="financialAidRanges"
+                        @input="updateSelect('financialAid', $event)" 
+                        @change="updateSelect('financialAid', $event)">
+                    </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-md-8 py-4">
-                    <button type="button" class="btn btn-success" @click="fetchMockData()">Submit</button>
+                    <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
                 </div>
             </div>
         </div>
     </form>
 </template>
 <script>
+import vSelect from 'vue-select';
 import { updateForm } from '../../utils/index';
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data(){
       return {
-          form: {
-              major: null,
-              age: null,
-              education: null,
-              earnings: null,
-              financialAid: null,
-          }
+        form: {
+            majorId: null,
+            age: null,
+            education: null,
+            earnings: null,
+            financialAid: null,
+            //drop down for university hasn't been created yet
+            university: 1153
+        },
+        ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
+        earningRanges: [{earn:'0', value: 1}, {earn:'0 - 20,000', value: 2}, {earn:'30,000 - 45,000', value: 3}, {earn:'45,000 - 60,000', value: 4}, {earn:'60,000 +', value: 5}],
+        financialAidRanges: [{finAid:'0', value: 1}, {finAid:'0 - 5,000', value: 2}, {finAid:'5,000 - 15,000', value: 3}, {finAid:'15,000 +', value: 4}]
       }
-  },
-  methods: {
-    ...mapActions([
-      'fetchMockData'
-    ]),
-    updateForm
-  }
+    },
+    methods: {
+        ...mapActions([
+            'fetchFreData'
+        ]),
+        updateGrandfatherSelect(field, dataKey, data) {
+            if(data) {
+                this.form[field] = data[dataKey];
+            } else {
+                this.form[field] = null;
+            }
+        },
+        updateSelect(field, data) {
+             if(data) {
+                this.form[field] = data.value;
+            } else {
+                this.form[field] = null;
+            }
+        },
+    },
+    computed: {
+        ...mapGetters([
+            'majors'
+        ])
+    },
+    components: {
+        vSelect
+    }
 }
 </script>
 
