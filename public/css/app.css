@@ -27163,6 +27163,11 @@ body {
   text-align: center;
 }
 
+.faq-panel {
+  padding: 7%;
+  padding-top: 0%;
+}
+
 figcaption {
   font-size: 1.5rem;
 }

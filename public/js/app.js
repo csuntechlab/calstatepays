@@ -65804,7 +65804,7 @@ var render = function() {
                               [_vm._v("I can not find my CSU.")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
                               )
@@ -65829,7 +65829,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
                               )
@@ -65850,7 +65850,7 @@ var render = function() {
                               [_vm._v("Were all students found?")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
                               )
@@ -65871,7 +65871,7 @@ var render = function() {
                               [_vm._v("I can not find my major.")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
                               )
@@ -65896,7 +65896,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
                               )
@@ -65917,7 +65917,7 @@ var render = function() {
                               [_vm._v("Are lapses in employment included?")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
                               )
@@ -65938,7 +65938,7 @@ var render = function() {
                               [_vm._v('What does "After Education Exit" mean?')]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
                               )
@@ -65966,7 +65966,7 @@ var render = function() {
                               [_vm._v('What does "Some College" mean?')]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
                               )
@@ -65987,7 +65987,7 @@ var render = function() {
                               [_vm._v('What does "Data Not Available" mean?')]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
                               )
@@ -66012,7 +66012,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
                               )
@@ -66037,7 +66037,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
                               )
@@ -66062,7 +66062,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v("Yes, they are adjusted to 2012 dollars.")
                             ])
                           ])
@@ -66081,7 +66081,7 @@ var render = function() {
                               [_vm._v("Where did the earnings data come from?")]
                             ),
                             _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4" }, [
+                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                               _vm._v(
                                 "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
                               )
