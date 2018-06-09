@@ -23,10 +23,8 @@ class MajorControllerTest extends TestCase
 
     public function setUp(){
         parent::setUp();
+        $this->seed('DatabaseSeeder');
         $this->controller = new MajorController();
-        $this->seed('Hegis_Codes_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
     }
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
@@ -92,5 +90,19 @@ class MajorControllerTest extends TestCase
                 'returnOnInvestment'
             ]
         ]);
+    }
+
+    public function test_filterByFieldOfStudy_returns_all_related_hegis_codes_in_json_format()
+    {
+        $engineeringId = 6;
+        $countOfRelatedHegisCOdes = 10;
+        $response = $this->json('GET', "/api/major/hegis-codes/$engineeringId");
+        $response->assertJsonStructure([
+            'fieldOfStudyId',
+            'fieldOfStudyName',
+            'hegisData'
+        ]);
+        $response = $response->getOriginalContent();
+        $this->assertCount($countOfRelatedHegisCOdes, $response['hegisData']);
     }
 }

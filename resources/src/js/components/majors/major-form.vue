@@ -5,6 +5,7 @@
                 <h5 class="form--title">Choose A Campus</h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
+                    <label for="campus" v-show="this.$v.$error">(Required)</label>
                     <v-select 
                         label="name" 
                         :options="universities"
@@ -16,7 +17,8 @@
             <div class="row row--condensed">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
-                    <label for="Major">Major:</label>
+                    <label for="Major">Major:</label>                    
+                    <label for="Major" v-show="this.$v.$error">(Required)</label>
                     <v-select 
                         label="major" 
                         :options="majors"
@@ -47,6 +49,7 @@
 
 <script>
 import vSelect from 'vue-select';
+import { required } from 'vuelidate/lib/validators';
 import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
 
@@ -70,9 +73,12 @@ export default {
         ]),
         updateForm,
         submitForm(){
-            this.form.formWasSubmitted = true;
-            this.fetchIndustryImages(this.form);
-            this.fetchMajorData(this.form);
+            this.$v.$touch();
+            if(!this.$v.$invalid) {
+                this.form.formWasSubmitted = true;
+                this.fetchIndustryImages(this.form);
+                this.fetchMajorData(this.form);
+            }
         },
         updateSelect(field, dataKey, data) {
             if(data) {
@@ -94,8 +100,17 @@ export default {
             'universities',
         ])
     },
+    validations: {
+        form: {
+            majorId: { required },
+            schoolId: { required }
+        }
+    },
     components: {
         vSelect,        
-    }    
+    },
+    created() {
+        console.log(this.$v)                
+    }
 }
 </script>

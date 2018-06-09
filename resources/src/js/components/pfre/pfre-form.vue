@@ -1,7 +1,7 @@
 <template>
     <form class="form--inverted">
             <div class="fre-major-title">
-                <h3 class="text-gray" v-if="form.majorId">{{ form.majorId }}</h3>
+                <h3 class="text-gray" v-if="form.majorId">{{ selectedMajorName }}</h3>
             </div>
             <div class="form__group">
             <div class="row row--condensed">    
@@ -10,8 +10,8 @@
                     <v-select 
                         label="major" 
                         :options="majors"
-                        @input="updateSelect('majorId', 'majorId', $event)" 
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @input="updateGrandfatherSelect('majorId', 'majorId', $event)" 
+                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)">
                     </v-select>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                     <v-select 
                         label="age" 
                         :options="ageRanges"
-                        @input="updateSelect('age', 'age', $event)" 
-                        @change="updateSelect('age', 'age', $event)">
+                        @input="updateSelect('age', $event)" 
+                        @change="updateSelect('age', $event)">
                     </v-select>
                 </div>
             </div>
@@ -35,8 +35,8 @@
                     type="radio"
                     id="freshman"
                     v-model="form.education"
-                    value="freshman"
-                    @input="updateForm('education', $event.target.value)">
+                    value="FTF"
+                    @input="updateSelect('education', $event.target)">
                 </div>  
                 <div class="col col-3"></div>
             </div>
@@ -48,8 +48,8 @@
                     type="radio"
                     id="transfer"
                     v-model="form.education"
-                    value="transfer"
-                    @input="updateForm('education', $event.target.value)">
+                    value="FTT"
+                    @input="updateSelect('education', $event.target)">
                 </div>  
                 <div class="col col-3"></div>
             </div>
@@ -57,10 +57,10 @@
                 <div class="col col-12">
                     <label for="earnings">Estimated Annual Earnings During School</label>
                     <v-select 
-                        label="earnings" 
+                        label="earn" 
                         :options="earningRanges"
-                        @input="updateSelect('earnings', 'earnings', $event)" 
-                        @change="updateSelect('earnings', 'earnings', $event)">
+                        @input="updateSelect('earnings', $event)" 
+                        @change="updateSelect('earnings', $event)">
                     </v-select>
                 </div>
             </div>
@@ -68,16 +68,16 @@
                 <div class="col col-12">
                     <label for="financialAid">Estimated Annual Financial Aid</label>
                     <v-select 
-                        label="fincialAid" 
+                        label="finAid" 
                         :options="financialAidRanges"
-                        @input="updateSelect('financialAid', 'financialAid', $event)" 
-                        @change="updateSelect('financialAid', 'financialAid', $event)">
+                        @input="updateSelect('financialAid', $event)" 
+                        @change="updateSelect('financialAid', $event)">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="py-4">
-                    <button type="button" class="btn btn-success" @click="fetchMockData()">Submit</button>
+                    <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
                 </div>
             </div>
         </div>
@@ -97,29 +97,46 @@ export default {
             education: null,
             earnings: null,
             financialAid: null,
+            //drop down for university hasn't been created yet
+            university: 1153
         },
-        ageRanges: ['18-19', '20-24', '24-26', '26 +'],
-        financialAidRanges: ['0', '0 - 20,000', '30,000 - 45,000', '45,000 - 60,000', '60,000 +'],
-        earningRanges: ['0', '0 - 5,000', '5,000 - 15,000', '15,000']
+        ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
+        earningRanges: [{earn:'0', value: 1}, {earn:'0 - 20,000', value: 2}, {earn:'30,000 - 45,000', value: 3}, {earn:'45,000 - 60,000', value: 4}, {earn:'60,000 +', value: 5}],
+        financialAidRanges: [{finAid:'0', value: 1}, {finAid:'0 - 5,000', value: 2}, {finAid:'5,000 - 15,000', value: 3}, {finAid:'15,000 +', value: 4}]
       }
     },
     methods: {
         ...mapActions([
-            'fetchMockData'
+            'fetchFreData'
         ]),
-        updateSelect(field, dataKey, data) {
+        updateGrandfatherSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
             } else {
                 this.form[field] = null;
             }
         },
-        updateForm
+        updateSelect(field, data) {
+             if(data) {
+                this.form[field] = data.value;
+            } else {
+                this.form[field] = null;
+            }
+        },
     },
     computed: {
         ...mapGetters([
-            'majors'
-        ])
+            'majors',
+            'majorNameById'
+        ]),
+        selectedMajorName() {
+            if(this.form.majorId == null) {
+                return ''
+            }
+            else {
+                return this.majorNameById(this.form.majorId)
+            }
+        }
     },
     components: {
         vSelect

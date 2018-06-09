@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FieldOfStudy;
 use Illuminate\Http\Request;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
@@ -81,4 +82,30 @@ class MajorController extends Controller
             ]
         ];
     }
+
+    public function filterByFieldOfStudy($fieldOfStudyId)
+    {
+        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
+                                    ->where('id', $fieldOfStudyId)->first();
+        $hegisCategory = $fieldOfStudy->hegisCategory;
+
+        foreach($hegisCategory as $category){
+            $hegisCodes = $category->hegisCode;
+            if(!is_null($hegisCodes)){
+                $data[] = $hegisCodes->map(function($code){
+                    return  [
+                        'hegisCode'         => $code->hegis_code,
+                        'hegis_category_id' => $code->hegis_category_id,
+                        'major'             => $code->major
+                    ];
+                });
+            }
+        }
+        return [
+            'fieldOfStudyId'   => $fieldOfStudyId,
+            'fieldOfStudyName' => $fieldOfStudy->name,
+            'hegisData'        => array_collapse($data)
+        ];
+    }
+
 }

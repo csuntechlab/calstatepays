@@ -53,6 +53,17 @@ green: $green,
   margin-left: 5px;
   float: left;
 }
+
+.progress-median:after {
+    content:"";
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    border-left: 2px dotted #17A2B8;
+    transform: translate(-50%);
+}
   
 @mixin legend-color-mixin($legend-color) {
   @each $color, $value in $colorList {
