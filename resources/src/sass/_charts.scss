@@ -4,6 +4,13 @@
   color: blue;
 }
 
+@media screen and (min-width: 500px) {
+  .echarts {
+    height: 100px !important;
+    width: 100px !important;
+  }
+}
+
 .pfre-bar {
   border-radius: 50px;
   margin-bottom: 0.5rem;
@@ -75,3 +82,9 @@ green: $green,
 }
 
 @include legend-color-mixin($colorList);
+
+.mobile-legend {
+  float: left;
+  font-size: 10px;
+  margin-left: 10px;
+}

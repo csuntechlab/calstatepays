@@ -27001,13 +27001,14 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #FFF;
   border-radius: 50px;
-  height: 650px;
+  min-height: 650px;
+  padding-bottom: 50px;
   margin-bottom: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -27656,6 +27657,13 @@ input[type="button"]:focus {
   color: blue;
 }
 
+@media screen and (min-width: 500px) {
+  .echarts {
+    height: 100px !important;
+    width: 100px !important;
+  }
+}
+
 .pfre-bar {
   border-radius: 50px;
   margin-bottom: 0.5rem;
@@ -27744,6 +27752,12 @@ input[type="button"]:focus {
   background-color: #6C4B00;
 }
 
+.mobile-legend {
+  float: left;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
 .industry-carousel {
   background-position: center;
   background-size: cover;
@@ -27755,6 +27769,12 @@ input[type="button"]:focus {
 .industry-carousel-card {
   height: 8em;
   width: 14em;
+}
+
+.industry-carousel-card__mobile {
+  height: 8em;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .industry-title {
@@ -27769,6 +27789,12 @@ input[type="button"]:focus {
   border-radius: 1rem;
   line-height: 3px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 500px) {
+  .info-wrapper {
+    padding: 5% 0% 12% 10% !important;
+  }
 }
 
 .industry-info {

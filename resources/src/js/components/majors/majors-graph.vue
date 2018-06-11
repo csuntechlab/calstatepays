@@ -1,5 +1,5 @@
 <template>
-<chart :options="polar"></chart>
+<chart :initOptions="chartDimensions" :options="polar" :autoResize="true"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -41,6 +41,37 @@ export default {
                 return this.majorData[2];
             }
             return null;
+        },
+        mobileYAxis() {
+            let currentWidth = window.innerWidth;
+            if(currentWidth <= 750) {
+                return 90
+            }
+            else {
+                return 0
+            }
+        },
+        chartDimensions(){
+            let currentWidth = window.innerWidth;
+            if(currentWidth >= 1001) {
+                return {
+                    height: 400,
+                    width: currentWidth * .42
+                }
+               
+            }
+            else if(currentWidth >= 750 && currentWidth <= 1000) {
+                return {
+                    height: 300,
+                    width: currentWidth - 200
+                }
+            }
+            else {
+              return {
+                    height: 400,
+                    width: currentWidth - 125,
+                }  
+            }
         },
         majorName(){
             if(this.majorData.length > 0){
@@ -134,6 +165,9 @@ export default {
                     data: ['line']
                 },
                 yAxis: {
+                    axisLabel: {
+                        rotate: this.mobileYAxis
+                    },
                     max: 150000
                 },
                 series: [

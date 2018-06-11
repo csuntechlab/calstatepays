@@ -46155,7 +46155,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(14);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -46166,15 +46168,22 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majorCards'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majorCards']), {
+        windowWidth: function windowWidth() {
+            return window.innerWidth;
+        }
+    }),
     components: {
         majorCard: __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default.a,
+        majorCardMobile: __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue___default.a,
         cardAdd: __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default.a
     },
     methods: {
@@ -47774,6 +47783,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             return null;
         },
+        mobileYAxis: function mobileYAxis() {
+            var currentWidth = window.innerWidth;
+            if (currentWidth <= 750) {
+                return 90;
+            } else {
+                return 0;
+            }
+        },
+        chartDimensions: function chartDimensions() {
+            var currentWidth = window.innerWidth;
+            if (currentWidth >= 1001) {
+                return {
+                    height: 400,
+                    width: currentWidth * .42
+                };
+            } else if (currentWidth >= 750 && currentWidth <= 1000) {
+                return {
+                    height: 300,
+                    width: currentWidth - 200
+                };
+            } else {
+                return {
+                    height: 400,
+                    width: currentWidth - 125
+                };
+            }
+        },
         majorName: function majorName() {
             if (this.majorData.length > 0) {
                 return this.$store.getters.majorNameById(this.majorId);
@@ -47863,6 +47899,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     data: ['line']
                 },
                 yAxis: {
+                    axisLabel: {
+                        rotate: this.mobileYAxis
+                    },
                     max: 150000
                 },
                 series: [{
@@ -64894,7 +64933,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("chart", { attrs: { options: _vm.polar } })
+  return _c("chart", {
+    attrs: {
+      initOptions: _vm.chartDimensions,
+      options: _vm.polar,
+      autoResize: true
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -65430,19 +65475,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col col-md-3 col-sm-12 my-3" },
-              [
-                _c("major-form", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: !_vm.selectedFormWasSubmitted,
-                      expression: "!selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: { index: _vm.index }
-                })
-              ],
+              [_c("major-form", { attrs: { index: _vm.index } })],
               1
             ),
             _vm._v(" "),
@@ -65468,7 +65501,24 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2 mt-4 pt-5 pl-0" })
+            _c(
+              "div",
+              { staticClass: "col-2 mt-4 pt-5 pl-0" },
+              [
+                _c("major-legend", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  attrs: { educationLevel: _vm.selectedEducationLevel }
+                })
+              ],
+              1
+            )
           ])
         ])
       ])
@@ -65500,11 +65550,19 @@ var render = function() {
       { staticClass: "col col-md-12" },
       [
         _vm._l(_vm.majorCards, function(majorCard, index) {
-          return _c("major-card", {
-            key: index,
-            staticClass: "my-2",
-            attrs: { index: index }
-          })
+          return _vm.windowWidth > 800
+            ? _c("major-card", {
+                key: index,
+                staticClass: "my-2",
+                attrs: { index: index }
+              })
+            : _vm._l(_vm.majorCards, function(majorCard, index) {
+                return _c("major-card-mobile", {
+                  key: index,
+                  staticClass: "my-2",
+                  attrs: { index: index }
+                })
+              })
         }),
         _vm._v(" "),
         _c("card-add", { attrs: { onPlus: _vm.onPlus } })
@@ -84815,6 +84873,347 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(367)
+/* template */
+var __vue_template__ = __webpack_require__(368)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-card-mobile.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-30c53d79", Component.options)
+  } else {
+    hotAPI.reload("data-v-30c53d79", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 367 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__major_form_vue__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__major_form_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_card__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__global_card__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(14);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['index'],
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
+        isEmpty: function isEmpty() {
+            //Check whether the form field was fired off, toggle carousel on
+            if (this.industries(this.index).length === 0) {
+                return false;
+            }return true;
+        },
+        selectedMajorData: function selectedMajorData() {
+            return this.majorData(this.index);
+        },
+        selectedIndustries: function selectedIndustries() {
+            return this.industries(this.index);
+        },
+        selectedEducationLevel: function selectedEducationLevel() {
+            return this.educationLevel(this.index);
+        },
+        selectedFormWasSubmitted: function selectedFormWasSubmitted() {
+            return this.formWasSubmitted(this.index);
+        }
+    }),
+    components: {
+        majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
+        card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
+        majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
+        majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
+        industryMobile: __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue___default.a,
+        majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
+    }
+});
+
+/***/ }),
+/* 368 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "col col-md-12" },
+    [
+      _c("card", [
+        _c("div", { staticClass: "container-fluid my-0" }, [
+          _c(
+            "div",
+            { staticClass: "row m-1 p-0" },
+            [
+              _c("major-graph-wrapper", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: {
+                  majorData: _vm.selectedMajorData,
+                  educationLevel: _vm.selectedEducationLevel
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("major-legend", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: { educationLevel: _vm.selectedEducationLevel }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("major-form", {
+                staticClass: "m-0",
+                attrs: { index: _vm.index }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col" },
+              [
+                _c("industry-mobile", {
+                  attrs: { industries: _vm.selectedIndustries }
+                })
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-30c53d79", module.exports)
+  }
+}
+
+/***/ }),
+/* 369 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(370)
+/* template */
+var __vue_template__ = __webpack_require__(371)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-mobile.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-871d88be", Component.options)
+  } else {
+    hotAPI.reload("data-v-871d88be", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 370 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__industry_carousel_card__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__industry_carousel_card__);
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['industries'],
+
+    components: {
+        industryCarouselCard: __WEBPACK_IMPORTED_MODULE_0__industry_carousel_card___default.a
+    }
+});
+
+/***/ }),
+/* 371 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
+      return _c(
+        "div",
+        { key: index },
+        [
+          _c("industry-carousel-card", {
+            staticClass: "industry-carousel-card__mobile",
+            style: { backgroundImage: "url(" + industry.image + ")" },
+            attrs: { industry: industry }
+          })
+        ],
+        1
+      )
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-871d88be", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

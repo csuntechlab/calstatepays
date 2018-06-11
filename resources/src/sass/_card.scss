@@ -1,9 +1,10 @@
 .csu-card{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: $white;
     border-radius: 50px;
-    height: 650px;
+    min-height: 650px;
+    padding-bottom: 50px;
     margin-bottom: 50px;
     justify-content: center;
     align-items: flex-start;
