@@ -34,16 +34,18 @@
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
+                        v-model="selected"
                         :options="majors"
                         @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)">
                     </v-select>
                     <v-select
-                            label="major"
-                            v-else
-                            :options="selectedMajorsByField"
-                            @input="updateSelect('majorId', 'majorId', $event)"
-                            @change="updateSelect('majorId', 'majorId', $event)">
+                        label="major"
+                        v-else
+                        v-model="selected"
+                        :options="selectedMajorsByField"
+                        @input="updateSelect('majorId', 'majorId', $event)"
+                        @change="updateSelect('majorId', 'majorId', $event)">
                     </v-select>
                 </div>
             </div>
@@ -86,6 +88,8 @@ export default {
                 educationLevel: "allDegrees",
             },
         }
+
+        selected: null;
     },
     methods: {
         ...mapActions([
@@ -111,6 +115,15 @@ export default {
                 this.form[field] = null;
             }
         },
+        // updateDiscipline(field, dataKey, data) {
+        //     removeMajorsByField();
+        //     if(data) {
+        //         this.form[field] = data[dataKey];
+        //         this.handleFieldOfStudyMajors(field);
+        //     } else {
+        //         this.form[field] = null;
+        //     }
+        // },
         handleFieldOfStudyMajors(field){
             if(field == 'fieldOfStudyId'){
                 this.fetchUpdatedMajorsByField(this.form);
@@ -132,7 +145,11 @@ export default {
             'formWasSubmitted',
         ]),
         selectedMajorsByField(){
+            this.selected = null;
             return this.majorsByField(this.index);
+        },
+        removeMajorsByField(){
+            return this.majorsByField(null);
         },
         selectedFormWasSubmitted(){
             return this.formWasSubmitted(this.index);
