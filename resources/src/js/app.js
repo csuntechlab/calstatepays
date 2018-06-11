@@ -28,6 +28,7 @@ const vm = new Vue({
     render: h => h(App),
     created(){
         this.$store.dispatch('fetchMajors');
+        this.$store.dispatch('fetchFieldOfStudies');
         this.$store.dispatch('fetchUniversities');
     }
 });
