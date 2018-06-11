@@ -9,13 +9,13 @@
                 </div>
                 <div class="row m-1 p-0">
                     <div class="col col-md-3 col-sm-12 my-3">
-                         <major-form :index="index"></major-form>
+                         <major-form v-show="!selectedFormWasSubmitted" :index="index"></major-form>
                     </div>
                     <div class="col col-7">
-                        <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
+                        <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
-                        <major-legend v-show="isEmpty" :educationLevel="selectedEducationLevel"></major-legend>
+                        <!-- <major-legend v-show="isEmpty" :educationLevel="selectedEducationLevel"></major-legend> -->
                     </div>
                 </div>
             </div>
@@ -41,7 +41,8 @@ export default {
             'universityById',
             'industries',
             'majorData',
-            'educationLevel'
+            'educationLevel',
+            'formWasSubmitted'
         ]),
         isEmpty(){
             //Check whether the form field was fired off, toggle carousel on
@@ -57,6 +58,9 @@ export default {
         },
         selectedEducationLevel() {
             return this.educationLevel(this.index);
+        },
+        selectedFormWasSubmitted() {
+            return this.formWasSubmitted(this.index);
         }
     },
     components: { 
