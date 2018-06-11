@@ -7,10 +7,10 @@
           </div>
           <div class="container-fluid p-0">
             <div class="row">
-              <div class="col-12 col-md-3 align-self-center">
+              <div class="col-12 col-md-4 col-lg-3 align-self-center">
                 <pfre-form></pfre-form>
               </div>
-              <div class="col-12 col-md-9 align-self-center">
+              <div class="col-12 col-md-8 col-lg-9 align-self-center">
                 <pfre-progress></pfre-progress>
               </div>
             </div>

@@ -44445,24 +44445,24 @@ var render = function() {
           ],
           1
         )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "py-4" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-success",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.fetchFreData(_vm.form)
-                }
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row row--condensed" }, [
+      _c("div", { staticClass: "py-4" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.fetchFreData(_vm.form)
               }
-            },
-            [_vm._v("Submit")]
-          )
-        ])
+            }
+          },
+          [_vm._v("Submit")]
+        )
       ])
     ])
   ])
@@ -44516,7 +44516,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
-    _c("div", { staticClass: "col-11 col-md-6" }, [
+    _c("div", { staticClass: "col-11 col-md-2 align-self-center" }, [
       _c(
         "button",
         {
@@ -44535,7 +44535,11 @@ var render = function() {
     _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
       ? _c(
           "div",
-          { class: _vm.infoKey ? "pfre-info--show col-10 my-2" : "pfre-info" },
+          {
+            class: _vm.infoKey
+              ? "pfre-info--show col-11 col-md-10 my-2"
+              : "pfre-info"
+          },
           [_vm._t("default")],
           2
         )
@@ -45761,10 +45765,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "progress-wrapper" }, [
-    _c("div", { staticClass: "row no-gutters" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-md-9" },
+        { staticClass: "col-12 col-lg-9" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
           _vm._v(" "),
@@ -45810,7 +45814,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
             _vm._v(
@@ -45822,10 +45826,10 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-md-9" },
+        { staticClass: "col-12 col-lg-9" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
           _vm._v(" "),
@@ -45881,7 +45885,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
             _vm._v(
@@ -45893,10 +45897,10 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-md-9" },
+        { staticClass: "col-12 col-lg-9" },
         [
           _c("h5", { staticClass: "text-center" }, [
             _vm._v("Return On Investment")
@@ -45970,7 +45974,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-md-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
             _vm._v(
@@ -46015,14 +46019,14 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c(
                 "div",
-                { staticClass: "col-12 col-md-3 align-self-center" },
+                { staticClass: "col-12 col-md-4 col-lg-3 align-self-center" },
                 [_c("pfre-form")],
                 1
               ),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-12 col-md-9 align-self-center" },
+                { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
                 [_c("pfre-progress")],
                 1
               )

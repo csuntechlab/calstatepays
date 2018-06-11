@@ -75,11 +75,11 @@
                     </v-select>
                 </div>
             </div>
+            </div>
             <div class="row row--condensed">
                 <div class="py-4">
                     <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
                 </div>
-            </div>
         </div>
     </form>
 </template>

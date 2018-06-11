@@ -27051,7 +27051,7 @@ html {
   font-weight: 600;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .home__heading {
     font-size: 2.5rem;
   }
@@ -27143,13 +27143,13 @@ body {
           transform: translateY(-50%);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .pfre-info--show::after {
     display: none;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .pfre-info--show {
     -webkit-transform: translate(0);
             transform: translate(0);
@@ -27209,7 +27209,7 @@ figcaption {
   background-size: cover;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .bg {
     background-size: contain;
     background-position: 0 0;
@@ -27230,7 +27230,7 @@ figcaption {
   border-bottom: .3rem solid;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .video-placeholder {
     height: 45vh;
   }
@@ -27241,13 +27241,13 @@ figcaption {
   min-height: 11vh;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .learn-how {
     display: none;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .fa-wrapper {
     background: #FFF;
     -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
@@ -27292,7 +27292,7 @@ figcaption {
   height: 35vh;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .faq-banner {
     background-position: 40%;
   }
@@ -27604,7 +27604,7 @@ textarea {
   font-weight: normal;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .fre-major-title {
     display: block;
   }
@@ -27653,7 +27653,7 @@ textarea {
   float: left;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .btn-info {
     float: right;
   }
