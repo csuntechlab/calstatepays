@@ -14,9 +14,12 @@ export default {
     industries: state => index => state.majorCards[index].industries,
     educationLevel: state => index => state.majorCards[index].educationLevel,
     universities: state => state.universities,
+    fieldOfStudies: state => state.fieldOfStudy,
     universityById: (state, getters) => (id) => {
         const index = getters.universities.findIndex(campus => campus.id == id);
         return getters.universities[index];
     },
     majorCards: state => state.majorCards,
+    majorsByField: state => index => state.majorCards[index].majorsByField,
+    formWasSubmitted:state=> index => state.majorCards[index].formWasSubmitted,
 }
