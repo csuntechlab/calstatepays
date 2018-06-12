@@ -46365,6 +46365,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majorCards']), {
+        mobileCards: function mobileCards() {
+            return this.majorCards;
+        },
         windowWidth: function windowWidth() {
             return window.innerWidth;
         }
@@ -66088,13 +66091,15 @@ var render = function() {
                 staticClass: "my-2",
                 attrs: { index: index }
               })
-            : _vm._l(_vm.majorCards, function(majorCard, index) {
-                return _c("major-card-mobile", {
-                  key: index,
-                  staticClass: "my-2",
-                  attrs: { index: index }
-                })
-              })
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.mobileCards, function(majorCard, index) {
+          return _c("major-card-mobile", {
+            key: index,
+            staticClass: "my-2",
+            attrs: { index: index }
+          })
         }),
         _vm._v(" "),
         _c("card-add", { attrs: { onPlus: _vm.onPlus } })
