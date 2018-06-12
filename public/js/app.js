@@ -46760,6 +46760,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         selectedFormWasSubmitted: function selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
+        },
+        windowSize: function windowSize() {
+            return window.innerWidth;
         }
     }),
     validations: {
@@ -47704,9 +47707,21 @@ var render = function() {
             ])
           ])
         : _c("div", { staticClass: "form__group" }, [
-            _c("p", { staticClass: "h3 majors-header my-5" }, [
-              _vm._v("Select a Degree Level")
-            ]),
+            _c(
+              "p",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.windowSize > 500,
+                    expression: "windowSize > 500"
+                  }
+                ],
+                staticClass: "h3 majors-header my-5"
+              },
+              [_vm._v("Select a Degree Level")]
+            ),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -65344,6 +65359,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -65351,6 +65372,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             isAll: true
         };
+    },
+
+    computed: {
+        windowSize: function windowSize() {
+            return window.innerWidth;
+        }
     }
 });
 
@@ -65365,18 +65392,27 @@ var render = function() {
   return _c("div", [
     _vm.educationLevel == "allDegrees"
       ? _c("div", [
-          _c("h5", { staticClass: "majors-header" }, [
-            _vm._v("Graduation Level: ")
-          ]),
+          _c(
+            "h5",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.windowSize > 500,
+                  expression: "windowSize > 500"
+                }
+              ],
+              staticClass: "majors-header"
+            },
+            [_vm._v("Graduation Level: ")]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "legend-green m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")]),
+          _vm._m(0),
           _vm._v(" "),
-          _c("div", { staticClass: "legend-gold m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")]),
+          _vm._m(1),
           _vm._v(" "),
-          _c("div", { staticClass: "legend-oxford m-0" }),
-          _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+          _vm._m(2)
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
@@ -65426,7 +65462,35 @@ var render = function() {
             : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-green m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-gold m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-oxford m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -65605,6 +65669,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
 //
 //
 //
@@ -65834,17 +65900,19 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _c("major-form", {
-                staticClass: "m-0",
-                attrs: { index: _vm.index }
-              })
-            ],
-            1
-          ),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col" },
+              [
+                _c("major-form", {
+                  staticClass: "m-0",
+                  attrs: { index: _vm.index }
+                })
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c(

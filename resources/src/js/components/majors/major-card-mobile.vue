@@ -9,7 +9,9 @@
                     <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
                 </div>
                 <div class="row">
-                    <major-form :index="index" class="m-0"></major-form>                    
+                    <div class="col">
+                        <major-form :index="index" class="m-0"></major-form>                    
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">

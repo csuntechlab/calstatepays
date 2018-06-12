@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="form__group" v-else>
-            <p class="h3 majors-header my-5">Select a Degree Level</p>
+            <p v-show="windowSize > 500" class="h3 majors-header my-5">Select a Degree Level</p>
             <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label :for="'allDegrees-' + form.cardIndex">All</label>
             <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">
@@ -136,6 +136,9 @@ export default {
         },
         selectedFormWasSubmitted(){
             return this.formWasSubmitted(this.index);
+        },
+        windowSize() {
+            return window.innerWidth;
         }
     },
     validations: {
