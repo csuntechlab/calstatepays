@@ -87,9 +87,9 @@ export default {
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
             },
+            selected: null
         }
 
-        selected: null;
     },
     methods: {
         ...mapActions([
@@ -115,15 +115,6 @@ export default {
                 this.form[field] = null;
             }
         },
-        // updateDiscipline(field, dataKey, data) {
-        //     removeMajorsByField();
-        //     if(data) {
-        //         this.form[field] = data[dataKey];
-        //         this.handleFieldOfStudyMajors(field);
-        //     } else {
-        //         this.form[field] = null;
-        //     }
-        // },
         handleFieldOfStudyMajors(field){
             if(field == 'fieldOfStudyId'){
                 this.fetchUpdatedMajorsByField(this.form);

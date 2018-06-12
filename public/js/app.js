@@ -46569,10 +46569,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees"
-            }
+            },
+            selected: null
         };
-
-        selected: null;
     },
 
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'toggleFormWasSubmitted', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
@@ -46593,16 +46592,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.form[field] = null;
             }
         },
-
-        // updateDiscipline(field, dataKey, data) {
-        //     removeMajorsByField();
-        //     if(data) {
-        //         this.form[field] = data[dataKey];
-        //         this.handleFieldOfStudyMajors(field);
-        //     } else {
-        //         this.form[field] = null;
-        //     }
-        // },
         handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
             if (field == 'fieldOfStudyId') {
                 this.fetchUpdatedMajorsByField(this.form);
