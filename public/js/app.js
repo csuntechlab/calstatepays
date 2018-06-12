@@ -46550,6 +46550,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -46567,7 +46569,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees"
-            }
+            },
+            selected: null
         };
     },
 
@@ -46603,7 +46606,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted']), {
         selectedMajorsByField: function selectedMajorsByField() {
+            this.selected = null;
             return this.majorsByField(this.index);
+        },
+        removeMajorsByField: function removeMajorsByField() {
+            return this.majorsByField(null);
         },
         selectedFormWasSubmitted: function selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
@@ -47515,6 +47522,13 @@ var render = function() {
                           change: function($event) {
                             _vm.updateSelect("majorId", "majorId", $event)
                           }
+                        },
+                        model: {
+                          value: _vm.selected,
+                          callback: function($$v) {
+                            _vm.selected = $$v
+                          },
+                          expression: "selected"
                         }
                       })
                     : _c("v-select", {
@@ -47529,6 +47543,13 @@ var render = function() {
                           change: function($event) {
                             _vm.updateSelect("majorId", "majorId", $event)
                           }
+                        },
+                        model: {
+                          value: _vm.selected,
+                          callback: function($$v) {
+                            _vm.selected = $$v
+                          },
+                          expression: "selected"
                         }
                       })
                 ],

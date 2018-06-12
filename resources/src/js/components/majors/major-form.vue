@@ -34,16 +34,18 @@
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
+                        v-model="selected"
                         :options="majors"
                         @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)">
                     </v-select>
                     <v-select
-                            label="major"
-                            v-else
-                            :options="selectedMajorsByField"
-                            @input="updateSelect('majorId', 'majorId', $event)"
-                            @change="updateSelect('majorId', 'majorId', $event)">
+                        label="major"
+                        v-else
+                        v-model="selected"
+                        :options="selectedMajorsByField"
+                        @input="updateSelect('majorId', 'majorId', $event)"
+                        @change="updateSelect('majorId', 'majorId', $event)">
                     </v-select>
                 </div>
             </div>
@@ -85,7 +87,9 @@ export default {
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
             },
+            selected: null
         }
+
     },
     methods: {
         ...mapActions([
@@ -132,7 +136,11 @@ export default {
             'formWasSubmitted',
         ]),
         selectedMajorsByField(){
+            this.selected = null;
             return this.majorsByField(this.index);
+        },
+        removeMajorsByField(){
+            return this.majorsByField(null);
         },
         selectedFormWasSubmitted(){
             return this.formWasSubmitted(this.index);
