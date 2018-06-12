@@ -65365,6 +65365,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -65416,48 +65434,75 @@ var render = function() {
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
-            _c("h5", { staticClass: "font-weight-bold pb-2" }, [
-              _vm._v("Percentile: ")
-            ]),
+            _c(
+              "h5",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.windowSize > 500,
+                    expression: "windowSize > 500"
+                  }
+                ],
+                staticClass: "font-weight-bold pb-2"
+              },
+              [_vm._v("Percentile: ")]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford-75 m-0" }),
-            _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
+            _vm._m(3),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford m-0" }),
-            _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+            _vm._m(4),
             _vm._v(" "),
-            _c("div", { staticClass: "legend-oxford-25 m-0" }),
-            _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+            _vm._m(5)
           ])
         : _vm.educationLevel == "bachelors"
           ? _c("div", [
-              _c("h5", { staticClass: "font-weight-bold pb-2" }, [
-                _vm._v("Percentile: ")
-              ]),
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "font-weight-bold pb-2"
+                },
+                [_vm._v("Percentile: ")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold-75 m-0" }),
-              _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
+              _vm._m(6),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold m-0" }),
-              _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+              _vm._m(7),
               _vm._v(" "),
-              _c("div", { staticClass: "legend-gold-25 m-0" }),
-              _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+              _vm._m(8)
             ])
           : _vm.educationLevel == "postBacc"
             ? _c("div", [
-                _c("h5", { staticClass: "font-weight-bold pb-2" }, [
-                  _vm._v("Percentile: ")
-                ]),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.windowSize > 500,
+                        expression: "windowSize > 500"
+                      }
+                    ],
+                    staticClass: "font-weight-bold pb-2"
+                  },
+                  [_vm._v("Percentile: ")]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green-75 m-0" }),
-                _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")]),
+                _vm._m(9),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green m-0" }),
-                _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")]),
+                _vm._m(10),
                 _vm._v(" "),
-                _c("div", { staticClass: "legend-green-25 m-0" }),
-                _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+                _vm._m(11)
               ])
             : _vm._e()
   ])
@@ -65488,6 +65533,87 @@ var staticRenderFns = [
     return _c("span", { staticClass: "legend-mobile" }, [
       _c("div", { staticClass: "legend-oxford m-0" }),
       _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-oxford-75 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-oxford m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-oxford-25 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-gold-75 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-gold m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-gold-25 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-green-75 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-green m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "legend-mobile" }, [
+      _c("div", { staticClass: "legend-green-25 m-0" }),
+      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
     ])
   }
 ]
