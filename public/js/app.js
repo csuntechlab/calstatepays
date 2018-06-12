@@ -44145,7 +44145,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "csu-card col col-lg-10" },
+    { staticClass: "csu-card col col-lg-10 container row align-items-center" },
     [_vm._t("default")],
     2
   )
@@ -46306,13 +46306,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card-add col col-lg-10 d-flex flex-row" }, [
-    _c("div", { staticClass: "col col-1" }, [
-      _c("button", { staticClass: "btn-add" }, [
-        _c("i", { staticClass: "fa fa-plus-circle", on: { click: _vm.onPlus } })
+  return _c(
+    "div",
+    {
+      staticClass:
+        "card-add col col-lg-10 d-flex flex-row container row align-items-center"
+    },
+    [
+      _c("div", { staticClass: "col col-1" }, [
+        _c("button", { staticClass: "btn-add" }, [
+          _c("i", {
+            staticClass: "fa fa-plus-circle",
+            on: { click: _vm.onPlus }
+          })
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
