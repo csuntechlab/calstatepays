@@ -1,7 +1,7 @@
 <template>
     <form class="form--inverted" id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A Campus</h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
@@ -14,7 +14,7 @@
                     </v-select>
                 </div>
             </div>
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose a Discipline</h5>
                 <div class="col col-12">
                     <label for="fieldOfStudy">Discipline:</label>
@@ -26,7 +26,7 @@
                     </v-select>
                 </div>
             </div>
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>

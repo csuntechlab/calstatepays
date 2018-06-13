@@ -47570,7 +47570,7 @@ var render = function() {
     [
       !_vm.selectedFormWasSubmitted
         ? _c("div", { staticClass: "form__group" }, [
-            _c("div", { staticClass: "row row--condensed" }, [
+            _c("div", { staticClass: "row row--condensed mt-3" }, [
               _c("h5", { staticClass: "form--title" }, [
                 _vm._v("Choose A Campus")
               ]),
@@ -47615,7 +47615,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
+            _c("div", { staticClass: "row row--condensed mt-3" }, [
               _c("h5", { staticClass: "form--title" }, [
                 _vm._v("Choose a Discipline")
               ]),
@@ -47644,7 +47644,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
+            _c("div", { staticClass: "row row--condensed mt-3" }, [
               _c("h5", { staticClass: "form--title" }, [
                 _vm._v("Choose A Major")
               ]),
