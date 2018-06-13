@@ -44304,6 +44304,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -44383,6 +44386,7 @@ var render = function() {
             _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input-major",
               attrs: { label: "major", options: _vm.majors },
               on: {
                 input: function($event) {
@@ -44406,12 +44410,10 @@ var render = function() {
             _c("label", { attrs: { for: "age" } }, [_vm._v("Age Range:")]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "age", options: _vm.ageRanges },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("age", $event)
-                },
-                change: function($event) {
                   _vm.updateSelect("age", $event)
                 }
               }
@@ -44503,6 +44505,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "earn", options: _vm.earningRanges },
               on: {
                 input: function($event) {
@@ -44528,6 +44531,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "finAid", options: _vm.financialAidRanges },
               on: {
                 input: function($event) {
@@ -46108,7 +46112,9 @@ var render = function() {
       [
         _c("card", { staticClass: "container row align-items-center" }, [
           _c("div", { staticClass: "text-center col-12" }, [
-            _c("h2", [_vm._v("Financial Return on Education")])
+            _c("h2", { staticClass: "pfre__heading" }, [
+              _vm._v("Financial Return on Education")
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "container-fluid p-0" }, [

@@ -31,6 +31,14 @@ body {
   color: $gray;
 }
 
+.pfre__heading {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    @media screen and (max-width: $break-small) {
+        font-size: 2.24rem;
+    }
+}
 
 .pfre-info{
     position: absolute;

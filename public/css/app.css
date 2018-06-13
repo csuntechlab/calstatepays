@@ -27078,6 +27078,18 @@ body {
   color: #777777;
 }
 
+.pfre__heading {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .pfre__heading {
+    font-size: 2.24rem;
+  }
+}
+
 .pfre-info {
   position: absolute;
   margin-left: 80px;
@@ -27474,6 +27486,24 @@ label {
   content: "*";
 }
 
+.csu-form-input, .csu-form-input-major {
+  border-bottom: 0.2rem #777777 solid;
+}
+
+.csu-form-input .dropdown-toggle, .csu-form-input-major .dropdown-toggle {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.csu-form-input .dropdown-toggle {
+  height: 2.75rem;
+}
+
+.csu-form-input-major .dropdown-toggle {
+  overflow: visible;
+  height: auto;
+}
+
 .currency {
   position: relative;
 }
@@ -27574,7 +27604,6 @@ textarea {
 
 .form__group {
   margin-bottom: .5rem;
-  margin-top: 2rem;
 }
 
 .form--title {
@@ -27593,7 +27622,9 @@ textarea {
 
 .fre-major-title {
   display: none;
-  height: 4rem;
+  height: 5.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .fre-major-title h3 {

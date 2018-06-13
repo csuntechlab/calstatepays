@@ -7,11 +7,12 @@
             <div class="row row--condensed">    
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <v-select 
+                    <v-select
                         label="major" 
                         :options="majors"
                         @input="updateGrandfatherSelect('majorId', 'majorId', $event)" 
-                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)">
+                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                 </div>
             </div>
@@ -22,7 +23,7 @@
                         label="age" 
                         :options="ageRanges"
                         @input="updateSelect('age', $event)" 
-                        @change="updateSelect('age', $event)">
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>
@@ -60,7 +61,8 @@
                         label="earn" 
                         :options="earningRanges"
                         @input="updateSelect('earnings', $event)" 
-                        @change="updateSelect('earnings', $event)">
+                        @change="updateSelect('earnings', $event)"
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>
@@ -71,7 +73,8 @@
                         label="finAid" 
                         :options="financialAidRanges"
                         @input="updateSelect('financialAid', $event)" 
-                        @change="updateSelect('financialAid', $event)">
+                        @change="updateSelect('financialAid', $event)"
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>

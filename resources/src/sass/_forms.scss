@@ -21,6 +21,29 @@ label {
   }
 }
 
+%form-input-base {
+  border-bottom: .2rem $gray solid;
+  .dropdown-toggle {
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+
+.csu-form-input {
+  @extend %form-input-base;
+  .dropdown-toggle {
+    height: 2.75rem;
+  }
+}
+
+.csu-form-input-major {
+  @extend %form-input-base;
+  .dropdown-toggle {
+    overflow: visible;
+    height: auto;
+  }  
+}
+
 .currency {
   position: relative;
 
@@ -81,7 +104,6 @@ textarea {
 
 .form__group {
   margin-bottom: .5rem;
-  margin-top: 2rem;
 }
 
 .form--title{
@@ -100,7 +122,9 @@ textarea {
 
 .fre-major-title {
   display: none;
-  height: 4rem;
+  height: 5.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   h3 {
     margin-bottom: 0;
     line-height: 1;
