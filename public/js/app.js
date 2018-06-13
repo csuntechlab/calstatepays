@@ -65972,11 +65972,16 @@ var render = function() {
     _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
       return _c(
         "div",
-        { key: index },
+        {
+          key: index,
+          style: {
+            backgroundImage: "url(" + industry.image + ")",
+            borderRadius: "1rem"
+          }
+        },
         [
           _c("industry-carousel-card", {
             staticClass: "industry-carousel-card__mobile",
-            style: { backgroundImage: "url(" + industry.image + ")" },
             attrs: { industry: industry }
           })
         ],
