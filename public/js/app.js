@@ -44616,28 +44616,32 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
-    _c("div", { staticClass: "col-11 col-md-2 align-self-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn-info",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              _vm.toggleInfo(_vm.infoKey)
+    _c(
+      "div",
+      { staticClass: "col-11 col-md-2 col-lg-4 col-xl-3 align-self-center" },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn-info",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.toggleInfo(_vm.infoKey)
+              }
             }
-          }
-        },
-        [_c("i", { staticClass: "fa fa-question" })]
-      )
-    ]),
+          },
+          [_c("i", { staticClass: "fa fa-question" })]
+        )
+      ]
+    ),
     _vm._v(" "),
     _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
       ? _c(
           "div",
           {
             class: _vm.infoKey
-              ? "pfre-info--show col-11 col-md-10 my-2"
+              ? "pfre-info--show col-11 col-md-10 col-lg-8 col-xl-9 my-2"
               : "pfre-info"
           },
           [_vm._t("default")],
@@ -45868,7 +45872,7 @@ var render = function() {
     _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-lg-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
           _vm._v(" "),
@@ -45914,7 +45918,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-lg-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
             _vm._v(
@@ -45929,7 +45933,7 @@ var render = function() {
     _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-lg-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
           _vm._v(" "),
@@ -45985,7 +45989,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-lg-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
             _vm._v(
@@ -46000,7 +46004,7 @@ var render = function() {
     _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-lg-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [
             _vm._v("Return On Investment")
@@ -46074,7 +46078,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12 col-lg-3 align-self-md-center" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
             _vm._v(

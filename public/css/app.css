@@ -27081,7 +27081,6 @@ body {
 .pfre__heading {
   font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -27130,14 +27129,13 @@ body {
 
 .pfre-info--show {
   position: absolute;
+  -webkit-transform: translate(50%, -45%);
+          transform: translate(50%, -45%);
   background: #EBEBEB;
   border-radius: 15px;
   float: right;
   width: 10rem;
-  top: 27%;
-  left: 33%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: .9rem;
   padding: .5rem;
 }
 
@@ -27161,7 +27159,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .pfre-info--show {
     -webkit-transform: translate(0);
             transform: translate(0);
