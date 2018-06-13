@@ -1,7 +1,7 @@
 <template>
     <div class="col col-md-12">
         <card>
-            <div class="container-fluid my-0">
+            <div class="container-fluid my-0 mt-2">
                 <div class="row m-1 p-0">
                     <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
                 </div>
@@ -13,9 +13,9 @@
                         <major-form :index="index" class="m-0"></major-form>                    
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col">
-                        <industry-mobile :industries="selectedIndustries"></industry-mobile>
+                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries"></industry-mobile>
                     </div>
                 </div>
             </div>

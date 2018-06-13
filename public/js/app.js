@@ -65949,6 +65949,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65969,25 +65970,30 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
-      return _c(
-        "div",
-        {
-          key: index,
-          style: {
-            backgroundImage: "url(" + industry.image + ")",
-            borderRadius: "1rem"
-          }
-        },
-        [
-          _c("industry-carousel-card", {
-            staticClass: "industry-carousel-card__mobile",
-            attrs: { industry: industry }
-          })
-        ],
-        1
-      )
-    })
+    [
+      _c("h5", [_vm._v("Top Industries")]),
+      _vm._v(" "),
+      _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
+        return _c(
+          "div",
+          {
+            key: index,
+            style: {
+              backgroundImage: "url(" + industry.image + ")",
+              borderRadius: "1rem"
+            }
+          },
+          [
+            _c("industry-carousel-card", {
+              staticClass: "industry-carousel-card__mobile",
+              attrs: { industry: industry }
+            })
+          ],
+          1
+        )
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -66013,7 +66019,7 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("div", { staticClass: "container-fluid my-0" }, [
+        _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
           _c(
             "div",
             { staticClass: "row m-1 p-0" },
@@ -66069,12 +66075,20 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "row mt-3" }, [
             _c(
               "div",
               { staticClass: "col" },
               [
                 _c("industry-mobile", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
                   attrs: { industries: _vm.selectedIndustries }
                 })
               ],
