@@ -2,7 +2,7 @@
     <div class="row wrapper graph-content card-padding">
         <div class="col col-md-12">
             <major-card v-if="windowWidth > 800" class="my-2" v-for="(majorCard, index) in majorCards" :key="index" :index=index></major-card>
-            <major-card-mobile class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index></major-card-mobile>
+            <major-card-mobile v-else class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index></major-card-mobile>
             <card-add :onPlus="onPlus"></card-add>
         </div>
     </div>
