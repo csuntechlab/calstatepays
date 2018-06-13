@@ -73,7 +73,6 @@ class University_Majors_TableSeeder extends Seeder
             ['code' => 42],
             ['code' => 56],
             ['code' => 31],
-            ['code' => 21],
             ['code' => 44],
             ['code' => 92],
             ['code' => 52],
