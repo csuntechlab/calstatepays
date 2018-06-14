@@ -1,8 +1,9 @@
 <template>
     <div class="row wrapper graph-content card-padding">
         <div class="col col-md-12">
-            <major-card v-if="windowWidth > 800" class="my-2" v-for="(majorCard, index) in majorCards" :key="index" :index=index></major-card>
-            <major-card-mobile v-else class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index></major-card-mobile>
+            {{windowWidth}}
+            <major-card v-if="isDesktop" class="my-2" v-for="(majorCard, index) in desktopCards" :key="index" :index=index></major-card>
+            <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index></major-card-mobile>
             <card-add :onPlus="onPlus"></card-add>
         </div>
     </div>
@@ -14,26 +15,46 @@ import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
 import { mapGetters } from 'vuex';
 
 export default {
+    data() {
+        return {
+            windowWidth: 0,
+            isDesktop: true,
+            isMobile: false,
+        }
+    },
     computed: {
         ...mapGetters([
             'majorCards'
         ]),
-        mobileCards() {
-            return this.majorCards;
+        desktopCards() {
+            return (this.isDesktop ? this.majorCards : null);
         },
-        windowWidth() {
-            return window.innerWidth;
+        mobileCards() {
+            return (this.isDesktop ? null : this.majorCards);
+        },
+    },
+    methods: {
+        getWindowWidth(event) {
+            this.windowWidth = document.documentElement.clientWidth;
+            this.windowWidth < 800 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+        },
+        onPlus(){
+            this.$store.dispatch('addMajorCard');
         }
+    },
+    mounted() {
+        this.$nextTick(function() {
+            window.addEventListener('resize', this.getWindowWidth);
+            this.getWindowWidth();
+        });
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.getWindowWidth);
     },
     components: { 
         majorCard,
         majorCardMobile,
         cardAdd,
     },
-    methods: {
-        onPlus(){
-            this.$store.dispatch('addMajorCard');
-        }
-    }
 }
 </script>

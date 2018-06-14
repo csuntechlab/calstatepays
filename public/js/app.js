@@ -46357,6 +46357,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -46364,23 +46365,45 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            windowWidth: 0,
+            isDesktop: true,
+            isMobile: false
+        };
+    },
+
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majorCards']), {
-        mobileCards: function mobileCards() {
-            return this.majorCards;
+        desktopCards: function desktopCards() {
+            return this.isDesktop ? this.majorCards : null;
         },
-        windowWidth: function windowWidth() {
-            return window.innerWidth;
+        mobileCards: function mobileCards() {
+            return this.isDesktop ? null : this.majorCards;
         }
     }),
+    methods: {
+        getWindowWidth: function getWindowWidth(event) {
+            this.windowWidth = document.documentElement.clientWidth;
+            this.windowWidth < 800 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+        },
+        onPlus: function onPlus() {
+            this.$store.dispatch('addMajorCard');
+        }
+    },
+    mounted: function mounted() {
+        this.$nextTick(function () {
+            window.addEventListener('resize', this.getWindowWidth);
+            this.getWindowWidth();
+        });
+    },
+    beforeDestroy: function beforeDestroy() {
+        window.removeEventListener('resize', this.getWindowWidth);
+    },
+
     components: {
         majorCard: __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default.a,
         majorCardMobile: __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue___default.a,
         cardAdd: __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default.a
-    },
-    methods: {
-        onPlus: function onPlus() {
-            this.$store.dispatch('addMajorCard');
-        }
     }
 });
 
@@ -66124,20 +66147,25 @@ var render = function() {
       "div",
       { staticClass: "col col-md-12" },
       [
-        _vm._l(_vm.majorCards, function(majorCard, index) {
-          return _vm.windowWidth > 800
+        _vm._v("\n        " + _vm._s(_vm.windowWidth) + "\n        "),
+        _vm._l(_vm.desktopCards, function(majorCard, index) {
+          return _vm.isDesktop
             ? _c("major-card", {
                 key: index,
                 staticClass: "my-2",
                 attrs: { index: index }
               })
-            : _vm._l(_vm.mobileCards, function(majorCard, index) {
-                return _c("major-card-mobile", {
-                  key: index,
-                  staticClass: "my-2",
-                  attrs: { index: index }
-                })
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.mobileCards, function(majorCard, index) {
+          return _vm.isMobile
+            ? _c("major-card-mobile", {
+                key: index,
+                staticClass: "my-2",
+                attrs: { index: index }
               })
+            : _vm._e()
         }),
         _vm._v(" "),
         _c("card-add", { attrs: { onPlus: _vm.onPlus } })
