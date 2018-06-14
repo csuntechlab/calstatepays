@@ -27508,7 +27508,15 @@ label {
 
 .csu-form-input-major .dropdown-toggle {
   overflow: visible;
-  height: auto;
+  min-height: 2.75rem;
+}
+
+.csu-form-input-major input[type="search"] {
+  position: absolute !important;
+}
+
+.csu-form-input-major div .selected-tag {
+  height: unset;
 }
 
 .currency {

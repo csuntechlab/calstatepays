@@ -44497,8 +44497,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -44616,7 +44614,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-9" }, [
+        _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
           _c("label", { attrs: { for: "education" } }, [
             _vm._v("Education Level:")
           ]),
@@ -44653,13 +44651,11 @@ var render = function() {
               }
             }
           })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-3" })
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-9" }, [
+        _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
           _c(
             "label",
             { staticClass: "label--radio", attrs: { for: "transfer" } },
@@ -44692,9 +44688,7 @@ var render = function() {
               }
             }
           })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-3" })
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [

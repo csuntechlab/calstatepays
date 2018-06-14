@@ -40,8 +40,16 @@ label {
   @extend %form-input-base;
   .dropdown-toggle {
     overflow: visible;
-    height: auto;
-  }  
+    min-height: 2.75rem;
+  }
+  input[type="search"] {
+    position: absolute !important;
+  }
+  div {
+    .selected-tag {
+    height: unset;
+  }
+  }
 }
 
 .currency {

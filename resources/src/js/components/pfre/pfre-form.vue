@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-9">
+                <div class="col-12 col-9 col-md-12">
                     <label for="education">Education Level:</label>
                     <label class="label--radio" for="freshman">First Time Freshman:</label>
                     <input 
@@ -39,11 +39,10 @@
                     v-model="form.education"
                     value="FTF"
                     @input="updateSelect('education', $event.target)">
-                </div>  
-                <div class="col col-3"></div>
+                </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-9">
+                <div class="col-12 col-9 col-md-12">
                     <label class="label--radio" for="transfer">First Time Transfer:</label>
                     <input 
                     class="mx-2 mt-1"
@@ -53,8 +52,7 @@
                     v-model="form.education"
                     value="FTT"
                     @input="updateSelect('education', $event.target)">
-                </div>  
-                <div class="col col-3"></div>
+                </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
