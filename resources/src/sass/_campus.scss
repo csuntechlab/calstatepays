@@ -15,12 +15,6 @@
     }
 }
 
-.campuses-container{
-    display: flex;
-    align-items: left; 
-    flex-wrap: wrap;
-}
-
 .campus{
     display: flex;
     height: 25rem;
@@ -43,6 +37,17 @@
     }
 }
 
+.notav {
+    @extend .campus;
+    p:hover {
+    color: white;
+    opacity: .5;
+}
+    p{
+        opacity:0;
+    }
+}
+
 #csun {
     background-image: 
         $available-campus, 
@@ -50,8 +55,9 @@
 }
 #csulb {
     background-image: 
-        $unavailable-campus, 
+        $unavailable-campus,
         url('https://www.metalab.csun.edu/learnandearn/imgs/csulb.jpg');
+
 }
 #csula {
     background-image: 

@@ -55,7 +55,8 @@
                     </div>  
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
-                    <div id="csulb" class=" campus">
+                    <div id="csulb" class=" campus campus-not-available">
+                        <p>Campus Not Available</p>
                         <h3>California State University Long Beach</h3>
                     </div> 
                 </div>

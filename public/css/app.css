@@ -12053,8 +12053,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -27361,17 +27360,6 @@ footer, .footer {
   font-weight: 400;
 }
 
-.campuses-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 .campus {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27391,6 +27379,15 @@ footer, .footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FFF;
+}
+
+.campus p:hover {
+  color: white;
+  opacity: .5;
+}
+
+.campus p {
+  opacity: 0;
 }
 
 .campus h3 {
