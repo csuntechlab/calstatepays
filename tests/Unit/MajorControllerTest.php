@@ -29,6 +29,7 @@ class MajorControllerTest extends TestCase
         $this->seed('DatabaseSeeder');
         $this->controller = new MajorController($this->retriever);
     }
+
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
         $this->retriever
@@ -45,6 +46,9 @@ class MajorControllerTest extends TestCase
                 'university' => 1001
                 ]
         ]);
+        
+        $this->retriever->getAllHegisCodes();
+
     }
 
     public function test_getMajorEarnings_returns_data_for_3_paths()
