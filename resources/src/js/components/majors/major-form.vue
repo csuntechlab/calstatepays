@@ -158,8 +158,5 @@ export default {
     components: {
         vSelect,        
     },
-    created() {
-        console.log(this.$v)                
-    }
 }
 </script>
