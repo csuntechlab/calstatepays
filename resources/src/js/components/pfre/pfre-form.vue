@@ -80,7 +80,7 @@
             </div>
             </div>
             <div class="row row--condensed">
-                <div class="py-4">
+                <div class="py-2">
                         <button type="button" class="btn btn-success" @click="fetchFreData(form), scrollWin()">Submit</button>
                 </div>
         </div>
@@ -129,7 +129,7 @@ export default {
         scrollWin() {
             if (window.innerWidth <= 767){
                 window.scrollTo({
-                    top: 700,
+                    top: 655,
                     behavior: "smooth"
                 });
             }

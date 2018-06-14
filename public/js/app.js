@@ -44348,7 +44348,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         scrollWin: function scrollWin() {
             if (window.innerWidth <= 767) {
                 window.scrollTo({
-                    top: 700,
+                    top: 655,
                     behavior: "smooth"
                 });
             }
@@ -44563,7 +44563,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row row--condensed" }, [
-      _c("div", { staticClass: "py-4" }, [
+      _c("div", { staticClass: "py-2" }, [
         _c(
           "button",
           {
