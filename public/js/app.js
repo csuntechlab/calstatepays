@@ -84640,7 +84640,7 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "nav-link",
-                            attrs: { "active-class": "hr-nav", to: "/about" }
+                            attrs: { "active-class": "hr-nav", to: "/faq" }
                           },
                           [
                             _vm._v(
