@@ -27051,7 +27051,7 @@ html {
   font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .home__heading {
     font-size: 2.5rem;
   }
@@ -27083,7 +27083,7 @@ body {
   font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .pfre__heading {
     font-size: 1.78rem;
   }
@@ -27153,7 +27153,7 @@ body {
           transform: translateY(-50%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .pfre-info--show::after {
     display: none;
   }
@@ -27228,7 +27228,7 @@ figcaption {
   background-size: cover;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .bg {
     background-size: contain;
     background-position: 0 0;
@@ -27249,7 +27249,7 @@ figcaption {
   border-bottom: .3rem solid;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .video-placeholder {
     height: 45vh;
   }
@@ -27260,13 +27260,13 @@ figcaption {
   min-height: 11vh;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .learn-how {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .fa-wrapper {
     background: #FFF;
     -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
@@ -27311,7 +27311,7 @@ figcaption {
   height: 35vh;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .faq-banner {
     background-position: 40%;
   }
@@ -27651,7 +27651,7 @@ textarea {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .fre-major-title {
     display: block;
   }
@@ -27700,7 +27700,7 @@ textarea {
   float: left;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .btn-info {
     float: right;
   }

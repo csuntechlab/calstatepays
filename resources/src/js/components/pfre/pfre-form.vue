@@ -81,9 +81,7 @@
             </div>
             <div class="row row--condensed">
                 <div class="py-4">
-                    <a href="#progress-bar">
-                        <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
-                    </a>
+                        <button type="button" class="btn btn-success" @click="fetchFreData(form), scrollWin()">Submit</button>
                 </div>
         </div>
     </form>
@@ -128,6 +126,14 @@ export default {
                 this.form[field] = null;
             }
         },
+        scrollWin() {
+            if (window.innerWidth <= 767){
+                window.scrollTo({
+                    top: 700,
+                    behavior: "smooth"
+                });
+            }
+        }
     },
     computed: {
         ...mapGetters([
