@@ -30,9 +30,10 @@
             <div class="row row--condensed">
                 <div class="col col-9">
                     <label for="education">Education Level:</label>
-                    <label class="label--radio" for="education">First Time Freshman:</label>
+                    <label class="label--radio" for="freshman">First Time Freshman:</label>
                     <input 
                     class="mx-2 mt-1"
+                    for="freshman"
                     type="radio"
                     id="freshman"
                     v-model="form.education"
@@ -43,9 +44,10 @@
             </div>
             <div class="row row--condensed">
                 <div class="col col-9">
-                    <label class="label--radio" for="education">First Time Transfer:</label>
+                    <label class="label--radio" for="transfer">First Time Transfer:</label>
                     <input 
                     class="mx-2 mt-1"
+                    for="transfer"
                     type="radio"
                     id="transfer"
                     v-model="form.education"
@@ -81,7 +83,9 @@
             </div>
             <div class="row row--condensed">
                 <div class="py-4">
-                    <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
+                    <a href="#progress-bar">
+                        <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
+                    </a>
                 </div>
         </div>
     </form>

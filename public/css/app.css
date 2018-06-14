@@ -27085,7 +27085,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .pfre__heading {
-    font-size: 2.24rem;
+    font-size: 1.78rem;
   }
 }
 
@@ -27640,6 +27640,7 @@ textarea {
   color: #777777;
   text-align: center;
   font-weight: normal;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
