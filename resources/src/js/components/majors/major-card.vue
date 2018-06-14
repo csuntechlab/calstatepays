@@ -12,7 +12,7 @@
                          <major-form :index="index"></major-form>
                     </div>
                     <div class="col col-7">
-                        <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
+                        <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
                     </div>
                     <div class="col-2 mt-4 pt-5 pl-0">
                         <major-legend v-show="isEmpty" :educationLevel="selectedEducationLevel"></major-legend>
@@ -35,7 +35,7 @@ import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-    props: ['index'],
+    props: ['index', 'windowWidth'],
     computed: {
         ...mapGetters([
             'universityById',

@@ -1,5 +1,5 @@
 <template>
-<chart :initOptions="chartDimensions" :options="polar" :autoResize="true"></chart>
+<chart :initOptions="chartDimensions" :options="polar"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorData', 'educationLevel', 'majorId'],
+    props: ['majorData', 'educationLevel', 'majorId',  'windowWidth'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -52,24 +52,23 @@ export default {
             }
         },
         chartDimensions(){
-            let currentWidth = window.innerWidth;
-            if(currentWidth >= 1001) {
+            if(this.windowWidth >= 1001) {
                 return {
                     height: 400,
-                    width: currentWidth * .42
+                    width: this.windowWidth * .42
                 }
                
             }
-            else if(currentWidth >= 750 && currentWidth <= 1000) {
+            else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
                     height: 300,
-                    width: currentWidth - 200
+                    width: this.windowWidth - 200
                 }
             }
             else {
               return {
                     height: 400,
-                    width: currentWidth - 125,
+                    width: this.windowWidth - 125,
                 }  
             }
         },

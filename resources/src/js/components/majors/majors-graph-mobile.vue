@@ -1,5 +1,5 @@
 <template>
-<chart style="width: 0" :initOptions="chartDimensions" :options="polar" :autoResize="true"></chart>
+<chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -50,7 +50,7 @@ export default {
             }
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 400,
+                    height: 300,
                     width: this.windowWidth - 200
                 }
             }

@@ -46945,7 +46945,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['index'],
+    props: ['index', 'windowWidth'],
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
         isEmpty: function isEmpty() {
             //Check whether the form field was fired off, toggle carousel on
@@ -48279,7 +48279,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'majorId'],
+    props: ['majorData', 'educationLevel', 'majorId', 'windowWidth'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
@@ -48322,21 +48322,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         chartDimensions: function chartDimensions() {
-            var currentWidth = window.innerWidth;
-            if (currentWidth >= 1001) {
+            if (this.windowWidth >= 1001) {
                 return {
                     height: 400,
-                    width: currentWidth * .42
+                    width: this.windowWidth * .42
                 };
-            } else if (currentWidth >= 750 && currentWidth <= 1000) {
+            } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
                     height: 300,
-                    width: currentWidth - 200
+                    width: this.windowWidth - 200
                 };
             } else {
                 return {
                     height: 400,
-                    width: currentWidth - 125
+                    width: this.windowWidth - 125
                 };
             }
         },
@@ -65134,11 +65133,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("chart", {
-    attrs: {
-      initOptions: _vm.chartDimensions,
-      options: _vm.polar,
-      autoResize: true
-    }
+    attrs: { initOptions: _vm.chartDimensions, options: _vm.polar }
   })
 }
 var staticRenderFns = []
@@ -65310,7 +65305,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 400,
+                    height: 300,
                     width: this.windowWidth - 200
                 };
             } else {
@@ -65468,11 +65463,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("chart", {
     staticStyle: { width: "0" },
-    attrs: {
-      initOptions: _vm.chartDimensions,
-      options: _vm.polar,
-      autoResize: true
-    }
+    attrs: { initOptions: _vm.chartDimensions, options: _vm.polar }
   })
 }
 var staticRenderFns = []
@@ -65509,7 +65500,8 @@ var render = function() {
             attrs: {
               majorData: _vm.parsedMajorData,
               educationLevel: this.educationLevel,
-              majorId: _vm.majorData.majorId
+              majorId: _vm.majorData.majorId,
+              windowWidth: _vm.windowWidth
             }
           })
     ],
@@ -66043,7 +66035,8 @@ var render = function() {
                   ],
                   attrs: {
                     majorData: _vm.selectedMajorData,
-                    educationLevel: _vm.selectedEducationLevel
+                    educationLevel: _vm.selectedEducationLevel,
+                    windowWidth: _vm.windowWidth
                   }
                 })
               ],
