@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Http\Controllers\MajorController;
+use App\Contracts\MajorContract;
 use App\Models\StudentPath;
 use App\Models\UniversityMajor;
 use App\Models\MajorPath;
@@ -11,31 +12,38 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Mockery;
 
 class MajorControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
     private $controller;
-
+    private $retriever;
     private $validMajorId = 22021;
     private $validUniversity = 1153;
 
     public function setUp(){
         parent::setUp();
+        $this->retriever = Mockery::mock(MajorContract::class);
         $this->seed('DatabaseSeeder');
-        $this->controller = new MajorController();
+        $this->controller = new MajorController($this->retriever);
     }
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
-        $response = $this->json('GET', '/api/major/hegis-codes');
-        $response->assertStatus(200);
-        $response->assertJsonStructure([
-            0 => [
-                'hegis_code',
-                'major',
-                'university'
-            ]
+        $this->retriever
+            ->shouldReceive('getAllHegisCodes')
+            ->once()->andReturn([
+                [
+                    'hegis_code' => 100,
+                    'major' => 4,
+                    'university' => 1001
+                ],
+                [
+                'hegis_code' => 100,
+                'major' => 4,
+                'university' => 1001
+                ]
         ]);
     }
 
