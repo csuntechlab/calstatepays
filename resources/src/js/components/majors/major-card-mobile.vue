@@ -2,11 +2,15 @@
     <div class="col col-md-12">
         <card>
             <div class="container-fluid my-0 mt-2">
-                <div class="row m-1 p-0">
-                    <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"></major-graph-wrapper>
+                <div style="height: 400px" class="row m-1 p-0">
+                    <div class="col p-0">
+                        <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
+                    </div>
                 </div>
                 <div class="row">
-                    <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
+                    <div class="col">
+                        <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -35,7 +39,7 @@ import { updateForm } from '../../utils/index';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-    props: ['index'],
+    props: ['index', 'windowWidth'],
     computed: {
         ...mapGetters([
             'universityById',
