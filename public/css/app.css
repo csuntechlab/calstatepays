@@ -27360,7 +27360,7 @@ footer, .footer {
   font-weight: 400;
 }
 
-.campus {
+.campus, .not-avail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27381,21 +27381,23 @@ footer, .footer {
   color: #FFF;
 }
 
-.campus p:hover {
-  color: white;
-  opacity: .5;
-}
-
-.campus p {
-  opacity: 0;
-}
-
-.campus h3 {
+.campus h3, .not-avail h3 {
   position: absolute;
   bottom: 1rem;
   font-size: 1.3rem;
   line-height: 140%;
   font-weight: bold;
+}
+
+.not-avail p {
+  color: white;
+  opacity: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.not-avail p:hover {
+  opacity: .5;
 }
 
 #csun {

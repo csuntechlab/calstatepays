@@ -37,14 +37,16 @@
     }
 }
 
-.notav {
+.not-avail {
     @extend .campus;
-    p:hover {
-    color: white;
-    opacity: .5;
-}
     p{
+        color: white;
         opacity:0;
+        font-size: 1.4rem;
+        font-weight:bold;
+    }
+    p:hover{
+        opacity: .5;
     }
 }
 
