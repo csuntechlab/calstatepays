@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-content-md-start mx-2">
-    <div class="col-11 col-md-2 col-lg-4 col-xl-3 align-self-center">
+    <div class="col-11 col-md-2 col-lg-4 col-xl-3 px-0 align-self-center">
       <button class="btn-info" type="button" @click="toggleInfo(infoKey)">
         <i class="fa fa-question"></i>
       </button>

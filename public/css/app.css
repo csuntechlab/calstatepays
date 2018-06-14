@@ -27129,8 +27129,8 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  -webkit-transform: translate(50%, -45%);
-          transform: translate(50%, -45%);
+  -webkit-transform: translate(35%, -45%);
+          transform: translate(35%, -45%);
   background: #EBEBEB;
   border-radius: 15px;
   float: right;

@@ -44632,7 +44632,9 @@ var render = function() {
   return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
     _c(
       "div",
-      { staticClass: "col-11 col-md-2 col-lg-4 col-xl-3 align-self-center" },
+      {
+        staticClass: "col-11 col-md-2 col-lg-4 col-xl-3 px-0 align-self-center"
+      },
       [
         _c(
           "button",
