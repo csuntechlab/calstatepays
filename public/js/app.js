@@ -28323,6 +28323,7 @@ var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
 var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
+var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -28334,7 +28335,8 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
-    ADD_MAJOR_CARD: ADD_MAJOR_CARD
+    ADD_MAJOR_CARD: ADD_MAJOR_CARD,
+    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD
 });
 
 /***/ }),
@@ -43315,6 +43317,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         majorData: [],
         formWasSubmitted: false
     });
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
+    var index = payload;
+    if (index !== 0) {
+        console.log(index);
+        console.log(index !== 0);
+        state.majorCards.splice(index, 1);
+    }
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -43414,6 +43423,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref10.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD);
+    },
+    deleteMajorCard: function deleteMajorCard(_ref11, payload) {
+        var commit = _ref11.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, payload);
     }
 });
 
@@ -46409,6 +46423,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         selectedEducationLevel: function selectedEducationLevel() {
             return this.educationLevel(this.index);
+        }
+    }),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+        removeCurrentCard: function removeCurrentCard() {
+            this.deleteMajorCard(this.index);
         }
     }),
     components: {
@@ -65422,82 +65441,81 @@ var render = function() {
     "div",
     { staticClass: "col col-md-12" },
     [
-      _c(
-        "card",
-        [
-          _c(
-            "btn",
-            { staticClass: "btn btn-danger btn-sm btn-outline-danger" },
-            [_vm._v("Remove")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid my-0" }, [
-            _c("div", { staticClass: "row p-0" }, [
-              _c(
-                "div",
-                { staticClass: "mt-5" },
-                [
-                  _c("industry-carousel", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isEmpty,
-                        expression: "isEmpty"
-                      }
-                    ],
-                    attrs: { industries: _vm.selectedIndustries }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row m-1 p-0" }, [
-              _c(
-                "div",
-                { staticClass: "col col-md-3 col-sm-12 my-3" },
-                [_c("major-form", { attrs: { index: _vm.index } })],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col col-7" },
-                [
-                  _c("major-graph-wrapper", {
-                    attrs: {
-                      majorData: _vm.selectedMajorData,
-                      educationLevel: _vm.selectedEducationLevel
+      _c("card", [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-danger btn-sm btn-outline-danger",
+            on: { click: _vm.removeCurrentCard }
+          },
+          [_vm._v("Remove")]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "container-fluid my-0" }, [
+          _c("div", { staticClass: "row p-0" }, [
+            _c(
+              "div",
+              { staticClass: "mt-5" },
+              [
+                _c("industry-carousel", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
                     }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-2 mt-4 pt-5 pl-0" },
-                [
-                  _c("major-legend", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isEmpty,
-                        expression: "isEmpty"
-                      }
-                    ],
-                    attrs: { educationLevel: _vm.selectedEducationLevel }
-                  })
-                ],
-                1
-              )
-            ])
+                  ],
+                  attrs: { industries: _vm.selectedIndustries }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row m-1 p-0" }, [
+            _c(
+              "div",
+              { staticClass: "col col-md-3 col-sm-12 my-3" },
+              [_c("major-form", { attrs: { index: _vm.index } })],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col col-7" },
+              [
+                _c("major-graph-wrapper", {
+                  attrs: {
+                    majorData: _vm.selectedMajorData,
+                    educationLevel: _vm.selectedEducationLevel
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-2 mt-4 pt-5 pl-0" },
+              [
+                _c("major-legend", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  attrs: { educationLevel: _vm.selectedEducationLevel }
+                })
+              ],
+              1
+            )
           ])
-        ],
-        1
-      )
+        ])
+      ])
     ],
     1
   )

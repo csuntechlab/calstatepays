@@ -1,7 +1,7 @@
 <template>
     <div class="col col-md-12">
         <card>
-                <btn class="btn btn-danger btn-sm btn-outline-danger">Remove</btn>
+            <button v-on:click="removeCurrentCard" class="btn btn-danger btn-sm btn-outline-danger">Remove</button>
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
@@ -58,6 +58,14 @@ export default {
         },
         selectedEducationLevel() {
             return this.educationLevel(this.index);
+        }
+    },
+    methods:{
+        ...mapActions([
+            'deleteMajorCard'
+        ]),
+        removeCurrentCard(){
+            this.deleteMajorCard(this.index);
         }
     },
     components: { 
