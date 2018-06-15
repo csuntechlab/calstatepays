@@ -1,5 +1,5 @@
 <template>
-<chart :initOptions="chartDimensions" :options="polar"></chart>
+<chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorData', 'educationLevel', 'majorId',  'windowWidth'],
+    props: ['majorData', 'educationLevel', 'majorId', 'windowWidth'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -17,11 +17,8 @@ export default {
                color1: '#000',
                color2: '#000',
                color3: '#FFF',
-            }
+            },
         }
-    },
-    components: {
-        'chart': ECharts
     },
     computed: {
         mastersEarnings(){
@@ -42,16 +39,8 @@ export default {
             }
             return null;
         },
-        mobileYAxis() {
-            let currentWidth = window.innerWidth;
-            if(currentWidth <= 750) {
-                return 90
-            }
-            else {
-                return 0
-            }
-        },
         chartDimensions(){
+            let currentWidth = window.innerWidth;
             if(this.windowWidth >= 1001) {
                 return {
                     height: 400,
@@ -61,7 +50,7 @@ export default {
             }
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
+                    height: 400,
                     width: this.windowWidth - 200
                 }
             }
@@ -165,7 +154,7 @@ export default {
                 },
                 yAxis: {
                     axisLabel: {
-                        rotate: this.mobileYAxis
+                        rotate: 90
                     },
                     max: 150000
                 },
@@ -211,6 +200,9 @@ export default {
             }
             return null;
         }
-  }
+    },
+    components: {
+        'chart': ECharts
+    },
 }
 </script>

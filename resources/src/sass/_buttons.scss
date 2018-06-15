@@ -28,6 +28,16 @@
     outline: none;
 }
 
+.btn-remove{
+    color: $gray;
+    font-size: 2rem;
+    height: 25px;
+    width: 25px;
+    outline: none;
+    padding-left:95%;
+    padding-top:1rem;
+}
+
 .btn-plus{
     display: block;
 }

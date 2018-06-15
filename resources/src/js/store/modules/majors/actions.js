@@ -79,6 +79,9 @@ export default {
 
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);
+    },
+
+    deleteMajorCard({commit}, payload) {
+        commit(_majors.DELETE_MAJOR_CARD,payload);
     }
-    
 }
