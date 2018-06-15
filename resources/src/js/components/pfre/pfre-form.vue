@@ -80,7 +80,7 @@
             </div>
             </div>
             <div class="row row--condensed" id="submit-btn-container">
-                <div class="py-2">
+                <div class="pt-2 pb-4 pt-md-2 pb-md-2">
                         <button type="button" class="btn btn-success" @click="fetchFreData(form), scrollWin()">Submit</button>
                 </div>
         </div>

@@ -44571,7 +44571,7 @@ var render = function() {
         attrs: { id: "submit-btn-container" }
       },
       [
-        _c("div", { staticClass: "py-2" }, [
+        _c("div", { staticClass: "pt-2 pb-4 pt-md-2 pb-md-2" }, [
           _c(
             "button",
             {
