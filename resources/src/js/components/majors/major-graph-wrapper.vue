@@ -13,7 +13,7 @@
         props: ['majorData', 'educationLevel', 'windowWidth'],
         computed: {
             isMobile() {
-                return this.windowWidth < 800 ? true : false;
+                return this.windowWidth < 1000 ? true : false;
             },
             parsedMajorData() {
                 if(this.majorData.length == 0) {

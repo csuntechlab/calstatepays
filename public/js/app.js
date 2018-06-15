@@ -46713,7 +46713,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: {
         getWindowWidth: function getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
-            this.windowWidth < 800 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+            this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
         },
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
@@ -65170,7 +65170,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     computed: {
         isMobile: function isMobile() {
-            return this.windowWidth < 800 ? true : false;
+            return this.windowWidth < 1000 ? true : false;
         },
         parsedMajorData: function parsedMajorData() {
             if (this.majorData.length == 0) {

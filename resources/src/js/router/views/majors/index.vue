@@ -35,7 +35,7 @@ export default {
     methods: {
         getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
-            this.windowWidth < 800 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+            this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
         },
         onPlus(){
             this.$store.dispatch('addMajorCard');
