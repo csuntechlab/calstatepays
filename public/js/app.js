@@ -44347,9 +44347,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         scrollWin: function scrollWin() {
             if (window.innerWidth <= 767) {
-                window.scrollTo({
-                    top: 655,
-                    behavior: "smooth"
+                var scrollTop;
+                var progressBar = document.getElementById("submit-btn-container");
+                progressBar.scrollIntoView({
+                    behavior: "smooth",
+                    inline: "end"
                 });
             }
         }
@@ -44562,23 +44564,30 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row row--condensed" }, [
-      _c("div", { staticClass: "py-2" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.fetchFreData(_vm.form), _vm.scrollWin()
+    _c(
+      "div",
+      {
+        staticClass: "row row--condensed",
+        attrs: { id: "submit-btn-container" }
+      },
+      [
+        _c("div", { staticClass: "py-2" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.fetchFreData(_vm.form), _vm.scrollWin()
+                }
               }
-            }
-          },
-          [_vm._v("Submit")]
-        )
-      ])
-    ])
+            },
+            [_vm._v("Submit")]
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -45884,228 +45893,233 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "progress-wrapper" }, [
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
-              height: "55",
-              color: "pfre-year"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.start))
+  return _c(
+    "div",
+    { staticClass: "progress-wrapper", attrs: { id: "progress-bars" } },
+    [
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
+                height: "55",
+                color: "pfre-year"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.start))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.middle))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.end))
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.middle))
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.end))
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+                _vm._v(
+                  "Estimated time to degree: " +
+                    _vm._s(_vm.pfreData.years.actual)
+                )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
               _vm._v(
-                "Estimated time to degree: " + _vm._s(_vm.pfreData.years.actual)
+                "The estimated time it would take for you to complete your degree if you choose this major."
               )
             ])
-          ])
-        ],
-        1
-      ),
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
-            _vm._v(
-              "The estimated time it would take for you to complete your degree if you choose this major."
-            )
-          ])
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value:
-                _vm.pfreData.earnings.actual /
-                _vm.pfreData.earnings.maximum *
-                100,
-              height: "55",
-              color: "pfre-earnings"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.minimum))
-                )
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value:
+                  _vm.pfreData.earnings.actual /
+                  _vm.pfreData.earnings.maximum *
+                  100,
+                height: "55",
+                color: "pfre-earnings"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.minimum))
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.average))
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.maximum))
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
                 _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.average))
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.maximum))
+                  "Estimated Earnings 5 Years After Exit: " +
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
               _vm._v(
-                "Estimated Earnings 5 Years After Exit: " +
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
+                "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
               )
             ])
-          ])
-        ],
-        1
-      ),
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
-            _vm._v(
-              "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
-            )
-          ])
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [
-            _vm._v("Return On Investment")
-          ]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value:
-                _vm.pfreData.returnOnInvestment.actual *
-                100 /
-                (_vm.pfreData.returnOnInvestment.maximum * 100),
-              height: "55",
-              color: "pfre-fre"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.minimum
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [
+              _vm._v("Return On Investment")
+            ]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value:
+                  _vm.pfreData.returnOnInvestment.actual *
+                  100 /
+                  (_vm.pfreData.returnOnInvestment.maximum * 100),
+                height: "55",
+                color: "pfre-fre"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.minimum
+                      )
                     )
                   )
-                )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.average
+                      )
+                    )
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.maximum
+                      )
+                    )
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
                 _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.average
+                  "FRE - Financial Return on Education: " +
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.actual / 100
+                      )
                     )
-                  )
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.maximum
-                    )
-                  )
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "return" } }, [
               _vm._v(
-                "FRE - Financial Return on Education: " +
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.actual / 100
-                    )
-                  )
+                "Your estimated financial return on your education investment."
               )
             ])
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "return" } }, [
-            _vm._v(
-              "Your estimated financial return on your education investment."
-            )
-          ])
-        ],
-        1
-      )
-    ])
-  ])
+          ],
+          1
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
