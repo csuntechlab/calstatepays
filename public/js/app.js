@@ -65460,7 +65460,7 @@ var render = function() {
                 expression: "isNotFirstCard && isEmpty"
               }
             ],
-            staticClass: "fas fa-times-circle",
+            staticClass: "fas fa-times",
             on: { click: _vm.removeCurrentCard }
           })
         ]),

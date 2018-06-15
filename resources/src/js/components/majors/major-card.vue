@@ -3,7 +3,7 @@
         <card>
             <button class="btn-remove">
                 <!--<button v-on:click="removeCurrentCard" v-show="isNotFirstCard && isEmpty" class="btn btn-danger btn-sm btn-outline-danger">Remove</button>-->
-                <i class="fas fa-times-circle" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
+                <i class="fas fa-times" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
             </button>
             <div class="container-fluid my-0">
                 <div class="row p-0">
