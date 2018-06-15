@@ -12053,8 +12053,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -27394,18 +27393,7 @@ footer, .footer {
   font-weight: 400;
 }
 
-.campuses-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.campus {
+.campus, .not-avail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27426,12 +27414,23 @@ footer, .footer {
   color: #FFF;
 }
 
-.campus h3 {
+.campus h3, .not-avail h3 {
   position: absolute;
   bottom: 1rem;
   font-size: 1.3rem;
   line-height: 140%;
   font-weight: bold;
+}
+
+.not-avail p {
+  color: white;
+  opacity: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.not-avail p:hover {
+  opacity: .5;
 }
 
 #csun {
