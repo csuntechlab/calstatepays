@@ -1,7 +1,7 @@
 <template>
     <div class="col col-md-12">
         <card>
-            <btn class="btn btn-danger btn-sm btn-outline-danger">Remove</btn>
+                <btn class="btn btn-danger btn-sm btn-outline-danger">Remove</btn>
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
