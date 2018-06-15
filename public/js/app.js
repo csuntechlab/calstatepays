@@ -67259,6 +67259,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -67450,9 +67456,15 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csulb" } }, [
-                _c("h3", [_vm._v("California State University Long Beach")])
-              ])
+              _c(
+                "div",
+                { staticClass: "campus not-avail", attrs: { id: "csulb" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("California State University Long Beach")])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -67460,9 +67472,15 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csula" } }, [
-                _c("h3", [_vm._v("California State University Los Angeles")])
-              ])
+              _c(
+                "div",
+                { staticClass: " campus not-avail", attrs: { id: "csula" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("California State University Los Angeles")])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -67470,9 +67488,15 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csuf" } }, [
-                _c("h3", [_vm._v("California State University Fullerton")])
-              ])
+              _c(
+                "div",
+                { staticClass: " campus not-avail", attrs: { id: "csuf" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("California State University Fullerton")])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -67480,11 +67504,17 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csudh" } }, [
-                _c("h3", [
-                  _vm._v("California State University Dominguez Hills")
-                ])
-              ])
+              _c(
+                "div",
+                { staticClass: " campus not-avail", attrs: { id: "csudh" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [
+                    _vm._v("California State University Dominguez Hills")
+                  ])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -67492,9 +67522,17 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csuci" } }, [
-                _c("h3", [_vm._v("California State University Channel Island")])
-              ])
+              _c(
+                "div",
+                { staticClass: " campus not-avail", attrs: { id: "csuci" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [
+                    _vm._v("California State University Channel Island")
+                  ])
+                ]
+              )
             ]
           ),
           _vm._v(" "),
@@ -67502,9 +67540,15 @@ var staticRenderFns = [
             "div",
             { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
             [
-              _c("div", { staticClass: " campus", attrs: { id: "csup" } }, [
-                _c("h3", [_vm._v("California State University Pomona")])
-              ])
+              _c(
+                "div",
+                { staticClass: " campus not-avail", attrs: { id: "csup" } },
+                [
+                  _c("p", [_vm._v("Data Not Available At This Time")]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("California State University Pomona")])
+                ]
+              )
             ]
           )
         ]
@@ -85561,7 +85605,7 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "nav-link",
-                            attrs: { "active-class": "hr-nav", to: "/about" }
+                            attrs: { "active-class": "hr-nav", to: "/faq" }
                           },
                           [
                             _vm._v(
