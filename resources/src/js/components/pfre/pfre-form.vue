@@ -132,6 +132,7 @@ export default {
                 var progressBar = document.getElementById("submit-btn-container");
                 progressBar.scrollIntoView({
                     behavior: "smooth",
+                    block: "start",
                     inline: "end"
                 });
             }

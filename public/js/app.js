@@ -44351,6 +44351,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 var progressBar = document.getElementById("submit-btn-container");
                 progressBar.scrollIntoView({
                     behavior: "smooth",
+                    block: "start",
                     inline: "end"
                 });
             }
@@ -46155,7 +46156,10 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c(
                 "div",
-                { staticClass: "col-12 col-md-4 col-lg-3 align-self-center" },
+                {
+                  staticClass:
+                    "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
+                },
                 [_c("pfre-form")],
                 1
               ),
