@@ -33,7 +33,7 @@
                                     </router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" to="/about">
+                                    <router-link class="nav-link" active-class="hr-nav" to="/faq">
                                         About
                                     </router-link>
                                 </li>
