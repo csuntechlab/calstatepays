@@ -27011,20 +27011,11 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-<<<<<<< HEAD
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #FFF;
-  border-radius: 50px;
-  min-height: 650px;
-  padding-bottom: 50px;
-=======
       -ms-flex-direction: row;
           flex-direction: row;
   min-height: 75vh;
->>>>>>> 8fbe993823589b54ea8bfd5558c88dd79efe4153
   margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;
