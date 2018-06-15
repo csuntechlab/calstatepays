@@ -27874,13 +27874,6 @@ input[type="button"]:focus {
   width: 14em;
 }
 
-.industry-carousel-card__mobile {
-  height: 8em;
-  width: 100%;
-  margin-bottom: 10px;
-  border-radius: 1rem;
-}
-
 .industry-title {
   color: grey;
   text-align: center;
@@ -27892,12 +27885,31 @@ input[type="button"]:focus {
   padding: 1% 0% 12% 10%;
   border-radius: 1rem;
   line-height: 3px;
+  background-size: cover;
   background: rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  max-height: 150px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .info-wrapper {
+    width: 100% !important;
+    margin: 0 auto;
     padding: 1% 0% 12% 10% !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .info-wrapper {
+    float: left;
+    width: 31%;
+    margin: 0 auto;
+    margin-left: 2%;
+    padding: 1% 0% 12% 10% !important;
+    margin-bottom: 10px;
+    background-size: cover;
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 
