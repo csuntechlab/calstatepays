@@ -1,7 +1,9 @@
 <template>
     <div class="col col-md-12">
         <card>
-            <button v-on:click="removeCurrentCard" class="btn btn-danger btn-sm btn-outline-danger">Remove</button>
+            <div class="col col-1">
+                <button v-on:click="removeCurrentCard" v-show="isNotFirstCard && isEmpty" class="btn btn-danger btn-sm btn-outline-danger">Remove</button>
+            </div>
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
@@ -49,6 +51,11 @@ export default {
             if(this.industries(this.index).length === 0){
                 return false;
             } return true;
+        },
+        isNotFirstCard(){
+            if(this.index >= 1){
+                return true;
+            } return false;
         },
         selectedMajorData() {
             return this.majorData(this.index);
