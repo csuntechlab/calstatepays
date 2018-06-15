@@ -31,6 +31,13 @@ body {
   color: $gray;
 }
 
+.pfre__heading {
+    font-size: 3rem;
+    font-weight: 600;
+    @media screen and (max-width: $break-small) {
+        font-size: 1.78rem;
+    }
+}
 
 .pfre-info{
     position: absolute;
@@ -71,20 +78,19 @@ body {
 }
 
 .pfre-info--show {
-position: absolute;
-    margin-left: 80px;
+    position: absolute;
+    transform: translate(35%,-45%);
     background: $light-gray;
     border-radius: 15px;
     float: right;
     width: 10rem;
-    top: 45%;
-    transform: translateY(-50%);
-    padding: 8px;
+    left: .9rem;
+    padding: .5rem;
 
   &::after {
     content: " ";
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: -6px;
     width: 0;
     height: 0;
@@ -92,7 +98,17 @@ position: absolute;
     border-right: 6px solid $light-gray;
     border-bottom: 6px solid transparent;
     transform: translateY(-50%);
-    
+    @media screen and (max-width: $break-small) {
+        display: none;
+    }
+  }
+  @media screen and (max-width: $break-large) {
+        transform: translate(0);
+        margin-left: 0;
+        position: static;
+        width: auto;
+        float: none;
+        display: flex;
   }
 }
 
