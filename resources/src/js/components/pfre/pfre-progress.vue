@@ -1,9 +1,9 @@
 <template>
   <div class="progress-wrapper">
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters my-3">
+      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <h5 class="text-center">Years</h5>
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="45" color="pfre-year"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"></v-progress-linear>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.years.start}}</p>  
@@ -19,14 +19,14 @@
           <p class="font-weight-bold mb-0 text-center">Estimated time to degree: {{pfreData.years.actual}}</p>
         </div>
       </div>
-      <div class="col-3">
-        <pfre-info infoKey="timeToDegree">Information regarding Time to Degree Displayed Here.</pfre-info>
+      <div class="col-12 col-lg-4 col-xl-3 align-self-md-center">
+        <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
       </div>
     </div>
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters my-3">
+      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <h5 class="text-center">Earnings</h5>      
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="45" color="pfre-earnings"></v-progress-linear> 
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"></v-progress-linear> 
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>  
@@ -42,14 +42,14 @@
           <p class="font-weight-bold mb-0 text-center">Estimated Earnings 5 Years After Exit: {{pfreData.earnings.actual | currency}}</p>
         </div>  
       </div>
-      <div class="col-3">
-        <pfre-info infoKey="earnings">You're gonna make so much money, like so much.</pfre-info>
+      <div class="col-12 col-lg-4 col-xl-3 align-self-md-center">
+        <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
       </div>
     </div>
-    <div class="row">
-      <div class="col-9">
+    <div class="row no-gutters my-3">
+      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <h5 class="text-center">Return On Investment</h5>
-        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="45" color="pfre-fre"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"></v-progress-linear>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  
@@ -65,8 +65,8 @@
           <p class="font-weight-bold mb-0 text-center">FRE - Financial Return on Education: {{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
         </div>
       </div>
-      <div class="col-3">
-        <pfre-info infoKey="return">Tell your Financial Advisor he's no longer needed.</pfre-info>
+      <div class="col-12 col-lg-4 col-xl-3 align-self-md-center">
+        <pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
       </div>
     </div>
   </div>

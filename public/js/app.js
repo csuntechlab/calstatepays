@@ -44617,6 +44617,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -44657,7 +44663,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "csu-card col col-md-10 offset-md-1" },
+    { staticClass: "csu-card col col-lg-10 container row align-items-center" },
     [_vm._t("default")],
     2
   )
@@ -44814,6 +44820,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -44851,9 +44862,25 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             } else {
                 this.form[field] = null;
             }
+        },
+        scrollWin: function scrollWin() {
+            if (window.innerWidth <= 767) {
+                window.scrollTo({
+                    top: 655,
+                    behavior: "smooth"
+                });
+            }
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['majors', 'majorNameById']), {
+        selectedMajorName: function selectedMajorName() {
+            if (this.form.majorId == null) {
+                return '';
+            } else {
+                return this.majorNameById(this.form.majorId);
+            }
+        }
+    }),
     components: {
         vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
@@ -44868,14 +44895,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "form--inverted" }, [
+    _c("div", { staticClass: "fre-major-title" }, [
+      _vm.form.majorId
+        ? _c("h3", { staticClass: "text-gray" }, [
+            _vm._v(_vm._s(_vm.selectedMajorName))
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "form__group" }, [
       _c("div", { staticClass: "row row--condensed" }, [
-        _vm.form.major
-          ? _c("h3", { staticClass: "text-gray" }, [
-              _vm._v(_vm._s(_vm.form.major))
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "col col-12" },
@@ -44883,6 +44912,7 @@ var render = function() {
             _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input-major",
               attrs: { label: "major", options: _vm.majors },
               on: {
                 input: function($event) {
@@ -44906,12 +44936,10 @@ var render = function() {
             _c("label", { attrs: { for: "age" } }, [_vm._v("Age Range:")]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "age", options: _vm.ageRanges },
               on: {
                 input: function($event) {
-                  _vm.updateSelect("age", $event)
-                },
-                change: function($event) {
                   _vm.updateSelect("age", $event)
                 }
               }
@@ -44922,14 +44950,14 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-9" }, [
+        _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
           _c("label", { attrs: { for: "education" } }, [
             _vm._v("Education Level:")
           ]),
           _vm._v(" "),
           _c(
             "label",
-            { staticClass: "label--radio", attrs: { for: "education" } },
+            { staticClass: "label--radio", attrs: { for: "freshman" } },
             [_vm._v("First Time Freshman:")]
           ),
           _vm._v(" "),
@@ -44943,7 +44971,12 @@ var render = function() {
               }
             ],
             staticClass: "mx-2 mt-1",
-            attrs: { type: "radio", id: "freshman", value: "FTF" },
+            attrs: {
+              for: "freshman",
+              type: "radio",
+              id: "freshman",
+              value: "FTF"
+            },
             domProps: { checked: _vm._q(_vm.form.education, "FTF") },
             on: {
               input: function($event) {
@@ -44954,16 +44987,14 @@ var render = function() {
               }
             }
           })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-3" })
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-9" }, [
+        _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
           _c(
             "label",
-            { staticClass: "label--radio", attrs: { for: "education" } },
+            { staticClass: "label--radio", attrs: { for: "transfer" } },
             [_vm._v("First Time Transfer:")]
           ),
           _vm._v(" "),
@@ -44977,7 +45008,12 @@ var render = function() {
               }
             ],
             staticClass: "mx-2 mt-1",
-            attrs: { type: "radio", id: "transfer", value: "FTT" },
+            attrs: {
+              for: "transfer",
+              type: "radio",
+              id: "transfer",
+              value: "FTT"
+            },
             domProps: { checked: _vm._q(_vm.form.education, "FTT") },
             on: {
               input: function($event) {
@@ -44988,9 +45024,7 @@ var render = function() {
               }
             }
           })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col col-3" })
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row row--condensed" }, [
@@ -45003,6 +45037,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "earn", options: _vm.earningRanges },
               on: {
                 input: function($event) {
@@ -45028,6 +45063,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("v-select", {
+              staticClass: "csu-form-input",
               attrs: { label: "finAid", options: _vm.financialAidRanges },
               on: {
                 input: function($event) {
@@ -45041,24 +45077,24 @@ var render = function() {
           ],
           1
         )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row row--condensed" }, [
-        _c("div", { staticClass: "col col-md-8 py-4" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-success",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.fetchFreData(_vm.form)
-                }
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row row--condensed" }, [
+      _c("div", { staticClass: "py-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.fetchFreData(_vm.form), _vm.scrollWin()
               }
-            },
-            [_vm._v("Submit")]
-          )
-        ])
+            }
+          },
+          [_vm._v("Submit")]
+        )
       ])
     ])
   ])
@@ -45111,27 +45147,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "col-6" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn-info",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              _vm.toggleInfo(_vm.infoKey)
+  return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
+    _c(
+      "div",
+      {
+        staticClass: "col-11 col-md-2 col-lg-4 col-xl-3 px-0 align-self-center"
+      },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn-info",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.toggleInfo(_vm.infoKey)
+              }
             }
-          }
-        },
-        [_c("i", { staticClass: "fa fa-question" })]
-      )
-    ]),
+          },
+          [_c("i", { staticClass: "fa fa-question" })]
+        )
+      ]
+    ),
     _vm._v(" "),
     _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
       ? _c(
           "div",
-          { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
+          {
+            class: _vm.infoKey
+              ? "pfre-info--show col-11 col-md-10 col-lg-8 col-xl-9 my-2"
+              : "pfre-info"
+          },
           [_vm._t("default")],
           2
         )
@@ -46357,10 +46403,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "progress-wrapper" }, [
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
           _vm._v(" "),
@@ -46368,7 +46414,7 @@ var render = function() {
             staticClass: "pfre-bar progress-median",
             attrs: {
               value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
-              height: "45",
+              height: "55",
               color: "pfre-year"
             }
           }),
@@ -46406,20 +46452,22 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
-            _vm._v("Information regarding Time to Degree Displayed Here.")
+            _vm._v(
+              "The estimated time it would take for you to complete your degree if you choose this major."
+            )
           ])
         ],
         1
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
           _vm._v(" "),
@@ -46430,7 +46478,7 @@ var render = function() {
                 _vm.pfreData.earnings.actual /
                 _vm.pfreData.earnings.maximum *
                 100,
-              height: "45",
+              height: "55",
               color: "pfre-earnings"
             }
           }),
@@ -46475,20 +46523,22 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
-            _vm._v("You're gonna make so much money, like so much.")
+            _vm._v(
+              "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
+            )
           ])
         ],
         1
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row no-gutters my-3" }, [
       _c(
         "div",
-        { staticClass: "col-9" },
+        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
         [
           _c("h5", { staticClass: "text-center" }, [
             _vm._v("Return On Investment")
@@ -46501,7 +46551,7 @@ var render = function() {
                 _vm.pfreData.returnOnInvestment.actual *
                 100 /
                 (_vm.pfreData.returnOnInvestment.maximum * 100),
-              height: "45",
+              height: "55",
               color: "pfre-fre"
             }
           }),
@@ -46562,10 +46612,12 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-3" },
+        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
         [
           _c("pfre-info", { attrs: { infoKey: "return" } }, [
-            _vm._v("Tell your Financial Advisor he's no longer needed.")
+            _vm._v(
+              "Your estimated financial return on your education investment."
+            )
           ])
         ],
         1
@@ -46594,12 +46646,32 @@ var render = function() {
   return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
-      { staticClass: "col col-md-12" },
+      { staticClass: "col-12" },
       [
-        _c("card", [
-          _c("div", { staticClass: "col col-3" }, [_c("pfre-form")], 1),
+        _c("card", { staticClass: "container row align-items-center" }, [
+          _c("div", { staticClass: "text-center col-12" }, [
+            _c("h2", { staticClass: "pfre__heading" }, [
+              _vm._v("Financial Return on Education")
+            ])
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col col-9" }, [_c("pfre-progress")], 1)
+          _c("div", { staticClass: "container-fluid p-0" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12 col-md-4 col-lg-3 align-self-center" },
+                [_c("pfre-form")],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
+                [_c("pfre-progress")],
+                1
+              )
+            ])
+          ])
         ])
       ],
       1
@@ -46815,7 +46887,8 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "csu-card card-add col col-md-10 offset-md-1 d-flex flex-row"
+      staticClass:
+        "card-add col col-lg-10 d-flex flex-row container row align-items-center"
     },
     [
       _c("div", { staticClass: "col col-1" }, [
@@ -46987,8 +47060,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(12);
+var _props$data$methods$c;
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -47066,7 +47143,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_props$data$methods$c = {
     props: ['index'],
     data: function data() {
         return {
@@ -47132,11 +47209,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] },
             schoolId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
         }
-    },
-    components: {
-        vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
     }
-});
+}, _defineProperty(_props$data$methods$c, 'validations', {
+    form: {
+        majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] },
+        schoolId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
+    }
+}), _defineProperty(_props$data$methods$c, 'components', {
+    vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
+}), _props$data$methods$c);
 
 /***/ }),
 /* 188 */
