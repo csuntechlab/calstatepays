@@ -27611,6 +27611,15 @@ textarea {
   outline: none;
 }
 
+.btn-remove {
+  color: #D00D2D;
+  font-size: 2rem;
+  height: 15px;
+  width: 15px;
+  padding: 0px;
+  outline: none;
+}
+
 .btn-plus {
   display: block;
 }

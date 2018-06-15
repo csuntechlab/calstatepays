@@ -46397,6 +46397,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -65449,23 +65450,19 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("div", { staticClass: "col col-1" }, [
-          _c(
-            "button",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isNotFirstCard && _vm.isEmpty,
-                  expression: "isNotFirstCard && isEmpty"
-                }
-              ],
-              staticClass: "btn btn-danger btn-sm btn-outline-danger",
-              on: { click: _vm.removeCurrentCard }
-            },
-            [_vm._v("Remove")]
-          )
+        _c("button", { staticClass: "btn-remove" }, [
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard && _vm.isEmpty,
+                expression: "isNotFirstCard && isEmpty"
+              }
+            ],
+            staticClass: "fas fa-times-circle",
+            on: { click: _vm.removeCurrentCard }
+          })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0" }, [
