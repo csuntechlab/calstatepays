@@ -65187,7 +65187,7 @@ var render = function() {
     "div",
     [
       _c("h4", { staticClass: "industry-title" }, [
-        _vm._v("Industry By Employment")
+        _vm._v("Common Employment Sectors")
       ]),
       _vm._v(" "),
       _c(
