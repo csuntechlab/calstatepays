@@ -13,6 +13,13 @@
   width: 14em;
 }
 
+.industry-carousel-card__mobile{
+  height: 8em;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 1rem;  
+}
+
 .industry-title{
   color: grey;
   text-align:center;
@@ -21,10 +28,16 @@
 
 .info-wrapper {
   color: white;
-  padding: 12% 0% 12% 10%;
+  padding: 1% 0% 12% 10%;
   border-radius: 1rem;
   line-height: 3px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 500px) {
+  .info-wrapper {
+    padding: 1% 0% 12% 10% !important;
+  }
 }
 
 .industry-info{
