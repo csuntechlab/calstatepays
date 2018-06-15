@@ -27713,7 +27713,7 @@ input[type="button"]:focus {
   float: left;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .legend-oxford-25, .legend-oxford, .legend-oxford-75, .legend-green-25, .legend-green, .legend-green-75, .legend-gold-25, .legend-gold, .legend-gold-75 {
     height: 10px;
     width: 10px;

@@ -46687,7 +46687,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -66468,7 +66467,6 @@ var render = function() {
       "div",
       { staticClass: "col col-md-12" },
       [
-        _vm._v("\n        " + _vm._s(_vm.windowWidth) + "\n        "),
         _vm._l(_vm.desktopCards, function(majorCard, index) {
           return _vm.isDesktop
             ? _c("major-card", {
