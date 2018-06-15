@@ -12053,7 +12053,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -26996,27 +26997,38 @@ html {
           box-sizing: border-box;
 }
 
+.csu-card, .card-add {
+  background: #FFF;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .csu-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+<<<<<<< HEAD
       -ms-flex-direction: column;
           flex-direction: column;
   background: #FFF;
   border-radius: 50px;
   min-height: 650px;
   padding-bottom: 50px;
+=======
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 75vh;
+>>>>>>> 8fbe993823589b54ea8bfd5558c88dd79efe4153
   margin-bottom: 50px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
 .card-add {
@@ -27075,6 +27087,17 @@ body {
   color: #777777;
 }
 
+.pfre__heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+  .pfre__heading {
+    font-size: 1.78rem;
+  }
+}
+
 .pfre-info {
   position: absolute;
   margin-left: 80px;
@@ -27115,21 +27138,20 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  margin-left: 80px;
+  -webkit-transform: translate(35%, -45%);
+          transform: translate(35%, -45%);
   background: #EBEBEB;
   border-radius: 15px;
   float: right;
   width: 10rem;
-  top: 45%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  padding: 8px;
+  left: .9rem;
+  padding: .5rem;
 }
 
 .pfre-info--show::after {
   content: " ";
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: -6px;
   width: 0;
   height: 0;
@@ -27138,6 +27160,26 @@ body {
   border-bottom: 6px solid transparent;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media screen and (max-width: 767px) {
+  .pfre-info--show::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pfre-info--show {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    margin-left: 0;
+    position: static;
+    width: auto;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .info {
@@ -27460,6 +27502,34 @@ label {
   content: "*";
 }
 
+.csu-form-input, .csu-form-input-major {
+  border-bottom: 0.2rem #777777 solid;
+}
+
+.csu-form-input .dropdown-toggle, .csu-form-input-major .dropdown-toggle {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.csu-form-input .dropdown-toggle {
+  height: 2.75rem;
+}
+
+.csu-form-input-major .dropdown-toggle {
+  overflow: visible;
+  min-height: 2.75rem;
+}
+
+.csu-form-input-major input[type="search"] {
+  position: absolute !important;
+  left: 0;
+  bottom: 0;
+}
+
+.csu-form-input-major div .selected-tag {
+  height: unset;
+}
+
 .currency {
   position: relative;
 }
@@ -27560,15 +27630,10 @@ textarea {
 
 .form__group {
   margin-bottom: .5rem;
-  margin-top: 2rem;
 }
 
 .form--title {
   font-weight: 300;
-}
-
-.form--inverted {
-  margin-top: 100px;
 }
 
 .row--condensed {
@@ -27579,6 +27644,28 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.25rem 0rem;
+}
+
+.fre-major-title {
+  display: none;
+  height: 5.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fre-major-title h3 {
+  margin-bottom: 0;
+  line-height: 1;
+  color: #777777;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .fre-major-title {
+    display: block;
+  }
 }
 
 .btn {
@@ -27628,11 +27715,16 @@ textarea {
 
 .btn-info {
   color: #FFF;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   float: left;
-  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-info {
+    float: right;
+  }
 }
 
 .btn-info:focus {
@@ -27705,10 +27797,6 @@ input[type="button"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.progress-wrapper {
-  margin-top: 60px;
 }
 
 .progress-linear__bar__determinate {

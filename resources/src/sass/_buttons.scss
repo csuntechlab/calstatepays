@@ -44,11 +44,13 @@
 
 .btn-info{
     color: $white;
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     float: left;
-    margin-top: 2.5rem;
+    @media screen and (max-width: $break-small) {
+        float: right;
+    }
 }
 .btn-info:focus{
     outline: none;
