@@ -27513,6 +27513,8 @@ label {
 
 .csu-form-input-major input[type="search"] {
   position: absolute !important;
+  left: 0;
+  bottom: 0;
 }
 
 .csu-form-input-major div .selected-tag {

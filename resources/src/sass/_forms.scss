@@ -44,6 +44,8 @@ label {
   }
   input[type="search"] {
     position: absolute !important;
+    left: 0;
+    bottom: 0;
   }
   div {
     .selected-tag {
