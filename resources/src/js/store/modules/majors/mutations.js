@@ -73,8 +73,6 @@ export default {
     [_majors.DELETE_MAJOR_CARD](state,payload) {
         let index = payload;
         if(index !== 0){
-            console.log(index);
-            console.log(index !== 0);
             state.majorCards.splice(index,1);
         }
     }
