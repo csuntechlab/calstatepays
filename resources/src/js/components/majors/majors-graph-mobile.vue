@@ -50,7 +50,7 @@ export default {
             }
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
+                    height: 400,
                     width: this.windowWidth - 200
                 }
             }

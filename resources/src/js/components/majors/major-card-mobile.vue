@@ -2,9 +2,9 @@
     <div class="col col-md-12">
         <card>
             <div class="container-fluid my-0 mt-2">
-                <div style="height: 400px" class="row m-1 p-0">
+                <div v-show="selectedFormWasSubmitted" style="height: 400px" class="row m-1 p-0">
                     <div class="col p-0">
-                        <major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
+                        <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
                     </div>
                 </div>
                 <div class="row">

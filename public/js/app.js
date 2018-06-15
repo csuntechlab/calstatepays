@@ -65305,7 +65305,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
+                    height: 400,
                     width: this.windowWidth - 200
                 };
             } else {
@@ -66354,21 +66354,24 @@ var render = function() {
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
           _c(
             "div",
-            { staticClass: "row m-1 p-0", staticStyle: { height: "400px" } },
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedFormWasSubmitted,
+                  expression: "selectedFormWasSubmitted"
+                }
+              ],
+              staticClass: "row m-1 p-0",
+              staticStyle: { height: "400px" }
+            },
             [
               _c(
                 "div",
                 { staticClass: "col p-0" },
                 [
                   _c("major-graph-wrapper", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
-                    ],
                     attrs: {
                       majorData: _vm.selectedMajorData,
                       educationLevel: _vm.selectedEducationLevel,
