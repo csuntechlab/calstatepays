@@ -147,3 +147,12 @@ textarea {
         display: block;
   }
 }
+
+.form--degreeLevel {
+  label {
+    @media screen and (max-width: 999px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
