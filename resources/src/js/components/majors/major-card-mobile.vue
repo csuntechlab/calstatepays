@@ -1,6 +1,13 @@
 <template>
     <div class="col col-md-12">
         <card>
+            <div class="row btn-remove">
+                <div class="col-12">
+                    <button>
+                        <i class="fas fa-times" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
+                    </button>
+                </div>
+            </div>
             <div class="container-fluid my-0 mt-2">
                 <div v-show="selectedFormWasSubmitted" style="height: 400px" class="row m-1 p-0">
                     <div class="col p-0">
@@ -54,6 +61,11 @@ export default {
                 return false;
             } return true;
         },
+        isNotFirstCard(){
+            if(this.index >= 1){
+                return true;
+            } return false;
+        },
         selectedMajorData() {
             return this.majorData(this.index);
         },
@@ -65,6 +77,14 @@ export default {
         },
         selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
+        }
+    },
+    methods:{
+        ...mapActions([
+            'deleteMajorCard'
+        ]),
+        removeCurrentCard(){
+            this.deleteMajorCard(this.index);
         }
     },
     components: { 

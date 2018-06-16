@@ -79,8 +79,8 @@
                 </div>
             </div>
             </div>
-            <div class="row row--condensed">
-                <div class="py-2">
+            <div class="row row--condensed" id="submit-btn-container">
+                <div class="pt-2 pb-4 pt-md-2 pb-md-2">
                         <button type="button" class="btn btn-success" @click="fetchFreData(form), scrollWin()">Submit</button>
                 </div>
         </div>
@@ -128,9 +128,12 @@ export default {
         },
         scrollWin() {
             if (window.innerWidth <= 767){
-                window.scrollTo({
-                    top: 655,
-                    behavior: "smooth"
+                var scrollTop;
+                var progressBar = document.getElementById("submit-btn-container");
+                progressBar.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "end"
                 });
             }
         }

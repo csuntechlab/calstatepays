@@ -27513,6 +27513,8 @@ label {
 
 .csu-form-input-major input[type="search"] {
   position: absolute !important;
+  left: 0;
+  bottom: 0;
 }
 
 .csu-form-input-major div .selected-tag {
@@ -27686,6 +27688,16 @@ textarea {
   width: 40px;
   padding: 0px;
   outline: none;
+}
+
+.btn-remove {
+  color: #777777;
+  font-size: 2rem;
+  height: 25px;
+  width: 25px;
+  outline: none;
+  padding-left: 95%;
+  padding-top: 1rem;
 }
 
 .btn-plus {

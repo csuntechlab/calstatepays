@@ -28417,6 +28417,7 @@ var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
 var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
+var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -28428,7 +28429,8 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
-    ADD_MAJOR_CARD: ADD_MAJOR_CARD
+    ADD_MAJOR_CARD: ADD_MAJOR_CARD,
+    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD
 });
 
 /***/ }),
@@ -43833,6 +43835,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         majorData: [],
         formWasSubmitted: false
     });
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
+    var index = payload;
+    if (index !== 0) {
+        console.log(index);
+        console.log(index !== 0);
+        state.majorCards.splice(index, 1);
+    }
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -43932,6 +43941,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref10.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD);
+    },
+    deleteMajorCard: function deleteMajorCard(_ref11, payload) {
+        var commit = _ref11.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, payload);
     }
 });
 
@@ -44865,9 +44879,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         scrollWin: function scrollWin() {
             if (window.innerWidth <= 767) {
-                window.scrollTo({
-                    top: 655,
-                    behavior: "smooth"
+                var scrollTop;
+                var progressBar = document.getElementById("submit-btn-container");
+                progressBar.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "end"
                 });
             }
         }
@@ -45080,23 +45097,30 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row row--condensed" }, [
-      _c("div", { staticClass: "py-2" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.fetchFreData(_vm.form), _vm.scrollWin()
+    _c(
+      "div",
+      {
+        staticClass: "row row--condensed",
+        attrs: { id: "submit-btn-container" }
+      },
+      [
+        _c("div", { staticClass: "pt-2 pb-4 pt-md-2 pb-md-2" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.fetchFreData(_vm.form), _vm.scrollWin()
+                }
               }
-            }
-          },
-          [_vm._v("Submit")]
-        )
-      ])
-    ])
+            },
+            [_vm._v("Submit")]
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -46402,228 +46426,233 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "progress-wrapper" }, [
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
-              height: "55",
-              color: "pfre-year"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.start))
+  return _c(
+    "div",
+    { staticClass: "progress-wrapper", attrs: { id: "progress-bars" } },
+    [
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value: _vm.pfreData.years.actual / _vm.pfreData.years.end * 100,
+                height: "55",
+                color: "pfre-year"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.start))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.middle))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.end))
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.middle))
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(_vm._s(_vm.pfreData.years.end))
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+                _vm._v(
+                  "Estimated time to degree: " +
+                    _vm._s(_vm.pfreData.years.actual)
+                )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
               _vm._v(
-                "Estimated time to degree: " + _vm._s(_vm.pfreData.years.actual)
+                "The estimated time it would take for you to complete your degree if you choose this major."
               )
             ])
-          ])
-        ],
-        1
-      ),
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
-            _vm._v(
-              "The estimated time it would take for you to complete your degree if you choose this major."
-            )
-          ])
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value:
-                _vm.pfreData.earnings.actual /
-                _vm.pfreData.earnings.maximum *
-                100,
-              height: "55",
-              color: "pfre-earnings"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.minimum))
-                )
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value:
+                  _vm.pfreData.earnings.actual /
+                  _vm.pfreData.earnings.maximum *
+                  100,
+                height: "55",
+                color: "pfre-earnings"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.minimum))
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.average))
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.maximum))
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
                 _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.average))
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.maximum))
+                  "Estimated Earnings 5 Years After Exit: " +
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
               _vm._v(
-                "Estimated Earnings 5 Years After Exit: " +
-                  _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
+                "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
               )
             ])
-          ])
-        ],
-        1
-      ),
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
-            _vm._v(
-              "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
-            )
-          ])
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row no-gutters my-3" }, [
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
-        [
-          _c("h5", { staticClass: "text-center" }, [
-            _vm._v("Return On Investment")
-          ]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            staticClass: "pfre-bar progress-median",
-            attrs: {
-              value:
-                _vm.pfreData.returnOnInvestment.actual *
-                100 /
-                (_vm.pfreData.returnOnInvestment.maximum * 100),
-              height: "55",
-              color: "pfre-fre"
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "progress-footer" }, [
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-left mb-0" }, [
-                _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.minimum
+      _c("div", { staticClass: "row no-gutters my-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          [
+            _c("h5", { staticClass: "text-center" }, [
+              _vm._v("Return On Investment")
+            ]),
+            _vm._v(" "),
+            _c("v-progress-linear", {
+              staticClass: "pfre-bar progress-median",
+              attrs: {
+                value:
+                  _vm.pfreData.returnOnInvestment.actual *
+                  100 /
+                  (_vm.pfreData.returnOnInvestment.maximum * 100),
+                height: "55",
+                color: "pfre-fre"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress-footer" }, [
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-left mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.minimum
+                      )
                     )
                   )
-                )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "text-center mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.average
+                      )
+                    )
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4" }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.maximum
+                      )
+                    )
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "text-center mb-0" }, [
+            _c("div", [
+              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
                 _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.average
+                  "FRE - Financial Return on Education: " +
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.actual / 100
+                      )
                     )
-                  )
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "col-4" }, [
-              _c("p", { staticClass: "float-right mb-0" }, [
-                _vm._v(
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.maximum
-                    )
-                  )
                 )
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
+          [
+            _c("pfre-info", { attrs: { infoKey: "return" } }, [
               _vm._v(
-                "FRE - Financial Return on Education: " +
-                  _vm._s(
-                    _vm._f("percentage")(
-                      _vm.pfreData.returnOnInvestment.actual / 100
-                    )
-                  )
+                "Your estimated financial return on your education investment."
               )
             ])
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-        [
-          _c("pfre-info", { attrs: { infoKey: "return" } }, [
-            _vm._v(
-              "Your estimated financial return on your education investment."
-            )
-          ])
-        ],
-        1
-      )
-    ])
-  ])
+          ],
+          1
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -46659,7 +46688,10 @@ var render = function() {
             _c("div", { staticClass: "row" }, [
               _c(
                 "div",
-                { staticClass: "col-12 col-md-4 col-lg-3 align-self-center" },
+                {
+                  staticClass:
+                    "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
+                },
                 [_c("pfre-form")],
                 1
               ),
@@ -47005,6 +47037,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -47025,6 +47061,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return false;
             }return true;
         },
+        isNotFirstCard: function isNotFirstCard() {
+            if (this.index >= 1) {
+                return true;
+            }return false;
+        },
         selectedMajorData: function selectedMajorData() {
             return this.majorData(this.index);
         },
@@ -47036,6 +47077,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         selectedFormWasSubmitted: function selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
+        }
+    }),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+        removeCurrentCard: function removeCurrentCard() {
+            this.deleteMajorCard(this.index);
         }
     }),
     components: {
@@ -65725,7 +65771,7 @@ var render = function() {
     "div",
     [
       _c("h4", { staticClass: "industry-title" }, [
-        _vm._v("Industry By Employment")
+        _vm._v("Common Employment Sectors")
       ]),
       _vm._v(" "),
       _c(
@@ -66084,6 +66130,21 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
+        _c("button", { staticClass: "btn-remove" }, [
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard && _vm.isEmpty,
+                expression: "isNotFirstCard && isEmpty"
+              }
+            ],
+            staticClass: "fas fa-times",
+            on: { click: _vm.removeCurrentCard }
+          })
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0" }, [
           _c("div", { staticClass: "row p-0" }, [
             _c(
@@ -66269,6 +66330,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -66289,6 +66357,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 return false;
             }return true;
         },
+        isNotFirstCard: function isNotFirstCard() {
+            if (this.index >= 1) {
+                return true;
+            }return false;
+        },
         selectedMajorData: function selectedMajorData() {
             return this.majorData(this.index);
         },
@@ -66300,6 +66373,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         selectedFormWasSubmitted: function selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
+        }
+    }),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+        removeCurrentCard: function removeCurrentCard() {
+            this.deleteMajorCard(this.index);
         }
     }),
     components: {
@@ -66434,6 +66512,25 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
+        _c("div", { staticClass: "row btn-remove" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("button", [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isNotFirstCard && _vm.isEmpty,
+                    expression: "isNotFirstCard && isEmpty"
+                  }
+                ],
+                staticClass: "fas fa-times",
+                on: { click: _vm.removeCurrentCard }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
           _c(
             "div",

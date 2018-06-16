@@ -1,5 +1,5 @@
 <template>
-  <div class="progress-wrapper">
+  <div class="progress-wrapper" id="progress-bars">
     <div class="row no-gutters my-3">
       <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <h5 class="text-center">Years</h5>
