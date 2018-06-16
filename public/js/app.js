@@ -65725,7 +65725,7 @@ var render = function() {
     "div",
     [
       _c("h4", { staticClass: "industry-title" }, [
-        _vm._v("Industry By Employment")
+        _vm._v("Common Employment Sectors")
       ]),
       _vm._v(" "),
       _c(
@@ -66397,7 +66397,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h5", [_vm._v("Top Industries")]),
+      _c("h5", [_vm._v("Common Employment Sectors")]),
       _vm._v(" "),
       _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
         return _c(
