@@ -1,5 +1,5 @@
 <template>
-    <form class="form--inverted" id="'majorForm-' + form.cardIndex">
+    <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
             <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A Campus</h5>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="form__group" v-else>
-            <p v-show="windowSize > 500" class="h3 majors-header my-5">Select a Degree Level</p>
+            <p v-show="windowSize > 500" class="h3 majors-header my-5-md my-4">Select a Degree Level</p>
             <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label :for="'allDegrees-' + form.cardIndex">All</label>
             <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">

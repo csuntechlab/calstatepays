@@ -27192,6 +27192,12 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 479px) {
+  .majors-header {
+    font-size: 1.1rem;
+  }
+}
+
 .faq-header {
   text-align: center;
 }
@@ -27654,6 +27660,12 @@ textarea {
 @media screen and (max-width: 767px) {
   .fre-major-title {
     display: block;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .form--degreeLevel label {
+    font-size: 1.1rem;
   }
 }
 

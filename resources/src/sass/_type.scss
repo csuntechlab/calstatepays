@@ -130,6 +130,10 @@ body {
 .majors-header{
     color: gray;
     font-weight: 600;
+
+    @media screen and (max-width: 479px) {
+        font-size: 1.1rem;
+    }
 }
 
 .faq-header{
