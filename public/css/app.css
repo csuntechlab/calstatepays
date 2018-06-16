@@ -27192,6 +27192,12 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 479px) {
+  .majors-header {
+    font-size: 1.1rem;
+  }
+}
+
 .faq-header {
   text-align: center;
 }
@@ -27659,6 +27665,12 @@ textarea {
   }
 }
 
+@media screen and (max-width: 999px) {
+  .form--degreeLevel label {
+    font-size: 1.1rem;
+  }
+}
+
 .btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -27760,7 +27772,7 @@ input[type="button"]:focus {
 
 @media screen and (min-width: 500px) {
   .echarts {
-    height: 100px !important;
+    height: 400px !important;
     width: 100px !important;
   }
 }
@@ -27801,7 +27813,7 @@ input[type="button"]:focus {
   float: left;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .legend-oxford-25, .legend-oxford, .legend-oxford-75, .legend-green-25, .legend-green, .legend-green-75, .legend-gold-25, .legend-gold, .legend-gold-75 {
     height: 10px;
     width: 10px;
@@ -27886,13 +27898,6 @@ input[type="button"]:focus {
   width: 14em;
 }
 
-.industry-carousel-card__mobile {
-  height: 8em;
-  width: 100%;
-  margin-bottom: 10px;
-  border-radius: 1rem;
-}
-
 .industry-title {
   color: grey;
   text-align: center;
@@ -27904,12 +27909,31 @@ input[type="button"]:focus {
   padding: 1% 0% 12% 10%;
   border-radius: 1rem;
   line-height: 3px;
+  background-size: cover;
   background: rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  max-height: 150px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .info-wrapper {
+    width: 100% !important;
+    margin: 0 auto;
     padding: 1% 0% 12% 10% !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .info-wrapper {
+    float: left;
+    width: 31%;
+    margin: 0 auto;
+    margin-left: 2%;
+    padding: 1% 0% 12% 10% !important;
+    margin-bottom: 10px;
+    background-size: cover;
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 

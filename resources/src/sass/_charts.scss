@@ -6,7 +6,7 @@
 
 @media screen and (min-width: 500px) {
   .echarts {
-    height: 100px !important;
+    height: 400px !important;
     width: 100px !important;
   }
 }
@@ -61,7 +61,7 @@ green: $green,
   float: left;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   %legend {
     height: 10px;
     width: 10px;
