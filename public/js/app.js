@@ -43838,8 +43838,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
     if (index !== 0) {
-        console.log(index);
-        console.log(index !== 0);
         state.majorCards.splice(index, 1);
     }
 }), _majors$FETCH_MAJORS$);
@@ -47183,6 +47181,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -48076,6 +48078,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("v-select", {
+                    staticClass: "csu-form-input-major",
                     attrs: { label: "name", options: _vm.universities },
                     on: {
                       input: function($event) {
@@ -48105,6 +48108,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("v-select", {
+                    staticClass: "csu-form-input",
                     attrs: { label: "discipline", options: _vm.fieldOfStudies },
                     on: {
                       input: function($event) {
@@ -48149,6 +48153,7 @@ var render = function() {
                   _vm._v(" "),
                   this.form.fieldOfStudyId == null
                     ? _c("v-select", {
+                        staticClass: "csu-form-input-major",
                         attrs: { label: "major", options: _vm.majors },
                         on: {
                           input: function($event) {
@@ -48167,6 +48172,7 @@ var render = function() {
                         }
                       })
                     : _c("v-select", {
+                        staticClass: "csu-form-input-major",
                         attrs: {
                           label: "major",
                           options: _vm.selectedMajorsByField

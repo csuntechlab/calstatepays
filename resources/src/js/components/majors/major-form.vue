@@ -10,7 +10,8 @@
                         label="name" 
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
-                        @change="updateSelect('schoolId', 'id', $event)">
+                        @change="updateSelect('schoolId', 'id', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                 </div>
             </div>
@@ -22,7 +23,8 @@
                             label="discipline"
                             :options="fieldOfStudies"
                             @input="updateSelect('fieldOfStudyId', 'id', $event)"
-                            @change="updateSelect('fieldOfStudyId', 'id', $event)">
+                            @change="updateSelect('fieldOfStudyId', 'id', $event)"
+                            class="csu-form-input">
                     </v-select>
                 </div>
             </div>
@@ -37,7 +39,8 @@
                         v-model="selected"
                         :options="majors"
                         @input="updateSelect('majorId', 'majorId', $event)"
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @change="updateSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                     <v-select
                         label="major"
@@ -45,7 +48,8 @@
                         v-model="selected"
                         :options="selectedMajorsByField"
                         @input="updateSelect('majorId', 'majorId', $event)"
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @change="updateSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                 </div>
             </div>
