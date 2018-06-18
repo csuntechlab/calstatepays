@@ -32,23 +32,25 @@ class MajorControllerTest extends TestCase
 
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
-        $this->retriever
-            ->shouldReceive('getAllHegisCodes')
-            ->once()->andReturn([
-                [
-                    'hegis_code' => 100,
-                    'major' => 4,
-                    'university' => 1001
-                ],
-                [
+        $test = [
+            [
                 'hegis_code' => 100,
                 'major' => 4,
                 'university' => 1001
-                ]
-        ]);
-        
-        $this->retriever->getAllHegisCodes();
+            ],
+            [
+            'hegis_code' => 100,
+            'major' => 4,
+            'university' => 1001
+            ]
+        ];
 
+        $this->retriever
+            ->shouldReceive('getAllHegisCodes')
+            ->once()->andReturn($test);
+
+        $response = $this->retriever->getAllHegisCodes(); 
+        $this->assertEquals($test, $response);
     }
 
     public function test_getMajorEarnings_returns_data_for_3_paths()
