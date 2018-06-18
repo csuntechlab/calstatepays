@@ -39,9 +39,9 @@ class MajorControllerTest extends TestCase
                 'university' => 1001
             ],
             [
-            'hegis_code' => 100,
-            'major' => 4,
-            'university' => 1001
+            'hegis_code' => 111,
+            'major' => 3,
+            'university' => 1032
             ]
         ];
 
