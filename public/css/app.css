@@ -27693,6 +27693,14 @@ textarea {
   background: #2BAE67;
 }
 
+.btn-submit {
+  padding-left: 5rem;
+  font-size: 1.1rem;
+  text-transform: none;
+  padding-right: 5rem;
+  font-weight: 500;
+}
+
 .btn-add {
   color: #2BAE67;
   font-size: 3rem;

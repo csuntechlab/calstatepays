@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-md-8 py-4">
-                    <button type="button" @click="submitForm" class="btn btn-success">Submit</button>
+                <div class="py-4">
+                    <button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
                 </div>
             </div>
         </div>

@@ -45106,7 +45106,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-success",
+              staticClass: "btn btn-success btn-submit",
               attrs: { type: "button" },
               on: {
                 click: function($event) {
@@ -48199,11 +48199,11 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row row--condensed" }, [
-              _c("div", { staticClass: "col col-md-8 py-4" }, [
+              _c("div", { staticClass: "py-4" }, [
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-success",
+                    staticClass: "btn btn-success btn-submit",
                     attrs: { type: "button" },
                     on: { click: _vm.submitForm }
                   },
