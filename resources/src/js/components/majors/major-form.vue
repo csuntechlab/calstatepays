@@ -105,7 +105,13 @@ export default {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.scrollToNextCard();
             }
+        },
+        scrollToNextCard(){
+            var nextCard = document.querySelector("#majorForm-0");
+            console.log(nextCard);
+            nextCard.scrollTop = nextCard.scrollHeight;
         },
         updateSelect(field, dataKey, data) {
             if(data) {

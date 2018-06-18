@@ -43838,8 +43838,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
     if (index !== 0) {
-        console.log(index);
-        console.log(index !== 0);
         state.majorCards.splice(index, 1);
     }
 }), _majors$FETCH_MAJORS$);
@@ -47040,7 +47038,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -47213,7 +47210,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.scrollToNextCard();
             }
+        },
+        scrollToNextCard: function scrollToNextCard() {
+            var nextCard = document.querySelector("#majorForm-0");
+            console.log(nextCard);
+            nextCard.scrollTop = nextCard.scrollHeight;
         },
         updateSelect: function updateSelect(field, dataKey, data) {
             if (data) {
