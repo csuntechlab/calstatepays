@@ -6,20 +6,20 @@ use App\Models\FieldOfStudy;
 use Illuminate\Http\Request;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
+use App\Contracts\MajorContract;
 
 class MajorController extends Controller
 {
+    protected $majorRetriever;
+
+    public function __construct(MajorContract $majorContract)
+    {
+        $this->majorRetriever = $majorContract;
+    }
+
     public function getAllHegisCodes()
     {
-        $allHegisCodes = HEGISCode::get()->unique()->map(function ($item){
-           return [
-            'hegis_code' => $item['hegis_code'],
-            'major' => $item['major'],
-            'university' => $item['university']
-           ];
-
-        });
-        return $allHegisCodes->toArray();
+      return $this->majorRetriever->getAllHegisCodes();
     }
 
     public function getAllFieldOfStudies()

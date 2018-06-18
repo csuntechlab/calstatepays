@@ -184,6 +184,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+        * CSU METRO SERVICE PROVIDERS
+        */
+        App\Providers\MajorServiceProvider::class,
+
     ],
 
     /*
