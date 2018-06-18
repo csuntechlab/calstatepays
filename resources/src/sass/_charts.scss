@@ -4,6 +4,13 @@
   color: blue;
 }
 
+@media screen and (min-width: 500px) {
+  .echarts {
+    height: 400px !important;
+    width: 100px !important;
+  }
+}
+
 .pfre-bar {
   border-radius: 50px;
   margin-bottom: 0.5rem;
@@ -27,9 +34,9 @@
   display: flex;
 }
 
-.progress-wrapper{
-  margin-top: 60px;
-}
+// .progress-wrapper{
+//   margin-top: 60px;
+// }
 
 .progress-linear__bar__determinate {
   border-radius: 50px;
@@ -54,6 +61,24 @@ green: $green,
   float: left;
 }
 
+@media (max-width: 1000px) {
+  %legend {
+    height: 10px;
+    width: 10px;
+  }
+  .legend-mobile {
+    font-size: 10px;
+    float: left;
+    margin-left: 10px;
+    p {
+      margin-left: 15px !important;
+    }
+    .majors-header {
+      display: none !important;
+    }
+  }
+}
+
 .progress-median:after {
     content:"";
     position: absolute;
@@ -74,4 +99,11 @@ green: $green,
   }
 }
 
+
 @include legend-color-mixin($colorList);
+
+.mobile-legend {
+  float: left;
+  font-size: 10px;
+  margin-left: 10px;
+}

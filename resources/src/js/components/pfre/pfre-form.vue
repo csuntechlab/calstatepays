@@ -1,15 +1,18 @@
 <template>
     <form class="form--inverted">
-        <div class="form__group">
-            <div class="row row--condensed">
-                <h3 class="text-gray" v-if="form.major">{{ form.major }}</h3>
+            <div class="fre-major-title">
+                <h3 class="text-gray" v-if="form.majorId">{{ selectedMajorName }}</h3>
+            </div>
+            <div class="form__group">
+            <div class="row row--condensed">    
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <v-select 
+                    <v-select
                         label="major" 
                         :options="majors"
                         @input="updateGrandfatherSelect('majorId', 'majorId', $event)" 
-                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)">
+                        @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                 </div>
             </div>
@@ -20,36 +23,36 @@
                         label="age" 
                         :options="ageRanges"
                         @input="updateSelect('age', $event)" 
-                        @change="updateSelect('age', $event)">
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-9">
+                <div class="col-12 col-9 col-md-12">
                     <label for="education">Education Level:</label>
-                    <label class="label--radio" for="education">First Time Freshman:</label>
+                    <label class="label--radio" for="freshman">First Time Freshman:</label>
                     <input 
                     class="mx-2 mt-1"
+                    for="freshman"
                     type="radio"
                     id="freshman"
                     v-model="form.education"
                     value="FTF"
                     @input="updateSelect('education', $event.target)">
-                </div>  
-                <div class="col col-3"></div>
+                </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-9">
-                    <label class="label--radio" for="education">First Time Transfer:</label>
+                <div class="col-12 col-9 col-md-12">
+                    <label class="label--radio" for="transfer">First Time Transfer:</label>
                     <input 
                     class="mx-2 mt-1"
+                    for="transfer"
                     type="radio"
                     id="transfer"
                     v-model="form.education"
                     value="FTT"
                     @input="updateSelect('education', $event.target)">
-                </div>  
-                <div class="col col-3"></div>
+                </div>
             </div>
             <div class="row row--condensed">
                 <div class="col col-12">
@@ -58,7 +61,8 @@
                         label="earn" 
                         :options="earningRanges"
                         @input="updateSelect('earnings', $event)" 
-                        @change="updateSelect('earnings', $event)">
+                        @change="updateSelect('earnings', $event)"
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>
@@ -69,15 +73,16 @@
                         label="finAid" 
                         :options="financialAidRanges"
                         @input="updateSelect('financialAid', $event)" 
-                        @change="updateSelect('financialAid', $event)">
+                        @change="updateSelect('financialAid', $event)"
+                        class="csu-form-input">
                     </v-select>
                 </div>
             </div>
-            <div class="row row--condensed">
-                <div class="col col-md-8 py-4">
-                    <button type="button" class="btn btn-success" @click="fetchFreData(form)">Submit</button>
-                </div>
             </div>
+            <div class="row row--condensed" id="submit-btn-container">
+                <div class="pt-2 pb-4 pt-md-2 pb-md-2">
+                        <button type="button" class="btn btn-success" @click="fetchFreData(form), scrollWin()">Submit</button>
+                </div>
         </div>
     </form>
 </template>
@@ -121,11 +126,31 @@ export default {
                 this.form[field] = null;
             }
         },
+        scrollWin() {
+            if (window.innerWidth <= 767){
+                var scrollTop;
+                var progressBar = document.getElementById("submit-btn-container");
+                progressBar.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "end"
+                });
+            }
+        }
     },
     computed: {
         ...mapGetters([
-            'majors'
-        ])
+            'majors',
+            'majorNameById'
+        ]),
+        selectedMajorName() {
+            if(this.form.majorId == null) {
+                return ''
+            }
+            else {
+                return this.majorNameById(this.form.majorId)
+            }
+        }
     },
     components: {
         vSelect

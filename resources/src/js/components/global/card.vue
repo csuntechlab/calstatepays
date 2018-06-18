@@ -1,5 +1,5 @@
 <template>
-  <div class="csu-card col col-md-10 offset-md-1">
+  <div class="csu-card col col-lg-10 container row align-items-center">
     <slot></slot>
   </div>
 </template>

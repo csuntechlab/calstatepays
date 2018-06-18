@@ -1,13 +1,20 @@
 <template>
-    <majors-graph :majorData="parsedMajorData" :educationLevel="this.educationLevel" :majorId="majorData.majorId"></majors-graph>
+    <div>
+        <majors-graph-mobile v-if="isMobile" :majorData="parsedMajorData" :educationLevel="this.educationLevel" :majorId="majorData.majorId" :windowWidth="windowWidth"></majors-graph-mobile>
+        <majors-graph v-else :majorData="parsedMajorData" :educationLevel="this.educationLevel" :majorId="majorData.majorId" :windowWidth="windowWidth"></majors-graph>
+    </div>
 </template>
 
 <script>
     import majorsGraph from './majors-graph.vue';
+    import majorsGraphMobile from './majors-graph-mobile.vue';    
 
     export default {
-        props: ['majorData', 'educationLevel'],
+        props: ['majorData', 'educationLevel', 'windowWidth'],
         computed: {
+            isMobile() {
+                return this.windowWidth < 1000 ? true : false;
+            },
             parsedMajorData() {
                 if(this.majorData.length == 0) {
                     return []
@@ -52,7 +59,8 @@
             }
         },
         components: {
-            majorsGraph
+            majorsGraph,
+            majorsGraphMobile
         }
     }
 </script>

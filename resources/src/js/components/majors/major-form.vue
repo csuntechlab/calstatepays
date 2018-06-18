@@ -1,7 +1,7 @@
 <template>
-    <form class="form--inverted" id="'majorForm-' + form.cardIndex">
+    <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A Campus</h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
@@ -14,7 +14,7 @@
                     </v-select>
                 </div>
             </div>
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose a Discipline</h5>
                 <div class="col col-12">
                     <label for="fieldOfStudy">Discipline:</label>
@@ -26,7 +26,7 @@
                     </v-select>
                 </div>
             </div>
-            <div class="row row--condensed">
+            <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="form__group" v-else>
-            <p class="h3 majors-header my-5">Select a Degree Level</p>
+            <p v-show="windowSize > 500" class="h3 majors-header my-5-md my-4">Select a Degree Level</p>
             <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
             <label :for="'allDegrees-' + form.cardIndex">All</label>
             <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">
@@ -144,6 +144,15 @@ export default {
         },
         selectedFormWasSubmitted(){
             return this.formWasSubmitted(this.index);
+        },
+        windowSize() {
+            return window.innerWidth;
+        }
+    },
+    validations: {
+        form: {
+            majorId: { required },
+            schoolId: { required }
         }
     },
     validations: {
@@ -155,8 +164,5 @@ export default {
     components: {
         vSelect,        
     },
-    created() {
-        console.log(this.$v)                
-    }
 }
 </script>

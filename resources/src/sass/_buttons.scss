@@ -28,17 +28,29 @@
     outline: none;
 }
 
+.btn-remove{
+    color: $gray;
+    font-size: 2rem;
+    height: 25px;
+    width: 25px;
+    outline: none;
+    padding-left:95%;
+    padding-top:1rem;
+}
+
 .btn-plus{
     display: block;
 }
 
 .btn-info{
     color: $white;
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     float: left;
-    margin-top: 2.5rem;
+    @media screen and (max-width: $break-small) {
+        float: right;
+    }
 }
 .btn-info:focus{
     outline: none;
