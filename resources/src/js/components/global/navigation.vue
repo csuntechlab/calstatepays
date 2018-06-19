@@ -29,7 +29,7 @@
                                 </li>
                                 <li @click="toggleShowNav()" class="nav-item">
                                     <router-link class="nav-link" active-class="hr-nav" to="/pfre">
-                                        FRE
+                                        <abbr title="Financial Return on Education">FRE</abbr>
                                     </router-link>
                                 </li>
                                 <li @click="toggleShowNav()" class="nav-item">
@@ -62,9 +62,10 @@ export default {
     },
     methods: {
         toggleShowNav() {
-            var element;
-            var element = document.getElementById("nav-list");
-            element.classList.toggle("show");
+            if(window.innerHeight < 768) {
+                var element = document.getElementById("nav-list");
+                element.classList.toggle("show");
+            }
         }
     },
     created () {

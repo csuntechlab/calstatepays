@@ -85652,9 +85652,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggleShowNav: function toggleShowNav() {
-            var element;
-            var element = document.getElementById("nav-list");
-            element.classList.toggle("show");
+            if (window.innerHeight < 768) {
+                var element = document.getElementById("nav-list");
+                element.classList.toggle("show");
+            }
         }
     },
     created: function created() {
@@ -85789,8 +85790,14 @@ var render = function() {
                             attrs: { "active-class": "hr-nav", to: "/pfre" }
                           },
                           [
-                            _vm._v(
-                              "\n                                        FRE\n                                    "
+                            _c(
+                              "abbr",
+                              {
+                                attrs: {
+                                  title: "Financial Return on Education"
+                                }
+                              },
+                              [_vm._v("FRE")]
                             )
                           ]
                         )
