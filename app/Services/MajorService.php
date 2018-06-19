@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
 use App\Contracts\MajorContract;
 
@@ -18,5 +19,11 @@ class MajorService implements MajorContract
 
         });
         return $allHegisCodes->toArray();
+    }
+
+    public function getAllFieldOfStudies(): array
+    {
+        $fieldOfStudies = FieldOfStudy::all();
+        return $fieldOfStudies->toArray();
     }
 }
