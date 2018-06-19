@@ -11,28 +11,28 @@
 
                     <nav class="navbar navbar-expand-md navbar-light">
 
-                        <button v-on:click="toggleShowNav()" class="navbar-toggler" type="button">
+                        <button @click="toggleShowNav()" class="navbar-toggler" type="button">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse justify-content-center" id="tempNav" v-bind:class=" isShowing ? 'show' : '' ">
+                        <div class="collapse navbar-collapse justify-content-center" id="nav-list">
                             <ul class="navbar-nav d-flex justify-content-center">
-                                <li class="nav-item">
-                                    <router-link class="nav-link" exact-active-class="hr-nav" to="/">
+                                <li @click="toggleShowNav()" class="nav-item">
+                                    <router-link  class="nav-link" exact-active-class="hr-nav" to="/">
                                         Home
                                     </router-link>
                                 </li>
-                                <li class="nav-item">
+                                <li @click="toggleShowNav()" class="nav-item">
                                     <router-link class="nav-link" active-class="hr-nav" to="/majors">
                                         Majors
                                     </router-link>
                                 </li>
-                                <li class="nav-item">
+                                <li @click="toggleShowNav()" class="nav-item">
                                     <router-link class="nav-link" active-class="hr-nav" to="/pfre">
                                         FRE
                                     </router-link>
                                 </li>
-                                <li class="nav-item">
+                                <li @click="toggleShowNav()" class="nav-item">
                                     <router-link class="nav-link" active-class="hr-nav" to="/faq">
                                         About
                                     </router-link>
@@ -62,7 +62,9 @@ export default {
     },
     methods: {
         toggleShowNav() {
-            this.isShowing = !this.isShowing;
+            var element;
+            var element = document.getElementById("nav-list");
+            element.classList.toggle("show");
         }
     },
     created () {

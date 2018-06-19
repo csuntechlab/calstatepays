@@ -43838,8 +43838,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
     if (index !== 0) {
-        console.log(index);
-        console.log(index !== 0);
         state.majorCards.splice(index, 1);
     }
 }), _majors$FETCH_MAJORS$);
@@ -85654,7 +85652,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggleShowNav: function toggleShowNav() {
-            this.isShowing = !this.isShowing;
+            var element;
+            var element = document.getElementById("nav-list");
+            element.classList.toggle("show");
         }
     },
     created: function created() {
@@ -85710,8 +85710,7 @@ var render = function() {
               "div",
               {
                 staticClass: "collapse navbar-collapse justify-content-center",
-                class: _vm.isShowing ? "show" : "",
-                attrs: { id: "tempNav" }
+                attrs: { id: "nav-list" }
               },
               [
                 _c(
@@ -85720,7 +85719,14 @@ var render = function() {
                   [
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85740,7 +85746,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85760,7 +85773,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85780,7 +85800,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
