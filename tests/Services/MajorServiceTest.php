@@ -6,11 +6,11 @@ use Tests\TestCase;
 use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
 use App\Services\MajorService;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class MajorServiceTest extends TestCase
 {
-    use DatabaseTransactions;
+    use DatabaseMigrations;
 
     public function test_getAllHegisCodes_ensure_returns_all_rows() {
         $majorService = new MajorService();
