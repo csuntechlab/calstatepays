@@ -46813,7 +46813,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         }
     }),
     updated: function updated() {
-        this.scrollToNextCard();
+        //Only run if more than one card exists
+        var lastCardIndex = this.majorCards.length - 1;
+        if (lastCardIndex > 0) {
+            this.scrollToNextCard(lastCardIndex);
+        }
     },
     methods: {
         getWindowWidth: function getWindowWidth(event) {
@@ -46822,14 +46826,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
-            /*this.scrollToNextCard();*/
         },
-        scrollToNextCard: function scrollToNextCard() {
-            var progressBar = document.getElementById("plus");
+        scrollToNextCard: function scrollToNextCard(lastCardIndex) {
+            var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
             progressBar.scrollIntoView({
                 behavior: "smooth",
-                block: "start",
-                inline: "end"
+                block: "end",
+                inline: "nearest"
             });
         }
     },
@@ -66142,7 +66145,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col col-md-12" },
+    {
+      staticClass: "col col-md-12",
+      attrs: { id: "majorCardHasIndex-" + this.index }
+    },
     [
       _c("card", [
         _c("button", { staticClass: "btn-remove" }, [
@@ -66524,7 +66530,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col col-md-12" },
+    {
+      staticClass: "col col-md-12",
+      attrs: { id: "majorCardHasIndex-" + this.index }
+    },
     [
       _c("card", [
         _c("div", { staticClass: "row btn-remove" }, [

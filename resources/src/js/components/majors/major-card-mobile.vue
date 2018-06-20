@@ -1,5 +1,5 @@
 <template>
-    <div class="col col-md-12">
+    <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
         <card>
             <div class="row btn-remove">
                 <div class="col-12">

@@ -19,7 +19,6 @@ export default {
             windowWidth: 0,
             isDesktop: true,
             isMobile: false,
-            index,
         }
     },
     computed: {
@@ -34,7 +33,11 @@ export default {
         },
     },
     updated: function(){
-        this.scrollToNextCard();
+        //Only run if more than one card exists
+        var lastCardIndex = this.majorCards.length - 1;
+        if(lastCardIndex > 0){
+            this.scrollToNextCard(lastCardIndex);
+        }
     },
     methods: {
         getWindowWidth(event) {
@@ -43,15 +46,14 @@ export default {
         },
         onPlus(){
             this.$store.dispatch('addMajorCard');
-            /*this.scrollToNextCard();*/
 
         },
-        scrollToNextCard(){
-            var progressBar = document.getElementById("plus");
+        scrollToNextCard(lastCardIndex){
+            var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
             progressBar.scrollIntoView({
                 behavior: "smooth",
-                block: "start",
-                inline: "end"
+                block: "end",
+                inline: "nearest"
             });
         }
     },

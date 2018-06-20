@@ -1,5 +1,5 @@
 <template>
-    <div class="col col-md-12">
+    <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
         <card>
             <button class="btn-remove">
                 <i class="fas fa-times" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
@@ -77,7 +77,7 @@ export default {
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);
-        }
+        },
     },
     components: { 
         majorForm,
