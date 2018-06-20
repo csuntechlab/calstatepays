@@ -46,7 +46,6 @@ export default {
         },
         onPlus(){
             this.$store.dispatch('addMajorCard');
-
         },
         scrollToNextCard(lastCardIndex){
             var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
