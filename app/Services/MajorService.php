@@ -26,4 +26,11 @@ class MajorService implements MajorContract
         $fieldOfStudies = FieldOfStudy::all();
         return $fieldOfStudies->toArray();
     }
+
+    public function getHegisCategories($fieldOfStudyId)
+    {
+        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
+                                    ->where('id', $fieldOfStudyId)->first();
+        return $hegisCategory = $fieldOfStudy->hegisCategory;
+    }
 }

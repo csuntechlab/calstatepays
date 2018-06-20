@@ -90,10 +90,8 @@ class MajorController extends Controller
 
     public function filterByFieldOfStudy($fieldOfStudyId)
     {
-        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
-                                    ->where('id', $fieldOfStudyId)->first();
-        $hegisCategory = $fieldOfStudy->hegisCategory;
-
+        $hegisCategory = $this->majorRetriever->getHegisCategories($fieldOfStudyId);
+        
         foreach($hegisCategory as $category){
             $hegisCodes = $category->hegisCode;
             if(!is_null($hegisCodes)){
