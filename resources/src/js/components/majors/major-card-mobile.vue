@@ -52,12 +52,12 @@ export default {
             'educationLevel',
             'formWasSubmitted'
         ]),
-        // isEmpty(){
-        //     //Check whether the form field was fired off, toggle carousel on
-        //     if(this.industries(this.index).length === 0){
-        //         return false;
-        //     } return true;
-        // },
+        isEmpty(){
+            //Check whether the form field was fired off, toggle carousel on
+            if(this.industries(this.index).length === 0){
+                return false;
+            } return true;
+        },
         isNotFirstCard(){
             if(this.index >= 1){
                 return true;
@@ -79,13 +79,13 @@ export default {
     methods:{
         ...mapActions([
             'deleteMajorCard',
-            'toggleFormWasSubmitted'
+            'resetmajorCard'
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);
         },
         resetCurrentCard(){
-            this.toggleFormWasSubmitted(this.index);
+            this.resetMajorCard(this.index);
         }
     },
     components: { 

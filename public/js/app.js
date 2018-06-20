@@ -28418,6 +28418,7 @@ var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
+var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -28430,7 +28431,8 @@ var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
     ADD_MAJOR_CARD: ADD_MAJOR_CARD,
-    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD
+    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD,
+    RESET_MAJOR_CARD: RESET_MAJOR_CARD
 });
 
 /***/ }),
@@ -43826,11 +43828,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].educationLevel = payload.educationLevel;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_FORM_WAS_SUBMITTED, function (state, payload) {
     var index = payload;
-    if (state.majorCards[index].formWasSubmitted == true) {
-        state.majorCards[index].formWasSubmitted = false;
-    } else {
-        state.majorCards[index].formWasSubmitted = true;
-    }
+    state.majorCards[index].formWasSubmitted = true;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
         majorsByField: [],
@@ -43844,6 +43842,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     if (index !== 0) {
         state.majorCards.splice(index, 1);
     }
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, function (state, payload) {
+    var index = payload;
+    state.majorCards[index].majorsByField = [];
+    state.majorCards[index].industries = [];
+    state.majorCards[index].majorData = [];
+    state.majorCards[index].formWasSubmitted = false;
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -43948,6 +43952,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref11.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, payload);
+    },
+    resetMajorCard: function resetMajorCard(_ref12, payload) {
+        var commit = _ref12.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, payload);
     }
 });
 
@@ -47081,12 +47090,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'toggleFormWasSubmitted']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
         },
         resetCurrentCard: function resetCurrentCard() {
-            this.toggleFormWasSubmitted(this.index);
+            this.resetMajorCard(this.index);
         }
     }),
     components: {
@@ -66398,12 +66407,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'toggleFormWasSubmitted']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetmajorCard']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
         },
         resetCurrentCard: function resetCurrentCard() {
-            this.toggleFormWasSubmitted(this.index);
+            this.resetMajorCard(this.index);
         }
     }),
     components: {

@@ -75,13 +75,13 @@ export default {
     methods:{
         ...mapActions([
             'deleteMajorCard',
-            'toggleFormWasSubmitted'
+            'resetMajorCard'
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);
         },
         resetCurrentCard(){
-            this.toggleFormWasSubmitted(this.index);
+            this.resetMajorCard(this.index);
         }
     },
     components: { 
