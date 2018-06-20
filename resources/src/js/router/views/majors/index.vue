@@ -1,9 +1,9 @@
 <template>
     <div class="row wrapper graph-content card-padding">
         <div class="col col-md-12">
-            <major-card v-if="isDesktop" class="my-2" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
+            <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
             <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-            <card-add :onPlus="onPlus"></card-add>
+            <card-add id="plus" :onPlus="onPlus"></card-add>
         </div>
     </div>
 </template>
@@ -19,6 +19,7 @@ export default {
             windowWidth: 0,
             isDesktop: true,
             isMobile: false,
+            index,
         }
     },
     computed: {
@@ -32,6 +33,9 @@ export default {
             return (this.isDesktop ? null : this.majorCards);
         },
     },
+    updated: function(){
+        this.scrollToNextCard();
+    },
     methods: {
         getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
@@ -39,6 +43,16 @@ export default {
         },
         onPlus(){
             this.$store.dispatch('addMajorCard');
+            /*this.scrollToNextCard();*/
+
+        },
+        scrollToNextCard(){
+            var progressBar = document.getElementById("plus");
+            progressBar.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "end"
+            });
         }
     },
     mounted() {
