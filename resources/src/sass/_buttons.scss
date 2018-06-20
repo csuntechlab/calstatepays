@@ -31,7 +31,6 @@
 .major-tool-btn{
     padding-left: 93%;
     padding-top: 1rem;
-    display: inline;
 }
 
 .btn-remove{
@@ -39,11 +38,9 @@
     font-size: 2rem;
     outline: none;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 8px;
     vertical-align: middle;
     display: inline;
-    // padding-left:95%;
-    // padding-top:1rem;
 }
 
 .btn-reset{
@@ -51,6 +48,28 @@
     font-size: 1.6rem;
     outline: none;
     cursor: pointer;
+    vertical-align: middle;
+    display: inline;
+}
+
+.major-tool-btn-mobile{
+    padding-left: 80%;
+    padding-top: 1rem;
+}
+
+.btn-remove-mobile{
+    color: $gray;
+    font-size: 2rem;
+    outline: none;
+    margin-left: 5px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.btn-reset-mobile{
+    color: $gray;
+    font-size: 1.6rem;
+    outline: none;
     vertical-align: middle;
     display: inline;
 }

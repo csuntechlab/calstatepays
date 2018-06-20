@@ -27713,7 +27713,6 @@ textarea {
 .major-tool-btn {
   padding-left: 93%;
   padding-top: 1rem;
-  display: inline;
 }
 
 .btn-remove {
@@ -27721,7 +27720,7 @@ textarea {
   font-size: 2rem;
   outline: none;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 8px;
   vertical-align: middle;
   display: inline;
 }
@@ -27731,6 +27730,28 @@ textarea {
   font-size: 1.6rem;
   outline: none;
   cursor: pointer;
+  vertical-align: middle;
+  display: inline;
+}
+
+.major-tool-btn-mobile {
+  padding-left: 80%;
+  padding-top: 1rem;
+}
+
+.btn-remove-mobile {
+  color: #777777;
+  font-size: 2rem;
+  outline: none;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline;
+}
+
+.btn-reset-mobile {
+  color: #777777;
+  font-size: 1.6rem;
+  outline: none;
   vertical-align: middle;
   display: inline;
 }

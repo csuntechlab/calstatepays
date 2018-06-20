@@ -66360,8 +66360,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -66400,9 +66398,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'toggleFormWasSubmitted']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
+        },
+        resetCurrentCard: function resetCurrentCard() {
+            this.toggleFormWasSubmitted(this.index);
         }
     }),
     components: {
@@ -66537,36 +66538,34 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("div", { staticClass: "row major-tool-btn" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isEmpty,
-                  expression: "isEmpty"
-                }
-              ],
-              staticClass: "fas fa-sync-alt btn-reset",
-              attrs: { title: "Reset" },
-              on: { click: _vm.resetCurrentCard }
-            }),
-            _vm._v(" "),
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.isNotFirstCard,
-                  expression: "isNotFirstCard"
-                }
-              ],
-              staticClass: "fas fa-times btn-remove",
-              attrs: { title: "Close" },
-              on: { click: _vm.removeCurrentCard }
-            })
-          ])
+        _c("span", { staticClass: "major-tool-btn-mobile" }, [
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isEmpty,
+                expression: "isEmpty"
+              }
+            ],
+            staticClass: "fas fa-sync-alt btn-reset-mobile",
+            attrs: { title: "Reset" },
+            on: { click: _vm.resetCurrentCard }
+          }),
+          _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
+              }
+            ],
+            staticClass: "fas fa-times btn-remove-mobile",
+            attrs: { title: "Close" },
+            on: { click: _vm.removeCurrentCard }
+          })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
