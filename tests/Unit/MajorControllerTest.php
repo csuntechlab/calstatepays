@@ -53,6 +53,23 @@ class MajorControllerTest extends TestCase
         $this->assertEquals($test, $response);
     }
 
+    public function test_getAllFieldOfStudies_returns_json_format()
+    {
+        $test = [
+            [
+                'id' => 0,
+                'name' => 'Natural Sciences'
+            ]
+        ];
+
+        $this->retriever
+            ->shouldReceive('getAllFieldOfStudies')
+            ->once()->andReturn($test);
+        
+        $response = $this->retriever->getAllFieldOfStudies();
+        $this->assertEquals($test, $response);
+    }
+
     public function test_getMajorEarnings_returns_data_for_3_paths()
     {
         $response = $this->get('/api/major/'.$this->validMajorId.'/'.$this->validUniversity);
