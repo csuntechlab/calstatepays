@@ -5,6 +5,7 @@
       <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel mx-1">
         <industry-carousel-card :industry="industry" class="industry-carousel-card"></industry-carousel-card>
       </slide>
+      <slide></slide>
     </carousel>
     <br>
     <br>
