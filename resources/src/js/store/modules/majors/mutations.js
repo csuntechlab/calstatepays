@@ -57,7 +57,12 @@ export default {
 
     [_majors.TOGGLE_FORM_WAS_SUBMITTED](state, payload) {
         let index = payload;
+        if(state.majorCards[index].formWasSubmitted == true){
+            state.majorCards[index].formWasSubmitted = false;
+        }
+        else{
         state.majorCards[index].formWasSubmitted = true;
+        }
     },
 
     [_majors.ADD_MAJOR_CARD](state) {
@@ -75,6 +80,5 @@ export default {
         if(index !== 0){
             state.majorCards.splice(index,1);
         }
-    }
-
+    },
 }

@@ -43826,7 +43826,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].educationLevel = payload.educationLevel;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_FORM_WAS_SUBMITTED, function (state, payload) {
     var index = payload;
-    state.majorCards[index].formWasSubmitted = true;
+    if (state.majorCards[index].formWasSubmitted == true) {
+        state.majorCards[index].formWasSubmitted = false;
+    } else {
+        state.majorCards[index].formWasSubmitted = true;
+    }
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
         majorsByField: [],
@@ -47055,7 +47059,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
         isEmpty: function isEmpty() {
             //Check whether the form field was fired off, toggle carousel on
-            if (this.industries(this.index).length === 0) {
+            if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
                 return false;
             }return true;
         },
@@ -47077,9 +47081,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'toggleFormWasSubmitted']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
+        },
+        resetCurrentCard: function resetCurrentCard() {
+            this.toggleFormWasSubmitted(this.index);
         }
     }),
     components: {
@@ -66134,18 +66141,31 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("button", { staticClass: "btn-remove" }, [
+        _c("span", { staticClass: "major-tool-btn" }, [
           _c("i", {
             directives: [
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.isNotFirstCard && _vm.isEmpty,
-                expression: "isNotFirstCard && isEmpty"
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
               }
             ],
-            staticClass: "fas fa-times",
+            staticClass: "fas fa-times btn-remove",
             on: { click: _vm.removeCurrentCard }
+          }),
+          _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isEmpty,
+                expression: "isEmpty"
+              }
+            ],
+            staticClass: "fas fa-sync-alt btn-reset",
+            on: { click: _vm.resetCurrentCard }
           })
         ]),
         _vm._v(" "),

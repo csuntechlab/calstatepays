@@ -27702,14 +27702,25 @@ textarea {
   outline: none;
 }
 
+.major-tool-btn {
+  padding-left: 95%;
+  padding-top: 1rem;
+}
+
 .btn-remove {
   color: #777777;
   font-size: 2rem;
   height: 25px;
   width: 25px;
   outline: none;
-  padding-left: 95%;
-  padding-top: 1rem;
+}
+
+.btn-reset {
+  color: #777777;
+  font-size: 1.6rem;
+  height: 25px;
+  width: 25px;
+  outline: none;
 }
 
 .btn-plus {

@@ -28,14 +28,27 @@
     outline: none;
 }
 
+.major-tool-btn{
+    padding-left: 95%;
+    padding-top: 1rem;
+}
+
 .btn-remove{
     color: $gray;
     font-size: 2rem;
     height: 25px;
     width: 25px;
     outline: none;
-    padding-left:95%;
-    padding-top:1rem;
+    // padding-left:95%;
+    // padding-top:1rem;
+}
+
+.btn-reset{
+    color: $gray;
+    font-size: 1.6rem;
+    height: 25px;
+    width: 25px;
+    outline: none;
 }
 
 .btn-plus{
