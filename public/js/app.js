@@ -66147,12 +66147,13 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.isNotFirstCard,
-                expression: "isNotFirstCard"
+                value: _vm.isEmpty,
+                expression: "isEmpty"
               }
             ],
-            staticClass: "fas fa-times btn-remove",
-            on: { click: _vm.removeCurrentCard }
+            staticClass: "fas fa-sync-alt btn-reset",
+            attrs: { title: "Reset" },
+            on: { click: _vm.resetCurrentCard }
           }),
           _vm._v(" "),
           _c("i", {
@@ -66160,12 +66161,13 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.isEmpty,
-                expression: "isEmpty"
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
               }
             ],
-            staticClass: "fas fa-sync-alt btn-reset",
-            on: { click: _vm.resetCurrentCard }
+            staticClass: "fas fa-times btn-remove",
+            attrs: { title: "Close" },
+            on: { click: _vm.removeCurrentCard }
           })
         ]),
         _vm._v(" "),
@@ -66326,7 +66328,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(12);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //
@@ -66536,22 +66537,35 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("div", { staticClass: "row btn-remove" }, [
+        _c("div", { staticClass: "row major-tool-btn" }, [
           _c("div", { staticClass: "col-12" }, [
-            _c("button", [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard && _vm.isEmpty,
-                    expression: "isNotFirstCard && isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-times",
-                on: { click: _vm.removeCurrentCard }
-              })
-            ])
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isEmpty,
+                  expression: "isEmpty"
+                }
+              ],
+              staticClass: "fas fa-sync-alt btn-reset",
+              attrs: { title: "Reset" },
+              on: { click: _vm.resetCurrentCard }
+            }),
+            _vm._v(" "),
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isNotFirstCard,
+                  expression: "isNotFirstCard"
+                }
+              ],
+              staticClass: "fas fa-times btn-remove",
+              attrs: { title: "Close" },
+              on: { click: _vm.removeCurrentCard }
+            })
           ])
         ]),
         _vm._v(" "),

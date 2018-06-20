@@ -1,11 +1,10 @@
 <template>
     <div class="col col-md-12">
         <card>
-            <div class="row btn-remove">
+            <div class="row major-tool-btn">
                 <div class="col-12">
-                    <button>
-                        <i class="fas fa-times" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
-                    </button>
+                    <i class="fas fa-sync-alt btn-reset" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                    <i class="fas fa-times btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
                 </div>
             </div>
             <div class="container-fluid my-0 mt-2">

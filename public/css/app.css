@@ -27703,24 +27703,28 @@ textarea {
 }
 
 .major-tool-btn {
-  padding-left: 95%;
+  padding-left: 93%;
   padding-top: 1rem;
+  display: inline;
 }
 
 .btn-remove {
   color: #777777;
   font-size: 2rem;
-  height: 25px;
-  width: 25px;
   outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+  display: inline;
 }
 
 .btn-reset {
   color: #777777;
   font-size: 1.6rem;
-  height: 25px;
-  width: 25px;
   outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline;
 }
 
 .btn-plus {

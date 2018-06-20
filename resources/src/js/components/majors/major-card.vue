@@ -2,8 +2,8 @@
     <div class="col col-md-12">
         <card>
             <span class="major-tool-btn">
-                <i class="fas fa-times btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard"></i>
-                <i class="fas fa-sync-alt btn-reset" @click="resetCurrentCard" v-show="isEmpty"></i>
+                <i class="fas fa-sync-alt btn-reset" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                <i class="fas fa-times btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
             </span>
             <div class="container-fluid my-0">
                 <div class="row p-0">
