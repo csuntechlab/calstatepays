@@ -27351,6 +27351,14 @@ figcaption {
   padding: 18px 0px;
 }
 
+.nav-link abbr[title] {
+  border-bottom: none;
+}
+
+.navbar-toggler {
+  margin-top: .65rem;
+}
+
 .nav-logo {
   max-height: 60px;
   width: 120px;

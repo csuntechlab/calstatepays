@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Http\Controllers\MajorController;
+use App\Contracts\MajorContract;
 use App\Models\StudentPath;
 use App\Models\UniversityMajor;
 use App\Models\MajorPath;
@@ -11,32 +12,62 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Mockery;
 
 class MajorControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
     private $controller;
-
+    private $retriever;
     private $validMajorId = 22021;
     private $validUniversity = 1153;
 
     public function setUp(){
         parent::setUp();
+        $this->retriever = Mockery::mock(MajorContract::class);
         $this->seed('DatabaseSeeder');
-        $this->controller = new MajorController();
+        $this->controller = new MajorController($this->retriever);
     }
+
     public function test_getAllHegisCodes_ReturnsSuccessJsonFormat()
     {
-        $response = $this->json('GET', '/api/major/hegis-codes');
-        $response->assertStatus(200);
-        $response->assertJsonStructure([
-            0 => [
-                'hegis_code',
-                'major',
-                'university'
+        $test = [
+            [
+                'hegis_code' => 100,
+                'major' => 4,
+                'university' => 1001
+            ],
+            [
+            'hegis_code' => 111,
+            'major' => 3,
+            'university' => 1032
             ]
-        ]);
+        ];
+
+        $this->retriever
+            ->shouldReceive('getAllHegisCodes')
+            ->once()->andReturn($test);
+
+        $response = $this->retriever->getAllHegisCodes(); 
+        $this->assertEquals($test, $response);
+    }
+
+    public function test_getAllFieldOfStudies_returns_json_format()
+    {
+        $test = [
+            [
+                'id' => 0,
+                'name' => 'Natural Sciences'
+            ]
+        ];
+
+        $this->retriever
+            ->shouldReceive('getAllFieldOfStudies')
+            ->once()->andReturn($test);
+        
+        $response = $this->retriever->getAllFieldOfStudies();
+        $this->assertEquals($test, $response);
     }
 
     public function test_getMajorEarnings_returns_data_for_3_paths()
