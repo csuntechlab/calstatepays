@@ -85692,7 +85692,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggleShowNav: function toggleShowNav() {
-            this.isShowing = !this.isShowing;
+            if (window.innerHeight < 768) {
+                var element = document.getElementById("nav-list");
+                element.classList.toggle("show");
+            }
         }
     },
     created: function created() {
@@ -85748,8 +85751,7 @@ var render = function() {
               "div",
               {
                 staticClass: "collapse navbar-collapse justify-content-center",
-                class: _vm.isShowing ? "show" : "",
-                attrs: { id: "tempNav" }
+                attrs: { id: "nav-list" }
               },
               [
                 _c(
@@ -85758,7 +85760,14 @@ var render = function() {
                   [
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85778,7 +85787,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85798,7 +85814,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -85807,8 +85830,14 @@ var render = function() {
                             attrs: { "active-class": "hr-nav", to: "/pfre" }
                           },
                           [
-                            _vm._v(
-                              "\n                                        FRE\n                                    "
+                            _c(
+                              "abbr",
+                              {
+                                attrs: {
+                                  title: "Financial Return on Education"
+                                }
+                              },
+                              [_vm._v("FRE")]
                             )
                           ]
                         )
@@ -85818,7 +85847,14 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
-                      { staticClass: "nav-item" },
+                      {
+                        staticClass: "nav-item",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleShowNav()
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
