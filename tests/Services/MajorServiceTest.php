@@ -33,4 +33,17 @@ class MajorServiceTest extends TestCase
         $this->arrayHasKey("id", $response[0]);        
         $this->assertEquals(FieldOfStudy::count(), count($response));
     }
+
+    public function test_getHegisCategories_ensure_returns_hegis_categories_as_array() {
+        $majorService = new MajorService();
+        $this->seed('Field_Of_Studies_TableSeeder');
+        $this->seed('Hegis_Categories_TableSeeder');
+        $this->seed('Hegis_Codes_TableSeeder');
+        $fieldOfStudyId = 1;
+        $response = $majorService->getHegisCategories($fieldOfStudyId);
+
+        $this->arrayHasKey("hegisCode", $response[0]);
+        $this->arrayHasKey("hegis_category_id", $response[0]);
+        $this->arrayHasKey("major", $response[0]);
+    }
 }
