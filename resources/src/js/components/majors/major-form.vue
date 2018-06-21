@@ -2,7 +2,7 @@
     <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
             <div class="row row--condensed mt-3">
-                <h5 class="form--title">Choose A Campus</h5>
+                <h5 class="form--title">Choose A <abbr title="California State University">CSU</abbr></h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
                     <label for="campus" v-show="this.$v.$error">(Required)</label>

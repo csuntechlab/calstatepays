@@ -12,6 +12,11 @@
     padding-top: 3rem; 
 }
 
+abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+}
+
 html {
   min-height: 100vh;
   box-sizing: border-box;
