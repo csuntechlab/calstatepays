@@ -30,7 +30,6 @@ class MajorService implements MajorContract
 
     public function getMajorEarnings($hegis_code, $university_id): array
     {
-        $majorPathWages = UniversityMajor::AllMajorPathWages($hegis_code, 1153);
-        return $majorPathWages->toArray();
+        return UniversityMajor::AllMajorPathWages($hegis_code, 1153);
     }
 }
