@@ -45119,7 +45119,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-success",
+              staticClass: "btn btn-success btn-submit",
               attrs: { type: "button" },
               on: {
                 click: function($event) {
@@ -47212,6 +47212,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -48103,6 +48107,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("v-select", {
+                    staticClass: "csu-form-input-major",
                     attrs: { label: "name", options: _vm.universities },
                     on: {
                       input: function($event) {
@@ -48132,6 +48137,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("v-select", {
+                    staticClass: "csu-form-input",
                     attrs: { label: "discipline", options: _vm.fieldOfStudies },
                     on: {
                       input: function($event) {
@@ -48176,6 +48182,7 @@ var render = function() {
                   _vm._v(" "),
                   this.form.fieldOfStudyId == null
                     ? _c("v-select", {
+                        staticClass: "csu-form-input-major",
                         attrs: { label: "major", options: _vm.majors },
                         on: {
                           input: function($event) {
@@ -48194,6 +48201,7 @@ var render = function() {
                         }
                       })
                     : _c("v-select", {
+                        staticClass: "csu-form-input-major",
                         attrs: {
                           label: "major",
                           options: _vm.selectedMajorsByField
@@ -48220,11 +48228,11 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row row--condensed" }, [
-              _c("div", { staticClass: "col col-md-8 py-4" }, [
+              _c("div", { staticClass: "py-4" }, [
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-success",
+                    staticClass: "btn btn-success btn-submit",
                     attrs: { type: "button" },
                     on: { click: _vm.submitForm }
                   },
