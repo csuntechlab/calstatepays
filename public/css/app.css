@@ -26991,6 +26991,11 @@ table.table tfoot tr td {
   padding-top: 3rem;
 }
 
+abbr[title] {
+  border-bottom: none;
+  text-decoration: none;
+}
+
 html {
   min-height: 100vh;
   -webkit-box-sizing: border-box;
