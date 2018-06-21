@@ -34,7 +34,7 @@ export default {
     },
     updated: function(){
         //Only run if more than one card exists
-        var lastCardIndex = this.majorCards.length - 1;
+        let lastCardIndex = this.majorCards.length - 1;
         if(lastCardIndex > 0){
             this.scrollToNextCard(lastCardIndex);
         }
@@ -48,7 +48,7 @@ export default {
             this.$store.dispatch('addMajorCard');
         },
         scrollToNextCard(lastCardIndex){
-            var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
+            let progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
             progressBar.scrollIntoView({
                 behavior: "smooth",
                 block: "end",
