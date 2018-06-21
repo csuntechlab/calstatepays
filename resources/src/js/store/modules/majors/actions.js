@@ -83,5 +83,9 @@ export default {
 
     deleteMajorCard({commit}, payload) {
         commit(_majors.DELETE_MAJOR_CARD,payload);
-    }
+    },
+
+    resetMajorCard({commit}, payload) {
+        commit(_majors.RESET_MAJOR_CARD,payload);
+    },
 }

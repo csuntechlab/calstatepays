@@ -27715,14 +27715,50 @@ textarea {
   outline: none;
 }
 
+.major-tool-btn {
+  padding-left: 93%;
+  padding-top: 1rem;
+}
+
 .btn-remove {
   color: #777777;
   font-size: 2rem;
-  height: 25px;
-  width: 25px;
   outline: none;
-  padding-left: 95%;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  display: inline;
+}
+
+.btn-reset {
+  color: #777777;
+  font-size: 1.6rem;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline;
+}
+
+.major-tool-btn-mobile {
+  padding-left: 80%;
   padding-top: 1rem;
+}
+
+.btn-remove-mobile {
+  color: #777777;
+  font-size: 2rem;
+  outline: none;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline;
+}
+
+.btn-reset-mobile {
+  color: #777777;
+  font-size: 1.6rem;
+  outline: none;
+  vertical-align: middle;
+  display: inline;
 }
 
 .btn-plus {

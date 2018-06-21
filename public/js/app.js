@@ -28418,6 +28418,7 @@ var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
+var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -28430,7 +28431,8 @@ var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
     ADD_MAJOR_CARD: ADD_MAJOR_CARD,
-    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD
+    DELETE_MAJOR_CARD: DELETE_MAJOR_CARD,
+    RESET_MAJOR_CARD: RESET_MAJOR_CARD
 });
 
 /***/ }),
@@ -43840,6 +43842,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     if (index !== 0) {
         state.majorCards.splice(index, 1);
     }
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, function (state, payload) {
+    var index = payload;
+    state.majorCards[index].majorsByField = [];
+    state.majorCards[index].industries = [];
+    state.majorCards[index].majorData = [];
+    state.majorCards[index].formWasSubmitted = false;
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -43944,6 +43952,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref11.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, payload);
+    },
+    resetMajorCard: function resetMajorCard(_ref12, payload) {
+        var commit = _ref12.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, payload);
     }
 });
 
@@ -47055,7 +47068,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
         isEmpty: function isEmpty() {
             //Check whether the form field was fired off, toggle carousel on
-            if (this.industries(this.index).length === 0) {
+            if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
                 return false;
             }return true;
         },
@@ -47077,9 +47090,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
+        },
+        resetCurrentCard: function resetCurrentCard() {
+            this.resetMajorCard(this.index);
         }
     }),
     components: {
@@ -66144,17 +66160,32 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("button", { staticClass: "btn-remove" }, [
+        _c("span", { staticClass: "major-tool-btn" }, [
           _c("i", {
             directives: [
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.isNotFirstCard && _vm.isEmpty,
-                expression: "isNotFirstCard && isEmpty"
+                value: _vm.isEmpty,
+                expression: "isEmpty"
               }
             ],
-            staticClass: "fas fa-times",
+            staticClass: "fas fa-sync-alt btn-reset",
+            attrs: { title: "Reset" },
+            on: { click: _vm.resetCurrentCard }
+          }),
+          _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
+              }
+            ],
+            staticClass: "fas fa-times btn-remove",
+            attrs: { title: "Close" },
             on: { click: _vm.removeCurrentCard }
           })
         ]),
@@ -66348,9 +66379,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
@@ -66389,9 +66417,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetmajorCard']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
+        },
+        resetCurrentCard: function resetCurrentCard() {
+            this.resetMajorCard(this.index);
         }
     }),
     components: {
@@ -66526,23 +66557,34 @@ var render = function() {
     { staticClass: "col col-md-12" },
     [
       _c("card", [
-        _c("div", { staticClass: "row btn-remove" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("button", [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard && _vm.isEmpty,
-                    expression: "isNotFirstCard && isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-times",
-                on: { click: _vm.removeCurrentCard }
-              })
-            ])
-          ])
+        _c("span", { staticClass: "major-tool-btn-mobile" }, [
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isEmpty,
+                expression: "isEmpty"
+              }
+            ],
+            staticClass: "fas fa-sync-alt btn-reset-mobile",
+            attrs: { title: "Reset" },
+            on: { click: _vm.resetCurrentCard }
+          }),
+          _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
+              }
+            ],
+            staticClass: "fas fa-times btn-remove-mobile",
+            attrs: { title: "Close" },
+            on: { click: _vm.removeCurrentCard }
+          })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
