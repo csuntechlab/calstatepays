@@ -7,7 +7,7 @@
                     <label for="campus">Campus:</label>
                     <label for="campus" v-show="this.$v.$error">(Required)</label>
                     <v-select 
-                        label="name" 
+                        label="name"
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
                         @change="updateSelect('schoolId', 'id', $event)"
@@ -90,8 +90,9 @@ export default {
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
+                errors: []
             },
-            selected: null
+            selected: null,
         }
 
     },
@@ -104,12 +105,27 @@ export default {
         ]),
         updateForm,
         submitForm(){
-            this.$v.$touch();
-            if(!this.$v.$invalid) {
+            if(this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
             }
+        },
+        checkForm(){
+            if(this.form.schoolId && this.form.majorId){
+                return true;
+            }
+                this.form.formErrors = [];
+            if(!this.form.schoolId){
+                this.form.errors.push('Campus Required');
+            }
+            if(!this.form.majorId){
+                this.form.errors.push('Major Required')
+            }
+            console.log(this.form.errors);
+        },
+        toggleFormHighlighting(){
+            
         },
         updateSelect(field, dataKey, data) {
             if(data) {
