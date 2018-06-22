@@ -46837,9 +46837,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             this.windowWidth = document.documentElement.clientWidth;
             this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
         },
-        onPlus: function onPlus() {
-            this.$store.dispatch('addMajorCard');
-        },
         scrollToNextCard: function scrollToNextCard(lastCardIndex) {
             var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
             progressBar.scrollIntoView({
@@ -46931,7 +46928,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['onPlus']
+    methods: {
+        onPlus: function onPlus() {
+            this.$store.dispatch('addMajorCard');
+        }
+    }
 });
 
 /***/ }),
@@ -46950,12 +46951,18 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "col col-1" }, [
-        _c("button", { staticClass: "btn-add" }, [
-          _c("i", {
-            staticClass: "fa fa-plus-circle",
-            on: { click: _vm.onPlus }
-          })
-        ])
+        _c(
+          "button",
+          {
+            staticClass: "btn-add",
+            on: {
+              click: function($event) {
+                _vm.onPlus()
+              }
+            }
+          },
+          [_c("i", { staticClass: "fa fa-plus-circle" })]
+        )
       ])
     ]
   )
@@ -66808,7 +66815,7 @@ var render = function() {
             : _vm._e()
         }),
         _vm._v(" "),
-        _c("card-add", { attrs: { id: "plus", onPlus: _vm.onPlus } })
+        _c("card-add", { attrs: { id: "plus" } })
       ],
       2
     )
