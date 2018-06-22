@@ -47216,6 +47216,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -47233,7 +47235,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
-                errors: []
+                errors: {
+                    "major": null,
+                    "university": null
+                },
+                submitCount: 0,
+                isUnivSelected: true,
+                isMajorSelected: true
             },
             selected: null
         };
@@ -47242,7 +47250,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'toggleFormWasSubmitted', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
         submitForm: function submitForm() {
-            /*this.$v.$touch();*/
+            this.form.submitCount += 1;
             if (this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
@@ -47253,14 +47261,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             if (this.form.schoolId && this.form.majorId) {
                 return true;
             }
-            this.form.formErrors = [];
+            this.checkFieldsHaveErrors();
+        },
+        checkFieldsHaveErrors: function checkFieldsHaveErrors() {
             if (!this.form.schoolId) {
-                this.form.errors.push('Campus Required');
+                this.form.errors.university = 'Campus Required';
+                this.form.isUnivSelected = false;
+            } else {
+                this.form.isUnivSelected = true;
+                this.form.errors.university = false;
             }
             if (!this.form.majorId) {
-                this.form.errors.push('Major Required');
+                this.form.errors.major = 'Major Required';
+                this.form.isMajorSelected = false;
+            } else {
+                this.form.isMajorSelected = true;
+                this.form.errors.major = false;
             }
-            console.log(this.form.errors);
         },
         updateSelect: function updateSelect(field, dataKey, data) {
             if (data) {
@@ -48111,17 +48128,29 @@ var render = function() {
                         {
                           name: "show",
                           rawName: "v-show",
-                          value: this.$v.$error,
-                          expression: "this.$v.$error"
+                          value: this.form.errors.university,
+                          expression: "this.form.errors.university"
                         }
                       ],
                       attrs: { for: "campus" }
                     },
-                    [_vm._v("(Required)")]
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticStyle: { "font-weight": "bold", color: "red" }
+                        },
+                        [_vm._v("Required *")]
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c("v-select", {
                     staticClass: "csu-form-input-major",
+                    class: {
+                      "border-danger":
+                        !this.form.schoolId && this.form.submitCount
+                    },
                     attrs: { label: "name", options: _vm.universities },
                     on: {
                       input: function($event) {
@@ -48185,18 +48214,30 @@ var render = function() {
                         {
                           name: "show",
                           rawName: "v-show",
-                          value: this.$v.$error,
-                          expression: "this.$v.$error"
+                          value: this.form.errors.major,
+                          expression: "this.form.errors.major"
                         }
                       ],
                       attrs: { for: "Major" }
                     },
-                    [_vm._v("(Required)")]
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticStyle: { "font-weight": "bold", color: "red" }
+                        },
+                        [_vm._v("Required *")]
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   this.form.fieldOfStudyId == null
                     ? _c("v-select", {
                         staticClass: "csu-form-input-major",
+                        class: {
+                          "border-danger":
+                            !this.form.majorId && this.form.submitCount
+                        },
                         attrs: { label: "major", options: _vm.majors },
                         on: {
                           input: function($event) {
