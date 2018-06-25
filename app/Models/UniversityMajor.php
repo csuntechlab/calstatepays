@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UniversityMajor extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'hegis_code',
