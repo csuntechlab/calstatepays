@@ -141,7 +141,6 @@ class University_Majors_TableSeeder extends Seeder
                     } elseif($student_path['student_path'] == 3){
                         $base_wage += 25000;
                     }
-                    $major_path_wage->avg_annual_wage = $base_wage;
                     $major_path_wage->_25th = $base_wage - 5000;
                     $major_path_wage->_50th = $base_wage;
                     $major_path_wage->_75th = $base_wage + 10000;
