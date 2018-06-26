@@ -3,7 +3,7 @@
         <div class="col col-md-12">
             <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
             <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-            <card-add id="plus"></card-add>
+            <card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
         </div>
     </div>
 </template>
@@ -51,7 +51,7 @@ export default {
                 block: "end",
                 inline: "nearest"
             });
-        }
+        },
     },
     mounted() {
         this.$nextTick(function() {

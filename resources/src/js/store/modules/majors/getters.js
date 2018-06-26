@@ -22,9 +22,13 @@ export default {
     majorCards: state => state.majorCards,
     majorsByField: state => index => state.majorCards[index].majorsByField,
     formWasSubmitted:state=> index => state.majorCards[index].formWasSubmitted,
-    previousFormsWereSubmitted: state => {
-        return state.majorCards.every(function(el) {
-            return el.formWasSubmitted === true;
+    indexOfUnsubmittedCard: state => {
+        // let bool = state.majorCards.every((el) => {
+        //     return el.formWasSubmitted === true;
+        // });
+        let index = state.majorCards.findIndex((el) => {
+            return el.formWasSubmitted === false;
         })
+        return index;
     }
 }
