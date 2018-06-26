@@ -18,7 +18,6 @@ class CreatePopulationsTable extends Migration
             $table->integer('population_found');
             $table->integer('population_size');
             $table->decimal('percentage_found');
-            $table->timestamps();
         });
     }
 

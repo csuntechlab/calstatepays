@@ -24,7 +24,6 @@ class CreateDuringSchoolDatasTable extends Migration
             $table->integer('num_students_full_year');
             $table->integer('median_earnings_full_year');
             $table->integer('year');
-            $table->timestamps();
         });
     }
 

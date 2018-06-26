@@ -17,7 +17,6 @@ class CreateIndustryWagesTable extends Migration
             $table->integer('id');
             $table->integer('avg_annual_wage_5')->nullable();
             $table->integer('avg_annual_wage_10')->nullable();
-            $table->timestamps();
         });
     }
 

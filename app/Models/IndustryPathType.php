@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class IndustryPathType extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;
+    
     protected $fillable = [
         'entry_status',
         'naics_code',

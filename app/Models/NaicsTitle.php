@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class NaicsTitle extends Model
 {
     public $primaryKey = 'naics_code';
+    public $timestamps = false;    
     public $incrementing = false;
 
     protected $fillable = [

@@ -19,7 +19,6 @@ class CreateUniversityMajorsTable extends Migration
             $table->integer('college_id')->nullable();
             $table->integer('field_of_study_id')->default(0);
             $table->integer('university_id');
-            $table->timestamps();
         });
     }
 

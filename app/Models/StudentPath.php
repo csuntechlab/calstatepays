@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class StudentPath extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;    
 
     protected $fillable = [
         'path_name'

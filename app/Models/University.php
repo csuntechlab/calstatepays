@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class University extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;    
 
     protected $hidden = [
         'created_at',
