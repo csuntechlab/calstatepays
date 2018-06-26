@@ -19,6 +19,14 @@
   background: $green;
 }
 
+.btn-submit {
+    padding-left: 5rem;
+    font-size: 1.1rem;
+    text-transform: none;
+    padding-right: 5rem;
+    font-weight: 500;
+}
+
 .btn-add{
     color: $green;
     font-size: 3rem;
@@ -28,14 +36,50 @@
     outline: none;
 }
 
+.major-tool-btn{
+    padding-left: 93%;
+    padding-top: 1rem;
+}
+
 .btn-remove{
     color: $gray;
     font-size: 2rem;
-    height: 25px;
-    width: 25px;
     outline: none;
-    padding-left:95%;
-    padding-top:1rem;
+    cursor: pointer;
+    margin-left: 8px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.btn-reset{
+    color: $gray;
+    font-size: 1.6rem;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline;
+}
+
+.major-tool-btn-mobile{
+    padding-left: 80%;
+    padding-top: 1rem;
+}
+
+.btn-remove-mobile{
+    color: $gray;
+    font-size: 2rem;
+    outline: none;
+    margin-left: 5px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.btn-reset-mobile{
+    color: $gray;
+    font-size: 1.6rem;
+    outline: none;
+    vertical-align: middle;
+    display: inline;
 }
 
 .btn-plus{

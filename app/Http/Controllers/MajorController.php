@@ -28,7 +28,7 @@ class MajorController extends Controller
     }
 
     public function getMajorEarnings($hegis_code, $university_id){
-        $university_major = UniversityMajor::AllMajorPathWages($hegis_code, 1153);
+        $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
 
         foreach($university_major as $data) {
             $years = $data['years'];

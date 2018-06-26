@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
+use App\Models\UniversityMajor;
 use App\Contracts\MajorContract;
 
 class MajorService implements MajorContract
@@ -32,5 +33,10 @@ class MajorService implements MajorContract
         $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
                                     ->where('id', $fieldOfStudyId)->first();
         return $hegisCategory = $fieldOfStudy->hegisCategory->toArray();
+    }
+    
+    public function getMajorEarnings($hegis_code, $university_id): array
+    {
+        return UniversityMajor::AllMajorPathWages($hegis_code, 1153);
     }
 }

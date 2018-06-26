@@ -59,7 +59,6 @@ export default {
         let index = payload;
         state.majorCards[index].formWasSubmitted = true;
     },
-
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
             majorsByField: [],
@@ -75,6 +74,13 @@ export default {
         if(index !== 0){
             state.majorCards.splice(index,1);
         }
-    }
+    },
 
+    [_majors.RESET_MAJOR_CARD](state, payload) {
+        let index = payload;
+        state.majorCards[index].majorsByField=[];
+        state.majorCards[index].industries=[];
+        state.majorCards[index].majorData = [];
+        state.majorCards[index].formWasSubmitted = false;
+    },
 }

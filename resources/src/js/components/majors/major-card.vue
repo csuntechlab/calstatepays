@@ -1,10 +1,10 @@
 <template>
-    <div class="col col-md-12">
+    <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
         <card>
-            <button class="btn-remove">
-                <!--<button v-on:click="removeCurrentCard" v-show="isNotFirstCard && isEmpty" class="btn btn-danger btn-sm btn-outline-danger">Remove</button>-->
-                <i class="fas fa-times" @click="removeCurrentCard" v-show="isNotFirstCard && isEmpty"></i>
-            </button>
+            <span class="major-tool-btn">
+                <i class="fas fa-sync-alt btn-reset" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                <i class="fas fa-times btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+            </span>
             <div class="container-fluid my-0">
                 <div class="row p-0">
                     <div class="mt-5">
@@ -50,7 +50,7 @@ export default {
         ]),
         isEmpty(){
             //Check whether the form field was fired off, toggle carousel on
-            if(this.industries(this.index).length === 0){
+            if(this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false){
                 return false;
             } return true;
         },
@@ -74,10 +74,14 @@ export default {
     },
     methods:{
         ...mapActions([
-            'deleteMajorCard'
+            'deleteMajorCard',
+            'resetMajorCard'
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);
+        },
+        resetCurrentCard(){
+            this.resetMajorCard(this.index);
         }
     },
     components: { 

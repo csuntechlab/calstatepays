@@ -2,15 +2,17 @@
     <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
             <div class="row row--condensed mt-3">
-                <h5 class="form--title">Choose A Campus</h5>
+                <h5 class="form--title">Choose A <abbr title="California State University">CSU</abbr></h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
-                    <label for="campus" v-show="this.$v.$error">(Required)</label>
+                    <label for="campus" v-show="this.form.errors.university"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select 
-                        label="name" 
+                        label="name"
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
-                        @change="updateSelect('schoolId', 'id', $event)">
+                        @change="updateSelect('schoolId', 'id', $event)"
+                        class="csu-form-input-major"
+                        v-bind:class="{ 'border-danger': !this.form.schoolId && this.form.submitCount}">
                     </v-select>
                 </div>
             </div>
@@ -22,7 +24,8 @@
                             label="discipline"
                             :options="fieldOfStudies"
                             @input="updateSelect('fieldOfStudyId', 'id', $event)"
-                            @change="updateSelect('fieldOfStudyId', 'id', $event)">
+                            @change="updateSelect('fieldOfStudyId', 'id', $event)"
+                            class="csu-form-input">
                     </v-select>
                 </div>
             </div>
@@ -30,14 +33,16 @@
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <label for="Major" v-show="this.$v.$error">(Required)</label>
+                    <label for="Major" v-show="this.form.errors.major"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
                         v-model="selected"
                         :options="majors"
                         @input="updateSelect('majorId', 'majorId', $event)"
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @change="updateSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major"
+                        v-bind:class="{ 'border-danger': !this.form.majorId && this.form.submitCount }">
                     </v-select>
                     <v-select
                         label="major"
@@ -45,13 +50,14 @@
                         v-model="selected"
                         :options="selectedMajorsByField"
                         @input="updateSelect('majorId', 'majorId', $event)"
-                        @change="updateSelect('majorId', 'majorId', $event)">
+                        @change="updateSelect('majorId', 'majorId', $event)"
+                        class="csu-form-input-major">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
-                <div class="col col-md-8 py-4">
-                    <button type="button" @click="submitForm" class="btn btn-success">Submit</button>
+                <div class="py-4">
+                    <button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -86,8 +92,15 @@ export default {
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
+                errors: {
+                    "major": null,
+                    "university": null
+                },
+                submitCount: 0,
+                isUnivSelected: true,
+                isMajorSelected: true
             },
-            selected: null
+            selected: null,
         }
 
     },
@@ -100,11 +113,33 @@ export default {
         ]),
         updateForm,
         submitForm(){
-            this.$v.$touch();
-            if(!this.$v.$invalid) {
+            this.form.submitCount += 1;
+            if(this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+            }
+        },
+        checkForm(){
+            if(this.form.schoolId && this.form.majorId){
+                return true;
+            }
+            this.checkFieldsHaveErrors()
+        },
+        checkFieldsHaveErrors(){
+            if(!this.form.schoolId){
+                this.form.errors.university = 'Campus Required';
+                this.form.isUnivSelected = false;
+            } else {
+                this.form.isUnivSelected = true;
+                this.form.errors.university = false;
+            }
+            if(!this.form.majorId){
+                this.form.errors.major = 'Major Required';
+                this.form.isMajorSelected = false;
+            } else {
+                this.form.isMajorSelected = true;
+                this.form.errors.major = false;
             }
         },
         updateSelect(field, dataKey, data) {

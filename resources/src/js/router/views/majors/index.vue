@@ -1,9 +1,9 @@
 <template>
     <div class="row wrapper graph-content card-padding">
         <div class="col col-md-12">
-            <major-card v-if="isDesktop" class="my-2" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
+            <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
             <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-            <card-add :onPlus="onPlus"></card-add>
+            <card-add id="plus"></card-add>
         </div>
     </div>
 </template>
@@ -32,13 +32,25 @@ export default {
             return (this.isDesktop ? null : this.majorCards);
         },
     },
+    updated: function(){
+        //Only run if more than one card exists
+        let lastCardIndex = this.majorCards.length - 1;
+        if(lastCardIndex > 0){
+            this.scrollToNextCard(lastCardIndex);
+        }
+    },
     methods: {
         getWindowWidth(event) {
             this.windowWidth = document.documentElement.clientWidth;
             this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
         },
-        onPlus(){
-            this.$store.dispatch('addMajorCard');
+        scrollToNextCard(lastCardIndex){
+            let progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
+            progressBar.scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+                inline: "nearest"
+            });
         }
     },
     mounted() {
