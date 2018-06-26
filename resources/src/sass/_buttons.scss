@@ -36,6 +36,15 @@
     outline: none;
 }
 
+.btn-add__disabled{
+    color: $gray;
+    font-size: 3rem;
+    height: 40px;
+    width: 40px;
+    padding: 0px;
+    outline: none;
+}
+
 .major-tool-btn{
     padding-left: 93%;
     padding-top: 1rem;
