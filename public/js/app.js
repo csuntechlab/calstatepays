@@ -40194,7 +40194,6 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 
 router.beforeEach(function (to, from, next) {
 	setTimeout(function () {
-		console.log("Fuckery");
 		window.scrollTo(0, 0);
 	}, 100);
 	next();
