@@ -12053,7 +12053,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -27723,7 +27724,9 @@ textarea {
 }
 
 .major-tool-btn {
-  padding-left: 93%;
+  float: left;
+  position: absolute;
+  right: 0;
   padding-top: 1rem;
 }
 
@@ -27739,6 +27742,7 @@ textarea {
 
 .btn-reset {
   color: #777777;
+  padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
   cursor: pointer;
