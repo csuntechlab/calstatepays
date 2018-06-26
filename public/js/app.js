@@ -66475,6 +66475,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -66656,37 +66658,39 @@ var render = function() {
     },
     [
       _c("card", [
-        _c("span", { staticClass: "major-tool-btn-mobile" }, [
-          _c("i", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isEmpty,
-                expression: "isEmpty"
-              }
-            ],
-            staticClass: "fas fa-sync-alt btn-reset-mobile",
-            attrs: { title: "Reset" },
-            on: { click: _vm.resetCurrentCard }
-          }),
-          _vm._v(" "),
-          _c("i", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.isNotFirstCard,
-                expression: "isNotFirstCard"
-              }
-            ],
-            staticClass: "fas fa-times btn-remove-mobile",
-            attrs: { title: "Close" },
-            on: { click: _vm.removeCurrentCard }
-          })
-        ]),
-        _vm._v(" "),
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col" }, [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isNotFirstCard,
+                    expression: "isNotFirstCard"
+                  }
+                ],
+                staticClass: "fas fa-times btn-remove float-right",
+                attrs: { title: "Close" },
+                on: { click: _vm.removeCurrentCard }
+              }),
+              _vm._v(" "),
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isEmpty,
+                    expression: "isEmpty"
+                  }
+                ],
+                staticClass: "fas fa-sync-alt btn-reset float-right",
+                attrs: { title: "Reset" },
+                on: { click: _vm.resetCurrentCard }
+              })
+            ])
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             {
