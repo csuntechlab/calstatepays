@@ -44359,7 +44359,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "bg mh-90" }, [
+    _c("div", { staticClass: "bg mh-90 pt-5" }, [
       _c("div", { staticClass: "p-0 text-center pt-9" }, [
         _c("h1", { staticClass: "m-4 home__heading" }, [
           _vm._v("Discover Your Earnings After College")
