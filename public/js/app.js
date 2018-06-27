@@ -65454,7 +65454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return [];
             }
             if (this.educationLevel == "allDegrees") {
-                return [[this.majorData.postBacc['2'].avg_annual_wage, this.majorData.postBacc['5'].avg_annual_wage, this.majorData.postBacc['10'].avg_annual_wage], [this.majorData.bachelors['2'].avg_annual_wage, this.majorData.bachelors['5'].avg_annual_wage, this.majorData.bachelors['10'].avg_annual_wage], [this.majorData.someCollege['2'].avg_annual_wage, this.majorData.someCollege['5'].avg_annual_wage, this.majorData.someCollege['10'].avg_annual_wage]];
+                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th]];
             } else {
                 return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
             }
