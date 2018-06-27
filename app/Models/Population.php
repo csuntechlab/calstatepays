@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Population extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;    
     public $incrementing = true;
 
     protected $fillable = [

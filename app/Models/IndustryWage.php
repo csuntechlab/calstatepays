@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class IndustryWage extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'id',
         'avg_annual_wage_5',

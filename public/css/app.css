@@ -12053,7 +12053,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -27715,6 +27716,15 @@ textarea {
 
 .btn-add {
   color: #2BAE67;
+  font-size: 3rem;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  outline: none;
+}
+
+.btn-add__disabled {
+  color: #777777;
   font-size: 3rem;
   height: 40px;
   width: 40px;

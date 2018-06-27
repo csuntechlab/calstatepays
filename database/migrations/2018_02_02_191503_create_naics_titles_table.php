@@ -17,7 +17,6 @@ class CreateNAICSTitlesTable extends Migration
             $table->integer('naics_code');
             $table->string('naics_title');
             $table->string('image')->nullable();
-            $table->timestamps();
         });
     }
 
