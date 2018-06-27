@@ -87,7 +87,6 @@ class University_Majors_TableSeeder extends Seeder
         foreach($data as $row){
             $university_major = new UniversityMajor();
             $university_major->hegis_code = $row->hegis_code;
-            $university_major->college_id = 1;
             $university_major->university_id = $row->university_id;
             $university_major->save();
             foreach($age_ranges as $age_range){

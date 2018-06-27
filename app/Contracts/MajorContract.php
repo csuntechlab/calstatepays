@@ -8,5 +8,7 @@ interface MajorContract
 
     public function getAllFieldOfStudies(): array;
 
+    public function getHegisCategories($fieldOfStudyId): array;
+    
     public function getMajorEarnings($hegis_code, $university_id): array;
 }
