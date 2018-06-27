@@ -40192,6 +40192,13 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/about', component: __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue___default.a }]
 });
 
+router.beforeEach(function (to, from, next) {
+	setTimeout(function () {
+		window.scrollTo(0, 0);
+	}, 100);
+	next();
+});
+
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
@@ -44352,7 +44359,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "bg mh-90" }, [
+    _c("div", { staticClass: "bg mh-90 pt-5" }, [
       _c("div", { staticClass: "p-0 text-center pt-9" }, [
         _c("h1", { staticClass: "m-4 home__heading" }, [
           _vm._v("Discover Your Earnings After College")
@@ -65447,7 +65454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return [];
             }
             if (this.educationLevel == "allDegrees") {
-                return [[this.majorData.postBacc['2'].avg_annual_wage, this.majorData.postBacc['5'].avg_annual_wage, this.majorData.postBacc['10'].avg_annual_wage], [this.majorData.bachelors['2'].avg_annual_wage, this.majorData.bachelors['5'].avg_annual_wage, this.majorData.bachelors['10'].avg_annual_wage], [this.majorData.someCollege['2'].avg_annual_wage, this.majorData.someCollege['5'].avg_annual_wage, this.majorData.someCollege['10'].avg_annual_wage]];
+                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th]];
             } else {
                 return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
             }

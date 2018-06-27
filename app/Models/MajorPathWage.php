@@ -12,7 +12,6 @@ class MajorPathWage extends Model
 
     protected $fillable = [
         'major_path_id',
-        'avg_annual_wage',
         '_25th',
         '_50th',
         '_75th',
