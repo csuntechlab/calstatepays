@@ -25,7 +25,8 @@ class MajorService implements MajorContract
     public function getAllFieldOfStudies(): array
     {
         $fieldOfStudies = FieldOfStudy::all();
-        return $fieldOfStudies->toArray();
+        $fieldOfStudies =$fieldOfStudies->slice(1);
+        dd($fieldOfStudies->toArray());
     }
 
     public function getHegisCategories($fieldOfStudyId): array
