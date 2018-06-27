@@ -28,12 +28,51 @@
 }
 
 .btn-add{
-    color: $green;
+    background: $green;
     font-size: 3rem;
-    height: 40px;
-    width: 40px;
+    height: 3.5rem;
+    border-radius: 100%;
+    width: 3.5rem;
     padding: 0px;
     outline: none;
+    position: fixed;
+    right: 1.5rem;
+    bottom: 2.5rem;
+    .add-icon{
+        color: $white;
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        line-height: 0;
+        transform: translate(-50%,50%);
+    }
+    .tooltiptext {
+        visibility: hidden;
+        line-height: normal;
+        width: 15rem;
+        height: 2.8rem;
+        background-color: $light-gray;
+        color: $black;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.5rem;
+        font-family: $font-brand;
+        border-radius: 6px;
+        padding: .25rem;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+        
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 2rem;
+        left: -4rem; 
+        transform: translateX(-50%);
+    }
+    :hover {
+        .tooltiptext {
+            visibility: visible;
+        }
+    }
 }
 
 .major-tool-btn{

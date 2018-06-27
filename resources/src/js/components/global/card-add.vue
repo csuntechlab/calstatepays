@@ -1,12 +1,7 @@
 <template>
-    <div class="card-add col col-lg-10 d-flex flex-row container row align-items-center">
-        <div class="col col-1">
-
-            <button class="btn-add" @click="onPlus()">
-                <i class="fa fa-plus-circle"></i>
-            </button>
-        </div>
-    </div>
+    <button class="btn-add" @click="onPlus()">
+        <i class="fa add-icon">+ <span class="tooltiptext">Compare Major</span> </i>
+    </button>
 </template>
 <script>
 export default {
