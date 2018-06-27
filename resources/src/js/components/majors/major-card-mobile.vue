@@ -81,7 +81,7 @@ export default {
     methods:{
         ...mapActions([
             'deleteMajorCard',
-            'resetmajorCard'
+            'resetMajorCard'
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);

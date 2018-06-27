@@ -66515,7 +66515,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return this.formWasSubmitted(this.index);
         }
     }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetmajorCard']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
         removeCurrentCard: function removeCurrentCard() {
             this.deleteMajorCard(this.index);
         },
