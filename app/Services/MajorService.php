@@ -28,6 +28,13 @@ class MajorService implements MajorContract
         return $fieldOfStudies->toArray();
     }
 
+    public function getHegisCategories($fieldOfStudyId): array
+    {
+        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
+                                    ->where('id', $fieldOfStudyId)->first();
+        return $hegisCategory = $fieldOfStudy->hegisCategory->toArray();
+    }
+    
     public function getMajorEarnings($hegis_code, $university_id): array
     {
         return UniversityMajor::AllMajorPathWages($hegis_code, 1153);
