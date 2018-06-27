@@ -7,17 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class UniversityMajor extends Model
 {
     public $primaryKey = 'id';
+    public $timestamps = false;
 
     protected $fillable = [
         'hegis_code',
-        'college_id',
         'university_id',
-        'field_of_study_id'
     ];
-
-    public function fieldOfStudy(){
-        return $this->hasOne('App\Models\FieldOfStudy', 'id', 'field_of_study_id');
-    }
 
     public function studentBackground(){
         return $this->hasMany('App\Models\StudentBackground','university_major_id','id');
@@ -34,13 +29,6 @@ class UniversityMajor extends Model
      */
     public function hegisCode() {
         return $this->hasOne('App\Models\HEGISCode','hegis_code','hegis_code');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function college() {
-        return $this->hasOne('App\Models\College','id','college_id');
     }
 
     /**
