@@ -40192,6 +40192,13 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/about', component: __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue___default.a }]
 });
 
+router.beforeEach(function (to, from, next) {
+	setTimeout(function () {
+		window.scrollTo(0, 0);
+	}, 100);
+	next();
+});
+
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
@@ -43773,6 +43780,15 @@ function h(tag, key, args) {
         return function (index) {
             return state.majorCards[index].formWasSubmitted;
         };
+    },
+    indexOfUnsubmittedCard: function indexOfUnsubmittedCard(state) {
+        // let bool = state.majorCards.every((el) => {
+        //     return el.formWasSubmitted === true;
+        // });
+        var index = state.majorCards.findIndex(function (el) {
+            return el.formWasSubmitted === false;
+        });
+        return index;
     }
 });
 
@@ -44343,7 +44359,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "bg mh-90" }, [
+    _c("div", { staticClass: "bg mh-90 pt-5" }, [
       _c("div", { staticClass: "p-0 text-center pt-9" }, [
         _c("h1", { staticClass: "m-4 home__heading" }, [
           _vm._v("Discover Your Earnings After College")
@@ -46916,16 +46932,30 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(12);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
 //
 //
 //
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
+        },
+        cardPlusError: function cardPlusError() {
+            this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
         }
     }
 });
@@ -46938,18 +46968,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "btn-add",
-      on: {
-        click: function($event) {
-          _vm.onPlus()
-        }
-      }
-    },
-    [_vm._m(0)]
-  )
+  return _c("div", [
+    _vm.indexOfUnsubmittedCard == -1
+      ? _c(
+          "button",
+          {
+            staticClass: "btn-add",
+            on: {
+              click: function($event) {
+                _vm.onPlus()
+              }
+            }
+          },
+          [_vm._m(0)]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "btn-add__disabled",
+            on: {
+              click: function($event) {
+                _vm.cardPlusError()
+              }
+            }
+          },
+          [_vm._m(1)]
+        )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -46957,8 +47002,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("i", { staticClass: "fa add-icon" }, [
-      _vm._v("+ "),
+      _vm._v("+"),
       _c("span", { staticClass: "tooltiptext" }, [_vm._v("Compare Major")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("i", { staticClass: "fa add-icon" }, [
+      _vm._v("+"),
+      _c("span", { staticClass: "tooltiptext" }, [_vm._v("Complete Form")])
     ])
   }
 ]
@@ -65407,7 +65461,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return [];
             }
             if (this.educationLevel == "allDegrees") {
-                return [[this.majorData.postBacc['2'].avg_annual_wage, this.majorData.postBacc['5'].avg_annual_wage, this.majorData.postBacc['10'].avg_annual_wage], [this.majorData.bachelors['2'].avg_annual_wage, this.majorData.bachelors['5'].avg_annual_wage, this.majorData.bachelors['10'].avg_annual_wage], [this.majorData.someCollege['2'].avg_annual_wage, this.majorData.someCollege['5'].avg_annual_wage, this.majorData.someCollege['10'].avg_annual_wage]];
+                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th]];
             } else {
                 return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
             }
@@ -66809,7 +66863,14 @@ var render = function() {
             : _vm._e()
         }),
         _vm._v(" "),
-        _c("card-add", { attrs: { id: "plus" } })
+        _c("card-add", {
+          attrs: { id: "plus" },
+          on: {
+            cardPlusError: function($event) {
+              _vm.scrollToNextCard($event)
+            }
+          }
+        })
       ],
       2
     )

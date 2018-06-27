@@ -87,7 +87,6 @@ class University_Majors_TableSeeder extends Seeder
         foreach($data as $row){
             $university_major = new UniversityMajor();
             $university_major->hegis_code = $row->hegis_code;
-            $university_major->college_id = 1;
             $university_major->university_id = $row->university_id;
             $university_major->save();
             foreach($age_ranges as $age_range){
@@ -141,7 +140,6 @@ class University_Majors_TableSeeder extends Seeder
                     } elseif($student_path['student_path'] == 3){
                         $base_wage += 25000;
                     }
-                    $major_path_wage->avg_annual_wage = $base_wage;
                     $major_path_wage->_25th = $base_wage - 5000;
                     $major_path_wage->_50th = $base_wage;
                     $major_path_wage->_75th = $base_wage + 10000;

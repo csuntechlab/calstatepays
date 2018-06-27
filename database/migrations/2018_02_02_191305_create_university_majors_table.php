@@ -16,10 +16,7 @@ class CreateUniversityMajorsTable extends Migration
         Schema::create('university_majors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('hegis_code');
-            $table->integer('college_id')->nullable();
-            $table->integer('field_of_study_id')->default(0);
             $table->integer('university_id');
-            $table->timestamps();
         });
     }
 

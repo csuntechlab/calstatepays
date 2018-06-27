@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DuringSchoolData extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'university_id',
         'student_path',

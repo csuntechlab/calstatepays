@@ -27,9 +27,7 @@
     font-weight: 500;
 }
 
-.btn-add{
-    background: $green;
-    font-size: 3rem;
+%fixed-btn-base {
     height: 3.5rem;
     border-radius: 100%;
     width: 3.5rem;
@@ -38,6 +36,7 @@
     position: fixed;
     right: 1.5rem;
     bottom: 2.5rem;
+    font-size: 3rem;
     .add-icon{
         color: $white;
         position: absolute;
@@ -60,8 +59,6 @@
         border-radius: 6px;
         padding: .25rem;
         box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
-        
-        /* Position the tooltip */
         position: absolute;
         z-index: 1;
         bottom: 2rem;
@@ -73,6 +70,16 @@
             visibility: visible;
         }
     }
+}
+
+.btn-add{
+    @extend %fixed-btn-base;
+    background: $green;
+}
+
+.btn-add__disabled{
+    @extend %fixed-btn-base;
+    background: $gray;
 }
 
 .major-tool-btn{

@@ -20,7 +20,6 @@ class CreateIndustryPathTypesTable extends Migration
             $table->integer('student_path');
             $table->integer('population_sample_id');
             $table->integer('university_majors_id');
-            $table->timestamps();
         });
     }
 

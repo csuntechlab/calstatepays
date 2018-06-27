@@ -7,7 +7,6 @@ $factory->define(App\Models\MajorPathWage::class, function (Faker\Generator $fak
     $_75th = $faker->numberBetween($_50th, $wage);
     return [
         'major_path_id'        => $faker->unique()->numberBetween(1,100000),
-        'avg_annual_wage'      => $wage,
         '_25th'                 => $_25th,
         '_50th'                 => $_50th,
         '_75th'                 => $_75th,
