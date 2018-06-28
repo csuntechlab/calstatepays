@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 //Major
 Route::get('major/field-of-study', 'MajorController@getAllFieldOfStudies');
+Route::get('/major/{majorName}', 'MajorController@getHegisCode');
 Route::get('major/hegis-codes', 'MajorController@getAllHegisCodes')->name('major.hegis-codes');
 Route::get('major/hegis-codes/{fieldOfStudyId}', 'MajorController@filterByFieldOfStudy');
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
