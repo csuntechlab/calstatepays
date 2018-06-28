@@ -8,7 +8,6 @@ use App\Models\UniversityMajor;
 use App\Models\MajorPathWage;
 use App\Models\Population;
 use App\Models\IndustryPathType;
-use App\Models\IndustryWage;
 use Faker\Factory as Faker;
 class University_Majors_TableSeeder extends Seeder
 {
