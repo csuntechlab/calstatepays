@@ -12,7 +12,7 @@ class Hegis_Codes_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/hegis_codes.json");
+        $json = File::get("database/data/hegis_codes_test.json");
         $data = json_decode($json);
         foreach($data as $row){
                 DB::table('hegis_codes')->insert([
