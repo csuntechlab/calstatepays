@@ -1,14 +1,14 @@
 [
   {
-    "path_name": "Success Stories"
+    "id": 1,
+    "path_name": "Success Stories / Bachelors Only"
   },
   {
-    "path_name": "Problem Children"
+    "id": 2,
+    "path_name": "Problem Children / Some College"
   },
   {
+    "id": 4,
     "path_name": "Grad Completers"
-  },
-  {
-    "path_name": "All"
   }
 ]

@@ -6,12 +6,12 @@
   },
   {
     "hegis_code": 22111,
-    "major": "African-American Studies",
+    "major": "Africana Studies",
     "hegis_category_id": 22
   },
   {
     "hegis_code": 5021,
-    "major": "Accounting",
+    "major": "Accountancy",
     "hegis_category_id": 5
   },
   {
@@ -20,18 +20,8 @@
     "hegis_category_id": 22
   },
   {
-    "hegis_code": 17031,
-    "major": "Applied Mathematics",
-    "hegis_category_id": 17
-  },
-  {
     "hegis_code": 10021,
     "major": "Art",
-    "hegis_category_id": 10
-  },
-  {
-    "hegis_code": 10031,
-    "major": "Art History",
     "hegis_category_id": 10
   },
   {
@@ -55,29 +45,14 @@
     "hegis_category_id": 4
   },
   {
-    "hegis_code": 4152,
-    "major": "Biomedical Physics",
-    "hegis_category_id": 4
-  },
-  {
     "hegis_code": 5011,
     "major": "Business Administration",
     "hegis_category_id": 5
   },
   {
-    "hegis_code": 5012,
-    "major": "Business Education",
-    "hegis_category_id": 5
-  },
-  {
-    "hegis_code": 5996,
-    "major": "Business Law",
-    "hegis_category_id": 5
-  },
-  {
-    "hegis_code": 4171,
-    "major": "Cell and Molecular Biology",
-    "hegis_category_id": 4
+    "hegis_code": 3085,
+    "major": "Central American Studies",
+    "hegis_category_id": 3
   },
   {
     "hegis_code": 19051,
@@ -85,8 +60,13 @@
     "hegis_category_id": 19
   },
   {
+    "hegis_code": 22131,
+    "major": "Chicano and Chicana Studies",
+    "hegis_category_id": 22
+  },
+  {
     "hegis_code": 8231,
-    "major": "Child Development",
+    "major": "Child and Adolescent Development",
     "hegis_category_id": 8
   },
   {
@@ -105,29 +85,34 @@
     "hegis_category_id": 12
   },
   {
+    "hegis_code": 15061,
+    "major": "Communication Studies",
+    "hegis_category_id": 15
+  },
+  {
     "hegis_code": 9094,
     "major": "Computer Engineering",
     "hegis_category_id": 9
   },
   {
     "hegis_code": 7012,
-    "major": "Computer Science and Information Technology",
+    "major": "Computer Information Technology",
+    "hegis_category_id": 7
+  },
+  {
+    "hegis_code": 7011,
+    "major": "Computer Science",
     "hegis_category_id": 7
   },
   {
     "hegis_code": 9254,
-    "major": "Construction Engineering Technology",
+    "major": "Construction Management",
     "hegis_category_id": 9
   },
   {
     "hegis_code": 21044,
     "major": "Deaf Studies",
     "hegis_category_id": 21
-  },
-  {
-    "hegis_code": 19171,
-    "major": "Earth Science",
-    "hegis_category_id": 19
   },
   {
     "hegis_code": 22041,
@@ -140,8 +125,8 @@
     "hegis_category_id": 9
   },
   {
-    "hegis_code": 9011,
-    "major": "Engineering",
+    "hegis_code": 9132,
+    "major": "Engineering Management",
     "hegis_category_id": 9
   },
   {
@@ -155,11 +140,6 @@
     "hegis_category_id": 12
   },
   {
-    "hegis_code": 4012,
-    "major": "Environmental Biology & Ecology",
-    "hegis_category_id": 4
-  },
-  {
     "hegis_code": 13011,
     "major": "Family and Consumer Sciences",
     "hegis_category_id": 13
@@ -168,6 +148,16 @@
     "hegis_code": 5041,
     "major": "Finance",
     "hegis_category_id": 5
+  },
+  {
+    "hegis_code": 11021,
+    "major": "French",
+    "hegis_category_id": 11
+  },
+  {
+    "hegis_code": 22990,
+    "major": "Gender and Women's Studies",
+    "hegis_category_id": 22
   },
   {
     "hegis_code": 22061,
@@ -180,24 +170,9 @@
     "hegis_category_id": 19
   },
   {
-    "hegis_code": 10091,
-    "major": "Graphic Design",
-    "hegis_category_id": 10
-  },
-  {
     "hegis_code": 12021,
     "major": "Health Administration",
     "hegis_category_id": 12
-  },
-  {
-    "hegis_code": 8371,
-    "major": "Health Education",
-    "hegis_category_id": 8
-  },
-  {
-    "hegis_code": 12011,
-    "major": "Health Science",
-    "hegis_category_id":12
   },
   {
     "hegis_code": 22051,
@@ -205,24 +180,9 @@
     "hegis_category_id": 22
   },
   {
-    "hegis_code": 5151,
-    "major": "Human Resources and Personnel Management",
-    "hegis_category_id": 5
-  },
-  {
-    "hegis_code": 15991,
-    "major": "Humanities",
-    "hegis_category_id": 15
-  },
-  {
     "hegis_code": 7021,
     "major": "Information Systems",
     "hegis_category_id": 7
-  },
-  {
-    "hegis_code": 5131,
-    "major": "International Business",
-    "hegis_category_id": 5
   },
   {
     "hegis_code": 6021,
@@ -235,9 +195,9 @@
     "hegis_category_id": 8
   },
   {
-    "hegis_code": 3081,
-    "major": "Latin and Central American Studies",
-    "hegis_category_id": 3
+    "hegis_code": 11011,
+    "major": "Languages and Cultures",
+    "hegis_category_id": 8
   },
   {
     "hegis_code": 49012,
@@ -255,13 +215,8 @@
     "hegis_category_id": 5
   },
   {
-    "hegis_code": 5072,
-    "major": "Management Systems Analysis and Operations Research",
-    "hegis_category_id":5
-  },
-  {
     "hegis_code": 9134,
-    "major": "Manufacturing Engineering",
+    "major": "Manufacturing Systems Engineering",
     "hegis_category_id": 9
   },
   {
@@ -280,28 +235,13 @@
     "hegis_category_id": 9
   },
   {
-    "hegis_code": 9051,
-    "major": "Medical Technology",
-    "hegis_category_id": 9
-  },
-  {
-    "hegis_code": 22131,
-    "major": "Mexican American Studies",
-    "hegis_category_id": 22
-  },
-  {
-    "hegis_code": 4111,
-    "major": "Microbiology",
-    "hegis_category_id": 4
-  },
-  {
-    "hegis_code": 10051,
-    "major": "Music",
-    "hegis_category_id": 10
+    "hegis_code": 15102,
+    "major": "Modern Jewish Studies",
+    "hegis_category_id": 15
   },
   {
     "hegis_code": 10041,
-    "major": "Music Performance",
+    "major": "Music",
     "hegis_category_id": 10
   },
   {
@@ -311,7 +251,7 @@
   },
   {
     "hegis_code": 12032,
-    "major": "Nursing RN",
+    "major": "Nursing - Post Licensure",
     "hegis_category_id": 12
   },
   {
@@ -330,11 +270,6 @@
     "hegis_category_id": 22
   },
   {
-    "hegis_code": 5064,
-    "major": "Production and Operations Management",
-    "hegis_category_id": 5
-  },
-  {
     "hegis_code": 20011,
     "major": "Psychology",
     "hegis_category_id": 20
@@ -345,9 +280,9 @@
     "hegis_category_id": 12
   },
   {
-    "hegis_code": 6051,
-    "major": "Radio and Television Broadcast",
-    "hegis_category_id": 6
+    "hegis_code": 21021,
+    "major": "Public Sector Management",
+    "hegis_category_id": 21
   },
   {
     "hegis_code": 12253,
@@ -355,29 +290,9 @@
     "hegis_category_id": 12
   },
   {
-    "hegis_code": 5111,
-    "major": "Real Estate",
-    "hegis_category_id": 5
-  },
-  {
-    "hegis_code": 21025,
-    "major": "Recreation Administration",
-    "hegis_category_id": 21
-  },
-  {
-    "hegis_code": 21031,
-    "major": "Recreation Management",
-    "hegis_category_id": 21
-  },
-  {
     "hegis_code": 15101,
     "major": "Religious Studies",
     "hegis_category_id": 15
-  },
-  {
-    "hegis_code": 21041,
-    "major": "Social Work",
-    "hegis_category_id": 21
   },
   {
     "hegis_code": 22081,
@@ -395,33 +310,18 @@
     "hegis_category_id": 49
   },
   {
-    "hegis_code": 15061,
-    "major": "Speech Communication",
-    "hegis_category_id": 15
-  },
-  {
-    "hegis_code": 17021,
-    "major": "Statistics",
-    "hegis_category_id": 17
-  },
-  {
     "hegis_code": 10071,
-    "major": "Theatre Arts",
+    "major": "Theatre",
     "hegis_category_id": 10
   },
   {
+    "hegis_code": 21025,
+    "major": "Tourism Hospitality and Recreation Management",
+    "hegis_category_id": 21
+  },
+  {
     "hegis_code": 22141,
-    "major": "Urban Studies",
+    "major": "Urban Studies and Planning",
     "hegis_category_id": 22
-  },
-  {
-    "hegis_code": 22990,
-    "major": "Gender and Women's Studies",
-    "hegis_category_id": 22
-  },
-  {
-    "hegis_code": 11013,
-    "major": "World Languages and Translation",
-    "hegis_category_id": 11
   }
-  ]
+]

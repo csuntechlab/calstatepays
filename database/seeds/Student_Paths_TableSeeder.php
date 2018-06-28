@@ -15,6 +15,7 @@ class Student_Paths_TableSeeder extends Seeder
         $data = json_decode($json);
         foreach($data as $row){
             DB::table('student_paths')->insert([
+                'id'        => $row->id,
                 'path_name' => $row->path_name
             ]);
         }
