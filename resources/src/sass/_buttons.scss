@@ -46,7 +46,9 @@
 }
 
 .major-tool-btn{
-    padding-left: 93%;
+    float: left;
+    position: absolute;
+    right: 0;
     padding-top: 1rem;
 }
 
@@ -62,6 +64,7 @@
 
 .btn-reset{
     color: $gray;
+    padding-top: 3px;
     font-size: 1.6rem;
     outline: none;
     cursor: pointer;
