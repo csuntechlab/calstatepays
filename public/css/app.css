@@ -27714,19 +27714,19 @@ textarea {
   font-weight: 500;
 }
 
-.btn-add, .btn-add__disabled {
+.btn-add {
   height: 3.5rem;
   border-radius: 100%;
   width: 3.5rem;
   padding: 0px;
   outline: none;
-  position: fixed;
+  position: absolute;
   right: 1.5rem;
   bottom: 2.5rem;
   font-size: 3rem;
 }
 
-.btn-add .add-icon, .btn-add__disabled .add-icon {
+.btn-add .add-icon {
   color: #FFF;
   position: absolute;
   left: 50%;
@@ -27736,7 +27736,7 @@ textarea {
           transform: translate(-50%, 50%);
 }
 
-.btn-add .tooltiptext, .btn-add__disabled .tooltiptext {
+.btn-add .tooltiptext {
   visibility: hidden;
   line-height: normal;
   width: 15rem;
@@ -27759,7 +27759,7 @@ textarea {
           transform: translateX(-50%);
 }
 
-.btn-add :hover .tooltiptext, .btn-add__disabled :hover .tooltiptext {
+.btn-add :hover .tooltiptext {
   visibility: visible;
 }
 
@@ -27768,7 +27768,7 @@ textarea {
 }
 
 .btn-add__disabled {
-  background: #777777;
+  display: none;
 }
 
 .major-tool-btn {

@@ -1478,7 +1478,7 @@ var matrix = __webpack_require__(20);
 
 var vector = __webpack_require__(7);
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var Transformable = __webpack_require__(72);
 
@@ -2597,7 +2597,7 @@ var zrUtil = __webpack_require__(0);
 
 var colorTool = __webpack_require__(25);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var timsort = __webpack_require__(45);
 
@@ -5436,836 +5436,6 @@ exports.isNumeric = isNumeric;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports) {
-
-/**
- * echarts设备环境识别
- *
- * @desc echarts基于Canvas，纯Javascript图表库，提供直观，生动，可交互，可个性化定制的数据统计图表。
- * @author firede[firede@firede.us]
- * @desc thanks zepto.
- */
-var env = {};
-
-if (typeof wx !== 'undefined') {
-  // In Weixin Application
-  env = {
-    browser: {},
-    os: {},
-    node: false,
-    wxa: true,
-    // Weixin Application
-    canvasSupported: true,
-    svgSupported: false,
-    touchEventsSupported: true
-  };
-} else if (typeof document === 'undefined' && typeof self !== 'undefined') {
-  // In worker
-  env = {
-    browser: {},
-    os: {},
-    node: false,
-    worker: true,
-    canvasSupported: true
-  };
-} else if (typeof navigator === 'undefined') {
-  // In node
-  env = {
-    browser: {},
-    os: {},
-    node: true,
-    worker: false,
-    // Assume canvas is supported
-    canvasSupported: true,
-    svgSupported: true
-  };
-} else {
-  env = detect(navigator.userAgent);
-}
-
-var _default = env; // Zepto.js
-// (c) 2010-2013 Thomas Fuchs
-// Zepto.js may be freely distributed under the MIT license.
-
-function detect(ua) {
-  var os = {};
-  var browser = {}; // var webkit = ua.match(/Web[kK]it[\/]{0,1}([\d.]+)/);
-  // var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
-  // var ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
-  // var ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
-  // var iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
-  // var webos = ua.match(/(webOS|hpwOS)[\s\/]([\d.]+)/);
-  // var touchpad = webos && ua.match(/TouchPad/);
-  // var kindle = ua.match(/Kindle\/([\d.]+)/);
-  // var silk = ua.match(/Silk\/([\d._]+)/);
-  // var blackberry = ua.match(/(BlackBerry).*Version\/([\d.]+)/);
-  // var bb10 = ua.match(/(BB10).*Version\/([\d.]+)/);
-  // var rimtabletos = ua.match(/(RIM\sTablet\sOS)\s([\d.]+)/);
-  // var playbook = ua.match(/PlayBook/);
-  // var chrome = ua.match(/Chrome\/([\d.]+)/) || ua.match(/CriOS\/([\d.]+)/);
-
-  var firefox = ua.match(/Firefox\/([\d.]+)/); // var safari = webkit && ua.match(/Mobile\//) && !chrome;
-  // var webview = ua.match(/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/) && !chrome;
-
-  var ie = ua.match(/MSIE\s([\d.]+)/) // IE 11 Trident/7.0; rv:11.0
-  || ua.match(/Trident\/.+?rv:(([\d.]+))/);
-  var edge = ua.match(/Edge\/([\d.]+)/); // IE 12 and 12+
-
-  var weChat = /micromessenger/i.test(ua); // Todo: clean this up with a better OS/browser seperation:
-  // - discern (more) between multiple browsers on android
-  // - decide if kindle fire in silk mode is android or not
-  // - Firefox on Android doesn't specify the Android version
-  // - possibly devide in os, device and browser hashes
-  // if (browser.webkit = !!webkit) browser.version = webkit[1];
-  // if (android) os.android = true, os.version = android[2];
-  // if (iphone && !ipod) os.ios = os.iphone = true, os.version = iphone[2].replace(/_/g, '.');
-  // if (ipad) os.ios = os.ipad = true, os.version = ipad[2].replace(/_/g, '.');
-  // if (ipod) os.ios = os.ipod = true, os.version = ipod[3] ? ipod[3].replace(/_/g, '.') : null;
-  // if (webos) os.webos = true, os.version = webos[2];
-  // if (touchpad) os.touchpad = true;
-  // if (blackberry) os.blackberry = true, os.version = blackberry[2];
-  // if (bb10) os.bb10 = true, os.version = bb10[2];
-  // if (rimtabletos) os.rimtabletos = true, os.version = rimtabletos[2];
-  // if (playbook) browser.playbook = true;
-  // if (kindle) os.kindle = true, os.version = kindle[1];
-  // if (silk) browser.silk = true, browser.version = silk[1];
-  // if (!silk && os.android && ua.match(/Kindle Fire/)) browser.silk = true;
-  // if (chrome) browser.chrome = true, browser.version = chrome[1];
-
-  if (firefox) {
-    browser.firefox = true;
-    browser.version = firefox[1];
-  } // if (safari && (ua.match(/Safari/) || !!os.ios)) browser.safari = true;
-  // if (webview) browser.webview = true;
-
-
-  if (ie) {
-    browser.ie = true;
-    browser.version = ie[1];
-  }
-
-  if (edge) {
-    browser.edge = true;
-    browser.version = edge[1];
-  } // It is difficult to detect WeChat in Win Phone precisely, because ua can
-  // not be set on win phone. So we do not consider Win Phone.
-
-
-  if (weChat) {
-    browser.weChat = true;
-  } // os.tablet = !!(ipad || playbook || (android && !ua.match(/Mobile/)) ||
-  //     (firefox && ua.match(/Tablet/)) || (ie && !ua.match(/Phone/) && ua.match(/Touch/)));
-  // os.phone  = !!(!os.tablet && !os.ipod && (android || iphone || webos ||
-  //     (chrome && ua.match(/Android/)) || (chrome && ua.match(/CriOS\/([\d.]+)/)) ||
-  //     (firefox && ua.match(/Mobile/)) || (ie && ua.match(/Touch/))));
-
-
-  return {
-    browser: browser,
-    os: os,
-    node: false,
-    // 原生canvas支持，改极端点了
-    // canvasSupported : !(browser.ie && parseFloat(browser.version) < 9)
-    canvasSupported: !!document.createElement('canvas').getContext,
-    svgSupported: typeof SVGRect !== 'undefined',
-    // works on most browsers
-    // IE10/11 does not support touch event, and MS Edge supports them but not by
-    // default, so we dont check navigator.maxTouchPoints for them here.
-    touchEventsSupported: 'ontouchstart' in window && !browser.ie && !browser.edge,
-    // <http://caniuse.com/#search=pointer%20event>.
-    pointerEventsSupported: 'onpointerdown' in window // Firefox supports pointer but not by default, only MS browsers are reliable on pointer
-    // events currently. So we dont use that on other browsers unless tested sufficiently.
-    // Although IE 10 supports pointer event, it use old style and is different from the
-    // standard. So we exclude that. (IE 10 is hardly used on touch device)
-    && (browser.edge || browser.ie && browser.version >= 11) // passiveSupported: detectPassiveSupport()
-
-  };
-} // See https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
-// function detectPassiveSupport() {
-//     // Test via a getter in the options object to see if the passive property is accessed
-//     var supportsPassive = false;
-//     try {
-//         var opts = Object.defineProperty({}, 'passive', {
-//             get: function() {
-//                 supportsPassive = true;
-//             }
-//         });
-//         window.addEventListener('testPassive', function() {}, opts);
-//     } catch (e) {
-//     }
-//     return supportsPassive;
-// }
-
-
-module.exports = _default;
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Displayable = __webpack_require__(34);
-
-var zrUtil = __webpack_require__(0);
-
-var PathProxy = __webpack_require__(35);
-
-var pathContain = __webpack_require__(236);
-
-var Pattern = __webpack_require__(78);
-
-var getCanvasPattern = Pattern.prototype.getCanvasPattern;
-var abs = Math.abs;
-var pathProxyForDraw = new PathProxy(true);
-/**
- * @alias module:zrender/graphic/Path
- * @extends module:zrender/graphic/Displayable
- * @constructor
- * @param {Object} opts
- */
-
-function Path(opts) {
-  Displayable.call(this, opts);
-  /**
-   * @type {module:zrender/core/PathProxy}
-   * @readOnly
-   */
-
-  this.path = null;
-}
-
-Path.prototype = {
-  constructor: Path,
-  type: 'path',
-  __dirtyPath: true,
-  strokeContainThreshold: 5,
-  brush: function (ctx, prevEl) {
-    var style = this.style;
-    var path = this.path || pathProxyForDraw;
-    var hasStroke = style.hasStroke();
-    var hasFill = style.hasFill();
-    var fill = style.fill;
-    var stroke = style.stroke;
-    var hasFillGradient = hasFill && !!fill.colorStops;
-    var hasStrokeGradient = hasStroke && !!stroke.colorStops;
-    var hasFillPattern = hasFill && !!fill.image;
-    var hasStrokePattern = hasStroke && !!stroke.image;
-    style.bind(ctx, this, prevEl);
-    this.setTransform(ctx);
-
-    if (this.__dirty) {
-      var rect; // Update gradient because bounding rect may changed
-
-      if (hasFillGradient) {
-        rect = rect || this.getBoundingRect();
-        this._fillGradient = style.getGradient(ctx, fill, rect);
-      }
-
-      if (hasStrokeGradient) {
-        rect = rect || this.getBoundingRect();
-        this._strokeGradient = style.getGradient(ctx, stroke, rect);
-      }
-    } // Use the gradient or pattern
-
-
-    if (hasFillGradient) {
-      // PENDING If may have affect the state
-      ctx.fillStyle = this._fillGradient;
-    } else if (hasFillPattern) {
-      ctx.fillStyle = getCanvasPattern.call(fill, ctx);
-    }
-
-    if (hasStrokeGradient) {
-      ctx.strokeStyle = this._strokeGradient;
-    } else if (hasStrokePattern) {
-      ctx.strokeStyle = getCanvasPattern.call(stroke, ctx);
-    }
-
-    var lineDash = style.lineDash;
-    var lineDashOffset = style.lineDashOffset;
-    var ctxLineDash = !!ctx.setLineDash; // Update path sx, sy
-
-    var scale = this.getGlobalScale();
-    path.setScale(scale[0], scale[1]); // Proxy context
-    // Rebuild path in following 2 cases
-    // 1. Path is dirty
-    // 2. Path needs javascript implemented lineDash stroking.
-    //    In this case, lineDash information will not be saved in PathProxy
-
-    if (this.__dirtyPath || lineDash && !ctxLineDash && hasStroke) {
-      path.beginPath(ctx); // Setting line dash before build path
-
-      if (lineDash && !ctxLineDash) {
-        path.setLineDash(lineDash);
-        path.setLineDashOffset(lineDashOffset);
-      }
-
-      this.buildPath(path, this.shape, false); // Clear path dirty flag
-
-      if (this.path) {
-        this.__dirtyPath = false;
-      }
-    } else {
-      // Replay path building
-      ctx.beginPath();
-      this.path.rebuildPath(ctx);
-    }
-
-    hasFill && path.fill(ctx);
-
-    if (lineDash && ctxLineDash) {
-      ctx.setLineDash(lineDash);
-      ctx.lineDashOffset = lineDashOffset;
-    }
-
-    hasStroke && path.stroke(ctx);
-
-    if (lineDash && ctxLineDash) {
-      // PENDING
-      // Remove lineDash
-      ctx.setLineDash([]);
-    } // Draw rect text
-
-
-    if (style.text != null) {
-      // Only restore transform when needs draw text.
-      this.restoreTransform(ctx);
-      this.drawRectText(ctx, this.getBoundingRect());
-    }
-  },
-  // When bundling path, some shape may decide if use moveTo to begin a new subpath or closePath
-  // Like in circle
-  buildPath: function (ctx, shapeCfg, inBundle) {},
-  createPathProxy: function () {
-    this.path = new PathProxy();
-  },
-  getBoundingRect: function () {
-    var rect = this._rect;
-    var style = this.style;
-    var needsUpdateRect = !rect;
-
-    if (needsUpdateRect) {
-      var path = this.path;
-
-      if (!path) {
-        // Create path on demand.
-        path = this.path = new PathProxy();
-      }
-
-      if (this.__dirtyPath) {
-        path.beginPath();
-        this.buildPath(path, this.shape, false);
-      }
-
-      rect = path.getBoundingRect();
-    }
-
-    this._rect = rect;
-
-    if (style.hasStroke()) {
-      // Needs update rect with stroke lineWidth when
-      // 1. Element changes scale or lineWidth
-      // 2. Shape is changed
-      var rectWithStroke = this._rectWithStroke || (this._rectWithStroke = rect.clone());
-
-      if (this.__dirty || needsUpdateRect) {
-        rectWithStroke.copy(rect); // FIXME Must after updateTransform
-
-        var w = style.lineWidth; // PENDING, Min line width is needed when line is horizontal or vertical
-
-        var lineScale = style.strokeNoScale ? this.getLineScale() : 1; // Only add extra hover lineWidth when there are no fill
-
-        if (!style.hasFill()) {
-          w = Math.max(w, this.strokeContainThreshold || 4);
-        } // Consider line width
-        // Line scale can't be 0;
-
-
-        if (lineScale > 1e-10) {
-          rectWithStroke.width += w / lineScale;
-          rectWithStroke.height += w / lineScale;
-          rectWithStroke.x -= w / lineScale / 2;
-          rectWithStroke.y -= w / lineScale / 2;
-        }
-      } // Return rect with stroke
-
-
-      return rectWithStroke;
-    }
-
-    return rect;
-  },
-  contain: function (x, y) {
-    var localPos = this.transformCoordToLocal(x, y);
-    var rect = this.getBoundingRect();
-    var style = this.style;
-    x = localPos[0];
-    y = localPos[1];
-
-    if (rect.contain(x, y)) {
-      var pathData = this.path.data;
-
-      if (style.hasStroke()) {
-        var lineWidth = style.lineWidth;
-        var lineScale = style.strokeNoScale ? this.getLineScale() : 1; // Line scale can't be 0;
-
-        if (lineScale > 1e-10) {
-          // Only add extra hover lineWidth when there are no fill
-          if (!style.hasFill()) {
-            lineWidth = Math.max(lineWidth, this.strokeContainThreshold);
-          }
-
-          if (pathContain.containStroke(pathData, lineWidth / lineScale, x, y)) {
-            return true;
-          }
-        }
-      }
-
-      if (style.hasFill()) {
-        return pathContain.contain(pathData, x, y);
-      }
-    }
-
-    return false;
-  },
-
-  /**
-   * @param  {boolean} dirtyPath
-   */
-  dirty: function (dirtyPath) {
-    if (dirtyPath == null) {
-      dirtyPath = true;
-    } // Only mark dirty, not mark clean
-
-
-    if (dirtyPath) {
-      this.__dirtyPath = dirtyPath;
-      this._rect = null;
-    }
-
-    this.__dirty = true;
-    this.__zr && this.__zr.refresh(); // Used as a clipping path
-
-    if (this.__clipTarget) {
-      this.__clipTarget.dirty();
-    }
-  },
-
-  /**
-   * Alias for animate('shape')
-   * @param {boolean} loop
-   */
-  animateShape: function (loop) {
-    return this.animate('shape', loop);
-  },
-  // Overwrite attrKV
-  attrKV: function (key, value) {
-    // FIXME
-    if (key === 'shape') {
-      this.setShape(value);
-      this.__dirtyPath = true;
-      this._rect = null;
-    } else {
-      Displayable.prototype.attrKV.call(this, key, value);
-    }
-  },
-
-  /**
-   * @param {Object|string} key
-   * @param {*} value
-   */
-  setShape: function (key, value) {
-    var shape = this.shape; // Path from string may not have shape
-
-    if (shape) {
-      if (zrUtil.isObject(key)) {
-        for (var name in key) {
-          if (key.hasOwnProperty(name)) {
-            shape[name] = key[name];
-          }
-        }
-      } else {
-        shape[key] = value;
-      }
-
-      this.dirty(true);
-    }
-
-    return this;
-  },
-  getLineScale: function () {
-    var m = this.transform; // Get the line scale.
-    // Determinant of `m` means how much the area is enlarged by the
-    // transformation. So its square root can be used as a scale factor
-    // for width.
-
-    return m && abs(m[0] - 1) > 1e-10 && abs(m[3] - 1) > 1e-10 ? Math.sqrt(abs(m[0] * m[3] - m[2] * m[1])) : 1;
-  }
-};
-/**
- * 扩展一个 Path element, 比如星形，圆等。
- * Extend a path element
- * @param {Object} props
- * @param {string} props.type Path type
- * @param {Function} props.init Initialize
- * @param {Function} props.buildPath Overwrite buildPath method
- * @param {Object} [props.style] Extended default style config
- * @param {Object} [props.shape] Extended default shape config
- */
-
-Path.extend = function (defaults) {
-  var Sub = function (opts) {
-    Path.call(this, opts);
-
-    if (defaults.style) {
-      // Extend default style
-      this.style.extendFrom(defaults.style, false);
-    } // Extend default shape
-
-
-    var defaultShape = defaults.shape;
-
-    if (defaultShape) {
-      this.shape = this.shape || {};
-      var thisShape = this.shape;
-
-      for (var name in defaultShape) {
-        if (!thisShape.hasOwnProperty(name) && defaultShape.hasOwnProperty(name)) {
-          thisShape[name] = defaultShape[name];
-        }
-      }
-    }
-
-    defaults.init && defaults.init.call(this, opts);
-  };
-
-  zrUtil.inherits(Sub, Path); // FIXME 不能 extend position, rotation 等引用对象
-
-  for (var name in defaults) {
-    // Extending prototype values and methods
-    if (name !== 'style' && name !== 'shape') {
-      Sub.prototype[name] = defaults[name];
-    }
-  }
-
-  return Sub;
-};
-
-zrUtil.inherits(Path, Displayable);
-var _default = Path;
-module.exports = _default;
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var bind = __webpack_require__(56);
-var isBuffer = __webpack_require__(127);
-
-/*global toString:true*/
-
-// utils is a library of generic helper functions non-specific to axios
-
-var toString = Object.prototype.toString;
-
-/**
- * Determine if a value is an Array
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Array, otherwise false
- */
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
-}
-
-/**
- * Determine if a value is an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an ArrayBuffer, otherwise false
- */
-function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
-}
-
-/**
- * Determine if a value is a FormData
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an FormData, otherwise false
- */
-function isFormData(val) {
-  return (typeof FormData !== 'undefined') && (val instanceof FormData);
-}
-
-/**
- * Determine if a value is a view on an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */
-function isArrayBufferView(val) {
-  var result;
-  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
-    result = ArrayBuffer.isView(val);
-  } else {
-    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
-  }
-  return result;
-}
-
-/**
- * Determine if a value is a String
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a String, otherwise false
- */
-function isString(val) {
-  return typeof val === 'string';
-}
-
-/**
- * Determine if a value is a Number
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Number, otherwise false
- */
-function isNumber(val) {
-  return typeof val === 'number';
-}
-
-/**
- * Determine if a value is undefined
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if the value is undefined, otherwise false
- */
-function isUndefined(val) {
-  return typeof val === 'undefined';
-}
-
-/**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
- * Determine if a value is a Date
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Date, otherwise false
- */
-function isDate(val) {
-  return toString.call(val) === '[object Date]';
-}
-
-/**
- * Determine if a value is a File
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a File, otherwise false
- */
-function isFile(val) {
-  return toString.call(val) === '[object File]';
-}
-
-/**
- * Determine if a value is a Blob
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Blob, otherwise false
- */
-function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
-}
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-function isFunction(val) {
-  return toString.call(val) === '[object Function]';
-}
-
-/**
- * Determine if a value is a Stream
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Stream, otherwise false
- */
-function isStream(val) {
-  return isObject(val) && isFunction(val.pipe);
-}
-
-/**
- * Determine if a value is a URLSearchParams object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-
-/**
- * Trim excess whitespace off the beginning and end of a string
- *
- * @param {String} str The String to trim
- * @returns {String} The String freed of excess whitespace
- */
-function trim(str) {
-  return str.replace(/^\s*/, '').replace(/\s*$/, '');
-}
-
-/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- */
-function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-    return false;
-  }
-  return (
-    typeof window !== 'undefined' &&
-    typeof document !== 'undefined'
-  );
-}
-
-/**
- * Iterate over an Array or an Object invoking a function for each item.
- *
- * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item.
- *
- * If 'obj' is an Object callback will be called passing
- * the value, key, and complete object for each property.
- *
- * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item
- */
-function forEach(obj, fn) {
-  // Don't bother if no value provided
-  if (obj === null || typeof obj === 'undefined') {
-    return;
-  }
-
-  // Force an array if not already something iterable
-  if (typeof obj !== 'object') {
-    /*eslint no-param-reassign:0*/
-    obj = [obj];
-  }
-
-  if (isArray(obj)) {
-    // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
-    }
-  } else {
-    // Iterate over object keys
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
-      }
-    }
-  }
-}
-
-/**
- * Accepts varargs expecting each argument to be an object, then
- * immutably merges the properties of each object and returns result.
- *
- * When multiple objects contain the same key the later object in
- * the arguments list will take precedence.
- *
- * Example:
- *
- * ```js
- * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
- * ```
- *
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function merge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Extends object a by mutably adding to it the properties of object b.
- *
- * @param {Object} a The object to be extended
- * @param {Object} b The object to copy properties from
- * @param {Object} thisArg The object to bind function to
- * @return {Object} The resulting value of object a
- */
-function extend(a, b, thisArg) {
-  forEach(b, function assignValue(val, key) {
-    if (thisArg && typeof val === 'function') {
-      a[key] = bind(val, thisArg);
-    } else {
-      a[key] = val;
-    }
-  });
-  return a;
-}
-
-module.exports = {
-  isArray: isArray,
-  isArrayBuffer: isArrayBuffer,
-  isBuffer: isBuffer,
-  isFormData: isFormData,
-  isArrayBufferView: isArrayBufferView,
-  isString: isString,
-  isNumber: isNumber,
-  isObject: isObject,
-  isUndefined: isUndefined,
-  isDate: isDate,
-  isFile: isFile,
-  isBlob: isBlob,
-  isFunction: isFunction,
-  isStream: isStream,
-  isURLSearchParams: isURLSearchParams,
-  isStandardBrowserEnv: isStandardBrowserEnv,
-  forEach: forEach,
-  merge: merge,
-  extend: extend,
-  trim: trim
-};
-
-
-/***/ }),
-/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7210,6 +6380,836 @@ var index_esm = {
 
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+/**
+ * echarts设备环境识别
+ *
+ * @desc echarts基于Canvas，纯Javascript图表库，提供直观，生动，可交互，可个性化定制的数据统计图表。
+ * @author firede[firede@firede.us]
+ * @desc thanks zepto.
+ */
+var env = {};
+
+if (typeof wx !== 'undefined') {
+  // In Weixin Application
+  env = {
+    browser: {},
+    os: {},
+    node: false,
+    wxa: true,
+    // Weixin Application
+    canvasSupported: true,
+    svgSupported: false,
+    touchEventsSupported: true
+  };
+} else if (typeof document === 'undefined' && typeof self !== 'undefined') {
+  // In worker
+  env = {
+    browser: {},
+    os: {},
+    node: false,
+    worker: true,
+    canvasSupported: true
+  };
+} else if (typeof navigator === 'undefined') {
+  // In node
+  env = {
+    browser: {},
+    os: {},
+    node: true,
+    worker: false,
+    // Assume canvas is supported
+    canvasSupported: true,
+    svgSupported: true
+  };
+} else {
+  env = detect(navigator.userAgent);
+}
+
+var _default = env; // Zepto.js
+// (c) 2010-2013 Thomas Fuchs
+// Zepto.js may be freely distributed under the MIT license.
+
+function detect(ua) {
+  var os = {};
+  var browser = {}; // var webkit = ua.match(/Web[kK]it[\/]{0,1}([\d.]+)/);
+  // var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
+  // var ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
+  // var ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
+  // var iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+  // var webos = ua.match(/(webOS|hpwOS)[\s\/]([\d.]+)/);
+  // var touchpad = webos && ua.match(/TouchPad/);
+  // var kindle = ua.match(/Kindle\/([\d.]+)/);
+  // var silk = ua.match(/Silk\/([\d._]+)/);
+  // var blackberry = ua.match(/(BlackBerry).*Version\/([\d.]+)/);
+  // var bb10 = ua.match(/(BB10).*Version\/([\d.]+)/);
+  // var rimtabletos = ua.match(/(RIM\sTablet\sOS)\s([\d.]+)/);
+  // var playbook = ua.match(/PlayBook/);
+  // var chrome = ua.match(/Chrome\/([\d.]+)/) || ua.match(/CriOS\/([\d.]+)/);
+
+  var firefox = ua.match(/Firefox\/([\d.]+)/); // var safari = webkit && ua.match(/Mobile\//) && !chrome;
+  // var webview = ua.match(/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/) && !chrome;
+
+  var ie = ua.match(/MSIE\s([\d.]+)/) // IE 11 Trident/7.0; rv:11.0
+  || ua.match(/Trident\/.+?rv:(([\d.]+))/);
+  var edge = ua.match(/Edge\/([\d.]+)/); // IE 12 and 12+
+
+  var weChat = /micromessenger/i.test(ua); // Todo: clean this up with a better OS/browser seperation:
+  // - discern (more) between multiple browsers on android
+  // - decide if kindle fire in silk mode is android or not
+  // - Firefox on Android doesn't specify the Android version
+  // - possibly devide in os, device and browser hashes
+  // if (browser.webkit = !!webkit) browser.version = webkit[1];
+  // if (android) os.android = true, os.version = android[2];
+  // if (iphone && !ipod) os.ios = os.iphone = true, os.version = iphone[2].replace(/_/g, '.');
+  // if (ipad) os.ios = os.ipad = true, os.version = ipad[2].replace(/_/g, '.');
+  // if (ipod) os.ios = os.ipod = true, os.version = ipod[3] ? ipod[3].replace(/_/g, '.') : null;
+  // if (webos) os.webos = true, os.version = webos[2];
+  // if (touchpad) os.touchpad = true;
+  // if (blackberry) os.blackberry = true, os.version = blackberry[2];
+  // if (bb10) os.bb10 = true, os.version = bb10[2];
+  // if (rimtabletos) os.rimtabletos = true, os.version = rimtabletos[2];
+  // if (playbook) browser.playbook = true;
+  // if (kindle) os.kindle = true, os.version = kindle[1];
+  // if (silk) browser.silk = true, browser.version = silk[1];
+  // if (!silk && os.android && ua.match(/Kindle Fire/)) browser.silk = true;
+  // if (chrome) browser.chrome = true, browser.version = chrome[1];
+
+  if (firefox) {
+    browser.firefox = true;
+    browser.version = firefox[1];
+  } // if (safari && (ua.match(/Safari/) || !!os.ios)) browser.safari = true;
+  // if (webview) browser.webview = true;
+
+
+  if (ie) {
+    browser.ie = true;
+    browser.version = ie[1];
+  }
+
+  if (edge) {
+    browser.edge = true;
+    browser.version = edge[1];
+  } // It is difficult to detect WeChat in Win Phone precisely, because ua can
+  // not be set on win phone. So we do not consider Win Phone.
+
+
+  if (weChat) {
+    browser.weChat = true;
+  } // os.tablet = !!(ipad || playbook || (android && !ua.match(/Mobile/)) ||
+  //     (firefox && ua.match(/Tablet/)) || (ie && !ua.match(/Phone/) && ua.match(/Touch/)));
+  // os.phone  = !!(!os.tablet && !os.ipod && (android || iphone || webos ||
+  //     (chrome && ua.match(/Android/)) || (chrome && ua.match(/CriOS\/([\d.]+)/)) ||
+  //     (firefox && ua.match(/Mobile/)) || (ie && ua.match(/Touch/))));
+
+
+  return {
+    browser: browser,
+    os: os,
+    node: false,
+    // 原生canvas支持，改极端点了
+    // canvasSupported : !(browser.ie && parseFloat(browser.version) < 9)
+    canvasSupported: !!document.createElement('canvas').getContext,
+    svgSupported: typeof SVGRect !== 'undefined',
+    // works on most browsers
+    // IE10/11 does not support touch event, and MS Edge supports them but not by
+    // default, so we dont check navigator.maxTouchPoints for them here.
+    touchEventsSupported: 'ontouchstart' in window && !browser.ie && !browser.edge,
+    // <http://caniuse.com/#search=pointer%20event>.
+    pointerEventsSupported: 'onpointerdown' in window // Firefox supports pointer but not by default, only MS browsers are reliable on pointer
+    // events currently. So we dont use that on other browsers unless tested sufficiently.
+    // Although IE 10 supports pointer event, it use old style and is different from the
+    // standard. So we exclude that. (IE 10 is hardly used on touch device)
+    && (browser.edge || browser.ie && browser.version >= 11) // passiveSupported: detectPassiveSupport()
+
+  };
+} // See https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
+// function detectPassiveSupport() {
+//     // Test via a getter in the options object to see if the passive property is accessed
+//     var supportsPassive = false;
+//     try {
+//         var opts = Object.defineProperty({}, 'passive', {
+//             get: function() {
+//                 supportsPassive = true;
+//             }
+//         });
+//         window.addEventListener('testPassive', function() {}, opts);
+//     } catch (e) {
+//     }
+//     return supportsPassive;
+// }
+
+
+module.exports = _default;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Displayable = __webpack_require__(34);
+
+var zrUtil = __webpack_require__(0);
+
+var PathProxy = __webpack_require__(35);
+
+var pathContain = __webpack_require__(236);
+
+var Pattern = __webpack_require__(78);
+
+var getCanvasPattern = Pattern.prototype.getCanvasPattern;
+var abs = Math.abs;
+var pathProxyForDraw = new PathProxy(true);
+/**
+ * @alias module:zrender/graphic/Path
+ * @extends module:zrender/graphic/Displayable
+ * @constructor
+ * @param {Object} opts
+ */
+
+function Path(opts) {
+  Displayable.call(this, opts);
+  /**
+   * @type {module:zrender/core/PathProxy}
+   * @readOnly
+   */
+
+  this.path = null;
+}
+
+Path.prototype = {
+  constructor: Path,
+  type: 'path',
+  __dirtyPath: true,
+  strokeContainThreshold: 5,
+  brush: function (ctx, prevEl) {
+    var style = this.style;
+    var path = this.path || pathProxyForDraw;
+    var hasStroke = style.hasStroke();
+    var hasFill = style.hasFill();
+    var fill = style.fill;
+    var stroke = style.stroke;
+    var hasFillGradient = hasFill && !!fill.colorStops;
+    var hasStrokeGradient = hasStroke && !!stroke.colorStops;
+    var hasFillPattern = hasFill && !!fill.image;
+    var hasStrokePattern = hasStroke && !!stroke.image;
+    style.bind(ctx, this, prevEl);
+    this.setTransform(ctx);
+
+    if (this.__dirty) {
+      var rect; // Update gradient because bounding rect may changed
+
+      if (hasFillGradient) {
+        rect = rect || this.getBoundingRect();
+        this._fillGradient = style.getGradient(ctx, fill, rect);
+      }
+
+      if (hasStrokeGradient) {
+        rect = rect || this.getBoundingRect();
+        this._strokeGradient = style.getGradient(ctx, stroke, rect);
+      }
+    } // Use the gradient or pattern
+
+
+    if (hasFillGradient) {
+      // PENDING If may have affect the state
+      ctx.fillStyle = this._fillGradient;
+    } else if (hasFillPattern) {
+      ctx.fillStyle = getCanvasPattern.call(fill, ctx);
+    }
+
+    if (hasStrokeGradient) {
+      ctx.strokeStyle = this._strokeGradient;
+    } else if (hasStrokePattern) {
+      ctx.strokeStyle = getCanvasPattern.call(stroke, ctx);
+    }
+
+    var lineDash = style.lineDash;
+    var lineDashOffset = style.lineDashOffset;
+    var ctxLineDash = !!ctx.setLineDash; // Update path sx, sy
+
+    var scale = this.getGlobalScale();
+    path.setScale(scale[0], scale[1]); // Proxy context
+    // Rebuild path in following 2 cases
+    // 1. Path is dirty
+    // 2. Path needs javascript implemented lineDash stroking.
+    //    In this case, lineDash information will not be saved in PathProxy
+
+    if (this.__dirtyPath || lineDash && !ctxLineDash && hasStroke) {
+      path.beginPath(ctx); // Setting line dash before build path
+
+      if (lineDash && !ctxLineDash) {
+        path.setLineDash(lineDash);
+        path.setLineDashOffset(lineDashOffset);
+      }
+
+      this.buildPath(path, this.shape, false); // Clear path dirty flag
+
+      if (this.path) {
+        this.__dirtyPath = false;
+      }
+    } else {
+      // Replay path building
+      ctx.beginPath();
+      this.path.rebuildPath(ctx);
+    }
+
+    hasFill && path.fill(ctx);
+
+    if (lineDash && ctxLineDash) {
+      ctx.setLineDash(lineDash);
+      ctx.lineDashOffset = lineDashOffset;
+    }
+
+    hasStroke && path.stroke(ctx);
+
+    if (lineDash && ctxLineDash) {
+      // PENDING
+      // Remove lineDash
+      ctx.setLineDash([]);
+    } // Draw rect text
+
+
+    if (style.text != null) {
+      // Only restore transform when needs draw text.
+      this.restoreTransform(ctx);
+      this.drawRectText(ctx, this.getBoundingRect());
+    }
+  },
+  // When bundling path, some shape may decide if use moveTo to begin a new subpath or closePath
+  // Like in circle
+  buildPath: function (ctx, shapeCfg, inBundle) {},
+  createPathProxy: function () {
+    this.path = new PathProxy();
+  },
+  getBoundingRect: function () {
+    var rect = this._rect;
+    var style = this.style;
+    var needsUpdateRect = !rect;
+
+    if (needsUpdateRect) {
+      var path = this.path;
+
+      if (!path) {
+        // Create path on demand.
+        path = this.path = new PathProxy();
+      }
+
+      if (this.__dirtyPath) {
+        path.beginPath();
+        this.buildPath(path, this.shape, false);
+      }
+
+      rect = path.getBoundingRect();
+    }
+
+    this._rect = rect;
+
+    if (style.hasStroke()) {
+      // Needs update rect with stroke lineWidth when
+      // 1. Element changes scale or lineWidth
+      // 2. Shape is changed
+      var rectWithStroke = this._rectWithStroke || (this._rectWithStroke = rect.clone());
+
+      if (this.__dirty || needsUpdateRect) {
+        rectWithStroke.copy(rect); // FIXME Must after updateTransform
+
+        var w = style.lineWidth; // PENDING, Min line width is needed when line is horizontal or vertical
+
+        var lineScale = style.strokeNoScale ? this.getLineScale() : 1; // Only add extra hover lineWidth when there are no fill
+
+        if (!style.hasFill()) {
+          w = Math.max(w, this.strokeContainThreshold || 4);
+        } // Consider line width
+        // Line scale can't be 0;
+
+
+        if (lineScale > 1e-10) {
+          rectWithStroke.width += w / lineScale;
+          rectWithStroke.height += w / lineScale;
+          rectWithStroke.x -= w / lineScale / 2;
+          rectWithStroke.y -= w / lineScale / 2;
+        }
+      } // Return rect with stroke
+
+
+      return rectWithStroke;
+    }
+
+    return rect;
+  },
+  contain: function (x, y) {
+    var localPos = this.transformCoordToLocal(x, y);
+    var rect = this.getBoundingRect();
+    var style = this.style;
+    x = localPos[0];
+    y = localPos[1];
+
+    if (rect.contain(x, y)) {
+      var pathData = this.path.data;
+
+      if (style.hasStroke()) {
+        var lineWidth = style.lineWidth;
+        var lineScale = style.strokeNoScale ? this.getLineScale() : 1; // Line scale can't be 0;
+
+        if (lineScale > 1e-10) {
+          // Only add extra hover lineWidth when there are no fill
+          if (!style.hasFill()) {
+            lineWidth = Math.max(lineWidth, this.strokeContainThreshold);
+          }
+
+          if (pathContain.containStroke(pathData, lineWidth / lineScale, x, y)) {
+            return true;
+          }
+        }
+      }
+
+      if (style.hasFill()) {
+        return pathContain.contain(pathData, x, y);
+      }
+    }
+
+    return false;
+  },
+
+  /**
+   * @param  {boolean} dirtyPath
+   */
+  dirty: function (dirtyPath) {
+    if (dirtyPath == null) {
+      dirtyPath = true;
+    } // Only mark dirty, not mark clean
+
+
+    if (dirtyPath) {
+      this.__dirtyPath = dirtyPath;
+      this._rect = null;
+    }
+
+    this.__dirty = true;
+    this.__zr && this.__zr.refresh(); // Used as a clipping path
+
+    if (this.__clipTarget) {
+      this.__clipTarget.dirty();
+    }
+  },
+
+  /**
+   * Alias for animate('shape')
+   * @param {boolean} loop
+   */
+  animateShape: function (loop) {
+    return this.animate('shape', loop);
+  },
+  // Overwrite attrKV
+  attrKV: function (key, value) {
+    // FIXME
+    if (key === 'shape') {
+      this.setShape(value);
+      this.__dirtyPath = true;
+      this._rect = null;
+    } else {
+      Displayable.prototype.attrKV.call(this, key, value);
+    }
+  },
+
+  /**
+   * @param {Object|string} key
+   * @param {*} value
+   */
+  setShape: function (key, value) {
+    var shape = this.shape; // Path from string may not have shape
+
+    if (shape) {
+      if (zrUtil.isObject(key)) {
+        for (var name in key) {
+          if (key.hasOwnProperty(name)) {
+            shape[name] = key[name];
+          }
+        }
+      } else {
+        shape[key] = value;
+      }
+
+      this.dirty(true);
+    }
+
+    return this;
+  },
+  getLineScale: function () {
+    var m = this.transform; // Get the line scale.
+    // Determinant of `m` means how much the area is enlarged by the
+    // transformation. So its square root can be used as a scale factor
+    // for width.
+
+    return m && abs(m[0] - 1) > 1e-10 && abs(m[3] - 1) > 1e-10 ? Math.sqrt(abs(m[0] * m[3] - m[2] * m[1])) : 1;
+  }
+};
+/**
+ * 扩展一个 Path element, 比如星形，圆等。
+ * Extend a path element
+ * @param {Object} props
+ * @param {string} props.type Path type
+ * @param {Function} props.init Initialize
+ * @param {Function} props.buildPath Overwrite buildPath method
+ * @param {Object} [props.style] Extended default style config
+ * @param {Object} [props.shape] Extended default shape config
+ */
+
+Path.extend = function (defaults) {
+  var Sub = function (opts) {
+    Path.call(this, opts);
+
+    if (defaults.style) {
+      // Extend default style
+      this.style.extendFrom(defaults.style, false);
+    } // Extend default shape
+
+
+    var defaultShape = defaults.shape;
+
+    if (defaultShape) {
+      this.shape = this.shape || {};
+      var thisShape = this.shape;
+
+      for (var name in defaultShape) {
+        if (!thisShape.hasOwnProperty(name) && defaultShape.hasOwnProperty(name)) {
+          thisShape[name] = defaultShape[name];
+        }
+      }
+    }
+
+    defaults.init && defaults.init.call(this, opts);
+  };
+
+  zrUtil.inherits(Sub, Path); // FIXME 不能 extend position, rotation 等引用对象
+
+  for (var name in defaults) {
+    // Extending prototype values and methods
+    if (name !== 'style' && name !== 'shape') {
+      Sub.prototype[name] = defaults[name];
+    }
+  }
+
+  return Sub;
+};
+
+zrUtil.inherits(Path, Displayable);
+var _default = Path;
+module.exports = _default;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(56);
+var isBuffer = __webpack_require__(127);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7590,7 +7590,7 @@ exports.getTextRect = getTextRect;
 
 var zrUtil = __webpack_require__(0);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var _model = __webpack_require__(3);
 
@@ -11508,7 +11508,7 @@ var Eventful = __webpack_require__(24);
 
 exports.Dispatcher = Eventful;
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 /**
  * 事件辅助类
@@ -25483,7 +25483,7 @@ exports.makeKey = makeKey;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 var normalizeHeaderName = __webpack_require__(129);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -28029,7 +28029,7 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 var settle = __webpack_require__(130);
 var buildURL = __webpack_require__(132);
 var parseHeaders = __webpack_require__(133);
@@ -28380,7 +28380,7 @@ function withParams(paramsOrClosure, maybeValidator) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pfre__ = __webpack_require__(156);
 
@@ -28601,7 +28601,7 @@ module.exports = Component.exports
 
 var guid = __webpack_require__(70);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var zrUtil = __webpack_require__(0);
 
@@ -32620,7 +32620,7 @@ module.exports = windingLine;
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 // Fix weird bug in some version of IE11 (like 11.0.9600.178**),
 // where exception "unexpected call to method or property access"
@@ -32941,7 +32941,7 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var _format = __webpack_require__(14);
 
@@ -38141,7 +38141,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var _model = __webpack_require__(3);
 
@@ -39008,7 +39008,7 @@ if (url) {
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 var bind = __webpack_require__(56);
 var Axios = __webpack_require__(128);
 var defaults = __webpack_require__(41);
@@ -39095,7 +39095,7 @@ function isSlowBuffer (obj) {
 
 
 var defaults = __webpack_require__(41);
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 var InterceptorManager = __webpack_require__(137);
 var dispatchRequest = __webpack_require__(138);
 
@@ -39180,7 +39180,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -39260,7 +39260,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -39335,7 +39335,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -39395,7 +39395,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -39513,7 +39513,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -39573,7 +39573,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -39632,7 +39632,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 var transformData = __webpack_require__(139);
 var isCancel = __webpack_require__(60);
 var defaults = __webpack_require__(41);
@@ -39725,7 +39725,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(11);
+var utils = __webpack_require__(12);
 
 /**
  * Transform the data for a request or a response
@@ -44642,7 +44642,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_info_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_progress_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(9);
 //
 //
 //
@@ -44775,7 +44775,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_select__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -45166,7 +45166,7 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -45299,7 +45299,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -46806,7 +46806,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -46860,6 +46860,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 block: "end",
                 inline: "nearest"
             });
+        },
+        handleScroll: function handleScroll(event) {
+            var footer = document.querySelector('footer');
+            var bounding = footer.getBoundingClientRect();
+            if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "absolute";
+                console.log('viewport');
+            } else {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "fixed";
+                console.log('Not in the viewport... whomp whomp');
+            }
         }
     },
     mounted: function mounted() {
@@ -46870,6 +46883,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     beforeDestroy: function beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
+    },
+    created: function created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed: function destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     },
 
     components: {
@@ -46932,7 +46951,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -46974,6 +46993,7 @@ var render = function() {
           "button",
           {
             staticClass: "btn-add",
+            attrs: { id: "compare-major-button" },
             on: {
               click: function($event) {
                 _vm.onPlus()
@@ -46986,6 +47006,7 @@ var render = function() {
           "button",
           {
             staticClass: "btn-add__disabled",
+            attrs: { id: "compare-major-button" },
             on: {
               click: function($event) {
                 _vm.cardPlusError()
@@ -47091,7 +47112,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -47195,7 +47216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(9);
 var _props$data$methods$c;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -48556,7 +48577,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(9);
 //
 //
 //
@@ -49813,7 +49834,7 @@ module.exports = _default;
 
 var util = __webpack_require__(0);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var Group = __webpack_require__(32);
 
@@ -50814,7 +50835,7 @@ var requestAnimationFrame = __webpack_require__(79);
 
 var Image = __webpack_require__(80);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var HOVER_LAYER_ZLEVEL = 1e5;
 var CANVAS_ZLEVEL = 314159;
@@ -52364,7 +52385,7 @@ var zrUtil = __webpack_require__(0);
 
 var Eventful = __webpack_require__(24);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var GestureMgr = __webpack_require__(231);
 
@@ -52875,7 +52896,7 @@ module.exports = _default;
 /* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var PathProxy = __webpack_require__(35);
 
@@ -54055,7 +54076,7 @@ module.exports = _default;
 /* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 /**
  * 圆形
@@ -54092,7 +54113,7 @@ module.exports = _default;
 /* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var fixClipWithShadow = __webpack_require__(87);
 
@@ -54141,7 +54162,7 @@ module.exports = _default;
 /* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 /**
  * 圆环
@@ -54172,7 +54193,7 @@ module.exports = _default;
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var polyHelper = __webpack_require__(88);
 
@@ -54380,7 +54401,7 @@ module.exports = _default;
 /* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var polyHelper = __webpack_require__(88);
 
@@ -54409,7 +54430,7 @@ module.exports = _default;
 /* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var roundRectHelper = __webpack_require__(82);
 
@@ -54454,7 +54475,7 @@ module.exports = _default;
 /* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 /**
  * 直线
@@ -54513,7 +54534,7 @@ module.exports = _default;
 /* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var vec2 = __webpack_require__(7);
 
@@ -54631,7 +54652,7 @@ module.exports = _default;
 /* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 /**
  * 圆弧
@@ -54671,7 +54692,7 @@ module.exports = _default;
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 // CompoundPath to improve performance
 var _default = Path.extend({
@@ -57190,7 +57211,7 @@ var _Axis = __webpack_require__(102);
 
 exports.Axis = _Axis;
 
-var _env = __webpack_require__(9);
+var _env = __webpack_require__(10);
 
 exports.env = _env;
 
@@ -60461,7 +60482,7 @@ module.exports = _default;
 /* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Path = __webpack_require__(10);
+var Path = __webpack_require__(11);
 
 var vec2 = __webpack_require__(7);
 
@@ -63785,7 +63806,7 @@ var echarts = __webpack_require__(6);
 
 var zrUtil = __webpack_require__(0);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var TooltipContent = __webpack_require__(322);
 
@@ -64508,7 +64529,7 @@ var zrColor = __webpack_require__(25);
 
 var eventUtil = __webpack_require__(26);
 
-var env = __webpack_require__(9);
+var env = __webpack_require__(10);
 
 var formatUtil = __webpack_require__(14);
 
@@ -65542,7 +65563,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(9);
 //
 //
 //
@@ -65817,7 +65838,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(9);
 //
 //
 //
@@ -66488,7 +66509,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(9);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -66853,7 +66874,7 @@ var render = function() {
   return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
-      { staticClass: "col col-md-12" },
+      { staticClass: "col col-md-12", on: { scroll: _vm.handleScroll } },
       [
         _vm._l(_vm.desktopCards, function(majorCard, index) {
           return _vm.isDesktop

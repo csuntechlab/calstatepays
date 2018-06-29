@@ -33,7 +33,7 @@
     width: 3.5rem;
     padding: 0px;
     outline: none;
-    position: fixed;
+    position: absolute;
     right: 1.5rem;
     bottom: 2.5rem;
     font-size: 3rem;
@@ -78,8 +78,7 @@
 }
 
 .btn-add__disabled{
-    @extend %fixed-btn-base;
-    background: $gray;
+    display: none;
 }
 
 .major-tool-btn{
