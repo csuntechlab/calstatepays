@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(Hegis_Codes_TableSeeder::class);
-        $this->call(Universities_TableSeeder::class);
+        $this->call(Universities_Test_TableSeeder::class);
         $this->call(Naics_Titles_TableSeeder::class);
         $this->call(Student_Paths_TableSeeder::class);
         $this->call(Field_Of_Studies_TableSeeder::class);

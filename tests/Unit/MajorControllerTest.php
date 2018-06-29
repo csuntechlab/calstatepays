@@ -21,13 +21,13 @@ class MajorControllerTest extends TestCase
     private $controller;
     private $retriever;
     private $validMajorId = 22021;
-    private $validUniversity = 70;
+    private $validUniversity = 1153;
 
     public function setUp(){
         parent::setUp();
         $this->retriever = Mockery::mock(MajorContract::class);
         $this->seed('Hegis_Codes_TestTableSeeder');
-        $this->seed('Universities_TableSeeder');
+        $this->seed('Universities_Test_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
         $this->seed('Field_Of_Studies_TableSeeder');

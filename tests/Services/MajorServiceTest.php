@@ -20,8 +20,7 @@ class MajorServiceTest extends TestCase
     }
 
     public function test_getAllHegisCodes_ensure_returns_all_rows() {
-        
-        $this->seed('Hegis_Codes_TableSeeder');
+        $this->seed('Hegis_Codes_TestTableSeeder');
         $response = $this->majorService->getAllHegisCodes();
 
         $this->arrayHasKey(0, $response);
@@ -42,7 +41,7 @@ class MajorServiceTest extends TestCase
 
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
         $this->seed('University_Majors_Test_TableSeeder');
-        $response = $this->majorService->getMajorEarnings(22021, 70);
+        $response = $this->majorService->getMajorEarnings(22021, 1153);
         $this->arrayHasKey("id", $response[0]);        
         $this->arrayHasKey("student_path", $response[0]);    
         $this->arrayHasKey("university_majors_id", $response[0]);        
