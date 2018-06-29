@@ -48,6 +48,7 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
             $majorPathWage->_50th = $row->_50th_percentile_earnings;
             $majorPathWage->_75th = $row->_75th_percentile_earnings;
             $majorPathWage->population_sample_id = $population->id;
+            $majorPathWage->save();
         };
     }
 }
