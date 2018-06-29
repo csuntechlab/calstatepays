@@ -18,7 +18,7 @@ class University_Majors_Test_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/university_majors.json");
+        $json = File::get("database/data/university_majors_test.json");
         $data = json_decode($json);
 
         //Data for Student_Background table
