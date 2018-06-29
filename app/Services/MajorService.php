@@ -48,4 +48,15 @@ class MajorService implements MajorContract
         };
         return $hegis_code;
     }
+
+    public function getUniversityMajorId($hegisCode, $universityId)
+    {
+        $universityMajorId = UniversityMajor::where('hegis_code', $hegisCode)
+                                                ->where('university_id', $universityId)
+                                                ->first(['id']);
+        if($hegisCode == null || $universityId == null){
+            dd($hegisCode, $universityId);
+        };
+        return $universityMajorId;
+    }
 }

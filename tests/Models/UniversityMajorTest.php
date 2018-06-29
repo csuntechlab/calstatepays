@@ -16,7 +16,7 @@ class UniversityMajorTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('University_Majors_Test_TableSeeder');
 
     }
 

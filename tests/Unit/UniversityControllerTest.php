@@ -17,7 +17,7 @@ class UniversityControllerTest extends TestCase
      */
     public function testGetAllUniversities()
     {
-        $this->artisan('db:seed');
+        $this->seed('Universities_TableSeeder');
         $response = $this->json('GET', '/api/university');
         $response->assertStatus(200);
         $response->assertJsonStructure([

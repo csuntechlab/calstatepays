@@ -32,7 +32,7 @@ class MajorControllerTest extends TestCase
         $this->seed('Student_Paths_TableSeeder');
         $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('University_Majors_Test_TableSeeder');
 
         $this->controller = new MajorController($this->retriever);
     }

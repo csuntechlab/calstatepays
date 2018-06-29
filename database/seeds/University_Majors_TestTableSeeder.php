@@ -9,7 +9,7 @@ use App\Models\MajorPathWage;
 use App\Models\Population;
 use App\Models\IndustryPathType;
 use Faker\Factory as Faker;
-class University_Majors_TableSeeder extends Seeder
+class University_Majors_Test_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
