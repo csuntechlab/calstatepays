@@ -63,12 +63,10 @@ export default {
             ) {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "absolute";
-                console.log('viewport')
 
             } else {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "fixed";
-                console.log('Not in the viewport... whomp whomp');
             }
         }
     },

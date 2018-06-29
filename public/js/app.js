@@ -46867,11 +46867,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "absolute";
-                console.log('viewport');
             } else {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "fixed";
-                console.log('Not in the viewport... whomp whomp');
             }
         }
     },
