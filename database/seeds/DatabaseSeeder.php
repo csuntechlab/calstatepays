@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Field_Of_Studies_TableSeeder::class);
         $this->call(Hegis_Categories_TableSeeder::class);
 
-        $this->call(University_Majors_TableSeeder::class);
+        $this->call(Master_Major_Page_Data_TableSeeder::class);
+        /*$this->call(University_Majors_TableSeeder::class);*/
     }
 }
