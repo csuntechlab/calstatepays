@@ -38,7 +38,7 @@ class MajorService implements MajorContract
     
     public function getMajorEarnings($hegis_code, $university_id): array
     {
-        return UniversityMajor::AllMajorPathWages($hegis_code, 1153);
+        return UniversityMajor::AllMajorPathWages($hegis_code, 70);
     }
     public function getHegisCode($name)
     {
