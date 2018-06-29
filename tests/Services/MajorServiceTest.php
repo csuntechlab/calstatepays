@@ -36,8 +36,9 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getAllFieldOfStudies();
 
         $this->arrayHasKey("name", $response[0]);        
-        $this->arrayHasKey("id", $response[0]);        
-        $this->assertEquals(FieldOfStudy::count(), count($response));
+        $this->arrayHasKey("id", $response[0]);
+        $removeUndeclared = 1;        
+        $this->assertEquals(FieldOfStudy::count() - $removeUndeclared, count($response));
     }
 
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
