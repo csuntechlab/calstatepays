@@ -21,7 +21,7 @@ class MajorControllerTest extends TestCase
     private $controller;
     private $retriever;
     private $validMajorId = 22021;
-    private $validUniversity = 1153;
+    private $validUniversity = 70;
 
     public function setUp(){
         parent::setUp();
