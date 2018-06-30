@@ -32,11 +32,11 @@ class MajorController extends Controller
 
         foreach($university_major as $data) {
             $years = $data['years'];
-            if ($data['student_path'] == 1) {
+            if ($data['student_path'] == 2) {
                 $someCollege[$years] = $this->extractWageByYearKey($data);
-            } else if ($data['student_path'] == 2) {
+            } else if ($data['student_path'] == 1) {
                 $bachelors[$years] = $this->extractWageByYearKey($data);
-            } else if ($data['student_path'] == 3) {
+            } else if ($data['student_path'] == 4) {
                 $post_bacc[$years] = $this->extractWageByYearKey($data);
             }
         }

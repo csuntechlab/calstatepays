@@ -38,6 +38,7 @@ class MajorService implements MajorContract
     
     public function getMajorEarnings($hegis_code, $university_id): array
     {
+
         return UniversityMajor::AllMajorPathWages($hegis_code, $university_id);
     }
     public function getHegisCode($name)
@@ -54,9 +55,6 @@ class MajorService implements MajorContract
         $universityMajorId = UniversityMajor::where('hegis_code', $hegisCode)
                                                 ->where('university_id', $universityId)
                                                 ->first(['id']);
-        if($hegisCode == null || $universityId == null){
-            dd($hegisCode, $universityId);
-        };
-        return $universityMajorId;
+        return $universityMajorId->id;
     }
 }

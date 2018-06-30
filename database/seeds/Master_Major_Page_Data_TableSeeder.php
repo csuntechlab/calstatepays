@@ -22,21 +22,18 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
         $majorService = new majorService();
         $faker = Faker::create();
         foreach($data as $row){
-            $universityMajor = new UniversityMajor();
             $majorPath       = new MajorPath();
             $majorPathWage   = new MajorPathWage();
             $population      = new Population();
 
-            $universityMajor->university_id = $row->campus;
             $hegis_code = $majorService->getHegisCode($row->major_at_exit);
-            $universityMajor->hegis_code = $hegis_code['hegis_code'];
-            $universityMajorTest = $universityMajor->save();
+            $universityId = $majorService->getUniversityMajorId($hegis_code->hegis_code,$row->campus);
 
-            if($universityMajorTest == false){
+            if($universityId == null){
                 dd('fake news');
             }
 
-            $majorPath->university_majors_id = $universityMajor->id;
+            $majorPath->university_majors_id = $universityId;
             $majorPath->entry_status = $row->entry_stat;
             $majorPath->years = $row->year;
             $majorPath->student_path = $row->student_path;
@@ -53,6 +50,10 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
             $majorPathWage->_75th = $row->_75th_percentile_earnings;
             $majorPathWage->population_sample_id = $population->id;
             $majorPathWage->save();
+
+
+            //Create Fake Industry Data
+
         };
     }
 }
