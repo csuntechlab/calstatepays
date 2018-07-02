@@ -50,7 +50,7 @@ class University_Majors_Test_TableSeeder extends Seeder
         $student_paths = [
             [ 'student_path' => 1],
             [ 'student_path' => 2],
-            [ 'student_path' => 3]
+            [ 'student_path' => 4]
         ];
         $years = [
             ['years' => 2],
