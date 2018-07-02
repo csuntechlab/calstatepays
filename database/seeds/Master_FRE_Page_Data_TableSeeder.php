@@ -9,7 +9,7 @@ use App\Models\MajorPathWage;
 use App\Models\Population;
 use App\Models\IndustryPathType;
 use Faker\Factory as Faker;
-class University_Majors_Hybrid_TableSeeder extends Seeder
+class Master_FRE_Page_Data_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -43,41 +43,6 @@ class University_Majors_Hybrid_TableSeeder extends Seeder
 
         ];
 
-        //Data for major_paths table
-        $student_paths = [
-            [ 'student_path' => 1],
-            [ 'student_path' => 2],
-            [ 'student_path' => 4]
-        ];
-        $years = [
-            ['years' => 2],
-            ['years' => 5],
-            ['years' => 10],
-        ];
-
-        //Data for_industry_path_types
-        $naics = [
-            ['code' => 21],
-            ['code' => 11],
-            ['code' => 22],
-            ['code' => 55],
-            ['code' => 48],
-            ['code' => 23],
-            ['code' => 71],
-            ['code' => 53],
-            ['code' => 72],
-            ['code' => 42],
-            ['code' => 56],
-            ['code' => 31],
-            ['code' => 44],
-            ['code' => 92],
-            ['code' => 52],
-            ['code' => 54],
-            ['code' => 62],
-            ['code' => 61],
-
-        ];
-
         $universityMajor = UniversityMajor::all();
         //Each University_Major row will have 8 related StudentBackground rows, each StudentBackground row will have 24
         //related Investment rows,so then each University_Major row has 576 possible combinations for Investment data.
@@ -99,23 +64,6 @@ class University_Majors_Hybrid_TableSeeder extends Seeder
                         }
                     }
                 }
-            }
-
-            //Dummy Data for FRE PAge
-            foreach($naics as $naic){
-                $faker = Faker::create();
-                $population_found = $faker->numberBetween(500, 1500);
-                $population_size = $faker->numberBetween(5000, 9000);
-                $population = new Population();
-                $population->population_found = $population_found;
-                $population->population_size = $population_size;
-                $population->percentage_found = ($population_found/$population_size) * 100;
-                $population->save();
-                factory(IndustryPathType::class)->create([
-                    'naics_code'           => $naic['code'],
-                    'university_majors_id' => $university_major->id,
-                    'population_sample_id' => $population->id
-                ]);
             }
         };
     }

@@ -29,10 +29,6 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
             $hegis_code = $majorService->getHegisCode($row->major_at_exit);
             $universityId = $majorService->getUniversityMajorId($hegis_code->hegis_code,$row->campus);
 
-            if($universityId == null){
-                dd('fake news');
-            }
-
             $majorPath->university_majors_id = $universityId;
             $majorPath->entry_status = $row->entry_stat;
             $majorPath->years = $row->year;
