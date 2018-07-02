@@ -51,9 +51,6 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
             $majorPathWage->population_sample_id = $population->id;
             $majorPathWage->save();
 
-
-            //Create Fake Industry Data
-
         };
     }
 }

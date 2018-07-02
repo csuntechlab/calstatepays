@@ -20,6 +20,8 @@ class University_Majors_TableSeeder extends Seeder
             $universityMajor->hegis_code = $row->hegis_code;
             $universityMajor->university_id = $northridgeUniversityCode;
             $universityMajor->save();
+
+
         }
     }
 }
