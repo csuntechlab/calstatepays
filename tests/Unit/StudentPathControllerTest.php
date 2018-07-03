@@ -17,7 +17,7 @@ class StudentPathControllerTest extends TestCase
      */
     public function testGetAllStudentPaths()
     {
-        $this->artisan('db:seed');
+        $this->seed('Student_Paths_TableSeeder');
         $response = $this->json('GET','/api/student-path');
         $response->assertStatus(200);
         $response->assertJsonStructure([
