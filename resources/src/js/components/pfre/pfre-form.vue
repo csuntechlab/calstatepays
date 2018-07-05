@@ -89,6 +89,7 @@
 <script>
 import vSelect from 'vue-select';
 import { updateForm } from '../../utils/index';
+import { required } from 'vuelidate/lib/validators';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -100,7 +101,6 @@ export default {
             education: null,
             earnings: null,
             financialAid: null,
-            //drop down for university hasn't been created yet
             university: 1153
         },
         ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
@@ -154,6 +154,16 @@ export default {
             else {
                 return this.majorNameById(this.form.majorId)
             }
+        }
+    },
+    validations: {
+        form: {
+            majorId: { required },
+            age: {required},
+            education: {required},
+            earnings: {required},
+            financialAid: {required},
+            university: {required},
         }
     },
     components: {

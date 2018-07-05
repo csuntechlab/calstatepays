@@ -97,8 +97,6 @@ export default {
                     "university": null
                 },
                 submitCount: 0,
-                isUnivSelected: true,
-                isMajorSelected: true
             },
             selected: null,
         }
@@ -129,16 +127,12 @@ export default {
         checkFieldsHaveErrors(){
             if(!this.form.schoolId){
                 this.form.errors.university = 'Campus Required';
-                this.form.isUnivSelected = false;
             } else {
-                this.form.isUnivSelected = true;
                 this.form.errors.university = false;
             }
             if(!this.form.majorId){
                 this.form.errors.major = 'Major Required';
-                this.form.isMajorSelected = false;
             } else {
-                this.form.isMajorSelected = true;
                 this.form.errors.major = false;
             }
         },
