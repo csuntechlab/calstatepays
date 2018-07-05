@@ -186,6 +186,12 @@ export default {
             if(!this.hasErrors){
                 this.fetchFreData(this.form);
                 this.submitToResubmit();
+                this.form.errors.education = false;
+                this.form.errors.major = false;
+                this.form.errors.earnings = false;
+                this.form.errors.finAid = false;
+                this.form.errors.age = false;
+                this.form.errors.unversity = false;
             }
         },
 
