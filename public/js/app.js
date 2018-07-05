@@ -45055,6 +45055,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -45070,7 +45075,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 education: null,
                 earnings: null,
                 financialAid: null,
-                university: 1153
+                university: 1153,
+                hasErrors: false,
+                errors: {
+                    "major": false,
+                    "university": false,
+                    "education": false,
+                    "earnings": false,
+                    "finAid": false,
+                    "age": false
+                }
             },
             ageRanges: [{ age: '18-19', value: 1 }, { age: '20-24', value: 2 }, { age: '24-26', value: 3 }, { age: '26 +', value: 4 }],
             earningRanges: [{ earn: '0', value: 1 }, { earn: '0 - 20,000', value: 2 }, { earn: '30,000 - 45,000', value: 3 }, { earn: '45,000 - 60,000', value: 4 }, { earn: '60,000 +', value: 5 }],
@@ -45102,6 +45116,43 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     block: "start",
                     inline: "end"
                 });
+            }
+        },
+        checkForm: function checkForm() {
+            if (this.form.schoolId && this.form.majorId) {
+                return true;
+            }
+            this.checkFieldsHaveErrors();
+        },
+        checkFieldsHaveErrors: function checkFieldsHaveErrors() {
+            this.hasErrors = false;
+            if (!this.form.university) {
+                this.form.errors.university = true;
+                this.hasErrors = true;
+            }
+            if (!this.form.majorId) {
+                this.form.errors.major = true;
+                this.hasErrors = true;
+            }
+            if (!this.form.earnings) {
+                this.form.errors.earnings = true;
+                this.hasErrors = true;
+            }
+            if (!this.form.age) {
+                this.form.errors.age = true;
+                this.hasErrors = true;
+            }
+            if (!this.form.financialAid) {
+                this.form.errors.finAid = true;
+                this.hasErrors = true;
+            }
+            if (!this.form.education) {
+                this.form.errors.education = true;
+                this.hasErrors = true;
+            }
+            if (!this.hasErrors) {
+                this.fetchFreData(this.form);
+                this.submitToResubmit();
             }
         },
         submitToResubmit: function submitToResubmit() {
@@ -45733,6 +45784,28 @@ var render = function() {
           [
             _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
             _vm._v(" "),
+            _c(
+              "label",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: this.form.errors.major,
+                    expression: "this.form.errors.major"
+                  }
+                ],
+                attrs: { for: "Major" }
+              },
+              [
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "red" } },
+                  [_vm._v("Required *")]
+                )
+              ]
+            ),
+            _vm._v(" "),
             _c("v-select", {
               staticClass: "csu-form-input-major",
               attrs: { label: "major", options: _vm.majors },
@@ -45757,6 +45830,28 @@ var render = function() {
           [
             _c("label", { attrs: { for: "age" } }, [_vm._v("Age Range:")]),
             _vm._v(" "),
+            _c(
+              "label",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: this.form.errors.age,
+                    expression: "this.form.errors.age"
+                  }
+                ],
+                attrs: { for: "Major" }
+              },
+              [
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "red" } },
+                  [_vm._v("Required *")]
+                )
+              ]
+            ),
+            _vm._v(" "),
             _c("v-select", {
               staticClass: "csu-form-input",
               attrs: { label: "age", options: _vm.ageRanges },
@@ -45776,6 +45871,28 @@ var render = function() {
           _c("label", { attrs: { for: "education" } }, [
             _vm._v("Education Level:")
           ]),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: this.form.errors.education,
+                  expression: "this.form.errors.education"
+                }
+              ],
+              attrs: { for: "Major" }
+            },
+            [
+              _c(
+                "span",
+                { staticStyle: { "font-weight": "bold", color: "red" } },
+                [_vm._v("Required *")]
+              )
+            ]
+          ),
           _vm._v(" "),
           _c(
             "label",
@@ -45858,6 +45975,28 @@ var render = function() {
               _vm._v("Estimated Annual Earnings During School")
             ]),
             _vm._v(" "),
+            _c(
+              "label",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: this.form.errors.earnings,
+                    expression: "this.form.errors.earnings"
+                  }
+                ],
+                attrs: { for: "Major" }
+              },
+              [
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "red" } },
+                  [_vm._v("Required *")]
+                )
+              ]
+            ),
+            _vm._v(" "),
             _c("v-select", {
               staticClass: "csu-form-input",
               attrs: { label: "earn", options: _vm.earningRanges },
@@ -45883,6 +46022,28 @@ var render = function() {
             _c("label", { attrs: { for: "financialAid" } }, [
               _vm._v("Estimated Annual Financial Aid")
             ]),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: this.form.errors.finAid,
+                    expression: "this.form.errors.finAid"
+                  }
+                ],
+                attrs: { for: "Major" }
+              },
+              [
+                _c(
+                  "span",
+                  { staticStyle: { "font-weight": "bold", color: "red" } },
+                  [_vm._v("Required *")]
+                )
+              ]
+            ),
             _vm._v(" "),
             _c("v-select", {
               staticClass: "csu-form-input",
@@ -45917,7 +46078,7 @@ var render = function() {
               attrs: { id: "submit_button", type: "button" },
               on: {
                 click: function($event) {
-                  _vm.fetchFreData(_vm.form), _vm.scrollWin()
+                  _vm.checkFieldsHaveErrors(), _vm.scrollWin()
                 }
               }
             },
@@ -48064,8 +48225,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
                 errors: {
-                    "major": null,
-                    "university": null
+                    "major": false,
+                    "university": false
                 },
                 submitCount: 0
             },
@@ -48091,14 +48252,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         checkFieldsHaveErrors: function checkFieldsHaveErrors() {
             if (!this.form.schoolId) {
-                this.form.errors.university = 'Campus Required';
-            } else {
-                this.form.errors.university = false;
+                this.form.errors.university = true;
             }
             if (!this.form.majorId) {
-                this.form.errors.major = 'Major Required';
-            } else {
-                this.form.errors.major = false;
+                this.form.errors.major = true;
             }
         },
         updateSelect: function updateSelect(field, dataKey, data) {

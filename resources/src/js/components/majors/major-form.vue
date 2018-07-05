@@ -93,8 +93,8 @@ export default {
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
                 errors: {
-                    "major": null,
-                    "university": null
+                    "major": false,
+                    "university": false
                 },
                 submitCount: 0,
             },
@@ -126,14 +126,10 @@ export default {
         },
         checkFieldsHaveErrors(){
             if(!this.form.schoolId){
-                this.form.errors.university = 'Campus Required';
-            } else {
-                this.form.errors.university = false;
+                this.form.errors.university = true;
             }
             if(!this.form.majorId){
-                this.form.errors.major = 'Major Required';
-            } else {
-                this.form.errors.major = false;
+                this.form.errors.major = true;
             }
         },
         updateSelect(field, dataKey, data) {
