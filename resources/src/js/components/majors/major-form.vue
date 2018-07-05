@@ -190,12 +190,6 @@ export default {
             schoolId: { required }
         }
     },
-    validations: {
-        form: {
-            majorId: { required },
-            schoolId: { required }
-        }
-    },
     components: {
         vSelect,        
     },

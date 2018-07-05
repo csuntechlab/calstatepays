@@ -81,7 +81,7 @@
             </div>
             <div class="row row--condensed" id="submit-btn-container">
                 <div class="pt-2 pb-4 pt-md-2 pb-md-2">
-                        <button type="button" class="btn btn-success btn-submit" @click="fetchFreData(form), scrollWin()">Submit</button>
+                        <button id="submit_button" type="button" class="btn btn-success btn-submit" @click="fetchFreData(form), scrollWin()">Submit</button>
                 </div>
         </div>
     </form>
@@ -136,6 +136,10 @@ export default {
                     inline: "end"
                 });
             }
+        },
+
+        submitToResubmit() {
+            document.getElementById("submit_button").innerHTML = "Resubmit";
         }
     },
     computed: {
