@@ -67,10 +67,7 @@ class MajorController extends Controller
     }
 
     public function getFREData(Request $request){
-        // dd($request->education_level);
         $freData = $this->majorRetriever->getFREData($request);
-        // dd($freData);
-        
         return [
             'majorId'      => $request->major,
             'universityId' => $request->university,

@@ -71,8 +71,5 @@ class MajorServiceTest extends TestCase
         $this->arrayHasKey("time_to_degree", $response);
         $this->arrayHasKey("earnings_5_years", $response);
         $this->arrayHasKey("roi", $response);
-
-
-        // dd($response);
     }
 }
