@@ -67,23 +67,17 @@ class MajorController extends Controller
     }
 
     public function getFREData(Request $request){
-        $data = UniversityMajor::where('hegis_code', $request->major)
-            ->where('university_id', $request->university)
-            ->with(['studentBackground' => function($query) use($request){
-                $query->where('age_range_id', $request->age_range);
-                $query->where('education_level', $request->education_level);
-            },'studentBackground.investment' => function ($query) use ($request){
-                $query->where('annual_earnings_id', $request->annual_earnings);
-                $query->where('annual_financial_aid_id', $request->financial_aid);
-            }])->firstOrFail();
-        $freData = $data->studentBackground->first()->investment->first();
+        // dd($request->education_level);
+        $freData = $this->majorRetriever->getFREData($request);
+        // dd($freData);
+        
         return [
             'majorId'      => $request->major,
             'universityId' => $request->university,
             'fre' => [
-                'timeToDegree'       => $freData->time_to_degree,
-                'earningsYearFive'   => $freData->earnings_5_years,
-                'returnOnInvestment' => $freData->roi
+                'timeToDegree'       => $freData['time_to_degree'],
+                'earningsYearFive'   => $freData['earnings_5_years'],
+                'returnOnInvestment' => $freData['roi']
             ]
         ];
     }
