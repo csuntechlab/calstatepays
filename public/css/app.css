@@ -27684,6 +27684,11 @@ textarea {
   }
 }
 
+.required-field {
+  color: red;
+  font-weight: bold;
+}
+
 .btn {
   border-radius: 3rem;
   font-family: "Open Sans";

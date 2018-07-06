@@ -6,8 +6,10 @@
             <div class="form__group">
             <div class="row row--condensed">    
                 <div class="col col-12">
+                    <div v-if="this.formNotFilled" class="required-field">
+                        Please fill out all fields.
+                    </div>
                     <label for="Major">Major:</label>
-                    <label for="Major" v-show="this.form.errors.major"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select
                         label="major" 
                         :options="majors"
@@ -20,7 +22,6 @@
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="age">Age Range:</label>
-                    <label for="Major" v-show="this.form.errors.age"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select 
                         label="age" 
                         :options="ageRanges"
@@ -32,7 +33,6 @@
             <div class="row row--condensed">
                 <div class="col-12 col-9 col-md-12">
                     <label for="education">Education Level:</label>
-                    <label for="Major" v-show="this.form.errors.education"><span style="font-weight:bold; color:red">Required *</span></label>
                     <label class="label--radio" for="freshman">First Time Freshman:</label>
                     <input 
                     class="mx-2 mt-1"
@@ -60,7 +60,6 @@
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="earnings">Estimated Annual Earnings During School</label>
-                    <label for="Major" v-show="this.form.errors.earnings"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select 
                         label="earn" 
                         :options="earningRanges"
@@ -73,7 +72,6 @@
             <div class="row row--condensed">
                 <div class="col col-12">
                     <label for="financialAid">Estimated Annual Financial Aid</label>
-                    <label for="Major" v-show="this.form.errors.finAid"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select 
                         label="finAid" 
                         :options="financialAidRanges"
@@ -86,7 +84,7 @@
             </div>
             <div class="row row--condensed" id="submit-btn-container">
                 <div class="pt-2 pb-4 pt-md-2 pb-md-2">
-                        <button id="submit_button" type="button" class="btn btn-success btn-submit" @click="checkFieldsHaveErrors(), scrollWin()">Submit</button>
+                        <button id="submit_button" type="button" class="btn btn-success btn-submit" @click="checkFormIsFilled(), scrollWin()">Submit</button>
                 </div>
         </div>
     </form>
@@ -107,15 +105,7 @@ export default {
             earnings: null,
             financialAid: null,
             university: 1153,
-            hasErrors: false,
-            errors: {
-                    "major": false,
-                    "university": false,
-                    "education": false,
-                    "earnings": false,
-                    "finAid": false,
-                    "age": false,
-                },
+            formNotFilled: false,
         },
         ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
         earningRanges: [{earn:'0', value: 1}, {earn:'0 - 20,000', value: 2}, {earn:'30,000 - 45,000', value: 3}, {earn:'45,000 - 60,000', value: 4}, {earn:'60,000 +', value: 5}],
@@ -151,50 +141,13 @@ export default {
                 });
             }
         },
-        checkForm(){
-            if(this.form.schoolId && this.form.majorId){
-                return true;
-            }
-            this.checkFieldsHaveErrors()
-        },
-        checkFieldsHaveErrors(){
-            this.hasErrors = false;
-            if(!this.form.university){
-                this.form.errors.university = true;
-                this.hasErrors = true;
-            }
-            if(!this.form.majorId){
-                this.form.errors.major = true;
-                this.hasErrors = true;
-            }
-            if(!this.form.earnings){
-                this.form.errors.earnings = true;
-                this.hasErrors = true;
-            }
-            if(!this.form.age){
-                this.form.errors.age = true;
-                this.hasErrors = true;
-            }
-            if(!this.form.financialAid){
-                this.form.errors.finAid = true;
-                this.hasErrors = true;
-            }
-            if(!this.form.education){
-                this.form.errors.education = true;
-                this.hasErrors = true;
-            }
-            if(!this.hasErrors){
+        checkFormIsFilled(){
+            this.formNotFilled = false;
+            if(this.$v.$invalid)
+                this.formNotFilled = true;
+            else
                 this.fetchFreData(this.form);
-                this.submitToResubmit();
-                this.form.errors.education = false;
-                this.form.errors.major = false;
-                this.form.errors.earnings = false;
-                this.form.errors.finAid = false;
-                this.form.errors.age = false;
-                this.form.errors.unversity = false;
-            }
         },
-
         submitToResubmit() {
             document.getElementById("submit_button").innerHTML = "Resubmit";
         }
