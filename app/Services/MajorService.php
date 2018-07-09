@@ -6,6 +6,7 @@ use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
 use App\Contracts\MajorContract;
+use Illuminate\Pagination\Paginator;
 
 class MajorService implements MajorContract
 {
@@ -25,6 +26,7 @@ class MajorService implements MajorContract
     public function getAllFieldOfStudies(): array
     {
         $fieldOfStudies = FieldOfStudy::all();
+        $fieldOfStudies = $fieldOfStudies->splice(1);
         return $fieldOfStudies->toArray();
     }
 
@@ -37,6 +39,27 @@ class MajorService implements MajorContract
     
     public function getMajorEarnings($hegis_code, $university_id): array
     {
-        return UniversityMajor::AllMajorPathWages($hegis_code, 1153);
+
+        $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
+                            ->where('university_id', $university_id)
+                            ->with('majorPaths.majorPathWage')
+                            ->first()->majorPaths->toArray();
+        return $universityMajor;
+    }
+    public function getHegisCode($name)
+    {
+        $hegis_code = HEGISCode::where('major', $name)->first(['hegis_code']);
+        if($hegis_code == null){
+            dd($name);
+        };
+        return $hegis_code;
+    }
+
+    public function getUniversityMajorId($hegisCode, $universityId)
+    {
+        $universityMajorId = UniversityMajor::where('hegis_code', $hegisCode)
+                                                ->where('university_id', $universityId)
+                                                ->first(['id']);
+        return $universityMajorId->id;
     }
 }

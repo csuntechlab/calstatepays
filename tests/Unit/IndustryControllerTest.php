@@ -16,7 +16,7 @@ class IndustryControllerTest extends TestCase
         parent::setUp();
 
         //Build 4 tables which are related to each other.
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('University_Majors_Test_TableSeeder');
         factory(NaicsTitle::class, 18)->create();
     }
 

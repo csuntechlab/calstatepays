@@ -1,11 +1,13 @@
 <template>
     <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
         <card>
-            <span class="major-tool-btn-mobile">
-                <i class="fas fa-sync-alt btn-reset-mobile" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
-                <i class="fas fa-times btn-remove-mobile" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-            </span>
             <div class="container-fluid my-0 mt-2">
+                <div class="row">
+                    <div class="col">
+                        <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+                        <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                    </div>
+                </div>
                 <div v-show="selectedFormWasSubmitted" style="height: 400px" class="row m-1 p-0">
                     <div class="col p-0">
                         <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
@@ -82,7 +84,7 @@ export default {
     methods:{
         ...mapActions([
             'deleteMajorCard',
-            'resetmajorCard'
+            'resetMajorCard'
         ]),
         removeCurrentCard(){
             this.deleteMajorCard(this.index);
