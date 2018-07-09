@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\NaicsTitle;
 use App\Models\UniversityMajor;
+use App\Contracts\IndustryContract;
 
 class IndustryController extends Controller
 {
+    protected $industryRetriever;
+
+    public function __construct(IndustryContract $industryContract)
+    {
+        $this->industryRetriever = $industryContract;
+    }
 
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::get()->map(function ($item, $key){
-            return [
-                'naics_code' => $item['naics_code'],
-                'title'      => $item['naics_title'],
-                'image'      => asset($item['image'])
-            ];
-        });
-        return $allNaicsTitles;
+        return $this->industryRetriever->getAllIndustryNaicsTitles();
     }
 
     public function getIndustryPopulationByRank($hegis_code, $university_id)

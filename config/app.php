@@ -187,6 +187,7 @@ return [
         /*
         * CSU METRO SERVICE PROVIDERS
         */
+        App\Providers\IndustryServiceProvider::class,
         App\Providers\MajorServiceProvider::class,
 
     ],
