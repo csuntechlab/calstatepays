@@ -7,9 +7,9 @@
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block my-2" alt="Cal State Pays logo">
                     </router-link>
                 </div>
-                <div class="col-3 col-md-6 order-6 order-md-2">
+                <div class="col-3 col-md-6 order-6 order-md-2 align-self-md-end">
 
-                    <nav class="navbar navbar-expand-md navbar-light">
+                    <nav class="navbar navbar-expand-md navbar-light p-0">
 
                         <button @click="toggleShowNav()" class="navbar-toggler" type="button">
                             <span class="navbar-toggler-icon"></span>

@@ -85926,152 +85926,171 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3 col-md-6 order-6 order-md-2" }, [
-          _c("nav", { staticClass: "navbar navbar-expand-md navbar-light" }, [
+        _c(
+          "div",
+          {
+            staticClass: "col-3 col-md-6 order-6 order-md-2 align-self-md-end"
+          },
+          [
             _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    _vm.toggleShowNav()
-                  }
-                }
-              },
-              [_c("span", { staticClass: "navbar-toggler-icon" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse justify-content-center",
-                attrs: { id: "nav-list" }
-              },
+              "nav",
+              { staticClass: "navbar navbar-expand-md navbar-light p-0" },
               [
                 _c(
-                  "ul",
-                  { staticClass: "navbar-nav d-flex justify-content-center" },
+                  "button",
+                  {
+                    staticClass: "navbar-toggler",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        _vm.toggleShowNav()
+                      }
+                    }
+                  },
+                  [_c("span", { staticClass: "navbar-toggler-icon" })]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "collapse navbar-collapse justify-content-center",
+                    attrs: { id: "nav-list" }
+                  },
                   [
                     _c(
-                      "li",
+                      "ul",
                       {
-                        staticClass: "nav-item",
-                        on: {
-                          click: function($event) {
-                            _vm.toggleShowNav()
-                          }
-                        }
+                        staticClass: "navbar-nav d-flex justify-content-center"
                       },
                       [
                         _c(
-                          "router-link",
+                          "li",
                           {
-                            staticClass: "nav-link",
-                            attrs: { "exact-active-class": "hr-nav", to: "/" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Home\n                                    "
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item",
-                        on: {
-                          click: function($event) {
-                            _vm.toggleShowNav()
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "nav-link",
-                            attrs: { "active-class": "hr-nav", to: "/majors" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                        Majors\n                                    "
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item",
-                        on: {
-                          click: function($event) {
-                            _vm.toggleShowNav()
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "nav-link",
-                            attrs: { "active-class": "hr-nav", to: "/pfre" }
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
                             _c(
-                              "abbr",
+                              "router-link",
                               {
+                                staticClass: "nav-link",
                                 attrs: {
-                                  title: "Financial Return on Education"
+                                  "exact-active-class": "hr-nav",
+                                  to: "/"
                                 }
                               },
-                              [_vm._v("FRE")]
+                              [
+                                _vm._v(
+                                  "\n                                        Home\n                                    "
+                                )
+                              ]
                             )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item",
-                        on: {
-                          click: function($event) {
-                            _vm.toggleShowNav()
-                          }
-                        }
-                      },
-                      [
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
                         _c(
-                          "router-link",
+                          "li",
                           {
-                            staticClass: "nav-link",
-                            attrs: { "active-class": "hr-nav", to: "/faq" }
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
-                            _vm._v(
-                              "\n                                        About\n                                    "
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: {
+                                  "active-class": "hr-nav",
+                                  to: "/majors"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Majors\n                                    "
+                                )
+                              ]
                             )
-                          ]
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { "active-class": "hr-nav", to: "/pfre" }
+                              },
+                              [
+                                _c(
+                                  "abbr",
+                                  {
+                                    attrs: {
+                                      title: "Financial Return on Education"
+                                    }
+                                  },
+                                  [_vm._v("FRE")]
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { "active-class": "hr-nav", to: "/faq" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        About\n                                    "
+                                )
+                              ]
+                            )
+                          ],
+                          1
                         )
-                      ],
-                      1
+                      ]
                     )
                   ]
                 )
               ]
             )
-          ])
-        ]),
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "col-3 col-md-3 order-1 order-md-3" }, [
           _c(
