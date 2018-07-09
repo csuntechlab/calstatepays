@@ -23,6 +23,5 @@
            </v-app>
        </div>
         <script src="{{ asset('js/app.js') }}"></script>
-       <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
     </body>
 </html>
