@@ -45110,10 +45110,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         checkFormIsFilled: function checkFormIsFilled() {
             this.formNotFilled = false;
-            if (this.$v.$invalid) this.formNotFilled = true;else this.fetchFreData(this.form);
-        },
-        submitToResubmit: function submitToResubmit() {
-            document.getElementById("submit_button").innerHTML = "Resubmit";
+            if (this.$v.$invalid) this.formNotFilled = true;else {
+                this.fetchFreData(this.form);
+                document.getElementById("submit-btn").innerHTML = "Resubmit";
+            }
         }
     }),
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'majorNameById']), {
@@ -45930,7 +45930,7 @@ var render = function() {
             "button",
             {
               staticClass: "btn btn-success btn-submit",
-              attrs: { id: "submit_button", type: "button" },
+              attrs: { id: "submit-btn", type: "button" },
               on: {
                 click: function($event) {
                   _vm.checkFormIsFilled(), _vm.scrollWin()

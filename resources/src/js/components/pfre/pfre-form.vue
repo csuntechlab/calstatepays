@@ -84,7 +84,7 @@
             </div>
             <div class="row row--condensed" id="submit-btn-container">
                 <div class="pt-2 pb-4 pt-md-2 pb-md-2">
-                        <button id="submit_button" type="button" class="btn btn-success btn-submit" @click="checkFormIsFilled(), scrollWin()">Submit</button>
+                        <button id="submit-btn" type="button" class="btn btn-success btn-submit" @click="checkFormIsFilled(), scrollWin()">Submit</button>
                 </div>
         </div>
     </form>
@@ -145,12 +145,11 @@ export default {
             this.formNotFilled = false;
             if(this.$v.$invalid)
                 this.formNotFilled = true;
-            else
+            else{
                 this.fetchFreData(this.form);
+                document.getElementById("submit-btn").innerHTML = "Resubmit";
+            }
         },
-        submitToResubmit() {
-            document.getElementById("submit_button").innerHTML = "Resubmit";
-        }
     },
     computed: {
         ...mapGetters([
