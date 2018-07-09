@@ -158,12 +158,23 @@ export default {
                     }
                 },
                 xAxis: {
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
                     data: this.xAxis
                 },
                 legend: {
                     data: ['line']
                 },
                 yAxis: {
+                    name: "Earnings",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [0, 0, 40, 0]
+                    },
+                    nameRotate: 90,
                     axisLabel: {
                         rotate: this.mobileYAxis
                     },
