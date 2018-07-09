@@ -44338,6 +44338,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 				data: function data() {
@@ -44368,19 +44386,13 @@ var render = function() {
         _c("div", { staticClass: "row px-4 py-2 fa-wrapper" }, [
           _c(
             "div",
-            { staticClass: "col-md-4 text-center my-3" },
+            { staticClass: "col-md-4 text-center my-3 home__col" },
             [
-              _c("i", { staticClass: "fa fa-graduation-cap" }),
+              _vm._m(0),
               _vm._v(" "),
-              _c("h3", { staticClass: "pt-3" }, [
-                _vm._v("Do college graduates earn more?")
-              ]),
+              _vm._m(1),
               _vm._v(" "),
-              _c("p", { staticClass: "py-3" }, [
-                _vm._v(
-                  "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
-                )
-              ]),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "router-link",
@@ -44399,19 +44411,13 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-md-4 text-center my-3" },
+            { staticClass: "col-md-4 text-center my-3 home__col" },
             [
-              _c("i", { staticClass: "fa fa-usd" }),
+              _vm._m(3),
               _vm._v(" "),
-              _c("h3", { staticClass: "pt-3" }, [
-                _vm._v("What is your financial return?")
-              ]),
+              _vm._m(4),
               _vm._v(" "),
-              _c("p", { staticClass: "py-3" }, [
-                _vm._v(
-                  "Education cost money but in the long term you will earn more. Find your return on education."
-                )
-              ]),
+              _vm._m(5),
               _vm._v(" "),
               _c(
                 "router-link",
@@ -44430,19 +44436,13 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-md-4 text-center my-3" },
+            { staticClass: "col-md-4 text-center my-3 home__col" },
             [
-              _c("i", { staticClass: "fa fa-line-chart" }),
+              _vm._m(6),
               _vm._v(" "),
-              _c("h3", { staticClass: "pt-3" }, [
-                _vm._v("Which majors earn the most?")
-              ]),
+              _vm._m(7),
               _vm._v(" "),
-              _c("p", { staticClass: "py-3" }, [
-                _vm._v(
-                  "Find out which majors has the highest earn and the most students."
-                )
-              ]),
+              _vm._m(8),
               _vm._v(" "),
               _c(
                 "router-link",
@@ -44539,12 +44539,96 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _vm._m(9),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(10)
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-graduation-cap" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Do college graduates earn more?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-usd" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("What is your financial return?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "Education cost money but in the long term you will earn more. Find your return on education."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-line-chart" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Which majors earn the most?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "Find out which majors has the highest earn and the most students."
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
