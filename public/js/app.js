@@ -66728,6 +66728,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -66760,9 +66761,9 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h5", [
-        _vm._v("Common Employment Sectors for " + _vm._s(_vm.selectedMajorName))
-      ]),
+      _c("h5", [_vm._v("Common Employment Sectors for")]),
+      _vm._v(" "),
+      _c("h5", [_vm._v(_vm._s(_vm.selectedMajorName))]),
       _vm._v(" "),
       _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
         return _c(
