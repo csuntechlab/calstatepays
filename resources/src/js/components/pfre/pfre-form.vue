@@ -105,7 +105,7 @@ export default {
             education: null,
             earnings: null,
             financialAid: null,
-            university: 1153,
+            university: 70
         },
         ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
         earningRanges: [{earn:'0', value: 1}, {earn:'0 - 20,000', value: 2}, {earn:'30,000 - 45,000', value: 3}, {earn:'45,000 - 60,000', value: 4}, {earn:'60,000 +', value: 5}],
