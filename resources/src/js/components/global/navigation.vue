@@ -7,16 +7,15 @@
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block my-2" alt="Cal State Pays logo">
                     </router-link>
                 </div>
-                <div class="col-3 col-md-6 order-6 order-md-2 align-self-md-end">
-
+                <div class="col-3 d-md-none order-3">
+                    <button @click="toggleShowNav()" class="navbar-toggler" type="button">
+                            <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-12 col-md-6 order-6 order-md-2 align-self-md-end p-0">
                     <nav class="navbar navbar-expand-md navbar-light p-0">
-
-                        <button @click="toggleShowNav()" class="navbar-toggler" type="button">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
                         <div class="collapse navbar-collapse justify-content-center" id="nav-list">
-                            <ul class="navbar-nav d-flex justify-content-center">
+                            <ul class="navbar-nav d-flex justify-content-center text-center">
                                 <li @click="toggleShowNav()" class="nav-item">
                                     <router-link  class="nav-link" exact-active-class="hr-nav" to="/">
                                         Home

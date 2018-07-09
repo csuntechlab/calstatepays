@@ -30,4 +30,9 @@
 .hr-nav{
 	border-bottom: 3px solid $red;
 	margin: 0px;
+	@media screen and (max-width: $break-small) {
+		background: $red;
+		color: $white !important;
+		font-weight: bold;
+	}
 }
