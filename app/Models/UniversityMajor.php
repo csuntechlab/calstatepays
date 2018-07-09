@@ -46,7 +46,7 @@ class UniversityMajor extends Model
     }
 
     public function scopeAllMajorPathWages($query,$hegis_code,$university_id){
-            return $query->where('hegis_code', $hegis_code)
+             $query->where('hegis_code', $hegis_code)
                          ->where('university_id', $university_id)
                          ->with('majorPaths.majorPathWage')
                          ->first()->majorPaths->toArray();
