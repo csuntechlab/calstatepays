@@ -12053,7 +12053,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -27341,7 +27342,6 @@ figcaption {
 }
 
 .site-header {
-  min-height: 5rem;
   font-family: "Open Sans";
   position: fixed;
   background: #FFF;
