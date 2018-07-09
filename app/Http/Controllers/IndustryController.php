@@ -25,6 +25,7 @@ class IndustryController extends Controller
         $university_major = UniversityMajor::where('hegis_code', $hegis_code)
                                             ->where('university_id', $university_id)
                                             ->first();
+
         $industryPathTypes = $university_major->industryPathTypes();
 
         $industryPopulations = $industryPathTypes->where('entry_status', 'All')
