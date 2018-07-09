@@ -26,7 +26,14 @@ class MajorControllerTest extends TestCase
     public function setUp(){
         parent::setUp();
         $this->retriever = Mockery::mock(MajorContract::class);
-        $this->seed('DatabaseSeeder');
+        $this->seed('Hegis_Codes_TestTableSeeder');
+        $this->seed('Universities_TestTableSeeder');
+        $this->seed('Naics_Titles_TableSeeder');
+        $this->seed('Student_Paths_TableSeeder');
+        $this->seed('Field_Of_Studies_TableSeeder');
+        $this->seed('Hegis_Categories_TableSeeder');
+        $this->seed('University_Majors_Test_TableSeeder');
+
         $this->controller = new MajorController($this->retriever);
     }
 

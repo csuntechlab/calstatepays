@@ -15,8 +15,8 @@ class CreatePopulationsTable extends Migration
     {
         Schema::create('populations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('population_found');
-            $table->integer('population_size');
+            $table->integer('population_found')->nullable();
+            $table->integer('population_size')->nullable();
             $table->decimal('percentage_found');
         });
     }
