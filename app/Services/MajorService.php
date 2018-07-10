@@ -25,8 +25,8 @@ class MajorService implements MajorContract
 
     public function getAllFieldOfStudies(): array
     {
-        $fieldOfStudies = FieldOfStudy::all();
-        $fieldOfStudies = $fieldOfStudies->splice(1);
+        $fieldOfStudies = FieldOfStudy::orderBy('name', 'asc')->get();
+        dd($fieldOfStudies->toArray());
         return $fieldOfStudies->toArray();
     }
 
