@@ -42,11 +42,11 @@ class MajorServiceTest extends TestCase
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
         $this->seed('University_Majors_Test_TableSeeder');
         $response = $this->majorService->getMajorEarnings(22021, 1153);
-        $this->arrayHasKey("id", $response[0]);        
-        $this->arrayHasKey("student_path", $response[0]);    
-        $this->arrayHasKey("university_majors_id", $response[0]);        
-        $this->arrayHasKey("entry_status", $response[0]);
-        $this->arrayHasKey("years", $response[0]);        
-        $this->arrayHasKey("major_path_wage", $response[0]);
+        $this->assertArrayHasKey("id", $response[0]);        
+        $this->assertArrayHasKey("student_path", $response[0]);    
+        $this->assertArrayHasKey("university_majors_id", $response[0]);        
+        $this->assertArrayHasKey("entry_status", $response[0]);
+        $this->assertArrayHasKey("years", $response[0]);        
+        $this->assertArrayHasKey("major_path_wage", $response[0]);
     }
 }
