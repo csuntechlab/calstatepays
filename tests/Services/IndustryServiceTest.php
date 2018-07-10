@@ -25,4 +25,16 @@ class IndustryServiceTest extends TestCase
         $this->assertArrayHasKey("title", $response[0]);        
         $this->assertArrayHasKey('image', $response[0]);
     }
+
+    public function test_getIndustryPopulationByRank_returns_all_data()
+    {
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Naics_Titles_TableSeeder');
+        $this->seed('Master_Industry_Page_Data_Seeder');   
+        $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
+        $this->assertArrayHasKey("title", $response[0]);    
+        $this->assertArrayHasKey("percentage", $response[0]);        
+        $this->assertArrayHasKey('rank', $response[0]);
+        $this->assertArrayHasKey('image', $response[0]);
+    }
 }
