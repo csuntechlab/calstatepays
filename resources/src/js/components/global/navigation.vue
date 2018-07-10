@@ -2,13 +2,13 @@
 	<header class="site-header">
         <div class="container-fluid"> 
             <div class="row d-md-flex">
-                <div class="col-6 col-md-3 order-2 order-md-1">
+                <div class="col-6 col-md-3 order-2 order-md-1 align-self-center">
                     <router-link class="" to="/">
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block my-2" alt="Cal State Pays logo">
                     </router-link>
                 </div>
-                <div class="col-3 d-md-none order-3">
-                    <button @click="toggleShowNav()" class="navbar-toggler" type="button">
+                <div class="col-3 d-md-none order-3 align-self-center">
+                    <button @click="toggleShowNav()" type="button">
                             <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -40,7 +40,7 @@
                         </div>
                     </nav>
                 </div>
-                <div class="col-3 col-md-3 order-1 order-md-3">
+                <div class="col-3 col-md-3 order-1 order-md-3 align-self-center">
                     <div class="navbar-text small mt-1 w-100">
                         <router-link to="/research">
                             <img :src="this.url + '/img/strada-gray.svg'" class="float-right nav-logo-secondary mx-auto d-block" alt="Strada Logo">

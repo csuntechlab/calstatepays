@@ -27375,6 +27375,12 @@ figcaption {
   top: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .site-header {
+    min-height: 3.75rem;
+  }
+}
+
 .nav-link {
   padding: 18px 0px;
 }
@@ -27392,9 +27398,14 @@ figcaption {
   width: 120px;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-logo {
+    height: 2.75rem;
+  }
+}
+
 .nav-logo-secondary {
-  max-height: 50px;
-  width: 50px;
+  height: 2.75rem;
 }
 
 .hr-nav {
@@ -27873,6 +27884,12 @@ input[type="button"]:focus {
 .fa-bars {
   font-size: 2.5rem;
   color: #777777;
+}
+
+@media screen and (max-width: 767px) {
+  .fa-bars {
+    font-size: 1.75rem;
+  }
 }
 
 .echarts {

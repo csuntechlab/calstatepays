@@ -85991,7 +85991,9 @@ var render = function() {
       _c("div", { staticClass: "row d-md-flex" }, [
         _c(
           "div",
-          { staticClass: "col-6 col-md-3 order-2 order-md-1" },
+          {
+            staticClass: "col-6 col-md-3 order-2 order-md-1 align-self-center"
+          },
           [
             _c("router-link", { attrs: { to: "/" } }, [
               _c("img", {
@@ -86006,21 +86008,24 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3 d-md-none order-3" }, [
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.toggleShowNav()
+        _c(
+          "div",
+          { staticClass: "col-3 d-md-none order-3 align-self-center" },
+          [
+            _c(
+              "button",
+              {
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.toggleShowNav()
+                  }
                 }
-              }
-            },
-            [_c("i", { staticClass: "fas fa-bars" })]
-          )
-        ]),
+              },
+              [_c("i", { staticClass: "fas fa-bars" })]
+            )
+          ]
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -86176,24 +86181,31 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3 col-md-3 order-1 order-md-3" }, [
-          _c(
-            "div",
-            { staticClass: "navbar-text small mt-1 w-100" },
-            [
-              _c("router-link", { attrs: { to: "/research" } }, [
-                _c("img", {
-                  staticClass: "float-right nav-logo-secondary mx-auto d-block",
-                  attrs: {
-                    src: this.url + "/img/strada-gray.svg",
-                    alt: "Strada Logo"
-                  }
-                })
-              ])
-            ],
-            1
-          )
-        ])
+        _c(
+          "div",
+          {
+            staticClass: "col-3 col-md-3 order-1 order-md-3 align-self-center"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "navbar-text small mt-1 w-100" },
+              [
+                _c("router-link", { attrs: { to: "/research" } }, [
+                  _c("img", {
+                    staticClass:
+                      "float-right nav-logo-secondary mx-auto d-block",
+                    attrs: {
+                      src: this.url + "/img/strada-gray.svg",
+                      alt: "Strada Logo"
+                    }
+                  })
+                ])
+              ],
+              1
+            )
+          ]
+        )
       ])
     ])
   ])
