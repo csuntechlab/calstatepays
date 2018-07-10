@@ -23,10 +23,10 @@ class MajorServiceTest extends TestCase
         $this->seed('Hegis_Codes_TestTableSeeder');
         $response = $this->majorService->getAllHegisCodes();
 
-        $this->arrayHasKey(0, $response);
-        $this->arrayHasKey("hegis_code", $response[0]);
-        $this->arrayHasKey("major", $response[0]);
-        $this->arrayHasKey("university", $response[0]);
+        $this->assertArrayHasKey(0, $response);
+        $this->assertArrayHasKey("hegis_code", $response[0]);
+        $this->assertArrayHasKey("major", $response[0]);
+        $this->assertArrayHasKey("university", $response[0]);
         $this->assertEquals(HEGISCode::count(), count($response));
     }
 
@@ -34,8 +34,8 @@ class MajorServiceTest extends TestCase
         $this->seed('Field_Of_Studies_TableSeeder');
         $response = $this->majorService->getAllFieldOfStudies();
 
-        $this->arrayHasKey("name", $response[0]);        
-        $this->arrayHasKey("id", $response[0]);
+        $this->assertArrayHasKey("name", $response[0]);        
+        $this->assertArrayHasKey("id", $response[0]);
         $this->assertEquals(FieldOfStudy::count(), count($response));
     }
 
