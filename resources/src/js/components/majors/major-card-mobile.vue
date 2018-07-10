@@ -25,7 +25,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col">
-                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries"></industry-mobile>
+                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"></industry-mobile>
                     </div>
                 </div>
             </div>
@@ -76,6 +76,9 @@ export default {
         },
         selectedFormWasSubmitted() {
             return this.formWasSubmitted(this.index);
+        },
+        selectedMajorId() {
+            return this.majorData(this.index).majorId;
         }
     },
     methods:{

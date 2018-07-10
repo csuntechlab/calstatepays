@@ -7,6 +7,7 @@ use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
 use App\Services\MajorService;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class MajorServiceTest extends TestCase
@@ -49,5 +50,26 @@ class MajorServiceTest extends TestCase
         $this->arrayHasKey("entry_status", $response[0]);
         $this->arrayHasKey("years", $response[0]);        
         $this->arrayHasKey("major_path_wage", $response[0]);
+    }
+
+    public function test_getFREData_ensure_returns_all_keys()
+    {
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_FRE_Page_Data_TableSeeder');
+        $request = new Request();
+        $request->major = 22021;
+        $request->university = 70;
+        $request->age_range = 2;
+        $request->education_level = 'FTF';
+        $request->annual_earnings = 3;
+        $request->financial_aid = 2;
+        
+        $response = $this->majorService->getFREData($request);
+        $this->arrayHasKey("student_background_id", $response);
+        $this->arrayHasKey("annual_earnings_id", $response);
+        $this->arrayHasKey("annual_financial_aid_id", $response);
+        $this->arrayHasKey("time_to_degree", $response);
+        $this->arrayHasKey("earnings_5_years", $response);
+        $this->arrayHasKey("roi", $response);
     }
 }
