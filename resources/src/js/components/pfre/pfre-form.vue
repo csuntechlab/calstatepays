@@ -6,7 +6,7 @@
             <div class="form__group">
             <div class="row row--condensed">    
                 <div class="col col-12">
-                    <div v-if="formNotFilled" class="required-field">
+                    <div v-show="formNotFilled" class="required-field">
                         Please fill out all fields.
                     </div>
                     <label for="Major">Major:</label>

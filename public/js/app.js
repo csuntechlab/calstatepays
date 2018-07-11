@@ -45739,13 +45739,25 @@ var render = function() {
           "div",
           { staticClass: "col col-12" },
           [
-            _vm.formNotFilled
-              ? _c("div", { staticClass: "required-field" }, [
-                  _vm._v(
-                    "\n                    Please fill out all fields.\n                "
-                  )
-                ])
-              : _vm._e(),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.formNotFilled,
+                    expression: "formNotFilled"
+                  }
+                ],
+                staticClass: "required-field"
+              },
+              [
+                _vm._v(
+                  "\n                    Please fill out all fields.\n                "
+                )
+              ]
+            ),
             _vm._v(" "),
             _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
             _vm._v(" "),
@@ -48062,6 +48074,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -48078,21 +48091,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 formWasSubmitted: false,
                 schoolId: null,
                 fieldOfStudyId: null,
-                educationLevel: "allDegrees",
-                errors: {
-                    "major": false,
-                    "university": false
-                },
-                submitCount: 0
+                educationLevel: "allDegrees"
             },
+            formNotFilled: false,
             selected: null
         };
     },
 
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(['fetchIndustryImages', 'toggleFormWasSubmitted', 'fetchUpdatedMajorsByField', 'fetchMajorData']), {
         updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
+
         submitForm: function submitForm() {
-            this.form.submitCount += 1;
+            this.formNotFilled = false;
             if (this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
@@ -48100,17 +48110,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         },
         checkForm: function checkForm() {
-            if (this.form.schoolId && this.form.majorId) {
-                return true;
-            }
-            this.checkFieldsHaveErrors();
-        },
-        checkFieldsHaveErrors: function checkFieldsHaveErrors() {
-            if (!this.form.schoolId) {
-                this.form.errors.university = true;
-            }
-            if (!this.form.majorId) {
-                this.form.errors.major = true;
+            if (!this.$v.$invalid) return true;else {
+                this.formNotFilled = true;
+                return false;
             }
         },
         updateSelect: function updateSelect(field, dataKey, data) {
@@ -48176,6 +48178,26 @@ var render = function() {
     [
       !_vm.selectedFormWasSubmitted
         ? _c("div", { staticClass: "form__group" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.formNotFilled,
+                    expression: "formNotFilled"
+                  }
+                ],
+                staticClass: "required-field"
+              },
+              [
+                _vm._v(
+                  "\n                Please select a Campus and Major.\n            "
+                )
+              ]
+            ),
+            _vm._v(" "),
             _c("div", { staticClass: "row row--condensed mt-3" }, [
               _vm._m(0),
               _vm._v(" "),
@@ -48186,30 +48208,6 @@ var render = function() {
                   _c("label", { attrs: { for: "campus" } }, [
                     _vm._v("Campus:")
                   ]),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: this.form.errors.university,
-                          expression: "this.form.errors.university"
-                        }
-                      ],
-                      attrs: { for: "campus" }
-                    },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-weight": "bold", color: "red" }
-                        },
-                        [_vm._v("Required *")]
-                      )
-                    ]
-                  ),
                   _vm._v(" "),
                   _c("v-select", {
                     staticClass: "csu-form-input-major",
@@ -48272,30 +48270,6 @@ var render = function() {
                 { staticClass: "col col-12" },
                 [
                   _c("label", { attrs: { for: "Major" } }, [_vm._v("Major:")]),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: this.form.errors.major,
-                          expression: "this.form.errors.major"
-                        }
-                      ],
-                      attrs: { for: "Major" }
-                    },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticStyle: { "font-weight": "bold", color: "red" }
-                        },
-                        [_vm._v("Required *")]
-                      )
-                    ]
-                  ),
                   _vm._v(" "),
                   this.form.fieldOfStudyId == null
                     ? _c("v-select", {
