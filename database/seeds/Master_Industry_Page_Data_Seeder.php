@@ -44,7 +44,6 @@ class Master_Industry_Page_Data_Seeder extends Seeder
         $universityMajor = UniversityMajor::all();
         foreach($universityMajor as $university_major){
 
-
             foreach($naics as $naic){
                 $faker = Faker::create();
                 $population_found = $faker->numberBetween(500, 1500);

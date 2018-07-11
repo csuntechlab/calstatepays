@@ -27066,8 +27066,31 @@ html {
   font-weight: 500;
 }
 
-.home__content {
+.home__col .home__subheading h3, .home__col .home__copy p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 85%;
+}
+
+.home__col {
   font-weight: 400;
+}
+
+.home__col .home__icon {
+  height: 7rem;
+}
+
+.home__col .home__subheading {
+  height: 6rem;
+  position: relative;
+}
+
+.home__col .home__copy {
+  height: 6.75rem;
+  position: relative;
 }
 
 body {
@@ -27384,6 +27407,13 @@ footer, .footer {
   font-family: "Open Sans";
   width: 100%;
   height: 100%;
+  min-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 1 auto !important;
+          flex: 0 1 auto !important;
   background-color: #000;
 }
 
