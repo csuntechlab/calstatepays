@@ -48191,6 +48191,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.form.majorId = null;
+                this.form.schoolId = null;
             }
         },
         checkForm: function checkForm() {

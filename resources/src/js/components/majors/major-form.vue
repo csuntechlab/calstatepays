@@ -113,6 +113,8 @@ export default {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.form.majorId = null;
+                this.form.schoolId = null;
             }
         },
 
