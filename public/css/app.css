@@ -26980,7 +26980,7 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .graph-content {
@@ -27377,16 +27377,33 @@ figcaption {
 
 @media screen and (max-width: 767px) {
   .site-header {
-    min-height: 3.75rem;
+    min-height: 4rem;
+    font-size: 1.3rem;
+  }
+}
+
+.site-header abbr[title] {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .collapse {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 200ms ease-in;
+    transition: height 200ms ease-in;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show {
+    height: 20rem;
   }
 }
 
 .nav-link {
-  padding: 18px 0px;
-}
-
-.nav-link abbr[title] {
-  border-bottom: none;
+  padding: 1.5rem 0px;
 }
 
 .navbar-toggler {
@@ -27400,12 +27417,12 @@ figcaption {
 
 @media screen and (max-width: 767px) {
   .nav-logo {
-    height: 2.75rem;
+    height: 2.9rem;
   }
 }
 
 .nav-logo-secondary {
-  height: 2.75rem;
+  height: 2.35rem;
 }
 
 .hr-nav {

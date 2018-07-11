@@ -85968,8 +85968,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         toggleShowNav: function toggleShowNav() {
             if (window.innerHeight < 768) {
-                var element = document.getElementById("nav-list");
-                element.classList.toggle("show");
+                var navItem = document.getElementById("nav-list");
+                navItem.classList.toggle("show");
             }
         }
     },
@@ -85997,7 +85997,7 @@ var render = function() {
           [
             _c("router-link", { attrs: { to: "/" } }, [
               _c("img", {
-                staticClass: "float-md-left nav-logo mx-auto d-block my-2",
+                staticClass: "float-md-left nav-logo mx-auto d-block",
                 attrs: {
                   src: this.url + "/img/calstatepays.svg",
                   alt: "Cal State Pays logo"
@@ -86014,14 +86014,7 @@ var render = function() {
           [
             _c(
               "button",
-              {
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    _vm.toggleShowNav()
-                  }
-                }
-              },
+              { attrs: { type: "button" }, on: { click: _vm.toggleShowNav } },
               [_c("i", { staticClass: "fas fa-bars" })]
             )
           ]
@@ -86057,11 +86050,7 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: {
-                              click: function($event) {
-                                _vm.toggleShowNav()
-                              }
-                            }
+                            on: { click: _vm.toggleShowNav }
                           },
                           [
                             _c(
@@ -86087,11 +86076,7 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: {
-                              click: function($event) {
-                                _vm.toggleShowNav()
-                              }
-                            }
+                            on: { click: _vm.toggleShowNav }
                           },
                           [
                             _c(
@@ -86117,11 +86102,7 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: {
-                              click: function($event) {
-                                _vm.toggleShowNav()
-                              }
-                            }
+                            on: { click: _vm.toggleShowNav }
                           },
                           [
                             _c(
@@ -86150,11 +86131,7 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: {
-                              click: function($event) {
-                                _vm.toggleShowNav()
-                              }
-                            }
+                            on: { click: _vm.toggleShowNav }
                           },
                           [
                             _c(
@@ -86189,7 +86166,7 @@ var render = function() {
           [
             _c(
               "div",
-              { staticClass: "navbar-text small mt-1 w-100" },
+              { staticClass: "navbar-text small w-100" },
               [
                 _c("router-link", { attrs: { to: "/research" } }, [
                   _c("img", {
