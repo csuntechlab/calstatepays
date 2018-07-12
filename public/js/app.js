@@ -48802,7 +48802,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 yAxis: {
                     axisLabel: {
                         rotate: this.mobileYAxis,
-                        formatter: '${value}'
+                        formatter: function formatter(value) {
+                            if (value > 999) {
+                                var strVal = value.toString();
+                                strVal = strVal.slice(0, -3);
+                                return '$' + strVal + 'k';
+                            } else return '$' + value;
+                        }
                     },
                     max: 150000
                 },
@@ -65778,7 +65784,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 yAxis: {
                     axisLabel: {
-                        rotate: 90
+                        rotate: 90,
+                        formatter: function formatter(value) {
+                            if (value > 999) {
+                                var strVal = value.toString();
+                                strVal = strVal.slice(0, -3);
+                                return '$' + strVal + 'k';
+                            } else return '$' + value;
+                        }
                     },
                     max: 150000
                 },

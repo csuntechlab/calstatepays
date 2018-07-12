@@ -172,7 +172,15 @@ export default {
                 yAxis: {
                     axisLabel: {
                         rotate: this.mobileYAxis,
-                        formatter: '${value}'
+                        formatter: function (value){
+                            if(value > 999){
+                                let strVal = value.toString();
+                                strVal = strVal.slice(0,-3);
+                                return '$' + strVal + 'k';
+                            }
+                            else
+                                return '$' + value;
+                        }
                     },
                     max: 150000
                 },
