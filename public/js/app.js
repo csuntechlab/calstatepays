@@ -85967,9 +85967,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggleShowNav: function toggleShowNav() {
-            if (window.innerHeight < 768) {
+            var showCheck = document.getElementById("nav-list");
+            if (showCheck.classList.contains("show")) {
                 var navItem = document.getElementById("nav-list");
-                navItem.classList.toggle("show");
+                navItem.classList.remove("show");
+            } else {
+                var navItem = document.getElementById("nav-list");
+                navItem.classList.add("show");
             }
         }
     },
@@ -86014,7 +86018,14 @@ var render = function() {
           [
             _c(
               "button",
-              { attrs: { type: "button" }, on: { click: _vm.toggleShowNav } },
+              {
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.toggleShowNav()
+                  }
+                }
+              },
               [_c("i", { staticClass: "fas fa-bars" })]
             )
           ]
@@ -86050,7 +86061,11 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: { click: _vm.toggleShowNav }
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
                             _c(
@@ -86076,7 +86091,11 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: { click: _vm.toggleShowNav }
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
                             _c(
@@ -86102,7 +86121,11 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: { click: _vm.toggleShowNav }
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
                             _c(
@@ -86131,7 +86154,11 @@ var render = function() {
                           "li",
                           {
                             staticClass: "nav-item",
-                            on: { click: _vm.toggleShowNav }
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
                           },
                           [
                             _c(

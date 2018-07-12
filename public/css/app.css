@@ -27390,14 +27390,15 @@ figcaption {
   .collapse {
     height: 0;
     overflow: hidden;
-    -webkit-transition: height 200ms ease-in;
-    transition: height 200ms ease-in;
+    -webkit-transition: height .5s;
+    transition: height .5s;
     display: block;
   }
 }
 
 @media screen and (max-width: 767px) {
   .show {
+    /* 5 refer to how many nav links there are*/
     height: 20rem;
   }
 }

@@ -20,14 +20,15 @@
 	@media screen and (max-width: $break-small) {
 		height: 0;
 		overflow: hidden;
-		transition: height 200ms ease-in;
+		transition: height .5s;
 		display: block;
 	}
 }
 
 .show {
 	@media screen and (max-width: $break-small) {
-		height: 20rem;
+		/* 5 refer to how many nav links there are*/
+		height: $navbar-height*5;
 	}
 }
 
