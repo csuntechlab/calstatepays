@@ -170,12 +170,6 @@ export default {
                     data: ['line']
                 },
                 yAxis: {
-                    // name: "Earnings",
-                    // nameLocation: 'middle',
-                    // nameTextStyle: {
-                    //     padding: [0, 0, 40, 0]
-                    // },
-                    // nameRotate: 90,
                     axisLabel: {
                         rotate: this.mobileYAxis,
                         formatter: '${value}'
@@ -193,7 +187,7 @@ export default {
                         },
                         itemStyle: {
                             color: this.toolColors3
-                        }
+                        },
                     },
                     {
                         type: 'line',
@@ -205,6 +199,11 @@ export default {
                         },
                         itemStyle: {
                             color: this.toolColors2
+                        },
+                        label: {
+                            show: true,
+                            formatter: '$ {c}',
+                            fontSize: 15
                         }
                     },
                     {
@@ -218,6 +217,11 @@ export default {
                         itemStyle: {
                             color: this.toolColors1
                         },
+                        label: {
+                            show: true,
+                            formatter: '$ {c}',
+                            fontSize: 15
+                        }
                     }
                 ],
                 animationDuration: 2000

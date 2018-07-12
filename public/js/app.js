@@ -48800,12 +48800,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     data: ['line']
                 },
                 yAxis: {
-                    // name: "Earnings",
-                    // nameLocation: 'middle',
-                    // nameTextStyle: {
-                    //     padding: [0, 0, 40, 0]
-                    // },
-                    // nameRotate: 90,
                     axisLabel: {
                         rotate: this.mobileYAxis,
                         formatter: '${value}'
@@ -48833,6 +48827,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     },
                     itemStyle: {
                         color: this.toolColors2
+                    },
+                    label: {
+                        show: true,
+                        formatter: '$ {c}',
+                        fontSize: 15
                     }
                 }, {
                     type: 'line',
@@ -48844,6 +48843,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     },
                     itemStyle: {
                         color: this.toolColors1
+                    },
+                    label: {
+                        show: true,
+                        formatter: '$ {c}',
+                        fontSize: 15
                     }
                 }],
                 animationDuration: 2000
