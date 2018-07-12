@@ -13,6 +13,7 @@ export default {
     data(){
         return {
             xAxis: ['2', '5', '10'],
+            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                color1: '#000',
                color2: '#000',
@@ -169,14 +170,15 @@ export default {
                     data: ['line']
                 },
                 yAxis: {
-                    name: "Earnings",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [0, 0, 40, 0]
-                    },
-                    nameRotate: 90,
+                    // name: "Earnings",
+                    // nameLocation: 'middle',
+                    // nameTextStyle: {
+                    //     padding: [0, 0, 40, 0]
+                    // },
+                    // nameRotate: 90,
                     axisLabel: {
-                        rotate: this.mobileYAxis
+                        rotate: this.mobileYAxis,
+                        formatter: '${value}'
                     },
                     max: 150000
                 },
