@@ -48827,11 +48827,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     },
                     itemStyle: {
                         color: this.toolColors2
-                    },
-                    label: {
-                        show: true,
-                        formatter: '$ {c}',
-                        fontSize: 15
                     }
                 }, {
                     type: 'line',
@@ -48843,11 +48838,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     },
                     itemStyle: {
                         color: this.toolColors1
-                    },
-                    label: {
-                        show: true,
-                        formatter: '$ {c}',
-                        fontSize: 15
                     }
                 }],
                 animationDuration: 2000

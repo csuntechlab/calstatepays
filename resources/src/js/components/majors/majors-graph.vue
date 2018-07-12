@@ -200,11 +200,6 @@ export default {
                         itemStyle: {
                             color: this.toolColors2
                         },
-                        label: {
-                            show: true,
-                            formatter: '$ {c}',
-                            fontSize: 15
-                        }
                     },
                     {
                         type: 'line',
@@ -217,11 +212,6 @@ export default {
                         itemStyle: {
                             color: this.toolColors1
                         },
-                        label: {
-                            show: true,
-                            formatter: '$ {c}',
-                            fontSize: 15
-                        }
                     }
                 ],
                 animationDuration: 2000
