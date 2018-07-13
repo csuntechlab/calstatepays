@@ -47427,7 +47427,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             }
         },
         toggleEducationLevel: function toggleEducationLevel(educationInput) {
-            console.log(this.educationLevel(this.index));
             this.$store.dispatch('toggleEducationLevel', {
                 cardIndex: this.form.cardIndex,
                 educationLevel: educationInput
