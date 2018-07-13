@@ -7,9 +7,9 @@
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
                     </router-link>
                 </div>
-                <div class="col-3 d-md-none order-3 align-self-center">
+                <div class="col-3 d-md-none order-3 align-self-center d-flex justify-content-center">
                     <button @click="toggleShowNav()" type="button">
-                            <i class="fas fa-bars"></i>
+                            <i id="nav-icon" class="fas fa-bars"></i>
                     </button>
                 </div>
                 <div class="col-12 col-md-6 order-6 order-md-2 align-self-md-end p-0">
@@ -65,10 +65,16 @@ export default {
             if(showCheck.classList.contains("show")){
                 var navItem = document.getElementById("nav-list");
                 navItem.classList.remove("show");
+                var navIcon = document.getElementById("nav-icon");
+                navIcon.classList.remove("fa-times");
+                navIcon.classList.add("fa-bars");
             }
             else{
                 var navItem = document.getElementById("nav-list");
                 navItem.classList.add("show");
+                var navIcon = document.getElementById("nav-icon");
+                navIcon.classList.remove("fa-bars");
+                navIcon.classList.add("fa-times");
             }
         }
     },

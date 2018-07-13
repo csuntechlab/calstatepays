@@ -85971,9 +85971,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (showCheck.classList.contains("show")) {
                 var navItem = document.getElementById("nav-list");
                 navItem.classList.remove("show");
+                var navIcon = document.getElementById("nav-icon");
+                navIcon.classList.remove("fa-times");
+                navIcon.classList.add("fa-bars");
             } else {
                 var navItem = document.getElementById("nav-list");
                 navItem.classList.add("show");
+                var navIcon = document.getElementById("nav-icon");
+                navIcon.classList.remove("fa-bars");
+                navIcon.classList.add("fa-times");
             }
         }
     },
@@ -86014,7 +86020,10 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-3 d-md-none order-3 align-self-center" },
+          {
+            staticClass:
+              "col-3 d-md-none order-3 align-self-center d-flex justify-content-center"
+          },
           [
             _c(
               "button",
@@ -86026,7 +86035,12 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-bars" })]
+              [
+                _c("i", {
+                  staticClass: "fas fa-bars",
+                  attrs: { id: "nav-icon" }
+                })
+              ]
             )
           ]
         ),
