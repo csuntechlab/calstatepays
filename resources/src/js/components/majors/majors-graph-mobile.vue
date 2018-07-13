@@ -91,7 +91,7 @@ export default {
         toolColors1(){
             let color='#476A6F'
                 if(this.educationLevel === 'someCollege'){
-                    color='#A1F0FB'
+                    color='#7E969A'
                 }
                 if(this.educationLevel === 'bachelors'){
                     color='#F2C55C'
@@ -119,10 +119,10 @@ export default {
         toolColors3(){
             let color='#279D5D'
                 if(this.educationLevel === 'someCollege'){
-                    color='#375255'
+                    color='#2c4144'
                 }
                 if(this.educationLevel === 'bachelors'){
-                    color='#6C4B00'
+                    color='#987100'
                 }
                 if(this.educationLevel === 'postBacc'){
                     color='#1B6E41'

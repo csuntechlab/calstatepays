@@ -47352,10 +47352,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -47372,7 +47368,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 formWasSubmitted: false,
                 schoolId: null,
                 fieldOfStudyId: null,
-                educationLevel: "allDegrees",
+                formEducationLevel: "allDegrees",
                 errors: {
                     "major": null,
                     "university": null
@@ -47430,14 +47426,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 this.fetchUpdatedMajorsByField(this.form);
             }
         },
-        toggleEducationLevel: function toggleEducationLevel() {
+        toggleEducationLevel: function toggleEducationLevel(educationInput) {
+            console.log(this.educationLevel(this.index));
             this.$store.dispatch('toggleEducationLevel', {
                 cardIndex: this.form.cardIndex,
-                educationLevel: this.form.educationLevel
+                educationLevel: educationInput
             });
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted', 'educationLevel']), {
         selectedMajorsByField: function selectedMajorsByField() {
             this.selected = null;
             return this.majorsByField(this.index);
@@ -48434,7 +48431,7 @@ var render = function() {
               ])
             ])
           ])
-        : _c("div", { staticClass: "form__group" }, [
+        : _c("div", [
             _c(
               "p",
               {
@@ -48451,144 +48448,75 @@ var render = function() {
               [_vm._v("Select a Degree Level")]
             ),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "allDegrees",
-                id: "allDegrees-" + _vm.form.cardIndex,
-                checked: "",
-                value: "allDegrees"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "allDegrees")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "allDegrees")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
             _c(
-              "label",
-              { attrs: { for: "allDegrees-" + _vm.form.cardIndex } },
-              [_vm._v("All")]
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_all",
+                class: {
+                  "selected-btn_all":
+                    this.educationLevel(this.index) == "allDegrees"
+                },
+                attrs: { id: "allDegrees-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    _vm.toggleEducationLevel("allDegrees")
+                  }
+                }
+              },
+              [_vm._v("All Levels")]
             ),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "postBacc",
-                id: "postBacc-" + _vm.form.cardIndex,
-                value: "postBacc"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "postBacc")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "postBacc")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_postBacc",
+                class: {
+                  "selected-btn_postBacc":
+                    this.educationLevel(this.index) == "postBacc"
+                },
+                attrs: { id: "postBacc-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    _vm.toggleEducationLevel("postBacc")
                   }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "postBacc-" + _vm.form.cardIndex } }, [
-              _vm._v("Post Bacc")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
                 }
-              ],
-              attrs: {
-                type: "radio",
-                name: "bachelors",
-                id: "bachelors-" + _vm.form.cardIndex,
-                value: "bachelors"
               },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "bachelors")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "bachelors")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "bachelors-" + _vm.form.cardIndex } }, [
-              _vm._v("Bachelor's Degree")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.educationLevel,
-                  expression: "form.educationLevel"
-                }
-              ],
-              attrs: {
-                type: "radio",
-                name: "someCollege",
-                id: "someCollege-" + _vm.form.cardIndex,
-                value: "someCollege"
-              },
-              domProps: {
-                checked: _vm._q(_vm.form.educationLevel, "someCollege")
-              },
-              on: {
-                change: [
-                  function($event) {
-                    _vm.$set(_vm.form, "educationLevel", "someCollege")
-                  },
-                  function($event) {
-                    _vm.toggleEducationLevel()
-                  }
-                ]
-              }
-            }),
+              [_vm._v("Post Bacc")]
+            ),
             _vm._v(" "),
             _c(
-              "label",
-              { attrs: { for: "someCollege-" + _vm.form.cardIndex } },
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_bachelors",
+                class: {
+                  "selected-btn_bachelors":
+                    this.educationLevel(this.index) == "bachelors"
+                },
+                attrs: { id: "bachelors-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    _vm.toggleEducationLevel("bachelors")
+                  }
+                }
+              },
+              [_vm._v("Bachelors")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_someCollege",
+                class: {
+                  "selected-btn_someCollege":
+                    this.educationLevel(this.index) == "someCollege"
+                },
+                attrs: { id: "someCollege-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    _vm.toggleEducationLevel("someCollege")
+                  }
+                }
+              },
               [_vm._v("Some College")]
             )
           ])
@@ -48736,13 +48664,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toolColors1: function toolColors1() {
             var color = '#476A6F';
             if (this.educationLevel === 'someCollege') {
-                color = '#A1F0FB';
+                color = '#7E969A';
             }
             if (this.educationLevel === 'bachelors') {
-                color = '#F2C55C';
+                color = '#EDAC17';
             }
             if (this.educationLevel === 'postBacc') {
-                color = '#3EFA94';
+                color = '#55BE85';
             }
             return color;
         },
@@ -48762,10 +48690,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toolColors3: function toolColors3() {
             var color = '#279D5D';
             if (this.educationLevel === 'someCollege') {
-                color = '#375255';
+                color = '#2c4144';
             }
             if (this.educationLevel === 'bachelors') {
-                color = '#6C4B00';
+                color = '#987100';
             }
             if (this.educationLevel === 'postBacc') {
                 color = '#1B6E41';
@@ -65724,7 +65652,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toolColors1: function toolColors1() {
             var color = '#476A6F';
             if (this.educationLevel === 'someCollege') {
-                color = '#A1F0FB';
+                color = '#7E969A';
             }
             if (this.educationLevel === 'bachelors') {
                 color = '#F2C55C';
@@ -65750,10 +65678,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toolColors3: function toolColors3() {
             var color = '#279D5D';
             if (this.educationLevel === 'someCollege') {
-                color = '#375255';
+                color = '#2c4144';
             }
             if (this.educationLevel === 'bachelors') {
-                color = '#6C4B00';
+                color = '#987100';
             }
             if (this.educationLevel === 'postBacc') {
                 color = '#1B6E41';
