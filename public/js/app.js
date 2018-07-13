@@ -85956,6 +85956,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -85974,12 +85975,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var navIcon = document.getElementById("nav-icon");
                 navIcon.classList.remove("fa-times");
                 navIcon.classList.add("fa-bars");
+                document.getElementById("nav-overlay").style.display = "none";
             } else {
                 var navItem = document.getElementById("nav-list");
                 navItem.classList.add("show");
                 var navIcon = document.getElementById("nav-icon");
                 navIcon.classList.remove("fa-bars");
                 navIcon.classList.add("fa-times");
+                document.getElementById("nav-overlay").style.display = "block";
             }
         }
     },
@@ -86022,7 +86025,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "col-3 d-md-none order-3 align-self-center d-flex justify-content-center"
+              "col-3 d-md-none order-3 align-self-center hamburger-btn-position"
           },
           [
             _c(
@@ -86225,7 +86228,9 @@ var render = function() {
           ]
         )
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "nav-overlay" } })
   ])
 }
 var staticRenderFns = []

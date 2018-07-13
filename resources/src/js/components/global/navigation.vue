@@ -7,7 +7,7 @@
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
                     </router-link>
                 </div>
-                <div class="col-3 d-md-none order-3 align-self-center d-flex justify-content-center">
+                <div class="col-3 d-md-none order-3 align-self-center hamburger-btn-position">
                     <button @click="toggleShowNav()" type="button">
                             <i id="nav-icon" class="fas fa-bars"></i>
                     </button>
@@ -49,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <div id="nav-overlay"></div>
 	</header>
 </template>
 <script>
@@ -68,6 +69,7 @@ export default {
                 var navIcon = document.getElementById("nav-icon");
                 navIcon.classList.remove("fa-times");
                 navIcon.classList.add("fa-bars");
+                document.getElementById("nav-overlay").style.display = "none";
             }
             else{
                 var navItem = document.getElementById("nav-list");
@@ -75,6 +77,7 @@ export default {
                 var navIcon = document.getElementById("nav-icon");
                 navIcon.classList.remove("fa-bars");
                 navIcon.classList.add("fa-times");
+                document.getElementById("nav-overlay").style.display = "block";
             }
         }
     },

@@ -27398,7 +27398,7 @@ figcaption {
 
 @media screen and (max-width: 767px) {
   .show {
-    /* 5 refer to how many nav links there are*/
+    /* 5 refer to the number of nav links*/
     height: 20rem;
   }
 }
@@ -27436,6 +27436,29 @@ figcaption {
     background: #D00D2D;
     color: #FFF !important;
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger-btn-position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #nav-overlay {
+    position: fixed;
+    background: #000;
+    opacity: .4;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
   }
 }
 

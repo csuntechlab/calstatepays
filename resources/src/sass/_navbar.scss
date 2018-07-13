@@ -27,7 +27,7 @@
 
 .show {
 	@media screen and (max-width: $break-small) {
-		/* 5 refer to how many nav links there are*/
+		/* 5 refer to the number of nav links*/
 		height: $navbar-height*5;
 	}
 }
@@ -57,5 +57,24 @@
 		background: $red;
 		color: $white !important;
 		font-weight: bold;
+	}
+}
+
+.hamburger-btn-position {
+	@media screen and (max-width: $break-small) {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+#nav-overlay{
+	@media screen and (max-width: $break-small) {
+		position: fixed;
+		background: $black;
+		opacity: .4;
+		width: 100vw;
+		height: 100vh;
+		z-index: 100;
+		display: none;
 	}
 }
