@@ -170,6 +170,29 @@ input[type="button"]:focus {
   font-weight: 500;
 }
 
+.selected-btn_all {
+  background: $dark-candy;
+}
+
+.selected-btn_postBacc {
+  background: $green-75;
+}
+
+.selected-btn_bachelors {
+  background: $gold-75;
+}
+
+.selected-btn_someCollege {
+  background: $oxford-75;
+}
+
+.selected-btn_all,
+.selected-btn_bachelors,
+.selected-btn_postBacc,
+.selected-btn_someCollege {
+  box-shadow: inset 0 0 15px #000 !important;
+}
+
 @media only screen and (min-width: 1000px) {
   .major-btn_all,
   .major-btn_bachelors,
@@ -195,21 +218,6 @@ input[type="button"]:focus {
   }
 }
 
-// .major-btn_all:hover {
-//   background-color: $dark-candy;
-// }
-
-// .major-btn_postBacc:hover {
-//   background-color: $green-75;
-// }
-
-// .major-btn_bachelors:hover {
-//   background-color: $gold-75;
-// }
-// .major-btn_someCollege:hover {
-//   background-color: $oxford-75;
-// }
-
 @media only screen and (min-width: 1000px) {
   .major-btn_all:hover,
   .major-btn_postBacc:hover,
@@ -217,21 +225,6 @@ input[type="button"]:focus {
   .major-btn_someCollege:hover {
     margin-left: 15px;
   }
-}
-
-.selected-btn_all {
-  background-color: $dark-candy;
-}
-
-.selected-btn_postBacc {
-  background-color: $green-75;
-}
-
-.selected-btn_bachelors {
-  background-color: $gold-75;
-}
-.selected-btn_someCollege {
-  background-color: $oxford-75;
 }
 
 @media only screen and (min-width: 1000px) {
