@@ -24,10 +24,10 @@ class MajorServiceTest extends TestCase
         $this->seed('Hegis_Codes_TestTableSeeder');
         $response = $this->majorService->getAllHegisCodes();
 
-        $this->arrayHasKey(0, $response);
-        $this->arrayHasKey("hegis_code", $response[0]);
-        $this->arrayHasKey("major", $response[0]);
-        $this->arrayHasKey("university", $response[0]);
+        $this->assertArrayHasKey(0, $response);
+        $this->assertArrayHasKey("hegis_code", $response[0]);
+        $this->assertArrayHasKey("major", $response[0]);
+        $this->assertArrayHasKey("university", $response[0]);
         $this->assertEquals(HEGISCode::count(), count($response));
     }
 
@@ -35,21 +35,20 @@ class MajorServiceTest extends TestCase
         $this->seed('Field_Of_Studies_TableSeeder');
         $response = $this->majorService->getAllFieldOfStudies();
 
-        $this->arrayHasKey("name", $response[0]);        
-        $this->arrayHasKey("id", $response[0]);
-        $removeUndeclared = 1;        
-        $this->assertEquals(FieldOfStudy::count() - $removeUndeclared, count($response));
+        $this->assertArrayHasKey("name", $response[0]);        
+        $this->assertArrayHasKey("id", $response[0]);
+        $this->assertEquals(FieldOfStudy::count(), count($response));
     }
 
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
         $this->seed('University_Majors_Test_TableSeeder');
         $response = $this->majorService->getMajorEarnings(22021, 1153);
-        $this->arrayHasKey("id", $response[0]);        
-        $this->arrayHasKey("student_path", $response[0]);    
-        $this->arrayHasKey("university_majors_id", $response[0]);        
-        $this->arrayHasKey("entry_status", $response[0]);
-        $this->arrayHasKey("years", $response[0]);        
-        $this->arrayHasKey("major_path_wage", $response[0]);
+        $this->assertArrayHasKey("id", $response[0]);        
+        $this->assertArrayHasKey("student_path", $response[0]);    
+        $this->assertArrayHasKey("university_majors_id", $response[0]);        
+        $this->assertArrayHasKey("entry_status", $response[0]);
+        $this->assertArrayHasKey("years", $response[0]);        
+        $this->assertArrayHasKey("major_path_wage", $response[0]);
     }
 
     public function test_getFREData_ensure_returns_all_keys()
