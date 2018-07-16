@@ -48649,6 +48649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
+            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
@@ -48788,6 +48789,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 },
                 xAxis: {
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0, 0, 0]
+                    },
                     data: this.xAxis
                 },
                 legend: {
@@ -48795,7 +48801,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 yAxis: {
                     axisLabel: {
-                        rotate: this.mobileYAxis
+                        rotate: this.mobileYAxis,
+                        formatter: function formatter(value) {
+                            if (value > 999) {
+                                var strVal = value.toString();
+                                strVal = strVal.slice(0, -3);
+                                return '$' + strVal + 'k';
+                            } else return '$' + value;
+                        }
                     },
                     max: 150000
                 },
@@ -65771,7 +65784,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 yAxis: {
                     axisLabel: {
-                        rotate: 90
+                        rotate: 90,
+                        formatter: function formatter(value) {
+                            if (value > 999) {
+                                var strVal = value.toString();
+                                strVal = strVal.slice(0, -3);
+                                return '$' + strVal + 'k';
+                            } else return '$' + value;
+                        }
                     },
                     max: 150000
                 },
@@ -86309,8 +86329,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -86327,8 +86345,6 @@ var render = function() {
       "div",
       { staticClass: "footer__links pl-4" },
       [
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "router-link",
           { staticClass: "footer__link text-gray", attrs: { to: "/research" } },
@@ -86346,7 +86362,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [
@@ -86354,21 +86370,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "footer__link text-white" }, [
-      _c("strong", [_vm._v("CSU Student Success Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "footer__links pr-4 ml-auto" }, [
       _c("p", { staticClass: "footer__link text-white text-right" }, [
         _c("strong", [_vm._v("California State University")])
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "footer__link text-white text-right" }, [
-        _c("strong", [_vm._v(" Office Of The Chancellor")])
       ]),
       _vm._v(" "),
       _c(
