@@ -86260,8 +86260,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -86278,8 +86276,6 @@ var render = function() {
       "div",
       { staticClass: "footer__links pl-4" },
       [
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "router-link",
           { staticClass: "footer__link text-gray", attrs: { to: "/research" } },
@@ -86297,7 +86293,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [
@@ -86305,21 +86301,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "footer__link text-white" }, [
-      _c("strong", [_vm._v("CSU Student Success Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "footer__links pr-4 ml-auto" }, [
       _c("p", { staticClass: "footer__link text-white text-right" }, [
         _c("strong", [_vm._v("California State University")])
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "footer__link text-white text-right" }, [
-        _c("strong", [_vm._v(" Office Of The Chancellor")])
       ]),
       _vm._v(" "),
       _c(
