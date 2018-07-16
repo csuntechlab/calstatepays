@@ -6,6 +6,9 @@
             <div class="form__group">
             <div class="row row--condensed">    
                 <div class="col col-12">
+                    <div v-show="formNotFilled" class="required-field">
+                        Please fill out all fields.
+                    </div>
                     <label for="Major">Major:</label>
                     <v-select
                         label="major" 
@@ -81,7 +84,7 @@
             </div>
             <div class="row row--condensed" id="submit-btn-container">
                 <div class="pt-2 pb-4 pt-md-2 pb-md-2">
-                        <button type="button" class="btn btn-success btn-submit" @click="fetchFreData(form), scrollWin()">Submit</button>
+                        <button id="submit-btn" type="button" class="btn btn-success btn-submit" @click="checkFormIsFilled(), scrollWin()">Submit</button>
                 </div>
         </div>
     </form>
@@ -89,18 +92,19 @@
 <script>
 import vSelect from 'vue-select';
 import { updateForm } from '../../utils/index';
+import { required } from 'vuelidate/lib/validators';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data(){
       return {
+        formNotFilled: false,
         form: {
             majorId: null,
             age: null,
             education: null,
             earnings: null,
             financialAid: null,
-            //drop down for university hasn't been created yet
             university: 70
         },
         ageRanges: [{age:'18-19', value: 1},{age:'20-24', value: 2}, {age:'24-26', value: 3}, {age:'26 +', value: 4}],
@@ -136,7 +140,16 @@ export default {
                     inline: "end"
                 });
             }
-        }
+        },
+        checkFormIsFilled(){
+            this.formNotFilled = false;
+            if(this.$v.$invalid)
+                this.formNotFilled = true;
+            else{
+                this.fetchFreData(this.form);
+                document.getElementById("submit-btn").innerHTML = "Resubmit";
+            }
+        },
     },
     computed: {
         ...mapGetters([
@@ -150,6 +163,16 @@ export default {
             else {
                 return this.majorNameById(this.form.majorId)
             }
+        }
+    },
+    validations: {
+        form: {
+            majorId: { required },
+            age: {required},
+            education: {required},
+            earnings: {required},
+            financialAid: {required},
+            university: {required},
         }
     },
     components: {

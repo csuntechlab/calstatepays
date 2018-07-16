@@ -1,12 +1,14 @@
 <template>
     <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
+                <div v-show="formNotFilled" class="required-field">
+                    Please select a Campus and Major.
+                </div>
             <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A <abbr title="California State University">CSU</abbr></h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
-                    <label for="campus" v-show="this.form.errors.university"><span style="font-weight:bold; color:red">Required *</span></label>
-                    <v-select 
+                    <v-select
                         label="name"
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
@@ -33,7 +35,6 @@
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <label for="Major" v-show="this.form.errors.major"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
@@ -92,17 +93,10 @@ export default {
                 schoolId: null,
                 fieldOfStudyId: null,
                 educationLevel: "allDegrees",
-                errors: {
-                    "major": null,
-                    "university": null
-                },
-                submitCount: 0,
-                isUnivSelected: true,
-                isMajorSelected: true
             },
+            formNotFilled: false,
             selected: null,
         }
-
     },
     methods: {
         ...mapActions([
@@ -112,36 +106,27 @@ export default {
             'fetchMajorData',
         ]),
         updateForm,
+
         submitForm(){
-            this.form.submitCount += 1;
+            this.formNotFilled = false;
             if(this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.form.majorId = null;
+                this.form.schoolId = null;
             }
         },
+
         checkForm(){
-            if(this.form.schoolId && this.form.majorId){
+            if(!this.$v.$invalid)
                 return true;
-            }
-            this.checkFieldsHaveErrors()
-        },
-        checkFieldsHaveErrors(){
-            if(!this.form.schoolId){
-                this.form.errors.university = 'Campus Required';
-                this.form.isUnivSelected = false;
-            } else {
-                this.form.isUnivSelected = true;
-                this.form.errors.university = false;
-            }
-            if(!this.form.majorId){
-                this.form.errors.major = 'Major Required';
-                this.form.isMajorSelected = false;
-            } else {
-                this.form.isMajorSelected = true;
-                this.form.errors.major = false;
+            else{
+                this.formNotFilled = true;
+                return false;
             }
         },
+
         updateSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
@@ -150,6 +135,7 @@ export default {
                 this.form[field] = null;
             }
         },
+        
         handleFieldOfStudyMajors(field){
             if(field == 'fieldOfStudyId'){
                 this.fetchUpdatedMajorsByField(this.form);
@@ -182,12 +168,6 @@ export default {
         },
         windowSize() {
             return window.innerWidth;
-        }
-    },
-    validations: {
-        form: {
-            majorId: { required },
-            schoolId: { required }
         }
     },
     validations: {
