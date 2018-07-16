@@ -46268,14 +46268,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -46311,28 +46303,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-<<<<<<< HEAD
-/* harmony default export */ __webpack_exports__["default"] = (_props$data$methods$c = {
-    props: ['index'],
-    data: function data() {
-        return {
-            form: {
-                cardIndex: this.index,
-                majorId: null,
-                formWasSubmitted: false,
-                schoolId: null,
-                fieldOfStudyId: null,
-                formEducationLevel: "allDegrees",
-                errors: {
-                    "major": null,
-                    "university": null
-                },
-                submitCount: 0,
-                isUnivSelected: true,
-                isMajorSelected: true
-            },
-            selected: null
-=======
 var percentage = function percentage(data) {
     return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(data).format('0.00%');
 };
@@ -46389,7 +46359,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
             nullFormat: defaults.nullFormat,
             defaultFormat: defaults.defaultFormat,
             scalePercentBy100: defaults.scalePercentBy100
->>>>>>> bd803cbc5de265ec5c9cb76da82e96c333b058da
         };
 
 
@@ -46754,38 +46723,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
                 optionalsRegExp = new RegExp('\\.?0{1,' + (optionals - (maxDecimals - boundedPrecision)) + '}$');
                 output = output.replace(optionalsRegExp, '');
             }
-<<<<<<< HEAD
-        },
-        toggleEducationLevel: function toggleEducationLevel(educationInput) {
-            this.$store.dispatch('toggleEducationLevel', {
-                cardIndex: this.form.cardIndex,
-                educationLevel: educationInput
-            });
-        }
-    }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted', 'educationLevel']), {
-        selectedMajorsByField: function selectedMajorsByField() {
-            this.selected = null;
-            return this.majorsByField(this.index);
-        },
-        removeMajorsByField: function removeMajorsByField() {
-            return this.majorsByField(null);
-        },
-        selectedFormWasSubmitted: function selectedFormWasSubmitted() {
-            return this.formWasSubmitted(this.index);
-        },
-        windowSize: function windowSize() {
-            return window.innerWidth;
-        }
-    }),
-    validations: {
-        form: {
-            majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] },
-            schoolId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
-=======
 
             return output;
->>>>>>> bd803cbc5de265ec5c9cb76da82e96c333b058da
         }
     };
 
@@ -48220,6 +48159,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48236,7 +48183,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 formWasSubmitted: false,
                 schoolId: null,
                 fieldOfStudyId: null,
-                educationLevel: "allDegrees"
+                formEducationLevel: "allDegrees",
+                errors: {
+                    "major": null,
+                    "university": null
+                },
+                submitCount: 0,
+                isUnivSelected: true,
+                isMajorSelected: true
             },
             formNotFilled: false,
             selected: null
@@ -48275,14 +48229,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.fetchUpdatedMajorsByField(this.form);
             }
         },
-        toggleEducationLevel: function toggleEducationLevel() {
+        toggleEducationLevel: function toggleEducationLevel(educationInput) {
             this.$store.dispatch('toggleEducationLevel', {
                 cardIndex: this.form.cardIndex,
-                educationLevel: this.form.educationLevel
+                educationLevel: educationInput
             });
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['majors', 'fieldOfStudies', 'universities', 'majorsByField', 'formWasSubmitted', 'educationLevel']), {
         selectedMajorsByField: function selectedMajorsByField() {
             this.selected = null;
             return this.majorsByField(this.index);

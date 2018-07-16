@@ -27930,6 +27930,17 @@ input[type="button"]:focus {
   background: #DAA200;
 }
 
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: #777777;
+}
+
+@media screen and (max-width: 767px) {
+  .fa-bars, .fa-times {
+    font-size: 1.75rem;
+  }
+}
+
 /*degree level button colors and animations*/
 .major-btn_icon {
   position: absolute;
@@ -28000,17 +28011,6 @@ input[type="button"]:focus {
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
-  }
-}
-
-.fa-bars, .fa-times {
-  font-size: 2.5rem;
-  color: #777777;
-}
-
-@media screen and (max-width: 767px) {
-  .fa-bars, .fa-times {
-    font-size: 1.75rem;
   }
 }
 
