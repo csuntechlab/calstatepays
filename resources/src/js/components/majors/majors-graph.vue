@@ -13,6 +13,7 @@ export default {
     data(){
         return {
             xAxis: ['2', '5', '10'],
+            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                color1: '#000',
                color2: '#000',
@@ -158,6 +159,11 @@ export default {
                     }
                 },
                 xAxis: {
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
                     data: this.xAxis
                 },
                 legend: {
@@ -165,7 +171,16 @@ export default {
                 },
                 yAxis: {
                     axisLabel: {
-                        rotate: this.mobileYAxis
+                        rotate: this.mobileYAxis,
+                        formatter: function (value){
+                            if(value > 999){
+                                let strVal = value.toString();
+                                strVal = strVal.slice(0,-3);
+                                return '$' + strVal + 'k';
+                            }
+                            else
+                                return '$' + value;
+                        }
                     },
                     max: 150000
                 },
@@ -180,7 +195,7 @@ export default {
                         },
                         itemStyle: {
                             color: this.toolColors3
-                        }
+                        },
                     },
                     {
                         type: 'line',
@@ -192,7 +207,7 @@ export default {
                         },
                         itemStyle: {
                             color: this.toolColors2
-                        }
+                        },
                     },
                     {
                         type: 'line',

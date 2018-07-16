@@ -11,17 +11,40 @@
 .home__link {
     font-weight: 500;
 }
-.home__content {
+
+%home__center--content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 85%;
+}
+
+
+.home__col {
     font-weight: 400;
+    .home__icon {
+        height: 7rem;
+    }
+    .home__subheading {
+        height: 6rem;
+        position: relative;
+        h3 {
+            @extend %home__center--content;
+        }
+    }
+    .home__copy {
+        height: 6.75rem;
+        position: relative;
+        p {
+            @extend %home__center--content;
+        }
+    }
 }
 body {
     font-family: $font-base;
     background: $white;
 }
-// .container-fluid{
-//     margin-top: 60px;
-//     padding-left: 0px;
-// }
 
 .expansion-panel__header{
   font-weight: 600;

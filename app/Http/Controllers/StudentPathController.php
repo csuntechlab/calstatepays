@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\StudentPath;
+use App\Contracts\StudentPathContract;
 
 class StudentPathController extends Controller
 {
+    protected $studentPathRetriever;
+
+    public function __construct(StudentPathContract $studentPathContract)
+    {
+        $this->studentPathRetriever = $studentPathContract;
+    }
+
     public function getAllStudentPaths()
     {
-        $allStudentPaths = StudentPath::all()->map(function ($path){
-            return [
-                'id'   => $path['id'],
-                'name' => $path['path_name']
-            ];
-        });
-        return $allStudentPaths->toArray();
+        return $this->studentPathRetriever->getAllStudentPaths();
     }
 }

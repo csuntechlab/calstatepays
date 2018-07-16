@@ -11,4 +11,6 @@ interface MajorContract
     public function getHegisCategories($fieldOfStudyId): array;
     
     public function getMajorEarnings($hegis_code, $university_id): array;
+
+    public function getFREData($request);
 }
