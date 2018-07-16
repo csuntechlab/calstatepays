@@ -143,6 +143,13 @@ input[type="button"]:focus {
   background: $gold;
 }
 
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: $gray;
+  @media screen and (max-width: $break-small) {
+      font-size: 1.75rem;
+  }
+}
 /*degree level button colors and animations*/
 .major-btn_icon {
   position: absolute;

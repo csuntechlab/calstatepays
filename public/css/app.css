@@ -26980,7 +26980,7 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .graph-content {
@@ -27365,7 +27365,6 @@ figcaption {
 }
 
 .site-header {
-  min-height: 5rem;
   font-family: "Open Sans";
   position: fixed;
   background: #FFF;
@@ -27376,12 +27375,36 @@ figcaption {
   top: 0;
 }
 
-.nav-link {
-  padding: 18px 0px;
+@media screen and (max-width: 767px) {
+  .site-header {
+    min-height: 4rem;
+    font-size: 1.3rem;
+  }
 }
 
-.nav-link abbr[title] {
+.site-header abbr[title] {
   border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .collapse {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show {
+    /* 5 refer to the number of nav links*/
+    height: 20rem;
+  }
+}
+
+.nav-link {
+  padding: 1.5rem 0px;
 }
 
 .navbar-toggler {
@@ -27393,9 +27416,14 @@ figcaption {
   width: 120px;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-logo {
+    height: 2.9rem;
+  }
+}
+
 .nav-logo-secondary {
-  max-height: 50px;
-  width: 50px;
+  height: 2.35rem;
 }
 
 .hr-nav {
@@ -27403,8 +27431,41 @@ figcaption {
   margin: 0px;
 }
 
+@media screen and (max-width: 767px) {
+  .hr-nav {
+    background: #D00D2D;
+    color: #FFF !important;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger-btn-position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #nav-overlay {
+    position: fixed;
+    background: #000;
+    opacity: .4;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
+  }
+}
+
 footer, .footer {
   font-family: "Open Sans";
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   width: 100%;
   height: 100%;
   min-height: 30px;
@@ -27714,6 +27775,11 @@ textarea {
   }
 }
 
+.required-field {
+  color: red;
+  font-weight: bold;
+}
+
 .btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -27934,6 +28000,17 @@ input[type="button"]:focus {
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
+  }
+}
+
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: #777777;
+}
+
+@media screen and (max-width: 767px) {
+  .fa-bars, .fa-times {
+    font-size: 1.75rem;
   }
 }
 

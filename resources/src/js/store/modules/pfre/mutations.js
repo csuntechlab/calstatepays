@@ -9,7 +9,6 @@ export default {
     },
 
     [_pfre.FETCH_FRE_DATA](state, payload) {
-        console.log(payload.fre);
         state.pfreData.years.actual = payload.fre.timeToDegree;
         state.pfreData.earnings.actual = payload.fre.earningsYearFive;
         state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
