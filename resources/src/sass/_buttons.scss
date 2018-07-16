@@ -141,3 +141,11 @@ input[type="button"]:focus{
 .home-btn__majors{
     background: $gold;
 }
+
+.fa-bars, .fa-times {
+    font-size: 2.5rem;
+    color: $gray;
+    @media screen and (max-width: $break-small) {
+        font-size: 1.75rem;
+    }
+}

@@ -26980,7 +26980,7 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .graph-content {
@@ -27365,7 +27365,6 @@ figcaption {
 }
 
 .site-header {
-  min-height: 5rem;
   font-family: "Open Sans";
   position: fixed;
   background: #FFF;
@@ -27376,12 +27375,36 @@ figcaption {
   top: 0;
 }
 
-.nav-link {
-  padding: 18px 0px;
+@media screen and (max-width: 767px) {
+  .site-header {
+    min-height: 4rem;
+    font-size: 1.3rem;
+  }
 }
 
-.nav-link abbr[title] {
+.site-header abbr[title] {
   border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .collapse {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show {
+    /* 5 refer to the number of nav links*/
+    height: 20rem;
+  }
+}
+
+.nav-link {
+  padding: 1.5rem 0px;
 }
 
 .navbar-toggler {
@@ -27393,14 +27416,50 @@ figcaption {
   width: 120px;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-logo {
+    height: 2.9rem;
+  }
+}
+
 .nav-logo-secondary {
-  max-height: 50px;
-  width: 50px;
+  height: 2.35rem;
 }
 
 .hr-nav {
   border-bottom: 3px solid #D00D2D;
   margin: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .hr-nav {
+    background: #D00D2D;
+    color: #FFF !important;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger-btn-position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #nav-overlay {
+    position: fixed;
+    background: #000;
+    opacity: .4;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
+  }
 }
 
 footer, .footer {
@@ -27868,6 +27927,17 @@ input[type="button"]:focus {
 
 .home-btn__majors {
   background: #ECA400;
+}
+
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: #777777;
+}
+
+@media screen and (max-width: 767px) {
+  .fa-bars, .fa-times {
+    font-size: 1.75rem;
+  }
 }
 
 .echarts {
