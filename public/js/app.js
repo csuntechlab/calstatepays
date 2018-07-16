@@ -48478,10 +48478,10 @@ var render = function() {
                 _c("i", {
                   staticClass: "major-btn_icon",
                   class: {
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "allDegrees",
                     "fas fa-check-circle":
-                      this.educationLevel(this.index) == "allDegrees"
+                      this.educationLevel(this.index) == "allDegrees",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "allDegrees"
                   }
                 }),
                 _vm._v("\n            All Levels")
@@ -48507,10 +48507,10 @@ var render = function() {
                 _c("i", {
                   staticClass: "major-btn_icon",
                   class: {
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "postBacc",
                     "fas fa-check-circle":
-                      this.educationLevel(this.index) == "postBacc"
+                      this.educationLevel(this.index) == "postBacc",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "postBacc"
                   }
                 }),
                 _vm._v("\n            Post Bacc")
@@ -48536,10 +48536,10 @@ var render = function() {
                 _c("i", {
                   staticClass: "major-btn_icon",
                   class: {
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "bachelors",
                     "fas fa-check-circle":
-                      this.educationLevel(this.index) == "bachelors"
+                      this.educationLevel(this.index) == "bachelors",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "bachelors"
                   }
                 }),
                 _vm._v("\n            Bachelors")
@@ -48565,10 +48565,10 @@ var render = function() {
                 _c("i", {
                   staticClass: "major-btn_icon",
                   class: {
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "someCollege",
                     "fas fa-check-circle":
-                      this.educationLevel(this.index) == "someCollege"
+                      this.educationLevel(this.index) == "someCollege",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "someCollege"
                   }
                 }),
                 _vm._v("\n            Some College")
