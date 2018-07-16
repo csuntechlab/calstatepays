@@ -144,6 +144,12 @@ input[type="button"]:focus {
 }
 
 /*degree level button colors and animations*/
+.major-btn_icon {
+  position: absolute;
+  right: 7%;
+  font-size: 1.3em;
+}
+
 .major-btn_all {
   background: $candy;
 }
@@ -171,35 +177,26 @@ input[type="button"]:focus {
   font-weight: 500;
 }
 
-.selected-btn_all {
-  background: $dark-candy;
-}
-
-.selected-btn_postBacc {
-  background: $green-75;
-}
-
-.selected-btn_bachelors {
-  background: $gold-75;
-}
-
-.selected-btn_someCollege {
-  background: $oxford-75;
-}
-
-.selected-btn_all,
-.selected-btn_bachelors,
-.selected-btn_postBacc,
-.selected-btn_someCollege {
-  box-shadow: inset 0 0 15px #000 !important;
-}
-
 @media only screen and (min-width: 1000px) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
-    width: 80%;
+    width: 90%;
+  }
+
+  .major-btn_all:hover,
+  .major-btn_postBacc:hover,
+  .major-btn_bachelors:hover,
+  .major-btn_someCollege:hover {
+    margin-left: 7.5px;
+  }
+
+  .selected-btn_all:hover,
+  .selected-btn_postBacc:hover,
+  .selected-btn_bachelors:hover,
+  .selected-btn_someCollege:hover {
+    margin-left: 0 !important;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
@@ -216,23 +213,5 @@ input[type="button"]:focus {
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .major-btn_all:hover,
-  .major-btn_postBacc:hover,
-  .major-btn_bachelors:hover,
-  .major-btn_someCollege:hover {
-    margin-left: 15px;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .selected-btn_all:hover,
-  .selected-btn_postBacc:hover,
-  .selected-btn_bachelors:hover,
-  .selected-btn_someCollege:hover {
-    margin-left: 0 !important;
   }
 }

@@ -47352,6 +47352,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48462,7 +48474,18 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("All Levels")]
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "allDegrees",
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "allDegrees"
+                  }
+                }),
+                _vm._v("\n            All Levels")
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -48480,7 +48503,18 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Post Bacc")]
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "postBacc",
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "postBacc"
+                  }
+                }),
+                _vm._v("\n            Post Bacc")
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -48498,7 +48532,18 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Bachelors")]
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "bachelors",
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "bachelors"
+                  }
+                }),
+                _vm._v("\n            Bachelors")
+              ]
             ),
             _vm._v(" "),
             _c(
@@ -48516,7 +48561,18 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Some College")]
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "someCollege",
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "someCollege"
+                  }
+                }),
+                _vm._v("\n            Some College")
+              ]
             )
           ])
     ]
