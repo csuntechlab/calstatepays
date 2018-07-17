@@ -27276,9 +27276,9 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
-     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
-     border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+  -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
+     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
+     border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
   border-top: .3rem solid;
   border-bottom: .3rem solid;
 }
@@ -27303,9 +27303,9 @@ figcaption {
 @media screen and (max-width: 767px) {
   .fa-wrapper {
     background: #FFF;
-    -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
-       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
-       border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+    -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
+       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
+       border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
     border-top: .3rem solid;
   }
 }
@@ -27328,7 +27328,7 @@ figcaption {
 
 .fa-line-chart {
   font-size: 6em;
-  color: #ECA400;
+  color: #DAA200;
   padding-bottom: .1rem;
 }
 
@@ -27599,7 +27599,7 @@ label {
 
 .label--required::after {
   margin-left: 2px;
-  color: #ECA400;
+  color: #DAA200;
   content: "*";
 }
 
@@ -27803,10 +27803,9 @@ textarea {
 }
 
 .btn-submit {
-  padding-left: 5rem;
+  padding: 0 5rem;
   font-size: 1.1rem;
   text-transform: none;
-  padding-right: 5rem;
   font-weight: 500;
 }
 
@@ -27912,7 +27911,9 @@ input[type="button"]:focus {
   color: white;
 }
 
-.button-link .home-btn__degrees, .button-link .home-btn__pfre, .button-link .home-btn__majors {
+.button-link .home-btn__degrees,
+.button-link .home-btn__pfre,
+.button-link .home-btn__majors {
   text-decoration: none;
   color: #FFF;
 }
@@ -27926,7 +27927,7 @@ input[type="button"]:focus {
 }
 
 .home-btn__majors {
-  background: #ECA400;
+  background: #DAA200;
 }
 
 .fa-bars, .fa-times {
@@ -27937,6 +27938,79 @@ input[type="button"]:focus {
 @media screen and (max-width: 767px) {
   .fa-bars, .fa-times {
     font-size: 1.75rem;
+  }
+}
+
+/*degree level button colors and animations*/
+.major-btn_icon {
+  position: absolute;
+  right: 7%;
+  font-size: 1.3em;
+}
+
+.major-btn_all {
+  background: #E74A37;
+}
+
+.major-btn_postBacc {
+  background: #2BAE67;
+}
+
+.major-btn_bachelors {
+  background: #DAA200;
+}
+
+.major-btn_someCollege {
+  background: #476A6F;
+}
+
+.major-btn_all,
+.major-btn_bachelors,
+.major-btn_postBacc,
+.major-btn_someCollege {
+  color: #FFF;
+  margin-left: 0;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 90%;
+  }
+  .major-btn_all:hover,
+  .major-btn_postBacc:hover,
+  .major-btn_bachelors:hover,
+  .major-btn_someCollege:hover {
+    margin-left: 7.5px;
+  }
+  .selected-btn_all:hover,
+  .selected-btn_postBacc:hover,
+  .selected-btn_bachelors:hover,
+  .selected-btn_someCollege:hover {
+    margin-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
   }
 }
 
@@ -27961,7 +28035,7 @@ input[type="button"]:focus {
 }
 
 .pfre-year {
-  background-color: #ECA400 !important;
+  background-color: #DAA200 !important;
 }
 
 .pfre-earnings {
@@ -28020,7 +28094,7 @@ input[type="button"]:focus {
 }
 
 .legend-oxford-25 {
-  background-color: #A1F0FB;
+  background-color: #7E969A;
 }
 
 .legend-oxford {
@@ -28028,7 +28102,7 @@ input[type="button"]:focus {
 }
 
 .legend-oxford-75 {
-  background-color: #375255;
+  background-color: #2c4144;
 }
 
 .legend-green-25 {
@@ -28044,15 +28118,15 @@ input[type="button"]:focus {
 }
 
 .legend-gold-25 {
-  background-color: #F2C55C;
+  background-color: #EDAC17;
 }
 
 .legend-gold {
-  background-color: #ECA400;
+  background-color: #DAA200;
 }
 
 .legend-gold-75 {
-  background-color: #6C4B00;
+  background-color: #987100;
 }
 
 .mobile-legend {
