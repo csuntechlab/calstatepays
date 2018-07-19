@@ -67758,6 +67758,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -67767,6 +67790,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.url = window.baseUrl;
+    },
+    mounted: function mounted() {
+        var divElement = document.getElementById('viz1531346960828');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '1016px';
+        vizElement.style.height = '991px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
     }
 });
 
@@ -67900,7 +67932,9 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(2)
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3)
   ])
 }
 var staticRenderFns = [
@@ -68042,6 +68076,99 @@ var staticRenderFns = [
                   _c("h3", [_vm._v("California State University Pomona")])
                 ]
               )
+            ]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "tableauPlaceholder",
+          staticStyle: { position: "relative" },
+          attrs: { id: "viz1531346960828" }
+        },
+        [
+          _c("noscript", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
+                }
+              },
+              [
+                _c("img", {
+                  staticStyle: { border: "none" },
+                  attrs: {
+                    alt:
+                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
+                    src:
+                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "object",
+            { staticClass: "tableauViz", staticStyle: { display: "none" } },
+            [
+              _c("param", {
+                attrs: {
+                  name: "host_url",
+                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "embed_code_version", value: "3" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "site_root", value: "" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "name",
+                  value:
+                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "tabs", value: "no" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "static_image",
+                  value:
+                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "animate_transition", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "display_static_image", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_count", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
             ]
           )
         ]
