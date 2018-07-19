@@ -8,6 +8,9 @@
                         <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
                     </div>
                 </div>
+                <div class="row">
+                    <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+                </div>
                 <div v-show="selectedFormWasSubmitted" style="height: 400px" class="row m-1 p-0">
                     <div class="col p-0">
                         <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
@@ -52,7 +55,8 @@ export default {
             'industries',
             'majorData',
             'educationLevel',
-            'formWasSubmitted'
+            'formWasSubmitted',
+            'majorNameById'
         ]),
         isEmpty(){
             //Check whether the form field was fired off, toggle carousel on
@@ -79,7 +83,13 @@ export default {
         },
         selectedMajorId() {
             return this.majorData(this.index).majorId;
-        }
+        },
+        selectedMajorTitle() {
+			if (this.selectedMajorData.length != 0) {
+				let currentMajor = this.selectedMajorData.majorId;
+				return this.majorNameById(currentMajor);
+			}
+		}
     },
     methods:{
         ...mapActions([
