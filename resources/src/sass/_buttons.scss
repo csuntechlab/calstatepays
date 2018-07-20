@@ -1,30 +1,29 @@
-.btn{
-    border-radius: 3rem;
-    font-family: $font-brand;
-    font-size: 0.9rem;
-    height: 45px;
-    font-weight: 300;
+.btn {
+  border-radius: 3rem;
+  font-family: $font-brand;
+  font-size: 0.9rem;
+  height: 45px;
+  font-weight: 300;
 }
 
-.btn:focus{
-    outline: none;
-    border: none;
+.btn:focus {
+  outline: none;
+  border: none;
 }
-.btn:active{
-    outline: none;
-    border: none;
+.btn:active {
+  outline: none;
+  border: none;
 }
 
-.btn-success{
+.btn-success {
   background: $green;
 }
 
 .btn-submit {
-    padding-left: 5rem;
-    font-size: 1.1rem;
-    text-transform: none;
-    padding-right: 5rem;
-    font-weight: 500;
+  padding: 0 5rem;
+  font-size: 1.1rem;
+  text-transform: none;
+  font-weight: 500;
 }
 
 %fixed-btn-base {
@@ -81,99 +80,181 @@
     display: none;
 }
 
-.major-tool-btn{
-    float: left;
-    position: absolute;
-    right: 0;
-    padding-top: 1rem;
+.major-tool-btn {
+  float: left;
+  position: absolute;
+  right: 0;
+  padding-top: 1rem;
 }
 
-.btn-remove{
-    color: $gray;
-    font-size: 2rem;
-    outline: none;
-    cursor: pointer;
-    margin-left: 8px;
-    vertical-align: middle;
-    display: inline;
+.btn-remove {
+  color: $gray;
+  font-size: 2rem;
+  outline: none;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  display: inline;
 }
 
-.btn-reset{
-    color: $gray;
-    padding-top: 3px;
-    font-size: 1.6rem;
-    outline: none;
-    cursor: pointer;
-    vertical-align: middle;
-    display: inline;
+.btn-reset {
+  color: $gray;
+  padding-top: 3px;
+  font-size: 1.6rem;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  display: inline;
 }
 
-.major-tool-btn-mobile{
-    padding-left: 80%;
-    padding-top: 1rem;
+.major-tool-btn-mobile {
+  padding-left: 80%;
+  padding-top: 1rem;
 }
 
-.btn-remove-mobile{
-    color: $gray;
-    font-size: 2rem;
-    outline: none;
-    margin-left: 5px;
-    vertical-align: middle;
-    display: inline;
+.btn-remove-mobile {
+  color: $gray;
+  font-size: 2rem;
+  outline: none;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline;
 }
 
-.btn-reset-mobile{
-    color: $gray;
-    font-size: 1.6rem;
-    outline: none;
-    vertical-align: middle;
-    display: inline;
+.btn-reset-mobile {
+  color: $gray;
+  font-size: 1.6rem;
+  outline: none;
+  vertical-align: middle;
+  display: inline;
 }
 
-.btn-plus{
-    display: block;
+.btn-plus {
+  display: block;
 }
 
-.btn-info{
-    color: $white;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    float: left;
-    @media screen and (max-width: $break-small) {
-        float: right;
-    }
+.btn-info {
+  color: $white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  float: left;
+  @media screen and (max-width: $break-small) {
+    float: right;
+  }
 }
-.btn-info:focus{
-    outline: none;
+.btn-info:focus {
+  outline: none;
 }
 
-input[type="button"]:focus{
-    outline:none;
+input[type="button"]:focus {
+  outline: none;
 }
 .home-btn {
-    border-radius: 5rem;
-    width: 70%;
-    font-size: 0.9rem;
-    font-family: $font-brand;
-    height: 45px;
-    color: white;
+  border-radius: 5rem;
+  width: 70%;
+  font-size: 0.9rem;
+  font-family: $font-brand;
+  height: 45px;
+  color: white;
 }
 .button-link {
-    .home-btn__degrees, .home-btn__pfre, .home-btn__majors {
-        text-decoration: none;
-        color: $white;
-    }
+  .home-btn__degrees,
+  .home-btn__pfre,
+  .home-btn__majors {
+    text-decoration: none;
+    color: $white;
+  }
 }
 
-.home-btn__degrees{
-    background: $oxford;
+.home-btn__degrees {
+  background: $oxford;
 }
 
-.home-btn__pfre{
-    background: $green;
+.home-btn__pfre {
+  background: $green;
 }
 
-.home-btn__majors{
-    background: $gold;
+.home-btn__majors {
+  background: $gold;
+}
+
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: $gray;
+  @media screen and (max-width: $break-small) {
+      font-size: 1.75rem;
+  }
+}
+/*degree level button colors and animations*/
+.major-btn_icon {
+  position: absolute;
+  right: 7%;
+  font-size: 1.3em;
+}
+
+.major-btn_all {
+  background: $candy;
+}
+
+.major-btn_postBacc {
+  background: $green;
+}
+
+.major-btn_bachelors {
+  background: $gold;
+}
+
+.major-btn_someCollege {
+  background: $oxford;
+}
+
+.major-btn_all,
+.major-btn_bachelors,
+.major-btn_postBacc,
+.major-btn_someCollege {
+  color: $white;
+  margin-left: 0;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 90%;
+  }
+
+  .major-btn_all:hover,
+  .major-btn_postBacc:hover,
+  .major-btn_bachelors:hover,
+  .major-btn_someCollege:hover {
+    margin-left: 7.5px;
+  }
+
+  .selected-btn_all:hover,
+  .selected-btn_postBacc:hover,
+  .selected-btn_bachelors:hover,
+  .selected-btn_someCollege:hover {
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
+  }
 }

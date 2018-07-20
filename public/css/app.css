@@ -26980,7 +26980,7 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .graph-content {
@@ -27276,9 +27276,9 @@ figcaption {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
-     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
-     border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+  -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
+     border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
+     border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
   border-top: .3rem solid;
   border-bottom: .3rem solid;
 }
@@ -27303,9 +27303,9 @@ figcaption {
 @media screen and (max-width: 767px) {
   .fa-wrapper {
     background: #FFF;
-    -o-border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
-       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#2FBF71), to(#EDAC17)) 5;
-       border-image: linear-gradient(90deg, #476A6F, #2FBF71, #EDAC17) 5;
+    -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
+       border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
+       border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
     border-top: .3rem solid;
   }
 }
@@ -27328,7 +27328,7 @@ figcaption {
 
 .fa-line-chart {
   font-size: 6em;
-  color: #ECA400;
+  color: #DAA200;
   padding-bottom: .1rem;
 }
 
@@ -27375,12 +27375,36 @@ figcaption {
   top: 0;
 }
 
-.nav-link {
-  padding: 18px 0px;
+@media screen and (max-width: 767px) {
+  .site-header {
+    min-height: 4rem;
+    font-size: 1.3rem;
+  }
 }
 
-.nav-link abbr[title] {
+.site-header abbr[title] {
   border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+  .collapse {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show {
+    /* 5 refer to the number of nav links*/
+    height: 20rem;
+  }
+}
+
+.nav-link {
+  padding: 1.5rem 0px;
 }
 
 .navbar-toggler {
@@ -27392,14 +27416,50 @@ figcaption {
   width: 120px;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-logo {
+    height: 2.9rem;
+  }
+}
+
 .nav-logo-secondary {
-  max-height: 50px;
-  width: 50px;
+  height: 2.35rem;
 }
 
 .hr-nav {
   border-bottom: 3px solid #D00D2D;
   margin: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .hr-nav {
+    background: #D00D2D;
+    color: #FFF !important;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger-btn-position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #nav-overlay {
+    position: fixed;
+    background: #000;
+    opacity: .4;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: none;
+  }
 }
 
 footer, .footer {
@@ -27539,7 +27599,7 @@ label {
 
 .label--required::after {
   margin-left: 2px;
-  color: #ECA400;
+  color: #DAA200;
   content: "*";
 }
 
@@ -27715,6 +27775,11 @@ textarea {
   }
 }
 
+.required-field {
+  color: red;
+  font-weight: bold;
+}
+
 .btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -27738,10 +27803,9 @@ textarea {
 }
 
 .btn-submit {
-  padding-left: 5rem;
+  padding: 0 5rem;
   font-size: 1.1rem;
   text-transform: none;
-  padding-right: 5rem;
   font-weight: 500;
 }
 
@@ -27886,7 +27950,9 @@ input[type="button"]:focus {
   color: white;
 }
 
-.button-link .home-btn__degrees, .button-link .home-btn__pfre, .button-link .home-btn__majors {
+.button-link .home-btn__degrees,
+.button-link .home-btn__pfre,
+.button-link .home-btn__majors {
   text-decoration: none;
   color: #FFF;
 }
@@ -27900,7 +27966,91 @@ input[type="button"]:focus {
 }
 
 .home-btn__majors {
-  background: #ECA400;
+  background: #DAA200;
+}
+
+.fa-bars, .fa-times {
+  font-size: 2.5rem;
+  color: #777777;
+}
+
+@media screen and (max-width: 767px) {
+  .fa-bars, .fa-times {
+    font-size: 1.75rem;
+  }
+}
+
+/*degree level button colors and animations*/
+.major-btn_icon {
+  position: absolute;
+  right: 7%;
+  font-size: 1.3em;
+}
+
+.major-btn_all {
+  background: #E74A37;
+}
+
+.major-btn_postBacc {
+  background: #2BAE67;
+}
+
+.major-btn_bachelors {
+  background: #DAA200;
+}
+
+.major-btn_someCollege {
+  background: #476A6F;
+}
+
+.major-btn_all,
+.major-btn_bachelors,
+.major-btn_postBacc,
+.major-btn_someCollege {
+  color: #FFF;
+  margin-left: 0;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 90%;
+  }
+  .major-btn_all:hover,
+  .major-btn_postBacc:hover,
+  .major-btn_bachelors:hover,
+  .major-btn_someCollege:hover {
+    margin-left: 7.5px;
+  }
+  .selected-btn_all:hover,
+  .selected-btn_postBacc:hover,
+  .selected-btn_bachelors:hover,
+  .selected-btn_someCollege:hover {
+    margin-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
+  }
 }
 
 .echarts {
@@ -27924,7 +28074,7 @@ input[type="button"]:focus {
 }
 
 .pfre-year {
-  background-color: #ECA400 !important;
+  background-color: #DAA200 !important;
 }
 
 .pfre-earnings {
@@ -27983,7 +28133,7 @@ input[type="button"]:focus {
 }
 
 .legend-oxford-25 {
-  background-color: #A1F0FB;
+  background-color: #7E969A;
 }
 
 .legend-oxford {
@@ -27991,7 +28141,7 @@ input[type="button"]:focus {
 }
 
 .legend-oxford-75 {
-  background-color: #375255;
+  background-color: #2c4144;
 }
 
 .legend-green-25 {
@@ -28007,15 +28157,15 @@ input[type="button"]:focus {
 }
 
 .legend-gold-25 {
-  background-color: #F2C55C;
+  background-color: #EDAC17;
 }
 
 .legend-gold {
-  background-color: #ECA400;
+  background-color: #DAA200;
 }
 
 .legend-gold-75 {
-  background-color: #6C4B00;
+  background-color: #987100;
 }
 
 .mobile-legend {

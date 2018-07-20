@@ -1,12 +1,14 @@
 <template>
     <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
         <div class="form__group" v-if="!selectedFormWasSubmitted">
+                <div v-show="formNotFilled" class="required-field">
+                    Please select a Campus and Major.
+                </div>
             <div class="row row--condensed mt-3">
                 <h5 class="form--title">Choose A <abbr title="California State University">CSU</abbr></h5>
                 <div class="col col-12">
                     <label for="campus">Campus:</label>
-                    <label for="campus" v-show="this.form.errors.university"><span style="font-weight:bold; color:red">Required *</span></label>
-                    <v-select 
+                    <v-select
                         label="name"
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
@@ -33,7 +35,6 @@
                 <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
                     <label for="Major">Major:</label>
-                    <label for="Major" v-show="this.form.errors.major"><span style="font-weight:bold; color:red">Required *</span></label>
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
@@ -61,16 +62,24 @@
                 </div>
             </div>
         </div>
-        <div class="form__group" v-else>
+        <div v-else>
             <p v-show="windowSize > 500" class="h3 majors-header my-5-md my-4">Select a Degree Level</p>
-            <input type="radio" name="allDegrees" :id="'allDegrees-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" checked value="allDegrees">
-            <label :for="'allDegrees-' + form.cardIndex">All</label>
-            <input type="radio" name="postBacc" :id="'postBacc-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="postBacc">
-            <label :for="'postBacc-' + form.cardIndex">Post Bacc</label>
-            <input type="radio" name="bachelors" :id="'bachelors-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="bachelors">
-            <label :for="'bachelors-' + form.cardIndex">Bachelor's Degree</label>
-            <input type="radio" name="someCollege" :id="'someCollege-' + form.cardIndex" v-model="form.educationLevel" @change="toggleEducationLevel()" value="someCollege">
-            <label :for="'someCollege-' + form.cardIndex">Some College</label>
+            <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
+                <i class="major-btn_icon" 
+                v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'far fa-circle':this.educationLevel(this.index) != 'allDegrees'}"></i>
+                All Levels</button>
+            <button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click="toggleEducationLevel('postBacc')" v-bind:class="{'selected-btn_postBacc': this.educationLevel(this.index) == 'postBacc'}">
+                <i class= "major-btn_icon" 
+                v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'postBacc', 'far fa-circle':this.educationLevel(this.index) != 'postBacc'}"></i>
+                Post Bacc</button>
+            <button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click="toggleEducationLevel('bachelors')" v-bind:class="{'selected-btn_bachelors': this.educationLevel(this.index) == 'bachelors'}">
+                <i class="major-btn_icon" 
+                v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'bachelors', 'far fa-circle':this.educationLevel(this.index) != 'bachelors'}"></i>
+                Bachelors</button>
+            <button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click="toggleEducationLevel('someCollege')" v-bind:class="{'selected-btn_someCollege': this.educationLevel(this.index) == 'someCollege'}">
+                <i class="major-btn_icon" 
+                v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'far fa-circle':this.educationLevel(this.index) != 'someCollege'}"></i>
+                Some College</button>
         </div>
     </form>
 </template>
@@ -91,7 +100,7 @@ export default {
                 formWasSubmitted: false,
                 schoolId: null,
                 fieldOfStudyId: null,
-                educationLevel: "allDegrees",
+                formEducationLevel: "allDegrees",
                 errors: {
                     "major": null,
                     "university": null
@@ -100,9 +109,9 @@ export default {
                 isUnivSelected: true,
                 isMajorSelected: true
             },
+            formNotFilled: false,
             selected: null,
         }
-
     },
     methods: {
         ...mapActions([
@@ -112,36 +121,27 @@ export default {
             'fetchMajorData',
         ]),
         updateForm,
+
         submitForm(){
-            this.form.submitCount += 1;
+            this.formNotFilled = false;
             if(this.checkForm()) {
                 this.toggleFormWasSubmitted(this.form.cardIndex);
                 this.fetchIndustryImages(this.form);
                 this.fetchMajorData(this.form);
+                this.form.majorId = null;
+                this.form.schoolId = null;
             }
         },
+
         checkForm(){
-            if(this.form.schoolId && this.form.majorId){
+            if(!this.$v.$invalid)
                 return true;
-            }
-            this.checkFieldsHaveErrors()
-        },
-        checkFieldsHaveErrors(){
-            if(!this.form.schoolId){
-                this.form.errors.university = 'Campus Required';
-                this.form.isUnivSelected = false;
-            } else {
-                this.form.isUnivSelected = true;
-                this.form.errors.university = false;
-            }
-            if(!this.form.majorId){
-                this.form.errors.major = 'Major Required';
-                this.form.isMajorSelected = false;
-            } else {
-                this.form.isMajorSelected = true;
-                this.form.errors.major = false;
+            else{
+                this.formNotFilled = true;
+                return false;
             }
         },
+
         updateSelect(field, dataKey, data) {
             if(data) {
                 this.form[field] = data[dataKey];
@@ -150,15 +150,16 @@ export default {
                 this.form[field] = null;
             }
         },
+        
         handleFieldOfStudyMajors(field){
             if(field == 'fieldOfStudyId'){
                 this.fetchUpdatedMajorsByField(this.form);
             }
         },
-        toggleEducationLevel() {
+        toggleEducationLevel(educationInput) {
             this.$store.dispatch('toggleEducationLevel', {
                 cardIndex: this.form.cardIndex,
-                educationLevel: this.form.educationLevel
+                educationLevel: educationInput
             })
         },
     },
@@ -169,6 +170,7 @@ export default {
             'universities',
             'majorsByField',
             'formWasSubmitted',
+            'educationLevel'
         ]),
         selectedMajorsByField(){
             this.selected = null;
@@ -182,12 +184,6 @@ export default {
         },
         windowSize() {
             return window.innerWidth;
-        }
-    },
-    validations: {
-        form: {
-            majorId: { required },
-            schoolId: { required }
         }
     },
     validations: {
