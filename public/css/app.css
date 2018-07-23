@@ -27812,7 +27812,7 @@ textarea {
 .btn-add {
   padding: 0px;
   outline: none;
-  position: absolute;
+  position: fixed;
   right: 1rem;
   bottom: 2rem;
 }

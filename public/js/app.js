@@ -47754,12 +47754,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         handleScroll: function handleScroll(event) {
             var footer = document.querySelector('footer');
             var bounding = footer.getBoundingClientRect();
-            if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-                var addBtn = document.getElementById("compare-major-button");
-                addBtn.style.position = "absolute";
-            } else {
+            if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "fixed";
+            }if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "absolute";
             }
         }
     },
@@ -86509,7 +86509,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "footer" }, [
+  return _c("footer", { staticClass: "footer", attrs: { id: "main-footer" } }, [
     _c(
       "div",
       { staticClass: "footer__links pl-4" },

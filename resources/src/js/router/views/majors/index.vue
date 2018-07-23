@@ -56,17 +56,16 @@ export default {
             var footer = document.querySelector('footer');
             var bounding = footer.getBoundingClientRect();
             if (
-                bounding.top >= 0 &&
-                bounding.left >= 0 &&
-                bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-                bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight 
+            ) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "fixed";
+
+            } if (
+                window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight
             ) {
                 var addBtn = document.getElementById("compare-major-button");
                 addBtn.style.position = "absolute";
-
-            } else {
-                var addBtn = document.getElementById("compare-major-button");
-                addBtn.style.position = "fixed";
             }
         }
     },
