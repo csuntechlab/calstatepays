@@ -27810,25 +27810,11 @@ textarea {
 }
 
 .btn-add {
-  height: 3.5rem;
-  border-radius: 100%;
-  width: 3.5rem;
   padding: 0px;
   outline: none;
   position: absolute;
-  right: 1.5rem;
-  bottom: 2.5rem;
-  font-size: 3rem;
-}
-
-.btn-add .add-icon {
-  color: #FFF;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  line-height: 0;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  right: 1rem;
+  bottom: 2rem;
 }
 
 .btn-add .tooltiptext {
@@ -27858,8 +27844,8 @@ textarea {
   visibility: visible;
 }
 
-.btn-add {
-  background: #2BAE67;
+.btn-add img {
+  width: 5.5rem;
 }
 
 .btn-add__disabled {

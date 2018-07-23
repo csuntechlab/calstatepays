@@ -1,7 +1,7 @@
 <template>
     <div>
         <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="indexOfUnsubmittedCard == -1">
-            <i class="fa add-icon">+<span class="tooltiptext">Compare Major</span></i>
+            <img :src="this.url + '/img/add-btn.svg'" alt="Compare Major Button">
         </button>
         <button class="btn-add__disabled" id="compare-major-button" @click="cardPlusError()" v-else>
             <i class="fa add-icon">+<span class="tooltiptext">Complete Form</span></i>
@@ -12,6 +12,12 @@
 import { mapGetters } from 'vuex';
 
 export default {
+    data () {
+        return {
+            url: '',
+            isShowing: false,
+        }
+    },
     computed: {
         ...mapGetters([
             'indexOfUnsubmittedCard'
@@ -23,7 +29,10 @@ export default {
         },
         cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
-        }
+        },
+        created () {
+        this.url = window.baseUrl;
+    }
     }
 }
 </script>

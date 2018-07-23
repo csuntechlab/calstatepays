@@ -47856,6 +47856,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: '',
+            isShowing: false
+        };
+    },
+
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
@@ -47863,6 +47870,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         cardPlusError: function cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
+        },
+        created: function created() {
+            this.url = window.baseUrl;
         }
     }
 });
@@ -47888,7 +47898,14 @@ var render = function() {
               }
             }
           },
-          [_vm._m(0)]
+          [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/add-btn.svg",
+                alt: "Compare Major Button"
+              }
+            })
+          ]
         )
       : _c(
           "button",
@@ -47901,20 +47918,11 @@ var render = function() {
               }
             }
           },
-          [_vm._m(1)]
+          [_vm._m(0)]
         )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("i", { staticClass: "fa add-icon" }, [
-      _vm._v("+"),
-      _c("span", { staticClass: "tooltiptext" }, [_vm._v("Compare Major")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
