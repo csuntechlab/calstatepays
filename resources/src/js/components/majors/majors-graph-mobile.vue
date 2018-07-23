@@ -9,7 +9,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import { mapGetters } from 'vuex';
 export default {
-    props: ['majorData', 'educationLevel', 'majorId', 'windowWidth'],
+    props: ['majorData', 'educationLevel', 'windowWidth'],
     data(){
         return {
             xAxis: ['2', '5', '10'],
@@ -60,12 +60,6 @@ export default {
                     width: this.windowWidth - 125,
                 }  
             }
-        },
-        majorName(){
-            if(this.majorData.length > 0){
-                return this.$store.getters.majorNameById(this.majorId);
-            }
-            return null;
         },
         toolTipTitles1(){
             let title="Some College"
@@ -132,14 +126,6 @@ export default {
 
         polar(){
             return {
-                title: {
-                    text: this.majorName,
-                left: 'center',
-                textStyle: {
-                    fontWeight: '600',
-                    color: "#777"
-                }
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {

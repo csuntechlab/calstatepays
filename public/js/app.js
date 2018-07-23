@@ -48037,6 +48037,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -48049,48 +48052,56 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['index', 'windowWidth'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
-        isEmpty: function isEmpty() {
-            //Check whether the form field was fired off, toggle carousel on
-            if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
-                return false;
-            }return true;
-        },
-        isNotFirstCard: function isNotFirstCard() {
-            if (this.index >= 1) {
-                return true;
-            }return false;
-        },
-        selectedMajorData: function selectedMajorData() {
-            return this.majorData(this.index);
-        },
-        selectedIndustries: function selectedIndustries() {
-            return this.industries(this.index);
-        },
-        selectedEducationLevel: function selectedEducationLevel() {
-            return this.educationLevel(this.index);
-        },
-        selectedFormWasSubmitted: function selectedFormWasSubmitted() {
-            return this.formWasSubmitted(this.index);
-        }
-    }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
-        removeCurrentCard: function removeCurrentCard() {
-            this.deleteMajorCard(this.index);
-        },
-        resetCurrentCard: function resetCurrentCard() {
-            this.resetMajorCard(this.index);
-        }
-    }),
-    components: {
-        majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
-        card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
-        majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
-        majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
-        industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
-        majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
-    }
+	props: ["index", "windowWidth"],
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
+		isEmpty: function isEmpty() {
+			//Check whether the form field was fired off, toggle carousel on
+			if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
+				return false;
+			}
+			return true;
+		},
+		isNotFirstCard: function isNotFirstCard() {
+			if (this.index >= 1) {
+				return true;
+			}
+			return false;
+		},
+		selectedMajorData: function selectedMajorData() {
+			return this.majorData(this.index);
+		},
+		selectedIndustries: function selectedIndustries() {
+			return this.industries(this.index);
+		},
+		selectedEducationLevel: function selectedEducationLevel() {
+			return this.educationLevel(this.index);
+		},
+		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
+			return this.formWasSubmitted(this.index);
+		},
+		selectedMajorTitle: function selectedMajorTitle() {
+			if (this.selectedMajorData.length != 0) {
+				var currentMajor = this.selectedMajorData.majorId;
+				return this.majorNameById(currentMajor);
+			}
+		}
+	}),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
+		removeCurrentCard: function removeCurrentCard() {
+			this.deleteMajorCard(this.index);
+		},
+		resetCurrentCard: function resetCurrentCard() {
+			this.resetMajorCard(this.index);
+		}
+	}),
+	components: {
+		majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
+		card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
+		majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
+		majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
+		industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
+		majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
+	}
 });
 
 /***/ }),
@@ -48649,7 +48660,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'majorId', 'windowWidth'],
+    props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
@@ -48709,12 +48720,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     width: this.windowWidth - 125
                 };
             }
-        },
-        majorName: function majorName() {
-            if (this.majorData.length > 0) {
-                return this.$store.getters.majorNameById(this.majorId);
-            }
-            return null;
         },
         toolTipTitles1: function toolTipTitles1() {
             var title = "Some College";
@@ -48778,14 +48783,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         polar: function polar() {
             return {
-                title: {
-                    text: this.majorName,
-                    left: 'center',
-                    textStyle: {
-                        fontWeight: '600',
-                        color: "#777"
-                    }
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -65648,7 +65645,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'majorId', 'windowWidth'],
+    props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
             xAxis: ['2', '5', '10'],
@@ -65697,12 +65694,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     width: this.windowWidth - 125
                 };
             }
-        },
-        majorName: function majorName() {
-            if (this.majorData.length > 0) {
-                return this.$store.getters.majorNameById(this.majorId);
-            }
-            return null;
         },
         toolTipTitles1: function toolTipTitles1() {
             var title = "Some College";
@@ -65766,14 +65757,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         polar: function polar() {
             return {
-                title: {
-                    text: this.majorName,
-                    left: 'center',
-                    textStyle: {
-                        fontWeight: '600',
-                        color: "#777"
-                    }
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -65882,7 +65865,6 @@ var render = function() {
             attrs: {
               majorData: _vm.parsedMajorData,
               educationLevel: this.educationLevel,
-              majorId: _vm.majorData.majorId,
               windowWidth: _vm.windowWidth
             }
           })
@@ -65890,7 +65872,6 @@ var render = function() {
             attrs: {
               majorData: _vm.parsedMajorData,
               educationLevel: this.educationLevel,
-              majorId: _vm.majorData.majorId,
               windowWidth: _vm.windowWidth
             }
           })
@@ -66436,28 +66417,25 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row p-0" }, [
+          _c("div", { staticClass: "row" }, [
             _c(
-              "div",
-              { staticClass: "mt-5" },
-              [
-                _c("industry-carousel", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
-                    }
-                  ],
-                  attrs: { industries: _vm.selectedIndustries }
-                })
-              ],
-              1
+              "h3",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                staticClass: "industry-title"
+              },
+              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row m-1 p-0" }, [
+          _c("div", { staticClass: "row mx-1 p-0" }, [
             _c(
               "div",
               { staticClass: "col col-md-3 col-sm-12 my-3" },
@@ -66502,6 +66480,27 @@ var render = function() {
                     }
                   ],
                   attrs: { educationLevel: _vm.selectedEducationLevel }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row p-0" }, [
+            _c(
+              "div",
+              { staticClass: "mt-4" },
+              [
+                _c("industry-carousel", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  attrs: { industries: _vm.selectedIndustries }
                 })
               ],
               1
@@ -66626,6 +66625,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -66639,7 +66641,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['index', 'windowWidth'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted', 'majorNameById']), {
         isEmpty: function isEmpty() {
             //Check whether the form field was fired off, toggle carousel on
             if (this.industries(this.index).length === 0) {
@@ -66665,6 +66667,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         selectedMajorId: function selectedMajorId() {
             return this.majorData(this.index).majorId;
+        },
+        selectedMajorTitle: function selectedMajorTitle() {
+            if (this.selectedMajorData.length != 0) {
+                var currentMajor = this.selectedMajorData.majorId;
+                return this.majorNameById(currentMajor);
+            }
         }
     }),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
@@ -66785,9 +66793,13 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h5", [_vm._v("Common Employment Sectors for")]),
+      _c("h5", { staticClass: "majors-header" }, [
+        _vm._v("Common Employment Sectors for")
+      ]),
       _vm._v(" "),
-      _c("h5", [_vm._v(_vm._s(_vm.selectedMajorName))]),
+      _c("h5", { staticClass: "majors-header" }, [
+        _vm._v(_vm._s(_vm.selectedMajorName))
+      ]),
       _vm._v(" "),
       _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
         return _c(
@@ -66858,6 +66870,24 @@ var render = function() {
                 on: { click: _vm.resetCurrentCard }
               })
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "h3",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                staticClass: "industry-title"
+              },
+              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+            )
           ]),
           _vm._v(" "),
           _c(
