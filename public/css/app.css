@@ -27002,7 +27002,7 @@ html {
           box-sizing: border-box;
 }
 
-.csu-card, .card-add {
+.csu-card, .csu-card__form, .card-add {
   background: #FFF;
   border-radius: 50px;
   -webkit-box-pack: center;
@@ -27019,6 +27019,20 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
   min-height: 75vh;
+  margin-bottom: 50px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.csu-card__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;

@@ -44975,7 +44975,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "csu-card col col-lg-10 container row align-items-center" },
+    { staticClass: "col col-lg-10 container row align-items-center" },
     [_vm._t("default")],
     2
   )
@@ -47594,34 +47594,38 @@ var render = function() {
       "div",
       { staticClass: "col-12" },
       [
-        _c("card", { staticClass: "container row align-items-center" }, [
-          _c("div", { staticClass: "text-center col-12" }, [
-            _c("h2", { staticClass: "pfre__heading" }, [
-              _vm._v("Financial Return on Education")
+        _c(
+          "card",
+          { staticClass: "csu-card container row align-items-center" },
+          [
+            _c("div", { staticClass: "text-center col-12" }, [
+              _c("h2", { staticClass: "pfre__heading" }, [
+                _vm._v("Financial Return on Education")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid p-0" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
+                  },
+                  [_c("pfre-form")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
+                  [_c("pfre-progress")],
+                  1
+                )
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "container-fluid p-0" }, [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
-                },
-                [_c("pfre-form")],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
-                [_c("pfre-progress")],
-                1
-              )
-            ])
-          ])
-        ])
+          ]
+        )
       ],
       1
     )
@@ -66379,7 +66383,14 @@ var render = function() {
         _c(
           "div",
           { staticClass: "col-md-3" },
-          [_c("card", [_c("major-form", { attrs: { index: _vm.index } })], 1)],
+          [
+            _c(
+              "card",
+              { staticClass: "csu-card__form" },
+              [_c("major-form", { attrs: { index: _vm.index } })],
+              1
+            )
+          ],
           1
         ),
         _vm._v(" "),
@@ -66387,7 +66398,7 @@ var render = function() {
           "div",
           { staticClass: "col-md-9" },
           [
-            _c("card", [
+            _c("card", { staticClass: "csu-card" }, [
               _c("div", { staticClass: "container-fluid my-0" }, [
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col" }, [

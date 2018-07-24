@@ -3,12 +3,12 @@
 		<div class="row">
 			
 			<div class="col-md-3">
-				<card>
+				<card class="csu-card__form">
 					<major-form :index="index"></major-form>
 				</card>
 			</div>
 			<div class="col-md-9">
-				<card>
+				<card class="csu-card">
 					<div class="container-fluid my-0">
 						<div class="row">
 							<div class="col">

@@ -1,7 +1,7 @@
 <template>
   <div class="row wrapper graph-content card-padding">
       <div class="col-12">
-        <card class="container row align-items-center">
+        <card class="csu-card container row align-items-center">
           <div class="text-center col-12">
             <h2 class="pfre__heading">Financial Return on Education</h2>
           </div>
