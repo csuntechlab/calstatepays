@@ -20,13 +20,15 @@
 							<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
 						</div>
 						<div class="row mx-1 p-0">
-							<div class="col col-9">
+							<div class="col">
 								<major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 							</div>
-							<div class="col-3 mt-4 pt-5 pl-0">
-								<major-legend v-show="isEmpty" :educationLevel="selectedEducationLevel"></major-legend>
-							</div>
 						</div>
+						<div class="row">
+							<div class="col">
+								<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
+							</div>
+                		</div>
 						<div class="row p-0">
 							<div class="mt-4">
 								<industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
@@ -35,7 +37,7 @@
 					</div>
 				</card>
 			</div>
-			
+
     	</div>
     </div>
 </template>

@@ -48018,6 +48018,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -48685,7 +48687,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.windowWidth >= 1001) {
                 return {
                     height: 400,
-                    width: this.windowWidth * .42
+                    width: this.windowWidth * .7
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
@@ -66428,7 +66430,7 @@ var render = function() {
                 _c("div", { staticClass: "row mx-1 p-0" }, [
                   _c(
                     "div",
-                    { staticClass: "col col-9" },
+                    { staticClass: "col" },
                     [
                       _c("major-graph-wrapper", {
                         directives: [
@@ -66447,19 +66449,21 @@ var render = function() {
                       })
                     ],
                     1
-                  ),
-                  _vm._v(" "),
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
                   _c(
                     "div",
-                    { staticClass: "col-3 mt-4 pt-5 pl-0" },
+                    { staticClass: "col" },
                     [
                       _c("major-legend", {
                         directives: [
                           {
                             name: "show",
                             rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
+                            value: _vm.selectedFormWasSubmitted,
+                            expression: "selectedFormWasSubmitted"
                           }
                         ],
                         attrs: { educationLevel: _vm.selectedEducationLevel }
