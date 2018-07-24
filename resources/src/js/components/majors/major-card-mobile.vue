@@ -1,6 +1,6 @@
 <template>
     <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
-        <card>
+        <card class="csu-card">
             <div class="container-fluid my-0 mt-2">
                 <div class="row">
                     <div class="col">

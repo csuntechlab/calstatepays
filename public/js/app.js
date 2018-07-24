@@ -66851,7 +66851,7 @@ var render = function() {
       attrs: { id: "majorCardHasIndex-" + this.index }
     },
     [
-      _c("card", [
+      _c("card", { staticClass: "csu-card" }, [
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col" }, [
