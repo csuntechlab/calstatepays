@@ -48476,6 +48476,7 @@ var render = function() {
                 attrs: { id: "allDegrees-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("allDegrees")
                   }
                 }
@@ -48505,6 +48506,7 @@ var render = function() {
                 attrs: { id: "postBacc-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("postBacc")
                   }
                 }
@@ -48534,6 +48536,7 @@ var render = function() {
                 attrs: { id: "bachelors-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("bachelors")
                   }
                 }
@@ -48563,6 +48566,7 @@ var render = function() {
                 attrs: { id: "someCollege-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("someCollege")
                   }
                 }
