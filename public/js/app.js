@@ -66105,6 +66105,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -66132,27 +66138,29 @@ var render = function() {
   return _c("div", [
     _vm.educationLevel == "allDegrees"
       ? _c("div", [
-          _c(
-            "h5",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.windowSize > 500,
-                  expression: "windowSize > 500"
-                }
-              ],
-              staticClass: "majors-header"
-            },
-            [_vm._v("Graduation Level: ")]
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2)
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c(
+              "h5",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.windowSize > 500,
+                    expression: "windowSize > 500"
+                  }
+                ],
+                staticClass: "text-center majors-header"
+              },
+              [_vm._v("Graduation Level: ")]
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
@@ -66167,7 +66175,7 @@ var render = function() {
                     expression: "windowSize > 500"
                   }
                 ],
-                staticClass: "font-weight-bold pb-2"
+                staticClass: "text-center font-weight-bold pb-2"
               },
               [_vm._v("Percentile: ")]
             ),
@@ -66180,30 +66188,7 @@ var render = function() {
           ])
         : _vm.educationLevel == "bachelors"
           ? _c("div", [
-              _c(
-                "h5",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
-                    }
-                  ],
-                  staticClass: "font-weight-bold pb-2"
-                },
-                [_vm._v("Percentile: ")]
-              ),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._m(8)
-            ])
-          : _vm.educationLevel == "postBacc"
-            ? _c("div", [
+              _c("div", { staticClass: "row justify-content-center" }, [
                 _c(
                   "h5",
                   {
@@ -66215,16 +66200,43 @@ var render = function() {
                         expression: "windowSize > 500"
                       }
                     ],
-                    staticClass: "font-weight-bold pb-2"
+                    staticClass: "text-center font-weight-bold pb-2"
                   },
                   [_vm._v("Percentile: ")]
                 ),
                 _vm._v(" "),
-                _vm._m(9),
+                _vm._m(6),
                 _vm._v(" "),
-                _vm._m(10),
+                _vm._m(7),
                 _vm._v(" "),
-                _vm._m(11)
+                _vm._m(8)
+              ])
+            ])
+          : _vm.educationLevel == "postBacc"
+            ? _c("div", [
+                _c("div", { staticClass: "row justify-content-center" }, [
+                  _c(
+                    "h5",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.windowSize > 500,
+                          expression: "windowSize > 500"
+                        }
+                      ],
+                      staticClass: "text-center font-weight-bold pb-2"
+                    },
+                    [_vm._v("Percentile: ")]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _vm._m(11)
+                ])
               ])
             : _vm._e()
   ])
@@ -66912,7 +66924,7 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
             _c(
               "div",
               { staticClass: "col" },
