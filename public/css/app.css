@@ -27845,7 +27845,9 @@ textarea {
 }
 
 .btn-add img {
-  width: 5.5rem;
+  width: 3.9rem;
+  -webkit-filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
+          filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
 }
 
 .btn-add__disabled {

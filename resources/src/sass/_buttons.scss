@@ -62,7 +62,8 @@
 .btn-add{
     @extend %fixed-btn-base;
     img {
-      width: 5.5rem;
+      width: 3.9rem;
+      filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, .24));
     }
 }
 
