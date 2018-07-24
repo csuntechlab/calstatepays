@@ -48014,6 +48014,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -66357,133 +66361,141 @@ var render = function() {
       attrs: { id: "majorCardHasIndex-" + this.index }
     },
     [
-      _c("card", [
-        _c("div", { staticClass: "container-fluid my-0" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-md-3" },
+          [_c("card", [_c("major-form", { attrs: { index: _vm.index } })], 1)],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-9" },
+          [
+            _c("card", [
+              _c("div", { staticClass: "container-fluid my-0" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col" }, [
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isNotFirstCard,
+                          expression: "isNotFirstCard"
+                        }
+                      ],
+                      staticClass: "fas fa-times btn-remove float-right",
+                      attrs: { title: "Close" },
+                      on: { click: _vm.removeCurrentCard }
+                    }),
+                    _vm._v(" "),
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isEmpty,
+                          expression: "isEmpty"
+                        }
+                      ],
+                      staticClass: "fas fa-sync-alt btn-reset float-right",
+                      attrs: { title: "Reset" },
+                      on: { click: _vm.resetCurrentCard }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "h3",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.selectedFormWasSubmitted,
+                          expression: "selectedFormWasSubmitted"
+                        }
+                      ],
+                      staticClass: "industry-title"
+                    },
+                    [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mx-1 p-0" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col col-9" },
+                    [
+                      _c("major-graph-wrapper", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.selectedFormWasSubmitted,
+                            expression: "selectedFormWasSubmitted"
+                          }
+                        ],
+                        attrs: {
+                          majorData: _vm.selectedMajorData,
+                          educationLevel: _vm.selectedEducationLevel,
+                          windowWidth: _vm.windowWidth
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-3 mt-4 pt-5 pl-0" },
+                    [
+                      _c("major-legend", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.isEmpty,
+                            expression: "isEmpty"
+                          }
+                        ],
+                        attrs: { educationLevel: _vm.selectedEducationLevel }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row p-0" }, [
+                  _c(
+                    "div",
+                    { staticClass: "mt-4" },
+                    [
+                      _c("industry-carousel", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.isEmpty,
+                            expression: "isEmpty"
+                          }
+                        ],
+                        attrs: { industries: _vm.selectedIndustries }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "h3",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.selectedFormWasSubmitted,
-                    expression: "selectedFormWasSubmitted"
-                  }
-                ],
-                staticClass: "industry-title"
-              },
-              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mx-1 p-0" }, [
-            _c(
-              "div",
-              { staticClass: "col col-md-3 col-sm-12 my-3" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col col-7" },
-              [
-                _c("major-graph-wrapper", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: {
-                    majorData: _vm.selectedMajorData,
-                    educationLevel: _vm.selectedEducationLevel,
-                    windowWidth: _vm.windowWidth
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-2 mt-4 pt-5 pl-0" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
-                    }
-                  ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row p-0" }, [
-            _c(
-              "div",
-              { staticClass: "mt-4" },
-              [
-                _c("industry-carousel", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
-                    }
-                  ],
-                  attrs: { industries: _vm.selectedIndustries }
-                })
-              ],
-              1
-            )
-          ])
-        ])
+          ],
+          1
+        )
       ])
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
