@@ -63,7 +63,7 @@
             </div>
         </div>
         <div v-else>
-            <p v-show="windowSize > 500" class="h3 majors-header my-5-md my-4">Select a Degree Level</p>
+            <p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
             <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
                 <i class="major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'far fa-circle':this.educationLevel(this.index) != 'allDegrees'}"></i>

@@ -48466,7 +48466,7 @@ var render = function() {
                     expression: "windowSize > 500"
                   }
                 ],
-                staticClass: "h3 majors-header my-5-md my-4"
+                staticClass: "text-center h3 majors-header my-5-md my-4"
               },
               [_vm._v("Select a Degree Level")]
             ),
