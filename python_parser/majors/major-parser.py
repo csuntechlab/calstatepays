@@ -54,11 +54,16 @@ def add_underscores(input):
     return input.lower().replace(" ", "_")
 
 # format the integers
+
 def remove_dollar(input):
     if input == '':
         return None
+    if "-" in input:
+        input = input.replace('-', '')
+    if "+" in input:
+        input = input.replace(' + ', '')
     dollar_less = input.replace("$", "")
-    return float(dollar_less.replace(",", ""))
+    return int(round(float(dollar_less.replace(",", ""))))
 
 # convert csv data into json and write it
 def write_json(data, json_file):
