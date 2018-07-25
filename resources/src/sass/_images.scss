@@ -104,3 +104,30 @@
 	  }
 	}
 }
+
+.CSUImgBanner {
+	@extend .col-12, .pt-3, .mb-3 ;
+	color: white;
+	background-image:
+		$black-filter,
+		url('https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg');
+	background-size: cover;
+	background-position: center;
+	font-family: $font-base;
+}
+
+.CSUImgBanner__campusTitle {
+	@extend .col-12, .text-left, .text-md-right, .p-0 ;
+	font-weight: bold;
+}
+
+.CSUImgBanner__dataTitle {
+	span {
+		border-bottom: .4rem $green solid;
+		line-height: 3rem;
+	}
+}
+
+.CSUImgBanner__dataInfoWrapper {
+	@extend .col-12, .col-md-7, .col-lg-6, .p-0 ;
+}
