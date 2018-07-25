@@ -45025,7 +45025,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 'csu-img-banner',
     data: function data() {
         return {
-            dummyCopy: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates eaque nemo ipsum. Facere.',
+            dummyCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
             industryTitle: 'Top Industries By Major',
             freTitle: 'Financial Return on Investment',
             campusName: 'California State University Northridge'
@@ -45051,7 +45051,9 @@ var render = function() {
         _c("span", [_vm._v(" " + _vm._s(_vm.freTitle) + " ")])
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v(" " + _vm._s(_vm.dummyCopy) + " ")])
+      _c("p", { staticClass: "CSUImgBanner__dataCopy" }, [
+        _vm._v(" " + _vm._s(_vm.dummyCopy) + " ")
+      ])
     ])
   ])
 }
