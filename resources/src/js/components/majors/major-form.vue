@@ -64,19 +64,19 @@
         </div>
         <div v-else>
             <p v-show="windowSize > 500" class="h3 majors-header my-5-md my-4">Select a Degree Level</p>
-            <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
+            <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
                 <i class="major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'far fa-circle':this.educationLevel(this.index) != 'allDegrees'}"></i>
                 All Levels</button>
-            <button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click="toggleEducationLevel('postBacc')" v-bind:class="{'selected-btn_postBacc': this.educationLevel(this.index) == 'postBacc'}">
+            <button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleEducationLevel('postBacc')" v-bind:class="{'selected-btn_postBacc': this.educationLevel(this.index) == 'postBacc'}">
                 <i class= "major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'postBacc', 'far fa-circle':this.educationLevel(this.index) != 'postBacc'}"></i>
                 Post Bacc</button>
-            <button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click="toggleEducationLevel('bachelors')" v-bind:class="{'selected-btn_bachelors': this.educationLevel(this.index) == 'bachelors'}">
+            <button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleEducationLevel('bachelors')" v-bind:class="{'selected-btn_bachelors': this.educationLevel(this.index) == 'bachelors'}">
                 <i class="major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'bachelors', 'far fa-circle':this.educationLevel(this.index) != 'bachelors'}"></i>
                 Bachelors</button>
-            <button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click="toggleEducationLevel('someCollege')" v-bind:class="{'selected-btn_someCollege': this.educationLevel(this.index) == 'someCollege'}">
+            <button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')" v-bind:class="{'selected-btn_someCollege': this.educationLevel(this.index) == 'someCollege'}">
                 <i class="major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'far fa-circle':this.educationLevel(this.index) != 'someCollege'}"></i>
                 Some College</button>
