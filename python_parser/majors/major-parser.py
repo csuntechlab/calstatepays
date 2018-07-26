@@ -37,9 +37,9 @@ def read_csv(file, json_file):
             row['HEGIS at Exit'] = format_ids(row['HEGIS at Exit'])
             row['Potential Number of Students For Each Year Out of School'] = remove_dollar(row['Potential Number of Students For Each Year Out of School'])
             row['Average Earnings'] = remove_dollar(row['Average Earnings'])
-            row['25th Percentile Earnings'] = remove_dollar(row['25th Percentile Earnings'])
-            row['50th Percentile Earnings'] = remove_dollar(row['50th Percentile Earnings'])
-            row['75th Percentile Earnings'] = remove_dollar(row['75th Percentile Earnings'])
+            row['_25th Percentile Earnings'] = remove_dollar(row['_25th Percentile Earnings'])
+            row['_50th Percentile Earnings'] = remove_dollar(row['_50th Percentile Earnings'])
+            row['_75th Percentile Earnings'] = remove_dollar(row['_75th Percentile Earnings'])
             row['Potential Number of Students'] = remove_dollar(row['Potential Number of Students'])
             row['Number of Students Found'] = remove_dollar(row['Number of Students Found'])
 
