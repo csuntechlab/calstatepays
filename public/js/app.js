@@ -45020,6 +45020,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'csu-data-img-banner',
@@ -45027,7 +45030,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
             industryTitle: 'Top Industries By Major',
+            industryCopy: '',
+            majorsTitle: 'Major Earnings Over Time',
+            majorCopy: '',
             freTitle: 'Financial Return on Investment',
+            freCopy: '',
             campusName: 'California State University Northridge',
             CSUImg: '../img/dataimgbanner/csun.jpg'
         };
@@ -45054,13 +45061,24 @@ var render = function() {
       }
     },
     [
-      _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-        _vm._v(" " + _vm._s(_vm.campusName))
+      _c("div", { staticClass: "CSUDataImgBanner__campusInfoWrapper" }, [
+        _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
+          _vm._v(" " + _vm._s(_vm.campusName))
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "CSUDataImgBanner__changeCampus",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Change Campus")]
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "CSUDataImgBanner__dataInfoWrapper" }, [
         _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
-          _c("span", [_vm._v(" " + _vm._s(_vm.industryTitle) + " ")])
+          _c("span", [_vm._v(" " + _vm._s(_vm.freTitle) + " ")])
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
