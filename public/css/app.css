@@ -27362,11 +27362,11 @@ figcaption {
 
 .CSUDataImgBanner {
   color: white;
+  font-family: "Montserrat";
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: "Montserrat";
 }
 
 .CSUDataImgBanner__campusTitle {
@@ -27381,9 +27381,9 @@ figcaption {
 }
 
 .CSUDataImgBanner__dataTitle span {
-  border-bottom: 0.4rem #2BAE67 solid;
   line-height: 1.5;
   font-size: 2rem;
+  border-bottom: 0.4rem #2BAE67 solid;
 }
 
 .CSUDataImgBanner__dataCopy {
