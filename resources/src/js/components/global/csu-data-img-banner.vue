@@ -5,7 +5,7 @@
             <a class="CSUDataImgBanner__changeCampus" href="#">Change Campus</a>
         </div>
         <div class="CSUDataImgBanner__dataInfoWrapper">
-            <h3 class="CSUDataImgBanner__dataTitle"> <span> {{ freTitle }} </span>  </h3>
+            <h3 class="CSUDataImgBanner__dataTitle"> <span> {{ dataTitle }} </span>  </h3>
             <p class="CSUDataImgBanner__dataCopy"> {{ fakeCopy }} </p>
         </div>
     </div>
@@ -27,6 +27,5 @@ export default {
             CSUImg: '../img/dataimgbanner/csun.jpg'
         }
     }
-  
 }
 </script>

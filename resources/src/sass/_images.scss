@@ -108,15 +108,15 @@
 .CSUDataImgBanner {
 	@extend .col-12, .pt-3, .mb-3 ;
 	color: white;
+	font-family: $font-base;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	font-family: $font-base;
 }
 
 .CSUDataImgBanner__campusInfoWrapper{
-	@extend .col-12, .text-left, .text-md-right, .p-0 ;
+	@extend .col-12, .p-0, .text-left, .text-md-right ;
 }
 
 .CSUDataImgBanner__campusTitle {
@@ -132,9 +132,9 @@
 
 .CSUDataImgBanner__dataTitle {
 	span {
-		border-bottom: .4rem $green solid;
 		line-height: 1.5;
 		font-size: 2rem;
+		border-bottom: .4rem $green solid;
 	}
 }
 
