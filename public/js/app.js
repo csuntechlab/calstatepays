@@ -45028,8 +45028,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
             industryTitle: 'Top Industries By Major',
             freTitle: 'Financial Return on Investment',
-            campusName: 'California State University Northridge'
-
+            campusName: 'California State University Northridge',
+            CSUImg: '../img/dataimgbanner/csun.jpg'
         };
     }
 });
@@ -45042,21 +45042,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "CSUDataImgBanner" }, [
-    _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-      _vm._v(" " + _vm._s(_vm.campusName))
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "CSUDataImgBanner__dataInfoWrapper" }, [
-      _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
-        _c("span", [_vm._v(" " + _vm._s(_vm.freTitle) + " ")])
+  return _c(
+    "div",
+    {
+      staticClass: "CSUDataImgBanner",
+      style: {
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" +
+          _vm.CSUImg +
+          ")"
+      }
+    },
+    [
+      _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
+        _vm._v(" " + _vm._s(_vm.campusName))
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
-        _vm._v(" " + _vm._s(_vm.fakeCopy) + " ")
+      _c("div", { staticClass: "CSUDataImgBanner__dataInfoWrapper" }, [
+        _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
+          _c("span", [_vm._v(" " + _vm._s(_vm.industryTitle) + " ")])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
+          _vm._v(" " + _vm._s(_vm.fakeCopy) + " ")
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

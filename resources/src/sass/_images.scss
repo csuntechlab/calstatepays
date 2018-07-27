@@ -108,11 +108,10 @@
 .CSUDataImgBanner {
 	@extend .col-12, .pt-3, .mb-3 ;
 	color: white;
-	background-image:
-		$csu-banner-img-black-filter,
-		url('../img/csucampuses/northridge.png');
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 	font-family: $font-base;
 }
 

@@ -27362,10 +27362,10 @@ figcaption {
 
 .CSUDataImgBanner {
   color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("../img/csucampuses/northridge.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/csucampuses/northridge.png");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: "Montserrat";
 }
 
