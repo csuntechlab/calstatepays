@@ -44905,8 +44905,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_img_banner__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_img_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_csu_img_banner__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_card__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_card__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_form_vue__ = __webpack_require__(173);
@@ -44949,7 +44949,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    csuImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_img_banner___default.a,
+    csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
     card: __WEBPACK_IMPORTED_MODULE_1__components_global_card___default.a,
     pfreForm: __WEBPACK_IMPORTED_MODULE_2__components_pfre_pfre_form_vue___default.a,
     pfreInfo: __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_info_vue___default.a,
@@ -44983,7 +44983,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-img-banner.vue"
+Component.options.__file = "resources/src/js/components/global/csu-data-img-banner.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44992,9 +44992,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bd9f1478", Component.options)
+    hotAPI.createRecord("data-v-cce79eca", Component.options)
   } else {
-    hotAPI.reload("data-v-bd9f1478", Component.options)
+    hotAPI.reload("data-v-cce79eca", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45022,13 +45022,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'csu-img-banner',
+    name: 'csu-data-img-banner',
     data: function data() {
         return {
-            dummyCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
+            fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
             industryTitle: 'Top Industries By Major',
             freTitle: 'Financial Return on Investment',
             campusName: 'California State University Northridge'
+
         };
     }
 });
@@ -45041,18 +45042,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "CSUImgBanner" }, [
-    _c("h2", { staticClass: "CSUImgBanner__campusTitle" }, [
+  return _c("div", { staticClass: "CSUDataImgBanner" }, [
+    _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
       _vm._v(" " + _vm._s(_vm.campusName))
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "CSUImgBanner__dataInfoWrapper" }, [
-      _c("h3", { staticClass: "CSUImgBanner__dataTitle" }, [
+    _c("div", { staticClass: "CSUDataImgBanner__dataInfoWrapper" }, [
+      _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
         _c("span", [_vm._v(" " + _vm._s(_vm.freTitle) + " ")])
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "CSUImgBanner__dataCopy" }, [
-        _vm._v(" " + _vm._s(_vm.dummyCopy) + " ")
+      _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
+        _vm._v(" " + _vm._s(_vm.fakeCopy) + " ")
       ])
     ])
   ])
@@ -45063,7 +45064,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bd9f1478", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-cce79eca", module.exports)
   }
 }
 
@@ -47709,7 +47710,7 @@ var render = function() {
     "div",
     { staticClass: "row wrapper graph-content card-padding" },
     [
-      _c("csu-img-banner"),
+      _c("csu-data-img-banner"),
       _vm._v(" "),
       _c(
         "div",
