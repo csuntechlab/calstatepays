@@ -44755,11 +44755,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'csu-selector',
+	name: "csu-selector",
 
-    props: ['url'],
+	props: ["url"],
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity']))
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["selectedUniversity"]))
 });
 
 /***/ }),
@@ -44771,8 +44771,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/long_beach_seal.svg",
@@ -44784,8 +44784,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/poly_seal.svg",
@@ -44797,8 +44797,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/dominguez_seal.svg",
@@ -44810,8 +44810,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/northridge_seal.svg",
@@ -44823,8 +44823,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/channel_islands_seal.svg",
@@ -44836,8 +44836,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/fulleton_seal.svg",
@@ -44849,8 +44849,8 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", [
-      _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+      _c("button", [
         _c("img", {
           attrs: {
             src: this.url + "/img/csuseals/los_angeles_seal.svg",
