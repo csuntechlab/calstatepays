@@ -53,6 +53,7 @@
 						</router-link>
 					</div>
 				</div>
+				<csu-selector :url='this.url' />
 				<div class="row mt-2 csu-wrapper">
 					<figure class="col-md col-sm-4 col-4 text-center">
 						<img :src="this.url + '/img/csuseals/long_beach_seal.svg'" alt="CSU Long Beach Seal">
@@ -100,6 +101,7 @@
 	</div>
 </template>
 <script>
+	import csuSelector from '../../../components/global/csu-selector.vue'
 	export default {
 	    data () {
 	        return {
@@ -108,6 +110,9 @@
 		},
 		created () {
 		    this.url = window.baseUrl;
+		},
+		components: {
+			csuSelector
 		}
 	}
 </script>

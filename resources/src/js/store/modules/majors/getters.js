@@ -1,7 +1,6 @@
 // MAJORS GETTERS
 
 export default {
-    selectedUniversity: state => state.selectedUniversity,
     majors: state => state.majors,
     majorById: (state) => (id) => {
         const index = state.majors.findIndex((major) => major.majorId === Number(id));
