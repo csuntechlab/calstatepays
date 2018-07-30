@@ -3,7 +3,7 @@
 	position: fixed;
 	background: $white;
 	width: 100%;
-	z-index: 500;
+	z-index: 1000000;
 	box-shadow: 0 6px 6px -6px #999;
 	top: 0;
 	@media screen and (max-width: $break-small) {
