@@ -100,6 +100,7 @@
 	</div>
 </template>
 <script>
+	import csuSelector from '../../../components/global/csu-selector.vue'
 	export default {
 	    data () {
 	        return {
@@ -108,6 +109,9 @@
 		},
 		created () {
 		    this.url = window.baseUrl;
+		},
+		components: {
+			csuSelector
 		}
 	}
 </script>

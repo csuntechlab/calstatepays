@@ -50,6 +50,16 @@
     }
 }
 
+.disabled-university{
+    opacity: .3;
+    filter: brightness(30%);
+    cursor: not-allowed;
+}
+
+.unselected-university{
+    opacity: .3;
+}
+
 #csun {
     background-image: 
         $available-campus, 
