@@ -50,6 +50,7 @@
 .nav-logo-secondary{
 	height: 2.35rem;
 }
+
 .hr-nav{
 	border-bottom: 3px solid $red;
 	margin: 0px;
@@ -60,11 +61,41 @@
 	}
 }
 
+
 .hamburger-btn-position {
 	@media screen and (max-width: $break-small) {
 		display: flex;
 		justify-content: center;
 	}
+}
+
+.sub-nav{
+	color: rgba(0,0,0,.5);
+	background: $white;
+	font-weight: 600;
+	padding: 1.2rem 0;
+	transition: 0.2s;
+}
+
+.sub-nav:hover{
+	color: rgba(0,0,0,.8);
+	background: $white;
+	text-decoration: none;
+}
+
+.sub-nav--active{
+	border-bottom: 3px solid $blue-light;
+	margin: 0px;
+	color: $blue-light;
+	@media screen and (max-width: $break-small) {
+		background: $blue-light;
+		color: $white !important;
+		font-weight: bold;
+	}
+}
+
+.sub-nav--active:hover{
+	color: $blue-light;
 }
 
 #nav-overlay{
