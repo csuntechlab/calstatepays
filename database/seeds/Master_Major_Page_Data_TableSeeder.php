@@ -22,19 +22,20 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
         $majorService = new majorService();
         $faker = Faker::create();
         foreach($data as $row){
-            $majorPath       = new MajorPath();
-            $majorPathWage   = new MajorPathWage();
-            $population      = new Population();
+            
+            $majorPath = new MajorPath();
+            $population = new Population();
+            $majorPathWage = new MajorPathWage();
 
-            $hegis_code = $majorService->getHegisCode($row->major_at_exit);
-            $universityId = $majorService->getUniversityMajorId($hegis_code->hegis_code,$row->campus);
-
+            $hegis_code = $row->hegis_at_exit;
+            $universityId = $majorService->getUniversityMajorId($hegis_code, $row->campus);
+            
             $majorPath->university_majors_id = $universityId;
-            $majorPath->entry_status = $row->entry_stat;
+            $majorPath->entry_status = $row->entry_status;
             $majorPath->years = $row->year;
             $majorPath->student_path = $row->student_path;
             $majorPath->save();
-
+            
             $population->population_found = $row->number_of_students_found;
             $population->population_size = $row->potential_number_of_students_for_each_year_out_of_school;
             $population->percentage_found = $faker->randomFloat(null,1,23);

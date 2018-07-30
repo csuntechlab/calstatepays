@@ -27369,7 +27369,7 @@ figcaption {
   position: fixed;
   background: #FFF;
   width: 100%;
-  z-index: 500;
+  z-index: 1000000;
   -webkit-box-shadow: 0 6px 6px -6px #999;
           box-shadow: 0 6px 6px -6px #999;
   top: 0;
@@ -27542,6 +27542,17 @@ footer, .footer {
 
 .not-avail p:hover {
   opacity: .5;
+}
+
+.disabled-university {
+  opacity: .3;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  cursor: not-allowed;
+}
+
+.unselected-university {
+  opacity: .3;
 }
 
 #csun {
