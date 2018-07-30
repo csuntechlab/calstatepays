@@ -24,22 +24,23 @@ class Master_Major_Page_Data_TableSeeder extends Seeder
         foreach($data as $row){
             
             $majorPath = new MajorPath();
+            $population = new Population();
+            $majorPathWage = new MajorPathWage();
+
+            $hegis_code = $row->hegis_at_exit;
+            $universityId = $majorService->getUniversityMajorId($hegis_code, $row->campus);
             
-            $majorPath->university_majors_id = $row->campus;
+            $majorPath->university_majors_id = $universityId;
             $majorPath->entry_status = $row->entry_status;
             $majorPath->years = $row->year;
             $majorPath->student_path = $row->student_path;
             $majorPath->save();
             
-            $population = new Population();
-
             $population->population_found = $row->number_of_students_found;
             $population->population_size = $row->potential_number_of_students_for_each_year_out_of_school;
             $population->percentage_found = $faker->randomFloat(null,1,23);
             $population->save();
 
-            $majorPathWage = new MajorPathWage();
-            
             $majorPathWage->major_path_id = $majorPath->id;
             $majorPathWage->_25th = $row->_25th_percentile_earnings;
             $majorPathWage->_50th = $row->_50th_percentile_earnings;
