@@ -48139,6 +48139,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 block: "end",
                 inline: "nearest"
             });
+        },
+        handleScroll: function handleScroll(event) {
+            var footer = document.querySelector('footer');
+            var bounding = footer.getBoundingClientRect();
+            if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "fixed";
+            }if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "absolute";
+            }
         }
     },
     mounted: function mounted() {
@@ -48149,6 +48160,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     beforeDestroy: function beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
+    },
+    created: function created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed: function destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     },
 
     components: {
@@ -48224,13 +48241,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: '',
+            isShowing: false
+        };
+    },
+
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
@@ -48238,6 +48259,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         cardPlusError: function cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
+        },
+        created: function created() {
+            this.url = window.baseUrl;
         }
     }
 });
@@ -48250,44 +48274,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass:
-        "card-add col col-lg-10 d-flex flex-row container row align-items-center"
-    },
-    [
-      _c("div", { staticClass: "col col-1" }, [
-        _vm.indexOfUnsubmittedCard == -1
-          ? _c(
-              "button",
-              {
-                staticClass: "btn-add",
-                on: {
-                  click: function($event) {
-                    _vm.onPlus()
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-plus-circle" })]
-            )
-          : _c(
-              "button",
-              {
-                staticClass: "btn-add__disabled",
-                on: {
-                  click: function($event) {
-                    _vm.cardPlusError()
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-plus-circle" })]
-            )
-      ])
-    ]
-  )
+  return _c("div", [
+    _vm.indexOfUnsubmittedCard == -1
+      ? _c(
+          "button",
+          {
+            staticClass: "btn-add",
+            attrs: { id: "compare-major-button" },
+            on: {
+              click: function($event) {
+                _vm.onPlus()
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/add-btn.svg",
+                alt: "Compare Major Button"
+              }
+            })
+          ]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "btn-add__disabled",
+            attrs: { id: "compare-major-button" },
+            on: {
+              click: function($event) {
+                _vm.cardPlusError()
+              }
+            }
+          },
+          [_vm._m(0)]
+        )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("i", { staticClass: "fa add-icon" }, [
+      _vm._v("+"),
+      _c("span", { staticClass: "tooltiptext" }, [_vm._v("Complete Form")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -67374,7 +67408,7 @@ var render = function() {
   return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
-      { staticClass: "col col-md-12" },
+      { staticClass: "col col-md-12", on: { scroll: _vm.handleScroll } },
       [
         _vm._l(_vm.desktopCards, function(majorCard, index) {
           return _vm.isDesktop
@@ -86868,7 +86902,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "footer" }, [
+  return _c("footer", { staticClass: "footer", attrs: { id: "main-footer" } }, [
     _c(
       "div",
       { staticClass: "footer__links pl-4" },
