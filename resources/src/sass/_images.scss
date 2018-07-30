@@ -106,7 +106,7 @@
 }
 
 .CSUDataImgBanner {
-	@extend .col-12, .pt-3, .mb-3 ;
+	@extend .py-3, .mb-3 ;
 	color: white;
 	font-family: $font-base;
 	background-size: cover;
@@ -116,12 +116,12 @@
 }
 
 .CSUDataImgBanner__campusInfoWrapper{
-	@extend .col-12, .p-0, .text-left, .text-md-right ;
+	@extend .p-0, .text-left, .text-md-right ;
 }
 
 .CSUDataImgBanner__campusTitle {
 	font-weight: bold;
-	font-size: 2.15rem;
+	font-size: 2.4rem;
 }
 
 .CSUDataImgBanner__changeCampus{
@@ -131,19 +131,20 @@
 }
 
 .CSUDataImgBanner__dataTitle {
+	@extend .mb-3 ;
 	span {
 		line-height: 1.5;
-		font-size: 2rem;
+		font-size: 2.3rem;
 		border-bottom: .4rem $green solid;
 	}
 }
 
 .CSUDataImgBanner__dataInfoWrapper {
-	@extend .col-12, .col-md-7, .col-lg-6, .p-0 ;
+	@extend .p-0 ;
 }
 
 .CSUDataImgBanner__dataCopy {
-	font-weight: 600;
+	font-weight: normal;
 	font-size: 1.1rem;
 	line-height: 1.4;
 }

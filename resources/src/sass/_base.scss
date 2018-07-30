@@ -1,7 +1,10 @@
 .content-wrapper{
     align-items: center;
     justify-content: center;
-    margin-top: $navbar-height;
+    margin-top: $navbar-height + .8;
+    @media screen and (max-width: $break-small) {
+        margin-top: $navbar-height;
+    }
 }
 
 .graph-content{

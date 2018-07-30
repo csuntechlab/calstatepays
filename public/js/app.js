@@ -45023,6 +45023,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'csu-data-img-banner',
@@ -45037,7 +45039,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             campusName: '',
 
             fakeTitle: 'Title',
-            fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea vero eaque nemo ipsum. Facere.',
+            fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea.',
 
             industryTitle: 'Top Industries By Major',
             industryCopy: '',
@@ -45060,41 +45062,54 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "CSUDataImgBanner",
+      staticClass: "CSUDataImgBanner col-12",
       style: {
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(" +
+          "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
           _vm.CSUImg +
           _vm.CSUNImg +
           ")"
       }
     },
     [
-      _c("div", { staticClass: "CSUDataImgBanner__campusInfoWrapper" }, [
-        _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-          _vm._v(" " + _vm._s(_vm.campusName + _vm.csunAcronym))
-        ]),
+      _c("div", { staticClass: "container p-0" }, [
+        _c(
+          "div",
+          { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
+          [
+            _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
+              _vm._v(" " + _vm._s(_vm.campusName + _vm.csunAcronym))
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "CSUDataImgBanner__changeCampus",
+                attrs: { href: "#" }
+              },
+              [_vm._v("Change Campus")]
+            )
+          ]
+        ),
         _vm._v(" "),
         _c(
-          "a",
+          "div",
           {
-            staticClass: "CSUDataImgBanner__changeCampus",
-            attrs: { href: "#" }
+            staticClass:
+              "CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6"
           },
-          [_vm._v("Change Campus")]
+          [
+            _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
+              _c("span", [
+                _vm._v(" " + _vm._s(_vm.dataTitle + _vm.fakeTitle) + " ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
+              _vm._v(" " + _vm._s(_vm.dataCopy + _vm.fakeCopy) + " ")
+            ])
+          ]
         )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "CSUDataImgBanner__dataInfoWrapper" }, [
-        _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
-          _c("span", [
-            _vm._v(" " + _vm._s(_vm.dataTitle + _vm.fakeTitle) + " ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
-          _vm._v(" " + _vm._s(_vm.dataCopy + _vm.fakeCopy) + " ")
-        ])
       ])
     ]
   )
