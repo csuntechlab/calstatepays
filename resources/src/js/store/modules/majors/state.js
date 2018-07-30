@@ -13,6 +13,6 @@ export default {
             majorData: [],
             educationLevel: 'allDegrees'
         }
-    ]
+    ],
 };
 
