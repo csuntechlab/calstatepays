@@ -1,6 +1,7 @@
 <template>
     <div class="row wrapper graph-content card-padding">
         <div class="col col-md-12">
+            <sub-nav/>
             <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
             <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
             <card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
@@ -11,6 +12,7 @@
 import cardAdd from '../../../components/global/card-add.vue';
 import majorCard from "../../../components/majors/major-card.vue";
 import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
+import subNav from "../../../components/global/sub-nav.vue";
 import { mapGetters } from 'vuex';
 
 export default {
@@ -66,6 +68,7 @@ export default {
         majorCard,
         majorCardMobile,
         cardAdd,
+        subNav
     },
 }
 </script>
