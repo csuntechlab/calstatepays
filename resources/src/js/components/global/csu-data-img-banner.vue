@@ -6,8 +6,8 @@
                 <a class="CSUDataImgBanner__changeCampus" href="#">Change Campus</a>
             </div>
             <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6">
-                <h3 class="CSUDataImgBanner__dataTitle"> <span> {{ dataTitle + fakeTitle }} </span>  </h3>
-                <p class="CSUDataImgBanner__dataCopy"> {{ dataCopy + fakeCopy }} </p>
+                <slot name="title"></slot>
+                <slot name="copy"></slot>
             </div> 
         </div>
     </div>
@@ -26,15 +26,6 @@ export default {
             dataCopy: '',
             campusName: '',
 
-            fakeTitle: 'Title',
-            fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea.',
-
-            industryTitle: 'Top Industries By Major',
-            industryCopy: '',
-            majorsTitle: 'Major Earnings Over Time',
-            majorCopy: '',
-            freTitle: 'Financial Return on Investment',
-            freCopy: ''
         }
     }
 }

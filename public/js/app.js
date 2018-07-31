@@ -44985,6 +44985,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -45036,17 +45043,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             dataTitle: '',
             dataCopy: '',
-            campusName: '',
+            campusName: ''
 
-            fakeTitle: 'Title',
-            fakeCopy: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus architecto necessitatibus id quis aliquam laboriosam dignissimos aut veritatis numquam amet, mollitia voluptates laborum magnam ea.',
-
-            industryTitle: 'Top Industries By Major',
-            industryCopy: '',
-            majorsTitle: 'Major Earnings Over Time',
-            majorCopy: '',
-            freTitle: 'Financial Return on Investment',
-            freCopy: ''
         };
     }
 });
@@ -45098,17 +45096,8 @@ var render = function() {
             staticClass:
               "CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6"
           },
-          [
-            _c("h3", { staticClass: "CSUDataImgBanner__dataTitle" }, [
-              _c("span", [
-                _vm._v(" " + _vm._s(_vm.dataTitle + _vm.fakeTitle) + " ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "CSUDataImgBanner__dataCopy" }, [
-              _vm._v(" " + _vm._s(_vm.dataCopy + _vm.fakeCopy) + " ")
-            ])
-          ]
+          [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
+          2
         )
       ])
     ]
@@ -47766,7 +47755,31 @@ var render = function() {
     "div",
     { staticClass: "row wrapper graph-content card-padding" },
     [
-      _c("csu-data-img-banner"),
+      _c("csu-data-img-banner", [
+        _c(
+          "h3",
+          {
+            staticClass: "CSUDataImgBanner__dataTitle",
+            attrs: { slot: "title" },
+            slot: "title"
+          },
+          [_c("span", [_vm._v("Financial Return on Education")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass: "CSUDataImgBanner__dataCopy",
+            attrs: { slot: "copy" },
+            slot: "copy"
+          },
+          [
+            _vm._v(
+              "\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos pariatur delectus ad maiores eius?\n      "
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -47881,6 +47894,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(8);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -67167,7 +67187,31 @@ var render = function() {
     "div",
     { staticClass: "row wrapper graph-content card-padding" },
     [
-      _c("csu-data-img-banner"),
+      _c("csu-data-img-banner", [
+        _c(
+          "h3",
+          {
+            staticClass: "CSUDataImgBanner__dataTitle",
+            attrs: { slot: "title" },
+            slot: "title"
+          },
+          [_c("span", [_vm._v("Major Earnings Over Time")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass: "CSUDataImgBanner__dataCopy",
+            attrs: { slot: "copy" },
+            slot: "copy"
+          },
+          [
+            _vm._v(
+              "\n            Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n        "
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
       _c(
         "div",

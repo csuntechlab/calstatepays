@@ -1,6 +1,13 @@
 <template>
     <div class="row wrapper graph-content card-padding">
-        <csu-data-img-banner></csu-data-img-banner>
+        <csu-data-img-banner>
+            <h3 class="CSUDataImgBanner__dataTitle" slot="title">
+                <span>Major Earnings Over Time</span>
+            </h3>
+            <p class="CSUDataImgBanner__dataCopy" slot="copy">
+                Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
+            </p>
+        </csu-data-img-banner>
         <div class="col col-md-12">    
             <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
             <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
