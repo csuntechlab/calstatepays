@@ -1,11 +1,11 @@
 <template>
     <div>
-	    <industry-carousel></industry-carousel>				
+	    <industry-progress></industry-progress>				
     </div>
 </template>
 
 <script>
-import industryCarousel from "../../../components/industries/industry-carousel.vue";
+import industryProgress from "../../../components/industries/industry-progress.vue";
 
 export default {
   data() {
@@ -14,7 +14,7 @@ export default {
   },
 
   components: {
-    industryCarousel
+    industryProgress
   }
 };
 </script>
