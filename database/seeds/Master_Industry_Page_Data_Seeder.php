@@ -32,7 +32,10 @@ class Master_Industry_Page_Data_Seeder extends Seeder
             $industryPathType->student_path = $row->student_path;
             $industryPathType->population_sample_id = $row->key;
             $industryPathType->university_majors_id = $row->key;
-            $industryPathType->save();
+            if($row->naics != null){
+                $industryPathType->save();
+            }
+            
 
             $industryWage->id  = $row->key;
             $industryWage->avg_annual_wage_5 = $row->average_annual_earnings_5_years_after_exit;
