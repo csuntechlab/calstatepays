@@ -26,7 +26,7 @@ class IndustryService implements IndustryContract
         $university_major = UniversityMajor::with(['industryPathTypes' =>  function($query) {
             $query->where('entry_status', 'ALL');
             $query->where('student_path', 4);
-        },'industryPathTypes.population','industryPathTypes.naicsTitle', 'industryPathTypes.industryWages'])->get()
+        },'industryPathTypes.population','industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])->get()
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $university_id)
             ->first();
