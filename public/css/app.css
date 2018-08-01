@@ -27052,6 +27052,11 @@ html {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.industry-card__legend {
+  padding: 20px 10px;
+  font-weight: 600;
+}
+
 .card-add {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -28111,6 +28116,24 @@ input[type="button"]:focus {
 
 .industry-bar__percentage-text {
   color: #2f98bf;
+}
+
+.industry-card__legend-salary {
+  height: 0;
+  width: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  background-color: #2BAE67;
+  display: inline-block;
+}
+
+.industry-card__legend-percentage {
+  height: 0;
+  width: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  background-color: #2f98bf;
+  display: inline-block;
 }
 
 .industry-bar__background {

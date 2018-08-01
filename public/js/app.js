@@ -67714,6 +67714,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -67730,66 +67739,92 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.industriesByMajor, function(industry, index) {
-      return _c("div", { key: index }, [
-        _c("div", { staticClass: "row industry-card__row" }, [
-          _c("div", { staticClass: "col-3" }, [_vm._v(_vm._s(industry.title))]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-9" }, [
-            _c("div", { staticClass: "row industry-bar__padding" }, [
-              _c(
-                "span",
-                { staticClass: "col-10" },
-                [
-                  _c("v-progress-linear", {
-                    staticClass: "industry-bar",
-                    attrs: {
-                      value: industry.percentage,
-                      height: "25",
-                      color: "industry-bar__percentage",
-                      "background-color": "industry-bar__background"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-2 industry-bar__percentage-text" },
-                [_vm._v(_vm._s(industry.percentage) + "%")]
-              )
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.industriesByMajor, function(industry, index) {
+        return _c("div", { key: index }, [
+          _c("div", { staticClass: "row industry-card__row" }, [
+            _c("div", { staticClass: "col-3" }, [
+              _vm._v(_vm._s(industry.title))
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "span",
-                { staticClass: "col-10" },
-                [
-                  _c("v-progress-linear", {
-                    staticClass: "industry-bar",
-                    attrs: {
-                      value: 50,
-                      height: "25",
-                      color: "industry-bar__salary",
-                      "background-color": "industry-bar__background"
-                    }
-                  })
-                ],
-                1
-              ),
+            _c("div", { staticClass: "col-9" }, [
+              _c("div", { staticClass: "row industry-bar__padding" }, [
+                _c(
+                  "span",
+                  { staticClass: "col-10" },
+                  [
+                    _c("v-progress-linear", {
+                      staticClass: "industry-bar",
+                      attrs: {
+                        value: industry.percentage,
+                        height: "25",
+                        color: "industry-bar__percentage",
+                        "background-color": "industry-bar__background"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-2 industry-bar__percentage-text" },
+                  [_vm._v(_vm._s(industry.percentage) + "%")]
+                )
+              ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-2 industry-bar__salary-text" }, [
-                _vm._v("$$$")
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "span",
+                  { staticClass: "col-10" },
+                  [
+                    _c("v-progress-linear", {
+                      staticClass: "industry-bar",
+                      attrs: {
+                        value: 50,
+                        height: "25",
+                        color: "industry-bar__salary",
+                        "background-color": "industry-bar__background"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-2 industry-bar__salary-text" }, [
+                  _vm._v("$$$")
+                ])
               ])
             ])
           ])
         ])
-      ])
-    })
+      })
+    ],
+    2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row industry-card__legend" }, [
+      _c("div", { staticClass: "col-3" }, [_vm._v("INDUSTRY")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-3" }, [
+        _c("div", { staticClass: "industry-card__legend-percentage" }),
+        _vm._v("PERCENTAGE\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "industry-card__legend-salary" }),
+        _vm._v("AVERAGE EARNINGS\n        ")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

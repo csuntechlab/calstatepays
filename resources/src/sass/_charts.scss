@@ -32,6 +32,24 @@
 	}
 }
 
+.industry-card__legend-salary{
+    height: 0;
+    width: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    background-color: $green;
+    display: inline-block;
+}
+
+.industry-card__legend-percentage{
+    height: 0;
+    width: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    background-color: $blue;
+    display: inline-block;
+}
+
 .industry-bar__background {
 	background-color: $light-gray;
 }
