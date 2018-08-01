@@ -50,7 +50,7 @@ export default {
 		return {
 			form: {
 				majorId: null,
-				university: null
+				university: 70
 			},
 			formNotFilled: false,
 			selected: null

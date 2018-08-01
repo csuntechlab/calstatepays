@@ -14,6 +14,26 @@
     @extend %card-base;
 }
 
+.csu-card__form{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    @extend %card-base;
+}
+
+.industry-card{
+    margin-bottom: 50px;
+    padding: 2rem;
+    min-height: 75vh;
+    @extend %card-base;
+}
+
+.industry-card__row{
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.1)
+}
+
 .card-add{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;

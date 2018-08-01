@@ -1,20 +1,20 @@
 <template>
-    <div class="industry-card(not made yet)">
+    <div>
         <div v-for="(industry,index) in industriesByMajor" :key="index">
             <div class="row industry-card__row">
                 <div class="col-3">{{industry.title}}</div>
                 <div class="col-9">
-                    <div class="row">
+                    <div class="row industry-bar__padding">
                         <span class="col-10">
-                            <v-progress-linear class="industry-bar" :value="industry.percentage" height="30" color="industry-bar__percentage"></v-progress-linear>
+                            <v-progress-linear class="industry-bar" :value="industry.percentage" height="25" color="industry-bar__percentage" background-color="industry-bar__background"/>
                         </span>
-                        <div class="col-2">{{industry.percentage}}%</div>
+                        <div class="col-2 industry-bar__percentage-text">{{industry.percentage}}%</div>
                     </div>
                     <div class="row">
                         <span class="col-10">
-                            <v-progress-linear class="industry-bar" :value="50" height="30" color="industry-bar__salary"></v-progress-linear>
+                            <v-progress-linear class="industry-bar" :value="50" height="25" color="industry-bar__salary" background-color="industry-bar__background"/>
                         </span>
-                        <div class="col-2">$$$</div>
+                        <div class="col-2 industry-bar__salary-text">$$$</div>
                     </div>
                 </div>
             </div>

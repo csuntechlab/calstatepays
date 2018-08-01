@@ -1,22 +1,22 @@
 <template>
-    <div class="row">
-      <div class="col-3">
-        <industry-form/>
+  <div class="row wrapper graph-content card-padding">
+      <div class="col-lg-3 col-xs-12">
+        <industry-form class="my-2 csu-card__form" />
       </div>
-      <div class="col-9">
-	      <industry-progress/>	
+      <div class="col-lg-9 col-xs-12">
+        <industry-progress class="my-2 card-item industry-card" />
       </div>
-    </div>
+  </div>
 </template>
 
 <script>
-import industryProgress from "../../../components/industries/industry-progress.vue";
-import industryForm from "../../../components/industries/industry-form.vue"
+  import industryProgress from "../../../components/industries/industry-progress.vue";
+  import industryForm from "../../../components/industries/industry-form.vue"
 
-export default {
-  components: {
-    industryProgress,
-    industryForm
-  }
-};
+  export default {
+    components: {
+      industryProgress,
+      industryForm
+    }
+  };
 </script>
