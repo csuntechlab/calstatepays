@@ -49,6 +49,13 @@ class IndustryPathType extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function industryWages() {
+        return $this->hasMany('App\Models\IndustryPathType','naics_code','id');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function industryWage() {
