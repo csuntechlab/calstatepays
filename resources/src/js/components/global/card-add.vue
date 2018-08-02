@@ -18,21 +18,21 @@ export default {
             isShowing: false,
         }
     },
+    created () {
+        this.url = window.baseUrl;
+    },
     computed: {
         ...mapGetters([
             'indexOfUnsubmittedCard'
         ])
     },
     methods: {
-        onPlus(){
+        onPlus() {
             this.$store.dispatch('addMajorCard');
         },
         cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
-        },
-        created () {
-        this.url = window.baseUrl;
-    }
+        }
     }
 }
 </script>

@@ -48307,6 +48307,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             isShowing: false
         };
     },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
     methods: {
@@ -48315,9 +48318,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         cardPlusError: function cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
-        },
-        created: function created() {
-            this.url = window.baseUrl;
         }
     }
 });
