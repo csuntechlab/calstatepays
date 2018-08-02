@@ -3,7 +3,7 @@
       <div class="col-lg-3 col-xs-12">
         <industry-form class="my-2 csu-card__form" />
       </div>
-      <div class="col-lg-9 col-xs-12">
+      <div class="col-lg-9 col-xs-12 mb-5">
         <industry-progress class="my-2 card-item industry-card" />
       </div>
   </div>
