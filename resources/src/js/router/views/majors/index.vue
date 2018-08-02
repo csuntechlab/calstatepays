@@ -98,7 +98,8 @@ export default {
 	components: {
 		majorCard,
 		majorCardMobile,
-		cardAdd
+		cardAdd,
+		subNav
 	}
 };
 </script>
