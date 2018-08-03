@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             csunAcronym: 'California State University Northridge',
-            CSUNImg: '../img/dataimgbanner/csun.jpg',
+            CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
             CSUImg: '',
         }
     }
