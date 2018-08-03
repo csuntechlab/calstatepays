@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer" id="main-footer">
         <div class="footer__links pl-4">
             <router-link class="footer__link text-gray" :to="`/research`" >Power Users</router-link>
             <br>
