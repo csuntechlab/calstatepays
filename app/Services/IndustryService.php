@@ -27,8 +27,8 @@ class IndustryService implements IndustryContract
                                             ->first();
         $industryPathTypes = $university_major->industryPathTypes();
 
-        $industryPopulations = $industryPathTypes->where('entry_status', 'All')
-                                               ->where('student_path', 4)
+        $industryPopulations = $industryPathTypes->where('entry_status', 'FTF + FTT')
+                                               ->where('student_path', 1)
                                                ->with('population')
                                                ->with('naicsTitle')
                                                ->get();
