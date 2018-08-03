@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <sub-nav/>
-        <div class="row wrapper graph-content card-padding">
-            <div class="col col-md-12" @scroll="handleScroll">
-                <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index
-                    :windowWidth=windowWidth></major-card>
-                <major-card-mobile v-if="isMobile" class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-                <card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
-            </div>
+    <div class="row wrapper graph-content card-padding">
+        <csu-data-img-banner>
+            <h3 class="CSUDataImgBanner__dataTitle" slot="title">
+                <span>Major Earnings Over Time</span>
+            </h3>
+            <p class="CSUDataImgBanner__dataCopy" slot="copy">
+                Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
+            </p>
+        </csu-data-img-banner>
+		<sub-nav/>
+        <div class="col col-md-12">    
+            <major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth></major-card>
+            <major-card-mobile v-if="isMobile"  class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
+            <card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
         </div>
     </div>
 </template>
 <script>
-import cardAdd from "../../../components/global/card-add.vue";
+import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
+import cardAdd from "../../../components/global/card-add";
 import majorCard from "../../../components/majors/major-card.vue";
 import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
 import subNav from "../../../components/global/sub-nav.vue";
@@ -99,7 +105,8 @@ export default {
 		majorCard,
 		majorCardMobile,
 		cardAdd,
-		subNav
+		subNav,
+		csuDataImgBanner
 	}
 };
 </script>
