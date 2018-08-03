@@ -1,16 +1,17 @@
-.img__logo{
+.img__logo {
 	padding-top: 10px;
 	max-height: 50px;
 }
-.img__logo--side{
+.img__logo--side {
 	max-height: 60px;
 	margin-top: 0px;
 }
-.img__banner{
+.img__banner {
 	max-width: 60%;
 }
-.bg { 
-	background-image: $white-filter, url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
+.bg {
+	background-image: $white-filter,
+		url("https://i.gyazo.com/5261827ebc5ee015d177ab999f162a72.jpg");
 	min-height: 83vh;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -29,8 +30,8 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
-	border-top: .3rem solid;
-	border-bottom: .3rem solid;
+	border-top: 0.3rem solid;
+	border-bottom: 0.3rem solid;
 	@media screen and (max-width: $break-small) {
 		height: 45vh;
 	}
@@ -47,8 +48,9 @@
 .fa-wrapper {
 	@media screen and (max-width: $break-small) {
 		background: $white;
-		border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold) 5;
-		border-top: .3rem solid;
+		border-image: linear-gradient(90deg, $oxford, $light-green, $light-gold)
+			5;
+		border-top: 0.3rem solid;
 	}
 	div {
 		p {
@@ -60,19 +62,19 @@
 .fa-graduation-cap {
 	font-size: 6em;
 	color: $oxford;
-	padding-bottom: .1rem;
+	padding-bottom: 0.1rem;
 }
 
 .fa-usd {
 	font-size: 6em;
 	color: $green;
-	padding-bottom: .1rem;	
+	padding-bottom: 0.1rem;
 }
 
 .fa-line-chart {
 	font-size: 6em;
 	color: $gold;
-	padding-bottom: .1rem;	
+	padding-bottom: 0.1rem;
 }
 
 .csu-seals {
@@ -81,7 +83,7 @@
 }
 
 .faq-banner {
-	background-image:$white-filter, url('../img/faq-banner.jpg');
+	background-image: $white-filter, url("../img/faq-banner.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 35vh;
@@ -92,15 +94,67 @@
 .csu-wrapper {
 	figure {
 		img {
-		width: 90%;
-		max-height: 7.25rem;
+			width: 90%;
+			max-height: 7.25rem;
 		}
 		figcaption {
-      font-family: $font-base;
-      text-transform: uppercase;
-      font-size: .85rem;
-      line-height: 1.5rem;
-      margin-top: .5rem;
-	  }
+			font-family: $font-base;
+			text-transform: uppercase;
+			font-size: 0.85rem;
+			line-height: 1.5rem;
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+.CSUDataImgBanner {
+	@extend .py-3, .mb-3 ;
+	color: white;
+	font-family: $font-base;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+	&__campusInfoWrapper {
+		@extend .p-0, .text-left, .text-md-right ;
+	}
+
+	&__campusTitle {
+		font-weight: bold;
+		font-size: 2.4rem;
+	}
+
+	&__changeCampus {
+		font-size: 1rem;
+		font-weight: 400;
+		color: $white;
+		opacity: .8;
+
+		&:hover{
+			opacity: 1;
+			text-decoration: none;
+			color: $white;
+		}
+	}
+
+	&__dataTitle {
+		@extend .mb-3 ;
+		span {
+			line-height: 1.5;
+			font-size: 2.3rem;
+			padding-bottom: .5rem;
+			border-bottom: .2rem $green solid;
+		}
+	}
+
+	&__dataInfoWrapper {
+		@extend .p-0 ;
+	}
+
+	&__dataCopy {
+		font-weight: normal;
+		font-size: 1.1rem;
+		line-height: 1.4;
 	}
 }
