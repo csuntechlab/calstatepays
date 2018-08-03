@@ -1,21 +1,20 @@
 <template>
   <div class="row wrapper graph-content card-padding">
-      <div class="col-12">
-        <card class="container row align-items-center">
-          <div class="text-center col-12">
-            <h2 class="pfre__heading">Financial Return on Education</h2>
-          </div>
+      <div  class="col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3">
+        <card class="container row">
+            <div>
+            <pfre-form></pfre-form>
+            </div> 
+         </card>
+      </div>
+      <div class="col col-12 col-md-8 col-lg-9">
+         <card class="container row">
           <div class="container-fluid p-0">
-            <div class="row">
-              <div class="col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3">
-                <pfre-form></pfre-form>
-              </div>
-              <div class="col-12 col-md-8 col-lg-9 align-self-center">
-                <pfre-progress></pfre-progress>
-              </div>
-            </div>
-          </div>  
-        </card>
+               <div class="row-fluid">
+                    <pfre-progress></pfre-progress>
+               </div>
+          </div>
+        </card> 
       </div>
   </div>
 </template>

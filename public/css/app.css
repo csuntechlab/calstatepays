@@ -27369,7 +27369,7 @@ figcaption {
   position: fixed;
   background: #FFF;
   width: 100%;
-  z-index: 500;
+  z-index: 1000000;
   -webkit-box-shadow: 0 6px 6px -6px #999;
           box-shadow: 0 6px 6px -6px #999;
   top: 0;
@@ -28195,4 +28195,12 @@ input[type="button"]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.frePage .csu-card {
+  -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+  height: 100%;
+  width: 100%;
 }

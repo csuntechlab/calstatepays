@@ -44934,7 +44934,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -47592,34 +47591,22 @@ var render = function() {
   return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
-      { staticClass: "col-12" },
+      { staticClass: "col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3" },
       [
-        _c("card", { staticClass: "container row align-items-center" }, [
-          _c("div", { staticClass: "text-center col-12" }, [
-            _c("h2", { staticClass: "pfre__heading" }, [
-              _vm._v("Financial Return on Education")
-            ])
-          ]),
-          _vm._v(" "),
+        _c("card", { staticClass: "container row" }, [
+          _c("div", [_c("pfre-form")], 1)
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "col col-12 col-md-8 col-lg-9" },
+      [
+        _c("card", { staticClass: "container row" }, [
           _c("div", { staticClass: "container-fluid p-0" }, [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
-                },
-                [_c("pfre-form")],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
-                [_c("pfre-progress")],
-                1
-              )
-            ])
+            _c("div", { staticClass: "row-fluid" }, [_c("pfre-progress")], 1)
           ])
         ])
       ],
@@ -86573,7 +86560,7 @@ if (false) {
 /* 371 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import \"frePage\";\r\n^\r\n      File to import not found or unreadable: C:\\Users\\zanee\\docker\\CSU-Metro-LA\\resources\\src\\sass\\_frePage.scss.\nParent style sheet: stdin\r\n      in C:\\Users\\zanee\\docker\\CSU-Metro-LA\\resources\\src\\sass\\app.scss (line 16, column 1)\n    at runLoaders (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\async\\dist\\async.js:2257:31)\n    at Object.callback (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\async\\dist\\async.js:958:16)\n    at options.error (C:\\Users\\zanee\\docker\\CSU-Metro-LA\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 /******/ ]);
