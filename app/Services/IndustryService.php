@@ -11,11 +11,11 @@ class IndustryService implements IndustryContract
 {
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key){
+        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
             return [
                 'naics_code' => $item['naics_code'],
-                'title'      => $item['naics_title'],
-                'image'      => asset($item['image'])
+                'title' => $item['naics_title'],
+                'image' => asset($item['image'])
             ];
         });
         return $allNaicsTitles;
@@ -23,25 +23,54 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
-        $university_major = UniversityMajor::with(['industryPathTypes' =>  function($query) {
-            $query->where('entry_status', 'ALL');
-            $query->where('student_path', 4);
-        },'industryPathTypes.population','industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])->get()
+
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', 1);
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $university_id)
             ->first();
 
-        $industryPopulations = $university_major->IndustryPathTypes->sortByDesc('population.percentage_found')
-        ->values()->map(function ($university_major, $index = 0 ){
+        $industryPathTypes = $university_major->industryPathTypes;
+
+        $industryPopulations = $industryPathTypes->sortByDesc('population.percentage_found')
+            ->values()
+            ->map(function ($industry, $index = 0) {
                 $index++;
-            return[
-                        'title'                  => $university_major->naicsTitle->naics_title,
-                        'percentage'             => round($university_major->population->percentage_found),
-                        'rank'                   => $index,
-                        'image' => asset($university_major->naicsTitle->image),
-                        'industry_wages' => $university_major->industry_wages
-                    ];
+                return [
+                    'title' => $industry->naicsTitle->naics_title,
+                    'percentage' => round($industry->population->percentage_found),
+                    'rank' => $index,
+                    'image' => asset($industry->naicsTitle->image),
+                    'industryWage' => (!is_null($industry->industryWage->avg_annual_wage_5)) ? $industry->industryWage->avg_annual_wage_5 : "Not Available"
+                ];
             });
         return $industryPopulations;
     }
 }
+
+//
+//            =======
+//                                                $query->where('student_path', 1)
+//                                                      ->where('entry_status', 'FTF + FTT');
+//                                                 },'industryPathTypes.population','industryPathTypes.naicsTitle'])
+//                                                ->where('hegis_code', $hegis_code)
+//                                                ->where('university_id', $university_id)
+//                                                ->first();
+//
+//        $industryPathTypes = $university_major->industryPathTypes;
+//
+//        $industryPopulations = $industryPathTypes->sortByDesc('population.percentage_found')
+//                                                   ->values()
+//                                                   ->map(function($industry, $index = 0){
+//            $index++;
+//            return [
+//                'title'                  => $industry->naicsTitle->naics_title,
+//                'percentage'             => round($industry->population->percentage_found),
+//                'rank'                   => $index,
+//                'image'                  => asset($industry->naicsTitle->image)
+//            ];
+//
+//        });
+//>>>>>>> dev

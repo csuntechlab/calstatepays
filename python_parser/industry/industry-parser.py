@@ -24,7 +24,10 @@ def read_csv(file, json_file):
     with open(file) as csvfile:
         reader = csv.DictReader(csvfile)
         title = reader.fieldnames
+        title.append('key')
         parsed_titles = [add_underscores(title[i]) for i in range(len(title))]
+
+        counter = 1;
         
         for row in reader:
             # Cast the data as ints/floats
@@ -32,11 +35,13 @@ def read_csv(file, json_file):
             row['Student Path'] = int(row['Student Path'])
 
             row['NAICS'] = remove_dollar(row['NAICS'])
-            row['HEGIS at Exit'] = remove_dollar(row['HEGIS at Exit'])
+            row['HEGIS at Exit'] = format_ids( row['HEGIS at Exit'] )
             
             row['Number of Students Found 5 Years After Exit'] = remove_dollar(row['Number of Students Found 5 Years After Exit'])
             row['Median Annual Earnings 5 Years After Exit'] = remove_dollar(row['Median Annual Earnings 5 Years After Exit'])
             row['Average Annual Earnings 5 Years After Exit'] = remove_dollar(row['Average Annual Earnings 5 Years After Exit'])
+            row['key'] = counter
+            counter += 1 
 
             csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range(
                 len(title))}])
@@ -45,14 +50,19 @@ def read_csv(file, json_file):
         write_json(csv_rows, json_file)
 
 # clean the csv titles
-
-
 def add_underscores(input):
     return input.lower().replace(" ", "_")
 
 # format the integers
+def format_ids(input):
+    if input == '':
+        return None
+    if "+" in input:
+        input = input.split(' + ')
+        input = input[0]
+    return int(input)    
 
-
+# format the integers
 def remove_dollar(input):
     if input == '':
         return None
@@ -68,7 +78,7 @@ def remove_dollar(input):
 
 def write_json(data, json_file):
     with open(json_file, "w") as f:
-        f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': '), encoding="utf-8", ensure_ascii=False))
+        f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False))
 
 
 if __name__ == "__main__":
