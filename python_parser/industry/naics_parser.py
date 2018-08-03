@@ -36,7 +36,7 @@ def read_csv(file, json_file):
         for row in reader:
             # Cast the data as ints/floats
             row['NAICS'] = remove_dollar(row['NAICS'])
-            row['Industry of Employment']= add_underscores(remove_commas(row ['Industry of Employment'] ) )
+            row['Industry of Employment']= add_underscores(removeAmp (remove_commas(row ['Industry of Employment'] ) ) )
 
             row['image'] = '/images/industry/'+row['Industry of Employment']+'.png'
             
@@ -76,6 +76,11 @@ def sanate(absList):
             l.append(d)
         break
     return l
+
+
+
+def removeAmp(input):
+    return input.replace(' &', '')
 
 
 

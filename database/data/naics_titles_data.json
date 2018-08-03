@@ -1,63 +1,8 @@
 [
     {
-        "image": "/images/industry/finance_&_insurance.png",
-        "naics_codes": 52,
-        "naics_title": "finance_&_insurance"
-    },
-    {
-        "image": "/images/industry/admin_&_support_&_waste_mgmt_&_remediation.png",
-        "naics_codes": 56,
-        "naics_title": "admin_&_support_&_waste_mgmt_&_remediation"
-    },
-    {
-        "image": "/images/industry/government.png",
-        "naics_codes": 92,
-        "naics_title": "government"
-    },
-    {
-        "image": "/images/industry/arts_entertainment_&_recreation.png",
-        "naics_codes": 71,
-        "naics_title": "arts_entertainment_&_recreation"
-    },
-    {
-        "image": "/images/industry/management_of_companies_&_enterprises.png",
+        "image": "/images/industry/management_of_companies_enterprises.png",
         "naics_codes": 55,
-        "naics_title": "management_of_companies_&_enterprises"
-    },
-    {
-        "image": "/images/industry/wages_-_no_naics_code.png",
-        "naics_codes": null,
-        "naics_title": "wages_-_no_naics_code"
-    },
-    {
-        "image": "/images/industry/mining.png",
-        "naics_codes": 21,
-        "naics_title": "mining"
-    },
-    {
-        "image": "/images/industry/non-classified.png",
-        "naics_codes": 99,
-        "naics_title": "non-classified"
-    },
-    {
-        "image": "/images/industry/wholesale_trade.png",
-        "naics_codes": 42,
-        "naics_title": "wholesale_trade"
-    },
-    {
-        "image": "/images/industry/construction.png",
-        "naics_codes": 23,
-        "naics_title": "construction"
-    },
-    {
-        "image": "/images/industry/retail_trade.png",
-        "naics_codes": 4445,
-        "naics_title": "retail_trade"
-    },
-    {
-        "image": "/images/industry/transportation_&_warehousing.png",
-        "naics_codes": 4849,
-        "naics_title": "transportation_&_warehousing"
+        "naics_title": "management_of_companies_enterprises"
     },
     {
         "image": "/images/industry/utilities.png",
@@ -65,34 +10,19 @@
         "naics_title": "utilities"
     },
     {
-        "image": "/images/industry/agriculture_forestry_fishing_&_hunting.png",
-        "naics_codes": 11,
-        "naics_title": "agriculture_forestry_fishing_&_hunting"
-    },
-    {
-        "image": "/images/industry/health_care_&_social_assistance.png",
-        "naics_codes": 62,
-        "naics_title": "health_care_&_social_assistance"
-    },
-    {
-        "image": "/images/industry/information.png",
-        "naics_codes": 51,
-        "naics_title": "information"
-    },
-    {
-        "image": "/images/industry/real_estate_&_rental_&_leasing.png",
-        "naics_codes": 53,
-        "naics_title": "real_estate_&_rental_&_leasing"
-    },
-    {
-        "image": "/images/industry/professional_scientific_&_technical_skills.png",
-        "naics_codes": 54,
-        "naics_title": "professional_scientific_&_technical_skills"
-    },
-    {
         "image": "/images/industry/other_services.png",
         "naics_codes": 81,
         "naics_title": "other_services"
+    },
+    {
+        "image": "/images/industry/real_estate_rental_leasing.png",
+        "naics_codes": 53,
+        "naics_title": "real_estate_rental_leasing"
+    },
+    {
+        "image": "/images/industry/retail_trade.png",
+        "naics_codes": 4445,
+        "naics_title": "retail_trade"
     },
     {
         "image": "/images/industry/manufacturing.png",
@@ -100,13 +30,83 @@
         "naics_title": "manufacturing"
     },
     {
+        "image": "/images/industry/agriculture_forestry_fishing_hunting.png",
+        "naics_codes": 11,
+        "naics_title": "agriculture_forestry_fishing_hunting"
+    },
+    {
+        "image": "/images/industry/non-classified.png",
+        "naics_codes": 99,
+        "naics_title": "non-classified"
+    },
+    {
+        "image": "/images/industry/construction.png",
+        "naics_codes": 23,
+        "naics_title": "construction"
+    },
+    {
+        "image": "/images/industry/mining.png",
+        "naics_codes": 21,
+        "naics_title": "mining"
+    },
+    {
+        "image": "/images/industry/admin_support_waste_mgmt_remediation.png",
+        "naics_codes": 56,
+        "naics_title": "admin_support_waste_mgmt_remediation"
+    },
+    {
+        "image": "/images/industry/government.png",
+        "naics_codes": 92,
+        "naics_title": "government"
+    },
+    {
+        "image": "/images/industry/transportation_warehousing.png",
+        "naics_codes": 4849,
+        "naics_title": "transportation_warehousing"
+    },
+    {
+        "image": "/images/industry/health_care_social_assistance.png",
+        "naics_codes": 62,
+        "naics_title": "health_care_social_assistance"
+    },
+    {
+        "image": "/images/industry/arts_entertainment_recreation.png",
+        "naics_codes": 71,
+        "naics_title": "arts_entertainment_recreation"
+    },
+    {
+        "image": "/images/industry/information.png",
+        "naics_codes": 51,
+        "naics_title": "information"
+    },
+    {
+        "image": "/images/industry/accommodation_food_services.png",
+        "naics_codes": 72,
+        "naics_title": "accommodation_food_services"
+    },
+    {
+        "image": "/images/industry/finance_insurance.png",
+        "naics_codes": 52,
+        "naics_title": "finance_insurance"
+    },
+    {
         "image": "/images/industry/educational_services.png",
         "naics_codes": 61,
         "naics_title": "educational_services"
     },
     {
-        "image": "/images/industry/accommodation_&_food_services.png",
-        "naics_codes": 72,
-        "naics_title": "accommodation_&_food_services"
+        "image": "/images/industry/wholesale_trade.png",
+        "naics_codes": 42,
+        "naics_title": "wholesale_trade"
+    },
+    {
+        "image": "/images/industry/professional_scientific_technical_skills.png",
+        "naics_codes": 54,
+        "naics_title": "professional_scientific_technical_skills"
+    },
+    {
+        "image": "/images/industry/wages_-_no_naics_code.png",
+        "naics_codes": null,
+        "naics_title": "wages_-_no_naics_code"
     }
 ]
