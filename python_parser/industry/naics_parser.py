@@ -36,9 +36,8 @@ def read_csv(file, json_file):
         for row in reader:
             # Cast the data as ints/floats
             row['NAICS'] = remove_dollar(row['NAICS'])
-            row['Industry of Employment']= add_underscores(removeAmp (remove_commas(row ['Industry of Employment'] ) ) )
 
-            row['image'] = '/images/industry/'+row['Industry of Employment']+'.png'
+            row['image'] = '/images/industry/'+add_underscores(removeAmp (remove_commas(row ['Industry of Employment'] ) ) )+'.png'
             
             naics = row['NAICS']
             # naics = 'nacis_codes:'+str(naics)

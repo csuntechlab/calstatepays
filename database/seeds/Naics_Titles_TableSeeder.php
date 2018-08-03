@@ -14,9 +14,7 @@ class Naics_Titles_TableSeeder extends Seeder
     {
         $json = File::get("database/data/naics_titles_data.json");
         $data = json_decode($json);
-        // dd($data);
         foreach($data as $row){
-            // dd($row->naics_title);
             if($row->naics_codes !=null){
                 DB::table('naics_titles')->insert([
                     'image'       => $row->image,
