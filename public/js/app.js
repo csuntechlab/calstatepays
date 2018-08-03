@@ -48300,7 +48300,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	components: {
 		majorCard: __WEBPACK_IMPORTED_MODULE_1__components_majors_major_card_vue___default.a,
 		majorCardMobile: __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_mobile_vue___default.a,
-		cardAdd: __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default.a
+		cardAdd: __WEBPACK_IMPORTED_MODULE_0__components_global_card_add_vue___default.a,
+		subNav: __WEBPACK_IMPORTED_MODULE_3__components_global_sub_nav_vue___default.a
 	}
 });
 
@@ -48380,6 +48381,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             isShowing: false
         };
     },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
     methods: {
@@ -48388,9 +48392,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         cardPlusError: function cardPlusError() {
             this.$emit('cardPlusError', this.indexOfUnsubmittedCard);
-        },
-        created: function created() {
-            this.url = window.baseUrl;
         }
     }
 });
