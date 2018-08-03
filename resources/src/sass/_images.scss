@@ -129,6 +129,13 @@
 		font-size: 1rem;
 		font-weight: 400;
 		color: $white;
+		opacity: .8;
+
+		&:hover{
+			opacity: 1;
+			text-decoration: none;
+			color: $white;
+		}
 	}
 
 	&__dataTitle {

@@ -27386,6 +27386,13 @@ figcaption {
   font-size: 1rem;
   font-weight: 400;
   color: #FFF;
+  opacity: .8;
+}
+
+.CSUDataImgBanner__changeCampus:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #FFF;
 }
 
 .CSUDataImgBanner__dataTitle span {
