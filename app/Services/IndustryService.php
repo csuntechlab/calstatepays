@@ -43,7 +43,7 @@ class IndustryService implements IndustryContract
                     'percentage' => round($industry->population->percentage_found),
                     'rank' => $index,
                     'image' => asset($industry->naicsTitle->image),
-                    'industryWage' => (!is_null($industry->industryWage->avg_annual_wage_5)) ? $industry->industryWage->avg_annual_wage_5 : "Not Available"
+                    'industryWage' => $industry->industryWage->avg_annual_wage_5
                 ];
             });
         return $industryPopulations;
