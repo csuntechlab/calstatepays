@@ -49,28 +49,3 @@ class IndustryService implements IndustryContract
         return $industryPopulations;
     }
 }
-
-//
-//            =======
-//                                                $query->where('student_path', 1)
-//                                                      ->where('entry_status', 'FTF + FTT');
-//                                                 },'industryPathTypes.population','industryPathTypes.naicsTitle'])
-//                                                ->where('hegis_code', $hegis_code)
-//                                                ->where('university_id', $university_id)
-//                                                ->first();
-//
-//        $industryPathTypes = $university_major->industryPathTypes;
-//
-//        $industryPopulations = $industryPathTypes->sortByDesc('population.percentage_found')
-//                                                   ->values()
-//                                                   ->map(function($industry, $index = 0){
-//            $index++;
-//            return [
-//                'title'                  => $industry->naicsTitle->naics_title,
-//                'percentage'             => round($industry->population->percentage_found),
-//                'rank'                   => $index,
-//                'image'                  => asset($industry->naicsTitle->image)
-//            ];
-//
-//        });
-//>>>>>>> dev
