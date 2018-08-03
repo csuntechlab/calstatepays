@@ -27405,7 +27405,7 @@ figcaption {
   position: fixed;
   background: #FFF;
   width: 100%;
-  z-index: 500;
+  z-index: 1000000;
   -webkit-box-shadow: 0 6px 6px -6px #999;
           box-shadow: 0 6px 6px -6px #999;
   top: 0;
@@ -27578,6 +27578,17 @@ footer, .footer {
 
 .not-avail p:hover {
   opacity: .5;
+}
+
+.disabled-university {
+  opacity: .3;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  cursor: not-allowed;
+}
+
+.unselected-university {
+  opacity: .3;
 }
 
 #csun {
@@ -27846,21 +27857,48 @@ textarea {
 }
 
 .btn-add {
-  color: #2BAE67;
-  font-size: 3rem;
-  height: 40px;
-  width: 40px;
   padding: 0px;
   outline: none;
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+}
+
+.btn-add .tooltiptext {
+  visibility: hidden;
+  line-height: normal;
+  width: 15rem;
+  height: 2.8rem;
+  background-color: #EBEBEB;
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: "Open Sans";
+  border-radius: 6px;
+  padding: .25rem;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 1;
+  bottom: 2rem;
+  left: -4rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.btn-add :hover .tooltiptext {
+  visibility: visible;
+}
+
+.btn-add img {
+  width: 3.9rem;
+  -webkit-filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
+          filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
 }
 
 .btn-add__disabled {
-  color: #777777;
-  font-size: 3rem;
-  height: 40px;
-  width: 40px;
-  padding: 0px;
-  outline: none;
+  display: none;
 }
 
 .major-tool-btn {

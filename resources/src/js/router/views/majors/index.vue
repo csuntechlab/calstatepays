@@ -61,6 +61,22 @@ export default {
                 inline: "nearest"
             });
         },
+        handleScroll (event) {
+            var footer = document.querySelector('footer');
+            var bounding = footer.getBoundingClientRect();
+            if (
+                window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight 
+            ) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "fixed";
+
+            } if (
+                window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight
+            ) {
+                var addBtn = document.getElementById("compare-major-button");
+                addBtn.style.position = "absolute";
+            }
+        }
     },
     mounted() {
         this.$nextTick(function() {
@@ -70,6 +86,12 @@ export default {
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
+    },
+    created () {
+    window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
     },
     components: { 
         csuDataImgBanner, 
