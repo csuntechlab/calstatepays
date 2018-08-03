@@ -35,7 +35,7 @@ def read_csv(file, json_file):
             row['Student Path'] = int(row['Student Path'])
 
             row['NAICS'] = remove_dollar(row['NAICS'])
-            row['HEGIS at Exit'] = remove_dollar(row['HEGIS at Exit'])
+            row['HEGIS at Exit'] = format_ids( row['HEGIS at Exit'] )
             
             row['Number of Students Found 5 Years After Exit'] = remove_dollar(row['Number of Students Found 5 Years After Exit'])
             row['Median Annual Earnings 5 Years After Exit'] = remove_dollar(row['Median Annual Earnings 5 Years After Exit'])
@@ -50,14 +50,19 @@ def read_csv(file, json_file):
         write_json(csv_rows, json_file)
 
 # clean the csv titles
-
-
 def add_underscores(input):
     return input.lower().replace(" ", "_")
 
 # format the integers
+def format_ids(input):
+    if input == '':
+        return None
+    if "+" in input:
+        input = input.split(' + ')
+        input = input[0]
+    return int(input)    
 
-
+# format the integers
 def remove_dollar(input):
     if input == '':
         return None
