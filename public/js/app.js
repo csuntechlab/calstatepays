@@ -45420,7 +45420,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "csu-card col col-lg-10 container row align-items-center" },
+    { staticClass: "csu-card container row align-items-center" },
     [_vm._t("default")],
     2
   )
@@ -66882,10 +66882,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col col-md-12",
-      attrs: { id: "majorCardHasIndex-" + this.index }
-    },
+    { staticClass: "col", attrs: { id: "majorCardHasIndex-" + this.index } },
     [
       _c("card", [
         _c("div", { staticClass: "container-fluid my-0" }, [
@@ -67511,7 +67508,7 @@ var render = function() {
   return _c("div", { staticClass: "row wrapper graph-content card-padding" }, [
     _c(
       "div",
-      { staticClass: "col col-md-12", on: { scroll: _vm.handleScroll } },
+      { staticClass: "col", on: { scroll: _vm.handleScroll } },
       [
         _vm._l(_vm.desktopCards, function(majorCard, index) {
           return _vm.isDesktop

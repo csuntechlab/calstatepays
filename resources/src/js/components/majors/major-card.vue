@@ -1,5 +1,5 @@
 <template>
-    <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
+    <div class="col" v-bind:id="'majorCardHasIndex-' + this.index">
         <card>
             <!-- <span class="major-tool-btn">
                 <i class="fas fa-sync-alt btn-reset" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
