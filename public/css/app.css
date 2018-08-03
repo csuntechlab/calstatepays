@@ -7535,7 +7535,7 @@ button.bg-dark:focus {
   margin-right: 1rem !important;
 }
 
-.mb-3,
+.mb-3, .CSUDataImgBanner, .CSUDataImgBanner__dataTitle,
 .my-3 {
   margin-bottom: 1rem !important;
 }
@@ -7593,7 +7593,7 @@ button.bg-dark:focus {
   margin-left: 3rem !important;
 }
 
-.p-0 {
+.p-0, .CSUDataImgBanner__campusInfoWrapper, .CSUDataImgBanner__dataInfoWrapper {
   padding: 0 !important;
 }
 
@@ -7670,7 +7670,8 @@ button.bg-dark:focus {
 }
 
 .pt-3,
-.py-3 {
+.py-3,
+.CSUDataImgBanner {
   padding-top: 1rem !important;
 }
 
@@ -7680,7 +7681,8 @@ button.bg-dark:focus {
 }
 
 .pb-3,
-.py-3 {
+.py-3,
+.CSUDataImgBanner {
   padding-bottom: 1rem !important;
 }
 
@@ -8775,7 +8777,7 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left {
+.text-left, .CSUDataImgBanner__campusInfoWrapper {
   text-align: left !important;
 }
 
@@ -8803,7 +8805,7 @@ button.bg-dark:focus {
   .text-md-left {
     text-align: left !important;
   }
-  .text-md-right {
+  .text-md-right, .CSUDataImgBanner__campusInfoWrapper {
     text-align: right !important;
   }
   .text-md-center {
@@ -17809,7 +17811,7 @@ p {
   margin-right: 16px !important;
 }
 
-.mb-3 {
+.mb-3, .CSUDataImgBanner, .CSUDataImgBanner__dataTitle {
   margin-bottom: 16px !important;
 }
 
@@ -17852,7 +17854,7 @@ p {
   padding-right: 16px !important;
 }
 
-.py-3 {
+.py-3, .CSUDataImgBanner {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
@@ -18094,7 +18096,7 @@ p {
   .text-md-center {
     text-align: center !important;
   }
-  .text-md-right {
+  .text-md-right, .CSUDataImgBanner__campusInfoWrapper {
     text-align: right !important;
   }
   .text-md-justify {
@@ -26980,15 +26982,17 @@ table.table tfoot tr td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4rem;
+  margin-top: 4.7rem;
+}
+
+@media screen and (max-width: 767px) {
+  .content-wrapper {
+    margin-top: 4rem;
+  }
 }
 
 .graph-content {
   background-color: #EBEBEB;
-}
-
-.card-padding {
-  padding-top: 3rem;
 }
 
 abbr[title] {
@@ -27291,8 +27295,8 @@ figcaption {
   -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
      border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
      border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
-  border-top: .3rem solid;
-  border-bottom: .3rem solid;
+  border-top: 0.3rem solid;
+  border-bottom: 0.3rem solid;
 }
 
 @media screen and (max-width: 767px) {
@@ -27318,7 +27322,7 @@ figcaption {
     -o-border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
        border-image: -webkit-gradient(linear, left top, right top, from(#476A6F), color-stop(#55BE85), to(#EDAC17)) 5;
        border-image: linear-gradient(90deg, #476A6F, #55BE85, #EDAC17) 5;
-    border-top: .3rem solid;
+    border-top: 0.3rem solid;
   }
 }
 
@@ -27329,19 +27333,19 @@ figcaption {
 .fa-graduation-cap {
   font-size: 6em;
   color: #476A6F;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .fa-usd {
   font-size: 6em;
   color: #2BAE67;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .fa-line-chart {
   font-size: 6em;
   color: #DAA200;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .csu-seals {
@@ -27371,9 +27375,49 @@ figcaption {
 .csu-wrapper figure figcaption {
   font-family: "Montserrat";
   text-transform: uppercase;
-  font-size: .85rem;
+  font-size: 0.85rem;
   line-height: 1.5rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
+}
+
+.CSUDataImgBanner {
+  color: white;
+  font-family: "Montserrat";
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.CSUDataImgBanner__campusTitle {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.CSUDataImgBanner__changeCampus {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #FFF;
+  opacity: .8;
+}
+
+.CSUDataImgBanner__changeCampus:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.CSUDataImgBanner__dataTitle span {
+  line-height: 1.5;
+  font-size: 2.3rem;
+  padding-bottom: .5rem;
+  border-bottom: 0.2rem #2BAE67 solid;
+}
+
+.CSUDataImgBanner__dataCopy {
+  font-weight: normal;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .site-header {
@@ -27381,7 +27425,7 @@ figcaption {
   position: fixed;
   background: #FFF;
   width: 100%;
-  z-index: 500;
+  z-index: 1000000;
   -webkit-box-shadow: 0 6px 6px -6px #999;
           box-shadow: 0 6px 6px -6px #999;
   top: 0;
@@ -27554,6 +27598,17 @@ footer, .footer {
 
 .not-avail p:hover {
   opacity: .5;
+}
+
+.disabled-university {
+  opacity: .3;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  cursor: not-allowed;
+}
+
+.unselected-university {
+  opacity: .3;
 }
 
 #csun {
@@ -27822,21 +27877,48 @@ textarea {
 }
 
 .btn-add {
-  color: #2BAE67;
-  font-size: 3rem;
-  height: 40px;
-  width: 40px;
   padding: 0px;
   outline: none;
+  position: fixed;
+  right: 1rem;
+  bottom: 2rem;
+}
+
+.btn-add .tooltiptext {
+  visibility: hidden;
+  line-height: normal;
+  width: 15rem;
+  height: 2.8rem;
+  background-color: #EBEBEB;
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: "Open Sans";
+  border-radius: 6px;
+  padding: .25rem;
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  z-index: 1;
+  bottom: 2rem;
+  left: -4rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.btn-add :hover .tooltiptext {
+  visibility: visible;
+}
+
+.btn-add img {
+  width: 3.9rem;
+  -webkit-filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
+          filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
 }
 
 .btn-add__disabled {
-  color: #777777;
-  font-size: 3rem;
-  height: 40px;
-  width: 40px;
-  padding: 0px;
-  outline: none;
+  display: none;
 }
 
 .major-tool-btn {

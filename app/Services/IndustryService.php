@@ -22,17 +22,17 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
-        $university_major = UniversityMajor::where('hegis_code', $hegis_code)
-                                            ->where('university_id', $university_id)
-                                            ->first();
-        $industryPathTypes = $university_major->industryPathTypes();
+        $university_major = UniversityMajor::with(['industryPathTypes' =>  function($query) {
+                                                $query->where('student_path', 1)
+                                                      ->where('entry_status', 'FTF + FTT');
+                                                 },'industryPathTypes.population','industryPathTypes.naicsTitle'])
+                                                ->where('hegis_code', $hegis_code)
+                                                ->where('university_id', $university_id)
+                                                ->first();
 
-        $industryPopulations = $industryPathTypes->where('entry_status', 'All')
-                                               ->where('student_path', 4)
-                                               ->with('population')
-                                               ->with('naicsTitle')
-                                               ->get();
-        $industryPopulations = $industryPopulations->sortByDesc('population.percentage_found')
+        $industryPathTypes = $university_major->industryPathTypes;
+        
+        $industryPopulations = $industryPathTypes->sortByDesc('population.percentage_found')
                                                    ->values()
                                                    ->map(function($industry, $index = 0){
             $index++;
