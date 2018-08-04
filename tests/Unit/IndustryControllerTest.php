@@ -33,17 +33,17 @@ class IndustryControllerTest extends TestCase
         ]);
     }
 
-    public function testGetIndustryPopulationByRank()
-    {
-        $response = $this->json('GET', '/api/industry/22021/1153');
-        $response->assertJsonStructure([
-            0 => [
-                'title',
-                'percentage',
-                'rank',
-                'image'
-            ]
-        ]);
-        $response->assertStatus(200);
-    }
+    // public function testGetIndustryPopulationByRank()
+    // {
+    //     $response = $this->json('GET', '/api/industry/22021/1153');
+    //     $response->assertJsonStructure([
+    //         0 => [
+    //             'title',
+    //             'percentage',
+    //             'rank',
+    //             'image'
+    //         ]
+    //     ]);
+    //     $response->assertStatus(200);
+    // }
 }
