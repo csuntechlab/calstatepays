@@ -14,9 +14,6 @@ npm-debug.log
 yarn-error.log
 .env
 .DS_Store
-<<<<<<< HEAD
 yarn.lock
-=======
 .DS_Store
 .DS_Store
->>>>>>> dev

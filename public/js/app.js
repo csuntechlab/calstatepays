@@ -44595,11 +44595,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
-    state.industries = [];
-    payload.forEach(function (industry) {
-        delete industry.image;
-        state.industries.push(industry);
-    });
+	state.industries = [];
+	payload.forEach(function (industry) {
+		delete industry.image;
+		state.industries.push(industry);
+	});
 }));
 
 /***/ }),
@@ -68314,7 +68314,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		return {
 			form: {
 				majorId: null,
-				university: 70
+				university: null
 			},
 			formNotFilled: false,
 			selected: null
@@ -68327,8 +68327,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			if (this.checkForm()) {
 				this.fetchIndustries(this.form);
-				this.form.majorId = null;
-				this.form.university = null;
 			}
 		},
 		checkForm: function checkForm() {
@@ -68496,7 +68494,7 @@ var render = function() {
             attrs: { slot: "title" },
             slot: "title"
           },
-          [_c("span", [_vm._v("Industries")])]
+          [_c("span", [_vm._v("Top Industries by Major")])]
         ),
         _vm._v(" "),
         _c(

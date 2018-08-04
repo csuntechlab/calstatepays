@@ -50,7 +50,7 @@ export default {
 		return {
 			form: {
 				majorId: null,
-				university: 70
+				university: null
 			},
 			formNotFilled: false,
 			selected: null
@@ -64,8 +64,6 @@ export default {
 			this.formNotFilled = false;
 			if (this.checkForm()) {
 				this.fetchIndustries(this.form);
-				this.form.majorId = null;
-				this.form.university = null;
 			}
 		},
 

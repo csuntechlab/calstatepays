@@ -2,7 +2,7 @@
   <div class="row wrapper graph-content card-padding">
     <csu-data-img-banner>
       <h3 class="CSUDataImgBanner__dataTitle" slot="title">
-        <span>Industries</span>
+        <span>Top Industries by Major</span>
       </h3>
       <p class="CSUDataImgBanner__dataCopy" slot="copy">
         Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla
