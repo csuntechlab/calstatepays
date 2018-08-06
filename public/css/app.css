@@ -27006,10 +27006,8 @@ html {
           box-sizing: border-box;
 }
 
-.csu-card, .card-add {
+.csu-card, .csu-card__form, .card-add {
   background: #FFF;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   border-radius: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -27025,6 +27023,20 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
   min-height: 75vh;
+  margin-bottom: 50px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.csu-card__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -28099,7 +28111,7 @@ input[type="button"]:focus {
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
-    width: 90%;
+    width: 100%;
   }
   .major-btn_all:hover,
   .major-btn_postBacc:hover,
@@ -28176,28 +28188,24 @@ input[type="button"]:focus {
 }
 
 .legend-oxford-25, .legend-oxford, .legend-oxford-75, .legend-green-25, .legend-green, .legend-green-75, .legend-gold-25, .legend-gold, .legend-gold-75 {
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   margin-left: 5px;
   float: left;
 }
 
-@media (max-width: 1000px) {
-  .legend-oxford-25, .legend-oxford, .legend-oxford-75, .legend-green-25, .legend-green, .legend-green-75, .legend-gold-25, .legend-gold, .legend-gold-75 {
-    height: 10px;
-    width: 10px;
-  }
-  .legend-mobile {
-    font-size: 10px;
-    float: left;
-    margin-left: 10px;
-  }
-  .legend-mobile p {
-    margin-left: 15px !important;
-  }
-  .legend-mobile .majors-header {
-    display: none !important;
-  }
+.legend-mobile {
+  font-size: 10px;
+  float: left;
+  margin-left: 10px;
+}
+
+.legend-mobile p {
+  margin-left: 15px !important;
+}
+
+.legend-mobile .majors-header {
+  display: none !important;
 }
 
 .progress-median:after {
