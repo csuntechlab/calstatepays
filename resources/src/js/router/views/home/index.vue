@@ -1,5 +1,27 @@
 <template>
 	<div>
+		<div class='row'>
+		<carousel :per-page='1'>
+			<slide>
+				<landing-page-banner class='CSUDataImgBanner col-12' v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + url + '/images/graduate-banner.jpg)',}">
+					<h1 slot='header'>Do college graduates earn more?</h1>
+					It pays to go to college. Earnings for graduates are significantly higher than non-graduates
+				</landing-page-banner>
+			</slide>
+			<slide>
+				<landing-page-banner class="CSUDataImgBanner col-12" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + url + '/images/dollars-banner.jpg)',}">
+					<h1 slot='header'>What is your financial return?</h1>
+					Education cost money but in the long term you will earn more. Find your return on education.
+				</landing-page-banner>
+			</slide>
+			<slide>
+				<landing-page-banner class="CSUDataImgBanner col-12" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + url + '/images/class-banner.jpg)',}">
+					<h1 slot='header'>Which majors earn the most?</h1>
+					Find out which majors has the highest earn and the most students.
+				</landing-page-banner>
+			</slide>
+		</carousel>
+		</div>
 		<div class="bg mh-90 pt-5">
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
@@ -45,7 +67,7 @@
 						</div>
 						<div class="home__copy">
 							<p>Find out which majors has the highest earn and the most students.</p>
-						</div>	
+						</div>
 						<router-link class="button-link" to="/majors">
 							<button class="home-btn home-btn__majors">
 								Compare Majors
@@ -100,18 +122,23 @@
 	</div>
 </template>
 <script>
-	import csuSelector from '../../../components/global/csu-selector.vue'
+	import { Carousel, Slide } from "vue-carousel";
+	import landingPageBanner from "../../../components/global/landing-page-banner";
+	import csuSelector from "../../../components/global/csu-selector.vue";
 	export default {
-	    data () {
-	        return {
-	            url: ''
-			}
+		data() {
+			return {
+				url: ""
+			};
 		},
-		created () {
-		    this.url = window.baseUrl;
+		created() {
+			this.url = window.baseUrl;
 		},
 		components: {
-			csuSelector
+			csuSelector,
+			Carousel,
+			Slide,
+			landingPageBanner
 		}
-	}
+	};
 </script>
