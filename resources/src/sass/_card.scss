@@ -1,6 +1,6 @@
 %card-base {
     background: $white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
     border-radius: 50px;
     justify-content: center;
 }
@@ -9,6 +9,14 @@
     display: flex;
     flex-direction: row;
     min-height: 75vh;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    @extend %card-base;
+}
+
+.csu-card__form{
+    display: flex;
+    flex-direction: row;
     margin-bottom: 50px;
     align-items: flex-start;
     @extend %card-base;
