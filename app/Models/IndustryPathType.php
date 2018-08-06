@@ -47,7 +47,6 @@ class IndustryPathType extends Model
     public function population() {
         return $this->hasOne('App\Models\Population','id','population_sample_id');
     }
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
