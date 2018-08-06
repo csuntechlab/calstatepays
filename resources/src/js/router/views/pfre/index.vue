@@ -12,7 +12,7 @@
     <sub-nav/>
     <div class="col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3">
       <card class="container row csu-card__form">
-        <div>
+        <div class="container-fluid p-0">
           <pfre-form></pfre-form>
         </div>
       </card>

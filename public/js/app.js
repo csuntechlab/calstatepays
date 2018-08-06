@@ -48279,7 +48279,12 @@ var render = function() {
         { staticClass: "col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3" },
         [
           _c("card", { staticClass: "container row csu-card__form" }, [
-            _c("div", [_c("pfre-form")], 1)
+            _c(
+              "div",
+              { staticClass: "container-fluid p-0" },
+              [_c("pfre-form")],
+              1
+            )
           ])
         ],
         1
