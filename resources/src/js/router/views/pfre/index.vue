@@ -10,19 +10,18 @@
       </p>
     </csu-data-img-banner>
     <sub-nav/>
-    <div class="col-12">
-      <card class="container row align-items-center">
-        <div class="text-center col-12">
-          <h2 class="pfre__heading">Financial Return on Education</h2>
-        </div>
+    <div class="col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3">
+      <card class="container row csu-card__form">
         <div class="container-fluid p-0">
-          <div class="row">
-            <div class="col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3">
-              <pfre-form></pfre-form>
-            </div>
-            <div class="col-12 col-md-8 col-lg-9 align-self-center">
-              <pfre-progress></pfre-progress>
-            </div>
+          <pfre-form></pfre-form>
+        </div>
+      </card>
+    </div>
+    <div class="col col-12 col-md-8 col-lg-9">
+      <card class="container row csu-card">
+        <div class="container-fluid p-0">
+          <div class="row-fluid">
+            <pfre-progress></pfre-progress>
           </div>
         </div>
       </card>
@@ -30,14 +29,13 @@
   </div>
 </template>
 <script>
-
-  import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
-  import subNav from "../../../components/global/sub-nav.vue"
-  import card from '../../../components/global/card';
-  import pfreForm from '../../../components/pfre/pfre-form.vue';
-  import pfreInfo from '../../../components/pfre/pfre-info.vue';
-  import pfreProgress from '../../../components/pfre/pfre-progress.vue';
-  import { mapGetters } from 'vuex';
+  import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
+  import subNav from "../../../components/global/sub-nav.vue";
+  import card from "../../../components/global/card";
+  import pfreForm from "../../../components/pfre/pfre-form.vue";
+  import pfreInfo from "../../../components/pfre/pfre-info.vue";
+  import pfreProgress from "../../../components/pfre/pfre-progress.vue";
+  import { mapGetters } from "vuex";
 
   export default {
     components: {
@@ -48,5 +46,5 @@
       pfreProgress,
       subNav
     }
-  }
+  };
 </script>
