@@ -1,4 +1,4 @@
-Campus,Location,Student Path,Entry Status,HEGIS at Exit,Major at Exit,Potential Number of Students,Potential Number of Students For Each Year Out of School,25th Percentile Earnings,50th Percentile Earnings,75th Percentile Earnings,Average Earnings,Number of Students Found,Year
+Campus,Location,Student Path,Entry Status,HEGIS at Exit,Major at Exit,Potential Number of Students,Potential Number of Students For Each Year Out of School,_25th Percentile Earnings,_50th Percentile Earnings,_75th Percentile Earnings,Average Earnings,Number of Students Found,Year
 70,Northridge,1,FTF + FTT,00121 + 12032,Undeclared/Unknown,161,156,77371.5,92513.5,105456.5,91859.83333,144,1
 70,Northridge,1,FTF + FTT,00121 + 12032,Undeclared/Unknown,161,125,76932,95454,115529,94832.42342,111,2
 70,Northridge,1,FTF + FTT,00121 + 12032,Undeclared/Unknown,161,101,80601.5,97760,117727.5,95946.27174,92,3

@@ -9,18 +9,17 @@
 	@media screen and (max-width: $break-small) {
 		min-height: $navbar-height;
 		font-size: 1.3rem;
-		
 	}
 	abbr[title] {
 		border-bottom: none;
 	}
 }
 
-.collapse{
+.collapse {
 	@media screen and (max-width: $break-small) {
 		height: 0;
 		overflow: hidden;
-		transition: height .5s;
+		transition: height 0.5s;
 		display: block;
 	}
 }
@@ -28,29 +27,30 @@
 .show {
 	@media screen and (max-width: $break-small) {
 		/* 5 refer to the number of nav links*/
-		height: $navbar-height*5;
+		height: $navbar-height * 5;
 	}
 }
 
-.nav-link{
+.nav-link {
 	padding: 1.5rem 0px;
 }
 
-.navbar-toggler{
-	margin-top: .65rem;
+.navbar-toggler {
+	margin-top: 0.65rem;
 }
 
-.nav-logo{
+.nav-logo {
 	max-height: 60px;
 	width: 120px;
 	@media screen and (max-width: $break-small) {
-		height: 2.9rem;	
+		height: 2.9rem;
 	}
 }
-.nav-logo-secondary{
+.nav-logo-secondary {
 	height: 2.35rem;
 }
-.hr-nav{
+
+.hr-nav {
 	border-bottom: 3px solid $red;
 	margin: 0px;
 	@media screen and (max-width: $break-small) {
@@ -67,11 +67,44 @@
 	}
 }
 
-#nav-overlay{
+.sub-nav{
+	background: $white;
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+.sub-nav__element {
+	color: rgba(0, 0, 0, 0.5);
+	padding: 1.2rem 0;
+	transition: 0.2s;
+
+	&:hover {
+		color: rgba(0, 0, 0, 0.8);
+		background: $white;
+		text-decoration: none;
+	}
+
+	&--active {
+		border-bottom: 3px solid $blue-light;
+		margin: 0px;
+		color: $blue-light;
+		@media screen and (max-width: $break-small) {
+			background: $blue-light;
+			color: $white !important;
+			font-weight: bold;
+		}
+	}
+
+	&--active:hover {
+		color: $blue-light;
+	}
+}
+
+#nav-overlay {
 	@media screen and (max-width: $break-small) {
 		position: fixed;
 		background: $black;
-		opacity: .4;
+		opacity: 0.4;
 		width: 100vw;
 		height: 100vh;
 		z-index: 100;

@@ -29,7 +29,6 @@ class MajorController extends Controller
 
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
-
         foreach($university_major as $data) {
             $years = $data['years'];
             if ($data['student_path'] == 2) {
@@ -52,6 +51,7 @@ class MajorController extends Controller
     }
 
     public function extractWageByYearKey($array){
+        $studentPathArray = null;
         switch ($array['years']) {
             case 2:
                 $studentPathArray = $array['major_path_wage'];

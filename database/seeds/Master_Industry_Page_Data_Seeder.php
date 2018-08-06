@@ -5,9 +5,10 @@ use App\Models\StudentBackground;
 use App\Models\Investment;
 use App\Models\MajorPath;
 use App\Models\UniversityMajor;
-use App\Models\MajorPathWage;
+use App\Services\MajorService;
 use App\Models\Population;
 use App\Models\IndustryPathType;
+use App\Models\IndustryWage;
 use Faker\Factory as Faker;
 class Master_Industry_Page_Data_Seeder extends Seeder
 {
@@ -18,47 +19,31 @@ class Master_Industry_Page_Data_Seeder extends Seeder
      */
     public function run()
     {
-        //Data for_industry_path_types
-        $naics = [
-            ['code' => 21],
-            ['code' => 11],
-            ['code' => 22],
-            ['code' => 55],
-            ['code' => 48],
-            ['code' => 23],
-            ['code' => 71],
-            ['code' => 53],
-            ['code' => 72],
-            ['code' => 42],
-            ['code' => 56],
-            ['code' => 31],
-            ['code' => 44],
-            ['code' => 92],
-            ['code' => 52],
-            ['code' => 54],
-            ['code' => 62],
-            ['code' => 61],
+        $json = File::get("database/data/master_industry_page_data.json");
+        $data = json_decode($json);
+        $majorService = new majorService();
 
-        ];
+        // dd($data);
+        foreach($data as $row){
+            $industryPathType = new IndustryPathType();
+            $industryWage = new IndustryWage();
 
-        $universityMajor = UniversityMajor::all();
-        foreach($universityMajor as $university_major){
+            $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
 
-            foreach($naics as $naic){
-                $faker = Faker::create();
-                $population_found = $faker->numberBetween(500, 1500);
-                $population_size = $faker->numberBetween(5000, 9000);
-                $population = new Population();
-                $population->population_found = $population_found;
-                $population->population_size = $population_size;
-                $population->percentage_found = ($population_found/$population_size) * 100;
-                $population->save();
-                factory(IndustryPathType::class)->create([
-                    'naics_code'           => $naic['code'],
-                    'university_majors_id' => $university_major->id,
-                    'population_sample_id' => $population->id
-                ]);
+            $industryPathType->entry_status = $row->entry_status;
+            $industryPathType->naics_code = $row->naics;
+            $industryPathType->student_path = $row->student_path;
+            $industryPathType->population_sample_id = $row->key;
+            $industryPathType->university_majors_id = $university_major_id;
+            if($row->naics != null){
+                $industryPathType->save();
             }
-        };
+            
+
+            $industryWage->id  = $row->key;
+            $industryWage->avg_annual_wage_5 = $row->average_annual_earnings_5_years_after_exit;
+            $industryWage->avg_annual_wage_10 = null;
+            $industryWage->save();
+        }
     }
 }
