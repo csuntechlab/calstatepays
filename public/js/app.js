@@ -49377,7 +49377,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
@@ -66362,7 +66362,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
