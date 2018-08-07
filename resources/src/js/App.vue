@@ -1,7 +1,7 @@
 <template>
 	<div >
 		<navigation></navigation>
-		<main class="no-gutters content-wrapper">
+		<main class="container-fluid no-gutters content-wrapper">
 			<router-view></router-view>
 		</main>
 		<csu-footer></csu-footer>

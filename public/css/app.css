@@ -27398,7 +27398,7 @@ figcaption {
   font-size: 1rem;
   font-weight: 400;
   color: #FFF;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .CSUDataImgBanner__changeCampus:hover {
@@ -27410,7 +27410,7 @@ figcaption {
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
   font-size: 2.3rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
@@ -27420,20 +27420,37 @@ figcaption {
   line-height: 1.4;
 }
 
-.landing-page-banner {
-  color: #FFF;
-  min-height: 40vh;
-  background-position: center;
+.landing-page-carousel {
+  margin: 0 -15px;
+}
+
+.landing-page-carousel__slide {
   background-repeat: no-repeat;
   background-size: cover;
+  padding-left: 3rem;
+  min-height: 40vh;
+  color: #FFF;
 }
 
-.landing-page-banner__header {
-  padding-top: 3rem;
+.landing-page-carousel__slide--centered {
+  background-position: center;
 }
 
-.landing-page-banner__text {
+.landing-page-carousel__slide--bottom {
+  background-position: bottom;
+}
+
+.landing-page-carousel__slide--top {
+  background-position: top;
+}
+
+.landing-page-carousel__header {
+  padding-top: 9rem;
+}
+
+.landing-page-carousel__text {
   padding: 1rem 0 3rem;
+  font-size: 1.25rem;
 }
 
 .site-header {
@@ -28338,4 +28355,14 @@ input[type="button"]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.VueCarousel-pagination {
+  position: absolute;
+  margin-top: -39px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.VueCarousel-dot {
+  margin-top: 5px !important;
 }

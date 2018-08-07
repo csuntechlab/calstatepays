@@ -108,7 +108,7 @@
 }
 
 .CSUDataImgBanner {
-	@extend .py-3 ;
+	@extend .py-3;
 	color: white;
 	font-family: $font-base;
 	background-size: cover;
@@ -117,7 +117,7 @@
 	background-repeat: no-repeat;
 
 	&__campusInfoWrapper {
-		@extend .p-0, .text-left, .text-md-right ;
+		@extend .p-0, .text-left, .text-md-right;
 	}
 
 	&__campusTitle {
@@ -129,9 +129,9 @@
 		font-size: 1rem;
 		font-weight: 400;
 		color: $white;
-		opacity: .8;
+		opacity: 0.8;
 
-		&:hover{
+		&:hover {
 			opacity: 1;
 			text-decoration: none;
 			color: $white;
@@ -139,17 +139,17 @@
 	}
 
 	&__dataTitle {
-		@extend .mb-3 ;
+		@extend .mb-3;
 		span {
 			line-height: 1.5;
 			font-size: 2.3rem;
-			padding-bottom: .5rem;
-			border-bottom: .2rem $green solid;
+			padding-bottom: 0.5rem;
+			border-bottom: 0.2rem $green solid;
 		}
 	}
 
 	&__dataInfoWrapper {
-		@extend .p-0 ;
+		@extend .p-0;
 	}
 
 	&__dataCopy {
@@ -159,18 +159,35 @@
 	}
 }
 
-.landing-page-banner{
-	color: $white;
-	min-height: 40vh;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.landing-page-carousel {
+	margin: 0 -15px;
 
-	&__header{
-		padding-top: 3rem;
+	&__slide {
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-left: 3rem;
+		min-height: 40vh;
+		color: $white;
+
+		&--centered{
+			background-position: center;
+		}
+
+		&--bottom{
+			background-position: bottom;
+		}
+
+		&--top{
+			background-position: top;
+		}
 	}
 
-	&__text{
-		padding:1rem 0 3rem;
+	&__header {
+		padding-top: 9rem;
+	}
+
+	&__text {
+		padding: 1rem 0 3rem;
+		font-size: 1.25rem;
 	}
 }
