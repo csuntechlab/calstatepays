@@ -45501,8 +45501,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-
 
 
 
@@ -48334,34 +48332,27 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-12" },
+        { staticClass: "col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3" },
         [
-          _c("card", { staticClass: "container row align-items-center" }, [
-            _c("div", { staticClass: "text-center col-12" }, [
-              _c("h2", { staticClass: "pfre__heading" }, [
-                _vm._v("Financial Return on Education")
-              ])
-            ]),
-            _vm._v(" "),
+          _c("card", { staticClass: "container row csu-card__form" }, [
+            _c(
+              "div",
+              { staticClass: "container-fluid p-0" },
+              [_c("pfre-form")],
+              1
+            )
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col col-12 col-md-8 col-lg-9" },
+        [
+          _c("card", { staticClass: "container row csu-card" }, [
             _c("div", { staticClass: "container-fluid p-0" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-12 col-md-4 col-lg-3 align-self-center pr-md-0 pr-lg-3"
-                  },
-                  [_c("pfre-form")],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-12 col-md-8 col-lg-9 align-self-center" },
-                  [_c("pfre-progress")],
-                  1
-                )
-              ])
+              _c("div", { staticClass: "row-fluid" }, [_c("pfre-progress")], 1)
             ])
           ])
         ],
@@ -48775,7 +48766,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(5);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //
