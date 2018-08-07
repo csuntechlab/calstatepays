@@ -44844,6 +44844,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "landing-page-banner col-12" },
     [
       _vm._t("header", [_vm._v("\n        Banner Header\n    ")]),
       _vm._v(" "),
@@ -45170,11 +45171,17 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "row" },
       [
         _c(
           "carousel",
-          { attrs: { "per-page": 1 } },
+          {
+            attrs: {
+              "per-page": 1,
+              loop: true,
+              autoplay: true,
+              autoplayTimeout: 5000
+            }
+          },
           [
             _c(
               "slide",
@@ -45182,7 +45189,6 @@ var render = function() {
                 _c(
                   "landing-page-banner",
                   {
-                    staticClass: "CSUDataImgBanner col-12",
                     style: {
                       backgroundImage:
                         "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
@@ -45209,7 +45215,6 @@ var render = function() {
                 _c(
                   "landing-page-banner",
                   {
-                    staticClass: "CSUDataImgBanner col-12",
                     style: {
                       backgroundImage:
                         "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
@@ -45236,7 +45241,6 @@ var render = function() {
                 _c(
                   "landing-page-banner",
                   {
-                    staticClass: "CSUDataImgBanner col-12",
                     style: {
                       backgroundImage:
                         "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +

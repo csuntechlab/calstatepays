@@ -27420,6 +27420,22 @@ figcaption {
   line-height: 1.4;
 }
 
+.landing-page-banner {
+  color: #FFF;
+  min-height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page-banner__header {
+  padding-top: 3rem;
+}
+
+.landing-page-banner__text {
+  padding: 1rem 0 3rem;
+}
+
 .site-header {
   font-family: "Open Sans";
   position: fixed;
