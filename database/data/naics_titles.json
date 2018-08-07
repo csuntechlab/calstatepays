@@ -1,92 +1,112 @@
 [
   {
-    "naics_code": 21,
-    "naics_title": "Oil",
-    "image": "/images/industry/oil.jpg"
+      "image": "/images/industry/non-classified.png",
+      "naics_codes": 99,
+      "naics_title": "Non-Classified"
   },
   {
-    "naics_code": 11,
-    "naics_title": "Agriculture",
-    "image": "/images/industry/agriculture.jpg"
+      "image": "/images/industry/wages_-_no_naics_code.png",
+      "naics_codes": null,
+      "naics_title": "Wages - No NAICS Code"
   },
   {
-    "naics_code": 22,
-    "naics_title": "Utilities",
-    "image": "/images/industry/utilities.jpg"
+      "image": "/images/industry/health_care_social_assistance.png",
+      "naics_codes": 62,
+      "naics_title": "Health Care & Social Assistance"
   },
   {
-    "naics_code": 55,
-    "naics_title": "Company",
-    "image": "/images/industry/company.jpg"
+      "image": "/images/industry/utilities.png",
+      "naics_codes": 22,
+      "naics_title": "Utilities"
   },
   {
-    "naics_code": 48,
-    "naics_title": "Transportation",
-    "image": "/images/industry/transportation.jpg"
+      "image": "/images/industry/government.png",
+      "naics_codes": 92,
+      "naics_title": "Government"
   },
   {
-    "naics_code": 23,
-    "naics_title": "Construction",
-    "image": "/images/industry/construction.jpg"
+      "image": "/images/industry/accommodation_food_services.png",
+      "naics_codes": 72,
+      "naics_title": "Accommodation & Food Services"
   },
   {
-    "naics_code": 71,
-    "naics_title": "Art",
-    "image": "/images/industry/art.jpg"
+      "image": "/images/industry/management_of_companies_enterprises.png",
+      "naics_codes": 55,
+      "naics_title": "Management of Companies & Enterprises"
   },
   {
-    "naics_code": 53,
-    "naics_title": "Estate",
-    "image": "/images/industry/estate.jpg"
+      "image": "/images/industry/professional_scientific_technical_skills.png",
+      "naics_codes": 54,
+      "naics_title": "Professional, Scientific, & Technical Skills"
   },
   {
-    "naics_code": 72,
-    "naics_title": "Food",
-    "image": "/images/industry/food.jpg"
+      "image": "/images/industry/construction.png",
+      "naics_codes": 23,
+      "naics_title": "Construction"
   },
   {
-    "naics_code": 42,
-    "naics_title": "Wholesale",
-    "image": "/images/industry/wholesale.jpg"
+      "image": "/images/industry/admin_support_waste_mgmt_remediation.png",
+      "naics_codes": 56,
+      "naics_title": "Admin & Support & Waste Mgmt & Remediation"
   },
   {
-    "naics_code": 56,
-    "naics_title": "Waste",
-    "image": "/images/industry/waste.jpg"
+      "image": "/images/industry/educational_services.png",
+      "naics_codes": 61,
+      "naics_title": "Educational Services"
   },
   {
-    "naics_code": 31,
-    "naics_title": "Manufacturing",
-    "image": "/images/industry/manufacturing.jpg"
+      "image": "/images/industry/agriculture_forestry_fishing_hunting.png",
+      "naics_codes": 11,
+      "naics_title": "Agriculture, Forestry, Fishing, & Hunting"
   },
   {
-    "naics_code": 44,
-    "naics_title": "Retail",
-    "image": "/images/industry/retail.jpg"
+      "image": "/images/industry/finance_insurance.png",
+      "naics_codes": 52,
+      "naics_title": "Finance & Insurance"
   },
   {
-    "naics_code": 92,
-    "naics_title": "Administration",
-    "image": "/images/industry/administration.jpg"
+      "image": "/images/industry/transportation_warehousing.png",
+      "naics_codes": 4849,
+      "naics_title": "Transportation & Warehousing"
   },
   {
-    "naics_code": 52,
-    "naics_title": "Finance",
-    "image": "/images/industry/finance.jpg"
+      "image": "/images/industry/other_services.png",
+      "naics_codes": 81,
+      "naics_title": "Other Services"
   },
   {
-    "naics_code": 54,
-    "naics_title": "Professional",
-    "image": "/images/industry/professional.jpg"
+      "image": "/images/industry/arts_entertainment_recreation.png",
+      "naics_codes": 71,
+      "naics_title": "Arts, Entertainment, & Recreation"
   },
   {
-    "naics_code": 62,
-    "naics_title": "Health",
-    "image": "/images/industry/health.jpg"
+      "image": "/images/industry/information.png",
+      "naics_codes": 51,
+      "naics_title": "Information"
   },
   {
-    "naics_code": 61,
-    "naics_title": "Education",
-    "image": "/images/industry/education.jpg"
+      "image": "/images/industry/retail_trade.png",
+      "naics_codes": 4445,
+      "naics_title": "Retail Trade"
+  },
+  {
+      "image": "/images/industry/real_estate_rental_leasing.png",
+      "naics_codes": 53,
+      "naics_title": "Real Estate & Rental & Leasing"
+  },
+  {
+      "image": "/images/industry/mining.png",
+      "naics_codes": 21,
+      "naics_title": "Mining"
+  },
+  {
+      "image": "/images/industry/manufacturing.png",
+      "naics_codes": 3133,
+      "naics_title": "Manufacturing"
+  },
+  {
+      "image": "/images/industry/wholesale_trade.png",
+      "naics_codes": 42,
+      "naics_title": "Wholesale Trade"
   }
 ]
