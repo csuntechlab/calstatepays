@@ -72,7 +72,7 @@ def sanate(absList):
     l = []
     for i in absList:
         for a,b,c in absList:
-            d = {'naics_codes':a,'naics_title':b,'image':c}
+            d = {'naics_code':a,'naics_title':b,'image':c}
             l.append(d)
         break
     return l
