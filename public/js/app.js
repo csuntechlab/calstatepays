@@ -87565,7 +87565,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "main",
-        { staticClass: "container-fluid no-gutters content-wrapper" },
+        { staticClass: "no-gutters content-wrapper" },
         [_c("router-view")],
         1
       ),
