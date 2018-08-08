@@ -62,6 +62,9 @@ class MajorController extends Controller
             case 10:
                 $studentPathArray = $array['major_path_wage'];
                 break;
+            case 15:
+                $studentPathArray = $array['major_path_wage'];
+                break;
         }
         return $studentPathArray;
     }
