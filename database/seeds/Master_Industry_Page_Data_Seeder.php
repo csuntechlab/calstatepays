@@ -23,16 +23,27 @@ class Master_Industry_Page_Data_Seeder extends Seeder
         $data = json_decode($json);
         $majorService = new MajorService();
 
-        // dd($data);
         foreach($data as $row){
             $industryPathType = new IndustryPathType();
             $industryWage = new IndustryWage();
-
-            // dd($row);
+            $population = new Population();
 
             $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
+            $sample = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status);
 
             if($row->naics != null){
+
+                $hegis_code = $row->hegis_at_exit;
+                $universityId = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
+                $majorPath = new MajorPath();
+
+                $population->population_found = $row->number_of_students_found_5_years_after_exit;
+                $population->population_size = $sample;
+                if($population->population_found != null && $population->population_size != null)
+                {
+                    $population->percentage_found = $population->population_found / $population->population_size;
+                }
+
                 $industryPathType->entry_status = $row->entry_status;
                 $industryPathType->naics_code = $row->naics;
                 $industryPathType->student_path = $row->student_path;
@@ -44,10 +55,12 @@ class Master_Industry_Page_Data_Seeder extends Seeder
                 $industryWage->avg_annual_wage_5 = $row->average_annual_earnings_5_years_after_exit;
                 $industryWage->avg_annual_wage_10 = null;
                 $industryWage->save();
-            }
-            
 
-            
+
+            }
+
+
+
         }
     }
 }
