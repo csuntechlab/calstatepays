@@ -121,7 +121,6 @@ class MajorControllerTest extends TestCase
         $annual_earnings = 2;
         $financial_aid = 3;
         $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
-        // $response = $this->get("/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
         $response->assertJsonStructure([
             'majorId',
             'universityId',
