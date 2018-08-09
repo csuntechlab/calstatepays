@@ -49434,7 +49434,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
@@ -66329,9 +66329,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return [];
             }
             if (this.educationLevel == "allDegrees") {
-                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th]];
+                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th, this.majorData.postBacc['15']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th, this.majorData.bachelors['15']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th, this.majorData.someCollege['15']._50th]];
             } else {
-                return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
+                return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th, this.majorData[this.educationLevel]['15']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th, this.majorData[this.educationLevel]['15']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th, this.majorData[this.educationLevel]['15']._25th]];
             }
         }
     },
@@ -66419,7 +66419,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
