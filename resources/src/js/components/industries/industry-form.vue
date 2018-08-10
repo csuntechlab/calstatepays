@@ -1,25 +1,27 @@
 <template>
-    <form class="form--inverted form--degreeLevel mb-4 mb-0-md">
-        <div class="form__group">
-                <div v-show="formNotFilled" class="required-field">
-                    Please select a Campus and Major.
+    <form class="form--inverted form--degreeLevel container mb-4 mb-0-md">
+        <div class="form__group csu-card__form-sizing">
+                <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+                   <i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
                 </div>
             <div class="row row--condensed mt-3">
                 <div class="col col-12">
-                    <label for="campus">Campus:</label>
+                    <label for="campus" v-bind:style="[!this.form.university && this.submittedOnce ? errorLabel : '']">
+						Select a Campus</label>
                     <v-select
                         label="name"
                         :options="universities"
                         @input="updateSelect('university', 'id', $event)" 
                         @change="updateSelect('university', 'id', $event)"
                         class="csu-form-input-major"
-                        v-bind:class="{ 'border-danger': !this.form.university}">
+                        v-bind:class="{ 'border-danger': !this.form.university && this.submittedOnce}">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed mt-3">
                 <div class="col col-12">
-                    <label for="Major">Major:</label>
+                    <label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
+						Select a Major</label>
                     <v-select
                         label="major"
                         v-model="selected"
@@ -27,13 +29,13 @@
                         @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)"
                         class="csu-form-input-major"
-                        v-bind:class="{ 'border-danger': !this.form.majorId}">
+                        v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed">
                 <div class="py-4">
-                    <button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+                    <button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -52,8 +54,14 @@ export default {
 				majorId: null,
 				university: null
 			},
+			submittedOnce: false,
 			formNotFilled: false,
-			selected: null
+			selected: null,
+
+			errorLabel: {
+				color: "red",
+				fontWeight: "bold"
+			}
 		};
 	},
 
@@ -62,7 +70,9 @@ export default {
 
 		submitForm() {
 			this.formNotFilled = false;
+			this.submittedOnce = true;
 			if (this.checkForm()) {
+				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}
 		},
@@ -81,7 +91,7 @@ export default {
 			} else {
 				this.form[field] = null;
 			}
-		},
+		}
 	},
 
 	computed: {
