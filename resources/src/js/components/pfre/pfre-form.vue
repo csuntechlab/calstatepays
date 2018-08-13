@@ -33,7 +33,7 @@
             </div>
             <div class="row row--condensed">
                 <div class="col-12 col-9 col-md-12">
-                    <label for="education" v-bind:style="[this.formNotFilled ? errorLabel : '']">
+                    <label for="education" v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']">
                         Select an Education Level</label>
                     <label class="label--radio" for="freshman">First Time Freshman:</label>
                     <input class="mx-2 mt-1" for="freshman" type="radio" id="freshman" v-model="form.education" value="FTF" @input="updateSelect('education', $event.target)">

@@ -46615,7 +46615,11 @@ var render = function() {
             _c(
               "label",
               {
-                style: [this.formNotFilled ? _vm.errorLabel : ""],
+                style: [
+                  this.submittedOnce && !this.form.education
+                    ? _vm.errorLabel
+                    : ""
+                ],
                 attrs: { for: "education" }
               },
               [_vm._v("\n                    Select an Education Level")]
