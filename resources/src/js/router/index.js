@@ -19,12 +19,11 @@ Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/pfre', component: pfre },
+		{ path: '/data/pfre', component: pfre },
 		{ path: '/data/industries', component: industries},
 		{ path: '/faq', component: faq},
 		{ path: '/research', component: research },
-		{ path: '/data', component: majors },
-		{ path: '/data/about', component: about },
+		{ path: '/data/majors', component: majors },
 	]
 });
 

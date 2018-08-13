@@ -27476,7 +27476,7 @@ figcaption {
 }
 
 .nav-link {
-  padding: 1.5rem 0px;
+  padding: 1.5rem 1.5rem !important;
 }
 
 .navbar-toggler {
@@ -27536,27 +27536,22 @@ figcaption {
 }
 
 .sub-nav__element:hover {
-  color: rgba(0, 0, 0, 0.8);
-  background: #FFF;
+  color: #4DB7C6;
   text-decoration: none;
+  -webkit-box-shadow: inset 0 -3px #4DB7C6;
+          box-shadow: inset 0 -3px #4DB7C6;
 }
 
 .sub-nav__element--active {
-  border-bottom: 3px solid #4DB7C6;
-  margin: 0px;
-  color: #4DB7C6;
-}
-
-@media screen and (max-width: 767px) {
-  .sub-nav__element--active {
-    background: #4DB7C6;
-    color: #FFF !important;
-    font-weight: bold;
-  }
+  background: #4DB7C6;
+  color: #FFF;
+  font-weight: bold;
 }
 
 .sub-nav__element--active:hover {
-  color: #4DB7C6;
+  background: #4DB7C6;
+  color: #FFF;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
