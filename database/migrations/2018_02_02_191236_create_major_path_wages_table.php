@@ -18,7 +18,6 @@ class CreateMajorPathWagesTable extends Migration
             $table->integer('_25th')->nullable();
             $table->integer('_50th')->nullable();
             $table->integer('_75th')->nullable();
-            $table->integer('population_sample_id');
         });
     }
 

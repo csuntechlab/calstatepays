@@ -13,6 +13,8 @@ class Population extends Model
     protected $fillable = [
         'population_found',
         'population_size',
+        'universityId',
+        'naics',
         'percentage_found'
     ];
     /**

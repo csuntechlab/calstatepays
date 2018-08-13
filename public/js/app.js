@@ -49776,7 +49776,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
@@ -66671,9 +66671,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return [];
             }
             if (this.educationLevel == "allDegrees") {
-                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th]];
+                return [[this.majorData.postBacc['2']._50th, this.majorData.postBacc['5']._50th, this.majorData.postBacc['10']._50th, this.majorData.postBacc['15']._50th], [this.majorData.bachelors['2']._50th, this.majorData.bachelors['5']._50th, this.majorData.bachelors['10']._50th, this.majorData.bachelors['15']._50th], [this.majorData.someCollege['2']._50th, this.majorData.someCollege['5']._50th, this.majorData.someCollege['10']._50th, this.majorData.someCollege['15']._50th]];
             } else {
-                return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th]];
+                return [[this.majorData[this.educationLevel]['2']._75th, this.majorData[this.educationLevel]['5']._75th, this.majorData[this.educationLevel]['10']._75th, this.majorData[this.educationLevel]['15']._75th], [this.majorData[this.educationLevel]['2']._50th, this.majorData[this.educationLevel]['5']._50th, this.majorData[this.educationLevel]['10']._50th, this.majorData[this.educationLevel]['15']._50th], [this.majorData[this.educationLevel]['2']._25th, this.majorData[this.educationLevel]['5']._25th, this.majorData[this.educationLevel]['10']._25th, this.majorData[this.educationLevel]['15']._25th]];
             }
         }
     },
@@ -66761,7 +66761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data: function data() {
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
@@ -68448,10 +68448,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['industriesByMajor']))
+	methods: {
+		formatDollars: function formatDollars(input) {
+			var dollarAmount = input.toString();
+			var hundreds = dollarAmount.substr(-3, 3);
+			var thousands = dollarAmount.slice(0, -3);
+			return thousands + ',' + hundreds;
+		}
+	},
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]))
 });
 
 /***/ }),
@@ -68500,28 +68514,59 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "span",
-                  { staticClass: "col-10" },
-                  [
-                    _c("v-progress-linear", {
-                      staticClass: "industry-bar",
-                      attrs: {
-                        value: 50,
-                        height: "25",
-                        color: "industry-bar__salary",
-                        "background-color": "industry-bar__background"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-2 industry-bar__salary-text" }, [
-                  _vm._v("$$$")
-                ])
-              ])
+              industry.industryWage == null
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "span",
+                      { staticClass: "col-10" },
+                      [
+                        _c("v-progress-linear", {
+                          staticClass: "industry-bar",
+                          attrs: {
+                            value: industry.industryWage / 1500,
+                            height: "25",
+                            color: "industry-bar__salary",
+                            "background-color": "industry-bar__background"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-2 industry-bar__salary-text" },
+                      [_vm._v("N/A")]
+                    )
+                  ])
+                : _c("div", { staticClass: "row" }, [
+                    _c(
+                      "span",
+                      { staticClass: "col-10" },
+                      [
+                        _c("v-progress-linear", {
+                          staticClass: "industry-bar",
+                          attrs: {
+                            value: industry.industryWage / 1500,
+                            height: "25",
+                            color: "industry-bar__salary",
+                            "background-color": "industry-bar__background"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-2 industry-bar__salary-text" },
+                      [
+                        _vm._v(
+                          "$" + _vm._s(_vm.formatDollars(industry.industryWage))
+                        )
+                      ]
+                    )
+                  ])
             ])
           ])
         ])

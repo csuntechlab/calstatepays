@@ -19,11 +19,17 @@
                         </span>
                         <div class="col-2 industry-bar__percentage-text">{{industry.percentage}}%</div>
                     </div>
-                    <div class="row">
+                    <div v-if="industry.industryWage == null" class="row">
                         <span class="col-10">
-                            <v-progress-linear class="industry-bar" :value="50" height="25" color="industry-bar__salary" background-color="industry-bar__background"/>
+                            <v-progress-linear class="industry-bar" :value="industry.industryWage/1500" height="25" color="industry-bar__salary" background-color="industry-bar__background"/>
                         </span>
-                        <div class="col-2 industry-bar__salary-text">$$$</div>
+                        <div class="col-2 industry-bar__salary-text">N/A</div>
+                    </div>
+                    <div v-else class="row">
+                        <span class="col-10">
+                            <v-progress-linear class="industry-bar" :value="industry.industryWage/1500" height="25" color="industry-bar__salary" background-color="industry-bar__background"/>
+                        </span>
+                        <div class="col-2 industry-bar__salary-text">${{formatDollars(industry.industryWage)}}</div>
                     </div>
                 </div>
             </div>
@@ -31,13 +37,19 @@
     </div>
 </template>
 <script>
-import { mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 export default {
-    computed: {
-        ...mapGetters([
-            'industriesByMajor'
-        ]),
-    },
-}
+	methods: {
+		formatDollars(input) {
+            let dollarAmount = input.toString();
+            let hundreds = dollarAmount.substr(-3,3);
+            let thousands = dollarAmount.slice(0,-3);
+            return thousands + ',' + hundreds;
+		}
+	},
+	computed: {
+		...mapGetters(["industriesByMajor"])
+	}
+};
 </script>
 
