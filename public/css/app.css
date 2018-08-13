@@ -27444,8 +27444,6 @@ figcaption {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 3rem;
-  height: 40vh;
-  min-height: 400px;
   color: #FFF;
 }
 
@@ -27467,8 +27465,12 @@ figcaption {
     font-size: 1.25rem;
   }
   .landing-page-carousel__header {
-    padding-top: 12vh;
+    padding-top: 8vh;
     font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 350px;
   }
 }
 
@@ -27480,6 +27482,10 @@ figcaption {
   .landing-page-carousel__header {
     padding-top: 12vh;
     font-size: 3rem;
+  }
+  .landing-page-carousel__slide {
+    height: 40vh;
+    min-height: 400px;
   }
 }
 
