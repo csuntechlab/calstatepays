@@ -27143,7 +27143,15 @@ body {
   width: 10rem;
 }
 
+/*
+
+take off transform
+float right
+add r
+
+*/
 .pfre-info {
+  /*add line height*/
   position: absolute;
   margin-left: 80px;
   margin-top: 100px;
@@ -27173,14 +27181,13 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  -webkit-transform: translate(35%, -45%);
-          transform: translate(35%, -45%);
   background: #EBEBEB;
   border-radius: 15px;
-  float: right;
-  width: 10rem;
-  left: .9rem;
+  /* float: right; */
+  width: 18rem;
+  left: 1.9rem;
   padding: .5rem;
+  top: -2rem;
 }
 
 .pfre-info--show::after {
@@ -27228,7 +27235,7 @@ body {
 }
 
 .pfre-info__wrapper {
-  margin-top: 90px;
+  margin-bottom: 2rem;
 }
 
 .majors-header {
