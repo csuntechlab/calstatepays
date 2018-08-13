@@ -197,7 +197,25 @@
 			min-height: 350px;
 		}
 	}
-	@media only screen and (min-width: 600px) {
+
+	@media only screen and (min-width: 600px) and (max-width: 800px) {
+		&__text {
+			padding: 1rem 0 3rem;
+			font-size: 1.25rem;
+		}
+
+		&__header {
+			padding-top: 10vh;
+			font-size: 2rem;
+		}
+
+		&__slide {
+			height: 30vh;
+			min-height: 300px;
+		}
+	}
+
+	@media only screen and (min-width: 800px) {
 		&__text {
 			padding: 1rem 0 3rem;
 			font-size: 1.75rem;

@@ -27474,7 +27474,22 @@ figcaption {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.25rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 10vh;
+    font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 300px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
   .landing-page-carousel__text {
     padding: 1rem 0 3rem;
     font-size: 1.75rem;
