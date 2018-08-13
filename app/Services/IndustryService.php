@@ -5,7 +5,6 @@ namespace App\Services;
 use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
 use App\Models\UniversityMajor;
-use function foo\func;
 
 class IndustryService implements IndustryContract
 {
@@ -32,15 +31,26 @@ class IndustryService implements IndustryContract
             ->where('university_id', $university_id)
             ->first();
 
-        $industryPathTypes = $university_major->industryPathTypes;
+        $industryPopulations = $university_major->industryPathTypes->sortByDesc('population.percentage_found')->values();
 
-        $industryPopulations = $industryPathTypes->sortByDesc('population.percentage_found')
-            ->values()
-            ->map(function ($industry, $index = 0) {
+        $total = 0;
+        foreach($industryPopulations as $pop) {
+            if($pop->population->population_found != null){
+                $total += $pop->population->population_found;
+            }
+        }
+
+        $industryPopulations = $industryPopulations
+            ->map(function ($industry,$index = 0) use($total){
                 $index++;
+                if( ($industry->population->population_found != null) && ($total != null) ){
+                    $percentage = round( ($industry->population->population_found/$total)*100 );
+                }else{
+                    $percentage = null;
+                }
                 return [
                     'title' => $industry->naicsTitle->naics_title,
-                    'percentage' => round($industry->population->percentage_found),
+                    'percentage' => $percentage,
                     'rank' => $index,
                     'image' => asset($industry->naicsTitle->image),
                     'industryWage' => $industry->industryWage->avg_annual_wage_5
