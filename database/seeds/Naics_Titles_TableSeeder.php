@@ -15,10 +15,10 @@ class Naics_Titles_TableSeeder extends Seeder
         $json = File::get("database/data/naics_titles_data.json");
         $data = json_decode($json);
         foreach($data as $row){
-            if($row->naics_codes !=null){
+            if($row->naics_code !=null){
                 DB::table('naics_titles')->insert([
                     'image'       => $row->image,
-                    'naics_code'  => $row->naics_codes,
+                    'naics_code'  => $row->naics_code,
                     'naics_title' => $row->naics_title
                     
                 ]);

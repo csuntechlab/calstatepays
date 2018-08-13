@@ -12,7 +12,7 @@ export default {
     props: ['majorData', 'educationLevel', 'windowWidth'],
     data(){
         return {
-            xAxis: ['2', '5', '10'],
+            xAxis: ['2', '5', '10', '15'],
             graphColors: {
                color1: '#000',
                color2: '#000',

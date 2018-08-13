@@ -21,18 +21,20 @@ class MajorControllerTest extends TestCase
     private $controller;
     private $retriever;
     private $validMajorId = 22021;
-    private $validUniversity = 1153;
+    private $validUniversity = 70;
 
     public function setUp(){
         parent::setUp();
         $this->retriever = Mockery::mock(MajorContract::class);
-        $this->seed('Hegis_Codes_TestTableSeeder');
-        $this->seed('Universities_TestTableSeeder');
+        $this->seed('Hegis_Codes_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
         $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
-        $this->seed('University_Majors_Test_TableSeeder');
+        $this->seed('Universities_TableSeeder');
+        $this->seed('Master_Major_Page_Data_TableSeeder');
+        $this->seed('Master_FRE_Page_Data_TableSeeder');
 
         $this->controller = new MajorController($this->retriever);
     }
@@ -113,12 +115,12 @@ class MajorControllerTest extends TestCase
     public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
     {
         $major = 5011;
-        $university = 1153;
+        $university = 70;
         $age_range = 1;
         $education_level = 'FTT';
         $annual_earnings = 2;
         $financial_aid = 3;
-        $response = $this->get("/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+        $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
         $response->assertJsonStructure([
             'majorId',
             'universityId',
@@ -133,7 +135,7 @@ class MajorControllerTest extends TestCase
     public function test_filterByFieldOfStudy_returns_all_related_hegis_codes_in_json_format()
     {
         $engineeringId = 6;
-        $countOfRelatedHegisCOdes = 10;
+        $countOfRelatedHegisCOdes = 14;
         $response = $this->json('GET', "/api/major/hegis-codes/$engineeringId");
         $response = $response->getOriginalContent();
         $this->assertCount($countOfRelatedHegisCOdes, $response[0]);

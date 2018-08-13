@@ -37,11 +37,12 @@ def read_csv(file, json_file):
             # Cast the data as ints/floats
             row['NAICS'] = remove_dollar(row['NAICS'])
 
-            row['image'] = '/images/industry/'+add_underscores(removeAmp (remove_commas(row ['Industry of Employment'] ) ) )+'.png'
+            row['image'] = '/images/industry/'+add_underscores(removeAmp (remove_commas(row ['Industry'] ) ) )+'.png'
+
             
             naics = row['NAICS']
             # naics = 'nacis_codes:'+str(naics)
-            IndustryOfEmployment = row['Industry of Employment']
+            IndustryOfEmployment = row['Industry']
             # IndustryOfEmployment = 'industryOfEmployment:'+IndustryOfEmployment
             image = row['image']
             # image = ('image:'+row['image'])
@@ -60,7 +61,7 @@ def read_csv(file, json_file):
         csv_rows[:] = [row for row in csv_rows if row != {} ]
         # print(csv_rows)
         
-        print(absList)
+        # print(absList)
         absList = sanate(absList)
         json_maker(absList,json_file)
         # write_json(csv_rows, json_file)
@@ -71,7 +72,7 @@ def sanate(absList):
     l = []
     for i in absList:
         for a,b,c in absList:
-            d = {'naics_codes':a,'naics_title':b,'image':c}
+            d = {'naics_code':a,'naics_title':b,'image':c}
             l.append(d)
         break
     return l
