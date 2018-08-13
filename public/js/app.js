@@ -44918,6 +44918,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -44988,7 +44989,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "landing-page-carousel__slide col-12" },
+    { staticClass: "landing-page-carousel__slide" },
     [
       _vm._t("header", [_vm._v("\n        Banner Header\n    ")]),
       _vm._v(" "),
@@ -45022,7 +45023,13 @@ var render = function() {
   return _c(
     "carousel",
     {
-      attrs: { perPage: 1, loop: true, autoplay: true, autoplayTimeout: 8000 }
+      attrs: {
+        perPage: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 8000,
+        autoplayHoverPause: true
+      }
     },
     [
       _c(

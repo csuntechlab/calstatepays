@@ -3,7 +3,8 @@
 		:perPage='1' 
 		:loop='true'
 		:autoplay='true' 
-		:autoplayTimeout='8000'>
+		:autoplayTimeout='8000'
+		:autoplayHoverPause='true'>
 			<slide>
 				<landing-page-banner class="landing-page-carousel__slide--top"
 				v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + url + '/images/graduates-banner.jpg)',}">

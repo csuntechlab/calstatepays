@@ -1,5 +1,5 @@
 <template>
-    <div class='landing-page-carousel__slide col-12'>
+    <div class='landing-page-carousel__slide'>
         <slot name="header" class="landing-page-banner__header">
             Banner Header
         </slot>
