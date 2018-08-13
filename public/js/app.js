@@ -40452,7 +40452,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/about', component: __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue___default.a }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/data', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/data/about', component: __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue___default.a }]
 });
 
 router.beforeEach(function (to, from, next) {
