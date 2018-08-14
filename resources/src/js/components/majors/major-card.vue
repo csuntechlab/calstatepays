@@ -1,7 +1,6 @@
 <template>
     <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
 		<div class="row">
-			
 			<div class="col-md-3">
 				<card class="csu-card__form">
 					<major-form :index="index"></major-form>

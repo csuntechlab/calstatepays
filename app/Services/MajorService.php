@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
+use App\Models\MajorPath;
 use App\Models\UniversityMajor;
 use App\Contracts\MajorContract;
 use Illuminate\Pagination\Paginator;
@@ -12,7 +13,7 @@ class MajorService implements MajorContract
 {
     public function getAllHegisCodes(): array 
     {
-       $allHegisCodes = HEGISCode::get()->unique()->map(function ($item){
+       $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
            return [
             'hegis_code' => $item['hegis_code'],
             'major' => $item['major'],
@@ -75,5 +76,14 @@ class MajorService implements MajorContract
             }])->firstOrFail();
         $freData = $data->studentBackground->first()->investment->first()->toArray();
         return $freData;
+    }
+
+    public function getPotentialNumberOfStudents($uid,$student_path, $entry_status)
+    {
+        $query = MajorPath::where('student_path',$student_path)
+            ->where('university_majors_id',$uid)
+            ->where('entry_status',$entry_status)
+            ->first();
+        return $query;
     }
 }

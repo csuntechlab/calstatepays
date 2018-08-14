@@ -21,29 +21,48 @@ class Master_Industry_Page_Data_Seeder extends Seeder
     {
         $json = File::get("database/data/master_industry_page_data.json");
         $data = json_decode($json);
-        $majorService = new majorService();
+        $majorService = new MajorService();
 
-        // dd($data);
         foreach($data as $row){
             $industryPathType = new IndustryPathType();
             $industryWage = new IndustryWage();
+            $population = new Population();
 
             $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
+            $potential_number_of_students = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status)->potential_number_of_students;
 
-            $industryPathType->entry_status = $row->entry_status;
-            $industryPathType->naics_code = $row->naics;
-            $industryPathType->student_path = $row->student_path;
-            $industryPathType->population_sample_id = $row->key;
-            $industryPathType->university_majors_id = $university_major_id;
             if($row->naics != null){
-                $industryPathType->save();
-            }
-            
+                $hegis_code = $row->hegis_at_exit;
+                $universityId = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
+                $majorPath = new MajorPath();
 
-            $industryWage->id  = $row->key;
-            $industryWage->avg_annual_wage_5 = $row->average_annual_earnings_5_years_after_exit;
-            $industryWage->avg_annual_wage_10 = null;
-            $industryWage->save();
+                $population->population_found = $row->number_of_students_found_5_years_after_exit;
+                $population->population_size = $potential_number_of_students;
+                $population->universityId = $universityId;
+                $population->naics = $row->naics;
+                if($population->population_found != null && $population->population_size != null)
+                {
+                    $population->percentage_found = 100 * ($population->population_found / $population->population_size);
+                }
+                $population->save();
+
+                $industryPathType->entry_status = $row->entry_status;
+                $industryPathType->naics_code = $row->naics;
+                $industryPathType->student_path = $row->student_path;
+                $industryPathType->population_sample_id = $population->id;
+                $industryPathType->university_majors_id = $university_major_id;
+                $industryPathType->save();
+
+                $industryWage->id  = $industryPathType->id;
+                $industryWage->avg_annual_wage_5 = $row->average_annual_earnings_5_years_after_exit;
+                $industryWage->avg_annual_wage_10 = null;
+                $industryWage->save();
+
+
+            }
+
+
+
         }
     }
 }

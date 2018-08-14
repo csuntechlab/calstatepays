@@ -61,3 +61,14 @@
 .row{
   justify-content: center;
 }
+
+.VueCarousel{
+  &-pagination{
+    position: absolute;
+    margin-top: -39px;
+    background: rgba(255,255,255,.2);
+  }
+  &-dot{
+    margin-top: 5px !important;
+  }
+}
