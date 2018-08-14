@@ -67283,7 +67283,8 @@ var render = function() {
           attrs: {
             navigationEnabled: true,
             perPage: 3,
-            navigationClickTargetSize: 20
+            navigationClickTargetSize: 20,
+            paginationEnabled: false
           }
         },
         [
