@@ -159,5 +159,10 @@ textarea {
 .required-field{
   color: red;
   font-weight: bold;
+  visibility: visible;
+    &--hidden{
+      font-weight: bold;
+      visibility: hidden;
+    }
 }
 

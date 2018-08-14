@@ -27043,6 +27043,10 @@ html {
           align-items: flex-start;
 }
 
+.csu-card__form-sizing {
+  width: 100%;
+}
+
 .industry-card {
   margin-bottom: 50px;
   padding: 2rem;
@@ -27966,6 +27970,12 @@ textarea {
 .required-field {
   color: red;
   font-weight: bold;
+  visibility: visible;
+}
+
+.required-field--hidden {
+  font-weight: bold;
+  visibility: hidden;
 }
 
 .btn {
