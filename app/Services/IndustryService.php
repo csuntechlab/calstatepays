@@ -31,20 +31,28 @@ class IndustryService implements IndustryContract
             ->where('university_id', $university_id)
             ->first();
 
-        $industryPopulations = $university_major->industryPathTypes->sortByDesc('population.percentage_found')->values();
+        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.percentage_found')->values();
+        $population_total = $this->getIndustryPopulationTotals($industry_populations);
+        $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
+        return $industry_populations;
+    }
 
+    private function getIndustryPopulationTotals($industry_populations) {
         $total = 0;
-        foreach($industryPopulations as $pop) {
+        foreach($industry_populations as $pop) {
             if($pop->population->population_found != null){
                 $total += $pop->population->population_found;
             }
         }
+        return $total;
+    }
 
-        $industryPopulations = $industryPopulations
-            ->map(function ($industry,$index = 0) use($total){
+    private function calculatePopulationPercentages($industry_populations, $population_total) {
+        $final =  $industry_populations = $industry_populations
+            ->map(function ($industry,$index = 0) use($population_total){
                 $index++;
-                if( ($industry->population->population_found != null) && ($total != null) ){
-                    $percentage = round( ($industry->population->population_found/$total)*100 );
+                if( ($industry->population->population_found != null) && ($population_total != null) ){
+                    $percentage = round( ($industry->population->population_found/$population_total)*100 );
                 }else{
                     $percentage = null;
                 }
@@ -56,6 +64,6 @@ class IndustryService implements IndustryContract
                     'industryWage' => $industry->industryWage->avg_annual_wage_5
                 ];
             });
-        return $industryPopulations;
+        return $final;
     }
 }
