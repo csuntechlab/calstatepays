@@ -67342,7 +67342,9 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm.industry
-          ? _c("p", { staticStyle: {} }, [_vm._v(_vm._s(_vm.industry.title))])
+          ? _c("p", { staticClass: "text-white h6" }, [
+              _vm._v(_vm._s(_vm.industry.title))
+            ])
           : _vm._e()
       ]
     )
