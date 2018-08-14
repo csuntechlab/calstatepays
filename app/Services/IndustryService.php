@@ -52,7 +52,7 @@ class IndustryService implements IndustryContract
             ->map(function ($industry,$index = 0) use($population_total){
                 $index++;
                 if( ($industry->population->population_found != null) && ($population_total != null) ){
-                    $percentage = round( ($industry->population->population_found/$population_total)*100 );
+                    $percentage = round( ($industry->population->population_found/$population_total)*100, 0, PHP_ROUND_HALF_DOWN);
                 }else{
                     $percentage = null;
                 }
