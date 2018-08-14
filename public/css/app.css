@@ -27045,6 +27045,10 @@ html {
           align-items: flex-start;
 }
 
+.csu-card__form-sizing {
+  width: 100%;
+}
+
 .industry-card {
   margin-bottom: 50px;
   padding: 2rem;
@@ -27416,7 +27420,7 @@ figcaption {
   font-size: 1rem;
   font-weight: 400;
   color: #FFF;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .CSUDataImgBanner__changeCampus:hover {
@@ -27428,7 +27432,7 @@ figcaption {
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
   font-size: 2.3rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
@@ -27436,6 +27440,74 @@ figcaption {
   font-weight: normal;
   font-size: 1.1rem;
   line-height: 1.4;
+}
+
+.landing-page-carousel {
+  margin: 0 -15px;
+}
+
+.landing-page-carousel__slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 3rem;
+  color: #FFF;
+}
+
+.landing-page-carousel__slide--centered {
+  background-position: center;
+}
+
+.landing-page-carousel__slide--bottom {
+  background-position: bottom;
+}
+
+.landing-page-carousel__slide--top {
+  background-position: top;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.25rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 8vh;
+    font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 350px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.25rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 10vh;
+    font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 300px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.75rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 12vh;
+    font-size: 3rem;
+  }
+  .landing-page-carousel__slide {
+    height: 40vh;
+    min-height: 400px;
+  }
 }
 
 .site-header {
@@ -27910,6 +27982,12 @@ textarea {
 .required-field {
   color: red;
   font-weight: bold;
+  visibility: visible;
+}
+
+.required-field--hidden {
+  font-weight: bold;
+  visibility: hidden;
 }
 
 .btn {
@@ -28403,4 +28481,14 @@ input[type="button"]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.VueCarousel-pagination {
+  position: absolute;
+  margin-top: -39px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.VueCarousel-dot {
+  margin-top: 5px !important;
 }

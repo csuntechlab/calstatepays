@@ -20,6 +20,9 @@
     margin-bottom: 50px;
     align-items: flex-start;
     @extend %card-base;
+    &-sizing{
+        width: 100%;
+    }
 }
 
 .industry-card{

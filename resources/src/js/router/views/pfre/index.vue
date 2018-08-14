@@ -11,11 +11,7 @@
     </csu-data-img-banner>
     <sub-nav/>
     <div class="col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3">
-      <card class="container row csu-card__form">
-        <div class="container-fluid p-0">
-          <pfre-form></pfre-form>
-        </div>
-      </card>
+      <pfre-form class="my-2 csu-card__form"></pfre-form>
     </div>
     <div class="col col-12 col-md-8 col-lg-9">
       <card class="container row csu-card">
