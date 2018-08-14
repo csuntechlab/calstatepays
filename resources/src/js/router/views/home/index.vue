@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<landing-page-carousel class="landing-page-carousel" :url='this.url'/>
+		<!-- <landing-page-carousel class="landing-page-carousel" :url='this.url'/> -->
 		<div class="bg mh-90 pt-5">
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
@@ -15,25 +15,9 @@
 						<div class="home__copy">
 							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
 						</div>
-						<router-link class="button-link" to="/majors">
+						<router-link class="button-link" to="/data/industries">
 							<button class="home-btn home-btn__degrees">
 								Compare Degree Levels
-							</button>
-						</router-link>
-					</div>
-					<div class="col-md-4 text-center my-3 home__col">
-						<div class="home__icon">
-							<i class="fa fa-usd"></i>
-						</div>
-						<div class="home__subheading">
-							<h3>What is your financial return?</h3>
-						</div>
-						<div class="home__copy">
-							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
-						</div>
-						<router-link class="button-link" to="/pfre">
-							<button class="home-btn home-btn__pfre">
-								Financial Return on Education
 							</button>
 						</router-link>
 					</div>
@@ -47,9 +31,25 @@
 						<div class="home__copy">
 							<p>Find out which majors has the highest earn and the most students.</p>
 						</div>
-						<router-link class="button-link" to="/majors">
+						<router-link class="button-link" to="/data/majors">
 							<button class="home-btn home-btn__majors">
 								Compare Majors
+							</button>
+						</router-link>
+					</div>
+					<div class="col-md-4 text-center my-3 home__col">
+						<div class="home__icon">
+							<i class="fa fa-usd"></i>
+						</div>
+						<div class="home__subheading">
+							<h3>What is your financial return?</h3>
+						</div>
+						<div class="home__copy">
+							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
+						</div>
+						<router-link class="button-link" to="/data/pfre">
+							<button class="home-btn home-btn__pfre">
+								Financial Return on Education
 							</button>
 						</router-link>
 					</div>

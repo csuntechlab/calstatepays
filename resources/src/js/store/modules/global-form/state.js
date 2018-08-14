@@ -2,4 +2,5 @@
 
 export default {
     selectedUniversity: null,
+    selectedDataPage: 'majors',
 };
