@@ -49827,6 +49827,7 @@ var render = function() {
                 attrs: { id: "allDegrees-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("allDegrees")
                   }
                 }
