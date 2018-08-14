@@ -6,7 +6,7 @@
       </h3>
       <p class="CSUDataImgBanner__dataCopy" slot="copy">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam
-        mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos pariatur delectus ad maiores eius?
+        mollitia temporibus cumque. 
       </p>
     </csu-data-img-banner>
     <sub-nav/>

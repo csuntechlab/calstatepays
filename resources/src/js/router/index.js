@@ -20,13 +20,12 @@ Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/pfre', component: pfre },
-		{ path: '/industries', component: industries},
+		{ path: '/data/pfre', component: pfre },
+		{ path: '/data/industries', component: industries},
+		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},
-		{ path: '/research', component: research },
-		{ path: '/researchcsun', component: researchcsun },
-		{ path: '/majors', component: majors },
-		{ path: '/about', component: about },
+		{path: '/research', component: research},
+		{ path: '/researchcsun', component: researchcsun }
 	]
 });
 
