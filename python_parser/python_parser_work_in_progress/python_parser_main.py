@@ -2,19 +2,27 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+import pandas as pd
+import numpy as np
+import simplejson
+
 # from csuMetro_Parsing.CsvToJson import CsvToJson
 from csuMetro_Parsing.CsvHelper import CsvHelper
 
 
 class CsvToJson():
+
     def __init__(self):
         pass
     
     def master_major_csv_to_json(self,majorCsvFiles):
         for csv in majorCsvFiles:
             print(csv) 
-            # o = CsvHelper(csv)
-            dir (CsvHelper)
+            csvSanatize = CsvHelper(csv)
+            csvSanatize.columnSanitizer()
+            csvSanatize.dataframe_builder()
+
+            # dir (CsvHelper)
             
             # print (obj)
             # pass

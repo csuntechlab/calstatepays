@@ -1,12 +1,17 @@
+import pandas as pd
+
+import numpy as np
+import simplejson
+
 class CsvHelper(object):
     def __init__(self,file):
         self.file = file
-
-        self.df = pd.read_csv(self.self.file)
-        columnSanitizer(self.df)
-        self.df = df.rename(columns=lambda x: x.replace('#', 'number'))
-        self.df = df.replace(['*****', np.NaN], np.NaN)
+        self.df = pd.read_csv(self.file+'.csv')
         pass
+    
+    def dataframe_builder(self):
+        self.df = self.df.rename(columns=lambda x: x.replace('#', 'number'))
+        self.df = self.df.replace(['*****', np.NaN], np.NaN)
 
     def columnSanitizer(self):
         self.df.columns = self.df.columns.str.replace(' ','_')
@@ -16,7 +21,7 @@ class CsvHelper(object):
     def column_sanitize_plus(self):
         self.df[self.file] = self.df[self.file].str.replace('+','')
         self.df[self.file] = self.df[self.file].str.replace(' ','')
-        #return self.df
+
     
     # converts to floats...
     def string_number_to_real_number(self):
