@@ -30,6 +30,12 @@ class CsvToJson():
     def master_industry_csv_to_json(self,industryCsvFiles):
         for csv in industryCsvFiles:
             print(csv) 
+            csvSanitize = CsvHelper(csv)
+            print(csvSanitize.dfHead())
+            # this method is to test and see first few results in terminal
+            csvSanitize.sanitizeHeaders()
+            print(csvSanitize.dfHead())
+            csvSanitize.jsonBuilder()
 
 
 def sort_csv_files(csvFiles):
