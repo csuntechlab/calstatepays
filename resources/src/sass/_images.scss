@@ -108,7 +108,7 @@
 }
 
 .CSUDataImgBanner {
-	@extend .py-3 ;
+	@extend .py-3;
 	color: white;
 	font-family: $font-base;
 	background-size: cover;
@@ -117,7 +117,7 @@
 	background-repeat: no-repeat;
 
 	&__campusInfoWrapper {
-		@extend .p-0, .text-left, .text-md-right ;
+		@extend .p-0, .text-left, .text-md-right;
 	}
 
 	&__campusTitle {
@@ -129,9 +129,9 @@
 		font-size: 1rem;
 		font-weight: 400;
 		color: $white;
-		opacity: .8;
+		opacity: 0.8;
 
-		&:hover{
+		&:hover {
 			opacity: 1;
 			text-decoration: none;
 			color: $white;
@@ -139,22 +139,96 @@
 	}
 
 	&__dataTitle {
-		@extend .mb-3 ;
+		@extend .mb-3;
 		span {
 			line-height: 1.5;
 			font-size: 2.3rem;
-			padding-bottom: .5rem;
-			border-bottom: .2rem $green solid;
+			padding-bottom: 0.5rem;
+			border-bottom: 0.2rem $green solid;
 		}
 	}
 
 	&__dataInfoWrapper {
-		@extend .p-0 ;
+		@extend .p-0;
 	}
 
 	&__dataCopy {
 		font-weight: normal;
 		font-size: 1.1rem;
 		line-height: 1.4;
+	}
+}
+
+.landing-page-carousel {
+	margin: 0 -15px;
+
+	&__slide {
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 0 3rem;
+		color: $white;
+
+		&--centered {
+			background-position: center;
+		}
+
+		&--bottom {
+			background-position: bottom;
+		}
+
+		&--top {
+			background-position: top;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		&__text {
+			padding: 1rem 0 3rem;
+			font-size: 1.25rem;
+		}
+
+		&__header {
+			padding-top: 8vh;
+			font-size: 2rem;
+		}
+
+		&__slide {
+			height: 30vh;
+			min-height: 350px;
+		}
+	}
+
+	@media only screen and (min-width: 600px) and (max-width: 800px) {
+		&__text {
+			padding: 1rem 0 3rem;
+			font-size: 1.25rem;
+		}
+
+		&__header {
+			padding-top: 10vh;
+			font-size: 2rem;
+		}
+
+		&__slide {
+			height: 30vh;
+			min-height: 300px;
+		}
+	}
+
+	@media only screen and (min-width: 800px) {
+		&__text {
+			padding: 1rem 0 3rem;
+			font-size: 1.75rem;
+		}
+
+		&__header {
+			padding-top: 12vh;
+			font-size: 3rem;
+		}
+
+		&__slide {
+			height: 40vh;
+			min-height: 400px;
+		}
 	}
 }

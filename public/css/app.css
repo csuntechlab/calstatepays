@@ -27043,6 +27043,10 @@ html {
           align-items: flex-start;
 }
 
+.csu-card__form-sizing {
+  width: 100%;
+}
+
 .industry-card {
   margin-bottom: 50px;
   padding: 2rem;
@@ -27159,7 +27163,15 @@ body {
   width: 10rem;
 }
 
+/*
+
+take off transform
+float right
+add r
+
+*/
 .pfre-info {
+  /*add line height*/
   position: absolute;
   margin-left: 80px;
   margin-top: 100px;
@@ -27189,14 +27201,13 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  -webkit-transform: translate(35%, -45%);
-          transform: translate(35%, -45%);
   background: #EBEBEB;
   border-radius: 15px;
-  float: right;
-  width: 10rem;
-  left: .9rem;
+  /* float: right; */
+  width: 18rem;
+  left: 1.9rem;
   padding: .5rem;
+  top: -2rem;
 }
 
 .pfre-info--show::after {
@@ -27244,7 +27255,7 @@ body {
 }
 
 .pfre-info__wrapper {
-  margin-top: 90px;
+  margin-bottom: 2rem;
 }
 
 .majors-header {
@@ -27414,7 +27425,7 @@ figcaption {
   font-size: 1rem;
   font-weight: 400;
   color: #FFF;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .CSUDataImgBanner__changeCampus:hover {
@@ -27426,7 +27437,7 @@ figcaption {
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
   font-size: 2.3rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
@@ -27434,6 +27445,74 @@ figcaption {
   font-weight: normal;
   font-size: 1.1rem;
   line-height: 1.4;
+}
+
+.landing-page-carousel {
+  margin: 0 -15px;
+}
+
+.landing-page-carousel__slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 3rem;
+  color: #FFF;
+}
+
+.landing-page-carousel__slide--centered {
+  background-position: center;
+}
+
+.landing-page-carousel__slide--bottom {
+  background-position: bottom;
+}
+
+.landing-page-carousel__slide--top {
+  background-position: top;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.25rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 8vh;
+    font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 350px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.25rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 10vh;
+    font-size: 2rem;
+  }
+  .landing-page-carousel__slide {
+    height: 30vh;
+    min-height: 300px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .landing-page-carousel__text {
+    padding: 1rem 0 3rem;
+    font-size: 1.75rem;
+  }
+  .landing-page-carousel__header {
+    padding-top: 12vh;
+    font-size: 3rem;
+  }
+  .landing-page-carousel__slide {
+    height: 40vh;
+    min-height: 400px;
+  }
 }
 
 .site-header {
@@ -27476,7 +27555,7 @@ figcaption {
 }
 
 .nav-link {
-  padding: 1.5rem 0px;
+  padding: 1.5rem 1.5rem !important;
 }
 
 .navbar-toggler {
@@ -27536,27 +27615,22 @@ figcaption {
 }
 
 .sub-nav__element:hover {
-  color: rgba(0, 0, 0, 0.8);
-  background: #FFF;
+  color: #4DB7C6;
   text-decoration: none;
+  -webkit-box-shadow: inset 0 -3px #4DB7C6;
+          box-shadow: inset 0 -3px #4DB7C6;
 }
 
 .sub-nav__element--active {
-  border-bottom: 3px solid #4DB7C6;
-  margin: 0px;
-  color: #4DB7C6;
-}
-
-@media screen and (max-width: 767px) {
-  .sub-nav__element--active {
-    background: #4DB7C6;
-    color: #FFF !important;
-    font-weight: bold;
-  }
+  background: #4DB7C6;
+  color: #FFF;
+  font-weight: bold;
 }
 
 .sub-nav__element--active:hover {
-  color: #4DB7C6;
+  background: #4DB7C6;
+  color: #FFF;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
@@ -27898,6 +27972,12 @@ textarea {
 .required-field {
   color: red;
   font-weight: bold;
+  visibility: visible;
+}
+
+.required-field--hidden {
+  font-weight: bold;
+  visibility: hidden;
 }
 
 .btn {
@@ -28358,7 +28438,7 @@ input[type="button"]:focus {
   background-size: cover;
   background: rgba(0, 0, 0, 0.5);
   max-width: 300px;
-  max-height: 150px;
+  height: 100px;
 }
 
 @media (max-width: 700px) {
@@ -28383,12 +28463,26 @@ input[type="button"]:focus {
   }
 }
 
+.industry-carousel__text {
+  line-height: 1.3rem;
+}
+
 .industry-info {
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 .row {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.VueCarousel-pagination {
+  position: absolute;
+  margin-top: -39px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.VueCarousel-dot {
+  margin-top: 5px !important;
 }

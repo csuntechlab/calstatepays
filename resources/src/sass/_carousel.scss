@@ -27,7 +27,7 @@
   background-size: cover;
   background: rgba(0, 0, 0, 0.5);
   max-width: 300px;
-  max-height: 150px;
+  height: 100px;
 }
 
 @media (max-width: 700px) {
@@ -53,11 +53,24 @@
   }
 }
 
-
+.industry-carousel__text {
+  line-height: 1.3rem;
+}
 
 .industry-info{
-  margin-top: 20%; 
+  margin-top: 5%; 
 }
 .row{
   justify-content: center;
+}
+
+.VueCarousel{
+  &-pagination{
+    position: absolute;
+    margin-top: -39px;
+    background: rgba(255,255,255,.2);
+  }
+  &-dot{
+    margin-top: 5px !important;
+  }
 }

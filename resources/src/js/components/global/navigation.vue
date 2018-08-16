@@ -22,18 +22,13 @@
                                     </router-link>
                                 </li>
                                 <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" to="/majors">
-                                        Majors
-                                    </router-link>
-                                </li>
-                                <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" to="/pfre">
-                                        <abbr title="Financial Return on Education">FRE</abbr>
+                                    <router-link class="nav-link" active-class="hr-nav" :to="{ path: '/data/' + selectedDataPage }">
+                                        Data
                                     </router-link>
                                 </li>
                                 <li @click="toggleShowNav()" class="nav-item">
                                     <router-link class="nav-link" active-class="hr-nav" to="/faq">
-                                        About
+                                        FAQ
                                     </router-link>
                                 </li>
                             </ul>
@@ -53,36 +48,39 @@
     </header>
 </template>
 <script>
-    export default {
-        data() {
-            return {
-                url: '',
-                isShowing: false,
-            }
-        },
-        methods: {
-            toggleShowNav() {
-                var showCheck = document.getElementById("nav-list");
-                if (showCheck.classList.contains("show")) {
-                    var navItem = document.getElementById("nav-list");
-                    navItem.classList.remove("show");
-                    var navIcon = document.getElementById("nav-icon");
-                    navIcon.classList.remove("fa-times");
-                    navIcon.classList.add("fa-bars");
-                    document.getElementById("nav-overlay").style.display = "none";
-                }
-                else {
-                    var navItem = document.getElementById("nav-list");
-                    navItem.classList.add("show");
-                    var navIcon = document.getElementById("nav-icon");
-                    navIcon.classList.remove("fa-bars");
-                    navIcon.classList.add("fa-times");
-                    document.getElementById("nav-overlay").style.display = "block";
-                }
-            }
-        },
-        created() {
-            this.url = window.baseUrl;
-        }
-    }
+import {mapGetters} from 'vuex';
+export default {
+	data() {
+		return {
+			url: "",
+			isShowing: false,
+		};
+	},
+	methods: {
+		toggleShowNav() {
+			var showCheck = document.getElementById("nav-list");
+			if (showCheck.classList.contains("show")) {
+				var navItem = document.getElementById("nav-list");
+				navItem.classList.remove("show");
+				var navIcon = document.getElementById("nav-icon");
+				navIcon.classList.remove("fa-times");
+				navIcon.classList.add("fa-bars");
+				document.getElementById("nav-overlay").style.display = "none";
+			} else {
+				var navItem = document.getElementById("nav-list");
+				navItem.classList.add("show");
+				var navIcon = document.getElementById("nav-icon");
+				navIcon.classList.remove("fa-bars");
+				navIcon.classList.add("fa-times");
+				document.getElementById("nav-overlay").style.display = "block";
+			}
+		}
+    },
+    computed: {
+        ...mapGetters(['selectedDataPage']),
+    },
+	created() {
+		this.url = window.baseUrl;
+	}
+};
 </script>

@@ -85,22 +85,21 @@ class MajorController extends Controller
     public function filterByFieldOfStudy($fieldOfStudyId)
     {
         $hegisCategory = $this->majorRetriever->getHegisCategories($fieldOfStudyId);
-        
         foreach($hegisCategory as $category){
             $hegisCodes = $category['hegis_code'];
             if(!is_null($hegisCodes)){
                 $data[] = array_map(function($code){
                     return  [
+                        'major'             => $code['major'],
                         'hegisCode'         => $code['hegis_code'],
                         'hegis_category_id' => $code['hegis_category_id'],
-                        'major'             => $code['major']
                     ];
                 }, $hegisCodes);
             }
         }
-        return [
-            array_collapse($data)
-        ];
+        $data = array_collapse($data);
+        sort($data);
+        return [$data];
     }
 
 }

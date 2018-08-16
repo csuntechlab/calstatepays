@@ -20,7 +20,7 @@
       <card class="csu-card">
         <div class="container-fluid p-0">
           <div class="row-fluid">
-            <pfre-progress></pfre-progress>
+            <pfre-progress/>
           </div>
         </div>
       </card>
