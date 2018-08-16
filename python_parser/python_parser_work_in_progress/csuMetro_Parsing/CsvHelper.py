@@ -1,5 +1,5 @@
-class CsvHelper:
-    def __util__(self,file):
+class CsvHelper(object):
+    def __init__(self,file):
         self.file = file
 
         self.df = pd.read_csv(self.self.file)

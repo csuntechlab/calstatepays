@@ -13,9 +13,11 @@ class CsvToJson():
     def master_major_csv_to_json(self,majorCsvFiles):
         for csv in majorCsvFiles:
             print(csv) 
-            pass
-            # obj = CsvHelper(csv)
+            # o = CsvHelper(csv)
+            dir (CsvHelper)
+            
             # print (obj)
+            # pass
 
     def master_industry_csv_to_json(self,industryCsvFiles):
         for csv in industryCsvFiles:
