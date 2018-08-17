@@ -27,14 +27,47 @@ class DataFrame:
     def __str__(self):
         print(self.df)
     
-    
-class SanitizeMajors:
-    def __init__():
-        pass
+     # sanitize column
+    def column_sanitize_plus(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('+','')
+        self.df[columnName] = self.df[columnName].str.replace(' ','')
 
+    
+    # converts to floats...
+    def string_number_to_real_number(self,columnName):
+        self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce')
+
+    def remove_dollar(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('$', '')
+
+    def remove_hyphen(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('-','')
+
+    def remove_comma(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace(',','')
+    
 class SanitizeIndustry:
     def __init__():
         pass 
+
+class SanitizeMajor:
+    def __init__(self,df):
+        self.df = df
+        pass
+
+    def sanitizeMajor(self):
+        mapper = {
+            'potential_number_of_students': 'potential_number_of_students_for_each_year_out_of_school':
+            '_25th_percentile_earnings':
+            '_50th_percentile_earnings':
+            '_75th_percentile_earnings':
+            'average_earnings':
+            'number_of_students_found':
+            'year':
+        }
+        for column in self.df:
+            pd.Series(column).map(mapper)
+
 
 class CsvHelper:
     def __init__(self,file):
@@ -119,22 +152,3 @@ class CsvHelper:
     def giveColumnHeads(self):
         for column in self.df:
             print(column)
-
-class SanitizeMajor(object):
-    def __init__(self,df):
-        self.df = df
-        pass
-
-    def sanitizeMajor(self):
-        mapper = {
-            'potential_number_of_students':
-            'potential_number_of_students_for_each_year_out_of_school':
-            '_25th_percentile_earnings':
-            '_50th_percentile_earnings':
-            '_75th_percentile_earnings':
-            'average_earnings':
-            'number_of_students_found':
-            'year':
-        }
-        for column in self.df:
-            pd.Series(column).map(mapper)
