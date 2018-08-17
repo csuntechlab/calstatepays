@@ -1,7 +1,6 @@
 <template>
-    <div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
-        <card class="csu-card">
-            <div class="container-fluid my-0 mt-2">
+    <div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
+        <card class="csu-card__form col-12">
                 <div class="row">
                     <div class="col">
                         <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
@@ -11,27 +10,26 @@
                 <div class="row">
                     <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
                 </div>
-                <div v-show="selectedFormWasSubmitted" style="height: 400px" class="row m-1 p-0">
-                    <div class="col p-0">
-                        <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth></major-graph-wrapper>
+                <div class="row" v-show="selectedFormWasSubmitted" style="height: 400px" >
+                    <div class="col-12">
+                        <major-graph-wrapper id="majorGraphContainer" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col">
-                        <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
+                    <div class="col-12">
+                        <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"/>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <major-form :index="index" class="m-0"></major-form>                    
+                    <div class="col-12">
+                        <major-form :index="index"/>                    
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col">
-                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"></industry-mobile>
+                    <div class="col-12">
+                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
                     </div>
                 </div>
-            </div>
         </card>
     </div>
 </template>

@@ -41,6 +41,7 @@ export default {
         },
         chartDimensions(){
             let currentWidth = window.innerWidth;
+            // var containerSize = document.getElementById('majorGraphContainer').offsetWidth;
             if(this.windowWidth >= 1001) {
                 return {
                     height: 400,

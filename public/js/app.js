@@ -49020,8 +49020,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -49330,9 +49328,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
 //
 //
 //
@@ -67011,6 +67006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         chartDimensions: function chartDimensions() {
             var currentWidth = window.innerWidth;
+            // var containerSize = document.getElementById('majorGraphContainer').offsetWidth;
             if (this.windowWidth >= 1001) {
                 return {
                     height: 400,
@@ -67762,68 +67758,84 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col col-md-12",
-      attrs: { id: "majorCardHasIndex-" + this.index }
-    },
+    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
     [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-md-3" },
-          [
-            _c(
-              "card",
-              { staticClass: "csu-card__form" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-9" },
-          [
-            _c("card", { staticClass: "csu-card" }, [
-              _c("div", { staticClass: "container-fluid my-0" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isNotFirstCard,
-                          expression: "isNotFirstCard"
-                        }
-                      ],
-                      staticClass: "fas fa-times btn-remove float-right",
-                      attrs: { title: "Close" },
-                      on: { click: _vm.removeCurrentCard }
-                    }),
-                    _vm._v(" "),
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isEmpty,
-                          expression: "isEmpty"
-                        }
-                      ],
-                      staticClass: "fas fa-sync-alt btn-reset float-right",
-                      attrs: { title: "Reset" },
-                      on: { click: _vm.resetCurrentCard }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "h3",
-                    {
+      _c(
+        "div",
+        { staticClass: "col-md-3" },
+        [
+          _c(
+            "card",
+            { staticClass: "csu-card__form container-fluid" },
+            [_c("major-form", { attrs: { index: _vm.index } })],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-9" },
+        [
+          _c("card", { staticClass: "csu-card" }, [
+            _c("div", { staticClass: "container-fluid my-0" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col" }, [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
+                      }
+                    ],
+                    staticClass: "fas fa-times btn-remove float-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
+                  }),
+                  _vm._v(" "),
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isEmpty,
+                        expression: "isEmpty"
+                      }
+                    ],
+                    staticClass: "fas fa-sync-alt btn-reset float-right",
+                    attrs: { title: "Reset" },
+                    on: { click: _vm.resetCurrentCard }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "h3",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    staticClass: "industry-title"
+                  },
+                  [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row mx-1 p-0" }, [
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("major-graph-wrapper", {
                       directives: [
                         {
                           name: "show",
@@ -67832,84 +67844,63 @@ var render = function() {
                           expression: "selectedFormWasSubmitted"
                         }
                       ],
-                      staticClass: "industry-title"
-                    },
-                    [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mx-1 p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("major-graph-wrapper", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: {
-                          majorData: _vm.selectedMajorData,
-                          educationLevel: _vm.selectedEducationLevel,
-                          windowWidth: _vm.windowWidth
+                      attrs: {
+                        majorData: _vm.selectedMajorData,
+                        educationLevel: _vm.selectedEducationLevel,
+                        windowWidth: _vm.windowWidth
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("major-legend", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.selectedFormWasSubmitted,
+                          expression: "selectedFormWasSubmitted"
                         }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "mt-4" },
-                    [
-                      _c("industry-carousel", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
-                        ],
-                        attrs: { industries: _vm.selectedIndustries }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                      ],
+                      attrs: { educationLevel: _vm.selectedEducationLevel }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row p-0" }, [
+                _c(
+                  "div",
+                  { staticClass: "mt-4" },
+                  [
+                    _c("industry-carousel", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isEmpty,
+                          expression: "isEmpty"
+                        }
+                      ],
+                      attrs: { industries: _vm.selectedIndustries }
+                    })
+                  ],
+                  1
+                )
               ])
             ])
-          ],
-          1
-        )
-      ])
+          ])
+        ],
+        1
+      )
     ]
   )
 }
@@ -67992,8 +67983,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
 //
 //
 //
@@ -68234,65 +68223,44 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col col-md-12",
-      attrs: { id: "majorCardHasIndex-" + this.index }
-    },
+    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
     [
-      _c("card", { staticClass: "csu-card" }, [
-        _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "h3",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.selectedFormWasSubmitted,
-                    expression: "selectedFormWasSubmitted"
-                  }
-                ],
-                staticClass: "industry-title"
-              },
-              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-            )
-          ]),
-          _vm._v(" "),
+      _c("card", { staticClass: "csu-card__form col-12" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col" }, [
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isNotFirstCard,
+                  expression: "isNotFirstCard"
+                }
+              ],
+              staticClass: "fas fa-times btn-remove float-right",
+              attrs: { title: "Close" },
+              on: { click: _vm.removeCurrentCard }
+            }),
+            _vm._v(" "),
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isEmpty,
+                  expression: "isEmpty"
+                }
+              ],
+              staticClass: "fas fa-sync-alt btn-reset float-right",
+              attrs: { title: "Reset" },
+              on: { click: _vm.resetCurrentCard }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
           _c(
-            "div",
+            "h3",
             {
               directives: [
                 {
@@ -68302,85 +68270,97 @@ var render = function() {
                   expression: "selectedFormWasSubmitted"
                 }
               ],
-              staticClass: "row m-1 p-0",
-              staticStyle: { height: "400px" }
+              staticClass: "industry-title"
             },
-            [
-              _c(
-                "div",
-                { staticClass: "col p-0" },
-                [
-                  _c("major-graph-wrapper", {
-                    attrs: {
-                      majorData: _vm.selectedMajorData,
-                      educationLevel: _vm.selectedEducationLevel,
-                      windowWidth: _vm.windowWidth
-                    }
-                  })
-                ],
-                1
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center" }, [
+            [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.selectedFormWasSubmitted,
+                expression: "selectedFormWasSubmitted"
+              }
+            ],
+            staticClass: "row",
+            staticStyle: { height: "400px" }
+          },
+          [
             _c(
               "div",
-              { staticClass: "col" },
+              { staticClass: "col-12" },
               [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("major-form", {
-                  staticClass: "m-0",
-                  attrs: { index: _vm.index }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-3" }, [
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("industry-mobile", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
+                _c("major-graph-wrapper", {
                   attrs: {
-                    industries: _vm.selectedIndustries,
-                    majorId: _vm.selectedMajorId
+                    id: "majorGraphContainer",
+                    majorData: _vm.selectedMajorData,
+                    educationLevel: _vm.selectedEducationLevel,
+                    windowWidth: _vm.windowWidth
                   }
                 })
               ],
               1
             )
-          ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c("major-legend", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: { educationLevel: _vm.selectedEducationLevel }
+              })
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [_c("major-form", { attrs: { index: _vm.index } })],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-3" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c("industry-mobile", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: {
+                  industries: _vm.selectedIndustries,
+                  majorId: _vm.selectedMajorId
+                }
+              })
+            ],
+            1
+          )
         ])
       ])
     ],
@@ -68407,7 +68387,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "graphContent" },
+    { staticClass: "container-fluid" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -68441,43 +68421,40 @@ var render = function() {
         "div",
         { staticClass: "row graphContent", on: { scroll: _vm.handleScroll } },
         [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              { staticClass: "row" },
-              [
-                _vm._l(_vm.desktopCards, function(majorCard, index) {
-                  return _vm.isDesktop
-                    ? _c("major-card", {
-                        key: index,
-                        staticClass: "my-2 card-item",
-                        attrs: { index: index, windowWidth: _vm.windowWidth }
-                      })
-                    : _vm._e()
-                }),
-                _vm._v(" "),
-                _vm._l(_vm.mobileCards, function(majorCard, index) {
-                  return _vm.isMobile
-                    ? _c("major-card-mobile", {
-                        key: index,
-                        staticClass: "my-2",
-                        attrs: { index: index, windowWidth: _vm.windowWidth }
-                      })
-                    : _vm._e()
-                }),
-                _vm._v(" "),
-                _c("card-add", {
-                  attrs: { id: "plus" },
-                  on: {
-                    cardPlusError: function($event) {
-                      _vm.scrollToNextCard($event)
-                    }
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _vm._l(_vm.desktopCards, function(majorCard, index) {
+                return _vm.isDesktop
+                  ? _c("major-card", {
+                      key: index,
+                      attrs: { index: index, windowWidth: _vm.windowWidth }
+                    })
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._l(_vm.mobileCards, function(majorCard, index) {
+                return _vm.isMobile
+                  ? _c("major-card-mobile", {
+                      key: index,
+                      attrs: { index: index, windowWidth: _vm.windowWidth }
+                    })
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _c("card-add", {
+                staticClass: "row",
+                attrs: { id: "plus" },
+                on: {
+                  cardPlusError: function($event) {
+                    _vm.scrollToNextCard($event)
                   }
-                })
-              ],
-              2
-            )
-          ])
+                }
+              })
+            ],
+            2
+          )
         ]
       )
     ],
