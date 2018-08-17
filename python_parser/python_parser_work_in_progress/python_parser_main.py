@@ -15,12 +15,10 @@ class IterateCsvFiles():
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       for csv in majorsCsvFiles:
-          print(csv) 
-          dataFrame = DataFrame(csv)
-          print(dataFrame);
+        csvSanitize = CsvHelper(csv)
+        csvSanitize.dfHead()
+        csvSanitize.giveColumnHeads()
           # dir (CsvHelper)
-          # print (obj)
-          # pass
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       for csv in industryCsvFiles:

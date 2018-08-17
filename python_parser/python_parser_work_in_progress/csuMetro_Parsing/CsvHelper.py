@@ -115,3 +115,26 @@ class CsvHelper:
         for column in self.df:
             print(column)
             pd.Series(column).map(mapper)
+    
+    def giveColumnHeads(self):
+        for column in self.df:
+            print(column)
+
+class SanitizeMajor(object):
+    def __init__(self,df):
+        self.df = df
+        pass
+
+    def sanitizeMajor(self):
+        mapper = {
+            'potential_number_of_students':
+            'potential_number_of_students_for_each_year_out_of_school':
+            '_25th_percentile_earnings':
+            '_50th_percentile_earnings':
+            '_75th_percentile_earnings':
+            'average_earnings':
+            'number_of_students_found':
+            'year':
+        }
+        for column in self.df:
+            pd.Series(column).map(mapper)
