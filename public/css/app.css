@@ -7463,7 +7463,7 @@ button.bg-dark:focus {
   margin-right: 0 !important;
 }
 
-.mb-0,
+.mb-0, .CSUDataImgBanner__dataCopy,
 .my-0 {
   margin-bottom: 0 !important;
 }
@@ -7670,8 +7670,7 @@ button.bg-dark:focus {
 }
 
 .pt-3,
-.py-3,
-.CSUDataImgBanner {
+.py-3 {
   padding-top: 1rem !important;
 }
 
@@ -7681,8 +7680,7 @@ button.bg-dark:focus {
 }
 
 .pb-3,
-.py-3,
-.CSUDataImgBanner {
+.py-3 {
   padding-bottom: 1rem !important;
 }
 
@@ -17631,7 +17629,7 @@ p {
   margin-right: 0 !important;
 }
 
-.mb-0 {
+.mb-0, .CSUDataImgBanner__dataCopy {
   margin-bottom: 0 !important;
 }
 
@@ -17854,7 +17852,7 @@ p {
   padding-right: 16px !important;
 }
 
-.py-3, .CSUDataImgBanner {
+.py-3 {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
@@ -26975,23 +26973,23 @@ table.table tfoot tr td {
   }
 }
 
-.content-wrapper {
+.contentWrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4.7rem;
+  margin-top: 4.6rem;
 }
 
 @media screen and (max-width: 767px) {
-  .content-wrapper {
+  .contentWrapper {
     margin-top: 4rem;
   }
 }
 
-.graph-content {
+.graphContent {
   background-color: #EBEBEB;
 }
 
@@ -27604,7 +27602,6 @@ figcaption {
 .sub-nav {
   background: #FFF;
   font-weight: 600;
-  margin-bottom: 2rem;
 }
 
 .sub-nav__element {

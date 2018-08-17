@@ -1,5 +1,5 @@
 <template>
-  <div class="row wrapper graph-content card-padding">
+  <div>
     <csu-data-img-banner>
       <h3 class="CSUDataImgBanner__dataTitle" slot="title">
         <span>Top Industries by Major</span>
@@ -10,13 +10,15 @@
       </p>
     </csu-data-img-banner>
     <sub-nav/>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-12">
-          <industry-form class="my-2 csu-card__form" />
-        </div>
-        <div class="col-lg-9 col-12 mb-5">
-          <industry-progress class="my-2 card-item industry-card" />
+    <div class="row graphContent">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12">
+            <industry-form class="csu-card__form" />
+          </div>
+          <div class="col-lg-9 col-12">
+            <industry-progress class="card-item industry-card" />
+          </div>
         </div>
       </div>
     </div>

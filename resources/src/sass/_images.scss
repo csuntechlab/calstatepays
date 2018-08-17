@@ -108,7 +108,6 @@
 }
 
 .CSUDataImgBanner {
-	@extend .py-3;
 	color: white;
 	font-family: $font-base;
 	background-size: cover;
@@ -153,6 +152,7 @@
 	}
 
 	&__dataCopy {
+		@extend .mb-0;
 		font-weight: normal;
 		font-size: 1.1rem;
 		line-height: 1.4;

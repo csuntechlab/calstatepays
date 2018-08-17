@@ -1,5 +1,5 @@
 <template>
-  <div class="row wrapper graph-content card-padding">
+  <div class="container-fluid">
     <csu-data-img-banner>
       <h3 class="CSUDataImgBanner__dataTitle" slot="title">
         <span>Financial Return on Education</span>
@@ -9,43 +9,45 @@
       </p>
     </csu-data-img-banner>
     <sub-nav/>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-12">
-          <card class="csu-card__form">
-            <pfre-form></pfre-form>
-          </card>
-        </div>
-    <div class="col-lg-9 col-12 mb-5">
-      <card class="csu-card">
-        <div class="container-fluid p-0">
-          <div class="row-fluid">
-            <pfre-progress/>
+    <div class="row graphContent">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12">
+            <card class="csu-card__form">
+              <pfre-form></pfre-form>
+            </card>
           </div>
-        </div>
-      </card>
-    </div>
-    </div>
+          <div class="col-lg-9 col-12">
+            <card class="csu-card">
+              <div class="container-fluid p-0">
+              <div class="row-fluid">
+              <pfre-progress/>
+              </div>
+            </div>
+          </card>
+          </div>
       </div>
+    </div>
+    </div>
   </div>
 </template>
 <script>
-  import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
-  import subNav from "../../../components/global/sub-nav.vue";
-  import card from "../../../components/global/card";
-  import pfreForm from "../../../components/pfre/pfre-form.vue";
-  import pfreInfo from "../../../components/pfre/pfre-info.vue";
-  import pfreProgress from "../../../components/pfre/pfre-progress.vue";
-  import { mapGetters } from "vuex";
+import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
+import subNav from "../../../components/global/sub-nav.vue";
+import card from "../../../components/global/card";
+import pfreForm from "../../../components/pfre/pfre-form.vue";
+import pfreInfo from "../../../components/pfre/pfre-info.vue";
+import pfreProgress from "../../../components/pfre/pfre-progress.vue";
+import { mapGetters } from "vuex";
 
-  export default {
-    components: {
-      csuDataImgBanner,
-      card,
-      pfreForm,
-      pfreInfo,
-      pfreProgress,
-      subNav
-    }
-  };
+export default {
+  components: {
+    csuDataImgBanner,
+    card,
+    pfreForm,
+    pfreInfo,
+    pfreProgress,
+    subNav
+  }
+};
 </script>

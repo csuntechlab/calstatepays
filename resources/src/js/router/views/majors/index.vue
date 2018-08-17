@@ -1,5 +1,5 @@
 <template>
-	<div class="row wrapper graph-content card-padding">
+	<div class="graphContent">
 		<csu-data-img-banner>
 			<h3 class="CSUDataImgBanner__dataTitle" slot="title">
 				<span>Major Earnings Over Time</span>
@@ -18,7 +18,6 @@
 				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
 			</div>
 		</div>
-		
 	</div>
 </template>
 <script>

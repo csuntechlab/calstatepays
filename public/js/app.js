@@ -45856,6 +45856,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -45918,9 +45920,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "header",
     {
-      staticClass: "CSUDataImgBanner col-12",
+      staticClass: "CSUDataImgBanner row",
       style: {
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
@@ -45929,7 +45931,7 @@ var render = function() {
       }
     },
     [
-      _c("div", { staticClass: "container p-0" }, [
+      _c("div", { staticClass: "container" }, [
         _c(
           "div",
           { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
@@ -45994,8 +45996,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46010,65 +46010,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c(
-      "div",
-      { staticClass: "row sub-nav" },
-      [
-        _c(
-          "router-link",
-          {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-            attrs: {
-              "exact-active-class": "sub-nav__element--active",
-              to: "/data/industries"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("industries")
-              }
-            }
+  return _c(
+    "nav",
+    { staticClass: "sub-nav row" },
+    [
+      _c(
+        "router-link",
+        {
+          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+          attrs: {
+            "exact-active-class": "sub-nav__element--active",
+            to: "/data/industries"
           },
-          [_vm._v("\n                INDUSTRIES\n            ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-            attrs: {
-              "active-class": "sub-nav__element--active",
-              to: "/data/majors"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("majors")
-              }
+          nativeOn: {
+            click: function($event) {
+              _vm.setDataPage("industries")
             }
+          }
+        },
+        [_vm._v("\n        INDUSTRIES\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        {
+          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+          attrs: {
+            "active-class": "sub-nav__element--active",
+            to: "/data/majors"
           },
-          [_vm._v("\n                MAJORS\n            ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-            attrs: {
-              "active-class": "sub-nav__element--active",
-              to: "/data/pfre"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("pfre")
-              }
+          nativeOn: {
+            click: function($event) {
+              _vm.setDataPage("majors")
             }
+          }
+        },
+        [_vm._v("\n        MAJORS\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        {
+          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+          attrs: {
+            "active-class": "sub-nav__element--active",
+            to: "/data/pfre"
           },
-          [_vm._v("\n                FRE\n            ")]
-        )
-      ],
-      1
-    )
-  ])
+          nativeOn: {
+            click: function($event) {
+              _vm.setDataPage("pfre")
+            }
+          }
+        },
+        [_vm._v("\n        FRE\n    ")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -46090,7 +46088,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col col-lg-10 container row align-items-center" },
+    { staticClass: "col col-lg-10 row align-items-center" },
     [_vm._t("default")],
     2
   )
@@ -48862,7 +48860,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
+    { staticClass: "container-fluid" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -48892,39 +48890,41 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-lg-3 col-12" },
-            [
-              _c(
-                "card",
-                { staticClass: "csu-card__form" },
-                [_c("pfre-form")],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-lg-9 col-12 mb-5" },
-            [
-              _c("card", { staticClass: "csu-card" }, [
-                _c("div", { staticClass: "container-fluid p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "row-fluid" },
-                    [_c("pfre-progress")],
-                    1
-                  )
+      _c("div", { staticClass: "row graphContent" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-lg-3 col-12" },
+              [
+                _c(
+                  "card",
+                  { staticClass: "csu-card__form" },
+                  [_c("pfre-form")],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-9 col-12" },
+              [
+                _c("card", { staticClass: "csu-card" }, [
+                  _c("div", { staticClass: "container-fluid p-0" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row-fluid" },
+                      [_c("pfre-progress")],
+                      1
+                    )
+                  ])
                 ])
-              ])
-            ],
-            1
-          )
+              ],
+              1
+            )
+          ])
         ])
       ])
     ],
@@ -49007,7 +49007,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //
@@ -68415,7 +68414,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
+    { staticClass: "graphContent" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -68561,6 +68560,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__);
+//
+//
 //
 //
 //
@@ -69157,7 +69158,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -69187,25 +69187,27 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-lg-3 col-12" },
-            [_c("industry-form", { staticClass: "my-2 csu-card__form" })],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-lg-9 col-12 mb-5" },
-            [
-              _c("industry-progress", {
-                staticClass: "my-2 card-item industry-card"
-              })
-            ],
-            1
-          )
+      _c("div", { staticClass: "row graphContent" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-lg-3 col-12" },
+              [_c("industry-form", { staticClass: "csu-card__form" })],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-9 col-12" },
+              [
+                _c("industry-progress", {
+                  staticClass: "card-item industry-card"
+                })
+              ],
+              1
+            )
+          ])
         ])
       ])
     ],
@@ -88611,12 +88613,7 @@ var render = function() {
     [
       _c("navigation"),
       _vm._v(" "),
-      _c(
-        "main",
-        { staticClass: "container-fluid no-gutters content-wrapper" },
-        [_c("router-view")],
-        1
-      ),
+      _c("main", { staticClass: "contentWrapper" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c("csu-footer")
     ],

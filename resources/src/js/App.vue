@@ -1,10 +1,10 @@
 <template>
 	<div >
-		<navigation></navigation>
-		<main class="container-fluid no-gutters content-wrapper">
+		<navigation/>
+		<main class="contentWrapper">
 			<router-view></router-view>
 		</main>
-		<csu-footer></csu-footer>
+		<csu-footer/>
 	</div>
 </template>
 <script>
