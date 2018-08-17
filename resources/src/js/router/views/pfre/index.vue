@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-lg-3 col-12">
             <card class="csu-card__form">
-              <pfre-form></pfre-form>
+              <pfre-form/>
             </card>
           </div>
           <div class="col-lg-9 col-12">

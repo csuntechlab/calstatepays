@@ -1,5 +1,5 @@
 <template>
-  <div class="col col-lg-10 row align-items-center">
+  <div>
     <slot></slot>
   </div>
 </template>

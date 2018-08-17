@@ -5,7 +5,7 @@
                 <h2 class="CSUDataImgBanner__campusTitle"> {{ csunAcronym }}</h2>
                 <a class="CSUDataImgBanner__changeCampus" href="#">Change Campus</a>
             </div>
-            <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6">
+            <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-7">
                 <slot name="title"></slot>
                 <slot name="copy"></slot>
             </div> 

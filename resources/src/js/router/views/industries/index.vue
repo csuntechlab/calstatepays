@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <csu-data-img-banner>
       <h3 class="CSUDataImgBanner__dataTitle" slot="title">
         <span>Top Industries by Major</span>

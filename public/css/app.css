@@ -27547,8 +27547,8 @@ figcaption {
 
 @media screen and (max-width: 767px) {
   .show {
-    /* 5 refer to the number of nav links*/
-    height: 20rem;
+    /* the number refer to the number of nav links*/
+    height: 16rem;
   }
 }
 

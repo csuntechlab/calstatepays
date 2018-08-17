@@ -10,12 +10,13 @@
 			</p>
 		</csu-data-img-banner>
 		<sub-nav/>
-		<div class="container" @scroll="handleScroll">
-			<div class="row">
-				<major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index
-				:windowWidth=windowWidth></major-card>
-				<major-card-mobile v-if="isMobile" class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
+		<div class="row graphContent" @scroll="handleScroll">
+			<div class="container">
+				<div class="row">
+					<major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
+					<major-card-mobile v-if="isMobile" class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
+					<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)" />
+				</div>
 			</div>
 		</div>
 	</div>

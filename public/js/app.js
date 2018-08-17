@@ -45953,10 +45953,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass:
-              "CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6"
-          },
+          { staticClass: "CSUDataImgBanner__dataInfoWrapper col-12 col-md-7" },
           [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
           2
         )
@@ -46086,12 +46083,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "col col-lg-10 row align-items-center" },
-    [_vm._t("default")],
-    2
-  )
+  return _c("div", [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49007,6 +48999,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -68446,43 +68439,45 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container", on: { scroll: _vm.handleScroll } },
+        { staticClass: "row graphContent", on: { scroll: _vm.handleScroll } },
         [
-          _c(
-            "div",
-            { staticClass: "row" },
-            [
-              _vm._l(_vm.desktopCards, function(majorCard, index) {
-                return _vm.isDesktop
-                  ? _c("major-card", {
-                      key: index,
-                      staticClass: "my-2 card-item",
-                      attrs: { index: index, windowWidth: _vm.windowWidth }
-                    })
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._l(_vm.mobileCards, function(majorCard, index) {
-                return _vm.isMobile
-                  ? _c("major-card-mobile", {
-                      key: index,
-                      staticClass: "my-2",
-                      attrs: { index: index, windowWidth: _vm.windowWidth }
-                    })
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _c("card-add", {
-                attrs: { id: "plus" },
-                on: {
-                  cardPlusError: function($event) {
-                    _vm.scrollToNextCard($event)
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              { staticClass: "row" },
+              [
+                _vm._l(_vm.desktopCards, function(majorCard, index) {
+                  return _vm.isDesktop
+                    ? _c("major-card", {
+                        key: index,
+                        staticClass: "my-2 card-item",
+                        attrs: { index: index, windowWidth: _vm.windowWidth }
+                      })
+                    : _vm._e()
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.mobileCards, function(majorCard, index) {
+                  return _vm.isMobile
+                    ? _c("major-card-mobile", {
+                        key: index,
+                        staticClass: "my-2",
+                        attrs: { index: index, windowWidth: _vm.windowWidth }
+                      })
+                    : _vm._e()
+                }),
+                _vm._v(" "),
+                _c("card-add", {
+                  attrs: { id: "plus" },
+                  on: {
+                    cardPlusError: function($event) {
+                      _vm.scrollToNextCard($event)
+                    }
                   }
-                }
-              })
-            ],
-            2
-          )
+                })
+              ],
+              2
+            )
+          ])
         ]
       )
     ],
@@ -69158,6 +69153,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container-fluid" },
     [
       _c("csu-data-img-banner", [
         _c(
