@@ -32,7 +32,7 @@ class CsvHelper(object):
     def remove_dollar(self,columnName):
         self.df[columnName] = self.df[columnName].str.replace('$', '')
 
-    def remove_hypthen(self,columnName):
+    def remove_hyphen(self,columnName):
         self.df[columnName] = self.df[columnName].str.replace('-','')
 
     def remove_comma(self,columnName):
@@ -73,7 +73,7 @@ class CsvHelper(object):
 
     def sanitizeHeaders(self):
         mapper = {
-            'naics':self.remove_hypthen('naics') or self.string_number_to_real_number('naics'),
+            'naics':self.remove_hyphen('naics') or self.string_number_to_real_number('naics'),
             'hegis_at_exist':self.column_sanitize_plus('hegis_at_exit') or self.string_number_to_real_number('hegis_at_exit'),
             'median_annual_earnings_5_years_after_exit':self.remove_dollar('median_annual_earnings_5_years_after_exit') or self.remove_comma('median_annual_earnings_5_years_after_exit') or self.string_number_to_real_number('median_annual_earnings_5_years_after_exit'),
             'average_annual_earnings_5_years_after_exit':self.remove_dollar('average_annual_earnings_5_years_after_exit') or self.remove_comma('average_annual_earnings_5_years_after_exit') or self.string_number_to_real_number('average_annual_earnings_5_years_after_exit'),
