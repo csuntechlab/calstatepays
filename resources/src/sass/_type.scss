@@ -102,13 +102,13 @@ body {
 
 .pfre-info--show {
     position: absolute;
-    transform: translate(35%,-45%);
     background: $light-gray;
     border-radius: 15px;
     float: right;
-    width: 10rem;
-    left: .9rem;
+    width: 18rem;
+    left: 1.9rem;
     padding: .5rem;
+    align-self: center;
 
   &::after {
     content: " ";
@@ -120,18 +120,18 @@ body {
     border-top: 6px solid transparent;
     border-right: 6px solid $light-gray;
     border-bottom: 6px solid transparent;
-    transform: translateY(-50%);
-    @media screen and (max-width: $break-small) {
+   // transform: translateY(-50%);
+    @media screen and (max-width: $break-large) {
         display: none;
     }
   }
   @media screen and (max-width: $break-large) {
-        transform: translate(0);
-        margin-left: 0;
+       // transform: translate(0);
+       // margin-left: 0;
         position: static;
         width: auto;
-        float: none;
-        display: flex;
+      //  float: none;
+      //  display: flex;
   }
 }
 
@@ -147,7 +147,18 @@ body {
 }
 
 .pfre-info__wrapper{
-    margin-top: 90px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    
+    position: relative;
+    @media screen and (max-width: 1200px){
+        flex-direction: column;
+        text-align:center;
+        margin: 0;
+        display: flex;
+        position: relative;
+    }
 }
 
 .majors-header{
