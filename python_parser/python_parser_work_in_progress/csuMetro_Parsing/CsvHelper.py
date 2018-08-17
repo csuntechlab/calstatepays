@@ -7,6 +7,8 @@ class CsvHelper(object):
     def __init__(self,file):
         self.file = file
         self.df = pd.read_csv(self.file+'.csv')
+        self.dataframe_builder()
+        self.columnSanitizer()
         pass
     
     def dataframe_builder(self):
@@ -17,24 +19,25 @@ class CsvHelper(object):
         self.df.columns = self.df.columns.str.replace(' ','_')
         self.df.columns = self.df.columns.str.lower()
     
-        # sanitize column
-    def column_sanitize_plus(self):
-        self.df[self.file] = self.df[self.file].str.replace('+','')
-        self.df[self.file] = self.df[self.file].str.replace(' ','')
+    # sanitize column
+    def column_sanitize_plus(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('+','')
+        self.df[columnName] = self.df[columnName].str.replace(' ','')
 
     
     # converts to floats...
-    def string_number_to_real_number(self):
-        self.df[self.file] = pd.to_numeric(self.df[self.file], errors='coerce')
+    def string_number_to_real_number(self,columnName):
+        self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce')
 
-    def remove_dollar(self):
-        self.df[self.file] = self.df[self.file].str.replace('$', '')
-        string_number_to_real_number(self.df,self.file)
+    def remove_dollar(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('$', '')
 
-    def remove_hypthen(self):
-        self.df[self.file] = self.df[self.file].str.replace('-','')
-        string_number_to_real_number(self.df,self.file)
-    
+    def remove_hypthen(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('-','')
+
+    def remove_comma(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace(',','')
+
     def jsonBuilder(self):
         # data frame to dict
         output = self.df.to_dict(orient='record')
@@ -49,13 +52,33 @@ class CsvHelper(object):
         for i in range(0, len(json_data)):
             if(json_data[i]["naics"]!=None):
                 json_data[i]["naics"]= int(json_data[i]["naics"])
-            if(json_data[i]["number_of_students_found"]!=None):
-                json_data[i]["number_of_students_found"] = int(json_data[i]["number_of_students_found"])
-            if(json_data[i]["median_annual_earnings"]!=None):
-                json_data[i]["median_annual_earnings"] = int(json_data[i]["median_annual_earnings"])
-            if(json_data[i]["average_annual_earnings"]!=None):
-                json_data[i]["average_annual_earnings"] = int(json_data[i]["average_annual_earnings"])
+            if(json_data[i]["number_of_students_found_5_years_after_exit"]!=None):
+                json_data[i]["number_of_students_found_5_years_after_exit"] = int(json_data[i]["number_of_students_found_5_years_after_exit"])
+            if(json_data[i]["median_annual_earnings_5_years_after_exit"]!=None):
+                json_data[i]["median_annual_earnings_5_years_after_exit"] = int(json_data[i]["median_annual_earnings_5_years_after_exit"])
+            if(json_data[i]["average_annual_earnings_5_years_after_exit"]!=None):
+                json_data[i]["average_annual_earnings_5_years_after_exit"] = int(json_data[i]["average_annual_earnings_5_years_after_exit"])
 
         with open(self.file+'.json', 'w') as outfile:
             json.dump(json_data, outfile, indent=4)
-            
+
+    # used for debugging
+    # returns first few rows of dataframe
+    def dfHead(self):
+        print (self.df.head())
+    
+    # we need column headers in each sanitization..
+    # that self.file is only used for write to and read to purposes
+    # we use inclusive or in mapping
+
+    def sanitizeHeaders(self):
+        mapper = {
+            'naics':self.remove_hypthen('naics') or self.string_number_to_real_number('naics'),
+            'hegis_at_exist':self.column_sanitize_plus('hegis_at_exit') or self.string_number_to_real_number('hegis_at_exit'),
+            'median_annual_earnings_5_years_after_exit':self.remove_dollar('median_annual_earnings_5_years_after_exit') or self.remove_comma('median_annual_earnings_5_years_after_exit') or self.string_number_to_real_number('median_annual_earnings_5_years_after_exit'),
+            'average_annual_earnings_5_years_after_exit':self.remove_dollar('average_annual_earnings_5_years_after_exit') or self.remove_comma('average_annual_earnings_5_years_after_exit') or self.string_number_to_real_number('average_annual_earnings_5_years_after_exit'),
+            'number_of_students_found_5_years_after_exit':self.remove_dollar('number_of_students_found_5_years_after_exit') or self.remove_comma('number_of_students_found_5_years_after_exit') or self.string_number_to_real_number('number_of_students_found_5_years_after_exit'),
+        }
+        for column in self.df:
+            print(column)
+            pd.Series(column).map(mapper)

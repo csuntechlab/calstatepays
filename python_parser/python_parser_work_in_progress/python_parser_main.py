@@ -15,13 +15,10 @@ class CsvToJson():
     def __init__(self):
         pass
     
-    def master_major_csv_to_json(self,majorCsvFiles):
-        for csv in majorCsvFiles:
+    def master_majors_csv_to_json(self,majorsCsvFiles):
+        for csv in majorsCsvFiles:
             print(csv) 
             csvSanatize = CsvHelper(csv)
-            csvSanatize.columnSanitizer()
-            csvSanatize.dataframe_builder()
-
             # dir (CsvHelper)
             
             # print (obj)
@@ -30,22 +27,28 @@ class CsvToJson():
     def master_industry_csv_to_json(self,industryCsvFiles):
         for csv in industryCsvFiles:
             print(csv) 
+            csvSanitize = CsvHelper(csv)
+            print(csvSanitize.dfHead())
+            # this method is to test and see first few results in terminal
+            csvSanitize.sanitizeHeaders()
+            print(csvSanitize.dfHead())
+            csvSanitize.jsonBuilder()
 
 
 def sort_csv_files(csvFiles):
-    majorCsvFiles = []
+    majorsCsvFiles = []
     industryCsvFiles = []
     for csv in csvFiles:
-        if 'major' in csv:
-            majorCsvFiles.append(csv.replace('.csv',''))
+        if 'majors' in csv:
+            majorsCsvFiles.append(csv.replace('.csv',''))
         elif 'industry' in csv:
             industryCsvFiles.append(csv.replace('.csv',''))
-    return majorCsvFiles,industryCsvFiles
+    return majorsCsvFiles,industryCsvFiles
 
 # def main( csvToJson = CsvToJson() ):
 def main( csvToJson = CsvToJson() ):
 #   able to get all csv files within working dir, 
-#   sort csv's based on major/industry
+#   sort csv's based on majors/industry
 #   create json based on those csvs
 
     mypath = os.getcwd()
@@ -54,9 +57,9 @@ def main( csvToJson = CsvToJson() ):
                  if isfile(join(mypath, csvFile)) 
                  if '.csv' in csvFile]
     
-    majorCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
+    majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
-    csvToJson.master_major_csv_to_json(majorCsvFiles)
+    csvToJson.master_majors_csv_to_json(majorsCsvFiles)
     csvToJson.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
