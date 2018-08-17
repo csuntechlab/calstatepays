@@ -6,19 +6,37 @@ import simplejson
 
 
 class DataFrame:
-
-    def __init__():
+    def __init__(self,file):
+        self.file = file
+        self.df = pd.read_csv(self.file+'.csv')
+        self.dataframe_builder()
+        self.headerSanitizer()
         pass
+    
+    def dataframe_builder(self):
+        self.df = self.df.rename(columns=lambda x: x.replace('#', 'number'))
+        self.df = self.df.replace(['*****', np.NaN], np.NaN)
 
+    def headerSanitizer(self):
+        self.df.columns = self.df.columns.str.replace(' ','_')
+        self.df.columns = self.df.columns.str.lower()
+        for i,col in enumerate(self.df.columns):
+            if(col[0] in '123456789'):
+                self.df = self.df.rename(index=str, columns={str(col): "_"+str(col)})
+    
+    def __str__(self):
+        print(self.df)
+    
+    
 class SanitizeMajors:
     def __init__():
         pass
-        
+
 class SanitizeIndustry:
     def __init__():
         pass 
 
-class CsvHelper(object):
+class CsvHelper:
     def __init__(self,file):
         self.file = file
         self.df = pd.read_csv(self.file+'.csv')
