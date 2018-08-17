@@ -3,6 +3,21 @@ import pandas as pd
 import numpy as np
 import simplejson
 
+
+
+class DataFrame:
+
+    def __init__():
+        pass
+
+class SanitizeMajors:
+    def __init__():
+        pass
+        
+class SanitizeIndustry:
+    def __init__():
+        pass 
+
 class CsvHelper(object):
     def __init__(self,file):
         self.file = file
