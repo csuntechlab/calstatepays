@@ -47244,6 +47244,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47261,42 +47269,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row justify-content-md-start mx-2" }, [
-    _c(
-      "div",
-      {
-        staticClass: "col-11 col-md-2 col-lg-4 col-xl-3 px-0 align-self-center"
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn-info",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.toggleInfo(_vm.infoKey)
+  return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
+    ? _c("div", { staticClass: "pfre-info__wrapper" }, [
+        _c("div", { staticClass: "text-sm-center text-md-left" }, [
+          _c(
+            "button",
+            {
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.toggleInfo(_vm.infoKey)
+                }
               }
-            }
-          },
-          [_c("i", { staticClass: "fa fa-question" })]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
-      ? _c(
-          "div",
-          {
-            class: _vm.infoKey
-              ? "pfre-info--show col-11 col-md-10 col-lg-8 col-xl-9 my-2"
-              : "pfre-info"
-          },
-          [_vm._t("default")],
-          2
-        )
-      : _vm._e()
-  ])
+            },
+            [_c("i", { staticClass: "fas fa-info-circle" })]
+          )
+        ]),
+        _vm._v(" "),
+        _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
+          ? _c(
+              "div",
+              { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
+              [_vm._t("default")],
+              2
+            )
+          : _vm._e()
+      ])
+    : _c("div", { staticClass: "position-relative" }, [
+        _c("div", { staticClass: "text-sm-center text-md-left" }, [
+          _c(
+            "button",
+            {
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.toggleInfo(_vm.infoKey)
+                }
+              }
+            },
+            [_c("i", { staticClass: "fas fa-info-circle" })]
+          )
+        ])
+      ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -47367,6 +47381,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48523,9 +48563,30 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-8 col-xl-9" },
           [
-            _c("h5", { staticClass: "text-center" }, [_vm._v("Years")]),
+            _c("div", { staticClass: "d-flex" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "col-xl-6 pl-0" },
+                [
+                  _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
+                    _vm._v(
+                      "The estimated time it would take for you to complete your degree if you choose this major."
+                    )
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-4 " }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.actual))
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c("v-progress-linear", {
               staticClass: "pfre-bar progress-median",
@@ -48556,27 +48617,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
-                _vm._v(
-                  "Estimated time to degree: " +
-                    _vm._s(_vm.pfreData.years.actual)
-                )
-              ])
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-          [
-            _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
-              _vm._v(
-                "The estimated time it would take for you to complete your degree if you choose this major."
-              )
-            ])
+            _c("div")
           ],
           1
         )
@@ -48587,7 +48628,30 @@ var render = function() {
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
           [
-            _c("h5", { staticClass: "text-center" }, [_vm._v("Earnings")]),
+            _c("div", { staticClass: "d-flex" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "col-xl-6 pl-0" },
+                [
+                  _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
+                    _vm._v(
+                      "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
+                    )
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-1 " }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
+                  )
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c("v-progress-linear", {
               staticClass: "pfre-bar progress-median",
@@ -48627,27 +48691,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
-                _vm._v(
-                  "Estimated Earnings 5 Years After Exit: " +
-                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
-                )
-              ])
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-          [
-            _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
-              _vm._v(
-                "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
-              )
-            ])
+            _vm._m(2)
           ],
           1
         )
@@ -48660,6 +48704,35 @@ var render = function() {
           [
             _c("h5", { staticClass: "text-center" }, [
               _vm._v("Return On Investment")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "d-flex" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "col-xl-6 pl-0" },
+                [
+                  _c("pfre-info", { attrs: { infoKey: "return" } }, [
+                    _vm._v(
+                      "Your estimated financial return on your education investment."
+                    )
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "col-1 " }, [
+                _c("p", { staticClass: "float-right mb-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm._f("percentage")(
+                        _vm.pfreData.returnOnInvestment.actual / 100
+                      )
+                    )
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _c("v-progress-linear", {
@@ -48712,31 +48785,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("p", { staticClass: "font-weight-bold mb-0 text-center" }, [
-                _vm._v(
-                  "FRE - Financial Return on Education: " +
-                    _vm._s(
-                      _vm._f("percentage")(
-                        _vm.pfreData.returnOnInvestment.actual / 100
-                      )
-                    )
-                )
-              ])
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 col-lg-4 col-xl-3 align-self-md-center" },
-          [
-            _c("pfre-info", { attrs: { infoKey: "return" } }, [
-              _vm._v(
-                "Your estimated financial return on your education investment."
-              )
-            ])
+            _vm._m(4)
           ],
           1
         )
@@ -48744,7 +48793,54 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-xl-4 pr-0" }, [
+      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
+        _vm._v("Estimated time to degree:")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
+      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
+        _vm._v("Estimated Earnings 5 Years After Exit:")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
+      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
+        _vm._v("EFRE - Financial Return on Education: ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -49734,6 +49830,7 @@ var render = function() {
                 attrs: { id: "allDegrees-" + _vm.form.cardIndex },
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     _vm.toggleEducationLevel("allDegrees")
                   }
                 }
@@ -67248,7 +67345,9 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm.industry
-          ? _c("p", { staticStyle: {} }, [_vm._v(_vm._s(_vm.industry.title))])
+          ? _c("p", { staticClass: "text-white h6" }, [
+              _vm._v(_vm._s(_vm.industry.title))
+            ])
           : _vm._e()
       ]
     )
@@ -67286,7 +67385,8 @@ var render = function() {
           attrs: {
             navigationEnabled: true,
             perPage: 3,
-            navigationClickTargetSize: 20
+            navigationClickTargetSize: 20,
+            paginationEnabled: false
           }
         },
         [

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="industry-title">Common Employment Sectors</h4>
-    <carousel :navigationEnabled="true" :perPage=3 class="industry-carousel" :navigationClickTargetSize=20>
+    <carousel :navigationEnabled="true" :perPage=3 class="industry-carousel" :navigationClickTargetSize=20 :paginationEnabled=false>
       <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel mx-1">
         <industry-carousel-card :industry="industry" class="industry-carousel-card"></industry-carousel-card>
       </slide>
