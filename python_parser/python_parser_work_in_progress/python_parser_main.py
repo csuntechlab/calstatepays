@@ -15,7 +15,7 @@ class IterateCsvFiles():
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       for csv in majorsCsvFiles:
-        csvSanitize = CsvHelper(csv)
+        csvSanitize = DataFrame(csv)
         csvSanitize.dfHead()
         csvSanitize.giveColumnHeads()
           # dir (CsvHelper)
