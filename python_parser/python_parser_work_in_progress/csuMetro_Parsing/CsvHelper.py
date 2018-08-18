@@ -57,16 +57,34 @@ class SanitizeMajor:
 
     def sanitizeMajor(self):
         mapper = {
-            'potential_number_of_students': 'potential_number_of_students_for_each_year_out_of_school':
-            '_25th_percentile_earnings':
-            '_50th_percentile_earnings':
-            '_75th_percentile_earnings':
-            'average_earnings':
-            'number_of_students_found':
-            'year':
+            'potential_number_of_students':dollar_column('potential_number_of_students') ,
+            '_25th_percentile_earnings':dollar_column('_25th_percentile_earnings'),
+            '_50th_percentile_earnings':dollar_column('_50th_percentile_earnings'),
+            '_75th_percentile_earnings':dollar_column('_75th_percentile_earnings'),
+            'average_earnings':dollar_column('average_earnings')
+            'number_of_students_found':string_number_to_real_number('number_of_students_found')
+            'year':string_number_to_real_number('year')
         }
         for column in self.df:
             pd.Series(column).map(mapper)
+
+        # converts to floats...
+    def string_number_to_real_number(self,columnName):
+        self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce')
+
+    def remove_dollar(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('$', '')
+
+    def remove_hyphen(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace('-','')
+
+    def remove_comma(self,columnName):
+        self.df[columnName] = self.df[columnName].str.replace(',','')
+    
+    def dollar_column(self,columnName):
+        remove_dollar(columnName)
+        remove_comma(columnName)
+        string_number_to_real_number(columnName)
 
 
 class CsvHelper:
