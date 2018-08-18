@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import simplejson
 from csuMetro_Parsing.CsvHelper import DataFrame
+from csuMetro_Parsing.CsvHelper import SanitizeMajor
 # from csuMetro_Parsing.IterateCsvFiles import IterateCsvFiles
 
 class IterateCsvFiles():
@@ -15,9 +16,10 @@ class IterateCsvFiles():
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       for csv in majorsCsvFiles:
-        csvSanitize = DataFrame(csv)
-        csvSanitize.dfHead()
-        csvSanitize.giveColumnHeads()
+        majorSanitize = SanitizeMajor(csv)
+        # csvSanitize = DataFrame(csv)
+        # csvSanitize.dfHead()
+        # csvSanitize.giveColumnHeads()
           # dir (CsvHelper)
 
     def master_industry_csv_to_json(self,industryCsvFiles):
