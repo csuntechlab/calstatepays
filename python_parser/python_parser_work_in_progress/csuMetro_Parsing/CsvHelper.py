@@ -66,9 +66,46 @@ class DataFrame:
         self.remove_comma(columnName)
         self.string_number_to_real_number(columnName)
 
-class SanitizeIndustry:
-    def __init__():
-        pass 
+class SanitizeIndustry(DataFrame):
+    def __init__(self,file):
+        super().__init__(file)
+        self.sanitizeCommon()
+        self.sanitizeIndustry()
+        self.jsonBuilder()
+        pass
+    
+    def sanitizeIndustry(self):
+        mapper = {
+            'naics':self.remove_hyphen('naics') or self.string_number_to_real_number('naics'),
+            'industry':self.remove_comma('industry'),
+            'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
+            'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
+            'number_of_students_found_5_years_after_exit':self.dollar_column('number_of_students_found_5_years_after_exit'),
+        }
+        for column in self.df:
+            pd.Series(column).map(mapper)
+    
+    def jsonBuilder(self):
+        output = self.df.to_dict(orient='record')
+
+        with open (self.file+'.json', 'w' ) as fp:
+          fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+        fp.close()
+
+        import json
+        json_data = json.load(open(self.file+'.json'))
+        for i in range(0, len(json_data)):
+            if(json_data[i]["naics"]!=None):
+                json_data[i]["naics"]= int(json_data[i]["naics"])
+            if(json_data[i]["number_of_students_found_5_years_after_exit"]!=None):
+                json_data[i]["number_of_students_found_5_years_after_exit"] = int(json_data[i]["number_of_students_found_5_years_after_exit"])
+            if(json_data[i]["median_annual_earnings_5_years_after_exit"]!=None):
+                json_data[i]["median_annual_earnings_5_years_after_exit"] = int(json_data[i]["median_annual_earnings_5_years_after_exit"])
+            if(json_data[i]["average_annual_earnings_5_years_after_exit"]!=None):
+                json_data[i]["average_annual_earnings_5_years_after_exit"] = int(json_data[i]["average_annual_earnings_5_years_after_exit"])
+
+        with open(self.file+'.json', 'w') as outfile:
+            json.dump(json_data, outfile, indent=4)
 
 class SanitizeMajor(DataFrame):
     def __init__(self,file):
@@ -128,6 +165,23 @@ class SanitizeMajor(DataFrame):
         }
         for column in self.df:
             pd.Series(column).map(mapper)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # Graveyard just in case we need but I doubt we'll need these... 
     #     # converts to floats...
