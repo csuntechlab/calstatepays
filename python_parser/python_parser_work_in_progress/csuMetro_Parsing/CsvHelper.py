@@ -77,7 +77,7 @@ class SanitizeIndustry(DataFrame):
     def sanitizeIndustry(self):
         mapper = {
             'naics':self.remove_hyphen('naics') or self.string_number_to_real_number('naics'),
-            'industry':self.remove_comma('industry'),
+            # 'industry':self.remove_comma('industry'),
             'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
             'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
             'number_of_students_found_5_years_after_exit':self.dollar_column('number_of_students_found_5_years_after_exit'),
