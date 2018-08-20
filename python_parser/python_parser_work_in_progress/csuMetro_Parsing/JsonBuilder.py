@@ -19,25 +19,20 @@ class JsonMajor:
     # output
     
     # print(output)
-    # newDictionary = 
+    hegisDictionary = {}
+    index = 1
     for row in output:
-        print(row)
-    
+        # campus = int(row['campus'])
+        hegis =  int(row['hegis_at_exit'])
+        hegisDictionary[hegis] = index
+        index +=1
+    del output
+    output  = {70:hegisDictionary}
+
     
     with open (self.file+'_Dictionary.json', 'w' ) as fp:
         fp.write(simplejson.dumps(output, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
-
-    
-
-    # with open(self.file+'.json', 'w') as outfile:
-        # json.dump(output, outfile, indent=4)
-    # outfile.close()
-    # dict to json, file is name
-    # with open ('universityMajorNorthridge.json', 'w' ) as fp:
-    #     json.dump(output,fp, indent=4))
-    # fp.close()
-  	
 
 
   
