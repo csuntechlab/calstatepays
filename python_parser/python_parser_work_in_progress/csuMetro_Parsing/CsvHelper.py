@@ -128,7 +128,9 @@ class SanitizeMajor(DataFrame):
     
     def getUniversityMajor(self):
         # get university major data frame 
-        pass
+        UnivMajorDF = self.df[['campus','hegis_at_exit']]
+        UnivMajorDF['id'] = range(1, len(UnivMajorDF) + 1)
+        return UnivMajorDF.head()
 
         
 

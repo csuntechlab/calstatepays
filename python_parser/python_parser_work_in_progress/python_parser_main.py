@@ -24,6 +24,7 @@ class IterateCsvFiles():
         majorDataFrame = majorSanitize.sanitizeMajor(); #sanitizes major
         # print(majorDataFrame)
         universityMajor = majorSanitize.getUniversityMajor() # Returns a dictionary
+        print(universityMajor)
         # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
         jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
         # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
