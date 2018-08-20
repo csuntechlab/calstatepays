@@ -126,11 +126,15 @@ class SanitizeMajor(DataFrame):
             pd.Series(column).map(mapper)
         return self.df
     
-    def getUniversityMajor(self):
+    def getUniversityMajorDictionary(self):
         # get university major data frame 
-        UnivMajorDF = self.df[['campus','hegis_at_exit']]
-        UnivMajorDF['id'] = range(1, len(UnivMajorDF) + 1)
-        return UnivMajorDF.head()
+        UnivMajorDictionary = self.df[['campus','hegis_at_exit']]
+        UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus', 'hegis_at_exit'], keep='first')
+        # UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['hegis_at_exit'], keep='first')
+        # UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus','hegis_at_exit'],'first',keep=False)
+        UnivMajorDictionary['id'] = range(1, len(UnivMajorDictionary) + 1)
+        # print()
+        return UnivMajorDictionary
 
         
 

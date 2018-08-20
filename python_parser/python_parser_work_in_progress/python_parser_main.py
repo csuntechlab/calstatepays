@@ -21,12 +21,12 @@ class IterateCsvFiles():
       for csv in majorsCsvFiles:
         print(csv)  
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
-        majorDataFrame = majorSanitize.sanitizeMajor(); #sanitizes major
+        majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
         # print(majorDataFrame)
-        universityMajor = majorSanitize.getUniversityMajor() # Returns a dictionary
-        print(universityMajor)
+        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
+        print(universityMajorDictionary)
         # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
-        jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
+        # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
         # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
         #print tables 
         
@@ -72,7 +72,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
-    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
     
