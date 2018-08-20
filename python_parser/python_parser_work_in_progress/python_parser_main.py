@@ -8,6 +8,8 @@ import simplejson
 from csuMetro_Parsing.CsvHelper import DataFrame
 from csuMetro_Parsing.CsvHelper import SanitizeMajor
 from csuMetro_Parsing.CsvHelper import SanitizeIndustry
+
+from csuMetro_Parsing.JsonBuilder import JsonMajor
 # from csuMetro_Parsing.IterateCsvFiles import IterateCsvFiles
 
 class IterateCsvFiles():
@@ -18,7 +20,13 @@ class IterateCsvFiles():
     def master_majors_csv_to_json(self,majorsCsvFiles):
       for csv in majorsCsvFiles:
         print(csv)  
-        majorSanitize = SanitizeMajor(csv)
+        majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
+        # universityMajor = majorSanitize.getUniversityMajor() # Returns a dictionary
+        # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
+        jsonMajor = JsonMajor(csv,majorSanitize) #Returns the Json
+        # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
+        #print tables 
+        
         del majorSanitize
         # csvSanitize = DataFrame(csv)
         # csvSanitize.dfHead()
@@ -29,7 +37,7 @@ class IterateCsvFiles():
       for csv in industryCsvFiles:
         print(csv)  
         industrySanitize = SanitizeIndustry(csv)
-        del industrySanitize;
+        del industrySanitize
         # # csvSanitize = CsvHelper(csv)
         # print(csvSanitize.dfHead())
         # # this method is to test and see first few results in terminal
