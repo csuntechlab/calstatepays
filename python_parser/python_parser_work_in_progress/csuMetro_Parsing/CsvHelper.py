@@ -103,7 +103,7 @@ class SanitizeIndustry(DataFrame):
             json.dump(json_data, outfile, indent=4)
 
     def industryDF(self):
-        industryPathTypes = self.df[['entry_status','naics','student_path']]
+        industryPathTypes = self.df[['entry_status','naics','student_path','hegis_at_exit']]
         industryPathTypes = industryPathTypes.rename(columns={'naics': 'naics_codes'})
         industryPathTypes['university_major_id'] = -1
 
