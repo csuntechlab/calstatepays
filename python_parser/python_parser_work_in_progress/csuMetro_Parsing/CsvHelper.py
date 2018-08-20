@@ -134,6 +134,10 @@ class SanitizeMajor(DataFrame):
         # print(UnivMajorDictionary.dtypes)
         UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus', 'hegis_at_exit'], keep='first')
         UnivMajorDictionary.loc[:,'id'] = range(1, len(UnivMajorDictionary) + 1)
+        UnivMajorDictionary['id'] = UnivMajorDictionary['id'].astype('float')
+        UnivMajorDictionary['campus'] = UnivMajorDictionary['campus'].astype('float')
+        UnivMajorDictionary['hegis_at_exit'] = UnivMajorDictionary['hegis_at_exit'].astype('float')
+        
         return UnivMajorDictionary
         
 
