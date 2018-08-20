@@ -102,6 +102,21 @@ class SanitizeIndustry(DataFrame):
         with open(self.file+'.json', 'w') as outfile:
             json.dump(json_data, outfile, indent=4)
 
+    def industryDF(self):
+        industryPathTypes = self.df[['entry_status','naics','student_path']]
+        industryPathTypes = industryPathTypes.rename(columns={'naics': 'naics_codes'})
+        industryPathTypes['university_major_id'] = -1
+
+        industryPathWages = self.df[['average_annual_earnings_5_years_after_exit']]
+        industryPathWages = industryPathWages.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
+    
+        naics_titles = self.df[['naics','industry']]
+        naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
+        naics_titles = naics_titles.drop_duplicates(subset=['naics_codes'], keep='first')
+
+
+        return industryPathTypes,industryPathWages,naics_titles
+
 class SanitizeMajor(DataFrame):
     def __init__(self,file):
         super().__init__(file)

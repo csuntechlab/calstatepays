@@ -43,7 +43,9 @@ class IterateCsvFiles():
       for csv in industryCsvFiles:
         print(csv)  
         industrySanitize = SanitizeIndustry(csv)
-        del industrySanitize
+        one,two,three = industrySanitize.industryDF()
+        print(one.head())
+        print(two.head())
 
 def sort_csv_files(csvFiles):
     majorsCsvFiles = []
@@ -69,7 +71,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
-    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
     
