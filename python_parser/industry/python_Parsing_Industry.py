@@ -15,7 +15,7 @@ def main(argv):
     output_file = ('master_industry_page_data.json')
     read_csv(input_file, output_file)
 
-
+valid_paths = set([1,2,4])
 #Read CSV File
 def read_csv(file, json_file):
     csv_rows = []
@@ -27,19 +27,20 @@ def read_csv(file, json_file):
         parsed_titles = [add_underscores(title[i]) for i in range(len(title))]
         
         for row in reader:
-            # Cast the data as ints/floats
-            row['Campus'] = int(row['Campus'])
-            row['Student Path'] = int(row['Student Path'])
+            if int(row['Student Path']) in valid_paths:
+                # Cast the data as ints/floats
+                row['Campus'] = int(row['Campus'])
+                row['Student Path'] = int(row['Student Path'])
 
-            row['NAICS'] = remove_dollar(row['NAICS'])
-            row['HEGIS At Exit'] = remove_dollar(row['HEGIS At Exit']) 
-            
-            row['Number of Students Found 5 Years After Exit'] = remove_dollar(row['Number of Students Found 5 Years After Exit'])
-            row['Median Annual Earnings 5 Years After Exit'] = remove_dollar(row['Median Annual Earnings 5 Years After Exit'])
-            row['Average Annual Earnings 5 Years After Exit'] = remove_dollar(row['Average Annual Earnings 5 Years After Exit'])
+                row['NAICS'] = remove_dollar(row['NAICS'])
+                row['HEGIS At Exit'] = remove_dollar(row['HEGIS At Exit']) 
+                
+                row['Number of Students Found 5 Years After Exit'] = remove_dollar(row['Number of Students Found 5 Years After Exit'])
+                row['Median Annual Earnings 5 Years After Exit'] = remove_dollar(row['Median Annual Earnings 5 Years After Exit'])
+                row['Average Annual Earnings 5 Years After Exit'] = remove_dollar(row['Average Annual Earnings 5 Years After Exit'])
 
-            csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range(
-                len(title))}])
+                csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range(
+                    len(title))}])
 
         csv_rows[:] = [row for row in csv_rows if row != {}]
         write_json(csv_rows, json_file)
