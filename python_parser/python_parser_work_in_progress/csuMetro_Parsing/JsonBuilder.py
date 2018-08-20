@@ -8,12 +8,13 @@ class JsonMajor:
   def __init__(self,file,df,universityMajorDictionary):
     self.file = file
     self.df = df
-    self.createDictionary(universityMajorDictionary) 
+    self.dictionary = self.createDictionary(universityMajorDictionary) 
     # self.jsonOutput(dictionary,universityMajorDictionary) 
     # self.dictionary = universityMajorDictionary
-    self.jsonOutput()
-    self.jsonSanitize()
+    # self.jsonOutput()
+    # self.jsonSanitize()
 	
+  
   def createDictionary(self,universityMajorDictionary):
     output = universityMajorDictionary.to_dict(orient='record')
     # output
@@ -27,14 +28,25 @@ class JsonMajor:
         hegisDictionary[hegis] = index
         index +=1
     del output
-    output  = {70:hegisDictionary}
-
+    dictionary  = {70:hegisDictionary}
+    return dictionary
     
-    with open (self.file+'_Dictionary.json', 'w' ) as fp:
-        fp.write(simplejson.dumps(output, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()
-
-
+    # with open (self.file+'_Dictionary.json', 'w' ) as fp:
+    #     fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    # fp.close()  
+  
+  def getMajorsTables(self, majorPathDf ):
+    # print(majorPathDf)
+    majorPathDf['university_majors_id'] = -1
+    
+    # print(majorPathWageDf)
+    for index,row in majorPathDf.iterrows():
+      hegis = row[3]
+      campus = row[4]
+      uni_majors_id = self.dictionary[campus][hegis] 
+      majorPathDf.ix[index,'university_majors_id'] = uni_majors_id
+    
+    print(majorPathDf)
   
   def jsonOutput(self):
     # data frame to dict
@@ -61,18 +73,6 @@ class JsonMajor:
 
         if(json_data[i]["_75th_percentile_earnings"]!=None):
             json_data[i]["_75th_percentile_earnings"] = int(json_data[i]["_75th_percentile_earnings"])
-
-        # Not Being used Currently   
-            # if(json_data[i]["potential_number_of_students"]!=None):
-            # json_data[i]["potential_number_of_students"]= int(json_data[i]["potential_number_of_students"])
-            
-            # if(json_data[i]["potential_number_of_students_for_each_year_out_of_school"]!=None):
-            #     json_data[i]["potential_number_of_students_for_each_year_out_of_school"] = int(json_data[i]["potential_number_of_students_for_each_year_out_of_school"]) 
-            # if(json_data[i]["average_earnings"]!=None):
-            #     json_data[i]["average_earnings"] = int(json_data[i]["average_earnings"])
-
-            # if(json_data[i]["number_of_students_found"]!=None):
-            #     json_data[i]["number_of_students_found"] = int(json_data[i]["number_of_students_found"])    
 
     with open(self.file+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)

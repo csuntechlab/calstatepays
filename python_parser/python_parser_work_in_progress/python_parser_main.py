@@ -28,6 +28,8 @@ class IterateCsvFiles():
         # print(universityMajorDictionary)
         # 
         jsonMajor = JsonMajor(csv,majorDataFrame,universityMajorDictionary) #Returns the Json
+        majorPathDf = jsonMajor.getMajorsTables(majorPathDf)
+        # majorPathTb,majorPathWageTb = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)
         # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
 
         del majorSanitize
@@ -36,6 +38,8 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
+        # del majorPathTb
+        # del majorPathWageTb
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       for csv in industryCsvFiles:
