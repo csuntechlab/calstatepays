@@ -136,6 +136,16 @@ class SanitizeMajor(DataFrame):
         # print()
         return UnivMajorDictionary
 
+    def MajorPathsDF(self):
+        MajorPathDf = self.df[['student_path','entry_status','year','hegis_at_exit','campus']]
+        MajorPathDf['id'] = range(1, len(MajorPathDf) + 1)
+        MajorPathWageDf = self.df[['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
+        MajorPathWageDf['major_path_id'] = MajorPathDf[['id']]
+        return MajorPathDf,MajorPathWageDf
+        
+
+
+
         
 
 
@@ -169,7 +179,6 @@ class SanitizeMajor(DataFrame):
     # def remove_comma(self,columnName):
     #     self.df[columnName] = self.df[columnName].str.replace(',','')
     
-
 
 
 # class CsvHelper:
