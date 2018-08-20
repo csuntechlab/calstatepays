@@ -10,8 +10,6 @@ from csuMetro_Parsing.CsvHelper import SanitizeMajor
 from csuMetro_Parsing.CsvHelper import SanitizeIndustry
 
 from csuMetro_Parsing.JsonBuilder import JsonMajor
-
-
 class IterateCsvFiles():
   
     def __init__(self):
@@ -27,7 +25,9 @@ class IterateCsvFiles():
         universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
 
         jsonMajor = JsonMajor(csv,majorDataFrame,universityMajorDictionary) #Returns the Json
+        
         majorPathDf = jsonMajor.getMajorsTables(majorPathDf)
+        
         jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
         jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
         jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
@@ -41,11 +41,23 @@ class IterateCsvFiles():
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       for csv in industryCsvFiles:
-        print(csv)  
+        fileName = csv.replace("_industry","")
         industrySanitize = SanitizeIndustry(csv)
-        one,two,three = industrySanitize.industryDF()
-        print(one.head())
-        print(two.head())
+        industryDataFrame = industrySanitize.SanitizeIndustry() 
+        
+        # get Table equiv Data Frames
+        industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.industryDF()
+
+
+        # init json Industry
+        jsonMajor = JsonIndustry(file,)
+        #update Industry PathTypes
+        
+        # JSon Outputs 
+        #  
+        
+
+        del industrySanitize
 
 def sort_csv_files(csvFiles):
     majorsCsvFiles = []
@@ -71,7 +83,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
-    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
     

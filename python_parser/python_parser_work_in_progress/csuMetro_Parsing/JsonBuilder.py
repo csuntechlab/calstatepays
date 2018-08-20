@@ -4,6 +4,20 @@ import numpy as np
 import simplejson
 import json
 
+class JsonIndustry:
+  def __init__(self,file):
+    self.file = file
+    # self.df = df
+    self.dictionary = self.getDictionary(file+"_Dictionary") 
+
+  def getDictionary(self,fileName):
+    dictionary  = json.load(open( fileName+'.json'))
+    # with open ()
+    pass
+
+    return dictionary
+
+
 class JsonMajor:
   def __init__(self,file,df,universityMajorDictionary):
     self.file = file
@@ -24,9 +38,9 @@ class JsonMajor:
     del output
     dictionary  = {70:hegisDictionary}
     
-    # with open (self.file+'_Dictionary.json', 'w' ) as fp:
-    #     fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    # fp.close()  
+    with open (self.file+'_Dictionary.json', 'w' ) as fp:
+        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    fp.close()  
 
     return dictionary
     

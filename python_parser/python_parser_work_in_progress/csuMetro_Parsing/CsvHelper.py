@@ -66,8 +66,8 @@ class SanitizeIndustry(DataFrame):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
-        self.sanitizeIndustry()
-        self.jsonBuilder()
+        # self.sanitizeIndustry()
+        # self.jsonBuilder()
         pass
     
     def sanitizeIndustry(self):
