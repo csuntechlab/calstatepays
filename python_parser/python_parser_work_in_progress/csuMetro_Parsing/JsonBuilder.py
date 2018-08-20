@@ -5,7 +5,7 @@ import simplejson
 
 class JsonMajor:
   
-  # def __init__(self,df,universityMajorDictionary):
+#   def __init__(self,file,df,universityMajorDictionary):
   def __init__(self,file,df):
     self.file = file
     self.df = df

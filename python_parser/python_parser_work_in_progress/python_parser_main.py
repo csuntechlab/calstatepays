@@ -21,9 +21,11 @@ class IterateCsvFiles():
       for csv in majorsCsvFiles:
         print(csv)  
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
-        # universityMajor = majorSanitize.getUniversityMajor() # Returns a dictionary
+        majorDataFrame = majorSanitize.sanitizeMajor(); #sanitizes major
+        # print(majorDataFrame)
+        universityMajor = majorSanitize.getUniversityMajor() # Returns a dictionary
         # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
-        jsonMajor = JsonMajor(csv,majorSanitize) #Returns the Json
+        jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
         # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
         #print tables 
         
