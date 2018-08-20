@@ -9,17 +9,11 @@ class JsonMajor:
     self.file = file
     self.df = df
     self.dictionary = self.createDictionary(universityMajorDictionary) 
-    # self.jsonOutput(dictionary,universityMajorDictionary) 
-    # self.dictionary = universityMajorDictionary
-    # self.jsonOutput()
-    # self.jsonSanitize()
 	
   
   def createDictionary(self,universityMajorDictionary):
     output = universityMajorDictionary.to_dict(orient='record')
-    # output
-    
-    # print(output)
+
     hegisDictionary = {}
     index = 1
     for row in output:
@@ -29,38 +23,35 @@ class JsonMajor:
         index +=1
     del output
     dictionary  = {70:hegisDictionary}
-    return dictionary
     
     # with open (self.file+'_Dictionary.json', 'w' ) as fp:
     #     fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     # fp.close()  
+
+    return dictionary
+    
+    
   
   def getMajorsTables(self, majorPathDf ):
-    # print(majorPathDf)
+    
     majorPathDf['university_majors_id'] = -1
     
-    # print(majorPathWageDf)
     for index,row in majorPathDf.iterrows():
       hegis = row[3]
       campus = row[4]
       uni_majors_id = self.dictionary[campus][hegis] 
       majorPathDf.ix[index,'university_majors_id'] = uni_majors_id
-    
-    # print(majorPathDf)
+
     return majorPathDf
     
   def jsonOutput(self,fileName, df):
-    # data frame to dict
-    print(df)
+
     output = df.to_dict(orient='record')
 
-    # dict to json, file is name
     with open (fileName+'.json', 'w' ) as fp:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
-  ##maybe return a  json
-  # create an write json method
   def jsonSanitize(self,fileName ):
     
     json_data = json.load(open( fileName+'.json'))

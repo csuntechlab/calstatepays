@@ -53,8 +53,6 @@ class DataFrame:
 
     ### These are the common sanitizations that both jsons require
     def sanitizeCommon(self):
-        # self.column_sanitize_plus('entry_status')
-        # need to remove plus and make into float
         self.column_sanitize_plus('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
 
@@ -75,7 +73,6 @@ class SanitizeIndustry(DataFrame):
     def sanitizeIndustry(self):
         mapper = {
             'naics':self.remove_hyphen('naics') or self.string_number_to_real_number('naics'),
-            # 'industry':self.remove_comma('industry'),
             'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
             'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
             'number_of_students_found_5_years_after_exit':self.dollar_column('number_of_students_found_5_years_after_exit'),
@@ -111,7 +108,6 @@ class SanitizeMajor(DataFrame):
         self.sanitizeCommon()
         pass
 
-    # for ur industry just copy something similiar to this
     def sanitizeMajor(self):
         mapper = {
             'potential_number_of_students':self.string_number_to_real_number('potential_number_of_students') ,
@@ -127,14 +123,8 @@ class SanitizeMajor(DataFrame):
         return self.df
     
     def getUniversityMajorDictionary(self):
-        # get university major data Dictionary 
-        # print(self.df.dtypes)
         UnivMajorDictionary = self.df.loc[:,['campus','hegis_at_exit']]
-        # UnivMajorDictionary = UnivMajorDictionary.copy()
-        # print(UnivMajorDictionary.dtypes)
         UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus', 'hegis_at_exit'], keep='first')
-        # UnivMajorDictionary.loc[:,'id'] = range(1, len(UnivMajorDictionary) + 1)
-        # UnivMajorDictionary['id'] = UnivMajorDictionary['id'].astype('float')
         UnivMajorDictionary['campus'] = UnivMajorDictionary['campus'].astype('float')
         UnivMajorDictionary['hegis_at_exit'] = UnivMajorDictionary['hegis_at_exit'].astype('float')
         
