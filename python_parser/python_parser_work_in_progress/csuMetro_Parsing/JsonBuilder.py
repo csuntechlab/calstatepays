@@ -46,36 +46,43 @@ class JsonMajor:
       uni_majors_id = self.dictionary[campus][hegis] 
       majorPathDf.ix[index,'university_majors_id'] = uni_majors_id
     
-    print(majorPathDf)
-  
-  def jsonOutput(self):
+    # print(majorPathDf)
+    return majorPathDf
+    
+  def jsonOutput(self,fileName, df):
     # data frame to dict
-        output = self.df.to_dict(orient='record')
+    print(df)
+    output = df.to_dict(orient='record')
 
-        # dict to json, file is name
-        with open (self.file+'.json', 'w' ) as fp:
-          fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-        fp.close()
+    # dict to json, file is name
+    with open (fileName+'.json', 'w' ) as fp:
+      fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    fp.close()
   
   ##maybe return a  json
   # create an write json method
-  def jsonSanitize(self):
+  def jsonSanitize(self,fileName ):
     
-    json_data = json.load(open(self.file+'.json'))
+    json_data = json.load(open( fileName+'.json'))
     for i in range(0, len(json_data)):
+       
+      # major path wage 
+      if(json_data[i]["_25th_percentile_earnings"]!=None):
+        json_data[i]["_25th_percentile_earnings"] = int(json_data[i]["_25th_percentile_earnings"])
 
-        # major path wage 
-        if(json_data[i]["_25th_percentile_earnings"]!=None):
-            json_data[i]["_25th_percentile_earnings"] = int(json_data[i]["_25th_percentile_earnings"])
+      if(json_data[i]["_50th_percentile_earnings"]!=None):
+        json_data[i]["_50th_percentile_earnings"] = int(json_data[i]["_50th_percentile_earnings"])
 
-        if(json_data[i]["_50th_percentile_earnings"]!=None):
-            json_data[i]["_50th_percentile_earnings"] = int(json_data[i]["_50th_percentile_earnings"])
+      if(json_data[i]["_75th_percentile_earnings"]!=None):
+        json_data[i]["_75th_percentile_earnings"] = int(json_data[i]["_75th_percentile_earnings"])
+      
+      if(True):
+        json_data[i]["major_path_id"] = int(json_data[i]["major_path_id"])
+        
+       
 
-        if(json_data[i]["_75th_percentile_earnings"]!=None):
-            json_data[i]["_75th_percentile_earnings"] = int(json_data[i]["_75th_percentile_earnings"])
-
-    with open(self.file+'.json', 'w') as outfile:
-        json.dump(json_data, outfile, indent=4)
+    with open(fileName+'.json', 'w') as outfile:
+      json.dump(json_data, outfile, indent=4)
     outfile.close()
 
 

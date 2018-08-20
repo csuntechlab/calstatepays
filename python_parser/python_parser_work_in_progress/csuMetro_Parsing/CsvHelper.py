@@ -53,7 +53,7 @@ class DataFrame:
 
     ### These are the common sanitizations that both jsons require
     def sanitizeCommon(self):
-        self.column_sanitize_plus('entry_status')
+        # self.column_sanitize_plus('entry_status')
         # need to remove plus and make into float
         self.column_sanitize_plus('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
