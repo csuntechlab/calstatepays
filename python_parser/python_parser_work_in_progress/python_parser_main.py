@@ -19,34 +19,23 @@ class IterateCsvFiles():
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       for csv in majorsCsvFiles:
-        print(csv)  
+        # print(csv)  
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
         majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
-        # print(majorDataFrame)
+        majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()
 
         universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
-        print(universityMajorDictionary)
-# <<<<<<< Updated upstream
-        # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
-        # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
-        # majorPath,MajorPathWage = majorSanitize.MajorPathsDF() #returns tables as Json
-        # print(majorPath.head())
-        # print(MajorPathWage.head())
-# =======
-        
+        # print(universityMajorDictionary)
+        # 
         jsonMajor = JsonMajor(csv,majorDataFrame,universityMajorDictionary) #Returns the Json
         # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
-        # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
-# >>>>>>> Stashed changes
-        #print tables 
-        
+
         del majorSanitize
         del majorDataFrame
         del universityMajorDictionary
-        # csvSanitize = DataFrame(csv)
-        # csvSanitize.dfHead()
-        # csvSanitize.giveColumnHeads()
-          # dir (CsvHelper)
+        del jsonMajor
+        del majorPathDf
+        del majorPathWageDf
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       for csv in industryCsvFiles:

@@ -127,20 +127,21 @@ class SanitizeMajor(DataFrame):
         return self.df
     
     def getUniversityMajorDictionary(self):
-        # get university major data frame 
-        UnivMajorDictionary = self.df[['campus','hegis_at_exit']]
+        # get university major data Dictionary 
+        # print(self.df.dtypes)
+        UnivMajorDictionary = self.df.loc[:,['campus','hegis_at_exit']]
+        # UnivMajorDictionary = UnivMajorDictionary.copy()
+        # print(UnivMajorDictionary.dtypes)
         UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus', 'hegis_at_exit'], keep='first')
-        # UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['hegis_at_exit'], keep='first')
-        # UnivMajorDictionary = UnivMajorDictionary.drop_duplicates(subset=['campus','hegis_at_exit'],'first',keep=False)
-        UnivMajorDictionary['id'] = range(1, len(UnivMajorDictionary) + 1)
-        # print()
+        UnivMajorDictionary.loc[:,'id'] = range(1, len(UnivMajorDictionary) + 1)
         return UnivMajorDictionary
+        
 
-    def MajorPathsDF(self):
-        MajorPathDf = self.df[['student_path','entry_status','year','hegis_at_exit','campus']]
-        MajorPathDf['id'] = range(1, len(MajorPathDf) + 1)
-        MajorPathWageDf = self.df[['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
-        MajorPathWageDf['major_path_id'] = MajorPathDf[['id']]
+    def getMajorPathsDF(self):
+        MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
+        MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1)
+        MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
+        MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']]
         return MajorPathDf,MajorPathWageDf
         
 

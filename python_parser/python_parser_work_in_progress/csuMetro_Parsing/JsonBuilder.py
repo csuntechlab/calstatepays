@@ -8,10 +8,11 @@ class JsonMajor:
   def __init__(self,file,df,universityMajorDictionary):
     self.file = file
     self.df = df
-    self.createDictionary(universityMajorDictionary) 
+    # self.createDictionary(universityMajorDictionary) 
+    # self.jsonOutput(dictionary,universityMajorDictionary) 
     # self.dictionary = universityMajorDictionary
-    # self.jsonOutput()
-    # self.jsonSanitize()
+    self.jsonOutput()
+    self.jsonSanitize()
 	
   def createDictionary(self,universityMajorDictionary):
     output = universityMajorDictionary.to_dict(orient='record')
@@ -19,7 +20,7 @@ class JsonMajor:
     print(output)
     
     with open (self.file+'_Dictionary.json', 'w' ) as fp:
-        fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+        fp.write(simplejson.dumps(output, sort_keys=False, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
 
     
