@@ -23,16 +23,26 @@ class IterateCsvFiles():
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
         majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
         # print(majorDataFrame)
+
         universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
         print(universityMajorDictionary)
+# <<<<<<< Updated upstream
         # jsonMajor = JsonMajor(majorSanitize,universityMajor) #Returns the Json
-        jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
-        majorPath,MajorPathWage = majorSanitize.MajorPathsDF() #returns tables as Json
-        print(majorPath.head())
-        print(MajorPathWage.head())
+        # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
+        # majorPath,MajorPathWage = majorSanitize.MajorPathsDF() #returns tables as Json
+        # print(majorPath.head())
+        # print(MajorPathWage.head())
+# =======
+        
+        jsonMajor = JsonMajor(csv,majorDataFrame,universityMajorDictionary) #Returns the Json
+        # jsonMajor = JsonMajor(csv,majorDataFrame) #Returns the Json
+        # majorPath,MajorPathWage = JsonMajor.getTables() #returns tables as Json
+# >>>>>>> Stashed changes
         #print tables 
         
         del majorSanitize
+        del majorDataFrame
+        del universityMajorDictionary
         # csvSanitize = DataFrame(csv)
         # csvSanitize.dfHead()
         # csvSanitize.giveColumnHeads()
