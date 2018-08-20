@@ -1,7 +1,8 @@
 <template>
     <div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
-        <card class="csu-card__form col-12">
-                <div class="row">
+        <card class="col-12">
+                <div class="csu-card__form">
+                    <div class="row">
                     <div class="col">
                         <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
                         <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
@@ -30,6 +31,8 @@
                         <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
                     </div>
                 </div>
+                </div>
+                
         </card>
     </div>
 </template>

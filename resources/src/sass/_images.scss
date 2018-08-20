@@ -116,7 +116,7 @@
 	background-repeat: no-repeat;
 
 	&__campusInfoWrapper {
-		@extend .p-0, .text-left, .text-md-right;
+		@extend .text-left, .text-md-right;
 	}
 
 	&__campusTitle {
@@ -145,10 +145,6 @@
 			padding-bottom: 0.5rem;
 			border-bottom: 0.2rem $green solid;
 		}
-	}
-
-	&__dataInfoWrapper {
-		@extend .p-0;
 	}
 
 	&__dataCopy {
