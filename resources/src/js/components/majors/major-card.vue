@@ -4,8 +4,8 @@
 				<major-form class="csu-card__form" :index="index"/>
 			</aside>
 			<div class="col-md-9">
-				<card class="csu-card">
-					<div class="container-fluid my-0">
+				<card class="csu-card container-fluid">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
 								<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
