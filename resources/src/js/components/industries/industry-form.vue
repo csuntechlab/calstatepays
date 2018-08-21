@@ -1,5 +1,5 @@
 <template>
-    <form class="container-fluid py-4">
+    <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
 			<div class="form-group">
 				<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">

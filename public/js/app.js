@@ -45856,8 +45856,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -46162,6 +46160,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
 //
 //
 //
@@ -46923,7 +46923,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "container-fluid py-4" }, [
+  return _c("form", { staticClass: "container-fluid csu-card__form" }, [
     _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
       _c("div", { staticClass: "form-group" }, [
         _c(
@@ -47021,37 +47021,41 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "form-group row justify-content-between" }, [
-            _c("label", { attrs: { for: "freshman" } }, [
-              _vm._v("First Time Freshman:")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.education,
-                  expression: "form.education"
-                }
-              ],
-              attrs: {
-                for: "freshman",
-                type: "radio",
-                id: "freshman",
-                value: "FTF"
-              },
-              domProps: { checked: _vm._q(_vm.form.education, "FTF") },
-              on: {
-                input: function($event) {
-                  _vm.updateSelect("education", $event.target)
+          _c(
+            "div",
+            { staticClass: "form-group row justify-content-between mb-0" },
+            [
+              _c("label", { attrs: { for: "freshman" } }, [
+                _vm._v("First Time Freshman:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.education,
+                    expression: "form.education"
+                  }
+                ],
+                attrs: {
+                  for: "freshman",
+                  type: "radio",
+                  id: "freshman",
+                  value: "FTF"
                 },
-                change: function($event) {
-                  _vm.$set(_vm.form, "education", "FTF")
+                domProps: { checked: _vm._q(_vm.form.education, "FTF") },
+                on: {
+                  input: function($event) {
+                    _vm.updateSelect("education", $event.target)
+                  },
+                  change: function($event) {
+                    _vm.$set(_vm.form, "education", "FTF")
+                  }
                 }
-              }
-            })
-          ]),
+              })
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "form-group row justify-content-between" }, [
             _c("label", { attrs: { for: "transfer" } }, [
@@ -48864,19 +48868,7 @@ var render = function() {
       _c("div", { staticClass: "row graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-lg-3 col-12" },
-              [
-                _c(
-                  "card",
-                  { staticClass: "csu-card__form" },
-                  [_c("pfre-form")],
-                  1
-                )
-              ],
-              1
-            ),
+            _c("div", { staticClass: "col-lg-3 col-12" }, [_c("pfre-form")], 1),
             _vm._v(" "),
             _c(
               "div",
@@ -49344,8 +49336,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -49424,10 +49414,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
-//
 //
 //
 //
@@ -49623,16 +49609,17 @@ var render = function() {
   return _c(
     "form",
     {
-      staticClass: "form--inverted form--degreeLevel",
+      staticClass: "container-fluid",
       attrs: { id: "majorForm-" + _vm.form.cardIndex }
     },
     [
-      _c("fieldset", [
+      _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
         !_vm.selectedFormWasSubmitted
-          ? _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+          ? _c("div", [
               _c(
                 "div",
                 {
+                  staticClass: "form-group",
                   class: [
                     this.formNotFilled
                       ? "required-field"
@@ -49641,159 +49628,147 @@ var render = function() {
                 },
                 [
                   _c("i", { staticClass: "fas fa-exclamation-circle" }),
-                  _vm._v(" Please select a Campus and Major.\n                ")
+                  _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
                 ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "row row--condensed mt-3" }, [
-                _c(
-                  "div",
-                  { staticClass: "col col-12" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        style: [
-                          this.submittedOnce && !this.form.schoolId
-                            ? _vm.errorLabel
-                            : ""
-                        ],
-                        attrs: { for: "campus" }
-                      },
-                      [_vm._v("\n                        Select a Campus")]
-                    ),
-                    _vm._v(" "),
-                    _c("v-select", {
-                      staticClass: "csu-form-input-major",
-                      class: {
-                        "border-danger":
-                          this.submittedOnce && !this.form.schoolId
-                      },
-                      attrs: { label: "name", options: _vm.universities },
-                      on: {
-                        input: function($event) {
-                          _vm.updateSelect("schoolId", "id", $event)
-                        },
-                        change: function($event) {
-                          _vm.updateSelect("schoolId", "id", $event)
-                        }
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row row--condensed mt-3" }, [
-                _c(
-                  "div",
-                  { staticClass: "col col-12" },
-                  [
-                    _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                      _vm._v("Select a Discipline (Optional)")
-                    ]),
-                    _vm._v(" "),
-                    _c("v-select", {
-                      staticClass: "csu-form-input",
-                      attrs: {
-                        label: "discipline",
-                        options: _vm.fieldOfStudies
-                      },
-                      on: {
-                        input: function($event) {
-                          _vm.updateSelect("fieldOfStudyId", "id", $event)
-                        },
-                        change: function($event) {
-                          _vm.updateSelect("fieldOfStudyId", "id", $event)
-                        }
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row row--condensed mt-3" }, [
-                _c(
-                  "div",
-                  { staticClass: "col col-12" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        style: [
-                          this.submittedOnce && !this.form.majorId
-                            ? _vm.errorLabel
-                            : ""
-                        ],
-                        attrs: { for: "Major" }
-                      },
-                      [_vm._v("\n                        Select a Major")]
-                    ),
-                    _vm._v(" "),
-                    this.form.fieldOfStudyId == null
-                      ? _c("v-select", {
-                          staticClass: "csu-form-input-major",
-                          class: {
-                            "border-danger":
-                              this.submittedOnce && !this.form.majorId
-                          },
-                          attrs: { label: "major", options: _vm.majors },
-                          on: {
-                            input: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            }
-                          },
-                          model: {
-                            value: _vm.selected,
-                            callback: function($$v) {
-                              _vm.selected = $$v
-                            },
-                            expression: "selected"
-                          }
-                        })
-                      : _c("v-select", {
-                          staticClass: "csu-form-input-major",
-                          attrs: {
-                            label: "major",
-                            options: _vm.selectedMajorsByField
-                          },
-                          on: {
-                            input: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            }
-                          },
-                          model: {
-                            value: _vm.selected,
-                            callback: function($$v) {
-                              _vm.selected = $$v
-                            },
-                            expression: "selected"
-                          }
-                        })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row row--condensed" }, [
-                _c("div", { staticClass: "py-4" }, [
+              _c(
+                "div",
+                { staticClass: "form-group" },
+                [
                   _c(
-                    "button",
+                    "label",
                     {
-                      staticClass: "btn btn-success btn-submit",
-                      attrs: { type: "button" },
-                      on: { click: _vm.submitForm }
+                      style: [
+                        this.submittedOnce && !this.form.schoolId
+                          ? _vm.errorLabel
+                          : ""
+                      ],
+                      attrs: { for: "campus" }
                     },
-                    [_vm._v("Submit")]
-                  )
-                ])
+                    [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    staticClass: "csu-form-input-major",
+                    class: {
+                      "border-danger": this.submittedOnce && !this.form.schoolId
+                    },
+                    attrs: { label: "name", options: _vm.universities },
+                    on: {
+                      input: function($event) {
+                        _vm.updateSelect("schoolId", "id", $event)
+                      },
+                      change: function($event) {
+                        _vm.updateSelect("schoolId", "id", $event)
+                      }
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form-group" },
+                [
+                  _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                    _vm._v("Select a Discipline (Optional)")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    staticClass: "csu-form-input",
+                    attrs: { label: "discipline", options: _vm.fieldOfStudies },
+                    on: {
+                      input: function($event) {
+                        _vm.updateSelect("fieldOfStudyId", "id", $event)
+                      },
+                      change: function($event) {
+                        _vm.updateSelect("fieldOfStudyId", "id", $event)
+                      }
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form-group" },
+                [
+                  _c(
+                    "label",
+                    {
+                      style: [
+                        this.submittedOnce && !this.form.majorId
+                          ? _vm.errorLabel
+                          : ""
+                      ],
+                      attrs: { for: "Major" }
+                    },
+                    [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
+                  ),
+                  _vm._v(" "),
+                  this.form.fieldOfStudyId == null
+                    ? _c("v-select", {
+                        staticClass: "csu-form-input-major",
+                        class: {
+                          "border-danger":
+                            this.submittedOnce && !this.form.majorId
+                        },
+                        attrs: { label: "major", options: _vm.majors },
+                        on: {
+                          input: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          },
+                          change: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          }
+                        },
+                        model: {
+                          value: _vm.selected,
+                          callback: function($$v) {
+                            _vm.selected = $$v
+                          },
+                          expression: "selected"
+                        }
+                      })
+                    : _c("v-select", {
+                        staticClass: "csu-form-input-major",
+                        attrs: {
+                          label: "major",
+                          options: _vm.selectedMajorsByField
+                        },
+                        on: {
+                          input: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          },
+                          change: function($event) {
+                            _vm.updateSelect("majorId", "majorId", $event)
+                          }
+                        },
+                        model: {
+                          value: _vm.selected,
+                          callback: function($$v) {
+                            _vm.selected = $$v
+                          },
+                          expression: "selected"
+                        }
+                      })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success btn-submit",
+                    attrs: { type: "button" },
+                    on: { click: _vm.submitForm }
+                  },
+                  [_vm._v("Submit")]
+                )
               ])
             ])
           : _c("div", [
@@ -49839,7 +49814,7 @@ var render = function() {
                         this.educationLevel(this.index) != "allDegrees"
                     }
                   }),
-                  _vm._v("\n                All Levels")
+                  _vm._v("\n                All Levels\n\t\t\t")
                 ]
               ),
               _vm._v(" "),
@@ -49869,7 +49844,7 @@ var render = function() {
                         this.educationLevel(this.index) != "postBacc"
                     }
                   }),
-                  _vm._v("\n                Post Bacc")
+                  _vm._v("\n                Post Bacc\n\t\t\t")
                 ]
               ),
               _vm._v(" "),
@@ -49899,7 +49874,7 @@ var render = function() {
                         this.educationLevel(this.index) != "bachelors"
                     }
                   }),
-                  _vm._v("\n                Bachelors")
+                  _vm._v("\n                Bachelors\n\t\t\t")
                 ]
               ),
               _vm._v(" "),
@@ -49929,7 +49904,7 @@ var render = function() {
                         this.educationLevel(this.index) != "someCollege"
                     }
                   }),
-                  _vm._v("\n                Some College")
+                  _vm._v("\n                Some College\n\t\t\t")
                 ]
               )
             ])
@@ -67747,15 +67722,13 @@ var render = function() {
     { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
     [
       _c(
-        "div",
+        "aside",
         { staticClass: "col-md-3" },
         [
-          _c(
-            "card",
-            { staticClass: "csu-card__form container-fluid" },
-            [_c("major-form", { attrs: { index: _vm.index } })],
-            1
-          )
+          _c("major-form", {
+            staticClass: "csu-card__form",
+            attrs: { index: _vm.index }
+          })
         ],
         1
       ),
@@ -67998,14 +67971,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -68211,62 +68176,45 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+    {
+      staticClass: "csu-card row",
+      attrs: { id: "majorCardHasIndex-" + this.index }
+    },
     [
-      _c("card", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "csu-card__form" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "h3",
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("i", {
+            directives: [
               {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.selectedFormWasSubmitted,
-                    expression: "selectedFormWasSubmitted"
-                  }
-                ],
-                staticClass: "industry-title"
-              },
-              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-            )
-          ]),
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isNotFirstCard,
+                expression: "isNotFirstCard"
+              }
+            ],
+            staticClass: "fas fa-times btn-remove float-right",
+            attrs: { title: "Close" },
+            on: { click: _vm.removeCurrentCard }
+          }),
           _vm._v(" "),
+          _c("i", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isEmpty,
+                expression: "isEmpty"
+              }
+            ],
+            staticClass: "fas fa-sync-alt btn-reset float-right",
+            attrs: { title: "Reset" },
+            on: { click: _vm.resetCurrentCard }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
           _c(
-            "div",
+            "h3",
             {
               directives: [
                 {
@@ -68276,85 +68224,88 @@ var render = function() {
                   expression: "selectedFormWasSubmitted"
                 }
               ],
-              staticClass: "row",
-              staticStyle: { height: "400px" }
+              staticClass: "industry-title"
             },
-            [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("major-graph-wrapper", {
-                    attrs: {
-                      id: "majorGraphContainer",
-                      majorData: _vm.selectedMajorData,
-                      educationLevel: _vm.selectedEducationLevel,
-                      windowWidth: _vm.windowWidth
-                    }
-                  })
-                ],
-                1
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
+            [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.selectedFormWasSubmitted,
+                expression: "selectedFormWasSubmitted"
+              }
+            ],
+            staticClass: "row",
+            staticStyle: { height: "400px" }
+          },
+          [
+            _c("major-graph-wrapper", {
+              attrs: {
+                id: "majorGraphContainer",
+                majorData: _vm.selectedMajorData,
+                educationLevel: _vm.selectedEducationLevel,
+                windowWidth: _vm.windowWidth
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row justify-content-center" },
+          [
+            _c("major-legend", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedFormWasSubmitted,
+                  expression: "selectedFormWasSubmitted"
+                }
               ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-3" }, [
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [
-                _c("industry-mobile", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: {
-                    industries: _vm.selectedIndustries,
-                    majorId: _vm.selectedMajorId
-                  }
-                })
+              attrs: { educationLevel: _vm.selectedEducationLevel }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          [_c("major-form", { attrs: { index: _vm.index } })],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _c("industry-mobile", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.selectedFormWasSubmitted,
+                  expression: "selectedFormWasSubmitted"
+                }
               ],
-              1
-            )
-          ])
-        ])
+              attrs: {
+                industries: _vm.selectedIndustries,
+                majorId: _vm.selectedMajorId
+              }
+            })
+          ],
+          1
+        )
       ])
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
@@ -68980,7 +68931,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "container-fluid py-4" }, [
+  return _c("form", { staticClass: "container-fluid csu-card__form" }, [
     _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
       _c("div", { staticClass: "form-group" }, [
         _c(
@@ -69144,7 +69095,7 @@ var render = function() {
             _c(
               "aside",
               { staticClass: "col-lg-3 col-12" },
-              [_c("industry-form", { staticClass: "csu-card__form" })],
+              [_c("industry-form")],
               1
             ),
             _vm._v(" "),

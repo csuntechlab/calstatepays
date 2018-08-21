@@ -1,5 +1,5 @@
 <template>
-    <form class="container-fluid py-4">
+    <form class="container-fluid csu-card__form">
         <fieldset class="csu-card__form-sizing">
             <div class="form-group">
                 <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
@@ -20,10 +20,12 @@
                 </v-select>
             </div>
             <div class="form-group">
-                <label for="age" v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']">
+                <label 
+                    for="age" 
+                    v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']">
                     Select an Age Range
                 </label>
-                <v-select 
+                <v-select
                     label="age"
                     :options="ageRanges"
                     @input="updateSelect('age', $event)"
@@ -36,7 +38,7 @@
                         Select an Education Level
                     </label>
                     <div class="col-12">
-                        <div class="form-group row justify-content-between">
+                        <div class="form-group row justify-content-between mb-0">
                         <label for="freshman">First Time Freshman:</label>
                         <input for="freshman" type="radio" id="freshman" v-model="form.education" value="FTF" @input="updateSelect('education', $event.target)">
                     </div>

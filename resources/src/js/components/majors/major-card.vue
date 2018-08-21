@@ -1,10 +1,8 @@
 <template>
     <div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
-			<div class="col-md-3">
-				<card class="csu-card__form container-fluid">
-					<major-form :index="index"/>
-				</card>
-			</div>
+			<aside class="col-md-3">
+				<major-form class="csu-card__form" :index="index"/>
+			</aside>
 			<div class="col-md-9">
 				<card class="csu-card">
 					<div class="container-fluid my-0">

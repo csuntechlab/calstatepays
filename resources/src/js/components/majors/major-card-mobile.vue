@@ -1,39 +1,31 @@
 <template>
-    <div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
-        <card class="col-12">
-                <div class="csu-card__form">
-                    <div class="row">
-                    <div class="col">
-                        <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-                        <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
-                </div>
-                <div class="row" v-show="selectedFormWasSubmitted" style="height: 400px" >
-                    <div class="col-12">
-                        <major-graph-wrapper id="majorGraphContainer" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <major-form :index="index"/>                    
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-12">
-                        <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
-                    </div>
-                </div>
-                </div>
-        </card>
-    </div>
+        <div class="csu-card row" v-bind:id="'majorCardHasIndex-' + this.index">
+            <div class="row">
+                <div class="col">
+                    <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+                    <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+            </div>
+            <div class="row">
+                <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+            </div>
+            <div class="row" v-show="selectedFormWasSubmitted" style="height: 400px" >
+                
+                    <major-graph-wrapper id="majorGraphContainer" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+            </div>
+            <div class="row justify-content-center">
+                
+                    <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"/>
+            </div>
+            <div class="row">
+                
+                    <major-form :index="index"/>                    
+            </div>
+            <div class="row">
+                
+                    <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
+            </div>
+            </div>
+        </div>
 </template>
 <script>
 import majorForm from './major-form.vue';
