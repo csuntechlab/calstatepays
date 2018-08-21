@@ -33,9 +33,9 @@ class JsonIndustry:
     for index,row in industryPathTypesDf.iterrows():
       hegis = (str)(row[4])
       campus = (str)(row[5])
-      print(hegis)
+      # print(hegis)
       uni_majors_id = self.dictionary[campus][hegis]
-      print(uni_majors_id) 
+      # print(uni_majors_id) 
       industryPathTypesDf.ix[index,'university_majors_id'] = uni_majors_id
 
     return industryPathTypesDf
@@ -43,36 +43,30 @@ class JsonIndustry:
   def jsonSanitizeWages(self,fileName): 
 
     import json
-    json_data = json.load(open(self.file+'.json'))
+    json_data = json.load(open(fileName+'.json'))
     for i in range(0, len(json_data)):
-        if(json_data[i]["naics"]!=None):
-            json_data[i]["naics"]= int(json_data[i]["naics"])
-        if(json_data[i]["number_of_students_found_5_years_after_exit"]!=None):
-            json_data[i]["number_of_students_found_5_years_after_exit"] = int(json_data[i]["number_of_students_found_5_years_after_exit"])
-        if(json_data[i]["median_annual_earnings_5_years_after_exit"]!=None):
-            json_data[i]["median_annual_earnings_5_years_after_exit"] = int(json_data[i]["median_annual_earnings_5_years_after_exit"])
-        if(json_data[i]["average_annual_earnings_5_years_after_exit"]!=None):
-            json_data[i]["average_annual_earnings_5_years_after_exit"] = int(json_data[i]["average_annual_earnings_5_years_after_exit"])
+        if(json_data[i]["avg_annual_wage_5"]!=None):
+            json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
 
-    with open(self.file+'.json', 'w') as outfile:
+    with open(fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
 
   def jsonSanitizeNaics(self,fileName):
 
     import json
-    json_data = json.load(open(self.file+'.json'))
+    json_data = json.load(open(fileName+'.json'))
     for i in range(0, len(json_data)):
-        if(json_data[i]["naics"]!=None):
-            json_data[i]["naics"]= int(json_data[i]["naics"])
+        if(json_data[i]["naics_codes"]!=None):
+            json_data[i]["naics_codes"]= int(json_data[i]["naics_codes"])
 
-    with open(self.file+'.json', 'w') as outfile:
+    with open(fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
 
-  def masterPathWagesToJson(self):
-    with open (self.file+'_Dictionary.json', 'w' ) as fp:
-        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()  
-  return
+  # def masterPathWagesToJson(self):
+  #   with open (self.file+'_Dictionary.json', 'w' ) as fp:
+  #       fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+  #   fp.close()  
+  
     
 
 

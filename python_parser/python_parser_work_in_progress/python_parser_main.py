@@ -59,10 +59,11 @@ class IterateCsvFiles():
         
         # JSon Outputs 
         jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
-        # jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
-        # jsonIndustry.jsonOutput(fileName+"_naics_titles",naics_titlesDf)
-        # jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
-        # jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
+        jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
+        jsonIndustry.jsonOutput(fileName+"_naics_titles",naics_titlesDf)
+        jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
+        jsonIndustry.jsonSanitizeNaics(fileName+"_industry_path")
+        jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
 
         del industrySanitize
         del industryDataFrame
