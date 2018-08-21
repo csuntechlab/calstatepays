@@ -80,27 +80,6 @@ class SanitizeIndustry(DataFrame):
         for column in self.df:
             pd.Series(column).map(mapper)
     
-    def jsonBuilder(self):
-        output = self.df.to_dict(orient='record')
-
-        with open (self.file+'.json', 'w' ) as fp:
-          fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-        fp.close()
-
-        import json
-        json_data = json.load(open(self.file+'.json'))
-        for i in range(0, len(json_data)):
-            if(json_data[i]["naics"]!=None):
-                json_data[i]["naics"]= int(json_data[i]["naics"])
-            if(json_data[i]["number_of_students_found_5_years_after_exit"]!=None):
-                json_data[i]["number_of_students_found_5_years_after_exit"] = int(json_data[i]["number_of_students_found_5_years_after_exit"])
-            if(json_data[i]["median_annual_earnings_5_years_after_exit"]!=None):
-                json_data[i]["median_annual_earnings_5_years_after_exit"] = int(json_data[i]["median_annual_earnings_5_years_after_exit"])
-            if(json_data[i]["average_annual_earnings_5_years_after_exit"]!=None):
-                json_data[i]["average_annual_earnings_5_years_after_exit"] = int(json_data[i]["average_annual_earnings_5_years_after_exit"])
-
-        with open(self.file+'.json', 'w') as outfile:
-            json.dump(json_data, outfile, indent=4)
 
     def industryDF(self):
         # industryPathTypes = self.df.loc[:,['entry_status','naics','student_path','hegis_at_exit','campus']]
