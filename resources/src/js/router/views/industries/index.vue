@@ -13,11 +13,11 @@
     <div class="row graphContent">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-12">
-            <industry-form class="csu-card__form" />
-          </div>
+          <aside class="col-lg-3 col-12">
+            <industry-form class="csu-card__form"/>
+          </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress class="card-item industry-card" />
+            <industry-progress class="card-item industry-card"/>
           </div>
         </div>
       </div>

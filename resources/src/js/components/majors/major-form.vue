@@ -1,6 +1,7 @@
 <template>
-    <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
-        <div class="form__group csu-card__form-sizing" v-if="!selectedFormWasSubmitted">
+    <form class="form--inverted form--degreeLevel" v-bind:id="'majorForm-' + form.cardIndex">
+		<fieldset>
+			<div class="form__group csu-card__form-sizing" v-if="!selectedFormWasSubmitted">
                 <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
                     <i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
                 </div>
@@ -61,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div v-else>
+			<div v-else>
             <p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
             <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
                 <i class="major-btn_icon" 
@@ -80,6 +81,7 @@
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'far fa-circle':this.educationLevel(this.index) != 'someCollege'}"></i>
                 Some College</button>
         </div>
+		</fieldset>
     </form>
 </template>
 

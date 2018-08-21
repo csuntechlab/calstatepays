@@ -46242,10 +46242,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -46927,11 +46923,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    { staticClass: "form--inverted form--degreeLevel container mb-4 mb-0-md" },
-    [
-      _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+  return _c("form", { staticClass: "container-fluid py-4" }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c("div", { staticClass: "form-group" }, [
         _c(
           "div",
           {
@@ -46941,101 +46935,96 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fas fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n        ")
+            _vm._v(" Please fill out all fields.\n            ")
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.majorId ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "Major" }
+            },
+            [_vm._v("\n                Select a Major\n            ")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.majorId
+            },
+            attrs: { label: "major", options: _vm.majors },
+            on: {
+              input: function($event) {
+                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+              },
+              change: function($event) {
+                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "age" }
+            },
+            [_vm._v("\n                Select an Age Range\n            ")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: { "border-danger": this.submittedOnce && !this.form.age },
+            attrs: { label: "age", options: _vm.ageRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("age", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "label",
+          {
+            staticClass: "form-group",
+            style: [
+              this.submittedOnce && !this.form.education ? _vm.errorLabel : ""
+            ],
+            attrs: { for: "education" }
+          },
+          [
+            _vm._v(
+              "\n                    Select an Education Level\n                "
+            )
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.majorId
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "Major" }
-                },
-                [_vm._v("\n                    Select a Major")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.majorId
-                },
-                attrs: { label: "major", options: _vm.majors },
-                on: {
-                  input: function($event) {
-                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
-                  ],
-                  attrs: { for: "age" }
-                },
-                [_vm._v("\n                   Select an Age Range")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.age
-                },
-                attrs: { label: "age", options: _vm.ageRanges },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("age", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
-            _c(
-              "label",
-              {
-                style: [
-                  this.submittedOnce && !this.form.education
-                    ? _vm.errorLabel
-                    : ""
-                ],
-                attrs: { for: "education" }
-              },
-              [_vm._v("\n                    Select an Education Level")]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "label--radio", attrs: { for: "freshman" } },
-              [_vm._v("First Time Freshman:")]
-            ),
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "form-group row justify-content-between" }, [
+            _c("label", { attrs: { for: "freshman" } }, [
+              _vm._v("First Time Freshman:")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -47046,7 +47035,6 @@ var render = function() {
                   expression: "form.education"
                 }
               ],
-              staticClass: "mx-2 mt-1",
               attrs: {
                 for: "freshman",
                 type: "radio",
@@ -47063,16 +47051,12 @@ var render = function() {
                 }
               }
             })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
-            _c(
-              "label",
-              { staticClass: "label--radio", attrs: { for: "transfer" } },
-              [_vm._v("\n                    First Time Transfer")]
-            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row justify-content-between" }, [
+            _c("label", { attrs: { for: "transfer" } }, [
+              _vm._v("First Time Transfer")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -47083,7 +47067,6 @@ var render = function() {
                   expression: "form.education"
                 }
               ],
-              staticClass: "mx-2 mt-1",
               attrs: {
                 for: "transfer",
                 type: "radio",
@@ -47101,115 +47084,105 @@ var render = function() {
               }
             })
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
           _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.earnings
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "earnings" }
-                },
-                [
-                  _vm._v(
-                    "\n                    Estimated Annual Earnings In School"
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.earnings
-                },
-                attrs: { label: "earn", options: _vm.earningRanges },
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.earnings ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "earnings" }
+            },
+            [_vm._v("\n                Estimated Annual Earnings In School")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.earnings
+            },
+            attrs: { label: "earn", options: _vm.earningRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("earnings", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("earnings", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.financialAid
+                  ? _vm.errorLabel
+                  : ""
+              ],
+              attrs: { for: "financialAid" }
+            },
+            [_vm._v("\n                    Estimated Annual Financial Aid")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.financialAid
+            },
+            attrs: { label: "finAid", options: _vm.financialAidRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("financialAid", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("financialAid", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row row--condensed",
+          attrs: { id: "submit-btn-container" }
+        },
+        [
+          _c("div", { staticClass: "py-2" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success btn-submit",
+                attrs: { id: "submit-btn", type: "button" },
                 on: {
-                  input: function($event) {
-                    _vm.updateSelect("earnings", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("earnings", $event)
+                  click: function($event) {
+                    _vm.submitForm()
                   }
                 }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.financialAid
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "financialAid" }
-                },
-                [_vm._v("\n                    Estimated Annual Financial Aid")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.financialAid
-                },
-                attrs: { label: "finAid", options: _vm.financialAidRanges },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("financialAid", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("financialAid", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "row row--condensed",
-            attrs: { id: "submit-btn-container" }
-          },
-          [
-            _c("div", { staticClass: "py-2" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success btn-submit",
-                  attrs: { id: "submit-btn", type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.submitForm()
-                    }
-                  }
-                },
-                [_vm._v("Submit")]
-              )
-            ])
-          ]
-        )
-      ])
-    ]
-  )
+              },
+              [_vm._v("Submit")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49536,6 +49509,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -49648,311 +49623,317 @@ var render = function() {
   return _c(
     "form",
     {
-      staticClass: "form--inverted form--degreeLevel mb-4 mb-0-md",
+      staticClass: "form--inverted form--degreeLevel",
       attrs: { id: "majorForm-" + _vm.form.cardIndex }
     },
     [
-      !_vm.selectedFormWasSubmitted
-        ? _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
-            _c(
-              "div",
-              {
-                class: [
-                  this.formNotFilled
-                    ? "required-field"
-                    : "required-field--hidden"
+      _c("fieldset", [
+        !_vm.selectedFormWasSubmitted
+          ? _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+              _c(
+                "div",
+                {
+                  class: [
+                    this.formNotFilled
+                      ? "required-field"
+                      : "required-field--hidden"
+                  ]
+                },
+                [
+                  _c("i", { staticClass: "fas fa-exclamation-circle" }),
+                  _vm._v(" Please select a Campus and Major.\n                ")
                 ]
-              },
-              [
-                _c("i", { staticClass: "fas fa-exclamation-circle" }),
-                _vm._v(" Please select a Campus and Major.\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.schoolId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "campus" }
-                    },
-                    [_vm._v("\n                    Select a Campus")]
-                  ),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input-major",
-                    class: {
-                      "border-danger": this.submittedOnce && !this.form.schoolId
-                    },
-                    attrs: { label: "name", options: _vm.universities },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                    _vm._v("Select a Discipline (Optional)")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input",
-                    attrs: { label: "discipline", options: _vm.fieldOfStudies },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.majorId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "Major" }
-                    },
-                    [_vm._v("\n                    Select a Major")]
-                  ),
-                  _vm._v(" "),
-                  this.form.fieldOfStudyId == null
-                    ? _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        class: {
-                          "border-danger":
-                            this.submittedOnce && !this.form.majorId
-                        },
-                        attrs: { label: "major", options: _vm.majors },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                    : _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        attrs: {
-                          label: "major",
-                          options: _vm.selectedMajorsByField
-                        },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
-              _c("div", { staticClass: "py-4" }, [
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "row row--condensed mt-3" }, [
                 _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success btn-submit",
-                    attrs: { type: "button" },
-                    on: { click: _vm.submitForm }
-                  },
-                  [_vm._v("Submit")]
+                  "div",
+                  { staticClass: "col col-12" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        style: [
+                          this.submittedOnce && !this.form.schoolId
+                            ? _vm.errorLabel
+                            : ""
+                        ],
+                        attrs: { for: "campus" }
+                      },
+                      [_vm._v("\n                        Select a Campus")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-select", {
+                      staticClass: "csu-form-input-major",
+                      class: {
+                        "border-danger":
+                          this.submittedOnce && !this.form.schoolId
+                      },
+                      attrs: { label: "name", options: _vm.universities },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("schoolId", "id", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("schoolId", "id", $event)
+                        }
+                      }
+                    })
+                  ],
+                  1
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row row--condensed mt-3" }, [
+                _c(
+                  "div",
+                  { staticClass: "col col-12" },
+                  [
+                    _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                      _vm._v("Select a Discipline (Optional)")
+                    ]),
+                    _vm._v(" "),
+                    _c("v-select", {
+                      staticClass: "csu-form-input",
+                      attrs: {
+                        label: "discipline",
+                        options: _vm.fieldOfStudies
+                      },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("fieldOfStudyId", "id", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("fieldOfStudyId", "id", $event)
+                        }
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row row--condensed mt-3" }, [
+                _c(
+                  "div",
+                  { staticClass: "col col-12" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        style: [
+                          this.submittedOnce && !this.form.majorId
+                            ? _vm.errorLabel
+                            : ""
+                        ],
+                        attrs: { for: "Major" }
+                      },
+                      [_vm._v("\n                        Select a Major")]
+                    ),
+                    _vm._v(" "),
+                    this.form.fieldOfStudyId == null
+                      ? _c("v-select", {
+                          staticClass: "csu-form-input-major",
+                          class: {
+                            "border-danger":
+                              this.submittedOnce && !this.form.majorId
+                          },
+                          attrs: { label: "major", options: _vm.majors },
+                          on: {
+                            input: function($event) {
+                              _vm.updateSelect("majorId", "majorId", $event)
+                            },
+                            change: function($event) {
+                              _vm.updateSelect("majorId", "majorId", $event)
+                            }
+                          },
+                          model: {
+                            value: _vm.selected,
+                            callback: function($$v) {
+                              _vm.selected = $$v
+                            },
+                            expression: "selected"
+                          }
+                        })
+                      : _c("v-select", {
+                          staticClass: "csu-form-input-major",
+                          attrs: {
+                            label: "major",
+                            options: _vm.selectedMajorsByField
+                          },
+                          on: {
+                            input: function($event) {
+                              _vm.updateSelect("majorId", "majorId", $event)
+                            },
+                            change: function($event) {
+                              _vm.updateSelect("majorId", "majorId", $event)
+                            }
+                          },
+                          model: {
+                            value: _vm.selected,
+                            callback: function($$v) {
+                              _vm.selected = $$v
+                            },
+                            expression: "selected"
+                          }
+                        })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row row--condensed" }, [
+                _c("div", { staticClass: "py-4" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success btn-submit",
+                      attrs: { type: "button" },
+                      on: { click: _vm.submitForm }
+                    },
+                    [_vm._v("Submit")]
+                  )
+                ])
               ])
             ])
-          ])
-        : _c("div", [
-            _c(
-              "p",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center h3 majors-header my-5-md my-4"
-              },
-              [_vm._v("Select a Degree Level")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm major-btn_all",
-                class: {
-                  "selected-btn_all":
-                    this.educationLevel(this.index) == "allDegrees"
+          : _c("div", [
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "text-center h3 majors-header my-5-md my-4"
                 },
-                attrs: { id: "allDegrees-" + _vm.form.cardIndex },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.toggleEducationLevel("allDegrees")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "major-btn_icon",
+                [_vm._v("Select a Degree Level")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_all",
                   class: {
-                    "fas fa-check-circle":
-                      this.educationLevel(this.index) == "allDegrees",
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "allDegrees"
+                    "selected-btn_all":
+                      this.educationLevel(this.index) == "allDegrees"
+                  },
+                  attrs: { id: "allDegrees-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleEducationLevel("allDegrees")
+                    }
                   }
-                }),
-                _vm._v("\n            All Levels")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm major-btn_postBacc",
-                class: {
-                  "selected-btn_postBacc":
-                    this.educationLevel(this.index) == "postBacc"
                 },
-                attrs: { id: "postBacc-" + _vm.form.cardIndex },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.toggleEducationLevel("postBacc")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "major-btn_icon",
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fas fa-check-circle":
+                        this.educationLevel(this.index) == "allDegrees",
+                      "far fa-circle":
+                        this.educationLevel(this.index) != "allDegrees"
+                    }
+                  }),
+                  _vm._v("\n                All Levels")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_postBacc",
                   class: {
-                    "fas fa-check-circle":
-                      this.educationLevel(this.index) == "postBacc",
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "postBacc"
+                    "selected-btn_postBacc":
+                      this.educationLevel(this.index) == "postBacc"
+                  },
+                  attrs: { id: "postBacc-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleEducationLevel("postBacc")
+                    }
                   }
-                }),
-                _vm._v("\n            Post Bacc")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm major-btn_bachelors",
-                class: {
-                  "selected-btn_bachelors":
-                    this.educationLevel(this.index) == "bachelors"
                 },
-                attrs: { id: "bachelors-" + _vm.form.cardIndex },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.toggleEducationLevel("bachelors")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "major-btn_icon",
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fas fa-check-circle":
+                        this.educationLevel(this.index) == "postBacc",
+                      "far fa-circle":
+                        this.educationLevel(this.index) != "postBacc"
+                    }
+                  }),
+                  _vm._v("\n                Post Bacc")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_bachelors",
                   class: {
-                    "fas fa-check-circle":
-                      this.educationLevel(this.index) == "bachelors",
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "bachelors"
+                    "selected-btn_bachelors":
+                      this.educationLevel(this.index) == "bachelors"
+                  },
+                  attrs: { id: "bachelors-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleEducationLevel("bachelors")
+                    }
                   }
-                }),
-                _vm._v("\n            Bachelors")
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm major-btn_someCollege",
-                class: {
-                  "selected-btn_someCollege":
-                    this.educationLevel(this.index) == "someCollege"
                 },
-                attrs: { id: "someCollege-" + _vm.form.cardIndex },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.toggleEducationLevel("someCollege")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "major-btn_icon",
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fas fa-check-circle":
+                        this.educationLevel(this.index) == "bachelors",
+                      "far fa-circle":
+                        this.educationLevel(this.index) != "bachelors"
+                    }
+                  }),
+                  _vm._v("\n                Bachelors")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_someCollege",
                   class: {
-                    "fas fa-check-circle":
-                      this.educationLevel(this.index) == "someCollege",
-                    "far fa-circle":
-                      this.educationLevel(this.index) != "someCollege"
+                    "selected-btn_someCollege":
+                      this.educationLevel(this.index) == "someCollege"
+                  },
+                  attrs: { id: "someCollege-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleEducationLevel("someCollege")
+                    }
                   }
-                }),
-                _vm._v("\n            Some College")
-              ]
-            )
-          ])
+                },
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fas fa-check-circle":
+                        this.educationLevel(this.index) == "someCollege",
+                      "far fa-circle":
+                        this.educationLevel(this.index) != "someCollege"
+                    }
+                  }),
+                  _vm._v("\n                Some College")
+                ]
+              )
+            ])
+      ])
     ]
   )
 }
@@ -67012,7 +66993,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         chartDimensions: function chartDimensions() {
             var currentWidth = window.innerWidth;
-            // var containerSize = document.getElementById('majorGraphContainer').offsetWidth;
             if (this.windowWidth >= 1001) {
                 return {
                     height: 400,
@@ -68026,7 +68006,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -68931,8 +68910,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -69003,11 +68980,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    { staticClass: "form--inverted form--degreeLevel container mb-4 mb-0-md" },
-    [
-      _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+  return _c("form", { staticClass: "container-fluid py-4" }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c("div", { staticClass: "form-group" }, [
         _c(
           "div",
           {
@@ -69017,109 +68992,101 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fas fa-exclamation-circle" }),
-            _vm._v(" Please select a Campus and Major.\n                ")
+            _vm._v(" Please select a Campus and Major.\n\t\t\t\t")
           ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed mt-3" }, [
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
           _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    !this.form.university && this.submittedOnce
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "campus" }
-                },
-                [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": !this.form.university && this.submittedOnce
-                },
-                attrs: { label: "name", options: _vm.universities },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("university", "id", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("university", "id", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed mt-3" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    !this.form.majorId && this.submittedOnce
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "Major" }
-                },
-                [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": !this.form.majorId && this.submittedOnce
-                },
-                attrs: { label: "major", options: _vm.majors },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("majorId", "majorId", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("majorId", "majorId", $event)
-                  }
-                },
-                model: {
-                  value: _vm.selected,
-                  callback: function($$v) {
-                    _vm.selected = $$v
-                  },
-                  expression: "selected"
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "py-4" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success btn-submit",
-                attrs: { id: "submit-btn", type: "button" },
-                on: { click: _vm.submitForm }
+            "label",
+            {
+              style: [
+                !this.form.university && this.submittedOnce
+                  ? _vm.errorLabel
+                  : ""
+              ],
+              attrs: { for: "campus" }
+            },
+            [_vm._v("\n\t\t\t\t\tSelect a Campus\n\t\t\t\t")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": !this.form.university && this.submittedOnce
+            },
+            attrs: { label: "name", options: _vm.universities },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("university", "id", $event)
               },
-              [_vm._v("Submit")]
-            )
-          ])
-        ])
+              change: function($event) {
+                _vm.updateSelect("university", "id", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                !this.form.majorId && this.submittedOnce ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "Major" }
+            },
+            [_vm._v("\n\t\t\t\t\tSelect a Major\n\t\t\t\t")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": !this.form.majorId && this.submittedOnce
+            },
+            attrs: { label: "major", options: _vm.majors },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("majorId", "majorId", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("majorId", "majorId", $event)
+              }
+            },
+            model: {
+              value: _vm.selected,
+              callback: function($$v) {
+                _vm.selected = $$v
+              },
+              expression: "selected"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group row" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success btn-submit",
+            attrs: { id: "submit-btn", type: "button" },
+            on: { click: _vm.submitForm }
+          },
+          [_vm._v("Submit")]
+        )
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -69175,7 +69142,7 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c(
-              "div",
+              "aside",
               { staticClass: "col-lg-3 col-12" },
               [_c("industry-form", { staticClass: "csu-card__form" })],
               1

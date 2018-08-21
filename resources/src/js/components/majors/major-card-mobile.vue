@@ -32,7 +32,6 @@
                     </div>
                 </div>
                 </div>
-                
         </card>
     </div>
 </template>

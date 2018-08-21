@@ -17,7 +17,7 @@ export default {
                color1: '#000',
                color2: '#000',
                color3: '#FFF',
-            },
+            }
         }
     },
     computed: {
@@ -41,7 +41,6 @@ export default {
         },
         chartDimensions(){
             let currentWidth = window.innerWidth;
-            // var containerSize = document.getElementById('majorGraphContainer').offsetWidth;
             if(this.windowWidth >= 1001) {
                 return {
                     height: 400,

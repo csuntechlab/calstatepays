@@ -7559,7 +7559,7 @@ button.bg-dark:focus {
   margin-right: 1.5rem !important;
 }
 
-.mb-4,
+.mb-4, .csu-card__form,
 .my-4 {
   margin-bottom: 1.5rem !important;
 }
@@ -17869,7 +17869,7 @@ p {
   margin-right: 24px !important;
 }
 
-.mb-4 {
+.mb-4, .csu-card__form {
   margin-bottom: 24px !important;
 }
 
@@ -27021,7 +27021,6 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
   min-height: 75vh;
-  margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -27035,7 +27034,6 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -27068,13 +27066,6 @@ html {
   margin-bottom: 0px;
   margin-top: 50px;
   padding-top: 50px;
-}
-
-.row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .text-gray {

@@ -1,85 +1,81 @@
 <template>
-    <form class="form--inverted form--degreeLevel container mb-4 mb-0-md">
-        <div class="form__group csu-card__form-sizing">
-            <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-                <i class="fas fa-exclamation-circle"></i> Please fill out all fields.
+    <form class="container-fluid py-4">
+        <fieldset class="csu-card__form-sizing">
+            <div class="form-group">
+                <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+                    <i class="fas fa-exclamation-circle"></i> Please fill out all fields.
+                </div>
             </div>
-            <div class="row row--condensed">
-                <div class="col col-12">
-                    <label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
-                        Select a Major</label>
-                    <v-select
+            <div class="form-group">
+                <label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+                    Select a Major
+                </label>
+                <v-select
                     label="major"
                     :options="majors"
                     @input="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     class="csu-form-input-major"
                     v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
-                    </v-select>
-                </div>
+                </v-select>
             </div>
-            <div class="row row--condensed">
-                <div class="col col-12">
-                    <label for="age" v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']">
-                       Select an Age Range</label>
-                    <v-select 
+            <div class="form-group">
+                <label for="age" v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']">
+                    Select an Age Range
+                </label>
+                <v-select 
                     label="age"
                     :options="ageRanges"
                     @input="updateSelect('age', $event)"
                     class="csu-form-input"
                     v-bind:class="{'border-danger': this.submittedOnce && !this.form.age}">
-                    </v-select>
-                </div>
+                </v-select>
             </div>
-            <div class="row row--condensed">
-                <div class="col-12 col-9 col-md-12">
-                    <label for="education" v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']">
-                        Select an Education Level</label>
-                    <label class="label--radio" for="freshman">First Time Freshman:</label>
-                    <input class="mx-2 mt-1" for="freshman" type="radio" id="freshman" v-model="form.education" value="FTF" @input="updateSelect('education', $event.target)">
-                </div>
+            <div class="form-group">
+                    <label class="form-group" for="education" v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']">
+                        Select an Education Level
+                    </label>
+                    <div class="col-12">
+                        <div class="form-group row justify-content-between">
+                        <label for="freshman">First Time Freshman:</label>
+                        <input for="freshman" type="radio" id="freshman" v-model="form.education" value="FTF" @input="updateSelect('education', $event.target)">
+                    </div>
+                    <div class="form-group row justify-content-between">
+                        <label for="transfer">First Time Transfer</label>
+                        <input for="transfer" type="radio" id="transfer" v-model="form.education" value="FTT" @input="updateSelect('education', $event.target)">
+                    </div>
+                    </div>
             </div>
-            <div class="row row--condensed">
-                <div class="col-12 col-9 col-md-12">
-                    <label class="label--radio" for="transfer">
-                        First Time Transfer</label>
-                    <input class="mx-2 mt-1" for="transfer" type="radio" id="transfer" v-model="form.education" value="FTT" @input="updateSelect('education', $event.target)">
-                </div>
+            <div class="form-group">
+                <label for="earnings" v-bind:style="[this.submittedOnce && !this.form.earnings ? errorLabel : '']">
+                    Estimated Annual Earnings In School</label>
+                <v-select
+                label="earn" 
+                :options="earningRanges" 
+                @input="updateSelect('earnings', $event)" 
+                @change="updateSelect('earnings', $event)"
+                class="csu-form-input" 
+                v-bind:class="{'border-danger': this.submittedOnce && !this.form.earnings}">
+                </v-select>
             </div>
-            <div class="row row--condensed">
-                <div class="col col-12">
-                    <label for="earnings" v-bind:style="[this.submittedOnce && !this.form.earnings ? errorLabel : '']">
-                        Estimated Annual Earnings In School</label>
-                    <v-select
-                    label="earn" 
-                    :options="earningRanges" 
-                    @input="updateSelect('earnings', $event)" 
-                    @change="updateSelect('earnings', $event)"
-                    class="csu-form-input" 
-                    v-bind:class="{'border-danger': this.submittedOnce && !this.form.earnings}">
-                    </v-select>
-                </div>
-            </div>
-            <div class="row row--condensed">
-                <div class="col col-12">
-                    <label for="financialAid" v-bind:style="[this.submittedOnce && !this.form.financialAid ? errorLabel : '']">
+            <div class="form-group">
+                <label for="financialAid" v-bind:style="[this.submittedOnce && !this.form.financialAid ? errorLabel : '']">
                         Estimated Annual Financial Aid</label>
                     <v-select 
-                    label="finAid" 
-                    :options="financialAidRanges"
-                    @input="updateSelect('financialAid', $event)" 
-                    @change="updateSelect('financialAid', $event)"
-                    class="csu-form-input" 
-                    v-bind:class="{'border-danger': this.submittedOnce && !this.form.financialAid}">
+                        label="finAid" 
+                        :options="financialAidRanges"
+                        @input="updateSelect('financialAid', $event)" 
+                        @change="updateSelect('financialAid', $event)"
+                        class="csu-form-input" 
+                        v-bind:class="{'border-danger': this.submittedOnce && !this.form.financialAid}">
                     </v-select>
-                </div>
             </div>
             <div class="row row--condensed" id="submit-btn-container">
                 <div class="py-2">
                     <button id="submit-btn" type="button" class="btn btn-success btn-submit" @click="submitForm()">Submit</button>
                 </div>
             </div>
-        </div>
+        </fieldset>
     </form>
 </template>
 <script>
