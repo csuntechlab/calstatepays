@@ -40444,8 +40444,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue__ = __webpack_require__(390);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_about_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__);
 
 
 
@@ -40460,12 +40462,13 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 
 
+
 // INIT VUE-ROUTER
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/researchcsun', component: __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default.a }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -69803,38 +69806,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            url: ''
-        };
-    },
-    created: function created() {
-        this.url = window.baseUrl;
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1531346960828');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '1016px';
-        vizElement.style.height = '991px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
+  data: function data() {
+    return {
+      url: ""
+    };
+  },
+  created: function created() {
+    this.url = window.baseUrl;
+  }
 });
 
 /***/ }),
@@ -69845,131 +69826,134 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "header",
-        { staticClass: "row", attrs: { id: "research-main-banner" } },
-        [
-          _c("div", { staticClass: "col align-self-center" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/long_beach_seal.svg",
-                      alt: "CSU Long Beach Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Long Beach")])
-                ]
-              ),
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "header",
+      { staticClass: "row", attrs: { id: "research-main-banner" } },
+      [
+        _c("div", { staticClass: "col align-self-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/long_beach_seal.svg",
+                  alt: "CSU Long Beach Seal"
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/poly_seal.svg",
-                      alt: "CSU Pomona Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Pomona")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/dominguez_seal.svg",
-                      alt: "CSU Dominguez Hills Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Dominguez Hills")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/northridge_seal.svg",
-                      alt: "CSU Northridge Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Northridge")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                      alt: "CSU Channel Islands Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Channel Islands")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/fulleton_seal.svg",
-                      alt: "CSU Fullerton Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Fullerton")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                      alt: "CSU Los Angeles Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Los Angeles")])
-                ]
-              )
+              _c("figcaption", [_vm._v("Long Beach")])
             ]),
             _vm._v(" "),
-            _vm._m(1)
-          ])
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/poly_seal.svg",
+                  alt: "CSU Pomona Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Pomona")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/dominguez_seal.svg",
+                  alt: "CSU Dominguez Hills Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Dominguez Hills")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/northridge_seal.svg",
+                  alt: "CSU Northridge Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Northridge")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                  alt: "CSU Channel Islands Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Channel Islands")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/fulleton_seal.svg",
+                  alt: "CSU Fullerton Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Fullerton")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                  alt: "CSU Los Angeles Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Los Angeles")])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("main", { staticClass: "container-fluid" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-start justify-content-xl-center" },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+            [
+              _c("router-link", { attrs: { to: "researchcsun" } }, [
+                _c("div", { staticClass: "campus", attrs: { id: "csun" } }, [
+                  _c("h3", [_vm._v("California State University Northridge")])
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._m(6),
+          _vm._v(" "),
+          _vm._m(7),
+          _vm._v(" "),
+          _vm._m(8),
+          _vm._v(" "),
+          _vm._m(9)
         ]
       )
-    ]),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -69999,216 +69983,139 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "campuses-container" }, [
-      _c(
-        "div",
-        { staticClass: "row justify-content-start justify-content-xl-center" },
-        [
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c("div", { staticClass: " campus", attrs: { id: "csun" } }, [
-                _c("h3", [_vm._v("California State University Northridge")])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: "campus not-avail", attrs: { id: "csulb" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("California State University Long Beach")])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: " campus not-avail", attrs: { id: "csula" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("California State University Los Angeles")])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: " campus not-avail", attrs: { id: "csuf" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("California State University Fullerton")])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: " campus not-avail", attrs: { id: "csudh" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [
-                    _vm._v("California State University Dominguez Hills")
-                  ])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: " campus not-avail", attrs: { id: "csuci" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [
-                    _vm._v("California State University Channel Island")
-                  ])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c(
-                "div",
-                { staticClass: " campus not-avail", attrs: { id: "csup" } },
-                [
-                  _c("p", [_vm._v("Data Not Available At This Time")]),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("California State University Pomona")])
-                ]
-              )
-            ]
-          )
-        ]
-      )
+    return _c("div", { staticClass: "col-12" }, [
+      _c("h3", { staticClass: "returnToCampusSelection" }, [
+        _vm._v("\n                    Select a CSU\n                ")
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        {
-          staticClass: "tableauPlaceholder",
-          staticStyle: { position: "relative" },
-          attrs: { id: "viz1531346960828" }
-        },
-        [
-          _c("noscript", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
-                }
-              },
-              [
-                _c("img", {
-                  staticStyle: { border: "none" },
-                  attrs: {
-                    alt:
-                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
-                    src:
-                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
-                  }
-                })
-              ]
-            )
-          ]),
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c(
+          "div",
+          { staticClass: "campus not-avail", attrs: { id: "allcampus" } },
+          [
+            _c("p", [_vm._v("Data Not Available At This Time")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("Aggregate Data Across the 7 CSUs")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c("div", { staticClass: "campus not-avail", attrs: { id: "csulb" } }, [
+          _c("p", [_vm._v("Data Not Available At This Time")]),
           _vm._v(" "),
-          _c(
-            "object",
-            { staticClass: "tableauViz", staticStyle: { display: "none" } },
-            [
-              _c("param", {
-                attrs: {
-                  name: "host_url",
-                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "embed_code_version", value: "3" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "site_root", value: "" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "name",
-                  value:
-                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "tabs", value: "no" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "static_image",
-                  value:
-                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "animate_transition", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "display_static_image", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_count", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
-            ]
-          )
-        ]
-      )
-    ])
+          _c("h3", [_vm._v("California State University Long Beach")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c(
+          "div",
+          { staticClass: " campus not-avail", attrs: { id: "csula" } },
+          [
+            _c("p", [_vm._v("Data Not Available At This Time")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("California State University Los Angeles")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c("div", { staticClass: " campus not-avail", attrs: { id: "csuf" } }, [
+          _c("p", [_vm._v("Data Not Available At This Time")]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("California State University Fullerton")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c(
+          "div",
+          { staticClass: " campus not-avail", attrs: { id: "csudh" } },
+          [
+            _c("p", [_vm._v("Data Not Available At This Time")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("California State University Dominguez Hills")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c(
+          "div",
+          { staticClass: " campus not-avail", attrs: { id: "csuci" } },
+          [
+            _c("p", [_vm._v("Data Not Available At This Time")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("California State University Channel Island")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
+      [
+        _c("div", { staticClass: " campus not-avail", attrs: { id: "csup" } }, [
+          _c("p", [_vm._v("Data Not Available At This Time")]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("California State University Pomona")])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -88537,6 +88444,421 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(408)
+/* template */
+var __vue_template__ = __webpack_require__(409)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/router/views/researchcsun/index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7aadd2eb", Component.options)
+  } else {
+    hotAPI.reload("data-v-7aadd2eb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 408 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: ''
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
+    mounted: function mounted() {
+        var divElement = document.getElementById('viz1531346960828');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '1016px';
+        vizElement.style.height = '991px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+});
+
+/***/ }),
+/* 409 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "header",
+      { staticClass: "row", attrs: { id: "research-main-banner" } },
+      [
+        _c("div", { staticClass: "col align-self-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/long_beach_seal.svg",
+                  alt: "CSU Long Beach Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Long Beach")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/poly_seal.svg",
+                  alt: "CSU Pomona Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Pomona")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/dominguez_seal.svg",
+                  alt: "CSU Dominguez Hills Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Dominguez Hills")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/northridge_seal.svg",
+                  alt: "CSU Northridge Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Northridge")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                  alt: "CSU Channel Islands Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Channel Islands")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/fulleton_seal.svg",
+                  alt: "CSU Fullerton Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Fullerton")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                  alt: "CSU Los Angeles Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Los Angeles")])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("main", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-11" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "returnToCampusSelection",
+                attrs: { to: "research" }
+              },
+              [
+                _c("h3", [
+                  _c("i", { staticClass: "fas fa-arrow-left" }),
+                  _vm._v(
+                    " Return to CSU Campus Selection\n                    "
+                  )
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "text-center home__heading" }, [
+        _vm._v(
+          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("button", { staticClass: "btn btn-success mb-3" }, [
+        _vm._v("\n-                   All Campuses\n-               ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass: "tableauPlaceholder",
+          staticStyle: { position: "relative" },
+          attrs: { id: "viz1531346960828" }
+        },
+        [
+          _c("noscript", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
+                }
+              },
+              [
+                _c("img", {
+                  staticStyle: { border: "none" },
+                  attrs: {
+                    alt:
+                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
+                    src:
+                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "object",
+            { staticClass: "tableauViz", staticStyle: { display: "none" } },
+            [
+              _c("param", {
+                attrs: {
+                  name: "host_url",
+                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "embed_code_version", value: "3" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "site_root", value: "" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "name",
+                  value:
+                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "tabs", value: "no" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "static_image",
+                  value:
+                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "animate_transition", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "display_static_image", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_count", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7aadd2eb", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

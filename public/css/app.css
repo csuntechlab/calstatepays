@@ -7502,7 +7502,8 @@ button.bg-dark:focus {
 }
 
 .mt-2,
-.my-2 {
+.my-2,
+.returnToCampusSelection {
   margin-top: 0.5rem !important;
 }
 
@@ -7512,7 +7513,8 @@ button.bg-dark:focus {
 }
 
 .mb-2,
-.my-2 {
+.my-2,
+.returnToCampusSelection {
   margin-bottom: 0.5rem !important;
 }
 
@@ -8777,7 +8779,7 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left, .CSUDataImgBanner__campusInfoWrapper {
+.text-left, .CSUDataImgBanner__campusInfoWrapper, .returnToCampusSelection {
   text-align: left !important;
 }
 
@@ -17764,7 +17766,7 @@ p {
   margin-right: 8px !important;
 }
 
-.my-2 {
+.my-2, .returnToCampusSelection {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
@@ -27681,8 +27683,8 @@ footer, .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 25rem;
-  min-width: 20vw;
+  height: 22rem;
+  min-width: 100%;
   -ms-flex-item-align: center;
       align-self: center;
   -webkit-box-pack: center;
@@ -27763,9 +27765,19 @@ footer, .footer {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg");
 }
 
+#allcampus {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("../img/csucampuses/allcsu.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/csucampuses/allcsu.png");
+}
+
 #csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
   background-size: cover;
   background-position: center;
+}
+
+.returnToCampusSelection {
+  color: #000;
+  font-weight: bold;
 }
 
 label {
