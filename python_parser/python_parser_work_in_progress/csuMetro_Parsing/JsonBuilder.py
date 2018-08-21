@@ -67,6 +67,12 @@ class JsonIndustry:
 
     with open(self.file+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
+
+  def masterPathWagesToJson(self):
+    with open (self.file+'_Dictionary.json', 'w' ) as fp:
+        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    fp.close()  
+  return
     
 
 

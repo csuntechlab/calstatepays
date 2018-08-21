@@ -66,6 +66,7 @@ class SanitizeIndustry(DataFrame):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
+        self.remove_hyphen('naics')
         # self.sanitizeIndustry()
         # self.jsonBuilder()
         pass
@@ -82,13 +83,12 @@ class SanitizeIndustry(DataFrame):
     
 
     def industryDF(self):
-        # industryPathTypes = self.df.loc[:,['entry_status','naics','student_path','hegis_at_exit','campus']]
         industryPathTypes = self.df.loc[:,['entry_status','naics','student_path']]
         industryPathTypes.loc[:,'id'] = range(1, len(industryPathTypes) + 1)
         industryPathTypes = industryPathTypes.rename(columns={'naics': 'naics_codes'})
         industryPathTypes['hegis_at_exit'] = self.df[['hegis_at_exit']]
         industryPathTypes['campus'] = self.df[['campus']]
-
+        industryPathTypes = industryPathTypes.loc[industryPathTypes['student_path'].isin([1,2,4])]
 
         industryPathWages = self.df.loc[:,['average_annual_earnings_5_years_after_exit']]
         industryPathWages = industryPathWages.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
@@ -101,6 +101,7 @@ class SanitizeIndustry(DataFrame):
 
 
         return industryPathTypes,industryPathWages,naics_titles
+
 
 class SanitizeMajor(DataFrame):
     def __init__(self,file):
