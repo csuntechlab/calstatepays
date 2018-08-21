@@ -103,12 +103,18 @@ class SanitizeIndustry(DataFrame):
             json.dump(json_data, outfile, indent=4)
 
     def industryDF(self):
-        industryPathTypes = self.df[['entry_status','naics','student_path','hegis_at_exit']]
+        # industryPathTypes = self.df.loc[:,['entry_status','naics','student_path','hegis_at_exit','campus']]
+        industryPathTypes = self.df.loc[:,['entry_status','naics','student_path']]
+        industryPathTypes.loc[:,'id'] = range(1, len(industryPathTypes) + 1)
         industryPathTypes = industryPathTypes.rename(columns={'naics': 'naics_codes'})
-        industryPathTypes['university_major_id'] = -1
+        industryPathTypes['hegis_at_exit'] = self.df[['hegis_at_exit']]
+        industryPathTypes['campus'] = self.df[['campus']]
 
-        industryPathWages = self.df[['average_annual_earnings_5_years_after_exit']]
+
+        industryPathWages = self.df.loc[:,['average_annual_earnings_5_years_after_exit']]
         industryPathWages = industryPathWages.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
+        industryPathWages.loc[:,'id'] = range(1, len(industryPathWages) + 1)
+
     
         naics_titles = self.df[['naics','industry']]
         naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
