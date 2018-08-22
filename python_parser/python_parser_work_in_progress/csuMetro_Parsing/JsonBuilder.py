@@ -99,7 +99,7 @@ class JsonIndustry:
     if( ',' in image):
       image = image.replace(',', "")
     if('&' in image):
-      image = image.replace('&',"")
+      image = image.replace('& ',"")
     if(' ' in image):
       image = image.replace(' ',"_")
     return image+".png"

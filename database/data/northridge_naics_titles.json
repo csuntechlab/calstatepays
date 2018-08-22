@@ -2,7 +2,7 @@
     {
         "naics_codes": 54,
         "naics_industry": "Professional, Scientific, & Technical Skills",
-        "images": "Professional_Scientific__Technical_Skills.png"
+        "images": "Professional_Scientific_Technical_Skills.png"
     },
     {
         "naics_codes": 61,
@@ -12,7 +12,7 @@
     {
         "naics_codes": 62,
         "naics_industry": "Health Care & Social Assistance",
-        "images": "Health_Care__Social_Assistance.png"
+        "images": "Health_Care_Social_Assistance.png"
     },
     {
         "naics_codes": 92,
@@ -32,7 +32,7 @@
     {
         "naics_codes": 53,
         "naics_industry": "Real Estate & Rental & Leasing",
-        "images": "Real_Estate__Rental__Leasing.png"
+        "images": "Real_Estate_Rental_Leasing.png"
     },
     {
         "naics_codes": 81,
@@ -42,7 +42,7 @@
     {
         "naics_codes": 11,
         "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
-        "images": "Agriculture_Forestry_Fishing__Hunting.png"
+        "images": "Agriculture_Forestry_Fishing_Hunting.png"
     },
     {
         "naics_codes": 21,
@@ -72,7 +72,7 @@
     {
         "naics_codes": 4849,
         "naics_industry": "Transportation & Warehousing",
-        "images": "Transportation__Warehousing.png"
+        "images": "Transportation_Warehousing.png"
     },
     {
         "naics_codes": 51,
@@ -82,27 +82,27 @@
     {
         "naics_codes": 52,
         "naics_industry": "Finance & Insurance",
-        "images": "Finance__Insurance.png"
+        "images": "Finance_Insurance.png"
     },
     {
         "naics_codes": 55,
         "naics_industry": "Management of Companies & Enterprises",
-        "images": "Management_of_Companies__Enterprises.png"
+        "images": "Management_of_Companies_Enterprises.png"
     },
     {
         "naics_codes": 56,
         "naics_industry": "Admin & Support & Waste Mgmt & Remediation",
-        "images": "Admin__Support__Waste_Mgmt__Remediation.png"
+        "images": "Admin_Support_Waste_Mgmt_Remediation.png"
     },
     {
         "naics_codes": 71,
         "naics_industry": "Arts, Entertainment, & Recreation",
-        "images": "Arts_Entertainment__Recreation.png"
+        "images": "Arts_Entertainment_Recreation.png"
     },
     {
         "naics_codes": 72,
         "naics_industry": "Accommodation & Food Services",
-        "images": "Accommodation__Food_Services.png"
+        "images": "Accommodation_Food_Services.png"
     },
     {
         "naics_codes": 99,
