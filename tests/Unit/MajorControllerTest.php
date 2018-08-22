@@ -26,19 +26,19 @@ class MajorControllerTest extends TestCase
     public function setUp(){
         parent::setUp();
         $this->retriever = Mockery::mock(MajorContract::class);
-        $this->call(Hegis_Codes_TableSeeder::class);
-        $this->call(University_Majors_TableSeeder::class);
-        $this->call(Naics_Titles_TableSeeder::class);
-        $this->call(Student_Paths_TableSeeder::class);
-        $this->call(Field_Of_Studies_TableSeeder::class);
-        $this->call(Hegis_Categories_TableSeeder::class);
-        $this->call(Universities_TableSeeder::class);
-        $this->call(Major_Paths_TableSeeder::class);
-        $this->call(Major_Path_Wages_TableSeeder::class);
+        $this->seed('Hegis_Codes_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Naics_Titles_TableSeeder');
+        $this->seed('Student_Paths_TableSeeder');
+        $this->seed('Field_Of_Studies_TableSeeder');
+        $this->seed('Hegis_Categories_TableSeeder');
+        $this->seed('Universities_TableSeeder');
+        $this->seed('Major_Paths_TableSeeder');
+        $this->seed('Major_Path_Wages_TableSeeder');
         
-        // $this->call(Master_Major_Page_Data_TableSeeder::class);
-        $this->call(Master_FRE_Page_Data_TableSeeder::class);
-        $this->call(Master_Industry_Page_Data_Seeder::class);
+        // $this->seed('Master_Major_Page_Data_TableSeeder');
+        $this->seed('Master_FRE_Page_Data_TableSeeder');
+        $this->seed('Master_Industry_Page_Data_Seeder');
 
         $this->controller = new MajorController($this->retriever);
     }
@@ -61,10 +61,9 @@ class MajorControllerTest extends TestCase
         $this->retriever
             ->shouldReceive('getAllHegisCodes')
             ->once()->andReturn($test);
-
-        dd($this-retriever );    
+  
         $response = $this->retriever->getAllHegisCodes(); 
-        dd($response );
+        
         $this->assertEquals($test, $response);
     }
 
