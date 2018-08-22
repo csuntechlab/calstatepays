@@ -18,18 +18,24 @@ class MajorServiceTest extends TestCase
     public function setUp(){
         parent::setUp();
         $this->majorService = new MajorService();
-        $this->seed('Hegis_Codes_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
-        $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
-        $this->seed('Field_Of_Studies_TableSeeder');
-        $this->seed('Hegis_Categories_TableSeeder');
-        $this->seed('Universities_TableSeeder');
-        $this->seed('Master_Major_Page_Data_TableSeeder');
+        $this->call(Hegis_Codes_TableSeeder::class);
+        $this->call(University_Majors_TableSeeder::class);
+        $this->call(Naics_Titles_TableSeeder::class);
+        $this->call(Student_Paths_TableSeeder::class);
+        $this->call(Field_Of_Studies_TableSeeder::class);
+        $this->call(Hegis_Categories_TableSeeder::class);
+        $this->call(Universities_TableSeeder::class);
+        $this->call(Major_Paths_TableSeeder::class);
+        $this->call(Major_Path_Wages_TableSeeder::class);
+        
+        // $this->call(Master_Major_Page_Data_TableSeeder::class);
+        $this->call(Master_FRE_Page_Data_TableSeeder::class);
+        $this->call(Master_Industry_Page_Data_Seeder::class);
     }
 
     public function test_getAllHegisCodes_ensure_returns_all_rows() {
         $response = $this->majorService->getAllHegisCodes();
+        dd($response);
 
         $this->assertArrayHasKey(0, $response);
         $this->assertArrayHasKey("hegis_code", $response[0]);
