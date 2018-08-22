@@ -98,6 +98,7 @@ class SanitizeIndustry(DataFrame):
         naics_titles = self.df[['naics','industry']]
         naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         naics_titles = naics_titles.drop_duplicates(subset=['naics_codes'], keep='first')
+        naics_titles['images'] = ""
 
 
         return industryPathTypes,industryPathWages,naics_titles

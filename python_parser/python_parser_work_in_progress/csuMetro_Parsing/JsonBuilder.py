@@ -40,13 +40,26 @@ class JsonIndustry:
 
     return industryPathTypesDf
   
+  def jsonSanitizePath(self,fileName):
+  
+    import json
+    json_data = json.load(open(fileName+'.json'))
+    for i in range(0, len(json_data)):
+        if(json_data[i]["naics_codes"]!=None):
+          json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
+
+    with open(fileName+'.json', 'w') as outfile:
+        json.dump(json_data, outfile, indent=4)
+  
   def jsonSanitizeWages(self,fileName): 
 
     import json
     json_data = json.load(open(fileName+'.json'))
     for i in range(0, len(json_data)):
-        if(json_data[i]["avg_annual_wage_5"]!=None):
-            json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
+      json_data[i]["id"] = int(json_data[i]["id"])
+      if(json_data[i]["avg_annual_wage_5"]!=None):
+        json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
+            
 
     with open(fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
@@ -57,7 +70,9 @@ class JsonIndustry:
     json_data = json.load(open(fileName+'.json'))
     for i in range(0, len(json_data)):
         if(json_data[i]["naics_codes"]!=None):
-            json_data[i]["naics_codes"]= int(json_data[i]["naics_codes"])
+          json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
+          image = self.sanitizeImage(json_data[i]["naics_industry"])
+          json_data[i]["images"]= image
 
     with open(fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
@@ -67,6 +82,14 @@ class JsonIndustry:
   #       fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
   #   fp.close()  
   
+  def sanitizeImage(self,image):
+    if( ',' in image):
+      image = image.replace(',', "")
+    if('&' in image):
+      image = image.replace('&',"")
+    if(' ' in image):
+      image = image.replace(' ',"_")
+    return image+".png"
     
 
 
