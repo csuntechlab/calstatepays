@@ -1,0 +1,430 @@
+{
+    "1": {
+        "hegis_codes": 12112032,
+        "university_id": 70
+    },
+    "2": {
+        "hegis_codes": 3085,
+        "university_id": 70
+    },
+    "3": {
+        "hegis_codes": 4011,
+        "university_id": 70
+    },
+    "4": {
+        "hegis_codes": 4111,
+        "university_id": 70
+    },
+    "5": {
+        "hegis_codes": 4141,
+        "university_id": 70
+    },
+    "6": {
+        "hegis_codes": 4152,
+        "university_id": 70
+    },
+    "7": {
+        "hegis_codes": 4171,
+        "university_id": 70
+    },
+    "8": {
+        "hegis_codes": 4201,
+        "university_id": 70
+    },
+    "9": {
+        "hegis_codes": 5011,
+        "university_id": 70
+    },
+    "10": {
+        "hegis_codes": 5012,
+        "university_id": 70
+    },
+    "11": {
+        "hegis_codes": 5021,
+        "university_id": 70
+    },
+    "12": {
+        "hegis_codes": 5041,
+        "university_id": 70
+    },
+    "13": {
+        "hegis_codes": 5061,
+        "university_id": 70
+    },
+    "14": {
+        "hegis_codes": 5062,
+        "university_id": 70
+    },
+    "15": {
+        "hegis_codes": 5064,
+        "university_id": 70
+    },
+    "16": {
+        "hegis_codes": 5072,
+        "university_id": 70
+    },
+    "17": {
+        "hegis_codes": 5091,
+        "university_id": 70
+    },
+    "18": {
+        "hegis_codes": 5111,
+        "university_id": 70
+    },
+    "19": {
+        "hegis_codes": 5131,
+        "university_id": 70
+    },
+    "20": {
+        "hegis_codes": 5151,
+        "university_id": 70
+    },
+    "21": {
+        "hegis_codes": 5995,
+        "university_id": 70
+    },
+    "22": {
+        "hegis_codes": 602106022,
+        "university_id": 70
+    },
+    "23": {
+        "hegis_codes": 6031,
+        "university_id": 70
+    },
+    "24": {
+        "hegis_codes": 701107012,
+        "university_id": 70
+    },
+    "25": {
+        "hegis_codes": 7021,
+        "university_id": 70
+    },
+    "26": {
+        "hegis_codes": 8231,
+        "university_id": 70
+    },
+    "27": {
+        "hegis_codes": 8351,
+        "university_id": 70
+    },
+    "28": {
+        "hegis_codes": 8375,
+        "university_id": 70
+    },
+    "29": {
+        "hegis_codes": 9011,
+        "university_id": 70
+    },
+    "30": {
+        "hegis_codes": 9081,
+        "university_id": 70
+    },
+    "31": {
+        "hegis_codes": 9091,
+        "university_id": 70
+    },
+    "32": {
+        "hegis_codes": 9094,
+        "university_id": 70
+    },
+    "33": {
+        "hegis_codes": 9101,
+        "university_id": 70
+    },
+    "34": {
+        "hegis_codes": 9134,
+        "university_id": 70
+    },
+    "35": {
+        "hegis_codes": 9254,
+        "university_id": 70
+    },
+    "36": {
+        "hegis_codes": 10021,
+        "university_id": 70
+    },
+    "37": {
+        "hegis_codes": 10031,
+        "university_id": 70
+    },
+    "38": {
+        "hegis_codes": 10041,
+        "university_id": 70
+    },
+    "39": {
+        "hegis_codes": 10051,
+        "university_id": 70
+    },
+    "40": {
+        "hegis_codes": 10071,
+        "university_id": 70
+    },
+    "41": {
+        "hegis_codes": 10091,
+        "university_id": 70
+    },
+    "42": {
+        "hegis_codes": 10101,
+        "university_id": 70
+    },
+    "43": {
+        "hegis_codes": 110111102111031,
+        "university_id": 70
+    },
+    "44": {
+        "hegis_codes": 11051,
+        "university_id": 70
+    },
+    "45": {
+        "hegis_codes": 12011,
+        "university_id": 70
+    },
+    "46": {
+        "hegis_codes": 12021,
+        "university_id": 70
+    },
+    "47": {
+        "hegis_codes": 12031,
+        "university_id": 70
+    },
+    "48": {
+        "hegis_codes": 12140,
+        "university_id": 70
+    },
+    "49": {
+        "hegis_codes": 12141,
+        "university_id": 70
+    },
+    "50": {
+        "hegis_codes": 12142,
+        "university_id": 70
+    },
+    "51": {
+        "hegis_codes": 12201,
+        "university_id": 70
+    },
+    "52": {
+        "hegis_codes": 12231,
+        "university_id": 70
+    },
+    "53": {
+        "hegis_codes": 1225112253,
+        "university_id": 70
+    },
+    "54": {
+        "hegis_codes": 1301113061,
+        "university_id": 70
+    },
+    "55": {
+        "hegis_codes": 15011,
+        "university_id": 70
+    },
+    "56": {
+        "hegis_codes": 15051,
+        "university_id": 70
+    },
+    "57": {
+        "hegis_codes": 15061,
+        "university_id": 70
+    },
+    "58": {
+        "hegis_codes": 15091,
+        "university_id": 70
+    },
+    "59": {
+        "hegis_codes": 15101,
+        "university_id": 70
+    },
+    "60": {
+        "hegis_codes": 15102,
+        "university_id": 70
+    },
+    "61": {
+        "hegis_codes": 15991,
+        "university_id": 70
+    },
+    "62": {
+        "hegis_codes": 17011,
+        "university_id": 70
+    },
+    "63": {
+        "hegis_codes": 17021,
+        "university_id": 70
+    },
+    "64": {
+        "hegis_codes": 17031,
+        "university_id": 70
+    },
+    "65": {
+        "hegis_codes": 19021,
+        "university_id": 70
+    },
+    "66": {
+        "hegis_codes": 19051,
+        "university_id": 70
+    },
+    "67": {
+        "hegis_codes": 19141,
+        "university_id": 70
+    },
+    "68": {
+        "hegis_codes": 19171,
+        "university_id": 70
+    },
+    "69": {
+        "hegis_codes": 20011,
+        "university_id": 70
+    },
+    "70": {
+        "hegis_codes": 21025,
+        "university_id": 70
+    },
+    "71": {
+        "hegis_codes": 21031,
+        "university_id": 70
+    },
+    "72": {
+        "hegis_codes": 21041,
+        "university_id": 70
+    },
+    "73": {
+        "hegis_codes": 21044,
+        "university_id": 70
+    },
+    "74": {
+        "hegis_codes": 22021,
+        "university_id": 70
+    },
+    "75": {
+        "hegis_codes": 22041,
+        "university_id": 70
+    },
+    "76": {
+        "hegis_codes": 22051,
+        "university_id": 70
+    },
+    "77": {
+        "hegis_codes": 22061,
+        "university_id": 70
+    },
+    "78": {
+        "hegis_codes": 22071,
+        "university_id": 70
+    },
+    "79": {
+        "hegis_codes": 22081,
+        "university_id": 70
+    },
+    "80": {
+        "hegis_codes": 22111,
+        "university_id": 70
+    },
+    "81": {
+        "hegis_codes": 22131,
+        "university_id": 70
+    },
+    "82": {
+        "hegis_codes": 22141,
+        "university_id": 70
+    },
+    "83": {
+        "hegis_codes": 2299049991,
+        "university_id": 70
+    },
+    "84": {
+        "hegis_codes": 22996,
+        "university_id": 70
+    },
+    "85": {
+        "hegis_codes": 49012,
+        "university_id": 70
+    },
+    "86": {
+        "hegis_codes": 49993,
+        "university_id": 70
+    },
+    "87": {
+        "hegis_codes": 5022,
+        "university_id": 70
+    },
+    "88": {
+        "hegis_codes": 6011,
+        "university_id": 70
+    },
+    "89": {
+        "hegis_codes": 6034,
+        "university_id": 70
+    },
+    "90": {
+        "hegis_codes": 7052,
+        "university_id": 70
+    },
+    "91": {
+        "hegis_codes": 8011,
+        "university_id": 70
+    },
+    "92": {
+        "hegis_codes": 8021,
+        "university_id": 70
+    },
+    "93": {
+        "hegis_codes": 8031,
+        "university_id": 70
+    },
+    "94": {
+        "hegis_codes": 808108181,
+        "university_id": 70
+    },
+    "95": {
+        "hegis_codes": 8221,
+        "university_id": 70
+    },
+    "96": {
+        "hegis_codes": 8261,
+        "university_id": 70
+    },
+    "97": {
+        "hegis_codes": 8271,
+        "university_id": 70
+    },
+    "98": {
+        "hegis_codes": 827208211,
+        "university_id": 70
+    },
+    "99": {
+        "hegis_codes": 8273,
+        "university_id": 70
+    },
+    "100": {
+        "hegis_codes": 9084,
+        "university_id": 70
+    },
+    "101": {
+        "hegis_codes": 9132,
+        "university_id": 70
+    },
+    "102": {
+        "hegis_codes": 9211,
+        "university_id": 70
+    },
+    "103": {
+        "hegis_codes": 10022,
+        "university_id": 70
+    },
+    "104": {
+        "hegis_codes": 1212112122,
+        "university_id": 70
+    },
+    "105": {
+        "hegis_codes": 12171,
+        "university_id": 70
+    },
+    "106": {
+        "hegis_codes": 15081,
+        "university_id": 70
+    },
+    "107": {
+        "hegis_codes": 21021,
+        "university_id": 70
+    }
+}
