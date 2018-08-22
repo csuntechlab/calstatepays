@@ -21,8 +21,8 @@ class University_Majors_TableSeeder extends Seeder
             $index = 1;
             foreach($data as $row){
                 $universityMajor = new UniversityMajor();
-                $universityMajor->hegis_code = $row->hegis_code;
-                $universityMajor->university_id = $northridgeUniversityCode;
+                $universityMajor->hegis_code = $row->hegis_codes;
+                $universityMajor->university_id = $row->university_id;
                 $universityMajor->save();
             }
         }
