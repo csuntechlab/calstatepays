@@ -19,7 +19,7 @@ class CreateMajorPathsTable extends Migration
             $table->integer('university_majors_id');
             $table->string('entry_status');
             $table->integer('years');
-            $table->integer('potential_number_of_students');
+            // $table->integer('potential_number_of_students');
         });
     }
 
