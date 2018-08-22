@@ -9,6 +9,7 @@ class DataFrame:
         self.df = pd.read_csv(self.file+'.csv')
         self.dataframe_builder()
         self.headerSanitizer()
+        self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
         pass
     
     def dataframe_builder(self):

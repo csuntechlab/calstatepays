@@ -1,4 +1,5 @@
 import pandas as pd
+import shutil
 
 import numpy as np
 import simplejson
@@ -25,6 +26,9 @@ class JsonIndustry:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
+    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+
+  
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
@@ -50,6 +54,9 @@ class JsonIndustry:
 
     with open(fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
+    
+    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+
   
   def jsonSanitizeWages(self,fileName): 
 
@@ -64,6 +71,9 @@ class JsonIndustry:
     with open(fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
 
+    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+
+
   def jsonSanitizeNaics(self,fileName):
 
     import json
@@ -76,6 +86,9 @@ class JsonIndustry:
 
     with open(fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
+
+    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+
 
   # def masterPathWagesToJson(self):
   #   with open (self.file+'_Dictionary.json', 'w' ) as fp:
@@ -122,7 +135,6 @@ class JsonMajor:
 
     
 
-    # TODO: refactor t`h`is hard code
     dictionary  = {campusId:hegisDictionary}
     
     with open (self.file+'_Dictionary.json', 'w' ) as fp:
@@ -132,6 +144,7 @@ class JsonMajor:
     with open (self.file+'_university_majors_id.json', 'w' ) as fp:
         fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close() 
+    shutil.copy2(self.file+'_university_majors_id.json', '../../database/data/') # complete target filename given
 
     return dictionary
     
@@ -156,7 +169,7 @@ class JsonMajor:
     with open (fileName+'.json', 'w' ) as fp:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
-  
+
   def jsonSanitize(self,fileName ):
     
     json_data = json.load(open( fileName+'.json'))
@@ -180,6 +193,9 @@ class JsonMajor:
     with open(fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
     outfile.close()
+
+    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+
 
 
     
