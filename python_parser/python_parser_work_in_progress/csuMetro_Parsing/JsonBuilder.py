@@ -22,11 +22,11 @@ class JsonIndustry:
   
     output = df.to_dict(orient='record')
 
-    with open (fileName+'.json', 'w' ) as fp:
+    with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
-    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+    # shutil.move(fileName+'.json', "../../database/data/")
 
   
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
@@ -47,47 +47,47 @@ class JsonIndustry:
   def jsonSanitizePath(self,fileName):
   
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
         if(json_data[i]["naics_codes"]!=None):
           json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
 
-    with open(fileName+'.json', 'w') as outfile:
+    with open('../../database/data/'+fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
     
-    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+    # shutil.move(fileName+'.json', "../../database/data/")
 
   
   def jsonSanitizeWages(self,fileName): 
 
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
       json_data[i]["id"] = int(json_data[i]["id"])
       if(json_data[i]["avg_annual_wage_5"]!=None):
         json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
             
 
-    with open(fileName+'.json', 'w') as outfile:
+    with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
 
-    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+    # shutil.move(fileName+'.json', "../../database/data/")
 
 
   def jsonSanitizeNaics(self,fileName):
 
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
         if(json_data[i]["naics_codes"]!=None):
           json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
           image = self.sanitizeImage(json_data[i]["naics_industry"])
           json_data[i]["images"]= image
 
-    with open(fileName+'.json', 'w') as outfile:
+    with open('../../database/data/'+fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
 
-    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+    # shutil.move(fileName+'.json', "../../database/data/")
 
 
   # def masterPathWagesToJson(self):
@@ -119,7 +119,7 @@ class JsonMajor:
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
-    universityMajorsId = {}
+    universityMajorsId = []
     index = 1
     for row in output:
         # campus = int(row['campus'])
@@ -128,7 +128,7 @@ class JsonMajor:
         dictRename = {'hegis_codes': hegis,'university_id':campus }
 
         hegisDictionary[hegis] = index
-        universityMajorsId[index] = dictRename
+        universityMajorsId.append(dictRename)
 
         index +=1
     del output
@@ -141,10 +141,11 @@ class JsonMajor:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
 
-    with open (self.file+'_university_majors_id.json', 'w' ) as fp:
+    with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
         fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close() 
-    shutil.copy2(self.file+'_university_majors_id.json', '../../database/data/') # complete target filename given
+
+    # shutil.move(self.file+'_university_majors_id.json', "../../database/data/")
 
     return dictionary
     
@@ -166,13 +167,16 @@ class JsonMajor:
 
     output = df.to_dict(orient='record')
 
-    with open (fileName+'.json', 'w' ) as fp:
+    with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
 
+    # shutil.move(fileName+'.json', "../../database/data/")
+
+
   def jsonSanitize(self,fileName ):
     
-    json_data = json.load(open( fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
        
       # major path wage 
@@ -190,11 +194,11 @@ class JsonMajor:
         
        
 
-    with open(fileName+'.json', 'w') as outfile:
+    with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
     outfile.close()
 
-    shutil.copy2(fileName+'.json', '../../database/data/') # complete target filename given
+    # shutil.move(fileName+'.json', "../../database/data/")
 
 
 
