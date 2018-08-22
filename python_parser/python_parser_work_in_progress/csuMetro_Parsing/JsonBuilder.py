@@ -47,7 +47,7 @@ class JsonIndustry:
   def jsonSanitizePath(self,fileName):
   
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
         if(json_data[i]["naics_codes"]!=None):
           json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
@@ -61,7 +61,7 @@ class JsonIndustry:
   def jsonSanitizeWages(self,fileName): 
 
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
       json_data[i]["id"] = int(json_data[i]["id"])
       if(json_data[i]["avg_annual_wage_5"]!=None):
@@ -77,7 +77,7 @@ class JsonIndustry:
   def jsonSanitizeNaics(self,fileName):
 
     import json
-    json_data = json.load(open(fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
         if(json_data[i]["naics_codes"]!=None):
           json_data[i]["naics_codes"] = int(json_data[i]["naics_codes"])
@@ -119,7 +119,7 @@ class JsonMajor:
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
-    universityMajorsId = {}
+    universityMajorsId = []
     index = 1
     for row in output:
         # campus = int(row['campus'])
@@ -128,7 +128,7 @@ class JsonMajor:
         dictRename = {'hegis_codes': hegis,'university_id':campus }
 
         hegisDictionary[hegis] = index
-        universityMajorsId[index] = dictRename
+        universityMajorsId.append(dictRename)
 
         index +=1
     del output
@@ -176,7 +176,7 @@ class JsonMajor:
 
   def jsonSanitize(self,fileName ):
     
-    json_data = json.load(open( fileName+'.json'))
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
     for i in range(0, len(json_data)):
        
       # major path wage 
