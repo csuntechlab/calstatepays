@@ -94,7 +94,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
-    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
     iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
