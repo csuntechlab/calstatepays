@@ -38,6 +38,8 @@ class DataFrame:
         self.df[columnName] = self.df[columnName].str.replace('+','')
         self.df[columnName] = self.df[columnName].str.replace(' ','')
 
+    def column_sanitize_get_first_5(self,columnName):
+        self.df[columnName] = self.df[columnName].str.slice(start=0, stop=5)
     
     # converts to floats...
     def string_number_to_real_number(self,columnName):
@@ -55,6 +57,7 @@ class DataFrame:
     ### These are the common sanitizations that both jsons require
     def sanitizeCommon(self):
         self.column_sanitize_plus('hegis_at_exit')
+        self.column_sanitize_get_first_5('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
 
     ### Both jsons will need this method

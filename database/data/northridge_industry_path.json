@@ -4,7 +4,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -13,7 +13,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -22,7 +22,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 3,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -31,7 +31,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 4,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -40,7 +40,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 5,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -2686,7 +2686,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 299,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2695,7 +2695,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 300,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2704,7 +2704,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 301,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2713,7 +2713,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 302,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2722,7 +2722,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 303,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2731,7 +2731,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 304,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2740,7 +2740,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 305,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2749,7 +2749,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 306,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2758,7 +2758,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 307,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2767,7 +2767,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 308,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2776,7 +2776,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 309,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2785,7 +2785,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 310,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2794,7 +2794,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 311,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2803,7 +2803,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 312,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2812,7 +2812,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 313,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2821,7 +2821,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 314,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2830,7 +2830,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 315,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2839,7 +2839,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 316,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2848,7 +2848,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 317,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2857,7 +2857,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 318,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -2866,7 +2866,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 319,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -3064,7 +3064,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 341,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3073,7 +3073,7 @@
         "naics_codes": 21,
         "student_path": 1,
         "id": 342,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3082,7 +3082,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 343,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3091,7 +3091,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 344,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3100,7 +3100,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 345,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3109,7 +3109,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 346,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3118,7 +3118,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 347,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3127,7 +3127,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 348,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3136,7 +3136,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 349,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3145,7 +3145,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 350,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3154,7 +3154,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 351,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3163,7 +3163,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 352,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3172,7 +3172,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 353,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3181,7 +3181,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 354,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3190,7 +3190,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 355,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3199,7 +3199,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 356,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3208,7 +3208,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 357,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3217,7 +3217,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 358,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3226,7 +3226,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 359,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3235,7 +3235,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 360,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -3244,7 +3244,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 361,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -5683,7 +5683,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 632,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5692,7 +5692,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 633,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5701,7 +5701,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 634,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5710,7 +5710,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 635,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5719,7 +5719,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 636,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5728,7 +5728,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 637,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5737,7 +5737,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 638,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5746,7 +5746,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 639,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5755,7 +5755,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 640,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5764,7 +5764,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 641,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5773,7 +5773,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 642,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5782,7 +5782,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 643,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5791,7 +5791,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 644,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -5800,7 +5800,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 645,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -6592,7 +6592,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 733,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6601,7 +6601,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 734,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6610,7 +6610,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 735,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6619,7 +6619,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 736,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6628,7 +6628,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 737,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6637,7 +6637,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 738,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6646,7 +6646,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 739,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6655,7 +6655,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 740,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6664,7 +6664,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 741,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6673,7 +6673,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 742,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6682,7 +6682,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 743,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -6691,7 +6691,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 744,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6700,7 +6700,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 745,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6709,7 +6709,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 746,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6718,7 +6718,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 747,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6727,7 +6727,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 748,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6736,7 +6736,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 749,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6745,7 +6745,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 750,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6754,7 +6754,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 751,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6763,7 +6763,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 752,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6772,7 +6772,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 753,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6781,7 +6781,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 754,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6790,7 +6790,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 755,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6799,7 +6799,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 756,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6808,7 +6808,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 757,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6817,7 +6817,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 758,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6826,7 +6826,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 759,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6835,7 +6835,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 760,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6844,7 +6844,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 761,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6853,7 +6853,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 762,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6862,7 +6862,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 763,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -6871,7 +6871,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 764,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -10696,7 +10696,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 1189,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10705,7 +10705,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 1190,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10714,7 +10714,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 1191,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10723,7 +10723,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 1192,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10732,7 +10732,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 1193,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10741,7 +10741,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 1194,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10750,7 +10750,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1195,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10759,7 +10759,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1196,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10768,7 +10768,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1197,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10777,7 +10777,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1198,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10786,7 +10786,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 1199,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10795,7 +10795,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 1200,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10804,7 +10804,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 1201,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10813,7 +10813,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1202,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -10822,7 +10822,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 1203,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -11263,7 +11263,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1252,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -11272,7 +11272,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1253,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -11281,7 +11281,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1254,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -13234,7 +13234,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 1471,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13243,7 +13243,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 1472,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13252,7 +13252,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 1473,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13261,7 +13261,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 1474,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13270,7 +13270,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 1475,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13279,7 +13279,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 1476,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13288,7 +13288,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 1477,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13297,7 +13297,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 1478,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13306,7 +13306,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 1479,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13315,7 +13315,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1480,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13324,7 +13324,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 1481,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13333,7 +13333,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1482,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13342,7 +13342,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1483,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13351,7 +13351,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1484,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13360,7 +13360,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 1485,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13369,7 +13369,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 1486,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13378,7 +13378,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 1487,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13387,7 +13387,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 1488,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13396,7 +13396,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1489,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13405,7 +13405,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 1490,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -13594,7 +13594,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 1511,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13603,7 +13603,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 1512,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13612,7 +13612,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 1513,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13621,7 +13621,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 1514,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13630,7 +13630,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 1515,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13639,7 +13639,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 1516,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13648,7 +13648,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 1517,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13657,7 +13657,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1518,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13666,7 +13666,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 1519,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13675,7 +13675,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1520,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13684,7 +13684,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1521,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13693,7 +13693,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1522,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13702,7 +13702,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 1523,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13711,7 +13711,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 1524,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13720,7 +13720,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 1525,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13729,7 +13729,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1526,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -13738,7 +13738,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 1527,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -15691,7 +15691,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 1744,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15700,7 +15700,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 1745,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15709,7 +15709,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 1746,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15718,7 +15718,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1747,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15727,7 +15727,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1748,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15736,7 +15736,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1749,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15745,7 +15745,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1750,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15754,7 +15754,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 1751,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15763,7 +15763,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 1752,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -15772,7 +15772,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 1753,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -16294,7 +16294,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 1811,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -16303,7 +16303,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1812,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -16312,7 +16312,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1813,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -16321,7 +16321,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1814,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -16330,7 +16330,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1815,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -16339,7 +16339,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 1816,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16348,7 +16348,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 1817,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16357,7 +16357,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 1818,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16366,7 +16366,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 1819,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16375,7 +16375,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 1820,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16384,7 +16384,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 1821,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16393,7 +16393,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 1822,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16402,7 +16402,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 1823,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16411,7 +16411,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 1824,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16420,7 +16420,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 1825,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16429,7 +16429,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 1826,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16438,7 +16438,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 1827,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16447,7 +16447,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 1828,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16456,7 +16456,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 1829,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16465,7 +16465,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 1830,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16474,7 +16474,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 1831,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16483,7 +16483,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 1832,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16492,7 +16492,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 1833,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16501,7 +16501,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 1834,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -16510,7 +16510,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 1835,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -19462,7 +19462,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 2163,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19471,7 +19471,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2164,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19480,7 +19480,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2165,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19489,7 +19489,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 2166,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19498,7 +19498,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2167,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19507,7 +19507,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 2168,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19516,7 +19516,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2169,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19525,7 +19525,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2170,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19534,7 +19534,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2171,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19543,7 +19543,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2172,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19552,7 +19552,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 2173,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19561,7 +19561,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2174,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19570,7 +19570,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2175,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -19921,7 +19921,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2214,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -19930,7 +19930,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2215,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -19939,7 +19939,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2216,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -19948,7 +19948,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2217,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -19957,7 +19957,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2218,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -22450,7 +22450,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 2495,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22459,7 +22459,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 2496,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22468,7 +22468,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 2497,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22477,7 +22477,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 2498,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22486,7 +22486,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2499,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22495,7 +22495,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2500,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22504,7 +22504,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 2501,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22513,7 +22513,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 2502,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22522,7 +22522,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2503,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22531,7 +22531,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 2504,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22540,7 +22540,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2505,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22549,7 +22549,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 2506,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22558,7 +22558,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2507,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22567,7 +22567,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2508,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22576,7 +22576,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2509,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22585,7 +22585,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 2510,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22594,7 +22594,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 2511,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22603,7 +22603,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2512,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22612,7 +22612,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 2513,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22621,7 +22621,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2514,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22630,7 +22630,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2515,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -22819,7 +22819,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 2536,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22828,7 +22828,7 @@
         "naics_codes": 21,
         "student_path": 1,
         "id": 2537,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22837,7 +22837,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 2538,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22846,7 +22846,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 2539,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22855,7 +22855,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 2540,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22864,7 +22864,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2541,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22873,7 +22873,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2542,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22882,7 +22882,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 2543,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22891,7 +22891,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 2544,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22900,7 +22900,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2545,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22909,7 +22909,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 2546,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22918,7 +22918,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2547,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22927,7 +22927,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 2548,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22936,7 +22936,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2549,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22945,7 +22945,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2550,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22954,7 +22954,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2551,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22963,7 +22963,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 2552,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22972,7 +22972,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 2553,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22981,7 +22981,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2554,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22990,7 +22990,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2555,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -22999,7 +22999,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2556,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -25294,7 +25294,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 2811,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25303,7 +25303,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2812,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25312,7 +25312,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2813,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25321,7 +25321,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2814,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25330,7 +25330,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2815,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25339,7 +25339,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2816,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25348,7 +25348,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2817,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25357,7 +25357,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2818,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25366,7 +25366,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2819,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25375,7 +25375,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2820,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -25384,7 +25384,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2821,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -26149,7 +26149,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2906,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26158,7 +26158,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2907,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26167,7 +26167,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2908,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26176,7 +26176,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2909,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26185,7 +26185,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2910,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26194,7 +26194,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2911,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26203,7 +26203,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 2912,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26212,7 +26212,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2913,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26221,7 +26221,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2914,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26230,7 +26230,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2915,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -26239,7 +26239,7 @@
         "naics_codes": 11,
         "student_path": 1,
         "id": 2916,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26248,7 +26248,7 @@
         "naics_codes": 22,
         "student_path": 1,
         "id": 2917,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26257,7 +26257,7 @@
         "naics_codes": 23,
         "student_path": 1,
         "id": 2918,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26266,7 +26266,7 @@
         "naics_codes": 3133,
         "student_path": 1,
         "id": 2919,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26275,7 +26275,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 2920,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26284,7 +26284,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 2921,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26293,7 +26293,7 @@
         "naics_codes": 4849,
         "student_path": 1,
         "id": 2922,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26302,7 +26302,7 @@
         "naics_codes": 51,
         "student_path": 1,
         "id": 2923,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26311,7 +26311,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 2924,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26320,7 +26320,7 @@
         "naics_codes": 53,
         "student_path": 1,
         "id": 2925,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26329,7 +26329,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 2926,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26338,7 +26338,7 @@
         "naics_codes": 55,
         "student_path": 1,
         "id": 2927,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26347,7 +26347,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 2928,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26356,7 +26356,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 2929,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26365,7 +26365,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 2930,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26374,7 +26374,7 @@
         "naics_codes": 71,
         "student_path": 1,
         "id": 2931,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26383,7 +26383,7 @@
         "naics_codes": 72,
         "student_path": 1,
         "id": 2932,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26392,7 +26392,7 @@
         "naics_codes": 81,
         "student_path": 1,
         "id": 2933,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26401,7 +26401,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 2934,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26410,7 +26410,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 2935,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -26419,7 +26419,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 2936,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -30028,7 +30028,7 @@
         "naics_codes": 42,
         "student_path": 1,
         "id": 3337,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30037,7 +30037,7 @@
         "naics_codes": 4445,
         "student_path": 1,
         "id": 3338,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30046,7 +30046,7 @@
         "naics_codes": 52,
         "student_path": 1,
         "id": 3339,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30055,7 +30055,7 @@
         "naics_codes": 54,
         "student_path": 1,
         "id": 3340,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30064,7 +30064,7 @@
         "naics_codes": 56,
         "student_path": 1,
         "id": 3341,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30073,7 +30073,7 @@
         "naics_codes": 61,
         "student_path": 1,
         "id": 3342,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30082,7 +30082,7 @@
         "naics_codes": 62,
         "student_path": 1,
         "id": 3343,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30091,7 +30091,7 @@
         "naics_codes": 99,
         "student_path": 1,
         "id": 3344,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30100,7 +30100,7 @@
         "naics_codes": 92,
         "student_path": 1,
         "id": 3345,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30109,7 +30109,7 @@
         "naics_codes": null,
         "student_path": 1,
         "id": 3346,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -30469,7 +30469,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 3386,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30478,7 +30478,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 3387,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30487,7 +30487,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 3388,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30496,7 +30496,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 3389,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30505,7 +30505,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 3390,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30514,7 +30514,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 3391,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30523,7 +30523,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 3392,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -30532,7 +30532,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 3393,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -33115,7 +33115,7 @@
         "naics_codes": 11,
         "student_path": 2,
         "id": 3680,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33124,7 +33124,7 @@
         "naics_codes": 21,
         "student_path": 2,
         "id": 3681,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33133,7 +33133,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 3682,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33142,7 +33142,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 3683,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33151,7 +33151,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 3684,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33160,7 +33160,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 3685,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33169,7 +33169,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 3686,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33178,7 +33178,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 3687,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33187,7 +33187,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 3688,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33196,7 +33196,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 3689,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33205,7 +33205,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 3690,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33214,7 +33214,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 3691,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33223,7 +33223,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 3692,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33232,7 +33232,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 3693,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33241,7 +33241,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 3694,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33250,7 +33250,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 3695,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33259,7 +33259,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 3696,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33268,7 +33268,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 3697,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33277,7 +33277,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 3698,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33286,7 +33286,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 3699,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33295,7 +33295,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 3700,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33304,7 +33304,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 3701,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -33493,7 +33493,7 @@
         "naics_codes": 11,
         "student_path": 2,
         "id": 3722,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33502,7 +33502,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 3723,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33511,7 +33511,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 3724,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33520,7 +33520,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 3725,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33529,7 +33529,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 3726,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33538,7 +33538,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 3727,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33547,7 +33547,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 3728,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33556,7 +33556,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 3729,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33565,7 +33565,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 3730,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33574,7 +33574,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 3731,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33583,7 +33583,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 3732,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33592,7 +33592,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 3733,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33601,7 +33601,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 3734,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33610,7 +33610,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 3735,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33619,7 +33619,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 3736,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33628,7 +33628,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 3737,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33637,7 +33637,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 3738,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33646,7 +33646,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 3739,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33655,7 +33655,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 3740,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33664,7 +33664,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 3741,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -33673,7 +33673,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 3742,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -36553,7 +36553,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4062,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36562,7 +36562,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4063,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36571,7 +36571,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4064,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36580,7 +36580,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4065,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36589,7 +36589,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 4066,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36598,7 +36598,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4067,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36607,7 +36607,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4068,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36616,7 +36616,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4069,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -36625,7 +36625,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 4070,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -37435,7 +37435,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 4160,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37444,7 +37444,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 4161,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37453,7 +37453,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 4162,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37462,7 +37462,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 4163,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37471,7 +37471,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4164,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37480,7 +37480,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 4165,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37489,7 +37489,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4166,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37498,7 +37498,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4167,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37507,7 +37507,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 4168,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37516,7 +37516,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4169,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37525,7 +37525,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 4170,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37534,7 +37534,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4171,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37543,7 +37543,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4172,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37552,7 +37552,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4173,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37561,7 +37561,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 4174,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37570,7 +37570,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 4175,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37579,7 +37579,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 4176,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -37588,7 +37588,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 4177,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37597,7 +37597,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 4178,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37606,7 +37606,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 4179,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37615,7 +37615,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4180,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37624,7 +37624,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 4181,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37633,7 +37633,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4182,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37642,7 +37642,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4183,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37651,7 +37651,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 4184,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37660,7 +37660,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4185,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37669,7 +37669,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 4186,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37678,7 +37678,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 4187,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37687,7 +37687,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4188,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37696,7 +37696,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4189,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37705,7 +37705,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 4190,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37714,7 +37714,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4191,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37723,7 +37723,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 4192,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37732,7 +37732,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 4193,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37741,7 +37741,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 4194,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -37750,7 +37750,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 4195,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -41458,7 +41458,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4607,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41467,7 +41467,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4608,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41476,7 +41476,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4609,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41485,7 +41485,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 4610,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41494,7 +41494,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4611,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41503,7 +41503,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4612,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41512,7 +41512,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 4613,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41521,7 +41521,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 4614,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41530,7 +41530,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 4615,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -41854,7 +41854,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4651,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -41863,7 +41863,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4652,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -41872,7 +41872,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4653,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -41881,7 +41881,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4654,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -41890,7 +41890,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4655,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -43996,7 +43996,7 @@
         "naics_codes": 11,
         "student_path": 2,
         "id": 4889,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44005,7 +44005,7 @@
         "naics_codes": 21,
         "student_path": 2,
         "id": 4890,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44014,7 +44014,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 4891,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44023,7 +44023,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 4892,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44032,7 +44032,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 4893,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44041,7 +44041,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 4894,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44050,7 +44050,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4895,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44059,7 +44059,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 4896,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44068,7 +44068,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4897,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44077,7 +44077,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4898,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44086,7 +44086,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 4899,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44095,7 +44095,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4900,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44104,7 +44104,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 4901,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44113,7 +44113,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 4902,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44122,7 +44122,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4903,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44131,7 +44131,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4904,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44140,7 +44140,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 4905,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44149,7 +44149,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4906,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44158,7 +44158,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 4907,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44167,7 +44167,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 4908,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44176,7 +44176,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 4909,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -44365,7 +44365,7 @@
         "naics_codes": 11,
         "student_path": 2,
         "id": 4930,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44374,7 +44374,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 4931,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44383,7 +44383,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 4932,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44392,7 +44392,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 4933,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44401,7 +44401,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 4934,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44410,7 +44410,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 4935,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44419,7 +44419,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 4936,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44428,7 +44428,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 4937,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44437,7 +44437,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 4938,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44446,7 +44446,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 4939,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44455,7 +44455,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 4940,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44464,7 +44464,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 4941,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44473,7 +44473,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 4942,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44482,7 +44482,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 4943,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44491,7 +44491,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 4944,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44500,7 +44500,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 4945,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44509,7 +44509,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 4946,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44518,7 +44518,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 4947,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44527,7 +44527,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 4948,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -44536,7 +44536,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 4949,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -47110,7 +47110,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 5235,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47119,7 +47119,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 5236,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47128,7 +47128,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 5237,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47137,7 +47137,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5238,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47146,7 +47146,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 5239,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47155,7 +47155,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5240,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47164,7 +47164,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 5241,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47173,7 +47173,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 5242,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -47803,7 +47803,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 5312,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47812,7 +47812,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 5313,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47821,7 +47821,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 5314,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47830,7 +47830,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 5315,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47839,7 +47839,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 5316,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47848,7 +47848,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 5317,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47857,7 +47857,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5318,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47866,7 +47866,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 5319,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47875,7 +47875,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5320,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47884,7 +47884,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 5321,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47893,7 +47893,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 5322,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47902,7 +47902,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 5323,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -47911,7 +47911,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 5324,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47920,7 +47920,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 5325,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47929,7 +47929,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 5326,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47938,7 +47938,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 5327,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47947,7 +47947,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 5328,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47956,7 +47956,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 5329,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47965,7 +47965,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 5330,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47974,7 +47974,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 5331,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47983,7 +47983,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5332,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -47992,7 +47992,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 5333,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48001,7 +48001,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 5334,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48010,7 +48010,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5335,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48019,7 +48019,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 5336,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48028,7 +48028,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 5337,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48037,7 +48037,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 5338,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48046,7 +48046,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 5339,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48055,7 +48055,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 5340,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -48064,7 +48064,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 5341,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -51016,7 +51016,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 5669,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -51025,7 +51025,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5670,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -51034,7 +51034,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 5671,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -51043,7 +51043,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 5672,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -51295,7 +51295,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 5700,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -51304,7 +51304,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 5701,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -51313,7 +51313,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5702,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -51322,7 +51322,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 5703,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -51331,7 +51331,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5704,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -51340,7 +51340,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 5705,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -53509,7 +53509,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 5946,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53518,7 +53518,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 5947,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53527,7 +53527,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 5948,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53536,7 +53536,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 5949,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53545,7 +53545,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 5950,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53554,7 +53554,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 5951,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53563,7 +53563,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 5952,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53572,7 +53572,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 5953,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53581,7 +53581,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 5954,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53590,7 +53590,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5955,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53599,7 +53599,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 5956,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53608,7 +53608,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 5957,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53617,7 +53617,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5958,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53626,7 +53626,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 5959,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53635,7 +53635,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 5960,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53644,7 +53644,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 5961,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53653,7 +53653,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 5962,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53662,7 +53662,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 5963,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53671,7 +53671,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 5964,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -53851,7 +53851,7 @@
         "naics_codes": 22,
         "student_path": 2,
         "id": 5984,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53860,7 +53860,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 5985,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53869,7 +53869,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 5986,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53878,7 +53878,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 5987,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53887,7 +53887,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 5988,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53896,7 +53896,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 5989,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53905,7 +53905,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 5990,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53914,7 +53914,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 5991,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53923,7 +53923,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 5992,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53932,7 +53932,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 5993,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53941,7 +53941,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 5994,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53950,7 +53950,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 5995,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53959,7 +53959,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 5996,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53968,7 +53968,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 5997,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53977,7 +53977,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 5998,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53986,7 +53986,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 5999,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -53995,7 +53995,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 6000,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -54004,7 +54004,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 6001,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -54013,7 +54013,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 6002,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -54022,7 +54022,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 6003,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -56380,7 +56380,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 6265,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -56389,7 +56389,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 6266,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -56398,7 +56398,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 6267,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -56407,7 +56407,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 6268,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -56416,7 +56416,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 6269,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -57091,7 +57091,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 6344,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57100,7 +57100,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 6345,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57109,7 +57109,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 6346,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57118,7 +57118,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 6347,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57127,7 +57127,7 @@
         "naics_codes": 4849,
         "student_path": 2,
         "id": 6348,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57136,7 +57136,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 6349,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57145,7 +57145,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 6350,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57154,7 +57154,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 6351,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57163,7 +57163,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 6352,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57172,7 +57172,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 6353,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57181,7 +57181,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 6354,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57190,7 +57190,7 @@
         "naics_codes": 99,
         "student_path": 2,
         "id": 6355,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57199,7 +57199,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 6356,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57208,7 +57208,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 6357,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -57217,7 +57217,7 @@
         "naics_codes": 23,
         "student_path": 2,
         "id": 6358,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57226,7 +57226,7 @@
         "naics_codes": 3133,
         "student_path": 2,
         "id": 6359,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57235,7 +57235,7 @@
         "naics_codes": 42,
         "student_path": 2,
         "id": 6360,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57244,7 +57244,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 6361,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57253,7 +57253,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 6362,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57262,7 +57262,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 6363,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57271,7 +57271,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 6364,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57280,7 +57280,7 @@
         "naics_codes": 54,
         "student_path": 2,
         "id": 6365,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57289,7 +57289,7 @@
         "naics_codes": 55,
         "student_path": 2,
         "id": 6366,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57298,7 +57298,7 @@
         "naics_codes": 56,
         "student_path": 2,
         "id": 6367,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57307,7 +57307,7 @@
         "naics_codes": 61,
         "student_path": 2,
         "id": 6368,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57316,7 +57316,7 @@
         "naics_codes": 62,
         "student_path": 2,
         "id": 6369,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57325,7 +57325,7 @@
         "naics_codes": 71,
         "student_path": 2,
         "id": 6370,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57334,7 +57334,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 6371,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57343,7 +57343,7 @@
         "naics_codes": 81,
         "student_path": 2,
         "id": 6372,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57352,7 +57352,7 @@
         "naics_codes": 92,
         "student_path": 2,
         "id": 6373,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -57361,7 +57361,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 6374,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -60484,7 +60484,7 @@
         "naics_codes": 4445,
         "student_path": 2,
         "id": 6721,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60493,7 +60493,7 @@
         "naics_codes": 51,
         "student_path": 2,
         "id": 6722,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60502,7 +60502,7 @@
         "naics_codes": 52,
         "student_path": 2,
         "id": 6723,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60511,7 +60511,7 @@
         "naics_codes": 53,
         "student_path": 2,
         "id": 6724,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60520,7 +60520,7 @@
         "naics_codes": 72,
         "student_path": 2,
         "id": 6725,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60529,7 +60529,7 @@
         "naics_codes": null,
         "student_path": 2,
         "id": 6726,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -60781,7 +60781,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 6754,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -60790,7 +60790,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 6755,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -62518,7 +62518,7 @@
         "naics_codes": 23,
         "student_path": 4,
         "id": 6947,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62527,7 +62527,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 6948,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62536,7 +62536,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 6949,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62545,7 +62545,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 6950,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62554,7 +62554,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 6951,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62563,7 +62563,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 6952,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62572,7 +62572,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 6953,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62581,7 +62581,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 6954,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62590,7 +62590,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 6955,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62599,7 +62599,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 6956,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62608,7 +62608,7 @@
         "naics_codes": 71,
         "student_path": 4,
         "id": 6957,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62617,7 +62617,7 @@
         "naics_codes": 81,
         "student_path": 4,
         "id": 6958,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62626,7 +62626,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 6959,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -62770,7 +62770,7 @@
         "naics_codes": 11,
         "student_path": 4,
         "id": 6975,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62779,7 +62779,7 @@
         "naics_codes": 22,
         "student_path": 4,
         "id": 6976,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62788,7 +62788,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 6977,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62797,7 +62797,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 6978,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62806,7 +62806,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 6979,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62815,7 +62815,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 6980,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62824,7 +62824,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 6981,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62833,7 +62833,7 @@
         "naics_codes": 55,
         "student_path": 4,
         "id": 6982,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62842,7 +62842,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 6983,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62851,7 +62851,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 6984,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62860,7 +62860,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 6985,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62869,7 +62869,7 @@
         "naics_codes": 99,
         "student_path": 4,
         "id": 6986,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62878,7 +62878,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 6987,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -62887,7 +62887,7 @@
         "naics_codes": null,
         "student_path": 4,
         "id": 6988,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -64318,7 +64318,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7147,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -64327,7 +64327,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7148,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -64885,7 +64885,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 7210,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -64894,7 +64894,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 7211,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -64903,7 +64903,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7212,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -64912,7 +64912,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7213,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -64921,7 +64921,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7214,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -64930,7 +64930,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 7215,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64939,7 +64939,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 7216,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64948,7 +64948,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 7217,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64957,7 +64957,7 @@
         "naics_codes": 4849,
         "student_path": 4,
         "id": 7218,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64966,7 +64966,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 7219,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64975,7 +64975,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 7220,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64984,7 +64984,7 @@
         "naics_codes": 53,
         "student_path": 4,
         "id": 7221,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -64993,7 +64993,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 7222,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65002,7 +65002,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 7223,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65011,7 +65011,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7224,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65020,7 +65020,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7225,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65029,7 +65029,7 @@
         "naics_codes": 72,
         "student_path": 4,
         "id": 7226,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65038,7 +65038,7 @@
         "naics_codes": 81,
         "student_path": 4,
         "id": 7227,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65047,7 +65047,7 @@
         "naics_codes": 99,
         "student_path": 4,
         "id": 7228,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65056,7 +65056,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7229,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -65065,7 +65065,7 @@
         "naics_codes": null,
         "student_path": 4,
         "id": 7230,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -67306,7 +67306,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 7479,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67315,7 +67315,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 7480,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67324,7 +67324,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 7481,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67333,7 +67333,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 7482,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67342,7 +67342,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7483,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67351,7 +67351,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7484,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -67630,7 +67630,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7515,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -68701,7 +68701,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 7634,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68710,7 +68710,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 7635,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68719,7 +68719,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 7636,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68728,7 +68728,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 7637,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68737,7 +68737,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 7638,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68746,7 +68746,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 7639,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68755,7 +68755,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7640,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68764,7 +68764,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7641,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68773,7 +68773,7 @@
         "naics_codes": 71,
         "student_path": 4,
         "id": 7642,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68782,7 +68782,7 @@
         "naics_codes": 81,
         "student_path": 4,
         "id": 7643,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68791,7 +68791,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7644,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -68899,7 +68899,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 7656,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68908,7 +68908,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 7657,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68917,7 +68917,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 7658,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68926,7 +68926,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 7659,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68935,7 +68935,7 @@
         "naics_codes": 55,
         "student_path": 4,
         "id": 7660,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68944,7 +68944,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 7661,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68953,7 +68953,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7662,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68962,7 +68962,7 @@
         "naics_codes": 99,
         "student_path": 4,
         "id": 7663,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68971,7 +68971,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7664,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -68980,7 +68980,7 @@
         "naics_codes": null,
         "student_path": 4,
         "id": 7665,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -69826,7 +69826,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7759,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -70132,7 +70132,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7793,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -70141,7 +70141,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7794,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -70150,7 +70150,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 7795,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70159,7 +70159,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 7796,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70168,7 +70168,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 7797,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70177,7 +70177,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 7798,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70186,7 +70186,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 7799,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70195,7 +70195,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 7800,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70204,7 +70204,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 7801,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70213,7 +70213,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7802,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70222,7 +70222,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7803,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70231,7 +70231,7 @@
         "naics_codes": 72,
         "student_path": 4,
         "id": 7804,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -70240,7 +70240,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 7805,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -71644,7 +71644,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7961,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -71860,7 +71860,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 7985,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -71869,7 +71869,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 7986,
-        "hegis_at_exit": 12112032,
+        "hegis_at_exit": 121,
         "campus": 70,
         "university_majors_id": 1
     },
@@ -73381,7 +73381,7 @@
         "naics_codes": 23,
         "student_path": 4,
         "id": 8154,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73390,7 +73390,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 8155,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73399,7 +73399,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 8156,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73408,7 +73408,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 8157,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73417,7 +73417,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 8158,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73426,7 +73426,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 8159,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73435,7 +73435,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 8160,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73444,7 +73444,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8161,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73453,7 +73453,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 8162,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73462,7 +73462,7 @@
         "naics_codes": 71,
         "student_path": 4,
         "id": 8163,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73471,7 +73471,7 @@
         "naics_codes": 81,
         "student_path": 4,
         "id": 8164,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73480,7 +73480,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 8165,
-        "hegis_at_exit": 602106022,
+        "hegis_at_exit": 6021,
         "campus": 70,
         "university_majors_id": 22
     },
@@ -73597,7 +73597,7 @@
         "naics_codes": 11,
         "student_path": 4,
         "id": 8178,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73606,7 +73606,7 @@
         "naics_codes": 22,
         "student_path": 4,
         "id": 8179,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73615,7 +73615,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 8180,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73624,7 +73624,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 8181,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73633,7 +73633,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 8182,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73642,7 +73642,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 8183,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73651,7 +73651,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 8184,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73660,7 +73660,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 8185,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73669,7 +73669,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8186,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73678,7 +73678,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 8187,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73687,7 +73687,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 8188,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -73696,7 +73696,7 @@
         "naics_codes": null,
         "student_path": 4,
         "id": 8189,
-        "hegis_at_exit": 701107012,
+        "hegis_at_exit": 7011,
         "campus": 70,
         "university_majors_id": 24
     },
@@ -74965,7 +74965,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8330,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -74974,7 +74974,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 8331,
-        "hegis_at_exit": 110111102111031,
+        "hegis_at_exit": 11011,
         "campus": 70,
         "university_majors_id": 43
     },
@@ -75478,7 +75478,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 8387,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -75487,7 +75487,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 8388,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -75496,7 +75496,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8389,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -75505,7 +75505,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 8390,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -75514,7 +75514,7 @@
         "naics_codes": 92,
         "student_path": 4,
         "id": 8391,
-        "hegis_at_exit": 1225112253,
+        "hegis_at_exit": 12251,
         "campus": 70,
         "university_majors_id": 53
     },
@@ -75523,7 +75523,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 8392,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75532,7 +75532,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 8393,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75541,7 +75541,7 @@
         "naics_codes": 4445,
         "student_path": 4,
         "id": 8394,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75550,7 +75550,7 @@
         "naics_codes": 4849,
         "student_path": 4,
         "id": 8395,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75559,7 +75559,7 @@
         "naics_codes": 51,
         "student_path": 4,
         "id": 8396,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75568,7 +75568,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 8397,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75577,7 +75577,7 @@
         "naics_codes": 53,
         "student_path": 4,
         "id": 8398,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75586,7 +75586,7 @@
         "naics_codes": 54,
         "student_path": 4,
         "id": 8399,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75595,7 +75595,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 8400,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75604,7 +75604,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8401,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75613,7 +75613,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 8402,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75622,7 +75622,7 @@
         "naics_codes": 72,
         "student_path": 4,
         "id": 8403,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75631,7 +75631,7 @@
         "naics_codes": 81,
         "student_path": 4,
         "id": 8404,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75640,7 +75640,7 @@
         "naics_codes": 99,
         "student_path": 4,
         "id": 8405,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -75649,7 +75649,7 @@
         "naics_codes": null,
         "student_path": 4,
         "id": 8406,
-        "hegis_at_exit": 1301113061,
+        "hegis_at_exit": 13011,
         "campus": 70,
         "university_majors_id": 54
     },
@@ -77575,7 +77575,7 @@
         "naics_codes": 3133,
         "student_path": 4,
         "id": 8620,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -77584,7 +77584,7 @@
         "naics_codes": 42,
         "student_path": 4,
         "id": 8621,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -77593,7 +77593,7 @@
         "naics_codes": 52,
         "student_path": 4,
         "id": 8622,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -77602,7 +77602,7 @@
         "naics_codes": 56,
         "student_path": 4,
         "id": 8623,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -77611,7 +77611,7 @@
         "naics_codes": 61,
         "student_path": 4,
         "id": 8624,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
@@ -77620,7 +77620,7 @@
         "naics_codes": 62,
         "student_path": 4,
         "id": 8625,
-        "hegis_at_exit": 2299049991,
+        "hegis_at_exit": 22990,
         "campus": 70,
         "university_majors_id": 83
     },
