@@ -17,23 +17,28 @@ class IterateCsvFiles():
         pass
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
+      index = 1  
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
         majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
+        # print(majorDataFrame)
 
         # get Table equiv Data Frames
         majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()
+        # print(majorPathDf)
 
-        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
+        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary(index) # Returns a dictionary
         # init json Industry
-        jsonMajor = JsonMajor(fileName,majorDataFrame,universityMajorDictionary) #Returns the Json
+        jsonMajor = JsonMajor(fileName,majorDataFrame,universityMajorDictionary,index) #Returns the Json
         
         majorPathDf = jsonMajor.getMajorsTables(majorPathDf)
-        
+        # print(majorPathDf)
+        index = jsonMajor.getIndex()        
         jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
         jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
         jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
+
 
         del majorSanitize
         del majorDataFrame

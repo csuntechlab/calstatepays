@@ -10,6 +10,7 @@ class DataFrame:
         self.dataframe_builder()
         self.headerSanitizer()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
+        # print(self.df)
         pass
     
     def dataframe_builder(self):
@@ -18,10 +19,13 @@ class DataFrame:
 
     def headerSanitizer(self):
         self.df.columns = self.df.columns.str.replace(' ','_')
+        self.df.columns = self.df.columns.str.replace('#','number')
         self.df.columns = self.df.columns.str.lower()
         for i,col in enumerate(self.df.columns):
             if(col[0] in '123456789'):
                 self.df = self.df.rename(index=str, columns={str(col): "_"+str(col)})
+            elif(col == 'entry_stat'):
+                self.df = self.df.rename(index=str, columns={str(col): 'entry_status'})
     
     def dfHead(self):
         print (self.df.head())
@@ -138,7 +142,9 @@ class SanitizeMajor(DataFrame):
         
 
     def getMajorPathsDF(self):
+        # print(self.df)
         MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
+        # print(MajorPathDf)
         MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1)
         MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
         MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']]

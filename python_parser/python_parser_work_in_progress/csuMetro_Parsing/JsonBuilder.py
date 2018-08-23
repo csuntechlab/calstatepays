@@ -107,9 +107,10 @@ class JsonIndustry:
 
 
 class JsonMajor:
-  def __init__(self,file,df,universityMajorDictionary):
+  def __init__(self,file,df,universityMajorDictionary,index):
     self.file = file
     self.df = df
+    self.index = index
     self.dictionary = self.createDictionary(universityMajorDictionary) 
 	
   
@@ -119,22 +120,29 @@ class JsonMajor:
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
-    universityMajorsId = []
-    index = 1
+
+    jsonFile = open( 'University_Majors_Id_table.json' )
+    universityMajorsId = jsonFile.read()
+    universityMajorsId = json.loads( universityMajorsId )
+
+
+    #hegisDictionary = {}
+    #universityMajorsId = []
+    #index = 1
+    #index =1
     for row in output:
-        # campus = int(row['campus'])
-        hegis =  int(row['hegis_at_exit'])
-        campus =  int(row['campus'])
-        dictRename = {'hegis_codes': hegis,'university_id':campus }
+      # campus = int(row['campus'])
+      hegis =  int(row['hegis_at_exit'])
+      campus =  int(row['campus'])
+      dictRename = {'hegis_codes': hegis,'university_id':campus }
 
-        hegisDictionary[hegis] = index
-        universityMajorsId.append(dictRename)
+      hegisDictionary[hegis] = self.index
+      universityMajorsId.append(dictRename)
 
-        index +=1
+      self.index +=1
     del output
 
     
-
     dictionary  = {campusId:hegisDictionary}
     
     with open (self.file+'_Dictionary.json', 'w' ) as fp:
@@ -149,12 +157,13 @@ class JsonMajor:
 
     return dictionary
     
-    
+  def getIndex(self):
+    return self.index
   
   def getMajorsTables(self, majorPathDf ):
     
     majorPathDf['university_majors_id'] = -1
-    
+
     for index,row in majorPathDf.iterrows():
       hegis = row[3]
       campus = row[4]
