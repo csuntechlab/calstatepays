@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  webserver:
+    container_name: csumetro
+    image: csunmetalab/environment:csumetro
+    ports:
+      - '8080:80'
+    volumes:
+      - .:/var/www/
+  composer:
+    image: composer:latest
+    command: install
+    volumes:
+      - .:/app/
