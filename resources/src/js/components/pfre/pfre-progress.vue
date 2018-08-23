@@ -1,6 +1,6 @@
 <template>
   <div class="progress-wrapper" id="progress-bars">
-    <div class="row no-gutters">
+    <div class="row no-gutters my-3">
       <div class="col-12 col-lg-8 col-xl-9">
         <div class="d-flex">
           <span class="col-xl-4 pr-0">
@@ -30,7 +30,7 @@
       <!-- <div class="col-12 col-lg-4 col-xl-3 align-self-md-center"> -->
       <!-- </div> -->
     </div>
-    <div class="row no-gutters">
+    <div class="row no-gutters my-3">
       <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <!-- <h5 class="text-center">Earnings</h5>       -->
         <div class="d-flex">
@@ -62,7 +62,7 @@
       <!-- <div class="col-12 col-lg-4 col-xl-3 align-self-md-center">
       </div> -->
     </div>
-    <div class="row no-gutters">
+    <div class="row no-gutters my-3">
       <div class="col-12 col-lg-8 col-xl-9 align-self-center">
         <h5 class="text-center">Return On Investment</h5>
         <div class="d-flex">

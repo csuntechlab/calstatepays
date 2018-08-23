@@ -15,18 +15,16 @@
             </div>  
         </div>
         <div v-else-if="educationLevel == 'someCollege'">
-            <div class="row justify-content-center">
-                <h5 v-show="windowSize > 500" class="text-center font-weight-bold pb-2">Percentile: </h5>
-                <span class="legend-mobile">
-                    <div class="legend-oxford-75 m-0"></div><p class="ml-4">75th Percentile</p>
-                </span>
-                <span class="legend-mobile">
-                    <div class="legend-oxford m-0"></div><p class="ml-4">50th Percentile</p>
-                </span>
-                <span class="legend-mobile">
-                    <div class="legend-oxford-25 m-0"></div><p class="ml-4">25th Percentile</p>
-                </span>
-            </div> 
+            <h5 v-show="windowSize > 500" class="text-center font-weight-bold pb-2">Percentile: </h5>
+            <span class="legend-mobile">
+                <div class="legend-oxford-75 m-0"></div><p class="ml-4">75th Percentile</p>
+            </span>
+            <span class="legend-mobile">
+                <div class="legend-oxford m-0"></div><p class="ml-4">50th Percentile</p>
+            </span>
+            <span class="legend-mobile">
+                <div class="legend-oxford-25 m-0"></div><p class="ml-4">25th Percentile</p>
+            </span>
         </div>
         <div v-else-if="educationLevel == 'bachelors'">
             <div class="row justify-content-center">
