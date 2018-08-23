@@ -1,5 +1,5 @@
 <template>
-    <form class="container-fluid" v-bind:id="'majorForm-' + form.cardIndex">
+    <form v-bind:id="'majorForm-' + form.cardIndex">
 		<fieldset class="csu-card__form-sizing">
 			<div v-if="!selectedFormWasSubmitted">
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">

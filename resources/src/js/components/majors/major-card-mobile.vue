@@ -1,26 +1,38 @@
 <template>
-        <div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
+        <div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
             <div class="col-12">
                 <div class="csu-card">
-                    <div class="container-fluid">
+                    <div class="container-fluid py-3">
                         <div class="row">
-                            <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-                            <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                            <div class="col-12">
+                                <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+                                <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                            </div>
                         </div>
                         <div class="row">
-                            <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+                            <div class="col-12">
+                                <h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+                            </div>
                         </div>
                         <div class="row" v-show="selectedFormWasSubmitted" style="height: 400px" >
-                            <major-graph-wrapper id="majorGraphContainer" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+                            <div class="col-12">
+                                <major-graph-wrapper :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+                            </div>
                         </div>
                         <div class="row justify-content-center">
-                            <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"/>
+                            <div class="col-12">
+                                <major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"/>
+                            </div>
                         </div>
                         <div class="row">
-                            <major-form :index="index"/>                    
+                            <div class="col-12">
+                                <major-form :index="index"/>
+                            </div>
                         </div>
                         <div class="row">
-                            <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
+                            <div class="col-12">
+                                <industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId"/>
+                            </div>
                         </div>
                     </div>
                 </div>

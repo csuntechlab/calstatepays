@@ -44,22 +44,22 @@ export default {
             if(this.windowWidth >= 1001) {
                 return {
                     height: 400,
-                    width: this.windowWidth * .42
+                    width: 200
+                    // width: this.windowWidth / 1.75
                 }
                
             }
-            else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
+            else if(this.windowWidth >= 576 && this.windowWidth < 1000) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 150
-                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 15,
+                    width: this.windowWidth / 1.4,
                 }
             }
             else {
               return {
                     height: 400,
                     width: this.windowWidth - 48
-                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 30,
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
                 }  
             }
         },
@@ -178,75 +178,42 @@ export default {
                     },
                 },
                 series: [
-                    // {
-                    //     type: 'line',
-                    //     name:  this.toolTipTitles3,
-                    //     data:  this.mastersEarnings,
-                    //     lineStyle: {
-                    //         color: this.toolColors3,
-                    //         width: 4
-                    //     },
-                    //     itemStyle: {
-                    //         color: this.toolColors3
-                    //     }
-                    // },
-                    // {
-                    //     type: 'line',
-                    //     name: this.toolTipTitles2,
-                    //     data: this.bachelorsEarnings,
-                    //     lineStyle: {
-                    //         color: this.toolColors2,
-                    //         width: 4
-                    //     },
-                    //     itemStyle: {
-                    //         color: this.toolColors2
-                    //     }
-                    // },
-                    // {
-                    //     type: 'line',
-                    //     name: this.toolTipTitles1,
-                    //     data: this.someCollegeEarnings,
-                    //     lineStyle: {
-                    //         color: this.toolColors1,
-                    //         width: 4
-                    //     },
-                    //     itemStyle: {
-                    //         color: this.toolColors1
-                    //     },
-                    // }
                     {
-                        name: "Post",
-                        type: "line",
-                        data: [38572, 52317, 68802, 82001],
-                        itemStyle: {
-                            color: "#2BAE67"
-                        },
+                        type: 'line',
+                        name:  this.toolTipTitles3,
+                        data:  this.mastersEarnings,
                         lineStyle: {
-                            width: 5
-                        }
+                            color: this.toolColors3,
+                            width: 4,
                         },
-                        {
-                        name: "Bacc",
-                        type: "line",
-                        data: [26154, 37822],
                         itemStyle: {
-                            color: "#DAA200"
-                        },
-                        lineStyle: {
-                            width: 5
+                            color: this.toolColors3
                         }
+                    },
+                    {
+                        type: 'line',
+                        name: this.toolTipTitles2,
+                        data: this.bachelorsEarnings,
+                        lineStyle: {
+                            color: this.toolColors2,
+                            width: 4,
                         },
-                        {
-                        name: "College",
-                        type: "line",
-                        data: [16260, 24129, 32023, 44400],
                         itemStyle: {
-                            color: "#476A6F"
-                        },
-                        lineStyle: {
-                            width: 5
+                            color: this.toolColors2
                         }
-                    }
+                    },
+                    {
+                        type: 'line',
+                        name: this.toolTipTitles1,
+                        data: this.someCollegeEarnings,
+                        lineStyle: {
+                            color: this.toolColors1,
+                            width: 4,
+                        },
+                        itemStyle: {
+                            color: this.toolColors1
+                        },
+            }
                 ],
                 animationDuration: 2000
             }

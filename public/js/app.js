@@ -25610,7 +25610,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-data-img-banner.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\csu-data-img-banner.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -25619,9 +25619,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cce79eca", Component.options)
+    hotAPI.createRecord("data-v-0e0bcaf0", Component.options)
   } else {
-    hotAPI.reload("data-v-cce79eca", Component.options)
+    hotAPI.reload("data-v-0e0bcaf0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -25657,7 +25657,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/sub-nav.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\sub-nav.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -25666,9 +25666,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-827c1300", Component.options)
+    hotAPI.createRecord("data-v-1c94c826", Component.options)
   } else {
-    hotAPI.reload("data-v-827c1300", Component.options)
+    hotAPI.reload("data-v-1c94c826", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -25704,7 +25704,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/card.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\card.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -25713,9 +25713,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-23dde416", Component.options)
+    hotAPI.createRecord("data-v-6a8e046e", Component.options)
   } else {
-    hotAPI.reload("data-v-23dde416", Component.options)
+    hotAPI.reload("data-v-6a8e046e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -25939,7 +25939,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/majors-graph.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\majors-graph.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -25948,9 +25948,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-066e806c", Component.options)
+    hotAPI.createRecord("data-v-19571306", Component.options)
   } else {
-    hotAPI.reload("data-v-066e806c", Component.options)
+    hotAPI.reload("data-v-19571306", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -28799,7 +28799,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/pfre/pfre-info.vue"
+Component.options.__file = "resources\\src\\js\\components\\pfre\\pfre-info.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -28808,9 +28808,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e14bad7c", Component.options)
+    hotAPI.createRecord("data-v-1c102def", Component.options)
   } else {
-    hotAPI.reload("data-v-e14bad7c", Component.options)
+    hotAPI.reload("data-v-1c102def", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -28846,7 +28846,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/major-form.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-form.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -28855,9 +28855,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5bfce872", Component.options)
+    hotAPI.createRecord("data-v-2161533a", Component.options)
   } else {
-    hotAPI.reload("data-v-5bfce872", Component.options)
+    hotAPI.reload("data-v-2161533a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -28897,7 +28897,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "node_modules/vue-echarts/components/ECharts.vue"
+Component.options.__file = "node_modules\\vue-echarts\\components\\ECharts.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -28906,9 +28906,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e0eafbb8", Component.options)
+    hotAPI.createRecord("data-v-08963931", Component.options)
   } else {
-    hotAPI.reload("data-v-e0eafbb8", Component.options)
+    hotAPI.reload("data-v-08963931", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -39057,7 +39057,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/major-graph-wrapper.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-graph-wrapper.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39066,9 +39066,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-29763da1", Component.options)
+    hotAPI.createRecord("data-v-ee37b0e4", Component.options)
   } else {
-    hotAPI.reload("data-v-29763da1", Component.options)
+    hotAPI.reload("data-v-ee37b0e4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -39104,7 +39104,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/industries/industry-carousel-card.vue"
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-carousel-card.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39113,9 +39113,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6a0c683b", Component.options)
+    hotAPI.createRecord("data-v-6cbcafa4", Component.options)
   } else {
-    hotAPI.reload("data-v-6a0c683b", Component.options)
+    hotAPI.reload("data-v-6cbcafa4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -39151,7 +39151,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/major-legend.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-legend.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39160,9 +39160,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d5d87060", Component.options)
+    hotAPI.createRecord("data-v-e8c102fa", Component.options)
   } else {
-    hotAPI.reload("data-v-d5d87060", Component.options)
+    hotAPI.reload("data-v-e8c102fa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -39177,7 +39177,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(129);
-module.exports = __webpack_require__(403);
+module.exports = __webpack_require__(406);
 
 
 /***/ }),
@@ -39192,11 +39192,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(394);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -40444,9 +40444,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(390);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(393);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__);
 
 
@@ -44697,7 +44697,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/home/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\home\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44706,9 +44706,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-28376a34", Component.options)
+    hotAPI.createRecord("data-v-15f59300", Component.options)
   } else {
-    hotAPI.reload("data-v-28376a34", Component.options)
+    hotAPI.reload("data-v-15f59300", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44875,7 +44875,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/landing-page-carousel.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\landing-page-carousel.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44884,9 +44884,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f52518dc", Component.options)
+    hotAPI.createRecord("data-v-7deed382", Component.options)
   } else {
-    hotAPI.reload("data-v-f52518dc", Component.options)
+    hotAPI.reload("data-v-7deed382", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44976,7 +44976,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/landing-page-banner.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\landing-page-banner.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44985,9 +44985,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ffde9de", Component.options)
+    hotAPI.createRecord("data-v-6f6bd3cb", Component.options)
   } else {
-    hotAPI.reload("data-v-0ffde9de", Component.options)
+    hotAPI.reload("data-v-6f6bd3cb", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45026,7 +45026,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ffde9de", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6f6bd3cb", module.exports)
   }
 }
 
@@ -45165,7 +45165,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f52518dc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7deed382", module.exports)
   }
 }
 
@@ -45195,7 +45195,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-selector.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\csu-selector.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -45204,9 +45204,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c723ba6", Component.options)
+    hotAPI.createRecord("data-v-4f5ace40", Component.options)
   } else {
-    hotAPI.reload("data-v-3c723ba6", Component.options)
+    hotAPI.reload("data-v-4f5ace40", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45458,7 +45458,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3c723ba6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4f5ace40", module.exports)
   }
 }
 
@@ -45758,7 +45758,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-28376a34", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-15f59300", module.exports)
   }
 }
 
@@ -45788,7 +45788,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/pfre/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\pfre\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -45797,9 +45797,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-82a0cfa0", Component.options)
+    hotAPI.createRecord("data-v-705ef86c", Component.options)
   } else {
-    hotAPI.reload("data-v-82a0cfa0", Component.options)
+    hotAPI.reload("data-v-705ef86c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45974,7 +45974,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-cce79eca", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0e0bcaf0", module.exports)
   }
 }
 
@@ -46078,7 +46078,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-827c1300", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1c94c826", module.exports)
   }
 }
 
@@ -46098,7 +46098,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-23dde416", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6a8e046e", module.exports)
   }
 }
 
@@ -46128,7 +46128,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/pfre/pfre-form.vue"
+Component.options.__file = "resources\\src\\js\\components\\pfre\\pfre-form.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -46137,9 +46137,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-be0a5350", Component.options)
+    hotAPI.createRecord("data-v-2db0db05", Component.options)
   } else {
-    hotAPI.reload("data-v-be0a5350", Component.options)
+    hotAPI.reload("data-v-2db0db05", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47197,7 +47197,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-be0a5350", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2db0db05", module.exports)
   }
 }
 
@@ -47296,7 +47296,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-e14bad7c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1c102def", module.exports)
   }
 }
 
@@ -47326,7 +47326,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/pfre/pfre-progress.vue"
+Component.options.__file = "resources\\src\\js\\components\\pfre\\pfre-progress.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47335,9 +47335,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2797d141", Component.options)
+    hotAPI.createRecord("data-v-a99c9124", Component.options)
   } else {
-    hotAPI.reload("data-v-2797d141", Component.options)
+    hotAPI.reload("data-v-a99c9124", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48824,7 +48824,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2797d141", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-a99c9124", module.exports)
   }
 }
 
@@ -48903,7 +48903,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-82a0cfa0", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-705ef86c", module.exports)
   }
 }
 
@@ -48933,7 +48933,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/majors/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\majors\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -48942,9 +48942,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2bd0df21", Component.options)
+    hotAPI.createRecord("data-v-07141cfb", Component.options)
   } else {
-    hotAPI.reload("data-v-2bd0df21", Component.options)
+    hotAPI.reload("data-v-07141cfb", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49103,7 +49103,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/card-add.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\card-add.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -49112,9 +49112,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c077cf2c", Component.options)
+    hotAPI.createRecord("data-v-6975bec6", Component.options)
   } else {
-    hotAPI.reload("data-v-c077cf2c", Component.options)
+    hotAPI.reload("data-v-6975bec6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49229,7 +49229,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c077cf2c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6975bec6", module.exports)
   }
 }
 
@@ -49259,7 +49259,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/major-card.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-card.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -49268,9 +49268,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-957017da", Component.options)
+    hotAPI.createRecord("data-v-04a7bb86", Component.options)
   } else {
-    hotAPI.reload("data-v-957017da", Component.options)
+    hotAPI.reload("data-v-04a7bb86", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49609,313 +49609,306 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "container-fluid",
-      attrs: { id: "majorForm-" + _vm.form.cardIndex }
-    },
-    [
-      _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-        !_vm.selectedFormWasSubmitted
-          ? _c("div", [
-              !_vm.selectedFormWasSubmitted
-                ? _c(
-                    "div",
-                    {
-                      staticClass: "form-group",
-                      class: [
-                        this.formNotFilled
-                          ? "required-field"
-                          : "required-field--hidden"
-                      ]
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-exclamation-circle" }),
-                      _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.schoolId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "campus" }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
-                  ),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input-major",
-                    class: {
-                      "border-danger": this.submittedOnce && !this.form.schoolId
-                    },
-                    attrs: { label: "name", options: _vm.universities },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                    _vm._v("Select a Discipline (Optional)")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input",
-                    attrs: { label: "discipline", options: _vm.fieldOfStudies },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.majorId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "Major" }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
-                  ),
-                  _vm._v(" "),
-                  this.form.fieldOfStudyId == null
-                    ? _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        class: {
-                          "border-danger":
-                            this.submittedOnce && !this.form.majorId
-                        },
-                        attrs: { label: "major", options: _vm.majors },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                    : _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        attrs: {
-                          label: "major",
-                          options: _vm.selectedMajorsByField
-                        },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "button",
+  return _c("form", { attrs: { id: "majorForm-" + _vm.form.cardIndex } }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      !_vm.selectedFormWasSubmitted
+        ? _c("div", [
+            !_vm.selectedFormWasSubmitted
+              ? _c(
+                  "div",
                   {
-                    staticClass: "btn btn-success btn-submit",
-                    attrs: { type: "button" },
-                    on: { click: _vm.submitForm }
+                    staticClass: "form-group",
+                    class: [
+                      this.formNotFilled
+                        ? "required-field"
+                        : "required-field--hidden"
+                    ]
                   },
-                  [_vm._v("Submit")]
+                  [
+                    _c("i", { staticClass: "fas fa-exclamation-circle" }),
+                    _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
+                  ]
                 )
-              ])
-            ])
-          : _c("div", [
-              _c(
-                "p",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "label",
+                  {
+                    style: [
+                      this.submittedOnce && !this.form.schoolId
+                        ? _vm.errorLabel
+                        : ""
+                    ],
+                    attrs: { for: "campus" }
+                  },
+                  [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
+                ),
+                _vm._v(" "),
+                _c("v-select", {
+                  staticClass: "csu-form-input-major",
+                  class: {
+                    "border-danger": this.submittedOnce && !this.form.schoolId
+                  },
+                  attrs: { label: "name", options: _vm.universities },
+                  on: {
+                    input: function($event) {
+                      _vm.updateSelect("schoolId", "id", $event)
+                    },
+                    change: function($event) {
+                      _vm.updateSelect("schoolId", "id", $event)
                     }
-                  ],
-                  staticClass: "text-center h3 majors-header my-5-md my-4"
-                },
-                [_vm._v("Select a Degree Level")]
-              ),
-              _vm._v(" "),
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                  _vm._v("Select a Discipline (Optional)")
+                ]),
+                _vm._v(" "),
+                _c("v-select", {
+                  staticClass: "csu-form-input",
+                  attrs: { label: "discipline", options: _vm.fieldOfStudies },
+                  on: {
+                    input: function($event) {
+                      _vm.updateSelect("fieldOfStudyId", "id", $event)
+                    },
+                    change: function($event) {
+                      _vm.updateSelect("fieldOfStudyId", "id", $event)
+                    }
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "label",
+                  {
+                    style: [
+                      this.submittedOnce && !this.form.majorId
+                        ? _vm.errorLabel
+                        : ""
+                    ],
+                    attrs: { for: "Major" }
+                  },
+                  [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
+                ),
+                _vm._v(" "),
+                this.form.fieldOfStudyId == null
+                  ? _c("v-select", {
+                      staticClass: "csu-form-input-major",
+                      class: {
+                        "border-danger":
+                          this.submittedOnce && !this.form.majorId
+                      },
+                      attrs: { label: "major", options: _vm.majors },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.selected,
+                        callback: function($$v) {
+                          _vm.selected = $$v
+                        },
+                        expression: "selected"
+                      }
+                    })
+                  : _c("v-select", {
+                      staticClass: "csu-form-input-major",
+                      attrs: {
+                        label: "major",
+                        options: _vm.selectedMajorsByField
+                      },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.selected,
+                        callback: function($$v) {
+                          _vm.selected = $$v
+                        },
+                        expression: "selected"
+                      }
+                    })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-sm major-btn_all",
-                  class: {
-                    "selected-btn_all":
-                      this.educationLevel(this.index) == "allDegrees"
-                  },
-                  attrs: { id: "allDegrees-" + _vm.form.cardIndex },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.toggleEducationLevel("allDegrees")
-                    }
-                  }
+                  staticClass: "btn btn-success btn-submit",
+                  attrs: { type: "button" },
+                  on: { click: _vm.submitForm }
                 },
-                [
-                  _c("i", {
-                    staticClass: "major-btn_icon",
-                    class: {
-                      "fas fa-check-circle":
-                        this.educationLevel(this.index) == "allDegrees",
-                      "far fa-circle":
-                        this.educationLevel(this.index) != "allDegrees"
-                    }
-                  }),
-                  _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm major-btn_postBacc",
-                  class: {
-                    "selected-btn_postBacc":
-                      this.educationLevel(this.index) == "postBacc"
-                  },
-                  attrs: { id: "postBacc-" + _vm.form.cardIndex },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.toggleEducationLevel("postBacc")
-                    }
-                  }
-                },
-                [
-                  _c("i", {
-                    staticClass: "major-btn_icon",
-                    class: {
-                      "fas fa-check-circle":
-                        this.educationLevel(this.index) == "postBacc",
-                      "far fa-circle":
-                        this.educationLevel(this.index) != "postBacc"
-                    }
-                  }),
-                  _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm major-btn_bachelors",
-                  class: {
-                    "selected-btn_bachelors":
-                      this.educationLevel(this.index) == "bachelors"
-                  },
-                  attrs: { id: "bachelors-" + _vm.form.cardIndex },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.toggleEducationLevel("bachelors")
-                    }
-                  }
-                },
-                [
-                  _c("i", {
-                    staticClass: "major-btn_icon",
-                    class: {
-                      "fas fa-check-circle":
-                        this.educationLevel(this.index) == "bachelors",
-                      "far fa-circle":
-                        this.educationLevel(this.index) != "bachelors"
-                    }
-                  }),
-                  _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm major-btn_someCollege",
-                  class: {
-                    "selected-btn_someCollege":
-                      this.educationLevel(this.index) == "someCollege"
-                  },
-                  attrs: { id: "someCollege-" + _vm.form.cardIndex },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.toggleEducationLevel("someCollege")
-                    }
-                  }
-                },
-                [
-                  _c("i", {
-                    staticClass: "major-btn_icon",
-                    class: {
-                      "fas fa-check-circle":
-                        this.educationLevel(this.index) == "someCollege",
-                      "far fa-circle":
-                        this.educationLevel(this.index) != "someCollege"
-                    }
-                  }),
-                  _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
-                ]
+                [_vm._v("Submit")]
               )
             ])
-      ])
-    ]
-  )
+          ])
+        : _c("div", [
+            _c(
+              "p",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.windowSize > 500,
+                    expression: "windowSize > 500"
+                  }
+                ],
+                staticClass: "text-center h3 majors-header my-5-md my-4"
+              },
+              [_vm._v("Select a Degree Level")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_all",
+                class: {
+                  "selected-btn_all":
+                    this.educationLevel(this.index) == "allDegrees"
+                },
+                attrs: { id: "allDegrees-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.toggleEducationLevel("allDegrees")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "allDegrees",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "allDegrees"
+                  }
+                }),
+                _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_postBacc",
+                class: {
+                  "selected-btn_postBacc":
+                    this.educationLevel(this.index) == "postBacc"
+                },
+                attrs: { id: "postBacc-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.toggleEducationLevel("postBacc")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "postBacc",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "postBacc"
+                  }
+                }),
+                _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_bachelors",
+                class: {
+                  "selected-btn_bachelors":
+                    this.educationLevel(this.index) == "bachelors"
+                },
+                attrs: { id: "bachelors-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.toggleEducationLevel("bachelors")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "bachelors",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "bachelors"
+                  }
+                }),
+                _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm major-btn_someCollege",
+                class: {
+                  "selected-btn_someCollege":
+                    this.educationLevel(this.index) == "someCollege"
+                },
+                attrs: { id: "someCollege-" + _vm.form.cardIndex },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.toggleEducationLevel("someCollege")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fas fa-check-circle":
+                      this.educationLevel(this.index) == "someCollege",
+                    "far fa-circle":
+                      this.educationLevel(this.index) != "someCollege"
+                  }
+                }),
+                _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
+              ]
+            )
+          ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49923,7 +49916,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5bfce872", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2161533a", module.exports)
   }
 }
 
@@ -50001,18 +49994,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         chartDimensions: function chartDimensions() {
             if (this.windowWidth >= 1001) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
-                    width: this.windowWidth - 200
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth - 200
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             } else {
                 return {
-                    height: 400,
-                    width: this.windowWidth - 125
+                    height: 200,
+                    width: document.getElementById('majorCardHasIndex-0').clientWidth
                 };
             }
         },
@@ -50078,6 +50073,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         polar: function polar() {
             return {
+                title: {
+                    show: false
+                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -50090,7 +50088,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     nameTextStyle: {
                         padding: [10, 0, 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
                 legend: {
                     data: ['line']
@@ -50106,7 +50110,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 },
                 series: [{
                     type: 'line',
@@ -50160,13 +50170,13 @@ var content = __webpack_require__(241);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(243)("09e563c0", content, false, {});
+var update = __webpack_require__(243)("fe975bc6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0eafbb8\",\"scoped\":false,\"hasInlineConfig\":true}!../../vue-loader/lib/selector.js?type=styles&index=0!./ECharts.vue", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0eafbb8\",\"scoped\":false,\"hasInlineConfig\":true}!../../vue-loader/lib/selector.js?type=styles&index=0!./ECharts.vue");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-08963931\",\"scoped\":false,\"hasInlineConfig\":true}!../../vue-loader/lib/selector.js?type=styles&index=0!./ECharts.vue", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-08963931\",\"scoped\":false,\"hasInlineConfig\":true}!../../vue-loader/lib/selector.js?type=styles&index=0!./ECharts.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -60714,7 +60724,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-e0eafbb8", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-08963931", module.exports)
   }
 }
 
@@ -66817,7 +66827,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-066e806c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-19571306", module.exports)
   }
 }
 
@@ -66891,7 +66901,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/majors-graph-mobile.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\majors-graph-mobile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -66900,9 +66910,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1e07a4b5", Component.options)
+    hotAPI.createRecord("data-v-7d758ea2", Component.options)
   } else {
-    hotAPI.reload("data-v-1e07a4b5", Component.options)
+    hotAPI.reload("data-v-7d758ea2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -66976,17 +66986,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.windowWidth >= 1001) {
                 return {
                     height: 400,
-                    width: this.windowWidth * .42
+                    width: 200
+                    // width: this.windowWidth / 1.75
                 };
-            } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
+            } else if (this.windowWidth >= 576 && this.windowWidth < 1000) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 200
+                    width: this.windowWidth / 1.4
                 };
             } else {
                 return {
                     height: 400,
-                    width: this.windowWidth - 125
+                    width: this.windowWidth - 48
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
                 };
             }
         },
@@ -67059,7 +67071,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 },
                 xAxis: {
-                    data: this.xAxis
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0, 0, 0]
+                    },
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
+                },
+                name: "Years Out of College",
+                nameLocation: 'middle',
+                nameTextStyle: {
+                    padding: [10, 0, 0, 0]
                 },
                 legend: {
                     data: ['line']
@@ -67075,7 +67103,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
                 series: [{
                     type: 'line',
@@ -67140,7 +67174,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1e07a4b5", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7d758ea2", module.exports)
   }
 }
 
@@ -67154,6 +67188,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticStyle: { width: "100%" } },
     [
       _vm.isMobile
         ? _c("majors-graph-mobile", {
@@ -67180,7 +67215,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-29763da1", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-ee37b0e4", module.exports)
   }
 }
 
@@ -67210,7 +67245,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/industries/industry-carousel.vue"
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-carousel.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -67219,9 +67254,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0c966b72", Component.options)
+    hotAPI.createRecord("data-v-cb0080c2", Component.options)
   } else {
-    hotAPI.reload("data-v-0c966b72", Component.options)
+    hotAPI.reload("data-v-cb0080c2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -67334,7 +67369,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6a0c683b", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6cbcafa4", module.exports)
   }
 }
 
@@ -67397,7 +67432,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0c966b72", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-cb0080c2", module.exports)
   }
 }
 
@@ -67407,6 +67442,8 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -67518,27 +67555,29 @@ var render = function() {
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
-            _c(
-              "h5",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center font-weight-bold pb-2"
-              },
-              [_vm._v("Percentile: ")]
-            ),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _vm._m(5)
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "text-center font-weight-bold pb-2"
+                },
+                [_vm._v("Percentile: ")]
+              ),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5)
+            ])
           ])
         : _vm.educationLevel == "bachelors"
           ? _c("div", [
@@ -67710,7 +67749,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-d5d87060", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e8c102fa", module.exports)
   }
 }
 
@@ -67724,14 +67763,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+    {
+      staticClass: "row mb-3",
+      attrs: { id: "majorCardHasIndex-" + this.index }
+    },
     [
       _c(
         "aside",
         { staticClass: "col-md-3" },
         [
           _c("major-form", {
-            staticClass: "csu-card__form",
+            staticClass: "csu-card__form container-fluid",
             attrs: { index: _vm.index }
           })
         ],
@@ -67742,10 +67784,10 @@ var render = function() {
         "div",
         { staticClass: "col-md-9" },
         [
-          _c("card", { staticClass: "csu-card container-fluid" }, [
+          _c("card", { staticClass: "csu-card container-fluid py-3" }, [
             _c("div", { staticClass: "container-fluid" }, [
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col" }, [
+                _c("div", { staticClass: "col-12" }, [
                   _c("i", {
                     directives: [
                       {
@@ -67797,18 +67839,12 @@ var render = function() {
               _c("div", { staticClass: "row mx-1 p-0" }, [
                 _c(
                   "div",
-                  { staticClass: "col" },
+                  { staticClass: "col-12" },
                   [
                     _c("major-graph-wrapper", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.selectedFormWasSubmitted,
-                          expression: "selectedFormWasSubmitted"
-                        }
-                      ],
+                      staticStyle: { height: "50vh" },
                       attrs: {
+                        id: "majorGraphWrapperIndex-" + this.index,
                         majorData: _vm.selectedMajorData,
                         educationLevel: _vm.selectedEducationLevel,
                         windowWidth: _vm.windowWidth
@@ -67822,7 +67858,7 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c(
                   "div",
-                  { staticClass: "col" },
+                  { staticClass: "col-12" },
                   [
                     _c("major-legend", {
                       directives: [
@@ -67874,7 +67910,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-957017da", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-04a7bb86", module.exports)
   }
 }
 
@@ -67904,7 +67940,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/majors/major-card-mobile.vue"
+Component.options.__file = "resources\\src\\js\\components\\majors\\major-card-mobile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -67913,9 +67949,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-04fbbc4c", Component.options)
+    hotAPI.createRecord("data-v-30c53d79", Component.options)
   } else {
-    hotAPI.reload("data-v-04fbbc4c", Component.options)
+    hotAPI.reload("data-v-30c53d79", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -67947,6 +67983,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -68067,7 +68115,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/industries/industry-mobile.vue"
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-mobile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68076,9 +68124,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1c527f98", Component.options)
+    hotAPI.createRecord("data-v-871d88be", Component.options)
   } else {
-    hotAPI.reload("data-v-1c527f98", Component.options)
+    hotAPI.reload("data-v-871d88be", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68167,7 +68215,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1c527f98", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-871d88be", module.exports)
   }
 }
 
@@ -68181,57 +68229,64 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+    {
+      staticClass: "row mb-3",
+      attrs: { id: "majorCardHasIndex-" + this.index }
+    },
     [
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "csu-card" }, [
-          _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "container-fluid py-3" }, [
             _c("div", { staticClass: "row" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "h3",
-                {
+              _c("div", { staticClass: "col-12" }, [
+                _c("i", {
                   directives: [
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
                     }
                   ],
-                  staticClass: "industry-title"
-                },
-                [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-              )
+                  staticClass: "fas fa-times btn-remove float-right",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "h3",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    staticClass: "industry-title"
+                  },
+                  [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+                )
+              ])
             ]),
             _vm._v(" "),
             _c(
@@ -68249,65 +68304,76 @@ var render = function() {
                 staticStyle: { height: "400px" }
               },
               [
-                _c("major-graph-wrapper", {
-                  attrs: {
-                    id: "majorGraphContainer",
-                    majorData: _vm.selectedMajorData,
-                    educationLevel: _vm.selectedEducationLevel,
-                    windowWidth: _vm.windowWidth
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row justify-content-center" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
+                _c(
+                  "div",
+                  { staticClass: "col-12" },
+                  [
+                    _c("major-graph-wrapper", {
+                      attrs: {
+                        majorData: _vm.selectedMajorData,
+                        educationLevel: _vm.selectedEducationLevel,
+                        windowWidth: _vm.windowWidth
+                      }
+                    })
                   ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
+                  1
+                )
+              ]
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            ),
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("major-legend", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    attrs: { educationLevel: _vm.selectedEducationLevel }
+                  })
+                ],
+                1
+              )
+            ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              [
-                _c("industry-mobile", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [_c("major-form", { attrs: { index: _vm.index } })],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("industry-mobile", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    attrs: {
+                      industries: _vm.selectedIndustries,
+                      majorId: _vm.selectedMajorId
                     }
-                  ],
-                  attrs: {
-                    industries: _vm.selectedIndustries,
-                    majorId: _vm.selectedMajorId
-                  }
-                })
-              ],
-              1
-            )
+                  })
+                ],
+                1
+              )
+            ])
           ])
         ])
       ])
@@ -68320,7 +68386,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-04fbbc4c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-30c53d79", module.exports)
   }
 }
 
@@ -68414,7 +68480,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2bd0df21", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-07141cfb", module.exports)
   }
 }
 
@@ -68444,7 +68510,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/industries/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\industries\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68453,9 +68519,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3a4b907a", Component.options)
+    hotAPI.createRecord("data-v-09236a1d", Component.options)
   } else {
-    hotAPI.reload("data-v-3a4b907a", Component.options)
+    hotAPI.reload("data-v-09236a1d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68547,7 +68613,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/industries/industry-progress.vue"
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-progress.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68556,9 +68622,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5e50c482", Component.options)
+    hotAPI.createRecord("data-v-5ec0f1ec", Component.options)
   } else {
-    hotAPI.reload("data-v-5e50c482", Component.options)
+    hotAPI.reload("data-v-5ec0f1ec", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -68761,7 +68827,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5e50c482", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5ec0f1ec", module.exports)
   }
 }
 
@@ -68791,7 +68857,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/industries/industry-form.vue"
+Component.options.__file = "resources\\src\\js\\components\\industries\\industry-form.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -68800,9 +68866,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-52a091d6", Component.options)
+    hotAPI.createRecord("data-v-668d0483", Component.options)
   } else {
-    hotAPI.reload("data-v-52a091d6", Component.options)
+    hotAPI.reload("data-v-668d0483", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -69051,7 +69117,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-52a091d6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-668d0483", module.exports)
   }
 }
 
@@ -69128,7 +69194,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3a4b907a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-09236a1d", module.exports)
   }
 }
 
@@ -69158,7 +69224,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/faq/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\faq\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -69167,9 +69233,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0af86f85", Component.options)
+    hotAPI.createRecord("data-v-578007f1", Component.options)
   } else {
-    hotAPI.reload("data-v-0af86f85", Component.options)
+    hotAPI.reload("data-v-578007f1", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -69646,7 +69712,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0af86f85", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-578007f1", module.exports)
   }
 }
 
@@ -69676,7 +69742,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/research/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\research\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -69685,9 +69751,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-91beb2bc", Component.options)
+    hotAPI.createRecord("data-v-653aa6bc", Component.options)
   } else {
-    hotAPI.reload("data-v-91beb2bc", Component.options)
+    hotAPI.reload("data-v-653aa6bc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -70126,7 +70192,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-91beb2bc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-653aa6bc", module.exports)
   }
 }
 
@@ -70156,7 +70222,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/router/views/about/index.vue"
+Component.options.__file = "resources\\src\\js\\router\\views\\researchcsun\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -70165,9 +70231,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c6cf8b88", Component.options)
+    hotAPI.createRecord("data-v-6bbab0f6", Component.options)
   } else {
-    hotAPI.reload("data-v-c6cf8b88", Component.options)
+    hotAPI.reload("data-v-6bbab0f6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -70189,11 +70255,423 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: ''
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
+    mounted: function mounted() {
+        var divElement = document.getElementById('viz1531346960828');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '1016px';
+        vizElement.style.height = '991px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+});
+
+/***/ }),
+/* 392 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "header",
+      { staticClass: "row", attrs: { id: "research-main-banner" } },
+      [
+        _c("div", { staticClass: "col align-self-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/long_beach_seal.svg",
+                  alt: "CSU Long Beach Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Long Beach")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/poly_seal.svg",
+                  alt: "CSU Pomona Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Pomona")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/dominguez_seal.svg",
+                  alt: "CSU Dominguez Hills Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Dominguez Hills")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/northridge_seal.svg",
+                  alt: "CSU Northridge Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Northridge")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                  alt: "CSU Channel Islands Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Channel Islands")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/fulleton_seal.svg",
+                  alt: "CSU Fullerton Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Fullerton")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                  alt: "CSU Los Angeles Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Los Angeles")])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("main", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-11" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "returnToCampusSelection",
+                attrs: { to: "research" }
+              },
+              [
+                _c("h3", [
+                  _c("i", { staticClass: "fas fa-arrow-left" }),
+                  _vm._v(
+                    " Return to CSU Campus Selection\n                    "
+                  )
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "text-center home__heading" }, [
+        _vm._v(
+          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("button", { staticClass: "btn btn-success mb-3" }, [
+        _vm._v("\n-                   All Campuses\n-               ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass: "tableauPlaceholder",
+          staticStyle: { position: "relative" },
+          attrs: { id: "viz1531346960828" }
+        },
+        [
+          _c("noscript", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
+                }
+              },
+              [
+                _c("img", {
+                  staticStyle: { border: "none" },
+                  attrs: {
+                    alt:
+                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
+                    src:
+                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "object",
+            { staticClass: "tableauViz", staticStyle: { display: "none" } },
+            [
+              _c("param", {
+                attrs: {
+                  name: "host_url",
+                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "embed_code_version", value: "3" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "site_root", value: "" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "name",
+                  value:
+                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "tabs", value: "no" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "static_image",
+                  value:
+                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "animate_transition", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "display_static_image", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_count", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6bbab0f6", module.exports)
+  }
+}
+
+/***/ }),
+/* 393 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(394)
+/* template */
+var __vue_template__ = __webpack_require__(395)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\src\\js\\router\\views\\about\\index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7c4a3868", Component.options)
+  } else {
+    hotAPI.reload("data-v-7c4a3868", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 394 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 392 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -70208,12 +70686,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c6cf8b88", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7c4a3868", module.exports)
   }
 }
 
 /***/ }),
-/* 393 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -87845,15 +88323,15 @@ function install(Vue) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 394 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(395)
+var __vue_script__ = __webpack_require__(398)
 /* template */
-var __vue_template__ = __webpack_require__(402)
+var __vue_template__ = __webpack_require__(405)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87870,7 +88348,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/App.vue"
+Component.options.__file = "resources\\src\\js\\App.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -87879,9 +88357,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6e99997e", Component.options)
+    hotAPI.createRecord("data-v-ae18d3ea", Component.options)
   } else {
-    hotAPI.reload("data-v-6e99997e", Component.options)
+    hotAPI.reload("data-v-ae18d3ea", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -87892,14 +88370,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 395 */
+/* 398 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(399);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -87921,15 +88399,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 396 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(397)
+var __vue_script__ = __webpack_require__(400)
 /* template */
-var __vue_template__ = __webpack_require__(398)
+var __vue_template__ = __webpack_require__(401)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87946,7 +88424,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/navigation.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\navigation.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -87955,9 +88433,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6f1572cc", Component.options)
+    hotAPI.createRecord("data-v-17d50e0d", Component.options)
   } else {
-    hotAPI.reload("data-v-6f1572cc", Component.options)
+    hotAPI.reload("data-v-17d50e0d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -87968,7 +88446,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 397 */
+/* 400 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88062,7 +88540,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 398 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88276,20 +88754,20 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6f1572cc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-17d50e0d", module.exports)
   }
 }
 
 /***/ }),
-/* 399 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(400)
+var __vue_script__ = __webpack_require__(403)
 /* template */
-var __vue_template__ = __webpack_require__(401)
+var __vue_template__ = __webpack_require__(404)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -88306,7 +88784,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-footer.vue"
+Component.options.__file = "resources\\src\\js\\components\\global\\csu-footer.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -88315,9 +88793,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-40f3bb69", Component.options)
+    hotAPI.createRecord("data-v-df58fa48", Component.options)
   } else {
-    hotAPI.reload("data-v-40f3bb69", Component.options)
+    hotAPI.reload("data-v-df58fa48", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -88328,7 +88806,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 400 */
+/* 403 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88350,7 +88828,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 401 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88408,12 +88886,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-40f3bb69", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-df58fa48", module.exports)
   }
 }
 
 /***/ }),
-/* 402 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88438,430 +88916,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6e99997e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-ae18d3ea", module.exports)
   }
 }
 
 /***/ }),
-/* 403 */
+/* 406 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(408)
-/* template */
-var __vue_template__ = __webpack_require__(409)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/router/views/researchcsun/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7aadd2eb", Component.options)
-  } else {
-    hotAPI.reload("data-v-7aadd2eb", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 408 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            url: ''
-        };
-    },
-    created: function created() {
-        this.url = window.baseUrl;
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1531346960828');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '1016px';
-        vizElement.style.height = '991px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
-});
-
-/***/ }),
-/* 409 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "header",
-      { staticClass: "row", attrs: { id: "research-main-banner" } },
-      [
-        _c("div", { staticClass: "col align-self-center" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("main", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-11" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "returnToCampusSelection",
-                attrs: { to: "research" }
-              },
-              [
-                _c("h3", [
-                  _c("i", { staticClass: "fas fa-arrow-left" }),
-                  _vm._v(
-                    " Return to CSU Campus Selection\n                    "
-                  )
-                ])
-              ]
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(2)
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "text-center home__heading" }, [
-        _vm._v(
-          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("button", { staticClass: "btn btn-success mb-3" }, [
-        _vm._v("\n-                   All Campuses\n-               ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass: "tableauPlaceholder",
-          staticStyle: { position: "relative" },
-          attrs: { id: "viz1531346960828" }
-        },
-        [
-          _c("noscript", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
-                }
-              },
-              [
-                _c("img", {
-                  staticStyle: { border: "none" },
-                  attrs: {
-                    alt:
-                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
-                    src:
-                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "object",
-            { staticClass: "tableauViz", staticStyle: { display: "none" } },
-            [
-              _c("param", {
-                attrs: {
-                  name: "host_url",
-                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "embed_code_version", value: "3" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "site_root", value: "" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "name",
-                  value:
-                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "tabs", value: "no" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "static_image",
-                  value:
-                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "animate_transition", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "display_static_image", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_count", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
-            ]
-          )
-        ]
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7aadd2eb", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
