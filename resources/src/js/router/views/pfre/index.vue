@@ -17,7 +17,7 @@
           </div>
           <div class="col-lg-9 col-12">
             <card class="csu-card">
-              <div class="container-fluid">
+              <div class="container-fluid py-3">
               <div class="row-fluid">
               <pfre-progress/>
               </div>

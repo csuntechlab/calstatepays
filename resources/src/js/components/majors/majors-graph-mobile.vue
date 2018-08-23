@@ -1,5 +1,5 @@
 <template>
-<chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
+    <chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -51,13 +51,15 @@ export default {
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 200
+                    width: this.windowWidth - 150
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 15,
                 }
             }
             else {
               return {
                     height: 400,
-                    width: this.windowWidth - 125,
+                    width: this.windowWidth - 48
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 30,
                 }  
             }
         },
@@ -133,8 +135,24 @@ export default {
                     }
                 },
                 xAxis: {
-                    data: this.xAxis
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
+                name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
                 legend: {
                     data: ['line']
                 },
@@ -151,44 +169,83 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
                 series: [
+                    // {
+                    //     type: 'line',
+                    //     name:  this.toolTipTitles3,
+                    //     data:  this.mastersEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors3,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors3
+                    //     }
+                    // },
+                    // {
+                    //     type: 'line',
+                    //     name: this.toolTipTitles2,
+                    //     data: this.bachelorsEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors2,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors2
+                    //     }
+                    // },
+                    // {
+                    //     type: 'line',
+                    //     name: this.toolTipTitles1,
+                    //     data: this.someCollegeEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors1,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors1
+                    //     },
+                    // }
                     {
-                        type: 'line',
-                        name:  this.toolTipTitles3,
-                        data:  this.mastersEarnings,
-                        lineStyle: {
-                            color: this.toolColors3,
-                            width: 4
-                        },
+                        name: "Post",
+                        type: "line",
+                        data: [38572, 52317, 68802, 82001],
                         itemStyle: {
-                            color: this.toolColors3
+                            color: "#2BAE67"
+                        },
+                        lineStyle: {
+                            width: 5
                         }
-                    },
-                    {
-                        type: 'line',
-                        name: this.toolTipTitles2,
-                        data: this.bachelorsEarnings,
-                        lineStyle: {
-                            color: this.toolColors2,
-                            width: 4
                         },
+                        {
+                        name: "Bacc",
+                        type: "line",
+                        data: [26154, 37822],
                         itemStyle: {
-                            color: this.toolColors2
+                            color: "#DAA200"
+                        },
+                        lineStyle: {
+                            width: 5
                         }
-                    },
-                    {
-                        type: 'line',
-                        name: this.toolTipTitles1,
-                        data: this.someCollegeEarnings,
-                        lineStyle: {
-                            color: this.toolColors1,
-                            width: 4
                         },
+                        {
+                        name: "College",
+                        type: "line",
+                        data: [16260, 24129, 32023, 44400],
                         itemStyle: {
-                            color: this.toolColors1
+                            color: "#476A6F"
                         },
+                        lineStyle: {
+                            width: 5
+                        }
                     }
                 ],
                 animationDuration: 2000

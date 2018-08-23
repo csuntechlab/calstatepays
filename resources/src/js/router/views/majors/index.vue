@@ -32,7 +32,7 @@
 			return {
 				windowWidth: 0,
 				isDesktop: true,
-				isMobile: false
+				isMobile: false,
 			};
 		},
 		computed: {

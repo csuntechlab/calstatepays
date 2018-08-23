@@ -55,23 +55,25 @@ export default {
         chartDimensions(){
             if(this.windowWidth >= 1001) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
                
             }
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
-                    width: this.windowWidth - 200
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth - 200
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
             }
-            else {
-              return {
-                    height: 400,
-                    width: this.windowWidth - 125,
-                }  
-            }
+            // else {
+            //   return {
+            //         height: 200,
+            //         width: document.getElementById('majorCardHasIndex-0').clientWidth
+            //     }  
+            // }
         },
         toolTipTitles1(){
             let title="Some College"
@@ -150,7 +152,13 @@ export default {
                     nameTextStyle: {
                         padding: [10, 0 , 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
                 legend: {
                     data: ['line']
@@ -168,45 +176,84 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 },
                 series: [
+                    // {
+                    //     type: 'line',
+                    //     name:  this.toolTipTitles3,
+                    //     data:  this.mastersEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors3,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors3
+                    //     },
+                    // },
+                    // {
+                    //     type: 'line',
+                    //     name: this.toolTipTitles2,
+                    //     data: this.bachelorsEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors2,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors2
+                    //     },
+                    // },
+                    // {
+                    //     type: 'line',
+                    //     name: this.toolTipTitles1,
+                    //     data: this.someCollegeEarnings,
+                    //     lineStyle: {
+                    //         color: this.toolColors1,
+                    //         width: 4
+                    //     },
+                    //     itemStyle: {
+                    //         color: this.toolColors1
+                    //     },
+                    // }
                     {
-                        type: 'line',
-                        name:  this.toolTipTitles3,
-                        data:  this.mastersEarnings,
-                        lineStyle: {
-                            color: this.toolColors3,
-                            width: 4
-                        },
+                        name: "Post",
+                        type: "line",
+                        data: [38572, 52317, 68802, 82001],
                         itemStyle: {
-                            color: this.toolColors3
+                            color: "#2BAE67"
                         },
-                    },
-                    {
-                        type: 'line',
-                        name: this.toolTipTitles2,
-                        data: this.bachelorsEarnings,
                         lineStyle: {
-                            color: this.toolColors2,
-                            width: 4
+                            width: 5
+                        }
                         },
+                        {
+                        name: "Bacc",
+                        type: "line",
+                        data: [26154, 37822],
                         itemStyle: {
-                            color: this.toolColors2
+                            color: "#DAA200"
                         },
-                    },
-                    {
-                        type: 'line',
-                        name: this.toolTipTitles1,
-                        data: this.someCollegeEarnings,
                         lineStyle: {
-                            color: this.toolColors1,
-                            width: 4
+                            width: 5
+                        }
                         },
+                        {
+                        name: "College",
+                        type: "line",
+                        data: [16260, 24129, 32023, 44400],
                         itemStyle: {
-                            color: this.toolColors1
+                            color: "#476A6F"
                         },
-                    }
+                        lineStyle: {
+                            width: 5
+                        }
+    },
                 ],
                 animationDuration: 2000
             }

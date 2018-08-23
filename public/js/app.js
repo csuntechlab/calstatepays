@@ -39177,7 +39177,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(129);
-module.exports = __webpack_require__(403);
+module.exports = __webpack_require__(406);
 
 
 /***/ }),
@@ -39192,11 +39192,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(394);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -40444,9 +40444,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(390);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(393);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__);
 
 
@@ -48538,7 +48538,7 @@ var render = function() {
     "div",
     { staticClass: "progress-wrapper", attrs: { id: "progress-bars" } },
     [
-      _c("div", { staticClass: "row no-gutters my-3" }, [
+      _c("div", { staticClass: "row no-gutters" }, [
         _c(
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9" },
@@ -48601,7 +48601,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row no-gutters my-3" }, [
+      _c("div", { staticClass: "row no-gutters" }, [
         _c(
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
@@ -48675,7 +48675,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row no-gutters my-3" }, [
+      _c("div", { staticClass: "row no-gutters" }, [
         _c(
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
@@ -48878,7 +48878,7 @@ var render = function() {
               { staticClass: "col-lg-9 col-12" },
               [
                 _c("card", { staticClass: "csu-card" }, [
-                  _c("div", { staticClass: "container-fluid" }, [
+                  _c("div", { staticClass: "container-fluid py-3" }, [
                     _c(
                       "div",
                       { staticClass: "row-fluid" },
@@ -50001,20 +50001,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         chartDimensions: function chartDimensions() {
             if (this.windowWidth >= 1001) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
-                    width: this.windowWidth - 200
-                };
-            } else {
-                return {
-                    height: 400,
-                    width: this.windowWidth - 125
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth - 200
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             }
+            // else {
+            //   return {
+            //         height: 200,
+            //         width: document.getElementById('majorCardHasIndex-0').clientWidth
+            //     }  
+            // }
         },
         toolTipTitles1: function toolTipTitles1() {
             var title = "Some College";
@@ -50090,7 +50093,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     nameTextStyle: {
                         padding: [10, 0, 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
                 legend: {
                     data: ['line']
@@ -50106,40 +50115,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
+                series: [
+                // {
+                //     type: 'line',
+                //     name:  this.toolTipTitles3,
+                //     data:  this.mastersEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors3,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors3
+                //     },
+                // },
+                // {
+                //     type: 'line',
+                //     name: this.toolTipTitles2,
+                //     data: this.bachelorsEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors2,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors2
+                //     },
+                // },
+                // {
+                //     type: 'line',
+                //     name: this.toolTipTitles1,
+                //     data: this.someCollegeEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors1,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors1
+                //     },
+                // }
+                {
+                    name: "Post",
+                    type: "line",
+                    data: [38572, 52317, 68802, 82001],
                     itemStyle: {
-                        color: this.toolColors3
+                        color: "#2BAE67"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
+                    name: "Bacc",
+                    type: "line",
+                    data: [26154, 37822],
                     itemStyle: {
-                        color: this.toolColors2
+                        color: "#DAA200"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
+                    name: "College",
+                    type: "line",
+                    data: [16260, 24129, 32023, 44400],
                     itemStyle: {
-                        color: this.toolColors1
+                        color: "#476A6F"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }],
                 animationDuration: 2000
@@ -66981,12 +67030,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 200
+                    width: this.windowWidth - 150
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 15,
                 };
             } else {
                 return {
                     height: 400,
-                    width: this.windowWidth - 125
+                    width: this.windowWidth - 48
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 30,
                 };
             }
         },
@@ -67059,7 +67110,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 },
                 xAxis: {
-                    data: this.xAxis
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0, 0, 0]
+                    },
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
+                },
+                name: "Years Out of College",
+                nameLocation: 'middle',
+                nameTextStyle: {
+                    padding: [10, 0, 0, 0]
                 },
                 legend: {
                     data: ['line']
@@ -67075,40 +67142,80 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
+                series: [
+                // {
+                //     type: 'line',
+                //     name:  this.toolTipTitles3,
+                //     data:  this.mastersEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors3,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors3
+                //     }
+                // },
+                // {
+                //     type: 'line',
+                //     name: this.toolTipTitles2,
+                //     data: this.bachelorsEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors2,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors2
+                //     }
+                // },
+                // {
+                //     type: 'line',
+                //     name: this.toolTipTitles1,
+                //     data: this.someCollegeEarnings,
+                //     lineStyle: {
+                //         color: this.toolColors1,
+                //         width: 4
+                //     },
+                //     itemStyle: {
+                //         color: this.toolColors1
+                //     },
+                // }
+                {
+                    name: "Post",
+                    type: "line",
+                    data: [38572, 52317, 68802, 82001],
                     itemStyle: {
-                        color: this.toolColors3
+                        color: "#2BAE67"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
+                    name: "Bacc",
+                    type: "line",
+                    data: [26154, 37822],
                     itemStyle: {
-                        color: this.toolColors2
+                        color: "#DAA200"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
+                    name: "College",
+                    type: "line",
+                    data: [16260, 24129, 32023, 44400],
                     itemStyle: {
-                        color: this.toolColors1
+                        color: "#476A6F"
+                    },
+                    lineStyle: {
+                        width: 5
                     }
                 }],
                 animationDuration: 2000
@@ -67465,6 +67572,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -67518,27 +67627,29 @@ var render = function() {
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
-            _c(
-              "h5",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center font-weight-bold pb-2"
-              },
-              [_vm._v("Percentile: ")]
-            ),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _vm._m(5)
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "text-center font-weight-bold pb-2"
+                },
+                [_vm._v("Percentile: ")]
+              ),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5)
+            ])
           ])
         : _vm.educationLevel == "bachelors"
           ? _c("div", [
@@ -67743,40 +67854,40 @@ var render = function() {
         { staticClass: "col-md-9" },
         [
           _c("card", { staticClass: "csu-card container-fluid" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col" }, [
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isNotFirstCard,
-                        expression: "isNotFirstCard"
-                      }
-                    ],
-                    staticClass: "fas fa-times btn-remove float-right",
-                    attrs: { title: "Close" },
-                    on: { click: _vm.removeCurrentCard }
-                  }),
-                  _vm._v(" "),
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isEmpty,
-                        expression: "isEmpty"
-                      }
-                    ],
-                    staticClass: "fas fa-sync-alt btn-reset float-right",
-                    attrs: { title: "Reset" },
-                    on: { click: _vm.resetCurrentCard }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
+                    }
+                  ],
+                  staticClass: "fas fa-times btn-remove float-right",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
                 _c(
                   "h3",
                   {
@@ -67792,74 +67903,70 @@ var render = function() {
                   },
                   [_vm._v(_vm._s(_vm.selectedMajorTitle))]
                 )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mx-1 p-0" }, [
-                _c(
-                  "div",
-                  { staticClass: "col" },
-                  [
-                    _c("major-graph-wrapper", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.selectedFormWasSubmitted,
-                          expression: "selectedFormWasSubmitted"
-                        }
-                      ],
-                      attrs: {
-                        majorData: _vm.selectedMajorData,
-                        educationLevel: _vm.selectedEducationLevel,
-                        windowWidth: _vm.windowWidth
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col" },
-                  [
-                    _c("major-legend", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.selectedFormWasSubmitted,
-                          expression: "selectedFormWasSubmitted"
-                        }
-                      ],
-                      attrs: { educationLevel: _vm.selectedEducationLevel }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row p-0" }, [
-                _c(
-                  "div",
-                  { staticClass: "mt-4" },
-                  [
-                    _c("industry-carousel", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isEmpty,
-                          expression: "isEmpty"
-                        }
-                      ],
-                      attrs: { industries: _vm.selectedIndustries }
-                    })
-                  ],
-                  1
-                )
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-12",
+                  staticStyle: { height: "50vh" },
+                  attrs: { id: "majorGraphWrapperIndex-" + this.index }
+                },
+                [
+                  _c("major-graph-wrapper", {
+                    attrs: {
+                      majorData: _vm.selectedMajorData,
+                      educationLevel: _vm.selectedEducationLevel,
+                      windowWidth: _vm.windowWidth
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("major-legend", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    attrs: { educationLevel: _vm.selectedEducationLevel }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("industry-carousel", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isEmpty,
+                        expression: "isEmpty"
+                      }
+                    ],
+                    attrs: { industries: _vm.selectedIndustries }
+                  })
+                ],
+                1
+              )
             ])
           ])
         ],
@@ -67947,8 +68054,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
 //
 //
 //
@@ -68184,58 +68289,40 @@ var render = function() {
     { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
     [
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "csu-card" }, [
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "h3",
+        _c("div", { staticClass: "csu-card container-fluid" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("i", {
+              directives: [
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  staticClass: "industry-title"
-                },
-                [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-              )
-            ]),
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isNotFirstCard,
+                  expression: "isNotFirstCard"
+                }
+              ],
+              staticClass: "fas fa-times btn-remove float-right",
+              attrs: { title: "Close" },
+              on: { click: _vm.removeCurrentCard }
+            }),
             _vm._v(" "),
+            _c("i", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isEmpty,
+                  expression: "isEmpty"
+                }
+              ],
+              staticClass: "fas fa-sync-alt btn-reset float-right",
+              attrs: { title: "Reset" },
+              on: { click: _vm.resetCurrentCard }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
             _c(
-              "div",
+              "h3",
               {
                 directives: [
                   {
@@ -68245,70 +68332,79 @@ var render = function() {
                     expression: "selectedFormWasSubmitted"
                   }
                 ],
-                staticClass: "row",
-                staticStyle: { height: "400px" }
+                staticClass: "industry-title"
               },
-              [
-                _c("major-graph-wrapper", {
-                  attrs: {
-                    id: "majorGraphContainer",
-                    majorData: _vm.selectedMajorData,
-                    educationLevel: _vm.selectedEducationLevel,
-                    windowWidth: _vm.windowWidth
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row justify-content-center" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              [
-                _c("industry-mobile", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: {
-                    industries: _vm.selectedIndustries,
-                    majorId: _vm.selectedMajorId
-                  }
-                })
-              ],
-              1
+              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "row",
+              staticStyle: { height: "75vh" },
+              attrs: { id: "majorGraphWrapperIndex-" + this.index }
+            },
+            [
+              _c("major-graph-wrapper", {
+                staticClass: "col-12",
+                attrs: {
+                  majorData: _vm.selectedMajorData,
+                  educationLevel: _vm.selectedEducationLevel,
+                  windowWidth: _vm.windowWidth
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row justify-content-center" },
+            [
+              _c("major-legend", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: { educationLevel: _vm.selectedEducationLevel }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [_c("major-form", { attrs: { index: _vm.index } })],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("industry-mobile", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted,
+                    expression: "selectedFormWasSubmitted"
+                  }
+                ],
+                attrs: {
+                  industries: _vm.selectedIndustries,
+                  majorId: _vm.selectedMajorId
+                }
+              })
+            ],
+            1
+          )
         ])
       ])
     ]
@@ -70156,6 +70252,418 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/src/js/router/views/researchcsun/index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7aadd2eb", Component.options)
+  } else {
+    hotAPI.reload("data-v-7aadd2eb", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 391 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: ''
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
+    mounted: function mounted() {
+        var divElement = document.getElementById('viz1531346960828');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '1016px';
+        vizElement.style.height = '991px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+});
+
+/***/ }),
+/* 392 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "header",
+      { staticClass: "row", attrs: { id: "research-main-banner" } },
+      [
+        _c("div", { staticClass: "col align-self-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/long_beach_seal.svg",
+                  alt: "CSU Long Beach Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Long Beach")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/poly_seal.svg",
+                  alt: "CSU Pomona Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Pomona")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/dominguez_seal.svg",
+                  alt: "CSU Dominguez Hills Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Dominguez Hills")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/northridge_seal.svg",
+                  alt: "CSU Northridge Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Northridge")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                  alt: "CSU Channel Islands Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Channel Islands")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/fulleton_seal.svg",
+                  alt: "CSU Fullerton Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Fullerton")])
+            ]),
+            _vm._v(" "),
+            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                  alt: "CSU Los Angeles Seal"
+                }
+              }),
+              _vm._v(" "),
+              _c("figcaption", [_vm._v("Los Angeles")])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("main", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-11" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "returnToCampusSelection",
+                attrs: { to: "research" }
+              },
+              [
+                _c("h3", [
+                  _c("i", { staticClass: "fas fa-arrow-left" }),
+                  _vm._v(
+                    " Return to CSU Campus Selection\n                    "
+                  )
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "text-center home__heading" }, [
+        _vm._v(
+          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("button", { staticClass: "btn btn-success mb-3" }, [
+        _vm._v("\n-                   All Campuses\n-               ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass: "tableauPlaceholder",
+          staticStyle: { position: "relative" },
+          attrs: { id: "viz1531346960828" }
+        },
+        [
+          _c("noscript", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
+                }
+              },
+              [
+                _c("img", {
+                  staticStyle: { border: "none" },
+                  attrs: {
+                    alt:
+                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
+                    src:
+                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "object",
+            { staticClass: "tableauViz", staticStyle: { display: "none" } },
+            [
+              _c("param", {
+                attrs: {
+                  name: "host_url",
+                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "embed_code_version", value: "3" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "site_root", value: "" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "name",
+                  value:
+                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "tabs", value: "no" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "static_image",
+                  value:
+                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "animate_transition", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "display_static_image", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_count", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7aadd2eb", module.exports)
+  }
+}
+
+/***/ }),
+/* 393 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(394)
+/* template */
+var __vue_template__ = __webpack_require__(395)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/src/js/router/views/about/index.vue"
 
 /* hot reload */
@@ -70178,7 +70686,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 391 */
+/* 394 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70193,7 +70701,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 392 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -70213,7 +70721,7 @@ if (false) {
 }
 
 /***/ }),
-/* 393 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -87845,15 +88353,15 @@ function install(Vue) {
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 394 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(395)
+var __vue_script__ = __webpack_require__(398)
 /* template */
-var __vue_template__ = __webpack_require__(402)
+var __vue_template__ = __webpack_require__(405)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87892,14 +88400,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 395 */
+/* 398 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(399);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
 //
 //
@@ -87921,15 +88429,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 396 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(397)
+var __vue_script__ = __webpack_require__(400)
 /* template */
-var __vue_template__ = __webpack_require__(398)
+var __vue_template__ = __webpack_require__(401)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87968,7 +88476,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 397 */
+/* 400 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88062,7 +88570,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 398 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88281,15 +88789,15 @@ if (false) {
 }
 
 /***/ }),
-/* 399 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(400)
+var __vue_script__ = __webpack_require__(403)
 /* template */
-var __vue_template__ = __webpack_require__(401)
+var __vue_template__ = __webpack_require__(404)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -88328,7 +88836,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 400 */
+/* 403 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88350,7 +88858,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 401 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88413,7 +88921,7 @@ if (false) {
 }
 
 /***/ }),
-/* 402 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -88443,425 +88951,10 @@ if (false) {
 }
 
 /***/ }),
-/* 403 */
+/* 406 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(408)
-/* template */
-var __vue_template__ = __webpack_require__(409)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/router/views/researchcsun/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7aadd2eb", Component.options)
-  } else {
-    hotAPI.reload("data-v-7aadd2eb", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 408 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            url: ''
-        };
-    },
-    created: function created() {
-        this.url = window.baseUrl;
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1531346960828');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '1016px';
-        vizElement.style.height = '991px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
-});
-
-/***/ }),
-/* 409 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "header",
-      { staticClass: "row", attrs: { id: "research-main-banner" } },
-      [
-        _c("div", { staticClass: "col align-self-center" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("main", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-11" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "returnToCampusSelection",
-                attrs: { to: "research" }
-              },
-              [
-                _c("h3", [
-                  _c("i", { staticClass: "fas fa-arrow-left" }),
-                  _vm._v(
-                    " Return to CSU Campus Selection\n                    "
-                  )
-                ])
-              ]
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(2)
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "text-center home__heading" }, [
-        _vm._v(
-          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("button", { staticClass: "btn btn-success mb-3" }, [
-        _vm._v("\n-                   All Campuses\n-               ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass: "tableauPlaceholder",
-          staticStyle: { position: "relative" },
-          attrs: { id: "viz1531346960828" }
-        },
-        [
-          _c("noscript", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
-                }
-              },
-              [
-                _c("img", {
-                  staticStyle: { border: "none" },
-                  attrs: {
-                    alt:
-                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
-                    src:
-                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "object",
-            { staticClass: "tableauViz", staticStyle: { display: "none" } },
-            [
-              _c("param", {
-                attrs: {
-                  name: "host_url",
-                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "embed_code_version", value: "3" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "site_root", value: "" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "name",
-                  value:
-                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "tabs", value: "no" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "static_image",
-                  value:
-                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "animate_transition", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "display_static_image", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_count", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
-            ]
-          )
-        ]
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7aadd2eb", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
