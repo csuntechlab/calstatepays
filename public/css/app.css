@@ -27030,6 +27030,12 @@ html {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 767px) {
+  .csu-card {
+    min-height: unset;
+  }
+}
+
 .csu-card__form {
   display: -webkit-box;
   display: -ms-flexbox;

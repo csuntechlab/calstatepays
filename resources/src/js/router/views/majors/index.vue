@@ -10,7 +10,7 @@
 			</p>
 		</csu-data-img-banner>
 		<sub-nav/>
-		<div class="row graphContent" @scroll="handleScroll">
+		<div class="row graphContent" id="majorCardWrapper" @scroll="handleScroll">
 			<div class="container">
 				<major-card v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
 				<major-card-mobile v-if="isMobile" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
@@ -86,6 +86,7 @@
 				) {
 					var addBtn = document.getElementById("compare-major-button");
 					addBtn.style.position = "absolute";
+					addBtn.style.bottom = "1rem";
 				}
 			}
 		},

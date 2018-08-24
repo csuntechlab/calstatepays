@@ -11,6 +11,9 @@
     flex-direction: row;
     min-height: 75vh;
     align-items: flex-start;
+    @media screen and (max-width: $break-small) {
+        min-height: unset;
+    }
 }
 
 .csu-card__form{
@@ -49,3 +52,4 @@
     padding-top: 50px;
     @extend %card-base;
 }
+

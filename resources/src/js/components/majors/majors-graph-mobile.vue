@@ -1,6 +1,7 @@
 <template>
     <chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
 </template>
+
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
 import 'echarts/lib/chart/line';
@@ -46,8 +47,7 @@ export default {
                     height: 400,
                     width: 200
                     // width: this.windowWidth / 1.75
-                }
-               
+                }         
             }
             else if(this.windowWidth >= 576 && this.windowWidth < 1000) {
                 return {
@@ -125,7 +125,6 @@ export default {
                 }
             return color
         },
-
         polar(){
             return {
                 tooltip: {
@@ -213,7 +212,7 @@ export default {
                         itemStyle: {
                             color: this.toolColors1
                         },
-            }
+                    }
                 ],
                 animationDuration: 2000
             }
