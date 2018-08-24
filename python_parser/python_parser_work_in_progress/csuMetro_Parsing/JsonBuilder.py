@@ -99,7 +99,7 @@ class JsonIndustry:
     if( ',' in image):
       image = image.replace(',', "")
     if('&' in image):
-      image = image.replace('& ',"")
+      image = image.replace('&',"")
     if(' ' in image):
       image = image.replace(' ',"_")
     return image+".png"
@@ -107,34 +107,44 @@ class JsonIndustry:
 
 
 class JsonMajor:
-  def __init__(self,file,df,universityMajorDictionary):
+  def __init__(self,file,df,universityMajorDictionary,index):
     self.file = file
     self.df = df
+    self.index = index
     self.dictionary = self.createDictionary(universityMajorDictionary) 
 	
   
   def createDictionary(self,universityMajorDictionary):
+    print(universityMajorDictionary)
     output = universityMajorDictionary.to_dict(orient='record')
     
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
+
+    # jsonFile = open( 'University_Majors_Id_table.json' )
+    # universityMajorsId = jsonFile.read()
+    # universityMajorsId = json.loads( universityMajorsId )
+
+
+    #hegisDictionary = {}
     universityMajorsId = []
-    index = 1
+    #index = 1
+    #index =1
     for row in output:
-        # campus = int(row['campus'])
-        hegis =  int(row['hegis_at_exit'])
-        campus =  int(row['campus'])
-        dictRename = {'hegis_codes': hegis,'university_id':campus }
+      # campus = int(row['campus'])
+      hegis =  int(row['hegis_at_exit'])
+      hegisDictionary[hegis] = self.index
 
-        hegisDictionary[hegis] = index
-        universityMajorsId.append(dictRename)
+      campus =  int(row['campus'])
+      major =  (row['major'])
+      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.index }
+      universityMajorsId.append(dictRename)
 
-        index +=1
+      self.index +=1
     del output
 
     
-
     dictionary  = {campusId:hegisDictionary}
     
     with open (self.file+'_Dictionary.json', 'w' ) as fp:
@@ -149,12 +159,13 @@ class JsonMajor:
 
     return dictionary
     
-    
+  def getIndex(self):
+    return self.index
   
   def getMajorsTables(self, majorPathDf ):
     
     majorPathDf['university_majors_id'] = -1
-    
+
     for index,row in majorPathDf.iterrows():
       hegis = row[3]
       campus = row[4]
