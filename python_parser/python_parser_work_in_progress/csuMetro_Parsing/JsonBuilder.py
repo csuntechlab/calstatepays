@@ -94,10 +94,14 @@ class JsonIndustry:
 
 
 class JsonMajor:
-  def __init__(self,file,universityMajorDictionary,index):
+  def __init__(self,file,universityMajorDictionary,universityMajorsDataFrame,index):
     self.file = file
     self.index = index
-    self.dictionary = self.createDictionary(universityMajorDictionary) 
+    self.universityMajorsDataFrame = universityMajorsDataFrame
+    self.dictionary = self.createDictionary(universityMajorDictionary)
+
+  def getUniversityMajorIdDf(self):
+    return self.universityMajorsDataFrame
 	
   
   def createDictionary(self,universityMajorDictionary):
@@ -109,6 +113,11 @@ class JsonMajor:
     hegisDictionary = {}
 
     universityMajorsId = []
+
+    # universityMajorsIdDf = pd.DataFrame(columns=self.col)
+
+    # universityMajorsIdDf = pd.DataFrame()
+
     for row in output:
       hegis =  int(row['hegis_at_exit'])
       hegisDictionary[hegis] = self.index
@@ -117,10 +126,13 @@ class JsonMajor:
       major =  (row['major'])
       dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.index }
       universityMajorsId.append(dictRename)
-
+      
+      self.universityMajorsDataFrame = self.universityMajorsDataFrame.append( dictRename , ignore_index=True)
+      
       self.index +=1
     del output
 
+    # print(df)
     
     dictionary  = {campusId:hegisDictionary}
     
