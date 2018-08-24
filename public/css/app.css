@@ -12057,8 +12057,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -17766,7 +17765,9 @@ p {
   margin-right: 8px !important;
 }
 
-.my-2, .returnToCampusSelection {
+
+.my-2,
+.returnToCampusSelection {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
@@ -17856,7 +17857,9 @@ p {
   padding-right: 16px !important;
 }
 
-.py-3, .CSUDataImgBanner {
+
+.py-3,
+.CSUDataImgBanner {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
