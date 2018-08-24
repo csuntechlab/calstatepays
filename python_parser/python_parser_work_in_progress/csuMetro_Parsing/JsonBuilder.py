@@ -8,7 +8,6 @@ import json
 class JsonIndustry:
   def __init__(self,file):
     self.file = file
-    # self.df = df
     self.dictionary = self.getDictionary(file+"_Dictionary") 
 
   def getDictionary(self,fileName):
@@ -26,7 +25,6 @@ class JsonIndustry:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
-    # shutil.move(fileName+'.json', "../../database/data/")
 
   
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
@@ -37,9 +35,7 @@ class JsonIndustry:
     for index,row in industryPathTypesDf.iterrows():
       hegis = (str)(row[4])
       campus = (str)(row[5])
-      # print(hegis)
       uni_majors_id = self.dictionary[campus][hegis]
-      # print(uni_majors_id) 
       industryPathTypesDf.ix[index,'university_majors_id'] = uni_majors_id
 
     return industryPathTypesDf
@@ -55,7 +51,6 @@ class JsonIndustry:
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
     
-    # shutil.move(fileName+'.json', "../../database/data/")
 
   
   def jsonSanitizeWages(self,fileName): 
@@ -71,7 +66,6 @@ class JsonIndustry:
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
 
-    # shutil.move(fileName+'.json', "../../database/data/")
 
 
   def jsonSanitizeNaics(self,fileName):
@@ -87,19 +81,12 @@ class JsonIndustry:
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
         json.dump(json_data, outfile, indent=4)
 
-    # shutil.move(fileName+'.json', "../../database/data/")
-
-
-  # def masterPathWagesToJson(self):
-  #   with open (self.file+'_Dictionary.json', 'w' ) as fp:
-  #       fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-  #   fp.close()  
   
   def sanitizeImage(self,image):
     if( ',' in image):
       image = image.replace(',', "")
     if('&' in image):
-      image = image.replace('&',"")
+      image = image.replace('& ',"")
     if(' ' in image):
       image = image.replace(' ',"_")
     return image+".png"
@@ -107,32 +94,22 @@ class JsonIndustry:
 
 
 class JsonMajor:
-  def __init__(self,file,df,universityMajorDictionary,index):
+  def __init__(self,file,universityMajorDictionary,index):
     self.file = file
-    self.df = df
     self.index = index
     self.dictionary = self.createDictionary(universityMajorDictionary) 
 	
   
   def createDictionary(self,universityMajorDictionary):
-    print(universityMajorDictionary)
+    # print(universityMajorDictionary)
     output = universityMajorDictionary.to_dict(orient='record')
     
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
 
-    # jsonFile = open( 'University_Majors_Id_table.json' )
-    # universityMajorsId = jsonFile.read()
-    # universityMajorsId = json.loads( universityMajorsId )
-
-
-    #hegisDictionary = {}
     universityMajorsId = []
-    #index = 1
-    #index =1
     for row in output:
-      # campus = int(row['campus'])
       hegis =  int(row['hegis_at_exit'])
       hegisDictionary[hegis] = self.index
 
@@ -154,8 +131,6 @@ class JsonMajor:
     with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
         fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close() 
-
-    # shutil.move(self.file+'_university_majors_id.json', "../../database/data/")
 
     return dictionary
     
@@ -182,7 +157,6 @@ class JsonMajor:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
 
-    # shutil.move(fileName+'.json', "../../database/data/")
 
 
   def jsonSanitize(self,fileName ):
@@ -209,7 +183,6 @@ class JsonMajor:
       json.dump(json_data, outfile, indent=4)
     outfile.close()
 
-    # shutil.move(fileName+'.json', "../../database/data/")
 
 
 

@@ -22,19 +22,17 @@ class IterateCsvFiles():
         fileName = csv.replace("_majors","")
         majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
         majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
-        # print(majorDataFrame)
 
-        # get Table equiv Data Frames
-        majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()
-        # print(majorPathDf)
+        majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()# get Table equiv Data Frames
 
-        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
-        # init json Industry
-        jsonMajor = JsonMajor(fileName,majorDataFrame,universityMajorDictionary,index) #Returns the Json
+        universityMajorDictionaryDf = majorSanitize.getUniversityMajorDictionaryDf() # Returns a dictionary DF
         
-        majorPathDf = jsonMajor.getMajorsTables(majorPathDf)
-        # print(majorPathDf)
-        index = jsonMajor.getIndex()        
+        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,index) #Returns the Json
+        
+        majorPathDf = jsonMajor.getMajorsTables(majorPathDf)   # Sanitize majorPath Df
+
+        index = jsonMajor.getIndex() # gets index
+
         jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
         jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
         jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
@@ -42,7 +40,7 @@ class IterateCsvFiles():
 
         del majorSanitize
         del majorDataFrame
-        del universityMajorDictionary
+        del universityMajorDictionaryDf
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
