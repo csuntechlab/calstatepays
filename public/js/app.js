@@ -49144,8 +49144,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -49180,20 +49178,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { position: "relative" } }, [
-    _c(
-      "button",
-      { staticClass: "btn-add", attrs: { id: "compare-major-button" } },
-      [
-        _c("img", {
-          attrs: {
-            src: this.url + "/img/add-btn.svg",
-            alt: "Compare Major Button"
-          }
-        })
-      ]
-    ),
-    _vm._v(" "),
-    _vm._m(0)
+    _vm.indexOfUnsubmittedCard == -1
+      ? _c(
+          "button",
+          {
+            staticClass: "btn-add",
+            attrs: { id: "compare-major-button" },
+            on: {
+              click: function($event) {
+                _vm.onPlus()
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/add-btn.svg",
+                alt: "Compare Major Button"
+              }
+            })
+          ]
+        )
+      : _c(
+          "button",
+          {
+            staticClass: "btn-add__disabled",
+            attrs: { id: "compare-major-button" },
+            on: {
+              click: function($event) {
+                _vm.cardPlusError()
+              }
+            }
+          },
+          [_vm._m(0)]
+        )
   ])
 }
 var staticRenderFns = [
@@ -49201,19 +49219,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn-add__disabled",
-        attrs: { id: "compare-major-button" }
-      },
-      [
-        _c("i", { staticClass: "fa add-icon" }, [
-          _vm._v("+"),
-          _c("span", { staticClass: "tooltiptext" }, [_vm._v("Complete Form")])
-        ])
-      ]
-    )
+    return _c("i", { staticClass: "fa add-icon" }, [
+      _vm._v("+"),
+      _c("span", { staticClass: "tooltiptext" }, [_vm._v("Complete Form")])
+    ])
   }
 ]
 render._withStripped = true

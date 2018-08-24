@@ -1,11 +1,9 @@
 <template>
     <div style="position: relative">
-        <!-- <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="indexOfUnsubmittedCard == -1"> -->
-        <button class="btn-add" id="compare-major-button">
+        <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="indexOfUnsubmittedCard == -1">
             <img :src="this.url + '/img/add-btn.svg'" alt="Compare Major Button">
         </button>
-        <!-- <button class="btn-add__disabled" id="compare-major-button" @click="cardPlusError()" v-else> -->
-        <button class="btn-add__disabled" id="compare-major-button">
+        <button class="btn-add__disabled" id="compare-major-button" @click="cardPlusError()" v-else>
             <i class="fa add-icon">+<span class="tooltiptext">Complete Form</span></i>
         </button>
     </div>
