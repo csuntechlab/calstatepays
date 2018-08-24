@@ -115,28 +115,30 @@ class JsonMajor:
 	
   
   def createDictionary(self,universityMajorDictionary):
+    print(universityMajorDictionary)
     output = universityMajorDictionary.to_dict(orient='record')
     
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
 
-    jsonFile = open( 'University_Majors_Id_table.json' )
-    universityMajorsId = jsonFile.read()
-    universityMajorsId = json.loads( universityMajorsId )
+    # jsonFile = open( 'University_Majors_Id_table.json' )
+    # universityMajorsId = jsonFile.read()
+    # universityMajorsId = json.loads( universityMajorsId )
 
 
     #hegisDictionary = {}
-    #universityMajorsId = []
+    universityMajorsId = []
     #index = 1
     #index =1
     for row in output:
       # campus = int(row['campus'])
       hegis =  int(row['hegis_at_exit'])
-      campus =  int(row['campus'])
-      dictRename = {'hegis_codes': hegis,'university_id':campus }
-
       hegisDictionary[hegis] = self.index
+
+      campus =  int(row['campus'])
+      major =  (row['major'])
+      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.index }
       universityMajorsId.append(dictRename)
 
       self.index +=1

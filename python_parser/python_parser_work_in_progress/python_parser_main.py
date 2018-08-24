@@ -28,7 +28,7 @@ class IterateCsvFiles():
         majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()
         # print(majorPathDf)
 
-        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary(index) # Returns a dictionary
+        universityMajorDictionary = majorSanitize.getUniversityMajorDictionary() # Returns a dictionary
         # init json Industry
         jsonMajor = JsonMajor(fileName,majorDataFrame,universityMajorDictionary,index) #Returns the Json
         

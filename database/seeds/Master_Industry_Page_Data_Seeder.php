@@ -29,7 +29,9 @@ class Master_Industry_Page_Data_Seeder extends Seeder
             $population = new Population();
 
             $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
-            $potential_number_of_students = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status)->potential_number_of_students;
+            // $potential_number_of_students = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status)->potential_number_of_students;
+
+            $potential_number_of_students = 1;
 
             if($row->naics != null){
                 $hegis_code = $row->hegis_at_exit;

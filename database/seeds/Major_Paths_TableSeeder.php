@@ -38,7 +38,7 @@ class Major_Paths_TableSeeder extends Seeder
 
         foreach ($jsonCollection as $json ){
             $data = json_decode($json);
-            var_dump($data);
+            // var_dump($data);
             foreach($data as $row){
                 
                 $majorPath = new MajorPath();
