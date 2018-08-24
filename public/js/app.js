@@ -68664,6 +68664,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -68717,11 +68719,23 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-2 industry-bar__percentage-text" },
-                  [_vm._v(_vm._s(industry.percentage) + "%")]
-                )
+                industry.percentage > 0
+                  ? _c(
+                      "div",
+                      { staticClass: "col-2 industry-bar__percentage-text" },
+                      [_vm._v(_vm._s(industry.percentage) + "%")]
+                    )
+                  : industry.percentage === null
+                    ? _c(
+                        "div",
+                        { staticClass: "col-2 industry-bar__percentage-text" },
+                        [_vm._v("0%")]
+                      )
+                    : _c(
+                        "div",
+                        { staticClass: "col-2 industry-bar__percentage-text" },
+                        [_vm._v("<1%")]
+                      )
               ]),
               _vm._v(" "),
               industry.industryWage == null
