@@ -12,16 +12,16 @@ from csuMetro_Parsing.CsvHelper import SanitizeIndustry
 from csuMetro_Parsing.JsonBuilder import JsonMajor
 from csuMetro_Parsing.JsonBuilder import JsonIndustry
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
+
 class IterateCsvFiles():
   
     def __init__(self):
         pass
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame):
-        temp = UniversityMajorJsonBuilder(universityMajorsDataFrame)
+        temp = hegisID(universityMajorsDataFrame)
+        temp.convert_To_Json()
         
-      print(universityMajorsDataFrame)
-
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       index = 1  
