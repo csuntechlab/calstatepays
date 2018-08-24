@@ -19,9 +19,13 @@ class IterateCsvFiles():
         pass
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame):
-        temp = hegisID(universityMajorsDataFrame)
-        temp.convert_To_Json()
+        hegisTable = hegisID(universityMajorsDataFrame)
+        hegisTable.convert_To_Json()
         
+        hegisTable = hegisID(universityMajorsDataFrame)
+        hegisDataFrame = hegisTable.get_hegis_codes_table_data_frame()
+        hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
+        # print(hegisDataFrame)
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
       index = 1  

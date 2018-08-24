@@ -1,5 +1,4 @@
 import pandas as pd
-import shutil
 
 import numpy as np
 import simplejson
@@ -89,6 +88,9 @@ class JsonIndustry:
       image = image.replace('& ',"")
     if(' ' in image):
       image = image.replace(' ',"_")
+    
+    image = image.lower()
+
     return image+".png"
     
 
