@@ -16,8 +16,8 @@ class hegisID:
 
   def convert_To_Json(self):
     self.df['hegis_codes'] = (self.df['hegis_codes']).astype(int)
-    self.df['id'] = (self.df['hegis_codes']).astype(int)
-    self.df['university_id'] = (self.df['hegis_codes']).astype(int)
+    self.df['id'] = (self.df['id']).astype(int)
+    self.df['university_id'] = (self.df['university_id']).astype(int)
 
     self.json_output('master_university_table',self.df)
 
