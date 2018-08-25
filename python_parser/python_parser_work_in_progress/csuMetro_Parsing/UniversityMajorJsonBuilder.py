@@ -22,11 +22,17 @@ class hegisID:
     self.json_output('master_university_table',self.df)
 
   def get_hegis_codes_table_data_frame(self):
-    hegisCodesTableDataFrame = self.df.loc[:,['id','hegis_codes','major']]
+    hegisCodesTableDataFrame = self.df.loc[:,['hegis_codes','major']]
+    hegisCodesTableDataFrame = hegisCodesTableDataFrame.drop_duplicates(subset=['hegis_codes','major'], keep='first')
+    # csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range( len(title))}])
     hegisCodesTableDataFrame['hegis_category_id'] = -1
+    hegisCodesTableDataFrame['id'] = -1
+
+    i = 1
 
     for index,row in hegisCodesTableDataFrame.iterrows():
-      hegis = (str)((int)(row[1]))
+      # print(row[4])
+      hegis = (str)((int)(row[0]))
       lengthOfHegis = len(hegis)
 
       hegisCategoryId = '00'
@@ -37,6 +43,9 @@ class hegisID:
 
       hegisCategoryId = ( int )( hegisCategoryId )
       hegisCodesTableDataFrame.ix[index,'hegis_category_id'] = hegisCategoryId
+      hegisCodesTableDataFrame.ix[index,'id'] = i
+
+      i +=1
     
     return hegisCodesTableDataFrame
   
