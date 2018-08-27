@@ -105,6 +105,33 @@ def sort_csv_files(csvFiles):
             industryCsvFiles.append(csv.replace('.csv',''))
     return majorsCsvFiles,industryCsvFiles
 
+# i got bored and created this weird way to combat the awkward first two rows in the industry csvs
+# notice the first two rows, it seems awkward to not do this I think
+def remove_row_of_industry(industryFiles):
+    industryUpdated = []
+    for csv in industryFiles:
+        df1 = pd.read_csv(csv+'.csv', skiprows=[0])
+
+        # df1 = pd.read_csv(csv+'.csv',header= None)
+        fileName = csv.replace("_industry","")
+        # df2 = df1.iloc[1:]
+        fileName = fileName + '_updated_industry'
+        df1.to_csv(fileName+'.csv')
+        industryUpdated.append(fileName)
+    print(industryUpdated)
+    return industryUpdated
+
+def remove_temp_industry_file(industryFiles):
+    for csv in industryFiles:
+        if os.path.exists(csv+'.csv'):
+            os.remove(csv+'.csv')
+            print('delted')
+    else:
+        print("The file does not exist")
+
+
+
+
 def main( iterateCsvFiles = IterateCsvFiles() ):
 #   able to get all csv files within working dir, 
 #   sort csv's based on majors/industry
@@ -118,8 +145,10 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
-    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    updateIndustry = remove_row_of_industry(industryCsvFiles)
     iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    remove_temp_industry_file(updateIndustry)
     
 if __name__ == "__main__": main()
     
