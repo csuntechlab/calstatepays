@@ -15,10 +15,15 @@ class Data_Frame_Sanitizer:
                 csv general data frame
         '''
         self.file = file
-        self.df = pd.read_csv('./csv/' + self.file+'.csv')
+        localFilePath = './csv/' + self.file+'.csv'
+        self.df = pd.read_csv( localFilePath )
+        print(self.df)
         self.sanitize_null_values()
+        self.print_column_headers()
         self.header_sanitizer()
+        self.print_column_headers()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
+        print(self.df)
         pass
     
     def sanitize_null_values(self):
@@ -34,6 +39,7 @@ class Data_Frame_Sanitizer:
         '''
         self.df.columns = self.df.columns.str.replace(' ','_')
         self.df.columns = self.df.columns.str.replace('#','number')
+        self.df.columns = self.df.columns.str.replace('.1','')                                                      
         self.df.columns = self.df.columns.str.lower()
         for i,col in enumerate(self.df.columns):
             if(col[0] in '123456789'):

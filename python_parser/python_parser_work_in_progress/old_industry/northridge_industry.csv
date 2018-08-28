@@ -1,4 +1,5 @@
-Campus,Location,Student Path,Entry Stat,HEGIS at Exit,Major,Industry,# of Students Found 5 years after exit,Median Annual Earnings 5 years after exit,Average Annual Earnings 5 years after exit,# of Students Found 10 years after exit,Median Annual Earnings 10 years after exit,Average Annual Earnings 10 years after exit
+,,,,,,,5 Years After Education Exit,,,10 Years After Education Exit,,
+Campus,Location,Student Path,Entry Stat,HEGIS at Exit,Major,Industry,# of Students Found,Median Annual Earnings,Average Annual Earnings,# of Students Found,Median Annual Earnings,Average Annual Earnings
 70,Northridge,1,FTF + FTT,00121 + 12032,Nursing,"Professional, Scientific, & Technical Skills",,,,,,
 70,Northridge,1,FTF + FTT,00121 + 12032,Nursing,Educational Services,9,"$102,907","$105,963",,,
 70,Northridge,1,FTF + FTT,00121 + 12032,Nursing,Health Care & Social Assistance,32,"$117,778","$111,853",,,

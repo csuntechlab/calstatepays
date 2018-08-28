@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 import os
 from os import listdir
 from os.path import isfile, join
@@ -171,11 +174,10 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     '''
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
 
-    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
-    # industryCsvFiles = get_csv_files_in_this_directory(industryPath)
     # updateIndustry = remove_row_of_industry(industryCsvFiles)
-    # iterateCsvFiles.master_industry_csv_to_json(updateIndustry)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     # remove_temp_industry_file(updateIndustry)
     
 if __name__ == "__main__": main()

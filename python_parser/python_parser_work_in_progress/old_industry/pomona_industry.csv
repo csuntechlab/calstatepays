@@ -1,4 +1,5 @@
-Campus,Location,Student Path,Entry Stat,HEGIS at Exit,Major,Industry,# of Students Found 5 years after exit,Median Annual Earnings 5 years after exit,Average Annual Earnings 5 years after exit,# of Students Found 10 years after exit,Median Annual Earnings 10 years after exit,Average Annual Earnings 10 years after exit
+,,,,,,,5 Years After Education Exit,,,10 Years After Education Exit,,
+Campus,Location,Student Path,Entry Stat,HEGIS at Exit,Major,Industry,# of Students Found,Median Annual Earnings,Average Annual Earnings,# of Students Found,Median Annual Earnings,Average Annual Earnings
 10,Pomona,1,FTF + FTT,01011 + 01012 + 01021 + 01031 + 01081 + 01091,Agriculture/Agricultural Science & Horticulture,"Agriculture, Forestry, Fishing, & Hunting",11,"$61,710","$59,535",7,"$60,951","$55,978"
 10,Pomona,1,FTF + FTT,01011 + 01012 + 01021 + 01031 + 01081 + 01091,Agriculture/Agricultural Science & Horticulture,Utilities,,,,,,
 10,Pomona,1,FTF + FTT,01011 + 01012 + 01021 + 01031 + 01081 + 01091,Agriculture/Agricultural Science & Horticulture,Construction,,,,,,
