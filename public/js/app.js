@@ -45477,7 +45477,7 @@ var render = function() {
           _vm._v("Discover Your Earnings After College")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row px-4 py-2 fa-wrapper" }, [
+        _c("div", { staticClass: "row py-2 fa-wrapper" }, [
           _c(
             "div",
             { staticClass: "col-md-4 text-center my-3 home__col" },
@@ -88555,7 +88555,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-md-flex" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           {
