@@ -68,10 +68,11 @@ class IterateCsvFiles():
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       for csv in industryCsvFiles:
-        fileName = csv.replace("_industry","")
+        # fileName = csv.replace("_industry","")
+        fileName = csv.replace("_updated_industry","")
+
         industrySanitize = SanitizeIndustry(csv)
-        industryDataFrame = industrySanitize.sanitizeIndustry() 
-        
+        industryDataFrame = industrySanitize.sanitizeIndustry()         
         # get Table equiv Data Frames
         industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.industryDF()
 
@@ -105,11 +106,51 @@ def sort_csv_files(csvFiles):
             industryCsvFiles.append(csv.replace('.csv',''))
     return majorsCsvFiles,industryCsvFiles
 
+# i got bored and created this weird way to combat the awkward first two rows in the industry csvs
+# notice the first two rows, it seems awkward to not do this I think
+def remove_row_of_industry(industryFiles):
+    industryUpdated = []
+    for csv in industryFiles:
+        df1 = pd.read_csv(csv+'.csv', skiprows=1)
+        fileName = csv.replace("_industry","")
+        fileName = fileName + '_updated_industry'
+
+        # sorry for the n^2 wasn't able to think of a easier way to combat this dumb header problem
+
+        mapper = {
+            '# of Students Found':df1.rename(columns={'# of Students Found': '# of Students Found 5 years after exit'}, inplace=True),
+            'Median Annual Earnings':df1.rename(columns={'Median Annual Earnings': 'Median Annual Earnings 5 years after exit'}, inplace=True),
+            'Average Annual Earnings':df1.rename(columns={'Average Annual Earnings': 'Average Annual Earnings 5 years after exit'}, inplace=True),
+            '# of Students Found.1':df1.rename(columns={'# of Students Found.1': '# of Students Found 10 years after exit'}, inplace=True),
+            'Median Annual Earnings.1':df1.rename(columns={'Median Annual Earnings.1': 'Median Annual Earnings 10 years after exit'}, inplace=True),
+            'Average Annual Earnings.1':df1.rename(columns={'Average Annual Earnings.1': 'Average Annual Earnings 10 years after exit'}, inplace=True),
+        }
+        for column in df1:
+            pd.Series(column).map(mapper)
+
+        df1.to_csv(fileName+'.csv',index = False)
+        industryUpdated.append(fileName)
+        
+    return industryUpdated
+
+def remove_temp_industry_file(industryFiles):
+    for csv in industryFiles:
+        if os.path.exists(csv+'.csv'):
+            os.remove(csv+'.csv')
+            print('delted')
+    else:
+        print("The file does not exist")
+
+# I think its best not to wait for the client to update us with the major column
+# I assume the 
+# def frankensteinDominguez():
+#     dfMajor = pd.read_csv('')
+
+
 def main( iterateCsvFiles = IterateCsvFiles() ):
 #   able to get all csv files within working dir, 
 #   sort csv's based on majors/industry
 #   
-
     mypath = os.getcwd()
     
     csvFiles = [csvFile for csvFile in listdir(mypath) 
@@ -119,7 +160,9 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
     
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
-    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    updateIndustry = remove_row_of_industry(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(updateIndustry)
+    remove_temp_industry_file(updateIndustry)
     
 if __name__ == "__main__": main()
     

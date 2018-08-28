@@ -7,6 +7,8 @@ class DataFrame:
     def __init__(self,file):
         self.file = file
         self.df = pd.read_csv(self.file+'.csv')
+        print(self.df.keys())
+        print(self.df)
         self.dataframe_builder()
         self.headerSanitizer()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
@@ -65,6 +67,7 @@ class DataFrame:
 
     ### Both jsons will need this method
     def dollar_column(self,columnName):
+        print(self.df[columnName])
         self.remove_dollar(columnName)
         self.remove_comma(columnName)
         self.string_number_to_real_number(columnName)
@@ -73,15 +76,16 @@ class SanitizeIndustry(DataFrame):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
-        self.remove_hyphen('naics')
         pass
     
+    # i just realized we are not using 10 year
+    # so most of the code i did today was useless...
     def sanitizeIndustry(self):
         mapper = {
-            'naics':self.remove_hyphen('naics') or self.string_number_to_real_number('naics'),
             'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
             'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
-            'number_of_students_found_5_years_after_exit':self.dollar_column('number_of_students_found_5_years_after_exit'),
+            'median_annual_earnings_10_years_after_exit':self.dollar_column('median_annual_earnings_10_years_after_exit'),
+            'average_annual_earnings_10_years_after_exit':self.dollar_column('average_annual_earnings_10_years_after_exit'),
         }
         for column in self.df:
             pd.Series(column).map(mapper)
@@ -100,8 +104,12 @@ class SanitizeIndustry(DataFrame):
         industryPathWages.loc[:,'id'] = range(1, len(industryPathWages) + 1)
 
     
-        naics_titles = self.df[['naics','industry']]
-        naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
+        # naics_titles = self.df[['naics','industry']]
+        # naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
+
+        # i dont remember why we had naics slice, it doesnt exist in the csvs as a header
+        naics_titles = self.df[['hegis_at_exit','industry']]
+        naics_titles = naics_titles.rename(columns={'hegis_at_exit': 'naics_codes','industry':'naics_industry'})
         naics_titles = naics_titles.drop_duplicates(subset=['naics_codes'], keep='first')
         naics_titles['images'] = ""
 
