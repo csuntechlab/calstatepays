@@ -1,112 +1,432 @@
 [
     {
-        "naics_codes": 54,
+        "naics_codes": 121,
         "naics_industry": "Professional, Scientific, & Technical Skills",
         "images": "professional_scientific_technical_skills.png"
     },
     {
-        "naics_codes": 61,
-        "naics_industry": "Educational Services",
-        "images": "educational_services.png"
-    },
-    {
-        "naics_codes": 62,
-        "naics_industry": "Health Care & Social Assistance",
-        "images": "health_care_social_assistance.png"
-    },
-    {
-        "naics_codes": 92,
-        "naics_industry": "Government",
-        "images": "government.png"
-    },
-    {
-        "naics_codes": null,
-        "naics_industry": "Wages - No NAICS Code",
-        "images": ""
-    },
-    {
-        "naics_codes": 4445,
+        "naics_codes": 3085,
         "naics_industry": "Retail Trade",
         "images": "retail_trade.png"
     },
     {
-        "naics_codes": 53,
-        "naics_industry": "Real Estate & Rental & Leasing",
-        "images": "real_estate_rental_leasing.png"
-    },
-    {
-        "naics_codes": 81,
-        "naics_industry": "Other Services",
-        "images": "other_services.png"
-    },
-    {
-        "naics_codes": 11,
+        "naics_codes": 4011,
         "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
         "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 21,
-        "naics_industry": "Mining",
-        "images": "mining.png"
-    },
-    {
-        "naics_codes": 22,
+        "naics_codes": 4111,
         "naics_industry": "Utilities",
         "images": "utilities.png"
     },
     {
-        "naics_codes": 23,
+        "naics_codes": 4141,
         "naics_industry": "Construction",
         "images": "construction.png"
     },
     {
-        "naics_codes": 3133,
+        "naics_codes": 4152,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 4171,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 4201,
         "naics_industry": "Manufacturing",
         "images": "manufacturing.png"
     },
     {
-        "naics_codes": 42,
+        "naics_codes": 5011,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 5012,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 5021,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 5041,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 5061,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 5062,
         "naics_industry": "Wholesale Trade",
         "images": "wholesale_trade.png"
     },
     {
-        "naics_codes": 4849,
-        "naics_industry": "Transportation & Warehousing",
-        "images": "transportation_warehousing.png"
+        "naics_codes": 5064,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
     },
     {
-        "naics_codes": 51,
-        "naics_industry": "Information",
-        "images": "information.png"
+        "naics_codes": 5072,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 52,
-        "naics_industry": "Finance & Insurance",
-        "images": "finance_insurance.png"
+        "naics_codes": 5091,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 55,
-        "naics_industry": "Management of Companies & Enterprises",
-        "images": "management_of_companies_enterprises.png"
+        "naics_codes": 5111,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 56,
-        "naics_industry": "Admin & Support & Waste Mgmt & Remediation",
-        "images": "admin_support_waste_mgmt_remediation.png"
+        "naics_codes": 5131,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 71,
-        "naics_industry": "Arts, Entertainment, & Recreation",
-        "images": "arts_entertainment_recreation.png"
+        "naics_codes": 5151,
+        "naics_industry": "Construction",
+        "images": "construction.png"
     },
     {
-        "naics_codes": 72,
-        "naics_industry": "Accommodation & Food Services",
-        "images": "accommodation_food_services.png"
+        "naics_codes": 5995,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
     },
     {
-        "naics_codes": 99,
-        "naics_industry": "Non-Classified",
-        "images": "non-classified.png"
+        "naics_codes": 6021,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 6031,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 7011,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 7021,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 8231,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 8351,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 8375,
+        "naics_industry": "Retail Trade",
+        "images": "retail_trade.png"
+    },
+    {
+        "naics_codes": 9011,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 9081,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 9091,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 9094,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 9101,
+        "naics_industry": "Mining",
+        "images": "mining.png"
+    },
+    {
+        "naics_codes": 9134,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 9254,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 10021,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 10031,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 10041,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 10051,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 10071,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 10091,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 10101,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 11011,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 11051,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 12011,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 12021,
+        "naics_industry": "No Wages",
+        "images": "no_wages.png"
+    },
+    {
+        "naics_codes": 12031,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 12140,
+        "naics_industry": "No Wages",
+        "images": "no_wages.png"
+    },
+    {
+        "naics_codes": 12141,
+        "naics_industry": "No Wages",
+        "images": "no_wages.png"
+    },
+    {
+        "naics_codes": 12142,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 12201,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 12231,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 12251,
+        "naics_industry": "Wholesale Trade",
+        "images": "wholesale_trade.png"
+    },
+    {
+        "naics_codes": 13011,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 15011,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 15051,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 15061,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 15091,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 15101,
+        "naics_industry": "Mining",
+        "images": "mining.png"
+    },
+    {
+        "naics_codes": 15102,
+        "naics_industry": "Educational Services",
+        "images": "educational_services.png"
+    },
+    {
+        "naics_codes": 15991,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 17011,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 17021,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 17031,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 19021,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 19051,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 19141,
+        "naics_industry": "Mining",
+        "images": "mining.png"
+    },
+    {
+        "naics_codes": 19171,
+        "naics_industry": "Professional, Scientific, & Technical Skills",
+        "images": "professional_scientific_technical_skills.png"
+    },
+    {
+        "naics_codes": 20011,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 21025,
+        "naics_industry": "No Wages",
+        "images": "no_wages.png"
+    },
+    {
+        "naics_codes": 21031,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 21041,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 21044,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 22021,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22041,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22051,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22061,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22071,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22081,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22111,
+        "naics_industry": "Construction",
+        "images": "construction.png"
+    },
+    {
+        "naics_codes": 22131,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
+    },
+    {
+        "naics_codes": 22141,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 22990,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 22996,
+        "naics_industry": "Manufacturing",
+        "images": "manufacturing.png"
+    },
+    {
+        "naics_codes": 49012,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 49993,
+        "naics_industry": "Utilities",
+        "images": "utilities.png"
     }
 ]

@@ -77,10 +77,14 @@ class IterateCsvFiles():
         industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.industryDF()
 
 
+
         # init json Industry
         jsonIndustry = JsonIndustry(fileName)
         #update Industry PathTypes
         industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
+
+        print(industryPathTypesDf)
+        print(industryPathTypesDf.keys())
         
         # JSon Outputs 
         jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
