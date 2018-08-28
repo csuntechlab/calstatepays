@@ -3,20 +3,35 @@ import pandas as pd
 import numpy as np
 import simplejson
 
-class DataFrame:
+class Data_Frame_Sanitizer:
     def __init__(self,file):
+        '''
+        This is a dataframes parent class,
+        Majors and Industry dataframes are parsed in a similar manner.
+        So we will parse the first couple of columns here. 
+        Shared parsing functions will reside in the parent class
+            dataFrame object init
+                file, 
+                csv general data frame
+        '''
         self.file = file
-        self.df = pd.read_csv(self.file+'.csv')
-        self.dataframe_builder()
-        self.headerSanitizer()
+        self.df = pd.read_csv('./csv/' + self.file+'.csv')
+        self.sanitize_null_values()
+        self.header_sanitizer()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
         pass
     
-    def dataframe_builder(self):
+    def sanitize_null_values(self):
+        '''
+        Sanitizes null values
+        '''
         self.df = self.df.rename(columns=lambda x: x.replace('#', 'number'))
         self.df = self.df.replace(['*****', np.NaN], np.NaN)
 
-    def headerSanitizer(self):
+    def header_sanitizer(self):
+        '''
+        Sanitizes the header for each csv
+        '''
         self.df.columns = self.df.columns.str.replace(' ','_')
         self.df.columns = self.df.columns.str.replace('#','number')
         self.df.columns = self.df.columns.str.lower()
@@ -26,18 +41,30 @@ class DataFrame:
             elif(col == 'entry_stat'):
                 self.df = self.df.rename(index=str, columns={str(col): 'entry_status'})
     
-    def dfHead(self):
+    def print_data_frame_headers(self):
+        '''
+        prints the header
+        '''
         print (self.df.head())
 
-    def giveColumnHeads(self):
+    def print_column_headers(self):
+        '''
+        prints col headers
+        '''
         for column in self.df:
             print(column)
     
     def __str__(self):
+        '''
+        prints dataframe
+        '''
         print(self.df)
     
      # sanitize column
     def column_sanitize_plus(self,columnName):
+        '''
+        sanitize for col that has a plus
+        '''
         self.df[columnName] = self.df[columnName].str.replace('+','')
         self.df[columnName] = self.df[columnName].str.replace(' ','')
 
@@ -69,7 +96,7 @@ class DataFrame:
         self.remove_comma(columnName)
         self.string_number_to_real_number(columnName)
 
-class SanitizeIndustry(DataFrame):
+class Sanitize_Industry(Data_Frame_Sanitizer):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
@@ -77,7 +104,7 @@ class SanitizeIndustry(DataFrame):
     
     # i just realized we are not using 10 year
     # so most of the code i did today was useless...
-    def sanitizeIndustry(self):
+    def sanitize_Industry(self):
         mapper = {
             'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
             'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
@@ -88,7 +115,7 @@ class SanitizeIndustry(DataFrame):
             pd.Series(column).map(mapper)
     
 
-    def industryDF(self):
+    def get_Industry_Data_Frame(self):
         # TODO: i dont remember how to get naics from this dataframe
         # when script fails, always have to remove all updated csvs in python_parser_WIP directory
         # is hegis at exist == naics? I dont remember
@@ -114,13 +141,13 @@ class SanitizeIndustry(DataFrame):
         return industryPathTypes,industryPathWages,naics_titles
 
 
-class SanitizeMajor(DataFrame):
+class Sanitize_Major(Data_Frame_Sanitizer):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
         pass
 
-    def sanitizeMajor(self):
+    def sanitize_Major(self):
         mapper = {
             'potential_number_of_students':self.string_number_to_real_number('potential_number_of_students') ,
             'potential_number_of_students_for_each_year_out_of_school':self.string_number_to_real_number('potential_number_of_students_for_each_year_out_of_school'),
@@ -134,7 +161,7 @@ class SanitizeMajor(DataFrame):
             pd.Series(column).map(mapper)
         return self.df
     
-    def getUniversityMajorDictionaryDf(self):
+    def get_University_Majors_Dictionary_Data_Frame(self):
         UnivMajorDictionaryDf = self.df.loc[:,['campus','hegis_at_exit','major'] ]
         UnivMajorDictionaryDf = UnivMajorDictionaryDf.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
         UnivMajorDictionaryDf['campus'] = UnivMajorDictionaryDf['campus'].astype('float')
@@ -143,7 +170,7 @@ class SanitizeMajor(DataFrame):
         return UnivMajorDictionaryDf
         
 
-    def getMajorPathsDF(self):
+    def get_Majors_Paths_Data_Frame(self):
         MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
         MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1)
         MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]

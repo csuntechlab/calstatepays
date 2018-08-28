@@ -5,9 +5,9 @@ from os.path import isfile, join
 import pandas as pd
 import numpy as np
 import simplejson
-from csuMetro_Parsing.CsvHelper import DataFrame
-from csuMetro_Parsing.CsvHelper import SanitizeMajor
-from csuMetro_Parsing.CsvHelper import SanitizeIndustry
+from csuMetro_Parsing.CsvHelper import Data_Frame_Sanitizer
+from csuMetro_Parsing.CsvHelper import Sanitize_Major
+from csuMetro_Parsing.CsvHelper import Sanitize_Industry
 
 from csuMetro_Parsing.JsonBuilder import JsonMajor
 from csuMetro_Parsing.JsonBuilder import JsonIndustry
@@ -35,12 +35,12 @@ class IterateCsvFiles():
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
-        majorSanitize = SanitizeMajor(csv) # Object contains a dataFrame
-        majorDataFrame = majorSanitize.sanitizeMajor() #sanitizes major
+        majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
+        majorDataFrame = majorSanitize.sanitize_Major() #sanitizes major
 
-        majorPathDf,majorPathWageDf = majorSanitize.getMajorPathsDF()# get Table equiv Data Frames
+        majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
 
-        universityMajorDictionaryDf = majorSanitize.getUniversityMajorDictionaryDf() # Returns a dictionary DF
+        universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
         
         jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,index) #Returns the Json
         
@@ -71,10 +71,10 @@ class IterateCsvFiles():
         # fileName = csv.replace("_industry","")
         fileName = csv.replace("_updated_industry","")
 
-        industrySanitize = SanitizeIndustry(csv)
-        industryDataFrame = industrySanitize.sanitizeIndustry()         
+        industrySanitize = Sanitize_Industry(csv)
+        industryDataFrame = industrySanitize.sanitize_Industry()         
         # get Table equiv Data Frames
-        industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.industryDF()
+        industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.get_Industry_Data_Frame()
 
 
 
@@ -99,16 +99,6 @@ class IterateCsvFiles():
         del industryPathTypesDf
         del industryPathWagesDf
         del naics_titlesDf
-
-def sort_csv_files(csvFiles):
-    majorsCsvFiles = []
-    industryCsvFiles = []
-    for csv in csvFiles:
-        if 'majors' in csv:
-            majorsCsvFiles.append(csv.replace('.csv',''))
-        elif 'industry' in csv:
-            industryCsvFiles.append(csv.replace('.csv',''))
-    return majorsCsvFiles,industryCsvFiles
 
 # i got bored and created this weird way to combat the awkward first two rows in the industry csvs
 # notice the first two rows, it seems awkward to not do this I think
@@ -151,19 +141,39 @@ def remove_temp_industry_file(industryFiles):
 #     dfMajor = pd.read_csv('')
 
 
-def main( iterateCsvFiles = IterateCsvFiles() ):
-#   able to get all csv files within working dir, 
-#   sort csv's based on majors/industry
-#   
-    mypath = os.getcwd()
-    
-    csvFiles = [csvFile for csvFile in listdir(mypath) 
-                 if isfile(join(mypath, csvFile)) 
+def get_csv_files_in_this_directory():
+    '''
+    sort all the csv files to two lists
+    have a list for majors csv files
+    have a list for industry csv files
+    '''
+    majorsCsvFiles = []
+    industryCsvFiles = []
+
+    path = os.getcwd() + '/csv'
+  
+    csvFiles = [csvFile for csvFile in listdir(path) 
+                 if isfile(join(path, csvFile)) 
                  if '.csv' in csvFile]
     
-    majorsCsvFiles,industryCsvFiles = sort_csv_files(csvFiles)
-    
+    for csv in csvFiles:
+        if 'majors' in csv:
+            majorsCsvFiles.append(csv.replace('.csv',''))
+        elif 'industry' in csv:
+            industryCsvFiles.append(csv.replace('.csv',''))
+
+    return majorsCsvFiles,industryCsvFiles
+
+
+def main( iterateCsvFiles = IterateCsvFiles() ):
+    '''
+    send list of files to be parsed
+    '''
+    majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
+
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+
+    # industryCsvFiles = get_csv_files_in_this_directory(industryPath)
     # updateIndustry = remove_row_of_industry(industryCsvFiles)
     # iterateCsvFiles.master_industry_csv_to_json(updateIndustry)
     # remove_temp_industry_file(updateIndustry)

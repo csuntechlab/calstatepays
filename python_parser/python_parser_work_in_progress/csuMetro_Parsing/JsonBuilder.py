@@ -10,7 +10,7 @@ class JsonIndustry:
     self.dictionary = self.getDictionary(file+"_Dictionary") 
 
   def getDictionary(self,fileName):
-    jsonFile = open( fileName+'.json')
+    jsonFile = open('./dictionaries/'+fileName+'.json')
     dictionary = jsonFile.read()
     dictionary = json.loads(dictionary)
 
@@ -116,9 +116,9 @@ class JsonMajor:
 
     universityMajorsId = []
 
-    # universityMajorsIdDf = pd.DataFrame(columns=self.col)
+    # universityMajorsIdDf = pd.Data_Frame_Sanitizer(columns=self.col)
 
-    # universityMajorsIdDf = pd.DataFrame()
+    # universityMajorsIdDf = pd.Data_Frame_Sanitizer()
 
     for row in output:
       hegis =  int(row['hegis_at_exit'])
@@ -138,7 +138,8 @@ class JsonMajor:
     
     dictionary  = {campusId:hegisDictionary}
     
-    with open (self.file+'_Dictionary.json', 'w' ) as fp:
+    
+    with open('./dictionaries/'+self.file+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
 
