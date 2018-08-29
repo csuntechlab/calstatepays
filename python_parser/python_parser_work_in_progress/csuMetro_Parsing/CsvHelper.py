@@ -30,9 +30,13 @@ class Data_Frame_Sanitizer:
 
         # here we create the updated csv with the correct sanitizations
         # this data goes to sanitized_industries folder
-        # we should probabily read
-        # name = self.file.replace("_updated_industry","")
-        # self.df.to_csv(name+'_industry.csv',index=False)
+        # we should probabily read these files which i swapped into csv directory
+        # the caution is we'll be sanitizing it again, so maybe we can talk about this 
+        # friday?
+        # if "major" not in self.file: 
+        #     name = self.file.replace("_updated_industry","")
+        #     name = self.file.replace("_industry","")
+        #     self.df.to_csv('sanitized_industries/'+name+'_industry.csv',index=False)
         pass
     
     def sanitize_null_values(self):
