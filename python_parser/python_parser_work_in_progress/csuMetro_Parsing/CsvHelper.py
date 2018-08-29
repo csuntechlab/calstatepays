@@ -16,14 +16,23 @@ class Data_Frame_Sanitizer:
         '''
         self.file = file
         localFilePath = './csv/' + self.file+'.csv'
-        self.df = pd.read_csv( localFilePath )
+        self.df = pd.read_csv( localFilePath)
+        self.df.info()
         print(self.df)
         self.sanitize_null_values()
         self.print_column_headers()
         self.header_sanitizer()
         self.print_column_headers()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
+        print(self.df.keys())
         print(self.df)
+
+
+        # here we create the updated csv with the correct sanitizations
+        # this data goes to sanitized_industries folder
+        # we should probabily read
+        # name = self.file.replace("_updated_industry","")
+        # self.df.to_csv(name+'_industry.csv',index=False)
         pass
     
     def sanitize_null_values(self):
@@ -39,7 +48,7 @@ class Data_Frame_Sanitizer:
         '''
         self.df.columns = self.df.columns.str.replace(' ','_')
         self.df.columns = self.df.columns.str.replace('#','number')
-        self.df.columns = self.df.columns.str.replace('.1','')                                                      
+        # self.df.columns = self.df.columns.str.replace('.1','')                                                      
         self.df.columns = self.df.columns.str.lower()
         for i,col in enumerate(self.df.columns):
             if(col[0] in '123456789'):
@@ -125,7 +134,6 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         # TODO: i dont remember how to get naics from this dataframe
         # when script fails, always have to remove all updated csvs in python_parser_WIP directory
         # is hegis at exist == naics? I dont remember
-        print(self.df.keys())
         industryPathTypes = self.df.loc[:,['entry_status','naics','student_path']]
         industryPathTypes.loc[:,'id'] = range(1, len(industryPathTypes) + 1)
         industryPathTypes = industryPathTypes.rename(columns={'naics': 'naics_codes'})
