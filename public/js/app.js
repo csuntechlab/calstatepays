@@ -47252,23 +47252,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-=======
->>>>>>> dev
-=======
->>>>>>> Stashed changes
 
 
 
@@ -47288,11 +47271,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
     ? _c("div", { staticClass: "pfre-info__wrapper" }, [
-<<<<<<< HEAD
         _c("div", {}, [
-=======
-        _c("div", { staticClass: "text-sm-center text-md-left" }, [
->>>>>>> dev
           _c(
             "button",
             {
@@ -47323,13 +47302,8 @@ var render = function() {
             )
           : _vm._e()
       ])
-<<<<<<< HEAD
     : _c("div", {}, [
         _c("div", {}, [
-=======
-    : _c("div", { staticClass: "position-relative" }, [
-        _c("div", { staticClass: "text-sm-center text-md-left" }, [
->>>>>>> dev
           _c(
             "button",
             {
@@ -47500,27 +47474,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
->>>>>>> dev
-=======
-//
->>>>>>> Stashed changes
 
 
 
@@ -48603,12 +48557,12 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9" },
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
           [
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-auto pl-sm-0" },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
                     _vm._v(
@@ -48619,14 +48573,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-              _c("span", { staticClass: "col-1" }, [
-=======
-              _c("span", { staticClass: "col-4 " }, [
->>>>>>> dev
-=======
-              _c("span", { staticClass: "col col pr-sm-0" }, [
+              _c("span", { staticClass: "col col " }, [
                 _c(
                   "p",
                   {
@@ -48642,7 +48589,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "col align-self-end" }, [
->>>>>>> Stashed changes
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(_vm._s(_vm.pfreData.years.actual))
                 ])
@@ -48676,13 +48622,7 @@ var render = function() {
                   _vm._v(_vm._s(_vm.pfreData.years.end))
                 ])
               ])
-<<<<<<< HEAD
             ])
-=======
-            ]),
-            _vm._v(" "),
-            _c("div")
->>>>>>> dev
           ],
           1
         )
@@ -48696,7 +48636,7 @@ var render = function() {
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-auto pl-sm-0" },
+                { staticClass: "col-auto " },
                 [
                   _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                     _vm._v(
@@ -48707,14 +48647,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-              _c("span", { staticClass: "col-1" }, [
-=======
-              _c("span", { staticClass: "col-1 " }, [
->>>>>>> dev
-=======
-              _c("span", { staticClass: "col-8 pr-0" }, [
+              _c("span", { staticClass: "col-8 " }, [
                 _c(
                   "p",
                   {
@@ -48730,7 +48663,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "col align-self-end" }, [
->>>>>>> Stashed changes
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
@@ -48775,13 +48707,7 @@ var render = function() {
                   )
                 ])
               ])
-<<<<<<< HEAD
             ])
-=======
-            ]),
-            _vm._v(" "),
-            _vm._m(2)
->>>>>>> dev
           ],
           1
         )
@@ -48825,35 +48751,6 @@ var render = function() {
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(3),
-              _vm._v(" "),
-              _c(
-                "span",
-                { staticClass: "col-xl-6 pl-0" },
-                [
-                  _c("pfre-info", { attrs: { infoKey: "return" } }, [
-                    _vm._v(
-                      "Your estimated financial return on your education investment."
-                    )
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("span", { staticClass: "col-1 " }, [
-                _c("p", { staticClass: "float-right mb-0" }, [
-                  _vm._v(
-                    _vm._s(
-                      _vm._f("percentage")(
-                        _vm.pfreData.returnOnInvestment.actual / 100
-                      )
-                    )
                   )
                 ])
               ])
@@ -48907,13 +48804,7 @@ var render = function() {
                   )
                 ])
               ])
-<<<<<<< HEAD
             ])
-=======
-            ]),
-            _vm._v(" "),
-            _vm._m(4)
->>>>>>> dev
           ],
           1
         )
@@ -48921,64 +48812,7 @@ var render = function() {
     ]
   )
 }
-<<<<<<< Updated upstream
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-4 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated time to degree:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated Earnings 5 Years After Exit:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-<<<<<<< HEAD
-=======
-    return _c("div", [
-      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
->>>>>>> dev
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("EFRE - Financial Return on Education: ")
-      ])
-    ])
-<<<<<<< HEAD
-=======
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
-    ])
->>>>>>> dev
-  }
-]
-=======
 var staticRenderFns = []
->>>>>>> Stashed changes
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
