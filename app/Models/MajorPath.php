@@ -13,8 +13,8 @@ class MajorPath extends Model
         'student_path',
         'university_majors_id',
         'entry_status',
-        'years'
-
+        'years',
+        'potential_number_of_students'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

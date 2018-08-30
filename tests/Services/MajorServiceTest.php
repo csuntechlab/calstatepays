@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
+use App\Models\University;
 use App\Models\UniversityMajor;
 use App\Services\MajorService;
 use Illuminate\Http\Request;
@@ -18,10 +19,17 @@ class MajorServiceTest extends TestCase
     public function setUp(){
         parent::setUp();
         $this->majorService = new MajorService();
+        $this->seed('Hegis_Codes_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Naics_Titles_TableSeeder');
+        $this->seed('Student_Paths_TableSeeder');
+        $this->seed('Field_Of_Studies_TableSeeder');
+        $this->seed('Hegis_Categories_TableSeeder');
+        $this->seed('Universities_TableSeeder');
+        $this->seed('Master_Major_Page_Data_TableSeeder');
     }
 
     public function test_getAllHegisCodes_ensure_returns_all_rows() {
-        $this->seed('Hegis_Codes_TestTableSeeder');
         $response = $this->majorService->getAllHegisCodes();
 
         $this->assertArrayHasKey(0, $response);
@@ -41,8 +49,7 @@ class MajorServiceTest extends TestCase
     }
 
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
-        $this->seed('University_Majors_Test_TableSeeder');
-        $response = $this->majorService->getMajorEarnings(22021, 1153);
+        $response = $this->majorService->getMajorEarnings(22021, 70);
         $this->assertArrayHasKey("id", $response[0]);        
         $this->assertArrayHasKey("student_path", $response[0]);    
         $this->assertArrayHasKey("university_majors_id", $response[0]);        
@@ -53,7 +60,6 @@ class MajorServiceTest extends TestCase
 
     public function test_getFREData_ensure_returns_all_keys()
     {
-        $this->seed('University_Majors_TableSeeder');
         $this->seed('Master_FRE_Page_Data_TableSeeder');
         $request = new Request();
         $request->major = 22021;
@@ -70,5 +76,11 @@ class MajorServiceTest extends TestCase
         $this->arrayHasKey("time_to_degree", $response);
         $this->arrayHasKey("earnings_5_years", $response);
         $this->arrayHasKey("roi", $response);
+    }
+
+    public function test_getAllUniversities_returns_7_univerities()
+    {
+        $response = $this->majorService->getAllUniversities();
+        $this->assertEquals(University::count(), count($response));
     }
 }

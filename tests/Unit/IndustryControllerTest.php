@@ -14,14 +14,11 @@ class IndustryControllerTest extends TestCase
 
     public function setUp(){
         parent::setUp();
-
-        //Build 4 tables which are related to each other.
-        $this->seed('University_Majors_Test_TableSeeder');
-        factory(NaicsTitle::class, 18)->create();
     }
 
     public function testGetAllIndustryNaicsTitles()
     {
+        $this->seed('Naics_Titles_TableSeeder');
         $response = $this->json('GET', '/api/industry/naics-titles');
         $response->assertStatus(200);
         $response->assertJsonStructure([

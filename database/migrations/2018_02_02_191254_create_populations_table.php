@@ -17,7 +17,9 @@ class CreatePopulationsTable extends Migration
             $table->increments('id');
             $table->integer('population_found')->nullable();
             $table->integer('population_size')->nullable();
-            $table->decimal('percentage_found');
+            $table->integer('universityId');
+            $table->integer('naics');
+            $table->decimal('percentage_found')->nullable();
         });
     }
 

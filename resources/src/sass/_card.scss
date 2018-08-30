@@ -1,7 +1,7 @@
 %card-base {
     background: $white;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    border-radius: 50px;
+    border-radius: 20px;
     justify-content: center;
 }
 
@@ -20,6 +20,26 @@
     margin-bottom: 50px;
     align-items: flex-start;
     @extend %card-base;
+    &-sizing{
+        width: 100%;
+    }
+}
+
+.industry-card{
+    margin-bottom: 50px;
+    padding: 2rem;
+    min-height: 75vh;
+    @extend %card-base;
+}
+
+.industry-card__row{
+    padding: 20px 10px;
+    border-top: 1px solid rgba(0,0,0,.1)
+}
+
+.industry-card__legend{
+    padding: 20px 10px;
+    font-weight: 600;
 }
 
 .card-add{

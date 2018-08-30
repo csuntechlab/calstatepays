@@ -1,27 +1,26 @@
 <template>
     <form class="form--inverted form--degreeLevel mb-4 mb-0-md" v-bind:id="'majorForm-' + form.cardIndex">
-        <div class="form__group" v-if="!selectedFormWasSubmitted">
-                <div v-show="formNotFilled" class="required-field">
-                    Please select a Campus and Major.
+        <div class="form__group csu-card__form-sizing" v-if="!selectedFormWasSubmitted">
+                <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+                    <i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
                 </div>
             <div class="row row--condensed mt-3">
-                <h5 class="form--title">Choose A <abbr title="California State University">CSU</abbr></h5>
                 <div class="col col-12">
-                    <label for="campus">Campus:</label>
+                    <label for="campus" v-bind:style="[this.submittedOnce && !this.form.schoolId? errorLabel : '']">
+                        Select a Campus</label>
                     <v-select
                         label="name"
                         :options="universities"
                         @input="updateSelect('schoolId', 'id', $event)" 
                         @change="updateSelect('schoolId', 'id', $event)"
                         class="csu-form-input-major"
-                        v-bind:class="{ 'border-danger': !this.form.schoolId && this.form.submitCount}">
+                        v-bind:class="{'border-danger': this.submittedOnce && !this.form.schoolId}">
                     </v-select>
                 </div>
             </div>
             <div class="row row--condensed mt-3">
-                <h5 class="form--title">Choose a Discipline</h5>
                 <div class="col col-12">
-                    <label for="fieldOfStudy">Discipline:</label>
+                    <label for="fieldOfStudy">Select a Discipline (Optional)</label>
                     <v-select
                             label="discipline"
                             :options="fieldOfStudies"
@@ -32,9 +31,9 @@
                 </div>
             </div>
             <div class="row row--condensed mt-3">
-                <h5 class="form--title">Choose A Major</h5>
                 <div class="col col-12">
-                    <label for="Major">Major:</label>
+                    <label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+                        Select a Major</label>
                     <v-select
                         label="major"
                         v-if="this.form.fieldOfStudyId == null"
@@ -43,7 +42,7 @@
                         @input="updateSelect('majorId', 'majorId', $event)"
                         @change="updateSelect('majorId', 'majorId', $event)"
                         class="csu-form-input-major"
-                        v-bind:class="{ 'border-danger': !this.form.majorId && this.form.submitCount }">
+                        v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
                     </v-select>
                     <v-select
                         label="major"
@@ -64,7 +63,7 @@
         </div>
         <div v-else>
             <p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
-            <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
+            <button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
                 <i class="major-btn_icon" 
                 v-bind:class="{'fas fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'far fa-circle':this.educationLevel(this.index) != 'allDegrees'}"></i>
                 All Levels</button>
@@ -85,115 +84,120 @@
 </template>
 
 <script>
-import vSelect from 'vue-select';
-import { required } from 'vuelidate/lib/validators';
-import { updateForm } from '../../utils/index';
-import { mapGetters, mapActions } from 'vuex';
+import vSelect from "vue-select";
+import { required } from "vuelidate/lib/validators";
+import { updateForm } from "../../utils/index";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-    props: ['index'],
-    data(){
-      return {
-          form: {
-                cardIndex: this.index,
-                majorId: null,
-                formWasSubmitted: false,
-                schoolId: null,
-                fieldOfStudyId: null,
-                formEducationLevel: "allDegrees",
-                errors: {
-                    "major": null,
-                    "university": null
-                },
-                submitCount: 0,
-                isUnivSelected: true,
-                isMajorSelected: true
-            },
-            formNotFilled: false,
+	props: ["index"],
+	data() {
+		return {
+			form: {
+				cardIndex: this.index,
+				majorId: null,
+				formWasSubmitted: false,
+				schoolId: null,
+				fieldOfStudyId: null,
+				formEducationLevel: "allDegrees",
+				errors: {
+					major: null,
+					university: null
+				},
+				isUnivSelected: true,
+				isMajorSelected: true
+			},
+			submittedOnce: false,
+			formNotFilled: false,
             selected: null,
-        }
-    },
-    methods: {
-        ...mapActions([
-            'fetchIndustryImages',
-            'toggleFormWasSubmitted',
-            'fetchUpdatedMajorsByField',
-            'fetchMajorData',
-        ]),
-        updateForm,
+            
+			errorLabel: {
+				color: "red",
+				fontWeight: "bold"
+			}
+		};
+	},
+	methods: {
+		...mapActions([
+			"fetchIndustryImages",
+			"toggleFormWasSubmitted",
+			"fetchUpdatedMajorsByField",
+			"fetchMajorData"
+		]),
+		updateForm,
 
-        submitForm(){
-            this.formNotFilled = false;
-            if(this.checkForm()) {
-                this.toggleFormWasSubmitted(this.form.cardIndex);
-                this.fetchIndustryImages(this.form);
-                this.fetchMajorData(this.form);
-                this.form.majorId = null;
-                this.form.schoolId = null;
-            }
-        },
+		submitForm() {
+			this.formNotFilled = false;
+			this.submittedOnce = true;
+			if (this.checkForm()) {
+				this.toggleFormWasSubmitted(this.form.cardIndex);
+				this.fetchIndustryImages(this.form);
+				this.fetchMajorData(this.form);
+				this.form.majorId = null;
+				this.form.schoolId = null;
+			}
+		},
 
-        checkForm(){
-            if(!this.$v.$invalid)
-                return true;
-            else{
-                this.formNotFilled = true;
-                return false;
-            }
-        },
+		checkForm() {
+			if (!this.$v.$invalid) return true;
+			else {
+				this.formNotFilled = true;
+				return false;
+			}
+		},
 
-        updateSelect(field, dataKey, data) {
-            if(data) {
-                this.form[field] = data[dataKey];
-                this.handleFieldOfStudyMajors(field);
-            } else {
-                this.form[field] = null;
-            }
-        },
-        
-        handleFieldOfStudyMajors(field){
-            if(field == 'fieldOfStudyId'){
-                this.fetchUpdatedMajorsByField(this.form);
-            }
-        },
-        toggleEducationLevel(educationInput) {
-            this.$store.dispatch('toggleEducationLevel', {
-                cardIndex: this.form.cardIndex,
-                educationLevel: educationInput
-            })
-        },
-    },
-    computed: {
-        ...mapGetters([
-            'majors',
-            'fieldOfStudies',
-            'universities',
-            'majorsByField',
-            'formWasSubmitted',
-            'educationLevel'
-        ]),
-        selectedMajorsByField(){
-            this.selected = null;
-            return this.majorsByField(this.index);
-        },
-        removeMajorsByField(){
-            return this.majorsByField(null);
-        },
-        selectedFormWasSubmitted(){
-            return this.formWasSubmitted(this.index);
-        },
-        windowSize() {
-            return window.innerWidth;
-        }
-    },
-    validations: {
-        form: {
-            majorId: { required },
-            schoolId: { required }
-        }
-    },
-    components: {
-        vSelect,        
-    },
-}
+		updateSelect(field, dataKey, data) {
+			if (data) {
+				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
+			} else {
+				this.form[field] = null;
+			}
+		},
+
+		handleFieldOfStudyMajors(field) {
+			if (field == "fieldOfStudyId") {
+				this.fetchUpdatedMajorsByField(this.form);
+			}
+		},
+		toggleEducationLevel(educationInput) {
+			this.$store.dispatch("toggleEducationLevel", {
+				cardIndex: this.form.cardIndex,
+				educationLevel: educationInput
+			});
+		}
+	},
+	computed: {
+		...mapGetters([
+			"majors",
+			"fieldOfStudies",
+			"universities",
+			"majorsByField",
+			"formWasSubmitted",
+			"educationLevel"
+		]),
+		selectedMajorsByField() {
+			this.selected = null;
+			return this.majorsByField(this.index);
+		},
+		removeMajorsByField() {
+			return this.majorsByField(null);
+		},
+		selectedFormWasSubmitted() {
+			return this.formWasSubmitted(this.index);
+		},
+		windowSize() {
+			return window.innerWidth;
+		}
+	},
+	validations: {
+		form: {
+			majorId: { required },
+			schoolId: { required }
+		}
+	},
+	components: {
+		vSelect
+	}
+};
 </script>

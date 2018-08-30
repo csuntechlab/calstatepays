@@ -16,17 +16,22 @@ class MajorController extends Controller
     {
         $this->majorRetriever = $majorContract;
     }
-
+    
     public function getAllHegisCodes()
     {
-      return $this->majorRetriever->getAllHegisCodes();
+        return $this->majorRetriever->getAllHegisCodes();
     }
-
+    
     public function getAllFieldOfStudies()
     {
         return $this->majorRetriever->getAllFieldOfStudies();
     }
-
+    
+    public function getAllUniversities()
+    {
+        return $this->majorRetriever->getAllUniversities();
+    }
+    
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
         foreach($university_major as $data) {
@@ -62,6 +67,9 @@ class MajorController extends Controller
             case 10:
                 $studentPathArray = $array['major_path_wage'];
                 break;
+            case 15:
+                $studentPathArray = $array['major_path_wage'];
+                break;
         }
         return $studentPathArray;
     }
@@ -82,22 +90,21 @@ class MajorController extends Controller
     public function filterByFieldOfStudy($fieldOfStudyId)
     {
         $hegisCategory = $this->majorRetriever->getHegisCategories($fieldOfStudyId);
-        
         foreach($hegisCategory as $category){
             $hegisCodes = $category['hegis_code'];
             if(!is_null($hegisCodes)){
                 $data[] = array_map(function($code){
                     return  [
+                        'major'             => $code['major'],
                         'hegisCode'         => $code['hegis_code'],
                         'hegis_category_id' => $code['hegis_category_id'],
-                        'major'             => $code['major']
                     ];
                 }, $hegisCodes);
             }
         }
-        return [
-            array_collapse($data)
-        ];
+        $data = array_collapse($data);
+        sort($data);
+        return [$data];
     }
 
 }
