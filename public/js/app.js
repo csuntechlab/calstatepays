@@ -68499,6 +68499,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -68511,57 +68528,87 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['index', 'windowWidth'],
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['universityById', 'industries', 'majorData', 'educationLevel', 'formWasSubmitted', 'majorNameById']), {
-        isEmpty: function isEmpty() {
-            //Check whether the form field was fired off, toggle carousel on
-            if (this.industries(this.index).length === 0) {
-                return false;
-            }return true;
-        },
-        isNotFirstCard: function isNotFirstCard() {
-            if (this.index >= 1) {
-                return true;
-            }return false;
-        },
-        selectedMajorData: function selectedMajorData() {
-            return this.majorData(this.index);
-        },
-        selectedIndustries: function selectedIndustries() {
-            return this.industries(this.index);
-        },
-        selectedEducationLevel: function selectedEducationLevel() {
-            return this.educationLevel(this.index);
-        },
-        selectedFormWasSubmitted: function selectedFormWasSubmitted() {
-            return this.formWasSubmitted(this.index);
-        },
-        selectedMajorId: function selectedMajorId() {
-            return this.majorData(this.index).majorId;
-        },
-        selectedMajorTitle: function selectedMajorTitle() {
-            if (this.selectedMajorData.length != 0) {
-                var currentMajor = this.selectedMajorData.majorId;
-                return this.majorNameById(currentMajor);
-            }
-        }
-    }),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(['deleteMajorCard', 'resetMajorCard']), {
-        removeCurrentCard: function removeCurrentCard() {
-            this.deleteMajorCard(this.index);
-        },
-        resetCurrentCard: function resetCurrentCard() {
-            this.resetMajorCard(this.index);
-        }
-    }),
-    components: {
-        majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
-        card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
-        majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
-        majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
-        industryMobile: __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue___default.a,
-        majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
-    }
+	props: ["index", "windowWidth"],
+	data: function data() {
+		return {
+			mobileNetworks: {
+				"facebook-m": {
+					sharer: "https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote",
+					type: "direct"
+				},
+				"linkedin-m": {
+					sharer: "https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description",
+					type: "direct"
+				},
+				"twitter-m": {
+					sharer: "https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser",
+					type: "direct"
+				}
+			}
+		};
+	},
+
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
+		isEmpty: function isEmpty() {
+			//Check whether the form field was fired off, toggle carousel on
+			if (this.industries(this.index).length === 0) {
+				return false;
+			}
+			return true;
+		},
+		isNotFirstCard: function isNotFirstCard() {
+			if (this.index >= 1) {
+				return true;
+			}
+			return false;
+		},
+		selectedMajorData: function selectedMajorData() {
+			return this.majorData(this.index);
+		},
+		selectedIndustries: function selectedIndustries() {
+			return this.industries(this.index);
+		},
+		selectedEducationLevel: function selectedEducationLevel() {
+			return this.educationLevel(this.index);
+		},
+		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
+			return this.formWasSubmitted(this.index);
+		},
+		selectedMajorId: function selectedMajorId() {
+			return this.majorData(this.index).majorId;
+		},
+		selectedMajorTitle: function selectedMajorTitle() {
+			if (this.selectedMajorData.length != 0) {
+				var currentMajor = this.selectedMajorData.majorId;
+				return this.majorNameById(currentMajor);
+			}
+		},
+		shareDescription: function shareDescription() {
+			if (this.selectedEducationLevel == "allDegrees" && this.selectedMajorData.bachelors) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + " five years after graduating!";else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == "someCollege") return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after dropping out of college!";else if (this.selectedMajorData[this.selectedEducationLevel]) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after graduating with a " + this.selectedEducationLevel + " degree!";else return "Discover your earnings after college!";
+		}
+	}),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
+		removeCurrentCard: function removeCurrentCard() {
+			this.deleteMajorCard(this.index);
+		},
+		resetCurrentCard: function resetCurrentCard() {
+			this.resetMajorCard(this.index);
+		},
+		formatDollars: function formatDollars(input) {
+			var dollarAmount = input.toString();
+			var hundreds = dollarAmount.substr(-3, 3);
+			var thousands = dollarAmount.slice(0, -3);
+			return "$" + thousands + "," + hundreds;
+		}
+	}),
+	components: {
+		majorForm: __WEBPACK_IMPORTED_MODULE_0__major_form_vue___default.a,
+		card: __WEBPACK_IMPORTED_MODULE_1__global_card___default.a,
+		majorGraphWrapper: __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default.a,
+		majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
+		industryMobile: __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue___default.a,
+		majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
+	}
 });
 
 /***/ }),
@@ -68712,6 +68759,81 @@ var render = function() {
       _c("card", { staticClass: "csu-card" }, [
         _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
           _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col" },
+              [
+                _vm.selectedFormWasSubmitted
+                  ? _c("social-sharing", {
+                      attrs: {
+                        networks: _vm.mobileNetworks,
+                        url: "sandbox.csun.edu/metalab/test/csumetrola",
+                        title: this.shareDescription,
+                        description: "Discover Your Earnings After College.",
+                        quote: this.shareDescription,
+                        hashtags: "CalStatePays, ItPaysToGoToCollege"
+                      },
+                      inlineTemplate: {
+                        render: function() {
+                          var _vm = this
+                          var _h = _vm.$createElement
+                          var _c = _vm._self._c || _h
+                          return _c(
+                            "div",
+                            [
+                              _c(
+                                "network",
+                                {
+                                  staticClass:
+                                    "csu-card__share csu-card__share-facebook",
+                                  attrs: { network: "facebook-m" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fab fa-facebook fa-2x"
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "network",
+                                {
+                                  staticClass:
+                                    "csu-card__share csu-card__share-linkedin",
+                                  attrs: { network: "linkedin-m" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fab fa-linkedin fa-2x"
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "network",
+                                {
+                                  staticClass:
+                                    "csu-card__share csu-card__share-twitter",
+                                  attrs: { network: "twitter-m" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fab fa-twitter-square fa-2x"
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        },
+                        staticRenderFns: []
+                      }
+                    })
+                  : _vm._e()
+              ],
+              1
+            ),
+            _vm._v(" "),
             _c("div", { staticClass: "col" }, [
               _c("i", {
                 directives: [
