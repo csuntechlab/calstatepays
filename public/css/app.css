@@ -7667,7 +7667,7 @@ button.bg-dark:focus {
   padding-left: 0.5rem !important;
 }
 
-.p-3 {
+.p-3, .campus, .not-avail {
   padding: 1rem !important;
 }
 
@@ -27668,16 +27668,14 @@ footer, .footer {
   margin-bottom: 0rem;
 }
 
-#research-main-banner {
+.researchMainBanner {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-size: cover;
-  min-height: 45vh;
-  padding: 0 1.5rem;
-  width: 100%;
+  min-height: 30vh;
 }
 
-#research-main-banner h2 {
+.researchMainBanner h2 {
   color: #000;
   font-size: 3.75rem;
   max-width: 64rem;
@@ -27700,7 +27698,6 @@ footer, .footer {
   text-transform: uppercase;
   border-radius: 5%;
   position: relative;
-  padding: 1.5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FFF;
@@ -27708,8 +27705,9 @@ footer, .footer {
 
 .campus h3, .not-avail h3 {
   position: absolute;
-  bottom: 1rem;
-  font-size: 1.3rem;
+  bottom: .5rem;
+  left: 1rem;
+  font-size: 1.25rem;
   line-height: 140%;
   font-weight: bold;
 }
