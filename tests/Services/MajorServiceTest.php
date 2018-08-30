@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
+use App\Models\University;
 use App\Models\UniversityMajor;
 use App\Services\MajorService;
 use Illuminate\Http\Request;
@@ -75,5 +76,11 @@ class MajorServiceTest extends TestCase
         $this->arrayHasKey("time_to_degree", $response);
         $this->arrayHasKey("earnings_5_years", $response);
         $this->arrayHasKey("roi", $response);
+    }
+
+    public function test_getAllUniversities_returns_7_univerities()
+    {
+        $response = $this->majorService->getAllUniversities();
+        $this->assertEquals(University::count(), count($response));
     }
 }
