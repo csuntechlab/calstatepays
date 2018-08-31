@@ -12057,8 +12057,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusable:active, .sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -17766,7 +17765,9 @@ p {
   margin-right: 8px !important;
 }
 
-.my-2, .returnToCampusSelection {
+
+.my-2,
+.returnToCampusSelection {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
@@ -17856,7 +17857,9 @@ p {
   padding-right: 16px !important;
 }
 
-.py-3, .CSUDataImgBanner {
+
+.py-3,
+.CSUDataImgBanner {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
@@ -27024,11 +27027,27 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  min-height: 75vh;
   margin-bottom: 50px;
+  min-height: 60vh;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.csu-card__share {
+  margin-left: .3rem;
+}
+
+.csu-card__share-twitter {
+  color: #00C6FF;
+}
+
+.csu-card__share-facebook {
+  color: #3B5998;
+}
+
+.csu-card__share-linkedin {
+  color: #0077B5;
 }
 
 .csu-card__form {
