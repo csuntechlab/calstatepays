@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 require('./bootstrap');
+var SocialSharing = require("vue-social-sharing");
 import Vue from 'vue';
 import axios from 'axios';
 import router from './router';
@@ -12,6 +13,7 @@ import Vuetify from 'vuetify';
 import vSelect from 'vue-select';
 
 Vue.use(Vuetify);
+Vue.use(SocialSharing);
 
 import App from './App.vue';
 /**
