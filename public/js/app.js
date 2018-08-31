@@ -49029,7 +49029,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	methods: {
 		getWindowWidth: function getWindowWidth(event) {
 			this.windowWidth = document.documentElement.clientWidth;
-			this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+			this.windowWidth < 992 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
 		},
 		scrollToNextCard: function scrollToNextCard(lastCardIndex) {
 			var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
@@ -49771,7 +49771,7 @@ var render = function() {
               )
             ])
           ])
-        : _c("div", [
+        : _c("div", { staticClass: "majorBtnWrapper" }, [
             _c(
               "p",
               {
@@ -66985,13 +66985,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         chartDimensions: function chartDimensions() {
             var currentWidth = window.innerWidth;
-            if (this.windowWidth >= 1001) {
+            if (this.windowWidth > 1200) {
                 return {
                     height: 400,
                     width: 200
                     // width: this.windowWidth / 1.75
                 };
-            } else if (this.windowWidth >= 576 && this.windowWidth < 1000) {
+            } else if (this.windowWidth >= 768 && this.windowWidth <= 1200) {
                 return {
                     height: 400,
                     width: this.windowWidth / 1.4

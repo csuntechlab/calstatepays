@@ -54,7 +54,7 @@
 		methods: {
 			getWindowWidth(event) {
 				this.windowWidth = document.documentElement.clientWidth;
-				this.windowWidth < 1000
+				this.windowWidth < 992
 					? ((this.isDesktop = false), (this.isMobile = true))
 					: ((this.isDesktop = true), (this.isMobile = false));
 			},

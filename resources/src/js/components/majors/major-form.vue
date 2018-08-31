@@ -54,7 +54,7 @@
 					<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 				</div>
 			</div>
-			<div v-else>
+			<div v-else class="majorBtnWrapper">
 				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 					<i class="major-btn_icon" 

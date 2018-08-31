@@ -7741,7 +7741,7 @@ button.bg-dark:focus {
   padding-left: 3rem !important;
 }
 
-.m-auto {
+.m-auto, .majorBtnWrapper {
   margin: auto !important;
 }
 
@@ -27229,7 +27229,7 @@ add r
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .pfre-info--show {
     -webkit-transform: translate(0);
             transform: translate(0);
@@ -28208,7 +28208,7 @@ input[type="button"]:focus {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
@@ -28229,22 +28229,26 @@ input[type="button"]:focus {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 45%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
+  }
+}
+
+.majorBtnWrapper {
+  width: 80%;
 }
 
 .echarts {
