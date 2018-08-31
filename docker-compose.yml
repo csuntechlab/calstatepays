@@ -14,7 +14,7 @@ services:
   # Installs composer
   composer:
     restart: 'no'
-    container_name: csumetro_comp
+    container_name: csumetro_composer
     image: composer:latest
     command: install
     volumes:
@@ -22,7 +22,7 @@ services:
 
   # Database server
   db:
-    image: mysql:5.6
+    image: mysql:5.6.41
     container_name: csumetro_db
     volumes:
       - db_data:/var/lib/mysql/
