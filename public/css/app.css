@@ -27024,11 +27024,27 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  min-height: 75vh;
   margin-bottom: 50px;
+  min-height: 60vh;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.csu-card__share {
+  margin-left: .3rem;
+}
+
+.csu-card__share-twitter {
+  color: #00C6FF;
+}
+
+.csu-card__share-facebook {
+  color: #3B5998;
+}
+
+.csu-card__share-linkedin {
+  color: #0077B5;
 }
 
 .csu-card__form {
