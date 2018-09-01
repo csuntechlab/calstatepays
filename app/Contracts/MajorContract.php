@@ -13,4 +13,7 @@ interface MajorContract
     public function getMajorEarnings($hegis_code, $university_id): array;
 
     public function getFREData($request);
+
+    public function getAllUniversities();
+
 }

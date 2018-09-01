@@ -17,8 +17,8 @@
 
 .campus{
     display: flex;
-    height: 25rem;
-    min-width: 20vw;
+    height: 22rem;
+    min-width: 100%;
     align-self: center;
     justify-content: center;
     font-family: $font-base;
@@ -96,8 +96,19 @@
         $black-filter,
          url('https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg');
 }
+#allcampus {
+    background-image:
+        $black-filter,
+        url("../img/csucampuses/allcsu.png");
+}
 
 #csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
     background-size: cover;
     background-position: center;
+}
+
+.returnToCampusSelection {
+    @extend .text-left, .my-2 ;
+    color: $black;
+    font-weight: bold;
 }

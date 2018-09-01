@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper">
     <div class=""> 
       <button class="" type="button" @click="toggleInfo(infoKey);">
@@ -22,14 +23,34 @@
     <div class="col-11 col-md-2 col-lg-4 col-xl-3 px-0 align-self-center">
       <button class="" type="button" @click="toggleInfo(infoKey)">
         <i class="fas fa-info-circle"></i>
+=======
+    <div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper">
+    <div class="text-sm-center text-md-left"> 
+      <button class="" type="button" @click="toggleInfo(infoKey);">
+        <i class="fas fa-info-circle"></i>
+>>>>>>> dev
       </button>
     </div>
-    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show col-11 col-md-10 col-lg-8 col-xl-9 my-2' : 'pfre-info'"> 
+    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
       <slot></slot>
     </div>
+<<<<<<< HEAD
   </div> -->
   </template>
  <script> 
+=======
+
+  </div>
+     <div v-else class="position-relative">
+       <div class="text-sm-center text-md-left">
+      <button class="" type="button" @click="toggleInfo(infoKey)">
+        <i class="fas fa-info-circle"></i>
+      </button>
+    </div>
+     </div>
+</template>
+<script>
+>>>>>>> dev
 
 import { mapActions, mapGetters } from 'vuex';
 export default {

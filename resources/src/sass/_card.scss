@@ -1,17 +1,30 @@
 %card-base {
     background: $white;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    border-radius: 50px;
+    border-radius: 20px;
     justify-content: center;
 }
 
 .csu-card{
     display: flex;
     flex-direction: row;
-    min-height: 75vh;
     margin-bottom: 50px;
+    min-height: 60vh;
     align-items: flex-start;
     @extend %card-base;
+
+    &__share{
+        margin-left: .3rem;
+        &-twitter{
+            color: #00C6FF;
+        }
+        &-facebook{
+            color: #3B5998;
+        }
+        &-linkedin{
+            color: #0077B5;
+        }
+    }
 }
 
 .csu-card__form{
@@ -20,6 +33,26 @@
     margin-bottom: 50px;
     align-items: flex-start;
     @extend %card-base;
+    &-sizing{
+        width: 100%;
+    }
+}
+
+.industry-card{
+    margin-bottom: 50px;
+    padding: 2rem;
+    min-height: 75vh;
+    @extend %card-base;
+}
+
+.industry-card__row{
+    padding: 20px 10px;
+    border-top: 1px solid rgba(0,0,0,.1)
+}
+
+.industry-card__legend{
+    padding: 20px 10px;
+    font-weight: 600;
 }
 
 .card-add{

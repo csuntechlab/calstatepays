@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  webserver:
+    container_name: csumetro
+    image: csunmetalab/environment:csumetro
+    ports:
+      - '8080:80'
+    volumes:
+      - .:/var/www/
+    links:
+      - db
+
+  # Installs composer
+  composer:
+    restart: 'no'
+    container_name: csumetro_composer
+    image: composer:latest
+    command: install
+    volumes:
+      - .:/app/
+
+  # Database server
+  db:
+    image: mysql:5.6.41
+    container_name: csumetro_db
+    volumes:
+      - db_data:/var/lib/mysql/
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: csumetropass
+      MYSQL_DATABASE: csumetro
+      MYSQL_USER: csumetro
+      MYSQL_PASSWORD: csumetropass
+
+volumes:
+    db_data:
