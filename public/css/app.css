@@ -27206,63 +27206,13 @@ add r
   padding: 8px;
 }
 
-.pfre-info::after {
-  content: " ";
-  position: absolute;
-  top: 10%;
-  left: -6px;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-right: 6px solid #EBEBEB;
-  border-bottom: 6px solid transparent;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
 .pfre-info--show {
   position: absolute;
   background: #EBEBEB;
   border-radius: 15px;
-  /* float: right; */
   width: 18rem;
-  left: 1.9rem;
   padding: .5rem;
-  top: -2rem;
-}
-
-.pfre-info--show::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: -6px;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-right: 6px solid #EBEBEB;
-  border-bottom: 6px solid transparent;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-@media screen and (max-width: 767px) {
-  .pfre-info--show::after {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .pfre-info--show {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-    margin-left: 0;
-    position: static;
-    width: auto;
-    float: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
+  z-index: 2;
 }
 
 .info {
@@ -27276,7 +27226,7 @@ add r
 }
 
 .pfre-info__wrapper {
-  margin-bottom: 2rem;
+  position: relative;
 }
 
 .majors-header {

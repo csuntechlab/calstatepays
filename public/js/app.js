@@ -47644,7 +47644,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
     ? _c("div", { staticClass: "pfre-info__wrapper" }, [
-        _c("div", { staticClass: "text-sm-center text-md-left" }, [
+        _c("div", {}, [
           _c(
             "button",
             {
@@ -47662,14 +47662,21 @@ var render = function() {
         _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
           ? _c(
               "div",
-              { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
+              {
+                class: _vm.infoKey ? "pfre-info--show" : "pfre-info",
+                on: {
+                  click: function($event) {
+                    _vm.toggleInfo(_vm.infoKey)
+                  }
+                }
+              },
               [_vm._t("default")],
               2
             )
           : _vm._e()
       ])
-    : _c("div", { staticClass: "position-relative" }, [
-        _c("div", { staticClass: "text-sm-center text-md-left" }, [
+    : _c("div", {}, [
+        _c("div", {}, [
           _c(
             "button",
             {
@@ -47841,19 +47848,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -47871,7 +47865,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
 
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData'])),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData', 'toggleInfo'])),
   filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
   components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
 });
@@ -48936,14 +48930,12 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9" },
+          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
           [
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(0),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-xl-6 pl-0" },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
                     _vm._v(
@@ -48954,7 +48946,22 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-4 " }, [
+              _c("span", { staticClass: "col col " }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("timeToDegree")
+                      }
+                    }
+                  },
+                  [_vm._v("Estimated time to degree:")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(_vm._s(_vm.pfreData.years.actual))
                 ])
@@ -48988,9 +48995,7 @@ var render = function() {
                   _vm._v(_vm._s(_vm.pfreData.years.end))
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div")
+            ])
           ],
           1
         )
@@ -49001,12 +49006,10 @@ var render = function() {
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
           [
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(1),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-xl-6 pl-0" },
+                { staticClass: "col-auto " },
                 [
                   _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                     _vm._v(
@@ -49017,7 +49020,22 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-1 " }, [
+              _c("span", { staticClass: "col-8 " }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("earnings")
+                      }
+                    }
+                  },
+                  [_vm._v("Estimated Earnings 5 Years After Exit:")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
@@ -49062,9 +49080,7 @@ var render = function() {
                   )
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _vm._m(2)
+            ])
           ],
           1
         )
@@ -49075,16 +49091,10 @@ var render = function() {
           "div",
           { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
           [
-            _c("h5", { staticClass: "text-center" }, [
-              _vm._v("Return On Investment")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(3),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-xl-6 pl-0" },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "return" } }, [
                     _vm._v(
@@ -49095,14 +49105,25 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-1 " }, [
+              _c("span", { staticClass: "col-8" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("return")
+                      }
+                    }
+                  },
+                  [_vm._v("FRE - Financial Return on Education: ")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
-                    _vm._s(
-                      _vm._f("percentage")(
-                        _vm.pfreData.returnOnInvestment.actual / 100
-                      )
-                    )
+                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
                   )
                 ])
               ])
@@ -49156,9 +49177,7 @@ var render = function() {
                   )
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _vm._m(4)
+            ])
           ],
           1
         )
@@ -49166,54 +49185,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-4 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated time to degree:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated Earnings 5 Years After Exit:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("EFRE - Financial Return on Education: ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p", { staticClass: "font-weight-bold mb-0 text-center" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
