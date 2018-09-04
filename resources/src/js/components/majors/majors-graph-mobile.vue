@@ -45,7 +45,7 @@ export default {
             if(this.windowWidth > 1200) {
                 return {
                     height: 400,
-                    width: 200
+                    width: 600
                     // width: this.windowWidth / 1.75
                 }         
             }
