@@ -4,7 +4,7 @@
 		<div class="bg mh-90 pt-5">
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
-				<div class="row px-4 py-2 fa-wrapper">
+				<div class="row py-2 fa-wrapper">
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
 							<i class="fa fa-graduation-cap"></i>

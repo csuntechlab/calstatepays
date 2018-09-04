@@ -1,13 +1,13 @@
-.content-wrapper{
+.contentWrapper{
     align-items: center;
     justify-content: center;
-    margin-top: $navbar-height + .7;
+    margin-top: $navbar-height + .6;
     @media screen and (max-width: $break-small) {
         margin-top: $navbar-height;
     }
 }
 
-.graph-content{
+.graphContent{
     background-color: $light-gray;
 }
 

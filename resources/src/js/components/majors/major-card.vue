@@ -1,14 +1,10 @@
 <template>
-	<div class="col col-md-12" v-bind:id="'majorCardHasIndex-' + this.index">
-		<div class="row">
-			<div class="col-md-3">
-				<card class="csu-card__form">
-					<major-form :index="index"></major-form>
-				</card>
-			</div>
+    <div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+			<aside class="col-md-3">
+				<major-form class="csu-card__form container-fluid" :index="index"/>
+			</aside>
 			<div class="col-md-9">
-				<card class="csu-card">
-					<div class="container-fluid my-0">
+				<card class="csu-card container-fluid py-3">
 						<div class="row">
 							<div class="col-6">
 								<social-sharing v-if="selectedFormWasSubmitted" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription" description="Discover Your Earnings After College."
@@ -36,14 +32,13 @@
 						<div class="row">
 							<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
 						</div>
-						<div class="row mx-1 p-0">
-							<div class="col">
-								<major-graph-wrapper v-show="selectedFormWasSubmitted" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel"
-								 :windowWidth="windowWidth"></major-graph-wrapper>
+						<div class="row">
+							<div class="col-12">
+								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" style="height:50vh" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col">
+							<div class="col-12">
 								<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
 							</div>
 						</div>
@@ -51,13 +46,10 @@
 							<div class="mt-4">
 								<industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
 							</div>
-						</div>
 					</div>
 				</card>
-			</div>
-
-		</div>
-	</div>
+    	</div>
+    </div>
 </template>
 <script>
 import majorForm from "./major-form.vue";
