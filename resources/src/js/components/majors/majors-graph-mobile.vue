@@ -42,17 +42,17 @@ export default {
         },
         chartDimensions(){
             let currentWidth = window.innerWidth;
-            if(this.windowWidth > 1200) {
+            if(this.windowWidth >= 768 && this.windowWidth < 992) {
                 return {
                     height: 400,
-                    width: 600
+                    width: 710
                     // width: this.windowWidth / 1.75
                 }         
             }
-            else if(this.windowWidth >= 768 && this.windowWidth <= 1200) {
+            else if(this.windowWidth >= 540 && this.windowWidth < 768) {
                 return {
                     height: 400,
-                    width: this.windowWidth / 1.4,
+                    width: 490
                 }
             }
             else {
