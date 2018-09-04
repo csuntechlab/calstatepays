@@ -49057,7 +49057,7 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
@@ -49131,7 +49131,7 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
@@ -49216,7 +49216,7 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
