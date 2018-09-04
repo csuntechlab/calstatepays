@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid">
-        <header class="row align-items-center researchMainBanner ">
+    <div>
+        <header class="align-items-center researchMainBanner ">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="row">
@@ -50,7 +50,7 @@
                 </div>       
             </div>      
         </header>
-        <main class="row">
+        <main>
             <div class="container">
                 <div class="row">
                     <div class="col-12">

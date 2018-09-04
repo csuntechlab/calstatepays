@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <csu-data-img-banner>
       <h3 class="CSUDataImgBanner__dataTitle" slot="title">
         <span>Financial Return on Education</span>
@@ -16,7 +16,7 @@
               <pfre-form/>
           </div>
           <div class="col-lg-9 col-12">
-            <card class="csu-card">
+            <card class="csu-card py-3">
               <div class="container-fluid">
               <div class="row-fluid">
               <pfre-progress/>

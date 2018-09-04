@@ -1,6 +1,6 @@
 <template>
-	<div class="container-fluid">
-		<div class="row banner faq-banner align-items-center">
+	<div>
+		<div class="banner faq-banner align-items-center">
 			<h1 class="pt-3 home__heading faq-header">Frequently Asked Questions</h1>
 		</div>
 		<div class="row">

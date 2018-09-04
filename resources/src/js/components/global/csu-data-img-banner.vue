@@ -1,5 +1,5 @@
 <template>
-    <header class="CSUDataImgBanner row" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + CSUNImg + ')', }">
+    <header class="CSUDataImgBanner" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(' + CSUNImg + ')', }">
         <div class="container">
             <div class="row justify-content-start">
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
