@@ -69175,7 +69175,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "row graphContent",
+          staticClass: "graphContent",
           attrs: { id: "majorCardWrapper" },
           on: { scroll: _vm.handleScroll }
         },
@@ -70099,9 +70099,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -70116,264 +70113,262 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          { staticClass: "row justify-content-start align-items-center" },
-          [
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("I can not find my CSU.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
-                    )
-                  ])
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-start align-items-center" },
+        [
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find my CSU.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("How many students were followed-up in this study?")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("How many students were followed-up in this study?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("Were all students found?")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Were all students found?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("I can not find my major.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find my major.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("I can not find an industry I’m interested in.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find an industry I’m interested in.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("Are lapses in employment included?")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Are lapses in employment included?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v('What does "After Education Exit" mean?')
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "After Education Exit" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v('What does "Some College" mean?')
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "Some College" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v('What does "Data Not Available" mean?')
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "Data Not Available" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v(
-                      "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v(
+                    "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v(
-                      "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v(
+                    "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
+                  )
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("Are the earnings shown adjusted for inflation?")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v("Yes, they are adjusted to 2012 dollars.")
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Are the earnings shown adjusted for inflation?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v("Yes, they are adjusted to 2012 dollars.")
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "v-expansion-panel",
-              { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
-              [
-                _c("v-expansion-panel-content", [
-                  _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                    _vm._v("Where did the earnings data come from?")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                    _vm._v(
-                      "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
-                    )
-                  ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Where did the earnings data come from?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
+                  )
                 ])
-              ],
-              1
-            )
-          ],
-          1
-        )
-      ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
     ])
   ])
 }
@@ -70565,8 +70560,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -70590,90 +70583,88 @@ var render = function() {
   return _c("div", [
     _c("header", { staticClass: "align-items-center researchMainBanner " }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row align-items-center" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
+                alt: "CSU Long Beach Seal"
+              }
+            }),
             _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
+            _c("figcaption", [_vm._v("Long Beach")])
           ]),
           _vm._v(" "),
-          _vm._m(1)
-        ])
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/poly_seal.svg",
+                alt: "CSU Pomona Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Pomona")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
+                alt: "CSU Dominguez Hills Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Dominguez Hills")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/northridge_seal.svg",
+                alt: "CSU Northridge Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Northridge")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                alt: "CSU Channel Islands Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Channel Islands")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                alt: "CSU Fullerton Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Fullerton")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                alt: "CSU Los Angeles Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Los Angeles")])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
       ])
     ]),
     _vm._v(" "),
@@ -70730,7 +70721,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-12" }, [
         _c("h1", { staticClass: "text-center home__heading" }, [
           _vm._v(
-            "\n                            We Gathered Data Across 7 CSUs in the Metro LA Area\n                        "
+            "\n                        We Gathered Data Across 7 CSUs in the Metro LA Area\n                    "
           )
         ])
       ])
@@ -70740,12 +70731,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row text-center" }, [
       _c("div", { staticClass: "col-12" }, [
         _c("button", { staticClass: "btn btn-success" }, [
-          _vm._v(
-            "\n                        All Campuses\n                        "
-          )
+          _vm._v("\n                    All Campuses\n                    ")
         ])
       ])
     ])
@@ -71041,8 +71030,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -71072,127 +71059,93 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c(
-      "header",
-      { staticClass: "row align-items-center researchMainBanner " },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row align-items-center" }, [
-            _vm._m(0),
+  return _c("div", [
+    _c("header", { staticClass: "align-items-center researchMainBanner " }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
+                alt: "CSU Long Beach Seal"
+              }
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/long_beach_seal.svg",
-                      alt: "CSU Long Beach Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Long Beach")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/poly_seal.svg",
-                      alt: "CSU Pomona Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Pomona")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/dominguez_seal.svg",
-                      alt: "CSU Dominguez Hills Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Dominguez Hills")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/northridge_seal.svg",
-                      alt: "CSU Northridge Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Northridge")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                      alt: "CSU Channel Islands Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Channel Islands")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/fulleton_seal.svg",
-                      alt: "CSU Fullerton Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Fullerton")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "figure",
-                { staticClass: "col-md col-sm-4 col-4 text-center" },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                      alt: "CSU Los Angeles Seal"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("figcaption", [_vm._v("Los Angeles")])
-                ]
-              )
-            ]),
+            _c("figcaption", [_vm._v("Long Beach")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/poly_seal.svg",
+                alt: "CSU Pomona Seal"
+              }
+            }),
             _vm._v(" "),
-            _vm._m(1)
+            _c("figcaption", [_vm._v("Pomona")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
+                alt: "CSU Dominguez Hills Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Dominguez Hills")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/northridge_seal.svg",
+                alt: "CSU Northridge Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Northridge")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                alt: "CSU Channel Islands Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Channel Islands")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                alt: "CSU Fullerton Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Fullerton")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                alt: "CSU Los Angeles Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Los Angeles")])
           ])
-        ])
-      ]
-    ),
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]),
     _vm._v(" "),
     _c("main", { staticClass: "row" }, [
       _c("div", { staticClass: "container" }, [
@@ -71235,7 +71188,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-12" }, [
         _c("h1", { staticClass: "text-center home__heading" }, [
           _vm._v(
-            "\n                            We Gathered Data Across 7 CSUs in the Metro LA Area\n                        "
+            "\n                        We Gathered Data Across 7 CSUs in the Metro LA Area\n                    "
           )
         ])
       ])
@@ -71245,12 +71198,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row text-center" }, [
       _c("div", { staticClass: "col-12" }, [
         _c("button", { staticClass: "btn btn-success" }, [
-          _vm._v(
-            "\n                        All Campuses\n                        "
-          )
+          _vm._v("\n                    All Campuses\n                    ")
         ])
       ])
     ])
