@@ -1,5 +1,5 @@
 <template>
-	<div class="row wrapper graph-content card-padding">
+	<div>
 		<csu-data-img-banner>
 			<h3 class="CSUDataImgBanner__dataTitle" slot="title">
 				<span>Major Earnings Over Time</span>
@@ -10,11 +10,12 @@
 			</p>
 		</csu-data-img-banner>
 		<sub-nav/>
-		<div class="col" @scroll="handleScroll">
-			<major-card v-if="isDesktop" class="my-2 card-item" v-for="(majorCard, index) in desktopCards" :key="index" :index=index
-			 :windowWidth=windowWidth></major-card>
-			<major-card-mobile v-if="isMobile" class="my-2" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth></major-card-mobile>
-			<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"></card-add>
+		<div class="graphContent" id="majorCardWrapper" @scroll="handleScroll">
+			<div class="container">
+				<major-card v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
+				<major-card-mobile v-if="isMobile" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
+				<card-add class="row" id="plus" v-on:cardPlusError="scrollToNextCard($event)" />		
+			</div>		
 		</div>
 	</div>
 </template>
@@ -31,7 +32,7 @@
 			return {
 				windowWidth: 0,
 				isDesktop: true,
-				isMobile: false
+				isMobile: false,
 			};
 		},
 		computed: {
@@ -53,7 +54,7 @@
 		methods: {
 			getWindowWidth(event) {
 				this.windowWidth = document.documentElement.clientWidth;
-				this.windowWidth < 1000
+				this.windowWidth < 992
 					? ((this.isDesktop = false), (this.isMobile = true))
 					: ((this.isDesktop = true), (this.isMobile = false));
 			},
@@ -85,6 +86,7 @@
 				) {
 					var addBtn = document.getElementById("compare-major-button");
 					addBtn.style.position = "absolute";
+					addBtn.style.bottom = "1rem";
 				}
 			}
 		},

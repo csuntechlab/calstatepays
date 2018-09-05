@@ -6,6 +6,7 @@ use App\Models\FieldOfStudy;
 use App\Models\HEGISCode;
 use App\Models\MajorPath;
 use App\Models\UniversityMajor;
+use App\Models\University;
 use App\Contracts\MajorContract;
 use Illuminate\Pagination\Paginator;
 
@@ -85,5 +86,10 @@ class MajorService implements MajorContract
             ->where('entry_status',$entry_status)
             ->first();
         return $query;
+    }
+
+    public function getAllUniversities() {
+        $data = University::all()->toArray();
+        return $data;
     }
 }

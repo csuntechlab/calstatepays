@@ -1,7 +1,7 @@
 <template>
     <header class="site-header">
         <div class="container-fluid">
-            <div class="row d-md-flex">
+            <div class="row">
                 <div class="col-6 col-md-3 order-2 order-md-1 align-self-center">
                     <router-link class="" to="/">
                         <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">

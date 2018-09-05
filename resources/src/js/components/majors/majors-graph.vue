@@ -55,21 +55,23 @@ export default {
         chartDimensions(){
             if(this.windowWidth >= 1001) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
                
             }
             else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
-                    width: this.windowWidth - 200
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth - 200
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
             }
             else {
               return {
-                    height: 400,
-                    width: this.windowWidth - 125,
+                    height: 200,
+                    width: document.getElementById('majorCardHasIndex-0').clientWidth
                 }  
             }
         },
@@ -138,6 +140,9 @@ export default {
 
         polar(){
             return {
+                title: {
+                    show: false
+                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -150,7 +155,13 @@ export default {
                     nameTextStyle: {
                         padding: [10, 0 , 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
                 legend: {
                     data: ['line']
@@ -168,7 +179,13 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 },
                 series: [
                     {
@@ -206,7 +223,7 @@ export default {
                         itemStyle: {
                             color: this.toolColors1
                         },
-                    }
+    },
                 ],
                 animationDuration: 2000
             }

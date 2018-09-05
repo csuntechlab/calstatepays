@@ -16,17 +16,22 @@ class MajorController extends Controller
     {
         $this->majorRetriever = $majorContract;
     }
-
+    
     public function getAllHegisCodes()
     {
-      return $this->majorRetriever->getAllHegisCodes();
+        return $this->majorRetriever->getAllHegisCodes();
     }
-
+    
     public function getAllFieldOfStudies()
     {
         return $this->majorRetriever->getAllFieldOfStudies();
     }
-
+    
+    public function getAllUniversities()
+    {
+        return $this->majorRetriever->getAllUniversities();
+    }
+    
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
         foreach($university_major as $data) {
