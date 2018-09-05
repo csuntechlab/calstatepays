@@ -176,6 +176,10 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
 
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
+    # Will need to remove remove_row_of_industry 
+    # and remove_temp_industry_file 
+    # when danny gives us new csv
+
     # updateIndustry = remove_row_of_industry(industryCsvFiles)
     # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     # remove_temp_industry_file(updateIndustry)
