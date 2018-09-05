@@ -1,22 +1,22 @@
 [
   {
-    "id": "001137",
+    "id": "50",
     "university": "Fullerton"
   },
   {
-    "id": "001139",
+    "id": "40",
     "university": "Long Beach"
   },
   {
-    "id": "001140",
+    "id": "45",
     "university": "Los Angeles"
   },
   {
-    "id": "001141",
+    "id": "55",
     "university": "Dominguez Hills"
   },
   {
-    "id": "001144",
+    "id": "10",
     "university": "Pomona"
   },
   {
@@ -24,7 +24,7 @@
     "university": "Northridge"
   },
   {
-    "id": "039803",
+    "id": "73",
     "university": "Channel Islands"
   }
 ]
