@@ -12,13 +12,13 @@ class Hegis_Codes_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/northridge_hegis_codes.json");
+        $json = File::get("database/data/master_hegis_category_table.json");
         $data = json_decode($json);
         foreach($data as $row){
                 DB::table('hegis_codes')->insert([
-                    'hegis_code' => $row->hegis_code,
+                    'hegis_code' => $row->hegis_codes,
                     'hegis_category_id' => $row->hegis_category_id,
-                    'major'      => $row->major,
+                    // 'major'      => $row->major,
                 ]);
         };
     }

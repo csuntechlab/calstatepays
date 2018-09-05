@@ -33,8 +33,12 @@ class MajorControllerTest extends TestCase
         $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
         $this->seed('Universities_TableSeeder');
-        $this->seed('Master_Major_Page_Data_TableSeeder');
+        $this->seed('Major_Paths_TableSeeder');
+        $this->seed('Major_Path_Wages_TableSeeder');
+        
+        // $this->seed('Master_Major_Page_Data_TableSeeder');
         $this->seed('Master_FRE_Page_Data_TableSeeder');
+        $this->seed('Master_Industry_Page_Data_Seeder');
 
         $this->controller = new MajorController($this->retriever);
     }
@@ -57,8 +61,9 @@ class MajorControllerTest extends TestCase
         $this->retriever
             ->shouldReceive('getAllHegisCodes')
             ->once()->andReturn($test);
-
+  
         $response = $this->retriever->getAllHegisCodes(); 
+        
         $this->assertEquals($test, $response);
     }
 
