@@ -47832,23 +47832,6 @@ var render = function() {
         {
           staticClass: "d-flex col-4 justify-content-center sub-nav__element",
           attrs: {
-            "exact-active-class": "sub-nav__element--active",
-            to: "/data/industries"
-          },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("industries")
-            }
-          }
-        },
-        [_vm._v("\n        INDUSTRIES\n    ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
             "active-class": "sub-nav__element--active",
             to: "/data/majors"
           },
@@ -47859,6 +47842,23 @@ var render = function() {
           }
         },
         [_vm._v("\n        MAJORS\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        {
+          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+          attrs: {
+            "exact-active-class": "sub-nav__element--active",
+            to: "/data/industries"
+          },
+          nativeOn: {
+            click: function($event) {
+              _vm.setDataPage("industries")
+            }
+          }
+        },
+        [_vm._v("\n        INDUSTRIES\n    ")]
       ),
       _vm._v(" "),
       _c(

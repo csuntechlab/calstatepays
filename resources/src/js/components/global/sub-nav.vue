@@ -1,10 +1,10 @@
 <template>
     <nav class="sub-nav row">
-        <router-link class="d-flex col-4 justify-content-center sub-nav__element" exact-active-class="sub-nav__element--active" to="/data/industries" @click.native="setDataPage('industries')">
-            INDUSTRIES
-        </router-link>
         <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/majors" @click.native="setDataPage('majors')">
             MAJORS
+        </router-link>
+        <router-link class="d-flex col-4 justify-content-center sub-nav__element" exact-active-class="sub-nav__element--active" to="/data/industries" @click.native="setDataPage('industries')">
+            INDUSTRIES
         </router-link>
         <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/pfre" @click.native="setDataPage('pfre')">
             FRE
