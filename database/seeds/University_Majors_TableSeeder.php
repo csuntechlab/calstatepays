@@ -24,7 +24,7 @@ class University_Majors_TableSeeder extends Seeder
             $universityMajor = new UniversityMajor();
             $universityMajor->hegis_code = $row->hegis_codes;
             $universityMajor->university_id = $row->university_id;
-            // $universityMajor->university_major = $row->major;
+            $universityMajor->university_major = $row->major;
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }

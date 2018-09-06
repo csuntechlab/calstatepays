@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         
         // $this->call(Master_Major_Page_Data_TableSeeder::class);
         $this->call(Master_FRE_Page_Data_TableSeeder::class);
-        $this->call(Master_Industry_Page_Data_Seeder::class);
+        // $this->call(Master_Industry_Page_Data_Seeder::class);
     }
 }
