@@ -17,15 +17,15 @@ class Data_Frame_Sanitizer:
         self.file = file
         localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv( localFilePath)
-        self.df.info()
-        print(self.df)
+        # self.df.info()
+        # print(self.df)
         self.sanitize_null_values()
-        self.print_column_headers()
+        # self.print_column_headers()
         self.header_sanitizer()
-        self.print_column_headers()
+        # self.print_column_headers()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
-        print(self.df.keys())
-        print(self.df)
+        # print(self.df.keys())
+        # print(self.df)
 
 
         # here we create the updated csv with the correct sanitizations

@@ -42,7 +42,8 @@ class Major_Paths_TableSeeder extends Seeder
             foreach($data as $row){
                 
                 $majorPath = new MajorPath();
-                
+
+                $majorPath->id = $row->id;
                 $majorPath->student_path = $row->student_path;
                 $majorPath->entry_status = $row->entry_status;
                 $majorPath->years = $row->year;
