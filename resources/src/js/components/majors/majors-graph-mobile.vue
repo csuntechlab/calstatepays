@@ -1,6 +1,7 @@
 <template>
-<chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
+    <chart style="width: 0" :initOptions="chartDimensions" :options="polar"></chart>
 </template>
+
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
 import 'echarts/lib/chart/line';
@@ -17,7 +18,7 @@ export default {
                color1: '#000',
                color2: '#000',
                color3: '#FFF',
-            },
+            }
         }
     },
     computed: {
@@ -41,23 +42,24 @@ export default {
         },
         chartDimensions(){
             let currentWidth = window.innerWidth;
-            if(this.windowWidth >= 1001) {
+            if(this.windowWidth >= 768 && this.windowWidth < 992) {
                 return {
                     height: 400,
-                    width: this.windowWidth * .42
-                }
-               
+                    width: 710
+                    // width: this.windowWidth / 1.75
+                }         
             }
-            else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
+            else if(this.windowWidth >= 540 && this.windowWidth < 768) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 200
+                    width: 490
                 }
             }
             else {
               return {
                     height: 400,
-                    width: this.windowWidth - 125,
+                    width: this.windowWidth - 48
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
                 }  
             }
         },
@@ -123,7 +125,6 @@ export default {
                 }
             return color
         },
-
         polar(){
             return {
                 tooltip: {
@@ -133,8 +134,24 @@ export default {
                     }
                 },
                 xAxis: {
-                    data: this.xAxis
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
+                name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0 , 0, 0]
+                    },
                 legend: {
                     data: ['line']
                 },
@@ -151,7 +168,13 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
                 series: [
                     {
@@ -160,7 +183,7 @@ export default {
                         data:  this.mastersEarnings,
                         lineStyle: {
                             color: this.toolColors3,
-                            width: 4
+                            width: 4,
                         },
                         itemStyle: {
                             color: this.toolColors3
@@ -172,7 +195,7 @@ export default {
                         data: this.bachelorsEarnings,
                         lineStyle: {
                             color: this.toolColors2,
-                            width: 4
+                            width: 4,
                         },
                         itemStyle: {
                             color: this.toolColors2
@@ -184,7 +207,7 @@ export default {
                         data: this.someCollegeEarnings,
                         lineStyle: {
                             color: this.toolColors1,
-                            width: 4
+                            width: 4,
                         },
                         itemStyle: {
                             color: this.toolColors1

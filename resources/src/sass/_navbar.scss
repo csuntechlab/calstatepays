@@ -26,8 +26,8 @@
 
 .show {
 	@media screen and (max-width: $break-small) {
-		/* 5 refer to the number of nav links*/
-		height: $navbar-height * 5;
+		/* the number refer to the number of nav links*/
+		height: $navbar-height * 4;
 	}
 }
 
@@ -70,7 +70,6 @@
 .sub-nav {
 	background: $white;
 	font-weight: 600;
-	margin-bottom: 2rem;
 }
 
 .sub-nav__element {

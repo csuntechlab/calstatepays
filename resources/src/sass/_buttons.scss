@@ -20,7 +20,7 @@
 }
 
 .btn-submit {
-  padding: 0 5rem;
+  padding: 0 4rem;
   font-size: 1.1rem;
   text-transform: none;
   font-weight: 500;
@@ -211,12 +211,13 @@ input[type="button"]:focus {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: $break-large) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
+    margin-bottom: .5rem
   }
 
   .major-btn_all:hover,
@@ -233,19 +234,26 @@ input[type="button"]:focus {
     margin-left: 0 !important;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 45%;
-  }
-}
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: $break-medium) and (max-width: $break-large) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
+    margin-bottom: .5rem;
   }
+}
+@media only screen and (max-width: $break-medium) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+}
+
+.majorBtnWrapper {
+  @extend .m-auto ;
+  width: 80%;
 }

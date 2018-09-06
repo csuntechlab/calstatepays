@@ -37,8 +37,11 @@ $csu-banner-img-black-filter: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, 
 $white-filter: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
 
 //Break Points
+$break-Xsmall: 576px;
 $break-small: 767px;
-$break-large: 1200px;
+$break-medium: 768px;
+$break-large: 992px;
+$break-xlarge: 1200px;
 
 //Borders
 $border-radius: 3px;

@@ -17,7 +17,9 @@
                         <span class="col-10">
                             <v-progress-linear class="industry-bar" :value="industry.percentage" height="25" color="industry-bar__percentage" background-color="industry-bar__background"/>
                         </span>
-                        <div class="col-2 industry-bar__percentage-text">{{industry.percentage}}%</div>
+                        <div v-if="industry.percentage > 0" class="col-2 industry-bar__percentage-text">{{industry.percentage}}%</div>
+                        <div v-else-if="industry.percentage === null" class="col-2 industry-bar__percentage-text">0%</div>
+                        <div v-else class="col-2 industry-bar__percentage-text">&#60;1%</div>
                     </div>
                     <div v-if="industry.industryWage == null" class="row">
                         <span class="col-10">
