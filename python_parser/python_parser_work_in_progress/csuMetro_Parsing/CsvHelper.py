@@ -163,6 +163,8 @@ class Sanitize_Major(Data_Frame_Sanitizer):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
+        self.df = self.df.loc[self.df['year'].isin([2,5,10,15])]
+        print(self.df)
         pass
 
     def sanitize_Major(self):
