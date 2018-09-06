@@ -162,8 +162,8 @@ class JsonMajor:
       campus = row[4]
       uni_majors_id = self.dictionary[campus][hegis] 
       majorPathDf.ix[index,'university_majors_id'] = uni_majors_id
-      majorPathDf.ix[index,'id'] = self.indexMajorPathId;
-      majorPathWageDf.ix[index,'major_path_id'] = self.indexMajorPathId;
+      majorPathDf.ix[index,'id'] = self.indexMajorPathId
+      majorPathWageDf.ix[index,'major_path_id'] = self.indexMajorPathId
       self.indexMajorPathId += 1
 
     return majorPathDf,majorPathWageDf
