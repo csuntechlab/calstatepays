@@ -166,6 +166,9 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         pass
 
     def sanitize_Major(self):
+        '''
+        Sanitizes these Majors CSV Specific Columns
+        '''
         mapper = {
             'potential_number_of_students':self.string_number_to_real_number('potential_number_of_students') ,
             'potential_number_of_students_for_each_year_out_of_school':self.string_number_to_real_number('potential_number_of_students_for_each_year_out_of_school'),
@@ -190,7 +193,7 @@ class Sanitize_Major(Data_Frame_Sanitizer):
 
     def get_Majors_Paths_Data_Frame(self):
         MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
-        MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1)
+        MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1) # TODO: May have messed up here
         MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
-        MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']]
+        MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']] # TODO: May Have messed up here
         return MajorPathDf,MajorPathWageDf
