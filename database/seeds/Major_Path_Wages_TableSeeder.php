@@ -20,8 +20,8 @@ class Major_Path_Wages_TableSeeder extends Seeder
         $json = File::get("database/data/channel_islands_majors_path_wages.json");
         array_push($jsonCollection,$json);
 
-        $json = File::get("database/data/dominguez_hills_majors_path_wages.json");
-        array_push($jsonCollection,$json);
+//        $json = File::get("database/data/dominguez_hills_majors_path_wages.json");
+//        array_push($jsonCollection,$json);
 
         $json = File::get("database/data/fullerton_majors_path_wages.json");
         array_push($jsonCollection,$json);

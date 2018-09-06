@@ -58,14 +58,11 @@ class MajorService implements MajorContract
 
     public function getUniversityMajorId($hegisCode, $universityId, $major)
     {
-        var_dump( $hegisCode );
-        var_dump( $universityId );
-        var_dump( $major );
+
         $universityMajorId = UniversityMajor::where('hegis_code', $hegisCode)
                                                 ->where('university_id', $universityId)->get();
                                                 // ->where('university_major',$major)
                                                 // ->first(['id']);
-        var_dump($universityMajorId);                                               
         return $universityMajorId->id;
     }
 
