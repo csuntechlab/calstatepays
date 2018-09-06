@@ -96,9 +96,10 @@ class JsonIndustry:
 
 
 class JsonMajor:
-  def __init__(self,file,universityMajorDictionary,universityMajorsDataFrame,index):
+  def __init__(self,file,universityMajorDictionary,universityMajorsDataFrame,indexUniversityMajorsId , indexMajorPathId ):
     self.file = file
-    self.index = index
+    self.indexUniversityMajorsId = indexUniversityMajorsId 
+    self.indexMajorPathId = indexMajorPathId
     self.universityMajorsDataFrame = universityMajorsDataFrame
     self.dictionary = self.createDictionary(universityMajorDictionary)
 
@@ -122,16 +123,16 @@ class JsonMajor:
 
     for row in output:
       hegis =  int(row['hegis_at_exit'])
-      hegisDictionary[hegis] = self.index
+      hegisDictionary[hegis] = self.indexUniversityMajorsId
 
       campus =  int(row['campus'])
       major =  (row['major'])
-      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.index }
+      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.indexUniversityMajorsId }
       universityMajorsId.append(dictRename)
       
       self.universityMajorsDataFrame = self.universityMajorsDataFrame.append( dictRename , ignore_index=True)
       
-      self.index +=1
+      self.indexUniversityMajorsId +=1
     del output
 
     # print(df)
@@ -150,9 +151,9 @@ class JsonMajor:
     return dictionary
     
   def getIndex(self):
-    return self.index
+    return self.indexUniversityMajorsId,self.indexMajorPathId 
   
-  def getMajorsTables(self, majorPathDf ):
+  def getMajorsTables(self, majorPathDf , majorPathWageDf ):
     
     majorPathDf['university_majors_id'] = -1
 
@@ -161,8 +162,11 @@ class JsonMajor:
       campus = row[4]
       uni_majors_id = self.dictionary[campus][hegis] 
       majorPathDf.ix[index,'university_majors_id'] = uni_majors_id
+      majorPathDf.ix[index,'id'] = self.indexMajorPathId;
+      majorPathWageDf.ix[index,'major_path_id'] = self.indexMajorPathId;
+      self.indexMajorPathId += 1
 
-    return majorPathDf
+    return majorPathDf,majorPathWageDf
     
   def jsonOutput(self,fileName, df):
 

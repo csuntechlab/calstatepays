@@ -31,7 +31,8 @@ class IterateCsvFiles():
         # print(hegisDataFrame)
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
-      index = 1  
+      indexUniversityMajorsId = 1  
+      indexMajorPathId = 1  
       # universityMajorsList = []
       col = ["hegis_codes" ,"university_id" ,"major","id"]
       universityMajorsDataFrame = pd.DataFrame()
@@ -45,11 +46,11 @@ class IterateCsvFiles():
 
         universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
         
-        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,index) #Returns the Json
+        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,indexUniversityMajorsId, indexMajorPathId) #Returns the Json
         
-        majorPathDf = jsonMajor.getMajorsTables(majorPathDf)   # Sanitize majorPath Df
+        majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
 
-        index = jsonMajor.getIndex() # gets index
+        indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
         jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
         jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
@@ -173,8 +174,12 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     send list of files to be parsed
     '''
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
+    
+    print( majorsCsvFiles )
 
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+
+    # print( industryCsvFiles )
 
     # Will need to remove remove_row_of_industry 
     # and remove_temp_industry_file 
