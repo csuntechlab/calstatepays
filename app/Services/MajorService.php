@@ -12,8 +12,20 @@ use Illuminate\Pagination\Paginator;
 
 class MajorService implements MajorContract
 {
-    public function getAllHegisCodes(): array 
+    public function getAllHegisCodesByUniversity( $universityId ): array 
     {
+        $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
+                                            ->get()
+                                            ->map(function ($item){
+            return [
+                'hegis_code' => $item['hegis_code'],
+                'major' => $item['major'],
+                'university_id' => $item['university']->id
+            ];
+    
+            });
+        return $allHegisCodes->toArray();
+        // dd($allHegisCodes);                                            
        $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
            return [
             'hegis_code' => $item['hegis_code'],
@@ -31,10 +43,18 @@ class MajorService implements MajorContract
         return $fieldOfStudies->toArray();
     }
 
-    public function getHegisCategories($fieldOfStudyId): array
+    public function getHegisCategories($universityId,$fieldOfStudyId): array
     {
-        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
-                                    ->where('id', $fieldOfStudyId)->first();
+        $fieldOfStudy = FieldOfStudy::with('hegisCategory')
+                                // with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
+                                // $query->where('university_id',$universityId);  
+                                // }])
+                                ->with( ['hegisCategory.hegisCode'])
+                                ->where('id', $fieldOfStudyId)
+                                ->first()                              
+                                ;
+        // dd($fieldOfStudy);                                                                 
+        // return $fieldOfStudy;                                          
         return $hegisCategory = $fieldOfStudy->hegisCategory->toArray();
     }
     
