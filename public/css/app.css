@@ -26419,6 +26419,7 @@ input[type="button"]:focus {
 
 .industry-bar__salary {
   background-color: #2BAE67;
+  border-radius: 50px;
 }
 
 .industry-bar__salary-text {
@@ -26427,6 +26428,7 @@ input[type="button"]:focus {
 
 .industry-bar__percentage {
   background-color: #2f98bf;
+  border-radius: 50px;
 }
 
 .industry-bar__percentage-text {
