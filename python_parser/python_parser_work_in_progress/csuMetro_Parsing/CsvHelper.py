@@ -195,5 +195,8 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
         MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1) # TODO: May have messed up here
         MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
-        MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']] # TODO: May Have messed up here
+        # MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']] # TODO: May Have messed up here
+        MajorPathWageDf.loc[:,'major_path_id'] = range(1, len(MajorPathDf) + 1) # TODO: May Have messed up here
+        # print(MajorPathDf)
+        # print(MajorPathWageDf)
         return MajorPathDf,MajorPathWageDf

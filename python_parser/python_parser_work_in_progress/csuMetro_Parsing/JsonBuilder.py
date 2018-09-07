@@ -165,7 +165,9 @@ class JsonMajor:
       majorPathDf.ix[index,'id'] = self.indexMajorPathId
       majorPathWageDf.ix[index,'major_path_id'] = self.indexMajorPathId
       self.indexMajorPathId += 1
-
+      
+    # print(majorPathDf)
+    # print(majorPathWageDf)
     return majorPathDf,majorPathWageDf
     
   def jsonOutput(self,fileName, df):

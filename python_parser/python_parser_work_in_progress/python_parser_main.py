@@ -36,6 +36,8 @@ class IterateCsvFiles():
       # universityMajorsList = []
       col = ["hegis_codes" ,"university_id" ,"major","id"]
       universityMajorsDataFrame = pd.DataFrame()
+      majorPathDf1 = pd.DataFrame()
+      majorPathWageDf1 = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
@@ -49,6 +51,9 @@ class IterateCsvFiles():
         jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,indexUniversityMajorsId, indexMajorPathId) #Returns the Json
         
         majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
+
+        majorPathDf1 = majorPathDf1.append( majorPathDf , ignore_index=True)
+        majorPathWageDf1 = majorPathWageDf1.append( majorPathWageDf , ignore_index=True)
 
         indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
@@ -67,6 +72,9 @@ class IterateCsvFiles():
         del majorPathDf
         del majorPathWageDf
     #   print(universityMajorsDataFrame)
+    
+      print(majorPathDf1)
+      print(majorPathWageDf1)
       self.create_hegis_code_data_frame(universityMajorsDataFrame)
 
 
