@@ -20,7 +20,6 @@ Route::get('major/hegis-codes/{fieldOfStudyId}', 'MajorController@filterByFieldO
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
     'MajorController@getFREData')->name('major.fre-data');
-Route::get('/major/universities', 'MajorController@getAllUniversities');
 
 //Industry
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
