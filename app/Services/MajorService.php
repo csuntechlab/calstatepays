@@ -45,17 +45,42 @@ class MajorService implements MajorContract
 
     public function getHegisCategories($universityId,$fieldOfStudyId): array
     {
-        $fieldOfStudy = FieldOfStudy::with('hegisCategory')
-                                // with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
-                                // $query->where('university_id',$universityId);  
-                                // }])
-                                ->with( ['hegisCategory.hegisCode'])
+        /**
+         * hegisCategory.hegisCode returns all the hegis codes associated with the hegis category_id,
+         *  however once joined with university majors, all the hegis codes are mapped with hegis codes with in 
+         * university's majors id with university_id, however not all hegis codes are offered at every campus 
+         * so only some of the hegis codes have a corresponding university_majors relationship; otherwise it is null. 
+         */
+        $fieldOfStudy = FieldOfStudy::with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
+                                $query->where('university_id',$universityId);  
+                                }])
                                 ->where('id', $fieldOfStudyId)
-                                ->first()                              
-                                ;
-        // dd($fieldOfStudy);                                                                 
-        // return $fieldOfStudy;                                          
-        return $hegisCategory = $fieldOfStudy->hegisCategory->toArray();
+                                ->first();
+        $hegisCategory = $fieldOfStudy->hegisCategory;
+        
+        //TODO:Make its own function?
+        /**
+         * since $fieldOfStudy is separated by hegis category 
+         * the following function lumps all the hegis codes in one array
+         */
+        foreach($hegisCategory as $category){
+            $hegisCodes = $category['hegisCode'];
+            $hegisData[] = $hegisCodes->toArray();
+        }    
+        $hegisData = array_collapse($hegisData); 
+        
+        //TODO:Make its own function?
+        /**
+         * Since this is filtered by university_id meaning 
+         * not all hegis codes are offered at every campus.
+         * This removes all the null values
+         */
+        foreach( $hegisData as $hegis ){
+            if($hegis['university_majors']!==null){
+                $data[] = $hegis;
+            }
+        }
+        return $data;
     }
     
     public function getMajorEarnings($hegis_code, $university_id): array
