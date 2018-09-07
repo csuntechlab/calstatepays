@@ -24,6 +24,16 @@ This will build and run 3 containers
 ```
 docker exec -it csumetro /bin/bash 
 ```
+### To Run the python Script,
+After opening the CsuMetro file run commands:
+```
+cd python_parser/python_parser_work_in_progress/
+python python_parser_main.py
+```
+Note:
+- Python script will change the structure of the JSON but the data values will be consistent.  
+
+
 #### To seed the application,
 After entering the laravel web service shell:
 ```
