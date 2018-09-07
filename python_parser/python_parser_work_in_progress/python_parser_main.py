@@ -21,13 +21,18 @@ class IterateCsvFiles():
     def __init__(self):
         pass
     
-    def create_hegis_code_data_frame(self,universityMajorsDataFrame):
+    def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisTable.convert_To_Json()
         
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisDataFrame = hegisTable.get_hegis_codes_table_data_frame()
         hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
+
+        hegisTable.json_output('master_majors_path_table',MajorsPathsDataFrame)
+        hegisTable.json_output('master_majors_path_wage_table',MajorsPathWageDataFrame)
+        hegisTable.jsonSanitize('master_majors_path_wage_table')
+
         # print(hegisDataFrame)
     
     def master_majors_csv_to_json(self,majorsCsvFiles):
@@ -36,8 +41,8 @@ class IterateCsvFiles():
       # universityMajorsList = []
       col = ["hegis_codes" ,"university_id" ,"major","id"]
       universityMajorsDataFrame = pd.DataFrame()
-      majorPathDf1 = pd.DataFrame()
-      majorPathWageDf1 = pd.DataFrame()
+      MajorsPathsDataFrame = pd.DataFrame()
+      MajorsPathWageDataFrame = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
@@ -52,14 +57,14 @@ class IterateCsvFiles():
         
         majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
 
-        majorPathDf1 = majorPathDf1.append( majorPathDf , ignore_index=True)
-        majorPathWageDf1 = majorPathWageDf1.append( majorPathWageDf , ignore_index=True)
+        MajorsPathsDataFrame = MajorsPathsDataFrame.append( majorPathDf , ignore_index=True)
+        MajorsPathWageDataFrame = MajorsPathWageDataFrame.append( majorPathWageDf , ignore_index=True)
 
         indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
-        jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
-        jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
-        jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
+        # jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
+        # jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
+        # jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
 
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
 
@@ -73,9 +78,9 @@ class IterateCsvFiles():
         del majorPathWageDf
     #   print(universityMajorsDataFrame)
     
-      print(majorPathDf1)
-      print(majorPathWageDf1)
-      self.create_hegis_code_data_frame(universityMajorsDataFrame)
+      print(MajorsPathsDataFrame)
+      print(MajorsPathWageDataFrame)
+      self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
     def master_industry_csv_to_json(self,industryCsvFiles):

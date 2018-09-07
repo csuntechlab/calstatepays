@@ -144,9 +144,9 @@ class JsonMajor:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
 
-    with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
-        fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close() 
+    # with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
+    #     fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    # fp.close() 
 
     return dictionary
     

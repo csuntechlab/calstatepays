@@ -8,6 +8,7 @@ import simplejson
 import json
 
 class hegisID:
+
   def __init__(self,df):
     self.df = df
 
@@ -56,5 +57,29 @@ class hegisID:
     with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
+
+  def jsonSanitize(self,fileName ):
     
+    json_data = json.load(open('../../database/data/'+fileName+'.json'))
+    for i in range(0, len(json_data)):
+       
+      # major path wage 
+      if(json_data[i]["_25th_percentile_earnings"]!=None):
+        json_data[i]["_25th_percentile_earnings"] = int(json_data[i]["_25th_percentile_earnings"])
+
+      if(json_data[i]["_50th_percentile_earnings"]!=None):
+        json_data[i]["_50th_percentile_earnings"] = int(json_data[i]["_50th_percentile_earnings"])
+
+      if(json_data[i]["_75th_percentile_earnings"]!=None):
+        json_data[i]["_75th_percentile_earnings"] = int(json_data[i]["_75th_percentile_earnings"])
+      
+      if(True):
+        json_data[i]["major_path_id"] = int(json_data[i]["major_path_id"])
+        
+       
+
+    with open('../../database/data/'+fileName+'.json', 'w') as outfile:
+      json.dump(json_data, outfile, indent=4)
+    outfile.close()
+  
     
