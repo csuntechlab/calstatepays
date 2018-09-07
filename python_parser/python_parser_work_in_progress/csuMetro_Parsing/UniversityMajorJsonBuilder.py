@@ -23,7 +23,7 @@ class hegisID:
 
   def get_hegis_codes_table_data_frame(self):
     hegisCodesTableDataFrame = self.df.loc[:,['hegis_codes','major','university_id']]
-    hegisCodesTableDataFrame = hegisCodesTableDataFrame.drop_duplicates(subset=['hegis_codes','major','university_id'], keep='first')
+    hegisCodesTableDataFrame = hegisCodesTableDataFrame.drop_duplicates(subset=['hegis_codes'], keep='first')
     # csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range( len(title))}])
     hegisCodesTableDataFrame['hegis_category_id'] = -1
     hegisCodesTableDataFrame['id'] = -1
