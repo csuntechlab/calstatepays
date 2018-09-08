@@ -17,7 +17,7 @@ class CreateUniversityMajorsTable extends Migration
             $table->increments('id');
             $table->integer('hegis_code');
             $table->integer('university_id');
-//            $table->string('university_major');
+            $table->string('major');
             $table->unique(array('hegis_code', 'university_id'));
         });
     }
