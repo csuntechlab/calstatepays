@@ -27,18 +27,23 @@ class Master_Industry_Page_Data_Seeder extends Seeder
             $industryPathType = new IndustryPathType();
             $industryWage = new IndustryWage();
             $population = new Population();
+            // $potential_number_of_students = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status)->potential_number_of_students;
 
-            $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
-            $potential_number_of_students = $majorService->getPotentialNumberOfStudents($university_major_id, $row->student_path, $row->entry_status)->potential_number_of_students;
+            $potential_number_of_students = 1;
 
             if($row->naics != null){
                 $hegis_code = $row->hegis_at_exit;
-                $universityId = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus);
+
+                // var_dump($row);
+
+                $university_major_id = $majorService->getUniversityMajorId($row->hegis_at_exit, $row->campus, $row->major );
+                var_dump($university_major_id);
+                
                 $majorPath = new MajorPath();
 
                 $population->population_found = $row->number_of_students_found_5_years_after_exit;
                 $population->population_size = $potential_number_of_students;
-                $population->universityId = $universityId;
+                $population->universityId = $university_major_id;
                 $population->naics = $row->naics;
                 if($population->population_found != null && $population->population_size != null)
                 {
