@@ -135,8 +135,4 @@ class MajorService implements MajorContract
         return $query;
     }
 
-    public function getAllUniversities() {
-        $data = University::all()->toArray();
-        return $data;
-    }
 }
