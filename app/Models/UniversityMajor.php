@@ -12,6 +12,7 @@ class UniversityMajor extends Model
     protected $fillable = [
         'hegis_code',
         'university_id',
+        'major'
     ];
 
     public function studentBackground(){
