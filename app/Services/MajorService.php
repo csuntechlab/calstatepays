@@ -14,6 +14,7 @@ class MajorService implements MajorContract
 {
     public function getAllHegisCodesByUniversity( $universityId ): array 
     {
+
         $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
                                             ->get()
                                             ->map(function ($item){
@@ -24,6 +25,7 @@ class MajorService implements MajorContract
             ];
     
             });
+
 
         return $allHegisCodes->toArray();
        $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
