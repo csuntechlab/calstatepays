@@ -14,6 +14,4 @@ interface MajorContract
 
     public function getFREData($request);
 
-    public function getAllUniversities();
-
 }
