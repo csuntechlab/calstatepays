@@ -24,8 +24,8 @@ class MajorService implements MajorContract
             ];
     
             });
+
         return $allHegisCodes->toArray();
-        // dd($allHegisCodes);                                            
        $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
            return [
             'hegis_code' => $item['hegis_code'],
