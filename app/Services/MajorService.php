@@ -12,8 +12,20 @@ use Illuminate\Pagination\Paginator;
 
 class MajorService implements MajorContract
 {
-    public function getAllHegisCodes(): array 
+    public function getAllHegisCodesByUniversity( $universityId ): array 
     {
+        $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
+                                            ->get()
+                                            ->map(function ($item){
+            return [
+                'hegis_code' => $item['hegis_code'],
+                'major' => $item['major'],
+                'university_id' => $item['university']->id
+            ];
+    
+            });
+
+        return $allHegisCodes->toArray();
        $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
            return [
             'hegis_code' => $item['hegis_code'],
@@ -31,11 +43,44 @@ class MajorService implements MajorContract
         return $fieldOfStudies->toArray();
     }
 
-    public function getHegisCategories($fieldOfStudyId): array
+    public function getHegisCategories($universityId,$fieldOfStudyId): array
     {
-        $fieldOfStudy = FieldOfStudy::with('hegisCategory')->with('hegisCategory.hegisCode')
-                                    ->where('id', $fieldOfStudyId)->first();
-        return $hegisCategory = $fieldOfStudy->hegisCategory->toArray();
+        /**
+         * hegisCategory.hegisCode returns all the hegis codes associated with the hegis category_id,
+         *  however once joined with university majors, all the hegis codes are mapped with hegis codes with in 
+         * university's majors id with university_id, however not all hegis codes are offered at every campus 
+         * so only some of the hegis codes have a corresponding university_majors relationship; otherwise it is null. 
+         */
+        $fieldOfStudy = FieldOfStudy::with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
+                                $query->where('university_id',$universityId);  
+                                }])
+                                ->where('id', $fieldOfStudyId)
+                                ->first();
+        $hegisCategory = $fieldOfStudy->hegisCategory;
+        
+        //TODO:Make its own function?
+        /**
+         * since $fieldOfStudy is separated by hegis category 
+         * the following function lumps all the hegis codes in one array
+         */
+        foreach($hegisCategory as $category){
+            $hegisCodes = $category['hegisCode'];
+            $hegisData[] = $hegisCodes->toArray();
+        }    
+        $hegisData = array_collapse($hegisData); 
+        
+        //TODO:Make its own function?
+        /**
+         * Since this is filtered by university_id meaning 
+         * not all hegis codes are offered at every campus.
+         * This removes all the null values
+         */
+        foreach( $hegisData as $hegis ){
+            if($hegis['university_majors']!==null){
+                $data[] = $hegis;
+            }
+        }
+        return $data;
     }
     
     public function getMajorEarnings($hegis_code, $university_id): array
@@ -56,11 +101,13 @@ class MajorService implements MajorContract
         return $hegis_code;
     }
 
-    public function getUniversityMajorId($hegisCode, $universityId)
+    public function getUniversityMajorId($hegisCode, $universityId, $major)
     {
+
         $universityMajorId = UniversityMajor::where('hegis_code', $hegisCode)
-                                                ->where('university_id', $universityId)
-                                                ->first(['id']);
+                                                ->where('university_id', $universityId)->get();
+                                                // ->where('university_major',$major)
+                                                // ->first(['id']);
         return $universityMajorId->id;
     }
 
