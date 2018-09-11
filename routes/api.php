@@ -14,13 +14,10 @@ use Illuminate\Http\Request;
 */
 //Major
 Route::get('major/field-of-study', 'MajorController@getAllFieldOfStudies');
-Route::get('/major/code/{majorName}', 'MajorController@getHegisCode'); //TODO: Delete this route not being used
+Route::get('/major/code/{majorName}', 'MajorController@getHegisCode'); 
 
-// TODO: Change front end 
 Route::get('major/hegis-codes/university/{universityId}', 'MajorController@getAllHegisCodesByUniversity')->name('major.hegis-codes');
 
-
-// TODO: Fix this 
 Route::get('major/hegis-codes/{universityId}/{fieldOfStudyId}', 'MajorController@filterByFieldOfStudy');
 
 
