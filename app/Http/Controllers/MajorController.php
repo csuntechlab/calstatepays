@@ -85,7 +85,7 @@ class MajorController extends Controller
     public function filterByFieldOfStudy($universityId,$fieldOfStudyId)
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityId,$fieldOfStudyId);
-
+        
         if($hegisData == []){
             return [[]];
         }

@@ -53,7 +53,7 @@ class MajorService implements MajorContract
         if ($fieldOfStudy == null){
             return [];
         }
-        else if ($fieldOfStudy->hegisCategory == null){
+        else if ( $fieldOfStudy->hegisCategory == null ){
             return [];
         }
         
@@ -66,7 +66,7 @@ class MajorService implements MajorContract
         }    
         $hegisData = array_collapse($hegisData); 
     
-        $data[] = [];
+        $data = [];
         foreach( $hegisData as $hegis ){
             if($hegis['university_majors']!==null){
                 $data[] = $hegis;
