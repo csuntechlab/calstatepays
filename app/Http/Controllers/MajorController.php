@@ -43,9 +43,9 @@ class MajorController extends Controller
         $majorData = [
             'majorId' =>$hegis_code,
             'universityId' => $university_id,
-            'someCollege'=> $someCollege,
-            'bachelors' => $bachelors,
-            'postBacc' => $post_bacc
+            'someCollege'=> isset($someCollege) ? $someCollege : null,
+            'bachelors' => isset($bachelors) ? $bachelors : null,
+            'postBacc' => isset($post_bacc) ? $post_bacc : null
         ];
         return $majorData;
     }
