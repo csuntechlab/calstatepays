@@ -58,6 +58,7 @@ export default {
 	},
 	methods: {
 		toggleShowNav() {
+            console.log('hi it is me')
 			var showCheck = document.getElementById("nav-list");
 			if (showCheck.classList.contains("show")) {
 				var navItem = document.getElementById("nav-list");
