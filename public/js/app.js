@@ -45203,6 +45203,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -45850,7 +45853,7 @@ var render = function() {
           _vm._v("Discover Your Earnings After College")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row px-4 py-2 fa-wrapper" }, [
+        _c("div", { staticClass: "row py-2 fa-wrapper" }, [
           _c(
             "div",
             { staticClass: "col-md-4 text-center my-3 home__col" },
@@ -45863,15 +45866,10 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                {
-                  staticClass: "button-link",
-                  attrs: { to: "/data/industries" }
-                },
+                { staticClass: "button-link", attrs: { to: "/data/majors" } },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
-                    )
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -45891,10 +45889,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/majors" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/industries" }
+                },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
+                    )
                   ])
                 ]
               )
@@ -46020,34 +46023,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-graduation-cap" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__copy" }, [
-      _c("p", [
-        _vm._v(
-          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-line-chart" })
     ])
   },
@@ -46067,6 +46042,34 @@ var staticRenderFns = [
       _c("p", [
         _vm._v(
           "Find out which majors has the highest earn and the most students."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-graduation-cap" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Do college graduates earn more?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
         )
       ])
     ])
@@ -46201,6 +46204,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(4);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46612,28 +46620,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("nav", { staticClass: "sub-nav container-fluid" }, [
     _c(
       "div",
-      { staticClass: "row sub-nav" },
+      { staticClass: "row" },
       [
-        _c(
-          "router-link",
-          {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-            attrs: {
-              "exact-active-class": "sub-nav__element--active",
-              to: "/data/industries"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("industries")
-              }
-            }
-          },
-          [_vm._v("\n                INDUSTRIES\n            ")]
-        ),
-        _vm._v(" "),
         _c(
           "router-link",
           {
@@ -46648,7 +46639,24 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n                MAJORS\n            ")]
+          [_vm._v("\n        MAJORS\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "exact-active-class": "sub-nav__element--active",
+              to: "/data/industries"
+            },
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("industries")
+              }
+            }
+          },
+          [_vm._v("\n        INDUSTRIES\n        ")]
         ),
         _vm._v(" "),
         _c(
@@ -46665,7 +46673,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n                FRE\n            ")]
+          [_vm._v("\n        FRE\n        ")]
         )
       ],
       1
@@ -46690,12 +46698,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "col col-lg-10 container row align-items-center" },
-    [_vm._t("default")],
-    2
-  )
+  return _c("div", [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -46768,8 +46771,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
 //
 //
 //
@@ -47533,11 +47534,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    { staticClass: "form--inverted form--degreeLevel container mb-4 mb-0-md" },
-    [
-      _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+  return _c("form", { staticClass: "container-fluid csu-card__form" }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c("div", { staticClass: "form-group" }, [
         _c(
           "div",
           {
@@ -47547,101 +47546,132 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fas fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n        ")
+            _vm._v(" Please fill out all fields.\n            ")
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.majorId ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "Major" }
+            },
+            [_vm._v("\n                Select a Major\n            ")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.majorId
+            },
+            attrs: { label: "major", options: _vm.majors },
+            on: {
+              input: function($event) {
+                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+              },
+              change: function($event) {
+                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "age" }
+            },
+            [_vm._v("\n                Select an Age Range\n            ")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: { "border-danger": this.submittedOnce && !this.form.age },
+            attrs: { label: "age", options: _vm.ageRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("age", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "label",
+          {
+            staticClass: "form-group",
+            style: [
+              this.submittedOnce && !this.form.education ? _vm.errorLabel : ""
+            ],
+            attrs: { for: "education" }
+          },
+          [
+            _vm._v(
+              "\n                    Select an Education Level\n                "
+            )
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
+        _c("div", { staticClass: "col-12" }, [
           _c(
             "div",
-            { staticClass: "col col-12" },
+            { staticClass: "form-group row justify-content-between mb-0" },
             [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.majorId
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "Major" }
-                },
-                [_vm._v("\n                    Select a Major")]
-              ),
+              _c("label", { attrs: { for: "freshman" } }, [
+                _vm._v("First Time Freshman:")
+              ]),
               _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.majorId
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.education,
+                    expression: "form.education"
+                  }
+                ],
+                attrs: {
+                  for: "freshman",
+                  type: "radio",
+                  id: "freshman",
+                  value: "FTF"
                 },
-                attrs: { label: "major", options: _vm.majors },
+                domProps: { checked: _vm._q(_vm.form.education, "FTF") },
                 on: {
                   input: function($event) {
-                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                    _vm.updateSelect("education", $event.target)
                   },
                   change: function($event) {
-                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                    _vm.$set(_vm.form, "education", "FTF")
                   }
                 }
               })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
-                  ],
-                  attrs: { for: "age" }
-                },
-                [_vm._v("\n                   Select an Age Range")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.age
-                },
-                attrs: { label: "age", options: _vm.ageRanges },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("age", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
-            _c(
-              "label",
-              {
-                style: [
-                  this.submittedOnce && !this.form.education
-                    ? _vm.errorLabel
-                    : ""
-                ],
-                attrs: { for: "education" }
-              },
-              [_vm._v("\n                    Select an Education Level")]
-            ),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "label--radio", attrs: { for: "freshman" } },
-              [_vm._v("First Time Freshman:")]
-            ),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row justify-content-between" }, [
+            _c("label", { attrs: { for: "transfer" } }, [
+              _vm._v("First Time Transfer")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -47652,44 +47682,6 @@ var render = function() {
                   expression: "form.education"
                 }
               ],
-              staticClass: "mx-2 mt-1",
-              attrs: {
-                for: "freshman",
-                type: "radio",
-                id: "freshman",
-                value: "FTF"
-              },
-              domProps: { checked: _vm._q(_vm.form.education, "FTF") },
-              on: {
-                input: function($event) {
-                  _vm.updateSelect("education", $event.target)
-                },
-                change: function($event) {
-                  _vm.$set(_vm.form, "education", "FTF")
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "col-12 col-9 col-md-12" }, [
-            _c(
-              "label",
-              { staticClass: "label--radio", attrs: { for: "transfer" } },
-              [_vm._v("\n                    First Time Transfer")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.education,
-                  expression: "form.education"
-                }
-              ],
-              staticClass: "mx-2 mt-1",
               attrs: {
                 for: "transfer",
                 type: "radio",
@@ -47707,115 +47699,105 @@ var render = function() {
               }
             })
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
           _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.earnings
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "earnings" }
-                },
-                [
-                  _vm._v(
-                    "\n                    Estimated Annual Earnings In School"
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.earnings
-                },
-                attrs: { label: "earn", options: _vm.earningRanges },
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.earnings ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "earnings" }
+            },
+            [_vm._v("\n                Estimated Annual Earnings In School")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.earnings
+            },
+            attrs: { label: "earn", options: _vm.earningRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("earnings", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("earnings", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                this.submittedOnce && !this.form.financialAid
+                  ? _vm.errorLabel
+                  : ""
+              ],
+              attrs: { for: "financialAid" }
+            },
+            [_vm._v("\n                    Estimated Annual Financial Aid")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            class: {
+              "border-danger": this.submittedOnce && !this.form.financialAid
+            },
+            attrs: { label: "finAid", options: _vm.financialAidRanges },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("financialAid", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("financialAid", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row row--condensed",
+          attrs: { id: "submit-btn-container" }
+        },
+        [
+          _c("div", { staticClass: "py-2" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success btn-submit",
+                attrs: { id: "submit-btn", type: "button" },
                 on: {
-                  input: function($event) {
-                    _vm.updateSelect("earnings", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("earnings", $event)
+                  click: function($event) {
+                    _vm.submitForm()
                   }
                 }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    this.submittedOnce && !this.form.financialAid
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "financialAid" }
-                },
-                [_vm._v("\n                    Estimated Annual Financial Aid")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input",
-                class: {
-                  "border-danger": this.submittedOnce && !this.form.financialAid
-                },
-                attrs: { label: "finAid", options: _vm.financialAidRanges },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("financialAid", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("financialAid", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "row row--condensed",
-            attrs: { id: "submit-btn-container" }
-          },
-          [
-            _c("div", { staticClass: "py-2" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success btn-submit",
-                  attrs: { id: "submit-btn", type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.submitForm()
-                    }
-                  }
-                },
-                [_vm._v("Submit")]
-              )
-            ])
-          ]
-        )
-      ])
-    ]
-  )
+              },
+              [_vm._v("Submit")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -47893,7 +47875,14 @@ var render = function() {
         _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
           ? _c(
               "div",
-              { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
+              {
+                class: _vm.infoKey ? "pfre-info--show" : "pfre-info",
+                on: {
+                  click: function($event) {
+                    _vm.toggleInfo(_vm.infoKey)
+                  }
+                }
+              },
               [_vm._t("default")],
               2
             )
@@ -48071,6 +48060,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -48088,7 +48078,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
 
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData'])),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData', 'toggleInfo'])),
   filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
   components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
 });
@@ -49153,14 +49143,12 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(0),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-6 pl-0" },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
                     _vm._v(
@@ -49171,7 +49159,22 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-1" }, [
+              _c("span", { staticClass: "col col " }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("timeToDegree")
+                      }
+                    }
+                  },
+                  [_vm._v("Estimated time to degree:")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(_vm._s(_vm.pfreData.years.actual))
                 ])
@@ -49214,14 +49217,12 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(1),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-xl-6 pl-0" },
+                { staticClass: "col-auto " },
                 [
                   _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                     _vm._v(
@@ -49232,7 +49233,22 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-1" }, [
+              _c("span", { staticClass: "col-8 " }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("earnings")
+                      }
+                    }
+                  },
+                  [_vm._v("Estimated Earnings 5 Years After Exit:")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
@@ -49286,14 +49302,12 @@ var render = function() {
       _c("div", { staticClass: "row no-gutters my-3" }, [
         _c(
           "div",
-          { staticClass: "col-12 col-lg-8 col-xl-9 align-self-center" },
+          { staticClass: "col-12 col-lg-11 col-xl-10 align-self-center" },
           [
-            _c("div", { staticClass: "d-flex" }, [
-              _vm._m(2),
-              _vm._v(" "),
+            _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-xl-6 pl-0" },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "return" } }, [
                     _vm._v(
@@ -49304,7 +49318,22 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-1" }, [
+              _c("span", { staticClass: "col-8" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("return")
+                      }
+                    }
+                  },
+                  [_vm._v("FRE - Financial Return on Education: ")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "col align-self-end" }, [
                 _c("p", { staticClass: "float-right mb-0" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
@@ -49369,38 +49398,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-4 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated time to degree:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("Estimated Earnings 5 Years After Exit:")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "col-xl-5 pr-0" }, [
-      _c("p", { staticClass: "float-left font-weight-bold mb-0" }, [
-        _vm._v("EFRE - Financial Return on Education: ")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -49420,7 +49418,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -49442,7 +49439,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam\n      mollitia temporibus cumque. \n    "
+              "\n      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n    "
             )
           ]
         )
@@ -49450,25 +49447,31 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col col-12 col-md-4 col-lg-3 pr-md-0 pr-lg-3" },
-        [_c("pfre-form", { staticClass: "my-2 csu-card__form" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col col-12 col-md-8 col-lg-9" },
-        [
-          _c("card", { staticClass: "container row csu-card" }, [
-            _c("div", { staticClass: "container-fluid p-0" }, [
-              _c("div", { staticClass: "row-fluid" }, [_c("pfre-progress")], 1)
-            ])
+      _c("div", { staticClass: "row graphContent" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-3 col-12" }, [_c("pfre-form")], 1),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-9 col-12" },
+              [
+                _c("card", { staticClass: "csu-card py-3" }, [
+                  _c("div", { staticClass: "container-fluid" }, [
+                    _c(
+                      "div",
+                      { staticClass: "row-fluid" },
+                      [_c("pfre-progress")],
+                      1
+                    )
+                  ])
+                ])
+              ],
+              1
+            )
           ])
-        ],
-        1
-      )
+        ])
+      ])
     ],
     1
   )
@@ -49569,6 +49572,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -49604,7 +49608,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	methods: {
 		getWindowWidth: function getWindowWidth(event) {
 			this.windowWidth = document.documentElement.clientWidth;
-			this.windowWidth < 1000 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
+			this.windowWidth < 992 ? (this.isDesktop = false, this.isMobile = true) : (this.isDesktop = true, this.isMobile = false);
 		},
 		scrollToNextCard: function scrollToNextCard(lastCardIndex) {
 			var progressBar = document.getElementById("majorCardHasIndex-" + lastCardIndex);
@@ -49624,6 +49628,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
 				var addBtn = document.getElementById("compare-major-button");
 				addBtn.style.position = "absolute";
+				addBtn.style.bottom = "1rem";
 			}
 		}
 	},
@@ -49751,7 +49756,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticStyle: { position: "relative" } }, [
     _vm.indexOfUnsubmittedCard == -1
       ? _c(
           "button",
@@ -49877,14 +49882,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -50114,8 +50111,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -50225,178 +50220,168 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "form--inverted form--degreeLevel mb-4 mb-0-md",
-      attrs: { id: "majorForm-" + _vm.form.cardIndex }
-    },
-    [
+  return _c("form", { attrs: { id: "majorForm-" + _vm.form.cardIndex } }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
       !_vm.selectedFormWasSubmitted
-        ? _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+        ? _c("div", [
+            !_vm.selectedFormWasSubmitted
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "form-group",
+                    class: [
+                      this.formNotFilled
+                        ? "required-field"
+                        : "required-field--hidden"
+                    ]
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-exclamation-circle" }),
+                    _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "div",
-              {
-                class: [
-                  this.formNotFilled
-                    ? "required-field"
-                    : "required-field--hidden"
-                ]
-              },
+              { staticClass: "form-group" },
               [
-                _c("i", { staticClass: "fas fa-exclamation-circle" }),
-                _vm._v(" Please select a Campus and Major.\n            ")
-              ]
+                _c(
+                  "label",
+                  {
+                    style: [
+                      this.submittedOnce && !this.form.schoolId
+                        ? _vm.errorLabel
+                        : ""
+                    ],
+                    attrs: { for: "campus" }
+                  },
+                  [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
+                ),
+                _vm._v(" "),
+                _c("v-select", {
+                  staticClass: "csu-form-input-major",
+                  class: {
+                    "border-danger": this.submittedOnce && !this.form.schoolId
+                  },
+                  attrs: { label: "name", options: _vm.universities },
+                  on: {
+                    input: function($event) {
+                      _vm.updateSelect("schoolId", "id", $event)
+                    },
+                    change: function($event) {
+                      _vm.updateSelect("schoolId", "id", $event)
+                    }
+                  }
+                })
+              ],
+              1
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.schoolId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "campus" }
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                  _vm._v("Select a Discipline (Optional)")
+                ]),
+                _vm._v(" "),
+                _c("v-select", {
+                  staticClass: "csu-form-input",
+                  attrs: { label: "discipline", options: _vm.fieldOfStudies },
+                  on: {
+                    input: function($event) {
+                      _vm.updateSelect("fieldOfStudyId", "id", $event)
                     },
-                    [_vm._v("\n                    Select a Campus")]
-                  ),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input-major",
-                    class: {
-                      "border-danger": this.submittedOnce && !this.form.schoolId
-                    },
-                    attrs: { label: "name", options: _vm.universities },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("schoolId", "id", $event)
-                      }
+                    change: function($event) {
+                      _vm.updateSelect("fieldOfStudyId", "id", $event)
                     }
-                  })
-                ],
-                1
-              )
-            ]),
+                  }
+                })
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                    _vm._v("Select a Discipline (Optional)")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    staticClass: "csu-form-input",
-                    attrs: { label: "discipline", options: _vm.fieldOfStudies },
-                    on: {
-                      input: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      },
-                      change: function($event) {
-                        _vm.updateSelect("fieldOfStudyId", "id", $event)
-                      }
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "col col-12" },
-                [
-                  _c(
-                    "label",
-                    {
-                      style: [
-                        this.submittedOnce && !this.form.majorId
-                          ? _vm.errorLabel
-                          : ""
-                      ],
-                      attrs: { for: "Major" }
-                    },
-                    [_vm._v("\n                    Select a Major")]
-                  ),
-                  _vm._v(" "),
-                  this.form.fieldOfStudyId == null
-                    ? _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        class: {
-                          "border-danger":
-                            this.submittedOnce && !this.form.majorId
-                        },
-                        attrs: { label: "major", options: _vm.majors },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                    : _c("v-select", {
-                        staticClass: "csu-form-input-major",
-                        attrs: {
-                          label: "major",
-                          options: _vm.selectedMajorsByField
-                        },
-                        on: {
-                          input: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          },
-                          change: function($event) {
-                            _vm.updateSelect("majorId", "majorId", $event)
-                          }
-                        },
-                        model: {
-                          value: _vm.selected,
-                          callback: function($$v) {
-                            _vm.selected = $$v
-                          },
-                          expression: "selected"
-                        }
-                      })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row row--condensed" }, [
-              _c("div", { staticClass: "py-4" }, [
+            _c(
+              "div",
+              { staticClass: "form-group" },
+              [
                 _c(
-                  "button",
+                  "label",
                   {
-                    staticClass: "btn btn-success btn-submit",
-                    attrs: { type: "button" },
-                    on: { click: _vm.submitForm }
+                    style: [
+                      this.submittedOnce && !this.form.majorId
+                        ? _vm.errorLabel
+                        : ""
+                    ],
+                    attrs: { for: "Major" }
                   },
-                  [_vm._v("Submit")]
-                )
-              ])
+                  [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
+                ),
+                _vm._v(" "),
+                this.form.fieldOfStudyId == null
+                  ? _c("v-select", {
+                      staticClass: "csu-form-input-major",
+                      class: {
+                        "border-danger":
+                          this.submittedOnce && !this.form.majorId
+                      },
+                      attrs: { label: "major", options: _vm.majors },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.selected,
+                        callback: function($$v) {
+                          _vm.selected = $$v
+                        },
+                        expression: "selected"
+                      }
+                    })
+                  : _c("v-select", {
+                      staticClass: "csu-form-input-major",
+                      attrs: {
+                        label: "major",
+                        options: _vm.selectedMajorsByField
+                      },
+                      on: {
+                        input: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        },
+                        change: function($event) {
+                          _vm.updateSelect("majorId", "majorId", $event)
+                        }
+                      },
+                      model: {
+                        value: _vm.selected,
+                        callback: function($$v) {
+                          _vm.selected = $$v
+                        },
+                        expression: "selected"
+                      }
+                    })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success btn-submit",
+                  attrs: { type: "button" },
+                  on: { click: _vm.submitForm }
+                },
+                [_vm._v("Submit")]
+              )
             ])
           ])
-        : _c("div", [
+        : _c("div", { staticClass: "majorBtnWrapper" }, [
             _c(
               "p",
               {
@@ -50439,7 +50424,7 @@ var render = function() {
                       this.educationLevel(this.index) != "allDegrees"
                   }
                 }),
-                _vm._v("\n            All Levels")
+                _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
               ]
             ),
             _vm._v(" "),
@@ -50469,7 +50454,7 @@ var render = function() {
                       this.educationLevel(this.index) != "postBacc"
                   }
                 }),
-                _vm._v("\n            Post Bacc")
+                _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
               ]
             ),
             _vm._v(" "),
@@ -50499,7 +50484,7 @@ var render = function() {
                       this.educationLevel(this.index) != "bachelors"
                   }
                 }),
-                _vm._v("\n            Bachelors")
+                _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
               ]
             ),
             _vm._v(" "),
@@ -50529,12 +50514,12 @@ var render = function() {
                       this.educationLevel(this.index) != "someCollege"
                   }
                 }),
-                _vm._v("\n            Some College")
+                _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
               ]
             )
           ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50620,18 +50605,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         chartDimensions: function chartDimensions() {
             if (this.windowWidth >= 1001) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
                 return {
-                    height: 300,
-                    width: this.windowWidth - 200
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth - 200
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 };
             } else {
                 return {
-                    height: 400,
-                    width: this.windowWidth - 125
+                    height: 200,
+                    width: document.getElementById('majorCardHasIndex-0').clientWidth
                 };
             }
         },
@@ -50697,6 +50684,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         polar: function polar() {
             return {
+                title: {
+                    show: false
+                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -50709,7 +50699,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     nameTextStyle: {
                         padding: [10, 0, 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
                 legend: {
                     data: ['line']
@@ -50725,7 +50721,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
                 },
                 series: [{
                     type: 'line',
@@ -67551,6 +67553,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -67592,20 +67595,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         chartDimensions: function chartDimensions() {
             var currentWidth = window.innerWidth;
-            if (this.windowWidth >= 1001) {
+            if (this.windowWidth >= 768 && this.windowWidth < 992) {
                 return {
                     height: 400,
-                    width: this.windowWidth * .42
+                    width: 710
+                    // width: this.windowWidth / 1.75
                 };
-            } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
+            } else if (this.windowWidth >= 540 && this.windowWidth < 768) {
                 return {
                     height: 400,
-                    width: this.windowWidth - 200
+                    width: 490
                 };
             } else {
                 return {
                     height: 400,
-                    width: this.windowWidth - 125
+                    width: this.windowWidth - 48
+                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
                 };
             }
         },
@@ -67678,7 +67683,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 },
                 xAxis: {
-                    data: this.xAxis
+                    name: "Years Out of College",
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        padding: [10, 0, 0, 0]
+                    },
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
+                },
+                name: "Years Out of College",
+                nameLocation: 'middle',
+                nameTextStyle: {
+                    padding: [10, 0, 0, 0]
                 },
                 legend: {
                     data: ['line']
@@ -67694,7 +67715,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000
+                    max: 150000,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    }
                 },
                 series: [{
                     type: 'line',
@@ -67773,6 +67800,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticStyle: { width: "100%" } },
     [
       _vm.isMobile
         ? _c("majors-graph-mobile", {
@@ -68084,6 +68112,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -68137,27 +68167,29 @@ var render = function() {
         ])
       : _vm.educationLevel == "someCollege"
         ? _c("div", [
-            _c(
-              "h5",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center font-weight-bold pb-2"
-              },
-              [_vm._v("Percentile: ")]
-            ),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _vm._m(4),
-            _vm._v(" "),
-            _vm._m(5)
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c(
+                "h5",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "text-center font-weight-bold pb-2"
+                },
+                [_vm._v("Percentile: ")]
+              ),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5)
+            ])
           ])
         : _vm.educationLevel == "bachelors"
           ? _c("div", [
@@ -68344,229 +68376,215 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "col col-md-12",
+      staticClass: "row mb-3",
       attrs: { id: "majorCardHasIndex-" + this.index }
     },
     [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-md-3" },
-          [
-            _c(
-              "card",
-              { staticClass: "csu-card__form" },
-              [_c("major-form", { attrs: { index: _vm.index } })],
-              1
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-9" },
-          [
-            _c("card", { staticClass: "csu-card" }, [
-              _c("div", { staticClass: "container-fluid my-0" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-6" },
-                    [
-                      _vm.selectedFormWasSubmitted
-                        ? _c("social-sharing", {
-                            attrs: {
-                              url: "sandbox.csun.edu/metalab/test/csumetrola",
-                              title: this.shareDescription,
-                              description:
-                                "Discover Your Earnings After College.",
-                              quote: this.shareDescription,
-                              hashtags: "CalStatePays, ItPaysToGoToCollege"
-                            },
-                            inlineTemplate: {
-                              render: function() {
-                                var _vm = this
-                                var _h = _vm.$createElement
-                                var _c = _vm._self._c || _h
-                                return _c(
-                                  "div",
-                                  [
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-facebook",
-                                        attrs: { network: "facebook" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fab fa-facebook fa-2x"
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-linkedin",
-                                        attrs: { network: "linkedin" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fab fa-linkedin fa-2x"
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-twitter",
-                                        attrs: { network: "twitter" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "fab fa-twitter-square fa-2x"
-                                        })
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              },
-                              staticRenderFns: []
-                            }
-                          })
-                        : _vm._e()
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-6" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isNotFirstCard,
-                          expression: "isNotFirstCard"
-                        }
-                      ],
-                      staticClass: "fas fa-times btn-remove float-right",
-                      attrs: { title: "Close" },
-                      on: { click: _vm.removeCurrentCard }
-                    }),
-                    _vm._v(" "),
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isEmpty,
-                          expression: "isEmpty"
-                        }
-                      ],
-                      staticClass: "fas fa-sync-alt btn-reset float-right",
-                      attrs: { title: "Reset" },
-                      on: { click: _vm.resetCurrentCard }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "h3",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.selectedFormWasSubmitted,
-                          expression: "selectedFormWasSubmitted"
-                        }
-                      ],
-                      staticClass: "industry-title"
-                    },
-                    [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row mx-1 p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("major-graph-wrapper", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
+      _c(
+        "aside",
+        { staticClass: "col-md-3" },
+        [
+          _c("major-form", {
+            staticClass: "csu-card__form container-fluid",
+            attrs: { index: _vm.index }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-9" },
+        [
+          _c("card", { staticClass: "csu-card container-fluid py-3" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-6" },
+                [
+                  _vm.selectedFormWasSubmitted
+                    ? _c("social-sharing", {
                         attrs: {
-                          majorData: _vm.selectedMajorData,
-                          educationLevel: _vm.selectedEducationLevel,
-                          windowWidth: _vm.windowWidth
+                          url: "sandbox.csun.edu/metalab/test/csumetrola",
+                          title: this.shareDescription,
+                          description: "Discover Your Earnings After College.",
+                          quote: this.shareDescription,
+                          hashtags: "CalStatePays, ItPaysToGoToCollege"
+                        },
+                        inlineTemplate: {
+                          render: function() {
+                            var _vm = this
+                            var _h = _vm.$createElement
+                            var _c = _vm._self._c || _h
+                            return _c(
+                              "div",
+                              [
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-facebook",
+                                    attrs: { network: "facebook" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-facebook fa-2x"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-linkedin",
+                                    attrs: { network: "linkedin" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin fa-2x"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-twitter",
+                                    attrs: { network: "twitter" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-twitter-square fa-2x"
+                                    })
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          },
+                          staticRenderFns: []
                         }
                       })
-                    ],
-                    1
-                  )
-                ]),
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6" }, [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
+                    }
+                  ],
+                  staticClass: "fas fa-times btn-remove float-right",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
                 _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "mt-4" },
-                    [
-                      _c("industry-carousel", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
-                        ],
-                        attrs: { industries: _vm.selectedIndustries }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "h3",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "industry-title"
+                },
+                [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("major-graph-wrapper", {
+                    staticStyle: { height: "50vh" },
+                    attrs: {
+                      id: "majorGraphWrapperIndex-" + this.index,
+                      majorData: _vm.selectedMajorData,
+                      educationLevel: _vm.selectedEducationLevel,
+                      windowWidth: _vm.windowWidth
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("major-legend", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    attrs: { educationLevel: _vm.selectedEducationLevel }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row p-0" }, [
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("industry-carousel", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isEmpty,
+                        expression: "isEmpty"
+                      }
+                    ],
+                    attrs: { industries: _vm.selectedIndustries }
+                  })
+                ],
+                1
+              )
             ])
-          ],
-          1
-        )
-      ])
+          ])
+        ],
+        1
+      )
     ]
   )
 }
@@ -68649,6 +68667,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
 //
 //
 //
@@ -68939,122 +68961,142 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "col col-md-12",
+      staticClass: "row mb-3",
       attrs: { id: "majorCardHasIndex-" + this.index }
     },
     [
-      _c("card", { staticClass: "csu-card" }, [
-        _c("div", { staticClass: "container-fluid my-0 mt-2" }, [
-          _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "csu-card" }, [
+          _c("div", { staticClass: "container-fluid py-3" }, [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-6" },
+                [
+                  _vm.selectedFormWasSubmitted
+                    ? _c("social-sharing", {
+                        attrs: {
+                          networks: _vm.mobileNetworks,
+                          url: "sandbox.csun.edu/metalab/test/csumetrola",
+                          title: this.shareDescription,
+                          description: "Discover Your Earnings After College.",
+                          quote: this.shareDescription,
+                          hashtags: "CalStatePays, ItPaysToGoToCollege"
+                        },
+                        inlineTemplate: {
+                          render: function() {
+                            var _vm = this
+                            var _h = _vm.$createElement
+                            var _c = _vm._self._c || _h
+                            return _c(
+                              "div",
+                              [
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-facebook",
+                                    attrs: { network: "facebook-m" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-facebook fa-2x"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-linkedin",
+                                    attrs: { network: "linkedin-m" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin fa-2x"
+                                    })
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "network",
+                                  {
+                                    staticClass:
+                                      "csu-card__share csu-card__share-twitter",
+                                    attrs: { network: "twitter-m" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-twitter-square fa-2x"
+                                    })
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          },
+                          staticRenderFns: []
+                        }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6" }, [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
+                    }
+                  ],
+                  staticClass: "fas fa-times btn-remove float-right",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isEmpty,
+                      expression: "isEmpty"
+                    }
+                  ],
+                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "h3",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    staticClass: "industry-title"
+                  },
+                  [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+                )
+              ])
+            ]),
+            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "col" },
-              [
-                _vm.selectedFormWasSubmitted
-                  ? _c("social-sharing", {
-                      attrs: {
-                        networks: _vm.mobileNetworks,
-                        url: "sandbox.csun.edu/metalab/test/csumetrola",
-                        title: this.shareDescription,
-                        description: "Discover Your Earnings After College.",
-                        quote: this.shareDescription,
-                        hashtags: "CalStatePays, ItPaysToGoToCollege"
-                      },
-                      inlineTemplate: {
-                        render: function() {
-                          var _vm = this
-                          var _h = _vm.$createElement
-                          var _c = _vm._self._c || _h
-                          return _c(
-                            "div",
-                            [
-                              _c(
-                                "network",
-                                {
-                                  staticClass:
-                                    "csu-card__share csu-card__share-facebook",
-                                  attrs: { network: "facebook-m" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "fab fa-facebook fa-2x"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "network",
-                                {
-                                  staticClass:
-                                    "csu-card__share csu-card__share-linkedin",
-                                  attrs: { network: "linkedin-m" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "fab fa-linkedin fa-2x"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "network",
-                                {
-                                  staticClass:
-                                    "csu-card__share csu-card__share-twitter",
-                                  attrs: { network: "twitter-m" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "fab fa-twitter-square fa-2x"
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        },
-                        staticRenderFns: []
-                      }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "col" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isNotFirstCard,
-                    expression: "isNotFirstCard"
-                  }
-                ],
-                staticClass: "fas fa-times btn-remove float-right",
-                attrs: { title: "Close" },
-                on: { click: _vm.removeCurrentCard }
-              }),
-              _vm._v(" "),
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.isEmpty,
-                    expression: "isEmpty"
-                  }
-                ],
-                staticClass: "fas fa-sync-alt btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetCurrentCard }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "h3",
               {
                 directives: [
                   {
@@ -69064,106 +69106,84 @@ var render = function() {
                     expression: "selectedFormWasSubmitted"
                   }
                 ],
-                staticClass: "industry-title"
+                staticClass: "row",
+                staticStyle: { height: "400px" }
               },
-              [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.selectedFormWasSubmitted,
-                  expression: "selectedFormWasSubmitted"
-                }
-              ],
-              staticClass: "row m-1 p-0",
-              staticStyle: { height: "400px" }
-            },
-            [
+              [
+                _c(
+                  "div",
+                  { staticClass: "col-12" },
+                  [
+                    _c("major-graph-wrapper", {
+                      attrs: {
+                        majorData: _vm.selectedMajorData,
+                        educationLevel: _vm.selectedEducationLevel,
+                        windowWidth: _vm.windowWidth
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row justify-content-center" }, [
               _c(
                 "div",
-                { staticClass: "col p-0" },
+                { staticClass: "col-12" },
                 [
-                  _c("major-graph-wrapper", {
+                  _c("major-legend", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    attrs: { educationLevel: _vm.selectedEducationLevel }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [_c("major-form", { attrs: { index: _vm.index } })],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("industry-mobile", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
                     attrs: {
-                      majorData: _vm.selectedMajorData,
-                      educationLevel: _vm.selectedEducationLevel,
-                      windowWidth: _vm.windowWidth
+                      industries: _vm.selectedIndustries,
+                      majorId: _vm.selectedMajorId
                     }
                   })
                 ],
                 1
               )
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("major-form", {
-                  staticClass: "m-0",
-                  attrs: { index: _vm.index }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-3" }, [
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("industry-mobile", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  attrs: {
-                    industries: _vm.selectedIndustries,
-                    majorId: _vm.selectedMajorId
-                  }
-                })
-              ],
-              1
-            )
+            ])
           ])
         ])
       ])
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
@@ -69186,7 +69206,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -69218,38 +69237,47 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col", on: { scroll: _vm.handleScroll } },
+        {
+          staticClass: "graphContent",
+          attrs: { id: "majorCardWrapper" },
+          on: { scroll: _vm.handleScroll }
+        },
         [
-          _vm._l(_vm.desktopCards, function(majorCard, index) {
-            return _vm.isDesktop
-              ? _c("major-card", {
-                  key: index,
-                  staticClass: "my-2 card-item",
-                  attrs: { index: index, windowWidth: _vm.windowWidth }
-                })
-              : _vm._e()
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.mobileCards, function(majorCard, index) {
-            return _vm.isMobile
-              ? _c("major-card-mobile", {
-                  key: index,
-                  staticClass: "my-2",
-                  attrs: { index: index, windowWidth: _vm.windowWidth }
-                })
-              : _vm._e()
-          }),
-          _vm._v(" "),
-          _c("card-add", {
-            attrs: { id: "plus" },
-            on: {
-              cardPlusError: function($event) {
-                _vm.scrollToNextCard($event)
-              }
-            }
-          })
-        ],
-        2
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
+              _vm._l(_vm.desktopCards, function(majorCard, index) {
+                return _vm.isDesktop
+                  ? _c("major-card", {
+                      key: index,
+                      attrs: { index: index, windowWidth: _vm.windowWidth }
+                    })
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._l(_vm.mobileCards, function(majorCard, index) {
+                return _vm.isMobile
+                  ? _c("major-card-mobile", {
+                      key: index,
+                      attrs: { index: index, windowWidth: _vm.windowWidth }
+                    })
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _c("card-add", {
+                staticClass: "row",
+                attrs: { id: "plus" },
+                on: {
+                  cardPlusError: function($event) {
+                    _vm.scrollToNextCard($event)
+                  }
+                }
+              })
+            ],
+            2
+          )
+        ]
       )
     ],
     1
@@ -69326,6 +69354,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -69456,6 +69490,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -69509,11 +69545,23 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-2 industry-bar__percentage-text" },
-                  [_vm._v(_vm._s(industry.percentage) + "%")]
-                )
+                industry.percentage > 0
+                  ? _c(
+                      "div",
+                      { staticClass: "col-2 industry-bar__percentage-text" },
+                      [_vm._v(_vm._s(industry.percentage) + "%")]
+                    )
+                  : industry.percentage === null
+                    ? _c(
+                        "div",
+                        { staticClass: "col-2 industry-bar__percentage-text" },
+                        [_vm._v("0%")]
+                      )
+                    : _c(
+                        "div",
+                        { staticClass: "col-2 industry-bar__percentage-text" },
+                        [_vm._v("<1%")]
+                      )
               ]),
               _vm._v(" "),
               industry.industryWage == null
@@ -69708,8 +69756,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -69780,11 +69826,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    { staticClass: "form--inverted form--degreeLevel container mb-4 mb-0-md" },
-    [
-      _c("div", { staticClass: "form__group csu-card__form-sizing" }, [
+  return _c("form", { staticClass: "container-fluid csu-card__form" }, [
+    _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c("div", { staticClass: "form-group" }, [
         _c(
           "div",
           {
@@ -69794,109 +69838,101 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fas fa-exclamation-circle" }),
-            _vm._v(" Please select a Campus and Major.\n                ")
+            _vm._v(" Please select a Campus and Major.\n\t\t\t\t")
           ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed mt-3" }, [
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
           _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    !this.form.university && this.submittedOnce
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "campus" }
-                },
-                [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": !this.form.university && this.submittedOnce
-                },
-                attrs: { label: "name", options: _vm.universities },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("university", "id", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("university", "id", $event)
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed mt-3" }, [
-          _c(
-            "div",
-            { staticClass: "col col-12" },
-            [
-              _c(
-                "label",
-                {
-                  style: [
-                    !this.form.majorId && this.submittedOnce
-                      ? _vm.errorLabel
-                      : ""
-                  ],
-                  attrs: { for: "Major" }
-                },
-                [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
-              ),
-              _vm._v(" "),
-              _c("v-select", {
-                staticClass: "csu-form-input-major",
-                class: {
-                  "border-danger": !this.form.majorId && this.submittedOnce
-                },
-                attrs: { label: "major", options: _vm.majors },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("majorId", "majorId", $event)
-                  },
-                  change: function($event) {
-                    _vm.updateSelect("majorId", "majorId", $event)
-                  }
-                },
-                model: {
-                  value: _vm.selected,
-                  callback: function($$v) {
-                    _vm.selected = $$v
-                  },
-                  expression: "selected"
-                }
-              })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row row--condensed" }, [
-          _c("div", { staticClass: "py-4" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-success btn-submit",
-                attrs: { id: "submit-btn", type: "button" },
-                on: { click: _vm.submitForm }
+            "label",
+            {
+              style: [
+                !this.form.university && this.submittedOnce
+                  ? _vm.errorLabel
+                  : ""
+              ],
+              attrs: { for: "campus" }
+            },
+            [_vm._v("\n\t\t\t\t\tSelect a Campus\n\t\t\t\t")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": !this.form.university && this.submittedOnce
+            },
+            attrs: { label: "name", options: _vm.universities },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("university", "id", $event)
               },
-              [_vm._v("Submit")]
-            )
-          ])
-        ])
+              change: function($event) {
+                _vm.updateSelect("university", "id", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
+          _c(
+            "label",
+            {
+              style: [
+                !this.form.majorId && this.submittedOnce ? _vm.errorLabel : ""
+              ],
+              attrs: { for: "Major" }
+            },
+            [_vm._v("\n\t\t\t\t\tSelect a Major\n\t\t\t\t")]
+          ),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input-major",
+            class: {
+              "border-danger": !this.form.majorId && this.submittedOnce
+            },
+            attrs: { label: "major", options: _vm.majors },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("majorId", "majorId", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("majorId", "majorId", $event)
+              }
+            },
+            model: {
+              value: _vm.selected,
+              callback: function($$v) {
+                _vm.selected = $$v
+              },
+              expression: "selected"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group row" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success btn-submit",
+            attrs: { id: "submit-btn", type: "button" },
+            on: { click: _vm.submitForm }
+          },
+          [_vm._v("Submit")]
+        )
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -69918,7 +69954,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row wrapper graph-content card-padding" },
     [
       _c("csu-data-img-banner", [
         _c(
@@ -69948,23 +69983,29 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-3 col-xs-12" },
-        [_c("industry-form", { staticClass: "my-2 csu-card__form" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-9 col-xs-12 mb-5" },
-        [
-          _c("industry-progress", {
-            staticClass: "my-2 card-item industry-card"
-          })
-        ],
-        1
-      )
+      _c("div", { staticClass: "row graphContent" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "aside",
+              { staticClass: "col-lg-3 col-12" },
+              [_c("industry-form")],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-9 col-12" },
+              [
+                _c("industry-progress", {
+                  staticClass: "card-item industry-card"
+                })
+              ],
+              1
+            )
+          ])
+        ])
+      ])
     ],
     1
   )
@@ -70121,15 +70162,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -70141,328 +70173,259 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
+  return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "col col-md-9" },
+        { staticClass: "row justify-content-start align-items-center" },
         [
           _c(
-            "v-container",
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
             [
-              _c(
-                "v-layout",
-                { attrs: { row: "", wrap: "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", lg5: "", "mb-3": "" } },
-                    [
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v("I can not find my CSU.")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [
-                                _vm._v(
-                                  "How many students were followed-up in this study?"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v("Were all students found?")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v("I can not find my major.")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [
-                                _vm._v(
-                                  "I can not find an industry I’m interested in."
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v("Are lapses in employment included?")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v('What does "After Education Exit" mean?')]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { attrs: { xs12: "", lg5: "", "offset-lg2": "" } },
-                    [
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v('What does "Some College" mean?')]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v('What does "Data Not Available" mean?')]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [
-                                _vm._v(
-                                  "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [
-                                _vm._v(
-                                  "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [
-                                _vm._v(
-                                  "Are the earnings shown adjusted for inflation?"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v("Yes, they are adjusted to 2012 dollars.")
-                            ])
-                          ])
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        [
-                          _c("v-expansion-panel-content", [
-                            _c(
-                              "div",
-                              { attrs: { slot: "header" }, slot: "header" },
-                              [_vm._v("Where did the earnings data come from?")]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                              _vm._v(
-                                "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
-                              )
-                            ])
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find my CSU.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area."
                   )
-                ],
-                1
-              )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("How many students were followed-up in this study?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Were all students found?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "No. Only students who remained in California, and whose earnings were covered by Unemployment Insurance at 2, 5, and 10 years after education exit are included in the study. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed. Further, the study population was limited to students who, in any given period, had no more than two (2) consecutive quarters without reported earnings. You can view a copy of the All University Earnings Data report (.pdf), which includes the percentage of students found during the study."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find my major.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("I can not find an industry I’m interested in.")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Employment data are provided by industry, in keeping with 2-digit North American Industry Classification System (NAICS) classifications, rather than by occupation. Only industries employing a minimum number of students are reported."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Are lapses in employment included?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Yes. However, individuals who have more than two (2) consecutive quarters without earnings in a given time period are excluded from consideration."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "After Education Exit" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"After Education Exit" indicates that students were no longer enrolled in a college or university at the time of the study, regardless of whether they had completed a degree.'
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "Some College" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"Some College" indicates that a student attended the university in question, but has yet to complete a four-year degree anywhere.'
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v('What does "Data Not Available" mean?')
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    '"Data Not Available" indicates that we were not able to find any data for the major or industry at the time of the initial study.'
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v(
+                    "Do the Master’s Degree data include all Bachelor’s Degree recipients?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "No. The Master’s Degree data are confined to Bachelor’s Degree recipients who went on to pursue and complete a post-baccalaureate degree or certificate. Further, such degree recipients have been removed from the earnings data for the Bachelor’s Degree recipients."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v(
+                    "Why are the annual earnings data of Master’s Degree recipients in the same degree field lower than those shown for Some College and/or Bachelor's Degree recipients in some cases?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "When the number of students in any given subgroup is quite small, their average earnings can be misleading. As a result, they may appear to be lower than those of students with less advanced degrees."
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Are the earnings shown adjusted for inflation?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v("Yes, they are adjusted to 2012 dollars.")
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panel",
+            { staticClass: "col-12 col-lg-6 px-3", attrs: { popout: "" } },
+            [
+              _c("v-expansion-panel-content", [
+                _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                  _vm._v("Where did the earnings data come from?")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "p-sm-4 faq-panel" }, [
+                  _vm._v(
+                    "Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed."
+                  )
+                ])
+              ])
             ],
             1
           )
@@ -70477,15 +70440,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row banner faq-banner align-items-center" },
-      [
-        _c("h1", { staticClass: "pt-3 home__heading faq-header" }, [
-          _vm._v("Frequently Asked Questions")
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "banner faq-banner align-items-center" }, [
+      _c("h1", { staticClass: "pt-3 home__heading faq-header" }, [
+        _vm._v("Frequently Asked Questions")
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -70656,6 +70615,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -70676,133 +70643,135 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "header",
-      { staticClass: "row", attrs: { id: "research-main-banner" } },
-      [
-        _c("div", { staticClass: "col align-self-center" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
+  return _c("div", [
+    _c("header", { staticClass: "align-items-center researchMainBanner " }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
+                alt: "CSU Long Beach Seal"
+              }
+            }),
             _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
+            _c("figcaption", [_vm._v("Long Beach")])
           ]),
           _vm._v(" "),
-          _vm._m(1)
-        ])
-      ]
-    ),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/poly_seal.svg",
+                alt: "CSU Pomona Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Pomona")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
+                alt: "CSU Dominguez Hills Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Dominguez Hills")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/northridge_seal.svg",
+                alt: "CSU Northridge Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Northridge")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                alt: "CSU Channel Islands Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Channel Islands")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                alt: "CSU Fullerton Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Fullerton")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                alt: "CSU Los Angeles Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Los Angeles")])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]),
     _vm._v(" "),
-    _c("main", { staticClass: "container-fluid" }, [
-      _c(
-        "div",
-        { staticClass: "row justify-content-start justify-content-xl-center" },
-        [
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-            [
-              _c("router-link", { attrs: { to: "researchcsun" } }, [
-                _c("div", { staticClass: "campus", attrs: { id: "csun" } }, [
-                  _c("h3", [_vm._v("California State University Northridge")])
+    _c("main", [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "row justify-content-start justify-content-xl-center"
+          },
+          [
+            _vm._m(3),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
+              },
+              [
+                _c("router-link", { attrs: { to: "researchcsun" } }, [
+                  _c("div", { staticClass: "campus", attrs: { id: "csun" } }, [
+                    _c("h3", [_vm._v("California State University Northridge")])
+                  ])
                 ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _vm._m(5),
-          _vm._v(" "),
-          _vm._m(6),
-          _vm._v(" "),
-          _vm._m(7),
-          _vm._v(" "),
-          _vm._m(8),
-          _vm._v(" "),
-          _vm._m(9)
-        ]
-      )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _vm._m(8),
+            _vm._v(" "),
+            _vm._m(9)
+          ]
+        )
+      ])
     ])
   ])
 }
@@ -70812,10 +70781,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "text-center home__heading" }, [
-        _vm._v(
-          "\n                        We Gathered Data Across 7 CSUs in the Metro LA Area\n                    "
-        )
+      _c("div", { staticClass: "col-12" }, [
+        _c("h1", { staticClass: "text-center home__heading" }, [
+          _vm._v(
+            "\n                        We Gathered Data Across 7 CSUs in the Metro LA Area\n                    "
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("button", { staticClass: "btn btn-success" }, [
+          _vm._v("\n                    All Campuses\n                    ")
+        ])
       ])
     ])
   },
@@ -70824,18 +70807,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("button", { staticClass: "btn btn-success mb-3" }, [
-        _vm._v("\n    -                   All Campuses\n    -               ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [
-      _c("h3", { staticClass: "returnToCampusSelection" }, [
-        _vm._v("\n                    Select a CSU\n                ")
+      _c("div", { staticClass: "col-12" }, [
+        _c("h2", { staticClass: "returnToCampusSelection" }, [
+          _vm._v("\n                        Select a CSU\n                    ")
+        ])
       ])
     ])
   },
@@ -71112,6 +71087,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -71141,125 +71122,123 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "header",
-      { staticClass: "row", attrs: { id: "research-main-banner" } },
-      [
-        _c("div", { staticClass: "col align-self-center" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/long_beach_seal.svg",
-                  alt: "CSU Long Beach Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Long Beach")])
-            ]),
+  return _c("div", [
+    _c("header", { staticClass: "align-items-center researchMainBanner " }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
+                alt: "CSU Long Beach Seal"
+              }
+            }),
             _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/poly_seal.svg",
-                  alt: "CSU Pomona Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Pomona")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/dominguez_seal.svg",
-                  alt: "CSU Dominguez Hills Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Dominguez Hills")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/northridge_seal.svg",
-                  alt: "CSU Northridge Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Northridge")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/channel_islands_seal.svg",
-                  alt: "CSU Channel Islands Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Channel Islands")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/fulleton_seal.svg",
-                  alt: "CSU Fullerton Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Fullerton")])
-            ]),
-            _vm._v(" "),
-            _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: this.url + "/img/csuseals/los_angeles_seal.svg",
-                  alt: "CSU Los Angeles Seal"
-                }
-              }),
-              _vm._v(" "),
-              _c("figcaption", [_vm._v("Los Angeles")])
-            ])
+            _c("figcaption", [_vm._v("Long Beach")])
           ]),
           _vm._v(" "),
-          _vm._m(1)
-        ])
-      ]
-    ),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/poly_seal.svg",
+                alt: "CSU Pomona Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Pomona")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
+                alt: "CSU Dominguez Hills Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Dominguez Hills")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/northridge_seal.svg",
+                alt: "CSU Northridge Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Northridge")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                alt: "CSU Channel Islands Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Channel Islands")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                alt: "CSU Fullerton Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Fullerton")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                alt: "CSU Los Angeles Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Los Angeles")])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]),
     _vm._v(" "),
-    _c("main", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-11" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "returnToCampusSelection",
-                attrs: { to: "research" }
-              },
-              [
-                _c("h3", [
-                  _c("i", { staticClass: "fas fa-arrow-left" }),
-                  _vm._v(
-                    " Return to CSU Campus Selection\n                    "
-                  )
-                ])
-              ]
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(2)
+    _c("main", { staticClass: "row" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "returnToCampusSelection",
+                  attrs: { to: "research" }
+                },
+                [
+                  _c("h2", [
+                    _c("i", { staticClass: "fas fa-arrow-left" }),
+                    _vm._v(
+                      " Return to CSU Campus Selection\n                        "
+                    )
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
     ])
   ])
 }
@@ -71269,10 +71248,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "text-center home__heading" }, [
-        _vm._v(
-          "\n                    We Gathered Data Across 7 CSUs in the Metro LA Area\n                "
-        )
+      _c("div", { staticClass: "col-12" }, [
+        _c("h1", { staticClass: "text-center home__heading" }, [
+          _vm._v(
+            "\n                        We Gathered Data Across 7 CSUs in the Metro LA Area\n                    "
+          )
+        ])
       ])
     ])
   },
@@ -71280,9 +71261,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("button", { staticClass: "btn btn-success mb-3" }, [
-        _vm._v("\n-                   All Campuses\n-               ")
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("button", { staticClass: "btn btn-success" }, [
+          _vm._v("\n                    All Campuses\n                    ")
+        ])
       ])
     ])
   },
@@ -89330,7 +89313,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row d-md-flex" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           {
@@ -89684,12 +89667,7 @@ var render = function() {
     [
       _c("navigation"),
       _vm._v(" "),
-      _c(
-        "main",
-        { staticClass: "container-fluid no-gutters content-wrapper" },
-        [_c("router-view")],
-        1
-      ),
+      _c("main", { staticClass: "contentWrapper" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c("csu-footer")
     ],

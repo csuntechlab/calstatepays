@@ -7463,7 +7463,7 @@ button.bg-dark:focus {
   margin-right: 0 !important;
 }
 
-.mb-0,
+.mb-0, .CSUDataImgBanner__dataCopy,
 .my-0 {
   margin-bottom: 0 !important;
 }
@@ -7561,7 +7561,7 @@ button.bg-dark:focus {
   margin-right: 1.5rem !important;
 }
 
-.mb-4,
+.mb-4, .csu-card__form,
 .my-4 {
   margin-bottom: 1.5rem !important;
 }
@@ -7595,7 +7595,7 @@ button.bg-dark:focus {
   margin-left: 3rem !important;
 }
 
-.p-0, .CSUDataImgBanner__campusInfoWrapper, .CSUDataImgBanner__dataInfoWrapper {
+.p-0 {
   padding: 0 !important;
 }
 
@@ -7667,13 +7667,12 @@ button.bg-dark:focus {
   padding-left: 0.5rem !important;
 }
 
-.p-3 {
+.p-3, .campus, .not-avail {
   padding: 1rem !important;
 }
 
 .pt-3,
-.py-3,
-.CSUDataImgBanner {
+.py-3 {
   padding-top: 1rem !important;
 }
 
@@ -7683,8 +7682,7 @@ button.bg-dark:focus {
 }
 
 .pb-3,
-.py-3,
-.CSUDataImgBanner {
+.py-3 {
   padding-bottom: 1rem !important;
 }
 
@@ -7698,7 +7696,8 @@ button.bg-dark:focus {
 }
 
 .pt-4,
-.py-4 {
+.py-4,
+.csu-card__form {
   padding-top: 1.5rem !important;
 }
 
@@ -7708,7 +7707,8 @@ button.bg-dark:focus {
 }
 
 .pb-4,
-.py-4 {
+.py-4,
+.csu-card__form {
   padding-bottom: 1.5rem !important;
 }
 
@@ -7741,7 +7741,7 @@ button.bg-dark:focus {
   padding-left: 3rem !important;
 }
 
-.m-auto {
+.m-auto, .majorBtnWrapper {
   margin: auto !important;
 }
 
@@ -17633,7 +17633,7 @@ p {
   margin-right: 0 !important;
 }
 
-.mb-0 {
+.mb-0, .CSUDataImgBanner__dataCopy {
   margin-bottom: 0 !important;
 }
 
@@ -17856,7 +17856,7 @@ p {
   padding-right: 16px !important;
 }
 
-.py-3, .CSUDataImgBanner {
+.py-3 {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
@@ -17873,7 +17873,7 @@ p {
   margin-right: 24px !important;
 }
 
-.mb-4 {
+.mb-4, .csu-card__form {
   margin-bottom: 24px !important;
 }
 
@@ -17916,7 +17916,7 @@ p {
   padding-right: 24px !important;
 }
 
-.py-4 {
+.py-4, .csu-card__form {
   padding-top: 24px !important;
   padding-bottom: 24px !important;
 }
@@ -26977,23 +26977,23 @@ table.table tfoot tr td {
   }
 }
 
-.content-wrapper {
+.contentWrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4.7rem;
+  margin-top: 4.6rem;
 }
 
 @media screen and (max-width: 767px) {
-  .content-wrapper {
+  .contentWrapper {
     margin-top: 4rem;
   }
 }
 
-.graph-content {
+.graphContent {
   background-color: #EBEBEB;
 }
 
@@ -27017,18 +27017,15 @@ html {
 }
 
 .csu-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  min-height: 75vh;
   margin-bottom: 50px;
   min-height: 60vh;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  .csu-card {
+    min-height: unset;
+  }
 }
 
 .csu-card__share {
@@ -27055,7 +27052,6 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 50px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -27088,13 +27084,6 @@ html {
   margin-bottom: 0px;
   margin-top: 50px;
   padding-top: 50px;
-}
-
-.row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .text-gray {
@@ -27203,55 +27192,13 @@ add r
   padding: 8px;
 }
 
-.pfre-info::after {
-  content: " ";
-  position: absolute;
-  top: 10%;
-  left: -6px;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-right: 6px solid #EBEBEB;
-  border-bottom: 6px solid transparent;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
 .pfre-info--show {
   position: absolute;
   background: #EBEBEB;
   border-radius: 15px;
-  float: right;
   width: 18rem;
-  left: 1.9rem;
   padding: .5rem;
-  -ms-flex-item-align: center;
-      align-self: center;
-}
-
-.pfre-info--show::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: -6px;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-right: 6px solid #EBEBEB;
-  border-bottom: 6px solid transparent;
-}
-
-@media screen and (max-width: 1200px) {
-  .pfre-info--show::after {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .pfre-info--show {
-    position: static;
-    width: auto;
-  }
+  z-index: 2;
 }
 
 .info {
@@ -27265,16 +27212,12 @@ add r
 }
 
 .pfre-info__wrapper {
-  margin-bottom: 2rem;
-}
-
-.majors-header {
-  color: gray;
+  position: relative;
   font-weight: 600;
 }
 
 @media screen and (max-width: 479px) {
-  .majors-header {
+  .pfre-info__wrapper {
     font-size: 1.1rem;
   }
 }
@@ -27573,8 +27516,8 @@ figcaption {
 
 @media screen and (max-width: 767px) {
   .show {
-    /* 5 refer to the number of nav links*/
-    height: 20rem;
+    /* the number refer to the number of nav links*/
+    height: 16rem;
   }
 }
 
@@ -27628,7 +27571,6 @@ figcaption {
 .sub-nav {
   background: #FFF;
   font-weight: 600;
-  margin-bottom: 2rem;
 }
 
 .sub-nav__element {
@@ -27694,16 +27636,14 @@ footer, .footer {
   margin-bottom: 0rem;
 }
 
-#research-main-banner {
+.researchMainBanner {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80");
   background-size: cover;
-  min-height: 45vh;
-  padding: 0 1.5rem;
-  width: 100%;
+  min-height: 30vh;
 }
 
-#research-main-banner h2 {
+.researchMainBanner h2 {
   color: #000;
   font-size: 3.75rem;
   max-width: 64rem;
@@ -27726,7 +27666,6 @@ footer, .footer {
   text-transform: uppercase;
   border-radius: 5%;
   position: relative;
-  padding: 1.5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FFF;
@@ -27734,8 +27673,9 @@ footer, .footer {
 
 .campus h3, .not-avail h3 {
   position: absolute;
-  bottom: 1rem;
-  font-size: 1.3rem;
+  bottom: .5rem;
+  left: 1rem;
+  font-size: 1.25rem;
   line-height: 140%;
   font-weight: bold;
 }
@@ -28037,7 +27977,7 @@ textarea {
 }
 
 .btn-submit {
-  padding: 0 5rem;
+  padding: 0 4rem;
   font-size: 1.1rem;
   text-transform: none;
   font-weight: 500;
@@ -28236,12 +28176,13 @@ input[type="button"]:focus {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
+    margin-bottom: .5rem;
   }
   .major-btn_all:hover,
   .major-btn_postBacc:hover,
@@ -28257,22 +28198,28 @@ input[type="button"]:focus {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 45%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .major-btn_all,
   .major-btn_bachelors,
   .major-btn_postBacc,
   .major-btn_someCollege {
     width: 100%;
+    margin-bottom: .5rem;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .major-btn_all,
+  .major-btn_bachelors,
+  .major-btn_postBacc,
+  .major-btn_someCollege {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+}
+
+.majorBtnWrapper {
+  width: 80%;
 }
 
 .echarts {

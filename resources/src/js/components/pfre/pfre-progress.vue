@@ -1,15 +1,15 @@
 <template>
   <div class="progress-wrapper" id="progress-bars">
     <div class="row no-gutters my-3">
-      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
-        <div class="d-flex">
-          <span class="col-4 pr-0">
-            <p class="float-left font-weight-bold mb-0">Estimated time to degree:</p>
-          </span> 
-          <span class="col-6 pl-0">
+      <div class="col-12 col-lg-11 col-xl-10 align-self-center">
+        <div class="row no-gutters">
+          <span class="col-auto"> 
              <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
-          </span> 
-          <span class="col-1"><p class="float-right mb-0">{{pfreData.years.actual}}</p>
+          </span>
+          <span class="col col ">
+            <p class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')">Estimated time to degree:</p>
+          </span>  
+          <span class="col align-self-end"><p class="float-right mb-0">{{pfreData.years.actual}}</p>
           </span>
         </div>
         <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"></v-progress-linear>
@@ -27,16 +27,16 @@
       </div>
     </div>
     <div class="row no-gutters my-3">
-      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
-       <div class="d-flex">
-         <!-- make col-4  -->
-         <span class="col-xl-5 pr-0">
-           <p class="float-left font-weight-bold mb-0">Estimated Earnings 5 Years After Exit:</p>
-           </span> 
-        <span class="col-xl-6 pl-0">
+      <div class="col-12 col-lg-11 col-xl-10 align-self-center">
+       <div class="row no-gutters">
+        <span class="col-auto ">
              <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
         </span>
-        <span class="col-1">
+         <span class="col-8 ">
+           <p class="float-left font-weight-bold mb-0" @click="toggleInfo('earnings')">Estimated Earnings 5 Years After Exit:</p>
+           </span> 
+       
+        <span class="col align-self-end">
           <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
           </span>
     </div>
@@ -51,19 +51,20 @@
           <span class="col-4">
             <p class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>  
           </span>
-        </div> 
+        </div>  
       </div>
     </div>
     <div class="row no-gutters my-3">
-      <div class="col-12 col-lg-8 col-xl-9 align-self-center">
-       <div class="d-flex">
-         <span class="col-xl-5 pr-0">
-           <p class="float-left font-weight-bold mb-0">EFRE - Financial Return on Education: </p>
-        </span> 
-        <span class="col-xl-6 pl-0">
+      <div class="col-12 col-lg-11 col-xl-10 align-self-center">
+       <div class="row no-gutters">
+         
+        <span class="col-auto">
           <pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-        </span> 
-        <span class="col-1">
+        </span>
+        <span class="col-8">
+           <p class="float-left font-weight-bold mb-0" @click="toggleInfo('return')" >FRE - Financial Return on Education: </p>
+        </span>  
+        <span class="col align-self-end">
           <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
         </span>
       </div>
@@ -106,7 +107,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchFreData'
+      'fetchFreData',
+       'toggleInfo'
     ])
   },
   filters: { percentage, currency },

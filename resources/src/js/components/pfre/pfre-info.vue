@@ -5,8 +5,8 @@
         <i class="fas fa-info-circle"></i>
       </button>
     </div>
-    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
-      <slot></slot>
+    <div @click="toggleInfo(infoKey);" v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
+      <slot ></slot>
     </div>
 
   </div>
