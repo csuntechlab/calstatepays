@@ -50,10 +50,10 @@ class MajorService implements MajorContract
                                 }])
                                 ->where('id', $fieldOfStudyId)
                                 ->first();
-        if ($fieldOfStudy == null){
+        if ( empty($fieldOfStudy) ){
             return [];
         }
-        else if ( $fieldOfStudy->hegisCategory == null ){
+        else if ( empty($fieldOfStudy->hegisCategory) ){
             return [];
         }
         
