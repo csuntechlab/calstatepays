@@ -109,7 +109,6 @@ add r
 }
 
 .pfre-info--show {
-<<<<<<< HEAD
     position: absolute;
     background: $light-gray;
     border-radius: 15px;
@@ -118,25 +117,6 @@ add r
     left: 1.9rem;
     padding: .5rem;
     align-self: center;
-=======
-        position: absolute;
-    
-        background: #EBEBEB;
-        border-radius: 15px;
-        /* float: right; */
-        width: 18rem;
-        left: 1.9rem;
-        padding: .5rem;
-        top: -2rem;
-    
-    // position: absolute;
-    // background: $light-gray;
-    // border-radius: 15px;
-    // float: right;
-    // width: 10rem;
-    // left: .9rem;
-    // padding: .5rem;
->>>>>>> dev
 
   &::after {
     content: " ";
@@ -175,22 +155,7 @@ add r
 }
 
 .pfre-info__wrapper{
-<<<<<<< HEAD
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    display: flex;
-    
-    position: relative;
-    @media screen and (max-width: 1200px){
-        flex-direction: column;
-        text-align:center;
-        margin: 0;
-        display: flex;
-        position: relative;
-    }
-=======
     margin-bottom: 2rem ;
->>>>>>> dev
 }
 
 .majors-header{

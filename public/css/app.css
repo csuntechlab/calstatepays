@@ -12057,7 +12057,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -17765,9 +17766,7 @@ p {
   margin-right: 8px !important;
 }
 
-
-.my-2,
-.returnToCampusSelection {
+.my-2, .returnToCampusSelection {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
@@ -17857,9 +17856,7 @@ p {
   padding-right: 16px !important;
 }
 
-
-.py-3,
-.CSUDataImgBanner {
+.py-3, .CSUDataImgBanner {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
@@ -27224,20 +27221,12 @@ add r
   position: absolute;
   background: #EBEBEB;
   border-radius: 15px;
-<<<<<<< HEAD
   float: right;
   width: 18rem;
   left: 1.9rem;
   padding: .5rem;
   -ms-flex-item-align: center;
       align-self: center;
-=======
-  /* float: right; */
-  width: 18rem;
-  left: 1.9rem;
-  padding: .5rem;
-  top: -2rem;
->>>>>>> dev
 }
 
 .pfre-info--show::after {
@@ -27276,31 +27265,7 @@ add r
 }
 
 .pfre-info__wrapper {
-<<<<<<< HEAD
-  margin-top: 1rem;
   margin-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-@media screen and (max-width: 1200px) {
-  .pfre-info__wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-  }
-=======
-  margin-bottom: 2rem;
->>>>>>> dev
 }
 
 .majors-header {
@@ -27558,6 +27523,20 @@ figcaption {
     height: 40vh;
     min-height: 400px;
   }
+}
+
+.campus-modal {
+  color: black;
+}
+
+.campus-modal button {
+  width: auto;
+}
+
+.campus-modal img {
+  max-height: 10rem;
+  text-align: center;
+  width: 6rem;
 }
 
 .site-header {
