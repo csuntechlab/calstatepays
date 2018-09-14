@@ -78,9 +78,9 @@ export default {
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
+        state.majorCards[index].formWasSubmitted = false;
         state.majorCards[index].majorsByField=[];
         state.majorCards[index].industries=[];
         state.majorCards[index].majorData = [];
-        state.majorCards[index].formWasSubmitted = false;
     },
 }

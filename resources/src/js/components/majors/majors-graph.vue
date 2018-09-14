@@ -53,26 +53,13 @@ export default {
             }
         },
         chartDimensions(){
-            if(this.windowWidth >= 1001) {
+            if(this.windowWidth >= 1000) {
                 return {
                     height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
                     // width: this.windowWidth * .7
                     width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
                
-            }
-            else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
-                return {
-                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
-                    // width: this.windowWidth - 200
-                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
-                }
-            }
-            else {
-              return {
-                    height: 200,
-                    width: document.getElementById('majorCardHasIndex-0').clientWidth
-                }  
             }
         },
         toolTipTitles1(){
@@ -137,12 +124,8 @@ export default {
                 }
             return color
         },
-
         polar(){
             return {
-                title: {
-                    show: false
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {

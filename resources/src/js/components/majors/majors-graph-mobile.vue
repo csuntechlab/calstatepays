@@ -42,7 +42,7 @@ export default {
         },
         chartDimensions(){
             let currentWidth = window.innerWidth;
-            if(this.windowWidth >= 768 && this.windowWidth < 992) {
+            if(this.windowWidth >= 768 && this.windowWidth < 1000) {
                 return {
                     height: 400,
                     width: 710
