@@ -95791,7 +95791,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 	methods: {
 		toggleShowNav: function toggleShowNav() {
-			console.log('hi it is me');
 			var showCheck = document.getElementById("nav-list");
 			if (showCheck.classList.contains("show")) {
 				var navItem = document.getElementById("nav-list");
