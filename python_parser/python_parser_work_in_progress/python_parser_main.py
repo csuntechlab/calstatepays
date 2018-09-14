@@ -76,10 +76,7 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
-    #   print(universityMajorsDataFrame)
-    
-      print(MajorsPathsDataFrame)
-      print(MajorsPathWageDataFrame)
+        
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
