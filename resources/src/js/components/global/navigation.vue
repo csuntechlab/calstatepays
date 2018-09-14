@@ -22,7 +22,7 @@
                                     </router-link>
                                 </li>
                                 <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" :to="{ path: '/data/' + selectedDataPage }">
+                                    <router-link class="nav-link" :class="dataTabHighlight()" :to="{ path: '/data/' + selectedDataPage }">
                                         Data
                                     </router-link>
                                 </li>
@@ -74,7 +74,11 @@ export default {
 				navIcon.classList.add("fa-times");
 				document.getElementById("nav-overlay").style.display = "block";
 			}
-		}
+        },
+        dataTabHighlight() {
+            if(this.$route.path == '/data/majors' || this.$route.path == '/data/industries' || this.$route.path == '/data/pfre')
+                return 'hr-nav'
+        }
     },
     computed: {
         ...mapGetters(['selectedDataPage']),
