@@ -47824,7 +47824,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.setDataPage("industries");
             } else if (URL.includes("pfre")) {
                 this.setDataPage("pfre");
-                console.log("found pfre");
             }
         }
     })
