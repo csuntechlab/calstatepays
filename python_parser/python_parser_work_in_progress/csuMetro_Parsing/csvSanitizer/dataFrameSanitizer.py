@@ -17,26 +17,9 @@ class Data_Frame_Sanitizer:
         self.file = file
         localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv( localFilePath)
-        # self.df.info()
-        # print(self.df)
         self.sanitize_null_values()
-        # self.print_column_headers()
         self.header_sanitizer()
-        # self.print_column_headers()
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
-        # print(self.df.keys())
-        # print(self.df)
-
-
-        # here we create the updated csv with the correct sanitizations
-        # this data goes to sanitized_industries folder
-        # we should probabily read these files which i swapped into csv directory
-        # the caution is we'll be sanitizing it again, so maybe we can talk about this 
-        # friday?
-        # if "major" not in self.file: 
-        #     name = self.file.replace("_updated_industry","")
-        #     name = self.file.replace("_industry","")
-        #     self.df.to_csv('sanitized_industries/'+name+'_industry.csv',index=False)
         pass
     
     def sanitize_null_values(self):

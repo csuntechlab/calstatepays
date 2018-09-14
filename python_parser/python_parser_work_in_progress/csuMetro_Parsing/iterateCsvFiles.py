@@ -93,8 +93,7 @@ class IterateCsvFiles():
         # fileName = csv.replace("_industry","")
         fileName = csv.replace("_updated_industry","")
 
-        industrySanitize = Sanitize_Industry(csv)
-        industryDataFrame = industrySanitize.sanitize_Industry()         
+        industrySanitize = Sanitize_Industry(csv)      
         # get Table equiv Data Frames
         industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.get_Industry_Data_Frame()
 
