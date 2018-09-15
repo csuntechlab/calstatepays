@@ -90,7 +90,7 @@ class IterateCsvFiles():
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
-    def create_industry_naics_data_frame(self,industryCsvFiles):
+    def create_industry_naics_data_frame_and_create_dictionary(self,industryCsvFiles):
       '''
       loop through the csvs only extracting a for industry and appending it the previous data frame
       '''
@@ -99,30 +99,19 @@ class IterateCsvFiles():
         naicsObj = create_naics_dataFrame(csv)
         naicsDF = naicsObj.getDataFrame()
         masterNaicsDataFrame = masterNaicsDataFrame.append( naicsDF , ignore_index=True)
-        
-        pass
-      
+
       masterNaicsDataFrame = masterNaicsDataFrame.drop_duplicates(subset=['industry'], keep='first')
 
       masterNaicsDataFrame.loc[:,'id'] = range(1, len(masterNaicsDataFrame) + 1)
-      print("****")
 
-      masterNaicsDataFrame = naicsObj.getImages(masterNaicsDataFrame)
+      masterNaicsDataFrame,naicsDictionary = naicsObj.getImages(masterNaicsDataFrame)
       
-      # return masterNaicsDataFrame
+      self.json_output('master_naics_titles',masterNaicsDataFrame)
 
-      # create image here
-
-      # create json method and call it
-      # return dictionary 
-      return 0
-      # 
-
-
+      return naicsDictionary
 
     def master_industry_csv_to_json(self,industryCsvFiles):
-      naicsDataFrame = self.create_industry_naics_data_frame(industryCsvFiles)
-      print(naicsDataFrame)
+      naicsDictionary = self.create_industry_naics_data_frame_and_create_dictionary(industryCsvFiles)
 
       # for csv in industryCsvFiles:
       #   # fileName = csv.replace("_industry","")
@@ -155,3 +144,11 @@ class IterateCsvFiles():
       #   del industryPathTypesDf
       #   del industryPathWagesDf
       #   del naics_titlesDf
+    
+
+    def json_output(self,fileName, df):
+      output = df.to_dict(orient='record')
+
+      with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
+        fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+      fp.close()
