@@ -46534,6 +46534,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -46639,6 +46642,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -46655,7 +46659,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		csuSelector: __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default.a,
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a
-	}
+	},
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
@@ -47299,7 +47304,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/majors" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/majors" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("majors")
+                    }
+                  }
+                },
                 [
                   _c("button", { staticClass: "home-btn home-btn__majors" }, [
                     _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
@@ -47324,7 +47337,12 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "button-link",
-                  attrs: { to: "/data/industries" }
+                  attrs: { to: "/data/industries" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("industries")
+                    }
+                  }
                 },
                 [
                   _c("button", { staticClass: "home-btn home-btn__degrees" }, [
@@ -47350,7 +47368,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/pfre" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/pfre" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("pfre")
+                    }
+                  }
+                },
                 [
                   _c("button", { staticClass: "home-btn home-btn__pfre" }, [
                     _vm._v(
