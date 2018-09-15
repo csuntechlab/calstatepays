@@ -38,7 +38,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     
     print( majorsCsvFiles )
 
-    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
     print( industryCsvFiles )
 
@@ -47,7 +47,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     # when danny gives us new csv
 
     # updateIndustry = remove_row_of_industry(industryCsvFiles)
-    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     # remove_temp_industry_file(updateIndustry)
     
 if __name__ == "__main__": main()

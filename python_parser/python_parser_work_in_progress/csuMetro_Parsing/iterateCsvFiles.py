@@ -10,7 +10,7 @@ from csuMetro_Parsing.JsonBuilder import JsonMajor
 from csuMetro_Parsing.JsonBuilder import JsonIndustry
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
 
-from csuMetroParsing.naicsdataFrameMaker import create_naics_dataFrame
+from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
 
 # from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitizer
 # from csuMetro_Parsing.csvSanitizer.majorSanitizer import Sanitize_Major
@@ -101,47 +101,57 @@ class IterateCsvFiles():
         masterNaicsDataFrame = masterNaicsDataFrame.append( naicsDF , ignore_index=True)
         
         pass
-      # remove dups x
-      # USE THIS :  MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1) 
-
-      # yes but this is a migration 
-
-      return 
       
+      masterNaicsDataFrame = masterNaicsDataFrame.drop_duplicates(subset=['industry'], keep='first')
+
+      masterNaicsDataFrame.loc[:,'id'] = range(1, len(masterNaicsDataFrame) + 1)
+      print("****")
+
+      masterNaicsDataFrame = naicsObj.getImages(masterNaicsDataFrame)
+      
+      # return masterNaicsDataFrame
+
+      # create image here
+
+      # create json method and call it
+      # return dictionary 
+      return 0
+      # 
 
 
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       naicsDataFrame = self.create_industry_naics_data_frame(industryCsvFiles)
+      print(naicsDataFrame)
 
-      for csv in industryCsvFiles:
-        # fileName = csv.replace("_industry","")
-        fileName = csv.replace("_updated_industry","")
+      # for csv in industryCsvFiles:
+      #   # fileName = csv.replace("_industry","")
+      #   fileName = csv.replace("_updated_industry","")
 
-        industrySanitize = Sanitize_Industry(csv)      
-        # get Table equiv Data Frames
-        industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.get_Industry_Data_Frame()
+      #   industrySanitize = Sanitize_Industry(csv)      
+      #   # get Table equiv Data Frames
+      #   industryPathTypesDf,industryPathWagesDf,naics_titlesDf = industrySanitize.get_Industry_Data_Frame()
 
 
 
-        # init json Industry
-        jsonIndustry = JsonIndustry(fileName)
-        #update Industry PathTypes
-        industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
+      #   # init json Industry
+      #   jsonIndustry = JsonIndustry(fileName)
+      #   #update Industry PathTypes
+      #   industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
 
-        print(industryPathTypesDf)
-        print(industryPathTypesDf.keys())
+      #   print(industryPathTypesDf)
+      #   print(industryPathTypesDf.keys())
         
-        # JSon Outputs 
-        jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
-        jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
-        jsonIndustry.jsonOutput(fileName+"_naics_titles",naics_titlesDf)
-        jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
-        jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
-        jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
+      #   # JSon Outputs 
+      #   jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
+      #   jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
+      #   jsonIndustry.jsonOutput(fileName+"_naics_titles",naics_titlesDf)
+      #   jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
+      #   jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
+      #   jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
 
-        del industrySanitize
-        del industryDataFrame
-        del industryPathTypesDf
-        del industryPathWagesDf
-        del naics_titlesDf
+      #   del industrySanitize
+      #   # del industryDataFrame
+      #   del industryPathTypesDf
+      #   del industryPathWagesDf
+      #   del naics_titlesDf
