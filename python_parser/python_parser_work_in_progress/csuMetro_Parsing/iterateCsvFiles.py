@@ -10,6 +10,8 @@ from csuMetro_Parsing.JsonBuilder import JsonMajor
 from csuMetro_Parsing.JsonBuilder import JsonIndustry
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
 
+from csuMetroParsing.naicsdataFrameMaker import create_naics_dataFrame
+
 # from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitizer
 # from csuMetro_Parsing.csvSanitizer.majorSanitizer import Sanitize_Major
 # from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
@@ -51,8 +53,8 @@ class IterateCsvFiles():
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
 
 
-# csvSanitizer.majorSanitizer = Sanitize_Major
-# csvSanitizer.industrySanitizer = Sanitize_Major
+        # csvSanitizer.majorSanitizer = Sanitize_Major
+        # csvSanitizer.industrySanitizer = Sanitize_Major
         universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
 
         # majorDataFrame csvSanitizer.majorSanitizer majorSanitize.sanitize_Major
@@ -81,14 +83,37 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
-    #   print(universityMajorsDataFrame)
+     #   print(universityMajorsDataFrame)
     
       print(MajorsPathsDataFrame)
       print(MajorsPathWageDataFrame)
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
+    def create_industry_naics_data_frame(self,industryCsvFiles):
+      '''
+      loop through the csvs only extracting a for industry and appending it the previous data frame
+      '''
+      masterNaicsDataFrame = pd.DataFrame()
+      for csv in industryCsvFiles:
+        naicsObj = create_naics_dataFrame(csv)
+        naicsDF = naicsObj.getDataFrame()
+        masterNaicsDataFrame = masterNaicsDataFrame.append( naicsDF , ignore_index=True)
+        
+        pass
+      # remove dups x
+      # USE THIS :  MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1) 
+
+      # yes but this is a migration 
+
+      return 
+      
+
+
+
     def master_industry_csv_to_json(self,industryCsvFiles):
+      naicsDataFrame = self.create_industry_naics_data_frame(industryCsvFiles)
+
       for csv in industryCsvFiles:
         # fileName = csv.replace("_industry","")
         fileName = csv.replace("_updated_industry","")
