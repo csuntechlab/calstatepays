@@ -34,39 +34,21 @@ class Master_Industry_Page_Data_Seeder extends Seeder
             $naics->save();
         }
         
-        $industry_path_wages = glob('database/data/*_industry_path_wages.json');   
-        foreach ($industry_path_wages as $industry_path_wage)
+        $json = File::get('database/data/master_industry_industry_path.json');
+        $industry_path = json_decode($json);
+        foreach($industry_path as $row)
         {
-            $json = File::get($industry_path_wage);
-            $data = json_decode($json);
-
-            foreach($data as $row)
-            {
-                $industryWage = new IndustryWage();
-                $industryWage->id  = $row->id;
-                $industryWage->avg_annual_wage_5 = $row->avg_annual_wage_5;  
-                $industryWage->save();
-            }          
-        }
-
-        $industry_paths = glob('database/data/*_industry_path.json');
-        foreach ($industry_paths as $industry_path)
-        {
-            $json = File::get($industry_path);
-            $data = json_decode($json);
-
-            foreach($data as $row)
-            {
-                $industryPathType = new IndustryPathType();
-                $industryPathType->id  = $industryPathType->id;
-                $industryPathType->entry_status = $row->entry_status;
-                $industryPathType->naics_code = $row->naics_codes;
-                $industryPathType->student_path = $row->student_path;
-                $industryPathType->population_sample_id = 0;
-                $industryPathType->university_majors_id = $row->university_majors_id;
-                $industryPathType->save();
-            }         
-        }
+            $industryPathType = new IndustryPathType();
+            $industryPathType->id  = $industryPathType->id;
+            $industryPathType->entry_status = $row->entry_status;
+            $industryPathType->naics_code = $row->naics_codes;
+            $industryPathType->student_path = $row->student_path;
+            $industryPathType->population_sample_id = 0;
+            $industryPathType->university_majors_id = $row->university_majors_id;
+            $industryPathType->save();
+        }         
+    }
+}
 
         // $json = File::get("database/data/master_industry_page_data.json");
         // $data = json_decode($json);
@@ -115,5 +97,50 @@ class Master_Industry_Page_Data_Seeder extends Seeder
 
         //     }
         // }
-    }
-}
+
+
+
+// GRAVEYARD
+
+// foreach($data as $row)
+// {
+//     $naics = new NaicsTitle();
+//     $naics->naics_code = $row->id;
+//     $naics->naics_title = $row->industry;
+//     $naics->image = $row->image;
+//     $naics->save();
+// }
+
+// $industry_path_wages = glob('database/data/*_industry_path_wages.json');   
+// foreach ($industry_path_wages as $industry_path_wage)
+// {
+//     $json = File::get($industry_path_wage);
+//     $data = json_decode($json);
+
+//     foreach($data as $row)
+//     {
+//         $industryWage = new IndustryWage();
+//         $industryWage->id  = $row->id;
+//         $industryWage->avg_annual_wage_5 = $row->avg_annual_wage_5;  
+//         $industryWage->save();
+//     }          
+// }
+
+// $industry_paths = glob('database/data/*_industry_path.json');
+// foreach ($industry_paths as $industry_path)
+// {
+//     $json = File::get($industry_path);
+//     $data = json_decode($json);
+
+//     foreach($data as $row)
+//     {
+//         $industryPathType = new IndustryPathType();
+//         $industryPathType->id  = $industryPathType->id;
+//         $industryPathType->entry_status = $row->entry_status;
+//         $industryPathType->naics_code = $row->naics_codes;
+//         $industryPathType->student_path = $row->student_path;
+//         $industryPathType->population_sample_id = 0;
+//         $industryPathType->university_majors_id = $row->university_majors_id;
+//         $industryPathType->save();
+//     }         
+// }
