@@ -1,8 +1,8 @@
 [
     {
-        "naics_codes": 14,
-        "naics_industry": "Professional, Scientific, & Technical Skills",
-        "images": "professional_scientific_technical_skills.png"
+        "naics_codes": 1,
+        "naics_industry": "Construction",
+        "images": "construction.png"
     },
     {
         "naics_codes": 2,
@@ -30,39 +30,9 @@
         "images": "wages_-_no_naics_code.png"
     },
     {
-        "naics_codes": 10,
-        "naics_industry": "Retail Trade",
-        "images": "retail_trade.png"
-    },
-    {
-        "naics_codes": 13,
-        "naics_industry": "Real Estate & Rental & Leasing",
-        "images": "real_estate_rental_leasing.png"
-    },
-    {
-        "naics_codes": 21,
-        "naics_industry": "Other Services",
-        "images": "other_services.png"
-    },
-    {
-        "naics_codes": 20,
-        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
-        "images": "agriculture_forestry_fishing_hunting.png"
-    },
-    {
-        "naics_codes": 23,
-        "naics_industry": "Mining",
-        "images": "mining.png"
-    },
-    {
         "naics_codes": 7,
         "naics_industry": "Utilities",
         "images": "utilities.png"
-    },
-    {
-        "naics_codes": 1,
-        "naics_industry": "Construction",
-        "images": "construction.png"
     },
     {
         "naics_codes": 8,
@@ -75,14 +45,14 @@
         "images": "wholesale_trade.png"
     },
     {
+        "naics_codes": 10,
+        "naics_industry": "Retail Trade",
+        "images": "retail_trade.png"
+    },
+    {
         "naics_codes": 11,
         "naics_industry": "Transportation & Warehousing",
         "images": "transportation_warehousing.png"
-    },
-    {
-        "naics_codes": 18,
-        "naics_industry": "Information",
-        "images": "information.png"
     },
     {
         "naics_codes": 12,
@@ -90,9 +60,14 @@
         "images": "finance_insurance.png"
     },
     {
-        "naics_codes": 19,
-        "naics_industry": "Management of Companies & Enterprises",
-        "images": "management_of_companies_enterprises.png"
+        "naics_codes": 13,
+        "naics_industry": "Real Estate & Rental & Leasing",
+        "images": "real_estate_rental_leasing.png"
+    },
+    {
+        "naics_codes": 14,
+        "naics_industry": "Professional, Scientific, & Technical Skills",
+        "images": "professional_scientific_technical_skills.png"
     },
     {
         "naics_codes": 15,
@@ -110,8 +85,33 @@
         "images": "accommodation_food_services.png"
     },
     {
+        "naics_codes": 18,
+        "naics_industry": "Information",
+        "images": "information.png"
+    },
+    {
+        "naics_codes": 19,
+        "naics_industry": "Management of Companies & Enterprises",
+        "images": "management_of_companies_enterprises.png"
+    },
+    {
+        "naics_codes": 20,
+        "naics_industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "images": "agriculture_forestry_fishing_hunting.png"
+    },
+    {
+        "naics_codes": 21,
+        "naics_industry": "Other Services",
+        "images": "other_services.png"
+    },
+    {
         "naics_codes": 22,
         "naics_industry": "Non-Classified",
         "images": "non-classified.png"
+    },
+    {
+        "naics_codes": 23,
+        "naics_industry": "Mining",
+        "images": "mining.png"
     }
 ]

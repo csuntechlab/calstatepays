@@ -61,6 +61,7 @@ class JsonIndustry:
       if(json_data[i]["avg_annual_wage_5"]!=None):
         json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
             
+    # do we need to worry about avg annual 10 year?
 
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
