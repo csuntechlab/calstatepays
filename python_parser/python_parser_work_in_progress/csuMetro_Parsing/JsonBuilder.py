@@ -29,7 +29,6 @@ class JsonIndustry:
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
-
     
     for index,row in industryPathTypesDf.iterrows():
       hegis = (str)(row[4])
