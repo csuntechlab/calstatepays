@@ -46,12 +46,12 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         industryPathTypes['hegis_at_exit'] = self.df[['hegis_at_exit']]
         industryPathTypes['campus'] = self.df[['campus']]
         industryPathTypes = industryPathTypes.loc[industryPathTypes['student_path'].isin([1,2,4])]
+        industryPathTypes['population_id'] = 0
 
         industryPathWages = self.df.loc[:,['average_annual_earnings_5_years_after_exit']]
         industryPathWages = industryPathWages.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         industryPathWages.loc[:,'id'] = range(1, len(industryPathWages) + 1)
 
-        # i dont remember why we had naics slice, it doesnt exist in the csvs as a header
         naics_titles = self.df[['naics','industry']]
         naics_titles = naics_titles.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         naics_titles = naics_titles.drop_duplicates(subset=['naics_codes'], keep='first')
