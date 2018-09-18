@@ -78,8 +78,8 @@ class IterateCsvFiles():
         del majorPathWageDf
      #   print(universityMajorsDataFrame)
     
-      print(MajorsPathsDataFrame)
-      print(MajorsPathWageDataFrame)
+      # print(MajorsPathsDataFrame)
+      # print(MajorsPathWageDataFrame)
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
@@ -122,6 +122,7 @@ class IterateCsvFiles():
 
       print(industryMasterHelper.create_master_dict())
 
+      # **** TODO: good till here fix this 
       fileName = 'master_industry'
 
       # init json Industry
@@ -129,8 +130,8 @@ class IterateCsvFiles():
       #update Industry PathTypes
       industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
 
-      print(industryPathTypesDf)
-      print(industryPathTypesDf.keys())
+      # print(industryPathTypesDf)
+      # print(industryPathTypesDf.keys())
       
       # JSon Outputs 
       jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)

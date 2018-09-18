@@ -24,6 +24,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
             pd.Series(column).map(mapper)
 
     def create_industry_with_df(self,naics_dict):
+        # TODO: REMOVE NAICS ROWS WITH NO WAGES (OR OR ) Wages - No NAICS Code!!!!!!!!!
         self.df['naics'] = 0
         for idx, row in self.df.iterrows():
             self.df.at[idx,'naics'] = naics_dict.get(self.df.at[idx,'industry'])
@@ -56,8 +57,8 @@ class DFHelper():
         print(path)
     
         dictFiles = [csvFile for csvFile in listdir(path) 
-                    if isfile(join(path, csvFile)) 
-                    if '_Dictionary.json' in csvFile]
+                    if isfile(join(path, csvFile)) ]
+
         return dictFiles
 
     def create_master_dict(self):
@@ -65,15 +66,20 @@ class DFHelper():
         masterDict = {}
         import json
 
+        print("*************")
+
         # concatenate dicts
         for dictFile in dictFiles:
             with open(os.getcwd() + '/dictionaries/'+dictFile) as f:
                 data = json.load(f)
                 masterDict = {**masterDict, **data}
 
-        with open (os.getcwd() + '/dictionaries/master_industry_Dictionary.json', 'w' ) as fp:
+        with open ('./master_industry_Dictionary.json', 'w' ) as fp:
             fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
         fp.close()
+
+        # print(os.getcwd())
+
         return masterDict
 
 

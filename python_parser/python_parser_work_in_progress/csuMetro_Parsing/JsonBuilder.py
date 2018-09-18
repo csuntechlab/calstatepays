@@ -10,9 +10,12 @@ class JsonIndustry:
     self.dictionary = self.getDictionary(file+"_Dictionary") 
 
   def getDictionary(self,fileName):
-    jsonFile = open('./dictionaries/'+fileName+'.json')
+    print(fileName)
+    jsonFile = open('./'+fileName+'.json')
     dictionary = jsonFile.read()
     dictionary = json.loads(dictionary)
+
+    print(dictionary)
 
     return dictionary
   
@@ -30,7 +33,9 @@ class JsonIndustry:
     
     industryPathTypesDf['university_majors_id'] = -1
 
-    print(industryPathTypesDf)
+    # print(industryPathTypesDf)
+
+    print(self.dictionary)
     
     for index,row in industryPathTypesDf.iterrows():
       # print("***********")
@@ -145,6 +150,8 @@ class JsonMajor:
     del output
     
     dictionary  = {campusId:hegisDictionary}
+
+    print(self.file)
     
     with open('./dictionaries/'+self.file+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
