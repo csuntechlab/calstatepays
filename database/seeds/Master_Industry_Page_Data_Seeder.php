@@ -29,7 +29,7 @@ class Master_Industry_Page_Data_Seeder extends Seeder
             $industryPathType->entry_status = $row->entry_status;
             $industryPathType->naics_code = $row->naics_codes;
             $industryPathType->student_path = $row->student_path;
-            $industryPathType->population_sample_id = 0;
+            $industryPathType->population_sample_id = $row->population_sample_id;
             $industryPathType->university_majors_id = $row->university_majors_id;
             $industryPathType->save();
         }         

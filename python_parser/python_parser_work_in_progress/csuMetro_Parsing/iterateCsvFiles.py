@@ -110,7 +110,7 @@ class IterateCsvFiles():
       industryMasterHelper = DFHelper(masterIndustry)
       # get Table equiv Data Frames
       
-      industryPathTypesDf,industryPathWagesDf = industryMasterHelper.get_Industry_Data_Frame()
+      industryPathTypesDf,industryPathWagesDf,populationTable = industryMasterHelper.get_Industry_Data_Frame()
 
       industryMasterHelper.create_master_dict()
       fileName = 'master_industry'
@@ -123,6 +123,7 @@ class IterateCsvFiles():
       # JSon Outputs 
       jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
       jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
+      jsonIndustry.jsonOutput(fileName+"_population",populationTable)
       
       jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
       jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
