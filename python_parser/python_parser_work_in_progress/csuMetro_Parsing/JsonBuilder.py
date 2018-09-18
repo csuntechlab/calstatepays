@@ -29,10 +29,23 @@ class JsonIndustry:
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
+
+    print(industryPathTypesDf)
     
     for index,row in industryPathTypesDf.iterrows():
-      hegis = (str)(row[4])
-      campus = (str)(row[5])
+      # print("***********")
+      # print(row[0]) # entry status
+      # print(row[1]) # naics_codes
+      # print(row[2]) # industry
+      # print(row[3]) # student path
+      # print(row[4]) # hegis
+      # print(row[5]) # campus
+      # print(row[6]) # id
+      # print(row[7]) # population id
+      # print(row[8]) # university majors id 
+      # print("************")
+      hegis = (str)(row.hegis_at_exit)
+      campus = (str)(row.campus)
       uni_majors_id = self.dictionary[campus][hegis]
       industryPathTypesDf.ix[index,'university_majors_id'] = uni_majors_id
 
@@ -117,10 +130,6 @@ class JsonMajor:
 
     universityMajorsId = []
 
-    # universityMajorsIdDf = pd.Data_Frame_Sanitizer(columns=self.col)
-
-    # universityMajorsIdDf = pd.Data_Frame_Sanitizer()
-
     for row in output:
       hegis =  int(row['hegis_at_exit'])
       hegisDictionary[hegis] = self.indexUniversityMajorsId
@@ -134,19 +143,12 @@ class JsonMajor:
       
       self.indexUniversityMajorsId +=1
     del output
-
-    # print(df)
     
     dictionary  = {campusId:hegisDictionary}
-    
     
     with open('./dictionaries/'+self.file+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
-
-    # with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
-    #     fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    # fp.close() 
 
     return dictionary
     

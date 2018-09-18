@@ -1,117 +1,117 @@
 [
     {
-        "industry": "Construction",
         "id": 1,
-        "image": "/images/industry/construction.png"
+        "image": "/images/industry/agriculture_forestry_fishing_hunting.png",
+        "industry": "Agriculture, Forestry, Fishing, & Hunting"
     },
     {
-        "industry": "Educational Services",
         "id": 2,
-        "image": "/images/industry/educational_services.png"
+        "image": "/images/industry/utilities.png",
+        "industry": "Utilities"
     },
     {
-        "industry": "Health Care & Social Assistance",
         "id": 3,
-        "image": "/images/industry/health_care_social_assistance.png"
+        "image": "/images/industry/construction.png",
+        "industry": "Construction"
     },
     {
-        "industry": "Government",
         "id": 4,
-        "image": "/images/industry/government.png"
+        "image": "/images/industry/manufacturing.png",
+        "industry": "Manufacturing"
     },
     {
-        "industry": "No Wages",
         "id": 5,
-        "image": "/images/industry/no_wages.png"
+        "image": "/images/industry/wholesale_trade.png",
+        "industry": "Wholesale Trade"
     },
     {
-        "industry": "Wages - No NAICS Code",
         "id": 6,
-        "image": "/images/industry/wages_-_no_naics_code.png"
+        "image": "/images/industry/retail_trade.png",
+        "industry": "Retail Trade"
     },
     {
-        "industry": "Utilities",
         "id": 7,
-        "image": "/images/industry/utilities.png"
+        "image": "/images/industry/transportation_warehousing.png",
+        "industry": "Transportation & Warehousing"
     },
     {
-        "industry": "Manufacturing",
         "id": 8,
-        "image": "/images/industry/manufacturing.png"
+        "image": "/images/industry/information.png",
+        "industry": "Information"
     },
     {
-        "industry": "Wholesale Trade",
         "id": 9,
-        "image": "/images/industry/wholesale_trade.png"
+        "image": "/images/industry/finance_insurance.png",
+        "industry": "Finance & Insurance"
     },
     {
-        "industry": "Retail Trade",
         "id": 10,
-        "image": "/images/industry/retail_trade.png"
+        "image": "/images/industry/real_estate_rental_leasing.png",
+        "industry": "Real Estate & Rental & Leasing"
     },
     {
-        "industry": "Transportation & Warehousing",
         "id": 11,
-        "image": "/images/industry/transportation_warehousing.png"
+        "image": "/images/industry/professional_scientific_technical_skills.png",
+        "industry": "Professional, Scientific, & Technical Skills"
     },
     {
-        "industry": "Finance & Insurance",
         "id": 12,
-        "image": "/images/industry/finance_insurance.png"
+        "image": "/images/industry/admin_support_waste_mgmt_remediation.png",
+        "industry": "Admin & Support & Waste Mgmt & Remediation"
     },
     {
-        "industry": "Real Estate & Rental & Leasing",
         "id": 13,
-        "image": "/images/industry/real_estate_rental_leasing.png"
+        "image": "/images/industry/educational_services.png",
+        "industry": "Educational Services"
     },
     {
-        "industry": "Professional, Scientific, & Technical Skills",
         "id": 14,
-        "image": "/images/industry/professional_scientific_technical_skills.png"
+        "image": "/images/industry/health_care_social_assistance.png",
+        "industry": "Health Care & Social Assistance"
     },
     {
-        "industry": "Admin & Support & Waste Mgmt & Remediation",
         "id": 15,
-        "image": "/images/industry/admin_support_waste_mgmt_remediation.png"
+        "image": "/images/industry/arts_entertainment_recreation.png",
+        "industry": "Arts, Entertainment, & Recreation"
     },
     {
-        "industry": "Arts, Entertainment, & Recreation",
         "id": 16,
-        "image": "/images/industry/arts_entertainment_recreation.png"
+        "image": "/images/industry/accommodation_food_services.png",
+        "industry": "Accommodation & Food Services"
     },
     {
-        "industry": "Accommodation & Food Services",
         "id": 17,
-        "image": "/images/industry/accommodation_food_services.png"
+        "image": "/images/industry/other_services.png",
+        "industry": "Other Services"
     },
     {
-        "industry": "Information",
         "id": 18,
-        "image": "/images/industry/information.png"
+        "image": "/images/industry/government.png",
+        "industry": "Government"
     },
     {
-        "industry": "Management of Companies & Enterprises",
         "id": 19,
-        "image": "/images/industry/management_of_companies_enterprises.png"
+        "image": "/images/industry/no_wages.png",
+        "industry": "No Wages"
     },
     {
-        "industry": "Agriculture, Forestry, Fishing, & Hunting",
         "id": 20,
-        "image": "/images/industry/agriculture_forestry_fishing_hunting.png"
+        "image": "/images/industry/wages_-_no_naics_code.png",
+        "industry": "Wages - No NAICS Code"
     },
     {
-        "industry": "Other Services",
         "id": 21,
-        "image": "/images/industry/other_services.png"
+        "image": "/images/industry/management_of_companies_enterprises.png",
+        "industry": "Management of Companies & Enterprises"
     },
     {
-        "industry": "Non-Classified",
         "id": 22,
-        "image": "/images/industry/non-classified.png"
+        "image": "/images/industry/non-classified.png",
+        "industry": "Non-Classified"
     },
     {
-        "industry": "Mining",
         "id": 23,
-        "image": "/images/industry/mining.png"
+        "image": "/images/industry/mining.png",
+        "industry": "Mining"
     }
 ]
