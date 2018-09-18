@@ -50,7 +50,7 @@ class DFHelper():
         industryPathTypes['campus'] = self.df[['campus']]
         industryPathTypes['population_id'] = 0
         
-        industryPathWages = self.df.loc[:,['avg_annual_wage_5','id','population_found_5']]
+        industryPathWages = self.df.loc[:,['avg_annual_wage_5','id']]
         
         return industryPathTypes,industryPathWages
 
