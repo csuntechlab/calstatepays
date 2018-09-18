@@ -27,7 +27,10 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         # TODO: REMOVE NAICS ROWS WITH NO WAGES (OR OR ) Wages - No NAICS Code!!!!!!!!!
         self.df['naics'] = 0
         for idx, row in self.df.iterrows():
-            self.df.at[idx,'naics'] = naics_dict.get(self.df.at[idx,'industry'])
+            temp = naics_dict.get(self.df.at[idx,'industry'])
+            self.df.at[idx,'naics'] = temp
+            if temp == 19 or temp == 20:
+                self.df = self.df.drop(idx)
     
     def returnDf(self):
         return self.df
@@ -38,6 +41,21 @@ class DFHelper():
         Dataframe = Dataframe.loc[Dataframe['student_path'].isin([1,2,4])]
         Dataframe = Dataframe.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         Dataframe = Dataframe.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
+        Dataframe = Dataframe.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})
+        # campus
+        # location
+        # student_path
+        # entry_status
+        # hegis_at_exit
+        # major
+        # industry
+        # number_of_students_found_5_years_after_exit
+        # median_annual_earnings_5_years_after_exit
+        # average_annual_earnings_5_years_after_exit
+        # number_of_students_found_10_years_after_exit
+        # median_annual_earnings_10_years_after_exit
+        # average_annual_earnings_10_years_after_exit
+
         self.df = Dataframe
         # print(self.df.columns)
 
@@ -47,7 +65,7 @@ class DFHelper():
         industryPathTypes['campus'] = self.df[['campus']]
         industryPathTypes['population_id'] = 0
         
-        industryPathWages = self.df.loc[:,['avg_annual_wage_5','id']]
+        industryPathWages = self.df.loc[:,['avg_annual_wage_5','id','population_found_5']]
         
         return industryPathTypes,industryPathWages
 
@@ -74,8 +92,6 @@ class DFHelper():
         with open ('./master_industry_Dictionary.json', 'w' ) as fp:
             fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
         fp.close()
-
-        # print(os.getcwd())
 
         return masterDict
 

@@ -38,8 +38,7 @@ class IterateCsvFiles():
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
       indexMajorPathId = 1  
-      # universityMajorsList = []
-      col = ["hegis_codes" ,"university_id" ,"major","id"]
+      
       universityMajorsDataFrame = pd.DataFrame()
       MajorsPathsDataFrame = pd.DataFrame()
       MajorsPathWageDataFrame = pd.DataFrame()
@@ -62,10 +61,6 @@ class IterateCsvFiles():
 
         indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
-        # jsonMajor.jsonOutput(fileName+"_majors_path",majorPathDf)
-        # jsonMajor.jsonOutput(fileName+"_majors_path_wages",majorPathWageDf)
-        # jsonMajor.jsonSanitize(fileName+"_majors_path_wages")
-
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
 
         universityMajorsDataFrame = universityMajorIdDf
@@ -76,10 +71,7 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
-     #   print(universityMajorsDataFrame)
-    
-      # print(MajorsPathsDataFrame)
-      # print(MajorsPathWageDataFrame)
+
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
 
@@ -121,16 +113,12 @@ class IterateCsvFiles():
       industryPathTypesDf,industryPathWagesDf = industryMasterHelper.get_Industry_Data_Frame()
 
       industryMasterHelper.create_master_dict()
-      # **** TODO: good till here fix this 
       fileName = 'master_industry'
 
       # init json Industry
       jsonIndustry = JsonIndustry(fileName)
       #update Industry PathTypes
       industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
-
-      # print(industryPathTypesDf)
-      # print(industryPathTypesDf.keys())
       
       # JSon Outputs 
       jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
@@ -139,13 +127,6 @@ class IterateCsvFiles():
       jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
       jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
       jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
-
-      #   del industrySanitize
-      #   # del industryDataFrame
-      #   del industryPathTypesDf
-      #   del industryPathWagesDf
-      #   del naics_titlesDf
-    
 
     def json_output(self,fileName, df):
       output = df.to_dict(orient='record')
