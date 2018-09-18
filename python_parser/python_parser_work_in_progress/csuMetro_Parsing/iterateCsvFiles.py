@@ -120,8 +120,7 @@ class IterateCsvFiles():
       
       industryPathTypesDf,industryPathWagesDf = industryMasterHelper.get_Industry_Data_Frame()
 
-      print(industryMasterHelper.create_master_dict())
-
+      industryMasterHelper.create_master_dict()
       # **** TODO: good till here fix this 
       fileName = 'master_industry'
 

@@ -38,7 +38,7 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     
     print( majorsCsvFiles )
 
-    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
     print( industryCsvFiles )
 

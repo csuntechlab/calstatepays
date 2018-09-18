@@ -39,7 +39,7 @@ class DFHelper():
         Dataframe = Dataframe.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         Dataframe = Dataframe.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         self.df = Dataframe
-        print(self.df.columns)
+        # print(self.df.columns)
 
     def get_Industry_Data_Frame(self):
         industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','campus','id']]
@@ -54,7 +54,6 @@ class DFHelper():
     def get_dict(self):
         dictionary = []
         path = os.getcwd() + '/dictionaries'
-        print(path)
     
         dictFiles = [csvFile for csvFile in listdir(path) 
                     if isfile(join(path, csvFile)) ]
@@ -65,8 +64,6 @@ class DFHelper():
         dictFiles = self.get_dict()
         masterDict = {}
         import json
-
-        print("*************")
 
         # concatenate dicts
         for dictFile in dictFiles:
