@@ -42,22 +42,7 @@ class DFHelper():
         Dataframe = Dataframe.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         Dataframe = Dataframe.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         Dataframe = Dataframe.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})
-        # campus
-        # location
-        # student_path
-        # entry_status
-        # hegis_at_exit
-        # major
-        # industry
-        # number_of_students_found_5_years_after_exit
-        # median_annual_earnings_5_years_after_exit
-        # average_annual_earnings_5_years_after_exit
-        # number_of_students_found_10_years_after_exit
-        # median_annual_earnings_10_years_after_exit
-        # average_annual_earnings_10_years_after_exit
-
         self.df = Dataframe
-        # print(self.df.columns)
 
     def get_Industry_Data_Frame(self):
         industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','campus','id']]

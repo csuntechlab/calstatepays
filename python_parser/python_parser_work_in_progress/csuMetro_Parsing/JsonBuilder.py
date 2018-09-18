@@ -10,12 +10,9 @@ class JsonIndustry:
     self.dictionary = self.getDictionary(file+"_Dictionary") 
 
   def getDictionary(self,fileName):
-    # print(fileName)
     jsonFile = open('./'+fileName+'.json')
     dictionary = jsonFile.read()
     dictionary = json.loads(dictionary)
-
-    # print(dictionary)
 
     return dictionary
   
@@ -27,24 +24,11 @@ class JsonIndustry:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
-
-  
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
     
     for index,row in industryPathTypesDf.iterrows():
-      # print("***********")
-      # print(row[0]) # entry status
-      # print(row[1]) # naics_codes
-      # print(row[2]) # industry
-      # print(row[3]) # student path
-      # print(row[4]) # hegis
-      # print(row[5]) # campus
-      # print(row[6]) # id
-      # print(row[7]) # population id
-      # print(row[8]) # university majors id 
-      # print("************")
       hegis = (str)(row.hegis_at_exit)
       campus = (str)(row.campus)
       uni_majors_id = self.dictionary[campus][hegis]

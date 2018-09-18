@@ -75,8 +75,6 @@ class hegisID:
       
       if(True):
         json_data[i]["major_path_id"] = int(json_data[i]["major_path_id"])
-        
-       
 
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
