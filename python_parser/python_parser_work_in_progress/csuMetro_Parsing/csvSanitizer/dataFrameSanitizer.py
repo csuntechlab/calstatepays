@@ -88,6 +88,7 @@ class Data_Frame_Sanitizer:
 
     ### These are the common sanitizations that both jsons require
     def sanitizeCommon(self):
+        self.df['hegis_at_exit'] = self.df['hegis_at_exit'].astype(str)
         self.column_sanitize_plus('hegis_at_exit')
         self.column_sanitize_get_first_5('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
@@ -97,4 +98,15 @@ class Data_Frame_Sanitizer:
         self.remove_dollar(columnName)
         self.remove_comma(columnName)
         self.string_number_to_real_number(columnName)
+    
+    def renameNewCsvs(self):
+        # for industries...
+        self.df = self.df.rename(columns={'median_annual_earnings':'median_annual_earnings_5_years_after_exit', 'average_annual_earnings': 'average_annual_earnings_5_years_after_exit'})
+        self.df = self.df.rename(columns={'median_annual_earnings.1':'median_annual_earnings_10_years_after_exit', 'average_annual_earnings.1': 'average_annual_earnings_10_years_after_exit'})
+        self.df = self.df.rename(columns={'number_of_students_found.1':'number_of_students_found_10_years_after_exit', 'number_of_students_found': 'number_of_students_found_5_years_after_exit'})
+        print('updated')
+        print(self.df.columns)
+
+
+
 

@@ -103,7 +103,6 @@ class IterateCsvFiles():
       for csv in industryCsvFiles:
         fileName = csv.replace("_industry","")
         industrySanitize = Sanitize_Industry(csv)
-
         industrySanitize.create_industry_with_df(naicsDictionary)
         masterIndustry = masterIndustry.append( industrySanitize.returnDf() , ignore_index=True)
 

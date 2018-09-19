@@ -10,9 +10,11 @@ from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitize
 class Sanitize_Industry(Data_Frame_Sanitizer):
     def __init__(self,file):
         super().__init__(file)
+        self.renameNewCsvs()
         self.sanitizeCommon()
         self.sanitize_Industry()
-    
+        self.header_sanitizer()
+
     def sanitize_Industry(self):
         mapper = {
             'median_annual_earnings_5_years_after_exit':self.dollar_column('median_annual_earnings_5_years_after_exit'),
