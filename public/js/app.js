@@ -49759,8 +49759,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -49813,10 +49811,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			if (!this.selectedMajorData.postbacc) return 'Discover your earnings after college!';else if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
 		nullValues: function nullValues() {
-			if (this.selectedEducationLevel != 'allDegrees' && this.selectedMajorData) return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;else return false;
+			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;else return false;
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
@@ -49831,7 +49829,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				var dollarAmount = input.toString();
 				var hundreds = dollarAmount.substr(-3, 3);
 				var thousands = dollarAmount.slice(0, -3);
-				return '$' + thousands + ',' + hundreds;
+				return "$" + thousands + "," + hundreds;
 			}
 		}
 	}),
@@ -68227,7 +68225,7 @@ var render = function() {
                 "div",
                 { staticClass: "col-6" },
                 [
-                  _vm.selectedFormWasSubmitted
+                  _vm.selectedFormWasSubmitted && !_vm.nullValues
                     ? _c("social-sharing", {
                         attrs: {
                           url: "sandbox.csun.edu/metalab/test/csumetrola",
@@ -68356,12 +68354,16 @@ var render = function() {
                     value: _vm.selectedFormWasSubmitted && _vm.nullValues,
                     expression: "selectedFormWasSubmitted && nullValues"
                   }
-                ]
+                ],
+                staticClass: "row"
               },
               [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12 text-center" }, [
-                    _c("h3", [_vm._v("No Data Available")])
+                _c("div", { staticClass: "text-center" }, [
+                  _c("h3", [
+                    _c("i", {
+                      staticClass: "fas fa-exclamation-circle required-field"
+                    }),
+                    _vm._v(" No data available for selected degree level")
                   ])
                 ])
               ]
@@ -68418,30 +68420,30 @@ var render = function() {
                     ],
                     1
                   )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "mt-4" },
-                    [
-                      _c("industry-carousel", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
-                        ],
-                        attrs: { industries: _vm.selectedIndustries }
-                      })
-                    ],
-                    1
-                  )
                 ])
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row p-0" }, [
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("industry-carousel", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isEmpty,
+                        expression: "isEmpty"
+                      }
+                    ],
+                    attrs: { industries: _vm.selectedIndustries }
+                  })
+                ],
+                1
+              )
+            ])
           ])
         ],
         1
@@ -68595,8 +68597,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -68665,7 +68665,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			if (this.selectedEducationLevel == "allDegrees" && this.selectedMajorData.bachelors) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + " five years after graduating!";else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == "someCollege") return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after dropping out of college!";else if (this.selectedMajorData[this.selectedEducationLevel]) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after graduating with a " + this.selectedEducationLevel + " degree!";else return "Discover your earnings after college!";
+			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
 		nullValues: function nullValues() {
 			if (this.selectedEducationLevel != 'allDegrees') return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;else return false;
@@ -69065,44 +69065,29 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.nullValues,
-                    expression: "!nullValues"
-                  }
-                ]
-              },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-12" },
-                    [
-                      _c("industry-mobile", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: {
-                          industries: _vm.selectedIndustries,
-                          majorId: _vm.selectedMajorId
-                        }
-                      })
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-12" },
+                [
+                  _c("industry-mobile", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
                     ],
-                    1
-                  )
-                ])
-              ]
-            )
+                    attrs: {
+                      industries: _vm.selectedIndustries,
+                      majorId: _vm.selectedMajorId
+                    }
+                  })
+                ],
+                1
+              )
+            ])
           ])
         ])
       ])
@@ -69115,7 +69100,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "col-12 text-center" }, [
         _c("h3", [_vm._v("No Data Available")])
       ])
     ])

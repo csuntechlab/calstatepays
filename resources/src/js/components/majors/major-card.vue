@@ -7,7 +7,7 @@
 			<card class="csu-card container-fluid py-3">
 				<div class="row">
 					<div class="col-6">
-						<social-sharing v-if="selectedFormWasSubmitted" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription"
+						<social-sharing v-if="selectedFormWasSubmitted && !nullValues" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription"
 						 description="Discover Your Earnings After College." :quote="this.shareDescription" hashtags="CalStatePays, ItPaysToGoToCollege"
 						 inline-template>
 							<div>
@@ -31,13 +31,11 @@
 				<div class="row">
 					<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
 				</div>
-				<div v-show="selectedFormWasSubmitted && nullValues">
-					<div class="row">
-						<div class="col-12 text-center">
-							<h3>No Data Available</h3>
+					<div v-show="selectedFormWasSubmitted && nullValues" class="row">
+						<div class="text-center">
+							<h3><i class="fas fa-exclamation-circle required-field"/> No data available for selected degree level</h3>
 						</div>
 					</div>
-				</div>
 				<div v-show="!nullValues">
 					<div class="row">
 						<div class="col-12">
@@ -50,10 +48,10 @@
 							<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
 						</div>
 					</div>
-					<div class="row p-0">
-						<div class="mt-4">
-							<industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
-						</div>
+				</div>
+				<div class="row p-0">
+					<div class="mt-4">
+						<industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
 					</div>
 				</div>
 			</card>
@@ -61,105 +59,105 @@
 	</div>
 </template>
 <script>
-	import majorForm from "./major-form.vue";
-	import card from "../global/card";
-	import majorsGraph from "./majors-graph.vue";
-	import majorGraphWrapper from "./major-graph-wrapper.vue";
-	import industryCarousel from "../industries/industry-carousel.vue";
-	import majorLegend from "./major-legend.vue";
+import majorForm from "./major-form.vue";
+import card from "../global/card";
+import majorsGraph from "./majors-graph.vue";
+import majorGraphWrapper from "./major-graph-wrapper.vue";
+import industryCarousel from "../industries/industry-carousel.vue";
+import majorLegend from "./major-legend.vue";
 
-	import { updateForm } from "../../utils/index";
-	import { mapGetters, mapActions } from "vuex";
+import { updateForm } from "../../utils/index";
+import { mapGetters, mapActions } from "vuex";
 
-	export default {
-		props: ["index", "windowWidth"],
-		data() {
-			return {
-				major: this.majorNameById
-			};
-		},
-		computed: {
-			...mapGetters([
-				"industries",
-				"majorData",
-				"educationLevel",
-				"formWasSubmitted",
-				"majorNameById"
-			]),
-			isEmpty() {
-				//Check whether the form field was fired off, toggle carousel on
-				if (
-					this.industries(this.index).length === 0 ||
-					!this.selectedFormWasSubmitted
-				) {
-					return false;
-				}
-				return true;
-			},
-			isNotFirstCard() {
-				if (this.index >= 1) {
-					return true;
-				}
+export default {
+	props: ["index", "windowWidth"],
+	data() {
+		return {
+			major: this.majorNameById
+		};
+	},
+	computed: {
+		...mapGetters([
+			"industries",
+			"majorData",
+			"educationLevel",
+			"formWasSubmitted",
+			"majorNameById"
+		]),
+		isEmpty() {
+			//Check whether the form field was fired off, toggle carousel on
+			if (
+				this.industries(this.index).length === 0 ||
+				!this.selectedFormWasSubmitted
+			) {
 				return false;
-			},
-			selectedMajorData() {
-				return this.majorData(this.index);
-			},
-			selectedIndustries() {
-				return this.industries(this.index);
-			},
-			selectedEducationLevel() {
-				return this.educationLevel(this.index);
-			},
-			selectedFormWasSubmitted() {
-				return this.formWasSubmitted(this.index);
-			},
-			selectedMajorTitle() {
-				if (this.selectedMajorData.length != 0) {
-					let currentMajor = this.selectedMajorData.majorId;
-					return this.majorNameById(currentMajor);
-				}
-			},
-			shareDescription() {
-				if (!this.selectedMajorData.postbacc)
-					return 'Discover your earnings after college!'
-				else if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors)
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
-				else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege')
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
-				else
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
-			},
-			nullValues() {
-				if (this.selectedEducationLevel != 'allDegrees' && this.selectedMajorData)
-					return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
-				else return false;
+			}
+			return true;
+		},
+		isNotFirstCard() {
+			if (this.index >= 1) {
+				return true;
+			}
+			return false;
+		},
+		selectedMajorData() {
+			return this.majorData(this.index);
+		},
+		selectedIndustries() {
+			return this.industries(this.index);
+		},
+		selectedEducationLevel() {
+			return this.educationLevel(this.index);
+		},
+		selectedFormWasSubmitted() {
+			return this.formWasSubmitted(this.index);
+		},
+		selectedMajorTitle() {
+			if (this.selectedMajorData.length != 0) {
+				let currentMajor = this.selectedMajorData.majorId;
+				return this.majorNameById(currentMajor);
 			}
 		},
-		methods: {
-			...mapActions(["deleteMajorCard", "resetMajorCard"]),
-			removeCurrentCard() {
-				this.deleteMajorCard(this.index);
-			},
-			resetCurrentCard() {
-				this.resetMajorCard(this.index);
-			},
-			formatDollars(input) {
-				if (this.input) {
-					let dollarAmount = input.toString();
-					let hundreds = dollarAmount.substr(-3, 3);
-					let thousands = dollarAmount.slice(0, -3);
-					return '$' + thousands + ',' + hundreds;
-				}
-			}
+		shareDescription() {
+			if(this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors)
+				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+			else if(this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege')
+				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+			else if(this.selectedMajorData[this.selectedEducationLevel])
+				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+			else
+				return 'Discover your earnings after college!'
 		},
-		components: {
-			majorForm,
-			card,
-			majorGraphWrapper,
-			majorsGraph,
-			industryCarousel,
-			majorLegend
+		nullValues() {
+			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData)
+				return (this.selectedMajorData[this.selectedEducationLevel][2]._25th == null);
+			else return false;
 		}
-	};
+	},
+	methods: {
+		...mapActions(["deleteMajorCard", "resetMajorCard"]),
+		removeCurrentCard() {
+			this.deleteMajorCard(this.index);
+		},
+		resetCurrentCard() {
+			this.resetMajorCard(this.index);
+		},
+		formatDollars(input) {
+			if (this.input) {
+				let dollarAmount = input.toString();
+				let hundreds = dollarAmount.substr(-3, 3);
+				let thousands = dollarAmount.slice(0, -3);
+				return "$" + thousands + "," + hundreds;
+			}
+		}
+	},
+	components: {
+		majorForm,
+		card,
+		majorGraphWrapper,
+		majorsGraph,
+		industryCarousel,
+		majorLegend
+	}
+};
 </script>

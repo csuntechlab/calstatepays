@@ -33,7 +33,7 @@
 					</div>
 					<div v-show="this.selectedFormWasSubmitted && nullValues">
 						<div class="row">
-							<div class="col-12">
+							<div class="col-12 text-center">
 								<h3>No Data Available</h3>
 							</div>
 						</div>
@@ -55,13 +55,11 @@
 							<major-form :index="index" />
 						</div>
 					</div>
-					<div v-show="!nullValues">
 						<div class="row">
 							<div class="col-12">
 								<industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId" />
 							</div>
 						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -145,53 +143,14 @@
 				}
 			},
 			shareDescription() {
-				if (
-					this.selectedEducationLevel == "allDegrees" &&
-					this.selectedMajorData.bachelors
-				)
-					return (
-						"I discovered that " +
-						this.selectedMajorTitle +
-						" students from " +
-						"CSUN" +
-						" make an average of " +
-						this.formatDollars(
-							this.selectedMajorData.bachelors[5]._50th
-						) +
-						" five years after graduating!"
-					);
-				else if (
-					this.selectedMajorData[this.selectedEducationLevel] &&
-					this.selectedEducationLevel == "someCollege"
-				)
-					return (
-						"I discovered that " +
-						this.selectedMajorTitle +
-						" students from " +
-						"CSUN" +
-						" make an average of " +
-						this.formatDollars(
-							this.selectedMajorData[this.selectedEducationLevel][5]
-								._50th
-						) +
-						" five years after dropping out of college!"
-					);
-				else if (this.selectedMajorData[this.selectedEducationLevel])
-					return (
-						"I discovered that " +
-						this.selectedMajorTitle +
-						" students from " +
-						"CSUN" +
-						" make an average of " +
-						this.formatDollars(
-							this.selectedMajorData[this.selectedEducationLevel][5]
-								._50th
-						) +
-						" five years after graduating with a " +
-						this.selectedEducationLevel +
-						" degree!"
-					);
-				else return "Discover your earnings after college!";
+				if(this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors)
+					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+				else if(this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege')
+					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+				else if(this.selectedMajorData[this.selectedEducationLevel])
+					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+				else
+					return 'Discover your earnings after college!'
 			},
 			nullValues() {
 				if (this.selectedEducationLevel != 'allDegrees')
