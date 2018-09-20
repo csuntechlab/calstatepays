@@ -51393,8 +51393,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		checkForm: function checkForm() {
 			if (!this.$v.$invalid) return true;else {
-				this.formNotFilled = true;
-				return false;
+				this.formNotFilled = false;
+				return true;
 			}
 		},
 		updateSelect: function updateSelect(field, dataKey, data) {

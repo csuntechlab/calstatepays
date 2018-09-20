@@ -139,8 +139,8 @@ export default {
 		checkForm() {
 			if (!this.$v.$invalid) return true;
 			else {
-				this.formNotFilled = true;
-				return false;
+				this.formNotFilled = false;
+				return true;
 			}
 		},
 
