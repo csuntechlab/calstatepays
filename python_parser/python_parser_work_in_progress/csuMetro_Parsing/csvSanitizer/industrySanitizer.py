@@ -44,7 +44,6 @@ class DFHelper():
 
         Dataframe.loc[:,'population_sample_id'] = range(1, len(Dataframe) + 1)
         
-        Dataframe = Dataframe.loc[Dataframe['student_path'].isin([1,2,4])]
         Dataframe = Dataframe.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         Dataframe = Dataframe.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         Dataframe = Dataframe.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})

@@ -16,19 +16,34 @@ class hegisID:
     print(self.df.head())
 
   def convert_To_Json(self):
+
     self.df['hegis_codes'] = (self.df['hegis_codes']).astype(int)
     self.df['id'] = (self.df['id']).astype(int)
     self.df['university_id'] = (self.df['university_id']).astype(int)
 
+    errorDataFrame = self.df
+    duplicateHegisCodeDifferentMajor = self.df
+
+    self.df = self.df.drop_duplicates(subset=['university_id', 'hegis_codes'], keep='first')
+
     self.json_output('master_university_table',self.df)
     
-    # errorDataFrame = self.df
+    '''
+    ERROR Data Frame code here 
+    '''
+    errorDataFrame = self.df
 
-    # ids = errorDataFrame["id"]
-    # errorBoolean = errorDataFrame.duplicated(subset=['university_id','major'], keep=False)
-    # errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ].sort_index()
+    ids = errorDataFrame["id"]
+    errorBoolean = errorDataFrame.duplicated(subset=['university_id','major'], keep=False)
+    errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
     
-    # self.json_output('master_errors_table',errorDataFrame)
+    self.json_output('master_errors_table',errorDataFrame)
+
+    ids = duplicateHegisCodeDifferentMajor["id"]
+    errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['university_id','hegis_codes'], keep=False)
+    duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
+
+    self.json_output('master_duplicate_hegis_code_different_major_table',duplicateHegisCodeDifferentMajor)
 
   def get_hegis_codes_table_data_frame(self):
     hegisCodesTableDataFrame = self.df.loc[:,['hegis_codes','major','university_id']]
