@@ -18,13 +18,14 @@ class DatabaseSeeder extends Seeder
         $this->call(Field_Of_Studies_TableSeeder::class);
         $this->call(Hegis_Categories_TableSeeder::class);
         $this->call(Universities_TableSeeder::class);
-
-        
         $this->call(Major_Paths_TableSeeder::class);
         $this->call(Major_Path_Wages_TableSeeder::class);
-        
-        // $this->call(Master_Major_Page_Data_TableSeeder::class);
+        $this->call(Master_Industry_Path_Types_Table_Seeder::class);
+        $this->call(Master_Industry_Wages_Table_Seeder::class);
+        $this->call(Population_Table_Seeder::class);
         $this->call(Master_FRE_Page_Data_TableSeeder::class);
-        // $this->call(Master_Industry_Page_Data_Seeder::class);
+        
+        // $this->call(Same_Hegis_Different_Major_Error_Table_Seeder::class);
+        // $this->call(ERRORS_Universities_Majors_Seeder::class);
     }
 }

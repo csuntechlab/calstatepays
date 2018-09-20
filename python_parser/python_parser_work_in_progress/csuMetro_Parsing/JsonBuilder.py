@@ -10,7 +10,7 @@ class JsonIndustry:
     self.dictionary = self.getDictionary(file+"_Dictionary") 
 
   def getDictionary(self,fileName):
-    jsonFile = open('./dictionaries/'+fileName+'.json')
+    jsonFile = open('./'+fileName+'.json')
     dictionary = jsonFile.read()
     dictionary = json.loads(dictionary)
 
@@ -24,16 +24,17 @@ class JsonIndustry:
       fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()
   
-
-  
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
 
     
     for index,row in industryPathTypesDf.iterrows():
-      hegis = (str)(row[4])
-      campus = (str)(row[5])
+      # print(row.hegis_at_exit)
+      # print(row.campus)
+      # print("********************")
+      hegis = (str)(row.hegis_at_exit)
+      campus = (str)(row.campus)
       uni_majors_id = self.dictionary[campus][hegis]
       industryPathTypesDf.ix[index,'university_majors_id'] = uni_majors_id
 
@@ -61,6 +62,7 @@ class JsonIndustry:
       if(json_data[i]["avg_annual_wage_5"]!=None):
         json_data[i]["avg_annual_wage_5"] = int(json_data[i]["avg_annual_wage_5"])
             
+    # do we need to worry about avg annual 10 year?
 
     with open('../../database/data/'+fileName+'.json', 'w') as outfile:
       json.dump(json_data, outfile, indent=4)
@@ -117,10 +119,6 @@ class JsonMajor:
 
     universityMajorsId = []
 
-    # universityMajorsIdDf = pd.Data_Frame_Sanitizer(columns=self.col)
-
-    # universityMajorsIdDf = pd.Data_Frame_Sanitizer()
-
     for row in output:
       hegis =  int(row['hegis_at_exit'])
       hegisDictionary[hegis] = self.indexUniversityMajorsId
@@ -134,19 +132,14 @@ class JsonMajor:
       
       self.indexUniversityMajorsId +=1
     del output
-
-    # print(df)
     
     dictionary  = {campusId:hegisDictionary}
-    
+
+    # print(self.file)
     
     with open('./dictionaries/'+self.file+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
-
-    # with open ('../../database/data/'+self.file+'_university_majors_id.json', 'w' ) as fp:
-    #     fp.write(simplejson.dumps(universityMajorsId, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    # fp.close() 
 
     return dictionary
     

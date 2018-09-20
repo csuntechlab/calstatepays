@@ -31,7 +31,7 @@ class IndustryService implements IndustryContract
             ->where('university_id', $university_id)
             ->first();
 
-        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.percentage_found')->values();
+        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
         return $industry_populations;
