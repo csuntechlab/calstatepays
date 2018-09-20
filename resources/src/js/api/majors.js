@@ -1,5 +1,5 @@
-const fetchMajorsAPI = (success, error) => {
-    window.axios.get('api/major/hegis-codes').then(
+const fetchMajorsAPI = (payload, success, error) => {
+    window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
         response => success(response.data),
         response => error(response)
     );
