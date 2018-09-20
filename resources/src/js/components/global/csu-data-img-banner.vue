@@ -9,7 +9,6 @@
                          </campus-modal>
                     </div>
             </div>
-            <!-- <campus-modal><span slot="change"></span></campus-modal> -->
             <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6">
                 <slot name="title"></slot>
                 <slot name="copy"></slot>

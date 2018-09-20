@@ -1,29 +1,31 @@
 <template>
-  <div>
+  <div @keyup.enter="showModal= false">
       <button @click="showModal = true" role="button">
                 <slot name="change button"></slot>
             </button>
+        
+<v-dialog  v-model="showModal">
 
-        <v-dialog v-model="showModal" persistent scrollable>
-
-            <v-card  class=" text-xs-center mt-5 black--text">
+            <v-card  class=" text-xs-center black--text">
                 <v-card-title class="headline grey lighten-2 ">
                     Choose Your Campus
                 </v-card-title>
                 <v-card-text class="campus-modal">
-                    <v-layout row wrap>
-                        <v-flex xs v-for="(item, index) in universities" :key="index">      
-                            <v-btn class="h-75" @click="changeCampus(item.university_id);">
-                            <img :src= item.url >
-                            </v-btn>     
-                            <figcaption>{{item.name}}</figcaption>                    
-                        </v-flex>
-                    </v-layout>
+                    <div class="row" >
+                        <div class="col-12 col-sm" v-for="(item, index) in universities" :key="index">      
+                                <figure  @click="changeCampus(item.university_id);">
+                                <img :src= item.url role="button" class="btn">    
+                                <figcaption>{{item.name}}</figcaption>                    
+                                </figure>
+                        </div>
+                    </div>
             </v-card-text>
         </v-card> 
         </v-dialog>
+        
+        </div>
+        
        
-  </div>
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
