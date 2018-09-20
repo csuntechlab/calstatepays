@@ -159,6 +159,9 @@ export default {
 			}
 		},
 		toggleEducationLevel(educationInput) {
+			console.log(this)
+			console.log(educationInput);
+			console.log(this.form.cardIndex);
 			this.$store.dispatch("toggleEducationLevel", {
 				cardIndex: this.form.cardIndex,
 				educationLevel: educationInput

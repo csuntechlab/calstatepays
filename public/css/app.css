@@ -17053,7 +17053,7 @@ p {
   opacity: 0;
 }
 
-.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo) .v-select__slot > input {
+.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo):not(.v-text-field--single-line) .v-select__slot > input {
   margin-top: 24px;
 }
 
@@ -21203,6 +21203,8 @@ table.v-table tfoot tr td {
   font-weight: 500;
   position: relative;
   overflow: hidden;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
 }
 
 .v-date-picker-title__date > div {
