@@ -11,7 +11,7 @@ use App\Models\IndustryPathType;
 use App\Models\IndustryWage;
 use App\Models\NaicsTitle;
 use Faker\Factory as Faker;
-class Master_Industry_Page_Data_Seeder extends Seeder
+class Master_Industry_Path_Types_Table_Seeder extends Seeder
 {
     /**
      * Run the database seeds.
