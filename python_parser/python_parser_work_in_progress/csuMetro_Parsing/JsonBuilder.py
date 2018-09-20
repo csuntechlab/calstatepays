@@ -27,8 +27,12 @@ class JsonIndustry:
   def getIndustryPathTypesDfTable(self,industryPathTypesDf):
     
     industryPathTypesDf['university_majors_id'] = -1
+
     
     for index,row in industryPathTypesDf.iterrows():
+      # print(row.hegis_at_exit)
+      # print(row.campus)
+      # print("********************")
       hegis = (str)(row.hegis_at_exit)
       campus = (str)(row.campus)
       uni_majors_id = self.dictionary[campus][hegis]

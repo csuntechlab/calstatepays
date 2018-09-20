@@ -105,7 +105,7 @@ class Data_Frame_Sanitizer:
         self.df = self.df.rename(columns={'median_annual_earnings.1':'median_annual_earnings_10_years_after_exit', 'average_annual_earnings.1': 'average_annual_earnings_10_years_after_exit'})
         self.df = self.df.rename(columns={'number_of_students_found.1':'number_of_students_found_10_years_after_exit', 'number_of_students_found': 'number_of_students_found_5_years_after_exit'})
         print('updated')
-        print(self.df.columns)
+        # print(self.df.columns)
 
 
 
