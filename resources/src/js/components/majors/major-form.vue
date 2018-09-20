@@ -139,8 +139,8 @@ export default {
 		checkForm() {
 			if (!this.$v.$invalid) return true;
 			else {
-				this.formNotFilled = false;
-				return true;
+				this.formNotFilled = true;
+				return false;
 			}
 		},
 
@@ -159,9 +159,6 @@ export default {
 			}
 		},
 		toggleEducationLevel(educationInput) {
-			console.log(this)
-			console.log(educationInput);
-			console.log(this.form.cardIndex);
 			this.$store.dispatch("toggleEducationLevel", {
 				cardIndex: this.form.cardIndex,
 				educationLevel: educationInput
