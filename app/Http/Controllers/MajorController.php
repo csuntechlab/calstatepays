@@ -113,6 +113,10 @@ class MajorController extends Controller
     public function filterByFieldOfStudy($universityId,$fieldOfStudyId)
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityId,$fieldOfStudyId);
+        
+        if(empty($hegisData)){
+            return [[]];
+        }
 
         $data[] = array_map(function($hegis){
                 return  [
@@ -124,7 +128,7 @@ class MajorController extends Controller
 
         $data = array_collapse($data);
         sort($data);
-        return $data;
+        return [$data];
     }
 
 }
