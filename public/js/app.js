@@ -45108,6 +45108,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -45213,6 +45216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -45229,7 +45233,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		csuSelector: __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default.a,
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a
-	}
+	},
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
@@ -45873,7 +45878,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/majors" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/majors" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("majors")
+                    }
+                  }
+                },
                 [
                   _c("button", { staticClass: "home-btn home-btn__majors" }, [
                     _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
@@ -45898,7 +45911,12 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "button-link",
-                  attrs: { to: "/data/industries" }
+                  attrs: { to: "/data/industries" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("industries")
+                    }
+                  }
                 },
                 [
                   _c("button", { staticClass: "home-btn home-btn__degrees" }, [
@@ -45924,7 +45942,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/pfre" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/pfre" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("pfre")
+                    }
+                  }
+                },
                 [
                   _c("button", { staticClass: "home-btn home-btn__pfre" }, [
                     _vm._v(
@@ -46388,7 +46414,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']))
+    created: function created() {
+        this.toggleShowNavOnLoad();
+    },
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']), {
+        toggleShowNavOnLoad: function toggleShowNavOnLoad() {
+            var URL = window.location.href;
+            if (URL.includes("industries")) {
+                this.setDataPage("industries");
+            } else if (URL.includes("pfre")) {
+                this.setDataPage("pfre");
+            }
+        }
+    })
 });
 
 /***/ }),
@@ -50342,7 +50380,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             xAxis: ['2', '5', '10', '15'],
-            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
@@ -50500,10 +50537,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000,
+                    min: 0,
+                    max: 300000,
                     axisLine: {
                         show: false
                     },
+                    splitNumber: 5,
                     axisTick: {
                         show: false
                     }
@@ -67494,7 +67533,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000,
+                    yAxis: {
+                        splitNumber: 4,
+                        min: 0,
+                        max: 300000,
+                        splitLine: {
+                            show: true
+                        }
+                    },
                     axisTick: {
                         show: false
                     },
