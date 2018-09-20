@@ -46407,7 +46407,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']))
+    created: function created() {
+        this.toggleShowNavOnLoad();
+    },
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']), {
+        toggleShowNavOnLoad: function toggleShowNavOnLoad() {
+            var URL = window.location.href;
+            if (URL.includes("industries")) {
+                this.setDataPage("industries");
+            } else if (URL.includes("pfre")) {
+                this.setDataPage("pfre");
+            }
+        }
+    })
 });
 
 /***/ }),
