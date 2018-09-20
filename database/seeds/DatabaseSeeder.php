@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Master_Industry_Page_Data_Seeder::class);
         $this->call(Master_Industry_Wages_Table_Seeder::class);
         $this->call(Population_Table_Seeder::class);
+        $this->call(ERRORS_Universities_Majors_Seeder::class);
     }
 }
