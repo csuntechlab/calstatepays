@@ -112,7 +112,7 @@
 			]),
 			isEmpty() {
 				//Check whether the form field was fired off, toggle carousel on
-				if (this.industries(this.index).length === 0) {
+				if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
 					return false;
 				}
 				return true;

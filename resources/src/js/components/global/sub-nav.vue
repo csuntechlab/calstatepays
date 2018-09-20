@@ -1,21 +1,34 @@
 <template>
-    <nav class="sub-nav row">
-        <router-link class="d-flex col-4 justify-content-center sub-nav__element" exact-active-class="sub-nav__element--active" to="/data/industries" @click.native="setDataPage('industries')">
-            INDUSTRIES
-        </router-link>
-        <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/majors" @click.native="setDataPage('majors')">
+    <nav class="sub-nav container-fluid">
+        <div class="row">
+            <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/majors" @click.native="setDataPage('majors')">
             MAJORS
-        </router-link>
-        <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/pfre" @click.native="setDataPage('pfre')">
+            </router-link>
+            <router-link class="d-flex col-4 justify-content-center sub-nav__element" exact-active-class="sub-nav__element--active" to="/data/industries" @click.native="setDataPage('industries')">
+            INDUSTRIES
+            </router-link>
+            <router-link class="d-flex col-4 justify-content-center sub-nav__element" active-class="sub-nav__element--active" to="/data/pfre" @click.native="setDataPage('pfre')">
             FRE
-        </router-link>
+            </router-link>
+        </div>
     </nav>
 </template>
 <script>
 import {mapActions} from 'vuex';
 export default{
+    created: function() {
+        this.toggleShowNavOnLoad()
+    },
     methods: {
-        ...mapActions(['setDataPage'])
+        ...mapActions(['setDataPage']),
+        toggleShowNavOnLoad() {
+            var URL = window.location.href;
+            if (URL.includes("industries")) {
+                this.setDataPage("industries");
+            } else if (URL.includes("pfre")) {
+                this.setDataPage("pfre");
+            }
+        }
     }
 }
 </script>

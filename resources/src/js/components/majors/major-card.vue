@@ -90,7 +90,7 @@
 				//Check whether the form field was fired off, toggle carousel on
 				if (
 					this.industries(this.index).length === 0 ||
-					this.formWasSubmitted(this.index) == false
+					!this.selectedFormWasSubmitted
 				) {
 					return false;
 				}

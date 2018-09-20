@@ -12,14 +12,22 @@ class University_Majors_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/northridge_hegis_codes.json');
+        $json = File::get("database/data/master_university_table.json");
         $data = json_decode($json);
-        $northridgeUniversityCode = 70;
-        foreach($data as $row){
+        // var_dump($json);
+                
+        // $json = File::get("database/data/long_beach_university_majors_id.json");
+        // array_push($jsonCollection,$json);
+
+        foreach($data as $row) {
+
             $universityMajor = new UniversityMajor();
-            $universityMajor->hegis_code = $row->hegis_code;
-            $universityMajor->university_id = $northridgeUniversityCode;
+            $universityMajor->hegis_code = $row->hegis_codes;
+            $universityMajor->university_id = $row->university_id;
+            $universityMajor->major = $row->major;
+            $universityMajor->id = $row->id;
             $universityMajor->save();
         }
+        
     }
 }

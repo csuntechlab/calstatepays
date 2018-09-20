@@ -18,6 +18,6 @@ class HEGISCode extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function universityMajors() {
-        return $this->hasMany('App\Models\UniversityMajor','hegis_code','hegis_code');
+        return $this->hasOne('App\Models\UniversityMajor','hegis_code','hegis_code');
     }
 }

@@ -15,6 +15,6 @@ class HEGISCategory extends Model
         'field_of_study_id',
     ];
     public function hegisCode(){
-        return $this->hasMany('App\Models\HEGISCode', 'hegis_category_id', 'id')->orderBy('major','desc');
+        return $this->hasMany('App\Models\HEGISCode', 'hegis_category_id', 'id');
     }
 }

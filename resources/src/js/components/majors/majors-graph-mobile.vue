@@ -168,7 +168,14 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000,
+                    yAxis: {
+                        splitNumber: 4,
+                        min: 0,
+                        max: 300000,
+                        splitLine: {
+                            show: true
+                        }
+                    },
                     axisTick: {
                         show: false
                     },

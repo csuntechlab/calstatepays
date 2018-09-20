@@ -13,7 +13,6 @@ export default {
     data(){
         return {
             xAxis: ['2', '5', '10', '15'],
-            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                color1: '#000',
                color2: '#000',
@@ -162,10 +161,12 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000,
+                    min: 0,
+                    max: 300000,
                     axisLine: {
                         show: false
                     },
+                    splitNumber: 5,
                     axisTick: {
                         show: false
                     }

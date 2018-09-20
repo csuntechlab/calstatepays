@@ -39198,6 +39198,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(398);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -39216,6 +39219,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vuet
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(SocialSharing);
 
 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39223,17 +39227,20 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(SocialSharing);
  */
 
 var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: '#app',
-  store: __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */],
-  router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */],
-  render: function render(h) {
-    return h(__WEBPACK_IMPORTED_MODULE_6__App_vue___default.a);
-  },
-  created: function created() {
-    this.$store.dispatch('fetchMajors');
-    this.$store.dispatch('fetchFieldOfStudies');
-    this.$store.dispatch('fetchUniversities');
-  }
+    el: '#app',
+    store: __WEBPACK_IMPORTED_MODULE_3__store__["a" /* default */],
+    router: __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */],
+    render: function render(h) {
+        return h(__WEBPACK_IMPORTED_MODULE_6__App_vue___default.a);
+    },
+    created: function created() {
+        this.$store.dispatch('fetchMajors', this.selectedUniversity);
+        this.$store.dispatch('fetchFieldOfStudies');
+        this.$store.dispatch('fetchUniversities');
+    },
+
+
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(['selectedUniversity']))
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (vm);
@@ -44530,11 +44537,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchMajors: function fetchMajors(_ref) {
+    fetchMajors: function fetchMajors(_ref, payload) {
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
 
-        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorsAPI(function (success) {
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorsAPI(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJORS, success);
         }, function (error) {
             return console.log(error);
@@ -44633,8 +44640,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
-    window.axios.get('api/major/hegis-codes').then(function (response) {
+var fetchMajorsAPI = function fetchMajorsAPI(payload, success, error) {
+    window.axios.get("api/major/hegis-codes/university/" + payload).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -44642,7 +44649,7 @@ var fetchMajorsAPI = function fetchMajorsAPI(success, error) {
 };
 
 var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
-    window.axios.get('api/major/field-of-study').then(function (response) {
+    window.axios.get("api/major/field-of-study").then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -44650,7 +44657,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
 };
 
 var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
-    window.axios.get('api/major/hegis-codes/' + payload).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -44658,7 +44665,7 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    window.axios.get('api/major/' + payload.majorId + '/' + payload.schoolId).then(
+    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(
     // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
     function (response) {
         return success(response.data);
@@ -44668,7 +44675,7 @@ var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
 };
 
 var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
-    window.axios.get('api/university').then(function (response) {
+    window.axios.get("api/university").then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -44676,7 +44683,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
 };
 
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get('api/industry/' + payload.majorId + '/70').then(function (response) {
+    window.axios.get("api/industry/" + payload.majorId + "/70").then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -44883,7 +44890,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 // Global Form State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    selectedUniversity: null,
+    selectedUniversity: 70,
     selectedDataPage: 'majors'
 });
 
@@ -45101,6 +45108,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -45203,6 +45213,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -45219,7 +45233,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		csuSelector: __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default.a,
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a
-	}
+	},
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
@@ -45865,13 +45880,16 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "button-link",
-                  attrs: { to: "/data/industries" }
+                  attrs: { to: "/data/majors" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("majors")
+                    }
+                  }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
-                    )
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -45891,10 +45909,20 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/majors" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/industries" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("industries")
+                    }
+                  }
+                },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
+                    )
                   ])
                 ]
               )
@@ -45914,7 +45942,15 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "router-link",
-                { staticClass: "button-link", attrs: { to: "/data/pfre" } },
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/pfre" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("pfre")
+                    }
+                  }
+                },
                 [
                   _c("button", { staticClass: "home-btn home-btn__pfre" }, [
                     _vm._v(
@@ -46020,34 +46056,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-graduation-cap" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__copy" }, [
-      _c("p", [
-        _vm._v(
-          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-line-chart" })
     ])
   },
@@ -46067,6 +46075,34 @@ var staticRenderFns = [
       _c("p", [
         _vm._v(
           "Find out which majors has the highest earn and the most students."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-graduation-cap" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Do college graduates earn more?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
         )
       ])
     ])
@@ -46373,10 +46409,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']))
+    created: function created() {
+        this.toggleShowNavOnLoad();
+    },
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']), {
+        toggleShowNavOnLoad: function toggleShowNavOnLoad() {
+            var URL = window.location.href;
+            if (URL.includes("industries")) {
+                this.setDataPage("industries");
+            } else if (URL.includes("pfre")) {
+                this.setDataPage("pfre");
+            }
+        }
+    })
 });
 
 /***/ }),
@@ -46387,63 +46437,65 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    { staticClass: "sub-nav row" },
-    [
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "exact-active-class": "sub-nav__element--active",
-            to: "/data/industries"
-          },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("industries")
+  return _c("nav", { staticClass: "sub-nav container-fluid" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "active-class": "sub-nav__element--active",
+              to: "/data/majors"
+            },
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("majors")
+              }
             }
-          }
-        },
-        [_vm._v("\n        INDUSTRIES\n    ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "active-class": "sub-nav__element--active",
-            to: "/data/majors"
           },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("majors")
+          [_vm._v("\n        MAJORS\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "exact-active-class": "sub-nav__element--active",
+              to: "/data/industries"
+            },
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("industries")
+              }
             }
-          }
-        },
-        [_vm._v("\n        MAJORS\n    ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "active-class": "sub-nav__element--active",
-            to: "/data/pfre"
           },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("pfre")
+          [_vm._v("\n        INDUSTRIES\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "active-class": "sub-nav__element--active",
+              to: "/data/pfre"
+            },
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("pfre")
+              }
             }
-          }
-        },
-        [_vm._v("\n        FRE\n    ")]
-      )
-    ],
-    1
-  )
+          },
+          [_vm._v("\n        FRE\n        ")]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49731,7 +49783,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
+			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmitted) {
 				return false;
 			}
 			return true;
@@ -50342,7 +50394,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             xAxis: ['2', '5', '10', '15'],
-            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                 color1: '#000',
                 color2: '#000',
@@ -50486,10 +50537,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000,
+                    min: 0,
+                    max: 300000,
                     axisLine: {
                         show: false
                     },
+                    splitNumber: 5,
                     axisTick: {
                         show: false
                     }
@@ -67480,7 +67533,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             } else return '$' + value;
                         }
                     },
-                    max: 150000,
+                    yAxis: {
+                        splitNumber: 4,
+                        min: 0,
+                        max: 300000,
+                        splitLine: {
+                            show: true
+                        }
+                    },
                     axisTick: {
                         show: false
                     },
@@ -68572,7 +68632,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (this.industries(this.index).length === 0) {
+			if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
 				return false;
 			}
 			return true;
