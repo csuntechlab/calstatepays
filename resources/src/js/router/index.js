@@ -24,7 +24,7 @@ const router = new VueRouter({
 		{ path: '/data/industries', component: industries},
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},
-		{path: '/research', component: research},
+		{ path: '/research', component: research},
 		{ path: '/researchcsun', component: researchcsun }
 	]
 });
