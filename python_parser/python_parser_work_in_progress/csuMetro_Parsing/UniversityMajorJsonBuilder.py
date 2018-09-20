@@ -21,6 +21,14 @@ class hegisID:
     self.df['university_id'] = (self.df['university_id']).astype(int)
 
     self.json_output('master_university_table',self.df)
+    
+    # errorDataFrame = self.df
+
+    # ids = errorDataFrame["id"]
+    # errorBoolean = errorDataFrame.duplicated(subset=['university_id','major'], keep=False)
+    # errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ].sort_index()
+    
+    # self.json_output('master_errors_table',errorDataFrame)
 
   def get_hegis_codes_table_data_frame(self):
     hegisCodesTableDataFrame = self.df.loc[:,['hegis_codes','major','university_id']]
