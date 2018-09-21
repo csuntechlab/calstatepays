@@ -5,7 +5,7 @@
                     <div class="container-fluid py-3">
                         <div class="row">
 							<div class="col-6">
-								<social-sharing v-if="selectedFormWasSubmitted" :networks="mobileNetworks" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription"
+								<social-sharing v-if="selectedFormWasSubmitted" :networks="mobileNetworks" :url="this.url" :title="this.shareDescription"
 									description="Discover Your Earnings After College." :quote="this.shareDescription" hashtags="CalStatePays, ItPaysToGoToCollege"
 									inline-template>
 									<div>
@@ -71,6 +71,7 @@ export default {
 	props: ["index", "windowWidth"],
 	data() {
 		return {
+			url: window.baseURL,
 			mobileNetworks: {
 				"facebook-m": {
 					sharer:

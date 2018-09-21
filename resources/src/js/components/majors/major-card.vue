@@ -7,7 +7,7 @@
 				<card class="csu-card container-fluid py-3">
 						<div class="row">
 							<div class="col-6">
-								<social-sharing v-if="selectedFormWasSubmitted" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription" description="Discover Your Earnings After College."
+								<social-sharing v-if="selectedFormWasSubmitted" url="google.com" :title="this.shareDescription" description="Discover Your Earnings After College."
 								 :quote="this.shareDescription" 
 								 hashtags="CalStatePays, ItPaysToGoToCollege"
 								 inline-template>
@@ -66,6 +66,7 @@ export default {
 	props: ["index", "windowWidth"],
 	data() {
 		return {
+			url: window.baseURL,
 			major: this.majorNameById
 		};
 	},
