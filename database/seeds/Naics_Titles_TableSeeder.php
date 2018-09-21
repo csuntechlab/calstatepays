@@ -12,14 +12,14 @@ class Naics_Titles_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/naics_titles_data.json");
+        $json = File::get("database/data/master_naics_titles.json");
         $data = json_decode($json);
         foreach($data as $row){
-            if($row->naics_code !=null){
+            if($row->id !=null){
                 DB::table('naics_titles')->insert([
                     'image'       => $row->image,
-                    'naics_code'  => $row->naics_code,
-                    'naics_title' => $row->naics_title
+                    'naics_code'  => $row->id,
+                    'naics_title' => $row->industry
                     
                 ]);
             }

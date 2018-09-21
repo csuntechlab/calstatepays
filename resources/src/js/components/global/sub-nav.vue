@@ -16,8 +16,19 @@
 <script>
 import {mapActions} from 'vuex';
 export default{
+    created: function() {
+        this.toggleShowNavOnLoad()
+    },
     methods: {
-        ...mapActions(['setDataPage'])
+        ...mapActions(['setDataPage']),
+        toggleShowNavOnLoad() {
+            var URL = window.location.href;
+            if (URL.includes("industries")) {
+                this.setDataPage("industries");
+            } else if (URL.includes("pfre")) {
+                this.setDataPage("pfre");
+            }
+        }
     }
 }
 </script>
