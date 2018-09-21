@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 import simplejson
 
-from csuMetro_Parsing.CsvHelper import Data_Frame_Sanitizer
-from csuMetro_Parsing.CsvHelper import Sanitize_Major
+from csuMetro_Parsing.csvSanitizer.majorSanitizer import Sanitize_Major
 
-from csuMetro_Parsing.JsonBuilder import JsonMajor
-from csuMetro_Parsing.JsonBuilder import JsonIndustry
+from csuMetro_Parsing.jsonBuilder.JsonMajorSanitizer import JsonMajor
+from csuMetro_Parsing.jsonBuilder.JsonIndustrySanitizer import JsonIndustry
+
+
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
 
 from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
