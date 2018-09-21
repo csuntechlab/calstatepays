@@ -71986,7 +71986,7 @@ var render = function() {
                     ? _c("social-sharing", {
                         attrs: {
                           networks: _vm.mobileNetworks,
-                          url: this.url,
+                          url: "this.url",
                           title: this.shareDescription,
                           description: "Discover Your Earnings After College.",
                           quote: this.shareDescription,
