@@ -125,11 +125,13 @@ export default {
 		updateForm,
 
 		submitForm() {
+			console.log(this.form)
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleFormWasSubmitted(this.form.cardIndex);
 				this.fetchIndustryImages(this.form);
+				this.$store.dispatch("setUniversity", this.form.schoolId);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
 				this.form.schoolId = null;

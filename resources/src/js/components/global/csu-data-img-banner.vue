@@ -16,7 +16,14 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 export default {
+    computed: {
+        test () {
+            console.log("helllo it am return")
+        }
+        
+    },
     name: 'csu-data-img-banner',  
     data() {
         return {
