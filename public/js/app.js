@@ -49757,8 +49757,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -68315,8 +68313,8 @@ var render = function() {
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
                     }
                   ],
                   staticClass: "fas fa-sync-alt btn-reset float-right",
@@ -68355,16 +68353,14 @@ var render = function() {
                     expression: "selectedFormWasSubmitted && nullValues"
                   }
                 ],
-                staticClass: "row"
+                staticClass: "row text-center"
               },
               [
-                _c("div", { staticClass: "text-center" }, [
-                  _c("h3", [
-                    _c("i", {
-                      staticClass: "fas fa-exclamation-circle required-field"
-                    }),
-                    _vm._v(" No data available for selected degree level")
-                  ])
+                _c("h3", { staticClass: "csu-card__no-data" }, [
+                  _c("i", {
+                    staticClass: "fas fa-exclamation-circle required-field"
+                  }),
+                  _vm._v(" No data available")
                 ])
               ]
             ),
@@ -68530,8 +68526,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
 //
 //
 //
@@ -68941,8 +68935,8 @@ var render = function() {
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
                     }
                   ],
                   staticClass: "fas fa-sync-alt btn-reset float-right",
@@ -69099,9 +69093,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 text-center" }, [
-        _c("h3", [_vm._v("No Data Available")])
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("h3", { staticClass: "csu-card__no-data--mobile" }, [
+        _c("i", { staticClass: "fas fa-exclamation-circle required-field" }),
+        _vm._v(" No data available")
       ])
     ])
   }

@@ -27047,6 +27047,14 @@ html {
   color: #0077B5;
 }
 
+.csu-card__no-data {
+  line-height: 25rem;
+}
+
+.csu-card__no-data--mobile {
+  line-height: 18rem;
+}
+
 .csu-card__form {
   display: -webkit-box;
   display: -ms-flexbox;

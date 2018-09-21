@@ -23,7 +23,7 @@
 						</div>
 						<div class="col-6">
 							<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+							<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 						</div>
 					</div>
 					<div class="row">
@@ -32,10 +32,8 @@
 						</div>
 					</div>
 					<div v-show="this.selectedFormWasSubmitted && nullValues">
-						<div class="row">
-							<div class="col-12 text-center">
-								<h3>No Data Available</h3>
-							</div>
+						<div class="row text-center">
+							<h3 class="csu-card__no-data--mobile"><i class="fas fa-exclamation-circle required-field"/> No data available</h3>
 						</div>
 					</div>
 					<div v-show="!nullValues">

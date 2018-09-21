@@ -25,16 +25,14 @@
 					</div>
 					<div class="col-6">
 						<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-						<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+						<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 					</div>
 				</div>
 				<div class="row">
 					<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
 				</div>
-					<div v-show="selectedFormWasSubmitted && nullValues" class="row">
-						<div class="text-center">
-							<h3><i class="fas fa-exclamation-circle required-field"/> No data available for selected degree level</h3>
-						</div>
+					<div v-show="selectedFormWasSubmitted && nullValues" class="row text-center">
+						<h3 class="csu-card__no-data"><i class="fas fa-exclamation-circle required-field"/> No data available</h3>
 					</div>
 				<div v-show="!nullValues">
 					<div class="row">
