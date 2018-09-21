@@ -108,6 +108,9 @@ class IterateCsvFiles():
         masterIndustry = masterIndustry.append( industrySanitize.returnDf() , ignore_index=True)
 
       industryMasterHelper = DFHelper(masterIndustry)
+      print("TEXT GOES HERE TEST")
+
+      errorDataFrame,duplicateHegisCodeDifferentMajor = industryMasterHelper.get_errors_data_frame()
       # get Table equiv Data Frames
       
       industryPathTypesDf,industryPathWagesDf,populationTable = industryMasterHelper.get_Industry_Data_Frame()
@@ -117,6 +120,9 @@ class IterateCsvFiles():
 
       # init json Industry
       jsonIndustry = JsonIndustry(fileName)
+
+      self.json_output("industry_different_hegis_same_major",errorDataFrame)
+      self.json_output("industry_same_hegis_different_major",duplicateHegisCodeDifferentMajor)
       #update Industry PathTypes
       industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
       
@@ -128,6 +134,8 @@ class IterateCsvFiles():
       jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
       jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
       jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
+
+
 
     def json_output(self,fileName, df):
       output = df.to_dict(orient='record')

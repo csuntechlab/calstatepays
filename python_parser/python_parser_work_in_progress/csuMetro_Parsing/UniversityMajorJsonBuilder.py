@@ -31,7 +31,6 @@ class hegisID:
     '''
     ERROR Data Frame code here 
     '''
-    errorDataFrame = self.df
 
     ids = errorDataFrame["id"]
     errorBoolean = errorDataFrame.duplicated(subset=['university_id','major'], keep=False)

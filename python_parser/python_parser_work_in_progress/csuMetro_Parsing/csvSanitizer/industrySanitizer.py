@@ -4,7 +4,6 @@ import simplejson
 import os
 from os import listdir
 from os.path import isfile, join
-
 from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitizer
 
 class Sanitize_Industry(Data_Frame_Sanitizer):
@@ -48,6 +47,30 @@ class DFHelper():
         Dataframe = Dataframe.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         Dataframe = Dataframe.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})
         self.df = Dataframe
+
+    def get_errors_data_frame(self):
+        '''
+        ERROR Data Frame code here 
+        '''
+    
+        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major',] ]
+        errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
+        errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
+        duplicateHegisCodeDifferentMajor = errorDataFrame
+
+        print(errorDataFrame.head())
+
+        ids = errorDataFrame["id"]
+        errorBoolean = errorDataFrame.duplicated(subset=['campus','major'], keep=False)
+        errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
+        # self.json_output('master_errors_table',errorDataFrame)
+        ids = duplicateHegisCodeDifferentMajor["id"]       
+        errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
+        duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
+
+        return errorDataFrame,duplicateHegisCodeDifferentMajor
+        # self.json_output('master_duplicate_hegis_code_different_major_table',duplicateHegisCodeDifferentMajor)
+        pass
 
     def get_Industry_Data_Frame(self):
         industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','population_sample_id','campus','id']]

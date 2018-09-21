@@ -37,10 +37,10 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
     
     print( majorsCsvFiles )
-    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
     print( industryCsvFiles )
-    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
     
