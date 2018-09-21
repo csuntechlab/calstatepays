@@ -51201,7 +51201,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	props: ["index", "windowWidth"],
 	data: function data() {
 		return {
-			url: window.baseURL,
 			major: this.majorNameById
 		};
 	},
@@ -71413,7 +71412,6 @@ var render = function() {
                   _vm.selectedFormWasSubmitted
                     ? _c("social-sharing", {
                         attrs: {
-                          url: "google.com",
                           title: this.shareDescription,
                           description: "Discover Your Earnings After College.",
                           quote: this.shareDescription,
@@ -71748,7 +71746,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	props: ["index", "windowWidth"],
 	data: function data() {
 		return {
-			url: window.baseURL,
 			mobileNetworks: {
 				"facebook-m": {
 					sharer: "https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote",
@@ -71986,7 +71983,6 @@ var render = function() {
                     ? _c("social-sharing", {
                         attrs: {
                           networks: _vm.mobileNetworks,
-                          url: "this.url",
                           title: this.shareDescription,
                           description: "Discover Your Earnings After College.",
                           quote: this.shareDescription,
