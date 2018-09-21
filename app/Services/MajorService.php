@@ -80,7 +80,16 @@ class MajorService implements MajorContract
         $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
                             ->where('university_id', $university_id)
                             ->with('majorPaths.majorPathWage')
-                            ->first()->majorPaths->toArray();
+                            ->first();
+                            
+        if ( empty($universityMajor) ){
+            return [];
+        }
+        else if ( empty($universityMajor->majorPaths) ){
+            return [];
+        }
+
+        $universityMajor = $universityMajor->majorPaths->toArray();                            
         return $universityMajor;
     }
     public function getHegisCode($name)

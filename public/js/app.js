@@ -45953,6 +45953,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, function (state, payload) {
     var index = payload;
     state.majorCards[index].majorsByField = [];
+    state.majorCards[index].educationLevel = "allDegrees";
     state.majorCards[index].industries = [];
     state.majorCards[index].majorData = [];
     state.majorCards[index].formWasSubmitted = false;
