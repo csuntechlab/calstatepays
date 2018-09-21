@@ -15,26 +15,25 @@ class MajorService implements MajorContract
     public function getAllHegisCodesByUniversity( $universityId ): array 
     {
         $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
+                                            ->orderBy('major','asc')
                                             ->get()
                                             ->map(function ($item){
             return [
-                'hegis_code' => $item['hegis_code'],
                 'major' => $item['major'],
+                'hegis_code' => $item['hegis_code'],
                 'university_id' => $item['university']->id
             ];
-    
             });
-
         return $allHegisCodes->toArray();
-       $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
-           return [
-            'hegis_code' => $item['hegis_code'],
-            'major' => $item['major'],
-            'university' => $item['university']
-           ];
-
-        });
-        return $allHegisCodes->toArray();
+        // should delete?
+    //    $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
+    //        return [
+    //         'major' => $item['major'],
+    //         'hegis_code' => $item['hegis_code'],
+    //         'university' => $item['university']
+    //        ];
+    //     });
+        // return $allHegisCodes->toArray();
     }
 
     public function getAllFieldOfStudies(): array
