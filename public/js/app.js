@@ -47311,10 +47311,10 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "button-link",
-                  attrs: { to: "/data/industries" },
+                  attrs: { to: "/data/majors" },
                   nativeOn: {
                     click: function($event) {
-                      _vm.setDataPage("industries")
+                      _vm.setDataPage("majors")
                     }
                   }
                 },
@@ -47342,10 +47342,10 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "button-link",
-                  attrs: { to: "/data/majors" },
+                  attrs: { to: "/data/industries" },
                   nativeOn: {
                     click: function($event) {
-                      _vm.setDataPage("majors")
+                      _vm.setDataPage("industries")
                     }
                   }
                 },

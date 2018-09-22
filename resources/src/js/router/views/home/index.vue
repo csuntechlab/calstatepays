@@ -15,7 +15,7 @@
 						<div class="home__copy">
 							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
 						</div>
-						<router-link class="button-link" to="/data/industries" @click.native="setDataPage('industries')">
+						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
 							<button class="home-btn home-btn__degrees">
 								Explore by Major
 							</button>
@@ -31,7 +31,7 @@
 						<div class="home__copy">
 							<p>Explore industries of employment by major.</p>
 						</div>
-						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
+						<router-link class="button-link" to="/data/industries" @click.native="setDataPage('industries')">
 							<button class="home-btn home-btn__majors">
 								Explore Industries
 							</button>
