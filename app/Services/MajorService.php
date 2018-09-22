@@ -25,15 +25,6 @@ class MajorService implements MajorContract
             ];
             });
         return $allHegisCodes->toArray();
-        // should delete?
-    //    $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
-    //        return [
-    //         'major' => $item['major'],
-    //         'hegis_code' => $item['hegis_code'],
-    //         'university' => $item['university']
-    //        ];
-    //     });
-        // return $allHegisCodes->toArray();
     }
 
     public function getAllFieldOfStudies(): array
