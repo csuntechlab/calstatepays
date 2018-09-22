@@ -54,7 +54,7 @@ class DFHelper():
         '''
     
         errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major',] ]
-        errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
+        errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
         errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
         duplicateHegisCodeDifferentMajor = errorDataFrame
 
@@ -64,6 +64,7 @@ class DFHelper():
         errorBoolean = errorDataFrame.duplicated(subset=['campus','major'], keep=False)
         errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
         # self.json_output('master_errors_table',errorDataFrame)
+        
         ids = duplicateHegisCodeDifferentMajor["id"]       
         errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
         duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
