@@ -29,6 +29,12 @@ class MajorController extends Controller
     
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
+
+        //TODO: Ask if front end will be able to handle this or if we need to have the same set up
+        if( empty($university_major) ){
+            return [];
+        }
+
         foreach($university_major as $data) {
             $years = $data['years'];
             if ($data['student_path'] == 2) {
@@ -40,12 +46,40 @@ class MajorController extends Controller
             }
         }
 
+        // question, do we need to return the major id?
+        $nullArray = [
+            '2' =>
+            [
+                "_25th"=>null,
+                "_50th"=>null,
+                "_75th"=>null
+            ],
+            '5' =>
+            [
+                "_25th" => null,
+                "_50th" => null,
+                "_75th" => null
+            ],
+            '10' =>
+            [
+                "_25th" => null,
+                "_50th" => null,
+                "_75th" => null
+            ],
+            '15' =>
+            [
+                "_25th" => null,
+                "_50th" => null,
+                "_75th" => null
+            ]
+        ];
+
         $majorData = [
             'majorId' =>$hegis_code,
             'universityId' => $university_id,
-            'someCollege'=> isset($someCollege) ? $someCollege : null,
-            'bachelors' => isset($bachelors) ? $bachelors : null,
-            'postBacc' => isset($post_bacc) ? $post_bacc : null
+            'someCollege'=> isset($someCollege) ? $someCollege : $nullArray,
+            'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
+            'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray
         ];
         return $majorData;
     }
@@ -85,6 +119,10 @@ class MajorController extends Controller
     public function filterByFieldOfStudy($universityId,$fieldOfStudyId)
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityId,$fieldOfStudyId);
+        
+        if(empty($hegisData)){
+            return [[]];
+        }
 
         $data[] = array_map(function($hegis){
                 return  [
@@ -96,7 +134,7 @@ class MajorController extends Controller
 
         $data = array_collapse($data);
         sort($data);
-        return $data;
+        return [$data];
     }
 
 }
