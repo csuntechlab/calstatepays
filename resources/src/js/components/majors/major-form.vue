@@ -125,7 +125,6 @@ export default {
 		updateForm,
 
 		submitForm() {
-			console.log(this.form)
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
