@@ -29542,10 +29542,11 @@ var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 "use strict";
 var SET_UNIVERSITY = "global-form/SET_UNIVERSITY";
 var SET_DATA_PAGE = "global-form/SET_DATA_PAGE";
-
+var SET_MODAL_CHECK = "global-form/SET_MODAL_CHECK";
 /* harmony default export */ __webpack_exports__["a"] = ({
 	SET_UNIVERSITY: SET_UNIVERSITY,
-	SET_DATA_PAGE: SET_DATA_PAGE
+	SET_DATA_PAGE: SET_DATA_PAGE,
+	SET_MODAL_CHECK: SET_MODAL_CHECK
 });
 
 /***/ }),
@@ -46316,8 +46317,9 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 // Global Form State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    selectedUniversity: null,
-    selectedDataPage: 'majors'
+    selectedUniversity: 70,
+    selectedDataPage: 'majors',
+    modalCheck: false
 });
 
 /***/ }),
@@ -46325,15 +46327,23 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+var _selectedUniversity$s;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // Global form getters
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* harmony default export */ __webpack_exports__["a"] = (_selectedUniversity$s = {
     selectedUniversity: function selectedUniversity(state) {
         return state.selectedUniversity;
     },
     selectedDataPage: function selectedDataPage(state) {
         return state.selectedDataPage;
     }
-});
+}, _defineProperty(_selectedUniversity$s, "selectedDataPage", function selectedDataPage(state) {
+    return state.selectedDataPage;
+}), _defineProperty(_selectedUniversity$s, "modalCheck", function modalCheck(state) {
+    return state.modalCheck;
+}), _selectedUniversity$s);
 
 /***/ }),
 /* 172 */
@@ -46351,6 +46361,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.selectedUniversity = payload;
 }), _defineProperty(_global$SET_UNIVERSIT, __WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_DATA_PAGE, function (state, payload) {
     state.selectedDataPage = payload;
+}), _defineProperty(_global$SET_UNIVERSIT, __WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_MODAL_CHECK, function (state, payload) {
+    state.modalCheck = payload;
 }), _global$SET_UNIVERSIT);
 
 /***/ }),
@@ -46371,6 +46383,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref2.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_DATA_PAGE, payload);
+    },
+    setModalCheck: function setModalCheck(_ref3, payload) {
+        var commit = _ref3.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_MODAL_CHECK, payload);
     }
 });
 
@@ -47815,6 +47832,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47822,18 +47846,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             showModal: false,
-            str: this.$store.selectedUniversity,
-            universities: [{ url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', university_id: '039803', name: "Channel Island" }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', university_id: '001141', name: 'Dominguez Hills' }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', university_id: '001137', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', university_id: '001139', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', university_id: '001140', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', university_id: '70', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', university_id: '001144', name: 'Pomona' }]
+            universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }]
         };
     },
     mounted: function mounted() {
-        if (this.selectedUniversity == null) {
+        if (this.modalCheck == false) {
             this.showModal = true;
+            this.$store.dispatch('setModalCheck', true);
         }
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity', 'selectedDataPage'])),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity', 'setModalCheck']), {
         changeCampus: function changeCampus(university) {
 
             this.$store.dispatch('setUniversity', university);
@@ -47884,6 +47908,7 @@ var render = function() {
       _c(
         "v-dialog",
         {
+          attrs: { persistent: "" },
           model: {
             value: _vm.showModal,
             callback: function($$v) {
@@ -47907,32 +47932,53 @@ var render = function() {
                 _c(
                   "div",
                   { staticClass: "row" },
-                  _vm._l(_vm.universities, function(item, index) {
-                    return _c(
-                      "div",
-                      { key: index, staticClass: "col-12 col-sm" },
-                      [
-                        _c(
-                          "figure",
-                          {
-                            on: {
-                              click: function($event) {
-                                _vm.changeCampus(item.university_id)
+                  [
+                    _vm._l(_vm.universitySeals, function(item, index) {
+                      return _c(
+                        "div",
+                        { key: index, staticClass: "col-12 col-sm" },
+                        [
+                          _c(
+                            "figure",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.changeCampus(_vm.universities[index].id)
+                                }
                               }
-                            }
-                          },
-                          [
-                            _c("img", {
-                              staticClass: "btn",
-                              attrs: { src: item.url, role: "button" }
-                            }),
-                            _vm._v(" "),
-                            _c("figcaption", [_vm._v(_vm._s(item.name))])
-                          ]
-                        )
-                      ]
-                    )
-                  })
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "btn",
+                                attrs: { src: item.url, role: "button" }
+                              }),
+                              _vm._v(" "),
+                              _c("figcaption", [
+                                _vm._v(" " + _vm._s(item.name))
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 col-sm" }, [
+                      _c("figure", [
+                        _c("img", {
+                          staticClass: "btn",
+                          attrs: {
+                            src: " https://via.placeholder.com/123x112?",
+                            role: "button"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("figcaption", [
+                          _vm._v("All campuses(Aot Available)")
+                        ])
+                      ])
+                    ])
+                  ],
+                  2
                 )
               ])
             ],

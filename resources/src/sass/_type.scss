@@ -183,9 +183,9 @@ add r
 figcaption {
 	font-size: 1.5rem;    
 }
-.dialog__content{
+.v-dialog__content{
     z-index: 1000001 !important;
 }
-.overlay{
+.v-overlay{
     z-index: 1000000 !important;;
 }
