@@ -14,16 +14,17 @@ class MajorService implements MajorContract
 {
     public function getAllHegisCodesByUniversity( $universityId ): array 
     {
-        $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
-                                            ->orderBy('major','asc')
-                                            ->get()
-                                            ->map(function ($item){
-            return [
-                'major' => $item['major'],
-                'hegis_code' => $item['hegis_code'],
-                'university_id' => $item['university']->id
-            ];
-            });
+        $allHegisCodes = UniversityMajor::where('university_id', $universityId)
+                            ->orderBy('major','asc')
+                            ->get()
+                            ->map(function ($item){
+                    return [
+                        'major' => $item['major'],
+                        'hegis_code' => $item['hegis_code'],
+                        'university_id' => $item['university']->id
+                    ];
+                });
+
         return $allHegisCodes->toArray();
     }
 
