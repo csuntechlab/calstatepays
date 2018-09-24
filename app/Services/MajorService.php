@@ -81,9 +81,19 @@ class MajorService implements MajorContract
     public function getMajorEarnings($hegis_code, $university_id): array
     {
         $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
+                            ->with(['university' => function($query) {
+                                $query->where('opt_in',1);
+                            }])
                             ->where('university_id', $university_id)
                             ->with('majorPaths.majorPathWage')
                             ->first();
+
+        // situation where CSU opts out
+        // Might want to refactor this method?
+        if($universityMajor->university == null)
+        {
+            return [];
+        }
                             
         if ( empty($universityMajor) ){
             return [];
