@@ -13,26 +13,26 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class MajorServiceTest extends TestCase
 {
-//     use DatabaseMigrations;
-//     protected $majorService;
-//
-//     public function setUp(){
-//         parent::setUp();
-//         $this->majorService = new MajorService();
-//         $this->seed('Hegis_Codes_TableSeeder');
-//         $this->seed('University_Majors_TableSeeder');
-//         $this->seed('Naics_Titles_TableSeeder');
-//         $this->seed('Student_Paths_TableSeeder');
-//         $this->seed('Field_Of_Studies_TableSeeder');
-//         $this->seed('Hegis_Categories_TableSeeder');
-//         $this->seed('Universities_TableSeeder');
-//         $this->seed('Major_Paths_TableSeeder');
-//         $this->seed('Major_Path_Wages_TableSeeder');
+     use DatabaseMigrations;
+     protected $majorService;
+
+     public function setUp(){
+         parent::setUp();
+         $this->majorService = new MajorService();
+         $this->seed('Hegis_Codes_TableSeeder');
+         $this->seed('University_Majors_TableSeeder');
+         $this->seed('Naics_Titles_TableSeeder');
+         $this->seed('Student_Paths_TableSeeder');
+         $this->seed('Field_Of_Studies_TableSeeder');
+         $this->seed('Hegis_Categories_TableSeeder');
+         $this->seed('Universities_TableSeeder');
+         $this->seed('Major_Paths_TableSeeder');
+         $this->seed('Major_Path_Wages_TableSeeder');
         
          // $this->seed('Master_Major_Page_Data_TableSeeder');
 //         $this->seed('Master_FRE_Page_Data_TableSeeder');
 //         $this->seed('Master_Industry_Page_Data_Seeder');
-     //}
+     }
 
     // public function test_getAllHegisCodes_ensure_returns_all_rows() {
     //     $response = $this->majorService->getAllHegisCodes();
