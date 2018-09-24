@@ -74,7 +74,7 @@ export default {
 				navIcon.classList.add("fa-times");
 				document.getElementById("nav-overlay").style.display = "block";
 			}
-		}
+        }
     },
     computed: {
         ...mapGetters(['selectedDataPage']),
