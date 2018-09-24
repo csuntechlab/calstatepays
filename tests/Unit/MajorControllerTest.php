@@ -140,11 +140,17 @@ class MajorControllerTest extends TestCase
 
      public function test_filterByFieldOfStudy_returns_all_related_hegis_codes_in_json_format()
      {
+         // api is /api/major/hegis-code/{university_id}/{fieldOfStudyId}
+         // i.e. /api/major/hegis-code/70/6
+
          $engineeringId = 6;
          $unversityId = 70;
-         $countOfRelatedHegisCOdes = 9;
+         $countOfExpectedDropdowns = 9;
          $response = $this->json('GET', "/api/major/hegis-codes/". $unversityId."/".$engineeringId);
+
+         //use [0] because front end is handling an array of an array of arrays
          $response = $response->getOriginalContent();
-         $this->assertCount($countOfRelatedHegisCOdes, $response);
+         $count = count($response[0]);
+         $this->assertEquals($countOfExpectedDropdowns, $count);
      }
 }
