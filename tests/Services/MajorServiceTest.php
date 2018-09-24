@@ -91,10 +91,4 @@ class MajorServiceTest extends TestCase
          $this->arrayHasKey("roi", $response);
      }
 
-//      this method no longer exists
-//     public function test_getAllUniversities_returns_7_univerities()
-//     {
-//         $response = $this->majorService->getAllUniversities();
-//         $this->assertEquals(University::count(), count($response));
-//     }
 }
