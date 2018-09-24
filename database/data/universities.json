@@ -1,34 +1,42 @@
 [
   {
     "id": "50",
-    "university": "Fullerton"
+    "university": "Fullerton",
+    "opt_in":1
   },
   {
     "id": "40",
-    "university": "Long Beach"
+    "university": "Long Beach",
+    "opt_in":1
   },
   {
     "id": "45",
-    "university": "Los Angeles"
+    "university": "Los Angeles",
+    "opt_in":1
   },
   {
     "id": "55",
-    "university": "Dominguez Hills"
+    "university": "Dominguez Hills",
+    "opt_in":1
   },
   {
     "id": "10",
-    "university": "Pomona"
+    "university": "Pomona",
+    "opt_in":1
   },
   {
     "id": "70",
-    "university": "Northridge"
+    "university": "Northridge",
+    "opt_in":1
   },
   {
     "id": "73",
-    "university": "Channel Islands"
+    "university": "Channel Islands",
+    "opt_in":1
   },
   {
     "id": "0",
-    "university": "All"
+    "university": "All",
+    "opt_in":1
   }
 ]
