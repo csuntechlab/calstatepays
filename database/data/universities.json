@@ -2,27 +2,27 @@
   {
     "id": "50",
     "university": "Fullerton",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "40",
     "university": "Long Beach",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "45",
     "university": "Los Angeles",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "55",
     "university": "Dominguez Hills",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "10",
     "university": "Pomona",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "70",
@@ -32,7 +32,7 @@
   {
     "id": "73",
     "university": "Channel Islands",
-    "opt_in":1
+    "opt_in":0
   },
   {
     "id": "0",
