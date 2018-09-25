@@ -50689,7 +50689,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-3 col-12" }, [_c("pfre-form")], 1),
@@ -72886,7 +72886,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c(

@@ -24,12 +24,12 @@ class IndustryService implements IndustryContract
     {
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', 1);
-        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $university_id)
-            ->first();
+                $query->where('entry_status', 'FTF + FTT');
+                $query->where('student_path', 1);
+                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+                    ->where('hegis_code', $hegis_code)
+                    ->where('university_id', $university_id)
+                    ->first();
 
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);

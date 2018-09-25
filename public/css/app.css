@@ -26824,11 +26824,14 @@ input[type="button"]:focus {
 .major-btn_bachelors,
 .major-btn_postBacc,
 .major-btn_someCollege {
+  position: relative;
   color: #FFF;
   margin-left: 0;
   font-size: 1rem;
   text-transform: none;
   font-weight: 500;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 @media only screen and (min-width: 992px) {
