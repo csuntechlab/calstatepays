@@ -29,7 +29,7 @@ class IndustryService implements IndustryContract
         }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $university_id)
-            ->first();
+            ->firstOrFail();
 
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);

@@ -40,7 +40,7 @@ class MajorService implements MajorContract
                                 $query->where('university_id',$universityId);  
                                 }])
                                 ->where('id', $fieldOfStudyId)
-                                ->first();
+                                ->firstOrFail();
         if ( empty($fieldOfStudy) ){
             return [];
         }
@@ -69,9 +69,10 @@ class MajorService implements MajorContract
     public function getMajorEarnings($hegis_code, $university_id): array
     {
         $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
-                            ->where('university_id', $university_id)
-                            ->with('majorPaths.majorPathWage')
-                            ->first();
+            ->where('university_id', $university_id)
+            ->with('majorPaths.majorPathWage')
+            ->firstOrFail();
+        
                             
         if ( empty($universityMajor) ){
             return [];
@@ -122,7 +123,7 @@ class MajorService implements MajorContract
         $query = MajorPath::where('student_path',$student_path)
             ->where('university_majors_id',$uid)
             ->where('entry_status',$entry_status)
-            ->first();
+            ->firstOrFail();
         return $query;
     }
 
