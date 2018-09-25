@@ -6,18 +6,6 @@
 						<i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
 					</div>
 				<div class="form-group">
-					<label for="campus" v-bind:style="[this.submittedOnce && !this.form.schoolId? errorLabel : '']">
-						Select a Campus</label>
-					<v-select
-						label="name"
-						:options="universities"
-						@input="updateSelect('schoolId', 'id', $event)" 
-						@change="updateSelect('schoolId', 'id', $event)"
-						class="csu-form-input-major"
-						v-bind:class="{'border-danger': this.submittedOnce && !this.form.schoolId}">
-					</v-select>
-				</div>
-				<div class="form-group">
 					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
 					<v-select
 							label="discipline"
@@ -94,15 +82,13 @@ export default {
 			form: {
 				cardIndex: this.index,
 				majorId: null,
-				formWasSubmitted: false,
 				schoolId: null,
+				formWasSubmitted: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
 					major: null,
-					university: null
 				},
-				isUnivSelected: true,
 				isMajorSelected: true
 			},
 			submittedOnce: false,
@@ -114,6 +100,9 @@ export default {
 				fontWeight: "bold"
 			}
 		};
+	},
+	mounted() {
+		this.form.schoolId = this.selectedUniversity;
 	},
 	methods: {
 		...mapActions([
@@ -132,7 +121,6 @@ export default {
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
-				this.form.schoolId = null;
 			}
 		},
 
@@ -169,10 +157,10 @@ export default {
 		...mapGetters([
 			"majors",
 			"fieldOfStudies",
-			"universities",
 			"majorsByField",
 			"formWasSubmitted",
-			"educationLevel"
+			"educationLevel",
+			"selectedUniversity"
 		]),
 		selectedMajorsByField() {
 			this.selected = null;
@@ -190,8 +178,7 @@ export default {
 	},
 	validations: {
 		form: {
-			majorId: { required },
-			schoolId: { required }
+			majorId: { required }
 		}
 	},
 	components: {
