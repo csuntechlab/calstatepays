@@ -54,7 +54,7 @@
                     <div class="col-12">
                         <router-link to="research" class="returnToCampusSelection">
                             <h2>
-                                <i class="fas fa-arrow-left"></i> Return to CSU Campus Selection
+                                <i class="fa fa-arrow-left"></i> Return to CSU Campus Selection
                             </h2>
                         </router-link>
                     </div>

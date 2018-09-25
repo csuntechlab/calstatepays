@@ -9,14 +9,14 @@
 									description="Discover Your Earnings After College." :quote="this.shareDescription" hashtags="CalStatePays, ItPaysToGoToCollege"
 									inline-template>
 									<div>
-										<network network="facebook-m" class="csu-card__share csu-card__share-facebook">
-											<i class="fab fa-facebook fa-2x"></i>
+										<network network="facebook" class="csu-card__share csu-card__share-facebook">
+											<i class="fa fa-facebook-official fa-2x"></i>
 										</network>
-										<network network="linkedin-m" class="csu-card__share csu-card__share-linkedin">
-											<i class="fab fa-linkedin fa-2x"></i>
+										<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
+											<i class="fa fa-linkedin-square fa-2x"></i>
 										</network>
-										<network network="twitter-m" class="csu-card__share csu-card__share-twitter">
-											<i class="fab fa-twitter-square fa-2x"></i>
+										<network network="twitter" class="csu-card__share csu-card__share-twitter">
+											<i class="fa fa-twitter-square fa-2x"></i>
 										</network>
 									</div>
 								</social-sharing>

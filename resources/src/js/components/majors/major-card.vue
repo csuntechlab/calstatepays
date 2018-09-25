@@ -13,20 +13,20 @@
 								 inline-template>
 									<div>
 										<network network="facebook" class="csu-card__share csu-card__share-facebook">
-											<i class="fab fa-facebook fa-2x"></i>
+											<i class="fa fa-facebook-official fa-2x"></i>
 										</network>
 										<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
-											<i class="fab fa-linkedin fa-2x"></i>
+											<i class="fa fa-linkedin-square fa-2x"></i>
 										</network>
 										<network network="twitter" class="csu-card__share csu-card__share-twitter">
-											<i class="fab fa-twitter-square fa-2x"></i>
+											<i class="fa fa-twitter-square fa-2x"></i>
 										</network>
 									</div>
 								</social-sharing>
 							</div>
 							<div class="col-6">
-								<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-								<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+								<i class="fa fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+								<i class="fa fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
 							</div>
 						</div>
 						<div class="row">

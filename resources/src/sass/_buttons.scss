@@ -204,6 +204,7 @@ input[type="button"]:focus {
 .major-btn_bachelors,
 .major-btn_postBacc,
 .major-btn_someCollege {
+  position: relative;
   color: $white;
   margin-left: 0;
   font-size: 1rem;
