@@ -72063,7 +72063,7 @@ var render = function() {
                       expression: "isNotFirstCard"
                     }
                   ],
-                  staticClass: "fas fa-times btn-remove float-right",
+                  staticClass: "fa fa-times btn-remove float-right",
                   attrs: { title: "Close" },
                   on: { click: _vm.removeCurrentCard }
                 }),
@@ -72077,7 +72077,7 @@ var render = function() {
                       expression: "isEmpty"
                     }
                   ],
-                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  staticClass: "fa fa-sync-alt btn-reset float-right",
                   attrs: { title: "Reset" },
                   on: { click: _vm.resetCurrentCard }
                 })

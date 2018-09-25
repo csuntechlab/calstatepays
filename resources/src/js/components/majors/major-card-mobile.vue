@@ -22,8 +22,8 @@
 								</social-sharing>
 							</div>
                             <div class="col-6">
-                                <i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-                                <i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
+                                <i class="fa fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+                                <i class="fa fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
                             </div>
                         </div>
                         <div class="row">
