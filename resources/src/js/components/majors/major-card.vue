@@ -7,9 +7,14 @@
 			<card class="csu-card container-fluid py-3">
 				<div class="row">
 					<div class="col-6">
-						<social-sharing v-if="selectedFormWasSubmitted && !nullValues" url="sandbox.csun.edu/metalab/test/csumetrola" :title="this.shareDescription"
-						 description="Discover Your Earnings After College." :quote="this.shareDescription" hashtags="CalStatePays, ItPaysToGoToCollege"
-						 inline-template>
+						<social-sharing 
+						v-if="selectedFormWasSubmitted && !nullValues" 
+						url="sandbox.csun.edu/metalab/test/csumetrola" 
+						:title="this.shareDescription"
+						description="Discover Your Earnings After College." 
+						:quote="this.shareDescription" 
+						hashtags="CalStatePays, ItPaysToGoToCollege"
+						inline-template>
 							<div>
 								<network network="facebook" class="csu-card__share csu-card__share-facebook">
 									<i class="fab fa-facebook fa-2x"></i>
@@ -117,19 +122,24 @@ export default {
 			}
 		},
 		shareDescription() {
-			if(this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors)
-				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+			let opening = 'I discovered that ' + this.selectedMajorTitle + ' students from CSUN make an average of ';
+
+			if(this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees')
+				return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+
 			else if(this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege')
-				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+				return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+
 			else if(this.selectedMajorData[this.selectedEducationLevel])
-				return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+				return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+
 			else
 				return 'Discover your earnings after college!'
 		},
 		nullValues() {
 			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData)
 				return (this.selectedMajorData[this.selectedEducationLevel][2]._25th == null);
-			else return false;
+			return false;
 		}
 	},
 	methods: {
