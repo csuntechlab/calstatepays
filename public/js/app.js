@@ -45954,6 +45954,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var index = payload;
     state.majorCards[index].formWasSubmitted = false;
     state.majorCards[index].majorsByField = [];
+    state.majorCards[index].educationLevel = "allDegrees";
     state.majorCards[index].industries = [];
     state.majorCards[index].majorData = [];
 }), _majors$FETCH_MAJORS$);
@@ -46544,9 +46545,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
 //
 //
 //
@@ -47321,8 +47319,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore by Major\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47352,10 +47350,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
-                    )
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore Industries\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47489,34 +47485,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-line-chart" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Which majors earn the most?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__copy" }, [
-      _c("p", [
-        _vm._v(
-          "Find out which majors has the highest earn and the most students."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-graduation-cap" })
     ])
   },
@@ -47525,7 +47493,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
+      _c("h3", [_vm._v("WIll you graduate if you earn more?")])
     ])
   },
   function() {
@@ -47545,6 +47513,30 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-line-chart" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Where will you work?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [_vm._v("Explore industries of employment by major.")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-usd" })
     ])
   },
@@ -47553,7 +47545,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("What is your financial return?")])
+      _c("h3", [_vm._v("What is your financial return on your education?")])
     ])
   },
   function() {

@@ -80,6 +80,7 @@ export default {
         let index = payload;
         state.majorCards[index].formWasSubmitted = false;
         state.majorCards[index].majorsByField=[];
+        state.majorCards[index].educationLevel = "allDegrees"
         state.majorCards[index].industries=[];
         state.majorCards[index].majorData = [];
     },
