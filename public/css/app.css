@@ -26830,6 +26830,8 @@ input[type="button"]:focus {
   font-size: 1rem;
   text-transform: none;
   font-weight: 500;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 @media only screen and (min-width: 992px) {
