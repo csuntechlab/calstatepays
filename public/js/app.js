@@ -48787,7 +48787,7 @@ var render = function() {
             ]
           },
           [
-            _c("i", { staticClass: "fas fa-exclamation-circle" }),
+            _c("i", { staticClass: "fa fa-exclamation-circle" }),
             _vm._v(" Please fill out all fields.\n            ")
           ]
         )
@@ -51478,7 +51478,7 @@ var render = function() {
                     ]
                   },
                   [
-                    _c("i", { staticClass: "fas fa-exclamation-circle" }),
+                    _c("i", { staticClass: "fa fa-exclamation-circle" }),
                     _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
                   ]
                 )
@@ -72837,7 +72837,7 @@ var render = function() {
             ]
           },
           [
-            _c("i", { staticClass: "fas fa-exclamation-circle" }),
+            _c("i", { staticClass: "fa fa-exclamation-circle" }),
             _vm._v(" Please select a Campus and Major.\n\t\t\t\t")
           ]
         )

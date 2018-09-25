@@ -3,7 +3,7 @@
 		<fieldset class="csu-card__form-sizing">
 			<div v-if="!selectedFormWasSubmitted">
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-						<i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
+						<i class="fa fa-exclamation-circle"></i> Please select a Campus and Major.
 					</div>
 				<div class="form-group">
 					<label for="campus" v-bind:style="[this.submittedOnce && !this.form.schoolId? errorLabel : '']">
