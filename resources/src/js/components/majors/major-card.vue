@@ -7,10 +7,13 @@
 				<card class="csu-card container-fluid py-3">
 						<div class="row">
 							<div class="col-6">
-								<social-sharing v-if="selectedFormWasSubmitted" :title="this.shareDescription" description="Discover Your Earnings After College."
-								 :quote="this.shareDescription" 
-								 hashtags="CalStatePays, ItPaysToGoToCollege"
-								 inline-template>
+								<social-sharing 
+								v-if="selectedFormWasSubmitted" 
+								:title="this.shareDescription" 
+								description="Discover Your Earnings After College."
+								:quote="this.shareDescription" 
+								hashtags="CalStatePays, ItPaysToGoToCollege"
+								inline-template>
 									<div>
 										<network network="facebook" class="csu-card__share csu-card__share-facebook">
 											<i class="fab fa-facebook fa-2x"></i>
