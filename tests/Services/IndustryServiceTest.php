@@ -35,6 +35,7 @@ class IndustryServiceTest extends TestCase
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
          $this->seed('Population_Table_Seeder');
+         $this->seed('Universities_TableSeeder');
          $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
          $this->assertArrayHasKey("title", $response[0]);
          $this->assertArrayHasKey("percentage", $response[0]);
