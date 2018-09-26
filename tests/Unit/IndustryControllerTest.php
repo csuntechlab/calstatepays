@@ -14,11 +14,14 @@ class IndustryControllerTest extends TestCase
 
     public function setUp(){
         parent::setUp();
+        $this->seed('Naics_Titles_TableSeeder');
     }
 
     public function testGetAllIndustryNaicsTitles()
     {
-        $this->seed('Naics_Titles_TableSeeder');
+        // api route is
+        // /api/industry/naics-titles
+        // method is IndustryContrller@getAllIndustryNaicsTitles
         $response = $this->json('GET', '/api/industry/naics-titles');
         $response->assertStatus(200);
         $response->assertJsonStructure([
@@ -30,17 +33,24 @@ class IndustryControllerTest extends TestCase
         ]);
     }
 
-    // public function testGetIndustryPopulationByRank()
-    // {
-    //     $response = $this->json('GET', '/api/industry/22021/1153');
-    //     $response->assertJsonStructure([
-    //         0 => [
-    //             'title',
-    //             'percentage',
-    //             'rank',
-    //             'image'
-    //         ]
-    //     ]);
-    //     $response->assertStatus(200);
-    // }
+     public function testGetIndustryPopulationByRank()
+     {
+         // route is
+         // /api/industry/5021/70
+         // method is IndustryContrller@getIndustryPopulationByRank
+         $this->seed('University_Majors_TableSeeder');
+         $this->seed('Master_Industry_Path_Types_Table_Seeder');
+         $this->seed('Master_Industry_Wages_Table_Seeder');
+         $this->seed('Population_Table_Seeder');
+         $response = $this->json('GET', '/api/industry/5021/70');
+         $response->assertJsonStructure([
+             0 => [
+                 'title',
+                 'percentage',
+                 'rank',
+                 'image'
+             ]
+         ]);
+         $response->assertStatus(200);
+     }
 }
