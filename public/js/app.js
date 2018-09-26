@@ -50401,7 +50401,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col col " }, [
+              _c("span", { staticClass: "col" }, [
                 _c(
                   "p",
                   {
