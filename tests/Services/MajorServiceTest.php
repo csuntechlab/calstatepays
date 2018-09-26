@@ -28,6 +28,8 @@ class MajorServiceTest extends TestCase
          $this->seed('Universities_TableSeeder');
          $this->seed('Major_Paths_TableSeeder');
          $this->seed('Major_Path_Wages_TableSeeder');
+
+         // $this->seed('Master_Major_Page_Data_TableSeeder');
          // michael chan
          // do we need this?
          // $this->seed('Master_Major_Page_Data_TableSeeder');
@@ -90,5 +92,21 @@ class MajorServiceTest extends TestCase
          $this->arrayHasKey("earnings_5_years", $response);
          $this->arrayHasKey("roi", $response);
      }
+
+
+    public function test_getAllHegisCodesByUniversity_Opt_in_CSU()
+    {
+        // api route is
+        // major/hegis-codes/university/{universityId}
+        // i.e. major/hegis-codes/university/70
+        $university_id = 70;
+        $northridge_majors = 86;
+
+        $response = $this->majorService->getAllHegisCodesByUniversity($university_id);
+        $this->assertArrayHasKey('major',$response[0]);
+        $this->assertArrayHasKey('hegis_code',$response[0]);
+        $this->assertArrayHasKey('university_id',$response[0]);
+        $this->assertEquals(count($response),$northridge_majors);
+    }
 
 }

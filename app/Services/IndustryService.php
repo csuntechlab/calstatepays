@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
+use App\Models\University;
 use App\Models\UniversityMajor;
 
 class IndustryService implements IndustryContract
@@ -22,6 +23,19 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
+
+        /**
+         *  Would here be the best choice to check if CSU Opts In or Not?
+         */
+
+        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
+
+        // Might need a way to figure out how the Front end wants to handle this.
+        if($opt_in  === null ){
+            return response([
+                'success' => false
+            ],200);
+        }
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
