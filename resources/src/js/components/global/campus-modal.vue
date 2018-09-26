@@ -1,31 +1,30 @@
 <template>
   <div @keyup.enter="showModal= false">
-      <button @click="showModal = true" role="button">
+        <button @click="showModal = true" role="button">
                 <slot name="change button"></slot>
-            </button>
+        </button>
         
-<v-dialog  v-model="showModal" persistent>
-
-            <v-card  class=" text-xs-center black--text">
-                <v-card-title class="headline grey lighten-2 ">
-                    Choose Your Campus
-                </v-card-title>
-                <v-card-text class="campus-modal">
-                    <div class="row" >
-                        <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                                <figure  @click="changeCampus(universities[index].id);">
-                                <img :src= item.url role="button" class="btn">    
-                                <figcaption> {{item.name}}</figcaption>                    
-                                </figure>
-                        </div>
-                        <!-- place holder for all button -->
-                        <div class="col-12 col-sm">
-                            <figure>
-                                <img src=" https://via.placeholder.com/123x112?" role="button" class="btn">    
-                                <figcaption>All campuses(Aot Available)</figcaption>                    
-                             </figure>
-                        </div>
+    <v-dialog  v-model="showModal" persistent>
+        <v-card  class=" text-xs-center black--text">
+            <v-card-title class="headline grey lighten-2 ">
+                Choose Your Campus
+            </v-card-title>
+            <v-card-text class="campus-modal">
+                <div class="row" >
+                    <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
+                        <figure  @click="changeCampus(universities[index].id);">
+                            <img :src= item.url role="button" class="btn">    
+                            <figcaption> {{item.name}}</figcaption>                    
+                        </figure>
                     </div>
+                        <!-- place holder for all button -->
+                    <div class="col-12 col-sm">
+                        <figure>
+                            <img src=" https://via.placeholder.com/123x112?" role="button" class="btn">    
+                            <figcaption>All campuses(Aot Available)</figcaption>                    
+                        </figure>
+                    </div>
+                </div>
             </v-card-text>
         </v-card> 
         </v-dialog>
