@@ -65,11 +65,7 @@ class IndustryService implements IndustryContract
         $final =  $industry_populations = $industry_populations
             ->map(function ($industry,$index = 0) use($population_total){
                 $index++;
-                if( ($industry->population->population_found != null) && ($population_total != null) ){
-                    $percentage = round( ($industry->population->population_found/$population_total)*100, 0, PHP_ROUND_HALF_DOWN);
-                }else{
-                    $percentage = null;
-                }
+                $percentage = $this->populationHandler($industry,$population_total);
                 return [
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
@@ -79,5 +75,13 @@ class IndustryService implements IndustryContract
                 ];
             });
         return $final;
+    }
+
+    private function populationHandler($industry, $population_total){
+        if( ($industry->population->population_found!=null) && ($population_total != null) ){
+            $percentage = round( ($industry->population->population_found/$population_total)*100, 0, PHP_ROUND_HALF_DOWN);
+            return $percentage;
+        }
+        return null;
     }
 }
