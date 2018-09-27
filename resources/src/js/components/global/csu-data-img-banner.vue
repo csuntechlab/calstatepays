@@ -4,7 +4,11 @@
             <div class="row justify-content-start">
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
                     <h2 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h2>
-                    <a class="CSUDataImgBanner__changeCampus" href="#">Change Campus</a>
+                    <div data-app>
+                        <campus-modal>
+                            <span slot="change button" class="CSUDataImgBanner__changeCampus" href="#">Change Campus</span>
+                         </campus-modal>
+                    </div>
                 </div>
                 <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-8">
                     <slot name="title"></slot>
@@ -17,6 +21,7 @@
 
 <script>
 import {mapGetters} from 'vuex';
+import campusModal from './campus-modal.vue';
 export default {
     created: function(){
     },
@@ -42,6 +47,8 @@ export default {
             CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
             CSUImg: '',
         }
-    }
+    },
+    components: {campusModal}
 }
+
 </script>
