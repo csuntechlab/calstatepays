@@ -26,6 +26,27 @@
 									</div>
 								</social-sharing>
 							</div>
+							<div class="col-6">
+								<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+								<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+						</div>
+					</div>
+					<div v-show="this.selectedFormWasSubmitted && nullValues">
+						<div class="row text-center">
+							<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
+						</div>
+					</div>
+					<div v-show="!nullValues">
+						<div class="row" v-show="selectedFormWasSubmitted" style="height: 400px">
+							<div class="col-12">
+								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+							</div>
 						</div>
 						<div class="row justify-content-center">
 							<div class="col-12">
@@ -38,11 +59,11 @@
 							<major-form :index="index" />
 						</div>
 					</div>
-						<div class="row">
-							<div class="col-12">
-								<industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId" />
-							</div>
+					<div class="row">
+						<div class="col-12">
+							<industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId" />
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>

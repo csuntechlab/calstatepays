@@ -72013,6 +72013,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -72335,30 +72356,143 @@ var render = function() {
                     : _vm._e()
                 ],
                 1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row justify-content-center" }, [
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6" }, [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
+                    }
+                  ],
+                  staticClass: "fas fa-times btn-remove float-right",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
               _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("major-legend", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
-                    ],
-                    attrs: { educationLevel: _vm.selectedEducationLevel }
-                  })
-                ],
-                1
+                "h3",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "industry-title"
+                },
+                [_vm._v(_vm._s(_vm.selectedMajorTitle))]
               )
             ])
           ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: this.selectedFormWasSubmitted && _vm.nullValues,
+                  expression: "this.selectedFormWasSubmitted && nullValues"
+                }
+              ]
+            },
+            [_vm._m(0)]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.nullValues,
+                  expression: "!nullValues"
+                }
+              ]
+            },
+            [
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "row",
+                  staticStyle: { height: "400px" }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("major-graph-wrapper", {
+                        attrs: {
+                          id: "majorGraphWrapperIndex-" + this.index,
+                          majorData: _vm.selectedMajorData,
+                          educationLevel: _vm.selectedEducationLevel,
+                          windowWidth: _vm.windowWidth
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-center" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-12" },
+                  [
+                    _c("major-legend", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.selectedFormWasSubmitted,
+                          expression: "selectedFormWasSubmitted"
+                        }
+                      ],
+                      attrs: { educationLevel: _vm.selectedEducationLevel }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c(
@@ -72397,7 +72531,19 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("h3", { staticClass: "csu-card__no-data--mobile" }, [
+        _c("i", { staticClass: "fa fa-exclamation-circle required-field" }),
+        _vm._v(" No data available")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
