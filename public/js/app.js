@@ -47836,19 +47836,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47875,127 +47862,65 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    { staticClass: "sub-nav container-fluid" },
-    [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _vm._v("\n<<<<<<< HEAD\n            "),
-          _c(
-            "router-link",
-            {
-              staticClass:
-                "d-flex col-4 justify-content-center sub-nav__element",
-              attrs: {
-                "exact-active-class": "sub-nav__element--active",
-                to: "/data/industries"
-              },
-              nativeOn: {
-                click: function($event) {
-                  _vm.setDataPage("industries")
-                }
-              }
+  return _c("nav", { staticClass: "sub-nav container-fluid" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "active-class": "sub-nav__element--active",
+              to: "/data/majors"
             },
-            [_vm._v("\n                INDUSTRIES\n            ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass:
-                "d-flex col-4 justify-content-center sub-nav__element",
-              attrs: {
-                "active-class": "sub-nav__element--active",
-                to: "/data/majors"
-              },
-              nativeOn: {
-                click: function($event) {
-                  _vm.setDataPage("majors")
-                }
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("majors")
               }
+            }
+          },
+          [_vm._v("\n        MAJORS\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "exact-active-class": "sub-nav__element--active",
+              to: "/data/industries"
             },
-            [_vm._v("\n                MAJORS\n            ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass:
-                "d-flex col-4 justify-content-center sub-nav__element",
-              attrs: {
-                "active-class": "sub-nav__element--active",
-                to: "/data/pfre"
-              },
-              nativeOn: {
-                click: function($event) {
-                  _vm.setDataPage("pfre")
-                }
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("industries")
               }
+            }
+          },
+          [_vm._v("\n        INDUSTRIES\n        ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            attrs: {
+              "active-class": "sub-nav__element--active",
+              to: "/data/pfre"
             },
-            [_vm._v("\n                FRE\n            ")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" \n=======\n            "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "active-class": "sub-nav__element--active",
-            to: "/data/majors"
-          },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("majors")
+            nativeOn: {
+              click: function($event) {
+                _vm.setDataPage("pfre")
+              }
             }
-          }
-        },
-        [_vm._v("\n            MAJORS\n            ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "exact-active-class": "sub-nav__element--active",
-            to: "/data/industries"
           },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("industries")
-            }
-          }
-        },
-        [_vm._v("\n            INDUSTRIES\n            ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "d-flex col-4 justify-content-center sub-nav__element",
-          attrs: {
-            "active-class": "sub-nav__element--active",
-            to: "/data/pfre"
-          },
-          nativeOn: {
-            click: function($event) {
-              _vm.setDataPage("pfre")
-            }
-          }
-        },
-        [_vm._v("\n            FRE\n            ")]
-      ),
-      _vm._v(" "),
-      _vm._v("\n>>>>>>> d8d70310e99bc82937548d024004333900b4c3d3\n    ")
-    ],
-    1
-  )
+          [_vm._v("\n        FRE\n        ")]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
