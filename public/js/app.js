@@ -911,500 +911,6 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var zrUtil = __webpack_require__(0);
-
-/*
-* Licensed to the Apache Software Foundation (ASF) under one
-* or more contributor license agreements.  See the NOTICE file
-* distributed with this work for additional information
-* regarding copyright ownership.  The ASF licenses this file
-* to you under the Apache License, Version 2.0 (the
-* "License"); you may not use this file except in compliance
-* with the License.  You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing,
-* software distributed under the License is distributed on an
-* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-* KIND, either express or implied.  See the License for the
-* specific language governing permissions and limitations
-* under the License.
-*/
-var each = zrUtil.each;
-var isObject = zrUtil.isObject;
-var isArray = zrUtil.isArray;
-/**
- * Make the name displayable. But we should
- * make sure it is not duplicated with user
- * specified name, so use '\0';
- */
-
-var DUMMY_COMPONENT_NAME_PREFIX = 'series\0';
-/**
- * If value is not array, then translate it to array.
- * @param  {*} value
- * @return {Array} [value] or value
- */
-
-function normalizeToArray(value) {
-  return value instanceof Array ? value : value == null ? [] : [value];
-}
-/**
- * Sync default option between normal and emphasis like `position` and `show`
- * In case some one will write code like
- *     label: {
- *          show: false,
- *          position: 'outside',
- *          fontSize: 18
- *     },
- *     emphasis: {
- *          label: { show: true }
- *     }
- * @param {Object} opt
- * @param {string} key
- * @param {Array.<string>} subOpts
- */
-
-
-function defaultEmphasis(opt, key, subOpts) {
-  // Caution: performance sensitive.
-  if (opt) {
-    opt[key] = opt[key] || {};
-    opt.emphasis = opt.emphasis || {};
-    opt.emphasis[key] = opt.emphasis[key] || {}; // Default emphasis option from normal
-
-    for (var i = 0, len = subOpts.length; i < len; i++) {
-      var subOptName = subOpts[i];
-
-      if (!opt.emphasis[key].hasOwnProperty(subOptName) && opt[key].hasOwnProperty(subOptName)) {
-        opt.emphasis[key][subOptName] = opt[key][subOptName];
-      }
-    }
-  }
-}
-
-var TEXT_STYLE_OPTIONS = ['fontStyle', 'fontWeight', 'fontSize', 'fontFamily', 'rich', 'tag', 'color', 'textBorderColor', 'textBorderWidth', 'width', 'height', 'lineHeight', 'align', 'verticalAlign', 'baseline', 'shadowColor', 'shadowBlur', 'shadowOffsetX', 'shadowOffsetY', 'textShadowColor', 'textShadowBlur', 'textShadowOffsetX', 'textShadowOffsetY', 'backgroundColor', 'borderColor', 'borderWidth', 'borderRadius', 'padding']; // modelUtil.LABEL_OPTIONS = modelUtil.TEXT_STYLE_OPTIONS.concat([
-//     'position', 'offset', 'rotate', 'origin', 'show', 'distance', 'formatter',
-//     'fontStyle', 'fontWeight', 'fontSize', 'fontFamily',
-//     // FIXME: deprecated, check and remove it.
-//     'textStyle'
-// ]);
-
-/**
- * The method do not ensure performance.
- * data could be [12, 2323, {value: 223}, [1221, 23], {value: [2, 23]}]
- * This helper method retieves value from data.
- * @param {string|number|Date|Array|Object} dataItem
- * @return {number|string|Date|Array.<number|string|Date>}
- */
-
-function getDataItemValue(dataItem) {
-  return isObject(dataItem) && !isArray(dataItem) && !(dataItem instanceof Date) ? dataItem.value : dataItem;
-}
-/**
- * data could be [12, 2323, {value: 223}, [1221, 23], {value: [2, 23]}]
- * This helper method determine if dataItem has extra option besides value
- * @param {string|number|Date|Array|Object} dataItem
- */
-
-
-function isDataItemOption(dataItem) {
-  return isObject(dataItem) && !(dataItem instanceof Array); // // markLine data can be array
-  // && !(dataItem[0] && isObject(dataItem[0]) && !(dataItem[0] instanceof Array));
-}
-/**
- * Mapping to exists for merge.
- *
- * @public
- * @param {Array.<Object>|Array.<module:echarts/model/Component>} exists
- * @param {Object|Array.<Object>} newCptOptions
- * @return {Array.<Object>} Result, like [{exist: ..., option: ...}, {}],
- *                          index of which is the same as exists.
- */
-
-
-function mappingToExists(exists, newCptOptions) {
-  // Mapping by the order by original option (but not order of
-  // new option) in merge mode. Because we should ensure
-  // some specified index (like xAxisIndex) is consistent with
-  // original option, which is easy to understand, espatially in
-  // media query. And in most case, merge option is used to
-  // update partial option but not be expected to change order.
-  newCptOptions = (newCptOptions || []).slice();
-  var result = zrUtil.map(exists || [], function (obj, index) {
-    return {
-      exist: obj
-    };
-  }); // Mapping by id or name if specified.
-
-  each(newCptOptions, function (cptOption, index) {
-    if (!isObject(cptOption)) {
-      return;
-    } // id has highest priority.
-
-
-    for (var i = 0; i < result.length; i++) {
-      if (!result[i].option // Consider name: two map to one.
-      && cptOption.id != null && result[i].exist.id === cptOption.id + '') {
-        result[i].option = cptOption;
-        newCptOptions[index] = null;
-        return;
-      }
-    }
-
-    for (var i = 0; i < result.length; i++) {
-      var exist = result[i].exist;
-
-      if (!result[i].option // Consider name: two map to one.
-      // Can not match when both ids exist but different.
-      && (exist.id == null || cptOption.id == null) && cptOption.name != null && !isIdInner(cptOption) && !isIdInner(exist) && exist.name === cptOption.name + '') {
-        result[i].option = cptOption;
-        newCptOptions[index] = null;
-        return;
-      }
-    }
-  }); // Otherwise mapping by index.
-
-  each(newCptOptions, function (cptOption, index) {
-    if (!isObject(cptOption)) {
-      return;
-    }
-
-    var i = 0;
-
-    for (; i < result.length; i++) {
-      var exist = result[i].exist;
-
-      if (!result[i].option // Existing model that already has id should be able to
-      // mapped to (because after mapping performed model may
-      // be assigned with a id, whish should not affect next
-      // mapping), except those has inner id.
-      && !isIdInner(exist) // Caution:
-      // Do not overwrite id. But name can be overwritten,
-      // because axis use name as 'show label text'.
-      // 'exist' always has id and name and we dont
-      // need to check it.
-      && cptOption.id == null) {
-        result[i].option = cptOption;
-        break;
-      }
-    }
-
-    if (i >= result.length) {
-      result.push({
-        option: cptOption
-      });
-    }
-  });
-  return result;
-}
-/**
- * Make id and name for mapping result (result of mappingToExists)
- * into `keyInfo` field.
- *
- * @public
- * @param {Array.<Object>} Result, like [{exist: ..., option: ...}, {}],
- *                          which order is the same as exists.
- * @return {Array.<Object>} The input.
- */
-
-
-function makeIdAndName(mapResult) {
-  // We use this id to hash component models and view instances
-  // in echarts. id can be specified by user, or auto generated.
-  // The id generation rule ensures new view instance are able
-  // to mapped to old instance when setOption are called in
-  // no-merge mode. So we generate model id by name and plus
-  // type in view id.
-  // name can be duplicated among components, which is convenient
-  // to specify multi components (like series) by one name.
-  // Ensure that each id is distinct.
-  var idMap = zrUtil.createHashMap();
-  each(mapResult, function (item, index) {
-    var existCpt = item.exist;
-    existCpt && idMap.set(existCpt.id, item);
-  });
-  each(mapResult, function (item, index) {
-    var opt = item.option;
-    zrUtil.assert(!opt || opt.id == null || !idMap.get(opt.id) || idMap.get(opt.id) === item, 'id duplicates: ' + (opt && opt.id));
-    opt && opt.id != null && idMap.set(opt.id, item);
-    !item.keyInfo && (item.keyInfo = {});
-  }); // Make name and id.
-
-  each(mapResult, function (item, index) {
-    var existCpt = item.exist;
-    var opt = item.option;
-    var keyInfo = item.keyInfo;
-
-    if (!isObject(opt)) {
-      return;
-    } // name can be overwitten. Consider case: axis.name = '20km'.
-    // But id generated by name will not be changed, which affect
-    // only in that case: setOption with 'not merge mode' and view
-    // instance will be recreated, which can be accepted.
-
-
-    keyInfo.name = opt.name != null ? opt.name + '' : existCpt ? existCpt.name // Avoid diffferent series has the same name,
-    // because name may be used like in color pallet.
-    : DUMMY_COMPONENT_NAME_PREFIX + index;
-
-    if (existCpt) {
-      keyInfo.id = existCpt.id;
-    } else if (opt.id != null) {
-      keyInfo.id = opt.id + '';
-    } else {
-      // Consider this situatoin:
-      //  optionA: [{name: 'a'}, {name: 'a'}, {..}]
-      //  optionB [{..}, {name: 'a'}, {name: 'a'}]
-      // Series with the same name between optionA and optionB
-      // should be mapped.
-      var idNum = 0;
-
-      do {
-        keyInfo.id = '\0' + keyInfo.name + '\0' + idNum++;
-      } while (idMap.get(keyInfo.id));
-    }
-
-    idMap.set(keyInfo.id, item);
-  });
-}
-
-function isNameSpecified(componentModel) {
-  var name = componentModel.name; // Is specified when `indexOf` get -1 or > 0.
-
-  return !!(name && name.indexOf(DUMMY_COMPONENT_NAME_PREFIX));
-}
-/**
- * @public
- * @param {Object} cptOption
- * @return {boolean}
- */
-
-
-function isIdInner(cptOption) {
-  return isObject(cptOption) && cptOption.id && (cptOption.id + '').indexOf('\0_ec_\0') === 0;
-}
-/**
- * A helper for removing duplicate items between batchA and batchB,
- * and in themselves, and categorize by series.
- *
- * @param {Array.<Object>} batchA Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
- * @param {Array.<Object>} batchB Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
- * @return {Array.<Array.<Object>, Array.<Object>>} result: [resultBatchA, resultBatchB]
- */
-
-
-function compressBatches(batchA, batchB) {
-  var mapA = {};
-  var mapB = {};
-  makeMap(batchA || [], mapA);
-  makeMap(batchB || [], mapB, mapA);
-  return [mapToArray(mapA), mapToArray(mapB)];
-
-  function makeMap(sourceBatch, map, otherMap) {
-    for (var i = 0, len = sourceBatch.length; i < len; i++) {
-      var seriesId = sourceBatch[i].seriesId;
-      var dataIndices = normalizeToArray(sourceBatch[i].dataIndex);
-      var otherDataIndices = otherMap && otherMap[seriesId];
-
-      for (var j = 0, lenj = dataIndices.length; j < lenj; j++) {
-        var dataIndex = dataIndices[j];
-
-        if (otherDataIndices && otherDataIndices[dataIndex]) {
-          otherDataIndices[dataIndex] = null;
-        } else {
-          (map[seriesId] || (map[seriesId] = {}))[dataIndex] = 1;
-        }
-      }
-    }
-  }
-
-  function mapToArray(map, isData) {
-    var result = [];
-
-    for (var i in map) {
-      if (map.hasOwnProperty(i) && map[i] != null) {
-        if (isData) {
-          result.push(+i);
-        } else {
-          var dataIndices = mapToArray(map[i], true);
-          dataIndices.length && result.push({
-            seriesId: i,
-            dataIndex: dataIndices
-          });
-        }
-      }
-    }
-
-    return result;
-  }
-}
-/**
- * @param {module:echarts/data/List} data
- * @param {Object} payload Contains dataIndex (means rawIndex) / dataIndexInside / name
- *                         each of which can be Array or primary type.
- * @return {number|Array.<number>} dataIndex If not found, return undefined/null.
- */
-
-
-function queryDataIndex(data, payload) {
-  if (payload.dataIndexInside != null) {
-    return payload.dataIndexInside;
-  } else if (payload.dataIndex != null) {
-    return zrUtil.isArray(payload.dataIndex) ? zrUtil.map(payload.dataIndex, function (value) {
-      return data.indexOfRawIndex(value);
-    }) : data.indexOfRawIndex(payload.dataIndex);
-  } else if (payload.name != null) {
-    return zrUtil.isArray(payload.name) ? zrUtil.map(payload.name, function (value) {
-      return data.indexOfName(value);
-    }) : data.indexOfName(payload.name);
-  }
-}
-/**
- * Enable property storage to any host object.
- * Notice: Serialization is not supported.
- *
- * For example:
- * var inner = zrUitl.makeInner();
- *
- * function some1(hostObj) {
- *      inner(hostObj).someProperty = 1212;
- *      ...
- * }
- * function some2() {
- *      var fields = inner(this);
- *      fields.someProperty1 = 1212;
- *      fields.someProperty2 = 'xx';
- *      ...
- * }
- *
- * @return {Function}
- */
-
-
-function makeInner() {
-  // Consider different scope by es module import.
-  var key = '__\0ec_inner_' + innerUniqueIndex++ + '_' + Math.random().toFixed(5);
-  return function (hostObj) {
-    return hostObj[key] || (hostObj[key] = {});
-  };
-}
-
-var innerUniqueIndex = 0;
-/**
- * @param {module:echarts/model/Global} ecModel
- * @param {string|Object} finder
- *        If string, e.g., 'geo', means {geoIndex: 0}.
- *        If Object, could contain some of these properties below:
- *        {
- *            seriesIndex, seriesId, seriesName,
- *            geoIndex, geoId, geoName,
- *            bmapIndex, bmapId, bmapName,
- *            xAxisIndex, xAxisId, xAxisName,
- *            yAxisIndex, yAxisId, yAxisName,
- *            gridIndex, gridId, gridName,
- *            ... (can be extended)
- *        }
- *        Each properties can be number|string|Array.<number>|Array.<string>
- *        For example, a finder could be
- *        {
- *            seriesIndex: 3,
- *            geoId: ['aa', 'cc'],
- *            gridName: ['xx', 'rr']
- *        }
- *        xxxIndex can be set as 'all' (means all xxx) or 'none' (means not specify)
- *        If nothing or null/undefined specified, return nothing.
- * @param {Object} [opt]
- * @param {string} [opt.defaultMainType]
- * @param {Array.<string>} [opt.includeMainTypes]
- * @return {Object} result like:
- *        {
- *            seriesModels: [seriesModel1, seriesModel2],
- *            seriesModel: seriesModel1, // The first model
- *            geoModels: [geoModel1, geoModel2],
- *            geoModel: geoModel1, // The first model
- *            ...
- *        }
- */
-
-function parseFinder(ecModel, finder, opt) {
-  if (zrUtil.isString(finder)) {
-    var obj = {};
-    obj[finder + 'Index'] = 0;
-    finder = obj;
-  }
-
-  var defaultMainType = opt && opt.defaultMainType;
-
-  if (defaultMainType && !has(finder, defaultMainType + 'Index') && !has(finder, defaultMainType + 'Id') && !has(finder, defaultMainType + 'Name')) {
-    finder[defaultMainType + 'Index'] = 0;
-  }
-
-  var result = {};
-  each(finder, function (value, key) {
-    var value = finder[key]; // Exclude 'dataIndex' and other illgal keys.
-
-    if (key === 'dataIndex' || key === 'dataIndexInside') {
-      result[key] = value;
-      return;
-    }
-
-    var parsedKey = key.match(/^(\w+)(Index|Id|Name)$/) || [];
-    var mainType = parsedKey[1];
-    var queryType = (parsedKey[2] || '').toLowerCase();
-
-    if (!mainType || !queryType || value == null || queryType === 'index' && value === 'none' || opt && opt.includeMainTypes && zrUtil.indexOf(opt.includeMainTypes, mainType) < 0) {
-      return;
-    }
-
-    var queryParam = {
-      mainType: mainType
-    };
-
-    if (queryType !== 'index' || value !== 'all') {
-      queryParam[queryType] = value;
-    }
-
-    var models = ecModel.queryComponents(queryParam);
-    result[mainType + 'Models'] = models;
-    result[mainType + 'Model'] = models[0];
-  });
-  return result;
-}
-
-function has(obj, prop) {
-  return obj && obj.hasOwnProperty(prop);
-}
-
-function setAttribute(dom, key, value) {
-  dom.setAttribute ? dom.setAttribute(key, value) : dom[key] = value;
-}
-
-function getAttribute(dom, key) {
-  return dom.getAttribute ? dom.getAttribute(key) : dom[key];
-}
-
-exports.normalizeToArray = normalizeToArray;
-exports.defaultEmphasis = defaultEmphasis;
-exports.TEXT_STYLE_OPTIONS = TEXT_STYLE_OPTIONS;
-exports.getDataItemValue = getDataItemValue;
-exports.isDataItemOption = isDataItemOption;
-exports.mappingToExists = mappingToExists;
-exports.makeIdAndName = makeIdAndName;
-exports.isNameSpecified = isNameSpecified;
-exports.isIdInner = isIdInner;
-exports.compressBatches = compressBatches;
-exports.queryDataIndex = queryDataIndex;
-exports.makeInner = makeInner;
-exports.parseFinder = parseFinder;
-exports.setAttribute = setAttribute;
-exports.getAttribute = getAttribute;
-
-/***/ }),
-/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2347,6 +1853,500 @@ var index_esm = {
 
 /* harmony default export */ __webpack_exports__["a"] = (index_esm);
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var zrUtil = __webpack_require__(0);
+
+/*
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements.  See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership.  The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License.  You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied.  See the License for the
+* specific language governing permissions and limitations
+* under the License.
+*/
+var each = zrUtil.each;
+var isObject = zrUtil.isObject;
+var isArray = zrUtil.isArray;
+/**
+ * Make the name displayable. But we should
+ * make sure it is not duplicated with user
+ * specified name, so use '\0';
+ */
+
+var DUMMY_COMPONENT_NAME_PREFIX = 'series\0';
+/**
+ * If value is not array, then translate it to array.
+ * @param  {*} value
+ * @return {Array} [value] or value
+ */
+
+function normalizeToArray(value) {
+  return value instanceof Array ? value : value == null ? [] : [value];
+}
+/**
+ * Sync default option between normal and emphasis like `position` and `show`
+ * In case some one will write code like
+ *     label: {
+ *          show: false,
+ *          position: 'outside',
+ *          fontSize: 18
+ *     },
+ *     emphasis: {
+ *          label: { show: true }
+ *     }
+ * @param {Object} opt
+ * @param {string} key
+ * @param {Array.<string>} subOpts
+ */
+
+
+function defaultEmphasis(opt, key, subOpts) {
+  // Caution: performance sensitive.
+  if (opt) {
+    opt[key] = opt[key] || {};
+    opt.emphasis = opt.emphasis || {};
+    opt.emphasis[key] = opt.emphasis[key] || {}; // Default emphasis option from normal
+
+    for (var i = 0, len = subOpts.length; i < len; i++) {
+      var subOptName = subOpts[i];
+
+      if (!opt.emphasis[key].hasOwnProperty(subOptName) && opt[key].hasOwnProperty(subOptName)) {
+        opt.emphasis[key][subOptName] = opt[key][subOptName];
+      }
+    }
+  }
+}
+
+var TEXT_STYLE_OPTIONS = ['fontStyle', 'fontWeight', 'fontSize', 'fontFamily', 'rich', 'tag', 'color', 'textBorderColor', 'textBorderWidth', 'width', 'height', 'lineHeight', 'align', 'verticalAlign', 'baseline', 'shadowColor', 'shadowBlur', 'shadowOffsetX', 'shadowOffsetY', 'textShadowColor', 'textShadowBlur', 'textShadowOffsetX', 'textShadowOffsetY', 'backgroundColor', 'borderColor', 'borderWidth', 'borderRadius', 'padding']; // modelUtil.LABEL_OPTIONS = modelUtil.TEXT_STYLE_OPTIONS.concat([
+//     'position', 'offset', 'rotate', 'origin', 'show', 'distance', 'formatter',
+//     'fontStyle', 'fontWeight', 'fontSize', 'fontFamily',
+//     // FIXME: deprecated, check and remove it.
+//     'textStyle'
+// ]);
+
+/**
+ * The method do not ensure performance.
+ * data could be [12, 2323, {value: 223}, [1221, 23], {value: [2, 23]}]
+ * This helper method retieves value from data.
+ * @param {string|number|Date|Array|Object} dataItem
+ * @return {number|string|Date|Array.<number|string|Date>}
+ */
+
+function getDataItemValue(dataItem) {
+  return isObject(dataItem) && !isArray(dataItem) && !(dataItem instanceof Date) ? dataItem.value : dataItem;
+}
+/**
+ * data could be [12, 2323, {value: 223}, [1221, 23], {value: [2, 23]}]
+ * This helper method determine if dataItem has extra option besides value
+ * @param {string|number|Date|Array|Object} dataItem
+ */
+
+
+function isDataItemOption(dataItem) {
+  return isObject(dataItem) && !(dataItem instanceof Array); // // markLine data can be array
+  // && !(dataItem[0] && isObject(dataItem[0]) && !(dataItem[0] instanceof Array));
+}
+/**
+ * Mapping to exists for merge.
+ *
+ * @public
+ * @param {Array.<Object>|Array.<module:echarts/model/Component>} exists
+ * @param {Object|Array.<Object>} newCptOptions
+ * @return {Array.<Object>} Result, like [{exist: ..., option: ...}, {}],
+ *                          index of which is the same as exists.
+ */
+
+
+function mappingToExists(exists, newCptOptions) {
+  // Mapping by the order by original option (but not order of
+  // new option) in merge mode. Because we should ensure
+  // some specified index (like xAxisIndex) is consistent with
+  // original option, which is easy to understand, espatially in
+  // media query. And in most case, merge option is used to
+  // update partial option but not be expected to change order.
+  newCptOptions = (newCptOptions || []).slice();
+  var result = zrUtil.map(exists || [], function (obj, index) {
+    return {
+      exist: obj
+    };
+  }); // Mapping by id or name if specified.
+
+  each(newCptOptions, function (cptOption, index) {
+    if (!isObject(cptOption)) {
+      return;
+    } // id has highest priority.
+
+
+    for (var i = 0; i < result.length; i++) {
+      if (!result[i].option // Consider name: two map to one.
+      && cptOption.id != null && result[i].exist.id === cptOption.id + '') {
+        result[i].option = cptOption;
+        newCptOptions[index] = null;
+        return;
+      }
+    }
+
+    for (var i = 0; i < result.length; i++) {
+      var exist = result[i].exist;
+
+      if (!result[i].option // Consider name: two map to one.
+      // Can not match when both ids exist but different.
+      && (exist.id == null || cptOption.id == null) && cptOption.name != null && !isIdInner(cptOption) && !isIdInner(exist) && exist.name === cptOption.name + '') {
+        result[i].option = cptOption;
+        newCptOptions[index] = null;
+        return;
+      }
+    }
+  }); // Otherwise mapping by index.
+
+  each(newCptOptions, function (cptOption, index) {
+    if (!isObject(cptOption)) {
+      return;
+    }
+
+    var i = 0;
+
+    for (; i < result.length; i++) {
+      var exist = result[i].exist;
+
+      if (!result[i].option // Existing model that already has id should be able to
+      // mapped to (because after mapping performed model may
+      // be assigned with a id, whish should not affect next
+      // mapping), except those has inner id.
+      && !isIdInner(exist) // Caution:
+      // Do not overwrite id. But name can be overwritten,
+      // because axis use name as 'show label text'.
+      // 'exist' always has id and name and we dont
+      // need to check it.
+      && cptOption.id == null) {
+        result[i].option = cptOption;
+        break;
+      }
+    }
+
+    if (i >= result.length) {
+      result.push({
+        option: cptOption
+      });
+    }
+  });
+  return result;
+}
+/**
+ * Make id and name for mapping result (result of mappingToExists)
+ * into `keyInfo` field.
+ *
+ * @public
+ * @param {Array.<Object>} Result, like [{exist: ..., option: ...}, {}],
+ *                          which order is the same as exists.
+ * @return {Array.<Object>} The input.
+ */
+
+
+function makeIdAndName(mapResult) {
+  // We use this id to hash component models and view instances
+  // in echarts. id can be specified by user, or auto generated.
+  // The id generation rule ensures new view instance are able
+  // to mapped to old instance when setOption are called in
+  // no-merge mode. So we generate model id by name and plus
+  // type in view id.
+  // name can be duplicated among components, which is convenient
+  // to specify multi components (like series) by one name.
+  // Ensure that each id is distinct.
+  var idMap = zrUtil.createHashMap();
+  each(mapResult, function (item, index) {
+    var existCpt = item.exist;
+    existCpt && idMap.set(existCpt.id, item);
+  });
+  each(mapResult, function (item, index) {
+    var opt = item.option;
+    zrUtil.assert(!opt || opt.id == null || !idMap.get(opt.id) || idMap.get(opt.id) === item, 'id duplicates: ' + (opt && opt.id));
+    opt && opt.id != null && idMap.set(opt.id, item);
+    !item.keyInfo && (item.keyInfo = {});
+  }); // Make name and id.
+
+  each(mapResult, function (item, index) {
+    var existCpt = item.exist;
+    var opt = item.option;
+    var keyInfo = item.keyInfo;
+
+    if (!isObject(opt)) {
+      return;
+    } // name can be overwitten. Consider case: axis.name = '20km'.
+    // But id generated by name will not be changed, which affect
+    // only in that case: setOption with 'not merge mode' and view
+    // instance will be recreated, which can be accepted.
+
+
+    keyInfo.name = opt.name != null ? opt.name + '' : existCpt ? existCpt.name // Avoid diffferent series has the same name,
+    // because name may be used like in color pallet.
+    : DUMMY_COMPONENT_NAME_PREFIX + index;
+
+    if (existCpt) {
+      keyInfo.id = existCpt.id;
+    } else if (opt.id != null) {
+      keyInfo.id = opt.id + '';
+    } else {
+      // Consider this situatoin:
+      //  optionA: [{name: 'a'}, {name: 'a'}, {..}]
+      //  optionB [{..}, {name: 'a'}, {name: 'a'}]
+      // Series with the same name between optionA and optionB
+      // should be mapped.
+      var idNum = 0;
+
+      do {
+        keyInfo.id = '\0' + keyInfo.name + '\0' + idNum++;
+      } while (idMap.get(keyInfo.id));
+    }
+
+    idMap.set(keyInfo.id, item);
+  });
+}
+
+function isNameSpecified(componentModel) {
+  var name = componentModel.name; // Is specified when `indexOf` get -1 or > 0.
+
+  return !!(name && name.indexOf(DUMMY_COMPONENT_NAME_PREFIX));
+}
+/**
+ * @public
+ * @param {Object} cptOption
+ * @return {boolean}
+ */
+
+
+function isIdInner(cptOption) {
+  return isObject(cptOption) && cptOption.id && (cptOption.id + '').indexOf('\0_ec_\0') === 0;
+}
+/**
+ * A helper for removing duplicate items between batchA and batchB,
+ * and in themselves, and categorize by series.
+ *
+ * @param {Array.<Object>} batchA Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
+ * @param {Array.<Object>} batchB Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
+ * @return {Array.<Array.<Object>, Array.<Object>>} result: [resultBatchA, resultBatchB]
+ */
+
+
+function compressBatches(batchA, batchB) {
+  var mapA = {};
+  var mapB = {};
+  makeMap(batchA || [], mapA);
+  makeMap(batchB || [], mapB, mapA);
+  return [mapToArray(mapA), mapToArray(mapB)];
+
+  function makeMap(sourceBatch, map, otherMap) {
+    for (var i = 0, len = sourceBatch.length; i < len; i++) {
+      var seriesId = sourceBatch[i].seriesId;
+      var dataIndices = normalizeToArray(sourceBatch[i].dataIndex);
+      var otherDataIndices = otherMap && otherMap[seriesId];
+
+      for (var j = 0, lenj = dataIndices.length; j < lenj; j++) {
+        var dataIndex = dataIndices[j];
+
+        if (otherDataIndices && otherDataIndices[dataIndex]) {
+          otherDataIndices[dataIndex] = null;
+        } else {
+          (map[seriesId] || (map[seriesId] = {}))[dataIndex] = 1;
+        }
+      }
+    }
+  }
+
+  function mapToArray(map, isData) {
+    var result = [];
+
+    for (var i in map) {
+      if (map.hasOwnProperty(i) && map[i] != null) {
+        if (isData) {
+          result.push(+i);
+        } else {
+          var dataIndices = mapToArray(map[i], true);
+          dataIndices.length && result.push({
+            seriesId: i,
+            dataIndex: dataIndices
+          });
+        }
+      }
+    }
+
+    return result;
+  }
+}
+/**
+ * @param {module:echarts/data/List} data
+ * @param {Object} payload Contains dataIndex (means rawIndex) / dataIndexInside / name
+ *                         each of which can be Array or primary type.
+ * @return {number|Array.<number>} dataIndex If not found, return undefined/null.
+ */
+
+
+function queryDataIndex(data, payload) {
+  if (payload.dataIndexInside != null) {
+    return payload.dataIndexInside;
+  } else if (payload.dataIndex != null) {
+    return zrUtil.isArray(payload.dataIndex) ? zrUtil.map(payload.dataIndex, function (value) {
+      return data.indexOfRawIndex(value);
+    }) : data.indexOfRawIndex(payload.dataIndex);
+  } else if (payload.name != null) {
+    return zrUtil.isArray(payload.name) ? zrUtil.map(payload.name, function (value) {
+      return data.indexOfName(value);
+    }) : data.indexOfName(payload.name);
+  }
+}
+/**
+ * Enable property storage to any host object.
+ * Notice: Serialization is not supported.
+ *
+ * For example:
+ * var inner = zrUitl.makeInner();
+ *
+ * function some1(hostObj) {
+ *      inner(hostObj).someProperty = 1212;
+ *      ...
+ * }
+ * function some2() {
+ *      var fields = inner(this);
+ *      fields.someProperty1 = 1212;
+ *      fields.someProperty2 = 'xx';
+ *      ...
+ * }
+ *
+ * @return {Function}
+ */
+
+
+function makeInner() {
+  // Consider different scope by es module import.
+  var key = '__\0ec_inner_' + innerUniqueIndex++ + '_' + Math.random().toFixed(5);
+  return function (hostObj) {
+    return hostObj[key] || (hostObj[key] = {});
+  };
+}
+
+var innerUniqueIndex = 0;
+/**
+ * @param {module:echarts/model/Global} ecModel
+ * @param {string|Object} finder
+ *        If string, e.g., 'geo', means {geoIndex: 0}.
+ *        If Object, could contain some of these properties below:
+ *        {
+ *            seriesIndex, seriesId, seriesName,
+ *            geoIndex, geoId, geoName,
+ *            bmapIndex, bmapId, bmapName,
+ *            xAxisIndex, xAxisId, xAxisName,
+ *            yAxisIndex, yAxisId, yAxisName,
+ *            gridIndex, gridId, gridName,
+ *            ... (can be extended)
+ *        }
+ *        Each properties can be number|string|Array.<number>|Array.<string>
+ *        For example, a finder could be
+ *        {
+ *            seriesIndex: 3,
+ *            geoId: ['aa', 'cc'],
+ *            gridName: ['xx', 'rr']
+ *        }
+ *        xxxIndex can be set as 'all' (means all xxx) or 'none' (means not specify)
+ *        If nothing or null/undefined specified, return nothing.
+ * @param {Object} [opt]
+ * @param {string} [opt.defaultMainType]
+ * @param {Array.<string>} [opt.includeMainTypes]
+ * @return {Object} result like:
+ *        {
+ *            seriesModels: [seriesModel1, seriesModel2],
+ *            seriesModel: seriesModel1, // The first model
+ *            geoModels: [geoModel1, geoModel2],
+ *            geoModel: geoModel1, // The first model
+ *            ...
+ *        }
+ */
+
+function parseFinder(ecModel, finder, opt) {
+  if (zrUtil.isString(finder)) {
+    var obj = {};
+    obj[finder + 'Index'] = 0;
+    finder = obj;
+  }
+
+  var defaultMainType = opt && opt.defaultMainType;
+
+  if (defaultMainType && !has(finder, defaultMainType + 'Index') && !has(finder, defaultMainType + 'Id') && !has(finder, defaultMainType + 'Name')) {
+    finder[defaultMainType + 'Index'] = 0;
+  }
+
+  var result = {};
+  each(finder, function (value, key) {
+    var value = finder[key]; // Exclude 'dataIndex' and other illgal keys.
+
+    if (key === 'dataIndex' || key === 'dataIndexInside') {
+      result[key] = value;
+      return;
+    }
+
+    var parsedKey = key.match(/^(\w+)(Index|Id|Name)$/) || [];
+    var mainType = parsedKey[1];
+    var queryType = (parsedKey[2] || '').toLowerCase();
+
+    if (!mainType || !queryType || value == null || queryType === 'index' && value === 'none' || opt && opt.includeMainTypes && zrUtil.indexOf(opt.includeMainTypes, mainType) < 0) {
+      return;
+    }
+
+    var queryParam = {
+      mainType: mainType
+    };
+
+    if (queryType !== 'index' || value !== 'all') {
+      queryParam[queryType] = value;
+    }
+
+    var models = ecModel.queryComponents(queryParam);
+    result[mainType + 'Models'] = models;
+    result[mainType + 'Model'] = models[0];
+  });
+  return result;
+}
+
+function has(obj, prop) {
+  return obj && obj.hasOwnProperty(prop);
+}
+
+function setAttribute(dom, key, value) {
+  dom.setAttribute ? dom.setAttribute(key, value) : dom[key] = value;
+}
+
+function getAttribute(dom, key) {
+  return dom.getAttribute ? dom.getAttribute(key) : dom[key];
+}
+
+exports.normalizeToArray = normalizeToArray;
+exports.defaultEmphasis = defaultEmphasis;
+exports.TEXT_STYLE_OPTIONS = TEXT_STYLE_OPTIONS;
+exports.getDataItemValue = getDataItemValue;
+exports.isDataItemOption = isDataItemOption;
+exports.mappingToExists = mappingToExists;
+exports.makeIdAndName = makeIdAndName;
+exports.isNameSpecified = isNameSpecified;
+exports.isIdInner = isIdInner;
+exports.compressBatches = compressBatches;
+exports.queryDataIndex = queryDataIndex;
+exports.makeInner = makeInner;
+exports.parseFinder = parseFinder;
+exports.setAttribute = setAttribute;
+exports.getAttribute = getAttribute;
 
 /***/ }),
 /* 4 */
@@ -3626,7 +3626,7 @@ var ChartView = __webpack_require__(101);
 
 var graphic = __webpack_require__(5);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var _throttle = __webpack_require__(56);
 
@@ -7717,7 +7717,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(10);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -7947,7 +7947,7 @@ var _clazz = __webpack_require__(18);
 var enableClassManagement = _clazz.enableClassManagement;
 var parseClassType = _clazz.parseClassType;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -23281,7 +23281,7 @@ var assert = _util.assert;
 var each = _util.each;
 var isObject = _util.isObject;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var getDataItemValue = _model.getDataItemValue;
 var isDataItemOption = _model.isDataItemOption;
@@ -25223,7 +25223,7 @@ var _config = __webpack_require__(6);
 
 var __DEV__ = _config.__DEV__;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 var getDataItemValue = _model.getDataItemValue;
@@ -28317,7 +28317,7 @@ exports.createTask = createTask;
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -29459,7 +29459,7 @@ function withParams(paramsOrClosure, maybeValidator) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_majors__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pfre__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_global_form__ = __webpack_require__(169);
@@ -32798,7 +32798,7 @@ var merge = _util.merge;
 var extend = _util.extend;
 var mixin = _util.mixin;
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var Model = __webpack_require__(15);
 
@@ -33863,7 +33863,7 @@ exports.buildPath = buildPath;
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 var normalizeToArray = _model.normalizeToArray;
@@ -34146,7 +34146,7 @@ var encodeHTML = _format.encodeHTML;
 var addCommas = _format.addCommas;
 var getTooltipMarker = _format.getTooltipMarker;
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var ComponentModel = __webpack_require__(16);
 
@@ -34751,7 +34751,7 @@ var componentUtil = __webpack_require__(38);
 
 var clazzUtil = __webpack_require__(18);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var _task = __webpack_require__(54);
 
@@ -35011,7 +35011,7 @@ var _dimensionHelper = __webpack_require__(57);
 
 var getDimensionTypeByAxis = _dimensionHelper.getDimensionTypeByAxis;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var getDataItemValue = _model.getDataItemValue;
 
@@ -37170,7 +37170,7 @@ var extend = _util.extend;
 var isObject = _util.isObject;
 var clone = _util.clone;
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -39743,7 +39743,7 @@ function () {});
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -39821,7 +39821,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(10);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -40629,7 +40629,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 /**
@@ -46559,7 +46559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -47058,7 +47058,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -47678,7 +47678,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(2);
 //
 //
 //
@@ -47736,8 +47736,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__campus_modal_vue__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__campus_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__campus_modal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__campus_modal_vue__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -47757,19 +47760,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'csu-data-img-banner',
+    created: function created() {},
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity', 'universities']), {
+        getCampusName: function getCampusName() {
+            var universityId = parseInt(this.selectedUniversity);
+            var currentName = "";
+            this.universities.forEach(function (university) {
+                if (universityId === parseInt(university.id)) {
+                    currentName = university.name;
+                }
+            });
+            return currentName;
+        }
+    }),
     data: function data() {
         return {
-            csunAcronym: 'California State University Northridge',
             CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
             CSUImg: ''
         };
     },
 
-    components: { campusModal: __WEBPACK_IMPORTED_MODULE_0__campus_modal_vue___default.a }
+    components: { campusModal: __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue___default.a }
 });
 
 /***/ }),
@@ -47825,7 +47842,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -48032,9 +48049,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "header",
     {
-      staticClass: "CSUDataImgBanner col-12",
+      staticClass: "CSUDataImgBanner",
       style: {
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
@@ -48043,45 +48060,46 @@ var render = function() {
       }
     },
     [
-      _c("div", { staticClass: "container p-0" }, [
-        _c(
-          "div",
-          { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
-          [
-            _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-              _vm._v(" " + _vm._s(_vm.csunAcronym))
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { attrs: { "data-app": "" } },
-              [
-                _c("campus-modal", [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "CSUDataImgBanner__changeCampus",
-                      attrs: { slot: "change button", href: "#" },
-                      slot: "change button"
-                    },
-                    [_vm._v("Change Campus")]
-                  )
-                ])
-              ],
-              1
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "CSUDataImgBanner__dataInfoWrapper col-12 col-md-7 col-lg-6"
-          },
-          [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
-          2
-        )
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-start" }, [
+          _c(
+            "div",
+            { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
+            [
+              _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
+                _vm._v(" " + _vm._s(_vm.getCampusName))
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { attrs: { "data-app": "" } },
+                [
+                  _c("campus-modal", [
+                    _c(
+                      "span",
+                      {
+                        staticClass: "CSUDataImgBanner__changeCampus",
+                        attrs: { slot: "change button", href: "#" },
+                        slot: "change button"
+                      },
+                      [_vm._v("Change Campus")]
+                    )
+                  ])
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "CSUDataImgBanner__dataInfoWrapper col-12 col-md-8"
+            },
+            [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
+            2
+          )
+        ])
       ])
     ]
   )
@@ -48102,7 +48120,7 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -48294,7 +48312,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_index__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -49341,7 +49359,7 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -49495,7 +49513,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -51075,7 +51093,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -51236,7 +51254,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -51405,7 +51423,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -51569,7 +51587,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -51689,6 +51707,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (this.checkForm()) {
 				this.toggleFormWasSubmitted(this.form.cardIndex);
 				this.fetchIndustryImages(this.form);
+				this.$store.dispatch("setUniversity", this.form.schoolId);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
 			}
@@ -52047,7 +52066,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 //
 //
 //
@@ -58689,7 +58708,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var ComponentModel = __webpack_require__(16);
 
@@ -59133,7 +59152,7 @@ var isObject = _util.isObject;
 
 var compatStyle = __webpack_require__(294);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -59254,7 +59273,7 @@ module.exports = _default;
 
 var zrUtil = __webpack_require__(0);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -60285,7 +60304,7 @@ var GlobalModel = __webpack_require__(90);
 
 var ExtensionAPI = __webpack_require__(98);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var normalizeToArray = _model.normalizeToArray;
 
@@ -62759,7 +62778,7 @@ var zrUtil = __webpack_require__(0);
 
 var textContain = __webpack_require__(21);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -64026,7 +64045,7 @@ var lineAnimationDiff = __webpack_require__(331);
 
 var graphic = __webpack_require__(5);
 
-var modelUtil = __webpack_require__(2);
+var modelUtil = __webpack_require__(3);
 
 var _poly = __webpack_require__(332);
 
@@ -67547,7 +67566,7 @@ echarts.registerAction({
 
 var zrUtil = __webpack_require__(0);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -68283,7 +68302,7 @@ var eventTool = __webpack_require__(29);
 
 var throttleUtil = __webpack_require__(56);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
@@ -69884,7 +69903,7 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(15);
 
-var _model = __webpack_require__(2);
+var _model = __webpack_require__(3);
 
 var isNameSpecified = _model.isNameSpecified;
 
@@ -70784,7 +70803,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_title__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 //
 //
 //
@@ -71130,7 +71149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_carousel__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__industry_carousel_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(2);
 //
 //
 //
@@ -71944,7 +71963,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_index__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -72174,7 +72193,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__industry_carousel_card__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__industry_carousel_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__industry_carousel_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -72791,7 +72810,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -73054,7 +73073,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_index__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -73116,6 +73135,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
+				this.$store.dispatch("setUniversity", this.form.university);
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}
@@ -76474,9 +76494,9 @@ var VCardText = vue__WEBPACK_IMPORTED_MODULE_4___default.a.extend(Object(_util_h
 
 /***/ }),
 
-/***/ "./src/components/VCarousel/VCarousel.ts":
+/***/ "./src/components/VCarousel/VCarousel.js":
 /*!***********************************************!*\
-  !*** ./src/components/VCarousel/VCarousel.ts ***!
+  !*** ./src/components/VCarousel/VCarousel.js ***!
   \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -76490,24 +76510,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable.ts");
 /* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../directives/touch */ "./src/directives/touch.ts");
-/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-// Styles
-
-// Components
 
 
-// Mixins
 
 
-// Directives
 
-// Utilities
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_4__["provide"])('carousel')
 /* @vue/component */
-).extend({
+/* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-carousel',
     directives: { Touch: _directives_touch__WEBPACK_IMPORTED_MODULE_5__["default"] },
+    mixins: [_mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_4__["provide"])('carousel')],
     props: {
         cycle: {
             type: Boolean,
@@ -76538,9 +76551,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     data: function data() {
         return {
-            inputValue: this.value,
+            inputValue: null,
             items: [],
-            slideTimeout: undefined,
+            slideTimeout: null,
             reverse: false
         };
     },
@@ -76558,10 +76571,9 @@ __webpack_require__.r(__webpack_exports__);
         inputValue: function inputValue() {
             // Evaluates items when inputValue changes to
             // account for dynamic changing of children
-            var selectedItem = this.items[this.inputValue];
-            if (!selectedItem) return;
+            var uid = (this.items[this.inputValue] || {}).uid;
             for (var index = this.items.length; --index >= 0;) {
-                this.items[index].open(selectedItem.uid, this.reverse);
+                this.items[index].open(uid, this.reverse);
             }
             this.$emit('input', this.inputValue);
             this.restartTimeout();
@@ -76577,7 +76589,7 @@ __webpack_require__.r(__webpack_exports__);
                 this.restartTimeout();
             } else {
                 clearTimeout(this.slideTimeout);
-                this.slideTimeout = undefined;
+                this.slideTimeout = null;
             }
         }
     },
@@ -76591,6 +76603,7 @@ __webpack_require__.r(__webpack_exports__);
             }, this.genItems());
         },
         genIcon: function genIcon(direction, icon, fn) {
+            if (!icon) return null;
             return this.$createElement('div', {
                 staticClass: "v-carousel__" + direction
             }, [this.$createElement(_VBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -76601,18 +76614,6 @@ __webpack_require__.r(__webpack_exports__);
             }, [this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 props: { 'size': '46px' }
             }, icon)])]);
-        },
-        genIcons: function genIcons() {
-            var icons = [];
-            var prevIcon = this.$vuetify.rtl ? this.nextIcon : this.prevIcon;
-            if (prevIcon && typeof prevIcon === 'string') {
-                icons.push(this.genIcon('prev', prevIcon, this.prev));
-            }
-            var nextIcon = this.$vuetify.rtl ? this.prevIcon : this.nextIcon;
-            if (nextIcon && typeof nextIcon === 'string') {
-                icons.push(this.genIcon('next', nextIcon, this.next));
-            }
-            return icons;
         },
         genItems: function genItems() {
             var _this = this;
@@ -76635,16 +76636,12 @@ __webpack_require__.r(__webpack_exports__);
         },
         restartTimeout: function restartTimeout() {
             this.slideTimeout && clearTimeout(this.slideTimeout);
-            this.slideTimeout = undefined;
+            this.slideTimeout = null;
             var raf = requestAnimationFrame || setTimeout;
             raf(this.startTimeout);
         },
         init: function init() {
-            if (this.value == null) {
-                this.inputValue = 0;
-            } else {
-                this.startTimeout();
-            }
+            this.inputValue = this.value || 0;
         },
         next: function next() {
             this.reverse = false;
@@ -76659,8 +76656,11 @@ __webpack_require__.r(__webpack_exports__);
             this.inputValue = index;
         },
         startTimeout: function startTimeout() {
+            var _this = this;
             if (!this.cycle) return;
-            this.slideTimeout = window.setTimeout(this.next, this.interval > 0 ? this.interval : 6000);
+            this.slideTimeout = setTimeout(function () {
+                return _this.next();
+            }, this.interval > 0 ? this.interval : 6000);
         },
         register: function register(uid, open) {
             this.items.push({ uid: uid, open: open });
@@ -76672,13 +76672,6 @@ __webpack_require__.r(__webpack_exports__);
         }
     },
     render: function render(h) {
-        var children = [];
-        if (!this.hideControls) {
-            children.push(this.genIcons());
-        }
-        if (!this.hideDelimiters) {
-            children.push(this.genDelimiters());
-        }
         return h('div', {
             staticClass: 'v-carousel',
             directives: [{
@@ -76688,15 +76681,15 @@ __webpack_require__.r(__webpack_exports__);
                     right: this.prev
                 }
             }]
-        }, [children, this.$slots.default]);
+        }, [this.hideControls ? null : this.genIcon('prev', this.$vuetify.rtl ? this.nextIcon : this.prevIcon, this.prev), this.hideControls ? null : this.genIcon('next', this.$vuetify.rtl ? this.prevIcon : this.nextIcon, this.next), this.hideDelimiters ? null : this.genDelimiters(), this.$slots.default]);
     }
-}));
+});
 
 /***/ }),
 
-/***/ "./src/components/VCarousel/VCarouselItem.ts":
+/***/ "./src/components/VCarousel/VCarouselItem.js":
 /*!***************************************************!*\
-  !*** ./src/components/VCarousel/VCarouselItem.ts ***!
+  !*** ./src/components/VCarousel/VCarouselItem.js ***!
   \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -76705,7 +76698,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VImg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../VImg */ "./src/components/VImg/index.ts");
 /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable.ts");
-/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 var __assign = undefined && undefined.__assign || function () {
     __assign = Object.assign || function (t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -76722,12 +76714,10 @@ var __assign = undefined && undefined.__assign || function () {
 
 // Mixins
 
-// Utilities
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_1__["inject"])('carousel', 'v-carousel-item', 'v-carousel')
 /* @vue/component */
-).extend({
+/* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-carousel-item',
+    mixins: [Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_1__["inject"])('carousel', 'v-carousel-item', 'v-carousel')],
     inheritAttrs: false,
     props: {
         transition: {
@@ -76754,7 +76744,7 @@ var __assign = undefined && undefined.__assign || function () {
         this.carousel.register(this._uid, this.open);
     },
     beforeDestroy: function beforeDestroy() {
-        this.carousel.unregister(this._uid);
+        this.carousel.unregister(this._uid, this.open);
     },
     methods: {
         open: function open(id, reverse) {
@@ -76774,23 +76764,23 @@ var __assign = undefined && undefined.__assign || function () {
         }, this.$slots.default);
         return h('transition', { props: { name: this.computedTransition } }, [item]);
     }
-}));
+});
 
 /***/ }),
 
-/***/ "./src/components/VCarousel/index.ts":
+/***/ "./src/components/VCarousel/index.js":
 /*!*******************************************!*\
-  !*** ./src/components/VCarousel/index.ts ***!
+  !*** ./src/components/VCarousel/index.js ***!
   \*******************************************/
 /*! exports provided: VCarousel, VCarouselItem, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VCarousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCarousel */ "./src/components/VCarousel/VCarousel.ts");
+/* harmony import */ var _VCarousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCarousel */ "./src/components/VCarousel/VCarousel.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCarousel", function() { return _VCarousel__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _VCarouselItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VCarouselItem */ "./src/components/VCarousel/VCarouselItem.ts");
+/* harmony import */ var _VCarouselItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VCarouselItem */ "./src/components/VCarousel/VCarouselItem.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCarouselItem", function() { return _VCarouselItem__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
@@ -77588,7 +77578,7 @@ var VTableOverflow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["createSi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_small_dialog_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_small-dialog.styl */ "./src/stylus/components/_small-dialog.styl");
 /* harmony import */ var _stylus_components_small_dialog_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_small_dialog_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.ts");
+/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.js");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
 /* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../VBtn */ "./src/components/VBtn/index.ts");
@@ -79438,7 +79428,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_dependent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/dependent */ "./src/mixins/dependent.js");
 /* harmony import */ var _mixins_detachable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/detachable */ "./src/mixins/detachable.js");
 /* harmony import */ var _mixins_overlayable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/overlayable */ "./src/mixins/overlayable.js");
-/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.ts");
+/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.js");
 /* harmony import */ var _mixins_stackable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/stackable */ "./src/mixins/stackable.js");
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 /* harmony import */ var _directives_click_outside__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../directives/click-outside */ "./src/directives/click-outside.ts");
@@ -79482,8 +79472,6 @@ var __assign = undefined && undefined.__assign || function () {
         fullscreen: Boolean,
         fullWidth: Boolean,
         noClickAnimation: Boolean,
-        light: Boolean,
-        dark: Boolean,
         maxWidth: {
             type: [String, Number],
             default: 'none'
@@ -79643,8 +79631,7 @@ var __assign = undefined && undefined.__assign || function () {
             ref: 'content'
         }, [this.$createElement(_util_ThemeProvider__WEBPACK_IMPORTED_MODULE_9__["default"], {
             props: {
-                dark: !this.light && (this.$vuetify.dark || this.dark),
-                light: !this.dark && (this.light || !this.$vuetify.dark)
+                dark: this.$vuetify.dark || this.dark
             }
         }, [dialog])]));
         return h('div', {
@@ -81827,8 +81814,7 @@ __webpack_require__.r(__webpack_exports__);
     functional: true,
     render: function render(h, _a) {
         var data = _a.data,
-            _b = _a.children,
-            children = _b === void 0 ? [] : _b;
+            children = _a.children;
         data.staticClass = data.staticClass ? "v-list__tile__action " + data.staticClass : 'v-list__tile__action';
         var filteredChild = children.filter(function (VNode) {
             return VNode.isComment === false && VNode.text !== ' ';
@@ -81955,7 +81941,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_dependent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/dependent */ "./src/mixins/dependent.js");
 /* harmony import */ var _mixins_detachable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/detachable */ "./src/mixins/detachable.js");
 /* harmony import */ var _mixins_menuable_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/menuable.js */ "./src/mixins/menuable.js");
-/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.ts");
+/* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/returnable */ "./src/mixins/returnable.js");
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 /* harmony import */ var _mixins_menu_activator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./mixins/menu-activator */ "./src/components/VMenu/mixins/menu-activator.js");
 /* harmony import */ var _mixins_menu_generators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./mixins/menu-generators */ "./src/components/VMenu/mixins/menu-generators.js");
@@ -82126,8 +82112,7 @@ __webpack_require__.r(__webpack_exports__);
         };
         return h('div', data, [this.genActivator(), this.$createElement(_util_ThemeProvider__WEBPACK_IMPORTED_MODULE_15__["default"], {
             props: {
-                dark: !this.light && (this.$vuetify.dark || this.dark),
-                light: !this.dark && (this.light || !this.$vuetify.dark)
+                dark: this.$vuetify.dark || this.dark
             }
         }, [this.genTransition()])]);
     }
@@ -82232,6 +82217,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var __assign = undefined && undefined.__assign || function () {
+    __assign = Object.assign || function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) {
+                if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __read = undefined && undefined.__read || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
@@ -82316,10 +82313,7 @@ var __spread = undefined && undefined.__spread || function () {
             var options = {
                 attrs: this.getScopeIdAttrs(),
                 staticClass: 'v-menu__content',
-                'class': (_a = {
-                    'v-menu__content--auto': this.auto,
-                    'menuable__content__active': this.isActive
-                }, _a[this.contentClass.trim()] = true, _a),
+                'class': __assign({ 'v-menu__content--auto': this.auto, 'menuable__content__active': this.isActive }, this.themeClasses, (_a = {}, _a[this.contentClass.trim()] = true, _a)),
                 style: this.styles,
                 directives: this.genDirectives(),
                 ref: 'content',
@@ -84628,7 +84622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VSelectList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VSelectList */ "./src/components/VSelect/VSelectList.js");
 /* harmony import */ var _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../VTextField/VTextField */ "./src/components/VTextField/VTextField.js");
 /* harmony import */ var _mixins_comparable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/comparable */ "./src/mixins/comparable.ts");
-/* harmony import */ var _mixins_filterable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/filterable */ "./src/mixins/filterable.ts");
+/* harmony import */ var _mixins_filterable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/filterable */ "./src/mixins/filterable.js");
 /* harmony import */ var _directives_click_outside__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../directives/click-outside */ "./src/directives/click-outside.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
@@ -89708,7 +89702,7 @@ var Vuetify = {
             return false;
         })(opts.components);
     },
-    version: '1.2.4'
+    version: '1.2.3'
 };
 function checkVueVersion(Vue, requiredVue) {
     var vueDep = requiredVue || '^2.5.10';
@@ -90272,9 +90266,9 @@ function goTo(target, options) {
 
 /***/ }),
 
-/***/ "./src/components/index.ts":
+/***/ "./src/components/index.js":
 /*!*********************************!*\
-  !*** ./src/components/index.ts ***!
+  !*** ./src/components/index.js ***!
   \*********************************/
 /*! exports provided: VApp, VAlert, VAutocomplete, VAvatar, VBadge, VBottomNav, VBottomSheet, VBreadcrumbs, VBtn, VBtnToggle, VCard, VCarousel, VCheckbox, VChip, VCombobox, VCounter, VDataIterator, VDataTable, VDatePicker, VDialog, VDivider, VExpansionPanel, VFooter, VForm, VGrid, VHover, VIcon, VImg, VInput, VJumbotron, VLabel, VList, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VPagination, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRangeSlider, VRating, VResponsive, VSelect, VSlider, VSnackbar, VSpeedDial, VStepper, VSubheader, VSwitch, VSystemBar, VTabs, VTextarea, VTextField, VTimePicker, VToolbar, VTooltip, Transitions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -90314,7 +90308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCard", function() { return _VCard__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _VCarousel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./VCarousel */ "./src/components/VCarousel/index.ts");
+/* harmony import */ var _VCarousel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./VCarousel */ "./src/components/VCarousel/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCarousel", function() { return _VCarousel__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
 /* harmony import */ var _VCheckbox__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./VCheckbox */ "./src/components/VCheckbox/index.js");
@@ -91149,7 +91143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_app_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stylus/app.styl */ "./src/stylus/app.styl");
 /* harmony import */ var _stylus_app_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_app_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Vuetify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Vuetify */ "./src/components/Vuetify/index.ts");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/components/index.ts");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/components/index.js");
 /* harmony import */ var _directives__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./directives */ "./src/directives/index.ts");
 var __assign = undefined && undefined.__assign || function () {
     __assign = Object.assign || function (t) {
@@ -91172,7 +91166,7 @@ var Vuetify = {
         Vue.use(_components_Vuetify__WEBPACK_IMPORTED_MODULE_1__["default"], __assign({ components: _components__WEBPACK_IMPORTED_MODULE_2__,
             directives: _directives__WEBPACK_IMPORTED_MODULE_3__ }, args));
     },
-    version: '1.2.4'
+    version: '1.2.3'
 };
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(Vuetify);
@@ -91588,7 +91582,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/VBtn */ "./src/components/VBtn/index.ts");
 /* harmony import */ var _components_VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/VIcon */ "./src/components/VIcon/index.ts");
 /* harmony import */ var _components_VSelect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/VSelect */ "./src/components/VSelect/index.js");
-/* harmony import */ var _filterable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filterable */ "./src/mixins/filterable.ts");
+/* harmony import */ var _filterable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filterable */ "./src/mixins/filterable.js");
 /* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _loadable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./loadable */ "./src/mixins/loadable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/helpers */ "./src/util/helpers.ts");
@@ -92295,20 +92289,17 @@ function validateAttachTarget(val) {
 
 /***/ }),
 
-/***/ "./src/mixins/filterable.ts":
+/***/ "./src/mixins/filterable.js":
 /*!**********************************!*\
-  !*** ./src/mixins/filterable.ts ***!
+  !*** ./src/mixins/filterable.js ***!
   \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
+/* harmony default export */ __webpack_exports__["default"] = ({
     name: 'filterable',
     props: {
         noDataText: {
@@ -92316,7 +92307,7 @@ __webpack_require__.r(__webpack_exports__);
             default: '$vuetify.noDataText'
         }
     }
-}));
+});
 
 /***/ }),
 
@@ -92545,7 +92536,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _positionable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./positionable */ "./src/mixins/positionable.ts");
 /* harmony import */ var _stackable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stackable */ "./src/mixins/stackable.js");
+/* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./themeable */ "./src/mixins/themeable.ts");
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 
 
 
@@ -92580,7 +92573,7 @@ var dimensions = {
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
     name: 'menuable',
-    mixins: [_positionable__WEBPACK_IMPORTED_MODULE_1__["default"], _stackable__WEBPACK_IMPORTED_MODULE_2__["default"]],
+    mixins: [_positionable__WEBPACK_IMPORTED_MODULE_1__["default"], _stackable__WEBPACK_IMPORTED_MODULE_2__["default"], _themeable__WEBPACK_IMPORTED_MODULE_3__["default"]],
     props: {
         activator: {
             default: null,
@@ -92590,8 +92583,6 @@ var dimensions = {
         },
         allowOverflow: Boolean,
         inputActivator: Boolean,
-        light: Boolean,
-        dark: Boolean,
         maxWidth: {
             type: [Number, String],
             default: 'auto'
@@ -93237,27 +93228,23 @@ function provide(namespace) {
 
 /***/ }),
 
-/***/ "./src/mixins/returnable.ts":
+/***/ "./src/mixins/returnable.js":
 /*!**********************************!*\
-  !*** ./src/mixins/returnable.ts ***!
+  !*** ./src/mixins/returnable.js ***!
   \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
+/* harmony default export */ __webpack_exports__["default"] = ({
     name: 'returnable',
     props: {
         returnValue: null
     },
     data: function data() {
         return {
-            isActive: false,
             originalValue: null
         };
     },
@@ -93276,7 +93263,7 @@ __webpack_require__.r(__webpack_exports__);
             this.isActive = false;
         }
     }
-}));
+});
 
 /***/ }),
 
@@ -93915,11 +93902,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     data: function data() {
         return {
-            elOffsetTop: 0,
             parallax: 0,
             parallaxDist: 0,
             percentScrolled: 0,
-            scrollTop: 0,
             windowHeight: 0,
             windowBottom: 0
         };
@@ -93935,12 +93920,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     methods: {
         calcDimensions: function calcDimensions() {
-            var offset = this.$el.getBoundingClientRect();
-            this.scrollTop = window.pageYOffset;
             this.parallaxDist = this.imgHeight - this.height;
-            this.elOffsetTop = offset.top + this.scrollTop;
             this.windowHeight = window.innerHeight;
-            this.windowBottom = this.scrollTop + this.windowHeight;
+            this.windowBottom = window.pageYOffset + this.windowHeight;
         },
         listeners: function listeners() {
             window.addEventListener('scroll', this.translate, false);
@@ -93952,7 +93934,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         translate: function translate() {
             this.calcDimensions();
-            this.percentScrolled = (this.windowBottom - this.elOffsetTop) / (parseInt(this.height) + this.windowHeight);
+            this.percentScrolled = (this.windowBottom - this.$el.offsetTop) / (parseInt(this.height) + this.windowHeight);
             this.parallax = Math.round(this.parallaxDist * this.percentScrolled);
         }
     }
@@ -96077,7 +96059,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
