@@ -1,23 +1,8 @@
 <template>
     <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
-			<div class="form-group">
-				<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-					<i class="fas fa-exclamation-circle"></i> Please select a Campus and Major.
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="campus" v-bind:style="[!this.form.university && this.submittedOnce ? errorLabel : '']">
-					Select a Campus
-				</label>
-				<v-select
-					label="name"
-					:options="universities"
-					@input="updateSelect('university', 'id', $event)" 
-					@change="updateSelect('university', 'id', $event)"
-					class="csu-form-input-major"
-					v-bind:class="{ 'border-danger': !this.form.university && this.submittedOnce}">
-				</v-select>
+			<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+				<i class="fas fa-exclamation-circle"></i> Please select a Major.
 			</div>
 			<div class="form-group">
 				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
@@ -63,6 +48,10 @@ export default {
 		};
 	},
 
+	mounted() {
+		this.form.university = this.selectedUniversity;
+	},
+
 	methods: {
 		...mapActions(["fetchUpdatedMajorsByField", "fetchIndustries"]),
 
@@ -93,13 +82,17 @@ export default {
 	},
 
 	computed: {
-		...mapGetters(["majors", "universities", "majorsByField"])
+		...mapGetters([
+			"majors",
+			"universities",
+			"majorsByField",
+			"selectedUniversity"
+		])
 	},
 
 	validations: {
 		form: {
-			majorId: { required },
-			university: { required }
+			majorId: { required }
 		}
 	},
 	components: {

@@ -51644,17 +51644,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -51668,15 +51657,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				cardIndex: this.index,
 				majorId: null,
-				formWasSubmitted: false,
 				schoolId: null,
+				formWasSubmitted: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
-					major: null,
-					university: null
+					major: null
 				},
-				isUnivSelected: true,
 				isMajorSelected: true
 			},
 			submittedOnce: false,
@@ -51688,6 +51675,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				fontWeight: "bold"
 			}
 		};
+	},
+	mounted: function mounted() {
+		this.form.schoolId = this.selectedUniversity;
 	},
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData"]), {
@@ -51701,7 +51691,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
-				this.form.schoolId = null;
 			}
 		},
 		checkForm: function checkForm() {
@@ -51730,7 +51719,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			});
 		}
 	}),
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "fieldOfStudies", "universities", "majorsByField", "formWasSubmitted", "educationLevel"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "fieldOfStudies", "majorsByField", "formWasSubmitted", "educationLevel", "selectedUniversity"]), {
 		selectedMajorsByField: function selectedMajorsByField() {
 			this.selected = null;
 			return this.majorsByField(this.index);
@@ -51747,8 +51736,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	}),
 	validations: {
 		form: {
-			majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] },
-			schoolId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
+			majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
 		}
 	},
 	components: {
@@ -51781,46 +51769,10 @@ var render = function() {
                   },
                   [
                     _c("i", { staticClass: "fas fa-exclamation-circle" }),
-                    _vm._v(" Please select a Campus and Major.\n\t\t\t\t\t")
+                    _vm._v(" Please select a Major.\n\t\t\t\t\t")
                   ]
                 )
               : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "form-group" },
-              [
-                _c(
-                  "label",
-                  {
-                    style: [
-                      this.submittedOnce && !this.form.schoolId
-                        ? _vm.errorLabel
-                        : ""
-                    ],
-                    attrs: { for: "campus" }
-                  },
-                  [_vm._v("\n\t\t\t\t\t\tSelect a Campus")]
-                ),
-                _vm._v(" "),
-                _c("v-select", {
-                  staticClass: "csu-form-input-major",
-                  class: {
-                    "border-danger": this.submittedOnce && !this.form.schoolId
-                  },
-                  attrs: { label: "name", options: _vm.universities },
-                  on: {
-                    input: function($event) {
-                      _vm.updateSelect("schoolId", "id", $event)
-                    },
-                    change: function($event) {
-                      _vm.updateSelect("schoolId", "id", $event)
-                    }
-                  }
-                })
-              ],
-              1
-            ),
             _vm._v(" "),
             _c(
               "div",
@@ -51889,6 +51841,10 @@ var render = function() {
                     })
                   : _c("v-select", {
                       staticClass: "csu-form-input-major",
+                      class: {
+                        "border-danger":
+                          this.submittedOnce && !this.form.majorId
+                      },
                       attrs: {
                         label: "major",
                         options: _vm.selectedMajorsByField
@@ -73127,21 +73083,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -73164,6 +73105,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				fontWeight: "bold"
 			}
 		};
+	},
+	mounted: function mounted() {
+		this.form.university = this.selectedUniversity;
 	},
 
 
@@ -73191,12 +73135,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		}
 	}),
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "majorsByField"])),
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "majorsByField", "selectedUniversity"])),
 
 	validations: {
 		form: {
-			majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] },
-			university: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
+			majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
 		}
 	},
 	components: {
@@ -73214,55 +73157,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "container-fluid csu-card__form" }, [
     _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c(
-          "div",
-          {
-            class: [
-              this.formNotFilled ? "required-field" : "required-field--hidden"
-            ]
-          },
-          [
-            _c("i", { staticClass: "fas fa-exclamation-circle" }),
-            _vm._v(" Please select a Campus and Major.\n\t\t\t\t")
-          ]
-        )
-      ]),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "form-group" },
+        {
+          class: [
+            this.formNotFilled ? "required-field" : "required-field--hidden"
+          ]
+        },
         [
-          _c(
-            "label",
-            {
-              style: [
-                !this.form.university && this.submittedOnce
-                  ? _vm.errorLabel
-                  : ""
-              ],
-              attrs: { for: "campus" }
-            },
-            [_vm._v("\n\t\t\t\t\tSelect a Campus\n\t\t\t\t")]
-          ),
-          _vm._v(" "),
-          _c("v-select", {
-            staticClass: "csu-form-input-major",
-            class: {
-              "border-danger": !this.form.university && this.submittedOnce
-            },
-            attrs: { label: "name", options: _vm.universities },
-            on: {
-              input: function($event) {
-                _vm.updateSelect("university", "id", $event)
-              },
-              change: function($event) {
-                _vm.updateSelect("university", "id", $event)
-              }
-            }
-          })
-        ],
-        1
+          _c("i", { staticClass: "fas fa-exclamation-circle" }),
+          _vm._v(" Please select a Major.\n\t\t\t")
+        ]
       ),
       _vm._v(" "),
       _c(
