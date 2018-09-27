@@ -10,10 +10,10 @@
 							<i class="fa fa-graduation-cap"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>WIll you graduate if you earn more?</h3>
+							<h3>Do college graduates earn more?</h3>
 						</div>
 						<div class="home__copy">
-							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
+							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates.</p>
 						</div>
 						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
 							<button class="home-btn home-btn__degrees">
@@ -26,7 +26,7 @@
 							<i class="fa fa-line-chart"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Where will you work?</h3>
+							<h3>In which industries are they employed?</h3>
 						</div>
 						<div class="home__copy">
 							<p>Explore industries of employment by major.</p>
@@ -42,10 +42,10 @@
 							<i class="fa fa-usd"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>What is your financial return on your education?</h3>
+							<h3>What is your financial return on education?</h3>
 						</div>
 						<div class="home__copy">
-							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
+							<p>Education costs money, but in the long-term, you will earn more. Find your return on education.</p>
 						</div>
 						<router-link class="button-link" to="/data/pfre" @click.native="setDataPage('pfre')">
 							<button class="home-btn home-btn__pfre">
