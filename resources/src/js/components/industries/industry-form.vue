@@ -59,7 +59,6 @@ export default {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				this.$store.dispatch("setUniversity", this.form.university);
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}
