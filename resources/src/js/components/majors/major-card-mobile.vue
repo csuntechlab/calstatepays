@@ -39,7 +39,7 @@
 					</div>
 					<div v-show="this.selectedFormWasSubmitted && nullValues">
 						<div class="row text-center">
-							<h3 class="csu-card__no-data--mobile"><i class="fas fa-exclamation-circle required-field"/> No data available</h3>
+							<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
 						</div>
 					</div>
 					<div v-show="!nullValues">
