@@ -144,8 +144,8 @@ class MajorService implements MajorContract
                 $query->where('annual_financial_aid_id', $request->financial_aid);
             }])->firstOrFail();
 
-        $freData = $data->studentBackground->firstOrFail();
-        $freData= $freData->investment->firstOrFail();
+        $freData = $data->studentBackground->first();
+        $freData= $freData->investment->first();
         if(empty($freData)){
             $message ='Investment not found';                  
             throw new ModelNotFoundException($message);

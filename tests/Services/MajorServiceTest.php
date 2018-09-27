@@ -28,14 +28,6 @@ class MajorServiceTest extends TestCase
          $this->seed('Universities_TableSeeder');
          $this->seed('Major_Paths_TableSeeder');
          $this->seed('Major_Path_Wages_TableSeeder');
-
-         // $this->seed('Master_Major_Page_Data_TableSeeder');
-         // michael chan
-         // do we need this?
-         // $this->seed('Master_Major_Page_Data_TableSeeder');
-
-//         $this->seed('Master_FRE_Page_Data_TableSeeder');
-//         $this->seed('Master_Industry_Page_Data_Seeder');
      }
 
      public function test_getAllHegisCodes_ensure_returns_all_rows() {
@@ -84,6 +76,7 @@ class MajorServiceTest extends TestCase
          $request->annual_earnings = 3;
          $request->financial_aid = 2;
         
+        //  dd($this->majorService->getFREData($request));
          $response = $this->majorService->getFREData($request);
          $this->arrayHasKey("student_background_id", $response);
          $this->arrayHasKey("annual_earnings_id", $response);
