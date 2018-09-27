@@ -27,19 +27,6 @@
 								</div>
 							</social-sharing>
 						</div>
-						<div class="col-6">
-							<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="isEmpty" title="Reset"></i>
-						</div>
-					</div>
-					<div class="row">
-						<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" style="height:50vh" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
-						</div>
-					</div>
 					<div class="col-6">
 						<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 						<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
