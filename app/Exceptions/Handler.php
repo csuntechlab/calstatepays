@@ -17,7 +17,7 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         \Illuminate\Auth\AuthenticationException::class,
         \Illuminate\Auth\Access\AuthorizationException::class,
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        // \Symfony\Component\HttpKernel\Exception\HttpException::class,
         // \Illuminate\Database\Eloquent\ModelNotFoundException::class, // when first or fail happens this occurs
         \Illuminate\Session\TokenMismatchException::class,
         \Illuminate\Validation\ValidationException::class,
@@ -48,11 +48,11 @@ class Handler extends ExceptionHandler
     function buildResponseArray($collection, $success = true, $status_code = 200)
     {
         return $response = [
+            'collection' => $collection,
             'success'    => ($success ? "true" : "false"),
-            'status'     => strval($status_code),
             'api'        => 'csuMetro',
             'version'    => '1.0',
-            'collection' => $collection
+            'code' => $status_code,
         ];
     }
 
@@ -66,7 +66,7 @@ class Handler extends ExceptionHandler
     public function buildResponse($message,$status)
     {
         $response = $this->buildResponseArray('errors', false,$status);
-        $response['errors'] = [$message];
+        $response['message'] = [$message];
         return response($response,$status);
     }
 
@@ -80,8 +80,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if($e instanceof HttpException || $e instanceof ModelNotFoundException){
-            return $this->buildResponse('Resource could not be resolved',409);
-            // return response('Resource could not be resolved',409);
+            return  $this->buildResponse('Resource could not be resolved',409);
         }
         return parent::render($request, $exception);
     }

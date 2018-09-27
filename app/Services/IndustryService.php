@@ -6,12 +6,19 @@ use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryService implements IndustryContract
 {
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
+        $allNaicsTitles = NaicsTitle::all();
+
+        if($allNaicsTitles->isEmpty()){
+            throw new ModelNotFoundException('There is no Naics Title data');
+        }
+
+        $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {
             return [
                 'naics_code' => $item['naics_code'],
                 'title' => $item['naics_title'],
@@ -28,13 +35,13 @@ class IndustryService implements IndustryContract
          *  Would here be the best choice to check if CSU Opts In or Not?
          */
 
-        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
+        $opt_in = University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
 
         // Might need a way to figure out how the Front end wants to handle this.
+        //TODO: Do i delete this since we are using first or fail 
         if($opt_in  === null ){
-            return response([
-                'success' => false
-            ],200);
+            $message = ''.$university_id.' was not found';
+            throw new ModelNotFoundException($message);
         }
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
