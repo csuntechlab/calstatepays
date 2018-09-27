@@ -45819,7 +45819,6 @@ function h(tag, key, args) {
     },
     majorById: function majorById(state) {
         return function (id) {
-            console.log(state.majors);
             var index = state.majors.findIndex(function (major) {
                 return major.majorId === Number(id);
             });
@@ -46648,9 +46647,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
@@ -47323,8 +47319,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore by Major\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47354,10 +47350,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
-                    )
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore Industries\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47491,34 +47485,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-line-chart" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Which majors earn the most?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__copy" }, [
-      _c("p", [
-        _vm._v(
-          "Find out which majors has the highest earn and the most students."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-graduation-cap" })
     ])
   },
@@ -47527,7 +47493,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
+      _c("h3", [_vm._v("WIll you graduate if you earn more?")])
     ])
   },
   function() {
@@ -47547,6 +47513,30 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-line-chart" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Where will you work?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [_vm._v("Explore industries of employment by major.")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-usd" })
     ])
   },
@@ -47555,7 +47545,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("What is your financial return?")])
+      _c("h3", [_vm._v("What is your financial return on your education?")])
     ])
   },
   function() {
@@ -50411,7 +50401,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col col " }, [
+              _c("span", { staticClass: "col" }, [
                 _c(
                   "p",
                   {
@@ -50699,7 +50689,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-3 col-12" }, [_c("pfre-form")], 1),
@@ -72991,7 +72981,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c(
