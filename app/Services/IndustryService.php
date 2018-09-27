@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
+use App\Models\University;
 use App\Models\UniversityMajor;
 
 class IndustryService implements IndustryContract
@@ -23,15 +24,28 @@ class IndustryService implements IndustryContract
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
 
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', 1);
-        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $university_id)
-            ->first();
+        /**
+         *  Would here be the best choice to check if CSU Opts In or Not?
+         */
 
-        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.percentage_found')->values();
+        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
+
+        // Might need a way to figure out how the Front end wants to handle this.
+        if($opt_in  === null ){
+            return response([
+                'success' => false
+            ],200);
+        }
+
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+                $query->where('entry_status', 'FTF + FTT');
+                $query->where('student_path', 1);
+                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+                    ->where('hegis_code', $hegis_code)
+                    ->where('university_id', $university_id)
+                    ->first();
+
+        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
         return $industry_populations;

@@ -16,6 +16,7 @@ Vue.use(Vuetify);
 Vue.use(SocialSharing);
 
 import App from './App.vue';
+import { mapGetters } from 'vuex';
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,9 +30,15 @@ const vm = new Vue({
     router,
     render: h => h(App),
     created(){
-        this.$store.dispatch('fetchMajors');
-        this.$store.dispatch('fetchFieldOfStudies');
+        this.$store.dispatch('fetchMajors', this.selectedUniversity);
+        this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
+    },
+
+    computed: {
+        ...mapGetters([
+            'selectedUniversity'
+        ])
     }
 });
 

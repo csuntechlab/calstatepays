@@ -13,7 +13,6 @@ export default {
     data(){
         return {
             xAxis: ['2', '5', '10', '15'],
-            yAxis: ['$0', '$30,000', '$60,000', '$90,000', '$120,000', '$150,000'],
             graphColors: {
                color1: '#000',
                color2: '#000',
@@ -53,24 +52,13 @@ export default {
             }
         },
         chartDimensions(){
-            if(this.windowWidth >= 1001) {
+            if(this.windowWidth >= 1000) {
                 return {
-                    height: 400,
-                    width: this.windowWidth * .7
+                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
+                    // width: this.windowWidth * .7
+                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
                 }
                
-            }
-            else if(this.windowWidth >= 750 && this.windowWidth <= 1000) {
-                return {
-                    height: 300,
-                    width: this.windowWidth - 200
-                }
-            }
-            else {
-              return {
-                    height: 400,
-                    width: this.windowWidth - 125,
-                }  
             }
         },
         toolTipTitles1(){
@@ -135,7 +123,6 @@ export default {
                 }
             return color
         },
-
         polar(){
             return {
                 tooltip: {
@@ -150,7 +137,13 @@ export default {
                     nameTextStyle: {
                         padding: [10, 0 , 0, 0]
                     },
-                    data: this.xAxis
+                    data: this.xAxis,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
                 },
                 legend: {
                     data: ['line']
@@ -168,7 +161,15 @@ export default {
                                 return '$' + value;
                         }
                     },
-                    max: 150000
+                    min: 0,
+                    max: 300000,
+                    axisLine: {
+                        show: false
+                    },
+                    splitNumber: 5,
+                    axisTick: {
+                        show: false
+                    }
                 },
                 series: [
                     {
@@ -206,7 +207,7 @@ export default {
                         itemStyle: {
                             color: this.toolColors1
                         },
-                    }
+    },
                 ],
                 animationDuration: 2000
             }

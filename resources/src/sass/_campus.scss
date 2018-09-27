@@ -1,11 +1,9 @@
-#research-main-banner {
+.researchMainBanner {
     background-image:
      $white-filter,
      url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
     background-size: cover;
-    min-height: 45vh;
-    padding: 0 1.5rem;
-    width: 100%;
+    min-height: 30vh;
     h2 {
         color: $black;
         font-size: 3.75rem;
@@ -16,6 +14,7 @@
 }
 
 .campus{
+    @extend .p-3 ;
     display: flex;
     height: 22rem;
     min-width: 100%;
@@ -25,13 +24,13 @@
     text-transform: uppercase;
     border-radius: 5%;
     position: relative;
-    padding: 1.5em;
     box-sizing: border-box;
     color: $white;
     h3 {
         position: absolute;
-        bottom: 1rem;
-        font-size: 1.3rem;
+        bottom: .5rem;
+        left: 1rem;
+        font-size: 1.25rem;
         line-height: 140%;
         font-weight: bold;
     }

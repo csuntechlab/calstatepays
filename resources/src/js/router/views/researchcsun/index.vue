@@ -1,11 +1,13 @@
 <template>
-    <div class="row">
-        <header id="research-main-banner" class="row">
-            <div class="col align-self-center">
+    <div>
+       <header class="align-items-center researchMainBanner ">
+            <div class="container">
                 <div class="row">
-                    <h1 class="text-center home__heading">
-                        We Gathered Data Across 7 CSUs in the Metro LA Area
-                    </h1>
+                    <div class="col-12">
+                        <h1 class="text-center home__heading">
+                            We Gathered Data Across 7 CSUs in the Metro LA Area
+                        </h1>
+                    </div>
                 </div>
                 <div class="row mt-2 csu-wrapper">
                     <figure class="col-md col-sm-4 col-4 text-center">
@@ -37,45 +39,49 @@
                         <figcaption>Los Angeles</figcaption>
                     </figure>
                 </div>
-                <div class="row">
-                    <button class="btn btn-success mb-3">
-    -                   All Campuses
-    -               </button>
-                </div>
-            </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button class="btn btn-success">
+                        All Campuses
+                        </button>
+                    </div>
+                </div>     
+            </div>      
         </header>
-        <main class="container">
-            <div class="row">
-                <div class="col-11">
-                    <router-link to="research" class="returnToCampusSelection">
-                        <h3>
-                            <i class="fas fa-arrow-left"></i> Return to CSU Campus Selection
-                        </h3>
-                    </router-link>
+        <main class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <router-link to="research" class="returnToCampusSelection">
+                            <h2>
+                                <i class="fas fa-arrow-left"></i> Return to CSU Campus Selection
+                            </h2>
+                        </router-link>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class='tableauPlaceholder' id='viz1531346960828' style='position: relative'>
-                <noscript>
-                    <a href='https://www.sandbox.csun.edu/metalab/csumetrola#/'>
-                        <img alt='Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ' src='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png' style='border: none' />
-                    </a>
-                </noscript>
-                <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                    <param name='embed_code_version' value='3' />
-                    <param name='site_root' value='' />
-                    <param name='name' value='CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes' />
-                    <param name='tabs' value='no' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png' />
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='filter' value='publish=yes' />
-                </object>
-            </div>
+                <div class="row">
+                    <div class='tableauPlaceholder' id='viz1531346960828' style='position: relative'>
+                        <noscript>
+                            <a href='https://www.sandbox.csun.edu/metalab/csumetrola#/'>
+                                <img alt='Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ' src='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png' style='border: none' />
+                            </a>
+                        </noscript>
+                        <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='filter' value='publish=yes' />
+                        </object>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

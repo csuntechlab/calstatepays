@@ -1,6 +1,7 @@
 // Global Form State
 
 export default {
-    selectedUniversity: null,
+    selectedUniversity: 70,
     selectedDataPage: 'majors',
+    modalCheck:false
 };

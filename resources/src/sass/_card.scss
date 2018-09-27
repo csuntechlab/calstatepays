@@ -6,12 +6,13 @@
 }
 
 .csu-card{
-    display: flex;
-    flex-direction: row;
+    @extend %card-base;
+    min-height: 75vh;
     margin-bottom: 50px;
     min-height: 60vh;
-    align-items: flex-start;
-    @extend %card-base;
+    @media screen and (max-width: $break-small) {
+        min-height: unset;
+    }
 
     &__share{
         margin-left: .3rem;
@@ -25,14 +26,20 @@
             color: #0077B5;
         }
     }
+
+    &__no-data{
+        line-height: 25rem;
+        &--mobile{
+            line-height: 18rem;
+        }
+    }
 }
 
 .csu-card__form{
+    @extend %card-base, .mb-4, .py-4 ;
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
     align-items: flex-start;
-    @extend %card-base;
     &-sizing{
         width: 100%;
     }
@@ -65,7 +72,3 @@
     @extend %card-base;
 }
 
-
-.row{
-    flex-direction: row;
-}

@@ -4,8 +4,9 @@ import _majors from '../../mutation-types/majors';
 
 export default {
 
-    fetchMajors({commit, dispatch}){
+    fetchMajors({commit, dispatch}, payload){
         Major.fetchMajorsAPI(
+            payload,
             (success) => {
                 commit(_majors.FETCH_MAJORS, success);
             },
@@ -13,7 +14,7 @@ export default {
         );
     },
 
-    fetchFieldOfStudies({commit, dispatch}){
+    fetchFieldOfStudies({commit, dispatch},payload){
         Major.fetchFieldOfStudiesAPI(
             (success) => {
                 commit(_majors.FETCH_FIELD_OF_STUDIES, success);
@@ -28,7 +29,7 @@ export default {
 
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
         Major.fetchUpdatedMajorsByFieldAPI(
-            payload.fieldOfStudyId,
+            payload,
             (success) => {
                 success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
