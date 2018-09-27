@@ -25878,15 +25878,11 @@ add r
 
 .pfre-info__wrapper {
   position: relative;
-}
-
-.majors-header {
-  color: gray;
   font-weight: 600;
 }
 
 @media screen and (max-width: 479px) {
-  .majors-header {
+  .pfre-info__wrapper {
     font-size: 1.1rem;
   }
 }
@@ -25902,6 +25898,14 @@ add r
 
 figcaption {
   font-size: 1.5rem;
+}
+
+.v-dialog__content {
+  z-index: 1000001 !important;
+}
+
+.v-overlay {
+  z-index: 1000000 !important;
 }
 
 .img__logo {
@@ -26135,6 +26139,23 @@ figcaption {
     height: 40vh;
     min-height: 400px;
   }
+}
+
+.campus-modal {
+  color: black;
+}
+
+.campus-modal img {
+  height: 8rem;
+  text-align: center;
+}
+
+.campus-modal img:hover {
+  background-color: darkgray;
+}
+
+.campus-modal figcaption:hover {
+  cursor: pointer;
 }
 
 .site-header {
@@ -26902,6 +26923,7 @@ input[type="button"]:focus {
 
 .industry-bar__salary {
   background-color: #2BAE67;
+  border-radius: 50px;
 }
 
 .industry-bar__salary-text {
@@ -26910,6 +26932,7 @@ input[type="button"]:focus {
 
 .industry-bar__percentage {
   background-color: #2f98bf;
+  border-radius: 50px;
 }
 
 .industry-bar__percentage-text {
@@ -26951,14 +26974,17 @@ input[type="button"]:focus {
 
 .pfre-year {
   background-color: #DAA200 !important;
+  border-radius: 50px;
 }
 
 .pfre-earnings {
   background-color: #279D5D !important;
+  border-radius: 50px;
 }
 
 .pfre-fre {
   background-color: #476A6F !important;
+  border-radius: 50px;
 }
 
 .progress-footer {
