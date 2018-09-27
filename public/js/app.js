@@ -47752,7 +47752,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
     created: function created() {},
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity', 'universities']), {
-        getUnitName: function getUnitName() {
+        getCampusName: function getCampusName() {
             var universityId = parseInt(this.selectedUniversity);
             var currentName = "";
             this.universities.forEach(function (university) {
@@ -47798,7 +47798,7 @@ var render = function() {
             { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
             [
               _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-                _vm._v(" " + _vm._s(_vm.getUnitName))
+                _vm._v(" " + _vm._s(_vm.getCampusName))
               ]),
               _vm._v(" "),
               _c(
@@ -72808,6 +72808,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
+				this.$store.dispatch("setUniversity", this.form.university);
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}

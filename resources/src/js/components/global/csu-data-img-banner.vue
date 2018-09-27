@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-start">
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
-                    <h2 class="CSUDataImgBanner__campusTitle"> {{getUnitName}}</h2>
+                    <h2 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h2>
                     <a class="CSUDataImgBanner__changeCampus" href="#">Change Campus</a>
                 </div>
                 <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-8">
@@ -25,12 +25,12 @@ export default {
             'selectedUniversity',
             'universities'
             ]),
-        getUnitName() {
-            var universityId = parseInt(this.selectedUniversity)
-            var currentName = ""
+        getCampusName() {
+            var universityId = parseInt(this.selectedUniversity);
+            var currentName = "";
             this.universities.forEach(university => {
                 if(universityId===parseInt(university.id)) {
-                    currentName = university.name
+                    currentName = university.name;
                 }
             });
             return currentName;
