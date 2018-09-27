@@ -45953,11 +45953,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, function (state, payload) {
     var index = payload;
+    state.majorCards[index].formWasSubmitted = false;
     state.majorCards[index].majorsByField = [];
     state.majorCards[index].educationLevel = "allDegrees";
     state.majorCards[index].industries = [];
     state.majorCards[index].majorData = [];
-    state.majorCards[index].formWasSubmitted = false;
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -51461,6 +51461,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -51483,7 +51493,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (this.industries(this.index).length === 0 || this.formWasSubmitted(this.index) == false) {
+			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmitted) {
 				return false;
 			}
 			return true;
@@ -51513,7 +51523,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
+			var opening = 'I discovered that ' + this.selectedMajorTitle + ' students from CSUN make an average of ';
+
+			if (this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees') return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
+		},
+		nullValues: function nullValues() {
+			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
+			return false;
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
@@ -51524,10 +51540,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		formatDollars: function formatDollars(input) {
-			var dollarAmount = input.toString();
-			var hundreds = dollarAmount.substr(-3, 3);
-			var thousands = dollarAmount.slice(0, -3);
-			return '$' + thousands + ',' + hundreds;
+			if (this.input) {
+				var dollarAmount = input.toString();
+				var hundreds = dollarAmount.substr(-3, 3);
+				var thousands = dollarAmount.slice(0, -3);
+				return "$" + thousands + "," + hundreds;
+			}
 		}
 	}),
 	components: {
@@ -52128,22 +52146,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         chartDimensions: function chartDimensions() {
-            if (this.windowWidth >= 1001) {
+            if (this.windowWidth >= 1000) {
                 return {
                     height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
                     // width: this.windowWidth * .7
                     width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
-                };
-            } else if (this.windowWidth >= 750 && this.windowWidth <= 1000) {
-                return {
-                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
-                    // width: this.windowWidth - 200
-                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
-                };
-            } else {
-                return {
-                    height: 200,
-                    width: document.getElementById('majorCardHasIndex-0').clientWidth
                 };
             }
         },
@@ -52209,9 +52216,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         polar: function polar() {
             return {
-                title: {
-                    show: false
-                },
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -70870,7 +70874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         chartDimensions: function chartDimensions() {
             var currentWidth = window.innerWidth;
-            if (this.windowWidth >= 768 && this.windowWidth < 992) {
+            if (this.windowWidth >= 768 && this.windowWidth < 1000) {
                 return {
                     height: 400,
                     width: 710
@@ -71684,7 +71688,7 @@ var render = function() {
                 "div",
                 { staticClass: "col-6" },
                 [
-                  _vm.selectedFormWasSubmitted
+                  _vm.selectedFormWasSubmitted && !_vm.nullValues
                     ? _c("social-sharing", {
                         attrs: {
                           url: "sandbox.csun.edu/metalab/test/csumetrola",
@@ -71774,8 +71778,8 @@ var render = function() {
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
                     }
                   ],
                   staticClass: "fas fa-sync-alt btn-reset float-right",
@@ -71803,45 +71807,83 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("major-graph-wrapper", {
-                    staticStyle: { height: "50vh" },
-                    attrs: {
-                      id: "majorGraphWrapperIndex-" + this.index,
-                      majorData: _vm.selectedMajorData,
-                      educationLevel: _vm.selectedEducationLevel,
-                      windowWidth: _vm.windowWidth
-                    }
-                  })
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.selectedFormWasSubmitted && _vm.nullValues,
+                    expression: "selectedFormWasSubmitted && nullValues"
+                  }
                 ],
-                1
-              )
-            ]),
+                staticClass: "row text-center"
+              },
+              [
+                _c("h3", { staticClass: "csu-card__no-data" }, [
+                  _c("i", {
+                    staticClass: "fa fa-exclamation-circle required-field"
+                  }),
+                  _vm._v(" No data available")
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("major-legend", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.nullValues,
+                    expression: "!nullValues"
+                  }
+                ]
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("major-graph-wrapper", {
+                        staticStyle: { height: "50vh" },
+                        attrs: {
+                          id: "majorGraphWrapperIndex-" + this.index,
+                          majorData: _vm.selectedMajorData,
+                          educationLevel: _vm.selectedEducationLevel,
+                          windowWidth: _vm.windowWidth
+                        }
+                      })
                     ],
-                    attrs: { educationLevel: _vm.selectedEducationLevel }
-                  })
-                ],
-                1
-              )
-            ]),
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("major-legend", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.selectedFormWasSubmitted,
+                            expression: "selectedFormWasSubmitted"
+                          }
+                        ],
+                        attrs: { educationLevel: _vm.selectedEducationLevel }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "row p-0" }, [
               _c(
@@ -72007,6 +72049,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -72042,7 +72097,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (this.industries(this.index).length === 0) {
+			if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
 				return false;
 			}
 			return true;
@@ -72075,7 +72130,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			if (this.selectedEducationLevel == "allDegrees" && this.selectedMajorData.bachelors) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + " five years after graduating!";else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == "someCollege") return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after dropping out of college!";else if (this.selectedMajorData[this.selectedEducationLevel]) return "I discovered that " + this.selectedMajorTitle + " students from " + "CSUN" + " make an average of " + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + " five years after graduating with a " + this.selectedEducationLevel + " degree!";else return "Discover your earnings after college!";
+			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
+		},
+		nullValues: function nullValues() {
+			if (this.selectedEducationLevel != 'allDegrees') return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
+			return false;
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
@@ -72086,10 +72145,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		formatDollars: function formatDollars(input) {
-			var dollarAmount = input.toString();
-			var hundreds = dollarAmount.substr(-3, 3);
-			var thousands = dollarAmount.slice(0, -3);
-			return "$" + thousands + "," + hundreds;
+			if (this.input) {
+				var dollarAmount = input.toString();
+				var hundreds = dollarAmount.substr(-3, 3);
+				var thousands = dollarAmount.slice(0, -3);
+				return "$" + thousands + "," + hundreds;
+			}
 		}
 	}),
 	components: {
@@ -72346,8 +72407,8 @@ var render = function() {
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.isEmpty,
-                      expression: "isEmpty"
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
                     }
                   ],
                   staticClass: "fas fa-sync-alt btn-reset float-right",
@@ -72384,37 +72445,30 @@ var render = function() {
                   {
                     name: "show",
                     rawName: "v-show",
-                    value: _vm.selectedFormWasSubmitted,
-                    expression: "selectedFormWasSubmitted"
+                    value: this.selectedFormWasSubmitted && _vm.nullValues,
+                    expression: "this.selectedFormWasSubmitted && nullValues"
                   }
-                ],
-                staticClass: "row",
-                staticStyle: { height: "400px" }
+                ]
+              },
+              [_vm._m(0)]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.nullValues,
+                    expression: "!nullValues"
+                  }
+                ]
               },
               [
                 _c(
                   "div",
-                  { staticClass: "col-12" },
-                  [
-                    _c("major-graph-wrapper", {
-                      attrs: {
-                        majorData: _vm.selectedMajorData,
-                        educationLevel: _vm.selectedEducationLevel,
-                        windowWidth: _vm.windowWidth
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row justify-content-center" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("major-legend", {
+                  {
                     directives: [
                       {
                         name: "show",
@@ -72423,12 +72477,50 @@ var render = function() {
                         expression: "selectedFormWasSubmitted"
                       }
                     ],
-                    attrs: { educationLevel: _vm.selectedEducationLevel }
-                  })
-                ],
-                1
-              )
-            ]),
+                    staticClass: "row",
+                    staticStyle: { height: "400px" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "col-12" },
+                      [
+                        _c("major-graph-wrapper", {
+                          attrs: {
+                            id: "majorGraphWrapperIndex-" + this.index,
+                            majorData: _vm.selectedMajorData,
+                            educationLevel: _vm.selectedEducationLevel,
+                            windowWidth: _vm.windowWidth
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row justify-content-center" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("major-legend", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.selectedFormWasSubmitted,
+                            expression: "selectedFormWasSubmitted"
+                          }
+                        ],
+                        attrs: { educationLevel: _vm.selectedEducationLevel }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c(
@@ -72468,7 +72560,19 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row text-center" }, [
+      _c("h3", { staticClass: "csu-card__no-data--mobile" }, [
+        _c("i", { staticClass: "fa fa-exclamation-circle required-field" }),
+        _vm._v(" No data available")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
