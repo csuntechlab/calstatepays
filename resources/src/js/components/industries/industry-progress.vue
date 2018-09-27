@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="row industry-card__legend">
-            <div class="col-3">INDUSTRY</div>
+            <div class="col-3"><p>INDUSTRY</p></div>
             <div class="col-3">
-                <div class="industry-card__legend-percentage"/>PERCENTAGE
+                <div class="industry-card__legend-percentage"/><p>PERCENTAGE</p>
             </div>
-            <div class="col-6">
-                <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
+            <div class="col-3">
+                <div class="industry-card__legend-salary"/><p>AVERAGE EARNINGS</p>
             </div>
         </div>
         <div v-for="(industry,index) in industriesByMajor" :key="index">
