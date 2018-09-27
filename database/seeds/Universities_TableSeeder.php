@@ -17,7 +17,8 @@ class Universities_TableSeeder extends Seeder
         foreach($data as $row){
             DB::table('universities')->insert([
                 'id'              => $row->id,
-                'university_name' => $row->university
+                'university_name' => $row->university,
+                'opt_in'          => $row->opt_in
             ]);
         };
     }
