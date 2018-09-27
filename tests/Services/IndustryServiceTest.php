@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use App\Services\IndustryService;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryServiceTest extends TestCase
 {
@@ -15,11 +16,11 @@ class IndustryServiceTest extends TestCase
     {
         parent::setUp();
         $this->industryService= new IndustryService();
-        $this->seed('Naics_Titles_TableSeeder');
     }
 
     public function test_getAllIndustryNaicsTitles_returns_all_rows()
     {
+        $this->seed('Naics_Titles_TableSeeder');
         // route is api/industry/naics-titles
         $response = $this->industryService->getAllIndustryNaicsTitles();
         $this->assertArrayHasKey("naics_code", $response[0]);    
@@ -27,8 +28,15 @@ class IndustryServiceTest extends TestCase
         $this->assertArrayHasKey('image', $response[0]);
     }
 
+    public function test_getAllIndustryNaicsTitles_throws_a_model_not_found_exception() 
+    {
+        $this->setExpectedException('Exception');
+        $response = $this->industryService->getAllIndustryNaicsTitles();
+    }
+
      public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegist_code()
      {
+        $this->seed('Naics_Titles_TableSeeder');
          // route is api/industry/{hegis_code}/{university_id}
          // i.e. api/industry/5021/70
          $this->seed('University_Majors_TableSeeder');
@@ -41,5 +49,11 @@ class IndustryServiceTest extends TestCase
          $this->assertArrayHasKey("percentage", $response[0]);
          $this->assertArrayHasKey('rank', $response[0]);
          $this->assertArrayHasKey('image', $response[0]);
+     }
+
+     public function test_getIndustryPopulationByRank_throws_a_model_not_found_exception() 
+     {
+         $this->setExpectedException('Exception');
+         $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
      }
 }
