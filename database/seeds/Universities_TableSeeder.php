@@ -18,7 +18,8 @@ class Universities_TableSeeder extends Seeder
             DB::table('universities')->insert([
                 'id'              => $row->id,
                 'university_name' => $row->university,
-                'short_name' => $row->short_name
+                'short_name' => $row->short_name,
+                'opt_in'          => $row->opt_in
             ]);
         };
     }

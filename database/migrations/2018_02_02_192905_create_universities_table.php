@@ -17,6 +17,7 @@ class CreateUniversitiesTable extends Migration
             $table->string('id');
             $table->string('university_name');
             $table->string('short_name');
+            $table->smallInteger('opt_in');// Whether a CSU wants to have their info displayed or not
         });
     }
 
