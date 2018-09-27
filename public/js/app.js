@@ -48130,7 +48130,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-graduation-cap" })
+      _c("i", { staticClass: "fa fa-graduation-cap fa-5x" })
     ])
   },
   function() {
@@ -48158,7 +48158,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-line-chart" })
+      _c("i", { staticClass: "fa fa-line-chart fa-5x" })
     ])
   },
   function() {
@@ -48182,7 +48182,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-usd" })
+      _c("i", { staticClass: "fa fa-usd fa-5x" })
     ])
   },
   function() {
