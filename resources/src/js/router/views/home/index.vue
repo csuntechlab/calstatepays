@@ -10,14 +10,14 @@
 							<i class="fa fa-graduation-cap"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Do college graduates earn more?</h3>
+							<h3>WIll you graduate if you earn more?</h3>
 						</div>
 						<div class="home__copy">
 							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
 						</div>
-						<router-link class="button-link" to="/data/industries">
+						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
 							<button class="home-btn home-btn__degrees">
-								Compare Degree Levels
+								Explore by Major
 							</button>
 						</router-link>
 					</div>
@@ -26,14 +26,14 @@
 							<i class="fa fa-line-chart"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Which majors earn the most?</h3>
+							<h3>Where will you work?</h3>
 						</div>
 						<div class="home__copy">
-							<p>Find out which majors has the highest earn and the most students.</p>
+							<p>Explore industries of employment by major.</p>
 						</div>
-						<router-link class="button-link" to="/data/majors">
+						<router-link class="button-link" to="/data/industries" @click.native="setDataPage('industries')">
 							<button class="home-btn home-btn__majors">
-								Compare Majors
+								Explore Industries
 							</button>
 						</router-link>
 					</div>
@@ -42,12 +42,12 @@
 							<i class="fa fa-usd"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>What is your financial return?</h3>
+							<h3>What is your financial return on your education?</h3>
 						</div>
 						<div class="home__copy">
 							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
 						</div>
-						<router-link class="button-link" to="/data/pfre">
+						<router-link class="button-link" to="/data/pfre" @click.native="setDataPage('pfre')">
 							<button class="home-btn home-btn__pfre">
 								Financial Return on Education
 							</button>
@@ -103,6 +103,7 @@
 <script>
 import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import csuSelector from "../../../components/global/csu-selector.vue";
+import {mapActions} from 'vuex';
 export default {
 	data() {
 		return {
@@ -115,6 +116,9 @@ export default {
 	components: {
 		csuSelector,
 		landingPageCarousel
-	}
+	}, 
+	methods: {
+		...mapActions(['setDataPage'])
+	} 
 };
 </script>

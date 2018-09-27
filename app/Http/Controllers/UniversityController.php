@@ -7,10 +7,8 @@ use App\Models\University;
 
 class UniversityController extends Controller
 {
-    public function getAllUniversities()
-    {
-        /*$universities = University::all();*/
-        $universities = University::where('id',"70")->first();
-        return [0 => $universities];
+    public function getAllUniversities() {
+        $data = University::all()->toArray();
+        return $data;
     }
 }
