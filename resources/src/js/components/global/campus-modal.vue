@@ -21,7 +21,7 @@
                     <div class="col-12 col-sm">
                         <figure>
                             <img src=" https://via.placeholder.com/123x112?" role="button" class="btn">    
-                            <figcaption>All campuses(Aot Available)</figcaption>                    
+                            <figcaption>All campuses(Not Available)</figcaption>                    
                         </figure>
                     </div>
                 </div>
