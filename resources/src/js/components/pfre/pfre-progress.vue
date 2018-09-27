@@ -3,7 +3,7 @@
     <div class="row no-gutters my-3">
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
         <div class="row no-gutters">
-          <span class="col-auto">
+          <span class="col-auto"> 
              <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
           </span>
           <span class="col">
