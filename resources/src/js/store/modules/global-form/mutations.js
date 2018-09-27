@@ -6,6 +6,9 @@ export default {
     },
     [_global.SET_DATA_PAGE](state, payload){
         state.selectedDataPage = payload;
+    },
+    [_global.SET_MODAL_CHECK](state, payload){
+        state.modalCheck = payload;
     }
 
 }

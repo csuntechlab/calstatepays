@@ -13,7 +13,7 @@ const fetchFieldOfStudiesAPI = (success, error) => {
 };
 
 const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
-    window.axios.get(`api/major/hegis-codes/${payload}`).then(
+    window.axios.get(`api/major/hegis-codes/${payload.schoolId}/${payload.fieldOfStudyId}`).then(
         response => success(response.data),
         response => error(response)
     );
