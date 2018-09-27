@@ -14,16 +14,28 @@ class MajorService implements MajorContract
 {
     public function getAllHegisCodesByUniversity( $universityId ): array 
     {
-        $allHegisCodes = UniversityMajor::where('university_id', $universityId)
+        $allHegisCodes = UniversityMajor::where('university_id',$universityId)
+                            ->with(['university' => function($query) {
+                                $query->where('opt_in',1);
+                            }])
                             ->orderBy('major','asc')
-                            ->get()
+                            ->get();
+
+        // Given the situation where the CSU Opts out
+        // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
+        if($allHegisCodes[0]->university == null)
+        {
+            return [null];
+        }
+
+        $allHegisCodes = $allHegisCodes
                             ->map(function ($item){
-                    return [
-                        'major' => $item['major'],
-                        'hegis_code' => $item['hegis_code'],
-                        'university_id' => $item['university']->id
-                    ];
-                });
+                                return [
+                                    'major' => $item['major'],
+                                    'hegis_code' => $item['hegis_code'],
+                                    'university_id' => $item['university']->id
+                                ];
+                            });
 
         return $allHegisCodes->toArray();
     }
@@ -69,10 +81,19 @@ class MajorService implements MajorContract
     public function getMajorEarnings($hegis_code, $university_id): array
     {
         $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
-            ->where('university_id', $university_id)
-            ->with('majorPaths.majorPathWage')
-            ->firstOrFail();
-        
+                            ->with(['university' => function($query) {
+                                $query->where('opt_in',1);
+                            }])
+                            ->where('university_id', $university_id)
+                            ->with('majorPaths.majorPathWage')
+                            ->firstOrFail();
+
+        // situation where CSU opts out
+        // Might want to refactor this method?
+        if($universityMajor->university == null)
+        {
+            return [];
+        }
                             
         if ( empty($universityMajor) ){
             return [];
