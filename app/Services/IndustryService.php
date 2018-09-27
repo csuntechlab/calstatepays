@@ -37,13 +37,6 @@ class IndustryService implements IndustryContract
 
         $opt_in = University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
 
-        // Might need a way to figure out how the Front end wants to handle this.
-        //TODO: Do i delete this since we are using first or fail 
-        if($opt_in  === null ){
-            $message = ''.$university_id.' was not found';
-            throw new ModelNotFoundException($message);
-        }
-
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
             $query->where('student_path', 1);

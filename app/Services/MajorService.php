@@ -60,12 +60,8 @@ class MajorService implements MajorContract
                                 }])
                                 ->where('id', $fieldOfStudyId)
                                 ->firstOrFail();
-                                                                
-        if ( empty($fieldOfStudy) ){
-            $message ='Field of Study table has no data';                  
-            throw new ModelNotFoundException($message);
-        }
-        else if ( empty($fieldOfStudy->hegisCategory) ){
+
+        if ( empty($fieldOfStudy->hegisCategory) ){
             $message ='There is no hegis category that is mapped to this field of study';                  
             throw new ModelNotFoundException($message);
         }
@@ -98,17 +94,13 @@ class MajorService implements MajorContract
                             ->with('majorPaths.majorPathWage')
                             ->firstOrFail();
         // situation where CSU opts out
-        // Might want to refactor this method?
-        //TODO: Delete since we have first or fail checking?
-        if ( empty($universityMajor) ){
+
+        if($universityMajor->university == null){
             $message ='This university does not exist in the database';                  
             throw new ModelNotFoundException($message);
         }
-        else if($universityMajor->university == null){
-            $message ='This university does not exist in the database';                  
-            throw new ModelNotFoundException($message);
-        }
-        else if ( empty($universityMajor->majorPaths) ){
+        
+        if ( empty($universityMajor->majorPaths) ){
             $message ='Major paths data was not found';                  
             throw new ModelNotFoundException($message);
         }
@@ -122,12 +114,7 @@ class MajorService implements MajorContract
     {
         $hegis_code = HEGISCode::where('major', $name)
                                 ->firstOrFail(['hegis_code']);
-
-        // TODO: Delete this check if first or fail is happening
-        if($hegis_code == null){
-            $message ='Major paths data was not found';                  
-            throw new ModelNotFoundException($message);
-        };
+                                
         return $hegis_code;
     }
 
