@@ -27,9 +27,10 @@
 								</div>
 							</social-sharing>
 						</div>
-					<div class="col-6">
-						<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-						<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+						<div class="col-6">
+							<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+							<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+						</div>
 					</div>
 				<div class="row">
 					<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
