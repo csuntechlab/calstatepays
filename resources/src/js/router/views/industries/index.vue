@@ -10,7 +10,7 @@
       </p>
     </csu-data-img-banner>
     <sub-nav/>
-    <div class="row graphContent">
+    <div class="graphContent">
       <div class="container">
         <div class="row">
           <aside class="col-lg-3 col-12">

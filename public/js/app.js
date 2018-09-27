@@ -40666,7 +40666,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     },
     created: function created() {
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
-        this.$store.dispatch('fetchFieldOfStudies');
+        this.$store.dispatch('fetchFieldOfStudies', this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
     },
 
@@ -45982,7 +45982,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return console.log(error);
         });
     },
-    fetchFieldOfStudies: function fetchFieldOfStudies(_ref2) {
+    fetchFieldOfStudies: function fetchFieldOfStudies(_ref2, payload) {
         var commit = _ref2.commit,
             dispatch = _ref2.dispatch;
 
@@ -46001,7 +46001,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref4.commit,
             dispatch = _ref4.dispatch;
 
-        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload.fieldOfStudyId, function (success) {
+        __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
             success.cardIndex = payload.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
@@ -46092,7 +46092,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
 };
 
 var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -46562,9 +46562,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(3);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
 //
 //
 //
@@ -47339,8 +47336,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
-                    _vm._v("\n\t\t\t\t\t\t\tCompare Majors\n\t\t\t\t\t\t")
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore by Major\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47370,10 +47367,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tCompare Degree Levels\n\t\t\t\t\t\t"
-                    )
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore Industries\n\t\t\t\t\t\t")
                   ])
                 ]
               )
@@ -47507,34 +47502,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-line-chart" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Which majors earn the most?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__copy" }, [
-      _c("p", [
-        _vm._v(
-          "Find out which majors has the highest earn and the most students."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-graduation-cap" })
     ])
   },
@@ -47543,7 +47510,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
+      _c("h3", [_vm._v("WIll you graduate if you earn more?")])
     ])
   },
   function() {
@@ -47563,6 +47530,30 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-line-chart" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Where will you work?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [_vm._v("Explore industries of employment by major.")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
       _c("i", { staticClass: "fa fa-usd" })
     ])
   },
@@ -47571,7 +47562,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("What is your financial return?")])
+      _c("h3", [_vm._v("What is your financial return on your education?")])
     ])
   },
   function() {
@@ -47872,7 +47863,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47957,9 +47947,7 @@ var render = function() {
             { staticClass: " text-xs-center black--text" },
             [
               _c("v-card-title", { staticClass: "headline grey lighten-2 " }, [
-                _vm._v(
-                  "\n                    Choose Your Campus\n                "
-                )
+                _vm._v("\n              Choose Your Campus\n          ")
               ]),
               _vm._v(" "),
               _c("v-card-text", { staticClass: "campus-modal" }, [
@@ -48007,7 +47995,7 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("figcaption", [
-                          _vm._v("All campuses(Aot Available)")
+                          _vm._v("All campuses(Not Available)")
                         ])
                       ])
                     ])
@@ -50697,7 +50685,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col col " }, [
+              _c("span", { staticClass: "col" }, [
                 _c(
                   "p",
                   {
@@ -50985,7 +50973,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-3 col-12" }, [_c("pfre-form")], 1),
@@ -73277,7 +73265,7 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "row graphContent" }, [
+      _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c(

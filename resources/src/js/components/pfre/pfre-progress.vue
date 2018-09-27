@@ -6,13 +6,13 @@
           <span class="col-auto"> 
              <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
           </span>
-          <span class="col col ">
+          <span class="col">
             <p class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')">Estimated time to degree:</p>
           </span>  
           <span class="col align-self-end"><p class="float-right mb-0">{{pfreData.years.actual}}</p>
           </span>
         </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"/>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.years.start}}</p>  
@@ -40,7 +40,7 @@
           <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
           </span>
     </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"></v-progress-linear> 
+        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"/>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>  
@@ -68,7 +68,7 @@
           <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
         </span>
       </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"></v-progress-linear>
+        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"/>
         <div class="progress-footer">
           <span class="col-4">
             <p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  

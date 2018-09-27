@@ -26845,11 +26845,14 @@ input[type="button"]:focus {
 .major-btn_bachelors,
 .major-btn_postBacc,
 .major-btn_someCollege {
+  position: relative;
   color: #FFF;
   margin-left: 0;
   font-size: 1rem;
   text-transform: none;
   font-weight: 500;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 @media only screen and (min-width: 992px) {
@@ -26920,6 +26923,7 @@ input[type="button"]:focus {
 
 .industry-bar__salary {
   background-color: #2BAE67;
+  border-radius: 50px;
 }
 
 .industry-bar__salary-text {
@@ -26928,6 +26932,7 @@ input[type="button"]:focus {
 
 .industry-bar__percentage {
   background-color: #2f98bf;
+  border-radius: 50px;
 }
 
 .industry-bar__percentage-text {
@@ -26969,14 +26974,17 @@ input[type="button"]:focus {
 
 .pfre-year {
   background-color: #DAA200 !important;
+  border-radius: 50px;
 }
 
 .pfre-earnings {
   background-color: #279D5D !important;
+  border-radius: 50px;
 }
 
 .pfre-fre {
   background-color: #476A6F !important;
+  border-radius: 50px;
 }
 
 .progress-footer {

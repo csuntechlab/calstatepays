@@ -14,26 +14,29 @@ class MajorService implements MajorContract
 {
     public function getAllHegisCodesByUniversity( $universityId ): array 
     {
-        $allHegisCodes =  UniversityMajor::where('university_id', $universityId)
-                                            ->get()
-                                            ->map(function ($item){
-            return [
-                'hegis_code' => $item['hegis_code'],
-                'major' => $item['major'],
-                'university_id' => $item['university']->id
-            ];
-    
-            });
+        $allHegisCodes = UniversityMajor::where('university_id',$universityId)
+                            ->with(['university' => function($query) {
+                                $query->where('opt_in',1);
+                            }])
+                            ->orderBy('major','asc')
+                            ->get();
 
-        return $allHegisCodes->toArray();
-       $allHegisCodes = HEGISCode::orderBy('major', 'asc')->get()->unique()->map(function ($item){
-           return [
-            'hegis_code' => $item['hegis_code'],
-            'major' => $item['major'],
-            'university' => $item['university']
-           ];
+        // Given the situation where the CSU Opts out
+        // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
+        if($allHegisCodes[0]->university == null)
+        {
+            return [null];
+        }
 
-        });
+        $allHegisCodes = $allHegisCodes
+                            ->map(function ($item){
+                                return [
+                                    'major' => $item['major'],
+                                    'hegis_code' => $item['hegis_code'],
+                                    'university_id' => $item['university']->id
+                                ];
+                            });
+
         return $allHegisCodes->toArray();
     }
 
@@ -78,9 +81,19 @@ class MajorService implements MajorContract
     public function getMajorEarnings($hegis_code, $university_id): array
     {
         $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
+                            ->with(['university' => function($query) {
+                                $query->where('opt_in',1);
+                            }])
                             ->where('university_id', $university_id)
                             ->with('majorPaths.majorPathWage')
                             ->first();
+
+        // situation where CSU opts out
+        // Might want to refactor this method?
+        if($universityMajor->university == null)
+        {
+            return [];
+        }
                             
         if ( empty($universityMajor) ){
             return [];
