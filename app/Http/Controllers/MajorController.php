@@ -30,10 +30,10 @@ class MajorController extends Controller
     public function getMajorEarnings($hegis_code, $university_id){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
 
-        //TODO: Ask if front end will be able to handle this or if we need to have the same set up
-        if( empty($university_major) ){
-            return [];
-        }
+        // TODO: delete this if check?
+        // if( empty($university_major) ){
+        //     return [];
+        // }
 
         foreach($university_major as $data) {
             $years = $data['years'];
@@ -120,9 +120,10 @@ class MajorController extends Controller
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityId,$fieldOfStudyId);
         
-        if(empty($hegisData)){
-            return [[]];
-        }
+        // TODO: delete this if check?
+        // if(empty($hegisData)){
+        //     return [[]];
+        // }
 
         $data[] = array_map(function($hegis){
                 return  [
