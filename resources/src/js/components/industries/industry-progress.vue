@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="row industry-card__legend">
-            <div class="col-sm-2"></div>
+            <div class="col-sm-3"></div>
             <div class="col-sm-4">
                 <div class="industry-card__legend-percentage"/>PERCENTAGE
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
@@ -50,7 +50,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters(["industriesByMajor"])
+        ...mapGetters(["industriesByMajor"])
 	}
 };
 </script>
