@@ -9,6 +9,13 @@ use App\Models\UniversityMajor;
 
 class IndustryService implements IndustryContract
 {
+    private $helper;
+
+    public function __construct()
+    {
+        $this->helper = new HelperService();
+    }
+
     public function getAllIndustryNaicsTitles()
     {
         $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
@@ -21,21 +28,26 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
+    public function getIndustryPopulationAndWage($hegis_code, $university_id)
+    {
+        $this->helper->checkOptIn($university_id);
+
+        $university_major = UniversityMajor::with(['industryPathTypes',
+                    'industryPathTypes.population', 'industryPathTypes.naicsTitle','industryPathTypes.industryWage'])
+                    ->where('hegis_code', $hegis_code)
+                    ->where('university_id', $university_id)
+                    ->firstOrFail();
+
+        return $this->helper->handlePopulationCalculation($university_major);
+
+    }
+
     public function getIndustryPopulationByRank($hegis_code, $university_id)
     {
-
         /**
          *  Would here be the best choice to check if CSU Opts In or Not?
          */
-
-        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
-
-        // Might need a way to figure out how the Front end wants to handle this.
-        if($opt_in  === null ){
-            return response([
-                'success' => false
-            ],200);
-        }
+        $this->helper->checkOptIn($university_id);
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
@@ -43,45 +55,8 @@ class IndustryService implements IndustryContract
                 }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
                     ->where('hegis_code', $hegis_code)
                     ->where('university_id', $university_id)
-                    ->first();
+                    ->firstOrFail();
 
-        $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
-        $population_total = $this->getIndustryPopulationTotals($industry_populations);
-        $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
-        return $industry_populations;
-    }
-
-    private function getIndustryPopulationTotals($industry_populations) {
-        $total = 0;
-        foreach($industry_populations as $pop) {
-            if($pop->population->population_found != null){
-                $total += $pop->population->population_found;
-            }
-        }
-        return $total;
-    }
-
-    private function calculatePopulationPercentages($industry_populations, $population_total) {
-        $final =  $industry_populations = $industry_populations
-            ->map(function ($industry,$index = 0) use($population_total){
-                $index++;
-                $percentage = $this->populationHandler($industry,$population_total);
-                return [
-                    'title' => $industry->naicsTitle->naics_title,
-                    'percentage' => $percentage,
-                    'rank' => $index,
-                    'image' => asset($industry->naicsTitle->image),
-                    'industryWage' => $industry->industryWage->avg_annual_wage_5
-                ];
-            });
-        return $final;
-    }
-
-    private function populationHandler($industry, $population_total){
-        if( ($industry->population->population_found!=null) && ($population_total != null) ){
-            $percentage = round( ($industry->population->population_found/$population_total)*100, 0, PHP_ROUND_HALF_DOWN);
-            return $percentage;
-        }
-        return null;
+        return $this->helper->handlePopulationCalculation($university_major);
     }
 }
