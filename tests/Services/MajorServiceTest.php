@@ -10,7 +10,7 @@ use App\Models\UniversityMajor;
 use App\Services\MajorService;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class MajorServiceTest extends TestCase
 {
@@ -20,15 +20,6 @@ class MajorServiceTest extends TestCase
      public function setUp(){
          parent::setUp();
          $this->majorService = new MajorService();
-        //  $this->seed('Hegis_Codes_TableSeeder');
-        //  $this->seed('University_Majors_TableSeeder');
-        //  $this->seed('Naics_Titles_TableSeeder');
-        //  $this->seed('Student_Paths_TableSeeder');
-        //  $this->seed('Field_Of_Studies_TableSeeder');
-        //  $this->seed('Hegis_Categories_TableSeeder');
-        //  $this->seed('Universities_TableSeeder');
-        //  $this->seed('Major_Paths_TableSeeder');
-        //  $this->seed('Major_Path_Wages_TableSeeder');
      }
 
      public function test_getAllHegisCodes_ensure_returns_all_rows() 
@@ -53,7 +44,8 @@ class MajorServiceTest extends TestCase
      public function test_getAllHegisCodes_throws_a_model_not_found_exception() 
      {
         $univ_id = 25;    
-        $this->setExpectedException('Exception');
+        $message = ''.$univ_id.' was not found';
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException', $message,409);
         $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
 
@@ -69,7 +61,9 @@ class MajorServiceTest extends TestCase
 
      public function test_getAllFieldOfStudies_throws_a_model_not_found_exception() 
      {
-        $this->setExpectedException('Exception');
+         
+        $message ='Field of Study table has no data';
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException', $message,409);
         $this->majorService->getAllFieldOfStudies();
      }
 
@@ -90,7 +84,7 @@ class MajorServiceTest extends TestCase
 
      public function test_getMajorEarnings_throws_a_model_not_found_exception() 
      {
-         $this->setExpectedException('Exception');
+         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
          $response = $this->majorService->getMajorEarnings(22021, 70);
      }
 
@@ -119,7 +113,7 @@ class MajorServiceTest extends TestCase
          $this->arrayHasKey("roi", $response);
      }
 
-     public function test_getFREData_throws_a_model_not_found_exception() 
+     public function test_getFREData_throws_a_model_not_found_exception()
      {
          $request = new Request();
          $request->major = 22021;
@@ -128,7 +122,8 @@ class MajorServiceTest extends TestCase
          $request->education_level = 'FTF';
          $request->annual_earnings = 3;
          $request->financial_aid = 2;
-         $this->setExpectedException('Exception');
+         
+         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
          $response = $this->majorService->getFREData($request);
      }
 
@@ -155,8 +150,8 @@ class MajorServiceTest extends TestCase
     public function test_getAllHegisCodesByUniversity_Opt_in_CSU_throws_a_model_not_found_exception()
     {
         $university_id = 70;
-        $northridge_majors = 86;
-        $this->setExpectedException('Exception');
+        $message = ''.$university_id.' was not found';
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $response = $this->majorService->getAllHegisCodesByUniversity($university_id);
     }
 

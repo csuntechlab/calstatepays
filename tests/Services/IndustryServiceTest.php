@@ -30,7 +30,8 @@ class IndustryServiceTest extends TestCase
 
     public function test_getAllIndustryNaicsTitles_throws_a_model_not_found_exception() 
     {
-        $this->setExpectedException('Exception');
+        $message = 'There is no Naics Title data';
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException',$message,409);
         $response = $this->industryService->getAllIndustryNaicsTitles();
     }
 
@@ -53,7 +54,7 @@ class IndustryServiceTest extends TestCase
 
      public function test_getIndustryPopulationByRank_throws_a_model_not_found_exception() 
      {
-         $this->setExpectedException('Exception');
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
          $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
      }
 }

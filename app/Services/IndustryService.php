@@ -15,7 +15,8 @@ class IndustryService implements IndustryContract
         $allNaicsTitles = NaicsTitle::all();
 
         if($allNaicsTitles->isEmpty()){
-            throw new ModelNotFoundException('There is no Naics Title data');
+            $message = 'There is no Naics Title data';
+            throw new ModelNotFoundException($message,409);
         }
 
         $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {

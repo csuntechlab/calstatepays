@@ -25,8 +25,8 @@ class MajorService implements MajorContract
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
         if($allHegisCodes->isEmpty()){   
-            $message = ''.$universityId.' was not found';                  
-            throw new ModelNotFoundException($message);
+            $message = ''.$universityId.' was not found';
+            throw new ModelNotFoundException($message,409);
         }
 
         $allHegisCodes = $allHegisCodes
@@ -46,9 +46,10 @@ class MajorService implements MajorContract
         $fieldOfStudies = FieldOfStudy::orderBy('name', 'asc')->get();
 
         if($fieldOfStudies->isEmpty()){   
-            $message ='Field of Study table has no data';                  
-            throw new ModelNotFoundException($message);
+            $message ='Field of Study table has no data';
+            throw new ModelNotFoundException($message,409);
         }
+
 
         return $fieldOfStudies->toArray();
     }
@@ -62,8 +63,8 @@ class MajorService implements MajorContract
                                 ->firstOrFail();
 
         if ( empty($fieldOfStudy->hegisCategory) ){
-            $message ='There is no hegis category that is mapped to this field of study';                  
-            throw new ModelNotFoundException($message);
+            $message ='There is no hegis category that is mapped to this field of study';
+            throw new ModelNotFoundException($message,409);
         }
         
         $hegisCategory = $fieldOfStudy->hegisCategory;
@@ -97,12 +98,12 @@ class MajorService implements MajorContract
 
         if($universityMajor->university == null){
             $message ='This university does not exist in the database';                  
-            throw new ModelNotFoundException($message);
+            throw new ModelNotFoundException($message,409);
         }
         
         if ( empty($universityMajor->majorPaths) ){
             $message ='Major paths data was not found';                  
-            throw new ModelNotFoundException($message);
+            throw new ModelNotFoundException($message,409);
         }
 
         $universityMajor = $universityMajor->majorPaths->toArray();                            
@@ -127,7 +128,7 @@ class MajorService implements MajorContract
                                                 // ->first(['id']);
         if(empty($universityMajorId)){
             $message ='University Major not found';                  
-            throw new ModelNotFoundException($message);   
+            throw new ModelNotFoundException($message,409);   
         }
         return $universityMajorId->id;
     }
@@ -148,7 +149,7 @@ class MajorService implements MajorContract
         $freData= $freData->investment->first();
         if(empty($freData)){
             $message ='Investment not found';                  
-            throw new ModelNotFoundException($message);
+            throw new ModelNotFoundException($message,409);
         }
         $freData = $freData->toArray();
         return $freData;
