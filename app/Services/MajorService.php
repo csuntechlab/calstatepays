@@ -13,15 +13,23 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MajorService implements MajorContract
 {
+    private $helper;
+    public function __construct()
+    {
+        $this->helper = new HelperService();
+    }
+
     public function getAllHegisCodesByUniversity($universityId): array 
     {
+
         $allHegisCodes = UniversityMajor::where('university_id',$universityId)
                             ->with(['university' => function($query) {
                                 $query->where('opt_in',1);
                             }])
                             ->orderBy('major','asc')
                             ->get();
-                            
+
+        dd($allHegisCodes);
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
         if($allHegisCodes->isEmpty()){   
