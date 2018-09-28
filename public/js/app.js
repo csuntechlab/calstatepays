@@ -72994,12 +72994,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row industry-card__legend" }, [
       _c("div", { staticClass: "col-sm-2" }),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-5" }, [
+      _c("div", { staticClass: "col-sm-4" }, [
         _c("div", { staticClass: "industry-card__legend-percentage" }),
         _vm._v("PERCENTAGE\n        ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-5" }, [
+      _c("div", { staticClass: "col-sm-4" }, [
         _c("div", { staticClass: "industry-card__legend-salary" }),
         _vm._v("AVERAGE EARNINGS\n        ")
       ])
