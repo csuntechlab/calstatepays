@@ -72307,7 +72307,7 @@ var render = function() {
                       expression: "isNotFirstCard"
                     }
                   ],
-                  staticClass: "fas fa-times btn-remove float-right",
+                  staticClass: "fa fa-times fa-2x btn-remove float-right",
                   attrs: { title: "Close" },
                   on: { click: _vm.removeCurrentCard }
                 }),
@@ -72321,7 +72321,7 @@ var render = function() {
                       expression: "selectedFormWasSubmitted"
                     }
                   ],
-                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                   attrs: { title: "Reset" },
                   on: { click: _vm.resetCurrentCard }
                 })
@@ -72937,7 +72937,7 @@ var render = function() {
                       expression: "isNotFirstCard"
                     }
                   ],
-                  staticClass: "fas fa-times btn-remove float-right",
+                  staticClass: "fa fa-times fa-2x btn-remove float-right",
                   attrs: { title: "Close" },
                   on: { click: _vm.removeCurrentCard }
                 }),
@@ -72951,7 +72951,7 @@ var render = function() {
                       expression: "selectedFormWasSubmitted"
                     }
                   ],
-                  staticClass: "fas fa-sync-alt btn-reset float-right",
+                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                   attrs: { title: "Reset" },
                   on: { click: _vm.resetCurrentCard }
                 })
@@ -96799,7 +96799,7 @@ var render = function() {
               },
               [
                 _c("i", {
-                  staticClass: "fa fa-2x fa-bars",
+                  staticClass: "fa fa-bars",
                   attrs: { id: "nav-icon" }
                 })
               ]

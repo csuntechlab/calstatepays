@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-3 d-md-none order-3 align-self-center hamburger-btn-position">
                     <button @click="toggleShowNav()" type="button">
-                        <i id="nav-icon" class="fa fa-2x fa-bars"></i>
+                        <i id="nav-icon" class="fa fa-bars"></i>
                     </button>
                 </div>
                 <div class="col-12 col-md-6 order-6 order-md-2 align-self-md-end p-0">
