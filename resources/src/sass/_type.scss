@@ -163,19 +163,7 @@ add r
 }
 
 .pfre-info__wrapper{
-    // display: flex;
     position: relative;
-    @media screen and (max-width: 1200px){
-        // flex-direction: column;
-        // text-align:center;
-        // margin: 0;
-       // display: flex;
-       // position: relative;
-    }
-}
-
-.majors-header{
-    color: gray;
     font-weight: 600;
 
     @media screen and (max-width: 479px) {
@@ -194,4 +182,10 @@ add r
 
 figcaption {
 	font-size: 1.5rem;    
+}
+.v-dialog__content{
+    z-index: 1000001 !important;
+}
+.v-overlay{
+    z-index: 1000000 !important;;
 }

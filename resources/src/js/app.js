@@ -34,7 +34,7 @@ const vm = new Vue({
     render: h => h(App),
     created(){
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
-        this.$store.dispatch('fetchFieldOfStudies');
+        this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
     },
 
