@@ -72883,11 +72883,11 @@ var render = function() {
       _vm._l(_vm.industriesByMajor, function(industry, index) {
         return _c("div", { key: index }, [
           _c("div", { staticClass: "row industry-card__row" }, [
-            _c("div", { staticClass: "col-3" }, [
+            _c("div", { staticClass: "col-sm-3" }, [
               _vm._v(_vm._s(industry.title))
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-9" }, [
+            _c("div", { staticClass: "col-sm-9" }, [
               _c("div", { staticClass: "row industry-bar__padding" }, [
                 _c(
                   "span",
@@ -72992,14 +72992,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row industry-card__legend" }, [
-      _c("div", { staticClass: "col-3" }, [_vm._v("INDUSTRY")]),
+      _c("div", { staticClass: "col-sm-2" }),
       _vm._v(" "),
-      _c("div", { staticClass: "col-3" }, [
+      _c("div", { staticClass: "col-sm-5" }, [
         _c("div", { staticClass: "industry-card__legend-percentage" }),
         _vm._v("PERCENTAGE\n        ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-6" }, [
+      _c("div", { staticClass: "col-sm-5" }, [
         _c("div", { staticClass: "industry-card__legend-salary" }),
         _vm._v("AVERAGE EARNINGS\n        ")
       ])

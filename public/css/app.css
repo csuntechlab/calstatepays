@@ -26933,6 +26933,7 @@ input[type="button"]:focus {
 }
 
 .industry-bar__salary-text {
+  padding-left: 0%;
   color: #2BAE67;
 }
 
@@ -26942,6 +26943,7 @@ input[type="button"]:focus {
 }
 
 .industry-bar__percentage-text {
+  padding-left: 0%;
   color: #2f98bf;
 }
 
