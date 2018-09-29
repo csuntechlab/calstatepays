@@ -51488,7 +51488,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -71663,10 +71662,9 @@ var render = function() {
                 "div",
                 { staticClass: "col-6" },
                 [
-                  _vm.selectedFormWasSubmitted && !_vm.nullValues
+                  _vm.selectedFormWasSubmitted
                     ? _c("social-sharing", {
                         attrs: {
-                          url: "sandbox.csun.edu/metalab/test/csumetrola",
                           title: this.shareDescription,
                           description: "Discover Your Earnings After College.",
                           quote: this.shareDescription,
@@ -72036,7 +72034,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -72295,7 +72292,6 @@ var render = function() {
                     ? _c("social-sharing", {
                         attrs: {
                           networks: _vm.mobileNetworks,
-                          url: "sandbox.csun.edu/metalab/test/csumetrola",
                           title: this.shareDescription,
                           description: "Discover Your Earnings After College.",
                           quote: this.shareDescription,
@@ -72391,144 +72387,144 @@ var render = function() {
                   on: { click: _vm.resetCurrentCard }
                 })
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-12" }, [
-                _c(
-                  "h3",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
-                    ],
-                    staticClass: "industry-title"
-                  },
-                  [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: this.selectedFormWasSubmitted && _vm.nullValues,
-                    expression: "this.selectedFormWasSubmitted && nullValues"
-                  }
-                ]
-              },
-              [_vm._m(0)]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.nullValues,
-                    expression: "!nullValues"
-                  }
-                ]
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
-                    ],
-                    staticClass: "row",
-                    staticStyle: { height: "400px" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "col-12" },
-                      [
-                        _c("major-graph-wrapper", {
-                          attrs: {
-                            id: "majorGraphWrapperIndex-" + this.index,
-                            majorData: _vm.selectedMajorData,
-                            educationLevel: _vm.selectedEducationLevel,
-                            windowWidth: _vm.windowWidth
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row justify-content-center" }, [
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "h3",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "industry-title"
+                },
+                [_vm._v(_vm._s(_vm.selectedMajorTitle))]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: this.selectedFormWasSubmitted && _vm.nullValues,
+                  expression: "this.selectedFormWasSubmitted && nullValues"
+                }
+              ]
+            },
+            [_vm._m(0)]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.nullValues,
+                  expression: "!nullValues"
+                }
+              ]
+            },
+            [
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "row",
+                  staticStyle: { height: "400px" }
+                },
+                [
                   _c(
                     "div",
                     { staticClass: "col-12" },
                     [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
+                      _c("major-graph-wrapper", {
+                        attrs: {
+                          id: "majorGraphWrapperIndex-" + this.index,
+                          majorData: _vm.selectedMajorData,
+                          educationLevel: _vm.selectedEducationLevel,
+                          windowWidth: _vm.windowWidth
+                        }
                       })
                     ],
                     1
                   )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [_c("major-form", { attrs: { index: _vm.index } })],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("industry-mobile", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
-                    ],
-                    attrs: {
-                      industries: _vm.selectedIndustries,
-                      majorId: _vm.selectedMajorId
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-center" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-12" },
+                  [
+                    _c("major-legend", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.selectedFormWasSubmitted,
+                          expression: "selectedFormWasSubmitted"
+                        }
+                      ],
+                      attrs: { educationLevel: _vm.selectedEducationLevel }
+                    })
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-12" },
+              [_c("major-form", { attrs: { index: _vm.index } })],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-12" },
+              [
+                _c("industry-mobile", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
                     }
-                  })
-                ],
-                1
-              )
-            ])
+                  ],
+                  attrs: {
+                    industries: _vm.selectedIndustries,
+                    majorId: _vm.selectedMajorId
+                  }
+                })
+              ],
+              1
+            )
           ])
         ])
       ])
