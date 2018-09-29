@@ -52,11 +52,11 @@ export default {
         }
     },
     mounted(){
-     if(this.modalCheck == false){
-          this.showModal = true;
-         this.$store.dispatch('setModalCheck',true);
-
-
+        var sessionData = sessionStorage.getItem("selectedUniversity");
+        console.log(sessionData);
+        if(this.modalCheck == false){
+        this.showModal = true;
+        this.$store.dispatch('setModalCheck',true);
     }
 
     },
@@ -74,9 +74,9 @@ export default {
             'setModalCheck'
         ]),
         changeCampus: function(university){
-
-          this.$store.dispatch('setUniversity',university);
-          this.showModal = false;
+            sessionStorage.setItem("selectedUniversity", university);
+            this.$store.dispatch('setUniversity',university);
+            this.showModal = false;
         }
     }
 
