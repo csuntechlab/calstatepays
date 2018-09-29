@@ -53,11 +53,13 @@ export default {
     },
     mounted(){
         var sessionData = sessionStorage.getItem("selectedUniversity");
-        console.log(sessionData);
-        if(this.modalCheck == false){
+        if(sessionData === null){
         this.showModal = true;
         this.$store.dispatch('setModalCheck',true);
-    }
+        }
+        else {
+            this.$store.dispatch("setUniversity", sessionData);
+        }
 
     },
     computed:{

@@ -46326,8 +46326,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     selectedUniversity: 70,
-    selectedDataPage: 'majors',
-    modalCheck: false
+    selectedDataPage: 'majors'
 });
 
 /***/ }),
@@ -46335,23 +46334,19 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var _selectedUniversity$s;
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // Global form getters
-/* harmony default export */ __webpack_exports__["a"] = (_selectedUniversity$s = {
+/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({
     selectedUniversity: function selectedUniversity(state) {
         return state.selectedUniversity;
     },
     selectedDataPage: function selectedDataPage(state) {
         return state.selectedDataPage;
     }
-}, _defineProperty(_selectedUniversity$s, "selectedDataPage", function selectedDataPage(state) {
+}, "selectedDataPage", function selectedDataPage(state) {
     return state.selectedDataPage;
-}), _defineProperty(_selectedUniversity$s, "modalCheck", function modalCheck(state) {
-    return state.modalCheck;
-}), _selectedUniversity$s);
+}));
 
 /***/ }),
 /* 172 */
@@ -46369,8 +46364,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.selectedUniversity = payload;
 }), _defineProperty(_global$SET_UNIVERSIT, __WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_DATA_PAGE, function (state, payload) {
     state.selectedDataPage = payload;
-}), _defineProperty(_global$SET_UNIVERSIT, __WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_MODAL_CHECK, function (state, payload) {
-    state.modalCheck = payload;
 }), _global$SET_UNIVERSIT);
 
 /***/ }),
@@ -46391,11 +46384,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref2.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_DATA_PAGE, payload);
-    },
-    setModalCheck: function setModalCheck(_ref3, payload) {
-        var commit = _ref3.commit;
-
-        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__["a" /* default */].SET_MODAL_CHECK, payload);
     }
 });
 
@@ -47892,10 +47880,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     mounted: function mounted() {
         var sessionData = sessionStorage.getItem("selectedUniversity");
-        console.log(sessionData);
-        if (this.modalCheck == false) {
+        if (sessionData === null) {
             this.showModal = true;
             this.$store.dispatch('setModalCheck', true);
+        } else {
+            this.$store.dispatch("setUniversity", sessionData);
         }
     },
 

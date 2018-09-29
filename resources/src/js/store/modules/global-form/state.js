@@ -3,5 +3,4 @@
 export default {
     selectedUniversity: 70,
     selectedDataPage: 'majors',
-    modalCheck:false
 };
