@@ -10,7 +10,7 @@
 							<i class="fa fa-graduation-cap"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Do college graduates earn more?</h3>
+							<h3>Will you earn more if you graduate?</h3>
 						</div>
 						<div class="home__copy">
 							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates.</p>
@@ -26,7 +26,7 @@
 							<i class="fa fa-line-chart"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>In which industries are they employed?</h3>
+							<h3>Where will you work?</h3>
 						</div>
 						<div class="home__copy">
 							<p>Explore industries of employment by major.</p>

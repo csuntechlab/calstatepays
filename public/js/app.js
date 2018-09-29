@@ -47510,7 +47510,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("Do college graduates earn more?")])
+      _c("h3", [_vm._v("Will you earn more if you graduate?")])
     ])
   },
   function() {
@@ -47538,7 +47538,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("In which industries are they employed?")])
+      _c("h3", [_vm._v("Where will you work?")])
     ])
   },
   function() {
