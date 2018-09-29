@@ -11,10 +11,12 @@ use App\Contracts\MajorContract;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class MajorService implements MajorContract
+class HelperService 
 {
-    public function optIn()
-    {
-      
-    }
+  public function checkOptIn($university_id)
+  {
+    return "this works";
+    dd($university_id);
+      University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
+  }
 }

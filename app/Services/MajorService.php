@@ -21,11 +21,12 @@ class MajorService implements MajorContract
 
     public function getAllHegisCodesByUniversity($universityId): array 
     {
+        // dd($universityId);
+        dd($this->helper->checkOptIn($university_id));
+
+        
 
         $allHegisCodes = UniversityMajor::where('university_id',$universityId)
-                            ->with(['university' => function($query) {
-                                $query->where('opt_in',1);
-                            }])
                             ->orderBy('major','asc')
                             ->get();
 
