@@ -30,13 +30,13 @@ class IndustryServiceTest extends TestCase
      public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegist_code()
      {
          // route is api/industry/{hegis_code}/{university_id}
-         // i.e. api/industry/5021/70
+         // i.e. api/industry/5021/northridge
          $this->seed('University_Majors_TableSeeder');
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
          $this->seed('Population_Table_Seeder');
          $this->seed('Universities_TableSeeder');
-         $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
+         $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
          $this->assertArrayHasKey("title", $response[0]);
          $this->assertArrayHasKey("percentage", $response[0]);
          $this->assertArrayHasKey('rank', $response[0]);

@@ -42,16 +42,23 @@ class MajorServiceTest extends TestCase
          /**
           *  Should we test every univ id?
           */
-         $univ_id = 70;
-         $response = $this->majorService->getAllHegisCodesByUniversity($univ_id);
+         $univ_name = 'northridge';
+         $response = $this->majorService->getAllHegisCodesByUniversity($univ_name);
          $this->assertArrayHasKey(0, $response);
          $this->assertArrayHasKey("hegis_code", $response[0]);
          $this->assertArrayHasKey("major", $response[0]);
          $this->assertArrayHasKey("university_id", $response[0]);
 
-         // there are a lot more HEGIS codes due to other schools
-         // csun only has 86 unique
-         $this->assertEquals(UniversityMajor::where('university_id', $univ_id)->get()->count(), count($response));
+         /**
+          *  example api call
+          *  /major/hegis-codes/university/northridge
+          *  Expect northridge to receive 86  
+          */
+        $count = University::where('short_name',$univ_name)
+                            ->with(['UniversityMajor'])
+                            ->get();
+        $count = $count[0]->universityMajors->count();
+         $this->assertEquals($count, count($response));
      }
 
      public function test_getAllFieldOfStudies_ensure_returns_all_rows() {
@@ -64,7 +71,7 @@ class MajorServiceTest extends TestCase
      }
 
      public function test_getMajorEarnings_ensure_returns_all_major_path_wages(){
-         $response = $this->majorService->getMajorEarnings(22021, 70);
+         $response = $this->majorService->getMajorEarnings(22021, 'northridge');
          $this->assertArrayHasKey("id", $response[0]);
          $this->assertArrayHasKey("student_path", $response[0]);
          $this->assertArrayHasKey("university_majors_id", $response[0]);
@@ -99,10 +106,10 @@ class MajorServiceTest extends TestCase
         // api route is
         // major/hegis-codes/university/{universityId}
         // i.e. major/hegis-codes/university/70
-        $university_id = 70;
+        $university_name = 'northridge';
         $northridge_majors = 86;
 
-        $response = $this->majorService->getAllHegisCodesByUniversity($university_id);
+        $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
         $this->assertArrayHasKey('major',$response[0]);
         $this->assertArrayHasKey('hegis_code',$response[0]);
         $this->assertArrayHasKey('university_id',$response[0]);
