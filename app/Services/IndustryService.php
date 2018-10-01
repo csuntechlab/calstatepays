@@ -21,14 +21,12 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $university_id)
+    /** $university_id -> $universityName */
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-
-        /**
-         *  Would here be the best choice to check if CSU Opts In or Not?
-         */
-
-        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
+        $opt_in = University::where('short_name',$universityName)
+                                ->where('opt_in',1)
+                                ->firstOrFail();
 
         // Might need a way to figure out how the Front end wants to handle this.
         if($opt_in  === null ){
@@ -42,7 +40,7 @@ class IndustryService implements IndustryContract
                 $query->where('student_path', 1);
                 }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
                     ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $university_id)
+                    ->where('university_id', $opt_in->id)
                     ->first();
 
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
