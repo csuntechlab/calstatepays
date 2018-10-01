@@ -62,8 +62,18 @@ class MajorService implements MajorContract
         return $fieldOfStudies->toArray();
     }
 
-    public function getHegisCategories($universityId,$fieldOfStudyId): array
+    /** $universityId -> $universityName */
+    public function getHegisCategories($universityName,$fieldOfStudyId): array
     {
+        /** 
+         * This might be a bad idea
+         * But its the easiest approach to attain uni id
+         */
+        $universityId = University::where('short_name',$universityName)
+                                    ->where('opt_in',1)
+                                    ->firstOrFail();
+
+        $universityId = $universityId->id;
         $fieldOfStudy = FieldOfStudy::with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
                                 $query->where('university_id',$universityId);  
                                 }])
@@ -135,6 +145,7 @@ class MajorService implements MajorContract
         $universityMajor = $universityMajor->universityMajors[0]->majorPaths->toArray();                   
         return $universityMajor;
     }
+
     public function getHegisCode($name)
     {
         $hegis_code = HEGISCode::where('major', $name)->first(['hegis_code']);
@@ -154,6 +165,9 @@ class MajorService implements MajorContract
         return $universityMajorId->id;
     }
 
+    /**
+     *  How do?
+     */
     public function getFREData($request) 
     {
         $data = UniversityMajor::where('hegis_code', $request->major)

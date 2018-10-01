@@ -33,7 +33,6 @@ class MajorController extends Controller
     public function getMajorEarnings($hegis_code, $university_name){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
-        //TODO: Ask if front end will be able to handle this or if we need to have the same set up
         if( empty($university_major) ){
             return [];
         }
@@ -78,7 +77,7 @@ class MajorController extends Controller
         ];
 
         /**
-         * originaly it had 
+         * origina;ly it had 
          * 'universityId' => $university_id,
          * Should I make a query to get university id?
          *  Code would be... $universityId = University::where('short_name',$university_name);
@@ -125,9 +124,10 @@ class MajorController extends Controller
         ];
     }
 
-    public function filterByFieldOfStudy($universityId,$fieldOfStudyId)
+    /** universityId -> universityName */
+    public function filterByFieldOfStudy($universityName,$fieldOfStudyId)
     {
-        $hegisData = $this->majorRetriever->getHegisCategories($universityId,$fieldOfStudyId);
+        $hegisData = $this->majorRetriever->getHegisCategories($universityName,$fieldOfStudyId);
         
         if(empty($hegisData)){
             return [[]];

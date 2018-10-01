@@ -24,12 +24,17 @@ Route::get('major/hegis-codes/{universityName}/{fieldOfStudyId}', 'MajorControll
 
 /** $university_id -> $university_name */
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
+
+/** TODO: $universityId -> $universityName */
 Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
     'MajorController@getFREData')->name('major.fre-data');
 
 //Industry
+
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
-Route::get('industry/{hegis_code}/{university_id}', 'IndustryController@getIndustryPopulationByRank');
+
+/** $universityId -> $universityName */
+Route::get('industry/{hegis_code}/{universityName}', 'IndustryController@getIndustryPopulationByRank');
 
 //Student Path
 Route::get('student-path', 'StudentPathController@getAllStudentPaths')->name('student-paths');
