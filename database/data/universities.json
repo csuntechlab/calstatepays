@@ -2,49 +2,49 @@
   {
     "id": "50",
     "university": "California State University Fullerton",
-    "short_name": "CSUF",
+    "short_name": "fullerton",
     "opt_in":0
   },
   {
     "id": "40",
     "university": "California State University Long Beach",
-    "short_name": "CSULB",
+    "short_name": "long_beach",
     "opt_in":0
   },
   {
     "id": "45",
     "university": "California State University Los Angeles",
-    "short_name": "CSULA",
+    "short_name": "los_angeles",
     "opt_in":0
   },
   {
     "id": "55",
     "university": "California State University Dominguez Hills",
-    "short_name": "CSUDH",
+    "short_name": "dominguez_hills",
     "opt_in":0
   },
   {
     "id": "10",
     "university": "Cal Poly Pomona",
-    "short_name": "CPP",
+    "short_name": "pomona",
     "opt_in":0
   },
   {
     "id": "70",
     "university": "California State University Northridge",
-    "short_name": "CSUN",
+    "short_name": "northridge",
     "opt_in":1
   },
   {
     "id": "73",
     "university": "California State University Channel Islands",
-    "short_name": "CSUCI",
+    "short_name": "channel_islands",
     "opt_in":0
   },
   {
     "id": "0",
     "university": "All",
-    "short_name": "All Cal States",
+    "short_name": "all_cal_states",
     "opt_in":1
   }
 ]
