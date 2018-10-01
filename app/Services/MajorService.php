@@ -12,23 +12,39 @@ use Illuminate\Pagination\Paginator;
 
 class MajorService implements MajorContract
 {
-    public function getAllHegisCodesByUniversity( $universityId ): array 
+    public function getAllHegisCodesByUniversity( $university_name ): array 
     {
-        $allHegisCodes = UniversityMajor::where('university_id',$universityId)
-                            ->with(['university' => function($query) {
-                                $query->where('opt_in',1);
-                            }])
-                            ->orderBy('major','asc')
-                            ->get();
-
+        // $allHegisCodes = UniversityMajor::where('university_name', $university_major)
+        //                     ->with(['university' => function($query) {
+        //                         $query->where('opt_in',1);
+        //                     }])
+        //                     ->orderBy('major','asc')
+        //                     ->get();
+        
+        /** 
+         *  What is front end sending me?
+         *  Passing in a university name from the link... Probably Short Name?
+         *  Need to figure out how
+         *  > Get UniversityId
+         *  > Use that id, get the hegis codes
+         */
+        $allHegisCodes = University::where('short_name', $university_name)
+                                            ->where('opt_in',1)
+                                            ->with(['universityMajors' => function($query) {
+                                                $query->orderBy('major','asc');
+                                            }])
+                                            ->get();
+            
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
-        if($allHegisCodes[0]->university == null)
+        if(!isset($allHegisCodes))
         {
             return [null];
         }
+        // return $allHegisCodes->universityMajors->toArray();
 
-        $allHegisCodes = $allHegisCodes
+
+        $allHegisCodes = $allHegisCodes[0]->universityMajors
                             ->map(function ($item){
                                 return [
                                     'major' => $item['major'],
@@ -78,19 +94,29 @@ class MajorService implements MajorContract
         return $data;
     }
     
-    public function getMajorEarnings($hegis_code, $university_id): array
+    /**
+     * $university_id -> $university_name
+     */
+    public function getMajorEarnings($hegis_code, $university_name): array
     {
-        $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
-                            ->with(['university' => function($query) {
-                                $query->where('opt_in',1);
-                            }])
-                            ->where('university_id', $university_id)
-                            ->with('majorPaths.majorPathWage')
+        // $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
+                            // ->with(['university' => function($query) {
+                            //     $query->where('opt_in',1);
+                            // }])
+                            // ->where('university_id', $university_id)
+                            // ->with('majorPaths.majorPathWage')
+                            // ->first();
+
+        $universityMajor = University::where('short_name', $university_name)
+                            ->where('opt_in',1)
+                            ->with(['universityMajors' => function($query) use ($hegis_code) {
+                                $query->where('hegis_code',$hegis_code);
+                            }, 'universityMajors.majorPaths.majorPathWage'])
                             ->first();
 
         // situation where CSU opts out
         // Might want to refactor this method?
-        if($universityMajor->university == null)
+        if(!isset($universityMajor))
         {
             return [];
         }
@@ -98,11 +124,15 @@ class MajorService implements MajorContract
         if ( empty($universityMajor) ){
             return [];
         }
-        else if ( empty($universityMajor->majorPaths) ){
+        // else if ( empty($universityMajor->majorPaths) ){
+        //     return [];
+        // }
+        else if ( empty($universityMajor->universityMajors[0]->majorPaths) ){
             return [];
         }
 
-        $universityMajor = $universityMajor->majorPaths->toArray();                            
+        // $universityMajor = $universityMajor->majorPaths->toArray();  
+        $universityMajor = $universityMajor->universityMajors[0]->majorPaths->toArray();                   
         return $universityMajor;
     }
     public function getHegisCode($name)

@@ -17,9 +17,9 @@ class MajorController extends Controller
         $this->majorRetriever = $majorContract;
     }
     
-    public function getAllHegisCodesByUniversity( $universityId )
+    public function getAllHegisCodesByUniversity( $university_name )
     {
-        return $this->majorRetriever->getAllHegisCodesByUniversity($universityId);
+        return $this->majorRetriever->getAllHegisCodesByUniversity( $university_name );
     }
     
     public function getAllFieldOfStudies()
@@ -27,8 +27,11 @@ class MajorController extends Controller
         return $this->majorRetriever->getAllFieldOfStudies();
     }
     
-    public function getMajorEarnings($hegis_code, $university_id){
-        $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_id);
+    /**
+     *  $university_id -> $university_name
+     */
+    public function getMajorEarnings($hegis_code, $university_name){
+        $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
         //TODO: Ask if front end will be able to handle this or if we need to have the same set up
         if( empty($university_major) ){
@@ -74,9 +77,15 @@ class MajorController extends Controller
             ]
         ];
 
+        /**
+         * originaly it had 
+         * 'universityId' => $university_id,
+         * Should I make a query to get university id?
+         *  Code would be... $universityId = University::where('short_name',$university_name);
+         */
         $majorData = [
             'majorId' =>$hegis_code,
-            'universityId' => $university_id,
+            'universityId' => $university_name,
             'someCollege'=> isset($someCollege) ? $someCollege : $nullArray,
             'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
             'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray
