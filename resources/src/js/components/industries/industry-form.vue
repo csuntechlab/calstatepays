@@ -2,7 +2,7 @@
     <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
 			<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-				<i class="fas fa-exclamation-circle"></i> Please select a Major.
+				<i class="fa fa-exclamation-circle"></i> Please select a Major.
 			</div>
 			<div class="form-group">
 				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
