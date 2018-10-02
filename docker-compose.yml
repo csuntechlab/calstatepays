@@ -5,7 +5,7 @@ services:
     container_name: csumetro
     image: csunmetalab/environment:csumetro
     ports:
-      - '8081:80'
+      - '8080:80'
     volumes:
       - .:/var/www/
     links:
@@ -19,6 +19,14 @@ services:
     command: install
     volumes:
       - .:/app/
+
+  # Adminer server
+  adminer:
+    container_name: csumetro_adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
 
   # Database server
   db:
