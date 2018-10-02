@@ -228,3 +228,19 @@
 		}
 	}
 }
+.campus-modal{
+	color: black;
+	img{
+		height: 8rem; 
+		text-align: center;
+		&:hover{
+			background-color: darkgray;
+		}
+		
+	}
+	figcaption{
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
