@@ -35,7 +35,7 @@ class IndustryServiceTest extends TestCase
         $response = $this->industryService->getAllIndustryNaicsTitles();
     }
 
-     public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegist_code()
+     public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
      {
         $this->seed('Naics_Titles_TableSeeder');
          // route is api/industry/{hegis_code}/{university_id}

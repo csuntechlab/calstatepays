@@ -13,24 +13,14 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MajorService implements MajorContract
 {
-    private $helper;
-    public function __construct()
-    {
-        $this->helper = new HelperService();
-    }
 
     public function getAllHegisCodesByUniversity($universityId): array 
     {
-        // dd($universityId);
-        dd($this->helper->checkOptIn($university_id));
-
-        
+        University::where('id',$universityId)->where('opt_in',1)->firstOrFail();
 
         $allHegisCodes = UniversityMajor::where('university_id',$universityId)
                             ->orderBy('major','asc')
                             ->get();
-
-        dd($allHegisCodes);
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
         if($allHegisCodes->isEmpty()){   
@@ -58,8 +48,7 @@ class MajorService implements MajorContract
             $message ='Field of Study table has no data';
             throw new ModelNotFoundException($message,409);
         }
-
-
+        
         return $fieldOfStudies->toArray();
     }
 
@@ -110,7 +99,7 @@ class MajorService implements MajorContract
             throw new ModelNotFoundException($message,409);
         }
         
-        if ( empty($universityMajor->majorPaths) ){
+        if (empty($universityMajor->majorPaths)){
             $message ='Major paths data was not found';                  
             throw new ModelNotFoundException($message,409);
         }

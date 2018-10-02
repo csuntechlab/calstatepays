@@ -44,8 +44,8 @@ class MajorServiceTest extends TestCase
      public function test_getAllHegisCodes_throws_a_model_not_found_exception() 
      {
         $univ_id = 25;    
-        $message = ''.$univ_id.' was not found';
-        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException', $message,409);
+        // $message = ''.$univ_id.' was not found';
+        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
 

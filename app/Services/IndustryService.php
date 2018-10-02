@@ -35,9 +35,7 @@ class IndustryService implements IndustryContract
         /**
          *  Would here be the best choice to check if CSU Opts In or Not?
          */
-        $this->helper->checkOptIn($university_id);
-
-        $opt_in = University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
+        University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
