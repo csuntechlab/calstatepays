@@ -6,8 +6,9 @@ use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
+use App\Contracts\HelperContract;
 
-class HelperService 
+class HelperService implements HelperContract
 {
     public function checkOptIn($university_id)
     {

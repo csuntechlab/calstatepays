@@ -3,17 +3,18 @@
 namespace App\Services;
 
 use App\Contracts\IndustryContract;
+use App\Contracts\HelperContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
 
 class IndustryService implements IndustryContract
 {
-    private $helper;
+    protected $helperRetriever = null;
 
-    public function __construct()
+    public function __construct(HelperContract $helperContract)
     {
-        $this->helper = new HelperService();
+        $this->helperRetriever = $helperContract;
     }
 
     public function getAllIndustryNaicsTitles()
@@ -33,7 +34,7 @@ class IndustryService implements IndustryContract
         /**
          *  Would here be the best choice to check if CSU Opts In or Not?
          */
-        $this->helper->checkOptIn($university_id);
+        $this->helperRetriever->checkOptIn($university_id);
         
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
@@ -42,13 +43,12 @@ class IndustryService implements IndustryContract
                     ->where('hegis_code', $hegis_code)
                     ->where('university_id', $university_id)
                     ->firstOrFail();
-        // dd($university_major);
 
-        $industry_populations= $this->helper->sortIndustryPopulation($university_major);
+        $industry_populations= $this->helperRetriever->sortIndustryPopulation($university_major);
         
-        $population_total = $this->helper->getIndustryPopulationTotals($industry_populations);
+        $population_total = $this->helperRetriever->getIndustryPopulationTotals($industry_populations);
         
-        $industry_populations = $this->helper->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
+        $industry_populations = $this->helperRetriever->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
 
         return $industry_populations;
     }
