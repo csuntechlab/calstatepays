@@ -28,6 +28,7 @@ Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_ea
 //Industry
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 Route::get('industry/{hegis_code}/{university_id}', 'IndustryController@getIndustryPopulationByRank');
+Route::get('industry/major/{hegis_code}/{university_id}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 //Student Path
 Route::get('student-path', 'StudentPathController@getAllStudentPaths')->name('student-paths');
