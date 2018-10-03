@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 //Major
 Route::get('major/field-of-study', 'MajorController@getAllFieldOfStudies');
-Route::get('/major/code/{majorName}', 'MajorController@getHegisCode'); 
+// Route::get('/major/code/{majorName}', 'MajorController@getHegisCode');  TODO: why do i comment this out and get an error
 
 /** Swap university_id -> university_name */
 Route::get('major/hegis-codes/university/{university_name}', 'MajorController@getAllHegisCodesByUniversity')->name('major.hegis-codes');

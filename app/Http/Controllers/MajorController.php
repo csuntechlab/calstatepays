@@ -30,10 +30,6 @@ class MajorController extends Controller
     public function getMajorEarnings($hegis_code, $university_name){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
-        if( empty($university_major) ){
-            return [];
-        }
-
         foreach($university_major as $data) {
             $years = $data['years'];
             if ($data['student_path'] == 2) {
@@ -119,10 +115,6 @@ class MajorController extends Controller
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityName,$fieldOfStudyId);
         
-        if(empty($hegisData)){
-            return [[]];
-        }
-
         $data[] = array_map(function($hegis){
                 return  [
                     'major'             => $hegis['university_majors']['major'],

@@ -6,12 +6,20 @@ use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryService implements IndustryContract
 {
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
+        $allNaicsTitles = NaicsTitle::all();
+
+        if($allNaicsTitles->isEmpty()){
+            $message = 'There is no Naics Title data';
+            throw new ModelNotFoundException($message,409);
+        }
+
+        $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {
             return [
                 'naics_code' => $item['naics_code'],
                 'title' => $item['naics_title'],
@@ -23,16 +31,7 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name',$universityName)
-                                ->where('opt_in',1)
-                                ->firstOrFail();
-        
-        // Might need a way to figure out how the Front end wants to handle this.
-        if($opt_in  === null ){
-            return response([
-                'success' => false
-            ],200);
-        }
+        University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
@@ -40,8 +39,8 @@ class IndustryService implements IndustryContract
                 }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
                     ->where('hegis_code', $hegis_code)
                     ->where('university_id', $opt_in->id)
-                    ->first();
-        
+                    ->firstOrFail();
+
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
