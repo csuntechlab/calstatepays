@@ -9,23 +9,23 @@ use App\Models\UniversityMajor;
 use App\Models\University;
 use App\Contracts\MajorContract;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MajorService implements MajorContract
 {
-    public function getAllHegisCodesByUniversity( $universityId ): array 
+
+    public function getAllHegisCodesByUniversity($universityId): array 
     {
+        University::where('id',$universityId)->where('opt_in',1)->firstOrFail();
+
         $allHegisCodes = UniversityMajor::where('university_id',$universityId)
-                            ->with(['university' => function($query) {
-                                $query->where('opt_in',1);
-                            }])
                             ->orderBy('major','asc')
                             ->get();
-
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
-        if($allHegisCodes[0]->university == null)
-        {
-            return [null];
+        if($allHegisCodes->isEmpty()){   
+            $message = ''.$universityId.' was not found';
+            throw new ModelNotFoundException($message,409);
         }
 
         $allHegisCodes = $allHegisCodes
@@ -43,6 +43,12 @@ class MajorService implements MajorContract
     public function getAllFieldOfStudies(): array
     {
         $fieldOfStudies = FieldOfStudy::orderBy('name', 'asc')->get();
+
+        if($fieldOfStudies->isEmpty()){   
+            $message ='Field of Study table has no data';
+            throw new ModelNotFoundException($message,409);
+        }
+        
         return $fieldOfStudies->toArray();
     }
 
@@ -52,12 +58,11 @@ class MajorService implements MajorContract
                                 $query->where('university_id',$universityId);  
                                 }])
                                 ->where('id', $fieldOfStudyId)
-                                ->first();
-        if ( empty($fieldOfStudy) ){
-            return [];
-        }
-        else if ( empty($fieldOfStudy->hegisCategory) ){
-            return [];
+                                ->firstOrFail();
+
+        if ( empty($fieldOfStudy->hegisCategory) ){
+            $message ='There is no hegis category that is mapped to this field of study';
+            throw new ModelNotFoundException($message,409);
         }
         
         $hegisCategory = $fieldOfStudy->hegisCategory;
@@ -86,31 +91,29 @@ class MajorService implements MajorContract
                             }])
                             ->where('university_id', $university_id)
                             ->with('majorPaths.majorPathWage')
-                            ->first();
-
+                            ->firstOrFail();
         // situation where CSU opts out
-        // Might want to refactor this method?
-        if($universityMajor->university == null)
-        {
-            return [];
+
+        if($universityMajor->university == null){
+            $message ='This university does not exist in the database';                  
+            throw new ModelNotFoundException($message,409);
         }
-                            
-        if ( empty($universityMajor) ){
-            return [];
-        }
-        else if ( empty($universityMajor->majorPaths) ){
-            return [];
+        
+        if (empty($universityMajor->majorPaths)){
+            $message ='Major paths data was not found';                  
+            throw new ModelNotFoundException($message,409);
         }
 
         $universityMajor = $universityMajor->majorPaths->toArray();                            
         return $universityMajor;
     }
+
+    //TODO: Delete this method ? not Being used
     public function getHegisCode($name)
     {
-        $hegis_code = HEGISCode::where('major', $name)->first(['hegis_code']);
-        if($hegis_code == null){
-            dd($name);
-        };
+        $hegis_code = HEGISCode::where('major', $name)
+                                ->firstOrFail(['hegis_code']);
+                                
         return $hegis_code;
     }
 
@@ -121,6 +124,10 @@ class MajorService implements MajorContract
                                                 ->where('university_id', $universityId)->get();
                                                 // ->where('university_major',$major)
                                                 // ->first(['id']);
+        if(empty($universityMajorId)){
+            $message ='University Major not found';                  
+            throw new ModelNotFoundException($message,409);   
+        }
         return $universityMajorId->id;
     }
 
@@ -135,7 +142,14 @@ class MajorService implements MajorContract
                 $query->where('annual_earnings_id', $request->annual_earnings);
                 $query->where('annual_financial_aid_id', $request->financial_aid);
             }])->firstOrFail();
-        $freData = $data->studentBackground->first()->investment->first()->toArray();
+
+        $freData = $data->studentBackground->first();
+        $freData= $freData->investment->first();
+        if(empty($freData)){
+            $message ='Investment not found';                  
+            throw new ModelNotFoundException($message,409);
+        }
+        $freData = $freData->toArray();
         return $freData;
     }
 
@@ -144,7 +158,7 @@ class MajorService implements MajorContract
         $query = MajorPath::where('student_path',$student_path)
             ->where('university_majors_id',$uid)
             ->where('entry_status',$entry_status)
-            ->first();
+            ->firstOrFail();
         return $query;
     }
 
