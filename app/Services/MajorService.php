@@ -25,7 +25,7 @@ class MajorService implements MajorContract
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
         if($allHegisCodes->isEmpty()){   
-            $message = ''.$universityId.' was not found';
+            $message = ''.$university_name.' was not found';
             throw new ModelNotFoundException($message,409);
         }
 
@@ -99,12 +99,12 @@ class MajorService implements MajorContract
                             }, 'universityMajors.majorPaths.majorPathWage'])
                             ->firstOrFail();
 
-        if($universityMajor->university == null){
+        if($universityMajor->university_name == null){
             $message ='This university does not exist in the database';                  
             throw new ModelNotFoundException($message,409);
         }
         
-        if (empty($universityMajor->majorPaths)){
+        if (empty($universityMajor->universityMajors[0]->majorPaths)){
             $message ='Major paths data was not found';                  
             throw new ModelNotFoundException($message,409);
         }
@@ -140,8 +140,13 @@ class MajorService implements MajorContract
 
     public function getFREData($request) 
     {
+        /**
+         * ugly bad easy way to go from uni_name -> uni_id
+         */
+        $university_id = University::where('short_name',$request->university)->firstorfail();
+
         $data = UniversityMajor::where('hegis_code', $request->major)
-            ->where('university_id', $request->university)
+            ->where('university_id', $university_id->id)
             ->with(['studentBackground' => function($query) use($request){
                 $query->where('age_range_id', $request->age_range);
                 $query->where('education_level', $request->education_level);

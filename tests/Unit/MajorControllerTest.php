@@ -60,10 +60,10 @@ class MajorControllerTest extends TestCase
 
          $this->retriever
              ->shouldReceive('getAllHegisCodesByUniversity')
-             ->with(70)
+             ->with('northridge')
              ->once()->andReturn($test);
 
-         $response = $this->retriever->getAllHegisCodesByUniversity(70);
+         $response = $this->retriever->getAllHegisCodesByUniversity('northridge');
         
          $this->assertEquals($test, $response);
      }
@@ -91,7 +91,7 @@ class MajorControllerTest extends TestCase
          $response->assertStatus(200);
          $response->assertJsonStructure([
              'majorId',
-             'universityId',
+             'universityName',
              'someCollege',
              'bachelors',
              'postBacc'
@@ -121,7 +121,7 @@ class MajorControllerTest extends TestCase
      public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
      {
          $major = 5011;
-         $university = 70;
+         $university = 'northridge';
          $age_range = 1;
          $education_level = 'FTT';
          $annual_earnings = 2;

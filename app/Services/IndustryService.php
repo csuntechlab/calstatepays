@@ -31,8 +31,8 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
-
+        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
+        
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
                 $query->where('student_path', 1);

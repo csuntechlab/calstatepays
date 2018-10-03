@@ -55,6 +55,6 @@ class IndustryServiceTest extends TestCase
      public function test_getIndustryPopulationByRank_throws_a_model_not_found_exception() 
      {
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-         $response = $this->industryService->getIndustryPopulationByRank(22111, 70);
+         $response = $this->industryService->getIndustryPopulationByRank(22111, 'northridge');
      }
 }
