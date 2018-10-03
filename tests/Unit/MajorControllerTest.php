@@ -21,7 +21,7 @@ class MajorControllerTest extends TestCase
      private $controller;
      private $retriever;
      private $validMajorId = 22021;
-     private $validUniversity = 70;
+     private $validUniversity = 'northridge';
 
      public function setUp(){
          parent::setUp();
@@ -141,12 +141,12 @@ class MajorControllerTest extends TestCase
      public function test_filterByFieldOfStudy_returns_all_related_hegis_codes_in_json_format()
      {
          // api is /api/major/hegis-code/{university_id}/{fieldOfStudyId}
-         // i.e. /api/major/hegis-code/70/6
+         // i.e. /api/major/hegis-code/northridge/6
 
          $engineeringId = 6;
-         $unversityId = 70;
+         $unversityName = 'northridge';
          $countOfExpectedDropdowns = 9;
-         $response = $this->json('GET', "/api/major/hegis-codes/". $unversityId."/".$engineeringId);
+         $response = $this->json('GET', "/api/major/hegis-codes/". $unversityName."/".$engineeringId);
 
          //use [0] because front end is handling an array of an array of arrays
          $response = $response->getOriginalContent();

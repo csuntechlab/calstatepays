@@ -27,7 +27,7 @@ class IndustryService implements IndustryContract
         $opt_in = University::where('short_name',$universityName)
                                 ->where('opt_in',1)
                                 ->firstOrFail();
-
+        
         // Might need a way to figure out how the Front end wants to handle this.
         if($opt_in  === null ){
             return response([
@@ -42,7 +42,7 @@ class IndustryService implements IndustryContract
                     ->where('hegis_code', $hegis_code)
                     ->where('university_id', $opt_in->id)
                     ->first();
-
+        
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);

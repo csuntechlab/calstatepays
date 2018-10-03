@@ -55,7 +55,7 @@ class MajorServiceTest extends TestCase
           *  Expect northridge to receive 86  
           */
         $count = University::where('short_name',$univ_name)
-                            ->with(['UniversityMajor'])
+                            ->with('universityMajors')
                             ->get();
         $count = $count[0]->universityMajors->count();
          $this->assertEquals($count, count($response));
