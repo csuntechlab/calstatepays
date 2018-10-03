@@ -27,9 +27,6 @@ class MajorController extends Controller
         return $this->majorRetriever->getAllFieldOfStudies();
     }
     
-    /**
-     *  $university_id -> $university_name
-     */
     public function getMajorEarnings($hegis_code, $university_name){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
@@ -76,15 +73,9 @@ class MajorController extends Controller
             ]
         ];
 
-        /**
-         * origina;ly it had 
-         * 'universityId' => $university_id,
-         * Should I make a query to get university id?
-         *  Code would be... $universityId = University::where('short_name',$university_name);
-         */
         $majorData = [
             'majorId' =>$hegis_code,
-            'universityId' => $university_name,
+            'universityName' => $university_name,
             'someCollege'=> isset($someCollege) ? $someCollege : $nullArray,
             'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
             'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray
@@ -124,7 +115,6 @@ class MajorController extends Controller
         ];
     }
 
-    /** universityId -> universityName */
     public function filterByFieldOfStudy($universityName,$fieldOfStudyId)
     {
         $hegisData = $this->majorRetriever->getHegisCategories($universityName,$fieldOfStudyId);
