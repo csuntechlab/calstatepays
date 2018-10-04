@@ -138,14 +138,18 @@ figcaption {
     z-index: 1000000 !important;;
 }
 .splashPage{
-    background-color: rgba(0, 0, 0, 0.8);
-    height:9rem;
+    background-color: $light-gray;
+    height: calc(100vh - 457px);
     position: relative;
     text-align: center;
     font-size: 3rem;
-    color:$white;
+    color:black;
     display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 2rem;
+    @media screen and (max-width: 960px){
+        height: calc(100vh - 416px);
+    }
 }

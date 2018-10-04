@@ -25910,12 +25910,12 @@ figcaption {
 }
 
 .splashPage {
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 9rem;
+  background-color: #EBEBEB;
+  height: calc(100vh - 457px);
   position: relative;
   text-align: center;
   font-size: 3rem;
-  color: #FFF;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25927,6 +25927,12 @@ figcaption {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  .splashPage {
+    height: calc(100vh - 416px);
+  }
 }
 
 .img__logo {
