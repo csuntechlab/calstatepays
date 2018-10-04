@@ -1,0 +1,22 @@
+{
+  "age_range" : {
+    "19 years or less":1,
+    "20-23 years":2,
+    "24-30 years":3,
+    "More than 30 years":4
+  },
+  "annual_earnings" : {
+    "$0":1,
+    "$1 - $4,500":2,
+    "$4,501 - $10,500":3,
+    "$10,501 - $18,000":4,
+    "> $18,000":5
+  },
+  "annual_financial_aid":{
+    "$0":1,
+    "FA Range 1":2,
+    "FA Range 2":3,
+    "FA Range 3":4,
+    "FA Range 4":5
+  }
+}

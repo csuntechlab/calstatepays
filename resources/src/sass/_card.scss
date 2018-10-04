@@ -26,6 +26,13 @@
             color: #0077B5;
         }
     }
+
+    &__no-data{
+        line-height: 25rem;
+        &--mobile{
+            line-height: 18rem;
+        }
+    }
 }
 
 .csu-card__form{

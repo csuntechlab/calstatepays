@@ -5,50 +5,47 @@
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row py-2 fa-wrapper">
-					
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-line-chart"></i>
+							<i class="fa fa-graduation-cap fa-5x"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Which majors earn the most?</h3>
+							<h3>Will you earn more if you graduate?</h3>
 						</div>
 						<div class="home__copy">
-							<p>Find out which majors has the highest earn and the most students.</p>
+							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates.</p>
 						</div>
 						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
-							<button class="home-btn home-btn__majors">
-								Compare Majors
+							<button class="home-btn home-btn__degrees">
+								Explore by Major
 							</button>
 						</router-link>
 					</div>
-
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-graduation-cap"></i>
+							<i class="fa fa-line-chart fa-5x"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>Do college graduates earn more?</h3>
+							<h3>Where will you work?</h3>
 						</div>
 						<div class="home__copy">
-							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
+							<p>Explore industries of employment by major.</p>
 						</div>
 						<router-link class="button-link" to="/data/industries" @click.native="setDataPage('industries')">
-							<button class="home-btn home-btn__degrees">
-								Compare Degree Levels
+							<button class="home-btn home-btn__majors">
+								Explore Industries
 							</button>
 						</router-link>
 					</div>
-					
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-usd"></i>
+							<i class="fa fa-usd fa-5x"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>What is your financial return?</h3>
+							<h3>What is your financial return on education?</h3>
 						</div>
 						<div class="home__copy">
-							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
+							<p>Education costs money, but in the long-term, you will earn more. Find your return on education.</p>
 						</div>
 						<router-link class="button-link" to="/data/pfre" @click.native="setDataPage('pfre')">
 							<button class="home-btn home-btn__pfre">

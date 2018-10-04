@@ -181,7 +181,7 @@ input[type="button"]:focus {
 .major-btn_icon {
   position: absolute;
   right: 7%;
-  font-size: 1.3em;
+  font-size: 1.3em !important;
 }
 
 .major-btn_all {
@@ -204,11 +204,13 @@ input[type="button"]:focus {
 .major-btn_bachelors,
 .major-btn_postBacc,
 .major-btn_someCollege {
+  position: relative;
   color: $white;
   margin-left: 0;
   font-size: 1rem;
   text-transform: none;
   font-weight: 500;
+  transition: .2s;
 }
 
 @media only screen and (min-width: $break-large) {
