@@ -22,7 +22,6 @@ class IndustryController extends Controller
 
     public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
     {
-        // dd($universityName);
         return $this->industryRetriever->getIndustryPopulationByRankWithImages($hegis_code,$universityName);
     }
 }

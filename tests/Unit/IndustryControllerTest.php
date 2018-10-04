@@ -44,7 +44,6 @@ class IndustryControllerTest extends TestCase
          $this->seed('Population_Table_Seeder');
          $this->seed('Universities_TableSeeder');
          $response = $this->json('GET', '/api/industry/5021/northridge');
-        //  dd($response);
          $response->assertJsonStructure([
              0 => [
                  'title',
