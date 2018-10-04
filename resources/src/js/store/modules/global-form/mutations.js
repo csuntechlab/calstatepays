@@ -7,5 +7,4 @@ export default {
     [_global.SET_DATA_PAGE](state, payload){
         state.selectedDataPage = payload;
     }
-
 }
