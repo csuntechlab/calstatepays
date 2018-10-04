@@ -22798,13 +22798,6 @@ body {
   width: 10rem;
 }
 
-/*
-
-take off transform
-float right
-add r
-
-*/
 .pfre-info {
   /*add line height*/
   position: absolute;
@@ -22869,6 +22862,33 @@ figcaption {
 
 .v-overlay {
   z-index: 1000000 !important;
+}
+
+.splashPage {
+  background-color: #EBEBEB;
+  height: calc(100vh - 457px);
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  min-height: 2rem;
+}
+
+@media screen and (max-width: 960px) {
+  .splashPage {
+    height: calc(100vh - 416px);
+  }
 }
 
 .img__logo {
