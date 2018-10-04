@@ -6,8 +6,5 @@ export default {
     },
     setDataPage({commit}, payload){
         commit(_global.SET_DATA_PAGE, payload);
-    },
-    setModalCheck({commit}, payload){
-        commit(_global.SET_MODAL_CHECK, payload);
     }
 }
