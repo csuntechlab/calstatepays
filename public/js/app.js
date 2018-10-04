@@ -47882,14 +47882,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         var sessionData = sessionStorage.getItem("selectedUniversity");
         if (sessionData === null) {
             this.showModal = true;
-            this.$store.dispatch('setModalCheck', true);
         } else {
             this.$store.dispatch("setUniversity", sessionData);
         }
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity', 'setModalCheck']), {
+    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity']), {
         changeCampus: function changeCampus(university) {
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity', university);

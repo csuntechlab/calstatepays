@@ -55,7 +55,6 @@ export default {
         var sessionData = sessionStorage.getItem("selectedUniversity");
         if(sessionData === null){
         this.showModal = true;
-        this.$store.dispatch('setModalCheck',true);
         }
         else {
             this.$store.dispatch("setUniversity", sessionData);
@@ -72,8 +71,7 @@ export default {
     },
     methods:{
         ...mapActions([
-            'setUniversity',
-            'setModalCheck'
+            'setUniversity'
         ]),
         changeCampus: function(university){
             sessionStorage.setItem("selectedUniversity", university);
