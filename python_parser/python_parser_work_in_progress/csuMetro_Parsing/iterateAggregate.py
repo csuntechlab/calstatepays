@@ -1,29 +1,52 @@
 import pandas as pd
-
 import numpy as np
 import simplejson
 
-class Data_Frame_Sanitizer:
-    def __init__(self,file):
-        '''
-        This is a dataframes parent class,
-        Majors and Industry dataframes are parsed in a similar manner.
-        So we will parse the first couple of columns here. 
-        Shared parsing functions will reside in the parent class
-            dataFrame object init
-                file, 
-                csv general data frame
-        '''
-        self.file = file
-        localFilePath = './csv/' + self.file+'.csv'
+class AggregateCsvFiles():
+  
+    def __init__(self):
+        pass
+    
+    def aggregate_majors_csv_to_json(self,aggregateCsvFiles):
+      indexUniversityMajorsId = 1  
+      indexMajorPathId = 1  
+      
+      universityMajorsDataFrame = pd.DataFrame()
+      MajorsPathsDataFrame = pd.DataFrame()
+      MajorsPathWageDataFrame = pd.DataFrame()
+
+      for csv in aggregateCsvFiles:
+        file = csv
+        localFilePath = './csv/' + file+'.csv'
         self.df = pd.read_csv( localFilePath )
         self.sanitize_null_values()
         self.header_sanitizer()
+        self.sanitizeCommon()
+        print(self.df.head())
+        dfHegisCodes  = self.df.loc[:,['campus','hegis_at_exit','majors',] ]
+        print(dfHegisCodes.head())
 
-        #TODO: COMMENT THIS OUT FOR ERROR CHECKING
-        # self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
-        pass
-    
+        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','majors',] ]
+        errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','majors'], keep='first')
+        errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
+        duplicateHegisCodeDifferentMajor = errorDataFrame
+
+        print(errorDataFrame.head())
+
+        ids = errorDataFrame["id"]
+        errorBoolean = errorDataFrame.duplicated(subset=['campus','majors'], keep=False)
+        errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
+        # self.json_output('master_errors_table',errorDataFrame)
+        
+        ids = duplicateHegisCodeDifferentMajor["id"]       
+        errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
+        duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
+
+        self.json_output("aggregate_different_hegis_same_major",errorDataFrame)
+        self.json_output("aggregate_same_hegis_different_major",duplicateHegisCodeDifferentMajor)
+
+        # return errorDataFrame,duplicateHegisCodeDifferentMajor
+     
     def sanitize_null_values(self):
         '''
         Sanitizes null values
@@ -102,13 +125,12 @@ class Data_Frame_Sanitizer:
         self.remove_comma(columnName)
         self.string_number_to_real_number(columnName)
     
-    def renameNewCsvs(self):
-        # for industries...
-        self.df = self.df.rename(columns={'median_annual_earnings':'median_annual_earnings_5_years_after_exit', 'average_annual_earnings': 'average_annual_earnings_5_years_after_exit'})
-        self.df = self.df.rename(columns={'median_annual_earnings.1':'median_annual_earnings_10_years_after_exit', 'average_annual_earnings.1': 'average_annual_earnings_10_years_after_exit'})
-        self.df = self.df.rename(columns={'number_of_students_found.1':'number_of_students_found_10_years_after_exit', 'number_of_students_found': 'number_of_students_found_5_years_after_exit'})
-        print('updated')
-        # print(self.df.columns)
+    def json_output(self,fileName, df):
+      output = df.to_dict(orient='record')
+
+      with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
+        fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+      fp.close()
 
 
 

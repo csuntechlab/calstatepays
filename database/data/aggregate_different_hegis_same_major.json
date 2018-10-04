@@ -1,0 +1,92 @@
+[
+    {
+        "id": 2,
+        "majors": "Nursing",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 121
+    },
+    {
+        "id": 3,
+        "majors": "Agriculture/Agricultural Science & Horticulture",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 1011
+    },
+    {
+        "id": 4,
+        "majors": "Agriculture/Agricultural Science & Horticulture",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 1041
+    },
+    {
+        "id": 48,
+        "majors": "Education",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 8011
+    },
+    {
+        "id": 103,
+        "majors": "Speech Language Pathology",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 12204
+    },
+    {
+        "id": 128,
+        "majors": "Psychology",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 20011
+    },
+    {
+        "id": 132,
+        "majors": "Recreation Management & Administration",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 21025
+    },
+    {
+        "id": 133,
+        "majors": "Recreation Management & Administration",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 21031
+    },
+    {
+        "id": 149,
+        "majors": "Women's Studies",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 22990
+    },
+    {
+        "id": 152,
+        "majors": "Women's Studies",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 22996
+    },
+    {
+        "id": 155,
+        "majors": "Women's Studies",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 49012
+    },
+    {
+        "id": 159,
+        "majors": "Education",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 49081
+    },
+    {
+        "id": 167,
+        "majors": "Psychology",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 20013
+    },
+    {
+        "id": 191,
+        "majors": "Nursing",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 12031
+    },
+    {
+        "id": 195,
+        "majors": "Speech Language Pathology",
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
+        "hegis_at_exit": 12203
+    }
+]
