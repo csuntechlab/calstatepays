@@ -45,16 +45,16 @@ class IndustryServiceTest extends TestCase
          $this->seed('Master_Industry_Wages_Table_Seeder');
          $this->seed('Population_Table_Seeder');
          $this->seed('Universities_TableSeeder');
-         $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
+         $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
          $this->assertArrayHasKey("title", $response[0]);
          $this->assertArrayHasKey("percentage", $response[0]);
          $this->assertArrayHasKey('rank', $response[0]);
          $this->assertArrayHasKey('image', $response[0]);
      }
 
-     public function test_getIndustryPopulationByRank_throws_a_model_not_found_exception() 
+     public function test_getIndustryPopulationByRankWithImages_throws_a_model_not_found_exception() 
      {
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-         $response = $this->industryService->getIndustryPopulationByRank(22111, 'northridge');
+         $response = $this->industryService->getIndustryPopulationByRankWithImages(22111, 'northridge');
      }
 }
