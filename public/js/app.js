@@ -47542,7 +47542,7 @@ var render = function() {
                 backgroundImage:
                   "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
                   _vm.url +
-                  "/images/graduates-banner.jpg)"
+                  "/img/graduates-banner.jpg)"
               }
             },
             [
@@ -47578,7 +47578,7 @@ var render = function() {
                 backgroundImage:
                   "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
                   _vm.url +
-                  "/images/dollars-banner.jpg)"
+                  "/img/dollars-banner.jpg)"
               }
             },
             [
@@ -47614,7 +47614,7 @@ var render = function() {
                 backgroundImage:
                   "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(" +
                   _vm.url +
-                  "/images/class-banner.jpg)"
+                  "/img/class-banner.jpg)"
               }
             },
             [
