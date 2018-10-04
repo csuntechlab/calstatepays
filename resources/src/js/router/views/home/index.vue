@@ -7,13 +7,13 @@
 				<div class="row py-2 fa-wrapper">
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-graduation-cap"></i>
+							<i class="fa fa-graduation-cap fa-5x"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>WIll you graduate if you earn more?</h3>
+							<h3>Will you earn more if you graduate?</h3>
 						</div>
 						<div class="home__copy">
-							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates</p>
+							<p>It pays to go to college. Earnings for graduates are significantly higher than non-graduates.</p>
 						</div>
 						<router-link class="button-link" to="/data/majors" @click.native="setDataPage('majors')">
 							<button class="home-btn home-btn__degrees">
@@ -23,7 +23,7 @@
 					</div>
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-line-chart"></i>
+							<i class="fa fa-line-chart fa-5x"></i>
 						</div>
 						<div class="home__subheading">
 							<h3>Where will you work?</h3>
@@ -39,13 +39,13 @@
 					</div>
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-usd"></i>
+							<i class="fa fa-usd fa-5x"></i>
 						</div>
 						<div class="home__subheading">
-							<h3>What is your financial return on your education?</h3>
+							<h3>What is your financial return on education?</h3>
 						</div>
 						<div class="home__copy">
-							<p>Education cost money but in the long term you will earn more. Find your return on education.</p>
+							<p>Education costs money, but in the long-term, you will earn more. Find your return on education.</p>
 						</div>
 						<router-link class="button-link" to="/data/pfre" @click.native="setDataPage('pfre')">
 							<button class="home-btn home-btn__pfre">

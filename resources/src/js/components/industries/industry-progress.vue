@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="row industry-card__legend">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4">
+            <div class="col-3">INDUSTRY</div>
+            <div class="col-3">
                 <div class="industry-card__legend-percentage"/>PERCENTAGE
             </div>
-            <div class="col-sm-5">
+            <div class="col-6">
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
         <div v-for="(industry,index) in industriesByMajor" :key="index">
             <div class="row industry-card__row">
-                <div class="col-sm-3">{{industry.title}}</div>
-                <div class="col-sm-9">
+                <div class="col-3">{{industry.title}}</div>
+                <div class="col-9">
                     <div class="row industry-bar__padding">
                         <span class="col-10">
                             <v-progress-linear class="industry-bar" :value="industry.percentage" height="25" color="industry-bar__percentage" background-color="industry-bar__background"/>
@@ -50,7 +50,7 @@ export default {
 		}
 	},
 	computed: {
-        ...mapGetters(["industriesByMajor"])
+		...mapGetters(["industriesByMajor"])
 	}
 };
 </script>
