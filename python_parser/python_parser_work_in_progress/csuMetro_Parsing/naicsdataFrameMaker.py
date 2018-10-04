@@ -30,7 +30,7 @@ class create_naics_dataFrame():
       # print(row[2]) # images 
       # print("********")
       naicsDictionary[row[0]] = row[1]
-      image = "/images/industry/" + self.sanitizeImage(row[0])
+      image = "/img/industries/" + self.sanitizeImage(row[0])
       masterNaicsDataFrame.ix[index,'image'] = image
 
     return masterNaicsDataFrame,naicsDictionary

@@ -12,6 +12,7 @@ import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
 import researchcsun from './views/researchcsun/index.vue';
 import about from './views/about/index.vue';
+import splashPage from './views/splashPage/index.vue';
 
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
@@ -20,7 +21,8 @@ Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/data/pfre', component: pfre },
+		{path: '/data/pfre',component: splashPage},
+		//{ path: '/data/pfre', component: pfre },
 		{ path: '/data/industries', component: industries},
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},

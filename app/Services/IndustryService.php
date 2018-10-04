@@ -7,6 +7,7 @@ use App\Contracts\HelperContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryService implements IndustryContract
 {
@@ -19,7 +20,14 @@ class IndustryService implements IndustryContract
 
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
+        $allNaicsTitles = NaicsTitle::all();
+
+        if($allNaicsTitles->isEmpty()){
+            $message = 'There is no Naics Title data';
+            throw new ModelNotFoundException($message,409);
+        }
+
+        $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {
             return [
                 'naics_code' => $item['naics_code'],
                 'title' => $item['naics_title'],
@@ -29,44 +37,16 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $university_id)
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        /**
-         *  Would here be the best choice to check if CSU Opts In or Not?
-         */
-        $this->helperRetriever->checkOptIn($university_id);
-        
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', 1);
-                }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $university_id)
-                    ->firstOrFail();
-
-        $industry_populations= $this->sortIndustryPopulation($university_major);
-        
-        $population_total = $this->getIndustryPopulationTotals($industry_populations);
-        
-        $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
-
-        return $industry_populations;
-    }
-
-
-    public function getIndustryPopulationByRankWithImages($hegis_code, $university_id)
-    {
-        /**
-         *  Would here be the best choice to check if CSU Opts In or Not?
-         */
-        $this->helperRetriever->checkOptIn($university_id);
+        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
         
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
                 $query->where('entry_status', 'FTF + FTT');
                 $query->where('student_path', 1);
                 }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
                     ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $university_id)
+                    ->where('university_id', $opt_in->id)
                     ->firstOrFail();
 
         $industry_populations= $this->sortIndustryPopulation($university_major);
