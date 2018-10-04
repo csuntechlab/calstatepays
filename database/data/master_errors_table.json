@@ -1,524 +1,524 @@
 [
     {
-        "hegis_codes": 12032,
         "id": 1,
         "university_id": 50,
+        "hegis_codes": 12032,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 7028,
         "id": 17,
         "university_id": 50,
+        "hegis_codes": 7028,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 10022,
         "id": 27,
         "university_id": 50,
+        "hegis_codes": 10022,
         "major": "Art"
     },
     {
-        "hegis_codes": 20013,
         "id": 53,
         "university_id": 50,
+        "hegis_codes": 20013,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 22063,
         "id": 60,
         "university_id": 50,
+        "hegis_codes": 22063,
         "major": "Geography"
     },
     {
-        "hegis_codes": 49991,
         "id": 65,
         "university_id": 50,
+        "hegis_codes": 49991,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 49017,
         "id": 67,
         "university_id": 50,
+        "hegis_codes": 49017,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 6022,
         "id": 74,
         "university_id": 50,
+        "hegis_codes": 6022,
         "major": "Journalism"
     },
     {
-        "hegis_codes": 22999,
         "id": 78,
         "university_id": 50,
+        "hegis_codes": 22999,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 7011,
         "id": 84,
         "university_id": 50,
+        "hegis_codes": 7011,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 10021,
         "id": 95,
         "university_id": 50,
+        "hegis_codes": 10021,
         "major": "Art"
     },
     {
-        "hegis_codes": 12033,
         "id": 97,
         "university_id": 50,
+        "hegis_codes": 12033,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 20011,
         "id": 99,
         "university_id": 50,
+        "hegis_codes": 20011,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 6021,
         "id": 105,
         "university_id": 50,
+        "hegis_codes": 6021,
         "major": "Journalism"
     },
     {
-        "hegis_codes": 22061,
         "id": 114,
         "university_id": 50,
+        "hegis_codes": 22061,
         "major": "Geography"
     },
     {
-        "hegis_codes": 12032,
         "id": 115,
         "university_id": 70,
+        "hegis_codes": 12032,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 5061,
         "id": 127,
         "university_id": 70,
+        "hegis_codes": 5061,
         "major": "Management"
     },
     {
-        "hegis_codes": 5062,
         "id": 128,
         "university_id": 70,
+        "hegis_codes": 5062,
         "major": "Management"
     },
     {
-        "hegis_codes": 9134,
         "id": 148,
         "university_id": 70,
+        "hegis_codes": 9134,
         "major": "Manufacturing Engineering"
     },
     {
-        "hegis_codes": 12031,
         "id": 161,
         "university_id": 70,
+        "hegis_codes": 12031,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 13061,
         "id": 168,
         "university_id": 70,
+        "hegis_codes": 13061,
         "major": "Family and Consumer Sciences"
     },
     {
-        "hegis_codes": 21025,
         "id": 184,
         "university_id": 70,
+        "hegis_codes": 21025,
         "major": "Recreation Management & Administration"
     },
     {
-        "hegis_codes": 21031,
         "id": 185,
         "university_id": 70,
+        "hegis_codes": 21031,
         "major": "Recreation Management & Administration"
     },
     {
-        "hegis_codes": 49993,
         "id": 200,
         "university_id": 70,
+        "hegis_codes": 49993,
         "major": "Education"
     },
     {
-        "hegis_codes": 8011,
         "id": 205,
         "university_id": 70,
+        "hegis_codes": 8011,
         "major": "Education"
     },
     {
-        "hegis_codes": 8211,
         "id": 212,
         "university_id": 70,
+        "hegis_codes": 8211,
         "major": "Educational Leadership (EdD)"
     },
     {
-        "hegis_codes": 8273,
         "id": 213,
         "university_id": 70,
+        "hegis_codes": 8273,
         "major": "Educational Leadership (EdD)"
     },
     {
-        "hegis_codes": 9211,
         "id": 217,
         "university_id": 70,
+        "hegis_codes": 9211,
         "major": "Manufacturing Engineering"
     },
     {
-        "hegis_codes": 12122,
         "id": 219,
         "university_id": 70,
+        "hegis_codes": 12122,
         "major": "Physical Therapy"
     },
     {
-        "hegis_codes": 12121,
         "id": 225,
         "university_id": 70,
+        "hegis_codes": 12121,
         "major": "Physical Therapy"
     },
     {
-        "hegis_codes": 13011,
         "id": 226,
         "university_id": 70,
+        "hegis_codes": 13011,
         "major": "Family and Consumer Sciences"
     },
     {
-        "hegis_codes": 12032,
         "id": 227,
         "university_id": 40,
+        "hegis_codes": 12032,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 3071,
         "id": 229,
         "university_id": 40,
+        "hegis_codes": 3071,
         "major": "Asian/East Asian Studies"
     },
     {
-        "hegis_codes": 6022,
         "id": 245,
         "university_id": 40,
+        "hegis_codes": 6022,
         "major": "Journalism"
     },
     {
-        "hegis_codes": 7028,
         "id": 246,
         "university_id": 40,
+        "hegis_codes": 7028,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 10022,
         "id": 268,
         "university_id": 40,
+        "hegis_codes": 10022,
         "major": "Art"
     },
     {
-        "hegis_codes": 22063,
         "id": 315,
         "university_id": 40,
+        "hegis_codes": 22063,
         "major": "Geography"
     },
     {
-        "hegis_codes": 49991,
         "id": 320,
         "university_id": 40,
+        "hegis_codes": 49991,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 22999,
         "id": 321,
         "university_id": 40,
+        "hegis_codes": 22999,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 49017,
         "id": 324,
         "university_id": 40,
+        "hegis_codes": 49017,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 3021,
         "id": 329,
         "university_id": 40,
+        "hegis_codes": 3021,
         "major": "Asian/East Asian Studies"
     },
     {
-        "hegis_codes": 6021,
         "id": 330,
         "university_id": 40,
+        "hegis_codes": 6021,
         "major": "Journalism"
     },
     {
-        "hegis_codes": 7011,
         "id": 331,
         "university_id": 40,
+        "hegis_codes": 7011,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 10021,
         "id": 338,
         "university_id": 40,
+        "hegis_codes": 10021,
         "major": "Art"
     },
     {
-        "hegis_codes": 12033,
         "id": 339,
         "university_id": 40,
+        "hegis_codes": 12033,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 22061,
         "id": 342,
         "university_id": 40,
+        "hegis_codes": 22061,
         "major": "Geography"
     },
     {
-        "hegis_codes": 12032,
         "id": 344,
         "university_id": 55,
+        "hegis_codes": 12032,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 7028,
         "id": 353,
         "university_id": 55,
+        "hegis_codes": 7028,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 12232,
         "id": 362,
         "university_id": 55,
+        "hegis_codes": 12232,
         "major": "Medical Technology"
     },
     {
-        "hegis_codes": 20013,
         "id": 371,
         "university_id": 55,
+        "hegis_codes": 20013,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 8225,
         "id": 400,
         "university_id": 55,
+        "hegis_codes": 8225,
         "major": "Education"
     },
     {
-        "hegis_codes": 7011,
         "id": 408,
         "university_id": 55,
+        "hegis_codes": 7011,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 8011,
         "id": 409,
         "university_id": 55,
+        "hegis_codes": 8011,
         "major": "Education"
     },
     {
-        "hegis_codes": 12033,
         "id": 414,
         "university_id": 55,
+        "hegis_codes": 12033,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 12231,
         "id": 415,
         "university_id": 55,
+        "hegis_codes": 12231,
         "major": "Medical Technology"
     },
     {
-        "hegis_codes": 20011,
         "id": 419,
         "university_id": 55,
+        "hegis_codes": 20011,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 7028,
         "id": 435,
         "university_id": 73,
+        "hegis_codes": 7028,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 8232,
         "id": 436,
         "university_id": 73,
+        "hegis_codes": 8232,
         "major": "Child Development"
     },
     {
-        "hegis_codes": 10022,
         "id": 438,
         "university_id": 73,
+        "hegis_codes": 10022,
         "major": "Art"
     },
     {
-        "hegis_codes": 20013,
         "id": 446,
         "university_id": 73,
+        "hegis_codes": 20013,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 49017,
         "id": 454,
         "university_id": 73,
+        "hegis_codes": 49017,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 7011,
         "id": 458,
         "university_id": 73,
+        "hegis_codes": 7011,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 8231,
         "id": 459,
         "university_id": 73,
+        "hegis_codes": 8231,
         "major": "Child Development"
     },
     {
-        "hegis_codes": 10021,
         "id": 460,
         "university_id": 73,
+        "hegis_codes": 10021,
         "major": "Art"
     },
     {
-        "hegis_codes": 20011,
         "id": 461,
         "university_id": 73,
+        "hegis_codes": 20011,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 49012,
         "id": 462,
         "university_id": 73,
+        "hegis_codes": 49012,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 1011,
         "id": 466,
         "university_id": 10,
+        "hegis_codes": 1011,
         "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
-        "hegis_codes": 1041,
         "id": 467,
         "university_id": 10,
+        "hegis_codes": 1041,
         "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
-        "hegis_codes": 12032,
         "id": 546,
         "university_id": 45,
+        "hegis_codes": 12032,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 3085,
         "id": 548,
         "university_id": 45,
+        "hegis_codes": 3085,
         "major": "Latin/Central American Studies"
     },
     {
-        "hegis_codes": 7028,
         "id": 555,
         "university_id": 45,
+        "hegis_codes": 7028,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 8225,
         "id": 557,
         "university_id": 45,
+        "hegis_codes": 8225,
         "major": "Education"
     },
     {
-        "hegis_codes": 8232,
         "id": 558,
         "university_id": 45,
+        "hegis_codes": 8232,
         "major": "Child Development"
     },
     {
-        "hegis_codes": 10022,
         "id": 570,
         "university_id": 45,
+        "hegis_codes": 10022,
         "major": "Art"
     },
     {
-        "hegis_codes": 20013,
         "id": 591,
         "university_id": 45,
+        "hegis_codes": 20013,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 22063,
         "id": 599,
         "university_id": 45,
+        "hegis_codes": 22063,
         "major": "Geography"
     },
     {
-        "hegis_codes": 22999,
         "id": 604,
         "university_id": 45,
+        "hegis_codes": 22999,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 49017,
         "id": 605,
         "university_id": 45,
+        "hegis_codes": 49017,
         "major": "Women's Studies"
     },
     {
-        "hegis_codes": 49081,
         "id": 607,
         "university_id": 45,
+        "hegis_codes": 49081,
         "major": "Education"
     },
     {
-        "hegis_codes": 3081,
         "id": 611,
         "university_id": 45,
+        "hegis_codes": 3081,
         "major": "Latin/Central American Studies"
     },
     {
-        "hegis_codes": 7011,
         "id": 615,
         "university_id": 45,
+        "hegis_codes": 7011,
         "major": "Computer Science and Information Technology"
     },
     {
-        "hegis_codes": 8011,
         "id": 616,
         "university_id": 45,
+        "hegis_codes": 8011,
         "major": "Education"
     },
     {
-        "hegis_codes": 8231,
         "id": 618,
         "university_id": 45,
+        "hegis_codes": 8231,
         "major": "Child Development"
     },
     {
-        "hegis_codes": 10021,
         "id": 623,
         "university_id": 45,
+        "hegis_codes": 10021,
         "major": "Art"
     },
     {
-        "hegis_codes": 12033,
         "id": 626,
         "university_id": 45,
+        "hegis_codes": 12033,
         "major": "Nursing"
     },
     {
-        "hegis_codes": 20011,
         "id": 629,
         "university_id": 45,
+        "hegis_codes": 20011,
         "major": "Psychology"
     },
     {
-        "hegis_codes": 22061,
         "id": 633,
         "university_id": 45,
+        "hegis_codes": 22061,
         "major": "Geography"
     }
 ]

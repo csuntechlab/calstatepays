@@ -18,6 +18,8 @@ class CreateAggregateSameHegisDifferentMajorsTable extends Migration
             $table->integer('hegis_code');
             $table->string('university');
             $table->string('major');
+            $table->string('entry_status');
+            $table->string('student_path');
             $table->nullableTimestamps();
         });
     }

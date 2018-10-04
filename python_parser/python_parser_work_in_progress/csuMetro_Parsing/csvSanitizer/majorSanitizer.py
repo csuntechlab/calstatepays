@@ -31,10 +31,12 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         return self.df
     
     def get_University_Majors_Dictionary_Data_Frame(self):
-        UnivMajorDictionaryDf = self.df.loc[:,['campus','hegis_at_exit','major'] ]
+        UnivMajorDictionaryDf = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
         UnivMajorDictionaryDf = UnivMajorDictionaryDf.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
         UnivMajorDictionaryDf['campus'] = UnivMajorDictionaryDf['campus'].astype('float')
         UnivMajorDictionaryDf['hegis_at_exit'] = UnivMajorDictionaryDf['hegis_at_exit'].astype('float')
+
+        print(UnivMajorDictionaryDf.head())
         
         return UnivMajorDictionaryDf
         

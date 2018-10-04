@@ -26,7 +26,7 @@ class AggregateCsvFiles():
         dfHegisCodes  = self.df.loc[:,['campus','hegis_at_exit','majors',] ]
         print(dfHegisCodes.head())
 
-        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','majors',] ]
+        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','majors','student_path','entry_status'] ]
         errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','majors'], keep='first')
         errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
         duplicateHegisCodeDifferentMajor = errorDataFrame

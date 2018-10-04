@@ -23,6 +23,7 @@ class IterateCsvFiles():
         pass
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
+        print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisTable.convert_To_Json()
         
@@ -63,6 +64,8 @@ class IterateCsvFiles():
         indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
+
+        print(universityMajorIdDf.head())
 
         universityMajorsDataFrame = universityMajorIdDf
 

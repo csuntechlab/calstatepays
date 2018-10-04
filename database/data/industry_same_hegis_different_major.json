@@ -1,158 +1,210 @@
 [
     {
+        "major": "Agriculture/Agricultural Science & Horticulture",
         "id": 1,
-        "major": "Agriculture/Agricultural Science & Horticulture",
         "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 10
     },
     {
+        "major": "Agriculture/Agricultural Science & Horticulture",
         "id": 2,
-        "major": "Agriculture/Agricultural Science & Horticulture",
         "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 10
     },
     {
+        "major": "Kinesiology",
         "id": 26,
-        "major": "Kinesiology",
         "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 10
     },
     {
-        "id": 70,
         "major": "Agriculture/Agricultural Science and Education",
+        "id": 70,
         "hegis_at_exit": 1011,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 10
     },
     {
-        "id": 71,
         "major": "Animal Science",
+        "id": 71,
         "hegis_at_exit": 1041,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 10
     },
     {
+        "major": "Kinesiology/Physical Education",
         "id": 72,
-        "major": "Kinesiology/Physical Education",
         "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 10
     },
     {
+        "major": "Kinesiology",
         "id": 93,
-        "major": "Kinesiology",
         "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 50
     },
     {
+        "major": "Art",
         "id": 100,
-        "major": "Art",
         "hegis_at_exit": 10022,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 50
     },
     {
+        "major": "Kinesiology/Physical Education",
         "id": 161,
-        "major": "Kinesiology/Physical Education",
         "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 50
     },
     {
+        "major": "Art - Studio/Performance",
         "id": 164,
-        "major": "Art - Studio/Performance",
         "hegis_at_exit": 10022,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 50
     },
     {
+        "major": "Kinesiology",
         "id": 197,
-        "major": "Kinesiology",
         "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 45
     },
     {
-        "id": 206,
         "major": "Art",
+        "id": 206,
         "hegis_at_exit": 10022,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 45
     },
     {
+        "major": "Kinesiology/Physical Education",
         "id": 254,
-        "major": "Kinesiology/Physical Education",
         "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 45
     },
     {
-        "id": 256,
         "major": "Art - Studio/Performance",
+        "id": 256,
         "hegis_at_exit": 10022,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 45
     },
     {
-        "id": 267,
         "major": "Nursing",
+        "id": 267,
         "hegis_at_exit": 12032,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 70
     },
     {
+        "major": "Kinesiology",
         "id": 293,
-        "major": "Kinesiology",
         "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 70
     },
     {
-        "id": 348,
         "major": "Education",
+        "id": 348,
         "hegis_at_exit": 49993,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 70
     },
     {
-        "id": 362,
         "major": "Kinesiology/Physical Education",
+        "id": 362,
         "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 70
     },
     {
-        "id": 371,
         "major": "Special Major (Interdisciplinary)",
+        "id": 371,
         "hegis_at_exit": 49993,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 70
     },
     {
-        "id": 372,
         "major": "Undeclared/Unknown",
+        "id": 372,
         "hegis_at_exit": 12032,
+        "entry_status": "Postbacc",
+        "student_path": 6,
         "campus": 70
     },
     {
-        "id": 403,
         "major": "Psychology",
+        "id": 403,
         "hegis_at_exit": 20013,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 55
     },
     {
-        "id": 450,
         "major": "School Psychology",
+        "id": 450,
         "hegis_at_exit": 20013,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 55
     },
     {
-        "id": 486,
         "major": "Graphic Communications",
+        "id": 486,
         "hegis_at_exit": 7011,
+        "entry_status": "FTT",
+        "student_path": 4,
         "campus": 73
     },
     {
-        "id": 491,
         "major": "Computer Science and Information Technology",
+        "id": 491,
         "hegis_at_exit": 7011,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 73
     },
     {
-        "id": 514,
         "major": "Kinesiology",
+        "id": 514,
         "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
         "campus": 40
     },
     {
-        "id": 599,
         "major": "Kinesiology/Physical Education",
+        "id": 599,
         "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
         "campus": 40
     }
 ]

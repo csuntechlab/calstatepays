@@ -53,7 +53,7 @@ class DFHelper():
         ERROR Data Frame code here 
         '''
     
-        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major',] ]
+        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
         errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
         errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
         duplicateHegisCodeDifferentMajor = errorDataFrame

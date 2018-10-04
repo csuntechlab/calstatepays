@@ -1,92 +1,122 @@
 [
     {
+        "majors": "Nursing",
         "id": 2,
-        "majors": "Nursing",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 121
+        "hegis_at_exit": 121,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
         "id": 3,
-        "majors": "Agriculture/Agricultural Science & Horticulture",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1011
+        "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
         "id": 4,
-        "majors": "Agriculture/Agricultural Science & Horticulture",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1041
+        "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Education",
         "id": 48,
-        "majors": "Education",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 8011
+        "hegis_at_exit": 8011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Speech Language Pathology",
         "id": 103,
-        "majors": "Speech Language Pathology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 12204
+        "hegis_at_exit": 12204,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Psychology",
         "id": 128,
-        "majors": "Psychology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 20011
+        "hegis_at_exit": 20011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Recreation Management & Administration",
         "id": 132,
-        "majors": "Recreation Management & Administration",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 21025
+        "hegis_at_exit": 21025,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Recreation Management & Administration",
         "id": 133,
-        "majors": "Recreation Management & Administration",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 21031
+        "hegis_at_exit": 21031,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Women's Studies",
         "id": 149,
-        "majors": "Women's Studies",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 22990
+        "hegis_at_exit": 22990,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Women's Studies",
         "id": 152,
-        "majors": "Women's Studies",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 22996
+        "hegis_at_exit": 22996,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Women's Studies",
         "id": 155,
-        "majors": "Women's Studies",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 49012
+        "hegis_at_exit": 49012,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 159,
         "majors": "Education",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 49081
+        "id": 159,
+        "hegis_at_exit": 49081,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 167,
         "majors": "Psychology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 20013
+        "id": 167,
+        "hegis_at_exit": 20013,
+        "entry_status": "FTF + FTT",
+        "student_path": 3,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 191,
         "majors": "Nursing",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 12031
+        "id": 191,
+        "hegis_at_exit": 12031,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 195,
         "majors": "Speech Language Pathology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 12203
+        "id": 195,
+        "hegis_at_exit": 12203,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     }
 ]

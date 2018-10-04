@@ -1,50 +1,66 @@
 [
     {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
         "id": 3,
-        "majors": "Agriculture/Agricultural Science & Horticulture",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1011
+        "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
         "id": 4,
-        "majors": "Agriculture/Agricultural Science & Horticulture",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1041
+        "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 50,
         "majors": "Kinesiology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 8351
+        "id": 50,
+        "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 167,
         "majors": "Psychology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 20013
+        "id": 167,
+        "hegis_at_exit": 20013,
+        "entry_status": "FTF + FTT",
+        "student_path": 3,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 168,
         "majors": "Agriculture/Agricultural Science and Education",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1011
+        "id": 168,
+        "hegis_at_exit": 1011,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 169,
         "majors": "Animal Science",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 1041
+        "id": 169,
+        "hegis_at_exit": 1041,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 183,
         "majors": "Kinesiology/Physical Education",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 8351
+        "id": 183,
+        "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     },
     {
-        "id": 200,
         "majors": "School Psychology",
-        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73",
-        "hegis_at_exit": 20013
+        "id": 200,
+        "hegis_at_exit": 20013,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
     }
 ]
