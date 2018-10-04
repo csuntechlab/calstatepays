@@ -32,7 +32,6 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
     {
-        dd($hegis_code);
         $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
         
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
