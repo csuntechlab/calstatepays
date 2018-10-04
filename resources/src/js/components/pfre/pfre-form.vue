@@ -3,7 +3,7 @@
         <fieldset class="csu-card__form-sizing">
             <div class="form-group">
                 <div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-                    <i class="fas fa-exclamation-circle"></i> Please fill out all fields.
+                    <i class="fa fa-exclamation-circle"></i> Please fill out all fields.
                 </div>
             </div>
             <div class="form-group">

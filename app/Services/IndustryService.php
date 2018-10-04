@@ -6,12 +6,20 @@ use App\Contracts\IndustryContract;
 use App\Models\NaicsTitle;
 use App\Models\University;
 use App\Models\UniversityMajor;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryService implements IndustryContract
 {
     public function getAllIndustryNaicsTitles()
     {
-        $allNaicsTitles = NaicsTitle::all()->map(function ($item, $key) {
+        $allNaicsTitles = NaicsTitle::all();
+
+        if($allNaicsTitles->isEmpty()){
+            $message = 'There is no Naics Title data';
+            throw new ModelNotFoundException($message,409);
+        }
+
+        $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {
             return [
                 'naics_code' => $item['naics_code'],
                 'title' => $item['naics_title'],
@@ -27,23 +35,15 @@ class IndustryService implements IndustryContract
         /**
          *  Would here be the best choice to check if CSU Opts In or Not?
          */
-
-        $opt_in = University::where('id',$university_id)->where('opt_in',1)->first();
-
-        // Might need a way to figure out how the Front end wants to handle this.
-        if($opt_in  === null ){
-            return response([
-                'success' => false
-            ],200);
-        }
+        University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', 1);
-                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $university_id)
-                    ->first();
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', 1);
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $university_id)
+            ->firstOrFail();
 
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);

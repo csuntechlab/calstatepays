@@ -1,37 +1,38 @@
 <template>
-    <div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
-			<aside class="col-md-3">
-				<major-form class="csu-card__form container-fluid" :index="index"/>
-			</aside>
-			<div class="col-md-9">
-				<card class="csu-card container-fluid py-3">
-					<div class="row">
-						<div class="col-6">
-							<social-sharing 
-							v-if="selectedFormWasSubmitted" 
-							:title="this.shareDescription" 
-							description="Discover Your Earnings After College."
-							:quote="this.shareDescription" 
-							hashtags="CalStatePays, ItPaysToGoToCollege"
-							inline-template>
-								<div>
-									<network network="facebook" class="csu-card__share csu-card__share-facebook">
-										<i class="fab fa-facebook fa-2x"></i>
-									</network>
-									<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
-										<i class="fab fa-linkedin fa-2x"></i>
-									</network>
-									<network network="twitter" class="csu-card__share csu-card__share-twitter">
-										<i class="fab fa-twitter-square fa-2x"></i>
-									</network>
-								</div>
-							</social-sharing>
-						</div>
-						<div class="col-6">
-							<i class="fas fa-times btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fas fa-sync-alt btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
-						</div>
+	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+		<aside class="col-md-3">
+			<major-form class="csu-card__form container-fluid" :index="index" />
+		</aside>
+		<div class="col-md-9">
+			<card class="csu-card container-fluid py-3">
+				<div class="row">
+					<div class="col-6">
+						<social-sharing 
+						v-if="selectedFormWasSubmitted && !nullValues" 
+						url="sandbox.csun.edu/metalab/test/csumetrola" 
+						:title="this.shareDescription"
+						description="Discover Your Earnings After College." 
+						:quote="this.shareDescription" 
+						hashtags="CalStatePays, ItPaysToGoToCollege"
+						inline-template>
+							<div>
+								<network network="facebook" class="csu-card__share csu-card__share-facebook">
+									<i class="fa fa-facebook-official fa-2x"></i>
+								</network>
+								<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
+									<i class="fa fa-linkedin-square fa-2x"></i>
+								</network>
+								<network network="twitter" class="csu-card__share csu-card__share-twitter">
+									<i class="fa fa-twitter-square fa-2x"></i>
+								</network>
+							</div>
+						</social-sharing>
 					</div>
+					<div class="col-6">
+						<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+					</div>
+				</div>
 				<div class="row">
 					<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
 				</div>
