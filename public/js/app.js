@@ -48155,7 +48155,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("WIll you graduate if you earn more?")])
+      _c("h3", [_vm._v("Will you earn more if you graduate?")])
     ])
   },
   function() {
@@ -48165,7 +48165,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "home__copy" }, [
       _c("p", [
         _vm._v(
-          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates"
+          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates."
         )
       ])
     ])
@@ -48207,7 +48207,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__subheading" }, [
-      _c("h3", [_vm._v("What is your financial return on your education?")])
+      _c("h3", [_vm._v("What is your financial return on education?")])
     ])
   },
   function() {
@@ -48217,7 +48217,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "home__copy" }, [
       _c("p", [
         _vm._v(
-          "Education cost money but in the long term you will earn more. Find your return on education."
+          "Education costs money, but in the long-term, you will earn more. Find your return on education."
         )
       ])
     ])
