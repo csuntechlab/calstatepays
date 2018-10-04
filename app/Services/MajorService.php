@@ -13,22 +13,24 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MajorService implements MajorContract
 {
-
-    public function getAllHegisCodesByUniversity($universityId): array 
+    public function getAllHegisCodesByUniversity( $university_name ): array 
     {
-        University::where('id',$universityId)->where('opt_in',1)->firstOrFail();
-
-        $allHegisCodes = UniversityMajor::where('university_id',$universityId)
-                            ->orderBy('major','asc')
-                            ->get();
+        $allHegisCodes = University::where('short_name', $university_name)
+                                            ->where('opt_in',1)
+                                            ->with(['universityMajors' => function($query) {
+                                                $query->orderBy('major','asc');
+                                            }])
+                                            ->get();
+      
         // Given the situation where the CSU Opts out
         // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
         if($allHegisCodes->isEmpty()){   
-            $message = ''.$universityId.' was not found';
+            $message = ''.$university_name.' was not found';
             throw new ModelNotFoundException($message,409);
         }
 
-        $allHegisCodes = $allHegisCodes
+
+        $allHegisCodes = $allHegisCodes[0]->universityMajors
                             ->map(function ($item){
                                 return [
                                     'major' => $item['major'],
@@ -52,8 +54,13 @@ class MajorService implements MajorContract
         return $fieldOfStudies->toArray();
     }
 
-    public function getHegisCategories($universityId,$fieldOfStudyId): array
+    public function getHegisCategories($universityName,$fieldOfStudyId): array
     {
+        $universityId = University::where('short_name',$universityName)
+                                    ->where('opt_in',1)
+                                    ->firstOrFail();
+
+        $universityId = $universityId->id;
         $fieldOfStudy = FieldOfStudy::with( ['hegisCategory.hegisCode.universityMajors' => function ($query) use ($universityId) {
                                 $query->where('university_id',$universityId);  
                                 }])
@@ -83,32 +90,32 @@ class MajorService implements MajorContract
         return $data;
     }
     
-    public function getMajorEarnings($hegis_code, $university_id): array
+    public function getMajorEarnings($hegis_code, $university_name): array
     {
-        $universityMajor = UniversityMajor::where('hegis_code', $hegis_code)
-                            ->with(['university' => function($query) {
-                                $query->where('opt_in',1);
-                            }])
-                            ->where('university_id', $university_id)
-                            ->with('majorPaths.majorPathWage')
+        $universityMajor = University::where('short_name', $university_name)
+                            ->where('opt_in',1)
+                            ->with(['universityMajors' => function($query) use ($hegis_code) {
+                                $query->where('hegis_code',$hegis_code);
+                            }, 'universityMajors.majorPaths.majorPathWage'])
                             ->firstOrFail();
-        // situation where CSU opts out
 
-        if($universityMajor->university == null){
+        if($universityMajor->university_name == null){
             $message ='This university does not exist in the database';                  
             throw new ModelNotFoundException($message,409);
         }
         
-        if (empty($universityMajor->majorPaths)){
+        if (empty($universityMajor->universityMajors[0]->majorPaths)){
             $message ='Major paths data was not found';                  
             throw new ModelNotFoundException($message,409);
         }
 
-        $universityMajor = $universityMajor->majorPaths->toArray();                            
+        // $universityMajor = $universityMajor->majorPaths->toArray();  
+        $universityMajor = $universityMajor->universityMajors[0]->majorPaths->toArray();                   
         return $universityMajor;
     }
 
     //TODO: Delete this method ? not Being used
+
     public function getHegisCode($name)
     {
         $hegis_code = HEGISCode::where('major', $name)
@@ -133,8 +140,13 @@ class MajorService implements MajorContract
 
     public function getFREData($request) 
     {
+        /**
+         * ugly bad easy way to go from uni_name -> uni_id
+         */
+        $university_id = University::where('short_name',$request->university)->firstOrFail();
+
         $data = UniversityMajor::where('hegis_code', $request->major)
-            ->where('university_id', $request->university)
+            ->where('university_id', $university_id->id)
             ->with(['studentBackground' => function($query) use($request){
                 $query->where('age_range_id', $request->age_range);
                 $query->where('education_level', $request->education_level);

@@ -36,14 +36,14 @@ class IndustryControllerTest extends TestCase
      public function testGetIndustryPopulationByRank()
      {
          // route is
-         // /api/industry/5021/70
+         // /api/industry/5021/northridge
          // method is IndustryContrller@getIndustryPopulationByRank
          $this->seed('University_Majors_TableSeeder');
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
          $this->seed('Population_Table_Seeder');
          $this->seed('Universities_TableSeeder');
-         $response = $this->json('GET', '/api/industry/5021/70');
+         $response = $this->json('GET', '/api/industry/5021/northridge');
          $response->assertJsonStructure([
              0 => [
                  'title',

@@ -29,21 +29,17 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $university_id)
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-
-        /**
-         *  Would here be the best choice to check if CSU Opts In or Not?
-         */
-        University::where('id',$university_id)->where('opt_in',1)->firstOrFail();
-
+        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
+        
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', 1);
-        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $university_id)
-            ->firstOrFail();
+                $query->where('entry_status', 'FTF + FTT');
+                $query->where('student_path', 1);
+                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+                    ->where('hegis_code', $hegis_code)
+                    ->where('university_id', $opt_in->id)
+                    ->firstOrFail();
 
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
