@@ -143,7 +143,7 @@ class MajorService implements MajorContract
         /**
          * ugly bad easy way to go from uni_name -> uni_id
          */
-        $university_id = University::where('short_name',$request->university)->firstorfail();
+        $university_id = University::where('short_name',$request->university)->firstOrFail();
 
         $data = UniversityMajor::where('hegis_code', $request->major)
             ->where('university_id', $university_id->id)
