@@ -1,6 +1,6 @@
 // Global Form State
 
 export default {
-    selectedUniversity: 0,
+    selectedUniversity: 'all',
     selectedDataPage: 'majors',
 };
