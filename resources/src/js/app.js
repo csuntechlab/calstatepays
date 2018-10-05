@@ -32,7 +32,7 @@ const vm = new Vue({
     store,
     router,
     render: h => h(App),
-    created(){
+    mounted(){
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');

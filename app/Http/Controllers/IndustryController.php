@@ -8,7 +8,7 @@ use App\Contracts\IndustryContract;
 
 class IndustryController extends Controller
 {
-    protected $industryRetriever;
+    protected $industryRetriever = null;
 
     public function __construct(IndustryContract $industryContract)
     {
@@ -20,8 +20,8 @@ class IndustryController extends Controller
         return $this->industryRetriever->getAllIndustryNaicsTitles();
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $university_id)
+    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
     {
-        return $this->industryRetriever->getIndustryPopulationByRank($hegis_code, $university_id);
+        return $this->industryRetriever->getIndustryPopulationByRankWithImages($hegis_code,$universityName);
     }
 }

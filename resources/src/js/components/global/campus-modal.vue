@@ -12,7 +12,7 @@
             <v-card-text class="campus-modal">
                 <div class="row" >
                     <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                        <figure  @click="changeCampus(universities[index].id);">
+                        <figure  @click="changeCampus(universities[index].short_name);">
                             <img :src= item.url role="button" class="btn">    
                             <figcaption> {{item.name}}</figcaption>                    
                         </figure>
@@ -52,12 +52,13 @@ export default {
         }
     },
     mounted(){
-     if(this.modalCheck == false){
-          this.showModal = true;
-         this.$store.dispatch('setModalCheck',true);
-
-
-    }
+        var sessionData = sessionStorage.getItem("selectedUniversity");
+        if(sessionData === null){
+        this.showModal = true;
+        }
+        else {
+            this.$store.dispatch("setUniversity", sessionData);
+        }
 
     },
     computed:{
@@ -70,13 +71,12 @@ export default {
     },
     methods:{
         ...mapActions([
-            'setUniversity',
-            'setModalCheck'
+            'setUniversity'
         ]),
         changeCampus: function(university){
-
-          this.$store.dispatch('setUniversity',university);
-          this.showModal = false;
+            sessionStorage.setItem("selectedUniversity", university);
+            this.$store.dispatch('setUniversity',university);
+            this.showModal = false;
         }
     }
 
