@@ -73418,6 +73418,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73446,9 +73447,9 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm._l(_vm.industriesByMajor, function(industry, index) {
-        return industry.industryWage != null
-          ? _c("div", { key: index }, [
-              _c("div", { staticClass: "row industry-card__row" }, [
+        return _c("div", { key: index }, [
+          industry.industryWage != null
+            ? _c("div", { staticClass: "row industry-card__row" }, [
                 _c("div", { staticClass: "col-3" }, [
                   _vm._v(_vm._s(industry.title))
                 ]),
@@ -73553,8 +73554,8 @@ var render = function() {
                       ])
                 ])
               ])
-            ])
-          : _vm._e()
+            : _vm._e()
+        ])
       })
     ],
     2

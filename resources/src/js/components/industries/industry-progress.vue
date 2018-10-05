@@ -9,8 +9,9 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-for="(industry,index) in industriesByMajor" :key="index" v-if="industry.industryWage != null">
-            <div class="row industry-card__row">
+        <div v-for="(industry,index) in industriesByMajor" :key="index" >
+            <!-- v-if="industry.industryWage != null" -->
+            <div v-if="industry.industryWage != null" class="row industry-card__row">
                 <div class="col-3">{{industry.title}}</div>
                 <div class="col-9">
                     <div class="row industry-bar__padding">
