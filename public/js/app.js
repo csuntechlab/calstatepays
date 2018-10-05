@@ -46974,7 +46974,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 // Global Form State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    selectedUniversity: 'all',
+    selectedUniversity: 'all_cal_states',
     selectedDataPage: 'majors'
 });
 
@@ -48411,7 +48411,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var currentName = "";
             this.universities.forEach(function (university) {
                 if (selectedUniversity === university.short_name) {
-                    currentName = university.name;
+                    currentName = university.university_name;
                 }
             });
             return currentName;
