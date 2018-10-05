@@ -44,10 +44,10 @@ def main( iterateCsvFiles = IterateCsvFiles(), aggregateIterateCsvFiles = Aggreg
     majorsCsvFiles,industryCsvFiles,aggregateCsvFiles = get_csv_files_in_this_directory()
     
     print( majorsCsvFiles )
-    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
     print( industryCsvFiles )
-    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
 
     print( aggregateCsvFiles )
     # aggregateIterateCsvFiles.aggregate_majors_csv_to_json(aggregateCsvFiles)
