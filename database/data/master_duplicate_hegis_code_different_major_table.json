@@ -84,61 +84,109 @@
         "major": "School Psychology"
     },
     {
-        "id": 466,
+        "id": 468,
+        "university_id": 0,
+        "hegis_codes": 1011,
+        "major": "Agriculture/Agricultural Science & Horticulture"
+    },
+    {
+        "id": 469,
+        "university_id": 0,
+        "hegis_codes": 1041,
+        "major": "Agriculture/Agricultural Science & Horticulture"
+    },
+    {
+        "id": 515,
+        "university_id": 0,
+        "hegis_codes": 8351,
+        "major": "Kinesiology"
+    },
+    {
+        "id": 632,
+        "university_id": 0,
+        "hegis_codes": 20013,
+        "major": "Psychology"
+    },
+    {
+        "id": 633,
+        "university_id": 0,
+        "hegis_codes": 1011,
+        "major": "Agriculture/Agricultural Science and Education"
+    },
+    {
+        "id": 634,
+        "university_id": 0,
+        "hegis_codes": 1041,
+        "major": "Animal Science"
+    },
+    {
+        "id": 648,
+        "university_id": 0,
+        "hegis_codes": 8351,
+        "major": "Kinesiology/Physical Education"
+    },
+    {
+        "id": 665,
+        "university_id": 0,
+        "hegis_codes": 20013,
+        "major": "School Psychology"
+    },
+    {
+        "id": 675,
         "university_id": 10,
         "hegis_codes": 1011,
         "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
-        "id": 467,
+        "id": 676,
         "university_id": 10,
         "hegis_codes": 1041,
         "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
-        "id": 491,
+        "id": 700,
         "university_id": 10,
         "hegis_codes": 8351,
         "major": "Kinesiology"
     },
     {
-        "id": 538,
+        "id": 747,
         "university_id": 10,
         "hegis_codes": 1011,
         "major": "Agriculture/Agricultural Science and Education"
     },
     {
-        "id": 539,
+        "id": 748,
         "university_id": 10,
         "hegis_codes": 1041,
         "major": "Animal Science"
     },
     {
-        "id": 540,
+        "id": 749,
         "university_id": 10,
         "hegis_codes": 8351,
         "major": "Kinesiology/Physical Education"
     },
     {
-        "id": 559,
+        "id": 768,
         "university_id": 45,
         "hegis_codes": 8351,
         "major": "Kinesiology"
     },
     {
-        "id": 570,
+        "id": 779,
         "university_id": 45,
         "hegis_codes": 10022,
         "major": "Art"
     },
     {
-        "id": 622,
+        "id": 831,
         "university_id": 45,
         "hegis_codes": 8351,
         "major": "Kinesiology/Physical Education"
     },
     {
-        "id": 624,
+        "id": 833,
         "university_id": 45,
         "hegis_codes": 10022,
         "major": "Art - Studio/Performance"
