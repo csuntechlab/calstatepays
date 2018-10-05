@@ -31,11 +31,12 @@ export default {
             'universities'
             ]),
         getCampusName() {
-            var universityId = parseInt(this.selectedUniversity);
+            var selectedUniversity = this.selectedUniversity;
+
             var currentName = "";
             this.universities.forEach(university => {
-                if(universityId===parseInt(university.id)) {
-                    currentName = university.name;
+                if(selectedUniversity===(university.short_name)) {
+                    currentName = university.university_name;
                 }
             });
             return currentName;
