@@ -32,7 +32,9 @@ label {
 .csu-form-input {
   @extend %form-input-base;
   .dropdown-toggle {
-    height: 2.75rem;
+    overflow: hidden;
+    min-height: 2.75rem;
+    max-height: 4.25rem;
   }
 }
 
