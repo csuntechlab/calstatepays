@@ -34,7 +34,7 @@ Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_ea
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
 /** $universityId -> $universityName */
-Route::get('industry/{hegis_code}/{universityName}', 'IndustryController@getIndustryPopulationByRank');
+Route::get('industry/{hegis_code}/{universityName}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 //Student Path
 Route::get('student-path', 'StudentPathController@getAllStudentPaths')->name('student-paths');

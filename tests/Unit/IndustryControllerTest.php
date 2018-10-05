@@ -33,11 +33,11 @@ class IndustryControllerTest extends TestCase
         ]);
     }
 
-     public function testGetIndustryPopulationByRank()
+     public function testGetIndustryPopulationByRankWithImages()
      {
          // route is
          // /api/industry/5021/northridge
-         // method is IndustryContrller@getIndustryPopulationByRank
+         // method is IndustryContrller@getIndustryPopulationByRankWithImages
          $this->seed('University_Majors_TableSeeder');
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
