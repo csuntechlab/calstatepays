@@ -72,7 +72,7 @@ export default {
 
 	mounted() {
 		this.form.university = this.selectedUniversity;
-		this.form.schoolId = this.selectedUniversity
+		this.form.schoolId = this.selectedUniversity;
 	},
 
 	methods: {
@@ -80,7 +80,6 @@ export default {
 			"fetchIndustryMajorsByField",
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",]),
-
 		submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;

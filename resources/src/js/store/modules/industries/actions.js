@@ -1,6 +1,5 @@
 import Industries from "../../../api/industries";
 import _industries from "../../mutation-types/industries"
-//api call to fetch updated majors by field is already on the Majors side
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
 		Industries.fetchIndustriesAPI(

@@ -11,7 +11,7 @@ export default {
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state,payload) {
 		state.industryMajorsByField = [];
 		payload[0].forEach(major => {
-			major.majorId = major.hegisCode
+			major.majorId = major.hegisCode;
 			delete major.hegisCode;
 			state.industryMajorsByField.push(major);
 		});

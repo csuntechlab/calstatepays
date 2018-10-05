@@ -47123,7 +47123,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__ = __webpack_require__(72);
 
 
-//api call to fetch updated majors by field is already on the Majors side
 /* harmony default export */ __webpack_exports__["a"] = ({
 	fetchIndustries: function fetchIndustries(_ref, payload) {
 		var commit = _ref.commit,
