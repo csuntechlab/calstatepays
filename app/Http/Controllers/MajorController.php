@@ -27,7 +27,7 @@ class MajorController extends Controller
         return $this->majorRetriever->getAllFieldOfStudies();
     }
     
-    public function getMajorEarnings($hegis_code, $university_name){
+    public function getMajorEarnings($hegis_code,$university_name){
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
         foreach($university_major as $data) {

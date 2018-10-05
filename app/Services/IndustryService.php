@@ -11,13 +11,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class IndustryService implements IndustryContract
 {
-    protected $helperRetriever = null;
-
-    public function __construct(HelperContract $helperContract)
-    {
-        $this->helperRetriever = $helperContract;
-    }
-
     public function getAllIndustryNaicsTitles()
     {
         $allNaicsTitles = NaicsTitle::all();
@@ -54,6 +47,27 @@ class IndustryService implements IndustryContract
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
         
         $industry_populations = $this->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
+
+        return $industry_populations;
+    }
+
+    public function getIndustryPopulationByRank($hegis_code,$universityName)
+    {
+        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
+        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+                $query->where('entry_status', 'FTF + FTT');
+                $query->where('student_path', 1);
+                }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
+                    ->where('hegis_code', $hegis_code)
+                    ->where('university_id', $opt_in->id)
+                    ->firstOrFail();
+
+        $industry_populations= $this->sortIndustryPopulation($university_major);
+        
+        $population_total = $this->getIndustryPopulationTotals($industry_populations);
+        
+        $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
         return $industry_populations;
     }
