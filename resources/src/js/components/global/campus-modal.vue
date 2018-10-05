@@ -12,7 +12,7 @@
             <v-card-text class="campus-modal">
                 <div class="row" >
                     <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                        <figure  @click="changeCampus(universities[index].id);">
+                        <figure  @click="changeCampus(universities[index].short_name);">
                             <img :src= item.url role="button" class="btn">    
                             <figcaption> {{item.name}}</figcaption>                    
                         </figure>
