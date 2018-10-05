@@ -14,7 +14,7 @@
 					:options="majors"
 					@input="updateSelect('majorId', 'majorId', $event)"
 					@change="updateSelect('majorId', 'majorId', $event)"
-					class="csu-form-input-major"
+					class="csu-form-input"
 					v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
 				</v-select>
 			</div>

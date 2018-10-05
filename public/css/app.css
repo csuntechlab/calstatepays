@@ -23416,32 +23416,17 @@ label {
   content: "*";
 }
 
-.csu-form-input, .csu-form-input-major {
+.csu-form-input {
   border-bottom: 0.2rem #777777 solid;
 }
 
-.csu-form-input .dropdown-toggle, .csu-form-input-major .dropdown-toggle {
+.csu-form-input .dropdown-toggle {
   border-radius: 0 !important;
   border: none !important;
 }
 
 .csu-form-input .dropdown-toggle {
   height: 2.75rem;
-}
-
-.csu-form-input-major .dropdown-toggle {
-  overflow: visible;
-  min-height: 2.75rem;
-}
-
-.csu-form-input-major input[type="search"] {
-  position: absolute !important;
-  left: 0;
-  bottom: 0;
-}
-
-.csu-form-input-major div .selected-tag {
-  height: unset;
 }
 
 .currency {

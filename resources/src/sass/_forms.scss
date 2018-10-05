@@ -36,23 +36,23 @@ label {
   }
 }
 
-.csu-form-input-major {
-  @extend %form-input-base;
-  .dropdown-toggle {
-    overflow: visible;
-    min-height: 2.75rem;
-  }
-  input[type="search"] {
-    position: absolute !important;
-    left: 0;
-    bottom: 0;
-  }
-  div {
-    .selected-tag {
-    height: unset;
-  }
-  }
-}
+// .csu-form-input-major {
+//   @extend %form-input-base;
+//   .dropdown-toggle {
+//     overflow: visible;
+//     min-height: 2.75rem;
+//   }
+//   input[type="search"] {
+//     position: absolute !important;
+//     left: 0;
+//     bottom: 0;
+//   }
+//   div {
+//     .selected-tag {
+//     height: unset;
+//   }
+//   }
+// }
 
 .currency {
   position: relative;
