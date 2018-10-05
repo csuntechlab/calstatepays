@@ -1,0 +1,266 @@
+[
+    {
+        "campus": 10,
+        "student_path": 1,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "id": 1
+    },
+    {
+        "campus": 10,
+        "student_path": 1,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "id": 2
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "id": 72
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "id": 73
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Education",
+        "hegis_at_exit": 8011,
+        "entry_status": "FTF + FTT",
+        "id": 117
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 22990,
+        "entry_status": "FTF + FTT",
+        "id": 211
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 22996,
+        "entry_status": "FTF + FTT",
+        "id": 214
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49012,
+        "entry_status": "FTF + FTT",
+        "id": 217
+    },
+    {
+        "campus": 0,
+        "student_path": 1,
+        "major": "Education",
+        "hegis_at_exit": 49081,
+        "entry_status": "FTF + FTT",
+        "id": 220
+    },
+    {
+        "campus": 50,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49991,
+        "entry_status": "FTF + FTT",
+        "id": 287
+    },
+    {
+        "campus": 50,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49017,
+        "entry_status": "FTF + FTT",
+        "id": 289
+    },
+    {
+        "campus": 50,
+        "student_path": 2,
+        "major": "Women's Studies",
+        "hegis_at_exit": 22999,
+        "entry_status": "FTF + FTT",
+        "id": 305
+    },
+    {
+        "campus": 45,
+        "student_path": 1,
+        "major": "Education",
+        "hegis_at_exit": 8225,
+        "entry_status": "FTF + FTT",
+        "id": 317
+    },
+    {
+        "campus": 45,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 22999,
+        "entry_status": "FTF + FTT",
+        "id": 361
+    },
+    {
+        "campus": 45,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49017,
+        "entry_status": "FTF + FTT",
+        "id": 362
+    },
+    {
+        "campus": 45,
+        "student_path": 1,
+        "major": "Education",
+        "hegis_at_exit": 49081,
+        "entry_status": "FTF + FTT",
+        "id": 364
+    },
+    {
+        "campus": 70,
+        "student_path": 1,
+        "major": "Nursing",
+        "hegis_at_exit": 12032,
+        "entry_status": "FTF + FTT",
+        "id": 366
+    },
+    {
+        "campus": 70,
+        "student_path": 1,
+        "major": "Management",
+        "hegis_at_exit": 5061,
+        "entry_status": "FTF + FTT",
+        "id": 378
+    },
+    {
+        "campus": 70,
+        "student_path": 1,
+        "major": "Management",
+        "hegis_at_exit": 5062,
+        "entry_status": "FTF + FTT",
+        "id": 379
+    },
+    {
+        "campus": 70,
+        "student_path": 1,
+        "major": "Nursing",
+        "hegis_at_exit": 12031,
+        "entry_status": "FTF + FTT",
+        "id": 411
+    },
+    {
+        "campus": 73,
+        "student_path": 1,
+        "major": "Graphic Communications",
+        "hegis_at_exit": 7028,
+        "entry_status": "FTF + FTT",
+        "id": 517
+    },
+    {
+        "campus": 73,
+        "student_path": 1,
+        "major": "Child Development",
+        "hegis_at_exit": 8232,
+        "entry_status": "FTF + FTT",
+        "id": 518
+    },
+    {
+        "campus": 73,
+        "student_path": 1,
+        "major": "Art",
+        "hegis_at_exit": 10022,
+        "entry_status": "FTF + FTT",
+        "id": 520
+    },
+    {
+        "campus": 73,
+        "student_path": 1,
+        "major": "Psychology",
+        "hegis_at_exit": 20013,
+        "entry_status": "FTF + FTT",
+        "id": 526
+    },
+    {
+        "campus": 73,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49017,
+        "entry_status": "FTF + FTT",
+        "id": 532
+    },
+    {
+        "campus": 73,
+        "student_path": 4,
+        "major": "Graphic Communications",
+        "hegis_at_exit": 7011,
+        "entry_status": "FTT",
+        "id": 537
+    },
+    {
+        "campus": 73,
+        "student_path": 4,
+        "major": "Child Development",
+        "hegis_at_exit": 8231,
+        "entry_status": "FTT",
+        "id": 538
+    },
+    {
+        "campus": 73,
+        "student_path": 4,
+        "major": "Art",
+        "hegis_at_exit": 10021,
+        "entry_status": "FTT",
+        "id": 539
+    },
+    {
+        "campus": 73,
+        "student_path": 4,
+        "major": "Psychology",
+        "hegis_at_exit": 20011,
+        "entry_status": "FTT",
+        "id": 540
+    },
+    {
+        "campus": 73,
+        "student_path": 4,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49012,
+        "entry_status": "FTT",
+        "id": 541
+    },
+    {
+        "campus": 40,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49991,
+        "entry_status": "FTF + FTT",
+        "id": 629
+    },
+    {
+        "campus": 40,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 22999,
+        "entry_status": "FTF + FTT",
+        "id": 630
+    },
+    {
+        "campus": 40,
+        "student_path": 1,
+        "major": "Women's Studies",
+        "hegis_at_exit": 49017,
+        "entry_status": "FTF + FTT",
+        "id": 633
+    }
+]

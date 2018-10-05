@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "id": 1,
         "image": "/img/industries/agriculture_forestry_fishing_hunting.png",
         "industry": "Agriculture, Forestry, Fishing, & Hunting"
@@ -113,5 +114,120 @@
         "id": 23,
         "image": "/img/industries/mining.png",
         "industry": "Mining"
+=======
+        "industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "image": "/images/industry/agriculture_forestry_fishing_hunting.png",
+        "id": 1
+    },
+    {
+        "industry": "Utilities",
+        "image": "/images/industry/utilities.png",
+        "id": 2
+    },
+    {
+        "industry": "Construction",
+        "image": "/images/industry/construction.png",
+        "id": 3
+    },
+    {
+        "industry": "Manufacturing",
+        "image": "/images/industry/manufacturing.png",
+        "id": 4
+    },
+    {
+        "industry": "Wholesale Trade",
+        "image": "/images/industry/wholesale_trade.png",
+        "id": 5
+    },
+    {
+        "industry": "Retail Trade",
+        "image": "/images/industry/retail_trade.png",
+        "id": 6
+    },
+    {
+        "industry": "Transportation & Warehousing",
+        "image": "/images/industry/transportation_warehousing.png",
+        "id": 7
+    },
+    {
+        "industry": "Information",
+        "image": "/images/industry/information.png",
+        "id": 8
+    },
+    {
+        "industry": "Finance & Insurance",
+        "image": "/images/industry/finance_insurance.png",
+        "id": 9
+    },
+    {
+        "industry": "Real Estate & Rental & Leasing",
+        "image": "/images/industry/real_estate_rental_leasing.png",
+        "id": 10
+    },
+    {
+        "industry": "Professional, Scientific, & Technical Skills",
+        "image": "/images/industry/professional_scientific_technical_skills.png",
+        "id": 11
+    },
+    {
+        "industry": "Admin & Support & Waste Mgmt & Remediation",
+        "image": "/images/industry/admin_support_waste_mgmt_remediation.png",
+        "id": 12
+    },
+    {
+        "industry": "Educational Services",
+        "image": "/images/industry/educational_services.png",
+        "id": 13
+    },
+    {
+        "industry": "Health Care & Social Assistance",
+        "image": "/images/industry/health_care_social_assistance.png",
+        "id": 14
+    },
+    {
+        "industry": "Arts, Entertainment, & Recreation",
+        "image": "/images/industry/arts_entertainment_recreation.png",
+        "id": 15
+    },
+    {
+        "industry": "Accommodation & Food Services",
+        "image": "/images/industry/accommodation_food_services.png",
+        "id": 16
+    },
+    {
+        "industry": "Other Services",
+        "image": "/images/industry/other_services.png",
+        "id": 17
+    },
+    {
+        "industry": "Government",
+        "image": "/images/industry/government.png",
+        "id": 18
+    },
+    {
+        "industry": "No Wages",
+        "image": "/images/industry/no_wages.png",
+        "id": 19
+    },
+    {
+        "industry": "Wages - No NAICS Code",
+        "image": "/images/industry/wages_-_no_naics_code.png",
+        "id": 20
+    },
+    {
+        "industry": "Management of Companies & Enterprises",
+        "image": "/images/industry/management_of_companies_enterprises.png",
+        "id": 21
+    },
+    {
+        "industry": "Non-Classified",
+        "image": "/images/industry/non-classified.png",
+        "id": 22
+    },
+    {
+        "industry": "Mining",
+        "image": "/images/industry/mining.png",
+        "id": 23
+>>>>>>> origin/CSUM-454
     }
 ]
