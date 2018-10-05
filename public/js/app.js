@@ -29637,9 +29637,11 @@ var SET_MODAL_CHECK = "global-form/SET_MODAL_CHECK";
 
 "use strict";
 var FETCH_INDUSTRIES = "industries/FETCH_INDUSTRIES";
+var FETCH_INDUSTRY_MAJORS_BY_FIELD = "industries/FETCH_INDUSTRY_MAJORS_BY_FIELD";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-	FETCH_INDUSTRIES: FETCH_INDUSTRIES
+	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
+	FETCH_INDUSTRY_MAJORS_BY_FIELD: FETCH_INDUSTRY_MAJORS_BY_FIELD
 });
 
 /***/ }),
@@ -47065,7 +47067,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // Industries State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    industries: []
+    industries: [],
+    industryMajorsByField: []
 });
 
 /***/ }),
@@ -47078,6 +47081,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["a"] = ({
     industriesByMajor: function industriesByMajor(state) {
         return state.industries;
+    },
+    industryMajorsByField: function industryMajorsByField(state) {
+        return state.industryMajorsByField;
     }
 });
 
@@ -47087,17 +47093,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__ = __webpack_require__(72);
+var _industries$FETCH_IND;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
+/* harmony default export */ __webpack_exports__["a"] = (_industries$FETCH_IND = {}, _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
 	state.industries = [];
 	payload.forEach(function (industry) {
 		delete industry.image;
 		state.industries.push(industry);
 	});
-}));
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
+	state.industryMajorsByField = [];
+	payload[0].forEach(function (major) {
+		major.majorId = major.hegisCode;
+		delete major.hegisCode;
+		state.industryMajorsByField.push(major);
+	});
+}), _industries$FETCH_IND);
 
 /***/ }),
 /* 190 */
@@ -47108,7 +47123,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__ = __webpack_require__(72);
 
 
-
+//api call to fetch updated majors by field is already on the Majors side
 /* harmony default export */ __webpack_exports__["a"] = ({
 	fetchIndustries: function fetchIndustries(_ref, payload) {
 		var commit = _ref.commit,
@@ -47116,6 +47131,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(payload, function (success) {
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
+		}, function (error) {
+			return console.log(error);
+		});
+	},
+	fetchIndustryMajorsByField: function fetchIndustryMajorsByField(_ref2, payload) {
+		var commit = _ref2.commit,
+		    dispatch = _ref2.dispatch;
+
+		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryMajorsByFieldAPI(payload, function (success) {
+			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
 		}, function (error) {
 			return console.log(error);
 		});
@@ -47134,9 +47159,17 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
         return error(response);
     });
 };
+var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
+    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+        return success(response.data);
+    }, function (response) {
+        return error(response);
+    });
+};
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchIndustriesAPI: fetchIndustriesAPI
+    fetchIndustriesAPI: fetchIndustriesAPI,
+    fetchIndustryMajorsByFieldAPI: fetchIndustryMajorsByFieldAPI
 });
 
 /***/ }),
@@ -73663,6 +73696,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -73674,6 +73728,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		return {
 			form: {
 				majorId: null,
+				fieldOfStudyId: null,
 				university: null
 			},
 			submittedOnce: false,
@@ -73688,10 +73743,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	},
 	mounted: function mounted() {
 		this.form.university = this.selectedUniversity;
+		this.form.schoolId = this.selectedUniversity;
 	},
 
 
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchUpdatedMajorsByField", "fetchIndustries"]), {
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "fetchUpdatedMajorsByField", "fetchIndustries"]), {
 		submitForm: function submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
@@ -73709,14 +73765,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		updateSelect: function updateSelect(field, dataKey, data) {
 			if (data) {
 				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
+			}
+		},
+		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
+			if (field == "fieldOfStudyId") {
+
+				this.fetchIndustryMajorsByField(this.form);
 			}
 		}
 	}),
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "majorsByField", "selectedUniversity"])),
-
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "industryMajorsByField", "selectedUniversity", "fieldOfStudies"]), {
+		selectedMajorsByField: function selectedMajorsByField() {
+			return this.industryMajorsByField;
+		}
+	}),
 	validations: {
 		form: {
 			majorId: { required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"] }
@@ -73754,6 +73820,30 @@ var render = function() {
         "div",
         { staticClass: "form-group" },
         [
+          _c("label", { attrs: { for: "fieldOfStudy" } }, [
+            _vm._v("Select a Discipline (Optional)")
+          ]),
+          _vm._v(" "),
+          _c("v-select", {
+            staticClass: "csu-form-input",
+            attrs: { label: "discipline", options: _vm.fieldOfStudies },
+            on: {
+              input: function($event) {
+                _vm.updateSelect("fieldOfStudyId", "id", $event)
+              },
+              change: function($event) {
+                _vm.updateSelect("fieldOfStudyId", "id", $event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "form-group" },
+        [
           _c(
             "label",
             {
@@ -73765,28 +73855,51 @@ var render = function() {
             [_vm._v("\n\t\t\t\t\tSelect a Major\n\t\t\t\t")]
           ),
           _vm._v(" "),
-          _c("v-select", {
-            staticClass: "csu-form-input-major",
-            class: {
-              "border-danger": !this.form.majorId && this.submittedOnce
-            },
-            attrs: { label: "major", options: _vm.majors },
-            on: {
-              input: function($event) {
-                _vm.updateSelect("majorId", "majorId", $event)
-              },
-              change: function($event) {
-                _vm.updateSelect("majorId", "majorId", $event)
-              }
-            },
-            model: {
-              value: _vm.selected,
-              callback: function($$v) {
-                _vm.selected = $$v
-              },
-              expression: "selected"
-            }
-          })
+          this.form.fieldOfStudyId == null
+            ? _c("v-select", {
+                staticClass: "csu-form-input-major",
+                class: {
+                  "border-danger": !this.form.majorId && this.submittedOnce
+                },
+                attrs: { label: "major", options: _vm.majors },
+                on: {
+                  input: function($event) {
+                    _vm.updateSelect("majorId", "majorId", $event)
+                  },
+                  change: function($event) {
+                    _vm.updateSelect("majorId", "majorId", $event)
+                  }
+                },
+                model: {
+                  value: _vm.selected,
+                  callback: function($$v) {
+                    _vm.selected = $$v
+                  },
+                  expression: "selected"
+                }
+              })
+            : _c("v-select", {
+                staticClass: "csu-form-input-major",
+                class: {
+                  "border-danger": this.submittedOnce && !this.form.majorId
+                },
+                attrs: { label: "major", options: _vm.selectedMajorsByField },
+                on: {
+                  input: function($event) {
+                    _vm.updateSelect("majorId", "majorId", $event)
+                  },
+                  change: function($event) {
+                    _vm.updateSelect("majorId", "majorId", $event)
+                  }
+                },
+                model: {
+                  value: _vm.selected,
+                  callback: function($$v) {
+                    _vm.selected = $$v
+                  },
+                  expression: "selected"
+                }
+              })
         ],
         1
       ),
