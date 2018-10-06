@@ -16,7 +16,7 @@ class Data_Frame_Sanitizer:
         '''
         self.file = file
         localFilePath = './csv/' + self.file+'.csv'
-        self.df = pd.read_csv( localFilePath)
+        self.df = pd.read_csv( localFilePath )
         self.sanitize_null_values()
         self.header_sanitizer()
 
