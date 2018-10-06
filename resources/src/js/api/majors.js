@@ -34,7 +34,7 @@ const fetchUniversitiesAPI = (success, error) => {
     );
 }
 const fetchIndustryImagesAPI = (payload, success, error) => {
-    window.axios.get(`api/industry/${payload.majorId}/${payload.schoolId}`).then(
+    window.axios.get(`api/industry/images/${payload.majorId}/${payload.schoolId}`).then(
         response => success(response.data),
         response => error(response)
     );
