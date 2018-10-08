@@ -10,7 +10,7 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         super().__init__(file)
         self.sanitizeCommon()
         self.df = self.df.loc[self.df['year'].isin([2,5,10,15])]
-        print(self.df)
+        # print(self.df)
         pass
 
     def sanitize_Major(self):

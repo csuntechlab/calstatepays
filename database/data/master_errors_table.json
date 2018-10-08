@@ -34,5 +34,59 @@
         "id": 71,
         "major": "Recreation Management & Administration",
         "university_id": 70
+    },
+    {
+        "hegis_codes": 101101012,
+        "id": 89,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 104101043,
+        "id": 90,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 801108031,
+        "id": 134,
+        "major": "Education",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 2102521031,
+        "id": 218,
+        "major": "Recreation Management & Administration",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 21031,
+        "id": 219,
+        "major": "Recreation Management & Administration",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 2299049991,
+        "id": 235,
+        "major": "Women's Studies",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 2299622999,
+        "id": 238,
+        "major": "Women's Studies",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 4901249017,
+        "id": 241,
+        "major": "Women's Studies",
+        "university_id": 0
+    },
+    {
+        "hegis_codes": 49081,
+        "id": 245,
+        "major": "Education",
+        "university_id": 0
     }
 ]
