@@ -76,6 +76,9 @@ class Data_Frame_Sanitizer:
     def column_sanitize_get_first_5(self,columnName):
         self.df[columnName] = self.df[columnName].str.slice(start=0, stop=5)
     
+    def column_sanitize_get_first_10(self,columnName):
+        self.df[columnName] = self.df[columnName].str.slice(start=0, stop=10)
+    
     # converts to floats...
     def string_number_to_real_number(self,columnName):
         self.remove_comma(columnName) 
@@ -94,7 +97,10 @@ class Data_Frame_Sanitizer:
     def sanitizeCommon(self):
         self.df['hegis_at_exit'] = self.df['hegis_at_exit'].astype(str)
         self.column_sanitize_plus('hegis_at_exit')
-        self.column_sanitize_get_first_5('hegis_at_exit')
+        if self.df['campus'][1] == 0:
+            self.column_sanitize_get_first_10('hegis_at_exit')
+        else:
+            self.column_sanitize_get_first_5('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
 
     ### Both jsons will need this method
