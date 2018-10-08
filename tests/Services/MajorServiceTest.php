@@ -60,7 +60,7 @@ class MajorServiceTest extends TestCase
         $univ_id = 25;    
         // $message = ''.$univ_id.' was not found';
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-        $this->majorService->getAllHegisCodesByUniversity($univ_id);
+        $this->majorService->getAllHegisCodesByUnive1211203rsity($univ_id);
     }
 
      public function test_getAllFieldOfStudies_ensure_returns_all_rows() 
@@ -159,6 +159,17 @@ class MajorServiceTest extends TestCase
         $message = ''.$university_name.' was not found';
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
+    }
+
+    public function test_Aggregate_data_test_response()
+    {
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Universities_TableSeeder');
+        $aggregate = 'all_cal_states';
+        $hegis = 1211203;
+        $response = $this->majorService->getMajorEarnings($hegis,$aggregate);
+        $this->assertEquals($response[0]['entry_status'],"FTF + FTT");
+        $this->assertArrayHasKey('major_path_wage',$response[0]);
     }
 
 }
