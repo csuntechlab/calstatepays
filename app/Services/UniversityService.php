@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
-use App\Contracts\UniversityContract;
+
 use App\Models\University;
+use App\Contracts\UniversityContract;
+
 
 class UniversityService implements UniversityContract
 {

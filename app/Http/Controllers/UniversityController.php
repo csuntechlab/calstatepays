@@ -16,6 +16,6 @@ class UniversityController extends Controller
     
     public function getAllUniversities() 
     {
-        return $this->universeityRetriever->getAllUniversities();
+        return $this->universityRetriever->getAllUniversities();
     }
 }
