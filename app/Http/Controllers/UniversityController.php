@@ -2,26 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\University;
 use App\Contracts\UniversityContract;
 
 class UniversityController extends Controller
 {
 
-    protected $universityRetriever;
+    protected $universityRetriever = null;
 
     public function __construct(UniversityContract $universityContract)
     {
         $this->universityRetriever = $universityContract;
     }
-
-    public function getAllStudentPaths()
+    
+    public function getAllUniversities() 
     {
-        return $this->studentPathRetriever->getAllStudentPaths();
-    }
-    public function getAllUniversities() {
-        $data = University::all()->toArray();
-        return $data;
+        return $this->universeityRetriever->getAllUniversities();
     }
 }
