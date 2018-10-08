@@ -30,8 +30,8 @@ class JsonIndustry:
 
     
     for index,row in industryPathTypesDf.iterrows():
-      print(row.hegis_at_exit)
-      print(f'campus {row.campus}')
+      # print(row.hegis_at_exit)
+      # print(f'campus {row.campus}')
       # print("********************")
       hegis = (str)(row.hegis_at_exit)
       campus = (str)(row.campus)
