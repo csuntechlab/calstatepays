@@ -22,6 +22,7 @@ class Data_Frame_Sanitizer:
 
         #TODO: COMMENT THIS OUT FOR ERROR CHECKING
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
+        self.df = self.df.loc[self.df['entry_status'].isin(['FTF + FTT'])]
         pass
     
     def sanitize_null_values(self):
