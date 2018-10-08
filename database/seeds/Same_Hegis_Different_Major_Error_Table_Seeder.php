@@ -22,6 +22,8 @@ class Same_Hegis_Different_Major_Error_Table_Seeder extends Seeder
             $universityMajor->hegis_code = $row->hegis_codes;
             $universityMajor->university_id = $row->university_id;
             $universityMajor->major = $row->major;
+            // $universityMajor->entry_status = $row->entry_status;
+            // $universityMajor->student_path = $row->student_path;
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }

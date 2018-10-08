@@ -18,6 +18,8 @@ class SameHegisDifferentMajorErrors extends Migration
             $table->integer('hegis_code');
             $table->integer('university_id');
             $table->string('major');
+            // $table->string('entry_status');
+            // $table->string('student_path');
             $table->nullableTimestamps();
         });
     }

@@ -21,6 +21,8 @@ class hegisID:
     self.df['id'] = (self.df['id']).astype(int)
     self.df['university_id'] = (self.df['university_id']).astype(int)
 
+    print(self.df.head())
+
     errorDataFrame = self.df
     duplicateHegisCodeDifferentMajor = self.df
 
@@ -31,7 +33,6 @@ class hegisID:
     '''
     ERROR Data Frame code here 
     '''
-    errorDataFrame = self.df
 
     ids = errorDataFrame["id"]
     errorBoolean = errorDataFrame.duplicated(subset=['university_id','major'], keep=False)

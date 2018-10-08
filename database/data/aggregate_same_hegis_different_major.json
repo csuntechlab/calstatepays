@@ -1,0 +1,66 @@
+[
+    {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
+        "id": 3,
+        "hegis_at_exit": 1011,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Agriculture/Agricultural Science & Horticulture",
+        "id": 4,
+        "hegis_at_exit": 1041,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Kinesiology",
+        "id": 50,
+        "hegis_at_exit": 8351,
+        "entry_status": "FTF + FTT",
+        "student_path": 1,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Psychology",
+        "id": 167,
+        "hegis_at_exit": 20013,
+        "entry_status": "FTF + FTT",
+        "student_path": 3,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Agriculture/Agricultural Science and Education",
+        "id": 168,
+        "hegis_at_exit": 1011,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Animal Science",
+        "id": 169,
+        "hegis_at_exit": 1041,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "Kinesiology/Physical Education",
+        "id": 183,
+        "hegis_at_exit": 8351,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    },
+    {
+        "majors": "School Psychology",
+        "id": 200,
+        "hegis_at_exit": 20013,
+        "entry_status": "Postbacc",
+        "student_path": 5,
+        "campus": "10 + 40 + 45 + 50 + 55 + 70 + 73"
+    }
+]
