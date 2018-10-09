@@ -22,6 +22,7 @@ class IndustryControllerTest extends TestCase
         parent::setUp();
         $this->retriever = Mockery::spy(IndustryContract::class);
         $this->controller = new IndustryController($this->retriever);
+        $this->seed('Naics_Titles_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
         $this->seed('Master_Industry_Path_Types_Table_Seeder');
         $this->seed('Master_Industry_Wages_Table_Seeder');
@@ -60,7 +61,6 @@ class IndustryControllerTest extends TestCase
      */
     public function testGetAllIndustryNaicsTitlesReturns200Status()
     {
-        $this->seed('Naics_Titles_TableSeeder');
         $response = $this->json('GET', '/api/industry/naics-titles');
         $response->assertStatus(200);
     }
