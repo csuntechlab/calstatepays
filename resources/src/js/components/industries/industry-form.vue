@@ -5,11 +5,22 @@
 				<i class="fa fa-exclamation-circle"></i> Please select a Major.
 			</div>
 			<div class="form-group">
+					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+					<v-select
+							label="discipline"
+							:options="fieldOfStudies"
+							@input="updateSelect('fieldOfStudyId', 'id', $event)"
+							@change="updateSelect('fieldOfStudyId', 'id', $event)"
+							class="csu-form-input">
+					</v-select>
+				</div>
+			<div class="form-group">
 				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
 					Select a Major
 				</label>
 				<v-select
 					label="major"
+					v-if="this.form.fieldOfStudyId == null"
 					v-model="selected"
 					:options="majors"
 					@input="updateSelect('majorId', 'majorId', $event)"
@@ -17,6 +28,16 @@
 					class="csu-form-input-major"
 					v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
 				</v-select>
+				<v-select
+						label="major"
+						v-else
+						v-model="selected"
+						:options="selectedMajorsByField"
+						@input="updateSelect('majorId', 'majorId', $event)"
+						@change="updateSelect('majorId', 'majorId', $event)"
+						class="csu-form-input-major"
+						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+					</v-select>
 			</div>
 			<div class="form-group row">
 				<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
@@ -35,6 +56,7 @@ export default {
 		return {
 			form: {
 				majorId: null,
+				fieldOfStudyId: null,
 				university: null
 			},
 			submittedOnce: false,
@@ -50,11 +72,14 @@ export default {
 
 	mounted() {
 		this.form.university = this.selectedUniversity;
+		this.form.schoolId = this.selectedUniversity;
 	},
 
 	methods: {
-		...mapActions(["fetchUpdatedMajorsByField", "fetchIndustries"]),
-
+		...mapActions([
+			"fetchIndustryMajorsByField",
+			"fetchUpdatedMajorsByField",
+			"fetchIndustries",]),
 		submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
@@ -75,21 +100,32 @@ export default {
 		updateSelect(field, dataKey, data) {
 			if (data) {
 				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
 			}
-		}
+		},
+		handleFieldOfStudyMajors(field) {
+			if (field == "fieldOfStudyId") {
+			
+				this.fetchIndustryMajorsByField(this.form);
+			}
+		},
 	},
 
 	computed: {
 		...mapGetters([
 			"majors",
 			"universities",
-			"majorsByField",
-			"selectedUniversity"
-		])
+			"industryMajorsByField",
+			"selectedUniversity",
+			"fieldOfStudies"
+		]),
+		selectedMajorsByField() {
+			return this.industryMajorsByField;
+			
+		}
 	},
-
 	validations: {
 		form: {
 			majorId: { required }
