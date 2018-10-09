@@ -73473,7 +73473,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
             if (targetNoData.length > 0) {
                 for (var i = 0; i < targetNoData.length; i++) {
-                    console.log(targetNoData[i]);
+                    // console.log(targetNoData[i]);
+                    targetNoData[i].classList.toggle("d-none");
                 }
             }
         }
@@ -73634,19 +73635,23 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("div", [
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                _vm.toggleIndustryVisibility()
+      _c(
+        "div",
+        { staticClass: "row", staticStyle: { "border-top": "1px gray solid" } },
+        [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.toggleIndustryVisibility()
+                }
               }
-            }
-          },
-          [_c("p", [_vm._v("Complete List of Industries")])]
-        )
-      ])
+            },
+            [_c("p", [_vm._v("Only View Available Data")])]
+          )
+        ]
+      )
     ],
     2
   )
@@ -73950,7 +73955,7 @@ var render = function() {
                 }
               })
             : _c("v-select", {
-                staticClass: "csu-form-input-major",
+                staticClass: "csu-form-input",
                 class: {
                   "border-danger": this.submittedOnce && !this.form.majorId
                 },

@@ -46,8 +46,8 @@
                 </div>
             </div>
         </div>
-        <div>
-            <a @click="toggleIndustryVisibility()"><p>Complete List of Industries</p></a>
+        <div class="row" style="border-top:1px gray solid;">
+            <a @click="toggleIndustryVisibility()"><p>Only View Available Data</p></a>
         </div>
     </div>
 </template>
@@ -65,7 +65,8 @@ export default {
             var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
             if(targetNoData.length > 0) {
                 for (var i=0; i < targetNoData.length; i++) {
-                    console.log(targetNoData[i]);
+                    // console.log(targetNoData[i]);
+                    targetNoData[i].classList.toggle("d-none");
                 }
             }
         }
