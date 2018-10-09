@@ -99,7 +99,36 @@ class IndustryControllerTest extends TestCase
          $this->seed('Master_Industry_Wages_Table_Seeder');
          $this->seed('Population_Table_Seeder');
          $this->seed('Universities_TableSeeder');
+         $response = $this->json('GET', '/api/industry/images/5021/northridge');
+         $response->assertJsonStructure([
+             0 => [
+                 'title',
+                 'percentage',
+                 'rank',
+                 'image'
+             ]
+         ]);
+         $response->assertStatus(200);
+     }
+     
+     public function testGetIndustryPopulationByRank()
+     {
+         // route is
+         // /api/industry/5021/northridge
+         // method is IndustryContrller@getIndustryPopulationByRankWithImages
+         $this->seed('University_Majors_TableSeeder');
+         $this->seed('Master_Industry_Path_Types_Table_Seeder');
+         $this->seed('Master_Industry_Wages_Table_Seeder');
+         $this->seed('Population_Table_Seeder');
+         $this->seed('Universities_TableSeeder');
          $response = $this->json('GET', '/api/industry/5021/northridge');
+         $response->assertJsonStructure([
+             0 => [
+                 'title',
+                 'percentage',
+                 'rank'
+             ]
+         ]);
          $response->assertStatus(200);
      }
 }

@@ -1,0 +1,90 @@
+[
+    {
+        "id": 3,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1011
+    },
+    {
+        "id": 4,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_at_exit": 1041
+    },
+    {
+        "id": 48,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Education",
+        "hegis_at_exit": 8011
+    },
+    {
+        "id": 143,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Women's Studies",
+        "hegis_at_exit": 22990
+    },
+    {
+        "id": 146,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Women's Studies",
+        "hegis_at_exit": 22996
+    },
+    {
+        "id": 149,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Women's Studies",
+        "hegis_at_exit": 49012
+    },
+    {
+        "id": 152,
+        "campus": 0,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Education",
+        "hegis_at_exit": 49081
+    },
+    {
+        "id": 162,
+        "campus": 70,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Nursing",
+        "hegis_at_exit": 12032
+    },
+    {
+        "id": 174,
+        "campus": 70,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Management",
+        "hegis_at_exit": 5061
+    },
+    {
+        "id": 175,
+        "campus": 70,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Management",
+        "hegis_at_exit": 5062
+    },
+    {
+        "id": 207,
+        "campus": 70,
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "major": "Nursing",
+        "hegis_at_exit": 12031
+    }
+]

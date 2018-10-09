@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 import simplejson
 
-from csuMetro_Parsing.CsvHelper import Data_Frame_Sanitizer
-from csuMetro_Parsing.CsvHelper import Sanitize_Major
+from csuMetro_Parsing.csvSanitizer.majorSanitizer import Sanitize_Major
 
-from csuMetro_Parsing.JsonBuilder import JsonMajor
-from csuMetro_Parsing.JsonBuilder import JsonIndustry
+from csuMetro_Parsing.jsonBuilder.JsonMajorSanitizer import JsonMajor
+from csuMetro_Parsing.jsonBuilder.JsonIndustrySanitizer import JsonIndustry
+
+
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
 
 from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
@@ -22,6 +23,7 @@ class IterateCsvFiles():
         pass
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
+        print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisTable.convert_To_Json()
         
@@ -62,6 +64,8 @@ class IterateCsvFiles():
         indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
 
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
+
+        print(universityMajorIdDf.head())
 
         universityMajorsDataFrame = universityMajorIdDf
 
@@ -107,6 +111,9 @@ class IterateCsvFiles():
         masterIndustry = masterIndustry.append( industrySanitize.returnDf() , ignore_index=True)
 
       industryMasterHelper = DFHelper(masterIndustry)
+      print("TEXT GOES HERE TEST")
+
+      errorDataFrame,duplicateHegisCodeDifferentMajor = industryMasterHelper.get_errors_data_frame()
       # get Table equiv Data Frames
       
       industryPathTypesDf,industryPathWagesDf,populationTable = industryMasterHelper.get_Industry_Data_Frame()
@@ -116,6 +123,9 @@ class IterateCsvFiles():
 
       # init json Industry
       jsonIndustry = JsonIndustry(fileName)
+
+      self.json_output("industry_different_hegis_same_major",errorDataFrame)
+      self.json_output("industry_same_hegis_different_major",duplicateHegisCodeDifferentMajor)
       #update Industry PathTypes
       industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
       
@@ -127,6 +137,8 @@ class IterateCsvFiles():
       jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
       jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
       jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
+
+
 
     def json_output(self,fileName, df):
       output = df.to_dict(orient='record')
