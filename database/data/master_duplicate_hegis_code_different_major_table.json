@@ -1,1 +1,98 @@
-[]
+[
+    {
+        "university_id": 70,
+        "major": "Nursing",
+        "hegis_codes": 12032,
+        "id": 1
+    },
+    {
+        "university_id": 70,
+        "major": "Kinesiology",
+        "hegis_codes": 8351,
+        "id": 27
+    },
+    {
+        "university_id": 70,
+        "major": "Education",
+        "hegis_codes": 49993,
+        "id": 86
+    },
+    {
+        "university_id": 70,
+        "major": "Kinesiology/Physical Education",
+        "hegis_codes": 8351,
+        "id": 100
+    },
+    {
+        "university_id": 70,
+        "major": "Special Major (Interdisciplinary)",
+        "hegis_codes": 49993,
+        "id": 109
+    },
+    {
+        "university_id": 70,
+        "major": "Undeclared/Unknown",
+        "hegis_codes": 12032,
+        "id": 110
+    },
+    {
+        "university_id": 0,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "hegis_codes": 1091,
+        "id": 115
+    },
+    {
+        "university_id": 0,
+        "major": "Kinesiology",
+        "hegis_codes": 8351,
+        "id": 162
+    },
+    {
+        "university_id": 0,
+        "major": "Art",
+        "hegis_codes": 10022,
+        "id": 190
+    },
+    {
+        "university_id": 0,
+        "major": "Psychology",
+        "hegis_codes": 20013,
+        "id": 240
+    },
+    {
+        "university_id": 0,
+        "major": "Women's Studies",
+        "hegis_codes": 49017,
+        "id": 266
+    },
+    {
+        "university_id": 0,
+        "major": "Liberal Studies",
+        "hegis_codes": 49017,
+        "id": 267
+    },
+    {
+        "university_id": 0,
+        "major": "Agriculture/Agricultural Science and Education",
+        "hegis_codes": 1091,
+        "id": 278
+    },
+    {
+        "university_id": 0,
+        "major": "Kinesiology/Physical Education",
+        "hegis_codes": 8351,
+        "id": 299
+    },
+    {
+        "university_id": 0,
+        "major": "Art - Studio/Performance",
+        "hegis_codes": 10022,
+        "id": 307
+    },
+    {
+        "university_id": 0,
+        "major": "School Psychology",
+        "hegis_codes": 20013,
+        "id": 320
+    }
+]

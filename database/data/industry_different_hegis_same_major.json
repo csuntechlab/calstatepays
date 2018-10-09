@@ -1,90 +1,322 @@
 [
     {
+        "entry_status": "FTF + FTT",
+        "major": "Nursing",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 12032,
+        "id": 2
+    },
+    {
+        "entry_status": "FTF + FTT",
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_at_exit": 10110101,
         "campus": 0,
-        "id": 3,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 1091,
+        "id": 3
     },
     {
+        "entry_status": "FTF + FTT",
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_at_exit": 10410104,
         "campus": 0,
-        "id": 4,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 1043,
+        "id": 4
     },
     {
+        "entry_status": "FTF + FTT",
+        "major": "Latin/Central American Studies",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 3085,
+        "id": 13
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Journalism",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 6022,
+        "id": 42
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Computer Science and Information Technology",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 7028,
+        "id": 46
+    },
+    {
+        "entry_status": "FTF + FTT",
         "major": "Education",
-        "hegis_at_exit": 80110803,
         "campus": 0,
-        "id": 48,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 8225,
+        "id": 48
     },
     {
+        "entry_status": "FTF + FTT",
+        "major": "Child Development",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 8232,
+        "id": 49
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Art",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 10022,
+        "id": 75
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Medical Technology",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 12232,
+        "id": 100
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Psychology",
+        "campus": 0,
+        "student_path": 1,
+        "hegis_at_exit": 20013,
+        "id": 123
+    },
+    {
+        "entry_status": "FTF + FTT",
         "major": "Women's Studies",
-        "hegis_at_exit": 229904999,
         "campus": 0,
-        "id": 143,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 49991,
+        "id": 143
     },
     {
+        "entry_status": "FTF + FTT",
         "major": "Women's Studies",
-        "hegis_at_exit": 229962299,
         "campus": 0,
-        "id": 146,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 22999,
+        "id": 146
     },
     {
+        "entry_status": "FTF + FTT",
         "major": "Women's Studies",
-        "hegis_at_exit": 490124901,
         "campus": 0,
-        "id": 149,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 49017,
+        "id": 149
     },
     {
+        "entry_status": "FTF + FTT",
         "major": "Education",
+        "campus": 0,
+        "student_path": 1,
         "hegis_at_exit": 49081,
+        "id": 152
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Industrial Management & Technology",
         "campus": 0,
-        "id": 152,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 2,
+        "hegis_at_exit": 9133,
+        "id": 157
     },
     {
+        "entry_status": "Postbacc",
+        "major": "Latin/Central American Studies",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 3081,
+        "id": 164
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Journalism",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 6021,
+        "id": 167
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Computer Science and Information Technology",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 7011,
+        "id": 169
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Education",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 8011,
+        "id": 171
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Child Development",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 8231,
+        "id": 177
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Industrial Management & Technology",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 9132,
+        "id": 185
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Art",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 10021,
+        "id": 186
+    },
+    {
+        "entry_status": "Postbacc",
         "major": "Nursing",
-        "hegis_at_exit": 121,
-        "campus": 70,
-        "id": 162,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 12033,
+        "id": 189
     },
     {
+        "entry_status": "Postbacc",
+        "major": "Medical Technology",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 12231,
+        "id": 192
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Psychology",
+        "campus": 0,
+        "student_path": 5,
+        "hegis_at_exit": 20011,
+        "id": 197
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Nursing",
+        "campus": 70,
+        "student_path": 1,
+        "hegis_at_exit": 12032,
+        "id": 209
+    },
+    {
+        "entry_status": "FTF + FTT",
         "major": "Management",
+        "campus": 70,
+        "student_path": 1,
         "hegis_at_exit": 5061,
-        "campus": 70,
-        "id": 174,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "id": 221
     },
     {
+        "entry_status": "FTF + FTT",
         "major": "Management",
-        "hegis_at_exit": 5062,
         "campus": 70,
-        "id": 175,
-        "entry_status": "FTF + FTT",
-        "student_path": 1
+        "student_path": 1,
+        "hegis_at_exit": 5062,
+        "id": 222
     },
     {
-        "major": "Nursing",
-        "hegis_at_exit": 12031,
-        "campus": 70,
-        "id": 207,
         "entry_status": "FTF + FTT",
-        "student_path": 1
+        "major": "Manufacturing Engineering",
+        "campus": 70,
+        "student_path": 1,
+        "hegis_at_exit": 9134,
+        "id": 242
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Nursing",
+        "campus": 70,
+        "student_path": 1,
+        "hegis_at_exit": 12031,
+        "id": 254
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Family and Consumer Sciences",
+        "campus": 70,
+        "student_path": 1,
+        "hegis_at_exit": 13061,
+        "id": 259
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "major": "Education",
+        "campus": 70,
+        "student_path": 1,
+        "hegis_at_exit": 49993,
+        "id": 290
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Education",
+        "campus": 70,
+        "student_path": 5,
+        "hegis_at_exit": 8011,
+        "id": 296
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Educational Leadership (EdD)",
+        "campus": 70,
+        "student_path": 5,
+        "hegis_at_exit": 8211,
+        "id": 303
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Manufacturing Engineering",
+        "campus": 70,
+        "student_path": 5,
+        "hegis_at_exit": 9211,
+        "id": 307
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Physical Therapy",
+        "campus": 70,
+        "student_path": 5,
+        "hegis_at_exit": 12122,
+        "id": 310
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Educational Leadership (EdD)",
+        "campus": 70,
+        "student_path": 6,
+        "hegis_at_exit": 8273,
+        "id": 315
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Physical Therapy",
+        "campus": 70,
+        "student_path": 6,
+        "hegis_at_exit": 12121,
+        "id": 316
+    },
+    {
+        "entry_status": "Postbacc",
+        "major": "Family and Consumer Sciences",
+        "campus": 70,
+        "student_path": 6,
+        "hegis_at_exit": 13011,
+        "id": 317
     }
 ]
