@@ -35,11 +35,7 @@ class MajorControllerTest extends TestCase
          $this->seed('Universities_TableSeeder');
          $this->seed('Major_Paths_TableSeeder');
          $this->seed('Major_Path_Wages_TableSeeder');
-        
-         // $this->seed('Master_Major_Page_Data_TableSeeder');
          $this->seed('Master_FRE_Page_Data_TableSeeder');
-//         $this->seed('Master_Industry_Page_Data_Seeder');
-
          $this->controller = new MajorController($this->retriever);
      }
 
@@ -144,9 +140,9 @@ class MajorControllerTest extends TestCase
          // i.e. /api/major/hegis-code/northridge/6
 
          $engineeringId = 6;
-         $unversityName = 'northridge';
+         $universityName = 'northridge';
          $countOfExpectedDropdowns = 9;
-         $response = $this->json('GET', "/api/major/hegis-codes/". $unversityName."/".$engineeringId);
+         $response = $this->json('GET', "/api/major/hegis-codes/". $universityName."/".$engineeringId);
 
          //use [0] because front end is handling an array of an array of arrays
          $response = $response->getOriginalContent();
