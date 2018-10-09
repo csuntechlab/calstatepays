@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div v-else-if="industry.industryWage === null" class="row industry-card__row">
+            <div v-else-if="industry.industryWage === null && industry.percentage === null" class="row industry-card__row noData">
                 <div class="col-3">{{industry.title}}</div>
                 <div class="col-9">
                 <div class="row industry-bar__padding">
@@ -46,6 +46,9 @@
                 </div>
             </div>
         </div>
+        <div>
+            <a @click="toggleIndustryVisibility()"><p>Complete List of Industries</p></a>
+        </div>
     </div>
 </template>
 <script>
@@ -57,7 +60,15 @@ export default {
             let hundreds = dollarAmount.substr(-3,3);
             let thousands = dollarAmount.slice(0,-3);
             return thousands + ',' + hundreds;
-		}
+        },
+        toggleIndustryVisibility(){
+            var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
+            if(targetNoData.length > 0) {
+                for (var i=0; i < targetNoData.length; i++) {
+                    console.log(targetNoData[i]);
+                }
+            }
+        }
 	},
 	computed: {
 		...mapGetters(["industriesByMajor"])

@@ -73424,18 +73424,29 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	methods: {
-		formatDollars: function formatDollars(input) {
-			var dollarAmount = input.toString();
-			var hundreds = dollarAmount.substr(-3, 3);
-			var thousands = dollarAmount.slice(0, -3);
-			return thousands + ',' + hundreds;
-		}
-	},
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]))
+    methods: {
+        formatDollars: function formatDollars(input) {
+            var dollarAmount = input.toString();
+            var hundreds = dollarAmount.substr(-3, 3);
+            var thousands = dollarAmount.slice(0, -3);
+            return thousands + ',' + hundreds;
+        },
+        toggleIndustryVisibility: function toggleIndustryVisibility() {
+            var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
+            if (targetNoData.length > 0) {
+                for (var i = 0; i < targetNoData.length; i++) {
+                    console.log(targetNoData[i]);
+                }
+            }
+        }
+    },
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]))
 });
 
 /***/ }),
@@ -73525,8 +73536,8 @@ var render = function() {
                   ])
                 ])
               ])
-            : industry.industryWage === null
-              ? _c("div", { staticClass: "row industry-card__row" }, [
+            : industry.industryWage === null && industry.percentage === null
+              ? _c("div", { staticClass: "row industry-card__row noData" }, [
                   _c("div", { staticClass: "col-3" }, [
                     _vm._v(_vm._s(industry.title))
                   ]),
@@ -73589,7 +73600,21 @@ var render = function() {
                 ])
               : _vm._e()
         ])
-      })
+      }),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                _vm.toggleIndustryVisibility()
+              }
+            }
+          },
+          [_c("p", [_vm._v("Complete List of Industries")])]
+        )
+      ])
     ],
     2
   )
