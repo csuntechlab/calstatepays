@@ -22,6 +22,11 @@ class IndustryControllerTest extends TestCase
         $this->industryContract = Mockery::spy(IndustryContract::class);
     }
 
+    /**
+     * Api route : api/industry/naics-titles
+     * method : IndustryController@getAllIndustryNaicsTitles
+     * test uses dependency injection 
+     */
     public function testGetAllIndustryNaicsTitles()
     {
         $data = json_encode([
@@ -32,9 +37,6 @@ class IndustryControllerTest extends TestCase
             ],
         ]);
 
-        // api route is
-        // /api/industry/naics-titles
-        // method is IndustryContrller@getAllIndustryNaicsTitles
         $this->industryContract
             ->shouldReceive('getAllIndustryNaicsTitles')
             ->once()
@@ -45,6 +47,11 @@ class IndustryControllerTest extends TestCase
         $this->assertEquals($response,$data);
     }
 
+    /**
+     * Api route : api/industry/naics-titles
+     * method : IndustryController@getAllIndustryNaicsTitles
+     * test assert status
+     */
     public function testGetAllIndustryNaicsTitlesReturns200Status()
     {
         $this->seed('Naics_Titles_TableSeeder');
@@ -52,6 +59,11 @@ class IndustryControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Api route : api/industry/images/5021/northridge
+     * method : IndustryController@testGetIndustryPopulationByRankWithImages
+     * test uses dependency injection 
+     */
      public function testGetIndustryPopulationByRankWithImages()
      {
         $hegis_code = 5021;
@@ -73,10 +85,6 @@ class IndustryControllerTest extends TestCase
                 "industryWage" => 71888
             ]
         ]);
-        
-         // route is
-         // /api/industry/5021/northridge
-         // method is IndustryContrller@getIndustryPopulationByRankWithImages
          $this->industryContract
          ->shouldReceive('getIndustryPopulationByRankWithImages')
          ->once()
@@ -86,14 +94,50 @@ class IndustryControllerTest extends TestCase
         $controller = new IndustryController($this->industryContract);
         $response = $controller->getIndustryPopulationByRankWithImages($hegis_code,$universityName);
         $this->assertEquals($response,$data);
-
      }
 
-     public function testReturns200StatusGetIndustryPopulationByRankWithImages()
+         /**
+     * Api route : api/industry/images/5021/northridge
+     * method : IndustryController@testGetIndustryPopulationByRank
+     * test uses dependency injection 
+     */
+    public function testGetIndustryPopulationByRank()
+    {
+       $hegis_code = 5021;
+       $universityName = 'northridge';
+
+       $data = json_encode([
+           [
+               "title" => "Professional, Scientific, & Technical Skills",
+               "percentage" => 42,
+               "rank" => 1,
+               "industryWage" => 70860
+           ],
+           [
+               "title" => "Finance & Insurance",
+               "percentage" => 12,
+               "rank" => 2,
+               "industryWage" => 71888
+           ]
+       ]);
+        $this->industryContract
+        ->shouldReceive('getIndustryPopulationByRank')
+        ->once()
+        ->with($hegis_code,$universityName)
+        ->andReturn($data);
+
+       $controller = new IndustryController($this->industryContract);
+       $response = $controller->getIndustryPopulationByRank($hegis_code,$universityName);
+       $this->assertEquals($response,$data);
+    }
+    
+     /**
+     * Api route : api/industry/images/5021/northridge
+     * method : IndustryController@testGetIndustryPopulationByRankWithImages
+     * test assert status
+     */
+     public function testReturn200StatusGetIndustryPopulationByRankWithImages()
      {
-         // route is
-         // /api/industry/5021/northridge
-         // method is IndustryContrller@getIndustryPopulationByRankWithImages
          $this->seed('University_Majors_TableSeeder');
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
@@ -110,12 +154,14 @@ class IndustryControllerTest extends TestCase
          ]);
          $response->assertStatus(200);
      }
-     
-     public function testGetIndustryPopulationByRank()
+
+     /**
+     * Api route : api/industry/5021/northridge
+     * method : IndustryController@testGetIndustryPopulationByRank
+     * test assert status
+     */
+     public function testReturn200GetIndustryPopulationByRank()
      {
-         // route is
-         // /api/industry/5021/northridge
-         // method is IndustryContrller@getIndustryPopulationByRankWithImages
          $this->seed('University_Majors_TableSeeder');
          $this->seed('Master_Industry_Path_Types_Table_Seeder');
          $this->seed('Master_Industry_Wages_Table_Seeder');
