@@ -285,5 +285,34 @@ class MajorControllerTest extends TestCase
          $this->assertEquals($test,$response);
      }
 
+     /**
+      *  major/hegis-codes/university/{university_name}
+      *  major/hegis-codes/university/all_cal_states
+      */
+     public function test_Aggregate_api_for_earnings()
+     {
+        $universityName = 'all_cal_states';
+
+        $structure = [ 
+                [
+                    "major"=> "Accounting",
+                    "hegis_code"=> 5021,
+                    "university_id"=> 0
+                ]
+            ];
+
+        $this->retriever
+            ->shouldReceive('getAllHegisCodesByUniversity')
+            ->once()
+            ->with($universityName)
+            ->andReturn($structure);
+
+        $response = $this->controller->getAllHegisCodesByUniversity($universityName);
+        $this->assertEquals($response,$structure);
+
+
+
+     }
+
 
 }
