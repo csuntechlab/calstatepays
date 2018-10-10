@@ -79,4 +79,80 @@ class IndustryServiceTest extends TestCase
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
          $response = $this->industryService->getIndustryPopulationByRank(22111, 'northridge');
      }
+
+     /**
+      * industry/images/{hegis_code}/{university_name}
+      * function IndustryController@getIndustryPopulationByRankWithImages
+      * Use phpunit to get real api vals, test agaisnt real api output from route
+      */
+     public function test_Aggregate_getIndustryPopulationByRankWithImages()
+     {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_Industry_Path_Types_Table_Seeder');
+        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Population_Table_Seeder');
+        $this->seed('Naics_Titles_TableSeeder');
+
+        $university_name = 'all_cal_states';
+        $hegis = 5021;
+        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis,$university_name);
+
+        /**
+         * real values from the actual array
+         * this is position 0 from the real api
+         * it is possible for the need to switch these values in the future
+         * in order to make the test pass
+         */
+        $truthyArray = [   
+            [
+                "title"=> "Professional, Scientific, & Technical Skills",
+                "percentage"=> 40.0,
+                "rank"=> 1,
+                "image"=> "/img/industries/professional_scientific_technical_skills.png",
+                "industryWage"=> '69328'
+            ]
+        ];
+
+        $this->assertEquals($truthyArray[0]['title'],$response[0]['title']);
+        $this->assertEquals($truthyArray[0]['percentage'],$response[0]['percentage']);
+        $this->assertEquals($truthyArray[0]['rank'],$response[0]['rank']);
+        $this->assertEquals(asset($truthyArray[0]['image']), $response[0]['image']);
+        $this->assertEquals($truthyArray[0]['industryWage'],$response[0]['industryWage']);
+     }
+
+    /**
+     *   api is industry/{hegis_code}/{universityName}
+     *   testing agaisnt real api vals
+     *   (same as above)
+     */
+
+     public function test_Aggregate_getIndustryPopulationByRank()
+     {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_Industry_Path_Types_Table_Seeder');
+        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Population_Table_Seeder');
+        $this->seed('Naics_Titles_TableSeeder');
+
+        $university_name = 'all_cal_states';
+        $hegis = 5021;
+        $response = $this->industryService->getIndustryPopulationByRank($hegis,$university_name);
+
+        $truthyArray = [
+                [
+                    "title"=> "Professional, Scientific, & Technical Skills",
+                    "percentage"=> 40.0,
+                    "rank"=> 1,
+                    "industryWage"=> "69328"
+                ]
+            ];
+            
+        $this->assertEquals($truthyArray[0]['title'],$response[0]['title']);
+        $this->assertEquals($truthyArray[0]['percentage'],$response[0]['percentage']);
+        $this->assertEquals($truthyArray[0]['rank'],$response[0]['rank']);
+        $this->assertEquals($truthyArray[0]['industryWage'],$response[0]['industryWage']);
+     }
+
 }

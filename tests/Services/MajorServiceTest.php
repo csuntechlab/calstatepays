@@ -60,7 +60,7 @@ class MajorServiceTest extends TestCase
         $univ_id = 25;    
         // $message = ''.$univ_id.' was not found';
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-        $this->majorService->getAllHegisCodesByUnive1211203rsity($univ_id);
+        $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
 
      public function test_getAllFieldOfStudies_ensure_returns_all_rows() 
@@ -161,7 +161,7 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
     }
 
-    public function test_Aggregate_data_test_response()
+    public function test_Aggregate_data_test_response_of_getMajorEarnings()
     {
         $this->seed('University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
@@ -170,6 +170,61 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getMajorEarnings($hegis,$aggregate);
         $this->assertEquals($response[0]['entry_status'],"FTF + FTT");
         $this->assertArrayHasKey('major_path_wage',$response[0]);
+    }
+
+    public function test_Aggregate_getFREData_ensure_returns_all_keys()
+    {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_FRE_Page_Data_TableSeeder');
+        $request = new Request();
+        $request->major = 22021;
+        $request->university = 'all_cal_states';
+        $request->age_range = 1;
+        $request->education_level = 'FTF';
+        $request->annual_earnings = 1;
+        $request->financial_aid = 1;
+       
+        $response = $this->majorService->getFREData($request);
+
+        $this->arrayHasKey("student_background_id", $response);
+        $this->arrayHasKey("annual_earnings_id", $response);
+        $this->arrayHasKey("annual_financial_aid_id", $response);
+        $this->arrayHasKey("time_to_degree", $response);
+        $this->arrayHasKey("earnings_5_years", $response);
+        $this->arrayHasKey("roi", $response);
+    }
+
+    public function test_Aggregate_return_major_count()
+    {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $university_name = 'all_cal_states';
+        $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
+
+        $expected_count = 166;
+        $this->assertEquals($expected_count,count($response));
+    }
+
+    public function test_Able_to_retrieve_Aggregate_major_earnings()
+    {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('University_Majors_TableSeeder');
+        $response = $this->majorService->getMajorEarnings(5021, 'all_cal_states');
+
+        // need 12 arrays response, year responses, 2,5,10,15
+        // some college -> 4, bacc -> 4, post -> 4 ..
+        // these tests make sure the relationships were made
+        $this->assertEquals(12,count($response));
+        $this->assertEquals(4,count($response[0]['major_path_wage']));
+
+        $this->assertArrayHasKey("id", $response[0]);
+        $this->assertArrayHasKey("student_path", $response[0]);
+        $this->assertArrayHasKey("university_majors_id", $response[0]);
+        $this->assertArrayHasKey("entry_status", $response[0]);
+        $this->assertArrayHasKey("years", $response[0]);
+        $this->assertArrayHasKey("major_path_wage", $response[0]);
+        
     }
 
 }
