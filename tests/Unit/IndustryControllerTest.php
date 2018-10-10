@@ -171,4 +171,60 @@ class IndustryControllerTest extends TestCase
          ]);
          $response->assertStatus(200);
      }
+
+     /**
+      *  Aggregate tests
+      *  industry/images/5021/all_cal_states
+      */
+      public function test_return_Aggregate_getIndustryPopulationByRankWithImages()
+      {
+        $hegis = 5021;
+        $university = 'all_cal_states';
+
+        $firstResult = json_encode([
+            [
+            "title"=> "Professional, Scientific, & Technical Skills",
+            "percentage"=> 40,
+            "rank"=> 1,
+            "industryWage"=> 69328
+            ]
+        ]);
+        
+        $this->retriever
+                ->shouldReceive('getIndustryPopulationByRankWithImages')
+                ->once()
+                ->with($hegis,$university)
+                ->andReturn($firstResult);
+
+        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university);
+        $this->assertEquals($firstResult,$response);
+      }
+
+      /**
+      *  Aggregate tests
+      *  industry/5021/all_cal_states
+      */
+      public function test_return_Aggregate_expected_count_output_getIndustryPopulationByRank()
+      {
+        $hegis = 5021;
+        $university = 'all_cal_states';
+        
+        $firstResult = json_encode([
+            [
+            "title"=> "Professional, Scientific, & Technical Skills",
+            "percentage"=> 40,
+            "rank"=> 1,
+            "industryWage"=> 69328
+            ]
+        ]);
+        
+        $this->retriever
+                ->shouldReceive('getIndustryPopulationByRank')
+                ->once()
+                ->with($hegis,$university)
+                ->andReturn($firstResult);
+
+        $response = $this->controller->getIndustryPopulationByRank($hegis,$university);
+        $this->assertEquals($firstResult,$response);
+      }
 }

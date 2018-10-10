@@ -261,4 +261,29 @@ class MajorControllerTest extends TestCase
          $count = count($response[0]);
          $this->assertEquals($countOfExpectedDropdowns, $count);
      }
+
+     /**
+      * Aggregate earning test
+      * api is /api/major/5021/all_cal_states
+      */
+     public function test_Aggregate_major_earnings()
+     {
+         $major = 5021;
+         $universityName = 'all_cal_states';
+
+         $serviceResponse = [  0 =>  ["id" => 1133,"student_path" => 1,"university_majors_id" => 114,"entry_status" => "FTF + FTT","years" => 2,"potential_number_of_students" => 1,"major_path_wage" =>  ["major_path_id" => 1133,"_25th" => 37054,"_50th" => 52538,"_75th" => 61637,]],1 => ["id" => 1134,"student_path" => 1,"university_majors_id" => 114,"entry_status" => "FTF + FTT","years" => 5,"potential_number_of_students" => 1,"major_path_wage" =>  ["major_path_id" => 1134,"_25th" => 46624,"_50th" => 65392,"_75th" => 80988,]],2 => ["id" => 1135,"student_path" => 1,"university_majors_id" => 114,"entry_status" => "FTF + FTT","years" => 10,"potential_number_of_students" => 1,"major_path_wage" => ["major_path_id" => 1135,"_25th" => 54709,"_50th" => 80466,"_75th" => 104968,]],3 => ["id" => 1136,"student_path" => 1,"university_majors_id" => 114,"entry_status" => "FTF + FTT","years" => 15,"potential_number_of_students" => 1,"major_path_wage" =>  ["major_path_id" => 1136,"_25th" => 65692,"_50th" => 96147,"_75th" => 134611,]]];
+
+        $test =  ["majorId" => 5021,"universityName" => "all_cal_states","someCollege" => [2 =>  ["_25th" => null,"_50th" => null,"_75th" => null,],5 =>  ["_25th" => null,"_50th" => null,"_75th" => null,],10 =>  ["_25th" => null,"_50th" => null,"_75th" => null,],15 =>  ["_25th" => null,"_50th" => null,"_75th" => null,]],"bachelors" =>  [2 =>  ["major_path_id" => 1133,"_25th" => 37054,"_50th" => 52538,"_75th" => 61637,],5 =>  ["major_path_id" => 1134,"_25th" => 46624,"_50th" => 65392,"_75th" => 80988,],10 =>  ["major_path_id" => 1135,"_25th" => 54709,"_50th" => 80466,"_75th" => 104968,],15 =>  ["major_path_id" => 1136,"_25th" => 65692,"_50th" => 96147,"_75th" => 134611,]],"postBacc" =>  [2 => ["_25th" => null,"_50th" => null,"_75th" => null,],5 =>  ["_25th" => null,"_50th" => null,"_75th" => null,],10 =>  ["_25th" => null,"_50th" => null,"_75th" => null,],15 => ["_25th" => null,"_50th" => null,"_75th" => null,]]];
+
+         $this->retriever
+                ->shouldReceive('getMajorEarnings')
+                ->once()
+                ->with($major,$universityName)
+                ->andReturn($serviceResponse);
+
+         $response = $this->controller->getMajorEarnings($major,$universityName);
+         $this->assertEquals($test,$response);
+     }
+
+
 }
