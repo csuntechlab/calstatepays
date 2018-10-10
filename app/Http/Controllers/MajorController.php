@@ -27,7 +27,8 @@ class MajorController extends Controller
         return $this->majorRetriever->getAllFieldOfStudies();
     }
     
-    public function getMajorEarnings($hegis_code,$university_name){
+    public function getMajorEarnings($hegis_code,$university_name)
+    {
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
         foreach($university_major as $data) {
@@ -98,7 +99,8 @@ class MajorController extends Controller
         return $studentPathArray;
     }
 
-    public function getFREData(Request $request){
+    public function getFREData(Request $request)
+    {
         $freData = $this->majorRetriever->getFREData($request);
         return [
             'majorId'      => $request->major,
