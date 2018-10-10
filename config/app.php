@@ -191,6 +191,7 @@ return [
         App\Providers\MajorServiceProvider::class,
         App\Providers\StudentPathServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
+        App\Providers\UniversityServiceProvider::class,
 
     ],
 
