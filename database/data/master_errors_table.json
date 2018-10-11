@@ -1,92 +1,92 @@
 [
     {
+        "hegis_codes": 12032,
         "id": 1,
         "major": "Nursing",
-        "hegis_codes": 12032,
         "university_id": 70
     },
     {
+        "hegis_codes": 5061,
         "id": 13,
         "major": "Management",
-        "hegis_codes": 5061,
         "university_id": 70
     },
     {
+        "hegis_codes": 5062,
         "id": 14,
         "major": "Management",
-        "hegis_codes": 5062,
         "university_id": 70
     },
     {
+        "hegis_codes": 12031,
         "id": 47,
         "major": "Nursing",
-        "hegis_codes": 12031,
         "university_id": 70
     },
     {
+        "hegis_codes": 21025,
         "id": 70,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21025,
         "university_id": 70
     },
     {
+        "hegis_codes": 21031,
         "id": 71,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21031,
         "university_id": 70
     },
     {
+        "hegis_codes": 10110101,
         "id": 89,
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_codes": 1011,
         "university_id": 0
     },
     {
+        "hegis_codes": 10410104,
         "id": 90,
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_codes": 1041,
         "university_id": 0
     },
     {
+        "hegis_codes": 80110803,
         "id": 134,
         "major": "Education",
-        "hegis_codes": 8011,
         "university_id": 0
     },
     {
+        "hegis_codes": 210252103,
         "id": 218,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21025,
         "university_id": 0
     },
     {
+        "hegis_codes": 21031,
         "id": 219,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21031,
         "university_id": 0
     },
     {
+        "hegis_codes": 229904999,
         "id": 235,
         "major": "Women's Studies",
-        "hegis_codes": 22990,
         "university_id": 0
     },
     {
+        "hegis_codes": 229962299,
         "id": 238,
         "major": "Women's Studies",
-        "hegis_codes": 22996,
         "university_id": 0
     },
     {
+        "hegis_codes": 490124901,
         "id": 241,
         "major": "Women's Studies",
-        "hegis_codes": 49012,
         "university_id": 0
     },
     {
+        "hegis_codes": 49081,
         "id": 245,
         "major": "Education",
-        "hegis_codes": 49081,
         "university_id": 0
     }
 ]
