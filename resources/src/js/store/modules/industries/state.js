@@ -2,4 +2,5 @@
 
 export default {
     industries: [],
+    industryMajorsByField: []
 }
