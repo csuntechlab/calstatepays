@@ -6,5 +6,8 @@ export default {
     },
     setDataPage({commit}, payload){
         commit(_global.SET_DATA_PAGE, payload);
+    },
+    setError({commit},payload){
+        commit(_global.ERROR_ALERT,payload);
     }
 }
