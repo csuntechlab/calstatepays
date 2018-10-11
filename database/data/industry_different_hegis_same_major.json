@@ -1,90 +1,122 @@
 [
     {
-        "id": 3,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_at_exit": 1011
-    },
-    {
-        "id": 4,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_at_exit": 1041
-    },
-    {
-        "id": 48,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Education",
-        "hegis_at_exit": 8011
-    },
-    {
-        "id": 143,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Women's Studies",
-        "hegis_at_exit": 22990
-    },
-    {
-        "id": 146,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Women's Studies",
-        "hegis_at_exit": 22996
-    },
-    {
-        "id": 149,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Women's Studies",
-        "hegis_at_exit": 49012
-    },
-    {
-        "id": 152,
-        "campus": 0,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
-        "major": "Education",
-        "hegis_at_exit": 49081
-    },
-    {
-        "id": 162,
         "campus": 70,
-        "student_path": 1,
-        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
         "major": "Nursing",
-        "hegis_at_exit": 12032
-    },
-    {
-        "id": 174,
-        "campus": 70,
         "student_path": 1,
         "entry_status": "FTF + FTT",
+        "id": 1
+    },
+    {
+        "campus": 70,
+        "hegis_at_exit": 5061,
         "major": "Management",
-        "hegis_at_exit": 5061
-    },
-    {
-        "id": 175,
-        "campus": 70,
         "student_path": 1,
         "entry_status": "FTF + FTT",
+        "id": 13
+    },
+    {
+        "campus": 70,
+        "hegis_at_exit": 5062,
         "major": "Management",
-        "hegis_at_exit": 5062
-    },
-    {
-        "id": 207,
-        "campus": 70,
         "student_path": 1,
         "entry_status": "FTF + FTT",
+        "id": 14
+    },
+    {
+        "campus": 70,
+        "hegis_at_exit": 12031,
         "major": "Nursing",
-        "hegis_at_exit": 12031
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 47
+    },
+    {
+        "campus": 70,
+        "hegis_at_exit": 21025,
+        "major": "Recreation Management & Administration",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 70
+    },
+    {
+        "campus": 70,
+        "hegis_at_exit": 21031,
+        "major": "Recreation Management & Administration",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 71
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 10110101,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 89
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 10410104,
+        "major": "Agriculture/Agricultural Science & Horticulture",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 90
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 80110803,
+        "major": "Education",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 134
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 210252103,
+        "major": "Recreation Management & Administration",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 218
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 21031,
+        "major": "Recreation Management & Administration",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 219
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 229904999,
+        "major": "Women's Studies",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 235
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 229962299,
+        "major": "Women's Studies",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 238
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 490124901,
+        "major": "Women's Studies",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 241
+    },
+    {
+        "campus": 0,
+        "hegis_at_exit": 49081,
+        "major": "Education",
+        "student_path": 1,
+        "entry_status": "FTF + FTT",
+        "id": 245
     }
 ]

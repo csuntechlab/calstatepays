@@ -22,6 +22,7 @@ class Data_Frame_Sanitizer:
 
         #TODO: COMMENT THIS OUT FOR ERROR CHECKING
         self.df = self.df.loc[self.df['student_path'].isin([1,2,4])]
+        self.df = self.df.loc[self.df['entry_status'].isin(['FTF + FTT'])]
         pass
     
     def sanitize_null_values(self):
@@ -75,6 +76,9 @@ class Data_Frame_Sanitizer:
     def column_sanitize_get_first_5(self,columnName):
         self.df[columnName] = self.df[columnName].str.slice(start=0, stop=5)
     
+    def column_sanitize_get_first_9(self,columnName):
+        self.df[columnName] = self.df[columnName].str.slice(start=0, stop=9)
+    
     # converts to floats...
     def string_number_to_real_number(self,columnName):
         self.remove_comma(columnName) 
@@ -93,7 +97,10 @@ class Data_Frame_Sanitizer:
     def sanitizeCommon(self):
         self.df['hegis_at_exit'] = self.df['hegis_at_exit'].astype(str)
         self.column_sanitize_plus('hegis_at_exit')
-        self.column_sanitize_get_first_5('hegis_at_exit')
+        if self.df['campus'][1] == 0:
+            self.column_sanitize_get_first_9('hegis_at_exit')
+        else:
+            self.column_sanitize_get_first_5('hegis_at_exit')
         self.string_number_to_real_number('hegis_at_exit')
 
     ### Both jsons will need this method
