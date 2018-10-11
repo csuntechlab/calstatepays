@@ -46750,8 +46750,6 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    console.log(payload);
-    console.log("yeet");
     window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(
     // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
     function (response) {
