@@ -73646,8 +73646,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "row",
-          staticStyle: { "border-top": "1px gray solid" },
+          staticClass: "row industry-bar__collapse",
           attrs: { id: "toggleAccordinAction" },
           on: {
             click: function($event) {
@@ -73684,7 +73683,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { attrs: { id: "toggleAccordinAction" } }, [
+    return _c("p", { attrs: { id: "toggleAccordinAction" } }, [
       _vm._v("Only View Available Data"),
       _c("i", { staticClass: "fa fa-chevron-up" })
     ])

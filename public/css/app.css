@@ -23938,6 +23938,12 @@ input[type="button"]:focus {
   margin-bottom: 10px;
 }
 
+.industry-bar__collapse {
+  text-align: left;
+  color: #4DB7C6;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .pfre-bar {
   border-radius: 50px;
   margin-bottom: 0.5rem;
