@@ -7979,7 +7979,7 @@ button.bg-dark:focus {
   margin-right: 1rem !important;
 }
 
-.mb-3, .CSUDataImgBanner__dataTitle,
+.mb-3, .csu-card, .CSUDataImgBanner__dataTitle,
 .my-3 {
   margin-bottom: 1rem !important;
 }
@@ -13394,7 +13394,7 @@ p {
   margin-right: 16px !important;
 }
 
-.mb-3, .CSUDataImgBanner__dataTitle {
+.mb-3, .csu-card, .CSUDataImgBanner__dataTitle {
   margin-bottom: 16px !important;
 }
 
@@ -22643,9 +22643,7 @@ html {
 }
 
 .csu-card {
-  min-height: 75vh;
-  margin-bottom: 50px;
-  min-height: 60vh;
+  min-height: 50vh;
 }
 
 @media screen and (max-width: 767px) {
@@ -22696,9 +22694,8 @@ html {
 }
 
 .industry-card {
-  margin-bottom: 50px;
+  min-height: 30vh;
   padding: 2rem;
-  min-height: 75vh;
 }
 
 .industry-card__row {

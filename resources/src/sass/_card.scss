@@ -7,9 +7,8 @@
 
 .csu-card{
     @extend %card-base;
-    min-height: 75vh;
-    margin-bottom: 50px;
-    min-height: 60vh;
+    @extend .mb-3 ;
+    min-height: 50vh;
     @media screen and (max-width: $break-small) {
         min-height: unset;
     }
@@ -46,9 +45,8 @@
 }
 
 .industry-card{
-    margin-bottom: 50px;
+    min-height: 30vh;
     padding: 2rem;
-    min-height: 75vh;
     @extend %card-base;
 }
 

@@ -74070,11 +74070,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-lg-9 col-12" },
-              [
-                _c("industry-progress", {
-                  staticClass: "card-item industry-card"
-                })
-              ],
+              [_c("industry-progress", { staticClass: "industry-card" })],
               1
             )
           ])
