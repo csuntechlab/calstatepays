@@ -46,8 +46,8 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="border-top:1px gray solid;">
-            <a @click="toggleIndustryVisibility()"><p>Only View Available Data</p></a>
+        <div @click="toggleIndustryVisibility()" class="row" id="toggleAccordinAction" style="border-top:1px gray solid;">
+            <span id="toggleAccordinAction">Only View Available Data<i class="fa fa-chevron-up"></i></span>
         </div>
     </div>
 </template>
@@ -61,13 +61,23 @@ export default {
             let thousands = dollarAmount.slice(0,-3);
             return thousands + ',' + hundreds;
         },
+
         toggleIndustryVisibility(){
             var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
+            var targetText = document.getElementById("toggleAccordinAction");
+            var viewAvailableIndustryText = 'Only View Available Data' + '<i class="fa fa-chevron-up"></i>';
+            var viewAllIndustryText = 'Complete List of Industries' + '<i class="fa fa-chevron-down"></i>';
             if(targetNoData.length > 0) {
-                for (var i=0; i < targetNoData.length; i++) {
+                for (var i = 0; i < targetNoData.length; i++) {
                     // console.log(targetNoData[i]);
                     targetNoData[i].classList.toggle("d-none");
                 }
+            }
+            if(targetText.innerHTML === viewAllIndustryText || targetText.innerHTML == 'Complete List of Industries'){
+                targetText.innerHTML = viewAvailableIndustryText;
+            }
+            else {
+                targetText.innerHTML = viewAllIndustryText;
             }
         }
 	},

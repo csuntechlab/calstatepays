@@ -73471,11 +73471,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         toggleIndustryVisibility: function toggleIndustryVisibility() {
             var targetNoData = document.querySelectorAll('div.row.industry-card__row.noData');
+            var targetText = document.getElementById("toggleAccordinAction");
+            var viewAvailableIndustryText = 'Only View Available Data' + '<i class="fa fa-chevron-up"></i>';
+            var viewAllIndustryText = 'Complete List of Industries' + '<i class="fa fa-chevron-down"></i>';
             if (targetNoData.length > 0) {
                 for (var i = 0; i < targetNoData.length; i++) {
                     // console.log(targetNoData[i]);
                     targetNoData[i].classList.toggle("d-none");
                 }
+            }
+            if (targetText.innerHTML === viewAllIndustryText || targetText.innerHTML == 'Complete List of Industries') {
+                targetText.innerHTML = viewAvailableIndustryText;
+            } else {
+                targetText.innerHTML = viewAllIndustryText;
             }
         }
     },
@@ -73637,20 +73645,17 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row", staticStyle: { "border-top": "1px gray solid" } },
-        [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.toggleIndustryVisibility()
-                }
-              }
-            },
-            [_c("p", [_vm._v("Only View Available Data")])]
-          )
-        ]
+        {
+          staticClass: "row",
+          staticStyle: { "border-top": "1px gray solid" },
+          attrs: { id: "toggleAccordinAction" },
+          on: {
+            click: function($event) {
+              _vm.toggleIndustryVisibility()
+            }
+          }
+        },
+        [_vm._m(1)]
       )
     ],
     2
@@ -73673,6 +73678,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "industry-card__legend-salary" }),
         _vm._v("AVERAGE EARNINGS\n        ")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { attrs: { id: "toggleAccordinAction" } }, [
+      _vm._v("Only View Available Data"),
+      _c("i", { staticClass: "fa fa-chevron-up" })
     ])
   }
 ]
