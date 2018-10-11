@@ -82,6 +82,7 @@ class IndustryServiceTest extends TestCase
 
      /**
       * industry/images/{hegis_code}/{university_name}
+      * industry/images/5021/all_cal_states
       * function IndustryController@getIndustryPopulationByRankWithImages
       * Use phpunit to get real api vals, test agaisnt real api output from route
       */
@@ -107,7 +108,7 @@ class IndustryServiceTest extends TestCase
         $truthyArray = [   
             [
                 "title"=> "Professional, Scientific, & Technical Skills",
-                "percentage"=> 40.0,
+                "percentage"=> 39.0,
                 "rank"=> 1,
                 "image"=> "/img/industries/professional_scientific_technical_skills.png",
                 "industryWage"=> '69328'
@@ -143,7 +144,7 @@ class IndustryServiceTest extends TestCase
         $truthyArray = [
                 [
                     "title"=> "Professional, Scientific, & Technical Skills",
-                    "percentage"=> 40.0,
+                    "percentage"=> 39.0,
                     "rank"=> 1,
                     "industryWage"=> "69328"
                 ]
