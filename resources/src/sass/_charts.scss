@@ -63,7 +63,7 @@
 		text-align: left;
 		color: $blue-light;
 		border-top: 1px solid rgba(0,0,0,.1);
-		:hover{
+		&:hover{
 			color: $oxford;
 		}
 	}
