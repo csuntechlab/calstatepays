@@ -1,260 +1,92 @@
 [
     {
+        "hegis_codes": 1211203,
         "id": 1,
-        "university_id": 70,
         "major": "Nursing",
-        "hegis_codes": 1211203
+        "university_id": 70
     },
     {
+        "hegis_codes": 5061,
         "id": 13,
-        "university_id": 70,
         "major": "Management",
-        "hegis_codes": 5061
+        "university_id": 70
     },
     {
+        "hegis_codes": 5062,
         "id": 14,
-        "university_id": 70,
         "major": "Management",
-        "hegis_codes": 5062
+        "university_id": 70
     },
     {
-        "id": 34,
-        "university_id": 70,
-        "major": "Manufacturing Engineering",
-        "hegis_codes": 9134
-    },
-    {
+        "hegis_codes": 12031,
         "id": 47,
-        "university_id": 70,
         "major": "Nursing",
-        "hegis_codes": 12031
+        "university_id": 70
     },
     {
+        "hegis_codes": 21025,
         "id": 70,
-        "university_id": 70,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21025
+        "university_id": 70
     },
     {
+        "hegis_codes": 21031,
         "id": 71,
-        "university_id": 70,
         "major": "Recreation Management & Administration",
-        "hegis_codes": 21031
+        "university_id": 70
     },
     {
-        "id": 86,
-        "university_id": 70,
-        "major": "Education",
-        "hegis_codes": 49993
-    },
-    {
-        "id": 91,
-        "university_id": 70,
-        "major": "Education",
-        "hegis_codes": 8011
-    },
-    {
-        "id": 98,
-        "university_id": 70,
-        "major": "Educational Leadership (EdD)",
-        "hegis_codes": 82720821
-    },
-    {
-        "id": 99,
-        "university_id": 70,
-        "major": "Educational Leadership (EdD)",
-        "hegis_codes": 8273
-    },
-    {
-        "id": 103,
-        "university_id": 70,
-        "major": "Manufacturing Engineering",
-        "hegis_codes": 9211
-    },
-    {
-        "id": 112,
-        "university_id": 0,
-        "major": "Nursing",
-        "hegis_codes": 1211203
-    },
-    {
-        "id": 113,
-        "university_id": 0,
+        "hegis_codes": 10110101,
+        "id": 89,
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_codes": 10110101
+        "university_id": 0
     },
     {
-        "id": 114,
-        "university_id": 0,
+        "hegis_codes": 10410104,
+        "id": 90,
         "major": "Agriculture/Agricultural Science & Horticulture",
-        "hegis_codes": 10410104
+        "university_id": 0
     },
     {
-        "id": 123,
-        "university_id": 0,
-        "major": "Latin/Central American Studies",
-        "hegis_codes": 30810308
-    },
-    {
-        "id": 152,
-        "university_id": 0,
-        "major": "Journalism",
-        "hegis_codes": 60210602
-    },
-    {
-        "id": 156,
-        "university_id": 0,
-        "major": "Computer Science and Information Technology",
-        "hegis_codes": 70110701
-    },
-    {
-        "id": 158,
-        "university_id": 0,
+        "hegis_codes": 80110803,
+        "id": 134,
         "major": "Education",
-        "hegis_codes": 80110803
+        "university_id": 0
     },
     {
-        "id": 159,
-        "university_id": 0,
-        "major": "Child Development",
-        "hegis_codes": 82310823
+        "hegis_codes": 210252103,
+        "id": 218,
+        "major": "Recreation Management & Administration",
+        "university_id": 0
     },
     {
-        "id": 177,
-        "university_id": 0,
-        "major": "Industrial Management & Technology",
-        "hegis_codes": 91320913
+        "hegis_codes": 21031,
+        "id": 219,
+        "major": "Recreation Management & Administration",
+        "university_id": 0
     },
     {
-        "id": 188,
-        "university_id": 0,
-        "major": "Art",
-        "hegis_codes": 100211002
+        "hegis_codes": 229904999,
+        "id": 235,
+        "major": "Women's Studies",
+        "university_id": 0
     },
     {
-        "id": 213,
-        "university_id": 0,
-        "major": "Speech Language Pathology",
-        "hegis_codes": 12204
-    },
-    {
-        "id": 215,
-        "university_id": 0,
-        "major": "Medical Technology",
-        "hegis_codes": 122311223
-    },
-    {
+        "hegis_codes": 229962299,
         "id": 238,
-        "university_id": 0,
-        "major": "Psychology",
-        "hegis_codes": 200112001
-    },
-    {
-        "id": 242,
-        "university_id": 0,
-        "major": "Recreation Management & Administration",
-        "hegis_codes": 210252103
-    },
-    {
-        "id": 243,
-        "university_id": 0,
-        "major": "Recreation Management & Administration",
-        "hegis_codes": 21031
-    },
-    {
-        "id": 259,
-        "university_id": 0,
         "major": "Women's Studies",
-        "hegis_codes": 229904999
+        "university_id": 0
     },
     {
-        "id": 262,
-        "university_id": 0,
+        "hegis_codes": 490124901,
+        "id": 241,
         "major": "Women's Studies",
-        "hegis_codes": 229962299
+        "university_id": 0
     },
     {
-        "id": 265,
-        "university_id": 0,
-        "major": "Women's Studies",
-        "hegis_codes": 490124901
-    },
-    {
-        "id": 269,
-        "university_id": 0,
+        "hegis_codes": 49081,
+        "id": 245,
         "major": "Education",
-        "hegis_codes": 49081
-    },
-    {
-        "id": 277,
-        "university_id": 0,
-        "major": "Psychology",
-        "hegis_codes": 20013
-    },
-    {
-        "id": 280,
-        "university_id": 0,
-        "major": "Latin/Central American Studies",
-        "hegis_codes": 3081
-    },
-    {
-        "id": 283,
-        "university_id": 0,
-        "major": "Journalism",
-        "hegis_codes": 6021
-    },
-    {
-        "id": 285,
-        "university_id": 0,
-        "major": "Computer Science and Information Technology",
-        "hegis_codes": 7011
-    },
-    {
-        "id": 287,
-        "university_id": 0,
-        "major": "Education",
-        "hegis_codes": 8011
-    },
-    {
-        "id": 293,
-        "university_id": 0,
-        "major": "Child Development",
-        "hegis_codes": 8231
-    },
-    {
-        "id": 303,
-        "university_id": 0,
-        "major": "Industrial Management & Technology",
-        "hegis_codes": 9132
-    },
-    {
-        "id": 305,
-        "university_id": 0,
-        "major": "Art",
-        "hegis_codes": 10021
-    },
-    {
-        "id": 308,
-        "university_id": 0,
-        "major": "Nursing",
-        "hegis_codes": 120311203
-    },
-    {
-        "id": 312,
-        "university_id": 0,
-        "major": "Speech Language Pathology",
-        "hegis_codes": 12203
-    },
-    {
-        "id": 313,
-        "university_id": 0,
-        "major": "Medical Technology",
-        "hegis_codes": 12231
-    },
-    {
-        "id": 318,
-        "university_id": 0,
-        "major": "Psychology",
-        "hegis_codes": 20011
+        "university_id": 0
     }
 ]
