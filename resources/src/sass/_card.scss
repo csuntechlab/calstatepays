@@ -9,6 +9,7 @@
     @extend %card-base;
     @extend .mb-3 ;
     min-height: 50vh;
+    
     @media screen and (max-width: $break-small) {
         min-height: unset;
     }

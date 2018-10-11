@@ -23912,7 +23912,7 @@ input[type="button"]:focus {
   color: #2f98bf;
 }
 
-.industry-card__legend-salary {
+.industry-bar__legend-salary {
   height: 0;
   width: 10px;
   padding-bottom: 10px;
@@ -23921,7 +23921,7 @@ input[type="button"]:focus {
   display: inline-block;
 }
 
-.industry-card__legend-percentage {
+.industry-bar__legend-percentage {
   height: 0;
   width: 10px;
   padding-bottom: 10px;
@@ -23942,6 +23942,10 @@ input[type="button"]:focus {
   text-align: left;
   color: #4DB7C6;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.industry-bar__collapse :hover {
+  color: #476A6F;
 }
 
 .pfre-bar {
