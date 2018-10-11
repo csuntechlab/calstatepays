@@ -75,7 +75,9 @@ export default {
         ]),
         changeCampus: function(university){
             sessionStorage.setItem("selectedUniversity", university);
-            this.$store.dispatch('setUniversity',university);
+            this.$store.dispatch('setUniversity', university);
+            this.$store.dispatch('fetchMajors', university);
+            this.$store.dispatch('fetchFieldOfStudies', university);
             this.showModal = false;
         }
     }
