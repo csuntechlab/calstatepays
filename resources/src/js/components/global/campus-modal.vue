@@ -12,26 +12,21 @@
             <v-card-text class="campus-modal">
                 <div class="row" >
                     <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                        <figure  @click="changeCampus(universities[index].short_name);">
-                            <img :src= item.url role="button" class="btn">    
-                            <figcaption> {{item.name}}</figcaption>                    
+                        <figure v-if="universities[index].opt_in===1"  @click="changeCampus(universities[index].short_name);">
+                            <img :src= item.url role="button" class="btn opted-in">   
+                            <figcaption> {{item.name}}</figcaption>
                         </figure>
-                    </div>
-                        <!-- place holder for all button -->
-                    <div class="col-12 col-sm">
-                        <figure>
-                            <img src=" https://via.placeholder.com/123x112?" role="button" class="btn">    
-                            <figcaption>All campuses(Not Available)</figcaption>                    
+                        <figure v-else class="opted-out"> 
+                            <img :src= item.url role="button" class="btn">   
+                            <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
                         </figure>
                     </div>
                 </div>
             </v-card-text>
         </v-card> 
         </v-dialog>
-        
         </div>
         
-       
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
@@ -48,18 +43,14 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/poly_seal.svg',name:'Pomona'},
                 {url :window.baseUrl+ '/img/csuseals/northridge_seal.svg',name:'Northridge'},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island'},
+                {url: "https://via.placeholder.com/123x112?",
+                name: "All campuses(Not Available)"}
             ]
         }
     },
     mounted(){
-        var sessionData = sessionStorage.getItem("selectedUniversity");
-        if(sessionData === null){
-        this.showModal = true;
-        }
-        else {
-            this.$store.dispatch("setUniversity", sessionData);
-        }
-
+        this.checkSessionData();
+        this.checkOptIn();
     },
     computed:{
         ...mapGetters([
@@ -67,7 +58,8 @@ export default {
             'selectedUniversity',
             'selectedDataPage',
             'modalCheck'
-        ])
+        ]),
+        
     },
     methods:{
         ...mapActions([
@@ -77,6 +69,29 @@ export default {
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity',university);
             this.showModal = false;
+        },
+        checkOptIn: function(){
+            console.log("are we ioe=");
+            this.universities.forEach((university, index) => {
+                if(university.opt_in=== 1){
+                    console.log(`${university.name} opts in`);
+                    // this.universitySeals[index].name ="this opts in";
+                }
+                else{
+                    console.log(`${university.name} opts out`);
+                    // this.universitySeals[index].name ="this opts out";
+                }
+            });
+            console.log("ghjgjkl")
+        },
+        checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if(sessionData === null){
+                this.showModal = true;
+            }
+            else {
+            this.$store.dispatch("setUniversity", sessionData);
+            }
         }
     }
 

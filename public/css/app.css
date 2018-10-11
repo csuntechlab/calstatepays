@@ -23131,12 +23131,24 @@ figcaption {
   text-align: center;
 }
 
-.campus-modal img:hover {
+.campus-modal figcaption:hover {
+  cursor: pointer;
+}
+
+.campus-modal .opted-in:hover {
   background-color: darkgray;
 }
 
-.campus-modal figcaption:hover {
-  cursor: pointer;
+.campus-modal .opted-out img {
+  opacity: .3;
+}
+
+.campus-modal .opted-out img:hover {
+  cursor: no-drop;
+}
+
+.campus-modal .opted-out figcaption:hover {
+  cursor: no-drop;
 }
 
 .site-header {
