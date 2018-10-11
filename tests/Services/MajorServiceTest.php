@@ -166,7 +166,7 @@ class MajorServiceTest extends TestCase
         $this->seed('University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
         $aggregate = 'all_cal_states';
-        $hegis = 1211203;
+        $hegis = 11081;
         $response = $this->majorService->getMajorEarnings($hegis,$aggregate);
         $this->assertEquals($response[0]['entry_status'],"FTF + FTT");
         $this->assertArrayHasKey('major_path_wage',$response[0]);
@@ -202,7 +202,7 @@ class MajorServiceTest extends TestCase
         $university_name = 'all_cal_states';
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
 
-        $expected_count = 166;
+        $expected_count = 164;
         $this->assertEquals($expected_count,count($response));
     }
 

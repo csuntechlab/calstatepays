@@ -253,7 +253,7 @@ class MajorControllerTest extends TestCase
      {
          $engineeringId = 6;
          $universityName = 'northridge';
-         $countOfExpectedDropdowns = 8;
+         $countOfExpectedDropdowns = 9;
          $response = $this->json('GET', "/api/major/hegis-codes/". $universityName."/".$engineeringId);
 
          //use [0] because front end is handling an array of an array of arrays
