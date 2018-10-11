@@ -73647,7 +73647,6 @@ var render = function() {
         "div",
         {
           staticClass: "row industry-bar__collapse",
-          attrs: { id: "toggleAccordinAction" },
           on: {
             click: function($event) {
               _vm.toggleIndustryVisibility()

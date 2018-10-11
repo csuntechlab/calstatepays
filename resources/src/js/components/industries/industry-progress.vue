@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div @click="toggleIndustryVisibility()" class="row industry-bar__collapse" id="toggleAccordinAction">
+        <div @click="toggleIndustryVisibility()" class="row industry-bar__collapse">
             <p id="toggleAccordinAction">Only View Available Data<i class="fa fa-chevron-up"></i></p>
         </div>
     </div>
