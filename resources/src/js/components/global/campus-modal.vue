@@ -1,32 +1,34 @@
 <template>
-  <div @keyup.enter="showModal= false">
-        <button @click="showModal = true" role="button">
-                <slot name="change button"></slot>
-        </button>
-        
-    <v-dialog  v-model="showModal" persistent>
-        <v-card  class=" text-xs-center black--text">
-            <v-card-title class="headline grey lighten-2 ">
-                Choose Your Campus
-            </v-card-title>
-            <v-card-text class="campus-modal">
-                <div class="row" >
-                    <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                        <figure v-if="universities[index].opt_in===1"  @click="changeCampus(universities[index].short_name);">
-                            <img :src= item.url role="button" class="btn opted-in">   
-                            <figcaption> {{item.name}}</figcaption>
-                        </figure>
-                        <figure v-else class="opted-out"> 
-                            <img :src= item.url role="button" class="btn">   
-                            <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
-                        </figure>
+<div>
+      <div @keyup.enter="showModal= false">
+            <button @click="showModal = true" role="button">
+                    <slot name="change button"></slot>
+            </button>
+            
+        <v-dialog  v-model="showModal" persistent >
+            <v-card  class=" text-xs-center black--text" v-if="universities[0]">
+                <v-card-title class="headline grey lighten-2 ">
+                    Choose Your Campus
+                </v-card-title>
+                <v-card-text class="campus-modal">
+                    <div class="row" >
+                        <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
+                            <figure v-if="universities[index].opt_in === 1"  @click="changeCampus(universities[index].short_name);">
+                                <img :src= item.url role="button" class="btn opted-in">   
+                                <figcaption> {{item.name}}</figcaption>
+                            </figure>
+                            <figure v-else class="opted-out"> 
+                                <img :src= item.url role="button" class="btn">   
+                                <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
+                            </figure>
+                        </div>
                     </div>
-                </div>
-            </v-card-text>
-        </v-card> 
-        </v-dialog>
-        </div>
-        
+                </v-card-text>
+            </v-card> 
+            </v-dialog>
+            
+    </div>
+</div>  
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
@@ -50,7 +52,6 @@ export default {
     },
     mounted(){
         this.checkSessionData();
-        this.checkOptIn();
     },
     computed:{
         ...mapGetters([
@@ -69,20 +70,6 @@ export default {
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity',university);
             this.showModal = false;
-        },
-        checkOptIn: function(){
-            console.log("are we ioe=");
-            this.universities.forEach((university, index) => {
-                if(university.opt_in=== 1){
-                    console.log(`${university.name} opts in`);
-                    // this.universitySeals[index].name ="this opts in";
-                }
-                else{
-                    console.log(`${university.name} opts out`);
-                    // this.universitySeals[index].name ="this opts out";
-                }
-            });
-            console.log("ghjgjkl")
         },
         checkSessionData() {
             var sessionData = sessionStorage.getItem("selectedUniversity");

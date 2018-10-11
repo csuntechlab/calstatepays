@@ -48545,6 +48545,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48558,7 +48560,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     mounted: function mounted() {
         this.checkSessionData();
-        this.checkOptIn();
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
@@ -48567,19 +48568,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity', university);
             this.showModal = false;
-        },
-        checkOptIn: function checkOptIn() {
-            console.log("are we ioe=");
-            this.universities.forEach(function (university, index) {
-                if (university.opt_in === 1) {
-                    console.log(university.name + ' opts in');
-                    // this.universitySeals[index].name ="this opts in";
-                } else {
-                    console.log(university.name + ' opts out');
-                    // this.universitySeals[index].name ="this opts out";
-                }
-            });
-            console.log("ghjgjkl");
         },
         checkSessionData: function checkSessionData() {
             var sessionData = sessionStorage.getItem("selectedUniversity");
@@ -48601,116 +48589,126 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      on: {
-        keyup: function($event) {
-          if (
-            !("button" in $event) &&
-            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-          ) {
-            return null
-          }
-          _vm.showModal = false
-        }
-      }
-    },
-    [
-      _c(
-        "button",
-        {
-          attrs: { role: "button" },
-          on: {
-            click: function($event) {
-              _vm.showModal = true
+  return _c("div", [
+    _c(
+      "div",
+      {
+        on: {
+          keyup: function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
             }
+            _vm.showModal = false
           }
-        },
-        [_vm._t("change button")],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { persistent: "" },
-          model: {
-            value: _vm.showModal,
-            callback: function($$v) {
-              _vm.showModal = $$v
-            },
-            expression: "showModal"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            { staticClass: " text-xs-center black--text" },
-            [
-              _c("v-card-title", { staticClass: "headline grey lighten-2 " }, [
-                _vm._v("\n              Choose Your Campus\n          ")
-              ]),
-              _vm._v(" "),
-              _c("v-card-text", { staticClass: "campus-modal" }, [
-                _c(
-                  "div",
-                  { staticClass: "row" },
-                  _vm._l(_vm.universitySeals, function(item, index) {
-                    return _c(
-                      "div",
-                      { key: index, staticClass: "col-12 col-sm" },
+        }
+      },
+      [
+        _c(
+          "button",
+          {
+            attrs: { role: "button" },
+            on: {
+              click: function($event) {
+                _vm.showModal = true
+              }
+            }
+          },
+          [_vm._t("change button")],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "v-dialog",
+          {
+            attrs: { persistent: "" },
+            model: {
+              value: _vm.showModal,
+              callback: function($$v) {
+                _vm.showModal = $$v
+              },
+              expression: "showModal"
+            }
+          },
+          [
+            _vm.universities[0]
+              ? _c(
+                  "v-card",
+                  { staticClass: " text-xs-center black--text" },
+                  [
+                    _c(
+                      "v-card-title",
+                      { staticClass: "headline grey lighten-2 " },
                       [
-                        _vm.universities[index].opt_in === 1
-                          ? _c(
-                              "figure",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    _vm.changeCampus(
-                                      _vm.universities[index].short_name
-                                    )
-                                  }
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "btn opted-in",
-                                  attrs: { src: item.url, role: "button" }
-                                }),
-                                _vm._v(" "),
-                                _c("figcaption", [
-                                  _vm._v(" " + _vm._s(item.name))
-                                ])
-                              ]
-                            )
-                          : _c("figure", { staticClass: "opted-out" }, [
-                              _c("img", {
-                                staticClass: "btn",
-                                attrs: { src: item.url, role: "button" }
-                              }),
-                              _vm._v(" "),
-                              _c("figcaption", [
-                                _vm._v(_vm._s(item.name) + " "),
-                                _c("br"),
-                                _vm._v(" "),
-                                _c("small", [_vm._v("(Coming Soon)")])
-                              ])
-                            ])
+                        _vm._v(
+                          "\r\n                    Choose Your Campus\r\n                "
+                        )
                       ]
-                    )
-                  })
+                    ),
+                    _vm._v(" "),
+                    _c("v-card-text", { staticClass: "campus-modal" }, [
+                      _c(
+                        "div",
+                        { staticClass: "row" },
+                        _vm._l(_vm.universitySeals, function(item, index) {
+                          return _c(
+                            "div",
+                            { key: index, staticClass: "col-12 col-sm" },
+                            [
+                              _vm.universities[index].opt_in === 1
+                                ? _c(
+                                    "figure",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          _vm.changeCampus(
+                                            _vm.universities[index].short_name
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "btn opted-in",
+                                        attrs: { src: item.url, role: "button" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("figcaption", [
+                                        _vm._v(" " + _vm._s(item.name))
+                                      ])
+                                    ]
+                                  )
+                                : _c("figure", { staticClass: "opted-out" }, [
+                                    _c("img", {
+                                      staticClass: "btn",
+                                      attrs: { src: item.url, role: "button" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("figcaption", [
+                                      _vm._v(_vm._s(item.name) + " "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("small", [_vm._v("(Coming Soon)")])
+                                    ])
+                                  ])
+                            ]
+                          )
+                        })
+                      )
+                    ])
+                  ],
+                  1
                 )
-              ])
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+              : _vm._e()
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
