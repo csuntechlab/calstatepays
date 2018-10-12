@@ -233,14 +233,30 @@
 	img{
 		height: 8rem; 
 		text-align: center;
-		&:hover{
-			background-color: darkgray;
-		}
-		
 	}
 	figcaption{
 		&:hover{
 			cursor: pointer;
 		}
+	}
+	.opted-in{
+		&:hover{
+			background-color: darkgray;
+		}
+	}
+	.opted-out{
+		img{
+			opacity: .3;
+			&:hover{
+				cursor: no-drop;
+			}
+			
+		}
+		figcaption{
+			&:hover{
+				cursor: no-drop;
+			}
+		}
+		
 	}
 }
