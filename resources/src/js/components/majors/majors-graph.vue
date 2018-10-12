@@ -1,5 +1,5 @@
 <template>
-<chart :initOptions="chartDimensions" :options="polar"></chart>
+<chart :options="polar"></chart>
 </template>
 <script>
 import ECharts from 'vue-echarts/components/ECharts';
@@ -49,16 +49,6 @@ export default {
             }
             else {
                 return 0
-            }
-        },
-        chartDimensions(){
-            if(this.windowWidth >= 1000) {
-                return {
-                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
-                    // width: this.windowWidth * .7
-                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
-                }
-               
             }
         },
         toolTipTitles1(){

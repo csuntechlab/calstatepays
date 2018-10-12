@@ -46769,7 +46769,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/industry/images/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -48547,9 +48547,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48557,16 +48554,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             showModal: false,
-            universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }]
+            universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }, { url: "https://via.placeholder.com/123x112?",
+                name: "All campuses(Not Available)" }]
         };
     },
     mounted: function mounted() {
-        var sessionData = sessionStorage.getItem("selectedUniversity");
-        if (sessionData === null) {
-            this.showModal = true;
-        } else {
-            this.$store.dispatch("setUniversity", sessionData);
-        }
+        this.checkSessionData();
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
@@ -48574,7 +48567,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         changeCampus: function changeCampus(university) {
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity', university);
+            this.$store.dispatch('fetchMajors', university);
+            this.$store.dispatch('fetchFieldOfStudies', university);
             this.showModal = false;
+        },
+        checkSessionData: function checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if (sessionData === null) {
+                this.showModal = true;
+            } else {
+                this.$store.dispatch("setUniversity", sessionData);
+            }
         }
     })
 
@@ -48588,121 +48591,126 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      on: {
-        keyup: function($event) {
-          if (
-            !("button" in $event) &&
-            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-          ) {
-            return null
-          }
-          _vm.showModal = false
-        }
-      }
-    },
-    [
-      _c(
-        "button",
-        {
-          attrs: { role: "button" },
-          on: {
-            click: function($event) {
-              _vm.showModal = true
+  return _c("div", [
+    _c(
+      "div",
+      {
+        on: {
+          keyup: function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
             }
+            _vm.showModal = false
           }
-        },
-        [_vm._t("change button")],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { persistent: "" },
-          model: {
-            value: _vm.showModal,
-            callback: function($$v) {
-              _vm.showModal = $$v
-            },
-            expression: "showModal"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            { staticClass: " text-xs-center black--text" },
-            [
-              _c("v-card-title", { staticClass: "headline grey lighten-2 " }, [
-                _vm._v("\n              Choose Your Campus\n          ")
-              ]),
-              _vm._v(" "),
-              _c("v-card-text", { staticClass: "campus-modal" }, [
-                _c(
-                  "div",
-                  { staticClass: "row" },
+        }
+      },
+      [
+        _c(
+          "button",
+          {
+            attrs: { role: "button" },
+            on: {
+              click: function($event) {
+                _vm.showModal = true
+              }
+            }
+          },
+          [_vm._t("change button")],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "v-dialog",
+          {
+            attrs: { persistent: "" },
+            model: {
+              value: _vm.showModal,
+              callback: function($$v) {
+                _vm.showModal = $$v
+              },
+              expression: "showModal"
+            }
+          },
+          [
+            _vm.universities[0]
+              ? _c(
+                  "v-card",
+                  { staticClass: " text-xs-center black--text" },
                   [
-                    _vm._l(_vm.universitySeals, function(item, index) {
-                      return _c(
+                    _c(
+                      "v-card-title",
+                      { staticClass: "headline grey lighten-2 " },
+                      [
+                        _vm._v(
+                          "\r\n                    Choose Your Campus\r\n                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("v-card-text", { staticClass: "campus-modal" }, [
+                      _c(
                         "div",
-                        { key: index, staticClass: "col-12 col-sm" },
-                        [
-                          _c(
-                            "figure",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.changeCampus(
-                                    _vm.universities[index].short_name
-                                  )
-                                }
-                              }
-                            },
+                        { staticClass: "row" },
+                        _vm._l(_vm.universitySeals, function(item, index) {
+                          return _c(
+                            "div",
+                            { key: index, staticClass: "col-12 col-sm" },
                             [
-                              _c("img", {
-                                staticClass: "btn",
-                                attrs: { src: item.url, role: "button" }
-                              }),
-                              _vm._v(" "),
-                              _c("figcaption", [
-                                _vm._v(" " + _vm._s(item.name))
-                              ])
+                              _vm.universities[index].opt_in === 1
+                                ? _c(
+                                    "figure",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          _vm.changeCampus(
+                                            _vm.universities[index].short_name
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "btn opted-in",
+                                        attrs: { src: item.url, role: "button" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("figcaption", [
+                                        _vm._v(" " + _vm._s(item.name))
+                                      ])
+                                    ]
+                                  )
+                                : _c("figure", { staticClass: "opted-out" }, [
+                                    _c("img", {
+                                      staticClass: "btn",
+                                      attrs: { src: item.url, role: "button" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("figcaption", [
+                                      _vm._v(_vm._s(item.name) + " "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("small", [_vm._v("(Coming Soon)")])
+                                    ])
+                                  ])
                             ]
                           )
-                        ]
+                        })
                       )
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-12 col-sm" }, [
-                      _c("figure", [
-                        _c("img", {
-                          staticClass: "btn",
-                          attrs: {
-                            src: " https://via.placeholder.com/123x112?",
-                            role: "button"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("figcaption", [
-                          _vm._v("All campuses(Not Available)")
-                        ])
-                      ])
                     ])
                   ],
-                  2
+                  1
                 )
-              ])
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+              : _vm._e()
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52793,15 +52801,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return 0;
             }
         },
-        chartDimensions: function chartDimensions() {
-            if (this.windowWidth >= 1000) {
-                return {
-                    height: document.getElementById('majorGraphWrapperIndex-0').clientHeight,
-                    // width: this.windowWidth * .7
-                    width: document.getElementById('majorGraphWrapperIndex-0').clientWidth
-                };
-            }
-        },
         toolTipTitles1: function toolTipTitles1() {
             var title = "Some College";
             if (this.educationLevel !== "allDegrees") {
@@ -52960,7 +52959,7 @@ var content = __webpack_require__(258);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(259)("09e563c0", content, false, {});
+var update = __webpack_require__(259)("fa1dca66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71273,9 +71272,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("chart", {
-    attrs: { initOptions: _vm.chartDimensions, options: _vm.polar }
-  })
+  return _c("chart", { attrs: { options: _vm.polar } })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -71990,7 +71987,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "pt-md-5" }, [
     _vm.educationLevel == "allDegrees"
       ? _c("div", [
           _c("div", { staticClass: "row justify-content-center" }, [
@@ -75644,7 +75641,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n      "
+              "\r\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\r\n      "
             )
           ]
         )
@@ -75653,7 +75650,7 @@ var render = function() {
       _c("sub-nav"),
       _vm._v(" "),
       _c("div", { staticClass: "splashPage" }, [
-        _vm._v("       \n            Coming soon\n    ")
+        _vm._v("       \r\n            Coming soon\r\n    ")
       ])
     ],
     1
