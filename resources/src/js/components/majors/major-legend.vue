@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pt-md-5">
         <div v-if="educationLevel == 'allDegrees'">
             <div class="row justify-content-center">
                 <h5 v-show="windowSize > 500" class="text-center majors-header">Graduation Level: </h5>
