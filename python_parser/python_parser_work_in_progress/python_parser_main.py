@@ -31,8 +31,6 @@ def get_csv_files_in_this_directory():
             majorsCsvFiles.append(csv.replace('.csv',''))
         elif 'industry' in csv:
             industryCsvFiles.append(csv.replace('.csv',''))
-        elif 'aggregate' in csv:
-            aggregateCsvFiles.append(csv.replace('.csv',''))
 
     return majorsCsvFiles,industryCsvFiles,aggregateCsvFiles
 
@@ -48,9 +46,6 @@ def main( iterateCsvFiles = IterateCsvFiles(), aggregateIterateCsvFiles = Aggreg
 
     print( industryCsvFiles )
     iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
-
-    print( aggregateCsvFiles )
-    # aggregateIterateCsvFiles.aggregate_majors_csv_to_json(aggregateCsvFiles)
     
 if __name__ == "__main__": main()
     
