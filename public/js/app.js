@@ -46769,7 +46769,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/industry/images/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -52953,7 +52953,7 @@ var content = __webpack_require__(258);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(259)("09e563c0", content, false, {});
+var update = __webpack_require__(259)("fa1dca66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75542,7 +75542,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n      "
+              "\r\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\r\n      "
             )
           ]
         )
@@ -75551,7 +75551,7 @@ var render = function() {
       _c("sub-nav"),
       _vm._v(" "),
       _c("div", { staticClass: "splashPage" }, [
-        _vm._v("       \n            Coming soon\n    ")
+        _vm._v("       \r\n            Coming soon\r\n    ")
       ])
     ],
     1
