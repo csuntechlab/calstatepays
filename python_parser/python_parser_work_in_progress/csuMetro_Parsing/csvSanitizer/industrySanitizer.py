@@ -53,24 +53,24 @@ class DFHelper():
         ERROR Data Frame code here 
         '''
     
-        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
-        errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
-        errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
-        duplicateHegisCodeDifferentMajor = errorDataFrame
+        differentHegisSameMajor = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
+        differentHegisSameMajor = differentHegisSameMajor.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
+        differentHegisSameMajor.loc[:,'id'] = range(1, len(differentHegisSameMajor) + 1) 
+        sameHegisDifferentMajor = differentHegisSameMajor
 
-        print(errorDataFrame.head())
+        print(differentHegisSameMajor.head())
 
-        ids = errorDataFrame["id"]
-        errorBoolean = errorDataFrame.duplicated(subset=['campus','major'], keep=False)
-        errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
-        # self.json_output('master_errors_table',errorDataFrame)
+        ids = differentHegisSameMajor["id"]
+        errorBoolean = differentHegisSameMajor.duplicated(subset=['campus','major'], keep=False)
+        differentHegisSameMajor = differentHegisSameMajor[ids.isin( ids[ errorBoolean ] ) ]
+        # self.json_output('master_errors_table',differentHegisSameMajor)
         
-        ids = duplicateHegisCodeDifferentMajor["id"]       
-        errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
-        duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
+        ids = sameHegisDifferentMajor["id"]       
+        errorBoolean = sameHegisDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
+        sameHegisDifferentMajor = sameHegisDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
 
-        return errorDataFrame,duplicateHegisCodeDifferentMajor
-        # self.json_output('master_duplicate_hegis_code_different_major_table',duplicateHegisCodeDifferentMajor)
+        return differentHegisSameMajor,sameHegisDifferentMajor
+        # self.json_output('master_duplicate_hegis_code_different_major_table',sameHegisDifferentMajor)
         pass
 
     def get_Industry_Data_Frame(self):
