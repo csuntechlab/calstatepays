@@ -1,882 +1,882 @@
 [
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12032,
-        "major": "Nursing-12032",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Nursing-12032",
         "id": 1
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 3085,
-        "major": "Latin/Central American Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Latin/Central American Studies",
         "id": 2
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4011,
-        "major": "Biology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Biology",
         "id": 3
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4111,
-        "major": "Microbiology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Microbiology",
         "id": 4
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4141,
-        "major": "Biochemistry",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Biochemistry",
         "id": 5
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4152,
-        "major": "Biomedical Physics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Biomedical Physics",
         "id": 6
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4171,
-        "major": "Cell and Molecular Biology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Cell and Molecular Biology",
         "id": 7
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 4201,
-        "major": "Environmental Biology & Ecology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Environmental Biology & Ecology",
         "id": 8
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5011,
-        "major": "Business Administration",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Business Administration",
         "id": 9
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5012,
-        "major": "Business Education",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Business Education",
         "id": 10
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5021,
-        "major": "Accounting",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Accounting",
         "id": 11
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5041,
-        "major": "Finance",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Finance",
         "id": 12
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5061,
-        "major": "Management-5061",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Management-5061",
         "id": 13
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5062,
-        "major": "Management-5062",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Management-5062",
         "id": 14
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5064,
-        "major": "Production and Operations Management",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Production and Operations Management",
         "id": 15
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5072,
-        "major": "Management Systems Analysis / Operations Research",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Management Systems Analysis / Operations Research",
         "id": 16
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5091,
-        "major": "Marketing",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Marketing",
         "id": 17
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5111,
-        "major": "Real Estate",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Real Estate",
         "id": 18
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5131,
-        "major": "International Business",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "International Business",
         "id": 19
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5151,
-        "major": "Human Resources/Personnel Management",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Human Resources/Personnel Management",
         "id": 20
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 5995,
-        "major": "Business Law",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Business Law",
         "id": 21
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 6022,
-        "major": "Journalism",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Journalism",
         "id": 22
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 6031,
-        "major": "Radio/Television/Broadcast",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Radio/Television/Broadcast",
         "id": 23
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 7012,
-        "major": "Computer Science and Information Technology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Computer Science and Information Technology",
         "id": 24
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 7021,
-        "major": "Information Systems",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Information Systems",
         "id": 25
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 8231,
-        "major": "Child Development",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Child Development",
         "id": 26
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 8351,
-        "major": "Kinesiology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Kinesiology",
         "id": 27
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 8375,
-        "major": "Athletic Training",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Athletic Training",
         "id": 28
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9011,
-        "major": "Engineering",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Engineering",
         "id": 29
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9081,
-        "major": "Civil Engineering",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Civil Engineering",
         "id": 30
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9091,
-        "major": "Electrical Engineering",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Electrical Engineering",
         "id": 31
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9094,
-        "major": "Computer Engineering",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Computer Engineering",
         "id": 32
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9101,
-        "major": "Mechanical Engineering",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Mechanical Engineering",
         "id": 33
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9134,
-        "major": "Manufacturing Engineering-9134",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Manufacturing Engineering-9134",
         "id": 34
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 9254,
-        "major": "Construction Engineering Technology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Construction Engineering Technology",
         "id": 35
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10021,
-        "major": "Art",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Art",
         "id": 36
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10031,
-        "major": "Art History",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Art History",
         "id": 37
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10041,
-        "major": "Music - Performance",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Music - Performance",
         "id": 38
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10051,
-        "major": "Music",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Music",
         "id": 39
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10071,
-        "major": "Theatre Arts",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Theatre Arts",
         "id": 40
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10091,
-        "major": "Graphic Design",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Graphic Design",
         "id": 41
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 10101,
-        "major": "Cinema/Film",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Cinema/Film",
         "id": 42
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 11031,
-        "major": "World Languages and Cultures/Translation",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "World Languages and Cultures/Translation",
         "id": 43
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 11051,
-        "major": "Spanish",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Spanish",
         "id": 44
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12011,
-        "major": "Health Science",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Health Science",
         "id": 45
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12021,
-        "major": "Health Care Management/Administration",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Health Care Management/Administration",
         "id": 46
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12031,
-        "major": "Nursing-12031",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Nursing-12031",
         "id": 47
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12140,
-        "major": "Public Health",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Public Health",
         "id": 48
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12141,
-        "major": "Health Education",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Health Education",
         "id": 49
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12142,
-        "major": "Environmental and Occupational Health",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Environmental and Occupational Health",
         "id": 50
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12201,
-        "major": "Communicative Disorders",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Communicative Disorders",
         "id": 51
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12231,
-        "major": "Medical Technology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Medical Technology",
         "id": 52
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 12253,
-        "major": "Radiologic Science & Technology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Radiologic Science & Technology",
         "id": 53
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 13061,
-        "major": "Family and Consumer Sciences",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Family and Consumer Sciences",
         "id": 54
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15011,
-        "major": "English",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "English",
         "id": 55
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15051,
-        "major": "Linguistics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Linguistics",
         "id": 56
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15061,
-        "major": "Speech Communication",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Speech Communication",
         "id": 57
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15091,
-        "major": "Philosophy",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Philosophy",
         "id": 58
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15101,
-        "major": "Religious Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Religious Studies",
         "id": 59
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15102,
-        "major": "Jewish Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Jewish Studies",
         "id": 60
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 15991,
-        "major": "Humanities",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Humanities",
         "id": 61
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 17011,
-        "major": "Mathematics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Mathematics",
         "id": 62
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 17021,
-        "major": "Statistics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Statistics",
         "id": 63
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 17031,
-        "major": "Applied Mathematics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Applied Mathematics",
         "id": 64
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 19021,
-        "major": "Physics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Physics",
         "id": 65
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 19051,
-        "major": "Chemistry",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Chemistry",
         "id": 66
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 19141,
-        "major": "Geology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Geology",
         "id": 67
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 19171,
-        "major": "Earth Science",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Earth Science",
         "id": 68
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 20011,
-        "major": "Psychology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Psychology",
         "id": 69
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 21025,
-        "major": "Recreation Management & Administration-21025",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Recreation Management & Administration-21025",
         "id": 70
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 21031,
-        "major": "Recreation Management & Administration-21031",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Recreation Management & Administration-21031",
         "id": 71
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 21041,
-        "major": "Social Work",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Social Work",
         "id": 72
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 21044,
-        "major": "Deaf Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Deaf Studies",
         "id": 73
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22021,
-        "major": "Anthropology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Anthropology",
         "id": 74
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22041,
-        "major": "Economics",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Economics",
         "id": 75
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22051,
-        "major": "History",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "History",
         "id": 76
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22061,
-        "major": "Geography",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Geography",
         "id": 77
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22071,
-        "major": "Political Science",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Political Science",
         "id": 78
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22081,
-        "major": "Sociology",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Sociology",
         "id": 79
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22111,
-        "major": "African-American Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "African-American Studies",
         "id": 80
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22131,
-        "major": "Mexican-American Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Mexican-American Studies",
         "id": 81
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22141,
-        "major": "Urban Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Urban Studies",
         "id": 82
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 49991,
-        "major": "Women's Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Women's Studies",
         "id": 83
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 22996,
-        "major": "Asian/Asian-American Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Asian/Asian-American Studies",
         "id": 84
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 49012,
-        "major": "Liberal Studies",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Liberal Studies",
         "id": 85
     },
     {
+        "entry_stat": "FTF + FTT",
         "campus": 70,
         "hegis_at_exit": 49993,
-        "major": "Education-49993",
         "student_path": 1,
-        "entry_stat": "FTF + FTT",
+        "major": "Education-49993",
         "id": 86
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 5022,
-        "major": "Taxation",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Taxation",
         "id": 87
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 6011,
-        "major": "Communications",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Communications",
         "id": 88
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 6034,
-        "major": "Screenwriting",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Screenwriting",
         "id": 89
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 7052,
-        "major": "Software Engineering",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Software Engineering",
         "id": 90
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8011,
-        "major": "Education-8011",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Education-8011",
         "id": 91
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8021,
-        "major": "Elementary Education",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Elementary Education",
         "id": 92
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8031,
-        "major": "Secondary Education",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Secondary Education",
         "id": 93
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8181,
-        "major": "Special Education",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Special Education",
         "id": 94
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8221,
-        "major": "Educational Psychology",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Educational Psychology",
         "id": 95
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8261,
-        "major": "Counseling and Guidance",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Counseling and Guidance",
         "id": 96
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8271,
-        "major": "Educational Administration",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Educational Administration",
         "id": 97
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8211,
-        "major": "Educational Leadership (EdD)-8211",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Educational Leadership (EdD)-8211",
         "id": 98
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8273,
-        "major": "Educational Leadership (EdD)-8273",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Educational Leadership (EdD)-8273",
         "id": 99
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 8351,
-        "major": "Kinesiology/Physical Education",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Kinesiology/Physical Education",
         "id": 100
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 9084,
-        "major": "Structural Engineering",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Structural Engineering",
         "id": 101
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 9132,
-        "major": "Industrial Management & Technology",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Industrial Management & Technology",
         "id": 102
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 9211,
-        "major": "Manufacturing Engineering-9211",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Manufacturing Engineering-9211",
         "id": 103
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 10022,
-        "major": "Art - Studio/Performance",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Art - Studio/Performance",
         "id": 104
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 12122,
-        "major": "Physical Therapy",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Physical Therapy",
         "id": 105
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 12171,
-        "major": "Genetic Counseling",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Genetic Counseling",
         "id": 106
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 15081,
-        "major": "Teaching English to Speakers of Other Languages",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Teaching English to Speakers of Other Languages",
         "id": 107
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 21021,
-        "major": "Public Administration",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Public Administration",
         "id": 108
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 49993,
-        "major": "Special Major (Interdisciplinary)",
         "student_path": 5,
-        "entry_stat": "Postbacc",
+        "major": "Special Major (Interdisciplinary)",
         "id": 109
     },
     {
+        "entry_stat": "Postbacc",
         "campus": 70,
         "hegis_at_exit": 12032,
-        "major": "Undeclared/Unknown",
         "student_path": 6,
-        "entry_stat": "Postbacc",
+        "major": "Undeclared/Unknown",
         "id": 110
     }
 ]

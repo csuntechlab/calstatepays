@@ -37,7 +37,11 @@ class UniversitiesDataFrameErrorChecker():
     df['hegis_at_exit'] = df['hegis_at_exit'].astype(str)
     # df['hegis_at_exit'] = pd.to_numeric(df['hegis_at_exit'], errors='coerce')
     df = df.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
-    df.loc[:,'id'] = range(1, len(df) + 1) 
+    lenOfDf = len(df) + self.globalIndx
+    print(lenOfDf)
+    print(self.globalIndx)
+    df.loc[:,'id'] = range(self.globalIndx,lenOfDf) 
+    self.globalIndx = lenOfDf
     # print(df)
     return df
   
@@ -69,16 +73,16 @@ class UniversitiesDataFrameErrorChecker():
 
     for row in output:
       hegis =  (row['hegis_at_exit'])
-      hegisDictionary[hegis] = self.globalIndx
+      index = row['id']
+      hegisDictionary[hegis] = index
 
       campus =  int(row['campus'])
       major =  (row['major'])
-      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.globalIndx }
+      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':index }
       universityMajorsId.append(dictRename)
       
       self.masterDF = df.append( dictRename , ignore_index=True)
       
-      self.globalIndx +=1
     del output
     
     dictionary  = {campusId:hegisDictionary}
