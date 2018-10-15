@@ -54,7 +54,7 @@ This will build and run the following containers:
 - A database administration GUI - Adminer, named **csumetro_adminer**
 - MySQL service, named **csumetro_db**
 
-⚠️ **Important** ⚠️ Inside the `docker-compose.yml` file, you will find the database configuration that needs to be included in the project's `.env` file. After you have done this you should be able to type `localhost:8080` on your favorite browser and see the application's landing page.
+⚠️ **Important** Inside the `docker-compose.yml` file, you will find the database configuration that needs to be included in the project's `.env` file. After you have done this you should be able to type `localhost:8080` on your favorite browser and see the application's landing page.
 
 ## Additional project set-up
 
@@ -129,7 +129,7 @@ $ yarn run watch
 
 **Note:** When you run this command on the terminal it starts a process that will continuously watch for front end resource changes. If you want to stop the process then simply issue `Ctrl+C`.
 
-⚠️ **Important:** ⚠️ Make sure you terminate the watch process before you start switching into different branches!
+⚠️ **Important:** Make sure you terminate the watch process before you start switching into different branches!
 
 ## Bugs and issues:
 
