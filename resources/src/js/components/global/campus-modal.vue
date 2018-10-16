@@ -1,9 +1,9 @@
 <template>
 <div>
-      <div @keyup.enter="showModal= false">
-            <button @click="showModal = true" role="button">
-                    <slot name="change button"></slot>
-            </button>
+    <div @keyup.enter="showModal= false">
+        <button @click="showModal = true" role="button">
+                <slot name="change button"></slot>
+        </button>
             
         <v-dialog  v-model="showModal" persistent >
             <v-card  class=" text-xs-center black--text" v-if="universities[0]">
@@ -15,7 +15,7 @@
                         <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
                             <figure v-if="universities[index].opt_in === 1"  @click="changeCampus(universities[index].short_name);">
                                 <img :src= item.url role="button" class="btn opted-in">   
-                                <figcaption> {{item.name}}</figcaption>
+                                <figcaption>{{item.name}}</figcaption>
                             </figure>
                             <figure v-else class="opted-out"> 
                                 <img :src= item.url role="button" class="btn">   
@@ -24,9 +24,8 @@
                         </div>
                     </div>
                 </v-card-text>
-            </v-card> 
-            </v-dialog>
-            
+            </v-card>
+        </v-dialog>
     </div>
 </div>  
 </template>
@@ -46,7 +45,8 @@ export default {
                 {url :window.baseUrl+ '/img/csuseals/northridge_seal.svg',name:'Northridge'},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island'},
                 {url: "https://via.placeholder.com/123x112?",
-                name: "All campuses(Not Available)"}
+                name: "All Campuses"
+                }
             ]
         }
     },
