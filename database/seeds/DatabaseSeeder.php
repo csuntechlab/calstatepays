@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
         $this->call(Master_Industry_Wages_Table_Seeder::class);
         $this->call(Population_Table_Seeder::class);
         $this->call(Master_FRE_Page_Data_TableSeeder::class);
-        
-        // $this->call(Same_Hegis_Different_Major_Error_Table_Seeder::class);
-        // $this->call(ERRORS_Universities_Majors_Seeder::class);
-        // $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
-        // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
+
+        $this->call(Same_Hegis_Different_Major_Error_Table_Seeder::class);
+        $this->call(ERRORS_Universities_Majors_Seeder::class);
+        $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
+        $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
     }
 }
