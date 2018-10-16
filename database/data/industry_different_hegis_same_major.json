@@ -1,1 +1,226 @@
-[]
+[
+    {
+        "entry_status": "FTF + FTT",
+        "id": 2,
+        "major": "Nursing",
+        "campus": 0,
+        "hegis_at_exit": 12032,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 12,
+        "major": "Asian/East Asian Studies",
+        "campus": 0,
+        "hegis_at_exit": 3071,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 13,
+        "major": "Latin/Central American Studies",
+        "campus": 0,
+        "hegis_at_exit": 3085,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 42,
+        "major": "Journalism",
+        "campus": 0,
+        "hegis_at_exit": 6022,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 46,
+        "major": "Computer Science and Information Technology",
+        "campus": 0,
+        "hegis_at_exit": 7028,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 49,
+        "major": "Child Development",
+        "campus": 0,
+        "hegis_at_exit": 8232,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 67,
+        "major": "Industrial Management & Technology",
+        "campus": 0,
+        "hegis_at_exit": 9133,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 78,
+        "major": "Art",
+        "campus": 0,
+        "hegis_at_exit": 10022,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 103,
+        "major": "Speech Language Pathology",
+        "campus": 0,
+        "hegis_at_exit": 12204,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 105,
+        "major": "Medical Technology",
+        "campus": 0,
+        "hegis_at_exit": 12232,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 128,
+        "major": "Psychology",
+        "campus": 0,
+        "hegis_at_exit": 20013,
+        "student_path": 1
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 166,
+        "major": "Asian/East Asian Studies",
+        "campus": 0,
+        "hegis_at_exit": 3021,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 167,
+        "major": "Latin/Central American Studies",
+        "campus": 0,
+        "hegis_at_exit": 3081,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 170,
+        "major": "Journalism",
+        "campus": 0,
+        "hegis_at_exit": 6021,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 172,
+        "major": "Computer Science and Information Technology",
+        "campus": 0,
+        "hegis_at_exit": 7011,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 180,
+        "major": "Child Development",
+        "campus": 0,
+        "hegis_at_exit": 8231,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 190,
+        "major": "Industrial Management & Technology",
+        "campus": 0,
+        "hegis_at_exit": 9132,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 192,
+        "major": "Art",
+        "campus": 0,
+        "hegis_at_exit": 10021,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 195,
+        "major": "Nursing",
+        "campus": 0,
+        "hegis_at_exit": 12033,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 199,
+        "major": "Speech Language Pathology",
+        "campus": 0,
+        "hegis_at_exit": 12203,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 200,
+        "major": "Medical Technology",
+        "campus": 0,
+        "hegis_at_exit": 12231,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 205,
+        "major": "Psychology",
+        "campus": 0,
+        "hegis_at_exit": 20011,
+        "student_path": 5
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 249,
+        "major": "Manufacturing Engineering",
+        "campus": 70,
+        "hegis_at_exit": 9134,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 301,
+        "major": "Education",
+        "campus": 70,
+        "hegis_at_exit": 49993,
+        "student_path": 1
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 306,
+        "major": "Education",
+        "campus": 70,
+        "hegis_at_exit": 8011,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 313,
+        "major": "Educational Leadership (EdD)",
+        "campus": 70,
+        "hegis_at_exit": 8211,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 314,
+        "major": "Educational Leadership (EdD)",
+        "campus": 70,
+        "hegis_at_exit": 8273,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 318,
+        "major": "Manufacturing Engineering",
+        "campus": 70,
+        "hegis_at_exit": 9211,
+        "student_path": 5
+    }
+]

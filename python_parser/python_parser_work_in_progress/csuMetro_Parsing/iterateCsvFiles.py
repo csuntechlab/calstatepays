@@ -15,7 +15,7 @@ from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
 
-
+from csuMetro_Parsing.dataframeToCSV import DfToCSV
 
 class IterateCsvFiles():
   
@@ -45,14 +45,22 @@ class IterateCsvFiles():
       MajorsPathsDataFrame = pd.DataFrame()
       MajorsPathWageDataFrame = pd.DataFrame()
 
+      powerUserDataFrame = pd.DataFrame()
+
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
         majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
+        
+        powerDataFrame =  majorSanitize.get_majors_dataframe()
+        powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True)
+
+
         majorDataFrame = majorSanitize.sanitize_Major() #sanitizes major
 
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
         
         universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
+
         
         jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,indexUniversityMajorsId, indexMajorPathId) #Returns the Json
         
@@ -75,6 +83,8 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
+      
+      DfToCSV(powerUserDataFrame,'_majors')
 
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
@@ -109,6 +119,8 @@ class IterateCsvFiles():
         industrySanitize = Sanitize_Industry(csv)
         industrySanitize.create_industry_with_df(naicsDictionary)
         masterIndustry = masterIndustry.append( industrySanitize.returnDf() , ignore_index=True)
+
+      DfToCSV(masterIndustry,'_industry')
 
       industryMasterHelper = DFHelper(masterIndustry)
       print("TEXT GOES HERE TEST")

@@ -1,1 +1,62 @@
-[]
+[
+    {
+        "hegis_codes": 8351,
+        "id": 27,
+        "university_id": 70,
+        "major": "Kinesiology"
+    },
+    {
+        "hegis_codes": 49993,
+        "id": 86,
+        "university_id": 70,
+        "major": "Education"
+    },
+    {
+        "hegis_codes": 8351,
+        "id": 100,
+        "university_id": 70,
+        "major": "Kinesiology/Physical Education"
+    },
+    {
+        "hegis_codes": 49993,
+        "id": 109,
+        "university_id": 70,
+        "major": "Special Major (Interdisciplinary)"
+    },
+    {
+        "hegis_codes": 8351,
+        "id": 159,
+        "university_id": 0,
+        "major": "Kinesiology"
+    },
+    {
+        "hegis_codes": 10022,
+        "id": 187,
+        "university_id": 0,
+        "major": "Art"
+    },
+    {
+        "hegis_codes": 20013,
+        "id": 237,
+        "university_id": 0,
+        "major": "Psychology"
+    },
+    {
+        "hegis_codes": 8351,
+        "id": 294,
+        "university_id": 0,
+        "major": "Kinesiology/Physical Education"
+    },
+    {
+        "hegis_codes": 10022,
+        "id": 302,
+        "university_id": 0,
+        "major": "Art - Studio/Performance"
+    },
+    {
+        "hegis_codes": 20013,
+        "id": 315,
+        "university_id": 0,
+        "major": "School Psychology"
+    }
+]

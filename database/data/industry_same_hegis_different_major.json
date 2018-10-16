@@ -1,1 +1,82 @@
-[]
+[
+    {
+        "entry_status": "FTF + FTT",
+        "id": 50,
+        "major": "Kinesiology",
+        "campus": 0,
+        "hegis_at_exit": 8351,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 78,
+        "major": "Art",
+        "campus": 0,
+        "hegis_at_exit": 10022,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 128,
+        "major": "Psychology",
+        "campus": 0,
+        "hegis_at_exit": 20013,
+        "student_path": 1
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 185,
+        "major": "Kinesiology/Physical Education",
+        "campus": 0,
+        "hegis_at_exit": 8351,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 193,
+        "major": "Art - Studio/Performance",
+        "campus": 0,
+        "hegis_at_exit": 10022,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 206,
+        "major": "School Psychology",
+        "campus": 0,
+        "hegis_at_exit": 20013,
+        "student_path": 5
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 242,
+        "major": "Kinesiology",
+        "campus": 70,
+        "hegis_at_exit": 8351,
+        "student_path": 1
+    },
+    {
+        "entry_status": "FTF + FTT",
+        "id": 301,
+        "major": "Education",
+        "campus": 70,
+        "hegis_at_exit": 49993,
+        "student_path": 1
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 315,
+        "major": "Kinesiology/Physical Education",
+        "campus": 70,
+        "hegis_at_exit": 8351,
+        "student_path": 5
+    },
+    {
+        "entry_status": "Postbacc",
+        "id": 324,
+        "major": "Special Major (Interdisciplinary)",
+        "campus": 70,
+        "hegis_at_exit": 49993,
+        "student_path": 5
+    }
+]

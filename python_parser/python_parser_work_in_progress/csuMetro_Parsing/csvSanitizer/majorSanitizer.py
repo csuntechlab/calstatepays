@@ -10,7 +10,8 @@ class Sanitize_Major(Data_Frame_Sanitizer):
     def __init__(self,file):
         super().__init__(file)
         self.sanitizeCommon()
-        self.df = self.df.loc[self.df['year'].isin([2,5,10,15])]
+        # TODO: UNCOMMENT FOR CAL STATE PAYS DATA
+        # self.df = self.df.loc[self.df['year'].isin([2,5,10,15])]
         self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_majors",""))
         self.update_majors_based_on_same_hegis_different_majors()
         # print(self.df)
@@ -32,6 +33,9 @@ class Sanitize_Major(Data_Frame_Sanitizer):
                 self.df.at[idx,'major'] = self.dictionary[strHegis]
         
         # print(self.df)
+    
+    def get_majors_dataframe(self):
+        return self.df
     
 
     def sanitize_Major(self):

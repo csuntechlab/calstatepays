@@ -1,1 +1,170 @@
-[]
+[
+    {
+        "hegis_codes": 9134,
+        "id": 34,
+        "university_id": 70,
+        "major": "Manufacturing Engineering"
+    },
+    {
+        "hegis_codes": 49993,
+        "id": 86,
+        "university_id": 70,
+        "major": "Education"
+    },
+    {
+        "hegis_codes": 8011,
+        "id": 91,
+        "university_id": 70,
+        "major": "Education"
+    },
+    {
+        "hegis_codes": 8211,
+        "id": 98,
+        "university_id": 70,
+        "major": "Educational Leadership (EdD)"
+    },
+    {
+        "hegis_codes": 8273,
+        "id": 99,
+        "university_id": 70,
+        "major": "Educational Leadership (EdD)"
+    },
+    {
+        "hegis_codes": 9211,
+        "id": 103,
+        "university_id": 70,
+        "major": "Manufacturing Engineering"
+    },
+    {
+        "hegis_codes": 12032,
+        "id": 111,
+        "university_id": 0,
+        "major": "Nursing"
+    },
+    {
+        "hegis_codes": 3071,
+        "id": 121,
+        "university_id": 0,
+        "major": "Asian/East Asian Studies"
+    },
+    {
+        "hegis_codes": 3085,
+        "id": 122,
+        "university_id": 0,
+        "major": "Latin/Central American Studies"
+    },
+    {
+        "hegis_codes": 6022,
+        "id": 151,
+        "university_id": 0,
+        "major": "Journalism"
+    },
+    {
+        "hegis_codes": 7028,
+        "id": 155,
+        "university_id": 0,
+        "major": "Computer Science and Information Technology"
+    },
+    {
+        "hegis_codes": 8232,
+        "id": 158,
+        "university_id": 0,
+        "major": "Child Development"
+    },
+    {
+        "hegis_codes": 9133,
+        "id": 176,
+        "university_id": 0,
+        "major": "Industrial Management & Technology"
+    },
+    {
+        "hegis_codes": 10022,
+        "id": 187,
+        "university_id": 0,
+        "major": "Art"
+    },
+    {
+        "hegis_codes": 12204,
+        "id": 212,
+        "university_id": 0,
+        "major": "Speech Language Pathology"
+    },
+    {
+        "hegis_codes": 12232,
+        "id": 214,
+        "university_id": 0,
+        "major": "Medical Technology"
+    },
+    {
+        "hegis_codes": 20013,
+        "id": 237,
+        "university_id": 0,
+        "major": "Psychology"
+    },
+    {
+        "hegis_codes": 3021,
+        "id": 275,
+        "university_id": 0,
+        "major": "Asian/East Asian Studies"
+    },
+    {
+        "hegis_codes": 3081,
+        "id": 276,
+        "university_id": 0,
+        "major": "Latin/Central American Studies"
+    },
+    {
+        "hegis_codes": 6021,
+        "id": 279,
+        "university_id": 0,
+        "major": "Journalism"
+    },
+    {
+        "hegis_codes": 7011,
+        "id": 281,
+        "university_id": 0,
+        "major": "Computer Science and Information Technology"
+    },
+    {
+        "hegis_codes": 8231,
+        "id": 289,
+        "university_id": 0,
+        "major": "Child Development"
+    },
+    {
+        "hegis_codes": 9132,
+        "id": 299,
+        "university_id": 0,
+        "major": "Industrial Management & Technology"
+    },
+    {
+        "hegis_codes": 10021,
+        "id": 301,
+        "university_id": 0,
+        "major": "Art"
+    },
+    {
+        "hegis_codes": 12033,
+        "id": 304,
+        "university_id": 0,
+        "major": "Nursing"
+    },
+    {
+        "hegis_codes": 12203,
+        "id": 308,
+        "university_id": 0,
+        "major": "Speech Language Pathology"
+    },
+    {
+        "hegis_codes": 12231,
+        "id": 309,
+        "university_id": 0,
+        "major": "Medical Technology"
+    },
+    {
+        "hegis_codes": 20011,
+        "id": 314,
+        "university_id": 0,
+        "major": "Psychology"
+    }
+]
