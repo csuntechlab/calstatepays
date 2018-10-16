@@ -20,7 +20,7 @@
 @import "node_modules/bootstrap/scss/utilities";
 
 //Vue Select
-@import "node_modules/vuetify/dist/vuetify";
+@import url("../../../node_modules/vuetify/dist/vuetify.css");
 
 //Custom SCSS for App
 @import "variables";
