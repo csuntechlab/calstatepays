@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import json
 import simplejson
+import os
+from os import listdir
+from os.path import isfile, join
 
 class UniversitiesDataFrameErrorChecker():
   def __init__(self,csvfiles):
@@ -11,6 +14,16 @@ class UniversitiesDataFrameErrorChecker():
     # to append masterDf = masterDf.append( newDf , ignore_index=True)
     pass
 
+  def get_master_df(self):
+      print(self.masterDF)
+      master = self.masterDF.to_dict(orient='record')
+      fileName = './master_majors_university_table_new.json'
+      with open (fileName, 'w' ) as fp:
+        fp.write(simplejson.dumps(master, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+      fp.close()
+      return self.masterDF
+
+
   def concat_all_csv_to_master_df(self):
     for csv in self.csvFiles:
       # fileName = csv.replace("_majors","")
@@ -18,47 +31,59 @@ class UniversitiesDataFrameErrorChecker():
       df = pd.read_csv( localFilePath )
       df = self.sanitize_df(df)
       df = self.create_base_university_majors_table(df)
-      differentHegisSameMajor = self.find_duplicates(df)
-      df = self.update_university_majors_table_with_duplicates(differentHegisSameMajor,df)
+      differentHegisSameMajor,sameHegisDifferentMajor = self.find_duplicates(df)
+      df = self.update_university_majors_table_with_duplicates(differentHegisSameMajor,sameHegisDifferentMajor,df)
       self.create_dictionary_based_on_university_majors_table_with_duplicates(df,csv)
+    self.get_master_df()
     
   def sanitize_df(self,df):
     df.columns = df.columns.str.lower()
-    print(df.head())
-    # TODO: fix this sometime 
-    #df = df.rename(index=str, columns={'entry_stat': 'entry_status'})
     df.columns = df.columns.str.replace(' ','_')
+    df = df.loc[df['student_path'].isin([1,2,4])]
+    df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
     return df
 
   def create_base_university_majors_table(self,df):
     # TODO: also fix this entry stat
     df = df.loc[:,['campus','hegis_at_exit','major','student_path','entry_stat'] ]
-    print(df)
     df['hegis_at_exit'] = df['hegis_at_exit'].astype(str)
-    # df['hegis_at_exit'] = pd.to_numeric(df['hegis_at_exit'], errors='coerce')
+    df['hegis_at_exit'] = pd.to_numeric(df['hegis_at_exit'], errors='coerce')
     df = df.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
     lenOfDf = len(df) + self.globalIndx
-    print(lenOfDf)
-    print(self.globalIndx)
     df.loc[:,'id'] = range(self.globalIndx,lenOfDf) 
     self.globalIndx = lenOfDf
-    # print(df)
     return df
   
   def find_duplicates(self,df):
     ids = df["id"]
     differentHegisSameMajorBoolean = df.duplicated(subset=['campus','major'], keep=False)
     differentHegisSameMajor = df[ids.isin( ids[ differentHegisSameMajorBoolean ] ) ]
-    return differentHegisSameMajor
-    pass
+
+    ids = df["id"]
+    sameHegisDifferentMajorBoolean = df.duplicated(subset=['campus','hegis_at_exit'], keep=False)
+    sameHegisDifferentMajor = df[ids.isin( ids[ sameHegisDifferentMajorBoolean ] ) ]
+
+    sameHegisDifferentMajor = sameHegisDifferentMajor.drop_duplicates(subset=['hegis_at_exit'], keep='first')
+
+    return differentHegisSameMajor,sameHegisDifferentMajor
   
-  def update_university_majors_table_with_duplicates(self,differentHegisSameMajor,df):
+  def update_university_majors_table_with_duplicates(self,differentHegisSameMajor,sameHegisDifferentMajor,df):
     for idx, row in differentHegisSameMajor.iterrows():
       duplicatedMajor = differentHegisSameMajor.at[idx,'major']
       hegis = differentHegisSameMajor.at[idx,'hegis_at_exit']
-      df.at[idx,'major'] = duplicatedMajor + "-" + hegis
-      
+      strHegis = str(hegis).replace('.0',"")
+      df.at[idx,'major'] = duplicatedMajor + "-" + strHegis
+    # for idx, row in sameHegisDifferentMajor.iterrows():
+    #   duplicatedMajor = sameHegisDifferentMajor.at[idx,'major']
+    #   hegis = sameHegisDifferentMajor.at[idx,'hegis_at_exit']
+    #   strHegis = str(hegis).replace('.0',"")
+    #   df.at[idx,'hegis_at_exit'] = strHegis + strHegis
+    #   df.at[idx,'major'] = duplicatedMajor + "-" + strHegis+strHegis
 
+    # print('smaeHEgisDifferentMajor')
+    # print(sameHegisDifferentMajor)
+    # print('differentHegisSameMajor')
+    # print(differentHegisSameMajor)
     return df
         
   
@@ -72,39 +97,47 @@ class UniversitiesDataFrameErrorChecker():
     universityMajorsId = []
 
     for row in output:
-      hegis =  (row['hegis_at_exit'])
+      hegis = int(row['hegis_at_exit'])
       index = row['id']
       hegisDictionary[hegis] = index
-
       campus =  int(row['campus'])
       major =  (row['major'])
       dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':index }
       universityMajorsId.append(dictRename)
-      
-      self.masterDF = df.append( dictRename , ignore_index=True)
-      
-    del output
-    
+      self.masterDF = self.masterDF.append( dictRename , ignore_index=True)  
     dictionary  = {campusId:hegisDictionary}
-
-    # print(self.file)
     
-    with open('./dictionaries/'+csv+'.json','w') as fp:
+    with open('./dictionaries/'+csv.replace("_majors","")+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
     
-    df['hegis_at_exit'] = pd.to_numeric(df['hegis_at_exit'], errors='coerce')
-    output = df.to_dict(orient='record')
-    with open ('../../database/data/'+csv+'.json', 'w' ) as fp:
-      fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()
+    # with open ('../../database/data/'+csv.replace("_majors","")+'.json', 'w' ) as fp:
+    #   fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    # fp.close()
+    self.concat_dictionary_to_master_dictionary()
     return dictionary
-    pass
+
+  def get_dict(self):
+        path = os.getcwd() + '/dictionaries'
+        dictFiles = [csvFile for csvFile in listdir(path) 
+        if isfile(join(path, csvFile)) ]
+
+        return dictFiles
+ 
   
-  def concat_dictionary_to_master_dictionary(self,df):
+  def concat_dictionary_to_master_dictionary(self):
+    dictFiles = self.get_dict()
+    masterDict = {}
+    for dictFile in dictFiles:
+        with open(os.getcwd() + '/dictionaries/'+dictFile) as f:
+            data = json.load(f)
+            masterDict = {**masterDict, **data}
+    
+    fileName = './master_major_dictionary.json'
+    with open (fileName, 'w' ) as fp:
+        fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    fp.close()
 
-    return df
-    pass
-
+    return masterDict
 
   

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 import simplejson
 import os
 from os import listdir
@@ -87,9 +88,7 @@ class DFHelper():
         return industryPathTypes,industryPathWages,populationTable
 
     def get_dict(self):
-        dictionary = []
         path = os.getcwd() + '/dictionaries'
-    
         dictFiles = [csvFile for csvFile in listdir(path) 
                     if isfile(join(path, csvFile)) ]
 
@@ -98,19 +97,17 @@ class DFHelper():
     def create_master_dict(self):
         dictFiles = self.get_dict()
         masterDict = {}
-        import json
-
-        # concatenate dicts
+        
         for dictFile in dictFiles:
             with open(os.getcwd() + '/dictionaries/'+dictFile) as f:
                 data = json.load(f)
                 masterDict = {**masterDict, **data}
 
-        with open ('./master_industry_Dictionary.json', 'w' ) as fp:
+        fileName = './master_major_dictionary.json'
+        with open (fileName, 'w' ) as fp:
             fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
         fp.close()
 
-        return masterDict
 
 
 
