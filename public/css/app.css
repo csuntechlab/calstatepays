@@ -22891,7 +22891,7 @@ figcaption {
   }
 }
 
-.error {
+.errorAlert {
   position: fixed;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -22901,8 +22901,6 @@ figcaption {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-transition: .5s;
-  transition: .5s;
 }
 
 .img__logo {

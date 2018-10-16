@@ -3,5 +3,5 @@
 export default {
     selectedUniversity: 'northridge',
     selectedDataPage: 'majors',
-    errorMessage:{}
+    errorMessage:''
 };

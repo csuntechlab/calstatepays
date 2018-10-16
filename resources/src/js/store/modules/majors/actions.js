@@ -57,7 +57,7 @@ export default {
                 success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     },
 
@@ -69,7 +69,7 @@ export default {
                 success.forEach((industry) => industry['majorId'] = payload.majorId);
                 commit(_majors.FETCH_INDUSTRY_IMAGES, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     }, 
 

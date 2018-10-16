@@ -46679,7 +46679,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             success.cardIndex = payload.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
         }, function (error) {
-            return console.log(error);
+            return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
     },
     fetchIndustryImages: function fetchIndustryImages(_ref7, payload) {
@@ -46693,7 +46693,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             });
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, success);
         }, function (error) {
-            return console.log(error);
+            return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
     },
     toggleEducationLevel: function toggleEducationLevel(_ref8, payload) {
@@ -46733,7 +46733,7 @@ var fetchMajorsAPI = function fetchMajorsAPI(payload, success, error) {
     window.axios.get("api/major/hegis-codes/university/" + payload).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 
@@ -46741,7 +46741,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
     window.axios.get("api/major/field-of-study").then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 
@@ -46749,7 +46749,7 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
     window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 
@@ -46759,7 +46759,7 @@ var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
     function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 
@@ -46767,14 +46767,14 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     window.axios.get("api/university").then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
     window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data);
+        error(failure.response.data.message);
     });
 };
 
@@ -46980,7 +46980,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 /* harmony default export */ __webpack_exports__["a"] = ({
     selectedUniversity: 'northridge',
     selectedDataPage: 'majors',
-    errorMessage: {}
+    errorMessage: ''
 });
 
 /***/ }),
@@ -47128,7 +47128,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(payload, function (success) {
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
 		}, function (error) {
-			return console.log(error);
+			return commit(_global.ERROR_ALERT, error);
 		});
 	}
 });
@@ -97320,32 +97320,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'errorAlert',
     data: function data() {
-        return {};
+        return {
+            //showAlert:false
+        };
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['errorMessage']), {
         showAlert: function showAlert() {
-            return this.errorMessage;
+            return this.errorMessage != "";
         }
+
     }),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setError']), {
         closeAlert: function closeAlert() {
 
-            // this.showAlert = false;
+            //this.showAlert = false;
             this.$store.dispatch("setError", "");
         }
     })
@@ -97365,18 +97359,27 @@ var render = function() {
       _c(
         "v-alert",
         {
-          staticClass: "error bg-danger",
-          attrs: {
-            dismissible: "",
-            value: _vm.showAlert,
-            color: "success",
-            transition: "scale-transition"
-          }
+          staticClass: "errorAlert bg-danger",
+          attrs: { value: _vm.showAlert, type: "error" }
         },
         [
-          _c("i", { staticClass: "fa fa-exclamation-triangle" }),
-          _vm._v(" " + _vm._s(_vm.errorMessage.message) + " \n     ")
-        ]
+          _vm._v("\n " + _vm._s(_vm.errorMessage) + " \n      "),
+          _vm._v(" "),
+          _c(
+            "v-icon",
+            {
+              staticClass: "pl-2",
+              attrs: { medium: "" },
+              on: {
+                click: function($event) {
+                  _vm.closeAlert()
+                }
+              }
+            },
+            [_vm._v(" fa fa-times-circle fa-lg")]
+          )
+        ],
+        1
       )
     ],
     1

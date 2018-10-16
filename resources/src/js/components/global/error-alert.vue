@@ -1,21 +1,12 @@
 <template>
-     <!-- <div v-if="showAlert" class="alert alert-danger error" role="alert">
-        {{errorMessage.message}}
-        <button type="button" class="close pl-2" aria-label="Close" >
-            <span @click="closeAlert()" aria-hidden="true">&times;</span>
-        </button>
-    </div>  -->
     <div> 
-        <v-alert class="error bg-danger"
-       dismissible
-      :value="showAlert"   
-      color="success"
-      transition="scale-transition"
-    >
-   <i class="fa fa-exclamation-triangle">
-       </i> {{errorMessage.message}} 
-        <!-- <i role="button" @click="closeAlert()" class="fa fa-times-circle-o fa-lg"></i>    -->
-       </v-alert>
+        <v-alert class="errorAlert bg-danger" :value="showAlert" type="error">
+
+   <!-- <i class="fa fa-exclamation-triangle"></i> -->
+   {{errorMessage}} 
+        <!-- <i role="button"  class = "fa fa-times-circle-o"> </i> -->
+    <v-icon @click="closeAlert()" class = "pl-2" medium> fa fa-times-circle fa-lg</v-icon>  
+  </v-alert>
     </div>
 </template>
 <script>
@@ -24,14 +15,15 @@ export default {
     name: 'errorAlert',
     data(){
     return {
-      
+      //showAlert:false
     }},
     computed:{
         ...mapGetters([
         'errorMessage']),
-         showAlert: function(){
-             return  this.errorMessage;
+        showAlert: function(){
+           return this.errorMessage != "";
         }
+         
     },
     methods:{
         ...mapActions([
@@ -39,7 +31,7 @@ export default {
         ]),
         closeAlert(){ 
             
-            // this.showAlert = false;
+            //this.showAlert = false;
             this.$store.dispatch("setError", "");
         }
     }
