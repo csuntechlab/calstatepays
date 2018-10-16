@@ -136,10 +136,12 @@ class IndustryServiceTest extends TestCase
         $this->seed('Master_Industry_Wages_Table_Seeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Naics_Titles_TableSeeder');
-
+        
         $university_name = 'all_cal_states';
         $hegis = 5021;
-        $response = $this->industryService->getIndustryPopulationByRank($hegis,$university_name);
+        $degreeLevel = 1;
+
+        $response = $this->industryService->getIndustryPopulationByRank($hegis,$university_name,$degreeLevel);
 
         $truthyArray = [
                 [

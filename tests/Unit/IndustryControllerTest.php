@@ -208,6 +208,7 @@ class IndustryControllerTest extends TestCase
       {
         $hegis = 5021;
         $university = 'all_cal_states';
+        $degreeLevel = 1;
         
         $firstResult = json_encode([
             [
@@ -224,7 +225,7 @@ class IndustryControllerTest extends TestCase
                 ->with($hegis,$university)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRank($hegis,$university);
+        $response = $this->controller->getIndustryPopulationByRank($hegis,$university, $degreeLevel);
         $this->assertEquals($firstResult,$response);
       }
 }
