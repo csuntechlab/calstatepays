@@ -1,37 +1,34 @@
 <template>
-  <div @keyup.enter="showModal= false">
-        <button @click="showModal = true" role="button">
-                <slot name="change button"></slot>
-        </button>
-        
-    <v-dialog  v-model="showModal" persistent>
-        <v-card  class=" text-xs-center black--text">
-            <v-card-title class="headline grey lighten-2 ">
-                Choose Your Campus
-            </v-card-title>
-            <v-card-text class="campus-modal">
-                <div class="row" >
-                    <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                        <figure  @click="changeCampus(universities[index].short_name);">
-                            <img :src= item.url role="button" class="btn">    
-                            <figcaption> {{item.name}}</figcaption>                    
-                        </figure>
+<div>
+      <div @keyup.enter="showModal= false">
+            <button @click="showModal = true" role="button">
+                    <slot name="change button"></slot>
+            </button>
+            
+        <v-dialog  v-model="showModal" persistent >
+            <v-card  class=" text-xs-center black--text" v-if="universities[0]">
+                <v-card-title class="headline grey lighten-2 ">
+                    Choose Your Campus
+                </v-card-title>
+                <v-card-text class="campus-modal">
+                    <div class="row" >
+                        <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
+                            <figure v-if="universities[index].opt_in === 1"  @click="changeCampus(universities[index].short_name);">
+                                <img :src= item.url role="button" class="btn opted-in">   
+                                <figcaption> {{item.name}}</figcaption>
+                            </figure>
+                            <figure v-else class="opted-out"> 
+                                <img :src= item.url role="button" class="btn">   
+                                <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
+                            </figure>
+                        </div>
                     </div>
-                        <!-- place holder for all button -->
-                    <div class="col-12 col-sm">
-                        <figure>
-                            <img src=" https://via.placeholder.com/123x112?" role="button" class="btn">    
-                            <figcaption>All campuses(Not Available)</figcaption>                    
-                        </figure>
-                    </div>
-                </div>
-            </v-card-text>
-        </v-card> 
-        </v-dialog>
-        
-        </div>
-        
-       
+                </v-card-text>
+            </v-card> 
+            </v-dialog>
+            
+    </div>
+</div>  
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
@@ -48,18 +45,13 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/poly_seal.svg',name:'Pomona'},
                 {url :window.baseUrl+ '/img/csuseals/northridge_seal.svg',name:'Northridge'},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island'},
+                {url: "https://via.placeholder.com/123x112?",
+                name: "All campuses(Not Available)"}
             ]
         }
     },
     mounted(){
-        var sessionData = sessionStorage.getItem("selectedUniversity");
-        if(sessionData === null){
-        this.showModal = true;
-        }
-        else {
-            this.$store.dispatch("setUniversity", sessionData);
-        }
-
+        this.checkSessionData();
     },
     computed:{
         ...mapGetters([
@@ -67,7 +59,8 @@ export default {
             'selectedUniversity',
             'selectedDataPage',
             'modalCheck'
-        ])
+        ]),
+        
     },
     methods:{
         ...mapActions([
@@ -75,8 +68,19 @@ export default {
         ]),
         changeCampus: function(university){
             sessionStorage.setItem("selectedUniversity", university);
-            this.$store.dispatch('setUniversity',university);
+            this.$store.dispatch('setUniversity', university);
+            this.$store.dispatch('fetchMajors', university);
+            this.$store.dispatch('fetchFieldOfStudies', university);
             this.showModal = false;
+        },
+        checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if(sessionData === null){
+                this.showModal = true;
+            }
+            else {
+            this.$store.dispatch("setUniversity", sessionData);
+            }
         }
     }
 

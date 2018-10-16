@@ -6,7 +6,14 @@ const fetchIndustriesAPI = (payload, success, error) => {
             failure=>{ error(failure.response.data)}
         );
 }
+const fetchIndustryMajorsByFieldAPI = (payload, success, error) => {
+    window.axios.get(`api/major/hegis-codes/${payload.schoolId}/${payload.fieldOfStudyId}`).then(
+        response => success(response.data),
+        response => error(response)
+    );
+};
 
 export default {
-    fetchIndustriesAPI
+    fetchIndustriesAPI,
+    fetchIndustryMajorsByFieldAPI
 }
