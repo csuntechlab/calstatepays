@@ -180,6 +180,7 @@ class IndustryControllerTest extends TestCase
       {
         $hegis = 5021;
         $university = 'all_cal_states';
+        $degreeLevel= 1;
 
         $firstResult = json_encode([
             [
@@ -193,10 +194,10 @@ class IndustryControllerTest extends TestCase
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRankWithImages')
                 ->once()
-                ->with($hegis,$university)
+                ->with($hegis,$university,$degreeLevel)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university);
+        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university,$degreeLevel);
         $this->assertEquals($firstResult,$response);
       }
 
@@ -222,7 +223,7 @@ class IndustryControllerTest extends TestCase
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRank')
                 ->once()
-                ->with($hegis,$university)
+                ->with($hegis,$university, $degreeLevel)
                 ->andReturn($firstResult);
 
         $response = $this->controller->getIndustryPopulationByRank($hegis,$university, $degreeLevel);

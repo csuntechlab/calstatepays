@@ -97,7 +97,8 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all_cal_states';
         $hegis = 5021;
-        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis,$university_name);
+        $degreeLevel = 1;
+        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis,$university_name,$degreeLevel);
 
         /**
          * real values from the actual array
