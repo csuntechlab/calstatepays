@@ -14,6 +14,27 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         self.sanitizeCommon()
         self.sanitize_Industry()
         self.header_sanitizer()
+        self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_industry",""))
+        self.update_majors_based_on_same_hegis_different_majors()
+        # print(self.df)
+        pass
+
+    def get_this_university_major_dictionary(self,file):
+        # print(self.file)
+        jsonFile = open('./hegisToMajorDictionary/'+file+'.json')
+        dictionary = jsonFile.read()
+        dictionary = json.loads(dictionary)
+        return dictionary
+    
+    
+    def update_majors_based_on_same_hegis_different_majors(self):
+        for idx, row in self.df.iterrows():
+            hegis = self.df.at[idx,'hegis_at_exit']
+            strHegis = str(hegis).replace('.0',"")
+            if strHegis in self.dictionary:
+                self.df.at[idx,'major'] = self.dictionary[strHegis]
+        
+        # print(self.df)
 
     def sanitize_Industry(self):
         mapper = {
@@ -31,8 +52,8 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         for idx, row in self.df.iterrows():
             temp = naics_dict.get(self.df.at[idx,'industry'])
             self.df.at[idx,'naics'] = temp
-            if temp == 19 or temp == 20:
-                self.df = self.df.drop(idx)
+            # if temp == 19 or temp == 20:
+                # self.df = self.df.drop(idx)
     
     def returnDf(self):
         return self.df
@@ -103,7 +124,7 @@ class DFHelper():
                 data = json.load(f)
                 masterDict = {**masterDict, **data}
 
-        fileName = './master_major_dictionary.json'
+        fileName = './master_industry_dictionary.json'
         with open (fileName, 'w' ) as fp:
             fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
         fp.close()

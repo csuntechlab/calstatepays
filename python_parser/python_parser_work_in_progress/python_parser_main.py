@@ -45,16 +45,16 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles)
     lol.get_master_df()
 
-    lol.concat_all_csv_to_master_df()
+    # lol.concat_all_csv_to_master_df()
     print(lol)
     
     print( majorsCsvFiles )
-    # iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
+    iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
 
 
 
     print( industryCsvFiles )
-    # iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
+    iterateCsvFiles.master_industry_csv_to_json(industryCsvFiles)
     
 if __name__ == "__main__": main()
     

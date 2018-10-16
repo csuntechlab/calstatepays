@@ -65,7 +65,7 @@ class IterateCsvFiles():
 
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
 
-        print(universityMajorIdDf.head())
+        # print(universityMajorIdDf.head())
 
         universityMajorsDataFrame = universityMajorIdDf
 

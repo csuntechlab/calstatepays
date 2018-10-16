@@ -27,6 +27,7 @@ class JsonMajor:
     universityMajorsId = []
 
     for row in output:
+      # print(row['hegis_at_exit'])
       hegis =  int(row['hegis_at_exit'])
       hegisDictionary[hegis] = self.indexUniversityMajorsId
 

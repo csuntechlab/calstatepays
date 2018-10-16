@@ -1,6 +1,7 @@
 import pandas as pd
 
 import numpy as np
+import json
 import simplejson
 
 from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitizer
@@ -10,8 +11,28 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         super().__init__(file)
         self.sanitizeCommon()
         self.df = self.df.loc[self.df['year'].isin([2,5,10,15])]
+        self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_majors",""))
+        self.update_majors_based_on_same_hegis_different_majors()
         # print(self.df)
         pass
+
+    def get_this_university_major_dictionary(self,file):
+        # print(self.file)
+        jsonFile = open('./hegisToMajorDictionary/'+file+'.json')
+        dictionary = jsonFile.read()
+        dictionary = json.loads(dictionary)
+        return dictionary
+    
+    
+    def update_majors_based_on_same_hegis_different_majors(self):
+        for idx, row in self.df.iterrows():
+            hegis = self.df.at[idx,'hegis_at_exit']
+            strHegis = str(hegis).replace('.0',"")
+            if strHegis in self.dictionary:
+                self.df.at[idx,'major'] = self.dictionary[strHegis]
+        
+        # print(self.df)
+    
 
     def sanitize_Major(self):
         '''
@@ -36,7 +57,7 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         UnivMajorDictionaryDf['campus'] = UnivMajorDictionaryDf['campus'].astype('float')
         UnivMajorDictionaryDf['hegis_at_exit'] = UnivMajorDictionaryDf['hegis_at_exit'].astype('float')
 
-        print(UnivMajorDictionaryDf.head())
+        # print(UnivMajorDictionaryDf.head())
         
         return UnivMajorDictionaryDf
         

@@ -15,7 +15,7 @@ class UniversitiesDataFrameErrorChecker():
     pass
 
   def get_master_df(self):
-      print(self.masterDF)
+      # print(self.masterDF)
       master = self.masterDF.to_dict(orient='record')
       fileName = './master_majors_university_table_new.json'
       with open (fileName, 'w' ) as fp:
@@ -32,7 +32,7 @@ class UniversitiesDataFrameErrorChecker():
       df = self.sanitize_df(df)
       df = self.create_base_university_majors_table(df)
       differentHegisSameMajor,sameHegisDifferentMajor = self.find_duplicates(df)
-      df = self.update_university_majors_table_with_duplicates(differentHegisSameMajor,sameHegisDifferentMajor,df)
+      df = self.update_university_majors_table_with_duplicates(differentHegisSameMajor,sameHegisDifferentMajor,df,csv)
       self.create_dictionary_based_on_university_majors_table_with_duplicates(df,csv)
     self.get_master_df()
     
@@ -67,12 +67,21 @@ class UniversitiesDataFrameErrorChecker():
 
     return differentHegisSameMajor,sameHegisDifferentMajor
   
-  def update_university_majors_table_with_duplicates(self,differentHegisSameMajor,sameHegisDifferentMajor,df):
+  def update_university_majors_table_with_duplicates(self,differentHegisSameMajor,sameHegisDifferentMajor,df,csv):
+    
+    hegisToMajorDictionary = {}
+    
     for idx, row in differentHegisSameMajor.iterrows():
       duplicatedMajor = differentHegisSameMajor.at[idx,'major']
       hegis = differentHegisSameMajor.at[idx,'hegis_at_exit']
       strHegis = str(hegis).replace('.0',"")
       df.at[idx,'major'] = duplicatedMajor + "-" + strHegis
+      major = df.at[idx,'major']
+      hegisToMajorDictionary[int(hegis)] = major
+    dictionary = hegisToMajorDictionary
+    with open('./hegisToMajorDictionary/'+csv.replace("_majors","")+'.json','w') as fp:
+        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
+    fp.close()  
     # for idx, row in sameHegisDifferentMajor.iterrows():
     #   duplicatedMajor = sameHegisDifferentMajor.at[idx,'major']
     #   hegis = sameHegisDifferentMajor.at[idx,'hegis_at_exit']
@@ -93,7 +102,6 @@ class UniversitiesDataFrameErrorChecker():
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
-
     universityMajorsId = []
 
     for row in output:
@@ -110,7 +118,7 @@ class UniversitiesDataFrameErrorChecker():
     with open('./dictionaries/'+csv.replace("_majors","")+'.json','w') as fp:
         fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     fp.close()  
-    
+   
     # with open ('../../database/data/'+csv.replace("_majors","")+'.json', 'w' ) as fp:
     #   fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
     # fp.close()
