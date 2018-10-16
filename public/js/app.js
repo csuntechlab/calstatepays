@@ -48645,7 +48645,7 @@ var render = function() {
                       { staticClass: "headline grey lighten-2 " },
                       [
                         _vm._v(
-                          "\r\n                    Choose Your Campus\r\n                "
+                          "\n                    Choose Your Campus\n                "
                         )
                       ]
                     ),
@@ -52959,7 +52959,7 @@ var content = __webpack_require__(258);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(259)("fa1dca66", content, false, {});
+var update = __webpack_require__(259)("09e563c0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75548,7 +75548,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\r\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\r\n      "
+              "\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n      "
             )
           ]
         )
@@ -75557,7 +75557,7 @@ var render = function() {
       _c("sub-nav"),
       _vm._v(" "),
       _c("div", { staticClass: "splashPage" }, [
-        _vm._v("       \r\n            Coming soon\r\n    ")
+        _vm._v("       \n            Coming soon\n    ")
       ])
     ],
     1
