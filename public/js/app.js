@@ -47814,10 +47814,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "1139", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "1139" } },
         [
           _c("img", {
             attrs: {
@@ -47834,10 +47831,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "1144", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "1144" } },
         [
           _c("img", {
             attrs: {
@@ -47854,10 +47848,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "1141", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "1141" } },
         [
           _c("img", {
             attrs: {
@@ -47899,10 +47890,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "39803", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "39803" } },
         [
           _c("img", {
             attrs: {
@@ -47919,10 +47907,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "1137", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "1137" } },
         [
           _c("img", {
             attrs: {
@@ -47939,10 +47924,7 @@ var render = function() {
     _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
       _c(
         "button",
-        {
-          staticClass: "disabled-university",
-          attrs: { id: "1140", title: "Currently Unavailable" }
-        },
+        { staticClass: "disabled-university", attrs: { id: "1140" } },
         [
           _c("img", {
             attrs: {
