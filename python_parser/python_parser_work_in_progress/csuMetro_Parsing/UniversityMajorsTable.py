@@ -39,8 +39,8 @@ class UniversitiesDataFrameErrorChecker():
   def sanitize_df(self,df):
     df.columns = df.columns.str.lower()
     df.columns = df.columns.str.replace(' ','_')
-    # df = df.loc[df['student_path'].isin([1,2,4])]
-    # df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
+    df = df.loc[df['student_path'].isin([1,2,4])]
+    df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
     return df
 
   def create_base_university_majors_table(self,df):

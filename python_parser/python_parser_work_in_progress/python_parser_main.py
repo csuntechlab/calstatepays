@@ -42,9 +42,9 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     '''
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
 
-    # lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles)
-    # lol.get_master_df()
-    # lol.concat_all_csv_to_master_df()
+    lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles)
+    lol.get_master_df()
+    lol.concat_all_csv_to_master_df()
     
     print( majorsCsvFiles )
     iterateCsvFiles.master_majors_csv_to_json(majorsCsvFiles)
