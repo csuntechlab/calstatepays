@@ -82,7 +82,7 @@ class IndustryServiceTest extends TestCase
 
      /**
       * industry/images/{hegis_code}/{university_name}
-      * industry/images/5021/all_cal_states
+      * industry/images/5021/all
       * function IndustryController@getIndustryPopulationByRankWithImages
       * Use phpunit to get real api vals, test agaisnt real api output from route
       */
@@ -95,7 +95,7 @@ class IndustryServiceTest extends TestCase
         $this->seed('Population_Table_Seeder');
         $this->seed('Naics_Titles_TableSeeder');
 
-        $university_name = 'all_cal_states';
+        $university_name = 'all';
         $hegis = 5021;
         $degreeLevel = 1;
         $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis,$university_name,$degreeLevel);
@@ -137,8 +137,8 @@ class IndustryServiceTest extends TestCase
         $this->seed('Master_Industry_Wages_Table_Seeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Naics_Titles_TableSeeder');
-        
-        $university_name = 'all_cal_states';
+
+        $university_name = 'all';
         $hegis = 5021;
         $degreeLevel = 1;
 

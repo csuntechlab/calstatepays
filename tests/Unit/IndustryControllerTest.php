@@ -176,12 +176,12 @@ class IndustryControllerTest extends TestCase
 
      /**
       *  Aggregate tests
-      *  industry/images/5021/all_cal_states
+      *  industry/images/5021/all
       */
       public function test_return_Aggregate_getIndustryPopulationByRankWithImages()
       {
         $hegis = 5021;
-        $university = 'all_cal_states';
+        $university = 'all';
         $degreeLevel= 1;
 
         $firstResult = json_encode([
@@ -205,12 +205,12 @@ class IndustryControllerTest extends TestCase
 
       /**
       *  Aggregate tests
-      *  industry/5021/all_cal_states
+      *  industry/5021/all
       */
       public function test_return_Aggregate_expected_count_output_getIndustryPopulationByRank()
       {
         $hegis = 5021;
-        $university = 'all_cal_states';
+        $university = 'all';
         $degreeLevel = 1;
         
         $firstResult = json_encode([
