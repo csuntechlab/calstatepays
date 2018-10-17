@@ -8,7 +8,8 @@
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.
       </p>
     </csu-data-img-banner>
-    <sub-nav/>
+    <sub-nav v-if="isDesktop"/>
+    <sub-nav-movible v-else/>
     <div class="graphContent">
       <div class="container">
         <div class="row">
@@ -32,6 +33,7 @@
 <script>
 import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
 import subNav from "../../../components/global/sub-nav.vue";
+import subNavMobile from "../../../components/global/sub-nav-mobile.vue";
 import card from "../../../components/global/card";
 import pfreForm from "../../../components/pfre/pfre-form.vue";
 import pfreInfo from "../../../components/pfre/pfre-info.vue";
@@ -39,13 +41,36 @@ import pfreProgress from "../../../components/pfre/pfre-progress.vue";
 import { mapGetters } from "vuex";
 
 export default {
+  data() {
+    return {
+      isDesktop: true      
+    }
+  },
+  methods: {
+      getWindowWidth(event) {
+				this.windowWidth = document.documentElement.clientWidth;
+				this.windowWidth < 992
+					? ((this.isDesktop = false), (this.isMobile = true))
+					: ((this.isDesktop = true), (this.isMobile = false));
+			}
+    },
   components: {
     csuDataImgBanner,
     card,
     pfreForm,
     pfreInfo,
     pfreProgress,
-    subNav
-  }
+    subNav,
+    subNavMobile
+  },
+  mounted() {
+      this.$nextTick(function () {
+				window.addEventListener("resize", this.getWindowWidth);
+				this.getWindowWidth();
+			});
+    },
+  beforeDestroy() {
+			window.removeEventListener("resize", this.getWindowWidth);
+		},
 };
 </script>

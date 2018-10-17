@@ -9,7 +9,8 @@
         metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
       </p>
     </csu-data-img-banner>
-    <sub-nav/>
+    <sub-nav v-if="isDesktop"/>
+    <sub-nav-mobile v-else/>
     <div class="graphContent">
       <div class="container">
         <div class="row">
@@ -26,17 +27,41 @@
 </template>
 
 <script>
-  import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
-  import subNav from "../../../components/global/sub-nav.vue"
-  import industryProgress from "../../../components/industries/industry-progress.vue";
-  import industryForm from "../../../components/industries/industry-form.vue"
+import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
+import subNav from "../../../components/global/sub-nav.vue";
+import subNavMobile from "../../../components/global/sub-nav-mobile.vue";
+import industryProgress from "../../../components/industries/industry-progress.vue";
+import industryForm from "../../../components/industries/industry-form.vue"
 
-  export default {
+export default {
+    data() {
+      return {
+        isDesktop: true
+      };
+    },
     components: {
       csuDataImgBanner,
       industryProgress,
       industryForm,
-      subNav
-    }
+      subNav,
+      subNavMobile
+    },
+    methods: {
+      getWindowWidth(event) {
+				this.windowWidth = document.documentElement.clientWidth;
+				this.windowWidth < 992
+					? ((this.isDesktop = false), (this.isMobile = true))
+					: ((this.isDesktop = true), (this.isMobile = false));
+			}
+    },
+    mounted() {
+      this.$nextTick(function () {
+				window.addEventListener("resize", this.getWindowWidth);
+				this.getWindowWidth();
+			});
+    },
+    beforeDestroy() {
+			window.removeEventListener("resize", this.getWindowWidth);
+		},
   };
 </script>

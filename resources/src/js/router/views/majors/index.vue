@@ -9,7 +9,8 @@
 				metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
 			</p>
 		</csu-data-img-banner>
-		<sub-nav/>
+		<sub-nav v-if="isDesktop"/>
+		<sub-nav-mobile v-else/>
 		<div class="graphContent" id="majorCardWrapper" @scroll="handleScroll">
 			<div class="container">
 				<major-card v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
@@ -25,6 +26,7 @@
 	import majorCard from "../../../components/majors/major-card.vue";
 	import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
 	import subNav from "../../../components/global/sub-nav.vue";
+	import subNavMobile from "../../../components/global/sub-nav-mobile.vue";
 	import { mapGetters } from "vuex";
 
 	export default {
@@ -110,6 +112,7 @@
 			majorCardMobile,
 			cardAdd,
 			subNav,
+			subNavMobile,
 			csuDataImgBanner
 		}
 	};

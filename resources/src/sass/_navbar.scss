@@ -94,6 +94,49 @@
 		}
 	}
 }
+.sub-nav-mobile {
+	position: fixed;
+	bottom: 0;
+	z-index: 90000;
+	display: table-cell;
+	vertical-align: middle;
+	min-height: $navbar-height - .5;
+	font-size: 1rem;
+
+	box-shadow: 0px 2px -6px #999;
+	span {
+		display: block;
+	}
+	
+}
+
+.sub-nav-mobile__element {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	text-decoration: none;
+	display: table-cell;
+	.fa-usd,.fa-graduation-cap{	
+		color: rgba(0, 0, 0, 0.5);	
+	}
+	&--active {
+		text-decoration: none;
+		color: rgb(160, 13, 13);
+		font-weight: bold;
+		.fa-usd,.fa-graduation-cap{	
+			color:  rgb(160, 13, 13);	
+		}
+	}
+	&:hover {
+		text-decoration: none;
+		color: rgb(160, 13, 13);
+		font-weight: bold;
+		.fa-usd,.fa-graduation-cap{	
+			color: rgb(160, 13, 13);	
+		}
+	}
+}
 
 #nav-overlay {
 	@media screen and (max-width: $break-small) {
