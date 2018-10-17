@@ -165,7 +165,7 @@ class MajorServiceTest extends TestCase
     {
         $this->seed('University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
-        $aggregate = 'all_cal_states';
+        $aggregate = 'all';
         $hegis = 11081;
         $response = $this->majorService->getMajorEarnings($hegis,$aggregate);
         $this->assertEquals($response[0]['entry_status'],"FTF + FTT");
@@ -179,7 +179,7 @@ class MajorServiceTest extends TestCase
         $this->seed('Master_FRE_Page_Data_TableSeeder');
         $request = new Request();
         $request->major = 22021;
-        $request->university = 'all_cal_states';
+        $request->university = 'all';
         $request->age_range = 1;
         $request->education_level = 'FTF';
         $request->annual_earnings = 1;
@@ -199,7 +199,7 @@ class MajorServiceTest extends TestCase
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
-        $university_name = 'all_cal_states';
+        $university_name = 'all';
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
 
         $expected_count = 164;
@@ -210,7 +210,7 @@ class MajorServiceTest extends TestCase
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
-        $response = $this->majorService->getMajorEarnings(5021, 'all_cal_states');
+        $response = $this->majorService->getMajorEarnings(5021, 'all');
 
         // need 12 arrays response, year responses, 2,5,10,15
         // some college -> 4, bacc -> 4, post -> 4 ..

@@ -47023,7 +47023,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 // Global Form State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    selectedUniversity: 'all_cal_states',
+    selectedUniversity: 'all',
     selectedDataPage: 'majors'
 });
 
