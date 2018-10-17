@@ -46980,7 +46980,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
 // Global Form State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    selectedUniversity: 'northridge',
+    selectedUniversity: 'all_cal_states',
     selectedDataPage: 'majors',
     errorMessage: ''
 });
@@ -96857,7 +96857,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -97426,19 +97425,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'errorAlert',
-    data: function data() {
-        return {
-            //showAlert:false
-        };
-    },
-
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['errorMessage']), {
         showAlert: function showAlert() {
             return this.errorMessage != "";
@@ -97447,8 +97437,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setError']), {
         closeAlert: function closeAlert() {
-
-            //this.showAlert = false;
             this.$store.dispatch("setError", "");
         }
     })
@@ -97472,8 +97460,7 @@ var render = function() {
           attrs: { value: _vm.showAlert, type: "error" }
         },
         [
-          _vm._v("\n " + _vm._s(_vm.errorMessage) + " \n      "),
-          _vm._v(" "),
+          _vm._v("\n        " + _vm._s(_vm.errorMessage) + "\n        "),
           _c(
             "v-icon",
             {

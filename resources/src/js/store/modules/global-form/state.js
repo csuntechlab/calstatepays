@@ -1,7 +1,7 @@
 // Global Form State
 
 export default {
-    selectedUniversity: 'northridge',
+    selectedUniversity: 'all_cal_states',
     selectedDataPage: 'majors',
     errorMessage:''
 };
