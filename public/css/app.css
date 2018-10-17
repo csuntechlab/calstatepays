@@ -23276,8 +23276,8 @@ figcaption {
   vertical-align: middle;
   min-height: 3.5rem;
   font-size: 1rem;
-  -webkit-box-shadow: 0px 2px -6px #999;
-          box-shadow: 0px 2px -6px #999;
+  -webkit-box-shadow: 0 0 2px #999;
+          box-shadow: 0 0 2px #999;
 }
 
 .sub-nav-mobile span {
@@ -23343,6 +23343,12 @@ footer, .footer {
       -ms-flex: 0 1 auto !important;
           flex: 0 1 auto !important;
   background-color: #000;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-mobile-positioning {
+    margin-top: 95px;
+  }
 }
 
 .footer__links {

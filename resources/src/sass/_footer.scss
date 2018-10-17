@@ -8,6 +8,15 @@ footer, .footer {
     display: flex;
     flex: 0 1 auto !important;
     background-color: $black;
+    @media screen and (max-width: $break-small) {
+		// margin-top: $navbar-height - .5;
+	}
+}
+.footer-mobile-positioning{
+
+    @media screen and (max-width: $break-small) {
+		margin-top: 95px;
+	}
 }
 .footer__links{
     float: left;
