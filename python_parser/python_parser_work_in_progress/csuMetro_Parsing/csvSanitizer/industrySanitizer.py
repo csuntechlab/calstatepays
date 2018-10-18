@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 import simplejson
 import os
 from os import listdir
@@ -11,8 +12,29 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         super().__init__(file)
         self.renameNewCsvs()
         self.sanitizeCommon()
-        self.sanitize_Industry()
         self.header_sanitizer()
+        self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_industry",""))
+        self.update_majors_based_on_same_hegis_different_majors()
+        self.sanitize_Industry()
+        # print(self.df)
+        pass
+
+    def get_this_university_major_dictionary(self,file):
+        # print(self.file)
+        jsonFile = open('./hegisToMajorDictionary/'+file+'.json')
+        dictionary = jsonFile.read()
+        dictionary = json.loads(dictionary)
+        return dictionary
+    
+    
+    def update_majors_based_on_same_hegis_different_majors(self):
+        for idx, row in self.df.iterrows():
+            hegis = self.df.at[idx,'hegis_at_exit']
+            strHegis = str(hegis).replace('.0',"")
+            if strHegis in self.dictionary:
+                self.df.at[idx,'major'] = self.dictionary[strHegis]
+        
+        # print(self.df)
 
     def sanitize_Industry(self):
         mapper = {
@@ -30,8 +52,8 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         for idx, row in self.df.iterrows():
             temp = naics_dict.get(self.df.at[idx,'industry'])
             self.df.at[idx,'naics'] = temp
-            if temp == 19 or temp == 20:
-                self.df = self.df.drop(idx)
+            # if temp == 19 or temp == 20:
+                # self.df = self.df.drop(idx)
     
     def returnDf(self):
         return self.df
@@ -53,24 +75,24 @@ class DFHelper():
         ERROR Data Frame code here 
         '''
     
-        errorDataFrame = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
-        errorDataFrame = errorDataFrame.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
-        errorDataFrame.loc[:,'id'] = range(1, len(errorDataFrame) + 1) 
-        duplicateHegisCodeDifferentMajor = errorDataFrame
+        differentHegisSameMajor = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
+        differentHegisSameMajor = differentHegisSameMajor.drop_duplicates(subset=['campus', 'hegis_at_exit','major'], keep='first')
+        differentHegisSameMajor.loc[:,'id'] = range(1, len(differentHegisSameMajor) + 1) 
+        sameHegisDifferentMajor = differentHegisSameMajor
 
-        print(errorDataFrame.head())
+        print(differentHegisSameMajor.head())
 
-        ids = errorDataFrame["id"]
-        errorBoolean = errorDataFrame.duplicated(subset=['campus','major'], keep=False)
-        errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
-        # self.json_output('master_errors_table',errorDataFrame)
+        ids = differentHegisSameMajor["id"]
+        errorBoolean = differentHegisSameMajor.duplicated(subset=['campus','major'], keep=False)
+        differentHegisSameMajor = differentHegisSameMajor[ids.isin( ids[ errorBoolean ] ) ]
+        # self.json_output('master_errors_table',differentHegisSameMajor)
         
-        ids = duplicateHegisCodeDifferentMajor["id"]       
-        errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
-        duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
+        ids = sameHegisDifferentMajor["id"]       
+        errorBoolean = sameHegisDifferentMajor.duplicated(subset=['campus','hegis_at_exit'], keep=False)
+        sameHegisDifferentMajor = sameHegisDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
 
-        return errorDataFrame,duplicateHegisCodeDifferentMajor
-        # self.json_output('master_duplicate_hegis_code_different_major_table',duplicateHegisCodeDifferentMajor)
+        return differentHegisSameMajor,sameHegisDifferentMajor
+        # self.json_output('master_duplicate_hegis_code_different_major_table',sameHegisDifferentMajor)
         pass
 
     def get_Industry_Data_Frame(self):
@@ -87,9 +109,7 @@ class DFHelper():
         return industryPathTypes,industryPathWages,populationTable
 
     def get_dict(self):
-        dictionary = []
         path = os.getcwd() + '/dictionaries'
-    
         dictFiles = [csvFile for csvFile in listdir(path) 
                     if isfile(join(path, csvFile)) ]
 
@@ -98,19 +118,17 @@ class DFHelper():
     def create_master_dict(self):
         dictFiles = self.get_dict()
         masterDict = {}
-        import json
-
-        # concatenate dicts
+        
         for dictFile in dictFiles:
             with open(os.getcwd() + '/dictionaries/'+dictFile) as f:
                 data = json.load(f)
                 masterDict = {**masterDict, **data}
 
-        with open ('./master_industry_Dictionary.json', 'w' ) as fp:
+        fileName = './master_industry_dictionary.json'
+        with open (fileName, 'w' ) as fp:
             fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
         fp.close()
 
-        return masterDict
 
 
 

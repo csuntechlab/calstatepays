@@ -17,9 +17,9 @@ class Data_Frame_Sanitizer:
         self.file = file
         localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv( localFilePath )
-        print(self.df.head())
+        # print(self.df.head())
         self.df = self.df.drop(['Old HEGIS At Exit','HEGIS_With_Out_Plus'],axis=1)
-        print(self.df.head())
+        # print(self.df.head())
         self.sanitize_null_values()
         self.header_sanitizer()
 
@@ -117,7 +117,7 @@ class Data_Frame_Sanitizer:
         self.df = self.df.rename(columns={'median_annual_earnings':'median_annual_earnings_5_years_after_exit', 'average_annual_earnings': 'average_annual_earnings_5_years_after_exit'})
         self.df = self.df.rename(columns={'median_annual_earnings.1':'median_annual_earnings_10_years_after_exit', 'average_annual_earnings.1': 'average_annual_earnings_10_years_after_exit'})
         self.df = self.df.rename(columns={'number_of_students_found.1':'number_of_students_found_10_years_after_exit', 'number_of_students_found': 'number_of_students_found_5_years_after_exit'})
-        print('updated')
+        # print('updated')s
         # print(self.df.columns)
 
 
