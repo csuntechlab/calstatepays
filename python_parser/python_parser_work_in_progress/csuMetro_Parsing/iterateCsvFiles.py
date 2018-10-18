@@ -36,7 +36,7 @@ class IterateCsvFiles():
         hegisTable.jsonSanitize('master_majors_path_wage_table')
 
         # print(hegisDataFrame)
-    
+      
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
       indexMajorPathId = 1  

@@ -6,22 +6,30 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+from csuMetro_Parsing.jsonOutput import JsonOutPut
+
 class UniversitiesDataFrameErrorChecker():
   def __init__(self,csvfiles):
     self.csvFiles = csvfiles
     self.masterDF = pd.DataFrame()
     self.globalIndx = 1
+    self.jsonOutputter = JsonOutPut()
     # to append masterDf = masterDf.append( newDf , ignore_index=True)
     pass
 
   def get_master_df(self):
-      # print(self.masterDF)
-      master = self.masterDF.to_dict(orient='record')
-      fileName = './master_majors_university_table_new.json'
-      with open (fileName, 'w' ) as fp:
-        fp.write(simplejson.dumps(master, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-      fp.close()
-      return self.masterDF
+    print('self.masterDF')
+    self.string_number_to_real_number('id')
+    self.string_number_to_real_number('hegis_codes')
+    self.string_number_to_real_number('university_id')
+
+    master = self.masterDF.to_dict(orient='record')
+    fileName = './master_majors_university_table_new.json'
+    s
+    self.jsonOutputter.json_output_with_simple_json(fileName, master)
+  
+  def string_number_to_real_number(self,columnName):
+    self.masterDF[columnName] = pd.to_numeric(self.masterDF[columnName], errors='coerce', downcast='integer')
 
 
   def concat_all_csv_to_master_df(self):
@@ -39,6 +47,8 @@ class UniversitiesDataFrameErrorChecker():
   def sanitize_df(self,df):
     df.columns = df.columns.str.lower()
     df.columns = df.columns.str.replace(' ','_')
+    
+    #TODO: ERROR CHECKING COMMENT THIS OUT 
     df = df.loc[df['student_path'].isin([1,2,4])]
     df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
     return df
@@ -78,21 +88,16 @@ class UniversitiesDataFrameErrorChecker():
       df.at[idx,'major'] = duplicatedMajor + "-" + strHegis
       major = df.at[idx,'major']
       hegisToMajorDictionary[int(hegis)] = major
-    dictionary = hegisToMajorDictionary
-    with open('./hegisToMajorDictionary/'+csv.replace("_majors","")+'.json','w') as fp:
-        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()  
+
+    filePath = './hegisToMajorDictionary/'+csv.replace("_majors","")+'.json'
+    
+    self.jsonOutputter.json_output_with_simple_json(filePath,hegisToMajorDictionary)
     # for idx, row in sameHegisDifferentMajor.iterrows():
     #   duplicatedMajor = sameHegisDifferentMajor.at[idx,'major']
     #   hegis = sameHegisDifferentMajor.at[idx,'hegis_at_exit']
     #   strHegis = str(hegis).replace('.0',"")
     #   df.at[idx,'hegis_at_exit'] = strHegis + strHegis
     #   df.at[idx,'major'] = duplicatedMajor + "-" + strHegis+strHegis
-
-    # print('smaeHEgisDifferentMajor')
-    # print(sameHegisDifferentMajor)
-    # print('differentHegisSameMajor')
-    # print(differentHegisSameMajor)
     return df
         
   
@@ -115,37 +120,29 @@ class UniversitiesDataFrameErrorChecker():
       self.masterDF = self.masterDF.append( dictRename , ignore_index=True)  
     dictionary  = {campusId:hegisDictionary}
     
-    with open('./dictionaries/'+csv.replace("_majors","")+'.json','w') as fp:
-        fp.write(simplejson.dumps(dictionary, sort_keys=False,indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()  
-   
-    # with open ('../../database/data/'+csv.replace("_majors","")+'.json', 'w' ) as fp:
-    #   fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    # fp.close()
+    filePath = './dictionaries/'+csv.replace("_majors","")+'.json' 
+    
+    self.jsonOutputter.json_output_with_simple_json(filePath,dictionary)
+
     self.concat_dictionary_to_master_dictionary()
-    return dictionary
 
   def get_dict(self):
         path = os.getcwd() + '/dictionaries'
         dictFiles = [csvFile for csvFile in listdir(path) 
         if isfile(join(path, csvFile)) ]
-
         return dictFiles
  
   
   def concat_dictionary_to_master_dictionary(self):
     dictFiles = self.get_dict()
     masterDict = {}
+
     for dictFile in dictFiles:
         with open(os.getcwd() + '/dictionaries/'+dictFile) as f:
             data = json.load(f)
             masterDict = {**masterDict, **data}
     
-    fileName = './master_major_dictionary.json'
-    with open (fileName, 'w' ) as fp:
-        fp.write(simplejson.dumps(masterDict, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-    fp.close()
-
-    return masterDict
+    filePath = './dictionaries/master_major_dictionary.json'
+    self.jsonOutputter.json_output_with_simple_json(filePath,masterDict)
 
   
