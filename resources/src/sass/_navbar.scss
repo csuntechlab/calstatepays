@@ -90,8 +90,9 @@
 
 .sub-nav__element {
 	color: rgba(0, 0, 0, 0.5);
-	text-align: center;
 	padding: 1.2rem 0;
+	text-align: center;
+	text-transform: uppercase;
 	transition: 0.2s;
 	&:hover {
 		color: $blue-light;
@@ -115,6 +116,7 @@
 		padding: 0;
 		color: rgba(0, 0, 0, 0.5);
 		text-align: center;
+		text-transform: capitalize;
 		text-decoration: none;
 		display: table-cell;
 		.fa-usd,.fa-graduation-cap{	

@@ -48903,7 +48903,7 @@ var render = function() {
               attrs: { "aria-hidden": "true" }
             }),
             _vm._v(" "),
-            _c("span", [_vm._v("MAJORS")])
+            _c("span", [_vm._v("Majors")])
           ]
         ),
         _vm._v(" "),
@@ -48927,7 +48927,7 @@ var render = function() {
               attrs: { "aria-hidden": "true" }
             }),
             _vm._v(" "),
-            _c("span", [_vm._v("INDUSTRIES")])
+            _c("span", [_vm._v("Industries")])
           ]
         ),
         _vm._v(" "),
