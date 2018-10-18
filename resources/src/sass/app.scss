@@ -1,3 +1,6 @@
+//Vue Select
+@import url("../../../node_modules/vuetify/dist/vuetify.css");
+
 //Bootstrap
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
@@ -18,9 +21,6 @@
 @import "node_modules/bootstrap/scss/alert";
 @import "node_modules/bootstrap/scss/list-group";
 @import "node_modules/bootstrap/scss/utilities";
-
-//Vue Select
-@import url("../../../node_modules/vuetify/dist/vuetify.css");
 
 //Custom SCSS for App
 @import "variables";
