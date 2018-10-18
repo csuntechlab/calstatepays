@@ -45,6 +45,7 @@ class IterateCsvFiles():
       MajorsPathsDataFrame = pd.DataFrame()
       MajorsPathWageDataFrame = pd.DataFrame()
 
+      masterDataFrame = pd.DataFrame()
       powerUserDataFrame = pd.DataFrame()
 
       for csv in majorsCsvFiles:
@@ -52,10 +53,8 @@ class IterateCsvFiles():
         majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
         
         powerDataFrame =  majorSanitize.get_majors_dataframe()
-        powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True)
-
-
-        majorDataFrame = majorSanitize.sanitize_Major() #sanitizes major
+        powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True )
+        masterDataFrame = masterDataFrame.append( powerDataFrame , ignore_index=True )
 
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
         
@@ -78,7 +77,7 @@ class IterateCsvFiles():
         universityMajorsDataFrame = universityMajorIdDf
 
         del majorSanitize
-        del majorDataFrame
+        # del majorDataFrame
         del universityMajorDictionaryDf
         del jsonMajor
         del majorPathDf

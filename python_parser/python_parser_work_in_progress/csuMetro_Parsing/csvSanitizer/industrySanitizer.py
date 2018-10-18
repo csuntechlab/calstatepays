@@ -12,10 +12,10 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         super().__init__(file)
         self.renameNewCsvs()
         self.sanitizeCommon()
-        self.sanitize_Industry()
         self.header_sanitizer()
         self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_industry",""))
         self.update_majors_based_on_same_hegis_different_majors()
+        self.sanitize_Industry()
         # print(self.df)
         pass
 
