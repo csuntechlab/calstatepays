@@ -19,9 +19,9 @@ import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
 import subNav from "../../../components/global/sub-nav.vue";
 export default {
     components:{
-          csuDataImgBanner,
-          subNav
-    }
-}
+      csuDataImgBanner,
+      subNav,
+    },
+};
 </script>
 
