@@ -48416,7 +48416,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
@@ -48848,6 +48847,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48882,7 +48885,7 @@ var render = function() {
         _c(
           "router-link",
           {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            staticClass: "col-4 sub-nav__element",
             attrs: {
               "active-class": "sub-nav__element--active",
               to: "/data/majors"
@@ -48893,13 +48896,21 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n        MAJORS\n        ")]
+          [
+            _c("i", {
+              staticClass:
+                "mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", [_vm._v("Majors")])
+          ]
         ),
         _vm._v(" "),
         _c(
           "router-link",
           {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            staticClass: "col-4 sub-nav__element",
             attrs: {
               "exact-active-class": "sub-nav__element--active",
               to: "/data/industries"
@@ -48910,13 +48921,20 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n        INDUSTRIES\n        ")]
+          [
+            _c("i", {
+              staticClass: "mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", [_vm._v("Industries")])
+          ]
         ),
         _vm._v(" "),
         _c(
           "router-link",
           {
-            staticClass: "d-flex col-4 justify-content-center sub-nav__element",
+            staticClass: "col-4 sub-nav__element",
             attrs: {
               "active-class": "sub-nav__element--active",
               to: "/data/pfre"
@@ -48927,7 +48945,14 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n        FRE\n        ")]
+          [
+            _c("i", {
+              staticClass: "mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", [_vm._v("FRE")])
+          ]
         )
       ],
       1
@@ -73359,8 +73384,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-
 
 
 
@@ -75447,10 +75470,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-      components: {
-            csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
-            subNav: __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default.a
-      }
+  components: {
+    csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
+    subNav: __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default.a
+  }
 });
 
 /***/ }),
@@ -97232,6 +97255,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -97265,7 +97289,9 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _vm._m(0)
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "footer-mobile-positioning" })
   ])
 }
 var staticRenderFns = [

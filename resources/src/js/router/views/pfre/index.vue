@@ -37,7 +37,6 @@ import pfreForm from "../../../components/pfre/pfre-form.vue";
 import pfreInfo from "../../../components/pfre/pfre-info.vue";
 import pfreProgress from "../../../components/pfre/pfre-progress.vue";
 import { mapGetters } from "vuex";
-
 export default {
   components: {
     csuDataImgBanner,
@@ -46,6 +45,6 @@ export default {
     pfreInfo,
     pfreProgress,
     subNav
-  }
+  },
 };
 </script>

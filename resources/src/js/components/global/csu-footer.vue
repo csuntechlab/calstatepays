@@ -9,6 +9,7 @@
             <p class="footer__link text-white text-right"><strong>California State University</strong></p>
             <a href="#" class="footer__link text-gray pull-right">Contact Us</a>
         </div>
+        <div class="footer-mobile-positioning"/>
     </footer>
 </template>
 <script>

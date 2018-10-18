@@ -19408,9 +19408,28 @@ figcaption {
   font-weight: 600;
 }
 
+@media screen and (max-width: 767px) {
+  .sub-nav {
+    position: fixed;
+    bottom: 0;
+    z-index: 90000;
+    display: table;
+    vertical-align: middle;
+    min-height: 3.5rem;
+    font-size: 1rem;
+    -webkit-box-shadow: 0 0 2px #999;
+            box-shadow: 0 0 2px #999;
+  }
+  .sub-nav span {
+    display: block;
+  }
+}
+
 .sub-nav__element {
   color: rgba(0, 0, 0, 0.5);
   padding: 1.2rem 0;
+  text-align: center;
+  text-transform: uppercase;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -19432,6 +19451,53 @@ figcaption {
   background: #4DB7C6;
   color: #FFF;
   font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .sub-nav__element {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    display: table-cell;
+  }
+  .sub-nav__element .fa-usd, .sub-nav__element .fa-graduation-cap {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .sub-nav__element--active {
+    background: none;
+    text-decoration: none;
+    color: #a00d0d;
+    font-weight: bold;
+  }
+  .sub-nav__element--active .fa-usd, .sub-nav__element--active .fa-graduation-cap {
+    color: #a00d0d;
+  }
+  .sub-nav__element:hover {
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-decoration: none;
+    color: #a00d0d;
+    font-weight: bold;
+  }
+  .sub-nav__element:hover .fa-usd, .sub-nav__element:hover .fa-graduation-cap {
+    color: #a00d0d;
+  }
+}
+
+.mobile-icon {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-icon {
+    margin-left: 0;
+    display: initial !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -19460,6 +19526,12 @@ footer, .footer {
       -ms-flex: 0 1 auto !important;
           flex: 0 1 auto !important;
   background-color: #000;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-mobile-positioning {
+    margin-top: 110px;
+  }
 }
 
 .footer__links {
