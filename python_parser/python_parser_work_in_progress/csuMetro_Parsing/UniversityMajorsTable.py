@@ -21,11 +21,11 @@ class UniversitiesDataFrameErrorChecker():
     print('self.masterDF')
     self.string_number_to_real_number('id')
     self.string_number_to_real_number('hegis_codes')
-    self.string_number_to_real_number('university_id')
+    self.string_number_to_real_number('campus')
 
     master = self.masterDF.to_dict(orient='record')
-    fileName = './master_majors_university_table_new.json'
-    self.jsonOutputter.json_output_with_simple_json(fileName, master)
+    filePath = './master_majors_university_table_new.json'
+    self.jsonOutputter.json_output_with_simple_json(filePath, master)
   
   def string_number_to_real_number(self,columnName):
     self.masterDF[columnName] = pd.to_numeric(self.masterDF[columnName], errors='coerce', downcast='integer')
@@ -50,6 +50,7 @@ class UniversitiesDataFrameErrorChecker():
     #TODO: ERROR CHECKING COMMENT THIS OUT 
     df = df.loc[df['student_path'].isin([1,2,4])]
     df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
+    df = df.loc[df['year'].isin([2,5,10,15])]
     return df
 
   def create_base_university_majors_table(self,df):
@@ -114,7 +115,7 @@ class UniversitiesDataFrameErrorChecker():
       hegisDictionary[hegis] = index
       campus =  int(row['campus'])
       major =  (row['major'])
-      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':index }
+      dictRename = {'hegis_codes': hegis,'campus':campus,'major':major,'id':index }
       universityMajorsId.append(dictRename)
       self.masterDF = self.masterDF.append( dictRename , ignore_index=True)  
     dictionary  = {campusId:hegisDictionary}

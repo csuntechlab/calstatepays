@@ -33,7 +33,7 @@ class JsonMajor:
 
       campus =  int(row['campus'])
       major =  (row['major'])
-      dictRename = {'hegis_codes': hegis,'university_id':campus,'major':major,'id':self.indexUniversityMajorsId }
+      dictRename = {'hegis_codes': hegis,'campus':campus,'major':major,'id':self.indexUniversityMajorsId }
       universityMajorsId.append(dictRename)
       
       self.universityMajorsDataFrame = self.universityMajorsDataFrame.append( dictRename , ignore_index=True)

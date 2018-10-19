@@ -16,11 +16,13 @@ from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
 
 from csuMetro_Parsing.dataframeToCSV import DfToCSV
+from csuMetro_Parsing.jsonOutput import JsonOutPut
+# from csuMetro_Parsing.addUniqueIdentifier import AddUniqueId
 
 class IterateCsvFiles():
   
     def __init__(self):
-        pass
+      self.jsonOutputter = JsonOutPut()
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
         print(universityMajorsDataFrame.head())
@@ -29,11 +31,21 @@ class IterateCsvFiles():
         
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisDataFrame = hegisTable.get_hegis_codes_table_data_frame()
-        hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
-
-        hegisTable.json_output('master_majors_path_table',MajorsPathsDataFrame)
-        hegisTable.json_output('master_majors_path_wage_table',MajorsPathWageDataFrame)
-        print(MajorsPathWageDataFrame)
+        # hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
+        # hegisTable.json_output('master_majors_path_table',MajorsPathsDataFrame)
+        # hegisTable.json_output('master_majors_path_wage_table',MajorsPathWageDataFrame)
+        
+        # hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
+# 
+        filePath = '../../database/data/'
+        self.jsonOutputter.json_output_by_university(filePath+'master_hegis_category_table',hegisDataFrame)
+        self.jsonOutputter.json_output_by_university(filePath+'Major_Path_',MajorsPathsDataFrame)
+        self.jsonOutputter.json_output_by_university(filePath+'Major_Path_Wages_',MajorsPathWageDataFrame)
+        # hegisTable.json_output(filePath,MajorsPathsDataFrame)
+# 
+        # filePath = '../../database/data/master_majors_path_wage_table.json'
+        # hegisTable.json_output(filePath,MajorsPathWageDataFrame)
+        # print(MajorsPathWageDataFrame)
         # hegisTable.jsonSanitize('master_majors_path_wage_table')
 
         # print(hegisDataFrame)
@@ -46,16 +58,16 @@ class IterateCsvFiles():
       MajorsPathsDataFrame = pd.DataFrame()
       MajorsPathWageDataFrame = pd.DataFrame()
 
-      masterDataFrame = pd.DataFrame()
-      powerUserDataFrame = pd.DataFrame()
+      MasterMajorsDataframe = pd.DataFrame()
+      # powerUserDataFrame = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
         majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
         
-        powerDataFrame =  majorSanitize.get_majors_dataframe()
-        powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True )
-        masterDataFrame = masterDataFrame.append( powerDataFrame , ignore_index=True )
+        majorsDataFrame =  majorSanitize.get_majors_dataframe()
+        # powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True )
+        MasterMajorsDataframe = MasterMajorsDataframe.append( majorsDataFrame , ignore_index=True )
 
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
         
@@ -83,8 +95,12 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
+    
       
-      DfToCSV(powerUserDataFrame,'_majors')
+      DfToCSV(MasterMajorsDataframe,'_majors')
+      
+      # AddUniqueId(MasterMajorsDataFrame)
+      
 
       self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
 
