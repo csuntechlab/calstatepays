@@ -19047,6 +19047,18 @@ figcaption {
   }
 }
 
+.errorAlert {
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .img__logo {
   padding-top: 10px;
   max-height: 50px;
