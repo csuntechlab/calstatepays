@@ -9,9 +9,8 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-for="(industry,index) in industriesByMajor" :key="index">
-            <div class="row industry-card__row">
-                <div class="col-sm-3">{{industry.title}}</div>
+        <div v-for="(industry,index) in industriesByMajor" :key="index " class="row industry-card__row">
+            <div class="col-sm-3">{{industry.title}}</div>
                 <div class="col-sm-9">
                     <div class="row industry-bar__padding">
                         <span class="col-10">
@@ -33,8 +32,7 @@
                         </span>
                         <div class="col-2 industry-bar__salary-text">${{formatDollars(industry.industryWage)}}</div>
                     </div>
-                </div>
-            </div>
+            </div>            
         </div>
     </div>
 </template>
