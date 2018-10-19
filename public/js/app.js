@@ -49857,7 +49857,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("v-select", {
-            staticClass: "csu-form-input-major",
+            staticClass: "csu-form-input",
             class: {
               "border-danger": this.submittedOnce && !this.form.majorId
             },
@@ -52581,7 +52581,7 @@ var render = function() {
                 _vm._v(" "),
                 this.form.fieldOfStudyId == null
                   ? _c("v-select", {
-                      staticClass: "csu-form-input-major",
+                      staticClass: "csu-form-input",
                       class: {
                         "border-danger":
                           this.submittedOnce && !this.form.majorId
@@ -52604,7 +52604,7 @@ var render = function() {
                       }
                     })
                   : _c("v-select", {
-                      staticClass: "csu-form-input-major",
+                      staticClass: "csu-form-input",
                       class: {
                         "border-danger":
                           this.submittedOnce && !this.form.majorId
@@ -73915,7 +73915,7 @@ var render = function() {
           _vm._v(" "),
           this.form.fieldOfStudyId == null
             ? _c("v-select", {
-                staticClass: "csu-form-input-major",
+                staticClass: "csu-form-input",
                 class: {
                   "border-danger": !this.form.majorId && this.submittedOnce
                 },
@@ -73937,7 +73937,7 @@ var render = function() {
                 }
               })
             : _c("v-select", {
-                staticClass: "csu-form-input-major",
+                staticClass: "csu-form-input",
                 class: {
                   "border-danger": this.submittedOnce && !this.form.majorId
                 },

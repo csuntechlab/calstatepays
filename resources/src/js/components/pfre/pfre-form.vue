@@ -15,7 +15,7 @@
                     :options="majors"
                     @input="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
-                    class="csu-form-input-major"
+                    class="csu-form-input"
                     v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
                 </v-select>
             </div>
