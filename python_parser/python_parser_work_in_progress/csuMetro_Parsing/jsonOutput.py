@@ -22,9 +22,12 @@ class JsonOutPut:
   def json_output_by_university(self,filePath,df):
     print(df.head())
     aggregate = df.loc[df['campus'].isin([0])]
-    output = aggregate.to_dict(orient='record')
-    self.json_output_with_simple_json(filePath+'aggregate.json',output)
+    self.convert_df_to_dictionary_then_out_put_to_json(filePath+'aggregate.json',aggregate)
+    
     northridge = df.loc[df['campus'].isin([70])]
-    output = northridge.to_dict(orient='record')
-    self.json_output_with_simple_json(filePath+'northridge.json',output)
-    pass
+    self.convert_df_to_dictionary_then_out_put_to_json(filePath+'northridge.json',northridge)
+  
+  def convert_df_to_dictionary_then_out_put_to_json(self,filePath,df):
+    dictionaryOutputOfDf = df.to_dict(orient='record')
+    self.json_output_with_simple_json(filePath,dictionaryOutputOfDf )
+    

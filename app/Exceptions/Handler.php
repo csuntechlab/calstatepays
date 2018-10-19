@@ -49,9 +49,9 @@ class Handler extends ExceptionHandler
     {
         return $response = [
             'collection' => $collection,
-            'success'    => ($success ? "true" : "false"),
-            'api'        => 'csuMetro',
-            'version'    => '1.0',
+            'success' => ($success ? "true" : "false"),
+            'api' => 'csuMetro',
+            'version' => '1.0',
             'code' => $status_code,
         ];
     }
@@ -63,11 +63,11 @@ class Handler extends ExceptionHandler
      * @param $status
      * @return 
      */
-    public function buildResponse($message,$status)
+    public function buildResponse($message, $status)
     {
-        $response = $this->buildResponseArray('errors', false,$status);
+        $response = $this->buildResponseArray('errors', false, $status);
         $response['message'] = [$message];
-        return response($response,$status);
+        return response($response, $status);
     }
 
     /**
@@ -79,8 +79,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if($e instanceof HttpException || $e instanceof ModelNotFoundException){
-            return  $this->buildResponse('Resource could not be resolved',409);
+        if ($e instanceof HttpException || $e instanceof ModelNotFoundException) {
+            return $this->buildResponse('Resource could not be resolved', 409);
         }
         return parent::render($request, $exception);
     }
