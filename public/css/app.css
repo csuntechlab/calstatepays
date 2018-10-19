@@ -3613,7 +3613,7 @@ p {
 .v-autocomplete--is-selecting-index input {
   opacity: 0;
 }
-.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo):not(.v-text-field--single-line) .v-select__slot > input {
+.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo) .v-select__slot > input {
   margin-top: 24px;
 }
 .v-autocomplete:not(.v-input--is-disabled).v-select.v-text-field input {
@@ -7147,8 +7147,6 @@ table.v-table tfoot tr td {
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  padding-bottom: 8px;
-  margin-bottom: -8px;
 }
 .v-date-picker-title__date > div {
   position: relative;
@@ -20149,6 +20147,7 @@ input[type="button"]:focus {
 }
 
 .industry-bar__salary-text {
+  padding-left: 0;
   color: #2BAE67;
 }
 
@@ -20158,6 +20157,7 @@ input[type="button"]:focus {
 }
 
 .industry-bar__percentage-text {
+  padding-left: 0;
   color: #2f98bf;
 }
 
