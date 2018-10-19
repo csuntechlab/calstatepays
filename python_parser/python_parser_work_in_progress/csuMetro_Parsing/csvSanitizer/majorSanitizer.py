@@ -53,6 +53,8 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         }
         for column in self.df:
             pd.Series(column).map(mapper)
+        print("overhere")
+        print(self.df.head())
     
     def get_University_Majors_Dictionary_Data_Frame(self):
         UnivMajorDictionaryDf = self.df.loc[:,['campus','hegis_at_exit','major','student_path','entry_status'] ]
@@ -69,6 +71,7 @@ class Sanitize_Major(Data_Frame_Sanitizer):
         MajorPathDf = self.df.loc[:,['student_path','entry_status','year','hegis_at_exit','campus']]
         MajorPathDf.loc[:,'id'] = range(1, len(MajorPathDf) + 1) # TODO: May have messed up here
         MajorPathWageDf = self.df.loc[:,['_25th_percentile_earnings','_50th_percentile_earnings','_75th_percentile_earnings']]
+        print(MajorPathWageDf.head())
         # MajorPathWageDf.loc[:,'major_path_id'] = MajorPathDf.loc[:,['id']] # TODO: May Have messed up here
         MajorPathWageDf.loc[:,'major_path_id'] = range(1, len(MajorPathDf) + 1) # TODO: May Have messed up here
         # print(MajorPathDf)

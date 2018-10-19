@@ -85,7 +85,7 @@ class Data_Frame_Sanitizer:
     # converts to floats...
     def string_number_to_real_number(self,columnName):
         self.remove_comma(columnName) 
-        self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce')
+        self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce', downcast='integer')
 
     def remove_dollar(self,columnName):
         self.df[columnName] = self.df[columnName].str.replace('$', '')

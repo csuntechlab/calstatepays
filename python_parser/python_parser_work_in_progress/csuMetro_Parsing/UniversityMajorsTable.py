@@ -25,7 +25,6 @@ class UniversitiesDataFrameErrorChecker():
 
     master = self.masterDF.to_dict(orient='record')
     fileName = './master_majors_university_table_new.json'
-    s
     self.jsonOutputter.json_output_with_simple_json(fileName, master)
   
   def string_number_to_real_number(self,columnName):

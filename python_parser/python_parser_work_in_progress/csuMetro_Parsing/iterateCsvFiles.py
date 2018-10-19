@@ -33,7 +33,8 @@ class IterateCsvFiles():
 
         hegisTable.json_output('master_majors_path_table',MajorsPathsDataFrame)
         hegisTable.json_output('master_majors_path_wage_table',MajorsPathWageDataFrame)
-        hegisTable.jsonSanitize('master_majors_path_wage_table')
+        print(MajorsPathWageDataFrame)
+        # hegisTable.jsonSanitize('master_majors_path_wage_table')
 
         # print(hegisDataFrame)
       
