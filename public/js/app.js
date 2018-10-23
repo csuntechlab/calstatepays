@@ -29586,6 +29586,7 @@ var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
+var RESET_MAJOR_DATA = "majors/RESET_MAJOR_DATA";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -29599,7 +29600,8 @@ var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
     ADD_MAJOR_CARD: ADD_MAJOR_CARD,
     DELETE_MAJOR_CARD: DELETE_MAJOR_CARD,
-    RESET_MAJOR_CARD: RESET_MAJOR_CARD
+    RESET_MAJOR_CARD: RESET_MAJOR_CARD,
+    RESET_MAJOR_DATA: RESET_MAJOR_DATA
 });
 
 /***/ }),
@@ -46610,6 +46612,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].educationLevel = "allDegrees";
     state.majorCards[index].industries = [];
     state.majorCards[index].majorData = [];
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_DATA, function (state) {
+    state.majorCards = [{
+        formWasSubmitted: false,
+        majorsByField: [],
+        industries: [],
+        majorData: [],
+        educationLevel: 'allDegrees'
+    }];
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -46719,6 +46729,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref12.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, payload);
+    },
+    resetMajorData: function resetMajorData(_ref13) {
+        var commit = _ref13.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].RESET_MAJOR_DATA);
     }
 });
 
@@ -48431,11 +48446,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    created: function created() {},
+    methods: {
+        reset: function reset() {
+            this.$store.dispatch('resetMajorData');
+        }
+    },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity', 'universities']), {
         getCampusName: function getCampusName() {
             var selectedUniversity = this.selectedUniversity;
@@ -48778,7 +48798,13 @@ var render = function() {
             {
               staticClass: "CSUDataImgBanner__dataInfoWrapper col-12 col-md-8"
             },
-            [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
+            [
+              _c("button", { on: { click: _vm.reset } }, [_vm._v("Reset")]),
+              _vm._v(" "),
+              _vm._t("title"),
+              _vm._v(" "),
+              _vm._t("copy")
+            ],
             2
           )
         ])

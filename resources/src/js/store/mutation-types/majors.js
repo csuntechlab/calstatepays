@@ -10,6 +10,7 @@ const TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 const ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 const DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 const RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
+const RESET_MAJOR_DATA = "majors/RESET_MAJOR_DATA";
 
 export default {
     FETCH_MAJORS,
@@ -24,4 +25,5 @@ export default {
     ADD_MAJOR_CARD,
     DELETE_MAJOR_CARD,
     RESET_MAJOR_CARD,
+    RESET_MAJOR_DATA,
 }

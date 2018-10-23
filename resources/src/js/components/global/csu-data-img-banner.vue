@@ -11,6 +11,7 @@
                     </div>
                 </div>
                 <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-8">
+                    <button @click="reset">Reset</button>
                     <slot name="title"></slot>
                     <slot name="copy"></slot>
                 </div>
@@ -23,7 +24,10 @@
 import {mapGetters} from 'vuex';
 import campusModal from './campus-modal.vue';
 export default {
-    created: function(){
+    methods: {
+        reset(){
+            this.$store.dispatch('resetMajorData');
+        }
     },
     computed: {
         ...mapGetters([
