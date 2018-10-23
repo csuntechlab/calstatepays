@@ -149,13 +149,15 @@ class IterateCsvFiles():
       industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
       
       # JSon Outputs 
-      jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
-      jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
-      jsonIndustry.jsonOutput(fileName+"_population",populationTable)
+      filePath = '../../database/data/'
+      filePathIndustryPath = filePath + '/industryPathTypesData/Industry_Path_Types_'  
+      filePathIndustryWages = filePath + '/industryPathWagesData/Industry_Path_Wages_'
       
-      jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
-      jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
-      jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
+
+      self.jsonOutputter.json_output_by_university_path(filePathIndustryPath,industryPathTypesDf)
+      self.jsonOutputter.json_output_by_university_wages(filePathIndustryWages,industryPathTypesDf,industryPathWagesDf,'id','id')
+      
+      jsonIndustry.jsonOutput(fileName+"_population",populationTable)
 
 
 
