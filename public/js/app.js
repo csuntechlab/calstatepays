@@ -46600,6 +46600,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
+    state.majors = [];
     payload.forEach(function (major) {
         major.majorId = major.hegis_code;
         delete major.hegis_code;
@@ -52245,7 +52246,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ["index", "windowWidth"],
 	data: function data() {
@@ -52292,8 +52292,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees') return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
 		nullValues: function nullValues() {
-			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
-			return false;
+			var yearsOut = [2, 5, 10, 15];
+			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+				for (var i = 0; i < yearsOut.length; i++) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+						return false;
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
+						return false;
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+						return false;
+					}
+				}
+				return true;
+			}
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
@@ -72761,8 +72772,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
 		nullValues: function nullValues() {
-			if (this.selectedEducationLevel != 'allDegrees') return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
-			return false;
+			var yearsOut = [2, 5, 10, 15];
+			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+				for (var i = 0; i < yearsOut.length; i++) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+						return false;
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
+						return false;
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+						return false;
+					}
+				}
+				return true;
+			}
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
