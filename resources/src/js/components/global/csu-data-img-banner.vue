@@ -11,6 +11,7 @@
                     </div>
                 </div>
                 <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-8">
+                    <button @click="reset">Reset</button>
                     <slot name="title"></slot>
                     <slot name="copy"></slot>
                 </div>
@@ -48,6 +49,11 @@ export default {
             CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
             CSUImg: '',
         }
+    },
+    methods: {
+        reset(){
+				this.$store.dispatch('resetMajorState');
+			},
     },
     components: {campusModal}
 }
