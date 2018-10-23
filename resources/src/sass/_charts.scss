@@ -25,21 +25,22 @@
 		}
 	}
 
+	&__salary {
+		background-color: $green;
+		border-radius: 50px;
+		&-text {
+			padding-left: 0;
+			color: $green;
+		}
+	}
+
 	&__percentage {
 		background-color: $blue;
 		border-radius: 50px;
 		&-text {
+			padding-left: 0;
 			color: $blue;
 		}
-	}
-
-	&__legend-salary{
-		height: 0;
-		width: 10px;
-		padding-bottom: 10px;
-		margin-right: 5px;
-		background-color: $green;
-		display: inline-block;
 	}
 
 	&__legend-percentage{

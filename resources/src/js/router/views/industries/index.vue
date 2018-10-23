@@ -24,19 +24,17 @@
     </div>
   </div>
 </template>
-
 <script>
-  import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
-  import subNav from "../../../components/global/sub-nav.vue"
-  import industryProgress from "../../../components/industries/industry-progress.vue";
-  import industryForm from "../../../components/industries/industry-form.vue"
-
-  export default {
+import csuDataImgBanner from '../../../components/global/csu-data-img-banner';
+import subNav from "../../../components/global/sub-nav.vue";
+import industryProgress from "../../../components/industries/industry-progress.vue";
+import industryForm from "../../../components/industries/industry-form.vue"
+export default {
     components: {
       csuDataImgBanner,
       industryProgress,
       industryForm,
       subNav
-    }
+    },
   };
 </script>
