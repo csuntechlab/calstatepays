@@ -21,14 +21,6 @@
 		background-color: $green;
 		border-radius: 50px;
 		&-text {
-			color: $green;
-		}
-	}
-
-	&__salary {
-		background-color: $green;
-		border-radius: 50px;
-		&-text {
 			padding-left: 0;
 			color: $green;
 		}
@@ -57,7 +49,7 @@
 	}
 
 	&__padding {
-		margin-bottom: 10px;
+		margin-bottom: .75rem;
 	}
 
 	&__collapse {

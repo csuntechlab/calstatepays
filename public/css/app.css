@@ -20152,15 +20152,6 @@ input[type="button"]:focus {
 }
 
 .industry-bar__salary-text {
-  color: #2BAE67;
-}
-
-.industry-bar__salary {
-  background-color: #2BAE67;
-  border-radius: 50px;
-}
-
-.industry-bar__salary-text {
   padding-left: 0;
   color: #2BAE67;
 }
@@ -20189,7 +20180,7 @@ input[type="button"]:focus {
 }
 
 .industry-bar__padding {
-  margin-bottom: 10px;
+  margin-bottom: .75rem;
 }
 
 .industry-bar__collapse {

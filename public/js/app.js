@@ -73498,11 +73498,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73542,7 +73537,7 @@ var render = function() {
             _c("div", { staticClass: "col-sm-9" }, [
               _c("div", { staticClass: "row industry-bar__padding" }, [
                 _c(
-                  "span",
+                  "div",
                   { staticClass: "col-10" },
                   [
                     _c("v-progress-linear", {
@@ -73558,7 +73553,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                industry.percentage > 0
+                industry.percentage > 0 && industry != null
                   ? _c(
                       "div",
                       { staticClass: "col-2 industry-bar__percentage-text" },
@@ -73568,7 +73563,7 @@ var render = function() {
                     ? _c(
                         "div",
                         { staticClass: "col-2 industry-bar__percentage-text" },
-                        [_vm._v("0%")]
+                        [_vm._v("N/A")]
                       )
                     : _c(
                         "div",
@@ -73577,50 +73572,26 @@ var render = function() {
                       )
               ]),
               _vm._v(" "),
-              industry.industryWage == null
-                ? _c("div", { staticClass: "row" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-10" },
-                      [
-                        _c("v-progress-linear", {
-                          staticClass: "industry-bar",
-                          attrs: {
-                            value: industry.industryWage / 1500,
-                            height: "25",
-                            color: "industry-bar__salary",
-                            "background-color": "industry-bar__background"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-2 industry-bar__salary-text" },
-                      [_vm._v("N/A")]
-                    )
-                  ])
-                : _c("div", { staticClass: "row" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-10" },
-                      [
-                        _c("v-progress-linear", {
-                          staticClass: "industry-bar",
-                          attrs: {
-                            value: industry.industryWage / 1500,
-                            height: "25",
-                            color: "industry-bar__salary",
-                            "background-color": "industry-bar__background"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-10" },
+                  [
+                    _c("v-progress-linear", {
+                      staticClass: "industry-bar",
+                      attrs: {
+                        value: industry.industryWage / 1500,
+                        height: "25",
+                        color: "industry-bar__salary",
+                        "background-color": "industry-bar__background"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                industry.industryWage > 0 && industry != null
+                  ? _c(
                       "div",
                       { staticClass: "col-2 industry-bar__salary-text" },
                       [
@@ -73629,7 +73600,14 @@ var render = function() {
                         )
                       ]
                     )
-                  ])
+                  : industry.industryWage === null
+                    ? _c(
+                        "div",
+                        { staticClass: "col-2 industry-bar__salary-text" },
+                        [_vm._v("N/A")]
+                      )
+                    : _vm._e()
+              ])
             ])
           ]
         )
