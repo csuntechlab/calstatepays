@@ -30,13 +30,13 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
+    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName, $degree)
     {
         $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
         
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use($degree) {
                 $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', 1);
+                $query->where('student_path', $degree);
                 }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
                     ->where('hegis_code', $hegis_code)
                     ->where('university_id', $opt_in->id)
