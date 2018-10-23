@@ -9,6 +9,12 @@ footer, .footer {
     flex: 0 1 auto !important;
     background-color: $black;
 }
+.footer-mobile-positioning{
+
+    @media screen and (max-width: $break-small) {
+		margin-top: 110px;
+	}
+}
 .footer__links{
     float: left;
     padding: 5px 5px;

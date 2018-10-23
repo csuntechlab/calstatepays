@@ -3,4 +3,5 @@
 export default {
     selectedUniversity: 'all',
     selectedDataPage: 'majors',
+    errorMessage:''
 };

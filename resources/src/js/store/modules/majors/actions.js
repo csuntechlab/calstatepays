@@ -1,7 +1,7 @@
 //MAJORS ACTIONS
 import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
-
+import _global from '../../mutation-types/global-form';
 export default {
 
     fetchMajors({commit, dispatch}, payload){
@@ -10,7 +10,10 @@ export default {
             (success) => {
                 commit(_majors.FETCH_MAJORS, success);
             },
-            (error) => console.log(error),
+            (error) =>{commit(_global.ERROR_ALERT,error)
+
+                
+            }
         );
     },
 
@@ -19,7 +22,7 @@ export default {
             (success) => {
                 commit(_majors.FETCH_FIELD_OF_STUDIES, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     },
 
@@ -34,7 +37,7 @@ export default {
                 success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
             },
-            (error) => console.log(error),
+            (error) =>commit(_global.ERROR_ALERT,error),
         );
     },
 
@@ -43,7 +46,7 @@ export default {
             (success) => {
                 commit(_majors.FETCH_UNIVERSITIES, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     },
 
@@ -54,7 +57,7 @@ export default {
                 success.cardIndex = payload.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     },
 
@@ -66,7 +69,7 @@ export default {
                 success.forEach((industry) => industry['majorId'] = payload.majorId);
                 commit(_majors.FETCH_INDUSTRY_IMAGES, success);
             },
-            (error) => console.log(error),
+            (error) => commit(_global.ERROR_ALERT,error),
         );
     }, 
 
