@@ -30,7 +30,7 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName, $degree)
+    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
     {
         $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
         
