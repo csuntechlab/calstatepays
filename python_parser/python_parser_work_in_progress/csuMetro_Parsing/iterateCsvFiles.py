@@ -34,8 +34,12 @@ class IterateCsvFiles():
 
         filePath = '../../database/data/'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath+'master_hegis_category_table.json',hegisDataFrame)
-        self.jsonOutputter.json_output_by_university(filePath+'/majorPathData/Major_Path_',MajorsPathsDataFrame)
-        self.jsonOutputter.json_output_by_university(filePath+'/majorPathWagesData/Major_Path_Wages_',MajorsPathWageDataFrame)
+
+        filePathMajorPath = filePath + '/majorPathData/Major_Path_'
+        self.jsonOutputter.json_output_by_university_path(filePathMajorPath,MajorsPathsDataFrame)
+        
+        filePathMajorWages = filePath + '/majorPathWagesData/Major_Path_Wages_'
+        self.jsonOutputter.json_output_by_university_wages(filePathMajorWages,MajorsPathsDataFrame,MajorsPathWageDataFrame,'id','major_path_id')
       
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
