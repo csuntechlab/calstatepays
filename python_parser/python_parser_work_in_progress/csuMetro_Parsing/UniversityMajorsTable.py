@@ -85,7 +85,8 @@ class UniversitiesDataFrameErrorChecker():
       duplicatedMajor = differentHegisSameMajor.at[idx,'major']
       hegis = differentHegisSameMajor.at[idx,'hegis_at_exit']
       strHegis = str(hegis).replace('.0',"")
-      df.at[idx,'major'] = duplicatedMajor + "-" + strHegis
+      newMajorName = str(duplicatedMajor) + "-" + strHegis
+      df.at[idx,'major'] = newMajorName
       major = df.at[idx,'major']
       hegisToMajorDictionary[int(hegis)] = major
 
