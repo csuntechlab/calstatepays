@@ -19,15 +19,15 @@ class University_Majors_TableSeeder extends Seeder
         // $json = File::get("database/data/long_beach_university_majors_id.json");
         // array_push($jsonCollection,$json);
 
-        foreach($data as $row) {
+        foreach ($data as $row) {
 
             $universityMajor = new UniversityMajor();
             $universityMajor->hegis_code = $row->hegis_codes;
-            $universityMajor->university_id = $row->university_id;
+            $universityMajor->university_id = $row->campus;
             $universityMajor->major = $row->major;
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }
-        
+
     }
 }
