@@ -9,7 +9,16 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-for="(industry,index) in industriesByMajor" :key="index " class="row industry-card__row">
+        <div v-if="industriesByMajor.length === 0">
+        <v-progress-circular
+        :size="100"
+        :width="10"
+        color="red"
+        indeterminate
+        ></v-progress-circular>
+        </div>
+    
+        <div v-else v-for="(industry,index) in industriesByMajor" :key="index " class="row industry-card__row">
             <div class="col-sm-3">{{industry.title}}</div>
                 <div class="col-sm-9">
                     <div class="row industry-bar__padding">

@@ -51920,7 +51920,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
 				var addBtn = document.getElementById("compare-major-button");
 				addBtn.style.position = "absolute";
-				addBtn.style.bottom = "1rem";
 			}
 		}
 	},
@@ -73526,6 +73525,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73553,55 +73561,27 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _vm._l(_vm.industriesByMajor, function(industry, index) {
-        return _c(
-          "div",
-          { key: index, staticClass: "row industry-card__row" },
-          [
-            _c("div", { staticClass: "col-sm-3" }, [
-              _vm._v(_vm._s(industry.title))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-9" }, [
-              _c("div", { staticClass: "row industry-bar__padding" }, [
-                _c(
-                  "span",
-                  { staticClass: "col-10" },
-                  [
-                    _c("v-progress-linear", {
-                      staticClass: "industry-bar",
-                      attrs: {
-                        value: industry.percentage,
-                        height: "25",
-                        color: "industry-bar__percentage",
-                        "background-color": "industry-bar__background"
-                      }
-                    })
-                  ],
-                  1
-                ),
+      _vm.industriesByMajor.length === 0
+        ? _c(
+            "div",
+            [
+              _c("v-progress-circular", {
+                attrs: { size: 100, width: 10, color: "red", indeterminate: "" }
+              })
+            ],
+            1
+          )
+        : _vm._l(_vm.industriesByMajor, function(industry, index) {
+            return _c(
+              "div",
+              { key: index, staticClass: "row industry-card__row" },
+              [
+                _c("div", { staticClass: "col-sm-3" }, [
+                  _vm._v(_vm._s(industry.title))
+                ]),
                 _vm._v(" "),
-                industry.percentage > 0
-                  ? _c(
-                      "div",
-                      { staticClass: "col-2 industry-bar__percentage-text" },
-                      [_vm._v(_vm._s(industry.percentage) + "%")]
-                    )
-                  : industry.percentage === null
-                    ? _c(
-                        "div",
-                        { staticClass: "col-2 industry-bar__percentage-text" },
-                        [_vm._v("0%")]
-                      )
-                    : _c(
-                        "div",
-                        { staticClass: "col-2 industry-bar__percentage-text" },
-                        [_vm._v("<1%")]
-                      )
-              ]),
-              _vm._v(" "),
-              industry.industryWage == null
-                ? _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-9" }, [
+                  _c("div", { staticClass: "row industry-bar__padding" }, [
                     _c(
                       "span",
                       { staticClass: "col-10" },
@@ -73609,9 +73589,9 @@ var render = function() {
                         _c("v-progress-linear", {
                           staticClass: "industry-bar",
                           attrs: {
-                            value: industry.industryWage / 1500,
+                            value: industry.percentage,
                             height: "25",
-                            color: "industry-bar__salary",
+                            color: "industry-bar__percentage",
                             "background-color": "industry-bar__background"
                           }
                         })
@@ -73619,44 +73599,89 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-2 industry-bar__salary-text" },
-                      [_vm._v("N/A")]
-                    )
-                  ])
-                : _c("div", { staticClass: "row" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-10" },
-                      [
-                        _c("v-progress-linear", {
-                          staticClass: "industry-bar",
-                          attrs: {
-                            value: industry.industryWage / 1500,
-                            height: "25",
-                            color: "industry-bar__salary",
-                            "background-color": "industry-bar__background"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-2 industry-bar__salary-text" },
-                      [
-                        _vm._v(
-                          "$" + _vm._s(_vm.formatDollars(industry.industryWage))
+                    industry.percentage > 0
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "col-2 industry-bar__percentage-text"
+                          },
+                          [_vm._v(_vm._s(industry.percentage) + "%")]
                         )
-                      ]
-                    )
-                  ])
-            ])
-          ]
-        )
-      })
+                      : industry.percentage === null
+                        ? _c(
+                            "div",
+                            {
+                              staticClass: "col-2 industry-bar__percentage-text"
+                            },
+                            [_vm._v("0%")]
+                          )
+                        : _c(
+                            "div",
+                            {
+                              staticClass: "col-2 industry-bar__percentage-text"
+                            },
+                            [_vm._v("<1%")]
+                          )
+                  ]),
+                  _vm._v(" "),
+                  industry.industryWage == null
+                    ? _c("div", { staticClass: "row" }, [
+                        _c(
+                          "span",
+                          { staticClass: "col-10" },
+                          [
+                            _c("v-progress-linear", {
+                              staticClass: "industry-bar",
+                              attrs: {
+                                value: industry.industryWage / 1500,
+                                height: "25",
+                                color: "industry-bar__salary",
+                                "background-color": "industry-bar__background"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-2 industry-bar__salary-text" },
+                          [_vm._v("N/A")]
+                        )
+                      ])
+                    : _c("div", { staticClass: "row" }, [
+                        _c(
+                          "span",
+                          { staticClass: "col-10" },
+                          [
+                            _c("v-progress-linear", {
+                              staticClass: "industry-bar",
+                              attrs: {
+                                value: industry.industryWage / 1500,
+                                height: "25",
+                                color: "industry-bar__salary",
+                                "background-color": "industry-bar__background"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-2 industry-bar__salary-text" },
+                          [
+                            _vm._v(
+                              "$" +
+                                _vm._s(_vm.formatDollars(industry.industryWage))
+                            )
+                          ]
+                        )
+                      ])
+                ])
+              ]
+            )
+          })
     ],
     2
   )
