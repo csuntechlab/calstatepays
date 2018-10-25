@@ -51914,6 +51914,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
 				var addBtn = document.getElementById("compare-major-button");
 				addBtn.style.position = "fixed";
+				addBtn.style.bottom = "5rem";
 			}
 			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
 				var addBtn = document.getElementById("compare-major-button");
