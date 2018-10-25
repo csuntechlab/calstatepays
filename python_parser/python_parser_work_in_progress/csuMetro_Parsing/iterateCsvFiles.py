@@ -94,7 +94,7 @@ class IterateCsvFiles():
 
       masterNaicsDataFrame,naicsDictionary = naicsObj.getImages(masterNaicsDataFrame)
       
-      filePath = '../../database/data/master_naics_titles'
+      filePath = '../../database/data/master_naics_titles.json'
       self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath,masterNaicsDataFrame)
 
       return naicsDictionary  
@@ -117,5 +117,5 @@ class IterateCsvFiles():
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathIndustryPath,industryPathTypes)
         filePathIndustryWages = filePath + '/industryPathWagesData/Industry_Path_Wages_'+fileName+'.json'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathIndustryWages,industryPathWages)
-        filePathPopulation = filePath + '/industryPathWagesData/Industry_Path_Wages_'+fileName+'.json'
+        filePathPopulation = filePath + '/populationData/Industry_Population_'+fileName+'.json'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathPopulation,populationTable)

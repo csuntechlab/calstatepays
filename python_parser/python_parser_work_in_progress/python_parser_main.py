@@ -41,8 +41,11 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     send list of files to be parsed
     '''
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
-
+    
+    lol = UniversitiesDataFrameErrorChecker(industryCsvFiles,'industry')
+    del lol
     lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles,'majors')
+    
     lol.concat_all_csv_to_master_df()
     
     print( majorsCsvFiles )

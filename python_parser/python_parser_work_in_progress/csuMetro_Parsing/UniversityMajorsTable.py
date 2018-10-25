@@ -76,6 +76,7 @@ class UniversitiesDataFrameErrorChecker():
 
     # sameHegisDifferentMajor = sameHegisDifferentMajor.drop_duplicates(subset=['hegis_at_exit'], keep='first')
 
+    print(self.typeOfCsv)
     filePath = '../../database/data/errors/'+self.typeOfCsv
     
     self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath + "_different_hegis_same_major.json",differentHegisSameMajor)
