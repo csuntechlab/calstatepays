@@ -9,7 +9,8 @@ from os.path import isfile, join
 from csuMetro_Parsing.jsonOutput import JsonOutPut
 
 class UniversitiesDataFrameErrorChecker():
-  def __init__(self,csvfiles):
+  def __init__(self,csvfiles,typeOfCsv):
+    self.typeOfCsv = typeOfCsv
     self.csvFiles = csvfiles
     self.masterDF = pd.DataFrame()
     self.globalIndx = 1
@@ -73,7 +74,12 @@ class UniversitiesDataFrameErrorChecker():
     sameHegisDifferentMajorBoolean = df.duplicated(subset=['campus','hegis_at_exit'], keep=False)
     sameHegisDifferentMajor = df[ids.isin( ids[ sameHegisDifferentMajorBoolean ] ) ]
 
-    sameHegisDifferentMajor = sameHegisDifferentMajor.drop_duplicates(subset=['hegis_at_exit'], keep='first')
+    # sameHegisDifferentMajor = sameHegisDifferentMajor.drop_duplicates(subset=['hegis_at_exit'], keep='first')
+
+    filePath = '../../database/data/errors/'+self.typeOfCsv
+    
+    self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath + "_different_hegis_same_major.json",differentHegisSameMajor)
+    self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath + "_same_hegis_different_major.json",sameHegisDifferentMajor)
 
     return differentHegisSameMajor,sameHegisDifferentMajor
   

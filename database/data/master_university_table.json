@@ -531,13 +531,13 @@
         "campus": 0,
         "hegis_codes": 1091,
         "id": 89,
-        "major": "Agriculture/Agricultural Science & Horticulture-1091"
+        "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
         "campus": 0,
         "hegis_codes": 1043,
         "id": 90,
-        "major": "Agriculture/Agricultural Science & Horticulture-1043"
+        "major": "Animal Science/Animal Health Science"
     },
     {
         "campus": 0,
@@ -801,7 +801,7 @@
         "campus": 0,
         "hegis_codes": 8225,
         "id": 134,
-        "major": "Education-8225"
+        "major": "Education"
     },
     {
         "campus": 0,
@@ -1401,7 +1401,7 @@
         "campus": 0,
         "hegis_codes": 49991,
         "id": 234,
-        "major": "Women's Studies-49991"
+        "major": "Women's Studies"
     },
     {
         "campus": 0,
@@ -1419,7 +1419,7 @@
         "campus": 0,
         "hegis_codes": 22999,
         "id": 237,
-        "major": "Women's Studies-22999"
+        "major": "Asian/Asian-American Studies"
     },
     {
         "campus": 0,
@@ -1437,7 +1437,7 @@
         "campus": 0,
         "hegis_codes": 49017,
         "id": 240,
-        "major": "Women's Studies-49017"
+        "major": "Liberal Studies"
     },
     {
         "campus": 0,
@@ -1455,7 +1455,7 @@
         "campus": 0,
         "hegis_codes": 49081,
         "id": 243,
-        "major": "Education-49081"
+        "major": "Diversified Studies in Education"
     },
     {
         "campus": 0,

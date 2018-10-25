@@ -23,8 +23,9 @@ class IterateCsvFiles():
   
     def __init__(self):
       self.jsonOutputter = JsonOutPut()
+      self.globalIndex = 1
     
-    def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
+    def create_hegis_code_data_frame(self,universityMajorsDataFrame):
         print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisTable.convert_To_Json()
@@ -34,45 +35,33 @@ class IterateCsvFiles():
 
         filePath = '../../database/data/'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath+'master_hegis_category_table.json',hegisDataFrame)
-
-        filePathMajorPath = filePath + '/majorPathData/Major_Path_'
-        self.jsonOutputter.json_output_by_university_path(filePathMajorPath,MajorsPathsDataFrame)
-        
-        filePathMajorWages = filePath + '/majorPathWagesData/Major_Path_Wages_'
-        self.jsonOutputter.json_output_by_university_wages(filePathMajorWages,MajorsPathsDataFrame,MajorsPathWageDataFrame,'id','major_path_id')
       
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
       indexMajorPathId = 1  
-      
+      filePath = '../../database/data/'
       universityMajorsDataFrame = pd.DataFrame()
-      MajorsPathsDataFrame = pd.DataFrame()
-      MajorsPathWageDataFrame = pd.DataFrame()
-
-      MasterMajorsDataframe = pd.DataFrame()
-      # powerUserDataFrame = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
-        majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
-        
-        majorsDataFrame =  majorSanitize.get_majors_dataframe()
-        # powerUserDataFrame = powerUserDataFrame.append( powerDataFrame , ignore_index=True )
-        MasterMajorsDataframe = MasterMajorsDataframe.append( majorsDataFrame , ignore_index=True )
+        majorSanitize = Sanitize_Major(csv,self.globalIndex,indexUniversityMajorsId) # Object contains a dataFrame
 
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
         
         universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
 
+        self.globalIndex = majorSanitize.get_global_index()
+        indexUniversityMajorsId = majorSanitize.get_index_of_university_majors_id()
         
-        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,indexUniversityMajorsId, indexMajorPathId) #Returns the Json
+        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame) #Returns the Json
         
         majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
-
-        MajorsPathsDataFrame = MajorsPathsDataFrame.append( majorPathDf , ignore_index=True)
-        MajorsPathWageDataFrame = MajorsPathWageDataFrame.append( majorPathWageDf , ignore_index=True)
-
-        indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
+        
+        filePathMajorPath = filePath + '/majorPathData/Major_Path_'+ fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorPath,majorPathDf)
+        
+        filePathMajorWages = filePath + '/majorPathWagesData/Major_Path_Wages_'+ fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorWages,majorPathWageDf)
 
         universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
 
@@ -86,14 +75,9 @@ class IterateCsvFiles():
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
-    
-      
-      DfToCSV(MasterMajorsDataframe,'_majors')
-      
-      # AddUniqueId(MasterMajorsDataFrame)
       
 
-      self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
+      self.create_hegis_code_data_frame(universityMajorsDataFrame)
 
 
     def create_industry_naics_data_frame_and_create_dictionary(self,industryCsvFiles):
