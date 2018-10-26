@@ -27,6 +27,7 @@ export default {
     methods: {
         reset(){
             this.$store.dispatch('resetMajorData');
+            this.$store.dispatch('resetIndustryData');
         }
     },
     computed: {
