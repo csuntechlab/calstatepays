@@ -92,8 +92,4 @@ export default {
     resetMajorCard({commit}, payload) {
         commit(_majors.RESET_MAJOR_CARD,payload);
     },
-
-    resetMajorData({commit}){
-        commit(_majors.RESET_MAJOR_DATA);
-    }
 }

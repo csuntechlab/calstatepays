@@ -16,8 +16,4 @@ export default {
 			state.industryMajorsByField.push(major);
 		});
 	},
-	[_industries.RESET_INDUSTRY_STATE](state){
-		state.industries = [];
-		state.industryMajorsByField = [];
-	}
 };

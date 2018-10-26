@@ -25,5 +25,4 @@ export default {
     ADD_MAJOR_CARD,
     DELETE_MAJOR_CARD,
     RESET_MAJOR_CARD,
-    RESET_MAJOR_DATA,
 }

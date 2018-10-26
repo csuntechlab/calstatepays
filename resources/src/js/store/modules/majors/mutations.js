@@ -85,16 +85,4 @@ export default {
         state.majorCards[index].industries=[];
         state.majorCards[index].majorData = [];
     },
-
-    [_majors.RESET_MAJOR_DATA](state){
-        state.majorCards = [
-            {
-                formWasSubmitted: false,
-                majorsByField: [],
-                industries: [],
-                majorData: [],
-                educationLevel: 'allDegrees'
-            }
-        ];
-    }
 }
