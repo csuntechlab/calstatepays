@@ -13,10 +13,10 @@ class Industry_Same_Hegis_Different_Majors_Table_Seeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/industry_same_hegis_different_major.json");
+        $json = File::get("database/data/errors/industry_same_hegis_different_major.json");
         $data = json_decode($json);
 
-        foreach($data as $row) {
+        foreach ($data as $row) {
             $industry_same_hegis_different_major = new industry_same_hegis_different_major();
             $industry_same_hegis_different_major->hegis_code = $row->hegis_at_exit;
             $industry_same_hegis_different_major->university_id = $row->campus;

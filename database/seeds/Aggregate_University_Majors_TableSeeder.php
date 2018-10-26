@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\UniversityMajor;
 
-class University_Majors_TableSeeder extends Seeder
+class Aggregate_University_Majors_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class University_Majors_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/master_university_table.json");
+        $json = File::get("database/data/universityMajorData/aggregate_university_majors_table.json");
         $data = json_decode($json);
 
         foreach ($data as $row) {
@@ -23,6 +23,5 @@ class University_Majors_TableSeeder extends Seeder
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }
-
     }
 }

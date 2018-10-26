@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\Models\IndustryPathType;
+
+class Aggregate_Industry_Path_Types_TableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $json = File::get('database/data/industryPathTypesData/Industry_Path_Types_aggregate.json');
+        $industry_path = json_decode($json);
+
+        foreach ($industry_path as $row) {
+            $industryPathType = new IndustryPathType();
+            $industryPathType->id = $industryPathType->id;
+            $industryPathType->entry_status = $row->entry_status;
+            $industryPathType->naics_code = $row->naics_codes;
+            $industryPathType->student_path = $row->student_path;
+            $industryPathType->population_sample_id = $row->population_sample_id;
+            $industryPathType->university_majors_id = $row->campus;
+            $industryPathType->save();
+        }
+    }
+}
