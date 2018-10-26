@@ -28,17 +28,10 @@ class IterateCsvFiles():
     def create_hegis_code_data_frame(self,universityMajorsDataFrame):
         print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
-        hegisTable.convert_To_Json()
-        
-        hegisTable = hegisID(universityMajorsDataFrame)
-        hegisDataFrame = hegisTable.get_hegis_codes_table_data_frame()
-
-        filePath = '../../database/data/'
-        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath+'master_hegis_category_table.json',hegisDataFrame)
+        hegisTable.convert_hegis_codes_table_data_json()
       
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
-      indexMajorPathId = 1  
       filePath = '../../database/data/'
       universityMajorsDataFrame = pd.DataFrame()
 
@@ -63,13 +56,18 @@ class IterateCsvFiles():
         filePathMajorWages = filePath + '/majorPathWagesData/Major_Path_Wages_'+ fileName+'.json'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorWages,majorPathWageDf)
 
-        universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
+        MasteruniversityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
+        print("***************************")
+        print(MasteruniversityMajorIdDf.head())
+        universityMajorsIDf = hegisID(MasteruniversityMajorIdDf)
+        universityMajorsIDf.convert_to_json(fileName)
 
         # print(universityMajorIdDf.head())
 
-        universityMajorsDataFrame = universityMajorIdDf
+        universityMajorsDataFrame = MasteruniversityMajorIdDf
 
         del majorSanitize
+        del MasteruniversityMajorIdDf
         del universityMajorDictionaryDf
         del jsonMajor
         del majorPathDf

@@ -3,50 +3,30 @@ import numpy as np
 import json
 import simplejson
 
-
-import simplejson
-import json
+from csuMetro_Parsing.jsonOutput import JsonOutPut
 
 class hegisID:
 
   def __init__(self,df):
     self.df = df
+    self.jsonOutputter = JsonOutPut()
+    self.sanitize()
 
   def head(self):
     print(self.df.head())
 
-  def convert_To_Json(self):
-
+  def sanitize(self):
     self.df['hegis_codes'] = (self.df['hegis_codes']).astype(int)
     self.df['id'] = (self.df['id']).astype(int)
     self.df['campus'] = (self.df['campus']).astype(int)
-
-    # print(self.df.head())
-
-    errorDataFrame = self.df
-    duplicateHegisCodeDifferentMajor = self.df
-
     self.df = self.df.drop_duplicates(subset=['campus', 'hegis_codes'], keep='first')
-
-    self.json_output('master_university_table',self.df)
     
-    '''
-    ERROR Data Frame code here 
-    '''
 
-    ids = errorDataFrame["id"]
-    errorBoolean = errorDataFrame.duplicated(subset=['campus','major'], keep=False)
-    errorDataFrame = errorDataFrame[ids.isin( ids[ errorBoolean ] ) ]
-    
-    self.json_output('master_errors_table',errorDataFrame)
+  def convert_to_json(self,fileName):
+    filePath = '../../database/data/universityMajorData/'+fileName+'_university_majors_table.json'
+    self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath,self.df)
 
-    ids = duplicateHegisCodeDifferentMajor["id"]
-    errorBoolean = duplicateHegisCodeDifferentMajor.duplicated(subset=['campus','hegis_codes'], keep=False)
-    duplicateHegisCodeDifferentMajor = duplicateHegisCodeDifferentMajor[ids.isin( ids[ errorBoolean ] ) ]
-
-    self.json_output('master_duplicate_hegis_code_different_major_table',duplicateHegisCodeDifferentMajor)
-
-  def get_hegis_codes_table_data_frame(self):
+  def convert_hegis_codes_table_data_json(self):
     hegisCodesTableDataFrame = self.df.loc[:,['hegis_codes','major','campus']]
     hegisCodesTableDataFrame = hegisCodesTableDataFrame.drop_duplicates(subset=['hegis_codes'], keep='first')
     # csv_rows.extend([{parsed_titles[i]:row[title[i]] for i in range( len(title))}])
@@ -71,8 +51,8 @@ class hegisID:
       hegisCodesTableDataFrame.ix[index,'id'] = i
 
       i +=1
-    
-    return hegisCodesTableDataFrame
+    filePath = '../../database/data/master_hegis_category_table.json'
+    self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath,hegisCodesTableDataFrame)
   
   def json_output(self,fileName, df):
     
