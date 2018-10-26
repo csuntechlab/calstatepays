@@ -18,7 +18,7 @@ class Northridge_Major_Path_Wages_TableSeeder extends Seeder
         foreach ($data as $row) {
             $majorPathWage = new MajorPathWage();
 
-            $majorPathWage->major_path_id = $row->major_path_id;
+            $majorPathWage->major_path_id = $row->id;
             $majorPathWage->_25th = $row->_25th_percentile_earnings;
             $majorPathWage->_50th = $row->_50th_percentile_earnings;
             $majorPathWage->_75th = $row->_75th_percentile_earnings;

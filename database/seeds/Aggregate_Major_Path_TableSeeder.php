@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\MajorPathWage;
+use App\Models\MajorPath;
 
 class Aggregate_Major_Path_TableSeeder extends Seeder
 {

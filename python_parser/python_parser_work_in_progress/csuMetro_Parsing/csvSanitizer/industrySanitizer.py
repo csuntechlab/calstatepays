@@ -23,6 +23,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
     def set_index(self):
         lenOfDf = len(self.df) + self.globalIndex
         self.df.loc[:,'id'] = range(self.globalIndex,lenOfDf) 
+        self.df.loc[:,'population_sample_id'] = range(self.globalIndex,lenOfDf) 
         self.globalIndex = lenOfDf
     
     def get_index(self):
@@ -86,7 +87,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         # print(self.print_column_headers())
         for idx, row in self.df.iterrows():
             temp = naics_dict.get(self.df.at[idx,'naics_industry'])
-            self.df.at[idx,'naics'] = temp
+            self.df.at[idx,'naics_codes'] = temp
             # if temp == 19 or temp == 20:
                 # self.df = self.df.drop(idx)
     

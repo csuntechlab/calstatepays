@@ -100,6 +100,7 @@ class IterateCsvFiles():
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       naicsDictionary = self.create_industry_naics_data_frame_and_create_dictionary(industryCsvFiles)
+      print(naicsDictionary)
       
       self.globalIndex = 1
       filePath = '../../database/data/'
