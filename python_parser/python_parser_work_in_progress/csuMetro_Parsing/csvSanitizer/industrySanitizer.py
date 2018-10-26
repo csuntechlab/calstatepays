@@ -45,7 +45,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
     
 
     def get_this_university_major_dictionary(self,file):
-        # print(self.file)
+        print(self.file)
         jsonFile = open('./hegisToMajorDictionary/'+file+'.json')
         dictionary = jsonFile.read()
         dictionary = json.loads(dictionary)

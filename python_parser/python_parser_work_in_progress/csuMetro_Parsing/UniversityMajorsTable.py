@@ -15,11 +15,11 @@ class UniversitiesDataFrameErrorChecker():
     self.masterDF = pd.DataFrame()
     self.globalIndx = 1
     self.jsonOutputter = JsonOutPut()
+    self.concat_all_csv_to_master_df()
     # to append masterDf = masterDf.append( newDf , ignore_index=True)
     pass
 
   def get_master_df(self):
-    print('self.masterDF')
     self.string_number_to_real_number('id')
     self.string_number_to_real_number('hegis_codes')
     self.string_number_to_real_number('campus')
@@ -51,7 +51,6 @@ class UniversitiesDataFrameErrorChecker():
     #TODO: ERROR CHECKING COMMENT THIS OUT 
     df = df.loc[df['student_path'].isin([1,2,4])]
     df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
-    df = df.loc[df['year'].isin([2,5,10,15])]
     return df
 
   def create_base_university_majors_table(self,df):
@@ -76,7 +75,6 @@ class UniversitiesDataFrameErrorChecker():
 
     # sameHegisDifferentMajor = sameHegisDifferentMajor.drop_duplicates(subset=['hegis_at_exit'], keep='first')
 
-    print(self.typeOfCsv)
     filePath = '../../database/data/errors/'+self.typeOfCsv
     
     self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath + "_different_hegis_same_major.json",differentHegisSameMajor)
