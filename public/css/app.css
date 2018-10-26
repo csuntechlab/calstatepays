@@ -19326,7 +19326,7 @@ figcaption {
   position: fixed;
   background: #FFF;
   width: 100%;
-  z-index: 1000000;
+  z-index: 99999999;
   -webkit-box-shadow: 0 6px 6px -6px #999;
           box-shadow: 0 6px 6px -6px #999;
   top: 0;
@@ -19416,7 +19416,7 @@ figcaption {
   .sub-nav {
     position: fixed;
     bottom: 0;
-    z-index: 90000;
+    z-index: 99999999;
     display: table;
     vertical-align: middle;
     min-height: 3.5rem;
@@ -19884,7 +19884,7 @@ textarea {
   outline: none;
   position: fixed;
   right: 1rem;
-  bottom: 2rem;
+  bottom: 5rem;
 }
 
 .btn-add .tooltiptext {
@@ -19903,8 +19903,8 @@ textarea {
   -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
   position: absolute;
-  z-index: 1;
-  bottom: 2rem;
+  z-index: 99999999;
+  bottom: 5rem;
   left: -4rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);

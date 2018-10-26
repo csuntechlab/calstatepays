@@ -187,8 +187,6 @@ return [
          */
         App\Providers\IndustryServiceProvider::class,
         App\Providers\MajorServiceProvider::class,
-        App\Providers\StudentPathServiceProvider::class,
-        App\Providers\HelperServiceProvider::class,
         App\Providers\UniversityServiceProvider::class,
 
     ],
@@ -206,7 +204,8 @@ return [
 
     'aliases' => [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'HTML' => Collective\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

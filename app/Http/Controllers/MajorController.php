@@ -16,22 +16,22 @@ class MajorController extends Controller
     {
         $this->majorRetriever = $majorContract;
     }
-    
-    public function getAllHegisCodesByUniversity( $university_name )
+
+    public function getAllHegisCodesByUniversity($university_name)
     {
-        return $this->majorRetriever->getAllHegisCodesByUniversity( $university_name );
+        return $this->majorRetriever->getAllHegisCodesByUniversity($university_name);
     }
-    
+
     public function getAllFieldOfStudies()
     {
         return $this->majorRetriever->getAllFieldOfStudies();
     }
-    
-    public function getMajorEarnings($hegis_code,$university_name)
+
+    public function getMajorEarnings($hegis_code, $university_name)
     {
         $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
 
-        foreach($university_major as $data) {
+        foreach ($university_major as $data) {
             $years = $data['years'];
             if ($data['student_path'] == 2) {
                 $someCollege[$years] = $this->extractWageByYearKey($data);
@@ -45,25 +45,25 @@ class MajorController extends Controller
         // question, do we need to return the major id?
         $nullArray = [
             '2' =>
-            [
-                "_25th"=>null,
-                "_50th"=>null,
-                "_75th"=>null
+                [
+                "_25th" => null,
+                "_50th" => null,
+                "_75th" => null
             ],
             '5' =>
-            [
+                [
                 "_25th" => null,
                 "_50th" => null,
                 "_75th" => null
             ],
             '10' =>
-            [
+                [
                 "_25th" => null,
                 "_50th" => null,
                 "_75th" => null
             ],
             '15' =>
-            [
+                [
                 "_25th" => null,
                 "_50th" => null,
                 "_75th" => null
@@ -71,16 +71,17 @@ class MajorController extends Controller
         ];
 
         $majorData = [
-            'majorId' =>$hegis_code,
+            'majorId' => $hegis_code,
             'universityName' => $university_name,
-            'someCollege'=> isset($someCollege) ? $someCollege : $nullArray,
+            'someCollege' => isset($someCollege) ? $someCollege : $nullArray,
             'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
             'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray
         ];
         return $majorData;
     }
 
-    public function extractWageByYearKey($array){
+    public function extractWageByYearKey($array)
+    {
         $studentPathArray = null;
         switch ($array['years']) {
             case 2:
@@ -103,26 +104,26 @@ class MajorController extends Controller
     {
         $freData = $this->majorRetriever->getFREData($request);
         return [
-            'majorId'      => $request->major,
+            'majorId' => $request->major,
             'universityId' => $request->university,
             'fre' => [
-                'timeToDegree'       => $freData['time_to_degree'],
-                'earningsYearFive'   => $freData['earnings_5_years'],
+                'timeToDegree' => $freData['time_to_degree'],
+                'earningsYearFive' => $freData['earnings_5_years'],
                 'returnOnInvestment' => $freData['roi']
             ]
         ];
     }
 
-    public function filterByFieldOfStudy($universityName,$fieldOfStudyId)
+    public function filterByFieldOfStudy($universityName, $fieldOfStudyId)
     {
-        $hegisData = $this->majorRetriever->getHegisCategories($universityName,$fieldOfStudyId);
-        
-        $data[] = array_map(function($hegis){
-                return  [
-                    'major'             => $hegis['university_majors']['major'],
-                    'hegisCode'         => $hegis['hegis_code'],
-                    'hegis_category_id' => $hegis['hegis_category_id'],
-                ];
+        $hegisData = $this->majorRetriever->getHegisCategories($universityName, $fieldOfStudyId);
+
+        $data[] = array_map(function ($hegis) {
+            return [
+                'major' => $hegis['university_majors']['major'],
+                'hegisCode' => $hegis['hegis_code'],
+                'hegis_category_id' => $hegis['hegis_category_id'],
+            ];
         }, $hegisData);
 
         $data = array_collapse($data);

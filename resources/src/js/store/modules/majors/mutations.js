@@ -3,6 +3,7 @@ import _majors from '../../mutation-types/majors';
 
 export default {
     [_majors.FETCH_MAJORS](state, payload){
+        state.majors=[];
         payload.forEach((major) => {
             major.majorId = major.hegis_code;
             delete major.hegis_code;
