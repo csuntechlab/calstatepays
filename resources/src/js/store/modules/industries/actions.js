@@ -18,5 +18,8 @@ export default {
 			},
 			(error) => console.log(error)
 		)
+	},
+	resetIndustryState({commit}){
+		commit(_industries.RESET_INDUSTRY_STATE);
 	}
 };

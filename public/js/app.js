@@ -29642,10 +29642,12 @@ var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 "use strict";
 var FETCH_INDUSTRIES = "industries/FETCH_INDUSTRIES";
 var FETCH_INDUSTRY_MAJORS_BY_FIELD = "industries/FETCH_INDUSTRY_MAJORS_BY_FIELD";
+var RESET_INDUSTRY_STATE = "industries/RESET_INDUSTRY_STATE";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
-	FETCH_INDUSTRY_MAJORS_BY_FIELD: FETCH_INDUSTRY_MAJORS_BY_FIELD
+	FETCH_INDUSTRY_MAJORS_BY_FIELD: FETCH_INDUSTRY_MAJORS_BY_FIELD,
+	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE
 });
 
 /***/ }),
@@ -46495,21 +46497,6 @@ function h(tag, key, args) {
 
 "use strict";
 // MAJORS STATE
-//
-function defaultState() {
-    return {
-        majors: [],
-        universities: [],
-        fieldOfStudy: [],
-        majorCards: [{
-            formWasSubmitted: false,
-            majorsByField: [],
-            industries: [],
-            majorData: [],
-            educationLevel: 'allDegrees'
-        }]
-    };
-}
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     majors: [],
@@ -46676,20 +46663,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.majorCards[index].industries = [];
     state.majorCards[index].majorData = [];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_STATE, function (state) {
-    console.log(state);
-    state = {
-        majors: [],
-        universities: [],
-        fieldOfStudy: [],
-        majorCards: [{
-            formWasSubmitted: false,
-            majorsByField: [],
-            industries: [],
-            majorData: [],
-            educationLevel: 'allDegrees'
-        }]
-    };
-    console.log(state);
+    state.majorCards = [{
+        formWasSubmitted: false,
+        majorsByField: [],
+        industries: [],
+        majorData: [],
+        educationLevel: 'allDegrees'
+    }];
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -47195,7 +47175,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = (_industries$FETCH_IND = {}, _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
 	state.industries = [];
-	console.log(payload);
 	payload.forEach(function (industry) {
 		delete industry.image;
 		state.industries.push(industry);
@@ -47207,6 +47186,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		delete major.hegisCode;
 		state.industryMajorsByField.push(major);
 	});
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
+	state.industries = [];
+	state.industryMajorsByField = [];
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -47238,6 +47220,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		}, function (error) {
 			return console.log(error);
 		});
+	},
+	resetIndustryState: function resetIndustryState(_ref3) {
+		var commit = _ref3.commit;
+
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE);
 	}
 });
 
@@ -48536,6 +48523,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: {
         reset: function reset() {
             this.$store.dispatch('resetMajorState');
+            this.$store.dispatch('resetIndustryState');
         }
     },
     components: { campusModal: __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue___default.a }
@@ -73582,7 +73570,18 @@ var render = function() {
       _vm._l(_vm.industriesByMajor, function(industry, index) {
         return _c(
           "div",
-          { key: index, staticClass: "row industry-card__row" },
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.industriesByMajor.length != 0,
+                expression: "industriesByMajor.length != 0"
+              }
+            ],
+            key: index,
+            staticClass: "row industry-card__row"
+          },
           [
             _c("div", { staticClass: "col-sm-3" }, [
               _vm._v(_vm._s(industry.title))

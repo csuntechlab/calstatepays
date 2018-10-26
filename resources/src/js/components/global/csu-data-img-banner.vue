@@ -52,7 +52,8 @@ export default {
     },
     methods: {
         reset(){
-				this.$store.dispatch('resetMajorState');
+                this.$store.dispatch('resetMajorState');
+                this.$store.dispatch('resetIndustryState');
 			},
     },
     components: {campusModal}

@@ -86,12 +86,7 @@ export default {
     },
 
     [_majors.RESET_MAJOR_STATE](state){
-        console.log(state);
-        state = {
-            majors: [],
-            universities: [],
-            fieldOfStudy: [],
-            majorCards: [
+        state.majorCards = [
                 {
                     formWasSubmitted: false,
                     majorsByField: [],
@@ -99,8 +94,6 @@ export default {
                     majorData: [],
                     educationLevel: 'allDegrees'
                 }
-            ],
-        };
-        console.log(state);
-    }
+        ];
+    },
 }
