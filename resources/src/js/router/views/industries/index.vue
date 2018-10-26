@@ -14,10 +14,10 @@
       <div class="container">
         <div class="row">
           <aside class="col-lg-3 col-12">
-            <industry-form/>
+            <industry-form v-on:triggerLoadingScreen="triggerLoadingScreen($event)" />
           </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress class="card-item industry-card"/>
+            <industry-progress :loadingCheck="loadingCheck" class="card-item industry-card"/>
           </div>
         </div>
       </div>
@@ -30,11 +30,28 @@ import subNav from "../../../components/global/sub-nav.vue";
 import industryProgress from "../../../components/industries/industry-progress.vue";
 import industryForm from "../../../components/industries/industry-form.vue"
 export default {
+    data(){
+      return {
+        loadingCheck: false
+      }
+    },
     components: {
       csuDataImgBanner,
       industryProgress,
       industryForm,
       subNav
     },
+    methods: {
+      triggerLoadingScreen(event){
+      if (event===true){
+        console.log(this.loadingCheck);
+        this.loadingCheck = true;
+      }
+      else{
+        this.loadingCheck = false; 
+      }
+      }
+      
+    }
   };
 </script>

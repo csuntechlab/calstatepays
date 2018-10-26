@@ -84,6 +84,7 @@ export default {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
+				this.$emit('triggerLoadingScreen', true);
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}
@@ -107,7 +108,6 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-			
 				this.fetchIndustryMajorsByField(this.form);
 			}
 		},

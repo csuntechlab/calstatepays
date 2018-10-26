@@ -73423,11 +73423,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loadingCheck: false
+    };
+  },
+
   components: {
     csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
     industryProgress: __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default.a,
     industryForm: __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue___default.a,
     subNav: __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default.a
+  },
+  methods: {
+    triggerLoadingScreen: function triggerLoadingScreen(event) {
+      if (event === true) {
+        console.log(this.loadingCheck);
+        this.loadingCheck = true;
+      } else {
+        this.loadingCheck = false;
+      }
+    }
   }
 });
 
@@ -73537,15 +73553,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	methods: {
-		formatDollars: function formatDollars(input) {
-			var dollarAmount = input.toString();
-			var hundreds = dollarAmount.substr(-3, 3);
-			var thousands = dollarAmount.slice(0, -3);
-			return thousands + ',' + hundreds;
-		}
-	},
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]))
+    methods: {
+        formatDollars: function formatDollars(input) {
+            var dollarAmount = input.toString();
+            var hundreds = dollarAmount.substr(-3, 3);
+            var thousands = dollarAmount.slice(0, -3);
+            return thousands + ',' + hundreds;
+        }
+    },
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"])),
+    watch: {
+        terminateLoadingScreen: function terminateLoadingScreen() {
+            var currentInfo = industriesByMajor;
+            console.log(currentInfo);
+            this.$emit('triggerLoadingScreen', false);
+        }
+    },
+    props: ['loadingCheck']
 });
 
 /***/ }),
@@ -73561,7 +73585,7 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _vm.industriesByMajor.length === 0
+      _vm.loadingCheck === true && _vm.industriesByMajor.length === 0
         ? _c(
             "div",
             [
@@ -73858,6 +73882,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
+				this.$emit('triggerLoadingScreen', true);
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
 			}
@@ -73878,7 +73903,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-
 				this.fetchIndustryMajorsByField(this.form);
 			}
 		}
@@ -74079,7 +74103,15 @@ var render = function() {
             _c(
               "aside",
               { staticClass: "col-lg-3 col-12" },
-              [_c("industry-form")],
+              [
+                _c("industry-form", {
+                  on: {
+                    triggerLoadingScreen: function($event) {
+                      _vm.triggerLoadingScreen($event)
+                    }
+                  }
+                })
+              ],
               1
             ),
             _vm._v(" "),
@@ -74088,7 +74120,8 @@ var render = function() {
               { staticClass: "col-lg-9 col-12" },
               [
                 _c("industry-progress", {
-                  staticClass: "card-item industry-card"
+                  staticClass: "card-item industry-card",
+                  attrs: { loadingCheck: _vm.loadingCheck }
                 })
               ],
               1
