@@ -157,10 +157,20 @@
 					return 'Discover your earnings after college!'
 			},
 			nullValues() {
-				if (this.selectedEducationLevel != 'allDegrees')
-					return this.selectedMajorData[this.selectedEducationLevel][2]._25th == null;
-				return false;
-			}
+				var yearsOut = [2,5,10,15]
+				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+					for(var i=0; i< yearsOut.length; i++){
+						if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
+							return false
+						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null){
+							return false
+						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
+							return false
+						}
+					}
+					return true;
+				}
+       		}
 		},
 		methods: {
 			...mapActions(["deleteMajorCard", "resetMajorCard"]),
