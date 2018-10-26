@@ -29602,6 +29602,7 @@ var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
 var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
+var RESET_MAJOR_DATA = "majors/RESET_MAJOR_DATA";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
@@ -29640,6 +29641,7 @@ var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 "use strict";
 var FETCH_INDUSTRIES = "industries/FETCH_INDUSTRIES";
 var FETCH_INDUSTRY_MAJORS_BY_FIELD = "industries/FETCH_INDUSTRY_MAJORS_BY_FIELD";
+var RESET_INDUSTRY_STATE = "industries/RESET_INDUSTRY_STATE";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
@@ -48475,7 +48477,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    created: function created() {},
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['selectedUniversity', 'universities']), {
         getCampusName: function getCampusName() {
             var selectedUniversity = this.selectedUniversity;
