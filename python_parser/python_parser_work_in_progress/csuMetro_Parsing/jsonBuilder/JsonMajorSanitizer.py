@@ -7,10 +7,10 @@ import json
 from csuMetro_Parsing.jsonOutput import JsonOutPut
 
 class JsonMajor:
-  def __init__(self,file,universityMajorDictionary,universityMajorsDataFrame):
+  def __init__(self,file,universityMajorDictionary):
     self.jsonOutputter = JsonOutPut()
     self.file = file
-    self.universityMajorsDataFrame = universityMajorsDataFrame
+    self.universityMajorsDataFrame =  pd.DataFrame()
     self.dictionary = self.createDictionary(universityMajorDictionary)
     
 

@@ -33,7 +33,8 @@ class IterateCsvFiles():
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
       filePath = '../../database/data/'
-      universityMajorsDataFrame = pd.DataFrame()
+      # universityMajorsDataFrame = pd.DataFrame()
+      MasterUni = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
@@ -46,7 +47,7 @@ class IterateCsvFiles():
         self.globalIndex = majorSanitize.get_global_index()
         indexUniversityMajorsId = majorSanitize.get_index_of_university_majors_id()
         
-        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame) #Returns the Json
+        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf) #Returns the Json
         
         majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
         
@@ -64,7 +65,7 @@ class IterateCsvFiles():
 
         # print(universityMajorIdDf.head())
 
-        universityMajorsDataFrame = MasteruniversityMajorIdDf
+        MasterUni = MasterUni.append( MasteruniversityMajorIdDf , ignore_index=True)
 
         del majorSanitize
         del MasteruniversityMajorIdDf
@@ -73,7 +74,7 @@ class IterateCsvFiles():
         del majorPathDf
         del majorPathWageDf
       
-      self.create_hegis_code_data_frame(universityMajorsDataFrame)
+      self.create_hegis_code_data_frame(MasterUni)
 
 
     def create_industry_naics_data_frame_and_create_dictionary(self,industryCsvFiles):
