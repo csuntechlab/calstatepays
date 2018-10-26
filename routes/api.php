@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 //Major
 Route::get('major/field-of-study', 'MajorController@getAllFieldOfStudies');
 // Route::get('/major/code/{majorName}', 'MajorController@getHegisCode');  TODO: why do i comment this out and get an error
@@ -26,8 +26,7 @@ Route::get('major/hegis-codes/{universityName}/{fieldOfStudyId}', 'MajorControll
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 
 /** TODO: $universityId -> $universityName */
-Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
-    'MajorController@getFREData')->name('major.fre-data');
+Route::get('/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}', 'MajorController@getFREData')->name('major.fre-data');
 
 //Industry
 

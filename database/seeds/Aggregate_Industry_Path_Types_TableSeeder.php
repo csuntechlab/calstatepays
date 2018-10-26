@@ -22,7 +22,7 @@ class Aggregate_Industry_Path_Types_TableSeeder extends Seeder
             $industryPathType->naics_code = $row->naics_codes;
             $industryPathType->student_path = $row->student_path;
             $industryPathType->population_sample_id = $row->population_sample_id;
-            $industryPathType->university_majors_id = $row->campus;
+            $industryPathType->university_majors_id = $row->university_majors_id;
             $industryPathType->save();
         }
     }

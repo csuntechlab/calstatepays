@@ -40,29 +40,34 @@ class IndustryServiceTest extends TestCase
         $this->seed('Naics_Titles_TableSeeder');
          // route is api/industry/{hegis_code}/{university_id}
          // i.e. api/industry/5021/northridge
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
         $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Population_Table_Seeder');
+        $this->seed('Northridge_Industry_Population_TableSeeder');
+
         $this->seed('Universities_TableSeeder');
         $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
+        dd($response);
+
         $this->assertArrayHasKey("title", $response[0]);
         $this->assertArrayHasKey("percentage", $response[0]);
         $this->assertArrayHasKey('rank', $response[0]);
         $this->assertArrayHasKey('image', $response[0]);
     }
 
+    // route is api/industry/{hegis_code}/{university_id}
+    // i.e. api/industry/5021/northridge
     public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
     {
         $this->seed('Naics_Titles_TableSeeder');
-         // route is api/industry/{hegis_code}/{university_id}
-         // i.e. api/industry/5021/northridge
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
         $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Population_Table_Seeder');
+        $this->seed('Northridge_Industry_Population_TableSeeder');
         $this->seed('Universities_TableSeeder');
+
         $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
+        dd($response);
         $this->assertArrayHasKey("title", $response[0]);
         $this->assertArrayHasKey("percentage", $response[0]);
         $this->assertArrayHasKey('rank', $response[0]);
@@ -90,10 +95,11 @@ class IndustryServiceTest extends TestCase
     public function test_Aggregate_getIndustryPopulationByRankWithImages()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+
+        $this->seed('Aggregate_University_Majors_TableSeeder');
         $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Population_Table_Seeder');
+        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+        $this->seed('Aggregate_Industry_Population_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
 
         $university_name = 'all';
@@ -133,10 +139,11 @@ class IndustryServiceTest extends TestCase
     public function test_Aggregate_getIndustryPopulationByRank()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+
+        $this->seed('Aggregate_University_Majors_TableSeeder');
         $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Population_Table_Seeder');
+        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+        $this->seed('Aggregate_Industry_Population_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
 
         $university_name = 'all';

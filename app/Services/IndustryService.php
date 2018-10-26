@@ -15,9 +15,9 @@ class IndustryService implements IndustryContract
     {
         $allNaicsTitles = NaicsTitle::all();
 
-        if($allNaicsTitles->isEmpty()){
+        if ($allNaicsTitles->isEmpty()) {
             $message = 'There is no Naics Title data';
-            throw new ModelNotFoundException($message,409);
+            throw new ModelNotFoundException($message, 409);
         }
 
         $allNaicsTitles = $allNaicsTitles->map(function ($item, $key) {
@@ -30,43 +30,43 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
+    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
-        
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', 1);
-                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $opt_in->id)
-                    ->firstOrFail();
+        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $industry_populations= $this->sortIndustryPopulation($university_major);
-        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', 1);
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $opt_in->id)
+            ->firstOrFail();
+
+        $industry_populations = $this->sortIndustryPopulation($university_major);
+
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
-        
+
         $industry_populations = $this->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
 
         return $industry_populations;
     }
 
-    public function getIndustryPopulationByRank($hegis_code,$universityName)
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
-        
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', 1);
-                }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $opt_in->id)
-                    ->firstOrFail();
+        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $industry_populations= $this->sortIndustryPopulation($university_major);
-        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', 1);
+        }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $opt_in->id)
+            ->firstOrFail();
+
+        $industry_populations = $this->sortIndustryPopulation($university_major);
+
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
-        
+
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
         return $industry_populations;
@@ -76,23 +76,25 @@ class IndustryService implements IndustryContract
     {
         $industry_populations = $university_major->industryPathTypes->sortByDesc('population.population_found')->values();
         return $industry_populations;
-    } 
+    }
 
-    private function getIndustryPopulationTotals($industry_populations) {
+    private function getIndustryPopulationTotals($industry_populations)
+    {
         $total = 0;
-        foreach($industry_populations as $pop) {
-            if($pop->population->population_found != null){
+        foreach ($industry_populations as $pop) {
+            if ($pop->population->population_found != null) {
                 $total += $pop->population->population_found;
             }
         }
         return $total;
     }
 
-    private function calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total) {
-        $final =  $industry_populations = $industry_populations
-            ->map(function ($industry,$index = 0) use($population_total){
+    private function calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total)
+    {
+        $final = $industry_populations = $industry_populations
+            ->map(function ($industry, $index = 0) use ($population_total) {
                 $index++;
-                $percentage = $this->populationHandler($industry,$population_total);
+                $percentage = $this->populationHandler($industry, $population_total);
                 return [
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
@@ -104,19 +106,21 @@ class IndustryService implements IndustryContract
         return $final;
     }
 
-    private function populationHandler($industry, $population_total){
-        if( ($industry->population->population_found!=null) && ($population_total != null) ){
-            $percentage = round( ($industry->population->population_found/$population_total)*100, 0, PHP_ROUND_HALF_DOWN);
+    private function populationHandler($industry, $population_total)
+    {
+        if (($industry->population->population_found != null) && ($population_total != null)) {
+            $percentage = round(($industry->population->population_found / $population_total) * 100, 0, PHP_ROUND_HALF_DOWN);
             return $percentage;
         }
         return null;
     }
 
-    private function calculatePopulationPercentages($industry_populations, $population_total) {
-        $final =  $industry_populations = $industry_populations
-            ->map(function ($industry,$index = 0) use($population_total){
+    private function calculatePopulationPercentages($industry_populations, $population_total)
+    {
+        $final = $industry_populations = $industry_populations
+            ->map(function ($industry, $index = 0) use ($population_total) {
                 $index++;
-                $percentage = $this->populationHandler($industry,$population_total);
+                $percentage = $this->populationHandler($industry, $population_total);
                 return [
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
