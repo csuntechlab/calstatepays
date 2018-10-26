@@ -73438,7 +73438,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     triggerLoadingScreen: function triggerLoadingScreen(event) {
       if (event === true) {
-        console.log(this.loadingCheck);
+        // console.log(this.loadingCheck);
         this.loadingCheck = true;
       } else {
         this.loadingCheck = false;
@@ -73561,14 +73561,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return thousands + ',' + hundreds;
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"])),
-    watch: {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]), {
         terminateLoadingScreen: function terminateLoadingScreen() {
-            var currentInfo = industriesByMajor;
+            var currentInfo = this.industriesByMajor;
             console.log(currentInfo);
-            this.$emit('triggerLoadingScreen', false);
+            if (currentInfo !== this.industriesByMajor) {
+                this.$emit('triggerLoadingScreen', false);
+                return true;
+            } else {
+                this.$emit('triggerLoadingScreen', true);
+                return false;
+            }
         }
-    },
+    }),
     props: ['loadingCheck']
 });
 
@@ -73585,7 +73590,7 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _vm.loadingCheck === true && _vm.industriesByMajor.length === 0
+      _vm.loadingCheck === true
         ? _c(
             "div",
             [

@@ -9,7 +9,7 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-if="loadingCheck===true && industriesByMajor.length===0">
+        <div v-if="loadingCheck===true" >
         <v-progress-circular
         :size="100"
         :width="10"
@@ -58,14 +58,20 @@ export default {
 	},
 	computed: {
         ...mapGetters(["industriesByMajor"]),
-        
-    },
-    watch: {
         terminateLoadingScreen(){
-            var currentInfo = industriesByMajor;
+            var currentInfo = this.industriesByMajor;
             console.log(currentInfo);
-            this.$emit('triggerLoadingScreen', false);
+            if(currentInfo !==this.industriesByMajor){
+            this.$emit('triggerLoadingScreen', false);    
+            return true;            
+            }
+            else{
+            this.$emit('triggerLoadingScreen', true);
+            return false;
+
+            }
         }
+        
     },
     props: ['loadingCheck']
 }

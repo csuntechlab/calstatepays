@@ -44,7 +44,7 @@ export default {
     methods: {
       triggerLoadingScreen(event){
       if (event===true){
-        console.log(this.loadingCheck);
+        // console.log(this.loadingCheck);
         this.loadingCheck = true;
       }
       else{

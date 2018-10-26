@@ -113,6 +113,7 @@ export default {
 		},
 	},
 
+	
 	computed: {
 		...mapGetters([
 			"majors",
