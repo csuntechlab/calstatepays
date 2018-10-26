@@ -1,50 +1,50 @@
 [
     {
-        "student_path": 1,
-        "entry_stat": "FTF + FTT",
-        "major": "Nursing",
         "campus": 70,
         "id": 165,
-        "hegis_at_exit": 12032
-    },
-    {
         "student_path": 1,
         "entry_stat": "FTF + FTT",
-        "major": "Management",
+        "hegis_at_exit": 12032,
+        "major": "Nursing"
+    },
+    {
         "campus": 70,
         "id": 177,
-        "hegis_at_exit": 5061
-    },
-    {
         "student_path": 1,
         "entry_stat": "FTF + FTT",
-        "major": "Management",
+        "hegis_at_exit": 5061,
+        "major": "Management"
+    },
+    {
         "campus": 70,
         "id": 178,
-        "hegis_at_exit": 5062
-    },
-    {
         "student_path": 1,
         "entry_stat": "FTF + FTT",
-        "major": "Nursing",
+        "hegis_at_exit": 5062,
+        "major": "Management"
+    },
+    {
         "campus": 70,
         "id": 211,
-        "hegis_at_exit": 12031
-    },
-    {
         "student_path": 1,
         "entry_stat": "FTF + FTT",
-        "major": "Recreation Management & Administration",
+        "hegis_at_exit": 12031,
+        "major": "Nursing"
+    },
+    {
         "campus": 70,
         "id": 234,
-        "hegis_at_exit": 21025
-    },
-    {
         "student_path": 1,
         "entry_stat": "FTF + FTT",
-        "major": "Recreation Management & Administration",
+        "hegis_at_exit": 21025,
+        "major": "Recreation Management & Administration"
+    },
+    {
         "campus": 70,
         "id": 235,
-        "hegis_at_exit": 21031
+        "student_path": 1,
+        "entry_stat": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "major": "Recreation Management & Administration"
     }
 ]

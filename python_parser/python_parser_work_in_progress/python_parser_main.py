@@ -42,8 +42,8 @@ def main( iterateCsvFiles = IterateCsvFiles() ):
     '''
     majorsCsvFiles,industryCsvFiles = get_csv_files_in_this_directory()
     
-    lol = UniversitiesDataFrameErrorChecker(industryCsvFiles,'industry')
-    lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles,'majors')
+    lol = UniversitiesDataFrameErrorChecker(majorsCsvFiles,'majors','')
+    lol = UniversitiesDataFrameErrorChecker(industryCsvFiles,'industry','_doNotUse')
     del lol
     
     print( majorsCsvFiles )

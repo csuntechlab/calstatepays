@@ -9,8 +9,9 @@ from os.path import isfile, join
 from csuMetro_Parsing.jsonOutput import JsonOutPut
 
 class UniversitiesDataFrameErrorChecker():
-  def __init__(self,csvfiles,typeOfCsv):
+  def __init__(self,csvfiles,typeOfCsv,concat):
     self.typeOfCsv = typeOfCsv
+    self.test = concat
     self.csvFiles = csvfiles
     self.masterDF = pd.DataFrame()
     self.globalIndx = 1
@@ -95,7 +96,7 @@ class UniversitiesDataFrameErrorChecker():
       major = df.at[idx,'major']
       hegisToMajorDictionary[int(hegis)] = major
 
-    filePath = './hegisToMajorDictionary/'+csv.replace("_majors","")+'.json'
+    filePath = './hegisToMajorDictionary/'+csv.replace("_majors","")+self.test+'.json'
     
     self.jsonOutputter.json_output_with_simple_json(filePath,hegisToMajorDictionary)
     # for idx, row in sameHegisDifferentMajor.iterrows():
