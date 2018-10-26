@@ -21,5 +21,9 @@ export default {
 
     toggleInfo({commit}, payload) {
         commit(_pfre.TOGGLE_INFO, payload);
+    },
+
+    resetFreState({commit}){
+        commit(_pfre.RESET_FRE_STATE);
     }
 }

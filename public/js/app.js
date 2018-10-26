@@ -29628,11 +29628,13 @@ var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
 var FETCH_MOCK_DATA = 'pfre/FETCH_MOCK_DATA';
 var FETCH_FRE_DATA = 'pfre/FETCH_FRE_DATA';
 var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
+var RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MOCK_DATA: FETCH_MOCK_DATA,
     FETCH_FRE_DATA: FETCH_FRE_DATA,
-    TOGGLE_INFO: TOGGLE_INFO
+    TOGGLE_INFO: TOGGLE_INFO,
+    RESET_FRE_STATE: RESET_FRE_STATE
 });
 
 /***/ }),
@@ -46941,24 +46943,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_pfre$FETCH_MOCK_DATA = {}, _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].FETCH_MOCK_DATA, function (state) {
-    state.pfreData.years.actual = Math.floor(Math.random() * Math.floor(13));
-    state.pfreData.earnings.actual = Math.floor(Math.random() * Math.floor(45000));
-    state.pfreData.returnOnInvestment.actual = (Math.random() * (0 - .15) + .15).toFixed(2);
+	state.pfreData.years.actual = Math.floor(Math.random() * Math.floor(13));
+	state.pfreData.earnings.actual = Math.floor(Math.random() * Math.floor(45000));
+	state.pfreData.returnOnInvestment.actual = (Math.random() * (0 - 0.15) + 0.15).toFixed(2);
 }), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].FETCH_FRE_DATA, function (state, payload) {
-    state.pfreData.years.actual = payload.fre.timeToDegree;
-    state.pfreData.earnings.actual = payload.fre.earningsYearFive;
-    state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
+	state.pfreData.years.actual = payload.fre.timeToDegree;
+	state.pfreData.earnings.actual = payload.fre.earningsYearFive;
+	state.pfreData.returnOnInvestment.actual = payload.fre.returnOnInvestment;
 }), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].TOGGLE_INFO, function (state, payload) {
-    if (!state.pfreShowInfo) {
-        state.pfreInfoKey = payload;
-        state.pfreShowInfo = true;
-    } else {
-        if (state.pfreInfoKey == payload) {
-            state.pfreShowInfo = false;
-        } else {
-            state.pfreInfoKey = payload;
-        }
-    }
+	if (!state.pfreShowInfo) {
+		state.pfreInfoKey = payload;
+		state.pfreShowInfo = true;
+	} else {
+		if (state.pfreInfoKey == payload) {
+			state.pfreShowInfo = false;
+		} else {
+			state.pfreInfoKey = payload;
+		}
+	}
+}), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].RESET_FRE_STATE, function (state, payload) {
+	state.pfreData.years.actual = 0;
+	state.pfreData.earnings.actual = 0;
+	state.pfreData.returnOnInvestment.actual = 0;
 }), _pfre$FETCH_MOCK_DATA);
 
 /***/ }),
@@ -46993,6 +46999,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref3.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].TOGGLE_INFO, payload);
+    },
+    resetFreState: function resetFreState(_ref4) {
+        var commit = _ref4.commit;
+
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].RESET_FRE_STATE);
     }
 });
 
@@ -48494,7 +48505,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -48520,12 +48530,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
 
-    methods: {
-        reset: function reset() {
-            this.$store.dispatch('resetMajorState');
-            this.$store.dispatch('resetIndustryState');
-        }
-    },
     components: { campusModal: __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue___default.a }
 });
 
@@ -48634,10 +48638,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity']), {
         changeCampus: function changeCampus(university) {
-            sessionStorage.setItem("selectedUniversity", university);
-            this.$store.dispatch('setUniversity', university);
-            this.$store.dispatch('fetchMajors', university);
-            this.$store.dispatch('fetchFieldOfStudies', university);
+            if (this.selectedUniversity != university) {
+                sessionStorage.setItem("selectedUniversity", university);
+                this.$store.dispatch('setUniversity', university);
+                this.$store.dispatch('resetMajorState');
+                this.$store.dispatch('resetIndustryState');
+                this.$store.dispatch('resetFreState');
+                this.$store.dispatch('fetchMajors', university);
+                this.$store.dispatch('fetchFieldOfStudies', university);
+            }
             this.showModal = false;
         },
         checkSessionData: function checkSessionData() {
@@ -48847,13 +48856,7 @@ var render = function() {
             {
               staticClass: "CSUDataImgBanner__dataInfoWrapper col-12 col-md-8"
             },
-            [
-              _c("button", { on: { click: _vm.reset } }, [_vm._v("Reset")]),
-              _vm._v(" "),
-              _vm._t("title"),
-              _vm._v(" "),
-              _vm._t("copy")
-            ],
+            [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
             2
           )
         ])
