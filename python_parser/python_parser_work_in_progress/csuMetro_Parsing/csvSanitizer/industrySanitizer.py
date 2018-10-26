@@ -17,6 +17,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         self.sanitize_Industry()
         self.dictionaryUniId = self.get_dictionary(file.replace('_industry','')) 
         self.dictionary = self.get_this_university_major_dictionary(self.file.replace("_industry",""))
+        self.update_table_with_university_majors_id()
         self.update_majors_based_on_same_hegis_different_majors()
         # print(self.df)
 
@@ -35,13 +36,14 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         dictionary = json.loads(dictionary)
         return dictionary
     
-    def update_table_with_university_majors_id_and_images(self):
+    def update_table_with_university_majors_id(self):
         self.df['university_majors_id'] = -1
 
         for index,row in self.df.iterrows():
             hegis = (str)(row.hegis_at_exit)
             campus = (str)(row.campus)
             uni_majors_id = self.dictionaryUniId[campus][hegis]
+            print(uni_majors_id)
             self.df.ix[index,'university_majors_id'] = uni_majors_id
     
 
@@ -95,7 +97,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         return self.df
     
     def get_Industry_Data_Frame(self):
-        industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','population_sample_id','campus','id']]
+        industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','population_sample_id','campus','id','university_majors_id']]
         
         industryPathWages = self.df.loc[:,['avg_annual_wage_5','id']]
 

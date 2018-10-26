@@ -41,8 +41,8 @@ class IndustryServiceTest extends TestCase
          // route is api/industry/{hegis_code}/{university_id}
          // i.e. api/industry/5021/northridge
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Master_Industry_Path_Types_Table_Seeder');
-        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Universities_TableSeeder');
         $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
@@ -58,8 +58,8 @@ class IndustryServiceTest extends TestCase
          // route is api/industry/{hegis_code}/{university_id}
          // i.e. api/industry/5021/northridge
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Master_Industry_Path_Types_Table_Seeder');
-        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Universities_TableSeeder');
         $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
@@ -91,8 +91,8 @@ class IndustryServiceTest extends TestCase
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Master_Industry_Path_Types_Table_Seeder');
-        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Naics_Titles_TableSeeder');
 
@@ -125,6 +125,7 @@ class IndustryServiceTest extends TestCase
 
     /**
      *   api is industry/{hegis_code}/{universityName}
+     *   api is api/industry/5021/all
      *   testing agaisnt real api vals
      *   (same as above)
      */
@@ -133,8 +134,8 @@ class IndustryServiceTest extends TestCase
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('University_Majors_TableSeeder');
-        $this->seed('Master_Industry_Path_Types_Table_Seeder');
-        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
         $this->seed('Population_Table_Seeder');
         $this->seed('Naics_Titles_TableSeeder');
 

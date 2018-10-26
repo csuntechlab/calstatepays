@@ -24,15 +24,17 @@ class MajorServiceTest extends TestCase
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
-        //  $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
-        $this->seed('Major_Paths_TableSeeder');
-        $this->seed('Major_Path_Wages_TableSeeder');
+
+        $this->seed('Aggregate_Major_Path_TableSeeder');
+        $this->seed('Aggregate_Major_Path_Wages_TableSeeder');
+        $this->seed('Northridge_Major_Path_TableSeeder');
+        $this->seed('Northridge_Major_Path_Wages_TableSeeder');
     }
 
     public function test_getAllHegisCodes_ensure_returns_all_rows()
     {
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
         /**
          *  Should we test every univ id?
@@ -84,7 +86,8 @@ class MajorServiceTest extends TestCase
     public function test_getMajorEarnings_ensure_returns_all_major_path_wages()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
+
         $response = $this->majorService->getMajorEarnings(22021, 'northridge');
         $this->assertArrayHasKey("id", $response[0]);
         $this->assertArrayHasKey("student_path", $response[0]);
@@ -103,8 +106,9 @@ class MajorServiceTest extends TestCase
     public function test_getFREData_ensure_returns_all_keys()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
         $this->seed('Master_FRE_Page_Data_TableSeeder');
+
         $request = new Request();
         $request->major = 22021;
         $request->university = 'northridge';
@@ -141,7 +145,7 @@ class MajorServiceTest extends TestCase
     public function test_getAllHegisCodesByUniversity_Opt_in_CSU()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
         // api route is
         // major/hegis-codes/university/{universityId}
         // i.e. major/hegis-codes/university/70
@@ -165,8 +169,9 @@ class MajorServiceTest extends TestCase
 
     public function test_Aggregate_data_test_response_of_getMajorEarnings()
     {
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Aggregate_University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
+
         $aggregate = 'all';
         $hegis = 11081;
         $response = $this->majorService->getMajorEarnings($hegis, $aggregate);
@@ -177,8 +182,9 @@ class MajorServiceTest extends TestCase
     public function test_Aggregate_getFREData_ensure_returns_all_keys()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Aggregate_University_Majors_TableSeeder');
         $this->seed('Master_FRE_Page_Data_TableSeeder');
+
         $request = new Request();
         $request->major = 22021;
         $request->university = 'all';
@@ -200,7 +206,8 @@ class MajorServiceTest extends TestCase
     public function test_Aggregate_return_major_count()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Aggregate_University_Majors_TableSeeder');
+
         $university_name = 'all';
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
 
@@ -211,7 +218,8 @@ class MajorServiceTest extends TestCase
     public function test_Able_to_retrieve_Aggregate_major_earnings()
     {
         $this->seed('Universities_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Aggregate_University_Majors_TableSeeder');
+
         $response = $this->majorService->getMajorEarnings(5021, 'all');
 
         // need 12 arrays response, year responses, 2,5,10,15
