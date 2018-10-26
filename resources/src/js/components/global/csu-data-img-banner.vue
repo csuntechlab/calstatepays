@@ -23,8 +23,6 @@
 import {mapGetters} from 'vuex';
 import campusModal from './campus-modal.vue';
 export default {
-    created: function(){
-    },
     computed: {
         ...mapGetters([
             'selectedUniversity',

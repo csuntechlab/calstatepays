@@ -15,9 +15,7 @@
     </head>
     <body>
        <div id="app">
-           <v-app>
-
-           </v-app>
+           <v-app/>
        </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
