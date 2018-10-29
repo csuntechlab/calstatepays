@@ -10,6 +10,8 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\Http\Controllers\IndustryController;
 use App\Contracts\IndustryContract;
 use Mockery;
+use App\Http\Requests\IndustryFormRequest;
+use Illuminate\Support\Facades\Validator;
 
 class IndustryControllerTest extends TestCase
 {
@@ -72,9 +74,13 @@ class IndustryControllerTest extends TestCase
      */
      public function testGetIndustryPopulationByRankWithImages()
      {
-        $hegis_code = 5021;
-        $universityName = 'northridge';
-        $degree = 1;
+         $input = [
+            'major' => 5021,
+            'university' => 'northridge',
+            'degreeLevel' => 1
+         ];
+
+        $request = new IndustryFormRequest($input);
 
         $data = json_encode([
             [
@@ -92,13 +98,14 @@ class IndustryControllerTest extends TestCase
                 "industryWage" => 71888
             ]
         ]);
-         $this->retriever
-         ->shouldReceive('getIndustryPopulationByRankWithImages')
-         ->once()
-         ->with($hegis_code,$universityName,$degree)
-         ->andReturn($data);
 
-        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis_code,$universityName,$degree);
+         $this->retriever
+            ->shouldReceive('getIndustryPopulationByRankWithImages')
+            ->once()
+            ->with($request->major,$request->university, $request->degreeLevel)
+            ->andReturn($data);
+
+        $response = $this->controller->getIndustryPopulationByRankWithImages($request);
         $this->assertEquals($response,$data);
      }
 
@@ -109,11 +116,15 @@ class IndustryControllerTest extends TestCase
      */
     public function testGetIndustryPopulationByRank()
     {
-       $hegis_code = 5021;
-       $universityName = 'northridge';
-       $degree = 1;
+        $input = [
+            'major' => 5021,
+            'university' => 'northridge',
+            'degreeLevel' => 1
+         ];
 
-       $data = json_encode([
+        $request = new IndustryFormRequest($input);
+
+        $data = json_encode([
            [
                "title" => "Professional, Scientific, & Technical Skills",
                "percentage" => 42,
@@ -126,14 +137,15 @@ class IndustryControllerTest extends TestCase
                "rank" => 2,
                "industryWage" => 71888
            ]
-       ]);
-        $this->retriever
-        ->shouldReceive('getIndustryPopulationByRank')
-        ->once()
-        ->with($hegis_code,$universityName,$degree)
-        ->andReturn($data);
+        ]);
 
-       $response = $this->controller->getIndustryPopulationByRank($hegis_code,$universityName,$degree);
+        $this->retriever
+            ->shouldReceive('getIndustryPopulationByRank')
+            ->once()
+            ->with($request->hegis_code, $request->universityName, $request->degreeLevel)
+            ->andReturn($data);
+
+       $response = $this->controller->getIndustryPopulationByRank($request);
        $this->assertEquals($response,$data);
     }
     
@@ -180,9 +192,13 @@ class IndustryControllerTest extends TestCase
       */
       public function test_return_Aggregate_getIndustryPopulationByRankWithImages()
       {
-        $hegis = 5021;
-        $university = 'all';
-        $degreeLevel= 1;
+        $input = [
+            'hegis' => 5021,
+            'university' => 'all',
+            'degreeLevel'=> 1,
+        ];
+
+        $request = new IndustryFormRequest($input);
 
         $firstResult = json_encode([
             [
@@ -196,10 +212,10 @@ class IndustryControllerTest extends TestCase
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRankWithImages')
                 ->once()
-                ->with($hegis,$university,$degreeLevel)
+                ->with($request->hegis,$request->university,$request->degreeLevel)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university,$degreeLevel);
+        $response = $this->controller->getIndustryPopulationByRankWithImages($request);
         $this->assertEquals($firstResult,$response);
       }
 
@@ -209,26 +225,47 @@ class IndustryControllerTest extends TestCase
       */
       public function test_return_Aggregate_expected_count_output_getIndustryPopulationByRank()
       {
-        $hegis = 5021;
-        $university = 'all';
-        $degreeLevel = 1;
+
+        $input = [
+            'hegis' => 5021,
+            'university' =>'all',
+            'degreeLevel' => 1,
+          ];
+
+        $request = new IndustryFormRequest($input);
         
         $firstResult = json_encode([
-            [
-            "title"=> "Professional, Scientific, & Technical Skills",
-            "percentage"=> 40,
-            "rank"=> 1,
-            "industryWage"=> 69328
-            ]
-        ]);
+                [
+                "title"=> "Professional, Scientific, & Technical Skills",
+                "percentage"=> 40,
+                "rank"=> 1,
+                "industryWage"=> 69328
+                ]
+            ]);
         
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRank')
                 ->once()
-                ->with($hegis,$university,$degreeLevel)
+                ->with($request->hegis,$request->university,$request->degreeLevel)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRank($hegis,$university,$degreeLevel);
+        $response = $this->controller->getIndustryPopulationByRank($request);
         $this->assertEquals($firstResult,$response);
+      }
+
+      public function test_Validator(){
+        $input = [
+            'major' => 5021,
+            'university' => 'northridge',
+            'degreeLevel' => 1
+         ];
+
+         // test the validator
+         $request = new IndustryFormRequest($input);
+         $rules = $request->rules();
+         $validator = Validator::make($input, $rules);
+         $fails = $validator->fails();
+
+         $this->assertEquals(false,$fails);
       }
 }
