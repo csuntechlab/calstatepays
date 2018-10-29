@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Input;
 
 class MajorFormRequest extends FormRequest
 {
@@ -38,8 +39,8 @@ class MajorFormRequest extends FormRequest
     {
         // Include the next line if you need form data, too.
         $request = Input::all();
-        $request['hegis_code'] = $this->route('hegis_code');
-        $request['universityName'] = $this->route('universityName');
+        $request['major'] = $this->route('major');
+        $request['university'] = $this->route('university');
         return $request;
     }
 }
