@@ -231,4 +231,44 @@ class IndustryControllerTest extends TestCase
         $response = $this->controller->getIndustryPopulationByRank($hegis,$university,$degreeLevel);
         $this->assertEquals($firstResult,$response);
       }
+
+      public function test_IndustryTestController(){
+          $titles = $this->json('GET','api/industry/naics-titles');
+          $titles = $titles->getOriginalContent();
+          $this->assertArrayHasKey('naics_code', $titles[0]);
+          $this->assertArrayHasKey('title', $titles[0]);
+          $this->assertArrayHasKey('image', $titles[0]);
+          $this->assertStringEndsWith('.png', $titles[0]['image']);
+            
+          /** test the count */
+          $count = count($titles);
+          $this->assertEquals(23,$count);
+          
+          /** test the exception */
+          $fail = $this->json('GET','api/industry/43244/northridge/1');
+          $code = $fail->original['code'];
+          $this->assertFalse($fail->original['success']);
+          $this->assertEquals(409,$code);
+
+          /** test successful industry call */
+          $success =  $this->json('GET','api/industry/5021/northridge/1');
+          $success->assertStatus(200);
+          $success = $success->getOriginalContent();
+
+          /** test the industry image call */
+          $industryImage = $this->json('GET','api/industry/5021/northridge/1');
+          $industryImage->assertStatus(200);
+          $data = $industryImage->getOriginalContent();
+
+          /** make sure that image data == industry data */
+          foreach($data as $iterate => $success)
+          {
+            $this->assertEquals($data[$iterate]['rank'], $success['rank']);
+            $this->assertEquals($data[$iterate]['title'], $success['title']);
+            $this->assertEquals($data[$iterate]['industryWage'], $success['industryWage']);
+          }
+
+
+        //   $major = $success[0]['']
+      }
 }
