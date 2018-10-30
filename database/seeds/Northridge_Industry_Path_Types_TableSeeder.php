@@ -17,7 +17,7 @@ class Northridge_Industry_Path_Types_TableSeeder extends Seeder
 
         foreach ($industry_path as $row) {
             $industryPathType = new IndustryPathType();
-            $industryPathType->id = $industryPathType->id;
+            $industryPathType->id = $row->id;
             $industryPathType->entry_status = $row->entry_status;
             $industryPathType->naics_code = $row->naics_codes;
             $industryPathType->student_path = $row->student_path;

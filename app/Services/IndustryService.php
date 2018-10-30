@@ -65,6 +65,7 @@ class IndustryService implements IndustryContract
         $industry_populations = $this->sortIndustryPopulation($university_major);
 
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
+        // dd($population_total);
 
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
@@ -90,6 +91,7 @@ class IndustryService implements IndustryContract
 
     private function calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total)
     {
+        dd($industry_populations);
         $final = $industry_populations = $industry_populations
             ->map(function ($industry, $index = 0) use ($population_total) {
                 $index++;
@@ -120,7 +122,7 @@ class IndustryService implements IndustryContract
             ->map(function ($industry, $index = 0) use ($population_total) {
                 $index++;
                 $percentage = $this->populationHandler($industry, $population_total);
-                // dd($industry);
+                dd($industry);
                 // dd($industry->industryWage);
                 return [
                     'title' => $industry->naicsTitle->naics_title,
