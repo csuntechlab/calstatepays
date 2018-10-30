@@ -150,7 +150,7 @@ class MajorServiceTest extends TestCase
         // major/hegis-codes/university/{universityId}
         // i.e. major/hegis-codes/university/70
         $university_name = 'northridge';
-        $northridge_majors = 86;
+        $northridge_majors = 84;
 
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
         $this->assertArrayHasKey('major', $response[0]);

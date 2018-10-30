@@ -43,7 +43,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
             hegis = (str)(row.hegis_at_exit)
             campus = (str)(row.campus)
             uni_majors_id = self.dictionaryUniId[campus][hegis]
-            print(uni_majors_id)
+            # print(uni_majors_id)
             self.df.ix[index,'university_majors_id'] = uni_majors_id
     
 
