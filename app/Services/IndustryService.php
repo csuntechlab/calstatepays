@@ -108,7 +108,8 @@ class IndustryService implements IndustryContract
     private function populationHandler($industry, $population_total)
     {
         if (($industry->population->population_found != null) && ($population_total != null)) {
-            $percentage = round(($industry->population->population_found / $population_total) * 100, 0, PHP_ROUND_HALF_DOWN);
+            // $percentage = round(($industry->population->population_found / $population_total) * 100, 0, PHP_ROUND_HALF_DOWN);
+            $percentage = round(($industry->population->population_found / $population_total) * 100, 2);
             return $percentage;
         }
         return null;
