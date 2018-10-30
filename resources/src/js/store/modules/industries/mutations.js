@@ -15,5 +15,5 @@ export default {
 			delete major.hegisCode;
 			state.industryMajorsByField.push(major);
 		});
-	}
+	},
 };

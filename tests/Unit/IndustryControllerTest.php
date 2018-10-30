@@ -74,6 +74,7 @@ class IndustryControllerTest extends TestCase
      {
         $hegis_code = 5021;
         $universityName = 'northridge';
+        $degree = 1;
 
         $data = json_encode([
             [
@@ -94,10 +95,10 @@ class IndustryControllerTest extends TestCase
          $this->retriever
          ->shouldReceive('getIndustryPopulationByRankWithImages')
          ->once()
-         ->with($hegis_code,$universityName)
+         ->with($hegis_code,$universityName,$degree)
          ->andReturn($data);
 
-        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis_code,$universityName);
+        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis_code,$universityName,$degree);
         $this->assertEquals($response,$data);
      }
 
@@ -110,6 +111,7 @@ class IndustryControllerTest extends TestCase
     {
        $hegis_code = 5021;
        $universityName = 'northridge';
+       $degree = 1;
 
        $data = json_encode([
            [
@@ -128,10 +130,10 @@ class IndustryControllerTest extends TestCase
         $this->retriever
         ->shouldReceive('getIndustryPopulationByRank')
         ->once()
-        ->with($hegis_code,$universityName)
+        ->with($hegis_code,$universityName,$degree)
         ->andReturn($data);
 
-       $response = $this->controller->getIndustryPopulationByRank($hegis_code,$universityName);
+       $response = $this->controller->getIndustryPopulationByRank($hegis_code,$universityName,$degree);
        $this->assertEquals($response,$data);
     }
     
@@ -142,7 +144,7 @@ class IndustryControllerTest extends TestCase
      */
      public function testReturn200StatusGetIndustryPopulationByRankWithImages()
      {
-         $response = $this->json('GET', '/api/industry/images/5021/northridge');
+         $response = $this->json('GET', '/api/industry/images/5021/northridge/1');
          $response->assertJsonStructure([
              0 => [
                  'title',
@@ -161,7 +163,7 @@ class IndustryControllerTest extends TestCase
      */
      public function testReturn200GetIndustryPopulationByRank()
      {
-         $response = $this->json('GET', '/api/industry/5021/northridge');
+         $response = $this->json('GET', '/api/industry/5021/northridge/1');
          $response->assertJsonStructure([
              0 => [
                  'title',
@@ -180,6 +182,7 @@ class IndustryControllerTest extends TestCase
       {
         $hegis = 5021;
         $university = 'all';
+        $degreeLevel= 1;
 
         $firstResult = json_encode([
             [
@@ -193,10 +196,10 @@ class IndustryControllerTest extends TestCase
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRankWithImages')
                 ->once()
-                ->with($hegis,$university)
+                ->with($hegis,$university,$degreeLevel)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university);
+        $response = $this->controller->getIndustryPopulationByRankWithImages($hegis,$university,$degreeLevel);
         $this->assertEquals($firstResult,$response);
       }
 
@@ -208,6 +211,7 @@ class IndustryControllerTest extends TestCase
       {
         $hegis = 5021;
         $university = 'all';
+        $degreeLevel = 1;
         
         $firstResult = json_encode([
             [
@@ -221,10 +225,10 @@ class IndustryControllerTest extends TestCase
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRank')
                 ->once()
-                ->with($hegis,$university)
+                ->with($hegis,$university,$degreeLevel)
                 ->andReturn($firstResult);
 
-        $response = $this->controller->getIndustryPopulationByRank($hegis,$university);
+        $response = $this->controller->getIndustryPopulationByRank($hegis,$university,$degreeLevel);
         $this->assertEquals($firstResult,$response);
       }
 }
