@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
     {
         return $response = [
             'collection' => $collection,
-            'success' => ($success ? "true" : "false"),
+            'success' => ($success ? true : false),
             'api' => 'csuMetro',
             'version' => '1.0',
             'code' => $status_code,
@@ -66,7 +66,7 @@ class Handler extends ExceptionHandler
     public function buildResponse($message, $status)
     {
         $response = $this->buildResponseArray('errors', false, $status);
-        $response['message'] = [$message];
+        $response['message'] = $message;
         return response($response, $status);
     }
 

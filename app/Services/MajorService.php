@@ -114,16 +114,6 @@ class MajorService implements MajorContract
         return $universityMajor;
     }
 
-    //TODO: Delete this method ? not Being used
-
-    public function getHegisCode($name)
-    {
-        $hegis_code = HEGISCode::where('major', $name)
-            ->firstOrFail(['hegis_code']);
-
-        return $hegis_code;
-    }
-
     public function getUniversityMajorId($hegisCode, $universityId, $major)
     {
 

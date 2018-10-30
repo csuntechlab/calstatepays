@@ -7,7 +7,7 @@ export default {
 			success => {
 				commit(_industries.FETCH_INDUSTRIES, success);
 			},
-			error => console.log(error)
+			error => commit(_global.ERROR_ALERT,error)
 		);
 	},
 	fetchIndustryMajorsByField({commit, dispatch}, payload) {
@@ -18,5 +18,5 @@ export default {
 			},
 			(error) => console.log(error)
 		)
-	}
+	},
 };

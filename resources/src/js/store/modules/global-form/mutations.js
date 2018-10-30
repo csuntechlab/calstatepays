@@ -6,5 +6,8 @@ export default {
     },
     [_global.SET_DATA_PAGE](state, payload){
         state.selectedDataPage = payload;
+    },
+    [_global.ERROR_ALERT](state,payload){
+        state.errorMessage = payload;
     }
 }

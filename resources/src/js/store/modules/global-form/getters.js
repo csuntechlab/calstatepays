@@ -2,5 +2,5 @@
 export default {
     selectedUniversity: state => state.selectedUniversity,
     selectedDataPage: state => state.selectedDataPage,
-    selectedDataPage: state => state.selectedDataPage
+    errorMessage: state => state.errorMessage
 }

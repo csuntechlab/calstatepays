@@ -35,68 +35,61 @@ class IndustryServiceTest extends TestCase
         $response = $this->industryService->getAllIndustryNaicsTitles();
     }
 
-    // route is api/industry/{hegis_code}/{university_id}
-    // i.e. api/industry/5021/northridge
-    // public function test_getIndustryPopulationByRankWithImages_returns_relevant_data_respective_to_hegis_code()
-    // {
-    //     $this->seed('Naics_Titles_TableSeeder');
-    //     $this->seed('Northridge_University_Majors_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Types_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-    //     $this->seed('Northridge_Industry_Population_TableSeeder');
-    //     $this->seed('Field_Of_Studies_TableSeeder');
-    //     $this->seed('Hegis_Categories_TableSeeder');
-    //     $this->seed('Universities_TableSeeder');
+    public function test_getIndustryPopulationByRankWithImages_returns_relevant_data_respective_to_hegis_code()
+    {
+        $this->seed('Naics_Titles_TableSeeder');
+         // route is api/industry/{hegis_code}/{university_id}
+         // i.e. api/industry/5021/northridge
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_Industry_Path_Types_Table_Seeder');
+        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Population_Table_Seeder');
+        $this->seed('Universities_TableSeeder');
+        $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge', 1);
+        $this->assertArrayHasKey("title", $response[0]);
+        $this->assertArrayHasKey("percentage", $response[0]);
+        $this->assertArrayHasKey('rank', $response[0]);
+        $this->assertArrayHasKey('image', $response[0]);
+    }
 
-    //     $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
-    //     dd($response);
-
-    //     $this->assertArrayHasKey("title", $response[0]);
-    //     $this->assertArrayHasKey("percentage", $response[0]);
-    //     $this->assertArrayHasKey('rank', $response[0]);
-    //     $this->assertArrayHasKey('image', $response[0]);
-    // }
-
-    // route is api/industry/{hegis_code}/{university_id}
-    // i.e. api/industry/5021/northridge
-    // public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
-    // {
-    //     $this->seed('Naics_Titles_TableSeeder');
-    //     $this->seed('Northridge_University_Majors_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Types_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-    //     $this->seed('Northridge_Industry_Population_TableSeeder');
-    //     $this->seed('Universities_TableSeeder');
-    //     $this->seed('Hegis_Codes_TableSeeder');
-
-    //     $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
-    //     dd($response);
-    //     $this->assertArrayHasKey("title", $response[0]);
-    //     $this->assertArrayHasKey("percentage", $response[0]);
-    //     $this->assertArrayHasKey('rank', $response[0]);
-    // }
+    public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
+    {
+        $this->seed('Naics_Titles_TableSeeder');
+         // route is api/industry/{hegis_code}/{university_id}
+         // i.e. api/industry/5021/northridge
+        $this->seed('University_Majors_TableSeeder');
+        $this->seed('Master_Industry_Path_Types_Table_Seeder');
+        $this->seed('Master_Industry_Wages_Table_Seeder');
+        $this->seed('Population_Table_Seeder');
+        $this->seed('Universities_TableSeeder');
+        $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge', 1);
+        $this->assertArrayHasKey("title", $response[0]);
+        $this->assertArrayHasKey("percentage", $response[0]);
+        $this->assertArrayHasKey('rank', $response[0]);
+    }
 
     public function test_getIndustryPopulationByRankWithImages_throws_a_model_not_found_exception()
     {
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-        $response = $this->industryService->getIndustryPopulationByRankWithImages(22111, 'northridge');
+        $response = $this->industryService->getIndustryPopulationByRankWithImages(22111, 'northridge', 1);
     }
 
     public function test_getIndustryPopulationByRank_throws_a_model_not_found_exception()
     {
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
 
-        $response = $this->industryService->getIndustryPopulationByRank(22111, 'northridge');
+        $response = $this->industryService->getIndustryPopulationByRank(22111, 'northridge', 1);
     }
 
     /**
      * industry/images/{hegis_code}/{university_name}
-     * industry/images/5021/all_cal_states
+     * industry/images/5021/all
      * function IndustryController@getIndustryPopulationByRankWithImages
      * Use phpunit to get real api vals, test agaisnt real api output from route
      */
     public function test_Aggregate_getIndustryPopulationByRankWithImages()
     {
+
         $this->seed('Universities_TableSeeder');
 
         $this->seed('Aggregate_University_Majors_TableSeeder');
@@ -107,7 +100,8 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name);
+        $degreeLevel = 1;
+        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name, $degreeLevel);
 
         /**
          * real values from the actual array
@@ -151,7 +145,9 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
+        $degreeLevel = 1;
+
+        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
 
         $truthyArray = [
             [
