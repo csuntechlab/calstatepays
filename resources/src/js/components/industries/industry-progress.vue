@@ -30,6 +30,12 @@
                     </div>
                 </div>
             </div>
+            <div v-else-if="industry.percentage === null && industry.industryWage === null">
+                <div class="col-sm-3">{{industry.title}}</div>
+                <div class="col-sm-9">
+                    <h3>No Data</h3>
+                </div>
+            </div>
         </div>
     </div>
 </template>
