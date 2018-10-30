@@ -9,8 +9,8 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-for="(industry,index) in industriesByMajor" :key="index ">
-            <div v-if="industry.percentage != null || industry.industryWage != null" class="row industry-card__row">
+        <div v-for="(industry,index) in industriesByMajor" :key="index" class="industry-card__row">
+            <div v-if="industry.percentage != null || industry.industryWage != null" class="row">
                 <div class="col-sm-3">{{industry.title}}</div>
                 <div class="col-sm-9">
                     <div class="row industry-bar__padding">
@@ -19,7 +19,7 @@
                         </div>
                         <div v-if="industry.percentage > 0 && industry != null" class="col-2 industry-bar__percentage-text">{{industry.percentage}}%</div>
                         <div v-else-if="industry.percentage === null" class="col-2 industry-bar__percentage-text">N/A</div>
-                        <div v-else class="col-2 industry-bar__percentage-text">&#60;1%</div>
+                        <!-- <div v-else class="col-2 industry-bar__percentage-text">&#60;1%</div> -->
                     </div>
                     <div class="row">
                         <div class="col-10">
@@ -30,10 +30,10 @@
                     </div>
                 </div>
             </div>
-            <div v-else-if="industry.percentage === null && industry.industryWage === null">
+            <div v-else-if="industry.percentage === null && industry.industryWage === null" class="row">
                 <div class="col-sm-3">{{industry.title}}</div>
                 <div class="col-sm-9">
-                    <h3>No Data</h3>
+                    <h3><i class="fa fa-exclamation-circle required-field"></i>No data available</h3>
                 </div>
             </div>
         </div>

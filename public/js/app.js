@@ -73558,9 +73558,9 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm._l(_vm.industriesByMajor, function(industry, index) {
-        return _c("div", { key: index }, [
+        return _c("div", { key: index, staticClass: "industry-card__row" }, [
           industry.percentage != null || industry.industryWage != null
-            ? _c("div", { staticClass: "row industry-card__row" }, [
+            ? _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-sm-3" }, [
                   _vm._v(_vm._s(industry.title))
                 ]),
@@ -73600,13 +73600,7 @@ var render = function() {
                             },
                             [_vm._v("N/A")]
                           )
-                        : _c(
-                            "div",
-                            {
-                              staticClass: "col-2 industry-bar__percentage-text"
-                            },
-                            [_vm._v("<1%")]
-                          )
+                        : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row" }, [
@@ -73649,7 +73643,7 @@ var render = function() {
                 ])
               ])
             : industry.percentage === null && industry.industryWage === null
-              ? _c("div", [
+              ? _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-sm-3" }, [
                     _vm._v(_vm._s(industry.title))
                   ]),
@@ -73687,7 +73681,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-9" }, [
-      _c("h3", [_vm._v("No Data")])
+      _c("h3", [
+        _c("i", { staticClass: "fa fa-exclamation-circle required-field" }),
+        _vm._v("No data available")
+      ])
     ])
   }
 ]
