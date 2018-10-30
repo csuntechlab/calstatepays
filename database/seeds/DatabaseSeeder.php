@@ -18,12 +18,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Hegis_Categories_TableSeeder::class);
         $this->call(Universities_TableSeeder::class);
 
-        // $this->call(Aggregate_Industry_Path_Types_TableSeeder::class);
-        // $this->call(Aggregate_Industry_Path_Wages_TableSeeder::class);
-        // $this->call(Aggregate_Industry_Population_TableSeeder::class);
-        // $this->call(Aggregate_Major_Path_TableSeeder::class);
-        // $this->call(Aggregate_Major_Path_Wages_TableSeeder::class);
-        // $this->call(Aggregate_University_Majors_TableSeeder::class);
+        $this->call(Aggregate_Industry_Path_Types_TableSeeder::class);
+        $this->call(Aggregate_Industry_Path_Wages_TableSeeder::class);
+        $this->call(Aggregate_Industry_Population_TableSeeder::class);
+        $this->call(Aggregate_Major_Path_TableSeeder::class);
+        $this->call(Aggregate_Major_Path_Wages_TableSeeder::class);
+        $this->call(Aggregate_University_Majors_TableSeeder::class);
 
         $this->call(Northridge_Industry_Path_Types_TableSeeder::class);
         $this->call(Northridge_Industry_Path_Wages_TableSeeder::class);

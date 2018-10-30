@@ -15,9 +15,7 @@ class Same_Hegis_Different_Major_Error_Table_Seeder extends Seeder
         $json = File::get("database/data/master_duplicate_hegis_code_different_major_table.json");
         $data = json_decode($json);
 
-        // dd($data);
-
-        foreach($data as $row) {
+        foreach ($data as $row) {
             $universityMajor = new SameHegisDifferentMajorError();
             $universityMajor->hegis_code = $row->hegis_codes;
             $universityMajor->university_id = $row->university_id;
