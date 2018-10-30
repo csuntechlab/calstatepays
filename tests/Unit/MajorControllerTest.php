@@ -26,14 +26,11 @@ class MajorControllerTest extends TestCase
         parent::setUp();
         $this->retriever = Mockery::mock(MajorContract::class);
         $this->seed('Hegis_Codes_TableSeeder');
-        //  $this->seed('University_Majors_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
         $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
         $this->seed('Universities_TableSeeder');
-        //  $this->seed('Major_Paths_TableSeeder');
-        //  $this->seed('Major_Path_Wages_TableSeeder');
 
         $this->seed('Aggregate_Major_Path_TableSeeder');
         $this->seed('Aggregate_Major_Path_Wages_TableSeeder');
@@ -320,10 +317,5 @@ class MajorControllerTest extends TestCase
 
         $response = $this->controller->getAllHegisCodesByUniversity($universityName);
         $this->assertEquals($response, $structure);
-
-
-
     }
-
-
 }
