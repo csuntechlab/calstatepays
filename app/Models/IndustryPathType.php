@@ -8,7 +8,7 @@ class IndustryPathType extends Model
 {
     public $primaryKey = 'id';
     public $timestamps = false;
-    
+
     protected $fillable = [
         'entry_status',
         'naics_code',
@@ -23,34 +23,39 @@ class IndustryPathType extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function studentPath() {
-        return $this->hasOne('App\Models\StudentPath','id','student_path');
+    public function studentPath()
+    {
+        return $this->hasOne('App\Models\StudentPath', 'id', 'student_path');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function naicsTitle() {
-        return $this->hasOne('App\Models\NaicsTitle','naics_code','naics_code');
+    public function naicsTitle()
+    {
+        return $this->hasOne('App\Models\NaicsTitle', 'naics_code', 'naics_code');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function universityMajor() {
-        return $this->hasOne('App\Models\UniversityMajor','id','university_majors_id');
+    public function universityMajor()
+    {
+        return $this->hasOne('App\Models\UniversityMajor', 'id', 'university_majors_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function population() {
-        return $this->hasOne('App\Models\Population','id','population_sample_id');
+    public function population()
+    {
+        return $this->hasOne('App\Models\Population', 'id', 'population_sample_id');
     }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function industryWage() {
-        return $this->hasOne('App\Models\IndustryWage','id','id');
+    public function industryWage()
+    {
+        return $this->hasOne('App\Models\IndustryWage', 'id', 'id');
     }
 }
