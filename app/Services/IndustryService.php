@@ -120,6 +120,8 @@ class IndustryService implements IndustryContract
             ->map(function ($industry, $index = 0) use ($population_total) {
                 $index++;
                 $percentage = $this->populationHandler($industry, $population_total);
+                // dd($industry);
+                // dd($industry->industryWage);
                 return [
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,

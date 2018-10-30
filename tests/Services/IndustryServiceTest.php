@@ -56,23 +56,31 @@ class IndustryServiceTest extends TestCase
     //     $this->assertArrayHasKey('image', $response[0]);
     // }
 
-    // // route is api/industry/{hegis_code}/{university_id}
-    // // i.e. api/industry/5021/northridge
-    // public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
-    // {
-    //     $this->seed('Naics_Titles_TableSeeder');
-    //     $this->seed('Northridge_University_Majors_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Types_TableSeeder');
-    //     $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-    //     $this->seed('Northridge_Industry_Population_TableSeeder');
-    //     $this->seed('Universities_TableSeeder');
+    // route is api/industry/{hegis_code}/{university_id}
+    // i.e. api/industry/5021/northridge/1
+    public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
+    {
+        $this->seed('Universities_TableSeeder');
+        $this->seed('Naics_Titles_TableSeeder');
+        $this->seed('Northridge_University_Majors_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+        $this->seed('Northridge_Industry_Population_TableSeeder');
+        // $this->seed('Aggregate_University_Majors_TableSeeder');
+        // $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+        // $this->seed('Aggregate_Industry_Population_TableSeeder');
 
-    //     $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge', 1);
+        $university_name = 'northridge';
+        $hegis = 5021;
+        $degreeLevel = 1;
 
-    //     $this->assertArrayHasKey("title", $response[0]);
-    //     $this->assertArrayHasKey("percentage", $response[0]);
-    //     $this->assertArrayHasKey('rank', $response[0]);
-    // }
+        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
+
+        $this->assertArrayHasKey("title", $response[0]);
+        $this->assertArrayHasKey("percentage", $response[0]);
+        $this->assertArrayHasKey('rank', $response[0]);
+    }
 
     public function test_getIndustryPopulationByRankWithImages_throws_a_model_not_found_exception()
     {
