@@ -35,43 +35,46 @@ class IndustryServiceTest extends TestCase
         $response = $this->industryService->getAllIndustryNaicsTitles();
     }
 
-    public function test_getIndustryPopulationByRankWithImages_returns_relevant_data_respective_to_hegis_code()
-    {
-        $this->seed('Naics_Titles_TableSeeder');
-         // route is api/industry/{hegis_code}/{university_id}
-         // i.e. api/industry/5021/northridge
-        $this->seed('Northridge_University_Majors_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Northridge_Industry_Population_TableSeeder');
+    // route is api/industry/{hegis_code}/{university_id}
+    // i.e. api/industry/5021/northridge
+    // public function test_getIndustryPopulationByRankWithImages_returns_relevant_data_respective_to_hegis_code()
+    // {
+    //     $this->seed('Naics_Titles_TableSeeder');
+    //     $this->seed('Northridge_University_Majors_TableSeeder');
+    //     $this->seed('Northridge_Industry_Path_Types_TableSeeder');
+    //     $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+    //     $this->seed('Northridge_Industry_Population_TableSeeder');
+    //     $this->seed('Field_Of_Studies_TableSeeder');
+    //     $this->seed('Hegis_Categories_TableSeeder');
+    //     $this->seed('Universities_TableSeeder');
 
-        $this->seed('Universities_TableSeeder');
-        $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
-        dd($response);
+    //     $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
+    //     dd($response);
 
-        $this->assertArrayHasKey("title", $response[0]);
-        $this->assertArrayHasKey("percentage", $response[0]);
-        $this->assertArrayHasKey('rank', $response[0]);
-        $this->assertArrayHasKey('image', $response[0]);
-    }
+    //     $this->assertArrayHasKey("title", $response[0]);
+    //     $this->assertArrayHasKey("percentage", $response[0]);
+    //     $this->assertArrayHasKey('rank', $response[0]);
+    //     $this->assertArrayHasKey('image', $response[0]);
+    // }
 
     // route is api/industry/{hegis_code}/{university_id}
     // i.e. api/industry/5021/northridge
-    public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
-    {
-        $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('Northridge_University_Majors_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
-        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
-        $this->seed('Northridge_Industry_Population_TableSeeder');
-        $this->seed('Universities_TableSeeder');
+    // public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
+    // {
+    //     $this->seed('Naics_Titles_TableSeeder');
+    //     $this->seed('Northridge_University_Majors_TableSeeder');
+    //     $this->seed('Northridge_Industry_Path_Types_TableSeeder');
+    //     $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+    //     $this->seed('Northridge_Industry_Population_TableSeeder');
+    //     $this->seed('Universities_TableSeeder');
+    //     $this->seed('Hegis_Codes_TableSeeder');
 
-        $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
-        dd($response);
-        $this->assertArrayHasKey("title", $response[0]);
-        $this->assertArrayHasKey("percentage", $response[0]);
-        $this->assertArrayHasKey('rank', $response[0]);
-    }
+    //     $response = $this->industryService->getIndustryPopulationByRank(5021, 'northridge');
+    //     dd($response);
+    //     $this->assertArrayHasKey("title", $response[0]);
+    //     $this->assertArrayHasKey("percentage", $response[0]);
+    //     $this->assertArrayHasKey('rank', $response[0]);
+    // }
 
     public function test_getIndustryPopulationByRankWithImages_throws_a_model_not_found_exception()
     {
