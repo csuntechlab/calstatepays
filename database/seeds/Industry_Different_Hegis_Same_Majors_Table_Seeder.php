@@ -20,7 +20,7 @@ class Industry_Different_Hegis_Same_Majors_Table_Seeder extends Seeder
             $IndustryDifferentHegisSameMajor->hegis_code = $row->hegis_at_exit;
             $IndustryDifferentHegisSameMajor->university_id = $row->campus;
             $IndustryDifferentHegisSameMajor->major = $row->major;
-            $IndustryDifferentHegisSameMajor->entry_status = $row->entry_status;
+            $IndustryDifferentHegisSameMajor->entry_status = $row->entry_stat;
             $IndustryDifferentHegisSameMajor->student_path = $row->student_path;
             $IndustryDifferentHegisSameMajor->id = $row->id;
             $IndustryDifferentHegisSameMajor->save();
