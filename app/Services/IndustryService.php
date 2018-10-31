@@ -29,20 +29,20 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName, $degree)
+    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degree)
     {
-        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
-        
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use($degree) {
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', $degree);
-                }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $opt_in->id)
-                    ->firstOrFail();
+        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $industry_populations= $this->sortIndustryPopulation($university_major);
-        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', $degree);
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $opt_in->id)
+            ->firstOrFail();
+
+        $industry_populations = $this->sortIndustryPopulation($university_major);
+
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
         $industry_populations = $this->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
@@ -50,20 +50,20 @@ class IndustryService implements IndustryContract
         return $industry_populations;
     }
 
-    public function getIndustryPopulationByRank($hegis_code,$universityName,$degree)
+    public function getIndustryPopulationByRank($hegis_code, $universityName, $degree)
     {
-        $opt_in = University::where('short_name',$universityName)->where('opt_in',1)->firstOrFail();
-     
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use($degree){
-                $query->where('entry_status', 'FTF + FTT');
-                $query->where('student_path', $degree);
-                }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
-                    ->where('hegis_code', $hegis_code)
-                    ->where('university_id', $opt_in->id)
-                    ->firstOrFail();
+        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $industry_populations= $this->sortIndustryPopulation($university_major);
-        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+            $query->where('entry_status', 'FTF + FTT');
+            $query->where('student_path', $degree);
+        }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $opt_in->id)
+            ->firstOrFail();
+
+        $industry_populations = $this->sortIndustryPopulation($university_major);
+
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
@@ -108,7 +108,8 @@ class IndustryService implements IndustryContract
     private function populationHandler($industry, $population_total)
     {
         if (($industry->population->population_found != null) && ($population_total != null)) {
-            $percentage = round(($industry->population->population_found / $population_total) * 100, 0, PHP_ROUND_HALF_DOWN);
+            // $percentage = round(($industry->population->population_found / $population_total) * 100, 0, PHP_ROUND_HALF_DOWN);
+            $percentage = round(($industry->population->population_found / $population_total) * 100, 2);
             return $percentage;
         }
         return null;

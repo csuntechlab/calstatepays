@@ -20,16 +20,23 @@ class IndustryControllerTest extends TestCase
     protected $retriever = null;
     protected $controller = null;
 
-    public function setUp(){
+    public function setUp()
+    {
         parent::setUp();
         $this->retriever = Mockery::spy(IndustryContract::class);
         $this->controller = new IndustryController($this->retriever);
         $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('University_Majors_TableSeeder');
-        $this->seed('Master_Industry_Path_Types_Table_Seeder');
-        $this->seed('Master_Industry_Wages_Table_Seeder');
-        $this->seed('Population_Table_Seeder');
         $this->seed('Universities_TableSeeder');
+
+        $this->seed('Aggregate_University_Majors_TableSeeder');
+        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+        $this->seed('Aggregate_Industry_Population_TableSeeder');
+
+        $this->seed('Northridge_University_Majors_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Types_TableSeeder');
+        $this->seed('Northridge_Industry_Path_Wages_TableSeeder');
+        $this->seed('Northridge_Industry_Population_TableSeeder');
     }
 
     /**
@@ -53,7 +60,7 @@ class IndustryControllerTest extends TestCase
             ->andReturn($data);
 
         $response = $this->controller->getAllIndustryNaicsTitles();
-        $this->assertEquals($response,$data);
+        $this->assertEquals($response, $data);
     }
 
     /**
@@ -148,27 +155,27 @@ class IndustryControllerTest extends TestCase
        $response = $this->controller->getIndustryPopulationByRank($request);
        $this->assertEquals($response,$data);
     }
-    
-     /**
+
+    /**
      * Api route : api/industry/images/5021/northridge
      * method : IndustryController@testGetIndustryPopulationByRankWithImages
      * test assert status
      */
-     public function testReturn200StatusGetIndustryPopulationByRankWithImages()
-     {
-         $response = $this->json('GET', '/api/industry/images/5021/northridge/1');
-         $response->assertJsonStructure([
-             0 => [
-                 'title',
-                 'percentage',
-                 'rank',
-                 'image'
-             ]
-         ]);
-         $response->assertStatus(200);
-     }
+    public function testReturn200StatusGetIndustryPopulationByRankWithImages()
+    {
+        $response = $this->json('GET', '/api/industry/images/5021/northridge/1');
+        $response->assertJsonStructure([
+            0 => [
+                'title',
+                'percentage',
+                'rank',
+                'image'
+            ]
+        ]);
+        $response->assertStatus(200);
+    }
 
-     /**
+    /**
      * Api route : api/industry/5021/northridge
      * method : IndustryController@testGetIndustryPopulationByRank
      * test assert status
@@ -202,13 +209,13 @@ class IndustryControllerTest extends TestCase
 
         $firstResult = json_encode([
             [
-            "title"=> "Professional, Scientific, & Technical Skills",
-            "percentage"=> 40,
-            "rank"=> 1,
-            "industryWage"=> 69328
+                "title" => "Professional, Scientific, & Technical Skills",
+                "percentage" => 40,
+                "rank" => 1,
+                "industryWage" => 69328
             ]
         ]);
-        
+
         $this->retriever
                 ->shouldReceive('getIndustryPopulationByRankWithImages')
                 ->once()
