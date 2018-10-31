@@ -10,6 +10,7 @@ from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitize
 class Sanitize_Industry(Data_Frame_Sanitizer):
     def __init__(self,file,globalIndex):
         super().__init__(file)
+        self.print_column_headers()
         self.globalIndex = globalIndex
         self.renameNewCsvs()
         self.sanitizeCommon()
