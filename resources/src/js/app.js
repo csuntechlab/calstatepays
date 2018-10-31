@@ -5,7 +5,7 @@
  */
 require('./bootstrap');
 var SocialSharing = require("vue-social-sharing");
-import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+// import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import Vue from 'vue';
 import axios from 'axios';
 import router from './router';
