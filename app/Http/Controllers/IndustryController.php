@@ -20,13 +20,13 @@ class IndustryController extends Controller
         return $this->industryRetriever->getAllIndustryNaicsTitles();
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code,$universityName)
+    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degreeLevel)
     {
-        return $this->industryRetriever->getIndustryPopulationByRankWithImages($hegis_code,$universityName);
+        return $this->industryRetriever->getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degreeLevel);
     }
-    
-    public function getIndustryPopulationByRank($hegis_code,$universityName)
+
+    public function getIndustryPopulationByRank($hegis_code, $universityName, $degreeLevel)
     {
-        return $this->industryRetriever->getIndustryPopulationByRank($hegis_code, $universityName);
+        return $this->industryRetriever->getIndustryPopulationByRank($hegis_code, $universityName, $degreeLevel);
     }
 }

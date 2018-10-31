@@ -16,7 +16,7 @@ class Major_Path_Wages_TableSeeder extends Seeder
         $json = File::get("database/data/master_majors_path_wage_table.json");
         $data = json_decode($json);
 
-        foreach($data as $row){
+        foreach ($data as $row) {
             $majorPathWage = new MajorPathWage();
 
             $majorPathWage->major_path_id = $row->major_path_id;

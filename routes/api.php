@@ -34,9 +34,9 @@ Route::get(
 
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
-Route::get('industry/{hegis_code}/{universityName}', 'IndustryController@getIndustryPopulationByRank');
+Route::get('industry/{hegis_code}/{universityName}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRank');
 
-Route::get('industry/images/{hegis_code}/{universityName}', 'IndustryController@getIndustryPopulationByRankWithImages');
+Route::get('industry/images/{hegis_code}/{universityName}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 
 //University
