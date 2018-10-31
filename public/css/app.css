@@ -19651,7 +19651,8 @@ footer, .footer {
 }
 
 #allcampus {
-  background-image: url("../img/csucampuses/allcsu.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65))), url("../img/csucampuses/allcsu.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)), url("../img/csucampuses/allcsu.png");
 }
 
 #csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
@@ -20120,6 +20121,15 @@ input[type="button"]:focus {
 
 .majorBtnWrapper {
   width: 80%;
+}
+
+.power-user-modal-btn {
+  border-radius: 3rem;
+  font-family: "Open Sans";
+  font-size: 0.9rem;
+  font-weight: 300;
+  height: auto;
+  padding: .5rem;
 }
 
 .echarts {

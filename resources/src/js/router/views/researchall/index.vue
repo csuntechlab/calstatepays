@@ -13,27 +13,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class='tableauPlaceholder' id='viz1531346960829' style='position: relative'>
+                    <div class='tableauPlaceholder' id='viz1540769580146' style='position: relative'>
                         <noscript>
                             <a href='https://www.sandbox.csun.edu/metalab/csumetrola#/'>
-                                <img alt='Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ' src='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png' style='border: none' />
-                            </a>
+                            <img alt=' ' src='https://public.tableau.com/static/images/CS/CSU7AggregateDataVisualizationsEarningsandIndustryData/CSU7AggregareEarningsData/_rss.png' style='border: none' /></a>
                         </noscript>
-                        <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                            <param name='embed_code_version' value='3' />
-                            <param name='site_root' value='' />
-                            <param name='name' value='CSU7AggregateDataVisualizationsEarningsandIndustryData/CSU7AggregareEarningsData' />
-                            <param name='tabs' value='no' />
-                            <param name='toolbar' value='yes' />
-                            <param name='static_image' value='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOveTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png' />
-                            <param name='animate_transition' value='yes' />
-                            <param name='display_static_image' value='yes' />
-                            <param name='display_spinner' value='yes' />
-                            <param name='display_overlay' value='yes' />
-                            <param name='display_count' value='yes' />
-                            <param name='filter' value='publish=yes' />
+                        <object class='tableauViz'  style='display:none;'>
+                            <param name='host_url' value='https://public.tableau.com/' />
+                             <param name='embed_code_version' value='3' />
+                             <param name='site_root' value='' />
+                             <param name='name' value='CSU7AggregateDataVisualizationsEarningsandIndustryData/CSU7AggregareEarningsData' />
+                             <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+                             <param name='static_image' value='https://public.tableau.com/static/images/CS/CSU7AggregateDataVisualizationsEarningsandIndustryData/CSU7AggregareEarningsData/1.png' /> 
+                             <param name='animate_transition' value='yes' />
+                             <param name='display_static_image' value='yes' />
+                             <param name='display_spinner' value='yes' />
+                             <param name='display_overlay' value='yes' />
+                             <param name='display_count' value='yes' />
                         </object>
-                    </div>
+                    </div>       
+                    
+
                 </div>
             </div>
         </main>
@@ -54,13 +54,12 @@ export default {
         this.url = window.baseUrl;
     },
     mounted() {
-        var divElement = document.getElementById('viz1531346960829');
+        var divElement = document.getElementById('viz1540769580146');
         var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width='1016px';
-        vizElement.style.height='991px';
+        vizElement.style.width='1016px';vizElement.style.height='991px';
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
+       }
 }
 </script>
