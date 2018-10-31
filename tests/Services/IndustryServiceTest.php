@@ -124,7 +124,7 @@ class IndustryServiceTest extends TestCase
                 "percentage" => 37.25,
                 "rank" => 1,
                 "image" => "/img/industries/professional_scientific_technical_skills.png",
-                "industryWage" => '86386'
+                "industryWage" => '71707'
             ]
         ];
 
@@ -162,7 +162,7 @@ class IndustryServiceTest extends TestCase
                 "title" => "Professional, Scientific, & Technical Skills",
                 "percentage" => 37.25,
                 "rank" => 1,
-                "industryWage" => "86386"
+                "industryWage" => "71707"
             ]
         ];
 

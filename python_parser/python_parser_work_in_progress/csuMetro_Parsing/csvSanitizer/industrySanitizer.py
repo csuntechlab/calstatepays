@@ -82,7 +82,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         self.df = self.df.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         self.df = self.df.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         self.df = self.df.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})
-        self.df = self.df.rename(columns={'median_annual_earnings_10_years_after_exit': 'median_annual_wage_5'})
+        self.df = self.df.rename(columns={'median_annual_earnings_5_years_after_exit': 'median_annual_wage_5'})
 
 
     def create_industry_with_df(self,naics_dict):
