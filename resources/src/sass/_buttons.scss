@@ -259,3 +259,11 @@ input[type="button"]:focus {
   @extend .m-auto ;
   width: 80%;
 }
+.power-user-modal-btn{
+  border-radius: 3rem;
+  font-family: $font-brand;
+  font-size: 0.9rem;
+  font-weight: 300;
+  height: auto;
+  padding: .5rem;
+}
