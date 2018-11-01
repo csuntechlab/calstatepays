@@ -73590,7 +73590,7 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _vm.loadingCheck === true
+      _vm.loadingCheck === true && _vm.industriesByMajor.length === 0
         ? _c(
             "div",
             [

@@ -9,7 +9,7 @@
                 <div class="industry-card__legend-salary"/>AVERAGE EARNINGS
             </div>
         </div>
-        <div v-if="loadingCheck===true" >
+        <div v-if="(loadingCheck===true && industriesByMajor.length===0)"  >
         <v-progress-circular
         :size="100"
         :width="10"
@@ -68,7 +68,6 @@ export default {
             else{
             this.$emit('triggerLoadingScreen', true);
             return false;
-
             }
         }
         
