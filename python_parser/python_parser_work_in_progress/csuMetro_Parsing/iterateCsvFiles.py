@@ -15,68 +15,66 @@ from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
 
-
+from csuMetro_Parsing.dataframeToCSV import DfToCSV
+from csuMetro_Parsing.jsonOutput import JsonOutPut
+# from csuMetro_Parsing.addUniqueIdentifier import AddUniqueId
 
 class IterateCsvFiles():
   
     def __init__(self):
-        pass
+      self.jsonOutputter = JsonOutPut()
+      self.globalIndex = 1
     
-    def create_hegis_code_data_frame(self,universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame):
+    def create_hegis_code_data_frame(self,universityMajorsDataFrame):
         print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
-        hegisTable.convert_To_Json()
-        
-        hegisTable = hegisID(universityMajorsDataFrame)
-        hegisDataFrame = hegisTable.get_hegis_codes_table_data_frame()
-        hegisTable.json_output('master_hegis_category_table',hegisDataFrame)
-
-        hegisTable.json_output('master_majors_path_table',MajorsPathsDataFrame)
-        hegisTable.json_output('master_majors_path_wage_table',MajorsPathWageDataFrame)
-        hegisTable.jsonSanitize('master_majors_path_wage_table')
-
-        # print(hegisDataFrame)
-    
+        hegisTable.convert_hegis_codes_table_data_json()
+      
     def master_majors_csv_to_json(self,majorsCsvFiles):
       indexUniversityMajorsId = 1  
-      indexMajorPathId = 1  
-      
-      universityMajorsDataFrame = pd.DataFrame()
-      MajorsPathsDataFrame = pd.DataFrame()
-      MajorsPathWageDataFrame = pd.DataFrame()
+      filePath = '../../database/data/'
+      # universityMajorsDataFrame = pd.DataFrame()
+      MasterUni = pd.DataFrame()
 
       for csv in majorsCsvFiles:
         fileName = csv.replace("_majors","")
-        majorSanitize = Sanitize_Major(csv) # Object contains a dataFrame
-        majorDataFrame = majorSanitize.sanitize_Major() #sanitizes major
+        majorSanitize = Sanitize_Major(csv,self.globalIndex,indexUniversityMajorsId) # Object contains a dataFrame
 
         majorPathDf,majorPathWageDf = majorSanitize.get_Majors_Paths_Data_Frame()# get Table equiv Data Frames
         
         universityMajorDictionaryDf = majorSanitize.get_University_Majors_Dictionary_Data_Frame() # Returns a dictionary DF
+
+        self.globalIndex = majorSanitize.get_global_index()
+        indexUniversityMajorsId = majorSanitize.get_index_of_university_majors_id()
         
-        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf,universityMajorsDataFrame,indexUniversityMajorsId, indexMajorPathId) #Returns the Json
+        jsonMajor = JsonMajor(fileName,universityMajorDictionaryDf) #Returns the Json
         
         majorPathDf,majorPathWageDf = jsonMajor.getMajorsTables(majorPathDf,majorPathWageDf)   # Sanitize majorPath Df
+        
+        filePathMajorPath = filePath + '/majorPathData/Major_Path_'+ fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorPath,majorPathDf)
+        
+        filePathMajorWages = filePath + '/majorPathWagesData/Major_Path_Wages_'+ fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorWages,majorPathWageDf)
 
-        MajorsPathsDataFrame = MajorsPathsDataFrame.append( majorPathDf , ignore_index=True)
-        MajorsPathWageDataFrame = MajorsPathWageDataFrame.append( majorPathWageDf , ignore_index=True)
+        MasteruniversityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
+        print("***************************")
+        print(MasteruniversityMajorIdDf.head())
+        universityMajorsIDf = hegisID(MasteruniversityMajorIdDf)
+        universityMajorsIDf.convert_to_json(fileName)
 
-        indexUniversityMajorsId,indexMajorPathId = jsonMajor.getIndex() # gets index
+        # print(universityMajorIdDf.head())
 
-        universityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
-
-        print(universityMajorIdDf.head())
-
-        universityMajorsDataFrame = universityMajorIdDf
+        MasterUni = MasterUni.append( MasteruniversityMajorIdDf , ignore_index=True)
 
         del majorSanitize
-        del majorDataFrame
+        del MasteruniversityMajorIdDf
         del universityMajorDictionaryDf
         del jsonMajor
         del majorPathDf
         del majorPathWageDf
-
-      self.create_hegis_code_data_frame(universityMajorsDataFrame,MajorsPathsDataFrame,MajorsPathWageDataFrame)
+      
+      self.create_hegis_code_data_frame(MasterUni)
 
 
     def create_industry_naics_data_frame_and_create_dictionary(self,industryCsvFiles):
@@ -95,54 +93,29 @@ class IterateCsvFiles():
 
       masterNaicsDataFrame,naicsDictionary = naicsObj.getImages(masterNaicsDataFrame)
       
-      self.json_output('master_naics_titles',masterNaicsDataFrame)
+      filePath = '../../database/data/master_naics_titles.json'
+      self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePath,masterNaicsDataFrame)
 
       return naicsDictionary  
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       naicsDictionary = self.create_industry_naics_data_frame_and_create_dictionary(industryCsvFiles)
-
-      masterIndustry = pd.DataFrame()
+      print(naicsDictionary)
+      
+      self.globalIndex = 1
+      filePath = '../../database/data/'
 
       for csv in industryCsvFiles:
         fileName = csv.replace("_industry","")
-        industrySanitize = Sanitize_Industry(csv)
+        industrySanitize = Sanitize_Industry(csv,self.globalIndex)
         industrySanitize.create_industry_with_df(naicsDictionary)
-        masterIndustry = masterIndustry.append( industrySanitize.returnDf() , ignore_index=True)
+        self.globalIndex = industrySanitize.get_index()
 
-      industryMasterHelper = DFHelper(masterIndustry)
-      print("TEXT GOES HERE TEST")
+        industryPathTypes,industryPathWages,populationTable = industrySanitize.get_Industry_Data_Frame()
 
-      errorDataFrame,duplicateHegisCodeDifferentMajor = industryMasterHelper.get_errors_data_frame()
-      # get Table equiv Data Frames
-      
-      industryPathTypesDf,industryPathWagesDf,populationTable = industryMasterHelper.get_Industry_Data_Frame()
-
-      industryMasterHelper.create_master_dict()
-      fileName = 'master_industry'
-
-      # init json Industry
-      jsonIndustry = JsonIndustry(fileName)
-
-      self.json_output("industry_different_hegis_same_major",errorDataFrame)
-      self.json_output("industry_same_hegis_different_major",duplicateHegisCodeDifferentMajor)
-      #update Industry PathTypes
-      industryPathTypesDf = jsonIndustry.getIndustryPathTypesDfTable(industryPathTypesDf)
-      
-      # JSon Outputs 
-      jsonIndustry.jsonOutput(fileName+"_industry_path",industryPathTypesDf)
-      jsonIndustry.jsonOutput(fileName+"_industry_path_wages",industryPathWagesDf)
-      jsonIndustry.jsonOutput(fileName+"_population",populationTable)
-      
-      jsonIndustry.jsonSanitizeWages(fileName+"_industry_path_wages")
-      jsonIndustry.jsonSanitizePath(fileName+"_industry_path")
-      jsonIndustry.jsonSanitizeNaics(fileName+"_naics_titles")
-
-
-
-    def json_output(self,fileName, df):
-      output = df.to_dict(orient='record')
-
-      with open ('../../database/data/'+fileName+'.json', 'w' ) as fp:
-        fp.write(simplejson.dumps(output, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False,ignore_nan=True))
-      fp.close()
+        filePathIndustryPath = filePath + '/industryPathTypesData/Industry_Path_Types_'+fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathIndustryPath,industryPathTypes)
+        filePathIndustryWages = filePath + '/industryPathWagesData/Industry_Path_Wages_'+fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathIndustryWages,industryPathWages)
+        filePathPopulation = filePath + '/populationData/Industry_Population_'+fileName+'.json'
+        self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathPopulation,populationTable)
