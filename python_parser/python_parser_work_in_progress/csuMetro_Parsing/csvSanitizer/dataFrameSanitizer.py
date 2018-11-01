@@ -18,7 +18,7 @@ class Data_Frame_Sanitizer:
         localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv( localFilePath )
         # print(self.df.head())
-        self.df = self.df.drop(['Old HEGIS At Exit'],axis=1)
+        self.df = self.df.drop(['Old_Hegis'],axis=1)
         # print(self.df.head())
         self.sanitize_null_values()
         self.header_sanitizer()

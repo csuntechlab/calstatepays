@@ -10,6 +10,7 @@ from csuMetro_Parsing.csvSanitizer.dataFrameSanitizer import Data_Frame_Sanitize
 class Sanitize_Industry(Data_Frame_Sanitizer):
     def __init__(self,file,globalIndex):
         super().__init__(file)
+        self.print_column_headers()
         self.globalIndex = globalIndex
         self.renameNewCsvs()
         self.sanitizeCommon()
@@ -43,7 +44,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
             hegis = (str)(row.hegis_at_exit)
             campus = (str)(row.campus)
             uni_majors_id = self.dictionaryUniId[campus][hegis]
-            print(uni_majors_id)
+            # print(uni_majors_id)
             self.df.ix[index,'university_majors_id'] = uni_majors_id
     
 
@@ -81,6 +82,8 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
         self.df = self.df.rename(columns={'naics': 'naics_codes','industry':'naics_industry'})
         self.df = self.df.rename(columns={'average_annual_earnings_5_years_after_exit': 'avg_annual_wage_5'})
         self.df = self.df.rename(columns={'number_of_students_found_5_years_after_exit': 'population_found_5'})
+        self.df = self.df.rename(columns={'median_annual_earnings_5_years_after_exit': 'median_annual_wage_5'})
+
 
     def create_industry_with_df(self,naics_dict):
         # TODO: REMOVE NAICS ROWS WITH NO WAGES (OR OR ) Wages - No NAICS Code!!!!!!!!!
@@ -99,7 +102,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
     def get_Industry_Data_Frame(self):
         industryPathTypes = self.df.loc[:,['entry_status','naics_codes','naics_industry','student_path','hegis_at_exit','population_sample_id','campus','id','university_majors_id']]
         
-        industryPathWages = self.df.loc[:,['avg_annual_wage_5','id']]
+        industryPathWages = self.df.loc[:,['median_annual_wage_5','id']]
 
         populationTable = self.df.loc[:,['population_found_5','id']]
 

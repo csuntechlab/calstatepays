@@ -17,13 +17,14 @@ class Industry_Same_Hegis_Different_Majors_Table_Seeder extends Seeder
         $data = json_decode($json);
 
         foreach ($data as $row) {
+
             $industry_same_hegis_different_major = new industry_same_hegis_different_major();
             $industry_same_hegis_different_major->hegis_code = $row->hegis_at_exit;
-            $industry_same_hegis_different_major->university_id = $row->campus;
+            $industry_same_hegis_different_major->entry_status = $row->entry_stat;
             $industry_same_hegis_different_major->major = $row->major;
-            $industry_same_hegis_different_major->entry_status = $row->entry_status;
             $industry_same_hegis_different_major->student_path = $row->student_path;
             $industry_same_hegis_different_major->id = $row->id;
+            $industry_same_hegis_different_major->university_id = $row->campus;
             $industry_same_hegis_different_major->save();
         }
     }

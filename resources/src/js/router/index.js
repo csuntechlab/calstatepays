@@ -11,6 +11,8 @@ import industries from './views/industries/index.vue';
 import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
 import researchcsun from './views/researchcsun/index.vue';
+import researchall from './views/researchall/index.vue';
+
 import about from './views/about/index.vue';
 import splashPage from './views/splashPage/index.vue';
 
@@ -27,7 +29,8 @@ const router = new VueRouter({
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},
 		{ path: '/research', component: research},
-		{ path: '/researchcsun', component: researchcsun }
+		{ path: '/researchcsun', component: researchcsun },
+		{ path: '/researchall', component: researchall }
 	]
 });
 

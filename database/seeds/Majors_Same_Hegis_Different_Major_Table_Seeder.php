@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\SameHegisDifferentMajorError;
 
-class Same_Hegis_Different_Major_Error_Table_Seeder extends Seeder
+class Majors_Same_Hegis_Different_Major_Table_Seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,16 +12,16 @@ class Same_Hegis_Different_Major_Error_Table_Seeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/master_duplicate_hegis_code_different_major_table.json");
+        $json = File::get("database/data/errors/majors_same_hegis_different_major.json");
         $data = json_decode($json);
 
         foreach ($data as $row) {
             $universityMajor = new SameHegisDifferentMajorError();
-            $universityMajor->hegis_code = $row->hegis_codes;
+            $universityMajor->hegis_code = $row->hegis_at_exit;
             $universityMajor->university_id = $row->university_id;
             $universityMajor->major = $row->major;
-            // $universityMajor->entry_status = $row->entry_status;
-            // $universityMajor->student_path = $row->student_path;
+            $universityMajor->entry_status = $row->entry_stat;
+            $universityMajor->student_path = $row->student_path;
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }

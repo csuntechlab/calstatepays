@@ -18,7 +18,7 @@ class Master_Industry_Wages_Table_Seeder extends Seeder
         {
             $industryPathWage = new IndustryWage();
             $industryPathWage->id  = $row->id;
-            $industryPathWage->avg_annual_wage_5 = $row->avg_annual_wage_5;
+            $industryPathWage->avg_annual_wage_5 = $row->median_annual_wage_5;
             $industryPathWage->avg_annual_wage_10 = null;
             $industryPathWage->save();
         } 

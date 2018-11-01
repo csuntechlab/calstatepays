@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <router-link to="research" class="returnToCampusSelection">
+                        <router-link to=research class="returnToCampusSelection">
                             <h2>
                                 <i class="fa fa-arrow-left"></i> Return to CSU Campus Selection
                             </h2>
@@ -22,7 +22,7 @@
                         <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                             <param name='embed_code_version' value='3' />
                             <param name='site_root' value='' />
-                            <param name='name' value='CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes' />
+                            <param name='name' value = 'CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes'/>
                             <param name='tabs' value='no' />
                             <param name='toolbar' value='yes' />
                             <param name='static_image' value='https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png' />
@@ -44,8 +44,7 @@ import powerBanner from '../../../components/research/power-banner'
 export default {
     data () {
         return {
-            url: ''
-        }
+            url: '',        }
     },
     components: {
         powerBanner

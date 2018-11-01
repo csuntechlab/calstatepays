@@ -1,986 +1,986 @@
 [
     {
-        "major": "Undeclared/Unknown",
         "campus": 0,
+        "hegis_codes": 0,
+        "id": 85,
+        "major": "Undeclared/Unknown"
+    },
+    {
+        "campus": 0,
+        "hegis_codes": 12032,
+        "id": 86,
+        "major": "Nursing"
+    },
+    {
+        "campus": 0,
+        "hegis_codes": 1091,
         "id": 87,
-        "hegis_codes": 0
+        "major": "Agriculture/Agricultural Science & Horticulture"
     },
     {
-        "major": "Nursing",
         "campus": 0,
+        "hegis_codes": 1043,
         "id": 88,
-        "hegis_codes": 12032
+        "major": "Animal Science/Animal Health Science"
     },
     {
-        "major": "Agriculture/Agricultural Science & Horticulture",
         "campus": 0,
+        "hegis_codes": 1121,
         "id": 89,
-        "hegis_codes": 1091
+        "major": "Agricultural Business"
     },
     {
-        "major": "Animal Science/Animal Health Science",
         "campus": 0,
+        "hegis_codes": 1131,
         "id": 90,
-        "hegis_codes": 1043
+        "major": "Food Science and Technology"
     },
     {
-        "major": "Agricultural Business",
         "campus": 0,
+        "hegis_codes": 1993,
         "id": 91,
-        "hegis_codes": 1121
+        "major": "Agricultural Biology and Plant & Irrigation Science"
     },
     {
-        "major": "Food Science and Technology",
         "campus": 0,
+        "hegis_codes": 2021,
         "id": 92,
-        "hegis_codes": 1131
+        "major": "Architecture"
     },
     {
-        "major": "Agricultural Biology and Plant & Irrigation Science",
         "campus": 0,
+        "hegis_codes": 2031,
         "id": 93,
-        "hegis_codes": 1993
+        "major": "Interior Design"
     },
     {
-        "major": "Architecture",
         "campus": 0,
+        "hegis_codes": 2041,
         "id": 94,
-        "hegis_codes": 2021
+        "major": "Landscape Architecture"
     },
     {
-        "major": "Interior Design",
         "campus": 0,
+        "hegis_codes": 2061,
         "id": 95,
-        "hegis_codes": 2031
+        "major": "City and Regional Planning"
     },
     {
-        "major": "Landscape Architecture",
         "campus": 0,
+        "hegis_codes": 3071,
         "id": 96,
-        "hegis_codes": 2041
+        "major": "Asian/East Asian Studies"
     },
     {
-        "major": "City and Regional Planning",
         "campus": 0,
+        "hegis_codes": 3085,
         "id": 97,
-        "hegis_codes": 2061
+        "major": "Latin/Central American Studies"
     },
     {
-        "major": "Asian/East Asian Studies",
         "campus": 0,
+        "hegis_codes": 3122,
         "id": 98,
-        "hegis_codes": 3071
+        "major": "European Studies"
     },
     {
-        "major": "Latin/Central American Studies",
         "campus": 0,
+        "hegis_codes": 3131,
         "id": 99,
-        "hegis_codes": 3085
+        "major": "American Studies"
     },
     {
-        "major": "European Studies",
         "campus": 0,
+        "hegis_codes": 4011,
         "id": 100,
-        "hegis_codes": 3122
+        "major": "Biology"
     },
     {
-        "major": "American Studies",
         "campus": 0,
+        "hegis_codes": 4201,
         "id": 101,
-        "hegis_codes": 3131
+        "major": "Environmental Biology & Ecology"
     },
     {
-        "major": "Biology",
         "campus": 0,
+        "hegis_codes": 4021,
         "id": 102,
-        "hegis_codes": 4011
+        "major": "Botany"
     },
     {
-        "major": "Environmental Biology & Ecology",
         "campus": 0,
+        "hegis_codes": 4071,
         "id": 103,
-        "hegis_codes": 4201
+        "major": "Zoology"
     },
     {
-        "major": "Botany",
         "campus": 0,
+        "hegis_codes": 4111,
         "id": 104,
-        "hegis_codes": 4021
+        "major": "Microbiology"
     },
     {
-        "major": "Zoology",
         "campus": 0,
+        "hegis_codes": 4141,
         "id": 105,
-        "hegis_codes": 4071
+        "major": "Biochemistry"
     },
     {
-        "major": "Microbiology",
         "campus": 0,
+        "hegis_codes": 4152,
         "id": 106,
-        "hegis_codes": 4111
+        "major": "Biomedical Physics"
     },
     {
-        "major": "Biochemistry",
         "campus": 0,
+        "hegis_codes": 4171,
         "id": 107,
-        "hegis_codes": 4141
+        "major": "Cell and Molecular Biology"
     },
     {
-        "major": "Biomedical Physics",
         "campus": 0,
+        "hegis_codes": 4181,
         "id": 108,
-        "hegis_codes": 4152
+        "major": "Marine Biology"
     },
     {
-        "major": "Cell and Molecular Biology",
         "campus": 0,
+        "hegis_codes": 4991,
         "id": 109,
-        "hegis_codes": 4171
+        "major": "Biotechnology"
     },
     {
-        "major": "Marine Biology",
         "campus": 0,
+        "hegis_codes": 5011,
         "id": 110,
-        "hegis_codes": 4181
+        "major": "Business Administration"
     },
     {
-        "major": "Biotechnology",
         "campus": 0,
+        "hegis_codes": 5012,
         "id": 111,
-        "hegis_codes": 4991
+        "major": "Business Education"
     },
     {
-        "major": "Business Administration",
         "campus": 0,
+        "hegis_codes": 5021,
         "id": 112,
-        "hegis_codes": 5011
+        "major": "Accounting"
     },
     {
-        "major": "Business Education",
         "campus": 0,
+        "hegis_codes": 5041,
         "id": 113,
-        "hegis_codes": 5012
+        "major": "Finance"
     },
     {
-        "major": "Accounting",
         "campus": 0,
+        "hegis_codes": 5061,
         "id": 114,
-        "hegis_codes": 5021
+        "major": "Management"
     },
     {
-        "major": "Finance",
         "campus": 0,
+        "hegis_codes": 5064,
         "id": 115,
-        "hegis_codes": 5041
+        "major": "Production and Operations Management"
     },
     {
-        "major": "Management",
         "campus": 0,
+        "hegis_codes": 5072,
         "id": 116,
-        "hegis_codes": 5061
+        "major": "Management Systems Analysis / Operations Research"
     },
     {
-        "major": "Production and Operations Management",
         "campus": 0,
+        "hegis_codes": 5081,
         "id": 117,
-        "hegis_codes": 5064
+        "major": "Hotel and Restaurant/Hospitality Management"
     },
     {
-        "major": "Management Systems Analysis / Operations Research",
         "campus": 0,
+        "hegis_codes": 5083,
         "id": 118,
-        "hegis_codes": 5072
+        "major": "Travel and Tourism/Tourism Management"
     },
     {
-        "major": "Hotel and Restaurant/Hospitality Management",
         "campus": 0,
+        "hegis_codes": 5091,
         "id": 119,
-        "hegis_codes": 5081
+        "major": "Marketing"
     },
     {
-        "major": "Travel and Tourism/Tourism Management",
         "campus": 0,
+        "hegis_codes": 5111,
         "id": 120,
-        "hegis_codes": 5083
+        "major": "Real Estate"
     },
     {
-        "major": "Marketing",
         "campus": 0,
+        "hegis_codes": 5131,
         "id": 121,
-        "hegis_codes": 5091
+        "major": "International Business"
     },
     {
-        "major": "Real Estate",
         "campus": 0,
+        "hegis_codes": 5151,
         "id": 122,
-        "hegis_codes": 5111
+        "major": "Human Resources/Personnel Management"
     },
     {
-        "major": "International Business",
         "campus": 0,
+        "hegis_codes": 5171,
         "id": 123,
-        "hegis_codes": 5131
+        "major": "Business Economics"
     },
     {
-        "major": "Human Resources/Personnel Management",
         "campus": 0,
+        "hegis_codes": 5995,
         "id": 124,
-        "hegis_codes": 5151
+        "major": "Business Law"
     },
     {
-        "major": "Business Economics",
         "campus": 0,
+        "hegis_codes": 6011,
         "id": 125,
-        "hegis_codes": 5171
+        "major": "Communications"
     },
     {
-        "major": "Business Law",
         "campus": 0,
+        "hegis_codes": 6022,
         "id": 126,
-        "hegis_codes": 5995
+        "major": "Journalism"
     },
     {
-        "major": "Communications",
         "campus": 0,
+        "hegis_codes": 6031,
         "id": 127,
-        "hegis_codes": 6011
+        "major": "Radio/Television/Broadcast"
     },
     {
-        "major": "Journalism",
         "campus": 0,
+        "hegis_codes": 6991,
         "id": 128,
-        "hegis_codes": 6022
+        "major": "Multimedia"
     },
     {
-        "major": "Radio/Television/Broadcast",
         "campus": 0,
+        "hegis_codes": 8392,
         "id": 129,
-        "hegis_codes": 6031
+        "major": "Graphic Communications"
     },
     {
-        "major": "Multimedia",
         "campus": 0,
+        "hegis_codes": 7028,
         "id": 130,
-        "hegis_codes": 6991
+        "major": "Computer Science and Information Technology"
     },
     {
-        "major": "Graphic Communications",
         "campus": 0,
+        "hegis_codes": 7021,
         "id": 131,
-        "hegis_codes": 8392
+        "major": "Information Systems"
     },
     {
-        "major": "Computer Science and Information Technology",
         "campus": 0,
+        "hegis_codes": 8225,
         "id": 132,
-        "hegis_codes": 7028
+        "major": "Education"
     },
     {
-        "major": "Information Systems",
         "campus": 0,
+        "hegis_codes": 8232,
         "id": 133,
-        "hegis_codes": 7021
+        "major": "Child Development"
     },
     {
-        "major": "Education",
         "campus": 0,
+        "hegis_codes": 8351,
         "id": 134,
-        "hegis_codes": 8225
+        "major": "Kinesiology"
     },
     {
-        "major": "Child Development",
         "campus": 0,
+        "hegis_codes": 8357,
         "id": 135,
-        "hegis_codes": 8232
+        "major": "Exercise Science"
     },
     {
-        "major": "Kinesiology",
         "campus": 0,
+        "hegis_codes": 8375,
         "id": 136,
-        "hegis_codes": 8351
+        "major": "Athletic Training"
     },
     {
-        "major": "Exercise Science",
         "campus": 0,
+        "hegis_codes": 8393,
         "id": 137,
-        "hegis_codes": 8357
+        "major": "Industrial Arts"
     },
     {
-        "major": "Athletic Training",
         "campus": 0,
+        "hegis_codes": 8394,
         "id": 138,
-        "hegis_codes": 8375
+        "major": "Industrial Technology"
     },
     {
-        "major": "Industrial Arts",
         "campus": 0,
+        "hegis_codes": 8395,
         "id": 139,
-        "hegis_codes": 8393
+        "major": "Occupational Studies"
     },
     {
-        "major": "Industrial Technology",
         "campus": 0,
+        "hegis_codes": 8396,
         "id": 140,
-        "hegis_codes": 8394
+        "major": "Aviation"
     },
     {
-        "major": "Occupational Studies",
         "campus": 0,
+        "hegis_codes": 9013,
         "id": 141,
-        "hegis_codes": 8395
+        "major": "Engineering"
     },
     {
-        "major": "Aviation",
         "campus": 0,
+        "hegis_codes": 9021,
         "id": 142,
-        "hegis_codes": 8396
+        "major": "Aerospace Engineering"
     },
     {
-        "major": "Engineering",
         "campus": 0,
+        "hegis_codes": 9051,
         "id": 143,
-        "hegis_codes": 9013
+        "major": "Biomedical Engineering"
     },
     {
-        "major": "Aerospace Engineering",
         "campus": 0,
+        "hegis_codes": 9061,
         "id": 144,
-        "hegis_codes": 9021
+        "major": "Chemical Engineering"
     },
     {
-        "major": "Biomedical Engineering",
         "campus": 0,
+        "hegis_codes": 9081,
         "id": 145,
-        "hegis_codes": 9051
+        "major": "Civil Engineering"
     },
     {
-        "major": "Chemical Engineering",
         "campus": 0,
+        "hegis_codes": 9091,
         "id": 146,
-        "hegis_codes": 9061
+        "major": "Electrical Engineering"
     },
     {
-        "major": "Civil Engineering",
         "campus": 0,
+        "hegis_codes": 9093,
         "id": 147,
-        "hegis_codes": 9081
+        "major": "Electrical and Electronic Engineering"
     },
     {
-        "major": "Electrical Engineering",
         "campus": 0,
+        "hegis_codes": 9094,
         "id": 148,
-        "hegis_codes": 9091
+        "major": "Computer Engineering"
     },
     {
-        "major": "Electrical and Electronic Engineering",
         "campus": 0,
+        "hegis_codes": 9101,
         "id": 149,
-        "hegis_codes": 9093
+        "major": "Mechanical Engineering"
     },
     {
-        "major": "Computer Engineering",
         "campus": 0,
+        "hegis_codes": 9131,
         "id": 150,
-        "hegis_codes": 9094
+        "major": "Industrial Engineering"
     },
     {
-        "major": "Mechanical Engineering",
         "campus": 0,
+        "hegis_codes": 9133,
         "id": 151,
-        "hegis_codes": 9101
+        "major": "Industrial Management & Technology"
     },
     {
-        "major": "Industrial Engineering",
         "campus": 0,
+        "hegis_codes": 9134,
         "id": 152,
-        "hegis_codes": 9131
+        "major": "Manufacturing Engineering"
     },
     {
-        "major": "Industrial Management & Technology",
         "campus": 0,
+        "hegis_codes": 9151,
         "id": 153,
-        "hegis_codes": 9133
+        "major": "Materials Engineering"
     },
     {
-        "major": "Manufacturing Engineering",
         "campus": 0,
+        "hegis_codes": 9251,
         "id": 154,
-        "hegis_codes": 9134
+        "major": "Engineering Technology"
     },
     {
-        "major": "Materials Engineering",
         "campus": 0,
+        "hegis_codes": 9254,
         "id": 155,
-        "hegis_codes": 9151
+        "major": "Construction Engineering Technology"
     },
     {
-        "major": "Engineering Technology",
         "campus": 0,
+        "hegis_codes": 9255,
         "id": 156,
-        "hegis_codes": 9251
+        "major": "Electronic Engineering Technology"
     },
     {
-        "major": "Construction Engineering Technology",
         "campus": 0,
+        "hegis_codes": 9256,
         "id": 157,
-        "hegis_codes": 9254
+        "major": "Manufacturing Engineering Technology"
     },
     {
-        "major": "Electronic Engineering Technology",
         "campus": 0,
+        "hegis_codes": 9257,
         "id": 158,
-        "hegis_codes": 9255
+        "major": "Mechanical Engineering Technology"
     },
     {
-        "major": "Manufacturing Engineering Technology",
         "campus": 0,
+        "hegis_codes": 9259,
         "id": 159,
-        "hegis_codes": 9256
+        "major": "Computer Engineering Technology"
     },
     {
-        "major": "Mechanical Engineering Technology",
         "campus": 0,
+        "hegis_codes": 9262,
         "id": 160,
-        "hegis_codes": 9257
+        "major": "Environmental Engineering Technology"
     },
     {
-        "major": "Computer Engineering Technology",
         "campus": 0,
+        "hegis_codes": 10015,
         "id": 161,
-        "hegis_codes": 9259
+        "major": "Performing Arts"
     },
     {
-        "major": "Environmental Engineering Technology",
         "campus": 0,
+        "hegis_codes": 10022,
         "id": 162,
-        "hegis_codes": 9262
+        "major": "Art"
     },
     {
-        "major": "Performing Arts",
         "campus": 0,
+        "hegis_codes": 10023,
         "id": 163,
-        "hegis_codes": 10015
+        "major": "Design"
     },
     {
-        "major": "Art",
         "campus": 0,
+        "hegis_codes": 10025,
         "id": 164,
-        "hegis_codes": 10022
+        "major": "Industrial Design"
     },
     {
-        "major": "Design",
         "campus": 0,
+        "hegis_codes": 10031,
         "id": 165,
-        "hegis_codes": 10023
+        "major": "Art History"
     },
     {
-        "major": "Industrial Design",
         "campus": 0,
+        "hegis_codes": 10041,
         "id": 166,
-        "hegis_codes": 10025
+        "major": "Music - Performance"
     },
     {
-        "major": "Art History",
         "campus": 0,
+        "hegis_codes": 10051,
         "id": 167,
-        "hegis_codes": 10031
+        "major": "Music"
     },
     {
-        "major": "Music - Performance",
         "campus": 0,
+        "hegis_codes": 10071,
         "id": 168,
-        "hegis_codes": 10041
+        "major": "Theatre Arts"
     },
     {
-        "major": "Music",
         "campus": 0,
+        "hegis_codes": 10072,
         "id": 169,
-        "hegis_codes": 10051
+        "major": "Theatre Arts - Performance"
     },
     {
-        "major": "Theatre Arts",
         "campus": 0,
+        "hegis_codes": 10081,
         "id": 170,
-        "hegis_codes": 10071
+        "major": "Dance"
     },
     {
-        "major": "Theatre Arts - Performance",
         "campus": 0,
+        "hegis_codes": 10082,
         "id": 171,
-        "hegis_codes": 10072
+        "major": "Dance - Performance"
     },
     {
-        "major": "Dance",
         "campus": 0,
+        "hegis_codes": 10091,
         "id": 172,
-        "hegis_codes": 10081
+        "major": "Graphic Design"
     },
     {
-        "major": "Dance - Performance",
         "campus": 0,
+        "hegis_codes": 10101,
         "id": 173,
-        "hegis_codes": 10082
+        "major": "Cinema/Film"
     },
     {
-        "major": "Graphic Design",
         "campus": 0,
+        "hegis_codes": 11013,
         "id": 174,
-        "hegis_codes": 10091
+        "major": "World Languages and Cultures/Translation"
     },
     {
-        "major": "Cinema/Film",
         "campus": 0,
+        "hegis_codes": 11021,
         "id": 175,
-        "hegis_codes": 10101
+        "major": "French"
     },
     {
-        "major": "World Languages and Cultures/Translation",
         "campus": 0,
+        "hegis_codes": 11031,
         "id": 176,
-        "hegis_codes": 11013
+        "major": "German"
     },
     {
-        "major": "French",
         "campus": 0,
+        "hegis_codes": 11051,
         "id": 177,
-        "hegis_codes": 11021
+        "major": "Spanish"
     },
     {
-        "major": "German",
         "campus": 0,
+        "hegis_codes": 11071,
         "id": 178,
-        "hegis_codes": 11031
+        "major": "Chinese"
     },
     {
-        "major": "Spanish",
         "campus": 0,
+        "hegis_codes": 11081,
         "id": 179,
-        "hegis_codes": 11051
+        "major": "Japanese"
     },
     {
-        "major": "Chinese",
         "campus": 0,
+        "hegis_codes": 12011,
         "id": 180,
-        "hegis_codes": 11071
+        "major": "Health Science"
     },
     {
-        "major": "Japanese",
         "campus": 0,
+        "hegis_codes": 12021,
         "id": 181,
-        "hegis_codes": 11081
+        "major": "Health Care Management/Administration"
     },
     {
-        "major": "Health Science",
         "campus": 0,
+        "hegis_codes": 12081,
         "id": 182,
-        "hegis_codes": 12011
+        "major": "Occupational Therapy"
     },
     {
-        "major": "Health Care Management/Administration",
         "campus": 0,
+        "hegis_codes": 12140,
         "id": 183,
-        "hegis_codes": 12021
+        "major": "Public Health"
     },
     {
-        "major": "Occupational Therapy",
         "campus": 0,
+        "hegis_codes": 12141,
         "id": 184,
-        "hegis_codes": 12081
+        "major": "Health Education"
     },
     {
-        "major": "Public Health",
         "campus": 0,
+        "hegis_codes": 12142,
         "id": 185,
-        "hegis_codes": 12140
+        "major": "Environmental and Occupational Health"
     },
     {
-        "major": "Health Education",
         "campus": 0,
+        "hegis_codes": 12201,
         "id": 186,
-        "hegis_codes": 12141
+        "major": "Communicative Disorders"
     },
     {
-        "major": "Environmental and Occupational Health",
         "campus": 0,
+        "hegis_codes": 12204,
         "id": 187,
-        "hegis_codes": 12142
+        "major": "Speech Language Pathology"
     },
     {
-        "major": "Communicative Disorders",
         "campus": 0,
+        "hegis_codes": 12221,
         "id": 188,
-        "hegis_codes": 12201
+        "major": "Rehabilitation Counseling"
     },
     {
-        "major": "Speech Language Pathology",
         "campus": 0,
+        "hegis_codes": 12232,
         "id": 189,
-        "hegis_codes": 12204
+        "major": "Medical Technology"
     },
     {
-        "major": "Rehabilitation Counseling",
         "campus": 0,
+        "hegis_codes": 12253,
         "id": 190,
-        "hegis_codes": 12221
+        "major": "Radiologic Science & Technology"
     },
     {
-        "major": "Medical Technology",
         "campus": 0,
+        "hegis_codes": 13011,
         "id": 191,
-        "hegis_codes": 12232
+        "major": "Family and Consumer Sciences"
     },
     {
-        "major": "Radiologic Science & Technology",
         "campus": 0,
+        "hegis_codes": 13031,
         "id": 192,
-        "hegis_codes": 12253
+        "major": "Apparel Merchandising and Management"
     },
     {
-        "major": "Family and Consumer Sciences",
         "campus": 0,
+        "hegis_codes": 13061,
         "id": 193,
-        "hegis_codes": 13011
+        "major": "Dietetics/Nutritional Science"
     },
     {
-        "major": "Apparel Merchandising and Management",
         "campus": 0,
+        "hegis_codes": 15011,
         "id": 194,
-        "hegis_codes": 13031
+        "major": "English"
     },
     {
-        "major": "Dietetics/Nutritional Science",
         "campus": 0,
+        "hegis_codes": 15031,
         "id": 195,
-        "hegis_codes": 13061
+        "major": "Comparative Literature"
     },
     {
-        "major": "English",
         "campus": 0,
+        "hegis_codes": 15041,
         "id": 196,
-        "hegis_codes": 15011
+        "major": "Classics"
     },
     {
-        "major": "Comparative Literature",
         "campus": 0,
+        "hegis_codes": 15051,
         "id": 197,
-        "hegis_codes": 15031
+        "major": "Linguistics"
     },
     {
-        "major": "Classics",
         "campus": 0,
+        "hegis_codes": 15061,
         "id": 198,
-        "hegis_codes": 15041
+        "major": "Speech Communication"
     },
     {
-        "major": "Linguistics",
         "campus": 0,
+        "hegis_codes": 15071,
         "id": 199,
-        "hegis_codes": 15051
+        "major": "Creative Writing"
     },
     {
-        "major": "Speech Communication",
         "campus": 0,
+        "hegis_codes": 15091,
         "id": 200,
-        "hegis_codes": 15061
+        "major": "Philosophy"
     },
     {
-        "major": "Creative Writing",
         "campus": 0,
+        "hegis_codes": 15101,
         "id": 201,
-        "hegis_codes": 15071
+        "major": "Religious Studies"
     },
     {
-        "major": "Philosophy",
         "campus": 0,
+        "hegis_codes": 15102,
         "id": 202,
-        "hegis_codes": 15091
+        "major": "Jewish Studies"
     },
     {
-        "major": "Religious Studies",
         "campus": 0,
+        "hegis_codes": 15991,
         "id": 203,
-        "hegis_codes": 15101
+        "major": "Humanities"
     },
     {
-        "major": "Jewish Studies",
         "campus": 0,
+        "hegis_codes": 17011,
         "id": 204,
-        "hegis_codes": 15102
+        "major": "Mathematics"
     },
     {
-        "major": "Humanities",
         "campus": 0,
+        "hegis_codes": 17021,
         "id": 205,
-        "hegis_codes": 15991
+        "major": "Statistics"
     },
     {
-        "major": "Mathematics",
         "campus": 0,
+        "hegis_codes": 17031,
         "id": 206,
-        "hegis_codes": 17011
+        "major": "Applied Mathematics"
     },
     {
-        "major": "Statistics",
         "campus": 0,
+        "hegis_codes": 19021,
         "id": 207,
-        "hegis_codes": 17021
+        "major": "Physics"
     },
     {
-        "major": "Applied Mathematics",
         "campus": 0,
+        "hegis_codes": 19025,
         "id": 208,
-        "hegis_codes": 17031
+        "major": "Applied Physics"
     },
     {
-        "major": "Physics",
         "campus": 0,
+        "hegis_codes": 19051,
         "id": 209,
-        "hegis_codes": 19021
+        "major": "Chemistry"
     },
     {
-        "major": "Applied Physics",
         "campus": 0,
+        "hegis_codes": 19141,
         "id": 210,
-        "hegis_codes": 19025
+        "major": "Geology"
     },
     {
-        "major": "Chemistry",
         "campus": 0,
+        "hegis_codes": 19171,
         "id": 211,
-        "hegis_codes": 19051
+        "major": "Earth Science"
     },
     {
-        "major": "Geology",
         "campus": 0,
+        "hegis_codes": 20013,
         "id": 212,
-        "hegis_codes": 19141
+        "major": "Psychology"
     },
     {
-        "major": "Earth Science",
         "campus": 0,
+        "hegis_codes": 20991,
         "id": 213,
-        "hegis_codes": 19171
+        "major": "Behavioral Science"
     },
     {
-        "major": "Psychology",
         "campus": 0,
+        "hegis_codes": 20993,
         "id": 214,
-        "hegis_codes": 20013
+        "major": "Human Development"
     },
     {
-        "major": "Behavioral Science",
         "campus": 0,
+        "hegis_codes": 21021,
         "id": 215,
-        "hegis_codes": 20991
+        "major": "Public Administration"
     },
     {
-        "major": "Human Development",
         "campus": 0,
+        "hegis_codes": 21031,
         "id": 216,
-        "hegis_codes": 20993
+        "major": "Recreation Management & Administration"
     },
     {
-        "major": "Public Administration",
         "campus": 0,
+        "hegis_codes": 21041,
         "id": 217,
-        "hegis_codes": 21021
+        "major": "Social Work"
     },
     {
-        "major": "Recreation Management & Administration",
         "campus": 0,
+        "hegis_codes": 21042,
         "id": 218,
-        "hegis_codes": 21031
+        "major": "Human Services"
     },
     {
-        "major": "Social Work",
         "campus": 0,
+        "hegis_codes": 21044,
         "id": 219,
-        "hegis_codes": 21041
+        "major": "Deaf Studies"
     },
     {
-        "major": "Human Services",
         "campus": 0,
+        "hegis_codes": 21051,
         "id": 220,
-        "hegis_codes": 21042
+        "major": "Criminal Justice"
     },
     {
-        "major": "Deaf Studies",
         "campus": 0,
+        "hegis_codes": 21991,
         "id": 221,
-        "hegis_codes": 21044
+        "major": "Fire Protection Administration"
     },
     {
-        "major": "Criminal Justice",
         "campus": 0,
+        "hegis_codes": 22011,
         "id": 222,
-        "hegis_codes": 21051
+        "major": "Social Science"
     },
     {
-        "major": "Fire Protection Administration",
         "campus": 0,
+        "hegis_codes": 22021,
         "id": 223,
-        "hegis_codes": 21991
+        "major": "Anthropology"
     },
     {
-        "major": "Social Science",
         "campus": 0,
+        "hegis_codes": 22041,
         "id": 224,
-        "hegis_codes": 22011
+        "major": "Economics"
     },
     {
-        "major": "Anthropology",
         "campus": 0,
+        "hegis_codes": 22051,
         "id": 225,
-        "hegis_codes": 22021
+        "major": "History"
     },
     {
-        "major": "Economics",
         "campus": 0,
+        "hegis_codes": 22063,
         "id": 226,
-        "hegis_codes": 22041
+        "major": "Geography"
     },
     {
-        "major": "History",
         "campus": 0,
+        "hegis_codes": 22071,
         "id": 227,
-        "hegis_codes": 22051
+        "major": "Political Science"
     },
     {
-        "major": "Geography",
         "campus": 0,
+        "hegis_codes": 22081,
         "id": 228,
-        "hegis_codes": 22063
+        "major": "Sociology"
     },
     {
-        "major": "Political Science",
         "campus": 0,
+        "hegis_codes": 22111,
         "id": 229,
-        "hegis_codes": 22071
+        "major": "African-American Studies"
     },
     {
-        "major": "Sociology",
         "campus": 0,
+        "hegis_codes": 22131,
         "id": 230,
-        "hegis_codes": 22081
+        "major": "Mexican-American Studies"
     },
     {
-        "major": "African-American Studies",
         "campus": 0,
+        "hegis_codes": 22141,
         "id": 231,
-        "hegis_codes": 22111
+        "major": "Urban Studies"
     },
     {
-        "major": "Mexican-American Studies",
         "campus": 0,
+        "hegis_codes": 49991,
         "id": 232,
-        "hegis_codes": 22131
+        "major": "Women's Studies"
     },
     {
-        "major": "Urban Studies",
         "campus": 0,
+        "hegis_codes": 22991,
         "id": 233,
-        "hegis_codes": 22141
+        "major": "Ethnic Studies"
     },
     {
-        "major": "Women's Studies",
         "campus": 0,
+        "hegis_codes": 22993,
         "id": 234,
-        "hegis_codes": 49991
+        "major": "Labor Studies"
     },
     {
-        "major": "Ethnic Studies",
         "campus": 0,
+        "hegis_codes": 22999,
         "id": 235,
-        "hegis_codes": 22991
+        "major": "Asian/Asian-American Studies"
     },
     {
-        "major": "Labor Studies",
         "campus": 0,
+        "hegis_codes": 22997,
         "id": 236,
-        "hegis_codes": 22993
+        "major": "International Studies"
     },
     {
-        "major": "Asian/Asian-American Studies",
         "campus": 0,
+        "hegis_codes": 49011,
         "id": 237,
-        "hegis_codes": 22999
+        "major": "Environmental Studies"
     },
     {
-        "major": "International Studies",
         "campus": 0,
+        "hegis_codes": 49017,
         "id": 238,
-        "hegis_codes": 22997
+        "major": "Liberal Studies"
     },
     {
-        "major": "Environmental Studies",
         "campus": 0,
+        "hegis_codes": 49021,
         "id": 239,
-        "hegis_codes": 49011
+        "major": "Natural Science"
     },
     {
-        "major": "Liberal Studies",
         "campus": 0,
+        "hegis_codes": 49051,
         "id": 240,
-        "hegis_codes": 49017
+        "major": "Land Resource Management"
     },
     {
-        "major": "Natural Science",
         "campus": 0,
+        "hegis_codes": 49081,
         "id": 241,
-        "hegis_codes": 49021
+        "major": "Diversified Studies in Education"
     },
     {
-        "major": "Land Resource Management",
         "campus": 0,
+        "hegis_codes": 4101,
         "id": 242,
-        "hegis_codes": 49051
+        "major": "Physiology"
     },
     {
-        "major": "Diversified Studies in Education",
         "campus": 0,
+        "hegis_codes": 5992,
         "id": 243,
-        "hegis_codes": 49081
+        "major": "Public Relations"
     },
     {
-        "major": "Physiology",
         "campus": 0,
+        "hegis_codes": 5997,
         "id": 244,
-        "hegis_codes": 4101
+        "major": "Entrepreneurship & Small Business Management"
     },
     {
-        "major": "Public Relations",
         "campus": 0,
+        "hegis_codes": 6041,
         "id": 245,
-        "hegis_codes": 5992
+        "major": "Advertising"
     },
     {
-        "major": "Entrepreneurship & Small Business Management",
         "campus": 0,
+        "hegis_codes": 10052,
         "id": 246,
-        "hegis_codes": 5997
+        "major": "Music Education"
     },
     {
-        "major": "Advertising",
         "campus": 0,
+        "hegis_codes": 15021,
         "id": 247,
-        "hegis_codes": 6041
+        "major": "English Literature"
     },
     {
-        "major": "Music Education",
         "campus": 0,
+        "hegis_codes": 22994,
         "id": 248,
-        "hegis_codes": 10052
-    },
-    {
-        "major": "English Literature",
-        "campus": 0,
-        "id": 249,
-        "hegis_codes": 15021
-    },
-    {
-        "major": "Cultural Resources Management",
-        "campus": 0,
-        "id": 250,
-        "hegis_codes": 22994
+        "major": "Cultural Resources Management"
     }
 ]

@@ -18,7 +18,7 @@ class Northridge_Industry_Path_Wages_TableSeeder extends Seeder
         foreach ($industry_path_wage as $row) {
             $industryPathWage = new IndustryWage();
             $industryPathWage->id = $row->id;
-            $industryPathWage->avg_annual_wage_5 = $row->avg_annual_wage_5;
+            $industryPathWage->avg_annual_wage_5 = $row->median_annual_wage_5;
             $industryPathWage->avg_annual_wage_10 = null;
             $industryPathWage->save();
         }

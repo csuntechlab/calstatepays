@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\UniversityMajorsErrors;
 
-class ERRORS_Universities_Majors_Seeder extends Seeder
+class Majors_Different_Hegis_Same_Major_Table_Seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,16 +13,16 @@ class ERRORS_Universities_Majors_Seeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/master_errors_table.json");
+        $json = File::get("database/data/majors_different_hegis_same_major.json");
         $data = json_decode($json);
 
-        foreach($data as $row) {
+        foreach ($data as $row) {
             $universityMajor = new UniversityMajorsErrors();
             $universityMajor->hegis_code = $row->hegis_codes;
             $universityMajor->university_id = $row->university_id;
             $universityMajor->major = $row->major;
-            // $universityMajor->entry_status = $row->entry_status;
-            // // $universityMajor->student_path = $row->student_path;
+            $universityMajor->entry_status = $row->entry_stat;
+            $universityMajor->student_path = $row->student_path;
             $universityMajor->id = $row->id;
             $universityMajor->save();
         }

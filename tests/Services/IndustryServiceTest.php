@@ -121,10 +121,10 @@ class IndustryServiceTest extends TestCase
         $truthyArray = [
             [
                 "title" => "Professional, Scientific, & Technical Skills",
-                "percentage" => 37.0,
+                "percentage" => 37.25,
                 "rank" => 1,
                 "image" => "/img/industries/professional_scientific_technical_skills.png",
-                "industryWage" => '69328'
+                "industryWage" => '71707'
             ]
         ];
 
@@ -160,9 +160,9 @@ class IndustryServiceTest extends TestCase
         $truthyArray = [
             [
                 "title" => "Professional, Scientific, & Technical Skills",
-                "percentage" => 37.0,
+                "percentage" => 37.25,
                 "rank" => 1,
-                "industryWage" => "69328"
+                "industryWage" => "71707"
             ]
         ];
 
