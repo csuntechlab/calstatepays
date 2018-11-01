@@ -13,7 +13,7 @@
                 <i class="col-3 fa fa-university fa-5x" ></i> 
                <div class="col-9">
                     <span class="d-block">Earnings by Major + Industires of Employment</span>
-                    <router-link v-bind:to="universityLink">
+                    <router-link :to="universityLink">
                         <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Age at Entry + Industires of Employment</span>
-                    <router-link v-bind:to="universityLink">
+                    <router-link :to="universityLink">
                     <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Race + Industires of Employment</span>
-                    <router-link v-bind:to="universityLink">
+                    <router-link :to="universityLink">
                         <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
@@ -52,7 +52,7 @@
                 </div>               
                 <div class="col-9">
                     <span class="d-block">Earnings by Gender + Industires of Employment</span>
-                    <router-link v-bind:to="universityLink">
+                    <router-link :to="universityLink">
                         <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Pell Status at Entry + Industires of Employment</span>
-                    <router-link v-bind:to="universityLink">
+                    <router-link :to="universityLink">
                         <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
