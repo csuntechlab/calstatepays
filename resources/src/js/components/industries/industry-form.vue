@@ -42,6 +42,29 @@
 			<div class="form-group row">
 				<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 			</div>
+			<div class="majorBtnWrapper">
+				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')">
+					<i class="major-btn_icon" 
+					></i>
+					All Levels
+				</button>
+				<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleEducationLevel('postBacc')" >
+					<i class= "major-btn_icon" 
+					></i>
+					Post Bacc
+				</button>
+				<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleEducationLevel('bachelors')">
+					<i class="major-btn_icon" 
+				></i>
+					Bachelors
+				</button>
+				<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')">
+					<i class="major-btn_icon" 
+					v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'fa fa-circle-thin':this.educationLevel(this.index) != 'someCollege'}"></i>
+					Some College
+				</button>
+			</div>
 		</fieldset>
     </form>
 </template>
@@ -57,12 +80,13 @@ export default {
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: null
+				university: null,
+				formWasSubmitted: false,
+				formEducationLevel: "allDegrees",
 			},
 			submittedOnce: false,
 			formNotFilled: false,
 			selected: null,
-
 			errorLabel: {
 				color: "red",
 				fontWeight: "bold"
@@ -78,6 +102,7 @@ export default {
 	methods: {
 		...mapActions([
 			"fetchIndustryMajorsByField",
+			"toggleFormWasSubmitted",
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",]),
 		submitForm() {
@@ -86,9 +111,14 @@ export default {
 			if (this.checkForm()) {
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
+				this.form.formWasSubmitted=true;
 			}
 		},
-
+		toggleEducationLevel(educationInput) {
+			this.$store.dispatch("toggleEducationLevel", {
+				educationLevel: educationInput
+			});
+		},
 		checkForm() {
 			if (!this.$v.$invalid) return true;
 			else {
@@ -121,6 +151,9 @@ export default {
 			"selectedUniversity",
 			"fieldOfStudies"
 		]),
+		windowSize() {
+			return window.innerWidth;
+		},
 		selectedMajorsByField() {
 			return this.industryMajorsByField;
 			
