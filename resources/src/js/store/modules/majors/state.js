@@ -1,8 +1,7 @@
 // MAJORS STATE
-//
 
 export default {
-    majors:[],
+    majors: [],
     universities: [],
     fieldOfStudy: [],
     majorCards: [
