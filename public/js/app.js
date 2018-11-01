@@ -46575,14 +46575,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
+    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university + "/1").then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data);
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId + "/1").then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -97636,12 +97636,7 @@ var render = function() {
     [
       _c("navigation"),
       _vm._v(" "),
-      _c(
-        "main",
-        { staticClass: "contentWrapper" },
-        [_c("error-alert"), _vm._v(" "), _c("router-view")],
-        1
-      ),
+      _c("main", { staticClass: "contentWrapper" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c("csu-footer")
     ],
