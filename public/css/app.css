@@ -19030,7 +19030,6 @@ figcaption {
   background-color: #EBEBEB;
   height: calc(100vh - 457px);
   position: relative;
-  text-align: center;
   font-size: 3rem;
   color: black;
   display: -webkit-box;
@@ -19049,7 +19048,7 @@ figcaption {
 
 @media screen and (max-width: 960px) {
   .splashPage {
-    height: calc(100vh - 416px);
+    height: calc(100vh - 430px);
   }
 }
 

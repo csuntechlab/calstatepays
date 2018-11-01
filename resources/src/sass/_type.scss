@@ -141,7 +141,6 @@ figcaption {
     background-color: $light-gray;
     height: calc(100vh - 457px);
     position: relative;
-    text-align: center;
     font-size: 3rem;
     color:black;
     display: flex;
@@ -150,7 +149,7 @@ figcaption {
     text-align: center;
     min-height: 2rem;
     @media screen and (max-width: 960px){
-        height: calc(100vh - 416px);
+        height: calc(100vh - 430px);
     }
 }
 
