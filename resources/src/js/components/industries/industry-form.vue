@@ -61,7 +61,7 @@
 				</button>
 				<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')">
 					<i class="major-btn_icon" 
-					v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'fa fa-circle-thin':this.educationLevel(this.index) != 'someCollege'}"></i>
+					></i>
 					Some College
 				</button>
 			</div>

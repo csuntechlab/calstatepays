@@ -73608,15 +73608,7 @@ var render = function() {
             }
           },
           [
-            _c("i", {
-              staticClass: "major-btn_icon",
-              class: {
-                "fa fa-check-circle":
-                  this.educationLevel(this.index) == "someCollege",
-                "fa fa-circle-thin":
-                  this.educationLevel(this.index) != "someCollege"
-              }
-            }),
+            _c("i", { staticClass: "major-btn_icon" }),
             _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
           ]
         )
