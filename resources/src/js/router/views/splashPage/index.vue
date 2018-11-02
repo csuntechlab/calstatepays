@@ -10,7 +10,7 @@
     </csu-data-img-banner>
     <sub-nav/>
     <div class="splashPage">       
-            Coming soon
+            <p>Coming soon</p>
     </div> 
 </div>   
 </template>
