@@ -139,19 +139,23 @@ figcaption {
 }
 .splashPage{
     background-color: $light-gray;
-    height: calc(100vh - 457px);
+    height: calc(100vh - 409px);
     position: relative;
-    text-align: center;
     font-size: 3rem;
     color:black;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
-    min-height: 2rem;
-    @media screen and (max-width: 960px){
-        height: calc(100vh - 416px);
+    p{
+        padding: 6rem;
+        
     }
+    @media screen and (max-width: 960px){
+        height: calc(100vh - 430px);
+        min-height: 20rem;
+    }
+    // @media screen and (max-height: 960px){
+    //     height: 2rem
+    // }
 }
 
 .errorAlert{
