@@ -1,10 +1,10 @@
 <template>
     <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
-			<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+			<div v-if="!form.formWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 				<i class="fa fa-exclamation-circle"></i> Please select a Major.
 			</div>
-			<div class="form-group">
+			<div v-if="!form.formWasSubmitted===true" class="form-group">
 					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
 					<v-select
 							label="discipline"
@@ -14,7 +14,7 @@
 							class="csu-form-input">
 					</v-select>
 				</div>
-			<div class="form-group">
+			<div v-if="!form.formWasSubmitted" class="form-group">
 				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
 					Select a Major
 				</label>
@@ -39,10 +39,10 @@
 						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 					</v-select>
 			</div>
-			<div class="form-group row">
+			<div v-if="!form.formWasSubmitted" class="form-group row">
 				<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 			</div>
-			<div class="majorBtnWrapper">
+			<div v-else class="majorBtnWrapper">
 				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')">
 					<i class="major-btn_icon" 

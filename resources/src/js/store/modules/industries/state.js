@@ -2,5 +2,6 @@
 
 export default {
     industries: [],
-    industryMajorsByField: []
+    industryMajorsByField: [],
+    formWasSubmitted: false
 }
