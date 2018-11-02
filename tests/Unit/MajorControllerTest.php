@@ -319,10 +319,9 @@ class MajorControllerTest extends TestCase
         $this->assertEquals($response, $structure);
     }
 
-
-    public function test_Major_Test_Controller()
+    /** test getAllFieldOfStudies assert count */
+    public function test_field_Of_Study_Api()
     {
-        /** test getAllFieldOfStudies assert count */
         $fieldOfStudies = $this->json('GET', 'api/major/field-of-study');
         $fieldOfStudies->assertStatus(200);
         $fieldOfStudies = $fieldOfStudies->getOriginalContent();
@@ -332,20 +331,19 @@ class MajorControllerTest extends TestCase
             $this->assertArrayHasKey('name', $success);
             $this->assertNotNull('id', $success);
             $this->assertNotNull('name', $success);
-
         }
 
         $count = count($fieldOfStudies);
         $this->assertEquals(8, $count);
+    }
 
-        /** test get getAllHegisCodesBy northridge assert count per-university */
-        $universityName = "northridge";
+    private function getAllHegisCodesByUniversity_helper($universityName, $expectedCount)
+    {
+        $getAllHegisCodesBy = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
+        $getAllHegisCodesBy->assertStatus(200);
+        $getAllHegisCodesBy = $getAllHegisCodesBy->getOriginalContent();
 
-        $getAllHegisCodesByNorthridge = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
-        $getAllHegisCodesByNorthridge->assertStatus(200);
-        $getAllHegisCodesByNorthridge = $getAllHegisCodesByNorthridge->getOriginalContent();
-
-        foreach ($getAllHegisCodesByNorthridge as $iterate => $success) {
+        foreach ($getAllHegisCodesBy as $iterate => $success) {
             $this->assertArrayHasKey('major', $success);
             $this->assertArrayHasKey('hegis_code', $success);
             $this->assertArrayHasKey('university_id', $success);
@@ -354,102 +352,102 @@ class MajorControllerTest extends TestCase
             $this->assertNotNull('university_id', $success);
         }
 
-        $count = count($getAllHegisCodesByNorthridge);
-        $this->assertEquals(84, $count);
+        $count = count($getAllHegisCodesBy);
+        $this->assertEquals($expectedCount, $count);
+    }
+
+    private function filterByFieldOfStudyUniversity_helper($universityName, $fieldOfStudy, $expectedCount)
+    {
+        $filterByFieldOfStudy = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
+        $filterByFieldOfStudy->assertStatus(200);
+        $filterByFieldOfStudy = $filterByFieldOfStudy->getOriginalContent();
+
+        foreach ($filterByFieldOfStudy[0] as $iterate => $success) {
+            $this->assertArrayHasKey('major', $success);
+            $this->assertArrayHasKey('hegisCode', $success);
+            $this->assertArrayHasKey('hegis_category_id', $success);
+            $this->assertNotNull('major', $success);
+            $this->assertNotNull('hegisCode', $success);
+            $this->assertNotNull('hegis_category_id', $success);
+        }
+
+        $count = count($filterByFieldOfStudy[0]);
+        $this->assertEquals($expectedCount, $count);
+    }
+
+    private function getMajorEarnings_helper($universityName, $major)
+    {
+        $getMajorEarnings = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
+        $getMajorEarnings->assertStatus(200);
+        $getMajorEarnings = $getMajorEarnings->getOriginalContent();
+
+        $this->assertArrayHasKey('majorId', $getMajorEarnings);
+        $this->assertArrayHasKey('universityName', $getMajorEarnings);
+        $this->assertArrayHasKey('someCollege', $getMajorEarnings);
+        $this->assertArrayHasKey('bachelors', $getMajorEarnings);
+        $this->assertArrayHasKey('postBacc', $getMajorEarnings);
+
+        $this->assertNotNull('majorId', $getMajorEarnings);
+        $this->assertNotNull('universityName', $getMajorEarnings);
+        $this->assertNotNull('someCollege', $getMajorEarnings);
+        $this->assertNotNull('bachelors', $getMajorEarnings);
+        $this->assertNotNull('postBacc', $getMajorEarnings);
+
+        $count = count($getMajorEarnings);
+        $this->assertEquals(5, $count);
+
+        $this->studentPath_helper($getMajorEarnings, 'someCollege');
+        $this->studentPath_helper($getMajorEarnings, 'bachelors');
+        $this->studentPath_helper($getMajorEarnings, 'postBacc');
+    }
+
+    private function studentPath_helper($getMajorEarnings, $studentPath)
+    {
+        foreach ($getMajorEarnings[$studentPath] as $iterate => $success) {
+            $this->assertArrayHasKey('major_path_id', $success);
+            $this->assertArrayHasKey('_25th', $success);
+            $this->assertArrayHasKey('_50th', $success);
+            $this->assertArrayHasKey('_75th', $success);
+            $this->assertNotNull('major_path_id', $success);
+
+        }
+    }
+
+
+    public function test_Major_Test_Controller()
+    {
+        /** test get getAllHegisCodesBy northridge assert count per-university */
+        $universityName = "northridge";
+        $expectedCount = 84;
+        $this->getAllHegisCodesByUniversity_helper($universityName, $expectedCount);
 
         /** test get getAllHegisCodesBy aggregate assert count per-university */
         $universityName = "all";
-
-        $getAllHegisCodesByAggregate = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
-        $getAllHegisCodesByAggregate->assertStatus(200);
-        $getAllHegisCodesByAggregate = $getAllHegisCodesByAggregate->getOriginalContent();
-
-        foreach ($getAllHegisCodesByAggregate as $iterate => $success) {
-            $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegis_code', $success);
-            $this->assertArrayHasKey('university_id', $success);
-            $this->assertNotNull('major', $success);
-            $this->assertNotNull('hegis_code', $success);
-            $this->assertNotNull('university_id', $success);
-        }
-
-        $count = count($getAllHegisCodesByAggregate);
-        $this->assertEquals(164, $count);
+        $expectedCount = 164;
+        $this->getAllHegisCodesByUniversity_helper($universityName, $expectedCount);
 
         /** test filterByFieldOfStudy northridge assert count */
         $universityName = "northridge";
         $fieldOfStudy = 6;
-
-        $filterByFieldOfStudyNorthridge = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
-        $filterByFieldOfStudyNorthridge->assertStatus(200);
-        $filterByFieldOfStudyNorthridge = $filterByFieldOfStudyNorthridge->getOriginalContent();
-
-        foreach ($filterByFieldOfStudyNorthridge[0] as $iterate => $success) {
-            $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegisCode', $success);
-            $this->assertArrayHasKey('hegis_category_id', $success);
-            $this->assertNotNull('major', $success);
-            $this->assertNotNull('hegisCode', $success);
-            $this->assertNotNull('hegis_category_id', $success);
-        }
-
-        $count = count($filterByFieldOfStudyNorthridge[0]);
-        $this->assertEquals(9, $count);
+        $expectedCount = 9;
+        $this->filterByFieldOfStudyUniversity_helper($universityName, $fieldOfStudy, $expectedCount);
 
         /** test filterByFieldOfStudy aggregate assert count */
         $universityName = "all";
         $fieldOfStudy = 6;
-
-        $filterByFieldOfStudyAggregate = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
-        $filterByFieldOfStudyAggregate->assertStatus(200);
-        $filterByFieldOfStudyAggregate = $filterByFieldOfStudyAggregate->getOriginalContent();
-
-        foreach ($filterByFieldOfStudyAggregate[0] as $iterate => $success) {
-            $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegisCode', $success);
-            $this->assertArrayHasKey('hegis_category_id', $success);
-            $this->assertNotNull('major', $success);
-            $this->assertNotNull('hegisCode', $success);
-            $this->assertNotNull('hegis_category_id', $success);
-        }
-
-        $count = count($filterByFieldOfStudyAggregate[0]);
-        $this->assertEquals(26, $count);
+        $expectedCount = 26;
+        $this->filterByFieldOfStudyUniversity_helper($universityName, $fieldOfStudy, $expectedCount);
 
         /** test northridge getMajorEarnings assert count */
         $major = 5021;
         $universityName = "northridge";
 
-        $getMajorEarningsNorthridge = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
-        $getMajorEarningsNorthridge->assertStatus(200);
-        $getMajorEarningsNorthridge = $getMajorEarningsNorthridge->getOriginalContent();
-
-        $this->assertArrayHasKey('majorId', $getMajorEarningsNorthridge);
-        $this->assertArrayHasKey('universityName', $getMajorEarningsNorthridge);
-        $this->assertArrayHasKey('someCollege', $getMajorEarningsNorthridge);
-        $this->assertArrayHasKey('bachelors', $getMajorEarningsNorthridge);
-        $this->assertArrayHasKey('postBacc', $getMajorEarningsNorthridge);
-
-        $count = count($getMajorEarningsNorthridge);
-        $this->assertEquals(5, $count);
-
         /** test aggregate getMajorEarnings assert count */
         $major = 5021;
         $universityName = "all";
+        $universityName = "northridge";
 
-        $getMajorEarningsAggregate = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
-        $getMajorEarningsAggregate->assertStatus(200);
-        $getMajorEarningsAggregate = $getMajorEarningsAggregate->getOriginalContent();
-
-        $this->assertArrayHasKey('majorId', $getMajorEarningsAggregate);
-        $this->assertArrayHasKey('universityName', $getMajorEarningsAggregate);
-        $this->assertArrayHasKey('someCollege', $getMajorEarningsAggregate);
-        $this->assertArrayHasKey('bachelors', $getMajorEarningsAggregate);
-        $this->assertArrayHasKey('postBacc', $getMajorEarningsAggregate);
-
-        $count = count($getMajorEarningsAggregate);
-        $this->assertEquals(5, $count);
-
+        $this->getMajorEarnings_helper($universityName, $major);
 
         /** Exception testing */
         $universityName = "channelIslands";
