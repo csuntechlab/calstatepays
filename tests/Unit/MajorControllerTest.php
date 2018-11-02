@@ -322,17 +322,18 @@ class MajorControllerTest extends TestCase
 
     public function test_Major_Test_Controller()
     {
-
-        //Tests exception
-
-
         /** test getAllFieldOfStudies assert count */
         $fieldOfStudies = $this->json('GET', 'api/major/field-of-study');
         $fieldOfStudies->assertStatus(200);
         $fieldOfStudies = $fieldOfStudies->getOriginalContent();
 
-        $this->assertArrayHasKey('id', $fieldOfStudies[0]);
-        $this->assertArrayHasKey('name', $fieldOfStudies[0]);
+        foreach ($fieldOfStudies as $iterate => $success) {
+            $this->assertArrayHasKey('id', $success);
+            $this->assertArrayHasKey('name', $success);
+            $this->assertNotNull('id', $success);
+            $this->assertNotNull('name', $success);
+
+        }
 
         $count = count($fieldOfStudies);
         $this->assertEquals(8, $count);
@@ -344,9 +345,14 @@ class MajorControllerTest extends TestCase
         $getAllHegisCodesByNorthridge->assertStatus(200);
         $getAllHegisCodesByNorthridge = $getAllHegisCodesByNorthridge->getOriginalContent();
 
-        $this->assertArrayHasKey('major', $getAllHegisCodesByNorthridge[0]);
-        $this->assertArrayHasKey('hegis_code', $getAllHegisCodesByNorthridge[0]);
-        $this->assertArrayHasKey('university_id', $getAllHegisCodesByNorthridge[0]);
+        foreach ($getAllHegisCodesByNorthridge as $iterate => $success) {
+            $this->assertArrayHasKey('major', $success);
+            $this->assertArrayHasKey('hegis_code', $success);
+            $this->assertArrayHasKey('university_id', $success);
+            $this->assertNotNull('major', $success);
+            $this->assertNotNull('hegis_code', $success);
+            $this->assertNotNull('university_id', $success);
+        }
 
         $count = count($getAllHegisCodesByNorthridge);
         $this->assertEquals(84, $count);
@@ -358,9 +364,14 @@ class MajorControllerTest extends TestCase
         $getAllHegisCodesByAggregate->assertStatus(200);
         $getAllHegisCodesByAggregate = $getAllHegisCodesByAggregate->getOriginalContent();
 
-        $this->assertArrayHasKey('major', $getAllHegisCodesByAggregate[0]);
-        $this->assertArrayHasKey('hegis_code', $getAllHegisCodesByAggregate[0]);
-        $this->assertArrayHasKey('university_id', $getAllHegisCodesByAggregate[0]);
+        foreach ($getAllHegisCodesByAggregate as $iterate => $success) {
+            $this->assertArrayHasKey('major', $success);
+            $this->assertArrayHasKey('hegis_code', $success);
+            $this->assertArrayHasKey('university_id', $success);
+            $this->assertNotNull('major', $success);
+            $this->assertNotNull('hegis_code', $success);
+            $this->assertNotNull('university_id', $success);
+        }
 
         $count = count($getAllHegisCodesByAggregate);
         $this->assertEquals(164, $count);
@@ -373,9 +384,14 @@ class MajorControllerTest extends TestCase
         $filterByFieldOfStudyNorthridge->assertStatus(200);
         $filterByFieldOfStudyNorthridge = $filterByFieldOfStudyNorthridge->getOriginalContent();
 
-        $this->assertArrayHasKey('major', $filterByFieldOfStudyNorthridge[0][0]);
-        $this->assertArrayHasKey('hegisCode', $filterByFieldOfStudyNorthridge[0][0]);
-        $this->assertArrayHasKey('hegis_category_id', $filterByFieldOfStudyNorthridge[0][0]);
+        foreach ($filterByFieldOfStudyNorthridge[0] as $iterate => $success) {
+            $this->assertArrayHasKey('major', $success);
+            $this->assertArrayHasKey('hegisCode', $success);
+            $this->assertArrayHasKey('hegis_category_id', $success);
+            $this->assertNotNull('major', $success);
+            $this->assertNotNull('hegisCode', $success);
+            $this->assertNotNull('hegis_category_id', $success);
+        }
 
         $count = count($filterByFieldOfStudyNorthridge[0]);
         $this->assertEquals(9, $count);
@@ -388,9 +404,14 @@ class MajorControllerTest extends TestCase
         $filterByFieldOfStudyAggregate->assertStatus(200);
         $filterByFieldOfStudyAggregate = $filterByFieldOfStudyAggregate->getOriginalContent();
 
-        $this->assertArrayHasKey('major', $filterByFieldOfStudyAggregate[0][0]);
-        $this->assertArrayHasKey('hegisCode', $filterByFieldOfStudyAggregate[0][0]);
-        $this->assertArrayHasKey('hegis_category_id', $filterByFieldOfStudyAggregate[0][0]);
+        foreach ($filterByFieldOfStudyAggregate[0] as $iterate => $success) {
+            $this->assertArrayHasKey('major', $success);
+            $this->assertArrayHasKey('hegisCode', $success);
+            $this->assertArrayHasKey('hegis_category_id', $success);
+            $this->assertNotNull('major', $success);
+            $this->assertNotNull('hegisCode', $success);
+            $this->assertNotNull('hegis_category_id', $success);
+        }
 
         $count = count($filterByFieldOfStudyAggregate[0]);
         $this->assertEquals(26, $count);
@@ -432,8 +453,8 @@ class MajorControllerTest extends TestCase
 
         /** Exception testing */
         $universityName = "channelIslands";
-        /** test get getAllHegisCodesBy northridge throws an error code*/
 
+        /** test get getAllHegisCodesBy northridge throws an error code*/
         $getAllHegisCodesByUniversityFail = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
 
         $code = $getAllHegisCodesByUniversityFail->original['code'];
