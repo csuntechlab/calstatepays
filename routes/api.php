@@ -15,11 +15,11 @@ use Illuminate\Http\Request;
 //Major
 Route::get('major/field-of-study', 'MajorController@getAllFieldOfStudies');
 
-/** Swap university_id -> university_name */
-Route::get('major/hegis-codes/university/{university_name}', 'MajorController@getAllHegisCodesByUniversity')->name('major.hegis-codes');
+
+Route::get('major/hegis-codes/university/{university}', 'MajorController@getAllHegisCodesByUniversity')->name('major.hegis-codes');
 
 /** Swap university_id -> university_name */
-Route::get('major/hegis-codes/{universityName}/{fieldOfStudyId}', 'MajorController@filterByFieldOfStudy');
+Route::get('major/hegis-codes/{university}/{fieldOfStudyId}', 'MajorController@filterByFieldOfStudy');
 
 /** $university_id -> $university_name */
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
@@ -34,9 +34,10 @@ Route::get(
 
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
-Route::get('industry/{hegis_code}/{universityName}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRank');
+// change route variables from hegis_code to major... universityName to university
+Route::get('industry/{major}/{university}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRank');
 
-Route::get('industry/images/{hegis_code}/{universityName}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRankWithImages');
+Route::get('industry/images/{major}/{university}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 
 //University
