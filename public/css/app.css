@@ -19038,6 +19038,10 @@ figcaption {
   text-align: center;
 }
 
+.splashPage p {
+  padding: 6rem;
+}
+
 @media screen and (max-width: 960px) {
   .splashPage {
     height: calc(100vh - 430px);
@@ -19133,11 +19137,13 @@ figcaption {
 }
 
 .fa-graduation-cap {
+  font-size: 6em;
   color: #476A6F;
   padding-bottom: 0.1rem;
 }
 
 .fa-usd {
+  font-size: 6em;
   color: #2BAE67;
   padding-bottom: 0.1rem;
 }

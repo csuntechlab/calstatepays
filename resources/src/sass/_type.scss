@@ -145,7 +145,10 @@ figcaption {
     color:black;
     justify-content: center;
     text-align: center;
-    // padding: 6rem;
+    p{
+        padding: 6rem;
+        
+    }
     @media screen and (max-width: 960px){
         height: calc(100vh - 430px);
         min-height: 20rem;
