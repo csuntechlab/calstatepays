@@ -48003,11 +48003,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             if (this.selectedUniversity != university) {
                 sessionStorage.setItem("selectedUniversity", university);
                 this.$store.dispatch('setUniversity', university);
+                this.$store.dispatch('fetchMajors', university);
+                this.$store.dispatch('fetchFieldOfStudies', university);
                 this.$store.dispatch('resetMajorState');
                 this.$store.dispatch('resetIndustryState');
                 this.$store.dispatch('resetFreState');
-                this.$store.dispatch('fetchMajors', university);
-                this.$store.dispatch('fetchFieldOfStudies', university);
             }
             this.showModal = false;
         },
