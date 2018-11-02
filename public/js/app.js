@@ -72974,6 +72974,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73002,26 +73022,40 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm._l(_vm.industriesByMajor, function(industry, index) {
-        return _c("div", { key: index, staticClass: "industry-card__row" }, [
+        return _c("div", { key: index }, [
           industry.percentage != null || industry.industryWage != null
-            ? _c("div", { staticClass: "row" }, [
+            ? _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
                 _c("div", { staticClass: "col-sm-3" }, [
-                  _vm._v(_vm._s(industry.title))
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "IndustryProgressBarWrapper__IndustryTitle"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(industry.title) +
+                          "\n                "
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-sm-9" }, [
-                  _c("div", { staticClass: "row industry-bar__padding" }, [
+                  _c("div", { staticClass: "row py-2" }, [
                     _c(
                       "div",
                       { staticClass: "col-10" },
                       [
                         _c("v-progress-linear", {
-                          staticClass: "industry-bar",
+                          staticClass:
+                            "IndustryProgressBarWrapper__ProgressBarBase",
                           attrs: {
                             value: industry.percentage,
                             height: "25",
-                            color: "industry-bar__percentage",
-                            "background-color": "industry-bar__background"
+                            color: "IndustryProgressBarWrapper__PercentageBar",
+                            "background-color":
+                              "IndustryProgressBarWrapper__PercentageBar--Background"
                           }
                         })
                       ],
@@ -73029,36 +73063,54 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     industry.percentage > 0 && industry != null
-                      ? _c(
-                          "div",
-                          {
-                            staticClass: "col-2 industry-bar__percentage-text"
-                          },
-                          [_vm._v(_vm._s(industry.percentage) + "%")]
-                        )
-                      : industry.percentage === null
-                        ? _c(
-                            "div",
+                      ? _c("div", { staticClass: "col-2 pl-0" }, [
+                          _c(
+                            "p",
                             {
-                              staticClass: "col-2 industry-bar__percentage-text"
+                              staticClass:
+                                "IndustryProgressBarWrapper__PercentageText"
                             },
-                            [_vm._v("N/A")]
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(industry.percentage) +
+                                  "%\n                        "
+                              )
+                            ]
                           )
+                        ])
+                      : industry.percentage === null
+                        ? _c("div", { staticClass: "col-2 pl-0" }, [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "IndustryProgressBarWrapper__PercentageText"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            N/A\n                        "
+                                )
+                              ]
+                            )
+                          ])
                         : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "row py-2" }, [
                     _c(
                       "div",
                       { staticClass: "col-10" },
                       [
                         _c("v-progress-linear", {
-                          staticClass: "industry-bar",
+                          staticClass:
+                            "IndustryProgressBarWrapper__ProgressBarBase",
                           attrs: {
                             value: industry.industryWage / 1500,
                             height: "25",
-                            color: "industry-bar__salary",
-                            "background-color": "industry-bar__background"
+                            color: "IndustryProgressBarWrapper__SalaryBar",
+                            "background-color":
+                              "IndustryProgressBarWrapper__PercentageBar--Background"
                           }
                         })
                       ],
@@ -73066,35 +73118,44 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     industry.industryWage > 0 && industry != null
-                      ? _c(
-                          "div",
-                          { staticClass: "col-2 industry-bar__salary-text" },
-                          [
-                            _vm._v(
-                              "$" +
-                                _vm._s(_vm.formatDollars(industry.industryWage))
-                            )
-                          ]
-                        )
-                      : industry.industryWage === null
-                        ? _c(
-                            "div",
-                            { staticClass: "col-2 industry-bar__salary-text" },
-                            [_vm._v("N/A")]
+                      ? _c("div", { staticClass: "col-2 pl-0" }, [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "IndustryProgressBarWrapper__SalaryText"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            $" +
+                                  _vm._s(
+                                    _vm.formatDollars(industry.industryWage)
+                                  ) +
+                                  "\n                        "
+                              )
+                            ]
                           )
+                        ])
+                      : industry.industryWage === null
+                        ? _c("div", { staticClass: "col-2 pl-0" }, [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "IndustryProgressBarWrapper__SalaryText"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            N/A\n                        "
+                                )
+                              ]
+                            )
+                          ])
                         : _vm._e()
                   ])
                 ])
               ])
-            : industry.percentage === null && industry.industryWage === null
-              ? _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-3" }, [
-                    _vm._v(_vm._s(industry.title))
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(1, true)
-                ])
-              : _vm._e()
+            : _vm._e()
         ])
       })
     ],
@@ -73106,28 +73167,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row industry-card__legend" }, [
+    return _c("div", { staticClass: "row IndustryLegend" }, [
       _c("div", { staticClass: "col-sm-3" }),
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-4" }, [
-        _c("div", { staticClass: "industry-card__legend-percentage" }),
+        _c("div", { staticClass: "IndustryLegend__LegendPercentage" }),
         _vm._v("PERCENTAGE\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-5" }, [
-        _c("div", { staticClass: "industry-card__legend-salary" }),
+        _c("div", { staticClass: "IndustryLegend__LegendSalary" }),
         _vm._v("AVERAGE EARNINGS\n        ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-9" }, [
-      _c("h3", [
-        _c("i", { staticClass: "fa fa-exclamation-circle required-field" }),
-        _vm._v("No data available")
       ])
     ])
   }
