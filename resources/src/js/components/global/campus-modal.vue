@@ -66,10 +66,15 @@ export default {
             'setUniversity'
         ]),
         changeCampus: function(university){
+        if (this.selectedUniversity != university){
             sessionStorage.setItem("selectedUniversity", university);
             this.$store.dispatch('setUniversity', university);
+            this.$store.dispatch('resetMajorState');
+            this.$store.dispatch('resetIndustryState');
+            this.$store.dispatch('resetFreState');
             this.$store.dispatch('fetchMajors', university);
             this.$store.dispatch('fetchFieldOfStudies', university);
+        }
             this.showModal = false;
         },
         checkSessionData() {

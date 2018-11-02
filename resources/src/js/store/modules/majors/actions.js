@@ -92,4 +92,8 @@ export default {
     resetMajorCard({commit}, payload) {
         commit(_majors.RESET_MAJOR_CARD,payload);
     },
+
+    resetMajorState({commit}){
+        commit(_majors.RESET_MAJOR_STATE);
+    }
 }

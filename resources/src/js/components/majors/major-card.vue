@@ -42,7 +42,7 @@
 				<div v-show="!nullValues">
 					<div class="row">
 						<div class="col-12">
-							<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" style="height:50vh" :majorData="selectedMajorData"
+							<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData"
 							 :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 						</div>
 					</div>
