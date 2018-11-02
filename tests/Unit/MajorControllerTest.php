@@ -322,21 +322,26 @@ class MajorControllerTest extends TestCase
 
     public function test_Major_Test_Controller()
     {
+
+        //Tests exception
+
+
         /** test getAllFieldOfStudies assert count */
         $fieldOfStudies = $this->json('GET', 'api/major/field-of-study');
+        $fieldOfStudies->assertStatus(200);
         $fieldOfStudies = $fieldOfStudies->getOriginalContent();
+
         $this->assertArrayHasKey('id', $fieldOfStudies[0]);
         $this->assertArrayHasKey('name', $fieldOfStudies[0]);
 
         $count = count($fieldOfStudies);
         $this->assertEquals(8, $count);
-        // dd($count);
-
 
         /** test get getAllHegisCodesBy northridge assert count per-university */
         $universityName = "northridge";
 
         $getAllHegisCodesByNorthridge = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
+        $getAllHegisCodesByNorthridge->assertStatus(200);
         $getAllHegisCodesByNorthridge = $getAllHegisCodesByNorthridge->getOriginalContent();
 
         $this->assertArrayHasKey('major', $getAllHegisCodesByNorthridge[0]);
@@ -350,6 +355,7 @@ class MajorControllerTest extends TestCase
         $universityName = "all";
 
         $getAllHegisCodesByAggregate = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
+        $getAllHegisCodesByAggregate->assertStatus(200);
         $getAllHegisCodesByAggregate = $getAllHegisCodesByAggregate->getOriginalContent();
 
         $this->assertArrayHasKey('major', $getAllHegisCodesByAggregate[0]);
@@ -364,6 +370,7 @@ class MajorControllerTest extends TestCase
         $fieldOfStudy = 6;
 
         $filterByFieldOfStudyNorthridge = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
+        $filterByFieldOfStudyNorthridge->assertStatus(200);
         $filterByFieldOfStudyNorthridge = $filterByFieldOfStudyNorthridge->getOriginalContent();
 
         $this->assertArrayHasKey('major', $filterByFieldOfStudyNorthridge[0][0]);
@@ -378,6 +385,7 @@ class MajorControllerTest extends TestCase
         $fieldOfStudy = 6;
 
         $filterByFieldOfStudyAggregate = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
+        $filterByFieldOfStudyAggregate->assertStatus(200);
         $filterByFieldOfStudyAggregate = $filterByFieldOfStudyAggregate->getOriginalContent();
 
         $this->assertArrayHasKey('major', $filterByFieldOfStudyAggregate[0][0]);
@@ -392,8 +400,8 @@ class MajorControllerTest extends TestCase
         $universityName = "northridge";
 
         $getMajorEarningsNorthridge = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
+        $getMajorEarningsNorthridge->assertStatus(200);
         $getMajorEarningsNorthridge = $getMajorEarningsNorthridge->getOriginalContent();
-        // dd($getMajorEarningsNorthridge[]);
 
         $this->assertArrayHasKey('majorId', $getMajorEarningsNorthridge);
         $this->assertArrayHasKey('universityName', $getMajorEarningsNorthridge);
@@ -409,6 +417,7 @@ class MajorControllerTest extends TestCase
         $universityName = "all";
 
         $getMajorEarningsAggregate = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
+        $getMajorEarningsAggregate->assertStatus(200);
         $getMajorEarningsAggregate = $getMajorEarningsAggregate->getOriginalContent();
 
         $this->assertArrayHasKey('majorId', $getMajorEarningsAggregate);
@@ -419,5 +428,34 @@ class MajorControllerTest extends TestCase
 
         $count = count($getMajorEarningsAggregate);
         $this->assertEquals(5, $count);
+
+
+        /** Exception testing */
+        $universityName = "channelIslands";
+        /** test get getAllHegisCodesBy northridge throws an error code*/
+
+        $getAllHegisCodesByUniversityFail = $this->json('GET', 'api/major/hegis-codes/university/' . $universityName);
+
+        $code = $getAllHegisCodesByUniversityFail->original['code'];
+        $this->assertFalse($getAllHegisCodesByUniversityFail->original['success']);
+        $this->assertEquals(409, $code);
+
+        /** test filterByFieldOfStudy  throws an error code*/
+        $fieldOfStudy = 21;
+
+        $filterByFieldOfStudyFail = $this->json('GET', 'api/major/hegis-codes/' . $universityName . '/' . $fieldOfStudy);
+
+        $code = $filterByFieldOfStudyFail->original['code'];
+        $this->assertFalse($filterByFieldOfStudyFail->original['success']);
+        $this->assertEquals(409, $code);
+
+        /** test  getMajorEarnings throws an error code*/
+        $major = 21091;
+
+        $getMajorEarningsFail = $this->json('GET', 'api/major/' . $major . '/' . $universityName);
+
+        $code = $getMajorEarningsFail->original['code'];
+        $this->assertFalse($getMajorEarningsFail->original['success']);
+        $this->assertEquals(409, $code);
     }
 }
