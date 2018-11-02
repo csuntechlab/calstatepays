@@ -19,5 +19,11 @@ export default {
 	[_industries.RESET_INDUSTRY_STATE](state){
 		state.industries = [];
 		state.industryMajorsByField = [];
+	},
+	[_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED](state, payload){
+		state.industryFormWasSubmitted = true;
+	},
+	[_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL](state,payload){
+		state.industryEducationLevel = payload;
 	}
 };
