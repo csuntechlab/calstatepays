@@ -29610,11 +29610,15 @@ var RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
 var FETCH_INDUSTRIES = "industries/FETCH_INDUSTRIES";
 var FETCH_INDUSTRY_MAJORS_BY_FIELD = "industries/FETCH_INDUSTRY_MAJORS_BY_FIELD";
 var RESET_INDUSTRY_STATE = "industries/RESET_INDUSTRY_STATE";
-
+var TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED = "industries/TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED";
+var TOGGLE_INDUSTRY_EDUCATION_LEVEL = "industries/TOGGLE_INDUSTRY_EDUCATION_LEVEL";
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
 	FETCH_INDUSTRY_MAJORS_BY_FIELD: FETCH_INDUSTRY_MAJORS_BY_FIELD,
+	TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED: TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED,
+	TOGGLE_INDUSTRY_EDUCATION_LEVEL: TOGGLE_INDUSTRY_EDUCATION_LEVEL,
 	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE
+
 });
 
 /***/ }),
@@ -46517,7 +46521,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["a"] = ({
     industries: [],
     industryMajorsByField: [],
-    formWasSubmitted: false
+    industryFormWasSubmitted: false,
+    industryEducationLevel: "allDegrees"
 });
 
 /***/ }),
@@ -46533,6 +46538,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     industryMajorsByField: function industryMajorsByField(state) {
         return state.industryMajorsByField;
+    },
+    industryFormWasSubmitted: function industryFormWasSubmitted(state) {
+        return state.industryFormWasSubmitted;
+    },
+    industryEducationLevel: function industryEducationLevel(state) {
+        return state.industryEducationLevel;
     }
 });
 
@@ -46564,6 +46575,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED, function (state, payload) {
+	state.industryFormWasSubmitted = true;
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_EDUCATION_LEVEL, function (state, payload) {
+	state.industryEducationLevel = payload;
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -46600,6 +46615,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		var commit = _ref3.commit;
 
 		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE);
+	},
+	toggleIndustryFormWasSubmitted: function toggleIndustryFormWasSubmitted(_ref4) {
+		var commit = _ref4.commit;
+
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED);
+	},
+	toggleIndustryEducationLevel: function toggleIndustryEducationLevel(_ref5, payload) {
+		var commit = _ref5.commit;
+
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_EDUCATION_LEVEL, payload);
 	}
 });
 
@@ -73316,6 +73341,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -73325,6 +73351,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
+			//temp data property to simulate the functionality
+			//of the degree selector; should ultimately be removed
+			isActive: true,
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
@@ -73347,20 +73376,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	},
 
 
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchIndustries"]), {
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel"]), {
 		submitForm: function submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
-				this.form.formWasSubmitted = true;
+				this.toggleIndustryFormWasSubmitted();
 			}
 		},
-		toggleEducationLevel: function toggleEducationLevel(educationInput) {
-			this.$store.dispatch("toggleEducationLevel", {
-				educationLevel: educationInput
-			});
+		toggleIndustryEducationLevel: function toggleIndustryEducationLevel(educationInput) {
+			this.$store.dispatch("toggleIndustryEducationLevel", educationInput);
 		},
 		checkForm: function checkForm() {
 			if (!this.$v.$invalid) return true;else {
@@ -73384,7 +73410,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		}
 	}),
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "industryMajorsByField", "selectedUniversity", "fieldOfStudies"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "universities", "industryFormWasSubmitted", "industryEducationLevel", "industryMajorsByField", "selectedUniversity", "fieldOfStudies"]), {
 		windowSize: function windowSize() {
 			return window.innerWidth;
 		},
@@ -73412,7 +73438,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "container-fluid csu-card__form" }, [
     _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-      !_vm.form.formWasSubmitted
+      !_vm.industryFormWasSubmitted
         ? _c(
             "div",
             {
@@ -73427,7 +73453,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      !_vm.form.formWasSubmitted === true
+      !_vm.industryFormWasSubmitted === true
         ? _c(
             "div",
             { staticClass: "form-group" },
@@ -73453,7 +73479,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      !_vm.form.formWasSubmitted
+      !_vm.industryFormWasSubmitted
         ? _c(
             "div",
             { staticClass: "form-group" },
@@ -73524,7 +73550,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      !_vm.form.formWasSubmitted
+      !_vm.industryFormWasSubmitted
         ? _c("div", { staticClass: "form-group row" }, [
             _c(
               "button",
@@ -73561,12 +73587,20 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    _vm.toggleEducationLevel("allDegrees")
+                    _vm.toggleIndustryEducationLevel("allDegrees")
                   }
                 }
               },
               [
-                _c("i", { staticClass: "major-btn_icon" }),
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fa fa-check-circle":
+                      _vm.industryEducationLevel == "allDegrees",
+                    "fa fa-circle-thin":
+                      _vm.industryEducationLevel != "allDegrees"
+                  }
+                }),
                 _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
               ]
             ),
@@ -73579,12 +73613,20 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    _vm.toggleEducationLevel("postBacc")
+                    _vm.toggleIndustryEducationLevel("postBacc")
                   }
                 }
               },
               [
-                _c("i", { staticClass: "major-btn_icon" }),
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fa fa-check-circle":
+                      _vm.industryEducationLevel == "postBacc",
+                    "fa fa-circle-thin":
+                      _vm.industryEducationLevel != "postBacc"
+                  }
+                }),
                 _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
               ]
             ),
@@ -73597,12 +73639,20 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    _vm.toggleEducationLevel("bachelors")
+                    _vm.toggleIndustryEducationLevel("bachelors")
                   }
                 }
               },
               [
-                _c("i", { staticClass: "major-btn_icon" }),
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fa fa-check-circle":
+                      _vm.industryEducationLevel == "bachelors",
+                    "fa fa-circle-thin":
+                      _vm.industryEducationLevel != "bachelors"
+                  }
+                }),
                 _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
               ]
             ),
@@ -73615,12 +73665,20 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    _vm.toggleEducationLevel("someCollege")
+                    _vm.toggleIndustryEducationLevel("someCollege")
                   }
                 }
               },
               [
-                _c("i", { staticClass: "major-btn_icon" }),
+                _c("i", {
+                  staticClass: "major-btn_icon",
+                  class: {
+                    "fa fa-check-circle":
+                      _vm.industryEducationLevel == "someCollege",
+                    "fa fa-circle-thin":
+                      _vm.industryEducationLevel != "someCollege"
+                  }
+                }),
                 _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
               ]
             )

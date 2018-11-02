@@ -3,5 +3,6 @@
 export default {
     industries: [],
     industryMajorsByField: [],
-    formWasSubmitted: false
+    industryFormWasSubmitted: false,
+    industryEducationLevel: "allDegrees"
 }

@@ -1,10 +1,10 @@
 <template>
     <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
-			<div v-if="!form.formWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+			<div v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 				<i class="fa fa-exclamation-circle"></i> Please select a Major.
 			</div>
-			<div v-if="!form.formWasSubmitted===true" class="form-group">
+			<div v-if="!industryFormWasSubmitted===true" class="form-group">
 					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
 					<v-select
 							label="discipline"
@@ -14,7 +14,7 @@
 							class="csu-form-input">
 					</v-select>
 				</div>
-			<div v-if="!form.formWasSubmitted" class="form-group">
+			<div v-if="!industryFormWasSubmitted" class="form-group">
 				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
 					Select a Major
 				</label>
@@ -39,28 +39,29 @@
 						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 					</v-select>
 			</div>
-			<div v-if="!form.formWasSubmitted" class="form-group row">
+			<div v-if="!industryFormWasSubmitted" class="form-group row">
 				<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 			</div>
 			<div v-else class="majorBtnWrapper">
 				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
-				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')">
+				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('allDegrees')">
 					<i class="major-btn_icon" 
+					v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'allDegrees', 'fa fa-circle-thin':industryEducationLevel != 'allDegrees'}"
 					></i>
 					All Levels
 				</button>
-				<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleEducationLevel('postBacc')" >
-					<i class= "major-btn_icon" 
+				<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('postBacc')" >
+					<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'postBacc', 'fa fa-circle-thin':industryEducationLevel != 'postBacc'}" 
 					></i>
 					Post Bacc
 				</button>
-				<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleEducationLevel('bachelors')">
-					<i class="major-btn_icon" 
+				<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('bachelors')">
+					<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'bachelors', 'fa fa-circle-thin':industryEducationLevel != 'bachelors'}" 
 				></i>
 					Bachelors
 				</button>
-				<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')">
-					<i class="major-btn_icon" 
+				<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('someCollege')">
+					<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'someCollege', 'fa fa-circle-thin':industryEducationLevel != 'someCollege'}"
 					></i>
 					Some College
 				</button>
@@ -77,6 +78,9 @@ import { mapGetters, mapActions } from "vuex";
 export default {
 	data() {
 		return {
+			//temp data property to simulate the functionality
+			//of the degree selector; should ultimately be removed
+			isActive: true,
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
@@ -102,22 +106,22 @@ export default {
 	methods: {
 		...mapActions([
 			"fetchIndustryMajorsByField",
-			"toggleFormWasSubmitted",
+			"toggleIndustryFormWasSubmitted",
 			"fetchUpdatedMajorsByField",
-			"fetchIndustries",]),
+			"fetchIndustries",
+			"toggleIndustryEducationLevel"
+			]),
 		submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				document.getElementById("submit-btn").innerHTML = "Resubmit";
 				this.fetchIndustries(this.form);
-				this.form.formWasSubmitted=true;
+				this.toggleIndustryFormWasSubmitted();
 			}
 		},
-		toggleEducationLevel(educationInput) {
-			this.$store.dispatch("toggleEducationLevel", {
-				educationLevel: educationInput
-			});
+		toggleIndustryEducationLevel(educationInput) {
+			this.$store.dispatch("toggleIndustryEducationLevel",educationInput
+			);
 		},
 		checkForm() {
 			if (!this.$v.$invalid) return true;
@@ -147,9 +151,11 @@ export default {
 		...mapGetters([
 			"majors",
 			"universities",
+			"industryFormWasSubmitted",
+			"industryEducationLevel",
 			"industryMajorsByField",
 			"selectedUniversity",
-			"fieldOfStudies"
+			"fieldOfStudies",
 		]),
 		windowSize() {
 			return window.innerWidth;
