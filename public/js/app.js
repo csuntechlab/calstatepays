@@ -46615,7 +46615,7 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId + "/1").then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response);
@@ -48003,11 +48003,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             if (this.selectedUniversity != university) {
                 sessionStorage.setItem("selectedUniversity", university);
                 this.$store.dispatch('setUniversity', university);
-                this.$store.dispatch('fetchMajors', university);
-                this.$store.dispatch('fetchFieldOfStudies', university);
                 this.$store.dispatch('resetMajorState');
                 this.$store.dispatch('resetIndustryState');
                 this.$store.dispatch('resetFreState');
+                this.$store.dispatch('fetchMajors', university);
+                this.$store.dispatch('fetchFieldOfStudies', university);
             }
             this.showModal = false;
         },
