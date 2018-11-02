@@ -71208,7 +71208,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticStyle: { width: "100%" } },
     [
       _vm.isMobile
         ? _c("majors-graph-mobile", {
@@ -71972,7 +71971,6 @@ var render = function() {
                     { staticClass: "col-12" },
                     [
                       _c("major-graph-wrapper", {
-                        staticStyle: { height: "50vh" },
                         attrs: {
                           id: "majorGraphWrapperIndex-" + this.index,
                           majorData: _vm.selectedMajorData,
