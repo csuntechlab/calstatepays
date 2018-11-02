@@ -75743,14 +75743,21 @@ var render = function() {
       _vm._v(" "),
       _c("sub-nav"),
       _vm._v(" "),
-      _c("div", { staticClass: "splashPage" }, [
-        _vm._v("       \r\n            Coming soon\r\n    ")
-      ])
+      _vm._m(0)
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "splashPage" }, [
+      _c("p", [_vm._v("Coming soon")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
