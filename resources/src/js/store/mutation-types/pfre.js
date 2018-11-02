@@ -1,9 +1,11 @@
 const FETCH_MOCK_DATA = 'pfre/FETCH_MOCK_DATA';
 const FETCH_FRE_DATA = 'pfre/FETCH_FRE_DATA';
 const TOGGLE_INFO = 'pfre/TOGGLE_INFO';
+const RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
 
 export default {
     FETCH_MOCK_DATA,
     FETCH_FRE_DATA,
-    TOGGLE_INFO
+    TOGGLE_INFO,
+    RESET_FRE_STATE
 }
