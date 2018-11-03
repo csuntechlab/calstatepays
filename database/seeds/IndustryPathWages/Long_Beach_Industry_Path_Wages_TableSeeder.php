@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\IndustryWage;
 
-class Channel_Islands_Industry_Path_Wages_TableSeeder extends Seeder
+class Long_Beach_Industry_Path_Wages_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class Channel_Islands_Industry_Path_Wages_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/industryPathWagesData/Industry_Path_Wages_aggregate.json');
+        $json = File::get('database/data/industryPathWagesData/Industry_Path_Wages_long_beach.json');
         $industry_path_wage = json_decode($json);
 
         foreach ($industry_path_wage as $row) {

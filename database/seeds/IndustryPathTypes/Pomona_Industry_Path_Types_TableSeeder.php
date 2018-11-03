@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\IndustryPathType;
 
-class Los_Angeles_Industry_Path_Types_TableSeeder extends Seeder
+class Pomona_Industry_Path_Types_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class Los_Angeles_Industry_Path_Types_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/industryPathTypesData/Industry_Path_Types_aggregate.json');
+        $json = File::get('database/data/industryPathTypesData/Industry_Path_Types_pomona.json');
         $industry_path = json_decode($json);
 
         foreach ($industry_path as $row) {

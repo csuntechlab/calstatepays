@@ -3,8 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\IndustryPathType;
 
-
-class Channel_Islands_Industry_Path_Types_TableSeeder extends Seeder
+class Fullerton_Industry_Path_Types_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +12,7 @@ class Channel_Islands_Industry_Path_Types_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/industryPathTypesData/Industry_Path_Types_aggregate.json');
+        $json = File::get('database/data/industryPathTypesData/Industry_Path_Types_fullerton.json');
         $industry_path = json_decode($json);
 
         foreach ($industry_path as $row) {

@@ -12,7 +12,7 @@ class Fullerton_Industry_Path_Wages_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/industryPathWagesData/Industry_Path_Wages_aggregate.json');
+        $json = File::get('database/data/industryPathWagesData/Industry_Path_Wages_fullerton.json');
         $industry_path_wage = json_decode($json);
 
         foreach ($industry_path_wage as $row) {
