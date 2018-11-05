@@ -48,7 +48,7 @@ class IndustryServiceTest extends TestCase
         $this->seed('Northridge_Industry_Population_TableSeeder');
         $this->seed('Universities_TableSeeder');
 
-        $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge', 1);
+        $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
 
         $this->assertArrayHasKey("title", $response[0]);
         $this->assertArrayHasKey("percentage", $response[0]);
@@ -69,9 +69,9 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'northridge';
         $hegis = 5021;
-        $degreeLevel = 1;
+        // $degreeLevel = 1;
 
-        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
+        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
 
         $this->assertArrayHasKey("title", $response[0]);
         $this->assertArrayHasKey("percentage", $response[0]);
@@ -109,8 +109,8 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        $degreeLevel = 1;
-        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name, $degreeLevel);
+        // $degreeLevel = 1;
+        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name);
 
         /**
          * real values from the actual array
@@ -118,7 +118,7 @@ class IndustryServiceTest extends TestCase
          * it is possible for the need to switch these values in the future
          * in order to make the test pass
          */
-        $truthyArray = [
+        $someCollege = [
             [
                 "title" => "Professional, Scientific, & Technical Skills",
                 "percentage" => 37.25,

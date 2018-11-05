@@ -37,6 +37,7 @@ class IndustryController extends Controller
             return response()->json($request->validator->messages(), 400);
         }
         $industry_data =  $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
+        return $industry_data;
 
         foreach ($industry_data as $key=>$data) {
             if ($data['student_path'] == 2) {

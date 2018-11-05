@@ -33,7 +33,7 @@ class IndustryService implements IndustryContract
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
             $query->where('student_path', $degree);
         }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
