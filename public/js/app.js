@@ -46024,7 +46024,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         educationLevel: 'allDegrees',
         industries: [],
         majorData: [],
-        formWasSubmitted: false
+        formWasSubmitted: false,
+        submittedOnce: false
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
@@ -46033,11 +46034,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_CARD, function (state, payload) {
     var index = payload;
-    state.majorCards[index].formWasSubmitted = false;
-    // state.majorCards[index].majorsByField=[];
-    // state.majorCards[index].educationLevel = "allDegrees"
-    // state.majorCards[index].industries=[];
-    // state.majorCards[index].majorData = [];
+    if (state.majorCards[index].formWasSubmitted === true) {
+        state.majorCards[index].formWasSubmitted = false;
+    } else {
+        state.majorCards[index].formWasSubmitted = true;
+    }
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_STATE, function (state) {
     state.majorCards = [{
         formWasSubmitted: false,

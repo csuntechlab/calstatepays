@@ -68,6 +68,7 @@ export default {
             industries: [],
             majorData: [],
             formWasSubmitted: false,
+            submittedOnce: false
         });
     },
 
@@ -80,11 +81,13 @@ export default {
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
-        state.majorCards[index].formWasSubmitted = false;
-        // state.majorCards[index].majorsByField=[];
-        // state.majorCards[index].educationLevel = "allDegrees"
-        // state.majorCards[index].industries=[];
-        // state.majorCards[index].majorData = [];
+        if(state.majorCards[index].formWasSubmitted===true){
+            state.majorCards[index].formWasSubmitted = false;
+        }
+        else{
+            state.majorCards[index].formWasSubmitted = true;
+        }
+
     },
 
     [_majors.RESET_MAJOR_STATE](state){
