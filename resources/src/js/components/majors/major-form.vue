@@ -1,26 +1,26 @@
 <template>
-    <form v-bind:id="'majorForm-' + form.cardIndex">
-		<fieldset class="csu-card__form-sizing">
+    <form class="flip-area" v-bind:id="'majorForm-' + form.cardIndex">
+		<fieldset class="csu-card__form-sizing flip">
 			<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce" title="Reset"></i>
-			<div v-if="!selectedFormWasSubmitted">
-					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+			<div class="card-front" v-if="!selectedFormWasSubmitted">
+				<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
-					</div>
+				</div>
 				<div class="form-group">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
-					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
-					<v-select
+						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<v-select
 							label="discipline"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event)"
 							@change="updateSelect('fieldOfStudyId', 'id', $event)"
 							class="csu-form-input">
-					</v-select>
-				</div>
-				<div class="form-group">
-					<label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+						</v-select>
+					</div>
+					<div class="form-group">
+						<label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
 						Select a Major</label>
-					<v-select
+						<v-select
 						label="major"
 						v-if="this.form.fieldOfStudyId == null"
 						v-model="selected"
@@ -29,8 +29,8 @@
 						@change="updateSelect('majorId', 'majorId', $event)"
 						class="csu-form-input"
 						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
-					</v-select>
-					<v-select
+						</v-select>
+						<v-select
 						label="major"
 						v-else
 						v-model="selected"
@@ -39,13 +39,14 @@
 						@change="updateSelect('majorId', 'majorId', $event)"
 						class="csu-form-input"
 						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
-					</v-select>
-				</div>
-				<div class="form-group row">
-					<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
-				</div>
+						</v-select>
+					</div>
+					<div class="form-group row">
+						<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+					</div>
 			</div>
-			<div v-else class="majorBtnWrapper">
+
+			<div  v-else class="majorBtnWrapper card-back">
 				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 					<i class="major-btn_icon" 
