@@ -59,6 +59,7 @@ export default {
     [_majors.TOGGLE_FORM_WAS_SUBMITTED](state, payload) {
         let index = payload;
         state.majorCards[index].formWasSubmitted = true;
+        state.majorCards[index].submittedOnce = true;
     },
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({

@@ -1,11 +1,13 @@
 <template>
     <form v-bind:id="'majorForm-' + form.cardIndex">
 		<fieldset class="csu-card__form-sizing">
+			<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce" title="Reset"></i>
 			<div v-if="!selectedFormWasSubmitted">
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
 				<div class="form-group">
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
 					<v-select
 							label="discipline"
@@ -85,6 +87,7 @@ export default {
 				majorId: null,
 				schoolId: null,
 				formWasSubmitted: false,
+				submittedOnce: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
@@ -110,9 +113,13 @@ export default {
 			"fetchIndustryImages",
 			"toggleFormWasSubmitted",
 			"fetchUpdatedMajorsByField",
-			"fetchMajorData"
+			"fetchMajorData",
+			"resetMajorCard"
 		]),
 		updateForm,
+		resetCurrentCard() {
+			this.resetMajorCard(this.index);
+		},
 
 		submitForm() {
 			this.formNotFilled = false;
@@ -160,6 +167,7 @@ export default {
 			"fieldOfStudies",
 			"majorsByField",
 			"formWasSubmitted",
+			"formWasSubmittedOnce",
 			"educationLevel",
 			"selectedUniversity"
 		]),
@@ -172,6 +180,9 @@ export default {
 		},
 		selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
+		},
+		selectedFormWasSubmittedOnce(){
+			return this.formWasSubmittedOnce(this.index);
 		},
 		windowSize() {
 			return window.innerWidth;

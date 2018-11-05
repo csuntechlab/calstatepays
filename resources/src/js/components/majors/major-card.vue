@@ -43,7 +43,7 @@
 					<div class="row">
 						<div class="col-12">
 							<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData"
-							 :educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
+							:educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 						</div>
 					</div>
 					<div class="row">

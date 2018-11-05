@@ -45872,6 +45872,7 @@ function h(tag, key, args) {
     fieldOfStudy: [],
     majorCards: [{
         formWasSubmitted: false,
+        submittedOnce: false,
         majorsByField: [],
         industries: [],
         majorData: [],
@@ -45946,6 +45947,11 @@ function h(tag, key, args) {
             return state.majorCards[index].formWasSubmitted;
         };
     },
+    formWasSubmittedOnce: function formWasSubmittedOnce(state) {
+        return function (index) {
+            return state.majorCards[index].submittedOnce;
+        };
+    },
     indexOfUnsubmittedCard: function indexOfUnsubmittedCard(state) {
         // let bool = state.majorCards.every((el) => {
         //     return el.formWasSubmitted === true;
@@ -46011,6 +46017,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TOGGLE_FORM_WAS_SUBMITTED, function (state, payload) {
     var index = payload;
     state.majorCards[index].formWasSubmitted = true;
+    state.majorCards[index].submittedOnce = true;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].ADD_MAJOR_CARD, function (state) {
     state.majorCards.push({
         majorsByField: [],
@@ -51847,6 +51854,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -51862,6 +51871,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				majorId: null,
 				schoolId: null,
 				formWasSubmitted: false,
+				submittedOnce: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
@@ -51883,9 +51893,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		this.form.schoolId = this.selectedUniversity;
 	},
 
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData"]), {
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData", "resetMajorCard"]), {
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
-
+		resetCurrentCard: function resetCurrentCard() {
+			this.resetMajorCard(this.index);
+		},
 		submitForm: function submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
@@ -51922,7 +51934,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			});
 		}
 	}),
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "fieldOfStudies", "majorsByField", "formWasSubmitted", "educationLevel", "selectedUniversity"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "fieldOfStudies", "majorsByField", "formWasSubmitted", "formWasSubmittedOnce", "educationLevel", "selectedUniversity"]), {
 		selectedMajorsByField: function selectedMajorsByField() {
 			this.selected = null;
 			return this.majorsByField(this.index);
@@ -51932,6 +51944,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
+		},
+		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
+			return this.formWasSubmittedOnce(this.index);
 		},
 		windowSize: function windowSize() {
 			return window.innerWidth;
@@ -51957,6 +51972,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("form", { attrs: { id: "majorForm-" + _vm.form.cardIndex } }, [
     _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c("i", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.selectedFormWasSubmittedOnce,
+            expression: "selectedFormWasSubmittedOnce"
+          }
+        ],
+        staticClass: "fa fa-refresh fa-2x btn-reset float-right",
+        attrs: { title: "Reset" },
+        on: { click: _vm.resetCurrentCard }
+      }),
+      _vm._v(" "),
       !_vm.selectedFormWasSubmitted
         ? _c("div", [
             !_vm.selectedFormWasSubmitted
@@ -51981,6 +52010,20 @@ var render = function() {
               "div",
               { staticClass: "form-group" },
               [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                }),
+                _vm._v(" "),
                 _c("label", { attrs: { for: "fieldOfStudy" } }, [
                   _vm._v("Select a Discipline (Optional)")
                 ]),
