@@ -51670,7 +51670,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -51689,7 +51688,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmitted) {
@@ -51714,6 +51713,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
+		},
+		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
+			return this.formWasSubmittedOnce(this.index);
 		},
 		selectedMajorTitle: function selectedMajorTitle() {
 			if (this.selectedMajorData.length != 0) {
@@ -71878,7 +71880,7 @@ var render = function() {
                 "div",
                 { staticClass: "col-6" },
                 [
-                  _vm.selectedFormWasSubmitted && !_vm.nullValues
+                  _vm.selectedFormWasSubmittedOnce && !_vm.nullValues
                     ? _c("social-sharing", {
                         attrs: {
                           url: "sandbox.csun.edu/metalab/test/csumetrola",
@@ -71962,20 +71964,6 @@ var render = function() {
                   staticClass: "fa fa-times fa-2x btn-remove float-right",
                   attrs: { title: "Close" },
                   on: { click: _vm.removeCurrentCard }
-                }),
-                _vm._v(" "),
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
                 })
               ])
             ]),
@@ -71993,8 +71981,8 @@ var render = function() {
                   {
                     name: "show",
                     rawName: "v-show",
-                    value: _vm.selectedFormWasSubmitted && _vm.nullValues,
-                    expression: "selectedFormWasSubmitted && nullValues"
+                    value: _vm.selectedFormWasSubmittedOnce && _vm.nullValues,
+                    expression: "selectedFormWasSubmittedOnce && nullValues"
                   }
                 ],
                 staticClass: "row text-center"
@@ -72050,8 +72038,8 @@ var render = function() {
                           {
                             name: "show",
                             rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
+                            value: _vm.selectedFormWasSubmittedOnce,
+                            expression: "selectedFormWasSubmittedOnce"
                           }
                         ],
                         attrs: { educationLevel: _vm.selectedEducationLevel }

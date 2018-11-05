@@ -8,7 +8,7 @@
 				<div class="row">
 					<div class="col-6">
 						<social-sharing 
-						v-if="selectedFormWasSubmitted && !nullValues" 
+						v-if="selectedFormWasSubmittedOnce && !nullValues" 
 						url="sandbox.csun.edu/metalab/test/csumetrola" 
 						:title="this.shareDescription"
 						description="Discover Your Earnings After College." 
@@ -30,13 +30,12 @@
 					</div>
 					<div class="col-6">
 						<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 					</div>
 				</div>
 				<div class="row">
 					<h3  class="industry-title">{{selectedMajorTitle}}</h3>
 				</div>
-					<div v-show="selectedFormWasSubmitted && nullValues" class="row text-center">
+					<div v-show="selectedFormWasSubmittedOnce && nullValues" class="row text-center">
 						<h3 class="csu-card__no-data"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
 					</div>
 				<div v-show="!nullValues">
@@ -48,7 +47,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel"></major-legend>
+							<major-legend v-show="selectedFormWasSubmittedOnce" :educationLevel="selectedEducationLevel"></major-legend>
 						</div>
 					</div>
 				</div>
@@ -84,6 +83,7 @@ export default {
 			"majorData",
 			"educationLevel",
 			"formWasSubmitted",
+			"formWasSubmittedOnce",
 			"majorNameById"
 		]),
 		isEmpty() {
@@ -113,6 +113,9 @@ export default {
 		},
 		selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
+		},
+		selectedFormWasSubmittedOnce(){
+			return this.formWasSubmittedOnce(this.index);
 		},
 		selectedMajorTitle() {
 			if (this.selectedMajorData.length != 0) {
