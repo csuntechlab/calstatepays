@@ -52,8 +52,10 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
+        // $degree = 1;
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
         
+        /** no longer using degree level, must extract degree 1,2,4 for equal population total */
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
             // $query->where('student_path', $degree);
@@ -61,6 +63,17 @@ class IndustryService implements IndustryContract
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();
+            // dd($university_major);
+        
+        foreach ($university_major->industry_path_type as $key=>$data) {
+            if ($data['student_path'] == 2) {
+                $someCollege[$key] = $data;
+            } else if ($data['student_path'] == 1) {
+                $bachelors[$key] = $data;
+            } else if ($data['student_path'] == 4) {
+                $post_bacc[$key] = $data;
+            }
+        }
 
         $industry_populations = $this->sortIndustryPopulation($university_major);
 
