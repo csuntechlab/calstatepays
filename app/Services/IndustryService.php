@@ -29,7 +29,7 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degree)
+    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
@@ -50,13 +50,13 @@ class IndustryService implements IndustryContract
         return $industry_populations;
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $universityName, $degree)
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+        
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', $degree);
+            // $query->where('student_path', $degree);
         }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
@@ -125,6 +125,7 @@ class IndustryService implements IndustryContract
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
                     'rank' => $index,
+                    'student_path' => $industry->student_path,
                     'industryWage' => $industry->industryWage->avg_annual_wage_5
                 ];
             });
