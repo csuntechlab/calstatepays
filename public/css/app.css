@@ -19121,22 +19121,21 @@ figcaption {
   margin-bottom: 0rem;
 }
 
-.fa-graduation-cap {
-  font-size: 6em;
+.landing-page__icon {
+  font-size: 6rem;
+  padding-bottom: .1rem;
+}
+
+.landing-page__icon--cap {
   color: #476A6F;
-  padding-bottom: 0.1rem;
 }
 
-.fa-usd {
-  font-size: 6em;
-  color: #2BAE67;
-  padding-bottom: 0.1rem;
-}
-
-.fa-line-chart {
-  font-size: 6em;
+.landing-page__icon--chart {
   color: #DAA200;
-  padding-bottom: 0.1rem;
+}
+
+.landing-page__icon--usd {
+  color: #2BAE67;
 }
 
 .csu-seals {

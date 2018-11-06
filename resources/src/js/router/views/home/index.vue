@@ -7,7 +7,7 @@
 				<div class="row py-2 fa-wrapper">
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-graduation-cap fa-5x"></i>
+							<i class="fa fa-graduation-cap landing-page__icon--cap fa-5x"></i>
 						</div>
 						<div class="home__subheading">
 							<h3>Will you earn more if you graduate?</h3>
@@ -23,7 +23,7 @@
 					</div>
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-line-chart fa-5x"></i>
+							<i class="fa fa-line-chart landing-page__icon--chart fa-5x"></i>
 						</div>
 						<div class="home__subheading">
 							<h3>Where will you work?</h3>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-md-4 text-center my-3 home__col">
 						<div class="home__icon">
-							<i class="fa fa-usd fa-5x"></i>
+							<i class="fa fa-usd landing-page__icon--usd fa-5x"></i>
 						</div>
 						<div class="home__subheading">
 							<h3>What is your financial return on education?</h3>
