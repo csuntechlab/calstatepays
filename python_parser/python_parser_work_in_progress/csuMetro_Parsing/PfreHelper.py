@@ -32,7 +32,10 @@ class Sanitize_Pfre():
     def sanitizeHeaders(self):
         self.df.columns = self.df.columns.str.replace('- ','')
         self.df.columns = self.df.columns.str.replace(' ','_')
+        self.df.columns = self.df.columns.str.replace('(','')
+        self.df.columns = self.df.columns.str.replace(')','')
         self.df.columns = self.df.columns.str.lower()
+        print(self.df.columns)
     
     def get_Dictionary(self):
         fileName = self.file.replace("_pfre","")
@@ -99,7 +102,7 @@ class Sanitize_Pfre():
     def get_student_path_and_investments_data_frame(self):
         studentPathDataFrame = self.df.loc[:,['campus','age_range','entry_stat','university_majors_id','id']] # TODO: add hegis later
         
-        investmentsDataFrame = self.df.loc[:,['student_background_id','annual_earnings_during_school','annual_financial_aid','estimated_time_to_degree_(years)','estimated_earnings_5_years_after_exit','fre_financial_return_on_education','id']] 
+        investmentsDataFrame = self.df.loc[:,['student_background_id','annual_earnings_during_school','annual_financial_aid','estimated_time_to_degree_years','estimated_earnings_5_years_after_exit','fre_financial_return_on_education','id']] 
 
         return studentPathDataFrame,investmentsDataFrame
 

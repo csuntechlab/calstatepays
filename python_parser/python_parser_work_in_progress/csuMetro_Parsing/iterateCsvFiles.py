@@ -130,9 +130,9 @@ class IterateCsvFiles():
           fileName = csv.replace("_pfre","")
           self.globalIndex = pfreSanitize.get_global_index()
           student_backgrounds,investments = pfreSanitize.get_student_path_and_investments_data_frame()
-          filePathInvestments = filePath + '/investments/Investments_'+fileName+'.json'
+          filePathInvestments = filePath + '/investmentsData/Investments_'+fileName+'.json'
           self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathInvestments,investments)
-          filePathStudentPath = filePath + '/studentBackground/Student_Background_'+fileName+'.json'
+          filePathStudentPath = filePath + '/studentBackgroundData/Student_Background_'+fileName+'.json'
           self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathStudentPath,student_backgrounds)
       
 
