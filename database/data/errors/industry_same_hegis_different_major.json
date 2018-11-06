@@ -1,1 +1,594 @@
-[]
+[
+    {
+        "hegis_at_exit": 4011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 284,
+        "major": "Biology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 4141,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 286,
+        "major": "Biochemistry",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 5011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 290,
+        "major": "Business Administration",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 5021,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 292,
+        "major": "Accounting",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 8351,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 307,
+        "major": "Kinesiology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 309,
+        "major": "Engineering",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9091,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 311,
+        "major": "Electrical Engineering",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9101,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 313,
+        "major": "Mechanical Engineering",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9134,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 314,
+        "major": "Manufacturing Engineering",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10021,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 316,
+        "major": "Art",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10031,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 317,
+        "major": "Art History",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10041,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 318,
+        "major": "Music - Performance",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10051,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 319,
+        "major": "Music",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10071,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 320,
+        "major": "Theatre Arts",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 11051,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 324,
+        "major": "Spanish",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 325,
+        "major": "Health Science",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12031,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 326,
+        "major": "Nursing",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12142,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 327,
+        "major": "Environmental and Occupational Health",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12201,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 328,
+        "major": "Communicative Disorders",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 13061,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 331,
+        "major": "Dietetics/Nutritional Science",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 332,
+        "major": "English",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15051,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 333,
+        "major": "Linguistics",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15061,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 334,
+        "major": "Speech Communication",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 17011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 339,
+        "major": "Mathematics",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19021,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 342,
+        "major": "Physics",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19051,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 343,
+        "major": "Chemistry",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19141,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 344,
+        "major": "Geology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 20011,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 346,
+        "major": "Psychology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 21031,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 347,
+        "major": "Recreation Management & Administration",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 21041,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 348,
+        "major": "Social Work",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22021,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 350,
+        "major": "Anthropology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22051,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 352,
+        "major": "History",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22061,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 353,
+        "major": "Geography",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22071,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 354,
+        "major": "Political Science",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22081,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 355,
+        "major": "Sociology",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22131,
+        "entry_stat": "FTF + FTT",
+        "student_path": 1,
+        "id": 357,
+        "major": "Mexican-American Studies",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12141,
+        "entry_stat": "FTF + FTT",
+        "student_path": 4,
+        "id": 362,
+        "major": "Health Education",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 4011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 363,
+        "major": "Biology, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 4141,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 364,
+        "major": "Biochemistry, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 5011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 365,
+        "major": "Business Administration, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 5021,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 366,
+        "major": "Accounting, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 8351,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 380,
+        "major": "Kinesiology/Physical Education, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 381,
+        "major": "Engineering, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9091,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 383,
+        "major": "Electrical Engineering, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9101,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 384,
+        "major": "Mechanical Engineering, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 9134,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 386,
+        "major": "Manufacturing Engineering, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10021,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 387,
+        "major": "Art, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10031,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 389,
+        "major": "Art History, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10041,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 390,
+        "major": "Music - Performance, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10051,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 391,
+        "major": "Music, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 10071,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 392,
+        "major": "Theatre Arts, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 11051,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 393,
+        "major": "Spanish, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 394,
+        "major": "Health Science, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12141,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 397,
+        "major": "Health Education, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12142,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 398,
+        "major": "Environmental and Occupational Health, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12201,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 400,
+        "major": "Communicative Disorders, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 13061,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 401,
+        "major": "Dietetics/Nutritional Science, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 402,
+        "major": "English, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15051,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 403,
+        "major": "Linguistics, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 15061,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 404,
+        "major": "Speech Communication, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 17011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 405,
+        "major": "Mathematics, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19021,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 406,
+        "major": "Physics, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19051,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 407,
+        "major": "Chemistry, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 19141,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 408,
+        "major": "Geology, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 20011,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 409,
+        "major": "Psychology, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 21031,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 411,
+        "major": "Recreation Management & Administration, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 21041,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 412,
+        "major": "Social Work, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22021,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 413,
+        "major": "Anthropology, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22051,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 414,
+        "major": "History, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22061,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 415,
+        "major": "Geography, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22071,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 416,
+        "major": "Political Science, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22081,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 417,
+        "major": "Sociology, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 22131,
+        "entry_stat": "Postbacc",
+        "student_path": 5,
+        "id": 418,
+        "major": "Mexican-American Studies, Graduate Degree",
+        "campus": 70
+    },
+    {
+        "hegis_at_exit": 12031,
+        "entry_stat": "Postbacc",
+        "student_path": 6,
+        "id": 421,
+        "major": "Nursing, Graduate Degree",
+        "campus": 70
+    }
+]
