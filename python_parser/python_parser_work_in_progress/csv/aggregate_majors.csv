@@ -1,4 +1,4 @@
-Campus,Student Path,Entry Stat,Old_Hegis,HEGIS at Exit,Major,Potential # of Students,Potential # of Students For Each Year Out of School,25th Percentile Earnings,50th Percentile Earnings,75th Percentile Earnings,Average Earnings,# of Students Found,Year,% of Students Found
+campus,Student Path,Entry Stat,Old_Hegis,HEGIS at Exit,Major,Potential # of Students,Potential # of Students For Each Year Out of School,25th Percentile Earnings,50th Percentile Earnings,75th Percentile Earnings,Average Earnings,# of Students Found,Year,% of Students Found
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,777,768,"$11,485","$22,836","$39,178","$27,800",626,1,81.51%
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,777,747,"$16,706","$30,776","$49,156","$33,963",628,2,84.07%
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,777,734,"$21,940","$36,681","$53,088","$38,259",608,3,82.83%
