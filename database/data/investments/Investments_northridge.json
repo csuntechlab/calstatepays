@@ -1,0 +1,3602 @@
+[
+    {
+        "student_background_id": 1.0,
+        "fre_financial_return_on_education": 7.25,
+        "annual_earnings_during_school": 1.0,
+        "id": 1.0,
+        "estimated_time_to_degree_(years)": 7.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 70836.0
+    },
+    {
+        "student_background_id": 2.0,
+        "fre_financial_return_on_education": 2.23,
+        "annual_earnings_during_school": 1.0,
+        "id": 2.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 99261.0
+    },
+    {
+        "student_background_id": 3.0,
+        "fre_financial_return_on_education": 3.31,
+        "annual_earnings_during_school": 1.0,
+        "id": 3.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 91738.0
+    },
+    {
+        "student_background_id": 4.0,
+        "fre_financial_return_on_education": 10.97,
+        "annual_earnings_during_school": 1.0,
+        "id": 4.0,
+        "estimated_time_to_degree_(years)": 9.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 70553.0
+    },
+    {
+        "student_background_id": 5.0,
+        "fre_financial_return_on_education": 29.75,
+        "annual_earnings_during_school": 1.0,
+        "id": 5.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 65313.0
+    },
+    {
+        "student_background_id": 6.0,
+        "fre_financial_return_on_education": 11.88,
+        "annual_earnings_during_school": 2.0,
+        "id": 6.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 30590.0
+    },
+    {
+        "student_background_id": 7.0,
+        "fre_financial_return_on_education": 22.14,
+        "annual_earnings_during_school": 2.0,
+        "id": 7.0,
+        "estimated_time_to_degree_(years)": 3.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 86266.0
+    },
+    {
+        "student_background_id": 8.0,
+        "fre_financial_return_on_education": 29.09,
+        "annual_earnings_during_school": 2.0,
+        "id": 8.0,
+        "estimated_time_to_degree_(years)": 7.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 30021.0
+    },
+    {
+        "student_background_id": 9.0,
+        "fre_financial_return_on_education": 9.68,
+        "annual_earnings_during_school": 2.0,
+        "id": 9.0,
+        "estimated_time_to_degree_(years)": 7.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 73376.0
+    },
+    {
+        "student_background_id": 10.0,
+        "fre_financial_return_on_education": 12.05,
+        "annual_earnings_during_school": 2.0,
+        "id": 10.0,
+        "estimated_time_to_degree_(years)": 8.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 93308.0
+    },
+    {
+        "student_background_id": 11.0,
+        "fre_financial_return_on_education": 14.42,
+        "annual_earnings_during_school": 3.0,
+        "id": 11.0,
+        "estimated_time_to_degree_(years)": 9.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 95907.0
+    },
+    {
+        "student_background_id": 12.0,
+        "fre_financial_return_on_education": 20.88,
+        "annual_earnings_during_school": 3.0,
+        "id": 12.0,
+        "estimated_time_to_degree_(years)": 7.8,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 38336.0
+    },
+    {
+        "student_background_id": 13.0,
+        "fre_financial_return_on_education": 9.71,
+        "annual_earnings_during_school": 3.0,
+        "id": 13.0,
+        "estimated_time_to_degree_(years)": 9.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 85050.0
+    },
+    {
+        "student_background_id": 14.0,
+        "fre_financial_return_on_education": 11.91,
+        "annual_earnings_during_school": 3.0,
+        "id": 14.0,
+        "estimated_time_to_degree_(years)": 5.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 46732.0
+    },
+    {
+        "student_background_id": 15.0,
+        "fre_financial_return_on_education": 18.73,
+        "annual_earnings_during_school": 3.0,
+        "id": 15.0,
+        "estimated_time_to_degree_(years)": 5.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 47943.0
+    },
+    {
+        "student_background_id": 16.0,
+        "fre_financial_return_on_education": 0.44,
+        "annual_earnings_during_school": 4.0,
+        "id": 16.0,
+        "estimated_time_to_degree_(years)": 2.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 55859.0
+    },
+    {
+        "student_background_id": 17.0,
+        "fre_financial_return_on_education": 24.47,
+        "annual_earnings_during_school": 4.0,
+        "id": 17.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 32100.0
+    },
+    {
+        "student_background_id": 18.0,
+        "fre_financial_return_on_education": 14.28,
+        "annual_earnings_during_school": 4.0,
+        "id": 18.0,
+        "estimated_time_to_degree_(years)": 3.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 49732.0
+    },
+    {
+        "student_background_id": 19.0,
+        "fre_financial_return_on_education": 29.56,
+        "annual_earnings_during_school": 4.0,
+        "id": 19.0,
+        "estimated_time_to_degree_(years)": 6.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 39438.0
+    },
+    {
+        "student_background_id": 20.0,
+        "fre_financial_return_on_education": 9.74,
+        "annual_earnings_during_school": 4.0,
+        "id": 20.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 25890.0
+    },
+    {
+        "student_background_id": 21.0,
+        "fre_financial_return_on_education": 10.66,
+        "annual_earnings_during_school": 5.0,
+        "id": 21.0,
+        "estimated_time_to_degree_(years)": 8.7,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 51168.0
+    },
+    {
+        "student_background_id": 22.0,
+        "fre_financial_return_on_education": 17.12,
+        "annual_earnings_during_school": 5.0,
+        "id": 22.0,
+        "estimated_time_to_degree_(years)": 6.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 80578.0
+    },
+    {
+        "student_background_id": 23.0,
+        "fre_financial_return_on_education": 11.01,
+        "annual_earnings_during_school": 5.0,
+        "id": 23.0,
+        "estimated_time_to_degree_(years)": 4.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 93959.0
+    },
+    {
+        "student_background_id": 24.0,
+        "fre_financial_return_on_education": 10.5,
+        "annual_earnings_during_school": 5.0,
+        "id": 24.0,
+        "estimated_time_to_degree_(years)": 3.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 85882.0
+    },
+    {
+        "student_background_id": 25.0,
+        "fre_financial_return_on_education": 13.58,
+        "annual_earnings_during_school": 5.0,
+        "id": 25.0,
+        "estimated_time_to_degree_(years)": 7.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 25811.0
+    },
+    {
+        "student_background_id": 26.0,
+        "fre_financial_return_on_education": 4.26,
+        "annual_earnings_during_school": 1.0,
+        "id": 26.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 77438.0
+    },
+    {
+        "student_background_id": 27.0,
+        "fre_financial_return_on_education": 13.51,
+        "annual_earnings_during_school": 1.0,
+        "id": 27.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 37830.0
+    },
+    {
+        "student_background_id": 28.0,
+        "fre_financial_return_on_education": 13.0,
+        "annual_earnings_during_school": 1.0,
+        "id": 28.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 93763.0
+    },
+    {
+        "student_background_id": 29.0,
+        "fre_financial_return_on_education": 7.51,
+        "annual_earnings_during_school": 1.0,
+        "id": 29.0,
+        "estimated_time_to_degree_(years)": 4.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 84336.0
+    },
+    {
+        "student_background_id": 30.0,
+        "fre_financial_return_on_education": 16.29,
+        "annual_earnings_during_school": 1.0,
+        "id": 30.0,
+        "estimated_time_to_degree_(years)": 3.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 81614.0
+    },
+    {
+        "student_background_id": 31.0,
+        "fre_financial_return_on_education": 19.4,
+        "annual_earnings_during_school": 2.0,
+        "id": 31.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 54013.0
+    },
+    {
+        "student_background_id": 32.0,
+        "fre_financial_return_on_education": 12.74,
+        "annual_earnings_during_school": 2.0,
+        "id": 32.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 33179.0
+    },
+    {
+        "student_background_id": 33.0,
+        "fre_financial_return_on_education": 12.9,
+        "annual_earnings_during_school": 2.0,
+        "id": 33.0,
+        "estimated_time_to_degree_(years)": 2.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 64762.0
+    },
+    {
+        "student_background_id": 34.0,
+        "fre_financial_return_on_education": 3.41,
+        "annual_earnings_during_school": 2.0,
+        "id": 34.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 49491.0
+    },
+    {
+        "student_background_id": 35.0,
+        "fre_financial_return_on_education": 7.99,
+        "annual_earnings_during_school": 2.0,
+        "id": 35.0,
+        "estimated_time_to_degree_(years)": 1.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 84631.0
+    },
+    {
+        "student_background_id": 36.0,
+        "fre_financial_return_on_education": 19.28,
+        "annual_earnings_during_school": 3.0,
+        "id": 36.0,
+        "estimated_time_to_degree_(years)": 1.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 70678.0
+    },
+    {
+        "student_background_id": 37.0,
+        "fre_financial_return_on_education": 2.98,
+        "annual_earnings_during_school": 3.0,
+        "id": 37.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 43489.0
+    },
+    {
+        "student_background_id": 38.0,
+        "fre_financial_return_on_education": 3.36,
+        "annual_earnings_during_school": 3.0,
+        "id": 38.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 27561.0
+    },
+    {
+        "student_background_id": 39.0,
+        "fre_financial_return_on_education": 4.03,
+        "annual_earnings_during_school": 3.0,
+        "id": 39.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 79440.0
+    },
+    {
+        "student_background_id": 40.0,
+        "fre_financial_return_on_education": 8.9,
+        "annual_earnings_during_school": 3.0,
+        "id": 40.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 79144.0
+    },
+    {
+        "student_background_id": 41.0,
+        "fre_financial_return_on_education": 14.25,
+        "annual_earnings_during_school": 4.0,
+        "id": 41.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 35216.0
+    },
+    {
+        "student_background_id": 42.0,
+        "fre_financial_return_on_education": 4.83,
+        "annual_earnings_during_school": 4.0,
+        "id": 42.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 57806.0
+    },
+    {
+        "student_background_id": 43.0,
+        "fre_financial_return_on_education": 15.71,
+        "annual_earnings_during_school": 4.0,
+        "id": 43.0,
+        "estimated_time_to_degree_(years)": 3.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 77048.0
+    },
+    {
+        "student_background_id": 44.0,
+        "fre_financial_return_on_education": 15.96,
+        "annual_earnings_during_school": 4.0,
+        "id": 44.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 90145.0
+    },
+    {
+        "student_background_id": 45.0,
+        "fre_financial_return_on_education": 19.35,
+        "annual_earnings_during_school": 4.0,
+        "id": 45.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 58520.0
+    },
+    {
+        "student_background_id": 46.0,
+        "fre_financial_return_on_education": 1.68,
+        "annual_earnings_during_school": 5.0,
+        "id": 46.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 73176.0
+    },
+    {
+        "student_background_id": 47.0,
+        "fre_financial_return_on_education": 7.01,
+        "annual_earnings_during_school": 5.0,
+        "id": 47.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 58505.0
+    },
+    {
+        "student_background_id": 48.0,
+        "fre_financial_return_on_education": 9.9,
+        "annual_earnings_during_school": 5.0,
+        "id": 48.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 68151.0
+    },
+    {
+        "student_background_id": 49.0,
+        "fre_financial_return_on_education": 9.71,
+        "annual_earnings_during_school": 5.0,
+        "id": 49.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 73990.0
+    },
+    {
+        "student_background_id": 50.0,
+        "fre_financial_return_on_education": 7.87,
+        "annual_earnings_during_school": 5.0,
+        "id": 50.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 79906.0
+    },
+    {
+        "student_background_id": 51.0,
+        "fre_financial_return_on_education": 7.71,
+        "annual_earnings_during_school": 1.0,
+        "id": 51.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 78974.0
+    },
+    {
+        "student_background_id": 52.0,
+        "fre_financial_return_on_education": 12.68,
+        "annual_earnings_during_school": 1.0,
+        "id": 52.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 36994.0
+    },
+    {
+        "student_background_id": 53.0,
+        "fre_financial_return_on_education": 4.6,
+        "annual_earnings_during_school": 1.0,
+        "id": 53.0,
+        "estimated_time_to_degree_(years)": 8.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 40248.0
+    },
+    {
+        "student_background_id": 54.0,
+        "fre_financial_return_on_education": 0.87,
+        "annual_earnings_during_school": 1.0,
+        "id": 54.0,
+        "estimated_time_to_degree_(years)": 9.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 29906.0
+    },
+    {
+        "student_background_id": 55.0,
+        "fre_financial_return_on_education": 0.64,
+        "annual_earnings_during_school": 1.0,
+        "id": 55.0,
+        "estimated_time_to_degree_(years)": 6.4,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 87545.0
+    },
+    {
+        "student_background_id": 56.0,
+        "fre_financial_return_on_education": 1.08,
+        "annual_earnings_during_school": 2.0,
+        "id": 56.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 33335.0
+    },
+    {
+        "student_background_id": 57.0,
+        "fre_financial_return_on_education": 4.72,
+        "annual_earnings_during_school": 2.0,
+        "id": 57.0,
+        "estimated_time_to_degree_(years)": 6.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 47275.0
+    },
+    {
+        "student_background_id": 58.0,
+        "fre_financial_return_on_education": 2.32,
+        "annual_earnings_during_school": 2.0,
+        "id": 58.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 37527.0
+    },
+    {
+        "student_background_id": 59.0,
+        "fre_financial_return_on_education": 14.89,
+        "annual_earnings_during_school": 2.0,
+        "id": 59.0,
+        "estimated_time_to_degree_(years)": 3.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 62945.0
+    },
+    {
+        "student_background_id": 60.0,
+        "fre_financial_return_on_education": 10.76,
+        "annual_earnings_during_school": 2.0,
+        "id": 60.0,
+        "estimated_time_to_degree_(years)": 8.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 63348.0
+    },
+    {
+        "student_background_id": 61.0,
+        "fre_financial_return_on_education": 3.98,
+        "annual_earnings_during_school": 3.0,
+        "id": 61.0,
+        "estimated_time_to_degree_(years)": 8.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 76370.0
+    },
+    {
+        "student_background_id": 62.0,
+        "fre_financial_return_on_education": 6.87,
+        "annual_earnings_during_school": 3.0,
+        "id": 62.0,
+        "estimated_time_to_degree_(years)": 10.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 40581.0
+    },
+    {
+        "student_background_id": 63.0,
+        "fre_financial_return_on_education": 5.42,
+        "annual_earnings_during_school": 3.0,
+        "id": 63.0,
+        "estimated_time_to_degree_(years)": 8.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 48791.0
+    },
+    {
+        "student_background_id": 64.0,
+        "fre_financial_return_on_education": 0.06,
+        "annual_earnings_during_school": 3.0,
+        "id": 64.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 47296.0
+    },
+    {
+        "student_background_id": 65.0,
+        "fre_financial_return_on_education": 11.79,
+        "annual_earnings_during_school": 3.0,
+        "id": 65.0,
+        "estimated_time_to_degree_(years)": 3.5,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 51829.0
+    },
+    {
+        "student_background_id": 66.0,
+        "fre_financial_return_on_education": 11.95,
+        "annual_earnings_during_school": 4.0,
+        "id": 66.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 95610.0
+    },
+    {
+        "student_background_id": 67.0,
+        "fre_financial_return_on_education": 11.71,
+        "annual_earnings_during_school": 4.0,
+        "id": 67.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 41259.0
+    },
+    {
+        "student_background_id": 68.0,
+        "fre_financial_return_on_education": 0.74,
+        "annual_earnings_during_school": 4.0,
+        "id": 68.0,
+        "estimated_time_to_degree_(years)": 9.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 77207.0
+    },
+    {
+        "student_background_id": 69.0,
+        "fre_financial_return_on_education": 2.87,
+        "annual_earnings_during_school": 4.0,
+        "id": 69.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 40827.0
+    },
+    {
+        "student_background_id": 70.0,
+        "fre_financial_return_on_education": 9.18,
+        "annual_earnings_during_school": 4.0,
+        "id": 70.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 57028.0
+    },
+    {
+        "student_background_id": 71.0,
+        "fre_financial_return_on_education": 10.95,
+        "annual_earnings_during_school": 5.0,
+        "id": 71.0,
+        "estimated_time_to_degree_(years)": 4.7,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 39552.0
+    },
+    {
+        "student_background_id": 72.0,
+        "fre_financial_return_on_education": 12.47,
+        "annual_earnings_during_school": 5.0,
+        "id": 72.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 85323.0
+    },
+    {
+        "student_background_id": 73.0,
+        "fre_financial_return_on_education": 10.2,
+        "annual_earnings_during_school": 5.0,
+        "id": 73.0,
+        "estimated_time_to_degree_(years)": 6.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 50324.0
+    },
+    {
+        "student_background_id": 74.0,
+        "fre_financial_return_on_education": 6.15,
+        "annual_earnings_during_school": 5.0,
+        "id": 74.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 93964.0
+    },
+    {
+        "student_background_id": 75.0,
+        "fre_financial_return_on_education": 5.67,
+        "annual_earnings_during_school": 5.0,
+        "id": 75.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 90296.0
+    },
+    {
+        "student_background_id": 76.0,
+        "fre_financial_return_on_education": 14.22,
+        "annual_earnings_during_school": 1.0,
+        "id": 76.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 25659.0
+    },
+    {
+        "student_background_id": 77.0,
+        "fre_financial_return_on_education": 3.5,
+        "annual_earnings_during_school": 1.0,
+        "id": 77.0,
+        "estimated_time_to_degree_(years)": 1.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 62794.0
+    },
+    {
+        "student_background_id": 78.0,
+        "fre_financial_return_on_education": 9.68,
+        "annual_earnings_during_school": 1.0,
+        "id": 78.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 97291.0
+    },
+    {
+        "student_background_id": 79.0,
+        "fre_financial_return_on_education": 6.3,
+        "annual_earnings_during_school": 1.0,
+        "id": 79.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 41093.0
+    },
+    {
+        "student_background_id": 80.0,
+        "fre_financial_return_on_education": 1.3,
+        "annual_earnings_during_school": 1.0,
+        "id": 80.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 82507.0
+    },
+    {
+        "student_background_id": 81.0,
+        "fre_financial_return_on_education": 19.58,
+        "annual_earnings_during_school": 2.0,
+        "id": 81.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 71448.0
+    },
+    {
+        "student_background_id": 82.0,
+        "fre_financial_return_on_education": 6.54,
+        "annual_earnings_during_school": 2.0,
+        "id": 82.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 97634.0
+    },
+    {
+        "student_background_id": 83.0,
+        "fre_financial_return_on_education": 4.5,
+        "annual_earnings_during_school": 2.0,
+        "id": 83.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 90751.0
+    },
+    {
+        "student_background_id": 84.0,
+        "fre_financial_return_on_education": 2.78,
+        "annual_earnings_during_school": 2.0,
+        "id": 84.0,
+        "estimated_time_to_degree_(years)": 1.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 38418.0
+    },
+    {
+        "student_background_id": 85.0,
+        "fre_financial_return_on_education": 6.46,
+        "annual_earnings_during_school": 2.0,
+        "id": 85.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 70205.0
+    },
+    {
+        "student_background_id": 86.0,
+        "fre_financial_return_on_education": 10.33,
+        "annual_earnings_during_school": 3.0,
+        "id": 86.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 52841.0
+    },
+    {
+        "student_background_id": 87.0,
+        "fre_financial_return_on_education": 18.13,
+        "annual_earnings_during_school": 3.0,
+        "id": 87.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 84366.0
+    },
+    {
+        "student_background_id": 88.0,
+        "fre_financial_return_on_education": 13.29,
+        "annual_earnings_during_school": 3.0,
+        "id": 88.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 84827.0
+    },
+    {
+        "student_background_id": 89.0,
+        "fre_financial_return_on_education": 18.95,
+        "annual_earnings_during_school": 3.0,
+        "id": 89.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 99043.0
+    },
+    {
+        "student_background_id": 90.0,
+        "fre_financial_return_on_education": 11.74,
+        "annual_earnings_during_school": 3.0,
+        "id": 90.0,
+        "estimated_time_to_degree_(years)": 3.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 95762.0
+    },
+    {
+        "student_background_id": 91.0,
+        "fre_financial_return_on_education": 0.46,
+        "annual_earnings_during_school": 4.0,
+        "id": 91.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 75323.0
+    },
+    {
+        "student_background_id": 92.0,
+        "fre_financial_return_on_education": 1.15,
+        "annual_earnings_during_school": 4.0,
+        "id": 92.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 41162.0
+    },
+    {
+        "student_background_id": 93.0,
+        "fre_financial_return_on_education": 19.56,
+        "annual_earnings_during_school": 4.0,
+        "id": 93.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 91542.0
+    },
+    {
+        "student_background_id": 94.0,
+        "fre_financial_return_on_education": 9.12,
+        "annual_earnings_during_school": 4.0,
+        "id": 94.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 84971.0
+    },
+    {
+        "student_background_id": 95.0,
+        "fre_financial_return_on_education": 10.27,
+        "annual_earnings_during_school": 4.0,
+        "id": 95.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 88459.0
+    },
+    {
+        "student_background_id": 96.0,
+        "fre_financial_return_on_education": 2.31,
+        "annual_earnings_during_school": 5.0,
+        "id": 96.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 38047.0
+    },
+    {
+        "student_background_id": 97.0,
+        "fre_financial_return_on_education": 11.89,
+        "annual_earnings_during_school": 5.0,
+        "id": 97.0,
+        "estimated_time_to_degree_(years)": 5.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 68386.0
+    },
+    {
+        "student_background_id": 98.0,
+        "fre_financial_return_on_education": 7.83,
+        "annual_earnings_during_school": 5.0,
+        "id": 98.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 47468.0
+    },
+    {
+        "student_background_id": 99.0,
+        "fre_financial_return_on_education": 14.69,
+        "annual_earnings_during_school": 5.0,
+        "id": 99.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 69092.0
+    },
+    {
+        "student_background_id": 100.0,
+        "fre_financial_return_on_education": 1.67,
+        "annual_earnings_during_school": 5.0,
+        "id": 100.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 41899.0
+    },
+    {
+        "student_background_id": 101.0,
+        "fre_financial_return_on_education": 3.05,
+        "annual_earnings_during_school": 1.0,
+        "id": 101.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 93293.0
+    },
+    {
+        "student_background_id": 102.0,
+        "fre_financial_return_on_education": 2.42,
+        "annual_earnings_during_school": 1.0,
+        "id": 102.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 43244.0
+    },
+    {
+        "student_background_id": 103.0,
+        "fre_financial_return_on_education": 1.68,
+        "annual_earnings_during_school": 1.0,
+        "id": 103.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 66399.0
+    },
+    {
+        "student_background_id": 104.0,
+        "fre_financial_return_on_education": 7.65,
+        "annual_earnings_during_school": 1.0,
+        "id": 104.0,
+        "estimated_time_to_degree_(years)": 5.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 52050.0
+    },
+    {
+        "student_background_id": 105.0,
+        "fre_financial_return_on_education": 0.56,
+        "annual_earnings_during_school": 1.0,
+        "id": 105.0,
+        "estimated_time_to_degree_(years)": 7.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 31388.0
+    },
+    {
+        "student_background_id": 106.0,
+        "fre_financial_return_on_education": 7.59,
+        "annual_earnings_during_school": 2.0,
+        "id": 106.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 67055.0
+    },
+    {
+        "student_background_id": 107.0,
+        "fre_financial_return_on_education": 8.58,
+        "annual_earnings_during_school": 2.0,
+        "id": 107.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 51585.0
+    },
+    {
+        "student_background_id": 108.0,
+        "fre_financial_return_on_education": 9.96,
+        "annual_earnings_during_school": 2.0,
+        "id": 108.0,
+        "estimated_time_to_degree_(years)": 2.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 62339.0
+    },
+    {
+        "student_background_id": 109.0,
+        "fre_financial_return_on_education": 9.17,
+        "annual_earnings_during_school": 2.0,
+        "id": 109.0,
+        "estimated_time_to_degree_(years)": 6.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 99297.0
+    },
+    {
+        "student_background_id": 110.0,
+        "fre_financial_return_on_education": 2.79,
+        "annual_earnings_during_school": 2.0,
+        "id": 110.0,
+        "estimated_time_to_degree_(years)": 7.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 32695.0
+    },
+    {
+        "student_background_id": 111.0,
+        "fre_financial_return_on_education": 6.45,
+        "annual_earnings_during_school": 3.0,
+        "id": 111.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 61681.0
+    },
+    {
+        "student_background_id": 112.0,
+        "fre_financial_return_on_education": 2.71,
+        "annual_earnings_during_school": 3.0,
+        "id": 112.0,
+        "estimated_time_to_degree_(years)": 6.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 46921.0
+    },
+    {
+        "student_background_id": 113.0,
+        "fre_financial_return_on_education": 6.85,
+        "annual_earnings_during_school": 3.0,
+        "id": 113.0,
+        "estimated_time_to_degree_(years)": 6.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 46315.0
+    },
+    {
+        "student_background_id": 114.0,
+        "fre_financial_return_on_education": 8.08,
+        "annual_earnings_during_school": 3.0,
+        "id": 114.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 34540.0
+    },
+    {
+        "student_background_id": 115.0,
+        "fre_financial_return_on_education": 8.48,
+        "annual_earnings_during_school": 3.0,
+        "id": 115.0,
+        "estimated_time_to_degree_(years)": 9.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 88302.0
+    },
+    {
+        "student_background_id": 116.0,
+        "fre_financial_return_on_education": 6.65,
+        "annual_earnings_during_school": 4.0,
+        "id": 116.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 54983.0
+    },
+    {
+        "student_background_id": 117.0,
+        "fre_financial_return_on_education": 4.41,
+        "annual_earnings_during_school": 4.0,
+        "id": 117.0,
+        "estimated_time_to_degree_(years)": 10.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 81903.0
+    },
+    {
+        "student_background_id": 118.0,
+        "fre_financial_return_on_education": 6.72,
+        "annual_earnings_during_school": 4.0,
+        "id": 118.0,
+        "estimated_time_to_degree_(years)": 9.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 75161.0
+    },
+    {
+        "student_background_id": 119.0,
+        "fre_financial_return_on_education": 0.93,
+        "annual_earnings_during_school": 4.0,
+        "id": 119.0,
+        "estimated_time_to_degree_(years)": 9.1,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 97659.0
+    },
+    {
+        "student_background_id": 120.0,
+        "fre_financial_return_on_education": 3.33,
+        "annual_earnings_during_school": 4.0,
+        "id": 120.0,
+        "estimated_time_to_degree_(years)": 7.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 30907.0
+    },
+    {
+        "student_background_id": 121.0,
+        "fre_financial_return_on_education": 8.97,
+        "annual_earnings_during_school": 5.0,
+        "id": 121.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 41310.0
+    },
+    {
+        "student_background_id": 122.0,
+        "fre_financial_return_on_education": 3.95,
+        "annual_earnings_during_school": 5.0,
+        "id": 122.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 36339.0
+    },
+    {
+        "student_background_id": 123.0,
+        "fre_financial_return_on_education": 7.67,
+        "annual_earnings_during_school": 5.0,
+        "id": 123.0,
+        "estimated_time_to_degree_(years)": 10.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 98190.0
+    },
+    {
+        "student_background_id": 124.0,
+        "fre_financial_return_on_education": 9.22,
+        "annual_earnings_during_school": 5.0,
+        "id": 124.0,
+        "estimated_time_to_degree_(years)": 7.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 90406.0
+    },
+    {
+        "student_background_id": 125.0,
+        "fre_financial_return_on_education": 2.2,
+        "annual_earnings_during_school": 5.0,
+        "id": 125.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 33643.0
+    },
+    {
+        "student_background_id": 126.0,
+        "fre_financial_return_on_education": 4.8,
+        "annual_earnings_during_school": 1.0,
+        "id": 126.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 53931.0
+    },
+    {
+        "student_background_id": 127.0,
+        "fre_financial_return_on_education": 16.25,
+        "annual_earnings_during_school": 1.0,
+        "id": 127.0,
+        "estimated_time_to_degree_(years)": 1.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 65669.0
+    },
+    {
+        "student_background_id": 128.0,
+        "fre_financial_return_on_education": 1.35,
+        "annual_earnings_during_school": 1.0,
+        "id": 128.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 29089.0
+    },
+    {
+        "student_background_id": 129.0,
+        "fre_financial_return_on_education": 1.34,
+        "annual_earnings_during_school": 1.0,
+        "id": 129.0,
+        "estimated_time_to_degree_(years)": 2.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 69819.0
+    },
+    {
+        "student_background_id": 130.0,
+        "fre_financial_return_on_education": 0.69,
+        "annual_earnings_during_school": 1.0,
+        "id": 130.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 59600.0
+    },
+    {
+        "student_background_id": 131.0,
+        "fre_financial_return_on_education": 10.97,
+        "annual_earnings_during_school": 2.0,
+        "id": 131.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 92327.0
+    },
+    {
+        "student_background_id": 132.0,
+        "fre_financial_return_on_education": 17.1,
+        "annual_earnings_during_school": 2.0,
+        "id": 132.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 67962.0
+    },
+    {
+        "student_background_id": 133.0,
+        "fre_financial_return_on_education": 10.77,
+        "annual_earnings_during_school": 2.0,
+        "id": 133.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 46853.0
+    },
+    {
+        "student_background_id": 134.0,
+        "fre_financial_return_on_education": 7.9,
+        "annual_earnings_during_school": 2.0,
+        "id": 134.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 99606.0
+    },
+    {
+        "student_background_id": 135.0,
+        "fre_financial_return_on_education": 12.79,
+        "annual_earnings_during_school": 2.0,
+        "id": 135.0,
+        "estimated_time_to_degree_(years)": 4.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 96528.0
+    },
+    {
+        "student_background_id": 136.0,
+        "fre_financial_return_on_education": 13.57,
+        "annual_earnings_during_school": 3.0,
+        "id": 136.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 50356.0
+    },
+    {
+        "student_background_id": 137.0,
+        "fre_financial_return_on_education": 0.36,
+        "annual_earnings_during_school": 3.0,
+        "id": 137.0,
+        "estimated_time_to_degree_(years)": 4.4,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 44710.0
+    },
+    {
+        "student_background_id": 138.0,
+        "fre_financial_return_on_education": 6.1,
+        "annual_earnings_during_school": 3.0,
+        "id": 138.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 82505.0
+    },
+    {
+        "student_background_id": 139.0,
+        "fre_financial_return_on_education": 8.97,
+        "annual_earnings_during_school": 3.0,
+        "id": 139.0,
+        "estimated_time_to_degree_(years)": 5.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 87824.0
+    },
+    {
+        "student_background_id": 140.0,
+        "fre_financial_return_on_education": 6.39,
+        "annual_earnings_during_school": 3.0,
+        "id": 140.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 96877.0
+    },
+    {
+        "student_background_id": 141.0,
+        "fre_financial_return_on_education": 1.27,
+        "annual_earnings_during_school": 4.0,
+        "id": 141.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 97436.0
+    },
+    {
+        "student_background_id": 142.0,
+        "fre_financial_return_on_education": 3.88,
+        "annual_earnings_during_school": 4.0,
+        "id": 142.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 93829.0
+    },
+    {
+        "student_background_id": 143.0,
+        "fre_financial_return_on_education": 13.82,
+        "annual_earnings_during_school": 4.0,
+        "id": 143.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 28766.0
+    },
+    {
+        "student_background_id": 144.0,
+        "fre_financial_return_on_education": 6.05,
+        "annual_earnings_during_school": 4.0,
+        "id": 144.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 49047.0
+    },
+    {
+        "student_background_id": 145.0,
+        "fre_financial_return_on_education": 17.73,
+        "annual_earnings_during_school": 4.0,
+        "id": 145.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 81670.0
+    },
+    {
+        "student_background_id": 146.0,
+        "fre_financial_return_on_education": 3.97,
+        "annual_earnings_during_school": 5.0,
+        "id": 146.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 71538.0
+    },
+    {
+        "student_background_id": 147.0,
+        "fre_financial_return_on_education": 11.34,
+        "annual_earnings_during_school": 5.0,
+        "id": 147.0,
+        "estimated_time_to_degree_(years)": 1.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 44680.0
+    },
+    {
+        "student_background_id": 148.0,
+        "fre_financial_return_on_education": 13.2,
+        "annual_earnings_during_school": 5.0,
+        "id": 148.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 88452.0
+    },
+    {
+        "student_background_id": 149.0,
+        "fre_financial_return_on_education": 8.15,
+        "annual_earnings_during_school": 5.0,
+        "id": 149.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 72710.0
+    },
+    {
+        "student_background_id": 150.0,
+        "fre_financial_return_on_education": 3.11,
+        "annual_earnings_during_school": 5.0,
+        "id": 150.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 61311.0
+    },
+    {
+        "student_background_id": 151.0,
+        "fre_financial_return_on_education": 8.67,
+        "annual_earnings_during_school": 1.0,
+        "id": 151.0,
+        "estimated_time_to_degree_(years)": 6.8,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 55746.0
+    },
+    {
+        "student_background_id": 152.0,
+        "fre_financial_return_on_education": 3.44,
+        "annual_earnings_during_school": 1.0,
+        "id": 152.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 81341.0
+    },
+    {
+        "student_background_id": 153.0,
+        "fre_financial_return_on_education": 8.34,
+        "annual_earnings_during_school": 1.0,
+        "id": 153.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 51177.0
+    },
+    {
+        "student_background_id": 154.0,
+        "fre_financial_return_on_education": 2.15,
+        "annual_earnings_during_school": 1.0,
+        "id": 154.0,
+        "estimated_time_to_degree_(years)": 2.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 90550.0
+    },
+    {
+        "student_background_id": 155.0,
+        "fre_financial_return_on_education": 10.55,
+        "annual_earnings_during_school": 1.0,
+        "id": 155.0,
+        "estimated_time_to_degree_(years)": 5.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 42120.0
+    },
+    {
+        "student_background_id": 156.0,
+        "fre_financial_return_on_education": 18.07,
+        "annual_earnings_during_school": 2.0,
+        "id": 156.0,
+        "estimated_time_to_degree_(years)": 9.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 43857.0
+    },
+    {
+        "student_background_id": 157.0,
+        "fre_financial_return_on_education": 19.6,
+        "annual_earnings_during_school": 2.0,
+        "id": 157.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 77038.0
+    },
+    {
+        "student_background_id": 158.0,
+        "fre_financial_return_on_education": 13.07,
+        "annual_earnings_during_school": 2.0,
+        "id": 158.0,
+        "estimated_time_to_degree_(years)": 8.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 89296.0
+    },
+    {
+        "student_background_id": 159.0,
+        "fre_financial_return_on_education": 6.28,
+        "annual_earnings_during_school": 2.0,
+        "id": 159.0,
+        "estimated_time_to_degree_(years)": 7.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 77522.0
+    },
+    {
+        "student_background_id": 160.0,
+        "fre_financial_return_on_education": 9.45,
+        "annual_earnings_during_school": 2.0,
+        "id": 160.0,
+        "estimated_time_to_degree_(years)": 7.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 50254.0
+    },
+    {
+        "student_background_id": 161.0,
+        "fre_financial_return_on_education": 19.74,
+        "annual_earnings_during_school": 3.0,
+        "id": 161.0,
+        "estimated_time_to_degree_(years)": 5.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 32136.0
+    },
+    {
+        "student_background_id": 162.0,
+        "fre_financial_return_on_education": 7.86,
+        "annual_earnings_during_school": 3.0,
+        "id": 162.0,
+        "estimated_time_to_degree_(years)": 7.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 70109.0
+    },
+    {
+        "student_background_id": 163.0,
+        "fre_financial_return_on_education": 13.58,
+        "annual_earnings_during_school": 3.0,
+        "id": 163.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 29650.0
+    },
+    {
+        "student_background_id": 164.0,
+        "fre_financial_return_on_education": 18.92,
+        "annual_earnings_during_school": 3.0,
+        "id": 164.0,
+        "estimated_time_to_degree_(years)": 7.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 65735.0
+    },
+    {
+        "student_background_id": 165.0,
+        "fre_financial_return_on_education": 11.05,
+        "annual_earnings_during_school": 3.0,
+        "id": 165.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 92665.0
+    },
+    {
+        "student_background_id": 166.0,
+        "fre_financial_return_on_education": 19.26,
+        "annual_earnings_during_school": 4.0,
+        "id": 166.0,
+        "estimated_time_to_degree_(years)": 7.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 82384.0
+    },
+    {
+        "student_background_id": 167.0,
+        "fre_financial_return_on_education": 8.66,
+        "annual_earnings_during_school": 4.0,
+        "id": 167.0,
+        "estimated_time_to_degree_(years)": 9.8,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 27091.0
+    },
+    {
+        "student_background_id": 168.0,
+        "fre_financial_return_on_education": 10.89,
+        "annual_earnings_during_school": 4.0,
+        "id": 168.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 26837.0
+    },
+    {
+        "student_background_id": 169.0,
+        "fre_financial_return_on_education": 17.53,
+        "annual_earnings_during_school": 4.0,
+        "id": 169.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 78977.0
+    },
+    {
+        "student_background_id": 170.0,
+        "fre_financial_return_on_education": 14.9,
+        "annual_earnings_during_school": 4.0,
+        "id": 170.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 79457.0
+    },
+    {
+        "student_background_id": 171.0,
+        "fre_financial_return_on_education": 8.44,
+        "annual_earnings_during_school": 5.0,
+        "id": 171.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 81839.0
+    },
+    {
+        "student_background_id": 172.0,
+        "fre_financial_return_on_education": 9.77,
+        "annual_earnings_during_school": 5.0,
+        "id": 172.0,
+        "estimated_time_to_degree_(years)": 6.4,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 40574.0
+    },
+    {
+        "student_background_id": 173.0,
+        "fre_financial_return_on_education": 4.06,
+        "annual_earnings_during_school": 5.0,
+        "id": 173.0,
+        "estimated_time_to_degree_(years)": 7.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 41966.0
+    },
+    {
+        "student_background_id": 174.0,
+        "fre_financial_return_on_education": 5.85,
+        "annual_earnings_during_school": 5.0,
+        "id": 174.0,
+        "estimated_time_to_degree_(years)": 7.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 54369.0
+    },
+    {
+        "student_background_id": 175.0,
+        "fre_financial_return_on_education": 19.74,
+        "annual_earnings_during_school": 5.0,
+        "id": 175.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 84406.0
+    },
+    {
+        "student_background_id": 176.0,
+        "fre_financial_return_on_education": 6.09,
+        "annual_earnings_during_school": 1.0,
+        "id": 176.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 53921.0
+    },
+    {
+        "student_background_id": 177.0,
+        "fre_financial_return_on_education": 12.19,
+        "annual_earnings_during_school": 1.0,
+        "id": 177.0,
+        "estimated_time_to_degree_(years)": 3.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 57786.0
+    },
+    {
+        "student_background_id": 178.0,
+        "fre_financial_return_on_education": 15.43,
+        "annual_earnings_during_school": 1.0,
+        "id": 178.0,
+        "estimated_time_to_degree_(years)": 1.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 87085.0
+    },
+    {
+        "student_background_id": 179.0,
+        "fre_financial_return_on_education": 10.29,
+        "annual_earnings_during_school": 1.0,
+        "id": 179.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 79585.0
+    },
+    {
+        "student_background_id": 180.0,
+        "fre_financial_return_on_education": 14.59,
+        "annual_earnings_during_school": 1.0,
+        "id": 180.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 82598.0
+    },
+    {
+        "student_background_id": 181.0,
+        "fre_financial_return_on_education": 11.02,
+        "annual_earnings_during_school": 2.0,
+        "id": 181.0,
+        "estimated_time_to_degree_(years)": 2.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 41051.0
+    },
+    {
+        "student_background_id": 182.0,
+        "fre_financial_return_on_education": 7.25,
+        "annual_earnings_during_school": 2.0,
+        "id": 182.0,
+        "estimated_time_to_degree_(years)": 2.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 27511.0
+    },
+    {
+        "student_background_id": 183.0,
+        "fre_financial_return_on_education": 9.32,
+        "annual_earnings_during_school": 2.0,
+        "id": 183.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 85263.0
+    },
+    {
+        "student_background_id": 184.0,
+        "fre_financial_return_on_education": 0.63,
+        "annual_earnings_during_school": 2.0,
+        "id": 184.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 82505.0
+    },
+    {
+        "student_background_id": 185.0,
+        "fre_financial_return_on_education": 7.66,
+        "annual_earnings_during_school": 2.0,
+        "id": 185.0,
+        "estimated_time_to_degree_(years)": 3.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 25800.0
+    },
+    {
+        "student_background_id": 186.0,
+        "fre_financial_return_on_education": 10.55,
+        "annual_earnings_during_school": 3.0,
+        "id": 186.0,
+        "estimated_time_to_degree_(years)": 1.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 89730.0
+    },
+    {
+        "student_background_id": 187.0,
+        "fre_financial_return_on_education": 9.28,
+        "annual_earnings_during_school": 3.0,
+        "id": 187.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 84370.0
+    },
+    {
+        "student_background_id": 188.0,
+        "fre_financial_return_on_education": 1.72,
+        "annual_earnings_during_school": 3.0,
+        "id": 188.0,
+        "estimated_time_to_degree_(years)": 1.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 73625.0
+    },
+    {
+        "student_background_id": 189.0,
+        "fre_financial_return_on_education": 9.22,
+        "annual_earnings_during_school": 3.0,
+        "id": 189.0,
+        "estimated_time_to_degree_(years)": 3.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 53402.0
+    },
+    {
+        "student_background_id": 190.0,
+        "fre_financial_return_on_education": 7.27,
+        "annual_earnings_during_school": 3.0,
+        "id": 190.0,
+        "estimated_time_to_degree_(years)": 4.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 53380.0
+    },
+    {
+        "student_background_id": 191.0,
+        "fre_financial_return_on_education": 16.61,
+        "annual_earnings_during_school": 4.0,
+        "id": 191.0,
+        "estimated_time_to_degree_(years)": 4.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 75978.0
+    },
+    {
+        "student_background_id": 192.0,
+        "fre_financial_return_on_education": 17.89,
+        "annual_earnings_during_school": 3.0,
+        "id": 192.0,
+        "estimated_time_to_degree_(years)": 5.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 34648.0
+    },
+    {
+        "student_background_id": 193.0,
+        "fre_financial_return_on_education": 17.93,
+        "annual_earnings_during_school": 3.0,
+        "id": 193.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 72307.0
+    },
+    {
+        "student_background_id": 194.0,
+        "fre_financial_return_on_education": 18.44,
+        "annual_earnings_during_school": 3.0,
+        "id": 194.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 83313.0
+    },
+    {
+        "student_background_id": 195.0,
+        "fre_financial_return_on_education": 7.3,
+        "annual_earnings_during_school": 3.0,
+        "id": 195.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 65747.0
+    },
+    {
+        "student_background_id": 196.0,
+        "fre_financial_return_on_education": 8.92,
+        "annual_earnings_during_school": 5.0,
+        "id": 196.0,
+        "estimated_time_to_degree_(years)": 2.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 27128.0
+    },
+    {
+        "student_background_id": 197.0,
+        "fre_financial_return_on_education": 12.53,
+        "annual_earnings_during_school": 5.0,
+        "id": 197.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 45998.0
+    },
+    {
+        "student_background_id": 198.0,
+        "fre_financial_return_on_education": 7.36,
+        "annual_earnings_during_school": 5.0,
+        "id": 198.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 63211.0
+    },
+    {
+        "student_background_id": 199.0,
+        "fre_financial_return_on_education": 3.07,
+        "annual_earnings_during_school": 5.0,
+        "id": 199.0,
+        "estimated_time_to_degree_(years)": 1.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 83452.0
+    },
+    {
+        "student_background_id": 200.0,
+        "fre_financial_return_on_education": 17.41,
+        "annual_earnings_during_school": 5.0,
+        "id": 200.0,
+        "estimated_time_to_degree_(years)": 1.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 80443.0
+    },
+    {
+        "student_background_id": 201.0,
+        "fre_financial_return_on_education": 12.12,
+        "annual_earnings_during_school": 1.0,
+        "id": 201.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 71857.0
+    },
+    {
+        "student_background_id": 202.0,
+        "fre_financial_return_on_education": 14.23,
+        "annual_earnings_during_school": 1.0,
+        "id": 202.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 62074.0
+    },
+    {
+        "student_background_id": 203.0,
+        "fre_financial_return_on_education": 25.49,
+        "annual_earnings_during_school": 1.0,
+        "id": 203.0,
+        "estimated_time_to_degree_(years)": 7.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 74050.0
+    },
+    {
+        "student_background_id": 204.0,
+        "fre_financial_return_on_education": 24.34,
+        "annual_earnings_during_school": 1.0,
+        "id": 204.0,
+        "estimated_time_to_degree_(years)": 9.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 98980.0
+    },
+    {
+        "student_background_id": 205.0,
+        "fre_financial_return_on_education": 24.07,
+        "annual_earnings_during_school": 1.0,
+        "id": 205.0,
+        "estimated_time_to_degree_(years)": 4.4,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 62740.0
+    },
+    {
+        "student_background_id": 206.0,
+        "fre_financial_return_on_education": 20.32,
+        "annual_earnings_during_school": 2.0,
+        "id": 206.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 99606.0
+    },
+    {
+        "student_background_id": 207.0,
+        "fre_financial_return_on_education": 19.09,
+        "annual_earnings_during_school": 2.0,
+        "id": 207.0,
+        "estimated_time_to_degree_(years)": 9.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 59337.0
+    },
+    {
+        "student_background_id": 208.0,
+        "fre_financial_return_on_education": 28.64,
+        "annual_earnings_during_school": 2.0,
+        "id": 208.0,
+        "estimated_time_to_degree_(years)": 4.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 56953.0
+    },
+    {
+        "student_background_id": 209.0,
+        "fre_financial_return_on_education": 24.38,
+        "annual_earnings_during_school": 2.0,
+        "id": 209.0,
+        "estimated_time_to_degree_(years)": 8.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 87898.0
+    },
+    {
+        "student_background_id": 210.0,
+        "fre_financial_return_on_education": 10.52,
+        "annual_earnings_during_school": 2.0,
+        "id": 210.0,
+        "estimated_time_to_degree_(years)": 7.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 99470.0
+    },
+    {
+        "student_background_id": 211.0,
+        "fre_financial_return_on_education": 20.02,
+        "annual_earnings_during_school": 3.0,
+        "id": 211.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 76833.0
+    },
+    {
+        "student_background_id": 212.0,
+        "fre_financial_return_on_education": 23.74,
+        "annual_earnings_during_school": 3.0,
+        "id": 212.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 71344.0
+    },
+    {
+        "student_background_id": 213.0,
+        "fre_financial_return_on_education": 28.26,
+        "annual_earnings_during_school": 3.0,
+        "id": 213.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 99811.0
+    },
+    {
+        "student_background_id": 214.0,
+        "fre_financial_return_on_education": 21.03,
+        "annual_earnings_during_school": 3.0,
+        "id": 214.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 82413.0
+    },
+    {
+        "student_background_id": 215.0,
+        "fre_financial_return_on_education": 24.16,
+        "annual_earnings_during_school": 3.0,
+        "id": 215.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 75422.0
+    },
+    {
+        "student_background_id": 216.0,
+        "fre_financial_return_on_education": 22.78,
+        "annual_earnings_during_school": 4.0,
+        "id": 216.0,
+        "estimated_time_to_degree_(years)": 8.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 52368.0
+    },
+    {
+        "student_background_id": 217.0,
+        "fre_financial_return_on_education": 18.88,
+        "annual_earnings_during_school": 4.0,
+        "id": 217.0,
+        "estimated_time_to_degree_(years)": 7.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 69526.0
+    },
+    {
+        "student_background_id": 218.0,
+        "fre_financial_return_on_education": 22.4,
+        "annual_earnings_during_school": 4.0,
+        "id": 218.0,
+        "estimated_time_to_degree_(years)": 4.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 74641.0
+    },
+    {
+        "student_background_id": 219.0,
+        "fre_financial_return_on_education": 17.82,
+        "annual_earnings_during_school": 4.0,
+        "id": 219.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 94625.0
+    },
+    {
+        "student_background_id": 220.0,
+        "fre_financial_return_on_education": 18.99,
+        "annual_earnings_during_school": 4.0,
+        "id": 220.0,
+        "estimated_time_to_degree_(years)": 4.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 86430.0
+    },
+    {
+        "student_background_id": 221.0,
+        "fre_financial_return_on_education": 15.52,
+        "annual_earnings_during_school": 5.0,
+        "id": 221.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 71481.0
+    },
+    {
+        "student_background_id": 222.0,
+        "fre_financial_return_on_education": 20.66,
+        "annual_earnings_during_school": 5.0,
+        "id": 222.0,
+        "estimated_time_to_degree_(years)": 8.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 93689.0
+    },
+    {
+        "student_background_id": 223.0,
+        "fre_financial_return_on_education": 15.15,
+        "annual_earnings_during_school": 5.0,
+        "id": 223.0,
+        "estimated_time_to_degree_(years)": 5.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 74685.0
+    },
+    {
+        "student_background_id": 224.0,
+        "fre_financial_return_on_education": 20.62,
+        "annual_earnings_during_school": 5.0,
+        "id": 224.0,
+        "estimated_time_to_degree_(years)": 7.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 56331.0
+    },
+    {
+        "student_background_id": 225.0,
+        "fre_financial_return_on_education": 16.37,
+        "annual_earnings_during_school": 5.0,
+        "id": 225.0,
+        "estimated_time_to_degree_(years)": 6.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 74897.0
+    },
+    {
+        "student_background_id": 226.0,
+        "fre_financial_return_on_education": 16.19,
+        "annual_earnings_during_school": 1.0,
+        "id": 226.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 97423.0
+    },
+    {
+        "student_background_id": 227.0,
+        "fre_financial_return_on_education": 19.74,
+        "annual_earnings_during_school": 1.0,
+        "id": 227.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 61038.0
+    },
+    {
+        "student_background_id": 228.0,
+        "fre_financial_return_on_education": 28.29,
+        "annual_earnings_during_school": 1.0,
+        "id": 228.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 95876.0
+    },
+    {
+        "student_background_id": 229.0,
+        "fre_financial_return_on_education": 28.18,
+        "annual_earnings_during_school": 1.0,
+        "id": 229.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 79283.0
+    },
+    {
+        "student_background_id": 230.0,
+        "fre_financial_return_on_education": 25.9,
+        "annual_earnings_during_school": 1.0,
+        "id": 230.0,
+        "estimated_time_to_degree_(years)": 2.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 80214.0
+    },
+    {
+        "student_background_id": 231.0,
+        "fre_financial_return_on_education": 12.24,
+        "annual_earnings_during_school": 2.0,
+        "id": 231.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 87020.0
+    },
+    {
+        "student_background_id": 232.0,
+        "fre_financial_return_on_education": 28.92,
+        "annual_earnings_during_school": 2.0,
+        "id": 232.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 88670.0
+    },
+    {
+        "student_background_id": 233.0,
+        "fre_financial_return_on_education": 22.69,
+        "annual_earnings_during_school": 2.0,
+        "id": 233.0,
+        "estimated_time_to_degree_(years)": 1.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 97282.0
+    },
+    {
+        "student_background_id": 234.0,
+        "fre_financial_return_on_education": 15.75,
+        "annual_earnings_during_school": 2.0,
+        "id": 234.0,
+        "estimated_time_to_degree_(years)": 6.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 90535.0
+    },
+    {
+        "student_background_id": 235.0,
+        "fre_financial_return_on_education": 13.0,
+        "annual_earnings_during_school": 2.0,
+        "id": 235.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 86694.0
+    },
+    {
+        "student_background_id": 236.0,
+        "fre_financial_return_on_education": 13.19,
+        "annual_earnings_during_school": 3.0,
+        "id": 236.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 94809.0
+    },
+    {
+        "student_background_id": 237.0,
+        "fre_financial_return_on_education": 10.63,
+        "annual_earnings_during_school": 3.0,
+        "id": 237.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 70949.0
+    },
+    {
+        "student_background_id": 238.0,
+        "fre_financial_return_on_education": 19.52,
+        "annual_earnings_during_school": 3.0,
+        "id": 238.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 64248.0
+    },
+    {
+        "student_background_id": 239.0,
+        "fre_financial_return_on_education": 27.19,
+        "annual_earnings_during_school": 3.0,
+        "id": 239.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 99911.0
+    },
+    {
+        "student_background_id": 240.0,
+        "fre_financial_return_on_education": 13.13,
+        "annual_earnings_during_school": 3.0,
+        "id": 240.0,
+        "estimated_time_to_degree_(years)": 4.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 67688.0
+    },
+    {
+        "student_background_id": 241.0,
+        "fre_financial_return_on_education": 15.3,
+        "annual_earnings_during_school": 4.0,
+        "id": 241.0,
+        "estimated_time_to_degree_(years)": 2.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 57603.0
+    },
+    {
+        "student_background_id": 242.0,
+        "fre_financial_return_on_education": 15.32,
+        "annual_earnings_during_school": 4.0,
+        "id": 242.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 67503.0
+    },
+    {
+        "student_background_id": 243.0,
+        "fre_financial_return_on_education": 10.12,
+        "annual_earnings_during_school": 4.0,
+        "id": 243.0,
+        "estimated_time_to_degree_(years)": 6.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 84050.0
+    },
+    {
+        "student_background_id": 244.0,
+        "fre_financial_return_on_education": 22.84,
+        "annual_earnings_during_school": 4.0,
+        "id": 244.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 56459.0
+    },
+    {
+        "student_background_id": 245.0,
+        "fre_financial_return_on_education": 22.5,
+        "annual_earnings_during_school": 4.0,
+        "id": 245.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 88608.0
+    },
+    {
+        "student_background_id": 246.0,
+        "fre_financial_return_on_education": 14.04,
+        "annual_earnings_during_school": 5.0,
+        "id": 246.0,
+        "estimated_time_to_degree_(years)": 2.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 72490.0
+    },
+    {
+        "student_background_id": 247.0,
+        "fre_financial_return_on_education": 13.49,
+        "annual_earnings_during_school": 5.0,
+        "id": 247.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 91534.0
+    },
+    {
+        "student_background_id": 248.0,
+        "fre_financial_return_on_education": 29.35,
+        "annual_earnings_during_school": 5.0,
+        "id": 248.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 77544.0
+    },
+    {
+        "student_background_id": 249.0,
+        "fre_financial_return_on_education": 18.72,
+        "annual_earnings_during_school": 5.0,
+        "id": 249.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 88904.0
+    },
+    {
+        "student_background_id": 250.0,
+        "fre_financial_return_on_education": 22.99,
+        "annual_earnings_during_school": 5.0,
+        "id": 250.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 98357.0
+    },
+    {
+        "student_background_id": 251.0,
+        "fre_financial_return_on_education": 26.52,
+        "annual_earnings_during_school": 1.0,
+        "id": 251.0,
+        "estimated_time_to_degree_(years)": 5.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 58924.0
+    },
+    {
+        "student_background_id": 252.0,
+        "fre_financial_return_on_education": 20.33,
+        "annual_earnings_during_school": 1.0,
+        "id": 252.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 81291.0
+    },
+    {
+        "student_background_id": 253.0,
+        "fre_financial_return_on_education": 27.74,
+        "annual_earnings_during_school": 1.0,
+        "id": 253.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 96686.0
+    },
+    {
+        "student_background_id": 254.0,
+        "fre_financial_return_on_education": 24.71,
+        "annual_earnings_during_school": 1.0,
+        "id": 254.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 88285.0
+    },
+    {
+        "student_background_id": 255.0,
+        "fre_financial_return_on_education": 13.14,
+        "annual_earnings_during_school": 1.0,
+        "id": 255.0,
+        "estimated_time_to_degree_(years)": 6.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 82399.0
+    },
+    {
+        "student_background_id": 256.0,
+        "fre_financial_return_on_education": 12.9,
+        "annual_earnings_during_school": 2.0,
+        "id": 256.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 87155.0
+    },
+    {
+        "student_background_id": 257.0,
+        "fre_financial_return_on_education": 14.61,
+        "annual_earnings_during_school": 2.0,
+        "id": 257.0,
+        "estimated_time_to_degree_(years)": 9.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 91432.0
+    },
+    {
+        "student_background_id": 258.0,
+        "fre_financial_return_on_education": 13.59,
+        "annual_earnings_during_school": 2.0,
+        "id": 258.0,
+        "estimated_time_to_degree_(years)": 6.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 62161.0
+    },
+    {
+        "student_background_id": 259.0,
+        "fre_financial_return_on_education": 23.68,
+        "annual_earnings_during_school": 2.0,
+        "id": 259.0,
+        "estimated_time_to_degree_(years)": 8.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 75526.0
+    },
+    {
+        "student_background_id": 260.0,
+        "fre_financial_return_on_education": 21.9,
+        "annual_earnings_during_school": 2.0,
+        "id": 260.0,
+        "estimated_time_to_degree_(years)": 7.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 62772.0
+    },
+    {
+        "student_background_id": 261.0,
+        "fre_financial_return_on_education": 28.43,
+        "annual_earnings_during_school": 3.0,
+        "id": 261.0,
+        "estimated_time_to_degree_(years)": 7.8,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 74493.0
+    },
+    {
+        "student_background_id": 262.0,
+        "fre_financial_return_on_education": 23.39,
+        "annual_earnings_during_school": 3.0,
+        "id": 262.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 82351.0
+    },
+    {
+        "student_background_id": 263.0,
+        "fre_financial_return_on_education": 29.38,
+        "annual_earnings_during_school": 3.0,
+        "id": 263.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 68606.0
+    },
+    {
+        "student_background_id": 264.0,
+        "fre_financial_return_on_education": 16.67,
+        "annual_earnings_during_school": 3.0,
+        "id": 264.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 79014.0
+    },
+    {
+        "student_background_id": 265.0,
+        "fre_financial_return_on_education": 17.44,
+        "annual_earnings_during_school": 3.0,
+        "id": 265.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 99586.0
+    },
+    {
+        "student_background_id": 266.0,
+        "fre_financial_return_on_education": 15.26,
+        "annual_earnings_during_school": 4.0,
+        "id": 266.0,
+        "estimated_time_to_degree_(years)": 9.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 97883.0
+    },
+    {
+        "student_background_id": 267.0,
+        "fre_financial_return_on_education": 10.32,
+        "annual_earnings_during_school": 4.0,
+        "id": 267.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 64337.0
+    },
+    {
+        "student_background_id": 268.0,
+        "fre_financial_return_on_education": 23.7,
+        "annual_earnings_during_school": 4.0,
+        "id": 268.0,
+        "estimated_time_to_degree_(years)": 6.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 84461.0
+    },
+    {
+        "student_background_id": 269.0,
+        "fre_financial_return_on_education": 16.33,
+        "annual_earnings_during_school": 4.0,
+        "id": 269.0,
+        "estimated_time_to_degree_(years)": 8.1,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 70946.0
+    },
+    {
+        "student_background_id": 270.0,
+        "fre_financial_return_on_education": 19.95,
+        "annual_earnings_during_school": 4.0,
+        "id": 270.0,
+        "estimated_time_to_degree_(years)": 8.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 89800.0
+    },
+    {
+        "student_background_id": 271.0,
+        "fre_financial_return_on_education": 20.33,
+        "annual_earnings_during_school": 5.0,
+        "id": 271.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 62309.0
+    },
+    {
+        "student_background_id": 272.0,
+        "fre_financial_return_on_education": 16.56,
+        "annual_earnings_during_school": 5.0,
+        "id": 272.0,
+        "estimated_time_to_degree_(years)": 7.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 58817.0
+    },
+    {
+        "student_background_id": 273.0,
+        "fre_financial_return_on_education": 11.61,
+        "annual_earnings_during_school": 5.0,
+        "id": 273.0,
+        "estimated_time_to_degree_(years)": 9.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 64400.0
+    },
+    {
+        "student_background_id": 274.0,
+        "fre_financial_return_on_education": 18.41,
+        "annual_earnings_during_school": 5.0,
+        "id": 274.0,
+        "estimated_time_to_degree_(years)": 7.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 77627.0
+    },
+    {
+        "student_background_id": 275.0,
+        "fre_financial_return_on_education": 18.34,
+        "annual_earnings_during_school": 5.0,
+        "id": 275.0,
+        "estimated_time_to_degree_(years)": 2.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 54674.0
+    },
+    {
+        "student_background_id": 276.0,
+        "fre_financial_return_on_education": 23.38,
+        "annual_earnings_during_school": 1.0,
+        "id": 276.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 75530.0
+    },
+    {
+        "student_background_id": 277.0,
+        "fre_financial_return_on_education": 25.37,
+        "annual_earnings_during_school": 1.0,
+        "id": 277.0,
+        "estimated_time_to_degree_(years)": 2.4,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 81381.0
+    },
+    {
+        "student_background_id": 278.0,
+        "fre_financial_return_on_education": 26.19,
+        "annual_earnings_during_school": 1.0,
+        "id": 278.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 63714.0
+    },
+    {
+        "student_background_id": 279.0,
+        "fre_financial_return_on_education": 21.46,
+        "annual_earnings_during_school": 1.0,
+        "id": 279.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 77469.0
+    },
+    {
+        "student_background_id": 280.0,
+        "fre_financial_return_on_education": 28.58,
+        "annual_earnings_during_school": 1.0,
+        "id": 280.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 79309.0
+    },
+    {
+        "student_background_id": 281.0,
+        "fre_financial_return_on_education": 20.41,
+        "annual_earnings_during_school": 2.0,
+        "id": 281.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 67812.0
+    },
+    {
+        "student_background_id": 282.0,
+        "fre_financial_return_on_education": 25.62,
+        "annual_earnings_during_school": 2.0,
+        "id": 282.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 88764.0
+    },
+    {
+        "student_background_id": 283.0,
+        "fre_financial_return_on_education": 22.91,
+        "annual_earnings_during_school": 2.0,
+        "id": 283.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 76284.0
+    },
+    {
+        "student_background_id": 284.0,
+        "fre_financial_return_on_education": 22.57,
+        "annual_earnings_during_school": 2.0,
+        "id": 284.0,
+        "estimated_time_to_degree_(years)": 3.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 64400.0
+    },
+    {
+        "student_background_id": 285.0,
+        "fre_financial_return_on_education": 22.93,
+        "annual_earnings_during_school": 2.0,
+        "id": 285.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 68933.0
+    },
+    {
+        "student_background_id": 286.0,
+        "fre_financial_return_on_education": 21.19,
+        "annual_earnings_during_school": 3.0,
+        "id": 286.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 98079.0
+    },
+    {
+        "student_background_id": 287.0,
+        "fre_financial_return_on_education": 25.88,
+        "annual_earnings_during_school": 3.0,
+        "id": 287.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 61485.0
+    },
+    {
+        "student_background_id": 288.0,
+        "fre_financial_return_on_education": 22.49,
+        "annual_earnings_during_school": 3.0,
+        "id": 288.0,
+        "estimated_time_to_degree_(years)": 3.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 74232.0
+    },
+    {
+        "student_background_id": 289.0,
+        "fre_financial_return_on_education": 27.83,
+        "annual_earnings_during_school": 3.0,
+        "id": 289.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 97389.0
+    },
+    {
+        "student_background_id": 290.0,
+        "fre_financial_return_on_education": 20.36,
+        "annual_earnings_during_school": 3.0,
+        "id": 290.0,
+        "estimated_time_to_degree_(years)": 1.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 73963.0
+    },
+    {
+        "student_background_id": 291.0,
+        "fre_financial_return_on_education": 27.11,
+        "annual_earnings_during_school": 4.0,
+        "id": 291.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 86781.0
+    },
+    {
+        "student_background_id": 292.0,
+        "fre_financial_return_on_education": 28.81,
+        "annual_earnings_during_school": 4.0,
+        "id": 292.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 82613.0
+    },
+    {
+        "student_background_id": 293.0,
+        "fre_financial_return_on_education": 23.11,
+        "annual_earnings_during_school": 4.0,
+        "id": 293.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 65433.0
+    },
+    {
+        "student_background_id": 294.0,
+        "fre_financial_return_on_education": 23.89,
+        "annual_earnings_during_school": 4.0,
+        "id": 294.0,
+        "estimated_time_to_degree_(years)": 1.5,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 75307.0
+    },
+    {
+        "student_background_id": 295.0,
+        "fre_financial_return_on_education": 26.29,
+        "annual_earnings_during_school": 4.0,
+        "id": 295.0,
+        "estimated_time_to_degree_(years)": 2.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 85792.0
+    },
+    {
+        "student_background_id": 296.0,
+        "fre_financial_return_on_education": 26.19,
+        "annual_earnings_during_school": 5.0,
+        "id": 296.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 60789.0
+    },
+    {
+        "student_background_id": 297.0,
+        "fre_financial_return_on_education": 29.99,
+        "annual_earnings_during_school": 5.0,
+        "id": 297.0,
+        "estimated_time_to_degree_(years)": 5.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 72754.0
+    },
+    {
+        "student_background_id": 298.0,
+        "fre_financial_return_on_education": 26.5,
+        "annual_earnings_during_school": 5.0,
+        "id": 298.0,
+        "estimated_time_to_degree_(years)": 1.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 90674.0
+    },
+    {
+        "student_background_id": 299.0,
+        "fre_financial_return_on_education": 20.88,
+        "annual_earnings_during_school": 5.0,
+        "id": 299.0,
+        "estimated_time_to_degree_(years)": 5.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 94295.0
+    },
+    {
+        "student_background_id": 300.0,
+        "fre_financial_return_on_education": 29.03,
+        "annual_earnings_during_school": 5.0,
+        "id": 300.0,
+        "estimated_time_to_degree_(years)": 4.4,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 83604.0
+    },
+    {
+        "student_background_id": 301.0,
+        "fre_financial_return_on_education": 13.31,
+        "annual_earnings_during_school": 1.0,
+        "id": 301.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 99283.0
+    },
+    {
+        "student_background_id": 302.0,
+        "fre_financial_return_on_education": 28.22,
+        "annual_earnings_during_school": 1.0,
+        "id": 302.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 56169.0
+    },
+    {
+        "student_background_id": 303.0,
+        "fre_financial_return_on_education": 14.97,
+        "annual_earnings_during_school": 1.0,
+        "id": 303.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 70998.0
+    },
+    {
+        "student_background_id": 304.0,
+        "fre_financial_return_on_education": 19.6,
+        "annual_earnings_during_school": 1.0,
+        "id": 304.0,
+        "estimated_time_to_degree_(years)": 7.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 81514.0
+    },
+    {
+        "student_background_id": 305.0,
+        "fre_financial_return_on_education": 22.54,
+        "annual_earnings_during_school": 1.0,
+        "id": 305.0,
+        "estimated_time_to_degree_(years)": 5.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 77410.0
+    },
+    {
+        "student_background_id": 306.0,
+        "fre_financial_return_on_education": 12.36,
+        "annual_earnings_during_school": 2.0,
+        "id": 306.0,
+        "estimated_time_to_degree_(years)": 9.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 64055.0
+    },
+    {
+        "student_background_id": 307.0,
+        "fre_financial_return_on_education": 20.25,
+        "annual_earnings_during_school": 2.0,
+        "id": 307.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 57131.0
+    },
+    {
+        "student_background_id": 308.0,
+        "fre_financial_return_on_education": 24.91,
+        "annual_earnings_during_school": 2.0,
+        "id": 308.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 53516.0
+    },
+    {
+        "student_background_id": 309.0,
+        "fre_financial_return_on_education": 11.91,
+        "annual_earnings_during_school": 2.0,
+        "id": 309.0,
+        "estimated_time_to_degree_(years)": 3.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 60271.0
+    },
+    {
+        "student_background_id": 310.0,
+        "fre_financial_return_on_education": 25.74,
+        "annual_earnings_during_school": 2.0,
+        "id": 310.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 92368.0
+    },
+    {
+        "student_background_id": 311.0,
+        "fre_financial_return_on_education": 13.73,
+        "annual_earnings_during_school": 3.0,
+        "id": 311.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 84668.0
+    },
+    {
+        "student_background_id": 312.0,
+        "fre_financial_return_on_education": 27.77,
+        "annual_earnings_during_school": 3.0,
+        "id": 312.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 68941.0
+    },
+    {
+        "student_background_id": 313.0,
+        "fre_financial_return_on_education": 23.93,
+        "annual_earnings_during_school": 3.0,
+        "id": 313.0,
+        "estimated_time_to_degree_(years)": 9.8,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 62164.0
+    },
+    {
+        "student_background_id": 314.0,
+        "fre_financial_return_on_education": 22.5,
+        "annual_earnings_during_school": 3.0,
+        "id": 314.0,
+        "estimated_time_to_degree_(years)": 9.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 69899.0
+    },
+    {
+        "student_background_id": 315.0,
+        "fre_financial_return_on_education": 27.29,
+        "annual_earnings_during_school": 3.0,
+        "id": 315.0,
+        "estimated_time_to_degree_(years)": 7.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 54813.0
+    },
+    {
+        "student_background_id": 316.0,
+        "fre_financial_return_on_education": 14.79,
+        "annual_earnings_during_school": 4.0,
+        "id": 316.0,
+        "estimated_time_to_degree_(years)": 8.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 53712.0
+    },
+    {
+        "student_background_id": 317.0,
+        "fre_financial_return_on_education": 29.54,
+        "annual_earnings_during_school": 4.0,
+        "id": 317.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 73801.0
+    },
+    {
+        "student_background_id": 318.0,
+        "fre_financial_return_on_education": 26.62,
+        "annual_earnings_during_school": 4.0,
+        "id": 318.0,
+        "estimated_time_to_degree_(years)": 9.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 54552.0
+    },
+    {
+        "student_background_id": 319.0,
+        "fre_financial_return_on_education": 13.7,
+        "annual_earnings_during_school": 4.0,
+        "id": 319.0,
+        "estimated_time_to_degree_(years)": 7.1,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 62317.0
+    },
+    {
+        "student_background_id": 320.0,
+        "fre_financial_return_on_education": 20.71,
+        "annual_earnings_during_school": 4.0,
+        "id": 320.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 78992.0
+    },
+    {
+        "student_background_id": 321.0,
+        "fre_financial_return_on_education": 15.4,
+        "annual_earnings_during_school": 5.0,
+        "id": 321.0,
+        "estimated_time_to_degree_(years)": 6.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 98885.0
+    },
+    {
+        "student_background_id": 322.0,
+        "fre_financial_return_on_education": 19.26,
+        "annual_earnings_during_school": 5.0,
+        "id": 322.0,
+        "estimated_time_to_degree_(years)": 3.6,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 96554.0
+    },
+    {
+        "student_background_id": 323.0,
+        "fre_financial_return_on_education": 11.09,
+        "annual_earnings_during_school": 5.0,
+        "id": 323.0,
+        "estimated_time_to_degree_(years)": 7.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 87311.0
+    },
+    {
+        "student_background_id": 324.0,
+        "fre_financial_return_on_education": 10.49,
+        "annual_earnings_during_school": 5.0,
+        "id": 324.0,
+        "estimated_time_to_degree_(years)": 6.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 97119.0
+    },
+    {
+        "student_background_id": 325.0,
+        "fre_financial_return_on_education": 27.12,
+        "annual_earnings_during_school": 5.0,
+        "id": 325.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 69469.0
+    },
+    {
+        "student_background_id": 326.0,
+        "fre_financial_return_on_education": 23.0,
+        "annual_earnings_during_school": 1.0,
+        "id": 326.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 81039.0
+    },
+    {
+        "student_background_id": 327.0,
+        "fre_financial_return_on_education": 23.84,
+        "annual_earnings_during_school": 1.0,
+        "id": 327.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 64723.0
+    },
+    {
+        "student_background_id": 328.0,
+        "fre_financial_return_on_education": 24.03,
+        "annual_earnings_during_school": 1.0,
+        "id": 328.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 51446.0
+    },
+    {
+        "student_background_id": 329.0,
+        "fre_financial_return_on_education": 29.98,
+        "annual_earnings_during_school": 1.0,
+        "id": 329.0,
+        "estimated_time_to_degree_(years)": 2.1,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 75779.0
+    },
+    {
+        "student_background_id": 330.0,
+        "fre_financial_return_on_education": 29.42,
+        "annual_earnings_during_school": 1.0,
+        "id": 330.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 97378.0
+    },
+    {
+        "student_background_id": 331.0,
+        "fre_financial_return_on_education": 20.03,
+        "annual_earnings_during_school": 2.0,
+        "id": 331.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 71816.0
+    },
+    {
+        "student_background_id": 332.0,
+        "fre_financial_return_on_education": 24.38,
+        "annual_earnings_during_school": 2.0,
+        "id": 332.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 73065.0
+    },
+    {
+        "student_background_id": 333.0,
+        "fre_financial_return_on_education": 27.29,
+        "annual_earnings_during_school": 2.0,
+        "id": 333.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 91474.0
+    },
+    {
+        "student_background_id": 334.0,
+        "fre_financial_return_on_education": 25.92,
+        "annual_earnings_during_school": 2.0,
+        "id": 334.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 65007.0
+    },
+    {
+        "student_background_id": 335.0,
+        "fre_financial_return_on_education": 25.9,
+        "annual_earnings_during_school": 2.0,
+        "id": 335.0,
+        "estimated_time_to_degree_(years)": 6.0,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 97119.0
+    },
+    {
+        "student_background_id": 336.0,
+        "fre_financial_return_on_education": 28.85,
+        "annual_earnings_during_school": 3.0,
+        "id": 336.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 68437.0
+    },
+    {
+        "student_background_id": 337.0,
+        "fre_financial_return_on_education": 20.9,
+        "annual_earnings_during_school": 3.0,
+        "id": 337.0,
+        "estimated_time_to_degree_(years)": 3.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 87925.0
+    },
+    {
+        "student_background_id": 338.0,
+        "fre_financial_return_on_education": 20.1,
+        "annual_earnings_during_school": 3.0,
+        "id": 338.0,
+        "estimated_time_to_degree_(years)": 2.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 57755.0
+    },
+    {
+        "student_background_id": 339.0,
+        "fre_financial_return_on_education": 22.01,
+        "annual_earnings_during_school": 3.0,
+        "id": 339.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 68889.0
+    },
+    {
+        "student_background_id": 340.0,
+        "fre_financial_return_on_education": 28.95,
+        "annual_earnings_during_school": 3.0,
+        "id": 340.0,
+        "estimated_time_to_degree_(years)": 5.7,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 97766.0
+    },
+    {
+        "student_background_id": 341.0,
+        "fre_financial_return_on_education": 24.7,
+        "annual_earnings_during_school": 4.0,
+        "id": 341.0,
+        "estimated_time_to_degree_(years)": 4.4,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 60812.0
+    },
+    {
+        "student_background_id": 342.0,
+        "fre_financial_return_on_education": 24.72,
+        "annual_earnings_during_school": 4.0,
+        "id": 342.0,
+        "estimated_time_to_degree_(years)": 4.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 60454.0
+    },
+    {
+        "student_background_id": 343.0,
+        "fre_financial_return_on_education": 24.14,
+        "annual_earnings_during_school": 4.0,
+        "id": 343.0,
+        "estimated_time_to_degree_(years)": 2.9,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 78371.0
+    },
+    {
+        "student_background_id": 344.0,
+        "fre_financial_return_on_education": 24.94,
+        "annual_earnings_during_school": 4.0,
+        "id": 344.0,
+        "estimated_time_to_degree_(years)": 3.2,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 94319.0
+    },
+    {
+        "student_background_id": 345.0,
+        "fre_financial_return_on_education": 27.52,
+        "annual_earnings_during_school": 4.0,
+        "id": 345.0,
+        "estimated_time_to_degree_(years)": 3.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 89240.0
+    },
+    {
+        "student_background_id": 346.0,
+        "fre_financial_return_on_education": 23.08,
+        "annual_earnings_during_school": 5.0,
+        "id": 346.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 63179.0
+    },
+    {
+        "student_background_id": 347.0,
+        "fre_financial_return_on_education": 29.76,
+        "annual_earnings_during_school": 5.0,
+        "id": 347.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 82312.0
+    },
+    {
+        "student_background_id": 348.0,
+        "fre_financial_return_on_education": 20.3,
+        "annual_earnings_during_school": 5.0,
+        "id": 348.0,
+        "estimated_time_to_degree_(years)": 1.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 80074.0
+    },
+    {
+        "student_background_id": 349.0,
+        "fre_financial_return_on_education": 20.86,
+        "annual_earnings_during_school": 5.0,
+        "id": 349.0,
+        "estimated_time_to_degree_(years)": 5.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 61718.0
+    },
+    {
+        "student_background_id": 350.0,
+        "fre_financial_return_on_education": 26.75,
+        "annual_earnings_during_school": 5.0,
+        "id": 350.0,
+        "estimated_time_to_degree_(years)": 1.9,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 99674.0
+    },
+    {
+        "student_background_id": 351.0,
+        "fre_financial_return_on_education": 19.92,
+        "annual_earnings_during_school": 1.0,
+        "id": 351.0,
+        "estimated_time_to_degree_(years)": 6.1,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 60724.0
+    },
+    {
+        "student_background_id": 352.0,
+        "fre_financial_return_on_education": 21.22,
+        "annual_earnings_during_school": 1.0,
+        "id": 352.0,
+        "estimated_time_to_degree_(years)": 3.4,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 92860.0
+    },
+    {
+        "student_background_id": 353.0,
+        "fre_financial_return_on_education": 17.17,
+        "annual_earnings_during_school": 1.0,
+        "id": 353.0,
+        "estimated_time_to_degree_(years)": 7.2,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 84631.0
+    },
+    {
+        "student_background_id": 354.0,
+        "fre_financial_return_on_education": 21.45,
+        "annual_earnings_during_school": 1.0,
+        "id": 354.0,
+        "estimated_time_to_degree_(years)": 9.7,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 67438.0
+    },
+    {
+        "student_background_id": 355.0,
+        "fre_financial_return_on_education": 25.92,
+        "annual_earnings_during_school": 1.0,
+        "id": 355.0,
+        "estimated_time_to_degree_(years)": 6.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 89486.0
+    },
+    {
+        "student_background_id": 356.0,
+        "fre_financial_return_on_education": 12.18,
+        "annual_earnings_during_school": 2.0,
+        "id": 356.0,
+        "estimated_time_to_degree_(years)": 8.7,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 54685.0
+    },
+    {
+        "student_background_id": 357.0,
+        "fre_financial_return_on_education": 24.25,
+        "annual_earnings_during_school": 2.0,
+        "id": 357.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 87310.0
+    },
+    {
+        "student_background_id": 358.0,
+        "fre_financial_return_on_education": 28.6,
+        "annual_earnings_during_school": 2.0,
+        "id": 358.0,
+        "estimated_time_to_degree_(years)": 9.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 77530.0
+    },
+    {
+        "student_background_id": 359.0,
+        "fre_financial_return_on_education": 16.12,
+        "annual_earnings_during_school": 2.0,
+        "id": 359.0,
+        "estimated_time_to_degree_(years)": 7.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 63190.0
+    },
+    {
+        "student_background_id": 360.0,
+        "fre_financial_return_on_education": 20.96,
+        "annual_earnings_during_school": 2.0,
+        "id": 360.0,
+        "estimated_time_to_degree_(years)": 5.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 80111.0
+    },
+    {
+        "student_background_id": 361.0,
+        "fre_financial_return_on_education": 28.77,
+        "annual_earnings_during_school": 3.0,
+        "id": 361.0,
+        "estimated_time_to_degree_(years)": 6.8,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 53505.0
+    },
+    {
+        "student_background_id": 362.0,
+        "fre_financial_return_on_education": 22.41,
+        "annual_earnings_during_school": 3.0,
+        "id": 362.0,
+        "estimated_time_to_degree_(years)": 10.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 72432.0
+    },
+    {
+        "student_background_id": 363.0,
+        "fre_financial_return_on_education": 14.97,
+        "annual_earnings_during_school": 3.0,
+        "id": 363.0,
+        "estimated_time_to_degree_(years)": 8.5,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 71720.0
+    },
+    {
+        "student_background_id": 364.0,
+        "fre_financial_return_on_education": 19.23,
+        "annual_earnings_during_school": 3.0,
+        "id": 364.0,
+        "estimated_time_to_degree_(years)": 5.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 97417.0
+    },
+    {
+        "student_background_id": 365.0,
+        "fre_financial_return_on_education": 10.33,
+        "annual_earnings_during_school": 3.0,
+        "id": 365.0,
+        "estimated_time_to_degree_(years)": 7.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 91904.0
+    },
+    {
+        "student_background_id": 366.0,
+        "fre_financial_return_on_education": 25.1,
+        "annual_earnings_during_school": 4.0,
+        "id": 366.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 70312.0
+    },
+    {
+        "student_background_id": 367.0,
+        "fre_financial_return_on_education": 14.83,
+        "annual_earnings_during_school": 4.0,
+        "id": 367.0,
+        "estimated_time_to_degree_(years)": 9.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 94177.0
+    },
+    {
+        "student_background_id": 368.0,
+        "fre_financial_return_on_education": 27.32,
+        "annual_earnings_during_school": 4.0,
+        "id": 368.0,
+        "estimated_time_to_degree_(years)": 4.6,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 83879.0
+    },
+    {
+        "student_background_id": 369.0,
+        "fre_financial_return_on_education": 24.6,
+        "annual_earnings_during_school": 4.0,
+        "id": 369.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 58383.0
+    },
+    {
+        "student_background_id": 370.0,
+        "fre_financial_return_on_education": 16.89,
+        "annual_earnings_during_school": 4.0,
+        "id": 370.0,
+        "estimated_time_to_degree_(years)": 9.3,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 93630.0
+    },
+    {
+        "student_background_id": 371.0,
+        "fre_financial_return_on_education": 20.25,
+        "annual_earnings_during_school": 5.0,
+        "id": 371.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 76220.0
+    },
+    {
+        "student_background_id": 372.0,
+        "fre_financial_return_on_education": 29.38,
+        "annual_earnings_during_school": 5.0,
+        "id": 372.0,
+        "estimated_time_to_degree_(years)": 4.9,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 99715.0
+    },
+    {
+        "student_background_id": 373.0,
+        "fre_financial_return_on_education": 28.65,
+        "annual_earnings_during_school": 5.0,
+        "id": 373.0,
+        "estimated_time_to_degree_(years)": 8.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 59963.0
+    },
+    {
+        "student_background_id": 374.0,
+        "fre_financial_return_on_education": 21.62,
+        "annual_earnings_during_school": 5.0,
+        "id": 374.0,
+        "estimated_time_to_degree_(years)": 9.6,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 69435.0
+    },
+    {
+        "student_background_id": 375.0,
+        "fre_financial_return_on_education": 10.31,
+        "annual_earnings_during_school": 5.0,
+        "id": 375.0,
+        "estimated_time_to_degree_(years)": 8.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 51439.0
+    },
+    {
+        "student_background_id": 376.0,
+        "fre_financial_return_on_education": 16.71,
+        "annual_earnings_during_school": 1.0,
+        "id": 376.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 93193.0
+    },
+    {
+        "student_background_id": 377.0,
+        "fre_financial_return_on_education": 27.58,
+        "annual_earnings_during_school": 1.0,
+        "id": 377.0,
+        "estimated_time_to_degree_(years)": 5.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 54788.0
+    },
+    {
+        "student_background_id": 378.0,
+        "fre_financial_return_on_education": 18.5,
+        "annual_earnings_during_school": 1.0,
+        "id": 378.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 97700.0
+    },
+    {
+        "student_background_id": 379.0,
+        "fre_financial_return_on_education": 19.18,
+        "annual_earnings_during_school": 1.0,
+        "id": 379.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 54144.0
+    },
+    {
+        "student_background_id": 380.0,
+        "fre_financial_return_on_education": 26.95,
+        "annual_earnings_during_school": 1.0,
+        "id": 380.0,
+        "estimated_time_to_degree_(years)": 4.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 92052.0
+    },
+    {
+        "student_background_id": 381.0,
+        "fre_financial_return_on_education": 27.65,
+        "annual_earnings_during_school": 2.0,
+        "id": 381.0,
+        "estimated_time_to_degree_(years)": 5.2,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 64127.0
+    },
+    {
+        "student_background_id": 382.0,
+        "fre_financial_return_on_education": 10.71,
+        "annual_earnings_during_school": 2.0,
+        "id": 382.0,
+        "estimated_time_to_degree_(years)": 4.5,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 72754.0
+    },
+    {
+        "student_background_id": 383.0,
+        "fre_financial_return_on_education": 21.11,
+        "annual_earnings_during_school": 2.0,
+        "id": 383.0,
+        "estimated_time_to_degree_(years)": 3.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 99940.0
+    },
+    {
+        "student_background_id": 384.0,
+        "fre_financial_return_on_education": 23.57,
+        "annual_earnings_during_school": 2.0,
+        "id": 384.0,
+        "estimated_time_to_degree_(years)": 5.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 93657.0
+    },
+    {
+        "student_background_id": 385.0,
+        "fre_financial_return_on_education": 21.0,
+        "annual_earnings_during_school": 2.0,
+        "id": 385.0,
+        "estimated_time_to_degree_(years)": 2.2,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 81161.0
+    },
+    {
+        "student_background_id": 386.0,
+        "fre_financial_return_on_education": 24.06,
+        "annual_earnings_during_school": 3.0,
+        "id": 386.0,
+        "estimated_time_to_degree_(years)": 3.3,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 61333.0
+    },
+    {
+        "student_background_id": 387.0,
+        "fre_financial_return_on_education": 24.36,
+        "annual_earnings_during_school": 3.0,
+        "id": 387.0,
+        "estimated_time_to_degree_(years)": 1.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 81543.0
+    },
+    {
+        "student_background_id": 388.0,
+        "fre_financial_return_on_education": 15.08,
+        "annual_earnings_during_school": 3.0,
+        "id": 388.0,
+        "estimated_time_to_degree_(years)": 3.1,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 68346.0
+    },
+    {
+        "student_background_id": 389.0,
+        "fre_financial_return_on_education": 28.47,
+        "annual_earnings_during_school": 3.0,
+        "id": 389.0,
+        "estimated_time_to_degree_(years)": 3.9,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 97300.0
+    },
+    {
+        "student_background_id": 390.0,
+        "fre_financial_return_on_education": 19.27,
+        "annual_earnings_during_school": 3.0,
+        "id": 390.0,
+        "estimated_time_to_degree_(years)": 4.1,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 88779.0
+    },
+    {
+        "student_background_id": 391.0,
+        "fre_financial_return_on_education": 27.85,
+        "annual_earnings_during_school": 4.0,
+        "id": 391.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 90702.0
+    },
+    {
+        "student_background_id": 392.0,
+        "fre_financial_return_on_education": 23.42,
+        "annual_earnings_during_school": 3.0,
+        "id": 392.0,
+        "estimated_time_to_degree_(years)": 2.0,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 97102.0
+    },
+    {
+        "student_background_id": 393.0,
+        "fre_financial_return_on_education": 10.23,
+        "annual_earnings_during_school": 3.0,
+        "id": 393.0,
+        "estimated_time_to_degree_(years)": 3.0,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 69985.0
+    },
+    {
+        "student_background_id": 394.0,
+        "fre_financial_return_on_education": 18.48,
+        "annual_earnings_during_school": 3.0,
+        "id": 394.0,
+        "estimated_time_to_degree_(years)": 1.4,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 62792.0
+    },
+    {
+        "student_background_id": 395.0,
+        "fre_financial_return_on_education": 16.62,
+        "annual_earnings_during_school": 3.0,
+        "id": 395.0,
+        "estimated_time_to_degree_(years)": 2.8,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 82518.0
+    },
+    {
+        "student_background_id": 396.0,
+        "fre_financial_return_on_education": 19.29,
+        "annual_earnings_during_school": 5.0,
+        "id": 396.0,
+        "estimated_time_to_degree_(years)": 1.6,
+        "annual_financial_aid": 1.0,
+        "estimated_earnings_5_years_after_exit": 76055.0
+    },
+    {
+        "student_background_id": 397.0,
+        "fre_financial_return_on_education": 19.27,
+        "annual_earnings_during_school": 5.0,
+        "id": 397.0,
+        "estimated_time_to_degree_(years)": 1.7,
+        "annual_financial_aid": 2.0,
+        "estimated_earnings_5_years_after_exit": 76243.0
+    },
+    {
+        "student_background_id": 398.0,
+        "fre_financial_return_on_education": 29.93,
+        "annual_earnings_during_school": 5.0,
+        "id": 398.0,
+        "estimated_time_to_degree_(years)": 2.4,
+        "annual_financial_aid": 3.0,
+        "estimated_earnings_5_years_after_exit": 71551.0
+    },
+    {
+        "student_background_id": 399.0,
+        "fre_financial_return_on_education": 25.62,
+        "annual_earnings_during_school": 5.0,
+        "id": 399.0,
+        "estimated_time_to_degree_(years)": 1.3,
+        "annual_financial_aid": 4.0,
+        "estimated_earnings_5_years_after_exit": 96241.0
+    },
+    {
+        "student_background_id": 400.0,
+        "fre_financial_return_on_education": 27.06,
+        "annual_earnings_during_school": 5.0,
+        "id": 400.0,
+        "estimated_time_to_degree_(years)": 1.6,
+        "annual_financial_aid": 5.0,
+        "estimated_earnings_5_years_after_exit": 86412.0
+    }
+]

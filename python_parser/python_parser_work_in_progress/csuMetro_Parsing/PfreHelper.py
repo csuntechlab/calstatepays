@@ -8,19 +8,26 @@ import json
 
 class Sanitize_Pfre():
 
-    def __init__(self,file, indexID ):
+    def __init__(self,file, globalIndex ):
         self.file = file
-        localFilePath = './PFRE/' + self.file+'.csv'
+        self.globalIndex = globalIndex
+        localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv(localFilePath)
         self.sanitizeHeaders()
         print(list(self.df))
-        self.indexID = indexID
+        self.set_index()
         self.dictionary = self.get_Dictionary()
         self.set_values_for_data_frame()
         self.sanitize_data_frame()
+
+    def set_index(self):
+        lenOfDf = len(self.df) + self.globalIndex
+        self.df.loc[:,'id'] = range(self.globalIndex,lenOfDf) 
+        self.df.loc[:,'student_background_id'] = range(self.globalIndex,lenOfDf) 
+        self.globalIndex = lenOfDf
     
-    def getIndexID(self):
-        return self.indexID
+    def get_global_index(self):
+        return self.globalIndex
     
     def sanitizeHeaders(self):
         self.df.columns = self.df.columns.str.replace('- ','')
@@ -36,9 +43,7 @@ class Sanitize_Pfre():
 
     def set_values_for_data_frame(self):
         self.df['university_majors_id'] = -1
-        self.df['id'] = -1
-        self.df['student_background_id'] = -1
-
+        
         age_range = {'19 years or less':1,'20-23 years':2,'24-30 years':3,'More than 30 years':4}
         annual_earnings = {'$0 ':1,'$1 - $4,500':2,'$4,501 - $10,500':3,'$10,501 - $18,000':4,'> $18,000':5}
         annual_financial_aid = {'$0 ':1,'FA Range 1':2,'FA Range 2':3,'FA Range 3':4,'FA Range 4':5}
@@ -59,15 +64,15 @@ class Sanitize_Pfre():
             # print(row[12]) # student_background_id
             # print("**********")
 
-            campus = row[0]
+            campus = row['campus']
 
-            age_range_str = row[2]
+            age_range_str = row['age_range']
             age_range_id = age_range[age_range_str]
 
-            annual_earnings_str = row[4]
+            annual_earnings_str = row['annual_earnings_during_school']
             annual_earnings_id = annual_earnings[annual_earnings_str]
 
-            annual_financial_aid_str = row[5]
+            annual_financial_aid_str = row['annual_financial_aid']
             annual_financial_aid_id = annual_financial_aid[annual_financial_aid_str]
 
             self.df.ix[index,'age_range'] = age_range_id
@@ -76,9 +81,7 @@ class Sanitize_Pfre():
 
             # uni_majors_id = self.dictionary[campus][hegis] 
             # self.df.ix[index,'university_majors_id'] = uni_majors_id
-            self.df.ix[index,'id'] = self.indexID
-            self.df.ix[index,'student_background_id'] = self.indexID
-            self.indexID += 1
+            # self.df.ix[index,'student_background_id'] = self.indexID
     
     def sanitize_data_frame(self):
         '''
