@@ -50,7 +50,9 @@ class UniversitiesDataFrameErrorChecker():
     df.columns = df.columns.str.replace(' ','_')
     
     #TODO: ERROR CHECKING COMMENT THIS OUT 
-    df = df.loc[df['student_path'].isin([1,2,4])]
+    # df = df.loc[df['student_path'].isin([1,2,4])]
+    # df = df.loc[df['student_path'].isin([5,6])]
+    # df = df.loc[df['student_path'].isin([1,2,3,4])]
     df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
     return df
 
