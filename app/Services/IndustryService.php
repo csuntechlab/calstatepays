@@ -90,14 +90,16 @@ class IndustryService implements IndustryContract
         // dd($industry_populations);
 
         /** Get the population total for each */
-        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_major);
-        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_major);
-        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_major);
+        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
+        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
+        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
 
         /** Calculate the percentages */
-        $someCollege_population = $this->calculatePopulationPercentages($someCollege_major);
+        $someCollege_population = $this->calculatePopulationPercentages($someCollege_population,$someCollege_total);
+        $bachelors_population = $this->calculatePopulationPercentages($bachelors_population,$bachelors_total);
+        $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population,$post_bacc_total);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
         return $industry_populations;
