@@ -187,14 +187,35 @@ class IndustryControllerTest extends TestCase
      */
     public function testReturn200StatusGetIndustryPopulationByRankWithImages()
     {
-        $response = $this->json('GET', '/api/industry/images/5021/northridge/1');
+        $response = $this->json('GET', '/api/industry/images/5021/northridge');
+
         $response->assertJsonStructure([
-            0 => [
-                'title',
-                'percentage',
-                'rank',
-                'image'
+
+            "someCollege" =>[
+                    0 => [
+                        'title',
+                        'percentage',
+                        'rank',
+                        'image'
+                    ]
+                ],
+            "post_bacc" => [
+                    0 => [
+                        'title',
+                        'percentage',
+                        'rank',
+                        'image'
+                    ]
+                ],
+            "bachelors" => [
+                0 => [
+                    'title',
+                    'percentage',
+                    'rank',
+                    'image'
+                ]
             ]
+
         ]);
         $response->assertStatus(200);
     }
@@ -283,11 +304,13 @@ class IndustryControllerTest extends TestCase
         $request = new IndustryFormRequest($input);
         
         $firstResult = json_encode([
-                [
-                "title"=> "Professional, Scientific, & Technical Skills",
-                "percentage"=> 40,
-                "rank"=> 1,
-                "industryWage"=> 69328
+                "bachelors" =>  [
+                   "0" => [
+                        "title"=> "Professional, Scientific, & Technical Skills",
+                        "percentage"=> 40,
+                        "rank"=> 1,
+                        "industryWage"=> 69328
+                    ]
                 ]
             ]);
         

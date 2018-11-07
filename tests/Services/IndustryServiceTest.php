@@ -50,10 +50,10 @@ class IndustryServiceTest extends TestCase
 
         $response = $this->industryService->getIndustryPopulationByRankWithImages(5021, 'northridge');
 
-        $this->assertArrayHasKey("title", $response[0]);
-        $this->assertArrayHasKey("percentage", $response[0]);
-        $this->assertArrayHasKey('rank', $response[0]);
-        $this->assertArrayHasKey('image', $response[0]);
+        $this->assertArrayHasKey("title", $response['post_bacc'][0]);
+        $this->assertArrayHasKey("percentage", $response['post_bacc'][0]);
+        $this->assertArrayHasKey('rank', $response['post_bacc'][0]);
+        $this->assertArrayHasKey('image', $response['post_bacc'][0]);
     }
 
     // route is api/industry/{hegis_code}/{university_id}
@@ -73,9 +73,9 @@ class IndustryServiceTest extends TestCase
 
         $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
 
-        $this->assertArrayHasKey("title", $response[0]);
-        $this->assertArrayHasKey("percentage", $response[0]);
-        $this->assertArrayHasKey('rank', $response[0]);
+        $this->assertArrayHasKey("title", $response['someCollege'][0]);
+        $this->assertArrayHasKey("percentage", $response['someCollege'][0]);
+        $this->assertArrayHasKey('rank', $response['someCollege'][0]);
     }
 
     public function test_getIndustryPopulationByRankWithImages_throws_a_model_not_found_exception()
@@ -118,21 +118,20 @@ class IndustryServiceTest extends TestCase
          * it is possible for the need to switch these values in the future
          * in order to make the test pass
          */
-        $someCollege = [
+        $bachelors = [
             [
-                "title" => "Professional, Scientific, & Technical Skills",
-                "percentage" => 37.25,
-                "rank" => 1,
-                "image" => "/img/industries/professional_scientific_technical_skills.png",
-                "industryWage" => '71707'
+                "title"=> "Professional, Scientific, & Technical Skills",
+                "percentage"=> 37.25,
+                "rank"=> 1,
+                "image"=> "http://localhost/img/industries/professional_scientific_technical_skills.png",
+                "industryWage"=> 71707
             ]
         ];
-
-        $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
-        $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
-        $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
-        $this->assertEquals(asset($truthyArray[0]['image']), $response[0]['image']);
-        $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
+        $this->assertEquals($bachelors[0]['title'], $response['bachelors'][0]['title']);
+        $this->assertEquals($bachelors[0]['percentage'], $response['bachelors'][0]['percentage']);
+        $this->assertEquals($bachelors[0]['rank'], $response['bachelors'][0]['rank']);
+        $this->assertEquals(asset($bachelors[0]['image']), $response['bachelors'][0]['image']);
+        $this->assertEquals($bachelors[0]['industryWage'], $response['bachelors'][0]['industryWage']);
     }
 
     /**
@@ -153,10 +152,11 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        $degreeLevel = 1;
+        // $degreeLevel = 1;
 
-        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
+        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
 
+        //bachelors
         $truthyArray = [
             [
                 "title" => "Professional, Scientific, & Technical Skills",
@@ -166,10 +166,10 @@ class IndustryServiceTest extends TestCase
             ]
         ];
 
-        $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
-        $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
-        $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
-        $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
+        $this->assertEquals($truthyArray[0]['title'], $response['bachelors'][0]['title']);
+        $this->assertEquals($truthyArray[0]['percentage'], $response['bachelors'][0]['percentage']);
+        $this->assertEquals($truthyArray[0]['rank'], $response['bachelors'][0]['rank']);
+        $this->assertEquals($truthyArray[0]['industryWage'], $response['bachelors'][0]['industryWage']);
     }
 
 }
