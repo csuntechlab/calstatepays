@@ -43,6 +43,8 @@ Route::get('industry/images/{major}/{university}/{degreeLevel}', 'IndustryContro
 //University
 Route::get('/university', 'UniversityController@getAllUniversities');
 
+Route::get('/power/{university}/{id}','PowerUsersController@helloWorld');
+
 //Middleware
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
