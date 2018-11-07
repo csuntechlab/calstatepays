@@ -102,7 +102,12 @@ class IndustryService implements IndustryContract
         $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population,$post_bacc_total);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
-        return $industry_populations;
+        /** concatenate each array to finalize the API */
+        $industry_wages["someCollege"] = $someCollege_population;
+        $industry_wages["bachelors"]  = $bachelors_population;
+        $industry_wages["post_bacc"]  = $post_bacc_population;
+        $industry_wages["all"]  = $industry_populations;
+        return $industry_wages;
     }
 
     private function sortIndustryPopulation($university_major)
