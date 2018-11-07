@@ -58,27 +58,46 @@ class IndustryService implements IndustryContract
         /** no longer using degree level, must extract degree 1,2,4 for equal population total */
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-            // $query->where('student_path', $degree);
         }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();
-            // dd($university_major);
         
-        foreach ($university_major->industry_path_type as $key=>$data) {
-            if ($data['student_path'] == 2) {
-                $someCollege[$key] = $data;
-            } else if ($data['student_path'] == 1) {
-                $bachelors[$key] = $data;
-            } else if ($data['student_path'] == 4) {
-                $post_bacc[$key] = $data;
-            }
-        }
+        /** Seperate each student_path for fair population found comparison */
+        $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
 
+        // dd($someCollege_major);
+        // dd($someCollege_major);
+        
+        // /** Seperate each industry by student path */
+        // foreach ($university_major->industryPathTypes as $key=>$data) {
+        //     if ($data['student_path'] == 2) {
+        //         $someCollege[$key] = $data;
+        //     } else if ($data['student_path'] == 1) {
+        //         $bachelors[$key] = $data;
+        //     } else if ($data['student_path'] == 4) {
+        //         $post_bacc[$key] = $data;
+        //     }
+        // }
+
+        /** Sort each student_path */
+        // $someCollege_population = $this->sortIndustryPopulation($someCollege_major);
+        // $bachelors_population   = $this->sortIndustryPopulation($bachelors_major);
+        // $post_bacc_population   = $this->sortIndustryPopulation($post_bacc_major);
         $industry_populations = $this->sortIndustryPopulation($university_major);
+        // dd($industry_populations);
 
+        /** Get the population total for each */
+        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_major);
+        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_major);
+        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_major);
         $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
+
+        /** Calculate the percentages */
+        $someCollege_population = $this->calculatePopulationPercentages($someCollege_major);
         $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
         return $industry_populations;
