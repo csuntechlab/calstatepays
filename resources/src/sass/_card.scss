@@ -52,3 +52,34 @@
     padding-top: 50px;
     @extend %card-base;
 }
+
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container.flip .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.25s;
+	transform-style: preserve-3d;
+}
+
+/* hide back of pane during swap */
+.card-front, .card-back {
+	// backface-visibility: hidden;
+
+}
+
+/* front pane, placed above back */
+.card-front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.card-back {
+	transform: rotateY(180deg);
+}

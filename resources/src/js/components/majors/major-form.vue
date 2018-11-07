@@ -1,7 +1,9 @@
 <template>
-    <form class="flip-area" v-bind:id="'majorForm-' + form.cardIndex">
-		<fieldset class="csu-card__form-sizing flip">
-			<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce" title="Reset"></i>
+    <form v-bind:id="'majorForm-' + form.cardIndex">
+		<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce" title="Reset"></i>
+		<div class="flip-container">
+			<fieldset class="csu-card__form-sizing flipper">
+			
 			<div class="card-front" v-if="!selectedFormWasSubmitted">
 				<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
@@ -70,6 +72,8 @@
 				</button>
 			</div>
 		</fieldset>
+		</div>
+		
     </form>
 </template>
 
@@ -120,6 +124,7 @@ export default {
 		updateForm,
 		resetCurrentCard() {
 			this.resetMajorCard(this.index);
+			document.querySelector(".flip-container").classList.toggle("flip");
 		},
 
 		submitForm() {
@@ -130,6 +135,7 @@ export default {
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
+				document.querySelector(".flip-container").classList.toggle("flip");
 			}
 		},
 

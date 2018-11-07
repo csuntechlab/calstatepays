@@ -51860,6 +51860,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -51901,6 +51905,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
 		resetCurrentCard: function resetCurrentCard() {
 			this.resetMajorCard(this.index);
+			document.querySelector(".flip-container").classList.toggle("flip");
 		},
 		submitForm: function submitForm() {
 			this.formNotFilled = false;
@@ -51910,6 +51915,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
+				document.querySelector(".flip-container").classList.toggle("flip");
 			}
 		},
 		checkForm: function checkForm() {
@@ -51974,28 +51980,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "flip-area",
-      attrs: { id: "majorForm-" + _vm.form.cardIndex }
-    },
-    [
-      _c("fieldset", { staticClass: "csu-card__form-sizing flip" }, [
-        _c("i", {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.selectedFormWasSubmittedOnce,
-              expression: "selectedFormWasSubmittedOnce"
-            }
-          ],
-          staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-          attrs: { title: "Reset" },
-          on: { click: _vm.resetCurrentCard }
-        }),
-        _vm._v(" "),
+  return _c("form", { attrs: { id: "majorForm-" + _vm.form.cardIndex } }, [
+    _c("i", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.selectedFormWasSubmittedOnce,
+          expression: "selectedFormWasSubmittedOnce"
+        }
+      ],
+      staticClass: "fa fa-refresh fa-2x btn-reset float-right",
+      attrs: { title: "Reset" },
+      on: { click: _vm.resetCurrentCard }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "flip-container" }, [
+      _c("fieldset", { staticClass: "csu-card__form-sizing flipper" }, [
         !_vm.selectedFormWasSubmitted
           ? _c("div", { staticClass: "card-front" }, [
               !_vm.selectedFormWasSubmitted
@@ -52275,8 +52276,8 @@ var render = function() {
               )
             ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
