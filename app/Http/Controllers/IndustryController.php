@@ -38,24 +38,5 @@ class IndustryController extends Controller
         }
         $industry_data =  $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
         return $industry_data;
-
-        foreach ($industry_data as $key=>$data) {
-            if ($data['student_path'] == 2) {
-                $someCollege[$key] = $data;
-            } else if ($data['student_path'] == 1) {
-                $bachelors[$key] = $data;
-            } else if ($data['student_path'] == 4) {
-                $post_bacc[$key] = $data;
-            }
-        }
-
-        $majorData = [
-            'majorId' => $request->major,
-            'universityName' => $request->university,
-            'someCollege' => array_values($someCollege),
-            'bachelors' => array_values($bachelors) ,
-            'postBacc' => array_values($post_bacc),
-        ];
-        return $majorData;
     }
 }
