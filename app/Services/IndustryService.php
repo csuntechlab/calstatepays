@@ -52,7 +52,6 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        // $degree = 1;
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
         
         /** no longer using degree level, must extract degree 1,2,4 for equal population total */
@@ -67,27 +66,7 @@ class IndustryService implements IndustryContract
         $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
         $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
         $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
-
-        // dd($someCollege_major);
-        // dd($someCollege_major);
-        
-        // /** Seperate each industry by student path */
-        // foreach ($university_major->industryPathTypes as $key=>$data) {
-        //     if ($data['student_path'] == 2) {
-        //         $someCollege[$key] = $data;
-        //     } else if ($data['student_path'] == 1) {
-        //         $bachelors[$key] = $data;
-        //     } else if ($data['student_path'] == 4) {
-        //         $post_bacc[$key] = $data;
-        //     }
-        // }
-
-        /** Sort each student_path */
-        // $someCollege_population = $this->sortIndustryPopulation($someCollege_major);
-        // $bachelors_population   = $this->sortIndustryPopulation($bachelors_major);
-        // $post_bacc_population   = $this->sortIndustryPopulation($post_bacc_major);
         $industry_populations = $this->sortIndustryPopulation($university_major);
-        // dd($industry_populations);
 
         /** Get the population total for each */
         $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
