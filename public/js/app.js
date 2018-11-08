@@ -47635,7 +47635,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-graduation-cap fa-5x" })
+      _c("i", {
+        staticClass: "fa fa-graduation-cap landing-page__icon--cap fa-5x"
+      })
     ])
   },
   function() {
@@ -47663,7 +47665,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-line-chart fa-5x" })
+      _c("i", {
+        staticClass: "fa fa-line-chart landing-page__icon--chart fa-5x"
+      })
     ])
   },
   function() {
@@ -47687,7 +47691,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home__icon" }, [
-      _c("i", { staticClass: "fa fa-usd fa-5x" })
+      _c("i", { staticClass: "fa fa-usd landing-page__icon--usd fa-5x" })
     ])
   },
   function() {
@@ -48271,7 +48275,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //
