@@ -37,9 +37,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
         // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
         // $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
-        // $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
-
-        // $this->call(Investments_Template_Northridge_TableSeeder::class);
-        // $this->call(Student_Backgrounds_Template_Northridge_TableSeeder::class);
+        // $this->call(Majors_Different_Hegis_Same_Major_Table_Seeder::class);
     }
 }

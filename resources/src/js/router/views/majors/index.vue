@@ -12,7 +12,7 @@
 		<sub-nav/>
 		<div class="graphContent" id="majorCardWrapper" @scroll="handleScroll">
 			<div class="container">
-				<major-card v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
+				<major-card  v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
 				<major-card-mobile v-if="isMobile" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
 				<card-add class="row" id="plus" v-on:cardPlusError="scrollToNextCard($event)" />		
 			</div>		

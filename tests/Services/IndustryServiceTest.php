@@ -97,43 +97,43 @@ class IndustryServiceTest extends TestCase
      * function IndustryController@getIndustryPopulationByRankWithImages
      * Use phpunit to get real api vals, test agaisnt real api output from route
      */
-    public function test_Aggregate_getIndustryPopulationByRankWithImages()
-    {
+    // public function test_Aggregate_getIndustryPopulationByRankWithImages()
+    // {
 
-        $this->seed('Universities_TableSeeder');
-        $this->seed('Aggregate_University_Majors_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
-        $this->seed('Aggregate_Industry_Population_TableSeeder');
-        $this->seed('Naics_Titles_TableSeeder');
+    //     $this->seed('Universities_TableSeeder');
+    //     $this->seed('Aggregate_University_Majors_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Population_TableSeeder');
+    //     $this->seed('Naics_Titles_TableSeeder');
 
-        $university_name = 'all';
-        $hegis = 5021;
-        $degreeLevel = 1;
-        $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name, $degreeLevel);
+    //     $university_name = 'all';
+    //     $hegis = 5021;
+    //     $degreeLevel = 1;
+    //     $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name, $degreeLevel);
 
-        /**
-         * real values from the actual array
-         * this is position 0 from the real api
-         * it is possible for the need to switch these values in the future
-         * in order to make the test pass
-         */
-        $truthyArray = [
-            [
-                "title" => "Professional, Scientific, & Technical Skills",
-                "percentage" => 37.25,
-                "rank" => 1,
-                "image" => "/img/industries/professional_scientific_technical_skills.png",
-                "industryWage" => '71707'
-            ]
-        ];
+    //     /**
+    //      * real values from the actual array
+    //      * this is position 0 from the real api
+    //      * it is possible for the need to switch these values in the future
+    //      * in order to make the test pass
+    //      */
+    //     $truthyArray = [
+    //         [
+    //             "title" => "Professional, Scientific, & Technical Skills",
+    //             "percentage" => 37.25,
+    //             "rank" => 1,
+    //             "image" => "/img/industries/professional_scientific_technical_skills.png",
+    //             "industryWage" => '71707'
+    //         ]
+    //     ];
 
-        $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
-        $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
-        $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
-        $this->assertEquals(asset($truthyArray[0]['image']), $response[0]['image']);
-        $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
-    }
+    //     $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
+    //     $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
+    //     $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
+    //     $this->assertEquals(asset($truthyArray[0]['image']), $response[0]['image']);
+    //     $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
+    // }
 
     /**
      *   api is industry/{hegis_code}/{universityName}
@@ -142,34 +142,34 @@ class IndustryServiceTest extends TestCase
      *   (same as above)
      */
 
-    public function test_Aggregate_getIndustryPopulationByRank()
-    {
-        $this->seed('Universities_TableSeeder');
-        $this->seed('Aggregate_University_Majors_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
-        $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
-        $this->seed('Aggregate_Industry_Population_TableSeeder');
-        $this->seed('Naics_Titles_TableSeeder');
+    // public function test_Aggregate_getIndustryPopulationByRank()
+    // {
+    //     $this->seed('Universities_TableSeeder');
+    //     $this->seed('Aggregate_University_Majors_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Path_Types_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Path_Wages_TableSeeder');
+    //     $this->seed('Aggregate_Industry_Population_TableSeeder');
+    //     $this->seed('Naics_Titles_TableSeeder');
 
-        $university_name = 'all';
-        $hegis = 5021;
-        $degreeLevel = 1;
+    //     $university_name = 'all';
+    //     $hegis = 5021;
+    //     $degreeLevel = 1;
 
-        $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
+    //     $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name, $degreeLevel);
 
-        $truthyArray = [
-            [
-                "title" => "Professional, Scientific, & Technical Skills",
-                "percentage" => 37.25,
-                "rank" => 1,
-                "industryWage" => "71707"
-            ]
-        ];
+    //     $truthyArray = [
+    //         [
+    //             "title" => "Professional, Scientific, & Technical Skills",
+    //             "percentage" => 37.25,
+    //             "rank" => 1,
+    //             "industryWage" => "71707"
+    //         ]
+    //     ];
 
-        $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
-        $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
-        $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
-        $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
-    }
+    //     $this->assertEquals($truthyArray[0]['title'], $response[0]['title']);
+    //     $this->assertEquals($truthyArray[0]['percentage'], $response[0]['percentage']);
+    //     $this->assertEquals($truthyArray[0]['rank'], $response[0]['rank']);
+    //     $this->assertEquals($truthyArray[0]['industryWage'], $response[0]['industryWage']);
+    // }
 
 }

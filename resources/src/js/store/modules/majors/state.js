@@ -7,6 +7,7 @@ export default {
     majorCards: [
         {
             formWasSubmitted: false,
+            submittedOnce: false,
             majorsByField: [],
             industries: [],
             majorData: [],

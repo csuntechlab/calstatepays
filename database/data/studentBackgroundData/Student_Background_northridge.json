@@ -1,2802 +1,2802 @@
 [
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 1,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 2,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 3,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 4,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 5,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 6,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 7,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 8,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 9,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 10,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 11,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 12,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 13,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 14,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 15,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 16,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 17,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 18,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 19,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 20,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 21,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 22,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 23,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 24,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 25,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 26,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 27,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 28,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 29,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 30,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 31,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 32,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 33,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 34,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 35,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 36,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 37,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 38,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 39,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 40,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 41,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 42,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 43,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 44,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 45,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 46,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 47,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 48,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 49,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 50,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 51,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 52,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 53,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 54,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 55,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 56,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 57,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 58,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 59,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 60,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 61,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 62,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 63,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 64,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 65,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 66,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 67,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 68,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 69,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 70,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 71,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 72,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 73,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 74,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 75,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 76,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 77,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 78,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 79,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 80,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 81,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 82,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 83,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 84,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 85,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 86,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 87,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 88,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 89,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 90,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 91,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 92,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 93,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 94,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 95,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 96,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 97,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 98,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 99,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 100,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 101,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 102,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 103,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 104,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 105,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 106,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 107,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 108,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 109,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 110,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 111,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 112,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 113,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 114,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 115,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 116,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 117,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 118,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 119,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 120,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 121,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 122,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 123,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 124,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 125,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 126,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 127,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 128,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 129,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 130,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 131,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 132,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 133,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 134,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 135,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 136,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 137,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 138,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 139,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 140,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 141,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 142,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 143,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 144,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 145,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 146,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 147,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 148,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 149,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 150,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 151,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 152,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 153,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 154,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 155,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 156,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 157,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 158,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 159,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 160,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 161,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 162,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 163,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 164,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 165,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 166,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 167,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 168,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 169,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 170,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 171,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 172,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 173,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 174,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 175,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 176,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 177,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 178,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 179,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 180,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 181,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 182,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 183,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 184,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 185,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 186,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 187,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 188,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 189,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 190,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 191,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 192,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 193,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 194,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 195,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 196,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 197,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 198,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 199,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 200,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 201,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 202,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 203,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 204,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 205,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 206,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 207,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 208,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 209,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 210,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 211,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 212,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 213,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 214,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 215,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 216,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 217,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 218,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 219,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 220,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 221,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 222,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 223,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 224,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 225,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 226,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 227,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 228,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 229,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 230,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 231,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 232,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 233,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 234,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 235,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 236,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 237,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 238,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 239,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 240,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 241,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 242,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 243,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 244,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 245,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 246,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 247,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 248,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 1,
         "id": 249,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
-    },
-    {
-        "campus": 70,
+        "entry_stat": "FTT",
         "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 4
+    },
+    {
         "id": 250,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 1,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 251,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 252,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 253,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 254,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 255,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 256,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 257,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 258,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 259,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 260,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 261,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 262,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 263,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 264,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 265,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 266,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 267,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 268,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 269,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 270,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 271,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 272,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 273,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 274,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 275,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 276,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 277,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 278,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 279,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 280,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 281,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 282,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 283,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 284,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 285,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 286,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 287,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 288,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 289,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 290,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 291,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 292,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 293,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 294,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 295,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 296,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 297,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 298,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 2,
         "id": 299,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
-    },
-    {
-        "campus": 70,
+        "entry_stat": "FTT",
         "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 4
+    },
+    {
         "id": 300,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 2,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 301,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 302,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 303,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 304,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 305,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 306,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 307,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 308,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 309,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 310,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 311,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 312,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 313,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 314,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 315,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 316,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 317,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 318,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 319,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 320,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 321,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 322,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 323,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 324,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 325,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 326,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 327,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 328,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 329,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 330,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 331,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 332,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 333,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 334,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 335,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 336,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 337,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 338,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 339,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 340,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 341,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 342,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 343,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 344,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 345,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 346,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 347,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 348,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 3,
         "id": 349,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
-    },
-    {
-        "campus": 70,
+        "entry_stat": "FTT",
         "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 4
+    },
+    {
         "id": 350,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 3,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 351,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 352,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 353,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 354,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 355,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 356,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 357,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 358,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 359,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 360,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 361,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 362,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 363,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 364,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 365,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 366,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 367,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 368,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 369,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 370,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 371,
-        "university_majors_id": 1,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 372,
-        "university_majors_id": 2,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 373,
-        "university_majors_id": 3,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 374,
-        "university_majors_id": 4,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 375,
-        "university_majors_id": 5,
-        "entry_stat": "FTF"
+        "entry_stat": "FTF",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 376,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 377,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 378,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 379,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 380,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 381,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 382,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 383,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 384,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 385,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 386,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 387,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 388,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 389,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 390,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 391,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 392,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 393,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 394,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 395,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 396,
-        "university_majors_id": 1,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 1
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 397,
-        "university_majors_id": 2,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 2
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 398,
-        "university_majors_id": 3,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 3
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 399,
-        "university_majors_id": 4,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 4
     },
     {
-        "campus": 70,
-        "age_range": 4,
         "id": 400,
-        "university_majors_id": 5,
-        "entry_stat": "FTT"
+        "entry_stat": "FTT",
+        "age_range": 4,
+        "campus": 70,
+        "university_majors_id": 5
     }
 ]
