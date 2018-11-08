@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-start">
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
-                    <h2 class="CSUDataImgBanner__campusTitle"> {{getCampusName}} Cal State Northridge</h2>
+                    <h2 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h2>
                     <div data-app>
                         <campus-modal>
                             <span slot="change button" class="CSUDataImgBanner__changeCampus" href="#">Change Campus</span>

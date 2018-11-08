@@ -48541,9 +48541,7 @@ var render = function() {
             { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
             [
               _c("h2", { staticClass: "CSUDataImgBanner__campusTitle" }, [
-                _vm._v(
-                  " " + _vm._s(_vm.getCampusName) + " Cal State Northridge"
-                )
+                _vm._v(" " + _vm._s(_vm.getCampusName))
               ]),
               _vm._v(" "),
               _c(
