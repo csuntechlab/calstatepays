@@ -53,33 +53,47 @@
     @extend %card-base;
 }
 
-.flip-container {
-	perspective: 1000px;
-}
-	/* flip the pane when hovered */
-	.flip-container.flip .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
 
-/* flip speed goes here */
-.flipper {
-	transition: 0.25s;
-	transform-style: preserve-3d;
-}
+.flip-enter-active {
+    transition: all .18s cubic-bezier(0.55, 0.085, 0.68, 0.53); //ease-in-quad
+  }
+  
+  .flip-leave-active {
+    transition: all .18s cubic-bezier(0.25, 0.46, 0.45, 0.94); //ease-out-quad
+  }
+  
+  .flip-enter, .flip-leave-to {
+    transform: scaleX(0) translateZ(0);
+    opacity: 0;
+  }
 
-/* hide back of pane during swap */
-.card-front, .card-back {
-	// backface-visibility: hidden;
+// .flip-container {
+// 	perspective: 1000px;
+// }
+// 	/* flip the pane when hovered */
+// 	.flip-container.flip .flipper, .flip-container.hover .flipper {
+// 		transform: rotateY(180deg);
+// 	}
 
-}
+// /* flip speed goes here */
+// .flipper {
+// 	transition: 0.25s;
+// 	transform-style: preserve-3d;
+// }
 
-/* front pane, placed above back */
-.card-front {
-	z-index: 2;
-	transform: rotateY(0deg);
-}
+// /* hide back of pane during swap */
+// .card-front, .card-back {
+// 	backface-visibility: hidden;
 
-/* back, initially hidden pane */
-.card-back {
-	transform: rotateY(180deg);
-}
+// }
+
+// /* front pane, placed above back */
+// .card-front {
+// 	z-index: 2;
+// 	transform: rotateY(0deg);
+// }
+
+// /* back, initially hidden pane */
+// .card-back {
+// 	transform: rotateY(180deg);
+// }

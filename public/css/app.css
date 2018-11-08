@@ -18856,37 +18856,20 @@ html {
   padding-top: 50px;
 }
 
-.flip-container {
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
+.flip-enter-active {
+  -webkit-transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
-/* flip the pane when hovered */
-.flip-container.flip .flipper, .flip-container.hover .flipper {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+.flip-leave-active {
+  -webkit-transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* flip speed goes here */
-.flipper {
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-/* hide back of pane during swap */
-/* front pane, placed above back */
-.card-front {
-  z-index: 2;
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.card-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+.flip-enter, .flip-leave-to {
+  -webkit-transform: scaleY(0) translateZ(0);
+          transform: scaleY(0) translateZ(0);
+  opacity: 0;
 }
 
 .text-gray {
@@ -19957,6 +19940,7 @@ textarea {
 }
 
 .btn-reset {
+  position: relative;
   color: #777777;
   padding-top: 3px;
   font-size: 1.6rem;
