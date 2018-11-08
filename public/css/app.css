@@ -19950,6 +19950,7 @@ textarea {
 }
 
 .btn-reset {
+  z-index: 2;
   position: relative;
   color: #777777;
   padding-top: 3px;

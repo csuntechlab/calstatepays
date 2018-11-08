@@ -1,7 +1,8 @@
 <template>
     <form v-bind:id="'majorForm-' + form.cardIndex">
-		<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500" title="Reset"></i>
+		
 			<fieldset class="csu-card__form-sizing">
+				<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500" title="Reset"></i>
 				<transition name="flip" mode="out-in">
 					<div key="1" class="amiahere" v-if="!selectedFormWasSubmitted">
 						<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
