@@ -25,6 +25,7 @@ class JsonMajor:
     campusId =  int(output[0]['campus'])
     
     hegisDictionary = {}
+    dictionaryMajorToId = {}
 
     universityMajorsId = []
 
@@ -36,14 +37,21 @@ class JsonMajor:
       major =  (row['major'])
       dictRename = {'hegis_codes': hegis,'campus':campus,'major':major,'id':row['id']}
       universityMajorsId.append(dictRename)
+
+      dictionaryMajorToId[major] = row['id']
       
       self.universityMajorsDataFrame = self.universityMajorsDataFrame.append( dictRename , ignore_index=True)
 
     del output
     
     dictionary  = {campusId:hegisDictionary}
+    dict
     filePath = './dictionaries/'+self.file+'.json'
     self.jsonOutputter.json_output_with_simple_json(filePath,dictionary)
+
+    # sorted_x = sorted(.items(), key=operator.itemgetter(0))
+    filePath = './majorToId/'+self.file+'.json'
+    self.jsonOutputter.json_output_with_simple_json(filePath,dictionaryMajorToId)
     return dictionary
   
   def getMajorsTables(self, majorPathDf , majorPathWageDf ):

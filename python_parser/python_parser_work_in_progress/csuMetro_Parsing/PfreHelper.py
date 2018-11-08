@@ -39,7 +39,7 @@ class Sanitize_Pfre():
     
     def get_Dictionary(self):
         fileName = self.file.replace("_pfre","")
-        jsonFile = open('./dictionaries/'+fileName+'.json')
+        jsonFile = open('./majorToId/'+fileName+'.json')
         dictionary = jsonFile.read()
         dictionary = json.loads(dictionary)
         return dictionary
@@ -67,7 +67,7 @@ class Sanitize_Pfre():
             # print(row[12]) # student_background_id
             # print("**********")
 
-            campus = row['campus']
+            major = row['major']
 
             age_range_str = row['age_range']
             age_range_id = age_range[age_range_str]
@@ -78,11 +78,15 @@ class Sanitize_Pfre():
             annual_financial_aid_str = row['annual_financial_aid']
             annual_financial_aid_id = annual_financial_aid[annual_financial_aid_str]
 
+            uni_majors_id = self.dictionary[major]
+            
+
             self.df.ix[index,'age_range'] = age_range_id
             self.df.ix[index,'annual_earnings_during_school'] = annual_earnings_id
             self.df.ix[index,'annual_financial_aid'] = annual_financial_aid_id
-
-            # uni_majors_id = self.dictionary[campus][hegis] 
+            self.df.ix[index,'annual_financial_aid'] = annual_financial_aid_id
+            self.df.ix[index,'university_majors_id'] = annual_financial_aid_id
+            
             # self.df.ix[index,'university_majors_id'] = uni_majors_id
             # self.df.ix[index,'student_background_id'] = self.indexID
     
