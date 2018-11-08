@@ -19,51 +19,51 @@
     },
     {
         "campus": 70,
-        "hegis_codes": 5021,
-        "id": 4,
-        "major": "Accounting"
-    },
-    {
-        "campus": 70,
         "hegis_codes": 4111,
-        "id": 5,
+        "id": 4,
         "major": "Microbiology"
     },
     {
         "campus": 70,
         "hegis_codes": 4141,
-        "id": 6,
+        "id": 5,
         "major": "Biochemistry"
     },
     {
         "campus": 70,
         "hegis_codes": 4152,
-        "id": 7,
+        "id": 6,
         "major": "Biomedical Physics"
     },
     {
         "campus": 70,
         "hegis_codes": 4171,
-        "id": 8,
+        "id": 7,
         "major": "Cell and Molecular Biology"
     },
     {
         "campus": 70,
         "hegis_codes": 4201,
-        "id": 9,
+        "id": 8,
         "major": "Environmental Biology & Ecology"
     },
     {
         "campus": 70,
         "hegis_codes": 5011,
-        "id": 10,
+        "id": 9,
         "major": "Business Administration"
     },
     {
         "campus": 70,
         "hegis_codes": 5012,
-        "id": 11,
+        "id": 10,
         "major": "Business Education"
+    },
+    {
+        "campus": 70,
+        "hegis_codes": 5021,
+        "id": 11,
+        "major": "Accounting"
     },
     {
         "campus": 70,

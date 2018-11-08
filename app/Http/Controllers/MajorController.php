@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\HEGISCode;
 use App\Models\UniversityMajor;
 use App\Contracts\MajorContract;
+use Validator;
+use App\Http\Requests\MajorFormRequest;
 
 class MajorController extends Controller
 {
@@ -27,9 +29,9 @@ class MajorController extends Controller
         return $this->majorRetriever->getAllFieldOfStudies();
     }
 
-    public function getMajorEarnings($hegis_code, $university_name)
+    public function getMajorEarnings(MajorFormRequest $request)
     {
-        $university_major = $this->majorRetriever->getMajorEarnings($hegis_code, $university_name);
+        $university_major = $this->majorRetriever->getMajorEarnings($request->major, $request->university);
 
         foreach ($university_major as $data) {
             $years = $data['years'];
@@ -71,8 +73,8 @@ class MajorController extends Controller
         ];
 
         $majorData = [
-            'majorId' => $hegis_code,
-            'universityName' => $university_name,
+            'majorId' => $request->major,
+            'universityName' => $request->university,
             'someCollege' => isset($someCollege) ? $someCollege : $nullArray,
             'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
             'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray

@@ -3613,7 +3613,7 @@ p {
 .v-autocomplete--is-selecting-index input {
   opacity: 0;
 }
-.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo):not(.v-text-field--single-line) .v-select__slot > input {
+.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo) .v-select__slot > input {
   margin-top: 24px;
 }
 .v-autocomplete:not(.v-input--is-disabled).v-select.v-text-field input {
@@ -7147,8 +7147,6 @@ table.v-table tfoot tr td {
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  padding-bottom: 8px;
-  margin-bottom: -8px;
 }
 .v-date-picker-title__date > div {
   position: relative;
@@ -18777,6 +18775,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .graphContent {
   background-color: #EBEBEB;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: stretch;
 }
 
 abbr[title] {
@@ -18790,7 +18791,7 @@ html {
           box-sizing: border-box;
 }
 
-.csu-card, .csu-card__form, .industry-card, .card-add {
+.csu-card, .csu-card__form, .card-add, .industry-card {
   background: #FFF;
   border-radius: 20px;
   -webkit-box-pack: center;
@@ -18799,9 +18800,7 @@ html {
 }
 
 .csu-card {
-  min-height: 75vh;
   margin-bottom: 50px;
-  min-height: 60vh;
 }
 
 @media screen and (max-width: 767px) {
@@ -18851,22 +18850,6 @@ html {
   width: 100%;
 }
 
-.industry-card {
-  margin-bottom: 50px;
-  padding: 2rem;
-  min-height: 75vh;
-}
-
-.industry-card__row {
-  padding: 20px 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.industry-card__legend {
-  padding: 20px 10px;
-  font-weight: 600;
-}
-
 .card-add {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -18874,6 +18857,30 @@ html {
   margin-bottom: 0px;
   margin-top: 50px;
   padding-top: 50px;
+}
+
+.flip-enter-active {
+  -webkit-transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.flip-leave-active {
+  -webkit-transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flip-enter, .flip-leave-to {
+  -webkit-transform: scaleX(0) translateZ(0);
+          transform: scaleX(0) translateZ(0);
+  opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .flip-enter, .flip-leave-to {
+    -webkit-transform: scaleY(0) translateZ(0);
+            transform: scaleY(0) translateZ(0);
+    opacity: 0;
+  }
 }
 
 .text-gray {
@@ -19028,28 +19035,24 @@ figcaption {
 
 .splashPage {
   background-color: #EBEBEB;
-  height: calc(100vh - 457px);
+  height: calc(100vh - 409px);
   position: relative;
-  text-align: center;
   font-size: 3rem;
   color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   text-align: center;
-  min-height: 2rem;
+}
+
+.splashPage p {
+  padding: 6rem;
 }
 
 @media screen and (max-width: 960px) {
   .splashPage {
-    height: calc(100vh - 416px);
+    height: calc(100vh - 430px);
+    min-height: 20rem;
   }
 }
 
@@ -19140,22 +19143,21 @@ figcaption {
   margin-bottom: 0rem;
 }
 
-.fa-graduation-cap {
-  font-size: 6em;
+.landing-page__icon {
+  font-size: 6rem;
+  padding-bottom: .1rem;
+}
+
+.landing-page__icon--cap {
   color: #476A6F;
-  padding-bottom: 0.1rem;
 }
 
-.fa-usd {
-  font-size: 6em;
-  color: #2BAE67;
-  padding-bottom: 0.1rem;
-}
-
-.fa-line-chart {
-  font-size: 6em;
+.landing-page__icon--chart {
   color: #DAA200;
-  padding-bottom: 0.1rem;
+}
+
+.landing-page__icon--usd {
+  color: #2BAE67;
 }
 
 .csu-seals {
@@ -19948,6 +19950,8 @@ textarea {
 }
 
 .btn-reset {
+  z-index: 2;
+  position: relative;
   color: #777777;
   padding-top: 3px;
   font-size: 1.6rem;
@@ -20149,57 +20153,84 @@ input[type="button"]:focus {
   }
 }
 
-.industry-bar {
+.IndustryProgressBarWrapper {
+  padding: 20px 10px;
+  border-top: 1px solid #EBEBEB;
+}
+
+.IndustryProgressBarWrapper__ProgressBarBase {
   border-radius: 50px;
-  margin-bottom: 0.5rem;
   margin: 0;
+}
+
+.IndustryProgressBarWrapper__IndustryTitle {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.IndustryProgressBarWrapper__PercentageBar--Background {
+  border-radius: 50px;
   background-color: #EBEBEB;
 }
 
-.industry-bar__salary {
-  background-color: #2BAE67;
+.IndustryProgressBarWrapper__PercentageBar {
   border-radius: 50px;
-}
-
-.industry-bar__salary-text {
-  padding-left: 0;
-  color: #2BAE67;
-}
-
-.industry-bar__percentage {
   background-color: #2f98bf;
-  border-radius: 50px;
 }
 
-.industry-bar__percentage-text {
-  padding-left: 0;
+.IndustryProgressBarWrapper__SalaryBar {
+  border-radius: 50px;
+  background-color: #2BAE67;
+}
+
+.IndustryProgressBarWrapper__PercentageText {
+  margin: 0;
   color: #2f98bf;
 }
 
-.industry-card__legend-salary {
-  height: 0;
-  width: 10px;
-  padding-bottom: 10px;
-  margin-right: 5px;
+.IndustryProgressBarWrapper__SalaryText {
+  margin: 0;
+  color: #2BAE67;
+}
+
+.IndustryProgressBarWrapper__SalaryBar {
   background-color: #2BAE67;
-  display: inline-block;
 }
 
-.industry-card__legend-percentage {
+.IndustryProgressBarWrapper__collapse {
+  text-align: left;
+  color: #4DB7C6;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.IndustryProgressBarWrapper__collapse:hover {
+  color: #476A6F;
+}
+
+.IndustryLegend {
+  padding: 20px 10px;
+  font-weight: 600;
+}
+
+.IndustryLegend .IndustryLegend__LegendPercentage, .IndustryLegend .IndustryLegend__LegendSalary {
   height: 0;
   width: 10px;
   padding-bottom: 10px;
   margin-right: 5px;
-  background-color: #2f98bf;
   display: inline-block;
 }
 
-.industry-bar__background {
-  background-color: #EBEBEB;
+.IndustryLegend__LegendPercentage {
+  background-color: #2f98bf;
 }
 
-.industry-bar__padding {
-  margin-bottom: 10px;
+.IndustryLegend__LegendSalary {
+  background-color: #2BAE67;
+}
+
+.industry-card {
+  min-height: 100%;
+  padding: 2rem;
 }
 
 .pfre-bar {

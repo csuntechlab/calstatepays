@@ -7,9 +7,7 @@
 
 .csu-card{
     @extend %card-base;
-    min-height: 75vh;
     margin-bottom: 50px;
-    min-height: 60vh;
     @media screen and (max-width: $break-small) {
         min-height: unset;
     }
@@ -45,23 +43,6 @@
     }
 }
 
-.industry-card{
-    margin-bottom: 50px;
-    padding: 2rem;
-    min-height: 75vh;
-    @extend %card-base;
-}
-
-.industry-card__row{
-    padding: 20px 10px;
-    border-top: 1px solid rgba(0,0,0,.1)
-}
-
-.industry-card__legend{
-    padding: 20px 10px;
-    font-weight: 600;
-}
-
 .card-add{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -72,3 +53,20 @@
     @extend %card-base;
 }
 
+
+.flip-enter-active {
+    transition: all .18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.flip-leave-active {
+    transition: all .18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flip-enter, .flip-leave-to {
+    transform: scaleX(0) translateZ(0);
+    opacity: 0;
+    @media screen and (max-width: $break-small) {
+        transform: scaleY(0) translateZ(0);
+        opacity: 0;
+    }
+}

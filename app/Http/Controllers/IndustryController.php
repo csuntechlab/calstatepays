@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\NaicsTitle;
 use App\Models\UniversityMajor;
 use App\Contracts\IndustryContract;
+use Validator;
+use App\Http\Requests\IndustryFormRequest;
 
 class IndustryController extends Controller
 {
@@ -20,13 +22,21 @@ class IndustryController extends Controller
         return $this->industryRetriever->getAllIndustryNaicsTitles();
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degreeLevel)
+    public function getIndustryPopulationByRankWithImages(IndustryFormRequest $request)
     {
-        return $this->industryRetriever->getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degreeLevel);
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+        return $this->industryRetriever->getIndustryPopulationByRankWithImages($request->major, $request->university,$request->degreeLevel);
     }
-
-    public function getIndustryPopulationByRank($hegis_code, $universityName, $degreeLevel)
+    
+    public function getIndustryPopulationByRank(IndustryFormRequest $request)
     {
-        return $this->industryRetriever->getIndustryPopulationByRank($hegis_code, $universityName, $degreeLevel);
+        // if there is an error, return the error messages, with response code 400
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+        $industry_data =  $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
+        return $industry_data;
     }
 }

@@ -18,7 +18,7 @@ class Majors_Same_Hegis_Different_Major_Table_Seeder extends Seeder
         foreach ($data as $row) {
             $universityMajor = new SameHegisDifferentMajorError();
             $universityMajor->hegis_code = $row->hegis_at_exit;
-            $universityMajor->university_id = $row->university_id;
+            $universityMajor->university_id = $row->campus;
             $universityMajor->major = $row->major;
             $universityMajor->entry_status = $row->entry_stat;
             $universityMajor->student_path = $row->student_path;
