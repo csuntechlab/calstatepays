@@ -59,22 +59,18 @@
 	}
 }
 
-.fa-graduation-cap {
-	font-size: 6em;
-	color: $oxford;
-	padding-bottom: 0.1rem;
-}
-
-.fa-usd {
-	font-size: 6em;
-	color: $green;
-	padding-bottom: 0.1rem;
-}
-
-.fa-line-chart {
-	font-size: 6em;
-	color: $gold;
-	padding-bottom: 0.1rem;
+.landing-page__icon{
+	font-size: 6rem;
+	padding-bottom: .1rem;
+	&--cap{
+		color: $oxford;
+	}
+	&--chart{
+		color: $gold;
+	}
+	&--usd{
+		color: $green
+	}
 }
 
 .csu-seals {

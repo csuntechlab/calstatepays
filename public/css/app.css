@@ -18775,6 +18775,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .graphContent {
   background-color: #EBEBEB;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: stretch;
 }
 
 abbr[title] {
@@ -18867,8 +18870,8 @@ html {
 }
 
 .flip-enter, .flip-leave-to {
-  -webkit-transform: scaleY(0) translateZ(0);
-          transform: scaleY(0) translateZ(0);
+  -webkit-transform: scaleX(0) translateZ(0);
+          transform: scaleX(0) translateZ(0);
   opacity: 0;
 }
 
@@ -19132,22 +19135,21 @@ figcaption {
   margin-bottom: 0rem;
 }
 
-.fa-graduation-cap {
-  font-size: 6em;
+.landing-page__icon {
+  font-size: 6rem;
+  padding-bottom: .1rem;
+}
+
+.landing-page__icon--cap {
   color: #476A6F;
-  padding-bottom: 0.1rem;
 }
 
-.fa-usd {
-  font-size: 6em;
-  color: #2BAE67;
-  padding-bottom: 0.1rem;
-}
-
-.fa-line-chart {
-  font-size: 6em;
+.landing-page__icon--chart {
   color: #DAA200;
-  padding-bottom: 0.1rem;
+}
+
+.landing-page__icon--usd {
+  color: #2BAE67;
 }
 
 .csu-seals {
@@ -20218,7 +20220,7 @@ input[type="button"]:focus {
 }
 
 .industry-card {
-  min-height: 30vh;
+  min-height: 100%;
   padding: 2rem;
 }
 
