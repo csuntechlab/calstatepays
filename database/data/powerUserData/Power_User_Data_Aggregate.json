@@ -1,0 +1,27 @@
+[
+  {
+    "university_id": "0",
+    "path_id": 1,
+    "iFramePath": "CSU7LaborMarketOutcomes-ByMajor&#47;CSU7AggregareEarningsData"
+  },
+  {
+    "university_id": "0",
+    "path_id": 2,
+    "iFramePath": null
+  },
+  {
+    "university_id": "0",
+    "path_id": 3,
+    "iFramePath": null
+  },
+  {
+    "university_id": "0",
+    "path_id": 4,
+    "iFramePath": null
+  },
+  {
+    "university_id": "0",
+    "path_id": 5,
+    "iFramePath": null
+  }
+]
