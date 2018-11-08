@@ -4,5 +4,5 @@ namespace App\Contracts;
 
 interface PowerUsersContract
 {
-    public function helloWorld();
+    public function getPowerUserDataByUniversity();
 }

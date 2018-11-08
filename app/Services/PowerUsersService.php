@@ -6,7 +6,7 @@ use App\Contracts\PowerUsersContract;
 
 class PowerUsersService implements PowerUsersContract
 {
-    public function helloWorld()
+    public function getPowerUserDataByUniversity()
     {
         return "helloworld";
     }

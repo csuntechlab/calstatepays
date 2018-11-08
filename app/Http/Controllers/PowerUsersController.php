@@ -14,8 +14,8 @@ class PowerUsersController extends Controller
         $this->powerUsersRetrieval = $powerUsersContract;
     }
 
-    public function helloWorld()
+    public function getPowerUserDataByUniversity()
     {
-        return $this->powerUsersRetrieval->helloWorld();
+        return $this->powerUsersRetrieval->getPowerUserDataByUniversity();
     }
 }
