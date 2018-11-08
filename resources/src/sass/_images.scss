@@ -110,6 +110,10 @@
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+	height: 18.5rem;
+	@media screen and (max-width: $break-medium){
+		min-height: 16.5rem;
+	}
 
 	&__campusInfoWrapper {
 		@extend .text-left, .text-md-right;
