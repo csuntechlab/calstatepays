@@ -84,7 +84,6 @@ export default {
 	props: ["index", "windowWidth"],
 	data() {
 		return {
-			isShowing: false,
 			form: {
 				cardIndex: this.index,
 				majorId: null,
@@ -132,7 +131,6 @@ export default {
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
-				this.isShowing = !this.isShowing;
 			}
 		},
 

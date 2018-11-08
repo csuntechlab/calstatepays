@@ -1,71 +1,78 @@
 <template>
     <form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
-			<div v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
-				<i class="fa fa-exclamation-circle"></i> Please select a Major.
-			</div>
-			<div v-if="!industryFormWasSubmitted===true" class="form-group">
-					<label for="fieldOfStudy">Select a Discipline (Optional)</label>
-					<v-select
-							label="discipline"
-							:options="fieldOfStudies"
-							@input="updateSelect('fieldOfStudyId', 'id', $event)"
-							@change="updateSelect('fieldOfStudyId', 'id', $event)"
-							class="csu-form-input">
-					</v-select>
+			<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" title="Reset"></i>
+			<transition name="flip" mode="out-in">
+				<div key="1" v-if="!industryFormWasSubmitted">
+					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+					<i class="fa fa-exclamation-circle"></i> Please select a Major.
+					</div>
+					<div v-if="!industryFormWasSubmitted===true" class="form-group">
+							<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+							<v-select
+									label="discipline"
+									:options="fieldOfStudies"
+									@input="updateSelect('fieldOfStudyId', 'id', $event)"
+									@change="updateSelect('fieldOfStudyId', 'id', $event)"
+									class="csu-form-input">
+							</v-select>
+						</div>
+					<div v-if="!industryFormWasSubmitted" class="form-group">
+						<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
+							Select a Major
+						</label>
+						<v-select
+							label="major"
+							v-if="this.form.fieldOfStudyId == null"
+							v-model="selected"
+							:options="majors"
+							@input="updateSelect('majorId', 'majorId', $event)"
+							@change="updateSelect('majorId', 'majorId', $event)"
+							class="csu-form-input"
+							v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
+						</v-select>
+						<v-select
+								label="major"
+								v-else
+								v-model="selected"
+								:options="selectedMajorsByField"
+								@input="updateSelect('majorId', 'majorId', $event)"
+								@change="updateSelect('majorId', 'majorId', $event)"
+								class="csu-form-input"
+								v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+							</v-select>
+					</div>
+					<div v-if="!industryFormWasSubmitted" class="form-group row">
+						<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+					</div>
 				</div>
-			<div v-if="!industryFormWasSubmitted" class="form-group">
-				<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
-					Select a Major
-				</label>
-				<v-select
-					label="major"
-					v-if="this.form.fieldOfStudyId == null"
-					v-model="selected"
-					:options="majors"
-					@input="updateSelect('majorId', 'majorId', $event)"
-					@change="updateSelect('majorId', 'majorId', $event)"
-					class="csu-form-input"
-					v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
-				</v-select>
-				<v-select
-						label="major"
-						v-else
-						v-model="selected"
-						:options="selectedMajorsByField"
-						@input="updateSelect('majorId', 'majorId', $event)"
-						@change="updateSelect('majorId', 'majorId', $event)"
-						class="csu-form-input"
-						v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
-					</v-select>
-			</div>
-			<div v-if="!industryFormWasSubmitted" class="form-group row">
-				<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
-			</div>
-			<div v-else class="majorBtnWrapper">
-				<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
-				<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('allDegrees')">
-					<i class="major-btn_icon" 
-					v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'allDegrees', 'fa fa-circle-thin':industryEducationLevel != 'allDegrees'}"
+				
+				<div key="2" v-else class="majorBtnWrapper">
+					<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('allDegrees')">
+						<i class="major-btn_icon" 
+						v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'allDegrees', 'fa fa-circle-thin':industryEducationLevel != 'allDegrees'}"
+						></i>
+						All Levels
+					</button>
+					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('postBacc')" >
+						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'postBacc', 'fa fa-circle-thin':industryEducationLevel != 'postBacc'}" 
+						></i>
+						Post Bacc
+					</button>
+					<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('bachelors')">
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'bachelors', 'fa fa-circle-thin':industryEducationLevel != 'bachelors'}" 
 					></i>
-					All Levels
-				</button>
-				<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('postBacc')" >
-					<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'postBacc', 'fa fa-circle-thin':industryEducationLevel != 'postBacc'}" 
-					></i>
-					Post Bacc
-				</button>
-				<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('bachelors')">
-					<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'bachelors', 'fa fa-circle-thin':industryEducationLevel != 'bachelors'}" 
-				></i>
-					Bachelors
-				</button>
-				<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('someCollege')">
-					<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'someCollege', 'fa fa-circle-thin':industryEducationLevel != 'someCollege'}"
-					></i>
-					Some College
-				</button>
-			</div>
+						Bachelors
+					</button>
+					<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('someCollege')">
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'someCollege', 'fa fa-circle-thin':industryEducationLevel != 'someCollege'}"
+						></i>
+						Some College
+					</button>
+				</div>
+			</transition>
+			
 		</fieldset>
     </form>
 </template>
@@ -86,6 +93,7 @@ export default {
 				fieldOfStudyId: null,
 				university: null,
 				formWasSubmitted: false,
+				formWasSubmittedOnce: false,
 				formEducationLevel: "allDegrees",
 			},
 			submittedOnce: false,
@@ -107,6 +115,7 @@ export default {
 		...mapActions([
 			"fetchIndustryMajorsByField",
 			"toggleIndustryFormWasSubmitted",
+			"resetIndustryCard",
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",
 			"toggleIndustryEducationLevel"
@@ -118,6 +127,9 @@ export default {
 				this.fetchIndustries(this.form);
 				this.toggleIndustryFormWasSubmitted();
 			}
+		},
+		resetIndustries() {
+			this.resetIndustryCard();
 		},
 		toggleIndustryEducationLevel(educationInput) {
 			this.$store.dispatch("toggleIndustryEducationLevel",educationInput
@@ -145,6 +157,7 @@ export default {
 				this.fetchIndustryMajorsByField(this.form);
 			}
 		},
+		
 	},
 
 	computed: {
@@ -152,6 +165,7 @@ export default {
 			"majors",
 			"universities",
 			"industryFormWasSubmitted",
+			"industryFormWasSubmittedOnce",
 			"industryEducationLevel",
 			"industryMajorsByField",
 			"selectedUniversity",
