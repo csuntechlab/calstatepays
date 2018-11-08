@@ -109,7 +109,6 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        // $degreeLevel = 1;
         $response = $this->industryService->getIndustryPopulationByRankWithImages($hegis, $university_name);
 
         /**
@@ -123,7 +122,7 @@ class IndustryServiceTest extends TestCase
                 "title"=> "Professional, Scientific, & Technical Skills",
                 "percentage"=> 37.25,
                 "rank"=> 1,
-                "image"=> "http://localhost/img/industries/professional_scientific_technical_skills.png",
+                "image"=> asset("img/industries/professional_scientific_technical_skills.png"),
                 "industryWage"=> 71707
             ]
         ];
@@ -152,7 +151,6 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'all';
         $hegis = 5021;
-        // $degreeLevel = 1;
 
         $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
 

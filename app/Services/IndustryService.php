@@ -44,26 +44,22 @@ class IndustryService implements IndustryContract
         $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
         $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
         $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
-        // $industry_populations = $this->sortIndustryPopulation($university_major);
 
         /** Get the population total for each */
         $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
         $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
         $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
-        // $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
 
         /** Calculate the percentages and get the images */
         $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($someCollege_population,$someCollege_total);
         $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($bachelors_population,$bachelors_total);
         $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($post_bacc_population,$post_bacc_total);
-        // $industry_populations = $this->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
 
         /** concatenate each array to finalize the API */
         $industry_population_images["someCollege"] = $someCollege_population;
         $industry_population_images["bachelors"]  = $bachelors_population;
         $industry_population_images["post_bacc"]  = $post_bacc_population;
-        // $industry_population_images["all"]  = $industry_populations;
 
         return $industry_population_images;
     }
@@ -84,26 +80,22 @@ class IndustryService implements IndustryContract
         $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
         $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
         $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
-        // $industry_populations = $this->sortIndustryPopulation($university_major);
 
         /** Get the population total for each */
         $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
         $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
         $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
-        // $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
 
         /** Calculate the percentages */
         $someCollege_population = $this->calculatePopulationPercentages($someCollege_population,$someCollege_total);
         $bachelors_population = $this->calculatePopulationPercentages($bachelors_population,$bachelors_total);
         $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population,$post_bacc_total);
-        // $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
 
         /** concatenate each array to finalize the API */
         $industry_wages["someCollege"] = $someCollege_population;
         $industry_wages["bachelors"]  = $bachelors_population;
         $industry_wages["post_bacc"]  = $post_bacc_population;
-        // $industry_wages["all"]  = $industry_populations;
         return $industry_wages;
     }
 
