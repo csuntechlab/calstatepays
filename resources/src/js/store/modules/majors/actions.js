@@ -80,7 +80,6 @@ export default {
     toggleFormWasSubmitted({commit}, payload){
         commit(_majors.TOGGLE_FORM_WAS_SUBMITTED, payload)
     },
-
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);
     },
