@@ -301,7 +301,7 @@ class IndustryControllerTest extends TestCase
         //     // 'degreeLevel' => 1,
         //   ];
 
-        $request = new IndustryFormRequest($input);
+        // $request = new IndustryFormRequest($input);
 
         // $firstResult = json_encode([
         //         "bachelors" =>  [
