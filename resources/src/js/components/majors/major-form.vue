@@ -4,7 +4,7 @@
 			<fieldset class="csu-card__form-sizing">
 				<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500" title="Reset"></i>
 				<transition name="flip" mode="out-in">
-					<div key="1" class="amiahere" v-if="!selectedFormWasSubmitted">
+					<div key="1" v-if="!selectedFormWasSubmitted">
 						<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 								<i class="fa fa-exclamation-circle"></i> Please select a Major.						</div>
 						<div class="form-group">
@@ -46,7 +46,7 @@
 								<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 							</div>
 						</div>
-					<div key="2" v-else class="majorBtnWrapper iwannadie">
+					<div key="2" v-else class="majorBtnWrapper">
 						<p v-show="windowWidth > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 						<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 							<i class="major-btn_icon" 
@@ -122,12 +122,9 @@ export default {
 		updateForm,
 		resetCurrentCard() {
 			this.resetMajorCard(this.index);
-			// event.target.parentElement.children[1].classList.toggle("flip");
-			// document.querySelector(".flip-container").classList.toggle("flip");
 		},
 
 		submitForm() {
-			console.log(this);
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
@@ -136,8 +133,6 @@ export default {
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
 				this.isShowing = !this.isShowing;
-				// document.querySelector(".flip-container").classList.toggle("flip");
-				// event.target.parentElement.parentElement.parentElement.classList.toggle("flip");
 			}
 		},
 
