@@ -52,6 +52,10 @@ class UniversitiesDataFrameErrorChecker():
     #TODO: ERROR CHECKING COMMENT THIS OUT 
     df = df.loc[df['student_path'].isin([1,2,4])]
     df = df.loc[df['entry_stat'].isin(['FTF + FTT'])]
+
+    #TODO: ERROR CHECKING COMMENT THIS Out for error checking 
+    # df = df.loc[df['student_path'].isin([5,6])]
+    # df = df.loc[df['student_path'].isin([1,2,3,4])]
     return df
 
   def create_base_university_majors_table(self,df):
@@ -110,28 +114,28 @@ class UniversitiesDataFrameErrorChecker():
   
   def create_dictionary_based_on_university_majors_table_with_duplicates(self,df,csv):
     output = df.to_dict(orient='record')
-    
-    campusId =  int(output[0]['campus'])
-    
-    hegisDictionary = {}
-    universityMajorsId = []
+    if bool(output):
+      campusId =  int(output[0]['campus'])
+      
+      hegisDictionary = {}
+      universityMajorsId = []
 
-    for row in output:
-      hegis = int(row['hegis_at_exit'])
-      index = row['id']
-      hegisDictionary[hegis] = index
-      campus =  int(row['campus'])
-      major =  (row['major'])
-      dictRename = {'hegis_codes': hegis,'campus':campus,'major':major,'id':index }
-      universityMajorsId.append(dictRename)
-      self.masterDF = self.masterDF.append( dictRename , ignore_index=True)  
-    dictionary  = {campusId:hegisDictionary}
-    
-    filePath = './dictionaries/'+csv.replace("_majors","")+'.json' 
-    
-    self.jsonOutputter.json_output_with_simple_json(filePath,dictionary)
+      for row in output:
+        hegis = int(row['hegis_at_exit'])
+        index = row['id']
+        hegisDictionary[hegis] = index
+        campus =  int(row['campus'])
+        major =  (row['major'])
+        dictRename = {'hegis_codes': hegis,'campus':campus,'major':major,'id':index }
+        universityMajorsId.append(dictRename)
+        self.masterDF = self.masterDF.append( dictRename , ignore_index=True)  
+      dictionary  = {campusId:hegisDictionary}
+      
+      filePath = './dictionaries/'+csv.replace("_majors","")+'.json' 
+      
+      self.jsonOutputter.json_output_with_simple_json(filePath,dictionary)
 
-    self.concat_dictionary_to_master_dictionary()
+      self.concat_dictionary_to_master_dictionary()
 
   def get_dict(self):
         path = os.getcwd() + '/dictionaries'
