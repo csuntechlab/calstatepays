@@ -29,46 +29,74 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName, $degree)
+    public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', $degree);
         }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();
 
-        $industry_populations = $this->sortIndustryPopulation($university_major);
+        /** Seperate each student_path for fair population found comparison */
+        $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
 
-        $population_total = $this->getIndustryPopulationTotals($industry_populations);
+        /** Get the population total for each */
+        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
+        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
+        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
 
-        $industry_populations = $this->calculatePopulationPercentagesAndReturnImages($industry_populations, $population_total);
 
-        return $industry_populations;
+        /** Calculate the percentages and get the images */
+        $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($someCollege_population,$someCollege_total);
+        $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($bachelors_population,$bachelors_total);
+        $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($post_bacc_population,$post_bacc_total);
+
+        /** concatenate each array to finalize the API */
+        $industry_population_images["someCollege"] = $someCollege_population;
+        $industry_population_images["bachelors"]  = $bachelors_population;
+        $industry_population_images["post_bacc"]  = $post_bacc_population;
+
+        return $industry_population_images;
     }
 
-    public function getIndustryPopulationByRank($hegis_code, $universityName, $degree)
+    public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) use ($degree) {
+        
+        /** no longer using degree level, must extract degree 1,2,4 for equal population total */
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-            $query->where('student_path', $degree);
         }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();
+        
+        /** Seperate each student_path for fair population found comparison */
+        $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
 
-        $industry_populations = $this->sortIndustryPopulation($university_major);
+        /** Get the population total for each */
+        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
+        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
+        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
 
-        $population_total = $this->getIndustryPopulationTotals($industry_populations);
 
-        $industry_populations = $this->calculatePopulationPercentages($industry_populations, $population_total);
+        /** Calculate the percentages */
+        $someCollege_population = $this->calculatePopulationPercentages($someCollege_population,$someCollege_total);
+        $bachelors_population = $this->calculatePopulationPercentages($bachelors_population,$bachelors_total);
+        $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population,$post_bacc_total);
 
-        return $industry_populations;
+        /** concatenate each array to finalize the API */
+        $industry_wages["someCollege"] = $someCollege_population;
+        $industry_wages["bachelors"]  = $bachelors_population;
+        $industry_wages["post_bacc"]  = $post_bacc_population;
+        return $industry_wages;
     }
 
     private function sortIndustryPopulation($university_major)
@@ -125,6 +153,7 @@ class IndustryService implements IndustryContract
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
                     'rank' => $index,
+                    'student_path' => $industry->student_path,
                     'industryWage' => $industry->industryWage->avg_annual_wage_5
                 ];
             });

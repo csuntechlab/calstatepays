@@ -29,7 +29,6 @@ class IndustryFormRequest extends FormRequest
         return [
             'major' => 'required|integer',
             'university' => 'required|string',
-            'degreeLevel' => 'min:1|max:1'
         ];
     }
 
@@ -44,7 +43,6 @@ class IndustryFormRequest extends FormRequest
         $request = Input::all();
         $request['major'] = $this->route('major');
         $request['university'] = $this->route('university');
-        $request['degreeLevel'] = $this->route('degreeLevel');
         return $request;
     }
 }
