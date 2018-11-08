@@ -5,8 +5,7 @@
         <span>Top Industries by Major</span>
       </h3>
       <p class="CSUDataImgBanner__dataCopy" slot="copy">
-        Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla
-        metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
+        Different majors lead to jobs in different industries. Select a major and find out where CSU students work, and what they earn, five years after they leave.
       </p>
     </csu-data-img-banner>
     <sub-nav/>
