@@ -1,6 +1,6 @@
 <template>
     <form v-bind:id="'majorForm-' + form.cardIndex">
-		<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce" title="Reset"></i>
+		<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500" title="Reset"></i>
 			<fieldset class="csu-card__form-sizing">
 				<transition name="flip" mode="out-in">
 					<div key="1" class="amiahere" v-if="!selectedFormWasSubmitted">
@@ -46,7 +46,7 @@
 							</div>
 						</div>
 					<div key="2" v-else class="majorBtnWrapper iwannadie">
-						<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+						<p v-show="windowWidth > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 						<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')" v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 							<i class="major-btn_icon" 
 							v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'fa fa-circle-thin':this.educationLevel(this.index) != 'allDegrees'}"></i>
@@ -80,7 +80,7 @@ import { updateForm } from "../../utils/index";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-	props: ["index"],
+	props: ["index", "windowWidth"],
 	data() {
 		return {
 			isShowing: false,

@@ -52257,7 +52257,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	props: ["index"],
+	props: ["index", "windowWidth"],
 	data: function data() {
 		return {
 			isShowing: false,
@@ -52377,8 +52377,8 @@ var render = function() {
         {
           name: "show",
           rawName: "v-show",
-          value: _vm.selectedFormWasSubmittedOnce,
-          expression: "selectedFormWasSubmittedOnce"
+          value: _vm.selectedFormWasSubmittedOnce && _vm.windowWidth > 500,
+          expression: "selectedFormWasSubmittedOnce && windowWidth > 500"
         }
       ],
       staticClass: "fa fa-refresh fa-2x btn-reset float-right",
@@ -52546,8 +52546,8 @@ var render = function() {
                         {
                           name: "show",
                           rawName: "v-show",
-                          value: _vm.windowSize > 500,
-                          expression: "windowSize > 500"
+                          value: _vm.windowWidth > 500,
+                          expression: "windowWidth > 500"
                         }
                       ],
                       staticClass: "text-center h3 majors-header my-5-md my-4"
@@ -71934,7 +71934,7 @@ var render = function() {
         [
           _c("major-form", {
             staticClass: "csu-card__form container-fluid",
-            attrs: { index: _vm.index }
+            attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
           })
         ],
         1

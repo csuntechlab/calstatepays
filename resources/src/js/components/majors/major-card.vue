@@ -1,7 +1,7 @@
 <template>
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
 		<aside class="col-md-3">
-			<major-form class="csu-card__form container-fluid" :index="index" />
+			<major-form class="csu-card__form container-fluid" :windowWidth="windowWidth" :index="index" />
 		</aside>
 		<div class="col-md-9">
 			<card class="csu-card container-fluid py-3">
