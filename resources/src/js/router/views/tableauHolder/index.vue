@@ -2,7 +2,6 @@
     <div>
        <power-banner/>
         <main class="row">
-            <button @click="console.log()"></button>
             <div class="container">
                 <div class="row">
                     <div class="col-12">

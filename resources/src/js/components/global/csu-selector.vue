@@ -59,7 +59,6 @@ export default {
 	mounted() {
         if(this.selectedUniversity!=null)
             document.getElementById(this.selectedUniversity).className = "";
-        console.log("TESTING: Global campus state is set to " + this.selectedUniversity);
 	},
 
 	methods: {
