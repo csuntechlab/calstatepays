@@ -1,18 +1,1 @@
-[
-    {
-        "entry_stat": "FTF + FTT",
-        "hegis_at_exit": 8225,
-        "id": 605,
-        "campus": 45,
-        "major": "Education",
-        "student_path": 1
-    },
-    {
-        "entry_stat": "FTF + FTT",
-        "hegis_at_exit": 49081,
-        "id": 655,
-        "campus": 45,
-        "major": "Education",
-        "student_path": 1
-    }
-]
+[]
