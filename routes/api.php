@@ -35,9 +35,9 @@ Route::get(
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
 
 // change route variables from hegis_code to major... universityName to university
-Route::get('industry/{major}/{university}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRank');
+Route::get('industry/{major}/{university}', 'IndustryController@getIndustryPopulationByRank');
 
-Route::get('industry/images/{major}/{university}/{degreeLevel}', 'IndustryController@getIndustryPopulationByRankWithImages');
+Route::get('industry/images/{major}/{university}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 
 //University
