@@ -42322,14 +42322,12 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(394);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__ = __webpack_require__(402);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_researchall_index_vue__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_researchall_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_researchall_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_about_index_vue__ = __webpack_require__(408);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_about_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue__ = __webpack_require__(411);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue__);
 
 
 
@@ -42347,14 +42345,13 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 
 
-
 // INIT VUE-ROUTER
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue___default.a },
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a },
 	//{ path: '/data/pfre', component: pfre },
-	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/researchcsun', component: __WEBPACK_IMPORTED_MODULE_10__views_researchcsun_index_vue___default.a }, { path: '/tableauHolder', name: 'all', component: __WEBPACK_IMPORTED_MODULE_11__views_researchall_index_vue___default.a, props: true }]
+	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableauHolder', name: 'all', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -74369,7 +74366,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -74380,8 +74376,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             displayModal: false,
             universityName: '',
             universityLink: '',
-            selectedUni: '',
-            tableauValues: ['CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData', 'CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes']
+            selectedUniversity: ''
         };
     },
     methods: {
@@ -74736,7 +74731,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['showModal', 'selectedUni', 'universityName', 'universityLink'],
+    props: ['showModal', 'selectedUniversity', 'universityName'],
     name: 'power-users-modal',
     data: function data() {
         return {
@@ -74758,7 +74753,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         },
         tableauValue: function tableauValue() {
-            if (this.selectedUni == 'csu7') {
+            if (this.selectedUniversity == 'csu7') {
                 return {
                     byMajor: 'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData',
                     byAge: '',
@@ -74766,7 +74761,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                     byGender: '',
                     byPellStatus: ''
                 };
-            } else if (this.selectedUni == 'northridge') {
+            } else if (this.selectedUniversity == 'northridge') {
                 return {
                     byMajor: 'CSUNLaborMarketOutcomes-ByMajor/Story1',
                     byAge: '',
@@ -75093,7 +75088,7 @@ var render = function() {
         attrs: {
           showModal: _vm.displayModal,
           universityName: _vm.universityName,
-          selectedUni: _vm.selectedUni
+          selectedUniversity: _vm.selectedUniversity
         },
         on: {
           closeModal: function($event) {
@@ -75128,7 +75123,7 @@ var render = function() {
                         click: function($event) {
                           _vm.displayModal = true
                           _vm.universityName = "CSU7"
-                          _vm.selectedUni = "csu7"
+                          _vm.selectedUniversity = "csu7"
                         }
                       }
                     },
@@ -75154,7 +75149,7 @@ var render = function() {
                           _vm.displayModal = true
                           _vm.universityName =
                             "California State University Northridge"
-                          _vm.selectedUni = "northridge"
+                          _vm.selectedUniversity = "northridge"
                         }
                       }
                     },
@@ -75318,549 +75313,12 @@ if (false) {
 }
 
 /***/ }),
-/* 402 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(403)
-/* template */
-var __vue_template__ = __webpack_require__(404)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/router/views/researchcsun/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7aadd2eb", Component.options)
-  } else {
-    hotAPI.reload("data-v-7aadd2eb", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 403 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            url: '' };
-    },
-
-    components: {
-        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
-    },
-    created: function created() {
-        this.url = window.baseUrl;
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1531346960828');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '1016px';
-        vizElement.style.height = '991px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
-});
-
-/***/ }),
-/* 404 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("power-banner"),
-      _vm._v(" "),
-      _c("main", { staticClass: "row" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "returnToCampusSelection",
-                    attrs: { to: "research" }
-                  },
-                  [
-                    _c("h2", [
-                      _c("i", { staticClass: "fa fa-arrow-left" }),
-                      _vm._v(
-                        " Return to CSU Campus Selection\n                        "
-                      )
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass: "tableauPlaceholder",
-          staticStyle: { position: "relative" },
-          attrs: { id: "viz1531346960828" }
-        },
-        [
-          _c("noscript", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "https://www.sandbox.csun.edu/metalab/csumetrola#/"
-                }
-              },
-              [
-                _c("img", {
-                  staticStyle: { border: "none" },
-                  attrs: {
-                    alt:
-                      "Labor Market Outcomes for CSUN StudentsPost Education Earnings Data and Industries of Employment After Exit ",
-                    src:
-                      "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1_rss.png"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "object",
-            { staticClass: "tableauViz", staticStyle: { display: "none" } },
-            [
-              _c("param", {
-                attrs: {
-                  name: "host_url",
-                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "embed_code_version", value: "3" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "site_root", value: "" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "name",
-                  value:
-                    "CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "tabs", value: "no" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "static_image",
-                  value:
-                    "https://public.tableau.com/static/images/Ca/CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes/1.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "animate_transition", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "display_static_image", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_count", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "filter", value: "publish=yes" } })
-            ]
-          )
-        ]
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7aadd2eb", module.exports)
-  }
-}
-
-/***/ }),
-/* 405 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(406)
-/* template */
-var __vue_template__ = __webpack_require__(407)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/router/views/researchall/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-03966ad6", Component.options)
-  } else {
-    hotAPI.reload("data-v-03966ad6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 406 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            url: ''
-        };
-    },
-
-    components: {
-        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
-    },
-    created: function created() {
-        this.url = window.baseUrl;
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1541533460014');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '1016px';vizElement.style.height = '991px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        var vizEl = vizElement.getElementsByTagName('param');
-        vizEl[3].value = this.$route.params.tableauValue;
-    },
-
-    computed: {
-        tableauValueIsNotPresent: function tableauValueIsNotPresent() {
-            return this.$route.params.tableauValue == undefined || this.$route.params.tableauValue == '' || this.$route.params.tableauValue == null;
-        }
-    }
-});
-
-/***/ }),
-/* 407 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("power-banner"),
-      _vm._v(" "),
-      _c("main", { staticClass: "row" }, [
-        _c("button", {
-          on: {
-            click: function($event) {
-              _vm.console.log()
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-12" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "returnToCampusSelection",
-                    attrs: { to: "research" }
-                  },
-                  [
-                    _c("h2", [
-                      _c("i", { staticClass: "fa fa-arrow-left" }),
-                      _vm._v(
-                        " Return to CSU Campus Selection\n                        "
-                      )
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass: "tableauPlaceholder text-center position-relative",
-          attrs: { id: "viz1541533460014" }
-        },
-        [
-          _c("noscript", [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("img", {
-                staticStyle: { border: "none" },
-                attrs: {
-                  alt: " ",
-                  src:
-                    "https://public.tableau.com/static/images/CS/CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1_rss.png"
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "object",
-            { staticClass: "tableauViz", staticStyle: { display: "none" } },
-            [
-              _c("param", {
-                attrs: {
-                  name: "host_url",
-                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "embed_code_version", value: "3" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "site_root", value: "" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "name", value: "" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "tabs", value: "no" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: {
-                  name: "static_image",
-                  value:
-                    "https://public.tableau.com/static/images//CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1.png"
-                }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "animate_transition", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", {
-                attrs: { name: "display_static_image", value: "yes" }
-              }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
-              _vm._v(" "),
-              _c("param", { attrs: { name: "display_count", value: "yes" } })
-            ]
-          )
-        ]
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-03966ad6", module.exports)
-  }
-}
-
-/***/ }),
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
 /* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -98038,6 +97496,291 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(434)
+/* template */
+var __vue_template__ = __webpack_require__(435)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/router/views/tableauHolder/index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4840fb86", Component.options)
+  } else {
+    hotAPI.reload("data-v-4840fb86", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 434 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            url: ''
+        };
+    },
+
+    components: {
+        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
+    },
+    created: function created() {
+        this.url = window.baseUrl;
+    },
+    mounted: function mounted() {
+        var divElement = document.getElementById('viz1541533460014');
+        if (this.tableauValueIsNotPresent) {
+            var divElement = document.getElementById('viz1541533460014');
+            divElement.style.width = '1000px';divElement.style.height = '5rem';
+            divElement.style.backgroundColor = 'lightgray';
+            var heading = document.createElement("h1");
+            heading.innerText = "Tableau visual is not available";
+            divElement.appendChild(heading);
+        } else {
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '1016px';vizElement.style.height = '991px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            var vizEl = vizElement.getElementsByTagName('param');
+            vizEl[3].value = this.$route.params.tableauValue;
+        }
+    },
+
+    computed: {
+        tableauValueIsNotPresent: function tableauValueIsNotPresent() {
+            return this.$route.params.tableauValue == undefined || this.$route.params.tableauValue == '' || this.$route.params.tableauValue == null;
+        }
+    }
+});
+
+/***/ }),
+/* 435 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("power-banner"),
+      _vm._v(" "),
+      _c("main", { staticClass: "row" }, [
+        _c("button", {
+          on: {
+            click: function($event) {
+              _vm.console.log()
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-12" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "returnToCampusSelection",
+                    attrs: { to: "research" }
+                  },
+                  [
+                    _c("h2", [
+                      _c("i", { staticClass: "fa fa-arrow-left" }),
+                      _vm._v(
+                        " Return to CSU Campus Selection\n                        "
+                      )
+                    ])
+                  ]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass: "tableauPlaceholder text-center position-relative",
+          attrs: { id: "viz1541533460014" }
+        },
+        [
+          _c("noscript", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("img", {
+                staticStyle: { border: "none" },
+                attrs: {
+                  alt: " ",
+                  src:
+                    "https://public.tableau.com/static/images/CS/CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1_rss.png"
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "object",
+            { staticClass: "tableauViz", staticStyle: { display: "none" } },
+            [
+              _c("param", {
+                attrs: {
+                  name: "host_url",
+                  value: "https%3A%2F%2Fpublic.tableau.com%2F"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "embed_code_version", value: "3" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "site_root", value: "" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "name", value: "" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "tabs", value: "no" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "toolbar", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: {
+                  name: "static_image",
+                  value:
+                    "https://public.tableau.com/static/images//CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1.png"
+                }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "animate_transition", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", {
+                attrs: { name: "display_static_image", value: "yes" }
+              }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_spinner", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_overlay", value: "yes" } }),
+              _vm._v(" "),
+              _c("param", { attrs: { name: "display_count", value: "yes" } })
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4840fb86", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

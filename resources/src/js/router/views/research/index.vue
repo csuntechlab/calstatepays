@@ -1,7 +1,7 @@
  <template>
     <div>
         <power-banner/>
-        <power-users-modal :showModal=displayModal :universityName=universityName :selectedUni=selectedUni v-on:closeModal="closeModal($event)"></power-users-modal>
+        <power-users-modal :showModal=displayModal :universityName=universityName :selectedUniversity=selectedUniversity v-on:closeModal="closeModal($event)"></power-users-modal>
         <main>
             <div class="container">
                 <div>
@@ -13,13 +13,12 @@
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
-                            <div id="allcampus" class="campus not-avail" @click="displayModal = true; universityName='CSU7';selectedUni =  'csu7';">
-                                <!-- <p>Data Not Available At This Time</p> -->
+                            <div id="allcampus" class="campus not-avail" @click="displayModal = true; universityName='CSU7';selectedUniversity =  'csu7';">
                                 <h3>Aggregate Data Across the 7 CSUs</h3>
                             </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3">
-                                <div id="csun" class="campus" @click="displayModal = true ; universityName='California State University Northridge' ;selectedUni =  'northridge'">
+                                <div id="csun" class="campus" @click="displayModal = true ; universityName='California State University Northridge' ;selectedUniversity =  'northridge'">
                                     <h3>California State University Northridge</h3>
                                 </div>
                         </div>
@@ -74,8 +73,7 @@ export default {
             displayModal:false,
             universityName:'',
             universityLink:'',
-            selectedUni:'',
-            tableauValues:['CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData','CalStatePays-CSUNEarningsOverTimeandIndustriesofEmployment/CSUNLaborMarketOutcomes']
+            selectedUniversity:'',
         }
     },methods:{
         closeModal(){

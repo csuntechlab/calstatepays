@@ -78,7 +78,7 @@
 <script>
 import {mapGetters} from 'vuex';
 export default {
-    props:['showModal','selectedUni','universityName','universityLink'],
+    props:['showModal','selectedUniversity','universityName'],
     name: 'power-users-modal',
      data(){
         return{
@@ -102,7 +102,7 @@ export default {
             }
         },
         tableauValue(){
-            if(this.selectedUni == 'csu7'){
+            if(this.selectedUniversity == 'csu7'){
                 return {
                     byMajor:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData',
                     byAge:'',
@@ -111,7 +111,7 @@ export default {
                     byPellStatus:''
             }
             }
-            else if(this.selectedUni =='northridge'){
+            else if(this.selectedUniversity =='northridge'){
                 return {
                     byMajor:'CSUNLaborMarketOutcomes-ByMajor/Story1',
                     byAge:'',
