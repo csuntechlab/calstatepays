@@ -14,7 +14,7 @@ class Sanitize_Pfre():
         localFilePath = './csv/' + self.file+'.csv'
         self.df = pd.read_csv(localFilePath)
         self.sanitizeHeaders()
-        print(list(self.df))
+        # print(list(self.df))
         self.set_index()
         self.dictionary = self.get_Dictionary()
         self.set_values_for_data_frame()
@@ -35,7 +35,7 @@ class Sanitize_Pfre():
         self.df.columns = self.df.columns.str.replace('(','')
         self.df.columns = self.df.columns.str.replace(')','')
         self.df.columns = self.df.columns.str.lower()
-        print(self.df.columns)
+        # print(self.df.columns)
     
     def get_Dictionary(self):
         fileName = self.file.replace("_pfre","")

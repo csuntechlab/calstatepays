@@ -94,7 +94,11 @@ class Data_Frame_Sanitizer:
         self.df[columnName] = self.df[columnName].str.replace('-','')
 
     def remove_comma(self,columnName):
-        self.df[columnName] = self.df[columnName].str.replace(',','')
+        try:
+            self.df[columnName] = self.df[columnName].str.replace(',','')
+        except:
+            print(self.df.head())
+            print('Lols theres not enough data')
 
     ### These are the common sanitizations that both jsons require
     def sanitizeCommon(self):

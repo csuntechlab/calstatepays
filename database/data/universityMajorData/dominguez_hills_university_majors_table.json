@@ -1,0 +1,392 @@
+[
+    {
+        "major": "Undeclared/Unknown",
+        "hegis_codes": 0,
+        "campus": 55,
+        "id": 330
+    },
+    {
+        "major": "Nursing",
+        "hegis_codes": 12032,
+        "campus": 55,
+        "id": 331
+    },
+    {
+        "major": "Biology",
+        "hegis_codes": 4011,
+        "campus": 55,
+        "id": 332
+    },
+    {
+        "major": "Biochemistry",
+        "hegis_codes": 4141,
+        "campus": 55,
+        "id": 333
+    },
+    {
+        "major": "Business Administration",
+        "hegis_codes": 5011,
+        "campus": 55,
+        "id": 334
+    },
+    {
+        "major": "Finance",
+        "hegis_codes": 5041,
+        "campus": 55,
+        "id": 335
+    },
+    {
+        "major": "Travel and Tourism/Tourism Management",
+        "hegis_codes": 5083,
+        "campus": 55,
+        "id": 336
+    },
+    {
+        "major": "International Business",
+        "hegis_codes": 5131,
+        "campus": 55,
+        "id": 337
+    },
+    {
+        "major": "Communications",
+        "hegis_codes": 6011,
+        "campus": 55,
+        "id": 338
+    },
+    {
+        "major": "Multimedia",
+        "hegis_codes": 6991,
+        "campus": 55,
+        "id": 339
+    },
+    {
+        "major": "Computer Science and Information Technology",
+        "hegis_codes": 7028,
+        "campus": 55,
+        "id": 340
+    },
+    {
+        "major": "Child Development",
+        "hegis_codes": 8232,
+        "campus": 55,
+        "id": 341
+    },
+    {
+        "major": "Kinesiology",
+        "hegis_codes": 8351,
+        "campus": 55,
+        "id": 342
+    },
+    {
+        "major": "Art",
+        "hegis_codes": 10022,
+        "campus": 55,
+        "id": 343
+    },
+    {
+        "major": "Music",
+        "hegis_codes": 10051,
+        "campus": 55,
+        "id": 344
+    },
+    {
+        "major": "Theatre Arts",
+        "hegis_codes": 10071,
+        "campus": 55,
+        "id": 345
+    },
+    {
+        "major": "Spanish",
+        "hegis_codes": 11051,
+        "campus": 55,
+        "id": 346
+    },
+    {
+        "major": "Health Science",
+        "hegis_codes": 12011,
+        "campus": 55,
+        "id": 347
+    },
+    {
+        "major": "Occupational Therapy",
+        "hegis_codes": 12081,
+        "campus": 55,
+        "id": 348
+    },
+    {
+        "major": "Medical Technology",
+        "hegis_codes": 12232,
+        "campus": 55,
+        "id": 349
+    },
+    {
+        "major": "English",
+        "hegis_codes": 15011,
+        "campus": 55,
+        "id": 350
+    },
+    {
+        "major": "Philosophy",
+        "hegis_codes": 15091,
+        "campus": 55,
+        "id": 351
+    },
+    {
+        "major": "Humanities",
+        "hegis_codes": 15991,
+        "campus": 55,
+        "id": 352
+    },
+    {
+        "major": "Mathematics",
+        "hegis_codes": 17011,
+        "campus": 55,
+        "id": 353
+    },
+    {
+        "major": "Physics",
+        "hegis_codes": 19021,
+        "campus": 55,
+        "id": 354
+    },
+    {
+        "major": "Chemistry",
+        "hegis_codes": 19051,
+        "campus": 55,
+        "id": 355
+    },
+    {
+        "major": "Geology",
+        "hegis_codes": 19141,
+        "campus": 55,
+        "id": 356
+    },
+    {
+        "major": "Earth Science",
+        "hegis_codes": 19171,
+        "campus": 55,
+        "id": 357
+    },
+    {
+        "major": "Psychology",
+        "hegis_codes": 20013,
+        "campus": 55,
+        "id": 358
+    },
+    {
+        "major": "Behavioral Science",
+        "hegis_codes": 20991,
+        "campus": 55,
+        "id": 359
+    },
+    {
+        "major": "Public Administration",
+        "hegis_codes": 21021,
+        "campus": 55,
+        "id": 360
+    },
+    {
+        "major": "Recreation Management & Administration",
+        "hegis_codes": 21031,
+        "campus": 55,
+        "id": 361
+    },
+    {
+        "major": "Human Services",
+        "hegis_codes": 21042,
+        "campus": 55,
+        "id": 362
+    },
+    {
+        "major": "Criminal Justice",
+        "hegis_codes": 21051,
+        "campus": 55,
+        "id": 363
+    },
+    {
+        "major": "Anthropology",
+        "hegis_codes": 22021,
+        "campus": 55,
+        "id": 364
+    },
+    {
+        "major": "Economics",
+        "hegis_codes": 22041,
+        "campus": 55,
+        "id": 365
+    },
+    {
+        "major": "History",
+        "hegis_codes": 22051,
+        "campus": 55,
+        "id": 366
+    },
+    {
+        "major": "Geography",
+        "hegis_codes": 22063,
+        "campus": 55,
+        "id": 367
+    },
+    {
+        "major": "Political Science",
+        "hegis_codes": 22071,
+        "campus": 55,
+        "id": 368
+    },
+    {
+        "major": "Sociology",
+        "hegis_codes": 22081,
+        "campus": 55,
+        "id": 369
+    },
+    {
+        "major": "African-American Studies",
+        "hegis_codes": 22111,
+        "campus": 55,
+        "id": 370
+    },
+    {
+        "major": "Mexican-American Studies",
+        "hegis_codes": 22131,
+        "campus": 55,
+        "id": 371
+    },
+    {
+        "major": "Labor Studies",
+        "hegis_codes": 22993,
+        "campus": 55,
+        "id": 372
+    },
+    {
+        "major": "Liberal Studies",
+        "hegis_codes": 49017,
+        "campus": 55,
+        "id": 373
+    },
+    {
+        "major": "Environmental Biology & Ecology",
+        "hegis_codes": 4201,
+        "campus": 55,
+        "id": 374
+    },
+    {
+        "major": "Microbiology",
+        "hegis_codes": 4111,
+        "campus": 55,
+        "id": 375
+    },
+    {
+        "major": "Cell and Molecular Biology",
+        "hegis_codes": 4171,
+        "campus": 55,
+        "id": 376
+    },
+    {
+        "major": "Accounting",
+        "hegis_codes": 5021,
+        "campus": 55,
+        "id": 377
+    },
+    {
+        "major": "Management",
+        "hegis_codes": 5061,
+        "campus": 55,
+        "id": 378
+    },
+    {
+        "major": "Production and Operations Management",
+        "hegis_codes": 5064,
+        "campus": 55,
+        "id": 379
+    },
+    {
+        "major": "Marketing",
+        "hegis_codes": 5091,
+        "campus": 55,
+        "id": 380
+    },
+    {
+        "major": "Human Resources/Personnel Management",
+        "hegis_codes": 5151,
+        "campus": 55,
+        "id": 381
+    },
+    {
+        "major": "Public Relations",
+        "hegis_codes": 5992,
+        "campus": 55,
+        "id": 382
+    },
+    {
+        "major": "Entrepreneurship & Small Business Management",
+        "hegis_codes": 5997,
+        "campus": 55,
+        "id": 383
+    },
+    {
+        "major": "Journalism",
+        "hegis_codes": 6022,
+        "campus": 55,
+        "id": 384
+    },
+    {
+        "major": "Radio/Television/Broadcast",
+        "hegis_codes": 6031,
+        "campus": 55,
+        "id": 385
+    },
+    {
+        "major": "Information Systems",
+        "hegis_codes": 7021,
+        "campus": 55,
+        "id": 386
+    },
+    {
+        "major": "Education",
+        "hegis_codes": 8225,
+        "campus": 55,
+        "id": 387
+    },
+    {
+        "major": "Art History",
+        "hegis_codes": 10031,
+        "campus": 55,
+        "id": 388
+    },
+    {
+        "major": "Graphic Design",
+        "hegis_codes": 10091,
+        "campus": 55,
+        "id": 389
+    },
+    {
+        "major": "Health Care Management/Administration",
+        "hegis_codes": 12021,
+        "campus": 55,
+        "id": 390
+    },
+    {
+        "major": "Radiologic Science & Technology",
+        "hegis_codes": 12253,
+        "campus": 55,
+        "id": 391
+    },
+    {
+        "major": "English Literature",
+        "hegis_codes": 15021,
+        "campus": 55,
+        "id": 392
+    },
+    {
+        "major": "Linguistics",
+        "hegis_codes": 15051,
+        "campus": 55,
+        "id": 393
+    },
+    {
+        "major": "Cultural Resources Management",
+        "hegis_codes": 22994,
+        "campus": 55,
+        "id": 394
+    }
+]

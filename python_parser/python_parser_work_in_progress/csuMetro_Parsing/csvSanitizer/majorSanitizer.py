@@ -58,7 +58,7 @@ class Sanitize_Major(Data_Frame_Sanitizer):
 
         self.set_index()
 
-        print(self.df.head())
+        # print(self.df.head())
     
     def set_index(self):
         lenOfDf = len(self.df) + self.globalIndex
