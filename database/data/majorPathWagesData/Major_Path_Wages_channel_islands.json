@@ -1,1874 +1,1874 @@
 [
     {
-        "id": 2973.0,
         "_75th_percentile_earnings": 86447.0,
         "_50th_percentile_earnings": 78342.0,
-        "_25th_percentile_earnings": 65641.0
+        "_25th_percentile_earnings": 65641.0,
+        "id": 3641.0
     },
     {
-        "id": 2974.0,
         "_75th_percentile_earnings": 98143.0,
         "_50th_percentile_earnings": 78973.0,
-        "_25th_percentile_earnings": 56352.0
+        "_25th_percentile_earnings": 56352.0,
+        "id": 3642.0
     },
     {
-        "id": 2975.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3643.0
     },
     {
-        "id": 2976.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3644.0
     },
     {
-        "id": 2977.0,
         "_75th_percentile_earnings": 45861.0,
         "_50th_percentile_earnings": 30711.0,
-        "_25th_percentile_earnings": 14450.0
+        "_25th_percentile_earnings": 14450.0,
+        "id": 3645.0
     },
     {
-        "id": 2978.0,
         "_75th_percentile_earnings": 70835.0,
         "_50th_percentile_earnings": 45683.0,
-        "_25th_percentile_earnings": 29901.0
+        "_25th_percentile_earnings": 29901.0,
+        "id": 3646.0
     },
     {
-        "id": 2979.0,
         "_75th_percentile_earnings": 75961.0,
         "_50th_percentile_earnings": 66900.0,
-        "_25th_percentile_earnings": 47089.0
+        "_25th_percentile_earnings": 47089.0,
+        "id": 3647.0
     },
     {
-        "id": 2980.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3648.0
     },
     {
-        "id": 2981.0,
         "_75th_percentile_earnings": 46796.0,
         "_50th_percentile_earnings": 34698.0,
-        "_25th_percentile_earnings": 15634.0
+        "_25th_percentile_earnings": 15634.0,
+        "id": 3649.0
     },
     {
-        "id": 2982.0,
         "_75th_percentile_earnings": 63019.0,
         "_50th_percentile_earnings": 48980.0,
-        "_25th_percentile_earnings": 24943.0
+        "_25th_percentile_earnings": 24943.0,
+        "id": 3650.0
     },
     {
-        "id": 2983.0,
         "_75th_percentile_earnings": 61448.0,
         "_50th_percentile_earnings": 45167.0,
-        "_25th_percentile_earnings": 22580.0
+        "_25th_percentile_earnings": 22580.0,
+        "id": 3651.0
     },
     {
-        "id": 2984.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3652.0
     },
     {
-        "id": 2985.0,
         "_75th_percentile_earnings": 52255.0,
         "_50th_percentile_earnings": 38048.0,
-        "_25th_percentile_earnings": 24228.0
+        "_25th_percentile_earnings": 24228.0,
+        "id": 3653.0
     },
     {
-        "id": 2986.0,
         "_75th_percentile_earnings": 65315.0,
         "_50th_percentile_earnings": 51672.0,
-        "_25th_percentile_earnings": 34706.0
+        "_25th_percentile_earnings": 34706.0,
+        "id": 3654.0
     },
     {
-        "id": 2987.0,
         "_75th_percentile_earnings": 91477.0,
         "_50th_percentile_earnings": 69024.0,
-        "_25th_percentile_earnings": 49825.0
+        "_25th_percentile_earnings": 49825.0,
+        "id": 3655.0
     },
     {
-        "id": 2988.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3656.0
     },
     {
-        "id": 2989.0,
         "_75th_percentile_earnings": 43338.0,
         "_50th_percentile_earnings": 32011.0,
-        "_25th_percentile_earnings": 18454.0
+        "_25th_percentile_earnings": 18454.0,
+        "id": 3657.0
     },
     {
-        "id": 2990.0,
         "_75th_percentile_earnings": 57373.0,
         "_50th_percentile_earnings": 39138.0,
-        "_25th_percentile_earnings": 25776.0
+        "_25th_percentile_earnings": 25776.0,
+        "id": 3658.0
     },
     {
-        "id": 2991.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3659.0
     },
     {
-        "id": 2992.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3660.0
     },
     {
-        "id": 2993.0,
         "_75th_percentile_earnings": 68980.0,
         "_50th_percentile_earnings": 56027.0,
-        "_25th_percentile_earnings": 41884.0
+        "_25th_percentile_earnings": 41884.0,
+        "id": 3661.0
     },
     {
-        "id": 2994.0,
         "_75th_percentile_earnings": 86603.0,
         "_50th_percentile_earnings": 67995.0,
-        "_25th_percentile_earnings": 44067.0
+        "_25th_percentile_earnings": 44067.0,
+        "id": 3662.0
     },
     {
-        "id": 2995.0,
         "_75th_percentile_earnings": 138573.0,
         "_50th_percentile_earnings": 86370.0,
-        "_25th_percentile_earnings": 57917.0
+        "_25th_percentile_earnings": 57917.0,
+        "id": 3663.0
     },
     {
-        "id": 2996.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3664.0
     },
     {
-        "id": 2997.0,
         "_75th_percentile_earnings": 31553.0,
         "_50th_percentile_earnings": 25033.0,
-        "_25th_percentile_earnings": 13050.0
+        "_25th_percentile_earnings": 13050.0,
+        "id": 3665.0
     },
     {
-        "id": 2998.0,
         "_75th_percentile_earnings": 36577.0,
         "_50th_percentile_earnings": 30543.0,
-        "_25th_percentile_earnings": 15312.0
+        "_25th_percentile_earnings": 15312.0,
+        "id": 3666.0
     },
     {
-        "id": 2999.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3667.0
     },
     {
-        "id": 3000.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3668.0
     },
     {
-        "id": 3001.0,
         "_75th_percentile_earnings": 30286.0,
         "_50th_percentile_earnings": 20711.0,
-        "_25th_percentile_earnings": 11177.0
+        "_25th_percentile_earnings": 11177.0,
+        "id": 3669.0
     },
     {
-        "id": 3002.0,
         "_75th_percentile_earnings": 37308.0,
         "_50th_percentile_earnings": 33691.0,
-        "_25th_percentile_earnings": 24396.0
+        "_25th_percentile_earnings": 24396.0,
+        "id": 3670.0
     },
     {
-        "id": 3003.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3671.0
     },
     {
-        "id": 3004.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3672.0
     },
     {
-        "id": 3005.0,
         "_75th_percentile_earnings": 36788.0,
         "_50th_percentile_earnings": 22768.0,
-        "_25th_percentile_earnings": 12742.0
+        "_25th_percentile_earnings": 12742.0,
+        "id": 3673.0
     },
     {
-        "id": 3006.0,
         "_75th_percentile_earnings": 52518.0,
         "_50th_percentile_earnings": 33981.0,
-        "_25th_percentile_earnings": 17809.0
+        "_25th_percentile_earnings": 17809.0,
+        "id": 3674.0
     },
     {
-        "id": 3007.0,
         "_75th_percentile_earnings": 83408.0,
         "_50th_percentile_earnings": 55222.0,
-        "_25th_percentile_earnings": 18838.0
+        "_25th_percentile_earnings": 18838.0,
+        "id": 3675.0
     },
     {
-        "id": 3008.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3676.0
     },
     {
-        "id": 3009.0,
         "_75th_percentile_earnings": 38504.0,
         "_50th_percentile_earnings": 30890.0,
-        "_25th_percentile_earnings": 14734.0
+        "_25th_percentile_earnings": 14734.0,
+        "id": 3677.0
     },
     {
-        "id": 3010.0,
         "_75th_percentile_earnings": 53745.0,
         "_50th_percentile_earnings": 37665.0,
-        "_25th_percentile_earnings": 17788.0
+        "_25th_percentile_earnings": 17788.0,
+        "id": 3678.0
     },
     {
-        "id": 3011.0,
         "_75th_percentile_earnings": 109848.0,
         "_50th_percentile_earnings": 95065.0,
-        "_25th_percentile_earnings": 41655.0
+        "_25th_percentile_earnings": 41655.0,
+        "id": 3679.0
     },
     {
-        "id": 3012.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3680.0
     },
     {
-        "id": 3013.0,
         "_75th_percentile_earnings": 39133.0,
         "_50th_percentile_earnings": 21445.0,
-        "_25th_percentile_earnings": 10261.0
+        "_25th_percentile_earnings": 10261.0,
+        "id": 3681.0
     },
     {
-        "id": 3014.0,
         "_75th_percentile_earnings": 47460.0,
         "_50th_percentile_earnings": 27582.0,
-        "_25th_percentile_earnings": 17813.0
+        "_25th_percentile_earnings": 17813.0,
+        "id": 3682.0
     },
     {
-        "id": 3015.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3683.0
     },
     {
-        "id": 3016.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3684.0
     },
     {
-        "id": 3017.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3685.0
     },
     {
-        "id": 3018.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3686.0
     },
     {
-        "id": 3019.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3687.0
     },
     {
-        "id": 3020.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3688.0
     },
     {
-        "id": 3021.0,
         "_75th_percentile_earnings": 39480.0,
         "_50th_percentile_earnings": 25162.0,
-        "_25th_percentile_earnings": 13425.0
+        "_25th_percentile_earnings": 13425.0,
+        "id": 3689.0
     },
     {
-        "id": 3022.0,
         "_75th_percentile_earnings": 51854.0,
         "_50th_percentile_earnings": 32673.0,
-        "_25th_percentile_earnings": 18371.0
+        "_25th_percentile_earnings": 18371.0,
+        "id": 3690.0
     },
     {
-        "id": 3023.0,
         "_75th_percentile_earnings": 72233.0,
         "_50th_percentile_earnings": 54123.0,
-        "_25th_percentile_earnings": 33556.0
+        "_25th_percentile_earnings": 33556.0,
+        "id": 3691.0
     },
     {
-        "id": 3024.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3692.0
     },
     {
-        "id": 3025.0,
         "_75th_percentile_earnings": 46666.0,
         "_50th_percentile_earnings": 32421.0,
-        "_25th_percentile_earnings": 11768.0
+        "_25th_percentile_earnings": 11768.0,
+        "id": 3693.0
     },
     {
-        "id": 3026.0,
         "_75th_percentile_earnings": 62370.0,
         "_50th_percentile_earnings": 47593.0,
-        "_25th_percentile_earnings": 17791.0
+        "_25th_percentile_earnings": 17791.0,
+        "id": 3694.0
     },
     {
-        "id": 3027.0,
         "_75th_percentile_earnings": 94875.0,
         "_50th_percentile_earnings": 69151.0,
-        "_25th_percentile_earnings": 48985.0
+        "_25th_percentile_earnings": 48985.0,
+        "id": 3695.0
     },
     {
-        "id": 3028.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3696.0
     },
     {
-        "id": 3029.0,
         "_75th_percentile_earnings": 50650.0,
         "_50th_percentile_earnings": 15930.0,
-        "_25th_percentile_earnings": 9568.0
+        "_25th_percentile_earnings": 9568.0,
+        "id": 3697.0
     },
     {
-        "id": 3030.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3698.0
     },
     {
-        "id": 3031.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3699.0
     },
     {
-        "id": 3032.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3700.0
     },
     {
-        "id": 3033.0,
         "_75th_percentile_earnings": 47044.0,
         "_50th_percentile_earnings": 38817.0,
-        "_25th_percentile_earnings": 24874.0
+        "_25th_percentile_earnings": 24874.0,
+        "id": 3701.0
     },
     {
-        "id": 3034.0,
         "_75th_percentile_earnings": 58157.0,
         "_50th_percentile_earnings": 51671.0,
-        "_25th_percentile_earnings": 23079.0
+        "_25th_percentile_earnings": 23079.0,
+        "id": 3702.0
     },
     {
-        "id": 3035.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3703.0
     },
     {
-        "id": 3036.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3704.0
     },
     {
-        "id": 3037.0,
         "_75th_percentile_earnings": 37705.0,
         "_50th_percentile_earnings": 25891.0,
-        "_25th_percentile_earnings": 14751.0
+        "_25th_percentile_earnings": 14751.0,
+        "id": 3705.0
     },
     {
-        "id": 3038.0,
         "_75th_percentile_earnings": 51984.0,
         "_50th_percentile_earnings": 35327.0,
-        "_25th_percentile_earnings": 19449.0
+        "_25th_percentile_earnings": 19449.0,
+        "id": 3706.0
     },
     {
-        "id": 3039.0,
         "_75th_percentile_earnings": 63777.0,
         "_50th_percentile_earnings": 46008.0,
-        "_25th_percentile_earnings": 24071.0
+        "_25th_percentile_earnings": 24071.0,
+        "id": 3707.0
     },
     {
-        "id": 3040.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3708.0
     },
     {
-        "id": 3041.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3709.0
     },
     {
-        "id": 3042.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3710.0
     },
     {
-        "id": 3043.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3711.0
     },
     {
-        "id": 3044.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3712.0
     },
     {
-        "id": 3045.0,
         "_75th_percentile_earnings": 52680.0,
         "_50th_percentile_earnings": 38567.0,
-        "_25th_percentile_earnings": 17482.0
+        "_25th_percentile_earnings": 17482.0,
+        "id": 3713.0
     },
     {
-        "id": 3046.0,
         "_75th_percentile_earnings": 64656.0,
         "_50th_percentile_earnings": 47057.0,
-        "_25th_percentile_earnings": 31989.0
+        "_25th_percentile_earnings": 31989.0,
+        "id": 3714.0
     },
     {
-        "id": 3047.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3715.0
     },
     {
-        "id": 3048.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3716.0
     },
     {
-        "id": 3049.0,
         "_75th_percentile_earnings": 36524.0,
         "_50th_percentile_earnings": 22566.0,
-        "_25th_percentile_earnings": 10810.0
+        "_25th_percentile_earnings": 10810.0,
+        "id": 3717.0
     },
     {
-        "id": 3050.0,
         "_75th_percentile_earnings": 50426.0,
         "_50th_percentile_earnings": 30036.0,
-        "_25th_percentile_earnings": 15072.0
+        "_25th_percentile_earnings": 15072.0,
+        "id": 3718.0
     },
     {
-        "id": 3051.0,
         "_75th_percentile_earnings": 84759.0,
         "_50th_percentile_earnings": 52144.0,
-        "_25th_percentile_earnings": 22349.0
+        "_25th_percentile_earnings": 22349.0,
+        "id": 3719.0
     },
     {
-        "id": 3052.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3720.0
     },
     {
-        "id": 3053.0,
         "_75th_percentile_earnings": 35620.0,
         "_50th_percentile_earnings": 24203.0,
-        "_25th_percentile_earnings": 11253.0
+        "_25th_percentile_earnings": 11253.0,
+        "id": 3721.0
     },
     {
-        "id": 3054.0,
         "_75th_percentile_earnings": 48006.0,
         "_50th_percentile_earnings": 37793.0,
-        "_25th_percentile_earnings": 20830.0
+        "_25th_percentile_earnings": 20830.0,
+        "id": 3722.0
     },
     {
-        "id": 3055.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3723.0
     },
     {
-        "id": 3056.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3724.0
     },
     {
-        "id": 3057.0,
         "_75th_percentile_earnings": 41618.0,
         "_50th_percentile_earnings": 29349.0,
-        "_25th_percentile_earnings": 17861.0
+        "_25th_percentile_earnings": 17861.0,
+        "id": 3725.0
     },
     {
-        "id": 3058.0,
         "_75th_percentile_earnings": 49604.0,
         "_50th_percentile_earnings": 36806.0,
-        "_25th_percentile_earnings": 19394.0
+        "_25th_percentile_earnings": 19394.0,
+        "id": 3726.0
     },
     {
-        "id": 3059.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3727.0
     },
     {
-        "id": 3060.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3728.0
     },
     {
-        "id": 3061.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3729.0
     },
     {
-        "id": 3062.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3730.0
     },
     {
-        "id": 3063.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3731.0
     },
     {
-        "id": 3064.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3732.0
     },
     {
-        "id": 3065.0,
         "_75th_percentile_earnings": 39152.0,
         "_50th_percentile_earnings": 28075.0,
-        "_25th_percentile_earnings": 15212.0
+        "_25th_percentile_earnings": 15212.0,
+        "id": 3733.0
     },
     {
-        "id": 3066.0,
         "_75th_percentile_earnings": 57497.0,
         "_50th_percentile_earnings": 46416.0,
-        "_25th_percentile_earnings": 25373.0
+        "_25th_percentile_earnings": 25373.0,
+        "id": 3734.0
     },
     {
-        "id": 3067.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3735.0
     },
     {
-        "id": 3068.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3736.0
     },
     {
-        "id": 3069.0,
         "_75th_percentile_earnings": 38202.0,
         "_50th_percentile_earnings": 22966.0,
-        "_25th_percentile_earnings": 12526.0
+        "_25th_percentile_earnings": 12526.0,
+        "id": 3737.0
     },
     {
-        "id": 3070.0,
         "_75th_percentile_earnings": 51078.0,
         "_50th_percentile_earnings": 35657.0,
-        "_25th_percentile_earnings": 19352.0
+        "_25th_percentile_earnings": 19352.0,
+        "id": 3738.0
     },
     {
-        "id": 3071.0,
         "_75th_percentile_earnings": 65920.0,
         "_50th_percentile_earnings": 46425.0,
-        "_25th_percentile_earnings": 26506.0
+        "_25th_percentile_earnings": 26506.0,
+        "id": 3739.0
     },
     {
-        "id": 3072.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3740.0
     },
     {
-        "id": 3073.0,
         "_75th_percentile_earnings": 49730.0,
         "_50th_percentile_earnings": 32969.0,
-        "_25th_percentile_earnings": 13508.0
+        "_25th_percentile_earnings": 13508.0,
+        "id": 3741.0
     },
     {
-        "id": 3074.0,
         "_75th_percentile_earnings": 64263.0,
         "_50th_percentile_earnings": 55497.0,
-        "_25th_percentile_earnings": 33381.0
+        "_25th_percentile_earnings": 33381.0,
+        "id": 3742.0
     },
     {
-        "id": 3075.0,
         "_75th_percentile_earnings": 65274.0,
         "_50th_percentile_earnings": 63487.0,
-        "_25th_percentile_earnings": 56126.0
+        "_25th_percentile_earnings": 56126.0,
+        "id": 3743.0
     },
     {
-        "id": 3076.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3744.0
     },
     {
-        "id": 3077.0,
         "_75th_percentile_earnings": 17080.0,
         "_50th_percentile_earnings": 9531.0,
-        "_25th_percentile_earnings": 5071.0
+        "_25th_percentile_earnings": 5071.0,
+        "id": 3745.0
     },
     {
-        "id": 3078.0,
         "_75th_percentile_earnings": 32058.0,
         "_50th_percentile_earnings": 18325.0,
-        "_25th_percentile_earnings": 8341.0
+        "_25th_percentile_earnings": 8341.0,
+        "id": 3746.0
     },
     {
-        "id": 3079.0,
         "_75th_percentile_earnings": 61340.0,
         "_50th_percentile_earnings": 40599.0,
-        "_25th_percentile_earnings": 22725.0
+        "_25th_percentile_earnings": 22725.0,
+        "id": 3747.0
     },
     {
-        "id": 3080.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3748.0
     },
     {
-        "id": 3081.0,
         "_75th_percentile_earnings": 21467.0,
         "_50th_percentile_earnings": 11925.0,
-        "_25th_percentile_earnings": 5241.0
+        "_25th_percentile_earnings": 5241.0,
+        "id": 3749.0
     },
     {
-        "id": 3082.0,
         "_75th_percentile_earnings": 45501.0,
         "_50th_percentile_earnings": 28428.0,
-        "_25th_percentile_earnings": 18177.0
+        "_25th_percentile_earnings": 18177.0,
+        "id": 3750.0
     },
     {
-        "id": 3083.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3751.0
     },
     {
-        "id": 3084.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3752.0
     },
     {
-        "id": 3085.0,
         "_75th_percentile_earnings": 26698.0,
         "_50th_percentile_earnings": 15274.0,
-        "_25th_percentile_earnings": 6506.0
+        "_25th_percentile_earnings": 6506.0,
+        "id": 3753.0
     },
     {
-        "id": 3086.0,
         "_75th_percentile_earnings": 42784.0,
         "_50th_percentile_earnings": 23591.0,
-        "_25th_percentile_earnings": 12872.0
+        "_25th_percentile_earnings": 12872.0,
+        "id": 3754.0
     },
     {
-        "id": 3087.0,
         "_75th_percentile_earnings": 56347.0,
         "_50th_percentile_earnings": 30295.0,
-        "_25th_percentile_earnings": 19729.0
+        "_25th_percentile_earnings": 19729.0,
+        "id": 3755.0
     },
     {
-        "id": 3088.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3756.0
     },
     {
-        "id": 3089.0,
         "_75th_percentile_earnings": 18403.0,
         "_50th_percentile_earnings": 13133.0,
-        "_25th_percentile_earnings": 12011.0
+        "_25th_percentile_earnings": 12011.0,
+        "id": 3757.0
     },
     {
-        "id": 3090.0,
         "_75th_percentile_earnings": 24083.0,
         "_50th_percentile_earnings": 18859.0,
-        "_25th_percentile_earnings": 11995.0
+        "_25th_percentile_earnings": 11995.0,
+        "id": 3758.0
     },
     {
-        "id": 3091.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3759.0
     },
     {
-        "id": 3092.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3760.0
     },
     {
-        "id": 3093.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3761.0
     },
     {
-        "id": 3094.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3762.0
     },
     {
-        "id": 3095.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3763.0
     },
     {
-        "id": 3096.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3764.0
     },
     {
-        "id": 3097.0,
         "_75th_percentile_earnings": 34537.0,
         "_50th_percentile_earnings": 18854.0,
-        "_25th_percentile_earnings": 9210.0
+        "_25th_percentile_earnings": 9210.0,
+        "id": 3765.0
     },
     {
-        "id": 3098.0,
         "_75th_percentile_earnings": 52345.0,
         "_50th_percentile_earnings": 31520.0,
-        "_25th_percentile_earnings": 13927.0
+        "_25th_percentile_earnings": 13927.0,
+        "id": 3766.0
     },
     {
-        "id": 3099.0,
         "_75th_percentile_earnings": 64036.0,
         "_50th_percentile_earnings": 44516.0,
-        "_25th_percentile_earnings": 28566.0
+        "_25th_percentile_earnings": 28566.0,
+        "id": 3767.0
     },
     {
-        "id": 3100.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3768.0
     },
     {
-        "id": 3101.0,
         "_75th_percentile_earnings": 25044.0,
         "_50th_percentile_earnings": 14819.0,
-        "_25th_percentile_earnings": 7376.0
+        "_25th_percentile_earnings": 7376.0,
+        "id": 3769.0
     },
     {
-        "id": 3102.0,
         "_75th_percentile_earnings": 40351.0,
         "_50th_percentile_earnings": 27809.0,
-        "_25th_percentile_earnings": 12582.0
+        "_25th_percentile_earnings": 12582.0,
+        "id": 3770.0
     },
     {
-        "id": 3103.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3771.0
     },
     {
-        "id": 3104.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3772.0
     },
     {
-        "id": 3105.0,
         "_75th_percentile_earnings": 42638.0,
         "_50th_percentile_earnings": 20406.0,
-        "_25th_percentile_earnings": 7789.0
+        "_25th_percentile_earnings": 7789.0,
+        "id": 3773.0
     },
     {
-        "id": 3106.0,
         "_75th_percentile_earnings": 57907.0,
         "_50th_percentile_earnings": 31608.0,
-        "_25th_percentile_earnings": 17443.0
+        "_25th_percentile_earnings": 17443.0,
+        "id": 3774.0
     },
     {
-        "id": 3107.0,
         "_75th_percentile_earnings": 81046.0,
         "_50th_percentile_earnings": 35622.0,
-        "_25th_percentile_earnings": 19965.0
+        "_25th_percentile_earnings": 19965.0,
+        "id": 3775.0
     },
     {
-        "id": 3108.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3776.0
     },
     {
-        "id": 3109.0,
         "_75th_percentile_earnings": 21037.0,
         "_50th_percentile_earnings": 14201.0,
-        "_25th_percentile_earnings": 7583.0
+        "_25th_percentile_earnings": 7583.0,
+        "id": 3777.0
     },
     {
-        "id": 3110.0,
         "_75th_percentile_earnings": 51972.0,
         "_50th_percentile_earnings": 31120.0,
-        "_25th_percentile_earnings": 19344.0
+        "_25th_percentile_earnings": 19344.0,
+        "id": 3778.0
     },
     {
-        "id": 3111.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3779.0
     },
     {
-        "id": 3112.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3780.0
     },
     {
-        "id": 3113.0,
         "_75th_percentile_earnings": 17801.0,
         "_50th_percentile_earnings": 6671.0,
-        "_25th_percentile_earnings": 3834.0
+        "_25th_percentile_earnings": 3834.0,
+        "id": 3781.0
     },
     {
-        "id": 3114.0,
         "_75th_percentile_earnings": 11402.0,
         "_50th_percentile_earnings": 8998.0,
-        "_25th_percentile_earnings": 5603.0
+        "_25th_percentile_earnings": 5603.0,
+        "id": 3782.0
     },
     {
-        "id": 3115.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3783.0
     },
     {
-        "id": 3116.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3784.0
     },
     {
-        "id": 3117.0,
         "_75th_percentile_earnings": 28728.0,
         "_50th_percentile_earnings": 13005.0,
-        "_25th_percentile_earnings": 4948.0
+        "_25th_percentile_earnings": 4948.0,
+        "id": 3785.0
     },
     {
-        "id": 3118.0,
         "_75th_percentile_earnings": 38845.0,
         "_50th_percentile_earnings": 21856.0,
-        "_25th_percentile_earnings": 8368.0
+        "_25th_percentile_earnings": 8368.0,
+        "id": 3786.0
     },
     {
-        "id": 3119.0,
         "_75th_percentile_earnings": 78413.0,
         "_50th_percentile_earnings": 51806.0,
-        "_25th_percentile_earnings": 22500.0
+        "_25th_percentile_earnings": 22500.0,
+        "id": 3787.0
     },
     {
-        "id": 3120.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3788.0
     },
     {
-        "id": 3121.0,
         "_75th_percentile_earnings": 33341.0,
         "_50th_percentile_earnings": 17182.0,
-        "_25th_percentile_earnings": 3959.0
+        "_25th_percentile_earnings": 3959.0,
+        "id": 3789.0
     },
     {
-        "id": 3122.0,
         "_75th_percentile_earnings": 37541.0,
         "_50th_percentile_earnings": 23878.0,
-        "_25th_percentile_earnings": 10536.0
+        "_25th_percentile_earnings": 10536.0,
+        "id": 3790.0
     },
     {
-        "id": 3123.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3791.0
     },
     {
-        "id": 3124.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3792.0
     },
     {
-        "id": 3125.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3793.0
     },
     {
-        "id": 3126.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3794.0
     },
     {
-        "id": 3127.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3795.0
     },
     {
-        "id": 3128.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3796.0
     },
     {
-        "id": 3129.0,
         "_75th_percentile_earnings": 29088.0,
         "_50th_percentile_earnings": 17684.0,
-        "_25th_percentile_earnings": 7483.0
+        "_25th_percentile_earnings": 7483.0,
+        "id": 3797.0
     },
     {
-        "id": 3130.0,
         "_75th_percentile_earnings": 39423.0,
         "_50th_percentile_earnings": 23199.0,
-        "_25th_percentile_earnings": 10240.0
+        "_25th_percentile_earnings": 10240.0,
+        "id": 3798.0
     },
     {
-        "id": 3131.0,
         "_75th_percentile_earnings": 59071.0,
         "_50th_percentile_earnings": 36753.0,
-        "_25th_percentile_earnings": 15049.0
+        "_25th_percentile_earnings": 15049.0,
+        "id": 3799.0
     },
     {
-        "id": 3132.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3800.0
     },
     {
-        "id": 3133.0,
         "_75th_percentile_earnings": 31089.0,
         "_50th_percentile_earnings": 17920.0,
-        "_25th_percentile_earnings": 6564.0
+        "_25th_percentile_earnings": 6564.0,
+        "id": 3801.0
     },
     {
-        "id": 3134.0,
         "_75th_percentile_earnings": 44906.0,
         "_50th_percentile_earnings": 23926.0,
-        "_25th_percentile_earnings": 10170.0
+        "_25th_percentile_earnings": 10170.0,
+        "id": 3802.0
     },
     {
-        "id": 3135.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3803.0
     },
     {
-        "id": 3136.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3804.0
     },
     {
-        "id": 3137.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3805.0
     },
     {
-        "id": 3138.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3806.0
     },
     {
-        "id": 3139.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3807.0
     },
     {
-        "id": 3140.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3808.0
     },
     {
-        "id": 3141.0,
         "_75th_percentile_earnings": 32596.0,
         "_50th_percentile_earnings": 19098.0,
-        "_25th_percentile_earnings": 13232.0
+        "_25th_percentile_earnings": 13232.0,
+        "id": 3809.0
     },
     {
-        "id": 3142.0,
         "_75th_percentile_earnings": 71820.0,
         "_50th_percentile_earnings": 25477.0,
-        "_25th_percentile_earnings": 11039.0
+        "_25th_percentile_earnings": 11039.0,
+        "id": 3810.0
     },
     {
-        "id": 3143.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3811.0
     },
     {
-        "id": 3144.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3812.0
     },
     {
-        "id": 3145.0,
         "_75th_percentile_earnings": 26446.0,
         "_50th_percentile_earnings": 15480.0,
-        "_25th_percentile_earnings": 7060.0
+        "_25th_percentile_earnings": 7060.0,
+        "id": 3813.0
     },
     {
-        "id": 3146.0,
         "_75th_percentile_earnings": 40506.0,
         "_50th_percentile_earnings": 24041.0,
-        "_25th_percentile_earnings": 13571.0
+        "_25th_percentile_earnings": 13571.0,
+        "id": 3814.0
     },
     {
-        "id": 3147.0,
         "_75th_percentile_earnings": 56907.0,
         "_50th_percentile_earnings": 39138.0,
-        "_25th_percentile_earnings": 26005.0
+        "_25th_percentile_earnings": 26005.0,
+        "id": 3815.0
     },
     {
-        "id": 3148.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3816.0
     },
     {
-        "id": 3149.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3817.0
     },
     {
-        "id": 3150.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3818.0
     },
     {
-        "id": 3151.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3819.0
     },
     {
-        "id": 3152.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3820.0
     },
     {
-        "id": 3153.0,
         "_75th_percentile_earnings": 47813.0,
         "_50th_percentile_earnings": 30213.0,
-        "_25th_percentile_earnings": 15933.0
+        "_25th_percentile_earnings": 15933.0,
+        "id": 3821.0
     },
     {
-        "id": 3154.0,
         "_75th_percentile_earnings": 76664.0,
         "_50th_percentile_earnings": 66724.0,
-        "_25th_percentile_earnings": 39063.0
+        "_25th_percentile_earnings": 39063.0,
+        "id": 3822.0
     },
     {
-        "id": 3155.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3823.0
     },
     {
-        "id": 3156.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3824.0
     },
     {
-        "id": 3157.0,
         "_75th_percentile_earnings": 27514.0,
         "_50th_percentile_earnings": 12530.0,
-        "_25th_percentile_earnings": 6375.0
+        "_25th_percentile_earnings": 6375.0,
+        "id": 3825.0
     },
     {
-        "id": 3158.0,
         "_75th_percentile_earnings": 40779.0,
         "_50th_percentile_earnings": 19622.0,
-        "_25th_percentile_earnings": 11253.0
+        "_25th_percentile_earnings": 11253.0,
+        "id": 3826.0
     },
     {
-        "id": 3159.0,
         "_75th_percentile_earnings": 81255.0,
         "_50th_percentile_earnings": 56592.0,
-        "_25th_percentile_earnings": 22182.0
+        "_25th_percentile_earnings": 22182.0,
+        "id": 3827.0
     },
     {
-        "id": 3160.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3828.0
     },
     {
-        "id": 3161.0,
         "_75th_percentile_earnings": 22698.0,
         "_50th_percentile_earnings": 14526.0,
-        "_25th_percentile_earnings": 7686.0
+        "_25th_percentile_earnings": 7686.0,
+        "id": 3829.0
     },
     {
-        "id": 3162.0,
         "_75th_percentile_earnings": 40137.0,
         "_50th_percentile_earnings": 29788.0,
-        "_25th_percentile_earnings": 9250.0
+        "_25th_percentile_earnings": 9250.0,
+        "id": 3830.0
     },
     {
-        "id": 3163.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3831.0
     },
     {
-        "id": 3164.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3832.0
     },
     {
-        "id": 3165.0,
         "_75th_percentile_earnings": 37398.0,
         "_50th_percentile_earnings": 25927.0,
-        "_25th_percentile_earnings": 13851.0
+        "_25th_percentile_earnings": 13851.0,
+        "id": 3833.0
     },
     {
-        "id": 3166.0,
         "_75th_percentile_earnings": 43665.0,
         "_50th_percentile_earnings": 28430.0,
-        "_25th_percentile_earnings": 18644.0
+        "_25th_percentile_earnings": 18644.0,
+        "id": 3834.0
     },
     {
-        "id": 3167.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3835.0
     },
     {
-        "id": 3168.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3836.0
     },
     {
-        "id": 3169.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3837.0
     },
     {
-        "id": 3170.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3838.0
     },
     {
-        "id": 3171.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3839.0
     },
     {
-        "id": 3172.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3840.0
     },
     {
-        "id": 3173.0,
         "_75th_percentile_earnings": 28914.0,
         "_50th_percentile_earnings": 19447.0,
-        "_25th_percentile_earnings": 10111.0
+        "_25th_percentile_earnings": 10111.0,
+        "id": 3841.0
     },
     {
-        "id": 3174.0,
         "_75th_percentile_earnings": 59430.0,
         "_50th_percentile_earnings": 21476.0,
-        "_25th_percentile_earnings": 8843.0
+        "_25th_percentile_earnings": 8843.0,
+        "id": 3842.0
     },
     {
-        "id": 3175.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3843.0
     },
     {
-        "id": 3176.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3844.0
     },
     {
-        "id": 3177.0,
         "_75th_percentile_earnings": 33501.0,
         "_50th_percentile_earnings": 18481.0,
-        "_25th_percentile_earnings": 9191.0
+        "_25th_percentile_earnings": 9191.0,
+        "id": 3845.0
     },
     {
-        "id": 3178.0,
         "_75th_percentile_earnings": 42710.0,
         "_50th_percentile_earnings": 28941.0,
-        "_25th_percentile_earnings": 13537.0
+        "_25th_percentile_earnings": 13537.0,
+        "id": 3846.0
     },
     {
-        "id": 3179.0,
         "_75th_percentile_earnings": 58109.0,
         "_50th_percentile_earnings": 41718.0,
-        "_25th_percentile_earnings": 21970.0
+        "_25th_percentile_earnings": 21970.0,
+        "id": 3847.0
     },
     {
-        "id": 3180.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3848.0
     },
     {
-        "id": 3181.0,
         "_75th_percentile_earnings": 27266.0,
         "_50th_percentile_earnings": 22420.0,
-        "_25th_percentile_earnings": 13460.0
+        "_25th_percentile_earnings": 13460.0,
+        "id": 3849.0
     },
     {
-        "id": 3182.0,
         "_75th_percentile_earnings": 42676.0,
         "_50th_percentile_earnings": 19531.0,
-        "_25th_percentile_earnings": 2599.0
+        "_25th_percentile_earnings": 2599.0,
+        "id": 3850.0
     },
     {
-        "id": 3183.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3851.0
     },
     {
-        "id": 3184.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3852.0
     },
     {
-        "id": 3185.0,
         "_75th_percentile_earnings": 51320.0,
         "_50th_percentile_earnings": 45598.0,
-        "_25th_percentile_earnings": 41641.0
+        "_25th_percentile_earnings": 41641.0,
+        "id": 3853.0
     },
     {
-        "id": 3186.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3854.0
     },
     {
-        "id": 3187.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3855.0
     },
     {
-        "id": 3188.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3856.0
     },
     {
-        "id": 3189.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3857.0
     },
     {
-        "id": 3190.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3858.0
     },
     {
-        "id": 3191.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3859.0
     },
     {
-        "id": 3192.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3860.0
     },
     {
-        "id": 3193.0,
         "_75th_percentile_earnings": 83413.0,
         "_50th_percentile_earnings": 56184.0,
-        "_25th_percentile_earnings": 34140.0
+        "_25th_percentile_earnings": 34140.0,
+        "id": 3861.0
     },
     {
-        "id": 3194.0,
         "_75th_percentile_earnings": 99289.0,
         "_50th_percentile_earnings": 71570.0,
-        "_25th_percentile_earnings": 59216.0
+        "_25th_percentile_earnings": 59216.0,
+        "id": 3862.0
     },
     {
-        "id": 3195.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3863.0
     },
     {
-        "id": 3196.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3864.0
     },
     {
-        "id": 3197.0,
         "_75th_percentile_earnings": 79124.0,
         "_50th_percentile_earnings": 55486.0,
-        "_25th_percentile_earnings": 53394.0
+        "_25th_percentile_earnings": 53394.0,
+        "id": 3865.0
     },
     {
-        "id": 3198.0,
         "_75th_percentile_earnings": 94998.0,
         "_50th_percentile_earnings": 65733.0,
-        "_25th_percentile_earnings": 58311.0
+        "_25th_percentile_earnings": 58311.0,
+        "id": 3866.0
     },
     {
-        "id": 3199.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3867.0
     },
     {
-        "id": 3200.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3868.0
     },
     {
-        "id": 3201.0,
         "_75th_percentile_earnings": 75754.0,
         "_50th_percentile_earnings": 57794.0,
-        "_25th_percentile_earnings": 48779.0
+        "_25th_percentile_earnings": 48779.0,
+        "id": 3869.0
     },
     {
-        "id": 3202.0,
         "_75th_percentile_earnings": 90132.0,
         "_50th_percentile_earnings": 67452.0,
-        "_25th_percentile_earnings": 50387.0
+        "_25th_percentile_earnings": 50387.0,
+        "id": 3870.0
     },
     {
-        "id": 3203.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3871.0
     },
     {
-        "id": 3204.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3872.0
     },
     {
-        "id": 3205.0,
         "_75th_percentile_earnings": 56708.0,
         "_50th_percentile_earnings": 44209.0,
-        "_25th_percentile_earnings": 33578.0
+        "_25th_percentile_earnings": 33578.0,
+        "id": 3873.0
     },
     {
-        "id": 3206.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3874.0
     },
     {
-        "id": 3207.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3875.0
     },
     {
-        "id": 3208.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3876.0
     },
     {
-        "id": 3209.0,
         "_75th_percentile_earnings": 92706.0,
         "_50th_percentile_earnings": 84327.0,
-        "_25th_percentile_earnings": 48839.0
+        "_25th_percentile_earnings": 48839.0,
+        "id": 3877.0
     },
     {
-        "id": 3210.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3878.0
     },
     {
-        "id": 3211.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3879.0
     },
     {
-        "id": 3212.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3880.0
     },
     {
-        "id": 3213.0,
         "_75th_percentile_earnings": 38857.0,
         "_50th_percentile_earnings": 29457.0,
-        "_25th_percentile_earnings": 15324.0
+        "_25th_percentile_earnings": 15324.0,
+        "id": 3881.0
     },
     {
-        "id": 3214.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3882.0
     },
     {
-        "id": 3215.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3883.0
     },
     {
-        "id": 3216.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3884.0
     },
     {
-        "id": 3217.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3885.0
     },
     {
-        "id": 3218.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3886.0
     },
     {
-        "id": 3219.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3887.0
     },
     {
-        "id": 3220.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3888.0
     },
     {
-        "id": 3221.0,
         "_75th_percentile_earnings": 61165.0,
         "_50th_percentile_earnings": 46074.0,
-        "_25th_percentile_earnings": 32540.0
+        "_25th_percentile_earnings": 32540.0,
+        "id": 3889.0
     },
     {
-        "id": 3222.0,
         "_75th_percentile_earnings": 58009.0,
         "_50th_percentile_earnings": 30794.0,
-        "_25th_percentile_earnings": 23092.0
+        "_25th_percentile_earnings": 23092.0,
+        "id": 3890.0
     },
     {
-        "id": 3223.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3891.0
     },
     {
-        "id": 3224.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3892.0
     },
     {
-        "id": 3225.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3893.0
     },
     {
-        "id": 3226.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3894.0
     },
     {
-        "id": 3227.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3895.0
     },
     {
-        "id": 3228.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3896.0
     },
     {
-        "id": 3229.0,
         "_75th_percentile_earnings": 53642.0,
         "_50th_percentile_earnings": 34166.0,
-        "_25th_percentile_earnings": 12160.0
+        "_25th_percentile_earnings": 12160.0,
+        "id": 3897.0
     },
     {
-        "id": 3230.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3898.0
     },
     {
-        "id": 3231.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3899.0
     },
     {
-        "id": 3232.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3900.0
     },
     {
-        "id": 3233.0,
         "_75th_percentile_earnings": 58589.0,
         "_50th_percentile_earnings": 47791.0,
-        "_25th_percentile_earnings": 37003.0
+        "_25th_percentile_earnings": 37003.0,
+        "id": 3901.0
     },
     {
-        "id": 3234.0,
         "_75th_percentile_earnings": 85568.0,
         "_50th_percentile_earnings": 62380.0,
-        "_25th_percentile_earnings": 55080.0
+        "_25th_percentile_earnings": 55080.0,
+        "id": 3902.0
     },
     {
-        "id": 3235.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3903.0
     },
     {
-        "id": 3236.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3904.0
     },
     {
-        "id": 3237.0,
         "_75th_percentile_earnings": 82620.0,
         "_50th_percentile_earnings": 60810.0,
-        "_25th_percentile_earnings": 39852.0
+        "_25th_percentile_earnings": 39852.0,
+        "id": 3905.0
     },
     {
-        "id": 3238.0,
         "_75th_percentile_earnings": 82242.0,
         "_50th_percentile_earnings": 64857.0,
-        "_25th_percentile_earnings": 57637.0
+        "_25th_percentile_earnings": 57637.0,
+        "id": 3906.0
     },
     {
-        "id": 3239.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3907.0
     },
     {
-        "id": 3240.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3908.0
     },
     {
-        "id": 3241.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3909.0
     },
     {
-        "id": 3242.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3910.0
     },
     {
-        "id": 3243.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3911.0
     },
     {
-        "id": 3244.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3912.0
     },
     {
-        "id": 3245.0,
         "_75th_percentile_earnings": 59789.0,
         "_50th_percentile_earnings": 40463.0,
-        "_25th_percentile_earnings": 13192.0
+        "_25th_percentile_earnings": 13192.0,
+        "id": 3913.0
     },
     {
-        "id": 3246.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3914.0
     },
     {
-        "id": 3247.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3915.0
     },
     {
-        "id": 3248.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3916.0
     },
     {
-        "id": 3249.0,
         "_75th_percentile_earnings": 52534.0,
         "_50th_percentile_earnings": 40621.0,
-        "_25th_percentile_earnings": 20245.0
+        "_25th_percentile_earnings": 20245.0,
+        "id": 3917.0
     },
     {
-        "id": 3250.0,
         "_75th_percentile_earnings": 66713.0,
         "_50th_percentile_earnings": 50627.0,
-        "_25th_percentile_earnings": 29153.0
+        "_25th_percentile_earnings": 29153.0,
+        "id": 3918.0
     },
     {
-        "id": 3251.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3919.0
     },
     {
-        "id": 3252.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3920.0
     },
     {
-        "id": 3253.0,
         "_75th_percentile_earnings": 94597.0,
         "_50th_percentile_earnings": 70751.0,
-        "_25th_percentile_earnings": 45608.0
+        "_25th_percentile_earnings": 45608.0,
+        "id": 3921.0
     },
     {
-        "id": 3254.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3922.0
     },
     {
-        "id": 3255.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3923.0
     },
     {
-        "id": 3256.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3924.0
     },
     {
-        "id": 3257.0,
         "_75th_percentile_earnings": 52442.0,
         "_50th_percentile_earnings": 41759.0,
-        "_25th_percentile_earnings": 26326.0
+        "_25th_percentile_earnings": 26326.0,
+        "id": 3925.0
     },
     {
-        "id": 3258.0,
         "_75th_percentile_earnings": 60666.0,
         "_50th_percentile_earnings": 38419.0,
-        "_25th_percentile_earnings": 13809.0
+        "_25th_percentile_earnings": 13809.0,
+        "id": 3926.0
     },
     {
-        "id": 3259.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3927.0
     },
     {
-        "id": 3260.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3928.0
     },
     {
-        "id": 3261.0,
         "_75th_percentile_earnings": 72803.0,
         "_50th_percentile_earnings": 56246.0,
-        "_25th_percentile_earnings": 27938.0
+        "_25th_percentile_earnings": 27938.0,
+        "id": 3929.0
     },
     {
-        "id": 3262.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3930.0
     },
     {
-        "id": 3263.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3931.0
     },
     {
-        "id": 3264.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3932.0
     },
     {
-        "id": 3265.0,
         "_75th_percentile_earnings": 60533.0,
         "_50th_percentile_earnings": 50271.0,
-        "_25th_percentile_earnings": 37872.0
+        "_25th_percentile_earnings": 37872.0,
+        "id": 3933.0
     },
     {
-        "id": 3266.0,
         "_75th_percentile_earnings": 78088.0,
         "_50th_percentile_earnings": 47944.0,
-        "_25th_percentile_earnings": 36707.0
+        "_25th_percentile_earnings": 36707.0,
+        "id": 3934.0
     },
     {
-        "id": 3267.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3935.0
     },
     {
-        "id": 3268.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3936.0
     },
     {
-        "id": 3269.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3937.0
     },
     {
-        "id": 3270.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3938.0
     },
     {
-        "id": 3271.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3939.0
     },
     {
-        "id": 3272.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3940.0
     },
     {
-        "id": 3273.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3941.0
     },
     {
-        "id": 3274.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3942.0
     },
     {
-        "id": 3275.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3943.0
     },
     {
-        "id": 3276.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3944.0
     },
     {
-        "id": 3277.0,
         "_75th_percentile_earnings": 66158.0,
         "_50th_percentile_earnings": 55906.0,
-        "_25th_percentile_earnings": 39238.0
+        "_25th_percentile_earnings": 39238.0,
+        "id": 3945.0
     },
     {
-        "id": 3278.0,
         "_75th_percentile_earnings": 72106.0,
         "_50th_percentile_earnings": 62486.0,
-        "_25th_percentile_earnings": 53318.0
+        "_25th_percentile_earnings": 53318.0,
+        "id": 3946.0
     },
     {
-        "id": 3279.0,
         "_75th_percentile_earnings": 86073.0,
         "_50th_percentile_earnings": 68895.0,
-        "_25th_percentile_earnings": 38523.0
+        "_25th_percentile_earnings": 38523.0,
+        "id": 3947.0
     },
     {
-        "id": 3280.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3948.0
     },
     {
-        "id": 3281.0,
         "_75th_percentile_earnings": 111014.0,
         "_50th_percentile_earnings": 75582.0,
-        "_25th_percentile_earnings": 62537.0
+        "_25th_percentile_earnings": 62537.0,
+        "id": 3949.0
     },
     {
-        "id": 3282.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3950.0
     },
     {
-        "id": 3283.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3951.0
     },
     {
-        "id": 3284.0,
         "_75th_percentile_earnings": null,
         "_50th_percentile_earnings": null,
-        "_25th_percentile_earnings": null
+        "_25th_percentile_earnings": null,
+        "id": 3952.0
     }
 ]

@@ -40,12 +40,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Channel_Islands_Major_Path_Wages_TableSeeder::class);
         $this->call(Channel_Islands_University_Majors_TableSeeder::class);
 
-        // $this->call(Dominguez_Hills_Industry_Path_Types_TableSeeder::class);
-        // $this->call(Dominguez_Hills_Industry_Path_Wages_TableSeeder::class);
-        // $this->call(Dominguez_Hills_Industry_Population_TableSeeder::class);
-        // $this->call(Dominguez_Hills_Major_Path_TableSeeder::class);
-        // $this->call(Dominguez_Hills_Major_Path_Wages_TableSeeder::class);
-        // $this->call(Dominguez_Hills_University_Majors_TableSeeder::class);
+        $this->call(Dominguez_Hills_Industry_Path_Types_TableSeeder::class);
+        $this->call(Dominguez_Hills_Industry_Path_Wages_TableSeeder::class);
+        $this->call(Dominguez_Hills_Industry_Population_TableSeeder::class);
+        $this->call(Dominguez_Hills_Major_Path_TableSeeder::class);
+        $this->call(Dominguez_Hills_Major_Path_Wages_TableSeeder::class);
+        $this->call(Dominguez_Hills_University_Majors_TableSeeder::class);
 
         $this->call(Fullerton_Industry_Path_Types_TableSeeder::class);
         $this->call(Fullerton_Industry_Path_Wages_TableSeeder::class);
