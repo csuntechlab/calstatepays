@@ -48584,7 +48584,8 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "CSUDataImgBanner__dataInfoWrapper col-12 col-md-8"
+              staticClass:
+                "CSUDataImgBanner__dataInfoWrapper col-12 col-md-10 col-lg-8 col-xl-6"
             },
             [_vm._t("title"), _vm._v(" "), _vm._t("copy")],
             2
@@ -51498,7 +51499,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n    "
+              "\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\n    "
             )
           ]
         )
@@ -51611,7 +51612,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //
@@ -72872,7 +72872,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n\t\t\tInteger enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla\n\t\t\tmetus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n\t\t"
+              "\n\t\t\tCollege graduates earn more money over time. Select a major and find out how earnings for graduates, non-completers, and post graduates change over time.\n\t\t"
             )
           ]
         )
@@ -72999,7 +72999,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__ = __webpack_require__(389);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__);
-//
 //
 //
 //
@@ -73898,7 +73897,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n      Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla\n      metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n    "
+              "\n      Different majors lead to jobs in different industries. Select a major and find out where CSU students work, and what they earn, five years after they leave.\n    "
             )
           ]
         )
@@ -76097,7 +76096,11 @@ var render = function() {
           },
           [
             _vm._v(
+<<<<<<< HEAD
+              "\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\n    "
+=======
               "\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum asperiores omnis voluptate animi voluptatem nihil, laboriosam mollitia temporibus cumque. Nostrum itaque rem cum minima, dignissimos.\n      "
+>>>>>>> aacee0aff8bab6f2691e30a03ceb8825038f6fd3
             )
           ]
         )
@@ -91105,7 +91108,15 @@ var Vuetify = {
             return false;
         })(opts.components);
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
     version: '1.2.6'
+=======
+    version: '1.2.3'
+>>>>>>> 67d36aa91598c4abe809a2692d019158e71e5bfc
+=======
+    version: '1.2.6'
+>>>>>>> aacee0aff8bab6f2691e30a03ceb8825038f6fd3
 };
 function checkVueVersion(Vue, requiredVue) {
     var vueDep = requiredVue || '^2.5.10';
@@ -92569,7 +92580,15 @@ var Vuetify = {
         Vue.use(_components_Vuetify__WEBPACK_IMPORTED_MODULE_1__["default"], __assign({ components: _components__WEBPACK_IMPORTED_MODULE_2__,
             directives: _directives__WEBPACK_IMPORTED_MODULE_3__ }, args));
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
     version: '1.2.6'
+=======
+    version: '1.2.3'
+>>>>>>> 67d36aa91598c4abe809a2692d019158e71e5bfc
+=======
+    version: '1.2.6'
+>>>>>>> aacee0aff8bab6f2691e30a03ceb8825038f6fd3
 };
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(Vuetify);

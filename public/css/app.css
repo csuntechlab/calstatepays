@@ -19207,6 +19207,13 @@ figcaption {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  height: 18.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .CSUDataImgBanner {
+    height: unset;
+  }
 }
 
 .CSUDataImgBanner__campusTitle {
