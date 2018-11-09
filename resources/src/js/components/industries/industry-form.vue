@@ -1,8 +1,9 @@
 <template>
-    <form class="container-fluid csu-card__form">
+	<transition name="flip" mode="out-in">
+		<div key="1" v-if="!industryFormWasSubmitted">
+			<form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
 			<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" title="Reset"></i>
-			<transition name="flip" mode="out-in">
 				<div key="1" v-if="!industryFormWasSubmitted">
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 					<i class="fa fa-exclamation-circle"></i> Please select a Major.
@@ -46,8 +47,14 @@
 						<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 				</div>
-				
-				<div key="2" v-else class="majorBtnWrapper">
+				</fieldset>
+				</form>
+		</div>	
+		<div key="2" v-else>
+			<form class="container-fluid csu-card__form">
+				<fieldset class="csu-card__form-sizing">
+					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
+					title="Reset"></i>
 					<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'post_bacc', 'fa fa-circle-thin':industryEducationLevel != 'post_bacc'}" 
@@ -64,11 +71,11 @@
 						></i>
 						Some College
 					</button>
-				</div>
-			</transition>
-			
-		</fieldset>
-    </form>
+			</fieldset>
+    	</form>
+		</div>
+	</transition>
+	
 </template>
 <script>
 import vSelect from "vue-select";
@@ -88,7 +95,7 @@ export default {
 				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
-				formEducationLevel: "allDegrees",
+				formEducationLevel: "bachelors",
 			},
 			submittedOnce: false,
 			formNotFilled: false,
@@ -120,6 +127,7 @@ export default {
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
+				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 			}
 		},
 		resetIndustries() {
@@ -152,6 +160,7 @@ export default {
 			}
 		},
 		
+		
 	},
 
 	computed: {
@@ -169,8 +178,11 @@ export default {
 			return window.innerWidth;
 		},
 		selectedMajorsByField() {
-			return this.industryMajorsByField;
-			
+			return this.industryMajorsByField;	
+		},
+		handleIndustryEducationLevel() {
+			console.log(idustryEducationLevel);
+
 		}
 	},
 	validations: {

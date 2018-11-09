@@ -3,12 +3,7 @@ import _industries from "../../mutation-types/industries";
 export default {
 	[_industries.FETCH_INDUSTRIES](state, payload) {
 		state.allLevelIndustries = payload;
-		state.industries = [];
-		state.industries = payload.bachelors;
-		// payload.forEach(industry => {
-		// 	console.log(industry);
-		// 	state.industries.push(industry);
-		// });
+		state.industries = payload[state.industryEducationLevel];
 	},
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state,payload) {
 		state.industryMajorsByField = [];

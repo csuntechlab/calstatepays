@@ -46889,12 +46889,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = (_industries$FETCH_IND = {}, _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
 	state.allLevelIndustries = payload;
-	state.industries = [];
-	state.industries = payload.bachelors;
-	// payload.forEach(industry => {
-	// 	console.log(industry);
-	// 	state.industries.push(industry);
-	// });
+	state.industries = payload[state.industryEducationLevel];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
 	state.industryMajorsByField = [];
 	payload[0].forEach(function (major) {
@@ -52542,7 +52537,7 @@ var render = function() {
             ])
           ])
         ])
-      : _c("div", { key: "2", staticClass: "majorBtnWrapper" }, [
+      : _c("div", { key: "2" }, [
           _c("form", { attrs: { id: "majorForm-" + _vm.form.cardIndex } }, [
             _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
               _c("i", {
@@ -73163,7 +73158,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73196,18 +73190,10 @@ var render = function() {
           industry.percentage != null || industry.industryWage != null
             ? _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
                 _c("div", { staticClass: "col-sm-3" }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass: "IndustryProgressBarWrapper__IndustryTitle"
-                    },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(industry.title) +
-                          "\n                "
-                      )
-                    ]
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(industry.title) +
+                      "\n            "
                   )
                 ]),
                 _vm._v(" "),
@@ -73494,6 +73480,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -73512,7 +73505,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
-				formEducationLevel: "allDegrees"
+				formEducationLevel: "bachelors"
 			},
 			submittedOnce: false,
 			formNotFilled: false,
@@ -73536,6 +73529,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
+				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 			}
 		},
 		resetIndustries: function resetIndustries() {
@@ -73572,6 +73566,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedMajorsByField: function selectedMajorsByField() {
 			return this.industryMajorsByField;
+		},
+		handleIndustryEducationLevel: function handleIndustryEducationLevel() {
+			console.log(idustryEducationLevel);
 		}
 	}),
 	validations: {
@@ -73592,264 +73589,310 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "container-fluid csu-card__form" }, [
-    _c(
-      "fieldset",
-      { staticClass: "csu-card__form-sizing" },
-      [
-        _c("i", {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.industryFormWasSubmittedOnce,
-              expression: "industryFormWasSubmittedOnce"
-            }
-          ],
-          staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-          attrs: { title: "Reset" },
-          on: { click: _vm.resetIndustries }
-        }),
-        _vm._v(" "),
-        _c("transition", { attrs: { name: "flip", mode: "out-in" } }, [
-          !_vm.industryFormWasSubmitted
-            ? _c("div", { key: "1" }, [
-                !_vm.industryFormWasSubmitted
-                  ? _c(
-                      "div",
-                      {
-                        class: [
-                          this.formNotFilled
-                            ? "required-field"
-                            : "required-field--hidden"
-                        ]
-                      },
-                      [
-                        _c("i", { staticClass: "fa fa-exclamation-circle" }),
-                        _vm._v(" Please select a Major.\n\t\t\t\t\t")
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.industryFormWasSubmitted === true
-                  ? _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                          _vm._v("Select a Discipline (Optional)")
-                        ]),
-                        _vm._v(" "),
-                        _c("v-select", {
-                          staticClass: "csu-form-input",
-                          attrs: {
-                            label: "discipline",
-                            options: _vm.fieldOfStudies
-                          },
-                          on: {
-                            input: function($event) {
-                              _vm.updateSelect("fieldOfStudyId", "id", $event)
-                            },
-                            change: function($event) {
-                              _vm.updateSelect("fieldOfStudyId", "id", $event)
-                            }
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.industryFormWasSubmitted
-                  ? _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c(
-                          "label",
+  return _c("transition", { attrs: { name: "flip", mode: "out-in" } }, [
+    !_vm.industryFormWasSubmitted
+      ? _c("div", { key: "1" }, [
+          _c("form", { staticClass: "container-fluid csu-card__form" }, [
+            _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.industryFormWasSubmittedOnce,
+                    expression: "industryFormWasSubmittedOnce"
+                  }
+                ],
+                staticClass: "fa fa-refresh fa-2x btn-reset float-right",
+                attrs: { title: "Reset" },
+                on: { click: _vm.resetIndustries }
+              }),
+              _vm._v(" "),
+              !_vm.industryFormWasSubmitted
+                ? _c("div", { key: "1" }, [
+                    !_vm.industryFormWasSubmitted
+                      ? _c(
+                          "div",
                           {
-                            style: [
-                              !this.form.majorId && this.submittedOnce
-                                ? _vm.errorLabel
-                                : ""
-                            ],
-                            attrs: { for: "Major" }
+                            class: [
+                              this.formNotFilled
+                                ? "required-field"
+                                : "required-field--hidden"
+                            ]
                           },
                           [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\tSelect a Major\n\t\t\t\t\t\t"
-                            )
+                            _c("i", {
+                              staticClass: "fa fa-exclamation-circle"
+                            }),
+                            _vm._v(" Please select a Major.\n\t\t\t\t\t")
                           ]
-                        ),
-                        _vm._v(" "),
-                        this.form.fieldOfStudyId == null
-                          ? _c("v-select", {
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !_vm.industryFormWasSubmitted === true
+                      ? _c(
+                          "div",
+                          { staticClass: "form-group" },
+                          [
+                            _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                              _vm._v("Select a Discipline (Optional)")
+                            ]),
+                            _vm._v(" "),
+                            _c("v-select", {
                               staticClass: "csu-form-input",
-                              class: {
-                                "border-danger":
-                                  !this.form.majorId && this.submittedOnce
-                              },
-                              attrs: { label: "major", options: _vm.majors },
-                              on: {
-                                input: function($event) {
-                                  _vm.updateSelect("majorId", "majorId", $event)
-                                },
-                                change: function($event) {
-                                  _vm.updateSelect("majorId", "majorId", $event)
-                                }
-                              },
-                              model: {
-                                value: _vm.selected,
-                                callback: function($$v) {
-                                  _vm.selected = $$v
-                                },
-                                expression: "selected"
-                              }
-                            })
-                          : _c("v-select", {
-                              staticClass: "csu-form-input",
-                              class: {
-                                "border-danger":
-                                  this.submittedOnce && !this.form.majorId
-                              },
                               attrs: {
-                                label: "major",
-                                options: _vm.selectedMajorsByField
+                                label: "discipline",
+                                options: _vm.fieldOfStudies
                               },
                               on: {
                                 input: function($event) {
-                                  _vm.updateSelect("majorId", "majorId", $event)
+                                  _vm.updateSelect(
+                                    "fieldOfStudyId",
+                                    "id",
+                                    $event
+                                  )
                                 },
                                 change: function($event) {
-                                  _vm.updateSelect("majorId", "majorId", $event)
+                                  _vm.updateSelect(
+                                    "fieldOfStudyId",
+                                    "id",
+                                    $event
+                                  )
                                 }
-                              },
-                              model: {
-                                value: _vm.selected,
-                                callback: function($$v) {
-                                  _vm.selected = $$v
-                                },
-                                expression: "selected"
                               }
                             })
-                      ],
-                      1
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                !_vm.industryFormWasSubmitted
-                  ? _c("div", { staticClass: "form-group row" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-success btn-submit",
-                          attrs: { id: "submit-btn", type: "button" },
-                          on: { click: _vm.submitForm }
-                        },
-                        [_vm._v("Submit")]
-                      )
-                    ])
-                  : _vm._e()
-              ])
-            : _c("div", { key: "2", staticClass: "majorBtnWrapper" }, [
-                _c(
-                  "p",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.windowSize > 500,
-                        expression: "windowSize > 500"
-                      }
-                    ],
-                    staticClass: "text-center h3 majors-header my-5-md my-4"
-                  },
-                  [_vm._v("Select a Degree Level")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm major-btn_postBacc",
-                    attrs: { id: "postBacc-" + _vm.form.cardIndex },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.toggleIndustryEducationLevel("post_bacc")
-                      }
-                    }
-                  },
-                  [
-                    _c("i", {
-                      staticClass: "major-btn_icon",
-                      class: {
-                        "fa fa-check-circle":
-                          _vm.industryEducationLevel == "post_bacc",
-                        "fa fa-circle-thin":
-                          _vm.industryEducationLevel != "post_bacc"
-                      }
-                    }),
-                    _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm major-btn_bachelors",
-                    attrs: { id: "bachelors-" + _vm.form.cardIndex },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.toggleIndustryEducationLevel("bachelors")
-                      }
-                    }
-                  },
-                  [
-                    _c("i", {
-                      staticClass: "major-btn_icon",
-                      class: {
-                        "fa fa-check-circle":
-                          _vm.industryEducationLevel == "bachelors",
-                        "fa fa-circle-thin":
-                          _vm.industryEducationLevel != "bachelors"
-                      }
-                    }),
-                    _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm major-btn_someCollege",
-                    attrs: { id: "someCollege-" + _vm.form.cardIndex },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.toggleIndustryEducationLevel("someCollege")
-                      }
-                    }
-                  },
-                  [
-                    _c("i", {
-                      staticClass: "major-btn_icon",
-                      class: {
-                        "fa fa-check-circle":
-                          _vm.industryEducationLevel == "someCollege",
-                        "fa fa-circle-thin":
-                          _vm.industryEducationLevel != "someCollege"
-                      }
-                    }),
-                    _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
-                  ]
-                )
-              ])
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !_vm.industryFormWasSubmitted
+                      ? _c(
+                          "div",
+                          { staticClass: "form-group" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                style: [
+                                  !this.form.majorId && this.submittedOnce
+                                    ? _vm.errorLabel
+                                    : ""
+                                ],
+                                attrs: { for: "Major" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\tSelect a Major\n\t\t\t\t\t\t"
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            this.form.fieldOfStudyId == null
+                              ? _c("v-select", {
+                                  staticClass: "csu-form-input",
+                                  class: {
+                                    "border-danger":
+                                      !this.form.majorId && this.submittedOnce
+                                  },
+                                  attrs: {
+                                    label: "major",
+                                    options: _vm.majors
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      _vm.updateSelect(
+                                        "majorId",
+                                        "majorId",
+                                        $event
+                                      )
+                                    },
+                                    change: function($event) {
+                                      _vm.updateSelect(
+                                        "majorId",
+                                        "majorId",
+                                        $event
+                                      )
+                                    }
+                                  },
+                                  model: {
+                                    value: _vm.selected,
+                                    callback: function($$v) {
+                                      _vm.selected = $$v
+                                    },
+                                    expression: "selected"
+                                  }
+                                })
+                              : _c("v-select", {
+                                  staticClass: "csu-form-input",
+                                  class: {
+                                    "border-danger":
+                                      this.submittedOnce && !this.form.majorId
+                                  },
+                                  attrs: {
+                                    label: "major",
+                                    options: _vm.selectedMajorsByField
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      _vm.updateSelect(
+                                        "majorId",
+                                        "majorId",
+                                        $event
+                                      )
+                                    },
+                                    change: function($event) {
+                                      _vm.updateSelect(
+                                        "majorId",
+                                        "majorId",
+                                        $event
+                                      )
+                                    }
+                                  },
+                                  model: {
+                                    value: _vm.selected,
+                                    callback: function($$v) {
+                                      _vm.selected = $$v
+                                    },
+                                    expression: "selected"
+                                  }
+                                })
+                          ],
+                          1
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !_vm.industryFormWasSubmitted
+                      ? _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-success btn-submit",
+                              attrs: { id: "submit-btn", type: "button" },
+                              on: { click: _vm.submitForm }
+                            },
+                            [_vm._v("Submit")]
+                          )
+                        ])
+                      : _vm._e()
+                  ])
+                : _vm._e()
+            ])
+          ])
         ])
-      ],
-      1
-    )
+      : _c("div", { key: "2" }, [
+          _c("form", { staticClass: "container-fluid csu-card__form" }, [
+            _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.industryFormWasSubmittedOnce,
+                    expression: "industryFormWasSubmittedOnce"
+                  }
+                ],
+                staticClass: "fa fa-refresh fa-2x btn-reset float-right",
+                attrs: { title: "Reset" },
+                on: { click: _vm.resetIndustries }
+              }),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.windowSize > 500,
+                      expression: "windowSize > 500"
+                    }
+                  ],
+                  staticClass: "text-center h3 majors-header my-5-md my-4"
+                },
+                [_vm._v("Select a Degree Level")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_postBacc",
+                  attrs: { id: "postBacc-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleIndustryEducationLevel("post_bacc")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fa fa-check-circle":
+                        _vm.industryEducationLevel == "post_bacc",
+                      "fa fa-circle-thin":
+                        _vm.industryEducationLevel != "post_bacc"
+                    }
+                  }),
+                  _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_bachelors",
+                  attrs: { id: "bachelors-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleIndustryEducationLevel("bachelors")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fa fa-check-circle":
+                        _vm.industryEducationLevel == "bachelors",
+                      "fa fa-circle-thin":
+                        _vm.industryEducationLevel != "bachelors"
+                    }
+                  }),
+                  _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm major-btn_someCollege",
+                  attrs: { id: "someCollege-" + _vm.form.cardIndex },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.toggleIndustryEducationLevel("someCollege")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "major-btn_icon",
+                    class: {
+                      "fa fa-check-circle":
+                        _vm.industryEducationLevel == "someCollege",
+                      "fa fa-circle-thin":
+                        _vm.industryEducationLevel != "someCollege"
+                    }
+                  }),
+                  _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
+                ]
+              )
+            ])
+          ])
+        ])
   ])
 }
 var staticRenderFns = []
