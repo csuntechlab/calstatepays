@@ -19,6 +19,9 @@ export default {
 			(error) => console.log(error)
 		);
 	},
+	resetIndustryCard({commit}){
+		commit(_industries.RESET_INDUSTRY_CARD);
+	},
 	resetIndustryState({commit}){
 		commit(_industries.RESET_INDUSTRY_STATE);
 	},
