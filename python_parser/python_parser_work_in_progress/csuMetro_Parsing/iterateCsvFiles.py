@@ -9,15 +9,11 @@ from csuMetro_Parsing.jsonBuilder.JsonIndustrySanitizer import JsonIndustry
 
 
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
-
 from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
-
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
-
 from csuMetro_Parsing.dataframeToCSV import DfToCSV
 from csuMetro_Parsing.jsonOutput import JsonOutPut
-
 from csuMetro_Parsing.PfreHelper import Sanitize_Pfre
 # from csuMetro_Parsing.addUniqueIdentifier import AddUniqueId
 
