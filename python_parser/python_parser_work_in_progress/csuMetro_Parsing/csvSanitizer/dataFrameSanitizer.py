@@ -88,7 +88,10 @@ class Data_Frame_Sanitizer:
         self.df[columnName] = pd.to_numeric(self.df[columnName], errors='coerce', downcast='integer')
 
     def remove_dollar(self,columnName):
-        self.df[columnName] = self.df[columnName].str.replace('$', '')
+        try:
+            self.df[columnName] = self.df[columnName].str.replace('$', '')
+        except: 
+            print('No dollars in the column')
 
     def remove_hyphen(self,columnName):
         self.df[columnName] = self.df[columnName].str.replace('-','')

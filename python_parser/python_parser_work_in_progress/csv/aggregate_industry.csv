@@ -1,4 +1,4 @@
-campus,Student Path,Entry Stat,Old_Hegis,HEGIS at Exit,Major,industry,# of Students Found,Median Annual Earnings,Average Annual Earnings,# of Students Found,Median Annual Earnings,Average Annual Earnings
+Campus,Student Path,Entry Stat,Old_Hegis,HEGIS at Exit,Major,industry,number_of_students_found_5_years_after_exit,median_annual_earnings_5_years_after_exit,average_annual_earnings_5_years_after_exit,number_of_students_found_10_years_after_exit,median_annual_earnings_10_years_after_exit,average_annual_earnings_10_years_after_exit
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,"Agriculture, Forestry, Fishing, & Hunting",,,,,,
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,Utilities,5,110956,98022,,,
 0,1,FTF + FTT,00000,00000,Undeclared/Unknown,Construction,5,53120,58140,,,
