@@ -49,14 +49,8 @@
 				
 				<div key="2" v-else class="majorBtnWrapper">
 					<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
-					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('allDegrees')">
-						<i class="major-btn_icon" 
-						v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'allDegrees', 'fa fa-circle-thin':industryEducationLevel != 'allDegrees'}"
-						></i>
-						All Levels
-					</button>
-					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('postBacc')" >
-						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'postBacc', 'fa fa-circle-thin':industryEducationLevel != 'postBacc'}" 
+					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
+						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'post_bacc', 'fa fa-circle-thin':industryEducationLevel != 'post_bacc'}" 
 						></i>
 						Post Bacc
 					</button>
@@ -124,8 +118,8 @@ export default {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				this.fetchIndustries(this.form);
 				this.toggleIndustryFormWasSubmitted();
+				this.fetchIndustries(this.form);
 			}
 		},
 		resetIndustries() {

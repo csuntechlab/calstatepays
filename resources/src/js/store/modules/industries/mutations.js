@@ -2,11 +2,13 @@ import _industries from "../../mutation-types/industries";
 
 export default {
 	[_industries.FETCH_INDUSTRIES](state, payload) {
+		state.allLevelIndustries = payload;
 		state.industries = [];
-		payload.forEach(industry => {
-			delete industry.image;
-			state.industries.push(industry);
-		});
+		state.industries = payload.bachelors;
+		// payload.forEach(industry => {
+		// 	console.log(industry);
+		// 	state.industries.push(industry);
+		// });
 	},
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state,payload) {
 		state.industryMajorsByField = [];
@@ -34,5 +36,6 @@ export default {
 	},
 	[_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL](state,payload) {
 		state.industryEducationLevel = payload;
+		state.industries = state.allLevelIndustries[payload];
 	}
 };

@@ -46529,9 +46529,9 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
     window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
-        return success(response.data);
+        success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data.message);
+        console.log("fail");error(failure.response.data.message);
     });
 };
 
@@ -46842,11 +46842,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // Industries State
 
 /* harmony default export */ __webpack_exports__["a"] = ({
+    allLevelIndustries: {},
     industries: [],
     industryMajorsByField: [],
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
-    industryEducationLevel: "allDegrees"
+    industryEducationLevel: "bachelors"
 });
 
 /***/ }),
@@ -46887,11 +46888,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_industries$FETCH_IND = {}, _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, function (state, payload) {
+	state.allLevelIndustries = payload;
 	state.industries = [];
-	payload.forEach(function (industry) {
-		delete industry.image;
-		state.industries.push(industry);
-	});
+	state.industries = payload.bachelors;
+	// payload.forEach(industry => {
+	// 	console.log(industry);
+	// 	state.industries.push(industry);
+	// });
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
 	state.industryMajorsByField = [];
 	payload[0].forEach(function (major) {
@@ -46913,6 +46916,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.industryFormWasSubmittedOnce = true;
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_EDUCATION_LEVEL, function (state, payload) {
 	state.industryEducationLevel = payload;
+	state.industries = state.allLevelIndustries[payload];
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -46973,11 +46977,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    console.log(payload.majorId);
-    console.log(payload.university);
+    console.log("fetching industries");
     window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
-        return success(response.data);
+        success(response.data);
     }).catch(function (failure) {
+        console.log("failure");
+        console.log(response.data);
         error(failure.response.data);
     });
 };
@@ -73489,12 +73494,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -73535,8 +73534,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				this.fetchIndustries(this.form);
 				this.toggleIndustryFormWasSubmitted();
+				this.fetchIndustries(this.form);
 			}
 		},
 		resetIndustries: function resetIndustries() {
@@ -73772,38 +73771,12 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-sm major-btn_all",
-                    attrs: { id: "allDegrees-" + _vm.form.cardIndex },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.toggleIndustryEducationLevel("allDegrees")
-                      }
-                    }
-                  },
-                  [
-                    _c("i", {
-                      staticClass: "major-btn_icon",
-                      class: {
-                        "fa fa-check-circle":
-                          _vm.industryEducationLevel == "allDegrees",
-                        "fa fa-circle-thin":
-                          _vm.industryEducationLevel != "allDegrees"
-                      }
-                    }),
-                    _vm._v("\n\t\t\t\t\t\tAll Levels\n\t\t\t\t\t")
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
                     staticClass: "btn btn-sm major-btn_postBacc",
                     attrs: { id: "postBacc-" + _vm.form.cardIndex },
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.toggleIndustryEducationLevel("postBacc")
+                        _vm.toggleIndustryEducationLevel("post_bacc")
                       }
                     }
                   },
@@ -73812,9 +73785,9 @@ var render = function() {
                       staticClass: "major-btn_icon",
                       class: {
                         "fa fa-check-circle":
-                          _vm.industryEducationLevel == "postBacc",
+                          _vm.industryEducationLevel == "post_bacc",
                         "fa fa-circle-thin":
-                          _vm.industryEducationLevel != "postBacc"
+                          _vm.industryEducationLevel != "post_bacc"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
