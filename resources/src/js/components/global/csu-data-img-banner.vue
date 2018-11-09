@@ -10,7 +10,7 @@
                          </campus-modal>
                     </div>
                 </div>
-                <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-8">
+                <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-10 col-lg-8 col-xl-6">
                     <slot name="title"></slot>
                     <slot name="copy"></slot>
                 </div>

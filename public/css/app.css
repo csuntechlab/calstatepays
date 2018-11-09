@@ -19199,6 +19199,13 @@ figcaption {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  height: 18.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .CSUDataImgBanner {
+    height: unset;
+  }
 }
 
 .CSUDataImgBanner__campusTitle {
@@ -19695,12 +19702,19 @@ label {
 }
 
 .csu-form-input .dropdown-toggle {
-  border-radius: 0 !important;
   border: none !important;
+  min-height: 2rem;
 }
 
-.csu-form-input .dropdown-toggle {
-  height: 2.75rem;
+.csu-form-input input[type="search"] {
+  position: absolute;
+  background: purple;
+  width: 80% !important;
+}
+
+.csu-form-input .dropdown {
+  min-height: 2rem;
+  position: relative;
 }
 
 .currency {
@@ -19920,10 +19934,6 @@ textarea {
 
 .btn-add :hover .tooltiptext {
   visibility: visible;
-}
-
-.btn-add {
-  position: relative;
 }
 
 .btn-add img {
