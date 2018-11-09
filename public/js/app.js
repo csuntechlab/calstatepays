@@ -73158,6 +73158,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -73190,10 +73192,18 @@ var render = function() {
           industry.percentage != null || industry.industryWage != null
             ? _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
                 _c("div", { staticClass: "col-sm-3" }, [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(industry.title) +
-                      "\n            "
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "IndustryProgressBarWrapper__IndustryTitle"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(industry.title) +
+                          "\n                "
+                      )
+                    ]
                   )
                 ]),
                 _vm._v(" "),
