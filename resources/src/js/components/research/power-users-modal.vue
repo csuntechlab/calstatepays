@@ -113,7 +113,7 @@ export default {
             }
             else if(this.selectedUniversity =='northridge'){
                 return {
-                    byMajor:'CSUNLaborMarketOutcomes-ByMajor/Story1',
+                    byMajor:'CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor',
                     byAge:'',
                     byRace:'',
                     byGender:'',

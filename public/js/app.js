@@ -71708,7 +71708,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 };
             } else if (this.selectedUniversity == 'northridge') {
                 return {
-                    byMajor: 'CSUNLaborMarketOutcomes-ByMajor/Story1',
+                    byMajor: 'CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor',
                     byAge: '',
                     byRace: '',
                     byGender: '',
