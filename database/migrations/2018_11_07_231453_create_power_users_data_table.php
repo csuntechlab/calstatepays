@@ -15,7 +15,7 @@ class CreatePowerUsersDataTable extends Migration
     {
         Schema::create('power_users_data', function (Blueprint $table) {
             $table->integer('university_id');
-            $table->integer('pathTypeId');
+            $table->integer('path_type_id');
             $table->string('iframeLink');
             $table->nullableTimestamps();
         });
