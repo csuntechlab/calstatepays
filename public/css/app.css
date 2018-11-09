@@ -19212,7 +19212,7 @@ figcaption {
 
 @media screen and (max-width: 768px) {
   .CSUDataImgBanner {
-    min-height: 16.5rem;
+    height: unset;
   }
 }
 
