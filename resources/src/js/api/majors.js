@@ -46,7 +46,7 @@ const fetchIndustryImagesAPI = (payload, success, error) => {
         success(response.data)
     },   
     ).catch(
-        failure=>{ console.log("fail"); error(failure.response.data.message)}
+        failure=>{error(failure.response.data.message)}
     );
 };
 

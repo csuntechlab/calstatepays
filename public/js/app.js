@@ -46531,7 +46531,7 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, e
     window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
-        console.log("fail");error(failure.response.data.message);
+        error(failure.response.data.message);
     });
 };
 
@@ -46972,12 +46972,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    console.log("fetching industries");
     window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
-        console.log("failure");
-        console.log(response.data);
         error(failure.response.data);
     });
 };
@@ -73492,11 +73489,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -73576,9 +73568,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedMajorsByField: function selectedMajorsByField() {
 			return this.industryMajorsByField;
-		},
-		handleIndustryEducationLevel: function handleIndustryEducationLevel() {
-			console.log(idustryEducationLevel);
 		}
 	}),
 	validations: {
@@ -73619,172 +73608,135 @@ var render = function() {
               }),
               _vm._v(" "),
               !_vm.industryFormWasSubmitted
-                ? _c("div", { key: "1" }, [
-                    !_vm.industryFormWasSubmitted
-                      ? _c(
-                          "div",
-                          {
-                            class: [
-                              this.formNotFilled
-                                ? "required-field"
-                                : "required-field--hidden"
-                            ]
+                ? _c(
+                    "div",
+                    {
+                      class: [
+                        this.formNotFilled
+                          ? "required-field"
+                          : "required-field--hidden"
+                      ]
+                    },
+                    [
+                      _c("i", { staticClass: "fa fa-exclamation-circle" }),
+                      _vm._v(" Please select a Major.\n\t\t\t\t\t")
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.industryFormWasSubmitted === true
+                ? _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", { attrs: { for: "fieldOfStudy" } }, [
+                        _vm._v("Select a Discipline (Optional)")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-select", {
+                        staticClass: "csu-form-input",
+                        attrs: {
+                          label: "discipline",
+                          options: _vm.fieldOfStudies
+                        },
+                        on: {
+                          input: function($event) {
+                            _vm.updateSelect("fieldOfStudyId", "id", $event)
                           },
-                          [
-                            _c("i", {
-                              staticClass: "fa fa-exclamation-circle"
-                            }),
-                            _vm._v(" Please select a Major.\n\t\t\t\t\t")
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.industryFormWasSubmitted === true
-                      ? _c(
-                          "div",
-                          { staticClass: "form-group" },
-                          [
-                            _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                              _vm._v("Select a Discipline (Optional)")
-                            ]),
-                            _vm._v(" "),
-                            _c("v-select", {
-                              staticClass: "csu-form-input",
-                              attrs: {
-                                label: "discipline",
-                                options: _vm.fieldOfStudies
-                              },
-                              on: {
-                                input: function($event) {
-                                  _vm.updateSelect(
-                                    "fieldOfStudyId",
-                                    "id",
-                                    $event
-                                  )
-                                },
-                                change: function($event) {
-                                  _vm.updateSelect(
-                                    "fieldOfStudyId",
-                                    "id",
-                                    $event
-                                  )
-                                }
-                              }
-                            })
+                          change: function($event) {
+                            _vm.updateSelect("fieldOfStudyId", "id", $event)
+                          }
+                        }
+                      })
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.industryFormWasSubmitted
+                ? _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          style: [
+                            !this.form.majorId && this.submittedOnce
+                              ? _vm.errorLabel
+                              : ""
                           ],
-                          1
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.industryFormWasSubmitted
-                      ? _c(
-                          "div",
-                          { staticClass: "form-group" },
-                          [
-                            _c(
-                              "label",
-                              {
-                                style: [
-                                  !this.form.majorId && this.submittedOnce
-                                    ? _vm.errorLabel
-                                    : ""
-                                ],
-                                attrs: { for: "Major" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t\tSelect a Major\n\t\t\t\t\t\t"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            this.form.fieldOfStudyId == null
-                              ? _c("v-select", {
-                                  staticClass: "csu-form-input",
-                                  class: {
-                                    "border-danger":
-                                      !this.form.majorId && this.submittedOnce
-                                  },
-                                  attrs: {
-                                    label: "major",
-                                    options: _vm.majors
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      _vm.updateSelect(
-                                        "majorId",
-                                        "majorId",
-                                        $event
-                                      )
-                                    },
-                                    change: function($event) {
-                                      _vm.updateSelect(
-                                        "majorId",
-                                        "majorId",
-                                        $event
-                                      )
-                                    }
-                                  },
-                                  model: {
-                                    value: _vm.selected,
-                                    callback: function($$v) {
-                                      _vm.selected = $$v
-                                    },
-                                    expression: "selected"
-                                  }
-                                })
-                              : _c("v-select", {
-                                  staticClass: "csu-form-input",
-                                  class: {
-                                    "border-danger":
-                                      this.submittedOnce && !this.form.majorId
-                                  },
-                                  attrs: {
-                                    label: "major",
-                                    options: _vm.selectedMajorsByField
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      _vm.updateSelect(
-                                        "majorId",
-                                        "majorId",
-                                        $event
-                                      )
-                                    },
-                                    change: function($event) {
-                                      _vm.updateSelect(
-                                        "majorId",
-                                        "majorId",
-                                        $event
-                                      )
-                                    }
-                                  },
-                                  model: {
-                                    value: _vm.selected,
-                                    callback: function($$v) {
-                                      _vm.selected = $$v
-                                    },
-                                    expression: "selected"
-                                  }
-                                })
-                          ],
-                          1
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    !_vm.industryFormWasSubmitted
-                      ? _c("div", { staticClass: "form-group row" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-success btn-submit",
-                              attrs: { id: "submit-btn", type: "button" },
-                              on: { click: _vm.submitForm }
+                          attrs: { for: "Major" }
+                        },
+                        [_vm._v("\n\t\t\t\t\t\tSelect a Major\n\t\t\t\t\t\t")]
+                      ),
+                      _vm._v(" "),
+                      this.form.fieldOfStudyId == null
+                        ? _c("v-select", {
+                            staticClass: "csu-form-input",
+                            class: {
+                              "border-danger":
+                                !this.form.majorId && this.submittedOnce
                             },
-                            [_vm._v("Submit")]
-                          )
-                        ])
-                      : _vm._e()
+                            attrs: { label: "major", options: _vm.majors },
+                            on: {
+                              input: function($event) {
+                                _vm.updateSelect("majorId", "majorId", $event)
+                              },
+                              change: function($event) {
+                                _vm.updateSelect("majorId", "majorId", $event)
+                              }
+                            },
+                            model: {
+                              value: _vm.selected,
+                              callback: function($$v) {
+                                _vm.selected = $$v
+                              },
+                              expression: "selected"
+                            }
+                          })
+                        : _c("v-select", {
+                            staticClass: "csu-form-input",
+                            class: {
+                              "border-danger":
+                                this.submittedOnce && !this.form.majorId
+                            },
+                            attrs: {
+                              label: "major",
+                              options: _vm.selectedMajorsByField
+                            },
+                            on: {
+                              input: function($event) {
+                                _vm.updateSelect("majorId", "majorId", $event)
+                              },
+                              change: function($event) {
+                                _vm.updateSelect("majorId", "majorId", $event)
+                              }
+                            },
+                            model: {
+                              value: _vm.selected,
+                              callback: function($$v) {
+                                _vm.selected = $$v
+                              },
+                              expression: "selected"
+                            }
+                          })
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.industryFormWasSubmitted
+                ? _c("div", { staticClass: "form-group row" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success btn-submit",
+                        attrs: { id: "submit-btn", type: "button" },
+                        on: { click: _vm.submitForm }
+                      },
+                      [_vm._v("Submit")]
+                    )
                   ])
                 : _vm._e()
             ])

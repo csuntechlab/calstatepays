@@ -1,5 +1,4 @@
 const fetchIndustriesAPI = (payload, success, error) => {
-    console.log("fetching industries");
     window.axios.get(`api/industry/${payload.majorId}/${payload.university}`)
         .then(
             response => {
@@ -7,8 +6,6 @@ const fetchIndustriesAPI = (payload, success, error) => {
             },
             ).catch(
             failure=>{ 
-                console.log("failure");
-                console.log(response.data);
                 error(failure.response.data)}
         );
 }
