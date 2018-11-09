@@ -17,6 +17,8 @@ from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
 
 from csuMetro_Parsing.dataframeToCSV import DfToCSV
 from csuMetro_Parsing.jsonOutput import JsonOutPut
+
+from csuMetro_Parsing.PfreHelper import Sanitize_Pfre
 # from csuMetro_Parsing.addUniqueIdentifier import AddUniqueId
 
 class IterateCsvFiles():
@@ -119,3 +121,18 @@ class IterateCsvFiles():
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathIndustryWages,industryPathWages)
         filePathPopulation = filePath + '/populationData/Industry_Population_'+fileName+'.json'
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathPopulation,populationTable)
+
+    def master_pfre_csv_to_json(self,pfreCsvFiles):
+      self.globalIndex = 1
+      filePath = '../../database/data/'
+      for csv in pfreCsvFiles:
+          pfreSanitize = Sanitize_Pfre(csv,self.globalIndex)
+          fileName = csv.replace("_pfre","")
+          self.globalIndex = pfreSanitize.get_global_index()
+          student_backgrounds,investments = pfreSanitize.get_student_path_and_investments_data_frame()
+          filePathInvestments = filePath + '/investmentsData/Investments_'+fileName+'.json'
+          self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathInvestments,investments)
+          filePathStudentPath = filePath + '/studentBackgroundData/Student_Background_'+fileName+'.json'
+          self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathStudentPath,student_backgrounds)
+      
+

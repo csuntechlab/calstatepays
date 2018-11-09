@@ -72,6 +72,8 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
             'average_annual_earnings_5_years_after_exit':self.dollar_column('average_annual_earnings_5_years_after_exit'),
             'median_annual_earnings_10_years_after_exit':self.dollar_column('median_annual_earnings_10_years_after_exit'),
             'average_annual_earnings_10_years_after_exit':self.dollar_column('average_annual_earnings_10_years_after_exit'),
+            'number_of_students_found_5_years_after_exit':self.remove_comma('number_of_students_found_5_years_after_exit'),
+            'number_of_students_found_10_years_after_exit':self.remove_comma('number_of_students_found_10_years_after_exit'),
         }
         for column in self.df:
             pd.Series(column).map(mapper)
