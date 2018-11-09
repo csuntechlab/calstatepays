@@ -19,7 +19,6 @@ import splashPage from './views/splashPage/index.vue';
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
-
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
@@ -29,8 +28,8 @@ const router = new VueRouter({
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},
 		{ path: '/research', component: research},
-		{ path: '/researchcsun', component: researchcsun },
-		{ path: '/researchall', component: researchall }
+		{ path: '/researchcsun', component: researchcsun},
+		{ path: '/tableauHolder', name:'all',component: researchall , props:true}
 	]
 });
 
