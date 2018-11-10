@@ -2,8 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\University;
 use App\Contracts\PowerUsersContract;
-use App\Models\PowerUser;
+use App\Models\PowerUsersData;
 
 class PowerUsersService implements PowerUsersContract
 {
@@ -15,11 +16,9 @@ class PowerUsersService implements PowerUsersContract
 
         $universityId = $university->id;
 
+        $data = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->firstOrFail();
+        $test['tabFrame'] = $data['iFramePath'];
 
-        $data = PowerUser::where('university_id', $universityId)->where('path_type_id', $path_id)->firstOrFail();
-
-        dd($data);
-
-
+        return $test;
     }
 }

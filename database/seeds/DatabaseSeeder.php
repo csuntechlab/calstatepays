@@ -38,5 +38,17 @@ class DatabaseSeeder extends Seeder
         // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
         // $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
         // $this->call(Majors_Different_Hegis_Same_Major_Table_Seeder::class);
+
+        /** IFrame seeders */
+        $this->call(Power_User_Data_Aggregate_TableSeeder::class);
+        $this->call(Power_User_Data_Northridge_TableSeeder::class);
+        $this->call(Power_User_Data_Channel_Islands_TableSeeder::class);
+        $this->call(Power_User_Data_Dominguez_Hills_TableSeeder::class);
+        $this->call(Power_User_Data_Fullerton_TableSeeder::class);
+        $this->call(Power_User_Data_Long_Beach_TableSeeder::class);
+        $this->call(Power_User_Data_Los_Angeles_TableSeeder::class);
+        $this->call(Power_User_Data_Pomona_TableSeeder::class);
+
+
     }
 }

@@ -14,9 +14,10 @@ class CreatePowerUsersDataTable extends Migration
     public function up()
     {
         Schema::create('power_users_data', function (Blueprint $table) {
+            /** MAKE NOT NULLABLE when all iframe paths are good */
             $table->integer('university_id');
-            $table->integer('path_type_id');
-            $table->string('iframeLink');
+            $table->integer('path_id');
+            $table->string('iFramePath')->nullable();
             $table->nullableTimestamps();
         });
     }
