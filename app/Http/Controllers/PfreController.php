@@ -7,16 +7,16 @@ use App\Contracts\PfreContract;
 
 class PfreController extends Controller
 {
-    protected $majorRetriever;
+    protected $pfreRetriever;
 
-    public function __construct(PfreContract $majorContract)
+    public function __construct(PfreContract $pfreContract)
     {
-        $this->majorRetriever = $majorContract;
+        $this->pfreRetriever = $pfreContract;
     }
 
     public function getFREData(Request $request)
     {
-        $freData = $this->majorRetriever->getFREData($request);
+        $freData = $this->pfreRetriever->getFREData($request);
         return [
             'majorId' => $request->major,
             'universityId' => $request->university,

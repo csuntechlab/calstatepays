@@ -14,11 +14,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class PfreServiceTest extends TestCase
 {
     use DatabaseMigrations;
-    protected $majorService;
+    protected $pfreService;
     public function setUp()
     {
         parent::setUp();
-        $this->majorService = new PfreService();
+        $this->pfreService = new PfreService();
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
         $this->seed('Student_Paths_TableSeeder');
@@ -44,7 +44,7 @@ class PfreServiceTest extends TestCase
         $request->annual_earnings = 1;
         $request->financial_aid = 1;
 
-        $response = $this->majorService->getFREData($request);
+        $response = $this->pfreService->getFREData($request);
 
         $this->arrayHasKey("student_background_id", $response);
         $this->arrayHasKey("annual_earnings_id", $response);
@@ -65,7 +65,7 @@ class PfreServiceTest extends TestCase
         $request->financial_aid = 2;
 
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-        $response = $this->majorService->getFREData($request);
+        $response = $this->pfreService->getFREData($request);
     }
 
     public function test_getFREData_ensure_returns_all_keys()
@@ -82,8 +82,8 @@ class PfreServiceTest extends TestCase
         $request->annual_earnings = 3;
         $request->financial_aid = 2;
         
-        //  dd($this->majorService->getFREData($request));
-        $response = $this->majorService->getFREData($request);
+        //  dd($this->pfreService->getFREData($request));
+        $response = $this->pfreService->getFREData($request);
         $this->arrayHasKey("student_background_id", $response);
         $this->arrayHasKey("annual_earnings_id", $response);
         $this->arrayHasKey("annual_financial_aid_id", $response);
