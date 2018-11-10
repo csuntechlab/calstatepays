@@ -13,7 +13,7 @@
         <div v-for="(industry,index) in industriesByMajor" :key="index">
             <div v-if="industry.percentage != null || industry.industryWage != null" class="row IndustryProgressBarWrapper">
                 <div class="col-sm-3">
-                    <h3 class="IndustryProgressBarWrapper__IndustryTitle">
+                    <h3 class="IndustryProgressBarWrapper__IndustryTitle py-2">
                         {{industry.title}}
                     </h3>
                 </div>
