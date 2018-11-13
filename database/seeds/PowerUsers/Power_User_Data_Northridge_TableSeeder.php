@@ -13,12 +13,12 @@ class Power_User_Data_Northridge_TableSeeder extends Seeder
     {
         $json = File::get("database/data/powerUserData/Power_User_Data_Northridge.json");
         $data = json_decode($json);
-        foreach($data as $row){
-                DB::table('power_users_data')->insert([
-                    'university_id' => $row->university_id,
-                    'path_id' => $row->path_id,
-                    'iFramePath'      => $row->iFramePath,
-                ]);
+        foreach ($data as $row) {
+            DB::table('power_users_data')->insert([
+                'university_id' => $row->university_id,
+                'path_id' => $row->path_id,
+                'iFramePathString' => $row->iFramePath,
+            ]);
         };
     }
 }
