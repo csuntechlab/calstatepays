@@ -20,7 +20,7 @@ class JsonOutPut:
     fp.close()
 
   def json_output_by_university_path(self,filePath,df):
-    print(df.head())
+    # print(df.head())
     aggregate = self.get_df_by_campus(df,0)
     self.convert_df_to_dictionary_then_out_put_to_json(filePath+'aggregate.json',aggregate)
     
@@ -28,8 +28,8 @@ class JsonOutPut:
     self.convert_df_to_dictionary_then_out_put_to_json(filePath+'northridge.json',northridge)
 
   def json_output_by_university_wages(self,filePath,pathDf,df,left,right):
-    print(filePath)
-    print(df.head())
+    # print(filePath)
+    # print(df.head())
 
     aggregateWages = self.get_wages_df(pathDf,df,0,left,right)
     self.convert_df_to_dictionary_then_out_put_to_json(filePath+'aggregate.json',aggregateWages)
@@ -48,6 +48,6 @@ class JsonOutPut:
     return wages
   
   def get_df_by_campus(self,df,campus_id):
-    print(campus_id)
+    # print(campus_id)
     df = df.loc[df['campus'].isin([campus_id])]
     return df

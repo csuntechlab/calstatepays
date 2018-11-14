@@ -1,9 +1,9 @@
 class DfToCSV:
   def __init__(self,MajorsPathWageDataFrame,attachName):
-    print('here')
+    # print('here')
     self.df = MajorsPathWageDataFrame
     self.name = attachName
-    self.printCSV()
+    # self.printCSV()
   
   def printCSV(self):
     aggregate = self.df.loc[self.df['campus'].isin([0])]
