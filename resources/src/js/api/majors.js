@@ -12,7 +12,13 @@ const fetchFieldOfStudiesAPI = (success, error) => {
         response => success(response.data),
          
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{ 
+            if(failure.response.status == 400){
+                error(failure.response.data.major[0])
+            }else{
+                error(failure.response.data.message)
+            }
+        }
     );
 };
 

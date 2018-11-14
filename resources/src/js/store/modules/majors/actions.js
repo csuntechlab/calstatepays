@@ -11,7 +11,6 @@ export default {
                 commit(_majors.FETCH_MAJORS, success);
             },
             (error) =>{commit(_global.ERROR_ALERT,error)
-
                 
             }
         );
