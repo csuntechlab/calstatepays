@@ -27,7 +27,7 @@ Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 /** TODO: $universityId -> $universityName */
 Route::get(
     '/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
-    'MajorController@getFREData'
+    'PfreController@getFREData'
 )->name('major.fre-data');
 
 //Industry

@@ -49,7 +49,7 @@ class Sanitize_Industry(Data_Frame_Sanitizer):
     
 
     def get_this_university_major_dictionary(self,file):
-        print(self.file)
+        # print(self.file)
         jsonFile = open('./hegisToMajorDictionary/'+file+'.json')
         dictionary = jsonFile.read()
         dictionary = json.loads(dictionary)
@@ -166,7 +166,7 @@ class DFHelper():
         differentHegisSameMajor.loc[:,'id'] = range(1, len(differentHegisSameMajor) + 1) 
         sameHegisDifferentMajor = differentHegisSameMajor
 
-        print(differentHegisSameMajor.head())
+        # print(differentHegisSameMajor.head())
 
         ids = differentHegisSameMajor["id"]
         errorBoolean = differentHegisSameMajor.duplicated(subset=['campus','major'], keep=False)

@@ -1,7 +1,7 @@
 <template>
 	<transition name="flip" mode="out-in">
 		<div key="1" v-if="!selectedFormWasSubmitted">
-			<form v-bind:id="'majorForm-' + form.cardIndex">
+			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
 					title="Reset"></i>
@@ -32,7 +32,7 @@
 			</form>
 		</div>
 		<div key="2" v-else >
-			<form v-bind:id="'majorForm-' + form.cardIndex">
+			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
 					title="Reset"></i>
