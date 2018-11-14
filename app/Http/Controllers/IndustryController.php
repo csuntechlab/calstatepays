@@ -36,6 +36,7 @@ class IndustryController extends Controller
         if (isset($request->validator) && $request->validator->fails()) {
             return response()->json($request->validator->messages(), 400);
         }
-        return $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university,$request->degreeLevel);    
+        $industry_data =  $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
+        return $industry_data;
     }
 }

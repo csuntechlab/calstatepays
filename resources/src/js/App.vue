@@ -3,7 +3,7 @@
 		<navigation/>
 		
 		<main class="contentWrapper">	
-			<!-- <error-alert/>   uncomment this after meeting -->
+			<error-alert/>
 			<router-view></router-view>
 		</main>
 		<csu-footer/>

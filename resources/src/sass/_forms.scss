@@ -23,16 +23,22 @@ label {
 
 %form-input-base {
   border-bottom: .2rem $gray solid;
-  .dropdown-toggle {
-    border-radius: 0 !important;
-    border: none !important;
-  }
 }
 
 .csu-form-input {
   @extend %form-input-base;
   .dropdown-toggle {
-    height: 2.75rem;
+    border: none !important;
+    min-height: 2rem;
+  }
+  input[type="search"]{
+    position: absolute;
+    background: purple;
+    width: 80% !important;
+  }
+  .dropdown{
+    min-height: 2rem;
+    position: relative;
   }
 }
 

@@ -81,15 +81,13 @@ export default {
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
-        if(state.majorCards[index].formWasSubmitted===true){
+        if(state.majorCards[index].formWasSubmitted===true) {
             state.majorCards[index].formWasSubmitted = false;
         }
-        else{
+        else {
             state.majorCards[index].formWasSubmitted = true;
         }
-
     },
-
     [_majors.RESET_MAJOR_STATE](state){
         state.majorCards = [
                 {
