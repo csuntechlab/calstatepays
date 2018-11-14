@@ -100,6 +100,30 @@
 	widows: 10rem;
 }
 
+.homepage-seals {
+	figure {
+		img {
+			width: 90%;
+			max-height: 10.25rem;
+		}
+		figcaption {
+			font-family: $font-base;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.85rem;
+			line-height: 1.5rem;
+			margin-top: 0.5rem;
+		}
+
+		@media screen and (max-width: $break-small) {
+		img {
+			width: 90%;
+			max-height: 7.25rem;
+		}
+	}
+
+	}
+}
 .faq-banner {
 	background-image: $white-filter, url("../img/faq-banner.jpg");
 	background-size: cover;

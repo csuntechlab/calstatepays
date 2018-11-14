@@ -55,7 +55,9 @@
 						</router-link>
 					</div>
 				</div>
+				<!-- <campus-seals/> -->
 				<div class="row mt-2 csu-wrapper">
+					
 					<figure class="col-md col-sm-4 col-4 text-center">
 						<img :src="this.url + '/img/csuseals/long_beach_seal.svg'" alt="CSU Long Beach Seal">
 						<figcaption>Long Beach</figcaption>
@@ -105,6 +107,7 @@
 import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import csuSelector from "../../../components/global/csu-selector.vue";
 import homeBanner from "../../../components/home/home-banner.vue";
+import campusSeals from "../../../components/home/campus-seals.vue";
 import {mapActions} from 'vuex';
 export default {
 	data() {
@@ -118,7 +121,8 @@ export default {
 	components: {
 		csuSelector,
 		landingPageCarousel,
-		homeBanner
+		homeBanner,
+		campusSeals
 	}, 
 	methods: {
 		...mapActions(['setDataPage'])
