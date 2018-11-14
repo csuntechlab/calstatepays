@@ -1,16 +1,19 @@
 <template>
+<div class="container">
     <div class="row">
         <div class="col-md-12 mt-5 mb-5 home__subheading">
             <h3 class="text-center font-italic"> Endorsed by several CSUs, CalStatePays combines the data of soCal's top public universities
             </h3>
         </div>
         <div class="row homepage-seals mt-4">
-            <figure  v-for="(item, index) in universitySeals" :key="index" class="col-lg col-sm-3 col-4 text-center">
+            <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3">
                 <img :src="item.url" :alt="item.name">
-                <figcaption >{{item.name}}</figcaption>
+                <figcaption class="text-center" >{{item.name}}</figcaption>
             </figure>
         </div>  
     </div>
+</div>
+
 </template>
 
 <script>

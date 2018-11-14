@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<!-- <landing-page-carousel class="landing-page-carousel" :url='this.url'/> -->
+	<div> 
+		<landing-page-carousel class="landing-page-carousel" :url='this.url'/>
 		<!-- <home-banner/> -->
 		<div class="bg mh-90 pt-5">
 			<div class="p-0 text-center pt-9">
@@ -87,7 +87,7 @@
 						<img :src="this.url + '/img/csuseals/los_angeles_seal.svg'" alt="CSU Los Angeles Seal">
 						<figcaption>Los Angeles</figcaption>
 					</figure>
-				</div>
+				</div> 
 			</div>
 		</div>
 		<div class="learn-how row">
