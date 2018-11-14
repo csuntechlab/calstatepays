@@ -17,7 +17,7 @@ class CreatePowerUsersDataTable extends Migration
             /** MAKE NOT NULLABLE when all iframe paths are good */
             $table->integer('university_id');
             $table->integer('path_id');
-            $table->string('iFramePathString')->nullable();
+            $table->string('iframe_string')->nullable();
             $table->nullableTimestamps();
         });
     }

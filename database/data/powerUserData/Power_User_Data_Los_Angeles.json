@@ -2,26 +2,26 @@
   {
     "university_id": "45",
     "path_id": 1,
-    "iFramePath": null
+    "iframe_string": null
   },
   {
     "university_id": "45",
     "path_id": 2,
-    "iFramePath": null
+    "iframe_string": null
   },
   {
     "university_id": "45",
     "path_id": 3,
-    "iFramePath": null
+    "iframe_string": null
   },
   {
     "university_id": "45",
     "path_id": 4,
-    "iFramePath": null
+    "iframe_string": null
   },
   {
     "university_id": "45",
     "path_id": 5,
-    "iFramePath": null
+    "iframe_string": null
   }
 ]

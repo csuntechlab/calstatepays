@@ -17,7 +17,7 @@ class Power_User_Data_Dominguez_Hills_TableSeeder extends Seeder
             DB::table('power_users_data')->insert([
                 'university_id' => $row->university_id,
                 'path_id' => $row->path_id,
-                'iFramePathString' => $row->iFramePath,
+                'iframe_string' => $row->iframe_string,
             ]);
         };
     }
