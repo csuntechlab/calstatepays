@@ -14,7 +14,7 @@ class PowerUsersData extends Model
     protected $fillable = [
         'university_id',
         'path_id',
-        'iFramePath'
+        'iframe_string'
     ];
 
 }
