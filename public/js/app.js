@@ -45050,7 +45050,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 
 var fetchMajorsAPI = function fetchMajorsAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/university/" + payload).then(function (response) {
+    // window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
+    window.axios.get("api/major/hegis-codes/university/1111").then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -45061,11 +45062,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
     window.axios.get("api/major/field-of-study").then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        if (failure.response.status == 400) {
-            error(failure.response.data.major[0]);
-        } else {
-            error(failure.response.data.message);
-        }
+        error(failure.response.data.message);
     });
 };
 
@@ -45078,12 +45075,17 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(
+    // window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
+    window.axios.get("api/major/twelve/schoolId}").then(
     // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
     function (response) {
         return success(response.data);
     }).catch(function (failure) {
-        error(failure.response.data.message);
+        if (failure.response.status == 400) {
+            error(failure.response.data.major[0]);
+        } else {
+            error(failure.response.data.message);
+        }
     });
 };
 

@@ -1,9 +1,12 @@
 
 const fetchMajorsAPI = (payload, success, error) => {
     window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
+        // window.axios.get(`api/major/hegis-codes/university/1111`).then(
         response => success(response.data),
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{ 
+                error(failure.response.data.message)
+        }
     );
 }
 
@@ -13,11 +16,7 @@ const fetchFieldOfStudiesAPI = (success, error) => {
          
     ).catch(
         failure=>{ 
-            if(failure.response.status == 400){
-                error(failure.response.data.major[0])
-            }else{
                 error(failure.response.data.message)
-            }
         }
     );
 };
@@ -32,10 +31,17 @@ const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
 
 const fetchMajorDataAPI = (payload, success, error) => {
     window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
+        // window.axios.get(`api/major/twelve/schoolId}`).then(
         // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
         response => success(response.data),    
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{
+            if(failure.response.status == 400){
+            error(failure.response.data.major[0])
+        }else{
+            error(failure.response.data.message)
+        }
+    }
     );
 }
 
