@@ -1,6 +1,5 @@
 const fetchIndustriesAPI = (payload, success, error) => {
     window.axios.get(`api/industry/${payload.majorId}/${payload.university}`)
-    // window.axios.get(`api/industry/apple/1`)
         .then(
             response => {
                 success(response.data);

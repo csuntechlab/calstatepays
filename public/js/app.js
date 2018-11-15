@@ -45050,8 +45050,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 
 var fetchMajorsAPI = function fetchMajorsAPI(payload, success, error) {
-    // window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
-    window.axios.get("api/major/hegis-codes/university/1111").then(function (response) {
+    window.axios.get("api/major/hegis-codes/university/" + payload).then(
+    // window.axios.get(`api/major/hegis-codes/university/1111`).then(
+    function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -45075,8 +45076,7 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    // window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
-    window.axios.get("api/major/twelve/schoolId}").then(
+    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(
     // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
     function (response) {
         return success(response.data);
@@ -45494,14 +45494,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = ({
 	fetchIndustries: function fetchIndustries(_ref, payload) {
 		var commit = _ref.commit,
 		    dispatch = _ref.dispatch;
 
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(payload, function (success) {
-			console.log("fetch industry");
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
 		}, function (error) {
 			commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -45514,7 +45512,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustryMajorsByFieldAPI(payload, function (success) {
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
 		}, function (error) {
-			return console.log("error");
+			return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
 		});
 	},
 	resetIndustryCard: function resetIndustryCard(_ref3) {
@@ -45545,9 +45543,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university)
-    // window.axios.get(`api/industry/apple/1`)
-    .then(function (response) {
+    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         if (failure.response.status == 400) {

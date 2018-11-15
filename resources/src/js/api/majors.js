@@ -31,7 +31,6 @@ const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
 
 const fetchMajorDataAPI = (payload, success, error) => {
     window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
-        // window.axios.get(`api/major/twelve/schoolId}`).then(
         // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
         response => success(response.data),    
     ).catch(

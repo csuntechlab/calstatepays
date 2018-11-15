@@ -1,13 +1,11 @@
 import Industries from "../../../api/industries";
 import _industries from "../../mutation-types/industries"
 import _global from '../../mutation-types/global-form';
-
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
 		Industries.fetchIndustriesAPI(
 			payload,
 			success => {
-				console.log("fetch industry")
 				commit(_industries.FETCH_INDUSTRIES, success);
 			},
 			(error) =>{commit(_global.ERROR_ALERT,error)
@@ -20,7 +18,7 @@ export default {
 			(success) => {
 				commit(_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
 			},
-			(error) => console.log("error")
+			(error) => commit(_global.ERROR_ALERT,error)
 		);
 	},
 	resetIndustryCard({commit}){

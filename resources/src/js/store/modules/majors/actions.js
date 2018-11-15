@@ -10,8 +10,8 @@ export default {
             (success) => {
                 commit(_majors.FETCH_MAJORS, success);
             },
-            (error) =>{commit(_global.ERROR_ALERT,error)
-                
+            (error) =>{
+                commit(_global.ERROR_ALERT,error)  
             }
         );
     },
