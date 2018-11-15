@@ -273,8 +273,6 @@
 	color: $color;
 	a{margin: 0; text-decoration: none; color: $color}
 	a:hover{color: $constrast-color;}
-	svg{fill:$color}
-	svg:hover{fill:$constrast-color}
 	&:hover{
 		background:$color;
 	}
@@ -295,14 +293,19 @@
 }
 
 .homeCard{
-	&__icon--major{fill:blue;}
+	&__icon--major{fill:$CSP-Blue;}
 
 	&__title--major{
 		@extend %mytext;
 	}
-	&__titleAndIconWrapper--major,&__icon--major:hover{
+	&__titleAndIconWrapper--major{
 		@include titleAndIconWrapper($CSP-Blue);
-		fill: yellow;
+		&:hover{
+			.homeCard__icon--major{
+				fill: white;
+			}
+		}
+		
 	}
 	&__Copy--major{
 		@include homeCard__Copy($CSP-Dark-Blue);

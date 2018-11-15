@@ -19351,10 +19351,10 @@ figcaption {
 }
 
 .homeCard__icon--major {
-  fill: blue;
+  fill: #3A97D1;
 }
 
-.homeCard__titleAndIconWrapper--major, .homeCard__icon--major:hover {
+.homeCard__titleAndIconWrapper--major {
   -webkit-transition: all .30s ease-out;
   transition: all .30s ease-out;
   border-top: 0.4rem solid #3A97D1;
@@ -19362,29 +19362,24 @@ figcaption {
   border-right: 0.4rem solid #3A97D1;
   background: white;
   color: #3A97D1;
-  fill: yellow;
 }
 
-.homeCard__titleAndIconWrapper--major a, .homeCard__icon--major:hover a {
+.homeCard__titleAndIconWrapper--major a {
   margin: 0;
   text-decoration: none;
   color: #3A97D1;
 }
 
-.homeCard__titleAndIconWrapper--major a:hover, .homeCard__icon--major:hover a:hover {
+.homeCard__titleAndIconWrapper--major a:hover {
   color: white;
 }
 
-.homeCard__titleAndIconWrapper--major svg, .homeCard__icon--major:hover svg {
-  fill: #3A97D1;
-}
-
-.homeCard__titleAndIconWrapper--major svg:hover, .homeCard__icon--major:hover svg:hover {
-  fill: white;
-}
-
-.homeCard__titleAndIconWrapper--major:hover, .homeCard__icon--major:hover:hover {
+.homeCard__titleAndIconWrapper--major:hover {
   background: #3A97D1;
+}
+
+.homeCard__titleAndIconWrapper--major:hover .homeCard__icon--major {
+  fill: white;
 }
 
 .homeCard__Copy--major {
