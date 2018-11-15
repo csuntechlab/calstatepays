@@ -164,7 +164,7 @@ export default {
 					},
 					splitNumber: 5,
 					min: 0,
-					max: 175000,
+					max: 150000,
 					splitLine: {
 						show: true
 					},

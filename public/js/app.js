@@ -52995,7 +52995,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         }
                     },
                     min: 0,
-                    max: 175000,
+                    max: 150000,
                     axisLine: {
                         show: false
                     },
@@ -71395,7 +71395,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					},
 					splitNumber: 5,
 					min: 0,
-					max: 175000,
+					max: 150000,
 					splitLine: {
 						show: true
 					},
