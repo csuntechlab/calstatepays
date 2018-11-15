@@ -3613,7 +3613,7 @@ p {
 .v-autocomplete--is-selecting-index input {
   opacity: 0;
 }
-.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo) .v-select__slot > input {
+.v-autocomplete.v-text-field--enclosed:not(.v-text-field--solo):not(.v-text-field--single-line) .v-select__slot > input {
   margin-top: 24px;
 }
 .v-autocomplete:not(.v-input--is-disabled).v-select.v-text-field input {
@@ -7147,6 +7147,8 @@ table.v-table tfoot tr td {
   font-weight: 500;
   position: relative;
   overflow: hidden;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
 }
 .v-date-picker-title__date > div {
   position: relative;
@@ -19171,7 +19173,7 @@ figcaption {
 
 .landing-page__icon {
   font-size: 6rem;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .landing-page__icon--cap {
@@ -19202,7 +19204,7 @@ figcaption {
 .homepage-seals figure figcaption {
   font-family: "Montserrat";
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.85rem;
   line-height: 1.5rem;
   margin-top: 0.5rem;
@@ -19212,6 +19214,19 @@ figcaption {
   .homepage-seals figure img {
     width: 90%;
     max-height: 7.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .homepage-seals figure img {
+    width: 90%;
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepage-seals figure figcaption {
+    font-size: 0.7rem;
   }
 }
 
@@ -19375,7 +19390,7 @@ figcaption {
 }
 
 .campus-modal .opted-out img {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .campus-modal .opted-out img:hover {
