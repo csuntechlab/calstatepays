@@ -261,3 +261,50 @@
 		
 	}
 }
+
+@mixin titleAndIconWrapper($color) {
+	$border-thickness: .4rem;
+	$constrast-color: white;
+	transition: all .30s ease-out;
+	border-top: $border-thickness solid $color;
+	border-left: $border-thickness solid $color;
+	border-right: $border-thickness solid $color;
+	background: $constrast-color;
+	color: $color;
+	a{margin: 0; text-decoration: none; color: $color}
+	a:hover{color: $constrast-color;}
+	svg{fill:$color}
+	svg:hover{fill:$constrast-color}
+	&:hover{
+		background:$color;
+	}
+}
+
+%mytext {
+	@extend .text-left, .text-md-center ;
+	font-size: 1.8rem;
+	margin: 0;
+	font-weight: bold;
+}
+
+@mixin homeCard__Copy($color) {
+	@extend .text-center, .p-3 ;
+	background: $color;
+	color: white;
+	margin: 0;
+}
+
+.homeCard{
+	&__icon--major{fill:blue;}
+
+	&__title--major{
+		@extend %mytext;
+	}
+	&__titleAndIconWrapper--major,&__icon--major:hover{
+		@include titleAndIconWrapper($CSP-Blue);
+		fill: yellow;
+	}
+	&__Copy--major{
+		@include homeCard__Copy($CSP-Dark-Blue);
+	}
+}

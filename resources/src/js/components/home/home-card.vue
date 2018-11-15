@@ -1,0 +1,93 @@
+<template>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="homeCard__titleAndIconWrapper--major">
+                <router-link to="/data/majors" @click.native="setDataPage('majors')">
+                    <div class="row">
+                        <div class="col-3 col-md-12">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.8 152.2" style="enable-background:new 0 0 294.8 152.2;" xml:space="preserve">
+                                <path class="homeCard__icon--major" d="M289.9,5.1C289.5,5,289.1,5,288.8,5c-0.1,0-0.1,0-0.2,0h-12.3V2.5c0-3.3-7.7-3.3-7.7,0V5h-254
+                                    C11.4,5,7.4,4.3,4.3,5.3C0.3,6.5,0,10.4,0,13.9V24c0,3.7,0.8,7.4,5.1,8.3c0.5,0.1,1.1,0.2,1.7,0.2c13,0.5,26.2,0,39.3,0H212v74.8
+                                    c-6-2.5-12.6-4.2-18.9-5c-16.7-2.2-32.7,2.6-45.6,13.2c-5.1-4.6-11.5-8.1-17.7-10.6c-15-6-31.1-4.6-45.7,1.3V46c0-5.6-8.7-5.6-8.7,0
+                                    v66.8c0,3.4,3.6,5.2,6.5,3.7c14.3-7.3,30.7-9.5,45.8-3.2c6.5,2.7,12,6.1,16.4,11c1.6,1.8,4.5,1.6,6.1,0c11.6-11,27-15.9,42.8-13.4
+                                    c5.3,0.9,10.6,2.3,15.6,4.4c0.2,0.1,1,0.4,1.9,0.8c0.6,0.3,1.2,0.6,1.9,0.9c0.5,0.3,1.1,0.5,1.6,0.8c0.6,0.4,1.4,0.6,2.1,0.6
+                                    c2.4,0,4.4-1.9,4.4-4.3V32.5h48.1v32.9c-2.5,1.3-4.2,3.8-4.5,6.8c-0.1,0.2-0.1,0.5-0.1,0.8c0,0.3,0,0.5,0.1,0.7c0.2,1.9,1,3.6,2.3,5
+                                    c-2,1.3-3.6,3-4.7,5.2c-1.4,2.6-1.5,5.3-1.5,8.1c0.1,19.1,0,38.3,0,57.4c0,3.3,5.1,3.3,5.1,0c0-2.9,0-5.8,0-8.7
+                                    c0-11.7,0-23.5,0-35.2c0-4.5,0-8.9,0-13.4c0-1.9-0.1-3.8,0.7-5.5c0.8-1.6,2.2-3,3.8-3.9v6.8l0.1,60.4c0,3.2,5.1,3.2,5.1,0v-8.5
+                                    l-0.1-58.6c0,0,0.1,0,0.1,0.1c2.2,1.1,3.8,3.1,4.5,5.4c0.5,1.7,0.2,3.8,0.2,5.6c-0.1,18.6,0,37.3,0,55.9c0,3.3,5.1,3.3,5.1,0
+                                    c0-3,0-6,0-9c0-12.2,0-24.4,0-36.6c0-4.2,0-8.5,0-12.7c0.2-5-2-9.8-6.4-12.5c1.5-1.5,2.5-3.6,2.5-6c0-3.3-1.8-6-4.5-7.4v-33
+                                    c4,0,8,0.2,12,0c0.8,0,1.6-0.1,2.4-0.3c4-1.3,4.3-5.1,4.3-8.6V13.4C295,9.7,294.2,6,289.9,5.1z M8.8,11.4c0-0.1,0-0.2-0.1-0.2
+                                    C8.8,11.3,8.8,11.3,8.8,11.4z M6.3,23.7c0.1-0.1,0.2-0.1,0.3,0C6.4,23.7,6.3,23.6,6.3,23.7z M11.2,23.7c-0.7,0-1.6-0.1-2.5-0.1V14
+                                    c0-0.1,0-0.2,0-0.4c0.8-0.1,1.5-0.1,2.1-0.1h257.8v10.2H11.2z M269.1,72.9c0.2-4.3,6.7-4.3,6.7,0S269.3,77.2,269.1,72.9z
+                                    M276.3,23.7V13.5h10V23c0,0.2,0,0.4,0,0.7H276.3z"/>
+                            </svg>
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h2 class="homeCard__title--major">Verify Major Pay</h2>
+                        </div>
+                    </div>
+                </router-link>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="homeCard__Copy--major">Find out earnings for different majors after CSU graduation.</p>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-md-4 homeCard">
+            <div class="homeCard__titleAndIconWrapper--Industries">
+                <router-link to="/data/industries" @click.native="setDataPage('industries')">
+                    <img :src="this.url + '/img/homeimages/icon-Industry.svg'"/>
+                    <h2 class="homeCard__title--Industries">Verify Industries Pay</h2>
+                </router-link>
+            </div>
+            <p class="homeCard__Copy--Industries">Explore where CSU graduates work and what they earn.</p>
+        </div>
+        <div class="col-md-4 homeCard">
+            <div class="homeCard__titleAndIconWrapper--PFRE">
+                <router-link to="/data/pfre" @click.native="setDataPage('pfre')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242.8 101.5">
+                        <path class="PFRE0" d="M18.7 47.8c2.4 1.7 5.4 3.1 8.9 3.1 3.7-0.1 5.7-1.8 5.6-4.2 -0.1-5.9-15.2-4.5-15.4-12.8 -0.1-4.5 3.8-7.4 9.2-7.5 4.2-0.1 6.7 1.4 8.9 3.5l-2.1 2.4c-2.2-1.7-3.9-2.6-7.1-2.6 -3.2 0.1-5.2 1.6-5.1 4 0.1 5.2 15.2 3.9 15.4 12.6 0.1 4.6-3.9 7.8-9.9 7.9 -3.8 0-7.4-1.2-10.3-3.5L18.7 47.8zM25.3 20.1l2.9-0.1 0.2 7.7 -2.9 0.1L25.3 20.1zM28.9 52.7l0.2 8.2L26.2 61l-0.2-8.2L28.9 52.7z"/>
+                        <path class="PFRE0" d="M208.3 48.1c2.4 1.7 5.4 3.1 9 3.1 3.7-0.1 5.7-1.8 5.6-4.2 -0.1-5.9-15.2-4.5-15.4-12.8 -0.1-4.5 3.8-7.4 9.2-7.5 4.2-0.1 6.7 1.4 8.9 3.5l-2 2.4c-2.2-1.7-3.9-2.6-7.1-2.6 -3.2 0.1-5.2 1.6-5.1 4 0.1 5.2 15.2 3.9 15.4 12.6 0.1 4.6-3.9 7.8-9.9 7.9 -3.8 0-7.4-1.2-10.3-3.5L208.3 48.1zM214.9 20.4l2.9-0.1 0.2 7.7 -2.9 0.1L214.9 20.4zM218.5 53l0.2 8.2 -2.9 0.1 -0.2-8.2L218.5 53z"/>
+                        <path class="PFRE0" d="M129.7 101.3l-2.9-3.3 -2.9 3.3c-0.3 0.4-0.8 0-0.8-0.6V65.6c0-0.4 0.2-0.8 0.5-0.8h6.4c0.3 0 0.5 0.3 0.5 0.8v35.1C130.5 101.3 130 101.7 129.7 101.3z"/>
+                        <path class="PFRE0" d="M119 101.3l-2.8-3 -2.8 3c-0.4 0.4-0.9 0-0.9-0.6v-35c0-0.4 0.2-0.8 0.6-0.8h6.3c0.3 0 0.6 0.4 0.6 0.8v35C119.9 101.3 119.3 101.7 119 101.3z"/>
+                        <path class="PFRE1" d="M232.1 79.7C156.6 61 82.8 61 10.7 79.7 6.2 80.9 2 77 2 72.4v-63c0-4.7 4.4-8.3 9-7.3 73.6 15.9 147.2 15.9 220.8 0 4.6-1 9 2.5 9 7.3v63C240.8 77 236.5 80.8 232.1 79.7z"/>
+                        <path class="PFRE0" d="M121.5 24.3c4 0 7.7 1.4 10.7 3.7V13.5c0-1.8-1.4-3.2-3.2-3.2h-15.1c-1.8 0-3.2 1.4-3.2 3.2v14.6C113.6 25.8 117.4 24.3 121.5 24.3z"/>
+                        <path class="PFRE0" d="M121.5 59.2c-4.1 0-7.9-1.4-10.9-3.8V70c0 1.8 1.4 3.2 3.2 3.2h15.1c1.8 0 3.2-1.4 3.2-3.2V55.5C129.2 57.8 125.5 59.2 121.5 59.2z"/>
+                        <circle class="PFRE2" cx="121.5" cy="41.8" r="17.4"/>
+                        <path class="PFRE2" d="M10.7 79.7l4.1 13.6c1.2 3.9 5.3 6.1 9.2 4.8l84.8-32.4C76.3 66.5 43.6 71.4 10.7 79.7z"/>
+                        <path class="PFRE2" d="M232.8 79.7l-4 13.6c-1.2 3.9-5.3 6.1-9.2 4.8l-84.8-32.4C167.2 66.5 199.9 71.4 232.8 79.7z"/>
+                    </svg>
+                    <h2 class="homeCard__title--PFRE">Verify CSU Degree Pay</h2>
+                </router-link>
+            </div>
+            <p class="homeCard__Copy--PFRE">What’s the return on a CSU education. Find out the costs and benefits.</p>     
+        </div>-->
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+		return {
+			url: "",
+			isShowing: false,
+		};
+	}
+}
+</script>
+
+<style type="text/css">  
+    .industry0{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:10;}
+    .industry1{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+    .industry2{fill:none;stroke:#9D6D02;stroke-width:5;stroke-miterlimit:10;}
+    .industry3{fill:none;stroke:#9D6D02;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:12,11;}
+    .industry4{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+    .industry5{fill:none;stroke:#9D6D02;stroke-width:3;stroke-miterlimit:10;}
+    .PFRE0{fill:#7F1426;}
+    .PFRE1{fill:none;stroke:#7F1426;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+    .PFRE2{fill:none;stroke:#7F1426;stroke-width:4;stroke-miterlimit:10;}
+    .PFRE0:hover{fill:white}
+    .PFRE1:hover{fill:white}
+    .PFRE2:hover{fill:white}
+</style>
