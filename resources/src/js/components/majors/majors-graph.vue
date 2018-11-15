@@ -152,7 +152,7 @@ export default {
                         }
                     },
                     min: 0,
-                    max: 300000,
+                    max: 175000,
                     axisLine: {
                         show: false
                     },
