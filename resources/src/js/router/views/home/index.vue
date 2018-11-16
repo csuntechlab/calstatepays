@@ -2,8 +2,12 @@
 	<div class="container">
 		<!-- <landing-page-carousel class="landing-page-carousel" :url='this.url'/> -->
 		<!-- <home-banner/> -->
+<<<<<<< HEAD
 		<home-card/>
 		<!-- <div class="bg mh-90 pt-5">
+=======
+		<div class="bg mh-90 pt-5">
+>>>>>>> 333747f10bee7d2f503453e33e22433323b62e96
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row py-2 fa-wrapper">
@@ -105,7 +109,11 @@
 <script>
 import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import csuSelector from "../../../components/global/csu-selector.vue";
+<<<<<<< HEAD
 import homeCard from "../../../components/home/home-card.vue"
+=======
+import homeBanner from "../../../components/home/home-banner.vue";
+>>>>>>> 333747f10bee7d2f503453e33e22433323b62e96
 import {mapActions} from 'vuex';
 export default {
 	data() {
@@ -119,7 +127,11 @@ export default {
 	components: {
 		csuSelector,
 		landingPageCarousel,
+<<<<<<< HEAD
 		homeCard
+=======
+		homeBanner
+>>>>>>> 333747f10bee7d2f503453e33e22433323b62e96
 	}, 
 	methods: {
 		...mapActions(['setDataPage'])

@@ -1,0 +1,6014 @@
+[
+    {
+        "id": 2973,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 2974,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 2975,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 2976,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 2977,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 2978,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 2979,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 2980,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 2981,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 2982,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 2983,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 2984,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 2985,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 2986,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 2987,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 2988,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 2989,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 2990,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 2991,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 2992,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 2993,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 2994,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 2995,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 2996,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 2997,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 2998,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 2999,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3000,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3001,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3002,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3003,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3004,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3005,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3006,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3007,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3008,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3009,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3010,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3011,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3012,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3013,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3014,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3015,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3016,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3017,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3018,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3019,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3020,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3021,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3022,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3023,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3024,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3025,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3026,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3027,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3028,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3029,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3030,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3031,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3032,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3033,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3034,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3035,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3036,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3037,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3038,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3039,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3040,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3041,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3042,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3043,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3044,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3045,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3046,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3047,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3048,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3049,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3050,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3051,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3052,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3053,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3054,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3055,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3056,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3057,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3058,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3059,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3060,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3061,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15991,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 286,
+        "campus": 55
+    },
+    {
+        "id": 3062,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15991,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 286,
+        "campus": 55
+    },
+    {
+        "id": 3063,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15991,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 286,
+        "campus": 55
+    },
+    {
+        "id": 3064,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15991,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 286,
+        "campus": 55
+    },
+    {
+        "id": 3065,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3066,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3067,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3068,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3069,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3070,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3071,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3072,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3073,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3074,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3075,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3076,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3077,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3078,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3079,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3080,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3081,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19171,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 291,
+        "campus": 55
+    },
+    {
+        "id": 3082,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19171,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 291,
+        "campus": 55
+    },
+    {
+        "id": 3083,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19171,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 291,
+        "campus": 55
+    },
+    {
+        "id": 3084,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19171,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 291,
+        "campus": 55
+    },
+    {
+        "id": 3085,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3086,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3087,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3088,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3089,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3090,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3091,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3092,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3093,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3094,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3095,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3096,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3097,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3098,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3099,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3100,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3101,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3102,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3103,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3104,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3105,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3106,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3107,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3108,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3109,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3110,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3111,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3112,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3113,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3114,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3115,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3116,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3117,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3118,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3119,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3120,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3121,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3122,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3123,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3124,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3125,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3126,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3127,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3128,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3129,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3130,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3131,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3132,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3133,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3134,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3135,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3136,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3137,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3138,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3139,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3140,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3141,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3142,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3143,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3144,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3145,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 2,
+        "student_path": 1,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3146,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 5,
+        "student_path": 1,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3147,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 10,
+        "student_path": 1,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3148,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 15,
+        "student_path": 1,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3149,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3150,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3151,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3152,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3153,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3154,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3155,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3156,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3157,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3158,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3159,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3160,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3161,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4201,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 308,
+        "campus": 55
+    },
+    {
+        "id": 3162,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4201,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 308,
+        "campus": 55
+    },
+    {
+        "id": 3163,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4201,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 308,
+        "campus": 55
+    },
+    {
+        "id": 3164,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4201,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 308,
+        "campus": 55
+    },
+    {
+        "id": 3165,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3166,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3167,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3168,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3169,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3170,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3171,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3172,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3173,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3174,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3175,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3176,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3177,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3178,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3179,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3180,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3181,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3182,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3183,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3184,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3185,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3186,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3187,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3188,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3189,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3190,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3191,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3192,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3193,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5064,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 313,
+        "campus": 55
+    },
+    {
+        "id": 3194,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5064,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 313,
+        "campus": 55
+    },
+    {
+        "id": 3195,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5064,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 313,
+        "campus": 55
+    },
+    {
+        "id": 3196,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5064,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 313,
+        "campus": 55
+    },
+    {
+        "id": 3197,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3198,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3199,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3200,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3201,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3202,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3203,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3204,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3205,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3206,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3207,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3208,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3209,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3210,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3211,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3212,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3213,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3214,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3215,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3216,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3217,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3218,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3219,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3220,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3221,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3222,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3223,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3224,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3225,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3226,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3227,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3228,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3229,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3230,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3231,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3232,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3233,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3234,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3235,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3236,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3237,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3238,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3239,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3240,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3241,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3242,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3243,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3244,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3245,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3246,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3247,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3248,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3249,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3250,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3251,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3252,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3253,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3254,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3255,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3256,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3257,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3258,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3259,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3260,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3261,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3262,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3263,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3264,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3265,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3266,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3267,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3268,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3269,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3270,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3271,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3272,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3273,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3274,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3275,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3276,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3277,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3278,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3279,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3280,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3281,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3282,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3283,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3284,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3285,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3286,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3287,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3288,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3289,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3290,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3291,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3292,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3293,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3294,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3295,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3296,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3297,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12253,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 325,
+        "campus": 55
+    },
+    {
+        "id": 3298,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12253,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 325,
+        "campus": 55
+    },
+    {
+        "id": 3299,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12253,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 325,
+        "campus": 55
+    },
+    {
+        "id": 3300,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12253,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 325,
+        "campus": 55
+    },
+    {
+        "id": 3301,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3302,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3303,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3304,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3305,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3306,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3307,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3308,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3309,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3310,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3311,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3312,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3313,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3314,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3315,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3316,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3317,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3318,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3319,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3320,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3321,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3322,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3323,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3324,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3325,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3326,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3327,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3328,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3329,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3330,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3331,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3332,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3333,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3334,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3335,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3336,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3337,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3338,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3339,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3340,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3341,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3342,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3343,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3344,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3345,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3346,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3347,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3348,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3349,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3350,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3351,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3352,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3353,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3354,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3355,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3356,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3357,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3358,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3359,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3360,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3361,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3362,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3363,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3364,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3365,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3366,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3367,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3368,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3369,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3370,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3371,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3372,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3373,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3374,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3375,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3376,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3377,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3378,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3379,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3380,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3381,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3382,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3383,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3384,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3385,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3386,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3387,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3388,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3389,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3390,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3391,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3392,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3393,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3394,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3395,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3396,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3397,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 2,
+        "student_path": 2,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3398,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 5,
+        "student_path": 2,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3399,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 10,
+        "student_path": 2,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3400,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 15,
+        "student_path": 2,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3401,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3402,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3403,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3404,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 0,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 264,
+        "campus": 55
+    },
+    {
+        "id": 3405,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3406,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3407,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3408,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12032,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 265,
+        "campus": 55
+    },
+    {
+        "id": 3409,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3410,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3411,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3412,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 266,
+        "campus": 55
+    },
+    {
+        "id": 3413,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3414,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3415,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3416,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4111,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 309,
+        "campus": 55
+    },
+    {
+        "id": 3417,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3418,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3419,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3420,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4141,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 267,
+        "campus": 55
+    },
+    {
+        "id": 3421,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3422,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3423,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3424,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 4171,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 310,
+        "campus": 55
+    },
+    {
+        "id": 3425,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3426,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3427,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3428,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 268,
+        "campus": 55
+    },
+    {
+        "id": 3429,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3430,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3431,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3432,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 311,
+        "campus": 55
+    },
+    {
+        "id": 3433,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3434,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3435,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3436,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5041,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 269,
+        "campus": 55
+    },
+    {
+        "id": 3437,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3438,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3439,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3440,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5061,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 312,
+        "campus": 55
+    },
+    {
+        "id": 3441,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3442,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3443,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3444,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5083,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 270,
+        "campus": 55
+    },
+    {
+        "id": 3445,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3446,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3447,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3448,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5091,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 314,
+        "campus": 55
+    },
+    {
+        "id": 3449,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3450,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3451,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3452,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5131,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 271,
+        "campus": 55
+    },
+    {
+        "id": 3453,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3454,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3455,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3456,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5151,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 315,
+        "campus": 55
+    },
+    {
+        "id": 3457,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3458,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3459,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3460,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5992,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 316,
+        "campus": 55
+    },
+    {
+        "id": 3461,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3462,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3463,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3464,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 5997,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 317,
+        "campus": 55
+    },
+    {
+        "id": 3465,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3466,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3467,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3468,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 272,
+        "campus": 55
+    },
+    {
+        "id": 3469,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3470,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3471,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3472,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6022,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 318,
+        "campus": 55
+    },
+    {
+        "id": 3473,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3474,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3475,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3476,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6031,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 319,
+        "campus": 55
+    },
+    {
+        "id": 3477,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3478,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3479,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3480,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 6991,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 273,
+        "campus": 55
+    },
+    {
+        "id": 3481,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3482,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3483,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3484,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7028,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 274,
+        "campus": 55
+    },
+    {
+        "id": 3485,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3486,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3487,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3488,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 7021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 320,
+        "campus": 55
+    },
+    {
+        "id": 3489,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3490,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3491,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3492,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8225,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 321,
+        "campus": 55
+    },
+    {
+        "id": 3493,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3494,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3495,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3496,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8232,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 275,
+        "campus": 55
+    },
+    {
+        "id": 3497,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3498,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3499,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3500,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 8351,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 276,
+        "campus": 55
+    },
+    {
+        "id": 3501,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3502,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3503,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3504,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10022,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 277,
+        "campus": 55
+    },
+    {
+        "id": 3505,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3506,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3507,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3508,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10031,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 322,
+        "campus": 55
+    },
+    {
+        "id": 3509,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3510,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3511,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3512,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 278,
+        "campus": 55
+    },
+    {
+        "id": 3513,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3514,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3515,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3516,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10071,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 279,
+        "campus": 55
+    },
+    {
+        "id": 3517,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3518,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3519,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3520,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 10091,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 323,
+        "campus": 55
+    },
+    {
+        "id": 3521,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3522,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3523,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3524,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 11051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 280,
+        "campus": 55
+    },
+    {
+        "id": 3525,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3526,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3527,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3528,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 281,
+        "campus": 55
+    },
+    {
+        "id": 3529,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3530,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3531,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3532,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 324,
+        "campus": 55
+    },
+    {
+        "id": 3533,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3534,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3535,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3536,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12081,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 282,
+        "campus": 55
+    },
+    {
+        "id": 3537,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3538,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3539,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3540,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 12232,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 283,
+        "campus": 55
+    },
+    {
+        "id": 3541,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3542,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3543,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3544,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 284,
+        "campus": 55
+    },
+    {
+        "id": 3545,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3546,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3547,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3548,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 326,
+        "campus": 55
+    },
+    {
+        "id": 3549,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3550,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3551,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3552,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 327,
+        "campus": 55
+    },
+    {
+        "id": 3553,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3554,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3555,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3556,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 15091,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 285,
+        "campus": 55
+    },
+    {
+        "id": 3557,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3558,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3559,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3560,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 17011,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 287,
+        "campus": 55
+    },
+    {
+        "id": 3561,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3562,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3563,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3564,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 288,
+        "campus": 55
+    },
+    {
+        "id": 3565,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3566,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3567,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3568,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 289,
+        "campus": 55
+    },
+    {
+        "id": 3569,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3570,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3571,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3572,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 19141,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 290,
+        "campus": 55
+    },
+    {
+        "id": 3573,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3574,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3575,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3576,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20013,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 292,
+        "campus": 55
+    },
+    {
+        "id": 3577,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3578,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3579,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3580,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 20991,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 293,
+        "campus": 55
+    },
+    {
+        "id": 3581,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3582,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3583,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3584,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 294,
+        "campus": 55
+    },
+    {
+        "id": 3585,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3586,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3587,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3588,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21031,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 295,
+        "campus": 55
+    },
+    {
+        "id": 3589,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3590,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3591,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3592,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21042,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 296,
+        "campus": 55
+    },
+    {
+        "id": 3593,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3594,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3595,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3596,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 21051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 297,
+        "campus": 55
+    },
+    {
+        "id": 3597,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3598,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3599,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3600,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22021,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 298,
+        "campus": 55
+    },
+    {
+        "id": 3601,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3602,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3603,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3604,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22041,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 299,
+        "campus": 55
+    },
+    {
+        "id": 3605,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3606,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3607,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3608,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22051,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 300,
+        "campus": 55
+    },
+    {
+        "id": 3609,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3610,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3611,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3612,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22063,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 301,
+        "campus": 55
+    },
+    {
+        "id": 3613,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3614,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3615,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3616,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22071,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 302,
+        "campus": 55
+    },
+    {
+        "id": 3617,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3618,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3619,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3620,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22081,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 303,
+        "campus": 55
+    },
+    {
+        "id": 3621,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3622,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3623,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3624,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22111,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 304,
+        "campus": 55
+    },
+    {
+        "id": 3625,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3626,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3627,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3628,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22131,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 305,
+        "campus": 55
+    },
+    {
+        "id": 3629,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3630,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3631,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3632,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22993,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 306,
+        "campus": 55
+    },
+    {
+        "id": 3633,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3634,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3635,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3636,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 22994,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 328,
+        "campus": 55
+    },
+    {
+        "id": 3637,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 2,
+        "student_path": 4,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3638,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 5,
+        "student_path": 4,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3639,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 10,
+        "student_path": 4,
+        "university_majors_id": 307,
+        "campus": 55
+    },
+    {
+        "id": 3640,
+        "entry_status": "FTF + FTT",
+        "hegis_at_exit": 49017,
+        "year": 15,
+        "student_path": 4,
+        "university_majors_id": 307,
+        "campus": 55
+    }
+]

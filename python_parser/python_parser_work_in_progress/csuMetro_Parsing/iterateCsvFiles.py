@@ -9,15 +9,11 @@ from csuMetro_Parsing.jsonBuilder.JsonIndustrySanitizer import JsonIndustry
 
 
 from csuMetro_Parsing.UniversityMajorJsonBuilder import hegisID
-
 from csuMetro_Parsing.naicsdataFrameMaker import create_naics_dataFrame
-
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import Sanitize_Industry
 from csuMetro_Parsing.csvSanitizer.industrySanitizer import DFHelper
-
 from csuMetro_Parsing.dataframeToCSV import DfToCSV
 from csuMetro_Parsing.jsonOutput import JsonOutPut
-
 from csuMetro_Parsing.PfreHelper import Sanitize_Pfre
 # from csuMetro_Parsing.addUniqueIdentifier import AddUniqueId
 
@@ -28,7 +24,7 @@ class IterateCsvFiles():
       self.globalIndex = 1
     
     def create_hegis_code_data_frame(self,universityMajorsDataFrame):
-        print(universityMajorsDataFrame.head())
+        # print(universityMajorsDataFrame.head())
         hegisTable = hegisID(universityMajorsDataFrame)
         hegisTable.convert_hegis_codes_table_data_json()
       
@@ -60,8 +56,8 @@ class IterateCsvFiles():
         self.jsonOutputter.convert_df_to_dictionary_then_out_put_to_json(filePathMajorWages,majorPathWageDf)
 
         MasteruniversityMajorIdDf = jsonMajor.getUniversityMajorIdDf()
-        print("***************************")
-        print(MasteruniversityMajorIdDf.head())
+        # print("***************************")
+        # print(MasteruniversityMajorIdDf.head())
         universityMajorsIDf = hegisID(MasteruniversityMajorIdDf)
         universityMajorsIDf.convert_to_json(fileName)
 
@@ -102,7 +98,7 @@ class IterateCsvFiles():
 
     def master_industry_csv_to_json(self,industryCsvFiles):
       naicsDictionary = self.create_industry_naics_data_frame_and_create_dictionary(industryCsvFiles)
-      print(naicsDictionary)
+      # print(naicsDictionary)
       
       self.globalIndex = 1
       filePath = '../../database/data/'
