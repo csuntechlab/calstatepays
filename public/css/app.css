@@ -17461,11 +17461,11 @@ button.bg-dark:focus {
   padding-left: 0.5rem !important;
 }
 
-.p-3, .homeCard__Copy--major, .campus, .not-avail {
+.p-3, .campus, .not-avail {
   padding: 1rem !important;
 }
 
-.pt-3,
+.pt-3, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE,
 .py-3 {
   padding-top: 1rem !important;
 }
@@ -17485,7 +17485,7 @@ button.bg-dark:focus {
   padding-left: 1rem !important;
 }
 
-.p-4 {
+.p-4, .homeCard__titleAndIconWrapper--major, .homeCard__titleAndIconWrapper--industries, .homeCard__titleAndIconWrapper--PFRE {
   padding: 1.5rem !important;
 }
 
@@ -17981,7 +17981,7 @@ button.bg-dark:focus {
   .px-md-2 {
     padding-left: 0.5rem !important;
   }
-  .p-md-3 {
+  .p-md-3, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
     padding: 1rem !important;
   }
   .pt-md-3,
@@ -18235,7 +18235,10 @@ button.bg-dark:focus {
     padding: 1rem !important;
   }
   .pt-lg-3,
-  .py-lg-3 {
+  .py-lg-3,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-top: 1rem !important;
   }
   .pr-lg-3,
@@ -18243,14 +18246,17 @@ button.bg-dark:focus {
     padding-right: 1rem !important;
   }
   .pb-lg-3,
-  .py-lg-3 {
+  .py-lg-3,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-bottom: 1rem !important;
   }
   .pl-lg-3,
   .px-lg-3 {
     padding-left: 1rem !important;
   }
-  .p-lg-4 {
+  .p-lg-4, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
     padding: 1.5rem !important;
   }
   .pt-lg-4,
@@ -18277,7 +18283,10 @@ button.bg-dark:focus {
     padding-top: 3rem !important;
   }
   .pr-lg-5,
-  .px-lg-5 {
+  .px-lg-5,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-right: 3rem !important;
   }
   .pb-lg-5,
@@ -18285,7 +18294,10 @@ button.bg-dark:focus {
     padding-bottom: 3rem !important;
   }
   .pl-lg-5,
-  .px-lg-5 {
+  .px-lg-5,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-left: 3rem !important;
   }
   .m-lg-auto {
@@ -18577,7 +18589,7 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left, .CSUDataImgBanner__campusInfoWrapper, .homeCard__title--major, .returnToCampusSelection {
+.text-left, .CSUDataImgBanner__campusInfoWrapper, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE, .returnToCampusSelection {
   text-align: left !important;
 }
 
@@ -18585,7 +18597,7 @@ button.bg-dark:focus {
   text-align: right !important;
 }
 
-.text-center, .homeCard__Copy--major {
+.text-center, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
   text-align: center !important;
 }
 
@@ -18608,7 +18620,7 @@ button.bg-dark:focus {
   .text-md-right, .CSUDataImgBanner__campusInfoWrapper {
     text-align: right !important;
   }
-  .text-md-center, .homeCard__title--major {
+  .text-md-center, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE {
     text-align: center !important;
   }
 }
@@ -19370,14 +19382,14 @@ figcaption {
   cursor: no-drop;
 }
 
-.homeCard__title--major {
-  font-size: 1.8rem;
+.homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE {
+  font-size: 1.7rem;
   margin: 0;
   font-weight: bold;
 }
 
 .homeCard__icon--major {
-  fill: #3A97D1;
+  fill: #14597F;
 }
 
 .homeCard__titleAndIconWrapper--major {
@@ -19387,13 +19399,12 @@ figcaption {
   border-left: 0.4rem solid #3A97D1;
   border-right: 0.4rem solid #3A97D1;
   background: white;
-  color: #3A97D1;
 }
 
 .homeCard__titleAndIconWrapper--major a {
   margin: 0;
   text-decoration: none;
-  color: #3A97D1;
+  color: #246d9a;
 }
 
 .homeCard__titleAndIconWrapper--major a:hover {
@@ -19412,6 +19423,113 @@ figcaption {
   background: #14597F;
   color: white;
   margin: 0;
+  line-height: 130%;
+}
+
+.homeCard__icon--industries0 {
+  fill: #9D6D02;
+}
+
+.homeCard__icon--industries1 {
+  fill: none;
+  stroke: #9D6D02;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__icon--industries2 {
+  fill: none;
+  stroke: #9D6D02;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__titleAndIconWrapper--industries {
+  -webkit-transition: all .30s ease-out;
+  transition: all .30s ease-out;
+  border-top: 0.4rem solid #D79900;
+  border-left: 0.4rem solid #D79900;
+  border-right: 0.4rem solid #D79900;
+  background: white;
+}
+
+.homeCard__titleAndIconWrapper--industries a {
+  margin: 0;
+  text-decoration: none;
+  color: #8b6300;
+}
+
+.homeCard__titleAndIconWrapper--industries a:hover {
+  color: white;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover {
+  background: #D79900;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries0 {
+  fill: white;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries1 {
+  fill: none;
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries2 {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__Copy--industries {
+  background: #9D6D02;
+  color: white;
+  margin: 0;
+  line-height: 130%;
+}
+
+.homeCard__icon--PFRE {
+  fill: #7F1426;
+}
+
+.homeCard__titleAndIconWrapper--PFRE {
+  -webkit-transition: all .30s ease-out;
+  transition: all .30s ease-out;
+  border-top: 0.4rem solid #C52429;
+  border-left: 0.4rem solid #C52429;
+  border-right: 0.4rem solid #C52429;
+  background: white;
+}
+
+.homeCard__titleAndIconWrapper--PFRE a {
+  margin: 0;
+  text-decoration: none;
+  color: #84181c;
+}
+
+.homeCard__titleAndIconWrapper--PFRE a:hover {
+  color: white;
+}
+
+.homeCard__titleAndIconWrapper--PFRE:hover {
+  background: #C52429;
+}
+
+.homeCard__titleAndIconWrapper--PFRE:hover .homeCard__icon--PFRE {
+  fill: white;
+}
+
+.homeCard__Copy--PFRE {
+  background: #7F1426;
+  color: white;
+  margin: 0;
+  line-height: 130%;
 }
 
 .site-header {

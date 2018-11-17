@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
             <div class="homeCard__titleAndIconWrapper--major">
                 <router-link to="/data/majors" @click.native="setDataPage('majors')">
                     <div class="row">
@@ -23,7 +23,7 @@
                             </svg>
                         </div>
                         <div class="col-9 col-md-12">
-                            <h2 class="homeCard__title--major">Verify Major Pay</h2>
+                            <h2 class="homeCard__title--major">Verify <br> Major Pay</h2>
                         </div>
                     </div>
                 </router-link>
@@ -31,6 +31,81 @@
             <div class="row">
                 <div class="col-12">
                     <p class="homeCard__Copy--major">Find out earnings for different majors after CSU graduation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
+            <div class="homeCard__titleAndIconWrapper--industries">
+                <router-link to="/data/industries" @click.native="setDataPage('industries')">
+                    <div class="row">
+                        <div class="col-3 col-md-12">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 251.8 138.5" style="enable-background:new 0 0 251.8 138.5;" xml:space="preserve">
+                                <path class="homeCard__icon--industries0" d="M219,133.5l2.9-61.3c0-0.7-0.2-1.4-0.7-1.9s-1.2-0.8-1.9-0.7l-60.4,3.2V2.5c0-1.4-1.1-2.5-2.5-2.5H91.7 c-1.4,0-2.5,1.1-2.5,2.5v48.2L36.3,45c-0.7-0.1-1.4,0.2-2,0.7c-0.5,0.5-0.8,1.2-0.8,1.9l2.8,86H0v5h251.8v-5H219z M216.7,74.8 l-2.7,58.4h-55.2V77.9L216.7,74.8z M94.2,5h59.6v70.4c0,0,0,0.1,0,0.1v57.7H94.2V53.5V5z M89.2,55.8v77.5H41.3l-2.7-83L89.2,55.8z"/>
+                                <g>
+                                    <path class="homeCard__icon--industries0" d="M53.4,121.9h-5v-12h5V121.9z M53.4,98.9h-5v-12h5V98.9z M53.4,75.9h-5v-12h5V75.9z"/>
+                                </g>
+                                <g>
+                                    <path class="homeCard__icon--industries0" d="M67.6,121.9h-5v-12h5V121.9z M67.6,98.9h-5v-12h5V98.9z M67.6,75.9h-5v-12h5V75.9z"/>
+                                </g>
+                                <g>
+                                    <path class="homeCard__icon--industries0" d="M81.7,121.9h-5v-12h5V121.9z M81.7,98.9h-5v-12h5V98.9z M81.7,75.9h-5v-12h5V75.9z"/>
+                                </g>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="20.9" x2="141.9" y2="20.9"/>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="38.9" x2="141.9" y2="38.9"/>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="56.9" x2="141.9" y2="56.9"/>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="74.9" x2="141.9" y2="74.9"/>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="92.9" x2="141.9" y2="92.9"/>
+                                <line class="homeCard__icon--industries1" x1="106.1" y1="110.9" x2="141.9" y2="110.9"/>
+                                <circle class="homeCard__icon--industries2" cx="170.5" cy="97.1" r="4.5"/>
+                                <circle class="homeCard__icon--industries2" cx="187.8" cy="97.1" r="4.5"/>
+                                <circle class="homeCard__icon--industries2" cx="205.2" cy="97.1" r="4.5"/>
+                                <circle class="homeCard__icon--industries2" cx="179.1" cy="115.3" r="4.5"/>
+                                <ellipse transform="matrix(0.1602 -0.9871 0.9871 0.1602 51.1577 290.7485)" class="homeCard__icon--industries2" cx="196.4" cy="115.3" rx="4.5" ry="4.5"/>
+                            </svg>
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h2 class="homeCard__title--industries">Verify <br> Industries Pay</h2>
+                        </div>
+                    </div>
+                </router-link>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="homeCard__Copy--industries">Explore where CSU graduates work and what they earn.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
+            <div class="homeCard__titleAndIconWrapper--PFRE">
+                <router-link to="/data/majors" @click.native="setDataPage('majors')">
+                    <div class="row">
+                        <div class="col-3 col-md-12">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.8 152.2" style="enable-background:new 0 0 294.8 152.2;" xml:space="preserve">
+                                <path class="homeCard__icon--PFRE" d="M289.9,5.1C289.5,5,289.1,5,288.8,5c-0.1,0-0.1,0-0.2,0h-12.3V2.5c0-3.3-7.7-3.3-7.7,0V5h-254
+                                    C11.4,5,7.4,4.3,4.3,5.3C0.3,6.5,0,10.4,0,13.9V24c0,3.7,0.8,7.4,5.1,8.3c0.5,0.1,1.1,0.2,1.7,0.2c13,0.5,26.2,0,39.3,0H212v74.8
+                                    c-6-2.5-12.6-4.2-18.9-5c-16.7-2.2-32.7,2.6-45.6,13.2c-5.1-4.6-11.5-8.1-17.7-10.6c-15-6-31.1-4.6-45.7,1.3V46c0-5.6-8.7-5.6-8.7,0
+                                    v66.8c0,3.4,3.6,5.2,6.5,3.7c14.3-7.3,30.7-9.5,45.8-3.2c6.5,2.7,12,6.1,16.4,11c1.6,1.8,4.5,1.6,6.1,0c11.6-11,27-15.9,42.8-13.4
+                                    c5.3,0.9,10.6,2.3,15.6,4.4c0.2,0.1,1,0.4,1.9,0.8c0.6,0.3,1.2,0.6,1.9,0.9c0.5,0.3,1.1,0.5,1.6,0.8c0.6,0.4,1.4,0.6,2.1,0.6
+                                    c2.4,0,4.4-1.9,4.4-4.3V32.5h48.1v32.9c-2.5,1.3-4.2,3.8-4.5,6.8c-0.1,0.2-0.1,0.5-0.1,0.8c0,0.3,0,0.5,0.1,0.7c0.2,1.9,1,3.6,2.3,5
+                                    c-2,1.3-3.6,3-4.7,5.2c-1.4,2.6-1.5,5.3-1.5,8.1c0.1,19.1,0,38.3,0,57.4c0,3.3,5.1,3.3,5.1,0c0-2.9,0-5.8,0-8.7
+                                    c0-11.7,0-23.5,0-35.2c0-4.5,0-8.9,0-13.4c0-1.9-0.1-3.8,0.7-5.5c0.8-1.6,2.2-3,3.8-3.9v6.8l0.1,60.4c0,3.2,5.1,3.2,5.1,0v-8.5
+                                    l-0.1-58.6c0,0,0.1,0,0.1,0.1c2.2,1.1,3.8,3.1,4.5,5.4c0.5,1.7,0.2,3.8,0.2,5.6c-0.1,18.6,0,37.3,0,55.9c0,3.3,5.1,3.3,5.1,0
+                                    c0-3,0-6,0-9c0-12.2,0-24.4,0-36.6c0-4.2,0-8.5,0-12.7c0.2-5-2-9.8-6.4-12.5c1.5-1.5,2.5-3.6,2.5-6c0-3.3-1.8-6-4.5-7.4v-33
+                                    c4,0,8,0.2,12,0c0.8,0,1.6-0.1,2.4-0.3c4-1.3,4.3-5.1,4.3-8.6V13.4C295,9.7,294.2,6,289.9,5.1z M8.8,11.4c0-0.1,0-0.2-0.1-0.2
+                                    C8.8,11.3,8.8,11.3,8.8,11.4z M6.3,23.7c0.1-0.1,0.2-0.1,0.3,0C6.4,23.7,6.3,23.6,6.3,23.7z M11.2,23.7c-0.7,0-1.6-0.1-2.5-0.1V14
+                                    c0-0.1,0-0.2,0-0.4c0.8-0.1,1.5-0.1,2.1-0.1h257.8v10.2H11.2z M269.1,72.9c0.2-4.3,6.7-4.3,6.7,0S269.3,77.2,269.1,72.9z
+                                    M276.3,23.7V13.5h10V23c0,0.2,0,0.4,0,0.7H276.3z"/>
+                            </svg>
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h2 class="homeCard__title--PFRE">Verify CSU Degrees Pay</h2>
+                        </div>
+                    </div>
+                </router-link>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="homeCard__Copy--PFRE">What’s the return on a CSU education. Find out the costs and benefits.</p>
                 </div>
             </div>
         </div>
@@ -78,12 +153,9 @@ export default {
 </script>
 
 <style type="text/css">  
-    .industry0{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:10;}
-    .industry1{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-    .industry2{fill:none;stroke:#9D6D02;stroke-width:5;stroke-miterlimit:10;}
-    .industry3{fill:none;stroke:#9D6D02;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:12,11;}
-    .industry4{fill:none;stroke:#9D6D02;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-    .industry5{fill:none;stroke:#9D6D02;stroke-width:3;stroke-miterlimit:10;}
+    .st0{fill:#EF2525;}
+    .st1{fill:none;stroke:#EF2525;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+    .st2{fill:none;stroke:#EF2525;stroke-width:3;stroke-miterlimit:10;}
     .PFRE0{fill:#7F1426;}
     .PFRE1{fill:none;stroke:#7F1426;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
     .PFRE2{fill:none;stroke:#7F1426;stroke-width:4;stroke-miterlimit:10;}
