@@ -52405,7 +52405,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData", "resetMajorCard"]), {
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
 		resetCurrentCard: function resetCurrentCard() {
-			this.submittedOnce = false;
 			this.resetMajorCard(this.index);
 		},
 		submitForm: function submitForm() {
@@ -52415,6 +52414,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 			if (this.checkForm()) {
 				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
@@ -73524,6 +73524,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);

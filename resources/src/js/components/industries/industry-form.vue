@@ -120,6 +120,7 @@ export default {
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);

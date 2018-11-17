@@ -109,7 +109,6 @@
 			]),
 			updateForm,
 			resetCurrentCard() {
-				this.submittedOnce = false;
 				this.resetMajorCard(this.index);
 			},
 
@@ -120,6 +119,7 @@
 
 				if (this.checkForm()) {
 					this.selected = null;
+					this.submittedOnce = false;
 					this.toggleFormWasSubmitted(this.form.cardIndex);
 					this.fetchIndustryImages(this.form);
 					this.fetchMajorData(this.form);
