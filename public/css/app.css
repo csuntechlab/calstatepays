@@ -19085,7 +19085,6 @@ figcaption {
 }
 
 .hr-nav {
-  border-bottom: 3px solid #D00D2D;
   margin: 0px;
 }
 
@@ -19094,6 +19093,27 @@ figcaption {
     background: #D00D2D;
     color: #FFF !important;
     font-weight: bold;
+  }
+}
+
+.hr-nav::after {
+  content: "";
+  width: 100%;
+  background-color: #D00D2D;
+  height: 0.2rem;
+  display: block;
+  margin-top: .3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hr-nav::after {
+    margin-top: .5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hr-nav::after {
+    display: none;
   }
 }
 
@@ -19205,7 +19225,11 @@ figcaption {
   }
 }
 
-@media screen and (max-width: 767px) {
+#nav-overlay {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
   #nav-overlay {
     position: fixed;
     background: #000;

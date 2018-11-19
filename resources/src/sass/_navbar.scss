@@ -58,7 +58,6 @@
 }
 
 .hr-nav {
-	border-bottom: 3px solid $red;
 	margin: 0px;
 	@media screen and (max-width: $break-Xsmall) {
 		background: $red;
@@ -66,6 +65,22 @@
 		font-weight: bold;
 	}
 }
+.hr-nav::after{
+	@media screen and (max-width: $break-medium) {
+		margin-top: .5rem;
+	}
+
+	content: "";
+	width: 100%;
+	background-color: $red;
+    height: 0.2rem;
+    display: block;
+	margin-top: .3rem;
+	@media screen and (max-width: $break-Xsmall) {
+		display: none;
+	}
+}
+
 .hamburger-btn-position {
 	@media screen and (max-width: $break-small) {
 		display: flex;
@@ -158,7 +173,8 @@
 }
 
 #nav-overlay {
-	@media screen and (max-width: $break-small) {
+	display: none;
+	@media screen and (max-width: $break-Xsmall) {
 		position: fixed;
 		background: $black;
 		opacity: 0.4;
