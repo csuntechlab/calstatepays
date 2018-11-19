@@ -6,30 +6,31 @@
 	z-index: 99999999;
 	box-shadow: 0 6px 6px -6px #999;
 	top: 0;
-	@media screen and (max-width: $break-small) {
+	@media screen and (max-width: $break-Xsmall) {
 		min-height: $navbar-height;
 		font-size: 1.3rem;
 	}
 	abbr[title] {
 		border-bottom: none;
 	}
+	.collapse {
+		@media screen and (max-width: $break-Xsmall) {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.5s;
+			display: block;
+		}
+	}
+	
+	.show {
+		@media screen and (max-width: $break-Xsmall) {
+			/* the number refer to the number of nav links*/
+			height: $navbar-height * 4;
+		}
+	}
+	
 }
 
-// .collapse {
-// 	@media screen and (max-width: $break-small) {
-// 		height: 0;
-// 		overflow: hidden;
-// 		transition: height 0.5s;
-// 		display: block;
-// 	}
-// }
-
-// .show {
-// 	@media screen and (max-width: $break-small) {
-// 		/* the number refer to the number of nav links*/
-// 		height: $navbar-height * 4;
-// 	}
-// }
 
 .nav-link {
 	padding: 1.5rem 1.5rem !important;
@@ -42,30 +43,35 @@
 .nav-logo {
 	max-height: 60px;
 	width: 120px;
-	@media screen and (max-width: $break-small) {
-		height: 2.9rem;
+	@media screen and (max-width: $break-Xsmall) {
+		content:  	url("../../../img/homeimages/logo-mini.svg"); 
+		width: 4rem;
 	}
 }
 .nav-logo-secondary {
 	height: 2.35rem;
+	@media screen and (max-width: $break-Xsmall) {
+		width: 3rem;
+		height: 4rem;
+	
+	} 
 }
 
 .hr-nav {
 	border-bottom: 3px solid $red;
 	margin: 0px;
-	// @media screen and (max-width: $break-small) {
-	// 	background: $red;
-	// 	color: $white !important;
-	// 	font-weight: bold;
-	// }
+	@media screen and (max-width: $break-Xsmall) {
+		background: $red;
+		color: $white !important;
+		font-weight: bold;
+	}
 }
-
-// .hamburger-btn-position {
-// 	@media screen and (max-width: $break-small) {
-// 		display: flex;
-// 		justify-content: center;
-// 	}
-// }
+.hamburger-btn-position {
+	@media screen and (max-width: $break-small) {
+		display: flex;
+		justify-content: center;
+	}
+}
 
 .sub-nav {
 	background: $white;

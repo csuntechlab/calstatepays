@@ -94166,6 +94166,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -94212,110 +94214,215 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", { staticClass: "site-header" }, [
     _c("div", { staticClass: "container-fluid" }, [
-      _c("nav", { staticClass: "navbar navbar-expand-md navbar-light p-0" }, [
+      _c("div", { staticClass: "row" }, [
         _c(
           "div",
           {
-            staticClass: "collapse navbar-collapse justify-content-center",
-            attrs: { id: "nav-list" }
+            staticClass: "col-8 col-sm-3 order-2 order-sm-1 align-self-center"
+          },
+          [
+            _c("router-link", { attrs: { to: "/" } }, [
+              _c("img", {
+                staticClass: "float-md-left nav-logo mx-auto d-inline-block",
+                attrs: {
+                  src: this.url + "/img/calstatepays.svg",
+                  alt: "Cal State Pays logo"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/research" } }, [
+              _c("img", {
+                staticClass:
+                  " nav-logo-secondary mx-auto d-inline-block d-sm-none",
+                attrs: {
+                  src: this.url + "/img/strada-gray.svg",
+                  alt: "Strada Logo"
+                }
+              })
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-4 d-sm-none order-3 align-self-center hamburger-btn-position"
           },
           [
             _c(
-              "ul",
+              "button",
               {
-                staticClass:
-                  "navbar-nav d-flex justify-content-center text-center"
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.toggleShowNav()
+                  }
+                }
               },
               [
+                _c("i", {
+                  staticClass: "fa fa-bars",
+                  attrs: { id: "nav-icon" }
+                })
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-sm-6 order-6 order-sm-2 align-self-md-end p-0"
+          },
+          [
+            _c(
+              "nav",
+              { staticClass: "navbar navbar-expand-sm navbar-light p-0" },
+              [
                 _c(
-                  "li",
+                  "div",
                   {
-                    staticClass: "nav-item",
-                    on: {
-                      click: function($event) {
-                        _vm.toggleShowNav()
-                      }
-                    }
+                    staticClass:
+                      "collapse navbar-collapse justify-content-center",
+                    attrs: { id: "nav-list" }
                   },
                   [
                     _c(
-                      "router-link",
+                      "ul",
                       {
-                        staticClass: "nav-link",
-                        attrs: { "exact-active-class": "hr-nav", to: "/" }
+                        staticClass:
+                          "navbar-nav d-flex flex-column flex-sm-row justify-content-center text-center"
                       },
                       [
-                        _vm._v(
-                          "\n                                    Home\n                                "
+                        _c(
+                          "li",
+                          {
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: {
+                                  "exact-active-class": "hr-nav",
+                                  to: "/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Home\n                                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: {
+                                  "active-class": "hr-nav",
+                                  to: { path: "/data/" + _vm.selectedDataPage }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Data\n                                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          {
+                            staticClass: "nav-item",
+                            on: {
+                              click: function($event) {
+                                _vm.toggleShowNav()
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { "active-class": "hr-nav", to: "/faq" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    FAQ\n                                "
+                                )
+                              ]
+                            )
+                          ],
+                          1
                         )
                       ]
                     )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "nav-item",
-                    on: {
-                      click: function($event) {
-                        _vm.toggleShowNav()
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: {
-                          "active-class": "hr-nav",
-                          to: { path: "/data/" + _vm.selectedDataPage }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                    Data\n                                "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "nav-item",
-                    on: {
-                      click: function($event) {
-                        _vm.toggleShowNav()
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { "active-class": "hr-nav", to: "/faq" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                    FAQ\n                                "
-                        )
-                      ]
-                    )
-                  ],
-                  1
+                  ]
                 )
               ]
             )
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              " d-none d-sm-block col-3 col-md-3  order-3 align-self-center"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "navbar-text small w-100" },
+              [
+                _c("router-link", { attrs: { to: "/research" } }, [
+                  _c("img", {
+                    staticClass:
+                      "float-right nav-logo-secondary mx-auto d-sm-block",
+                    attrs: {
+                      src: this.url + "/img/strada-gray.svg",
+                      alt: "Strada Logo"
+                    }
+                  })
+                ])
+              ],
+              1
+            )
+          ]
         )
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "nav-overlay" } })
   ])
 }
 var staticRenderFns = []

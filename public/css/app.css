@@ -19025,8 +19025,9 @@ figcaption {
   top: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 576px) {
   .site-header {
+    min-height: 4rem;
     font-size: 1.3rem;
   }
 }
@@ -19035,8 +19036,18 @@ figcaption {
   border-bottom: none;
 }
 
-@media screen and (max-width: 767px) {
-  .show {
+@media screen and (max-width: 576px) {
+  .site-header .collapse {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .site-header .show {
     /* the number refer to the number of nav links*/
     height: 16rem;
   }
@@ -19055,9 +19066,10 @@ figcaption {
   width: 120px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 576px) {
   .nav-logo {
-    height: 2.9rem;
+    content: url("../../../img/homeimages/logo-mini.svg");
+    width: 4rem;
   }
 }
 
@@ -19065,9 +19077,35 @@ figcaption {
   height: 2.35rem;
 }
 
+@media screen and (max-width: 576px) {
+  .nav-logo-secondary {
+    width: 3rem;
+    height: 4rem;
+  }
+}
+
 .hr-nav {
   border-bottom: 3px solid #D00D2D;
   margin: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .hr-nav {
+    background: #D00D2D;
+    color: #FFF !important;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hamburger-btn-position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .sub-nav {
