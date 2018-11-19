@@ -16,6 +16,8 @@ export default {
 	[_industries.RESET_INDUSTRY_STATE](state) {
 		state.industries = [];
 		state.industryMajorsByField = [];
+		state.industryFormWasSubmitted = false;
+		state.industryFormWasSubmittedOnce = false;
 	},
 	[_industries.RESET_INDUSTRY_CARD](state) {
 		if(state.industryFormWasSubmitted) {
