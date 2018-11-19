@@ -122,6 +122,7 @@ export default {
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
+				this.$emit('selected', this.selected);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 			}
 		},
