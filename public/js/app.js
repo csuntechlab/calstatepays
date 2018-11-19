@@ -94520,7 +94520,10 @@ var render = function() {
       [
         _c(
           "router-link",
-          { staticClass: "footer__link text-gray", attrs: { to: "/research" } },
+          {
+            staticClass: "footer__link text-white",
+            attrs: { to: "/research" }
+          },
           [_vm._v("Power Users")]
         ),
         _vm._v(" "),
@@ -94528,7 +94531,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "router-link",
-          { staticClass: "footer__link text-gray", attrs: { to: "/faq" } },
+          { staticClass: "footer__link text-white", attrs: { to: "/faq" } },
           [_vm._v("FAQ")]
         )
       ],
@@ -94553,7 +94556,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "footer__link text-gray pull-right",
+          staticClass: "footer__link text-white pull-right",
           attrs: { href: "#" }
         },
         [_vm._v("Contact Us")]

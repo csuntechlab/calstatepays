@@ -19254,7 +19254,7 @@ footer, .footer {
   -webkit-box-flex: 0 !important;
       -ms-flex: 0 1 auto !important;
           flex: 0 1 auto !important;
-  background-color: #000;
+  background-color: #5b5b5b;
 }
 
 @media screen and (max-width: 767px) {
