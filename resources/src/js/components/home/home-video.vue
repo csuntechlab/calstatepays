@@ -1,7 +1,7 @@
 <template>
     <div class="homepageVideo" ref="homepageVideo">
         <div class="homepageVideo__btn" @click="playVideo">
-            <img src="/img/icon-play.png">
+            <img :src="this.url + '/img/icon-play.png'">
         </div>
         <div class="homepageVideo__container">
             <div class="embed-responsive embed-responsive-16by9 homepageVideo__wrapper">
@@ -16,6 +16,7 @@ export default {
     name: "homeVideo",
     data() {
         return {
+            url: '',
             videoId: 'ScMzIvxBSi4',
             playerVars: {
                 modestbranding: 1,
@@ -23,6 +24,9 @@ export default {
                 cc_load_policy: 1
             }
         }
+    },
+    created() {
+        this.url = window.baseUrl;
     },
     methods: {
         playVideo() {
