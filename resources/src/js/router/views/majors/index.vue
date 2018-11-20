@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<csu-data-img-banner>
-			<h3 class="CSUDataImgBanner__dataTitle" slot="title">
+			<h2 class="h4 CSUDataImgBanner__dataTitle" slot="title">
 				<span>Major Earnings Over Time</span>
-			</h3>
+			</h2>
 			<p class="CSUDataImgBanner__dataCopy" slot="copy">
 				College graduates earn more money over time. Select a major and find out how earnings for graduates, non-completers, and post graduates change over time.
 			</p>

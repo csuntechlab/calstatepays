@@ -21,8 +21,12 @@ label {
   }
 }
 
+/*Edits form field styling*/
 %form-input-base {
-  border-bottom: .2rem $gray solid;
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0;
 }
 
 .csu-form-input {

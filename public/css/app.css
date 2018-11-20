@@ -18795,7 +18795,7 @@ html {
 
 .csu-card, .csu-card__form, .card-add, .industry-card {
   background: #FFF;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -19223,11 +19223,10 @@ figcaption {
 .CSUDataImgBanner {
   color: white;
   font-family: "Montserrat";
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: top;
   background-repeat: no-repeat;
-  height: 18.5rem;
+  height: 20rem;
+  background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -19257,14 +19256,13 @@ figcaption {
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
   font-size: 2.3rem;
-  padding-bottom: 0.5rem;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
 .CSUDataImgBanner__dataCopy {
   font-weight: normal;
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.75rem;
 }
 
 .landing-page-carousel {
@@ -19725,8 +19723,12 @@ label {
   content: "*";
 }
 
+/*Edits form field styling*/
 .csu-form-input {
-  border-bottom: 0.2rem #777777 solid;
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0;
 }
 
 .csu-form-input .dropdown-toggle {
