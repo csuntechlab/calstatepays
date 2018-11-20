@@ -29570,13 +29570,16 @@ var RESET_INDUSTRY_STATE = "industries/RESET_INDUSTRY_STATE";
 var TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED = "industries/TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED";
 var RESET_INDUSTRY_CARD = "industries/RESET_INDUSTRY_CARD";
 var TOGGLE_INDUSTRY_EDUCATION_LEVEL = "industries/TOGGLE_INDUSTRY_EDUCATION_LEVEL";
+var SET_INDUSTRY_MAJOR = "industries/SET_INDUSTRY_MAJOR";
+
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
 	FETCH_INDUSTRY_MAJORS_BY_FIELD: FETCH_INDUSTRY_MAJORS_BY_FIELD,
 	TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED: TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED,
 	RESET_INDUSTRY_CARD: RESET_INDUSTRY_CARD,
 	TOGGLE_INDUSTRY_EDUCATION_LEVEL: TOGGLE_INDUSTRY_EDUCATION_LEVEL,
-	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE
+	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE,
+	SET_INDUSTRY_MAJOR: SET_INDUSTRY_MAJOR
 });
 
 /***/ }),
@@ -46845,7 +46848,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     industryMajorsByField: [],
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
-    industryEducationLevel: "bachelors"
+    industryEducationLevel: "bachelors",
+    industryMajor: null
 });
 
 /***/ }),
@@ -46870,6 +46874,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     industryEducationLevel: function industryEducationLevel(state) {
         return state.industryEducationLevel;
+    },
+    industryMajor: function industryMajor(state) {
+        return state.industryMajor;
     }
 });
 
@@ -46910,6 +46917,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_EDUCATION_LEVEL, function (state, payload) {
 	state.industryEducationLevel = payload;
 	state.industries = state.allLevelIndustries[payload];
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].SET_INDUSTRY_MAJOR, function (state, payload) {
+	state.industryMajor = payload.major;
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -46961,6 +46970,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		var commit = _ref6.commit;
 
 		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TOGGLE_INDUSTRY_EDUCATION_LEVEL, payload);
+	},
+	setIndustryMajor: function setIndustryMajor(_ref7, payload) {
+		var commit = _ref7.commit;
+
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].SET_INDUSTRY_MAJOR, payload);
 	}
 });
 
@@ -73298,7 +73312,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['major-title'],
   methods: {
     formatDollars: function formatDollars(input) {
       var dollarAmount = input.toString();
@@ -73307,7 +73320,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       return thousands + ',' + hundreds;
     }
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor"]))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor", "industryMajor"]))
 });
 
 /***/ }),
@@ -73322,9 +73335,9 @@ var render = function() {
     "div",
     [
       _c("div", { staticClass: "row IndustryLegend" }, [
-        _vm.majorTile !== null
+        _vm.industryMajor !== null
           ? _c("div", { staticClass: "col-sm-3 col-md-12" }, [
-              _c("h3", [_vm._v(_vm._s(_vm.majorTitle))])
+              _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
             ])
           : _vm._e(),
         _vm._v(" "),
@@ -73674,14 +73687,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	},
 
 
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "resetIndustryCard", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel"]), {
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "resetIndustryCard", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel", "setIndustryMajor"]), {
 		submitForm: function submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
-				this.$emit('selected', this.selected);
+				this.$store.dispatch("setIndustryMajor", this.selected);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 			}
 		},

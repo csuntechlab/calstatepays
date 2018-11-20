@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="row IndustryLegend">
-            <div v-if="majorTile !== null" class="col-sm-3 col-md-12">
-                <h3>{{majorTitle}}</h3>
+            <div v-if="industryMajor !== null" class="col-sm-3 col-md-12">
+                <h3>{{industryMajor}}</h3>
             </div>
             <div class="col-sm-3 offset-sm5">
                 <div class="IndustryLegend__LegendPercentage"/>PERCENTAGE
@@ -64,7 +64,6 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-    props:['major-title'],
 	methods: {
 		formatDollars(input) {
             let dollarAmount = input.toString();
@@ -74,7 +73,10 @@ export default {
 		}
 	},
 	computed: {
-        ...mapGetters(["industriesByMajor"]),
+        ...mapGetters([
+            "industriesByMajor",
+            "industryMajor"
+        ]),
 
 	}
 };
