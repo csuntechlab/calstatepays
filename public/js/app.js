@@ -44923,6 +44923,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_STATE, function (state) {
     state.majorCards = [{
         formWasSubmitted: false,
+        submittedOnce: false,
         majorsByField: [],
         industries: [],
         majorData: [],
@@ -45470,6 +45471,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];
+	state.industryFormWasSubmitted = false;
+	state.industryFormWasSubmittedOnce = false;
+	state.industryMajor = null;
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_CARD, function (state) {
 	if (state.industryFormWasSubmitted) {
 		state.industryFormWasSubmitted = false;
@@ -47044,7 +47048,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return {
             showModal: false,
             universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }, { url: "https://via.placeholder.com/123x112?",
-                name: "All Campuses"
+                name: "CSU7"
             }]
         };
     },
@@ -50826,7 +50830,7 @@ exports = module.exports = __webpack_require__(74)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50959,7 +50963,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				majorId: null,
 				schoolId: null,
 				formWasSubmitted: false,
-				submittedOnce: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
@@ -50987,13 +50990,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		submitForm: function submitForm() {
+			//Validation
 			this.formNotFilled = false;
 			this.submittedOnce = true;
+
 			if (this.checkForm()) {
+				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 				this.isShowing = !this.isShowing;
 			}
 		},
@@ -51027,9 +51035,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		selectedMajorsByField: function selectedMajorsByField() {
 			this.selected = null;
 			return this.majorsByField(this.index);
-		},
-		removeMajorsByField: function removeMajorsByField() {
-			return this.majorsByField(null);
 		},
 		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
@@ -51076,10 +51081,10 @@ var render = function() {
                       name: "show",
                       rawName: "v-show",
                       value:
-                        _vm.selectedFormWasSubmittedOnce &&
+                        _vm.selectedFormWasSubmittedOnce != false &&
                         _vm.windowWidth > 500,
                       expression:
-                        "selectedFormWasSubmittedOnce && windowWidth > 500"
+                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
                     }
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
@@ -51136,9 +51141,6 @@ var render = function() {
                       on: {
                         input: function($event) {
                           _vm.updateSelect("fieldOfStudyId", "id", $event)
-                        },
-                        change: function($event) {
-                          _vm.updateSelect("fieldOfStudyId", "id", $event)
                         }
                       }
                     })
@@ -51174,9 +51176,6 @@ var render = function() {
                           on: {
                             input: function($event) {
                               _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
                             }
                           },
                           model: {
@@ -51199,9 +51198,6 @@ var render = function() {
                           },
                           on: {
                             input: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
                               _vm.updateSelect("majorId", "majorId", $event)
                             }
                           },
@@ -51247,10 +51243,10 @@ var render = function() {
                       name: "show",
                       rawName: "v-show",
                       value:
-                        _vm.selectedFormWasSubmittedOnce &&
+                        _vm.selectedFormWasSubmittedOnce != false &&
                         _vm.windowWidth > 500,
                       expression:
-                        "selectedFormWasSubmittedOnce && windowWidth > 500"
+                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
                     }
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
@@ -51576,7 +51572,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         }
                     },
                     min: 0,
-                    max: 300000,
+                    max: 150000,
                     axisLine: {
                         show: false
                     },
@@ -68073,216 +68069,215 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'windowWidth'],
-    data: function data() {
-        return {
-            xAxis: ['2', '5', '10', '15'],
-            graphColors: {
-                color1: '#000',
-                color2: '#000',
-                color3: '#FFF'
-            }
-        };
-    },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-    computed: {
-        mastersEarnings: function mastersEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[0];
-            }
-            return null;
-        },
-        bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[1];
-            }
-            return null;
-        },
-        someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[2];
-            }
-            return null;
-        },
-        chartDimensions: function chartDimensions() {
-            var currentWidth = window.innerWidth;
-            if (this.windowWidth >= 768 && this.windowWidth < 1000) {
-                return {
-                    height: 400,
-                    width: 710
-                    // width: this.windowWidth / 1.75
-                };
-            } else if (this.windowWidth >= 540 && this.windowWidth < 768) {
-                return {
-                    height: 400,
-                    width: 490
-                };
-            } else {
-                return {
-                    height: 400,
-                    width: this.windowWidth - 48
-                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
-                };
-            }
-        },
-        toolTipTitles1: function toolTipTitles1() {
-            var title = "Some College";
-            if (this.educationLevel !== "allDegrees") {
-                title = "25th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles2: function toolTipTitles2() {
-            var title = "Bachelor's Degree";
-            if (this.educationLevel !== "allDegrees") {
-                title = "50th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles3: function toolTipTitles3() {
-            var title = "Post Bacc";
-            if (this.educationLevel !== "allDegrees") {
-                title = "75th Percentile";
-            }
-            return title;
-        },
-        toolColors1: function toolColors1() {
-            var color = '#476A6F';
-            if (this.educationLevel === 'someCollege') {
-                color = '#7E969A';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#F2C55C';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#3EFA94';
-            }
-            return color;
-        },
-        toolColors2: function toolColors2() {
-            var color = '#EDAC17';
-            if (this.educationLevel === 'someCollege') {
-                color = '#476A6F';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#ECA400';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#2BAE67';
-            }
-            return color;
-        },
-        toolColors3: function toolColors3() {
-            var color = '#279D5D';
-            if (this.educationLevel === 'someCollege') {
-                color = '#2c4144';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#987100';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#1B6E41';
-            }
-            return color;
-        },
-        polar: function polar() {
-            return {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                xAxis: {
-                    name: "Years Out of College",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [10, 0, 0, 0]
-                    },
-                    data: this.xAxis,
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                name: "Years Out of College",
-                nameLocation: 'middle',
-                nameTextStyle: {
-                    padding: [10, 0, 0, 0]
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    axisLabel: {
-                        rotate: 90,
-                        formatter: function formatter(value) {
-                            if (value > 999) {
-                                var strVal = value.toString();
-                                strVal = strVal.slice(0, -3);
-                                return '$' + strVal + 'k';
-                            } else return '$' + value;
-                        }
-                    },
-                    yAxis: {
-                        splitNumber: 4,
-                        min: 0,
-                        max: 300000,
-                        splitLine: {
-                            show: true
-                        }
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors3
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors2
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors1
-                    }
-                }],
-                animationDuration: 2000
-            };
-            return null;
-        }
-    },
-    components: {
-        'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-    }
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		chartDimensions: function chartDimensions() {
+			var currentWidth = window.innerWidth;
+			if (this.windowWidth >= 768 && this.windowWidth < 1000) {
+				return {
+					height: 400,
+					width: 710
+					// width: this.windowWidth / 1.75
+				};
+			} else if (this.windowWidth >= 540 && this.windowWidth < 768) {
+				return {
+					height: 400,
+					width: 490
+				};
+			} else {
+				return {
+					height: 400,
+					width: this.windowWidth - 48
+					// width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
+				};
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#F2C55C";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#3EFA94";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				name: "Years Out of College",
+				nameLocation: "middle",
+				nameTextStyle: {
+					padding: [10, 0, 0, 0]
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: 90,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					splitNumber: 5,
+					min: 0,
+					max: 150000,
+					splitLine: {
+						show: true
+					},
+
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	},
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	}
 });
 
 /***/ }),
@@ -68294,7 +68289,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("chart", {
-    staticStyle: { width: "0" },
     attrs: { initOptions: _vm.chartDimensions, options: _vm.polar }
   })
 }
@@ -68627,10 +68621,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -68657,110 +68647,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "pt-md-5" }, [
     _vm.educationLevel == "allDegrees"
-      ? _c("div", [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c(
-              "h5",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center majors-header"
-              },
-              [_vm._v("Graduation Level: ")]
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2)
-          ])
-        ])
+      ? _c("div", [_vm._m(0)])
       : _vm.educationLevel == "someCollege"
-        ? _c("div", [
-            _c("div", { staticClass: "row justify-content-center" }, [
-              _c(
-                "h5",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
-                    }
-                  ],
-                  staticClass: "text-center font-weight-bold pb-2"
-                },
-                [_vm._v("Percentile: ")]
-              ),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5)
-            ])
-          ])
+        ? _c("div", [_vm._m(1)])
         : _vm.educationLevel == "bachelors"
-          ? _c("div", [
-              _c("div", { staticClass: "row justify-content-center" }, [
-                _c(
-                  "h5",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.windowSize > 500,
-                        expression: "windowSize > 500"
-                      }
-                    ],
-                    staticClass: "text-center font-weight-bold pb-2"
-                  },
-                  [_vm._v("Percentile: ")]
-                ),
-                _vm._v(" "),
-                _vm._m(6),
-                _vm._v(" "),
-                _vm._m(7),
-                _vm._v(" "),
-                _vm._m(8)
-              ])
-            ])
-          : _vm.educationLevel == "postBacc"
-            ? _c("div", [
-                _c("div", { staticClass: "row justify-content-center" }, [
-                  _c(
-                    "h5",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.windowSize > 500,
-                          expression: "windowSize > 500"
-                        }
-                      ],
-                      staticClass: "text-center font-weight-bold pb-2"
-                    },
-                    [_vm._v("Percentile: ")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _vm._m(11)
-                ])
-              ])
-            : _vm._e()
+          ? _c("div", [_vm._m(2)])
+          : _vm.educationLevel == "postBacc" ? _c("div", [_vm._m(3)]) : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -68768,108 +68660,84 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   }
 ]
@@ -70107,13 +69975,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -70153,7 +70014,7 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.industriesByMajor, function(industry, index) {
         return _c("div", { key: index }, [
-          industry.percentage != null || industry.industryWage != null
+          industry.percentage > 0 || industry.industryWage != null
             ? _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
                 _c("div", { staticClass: "col-sm-3" }, [
                   _c(
@@ -70210,7 +70071,7 @@ var render = function() {
                             ]
                           )
                         ])
-                      : industry.percentage === null
+                      : industry.percentage > 0
                         ? _c("div", { staticClass: "col-2 pl-0" }, [
                             _c(
                               "p",
@@ -70248,7 +70109,7 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    industry.industryWage > 0 && industry != null
+                    industry.industryWage != null
                       ? _c("div", { staticClass: "col-2 pl-0" }, [
                           _c(
                             "p",
@@ -70298,7 +70159,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3 offset-md3 col-sm-6" }, [
+    return _c("div", { staticClass: "col-md-3 offset-md-3 col-sm-6" }, [
       _c("div", { staticClass: "IndustryLegend__LegendPercentage" }),
       _vm._v("PERCENTAGE\n        ")
     ])
@@ -70307,7 +70168,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+    return _c("div", { staticClass: "col-sm-6" }, [
       _c("div", { staticClass: "IndustryLegend__LegendSalary" }),
       _vm._v("AVERAGE EARNINGS\n        ")
     ])
@@ -70488,7 +70349,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	},
 	mounted: function mounted() {
 		this.form.university = this.selectedUniversity;
-		this.form.schoolId = this.selectedUniversity;
 	},
 
 
@@ -70501,9 +70361,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				this.fetchIndustries(this.form);
 				this.$store.dispatch("setIndustryMajor", this.selected);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+				this.selected = null;
+				this.submittedOnce = false;
+				this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 			}
 		},
 		resetIndustries: function resetIndustries() {
+			this.submittedOnce = false;
 			this.resetIndustryCard();
 		},
 		toggleIndustryEducationLevel: function toggleIndustryEducationLevel(educationInput) {

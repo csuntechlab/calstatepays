@@ -44,7 +44,7 @@ export default {
                 {url :window.baseUrl+ '/img/csuseals/northridge_seal.svg',name:'Northridge'},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island'},
                 {url: "https://via.placeholder.com/123x112?",
-                name: "All Campuses"
+                name: "CSU7"
                 }
             ]
         }

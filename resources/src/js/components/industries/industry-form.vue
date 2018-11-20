@@ -104,7 +104,6 @@ export default {
 
 	mounted() {
 		this.form.university = this.selectedUniversity;
-		this.form.schoolId = this.selectedUniversity;
 	},
 
 	methods: {
@@ -122,12 +121,17 @@ export default {
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
-				this.fetchIndustries(this.form);
-				this.$store.dispatch("setIndustryMajor", this.selected);
-				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+                this.fetchIndustries(this.form);
+                this.$store.dispatch("setIndustryMajor", this.selected);
+                this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+                this.selected = null;
+                this.submittedOnce = false;
+                this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 			}
 		},
 		resetIndustries() {
+			this.submittedOnce = false;
 			this.resetIndustryCard();
 		},
 		toggleIndustryEducationLevel(educationInput) {

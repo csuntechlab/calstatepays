@@ -4,15 +4,15 @@
             <div v-if="industryMajor !== null" class="col-12">
                 <h3>{{industryMajor}}</h3>
             </div>
-            <div class="col-md-3 offset-md3 col-sm-6">
+            <div class="col-md-3 offset-md-3 col-sm-6">
                 <div class="IndustryLegend__LegendPercentage"/>PERCENTAGE
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-6">
                 <div class="IndustryLegend__LegendSalary"/>AVERAGE EARNINGS
             </div>
         </div>
         <div v-for="(industry,index) in industriesByMajor" :key="index">
-            <div v-if="industry.percentage != null || industry.industryWage != null" class="row IndustryProgressBarWrapper">
+            <div v-if="industry.percentage > 0 || industry.industryWage != null" class="row IndustryProgressBarWrapper">
                 <div class="col-sm-3">
                     <h3 class="IndustryProgressBarWrapper__IndustryTitle py-2">
                         {{industry.title}}
@@ -28,18 +28,17 @@
                                 {{industry.percentage}}%
                             </p>
                         </div>
-                        <div v-else-if="industry.percentage === null" class="col-2 pl-0">
+                        <div v-else-if="industry.percentage > 0" class="col-2 pl-0">
                             <p class="IndustryProgressBarWrapper__PercentageText">
                                 N/A
                             </p>
                         </div>
-                        <!-- <div v-else class="col-2 IndustryProgressBarWrapper__PercentageText">&#60;1%</div> -->
                     </div>
                     <div class="row py-2">
                         <div class="col-10">
                             <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
                         </div>
-                        <div v-if="industry.industryWage > 0 && industry != null" class="col-2 pl-0">
+                        <div v-if="industry.industryWage != null" class="col-2 pl-0">
                             <p class="IndustryProgressBarWrapper__SalaryText">
                                 ${{formatDollars(industry.industryWage)}}
                             </p>
@@ -52,12 +51,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div v-else-if="industry.percentage === null && industry.industryWage === null" class="row">
-                <div class="col-sm-3">{{industry.title}}</div>
-                <div class="col-sm-9">
-                    <h3><i class="fa fa-exclamation-circle required-field"></i>No data available</h3>
-                </div>
-            </div> -->
         </div>
     </div>
 </template>
