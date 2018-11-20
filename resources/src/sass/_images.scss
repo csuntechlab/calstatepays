@@ -289,7 +289,7 @@
 	$border-thickness: .4rem;
 	$constrast-color: white;
 	$border-style: solid;
-	transition: all .30s ease-out;
+	transition: all .28s ease-out;
 	border-top: $border-thickness $border-style $color;
 	border-left: $border-thickness $border-style $color;
 	border-right: $border-thickness $border-style $color;
@@ -311,16 +311,36 @@
 	}
 }
 
-@mixin make-homeCard__copy($color) {
+%iconWrapperBase{
+	height: 7.75rem;
+	@media screen and (max-width: $break-small) {
+		height: unset;
+	}
+	@media screen and (min-width: $break-xlarge) {
+		height: 9.5rem;
+	}
+}
+
+@mixin make-homeCard__copy($color, $break-point) {
 	@extend .text-center, .p-3, .p-lg-4, .px-lg-5, .py-lg-3 ;
 	background: $color;
 	color: white;
 	margin: 0;
 	line-height: 130%;
+	font-size: 1.02rem;
+	min-height:7.5rem;
+	@media screen and (max-width: $break-point){
+		font-size: 1rem;
+		min-height: unset;
+	}
 }
 
 .homeCard{
 	//Major
+	&__iconWrapper--major{
+		@extend %iconWrapperBase;
+	}
+
 	&__icon--major{fill:$CSP-Dark-Blue;}
 
 	&__title--major{
@@ -336,10 +356,13 @@
 		
 	}
 	&__Copy--major{
-		@include make-homeCard__copy($CSP-Dark-Blue);
+		@include make-homeCard__copy($CSP-Dark-Blue, $break-small);
 	}
 
 	//Industries
+	&__iconWrapper--industries{
+		@extend %iconWrapperBase;
+	}
 	&__icon--industries0{fill:$CSP-Dark-Gold;}
 	&__icon--industries1{
 		fill:none;
@@ -383,10 +406,13 @@
 		
 	}
 	&__Copy--industries{
-		@include make-homeCard__copy($CSP-Dark-Gold);
+		@include make-homeCard__copy($CSP-Dark-Gold, $break-small);
 	}
 
 	//PFRE
+	&__iconWrapper--PFRE{
+		@extend %iconWrapperBase;
+	}
 	&__icon--PFRE{fill:$CSP-Dark-Red;}
 
 	&__title--PFRE{
@@ -403,6 +429,6 @@
 		
 	}
 	&__Copy--PFRE{
-		@include make-homeCard__copy($CSP-Dark-Red);
+		@include make-homeCard__copy($CSP-Dark-Red, $break-small);
 	}
 }

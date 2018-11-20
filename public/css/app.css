@@ -19412,13 +19412,29 @@ figcaption {
   }
 }
 
+.homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
+  height: 7.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
+    height: unset;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
+    height: 9.5rem;
+  }
+}
+
 .homeCard__icon--major {
   fill: #14597F;
 }
 
 .homeCard__titleAndIconWrapper--major {
-  -webkit-transition: all .30s ease-out;
-  transition: all .30s ease-out;
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
   border-top: 0.4rem solid #3A97D1;
   border-left: 0.4rem solid #3A97D1;
   border-right: 0.4rem solid #3A97D1;
@@ -19448,6 +19464,15 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
+  font-size: 1.02rem;
+  min-height: 7.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--major {
+    font-size: 1rem;
+    min-height: unset;
+  }
 }
 
 .homeCard__icon--industries0 {
@@ -19470,8 +19495,8 @@ figcaption {
 }
 
 .homeCard__titleAndIconWrapper--industries {
-  -webkit-transition: all .30s ease-out;
-  transition: all .30s ease-out;
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
   border-top: 0.4rem solid #D79900;
   border-left: 0.4rem solid #D79900;
   border-right: 0.4rem solid #D79900;
@@ -19516,6 +19541,15 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
+  font-size: 1.02rem;
+  min-height: 7.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--industries {
+    font-size: 1rem;
+    min-height: unset;
+  }
 }
 
 .homeCard__icon--PFRE {
@@ -19523,8 +19557,8 @@ figcaption {
 }
 
 .homeCard__titleAndIconWrapper--PFRE {
-  -webkit-transition: all .30s ease-out;
-  transition: all .30s ease-out;
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
   border-top: 0.4rem solid #C52429;
   border-left: 0.4rem solid #C52429;
   border-right: 0.4rem solid #C52429;
@@ -19554,6 +19588,15 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
+  font-size: 1.02rem;
+  min-height: 7.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--PFRE {
+    font-size: 1rem;
+    min-height: unset;
+  }
 }
 
 .site-header {

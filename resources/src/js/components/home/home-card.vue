@@ -4,7 +4,7 @@
             <div class="homeCard__titleAndIconWrapper--major">
                 <router-link to="/data/majors" @click.native="setDataPage('majors')">
                     <div class="row">
-                        <div class="col-4 col-sm-3 col-md-12 align-self-center">
+                        <div class="col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--major">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.8 152.2" style="enable-background:new 0 0 294.8 152.2;" xml:space="preserve">
                                 <path class="homeCard__icon--major" d="M289.9,5.1C289.5,5,289.1,5,288.8,5c-0.1,0-0.1,0-0.2,0h-12.3V2.5c0-3.3-7.7-3.3-7.7,0V5h-254
                                     C11.4,5,7.4,4.3,4.3,5.3C0.3,6.5,0,10.4,0,13.9V24c0,3.7,0.8,7.4,5.1,8.3c0.5,0.1,1.1,0.2,1.7,0.2c13,0.5,26.2,0,39.3,0H212v74.8
@@ -41,7 +41,7 @@
             <div class="homeCard__titleAndIconWrapper--industries">
                 <router-link to="/data/industries" @click.native="setDataPage('industries')">
                     <div class="row">
-                        <div class="col-4 col-sm-3 col-md-12 align-self-center">
+                        <div class="col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--industries">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 251.8 138.5" style="enable-background:new 0 0 251.8 138.5;" xml:space="preserve">
                                 <path class="homeCard__icon--industries0" d="M219,133.5l2.9-61.3c0-0.7-0.2-1.4-0.7-1.9s-1.2-0.8-1.9-0.7l-60.4,3.2V2.5c0-1.4-1.1-2.5-2.5-2.5H91.7 c-1.4,0-2.5,1.1-2.5,2.5v48.2L36.3,45c-0.7-0.1-1.4,0.2-2,0.7c-0.5,0.5-0.8,1.2-0.8,1.9l2.8,86H0v5h251.8v-5H219z M216.7,74.8 l-2.7,58.4h-55.2V77.9L216.7,74.8z M94.2,5h59.6v70.4c0,0,0,0.1,0,0.1v57.7H94.2V53.5V5z M89.2,55.8v77.5H41.3l-2.7-83L89.2,55.8z"/>
                                 <g>
@@ -85,7 +85,7 @@
             <div class="homeCard__titleAndIconWrapper--PFRE">
                 <router-link to="/data/majors" @click.native="setDataPage('majors')">
                     <div class="row">
-                        <div class="col-4 col-sm-3 col-md-12 align-self-center">
+                        <div class="col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--PFRE">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242.8 99.1">
                                 <path class="homeCard__icon--PFRE" d="M37.2 46.2c-0.2-8.7-15.3-7.4-15.4-12.6 0-2.4 1.9-4 5.1-4 3.2-0.1 4.9 0.9 7.1 2.6L36 29.7c-2-1.8-4.2-3.2-7.7-3.4L28.2 20l-2.9 0.1 0.1 6.3c-4.6 0.6-7.7 3.4-7.6 7.4 0.2 8.3 15.3 6.9 15.4 12.8 0.1 2.4-1.9 4.2-5.6 4.2 -3.6 0.1-6.5-1.3-8.9-3l-1.8 2.8c2.7 2.1 5.9 3.3 9.2 3.5L26.2 61l2.9-0.1 -0.1-7C34 53.3 37.3 50.3 37.2 46.2z"/>
                                 <path class="homeCard__icon--PFRE" d="M226.8 46.5c-0.2-8.7-15.3-7.4-15.4-12.6 0-2.4 1.9-4 5.1-4 3.2-0.1 4.9 0.9 7.1 2.6l2.1-2.4c-2-1.8-4.2-3.2-7.7-3.4l-0.1-6.3 -2.9 0.1 0.1 6.3c-4.6 0.6-7.7 3.4-7.6 7.4 0.2 8.3 15.3 6.9 15.4 12.8 0.1 2.4-1.9 4.2-5.6 4.2 -3.6 0.1-6.5-1.3-8.9-3l-1.8 2.8c2.7 2.1 5.9 3.3 9.2 3.5l0.2 6.9 2.9-0.1 -0.1-7C223.6 53.7 226.9 50.7 226.8 46.5z"/>
