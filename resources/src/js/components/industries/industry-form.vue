@@ -87,7 +87,6 @@ export default {
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
 				formEducationLevel: "bachelors",
@@ -102,10 +101,6 @@ export default {
 		};
 	},
 
-	mounted() {
-		this.form.university = this.selectedUniversity;
-		this.form.schoolId = this.selectedUniversity;
-	},
 
 	methods: {
 		...mapActions([
