@@ -13,10 +13,10 @@
       <div class="container">
         <div class="row">
           <aside class="col-lg-3 col-12">
-            <industry-form v-on:selected="derp($event)"/>
+            <industry-form />
           </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress v-bind:majorTitle=majorTitle class="industry-card"/>
+            <industry-progress class="industry-card"/>
           </div>
         </div>
       </div>
@@ -29,22 +29,11 @@ import subNav from "../../../components/global/sub-nav.vue";
 import industryProgress from "../../../components/industries/industry-progress.vue";
 import industryForm from "../../../components/industries/industry-form.vue"
 export default {
-    data() {
-      return {
-          majorTitle: null
-      };
-    },
     components: {
       csuDataImgBanner,
       industryProgress,
       industryForm,
       subNav
-    },
-    methods: {
-        derp: function($event) {
-            console.log($event.major);
-            this.majorTitle = $event.major;
-        }
     }
   };
 </script>

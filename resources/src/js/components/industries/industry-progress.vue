@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="row IndustryLegend">
-            <div v-if="industryMajor !== null" class="col-sm-3 col-md-12">
+            <div v-if="industryMajor !== null" class="col-12">
                 <h3>{{industryMajor}}</h3>
             </div>
-            <div class="col-sm-3 offset-sm5">
+            <div class="col-md-3 offset-md3 col-sm-6">
                 <div class="IndustryLegend__LegendPercentage"/>PERCENTAGE
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-6 col-sm-6">
                 <div class="IndustryLegend__LegendSalary"/>AVERAGE EARNINGS
             </div>
         </div>
