@@ -46353,6 +46353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_STATE, function (state) {
     state.majorCards = [{
         formWasSubmitted: false,
+        submittedOnce: false,
         majorsByField: [],
         industries: [],
         majorData: [],
@@ -46896,6 +46897,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];
+	state.industryFormWasSubmitted = false;
+	state.industryFormWasSubmittedOnce = false;
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_CARD, function (state) {
 	if (state.industryFormWasSubmitted) {
 		state.industryFormWasSubmitted = false;
@@ -52602,7 +52605,7 @@ exports = module.exports = __webpack_require__(47)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52702,7 +52705,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				majorId: null,
 				schoolId: null,
 				formWasSubmitted: false,
-				submittedOnce: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
 				errors: {
@@ -52730,13 +52732,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		submitForm: function submitForm() {
+			//Validation
 			this.formNotFilled = false;
 			this.submittedOnce = true;
+
 			if (this.checkForm()) {
+				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
 				this.fetchIndustryImages(this.form);
 				this.fetchMajorData(this.form);
 				this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 				this.isShowing = !this.isShowing;
 			}
 		},
@@ -52770,9 +52777,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		selectedMajorsByField: function selectedMajorsByField() {
 			this.selected = null;
 			return this.majorsByField(this.index);
-		},
-		removeMajorsByField: function removeMajorsByField() {
-			return this.majorsByField(null);
 		},
 		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
@@ -52819,10 +52823,10 @@ var render = function() {
                       name: "show",
                       rawName: "v-show",
                       value:
-                        _vm.selectedFormWasSubmittedOnce &&
+                        _vm.selectedFormWasSubmittedOnce != false &&
                         _vm.windowWidth > 500,
                       expression:
-                        "selectedFormWasSubmittedOnce && windowWidth > 500"
+                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
                     }
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
@@ -52879,9 +52883,6 @@ var render = function() {
                       on: {
                         input: function($event) {
                           _vm.updateSelect("fieldOfStudyId", "id", $event)
-                        },
-                        change: function($event) {
-                          _vm.updateSelect("fieldOfStudyId", "id", $event)
                         }
                       }
                     })
@@ -52917,9 +52918,6 @@ var render = function() {
                           on: {
                             input: function($event) {
                               _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
                             }
                           },
                           model: {
@@ -52942,9 +52940,6 @@ var render = function() {
                           },
                           on: {
                             input: function($event) {
-                              _vm.updateSelect("majorId", "majorId", $event)
-                            },
-                            change: function($event) {
                               _vm.updateSelect("majorId", "majorId", $event)
                             }
                           },
@@ -52990,10 +52985,10 @@ var render = function() {
                       name: "show",
                       rawName: "v-show",
                       value:
-                        _vm.selectedFormWasSubmittedOnce &&
+                        _vm.selectedFormWasSubmittedOnce != false &&
                         _vm.windowWidth > 500,
                       expression:
-                        "selectedFormWasSubmittedOnce && windowWidth > 500"
+                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
                     }
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
@@ -72118,10 +72113,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -72148,109 +72139,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "pt-md-5" }, [
     _vm.educationLevel == "allDegrees"
-      ? _c("div", [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c(
-              "h5",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.windowSize > 500,
-                    expression: "windowSize > 500"
-                  }
-                ],
-                staticClass: "text-center majors-header"
-              },
-              [_vm._v("Graduation Level: ")]
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2)
-          ])
-        ])
+      ? _c("div", [_vm._m(0)])
       : _vm.educationLevel == "someCollege"
-        ? _c("div", [
-            _c("div", { staticClass: "row justify-content-center" }, [
-              _c(
-                "h5",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
-                    }
-                  ],
-                  staticClass: "text-center font-weight-bold pb-2"
-                },
-                [_vm._v("Percentile: ")]
-              ),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5)
-            ])
-          ])
+        ? _c("div", [_vm._m(1)])
         : _vm.educationLevel == "bachelors"
-          ? _c("div", [
-              _c("div", { staticClass: "row justify-content-center" }, [
-                _c(
-                  "h5",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.windowSize > 500,
-                        expression: "windowSize > 500"
-                      }
-                    ],
-                    staticClass: "text-center font-weight-bold pb-2"
-                  },
-                  [_vm._v("Percentile: ")]
-                ),
-                _vm._v(" "),
-                _vm._m(6),
-                _vm._v(" "),
-                _vm._m(7),
-                _vm._v(" "),
-                _vm._m(8)
-              ])
-            ])
+          ? _c("div", [_vm._m(2)])
           : _vm.educationLevel == "postBacc"
-            ? _c("div", [
-                _c("div", { staticClass: "row justify-content-center" }, [
-                  _c(
-                    "h5",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.windowSize > 500,
-                          expression: "windowSize > 500"
-                        }
-                      ],
-                      staticClass: "text-center font-weight-bold pb-2"
-                    },
-                    [_vm._v("Percentile: ")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _vm._m(11)
-                ])
-              ])
+            ? _c("div", [_vm._m(3)])
             : _vm._e()
   ])
 }
@@ -72259,108 +72154,84 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Post Bacc Degree")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Bachelor's Degree")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-oxford-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("Some College")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-gold-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-oxford-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-gold-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green-75 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "legend-mobile" }, [
-      _c("div", { staticClass: "legend-green-25 m-0" }),
-      _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green-75 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("75th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("50th Percentile")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "legend-mobile" }, [
+        _c("div", { staticClass: "legend-green-25 m-0" }),
+        _c("p", { staticClass: "ml-4" }, [_vm._v("25th Percentile")])
+      ])
     ])
   }
 ]
@@ -73968,7 +73839,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	},
 	mounted: function mounted() {
 		this.form.university = this.selectedUniversity;
-		this.form.schoolId = this.selectedUniversity;
 	},
 
 
@@ -73977,12 +73847,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
+				this.selected = null;
+				this.submittedOnce = false;
 				this.toggleIndustryFormWasSubmitted();
 				this.fetchIndustries(this.form);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+				this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 			}
 		},
 		resetIndustries: function resetIndustries() {
+			this.submittedOnce = false;
 			this.resetIndustryCard();
 		},
 		toggleIndustryEducationLevel: function toggleIndustryEducationLevel(educationInput) {

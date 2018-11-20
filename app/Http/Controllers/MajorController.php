@@ -31,6 +31,10 @@ class MajorController extends Controller
 
     public function getMajorEarnings(MajorFormRequest $request)
     {
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+
         $university_major = $this->majorRetriever->getMajorEarnings($request->major, $request->university);
 
         foreach ($university_major as $data) {
