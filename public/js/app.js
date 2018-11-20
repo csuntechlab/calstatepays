@@ -47158,7 +47158,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -48611,9 +48610,308 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [_c("home-card")], 1)
+  return _c("div", [
+    _c("div", { staticClass: "bg mh-90 pt-5" }, [
+      _c("div", { staticClass: "p-0 text-center pt-9" }, [
+        _c("h1", { staticClass: "m-4 home__heading" }, [
+          _vm._v("Discover Your Earnings After College")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row py-2 fa-wrapper" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-4 text-center my-3 home__col" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/majors" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("majors")
+                    }
+                  }
+                },
+                [
+                  _c("button", { staticClass: "home-btn home-btn__degrees" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore by Major\n\t\t\t\t\t\t")
+                  ])
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-md-4 text-center my-3 home__col" },
+            [
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/industries" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("industries")
+                    }
+                  }
+                },
+                [
+                  _c("button", { staticClass: "home-btn home-btn__majors" }, [
+                    _vm._v("\n\t\t\t\t\t\t\tExplore Industries\n\t\t\t\t\t\t")
+                  ])
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-md-4 text-center my-3 home__col" },
+            [
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _vm._m(8),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "button-link",
+                  attrs: { to: "/data/pfre" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("pfre")
+                    }
+                  }
+                },
+                [
+                  _c("button", { staticClass: "home-btn home-btn__pfre" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\tFinancial Return on Education\n\t\t\t\t\t\t"
+                    )
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
+                alt: "CSU Long Beach Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Long Beach")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/poly_seal.svg",
+                alt: "CSU Pomona Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Pomona")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
+                alt: "CSU Dominguez Hills Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Dominguez Hills")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/northridge_seal.svg",
+                alt: "CSU Northridge Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Northridge")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
+                alt: "CSU Channel Islands Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Channel Islands")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                alt: "CSU Fullerton Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Fullerton")])
+          ]),
+          _vm._v(" "),
+          _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
+            _c("img", {
+              attrs: {
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
+                alt: "CSU Los Angeles Seal"
+              }
+            }),
+            _vm._v(" "),
+            _c("figcaption", [_vm._v("Los Angeles")])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(9),
+    _vm._v(" "),
+    _vm._m(10)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", {
+        staticClass: "fa fa-graduation-cap landing-page__icon--cap fa-5x"
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Will you earn more if you graduate?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "It pays to go to college. Earnings for graduates are significantly higher than non-graduates."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", {
+        staticClass: "fa fa-line-chart landing-page__icon--chart fa-5x"
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("Where will you work?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [_vm._v("Explore industries of employment by major.")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__icon" }, [
+      _c("i", { staticClass: "fa fa-usd landing-page__icon--usd fa-5x" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__subheading" }, [
+      _c("h3", [_vm._v("What is your financial return on education?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__copy" }, [
+      _c("p", [
+        _vm._v(
+          "Education costs money, but in the long-term, you will earn more. Find your return on education."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "learn-how row" }, [
+      _c("div", { staticClass: "text-center" }, [
+        _c("h1", [_vm._v("Learn How")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#video-section" } }, [
+          _c("i", {
+            staticClass: "fa fa-angle-down",
+            staticStyle: { "font-size": "5rem", "line-height": "1rem" },
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row", attrs: { id: "video-section" } }, [
+      _c("div", { staticClass: "video-placeholder" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
