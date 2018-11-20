@@ -46309,6 +46309,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.majorCards[index].majorsByField.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
+    console.log(payload);
     var index = payload.cardIndex;
     state.majorCards[index].majorData = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_SELECTIONS, function (state) {
@@ -46403,7 +46404,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref4.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -46424,7 +46425,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref6.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -46435,7 +46436,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref7.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             success.forEach(function (industry) {
                 return industry['majorId'] = payload.majorId;
             });
@@ -46499,7 +46500,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
 };
 
 var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -46507,10 +46508,10 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(
+    window.axios.get("api/major/" + payload.form.majorId + "/" + payload.school).then(
     // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
     function (response) {
-        return success(response.data);
+        success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
     });
@@ -46524,7 +46525,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/industry/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -52245,7 +52246,7 @@ exports = module.exports = __webpack_require__(75)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52376,7 +52377,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				cardIndex: this.index,
 				majorId: null,
-				schoolId: null,
+				// schoolId: null,
 				formWasSubmitted: false,
 				submittedOnce: false,
 				fieldOfStudyId: null,
@@ -52396,10 +52397,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
-	mounted: function mounted() {
-		this.form.schoolId = this.selectedUniversity;
-	},
 
+	// mounted() {
+	// 	this.form.schoolId = this.selectedUniversity;
+	// },
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData", "resetMajorCard"]), {
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
 		resetCurrentCard: function resetCurrentCard() {
@@ -52410,9 +52411,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleFormWasSubmitted(this.form.cardIndex);
-				this.fetchIndustryImages(this.form);
-				this.fetchMajorData(this.form);
-				this.form.majorId = null;
+				this.fetchIndustryImages({ form: this.form, school: this.selectedUniversity });
+				this.fetchMajorData({ form: this.form, school: this.selectedUniversity });
 				this.isShowing = !this.isShowing;
 			}
 		},
@@ -52432,7 +52432,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchUpdatedMajorsByField(this.form);
+				this.fetchUpdatedMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		},
 		toggleEducationLevel: function toggleEducationLevel(educationInput) {
@@ -73628,7 +73628,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: this.selectedUniversity,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
 				formEducationLevel: "bachelors"
@@ -73642,6 +73641,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
+
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "resetIndustryCard", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel"]), {
 		submitForm: function submitForm() {

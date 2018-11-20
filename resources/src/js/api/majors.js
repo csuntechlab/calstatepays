@@ -17,7 +17,7 @@ const fetchFieldOfStudiesAPI = (success, error) => {
 };
 
 const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
-    window.axios.get(`api/major/hegis-codes/${payload.schoolId}/${payload.fieldOfStudyId}`).then(
+    window.axios.get(`api/major/hegis-codes/${payload.school}/${payload.form.fieldOfStudyId}`).then(
         response => success(response.data),    
     ).catch(
         failure=>{ error(failure.response.data.message)}
@@ -25,9 +25,11 @@ const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
 };
 
 const fetchMajorDataAPI = (payload, success, error) => {
-    window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
+    window.axios.get(`api/major/${payload.form.majorId}/${payload.school}`).then(
         // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
-        response => success(response.data),    
+        response => {
+            success(response.data)    
+        }
     ).catch(
         failure=>{ error(failure.response.data.message)}
     );
@@ -35,13 +37,13 @@ const fetchMajorDataAPI = (payload, success, error) => {
 
 const fetchUniversitiesAPI = (success, error) => {
     window.axios.get(`api/university`).then(
-        response => success(response.data), 
+        response => success(response.data)
     ).catch(
         failure=>{ error(failure.response.data.message)}
     );
 }
 const fetchIndustryImagesAPI = (payload, success, error) => {
-    window.axios.get(`api/industry/${payload.majorId}/${payload.schoolId}`).then(
+    window.axios.get(`api/industry/${payload.form.majorId}/${payload.school}`).then(
         response => {
         success(response.data)
     },   

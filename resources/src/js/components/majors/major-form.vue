@@ -77,7 +77,7 @@
 				form: {
 					cardIndex: this.index,
 					majorId: null,
-					schoolId: null,
+					// schoolId: null,
 					formWasSubmitted: false,
 					submittedOnce: false,
 					fieldOfStudyId: null,
@@ -97,9 +97,9 @@
 				}
 			};
 		},
-		mounted() {
-			this.form.schoolId = this.selectedUniversity;
-		},
+		// mounted() {
+		// 	this.form.schoolId = this.selectedUniversity;
+		// },
 		methods: {
 			...mapActions([
 				"fetchIndustryImages",
@@ -118,9 +118,8 @@
 				this.submittedOnce = true;
 				if (this.checkForm()) {
 					this.toggleFormWasSubmitted(this.form.cardIndex);
-					this.fetchIndustryImages(this.form);
-					this.fetchMajorData(this.form);
-					this.form.majorId = null;
+					this.fetchIndustryImages({form:this.form, school:this.selectedUniversity});
+					this.fetchMajorData({form:this.form, school:this.selectedUniversity});
 					this.isShowing = !this.isShowing;
 				}
 			},
@@ -144,7 +143,7 @@
 
 			handleFieldOfStudyMajors(field) {
 				if (field == "fieldOfStudyId") {
-					this.fetchUpdatedMajorsByField(this.form);
+					this.fetchUpdatedMajorsByField({form:this.form, school:this.selectedUniversity});
 				}
 			},
 			toggleEducationLevel(educationInput) {
