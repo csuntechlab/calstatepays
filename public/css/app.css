@@ -17447,7 +17447,10 @@ button.bg-dark:focus {
 }
 
 .pr-2,
-.px-2 {
+.px-2,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-right: 0.5rem !important;
 }
 
@@ -17457,16 +17460,22 @@ button.bg-dark:focus {
 }
 
 .pl-2,
-.px-2 {
+.px-2,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-left: 0.5rem !important;
 }
 
-.p-3, .campus, .not-avail {
+.p-3, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE, .campus, .not-avail {
   padding: 1rem !important;
 }
 
-.pt-3, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE,
-.py-3 {
+.pt-3,
+.py-3,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-top: 1rem !important;
 }
 
@@ -17476,7 +17485,10 @@ button.bg-dark:focus {
 }
 
 .pb-3,
-.py-3 {
+.py-3,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-bottom: 1rem !important;
 }
 
@@ -17485,7 +17497,7 @@ button.bg-dark:focus {
   padding-left: 1rem !important;
 }
 
-.p-4, .homeCard__titleAndIconWrapper--major, .homeCard__titleAndIconWrapper--industries, .homeCard__titleAndIconWrapper--PFRE {
+.p-4 {
   padding: 1.5rem !important;
 }
 
@@ -17981,10 +17993,10 @@ button.bg-dark:focus {
   .px-md-2 {
     padding-left: 0.5rem !important;
   }
-  .p-md-3, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
+  .p-md-3 {
     padding: 1rem !important;
   }
-  .pt-md-3,
+  .pt-md-3, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE,
   .py-md-3 {
     padding-top: 1rem !important;
   }
@@ -18000,11 +18012,14 @@ button.bg-dark:focus {
   .px-md-3 {
     padding-left: 1rem !important;
   }
-  .p-md-4 {
+  .p-md-4, .homeCard__titleAndIconWrapper--major, .homeCard__titleAndIconWrapper--industries, .homeCard__titleAndIconWrapper--PFRE {
     padding: 1.5rem !important;
   }
   .pt-md-4,
-  .py-md-4 {
+  .py-md-4,
+  .homeCard__titleAndIconWrapper--major,
+  .homeCard__titleAndIconWrapper--industries,
+  .homeCard__titleAndIconWrapper--PFRE {
     padding-top: 1.5rem !important;
   }
   .pr-md-4,
@@ -18012,7 +18027,10 @@ button.bg-dark:focus {
     padding-right: 1.5rem !important;
   }
   .pb-md-4,
-  .py-md-4 {
+  .py-md-4,
+  .homeCard__titleAndIconWrapper--major,
+  .homeCard__titleAndIconWrapper--industries,
+  .homeCard__titleAndIconWrapper--PFRE {
     padding-bottom: 1.5rem !important;
   }
   .pl-md-4,
@@ -19386,6 +19404,12 @@ figcaption {
   font-size: 1.7rem;
   margin: 0;
   font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE {
+    font-size: 1.5rem;
+  }
 }
 
 .homeCard__icon--major {
