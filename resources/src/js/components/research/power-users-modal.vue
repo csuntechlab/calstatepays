@@ -13,8 +13,8 @@
                 <i class="col-3 fa fa-university fa-5x" ></i> 
                <div class="col-9">
                     <span class="d-block">Earnings by Major + Industries of Employment</span>
-                    <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byMajor}}">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
+                    <router-link  :to="{name:'all' ,params:{tableauValue:tableauValue.byMajor}}">
+                        <button @click="apple()" type="button" class="power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <i class="fa fa-venus fa-5x"></i>
                 </div>               
                 <div class="col-9">
-                    <span class="d-block">Earnings by Gender + c of Employment</span>
+                    <span class="d-block">Earnings by Gender + Industries of Employment</span>
                     <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byGender}}">
                         <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
                     </router-link>
@@ -88,6 +88,9 @@ export default {
     },methods:{
         closeModal:function(){
             this.$emit('closeModal')
+        },
+        apple(){
+            console.log(22222)
         }
     },computed:{
         ...mapGetters([
@@ -106,8 +109,8 @@ export default {
                 return {
                     byMajor:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData',
                     byAge:'',
-                    byRace:'',
-                    byGender:'CSU7byGenderNOV132018/Story1',
+                    byRace:'CSU7byRaceNOV142018/Story1',
+                    byGender:'CSU7byGenderNOV132018/CSU7byGender',
                     byPellStatus:''
             }
             }
