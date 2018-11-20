@@ -49190,7 +49190,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return {
             showModal: false,
             universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }, { url: "https://via.placeholder.com/123x112?",
-                name: "All Campuses"
+                name: "CSU7"
             }]
         };
     },
@@ -53681,7 +53681,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         }
                     },
                     min: 0,
-                    max: 300000,
+                    max: 150000,
                     axisLine: {
                         show: false
                     },
@@ -71926,216 +71926,215 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'windowWidth'],
-    data: function data() {
-        return {
-            xAxis: ['2', '5', '10', '15'],
-            graphColors: {
-                color1: '#000',
-                color2: '#000',
-                color3: '#FFF'
-            }
-        };
-    },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-    computed: {
-        mastersEarnings: function mastersEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[0];
-            }
-            return null;
-        },
-        bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[1];
-            }
-            return null;
-        },
-        someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[2];
-            }
-            return null;
-        },
-        chartDimensions: function chartDimensions() {
-            var currentWidth = window.innerWidth;
-            if (this.windowWidth >= 768 && this.windowWidth < 1000) {
-                return {
-                    height: 400,
-                    width: 710
-                    // width: this.windowWidth / 1.75
-                };
-            } else if (this.windowWidth >= 540 && this.windowWidth < 768) {
-                return {
-                    height: 400,
-                    width: 490
-                };
-            } else {
-                return {
-                    height: 400,
-                    width: this.windowWidth - 48
-                    // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
-                };
-            }
-        },
-        toolTipTitles1: function toolTipTitles1() {
-            var title = "Some College";
-            if (this.educationLevel !== "allDegrees") {
-                title = "25th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles2: function toolTipTitles2() {
-            var title = "Bachelor's Degree";
-            if (this.educationLevel !== "allDegrees") {
-                title = "50th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles3: function toolTipTitles3() {
-            var title = "Post Bacc";
-            if (this.educationLevel !== "allDegrees") {
-                title = "75th Percentile";
-            }
-            return title;
-        },
-        toolColors1: function toolColors1() {
-            var color = '#476A6F';
-            if (this.educationLevel === 'someCollege') {
-                color = '#7E969A';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#F2C55C';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#3EFA94';
-            }
-            return color;
-        },
-        toolColors2: function toolColors2() {
-            var color = '#EDAC17';
-            if (this.educationLevel === 'someCollege') {
-                color = '#476A6F';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#ECA400';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#2BAE67';
-            }
-            return color;
-        },
-        toolColors3: function toolColors3() {
-            var color = '#279D5D';
-            if (this.educationLevel === 'someCollege') {
-                color = '#2c4144';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#987100';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#1B6E41';
-            }
-            return color;
-        },
-        polar: function polar() {
-            return {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                xAxis: {
-                    name: "Years Out of College",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [10, 0, 0, 0]
-                    },
-                    data: this.xAxis,
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                name: "Years Out of College",
-                nameLocation: 'middle',
-                nameTextStyle: {
-                    padding: [10, 0, 0, 0]
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    axisLabel: {
-                        rotate: 90,
-                        formatter: function formatter(value) {
-                            if (value > 999) {
-                                var strVal = value.toString();
-                                strVal = strVal.slice(0, -3);
-                                return '$' + strVal + 'k';
-                            } else return '$' + value;
-                        }
-                    },
-                    yAxis: {
-                        splitNumber: 4,
-                        min: 0,
-                        max: 300000,
-                        splitLine: {
-                            show: true
-                        }
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors3
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors2
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors1
-                    }
-                }],
-                animationDuration: 2000
-            };
-            return null;
-        }
-    },
-    components: {
-        'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-    }
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		chartDimensions: function chartDimensions() {
+			var currentWidth = window.innerWidth;
+			if (this.windowWidth >= 768 && this.windowWidth < 1000) {
+				return {
+					height: 400,
+					width: 710
+					// width: this.windowWidth / 1.75
+				};
+			} else if (this.windowWidth >= 540 && this.windowWidth < 768) {
+				return {
+					height: 400,
+					width: 490
+				};
+			} else {
+				return {
+					height: 400,
+					width: this.windowWidth - 48
+					// width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
+				};
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#F2C55C";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#3EFA94";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				name: "Years Out of College",
+				nameLocation: "middle",
+				nameTextStyle: {
+					padding: [10, 0, 0, 0]
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: 90,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					splitNumber: 5,
+					min: 0,
+					max: 150000,
+					splitLine: {
+						show: true
+					},
+
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	},
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	}
 });
 
 /***/ }),
@@ -72147,7 +72146,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("chart", {
-    staticStyle: { width: "0" },
     attrs: { initOptions: _vm.chartDimensions, options: _vm.polar }
   })
 }
