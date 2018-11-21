@@ -1,9 +1,15 @@
 .homeBanner{
 	background-image: url("../img/homeimages/home-banner.jpg");
 	background-size: cover;
+	background-position: center center;
 	position: relative;
-	padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
 	width: 100%;
+	padding-top: 0;
+	height: 85vh;
+	@media screen and (max-width: $break-medium) {
+		padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
+		height: unset;
+	}
 	&__CSPLogo{
 		width: 30%;
 		position: absolute;
@@ -11,7 +17,7 @@
 		left: 50%;
 		transform: translate(-50%,-50%);
 	}
-	&__Tagling{
+	&__Tagline{
 		width: 76%;
 		position: absolute;
 		left: 50%;

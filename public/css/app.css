@@ -19073,9 +19073,18 @@ figcaption {
 .homeBanner {
   background-image: url("../img/homeimages/home-banner.jpg");
   background-size: cover;
+  background-position: center center;
   position: relative;
-  padding-top: 51.37%;
   width: 100%;
+  padding-top: 0;
+  height: 85vh;
+}
+
+@media screen and (max-width: 768px) {
+  .homeBanner {
+    padding-top: 51.37%;
+    height: unset;
+  }
 }
 
 .homeBanner__CSPLogo {
@@ -19087,7 +19096,7 @@ figcaption {
           transform: translate(-50%, -50%);
 }
 
-.homeBanner__Tagling {
+.homeBanner__Tagline {
   width: 76%;
   position: absolute;
   left: 50%;
