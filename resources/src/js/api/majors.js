@@ -41,14 +41,11 @@ const fetchUniversitiesAPI = (success, error) => {
     );
 }
 const fetchIndustryImagesAPI = (payload, success, error) => {
-    console.log(payload),
     window.axios.get(`api/industry/images/${payload.majorId}/${payload.schoolId}`).then(
         response => {
-            console.log("MADE IT INSIDE")
         success(response.data)
     },   
     ).catch(
-        console.log("CATCH"),
         failure=>{error(failure.response)}
     );
 };

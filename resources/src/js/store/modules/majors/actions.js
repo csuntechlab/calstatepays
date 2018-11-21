@@ -66,10 +66,6 @@ export default {
             payload,
             (success) => {
                 success.cardIndex = payload.cardIndex;
-                console.log("BACHELORSSS");
-                console.log(success.bachelors);
-                // success.bachelors.forEach((industry) => industry.majorId = payload.majorId);
-                console.log(success.bachelors);
                 commit(_majors.FETCH_INDUSTRY_IMAGES,{ industries:success.bachelors,cardIndex:success.cardIndex});
             },
             (error) => commit(_global.ERROR_ALERT,error),

@@ -47,10 +47,7 @@ export default {
     },
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
-        console.log(payload);
         let index = payload.cardIndex;
-        console.log(index);
-        console.log(state.majorCards[index]);
         state.majorCards[index].industries = payload.industries;
 
     },
