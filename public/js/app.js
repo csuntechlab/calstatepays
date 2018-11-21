@@ -52546,9 +52546,14 @@ var render = function() {
                       on: { click: _vm.resetCurrentCard }
                     }),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                      _vm._v("Select a Discipline (Optional)")
-                    ]),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "font-weight-bold",
+                        attrs: { for: "fieldOfStudy" }
+                      },
+                      [_vm._v("Select a Discipline (Optional)")]
+                    ),
                     _vm._v(" "),
                     _c("v-select", {
                       staticClass: "csu-form-input",
@@ -52573,6 +52578,7 @@ var render = function() {
                     _c(
                       "label",
                       {
+                        staticClass: "font-weight-bold",
                         style: [
                           this.submittedOnce && !this.form.majorId
                             ? _vm.errorLabel

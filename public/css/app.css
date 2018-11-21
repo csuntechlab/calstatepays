@@ -19747,6 +19747,13 @@ label {
   position: relative;
 }
 
+/*Targets dropdown menu items*/
+.v-select li > a {
+  white-space: normal !important;
+  word-break: normal !important;
+  border-top: .75px solid #EAEAEA;
+}
+
 .currency {
   position: relative;
 }
