@@ -83,8 +83,7 @@ class IndustryControllerTest extends TestCase
     {
         $input = [
             'major' => 5021,
-            'university' => 'northridge',
-            'degreeLevel' => 1
+            'university' => 'northridge'
         ];
 
         $request = new IndustryFormRequest($input);
@@ -109,7 +108,7 @@ class IndustryControllerTest extends TestCase
         $this->retriever
             ->shouldReceive('getIndustryPopulationByRankWithImages')
             ->once()
-            ->with($request->major, $request->university, $request->degreeLevel)
+            ->with($request->major, $request->university)
             ->andReturn($data);
 
         $response = $this->controller->getIndustryPopulationByRankWithImages($request);
@@ -124,9 +123,9 @@ class IndustryControllerTest extends TestCase
     public function testGetIndustryPopulationByRank()
     {
         // $input = [
-        //     'major' => 5021,
-        //     'university' => 'northridge',
-        //     // 'degreeLevel' => 1
+        //     ' major ' => 5021,
+        //     ' university ' => ' northridge ',
+        //     // ' degreeLevel ' => 1
         //  ];
 
         // $request = new IndustryFormRequest($input);
@@ -171,7 +170,7 @@ class IndustryControllerTest extends TestCase
         // ]);
 
         // $this->retriever
-        //     ->shouldReceive('getIndustryPopulationByRank')
+        //     ->shouldReceive(' getIndustryPopulationByRank ')
         //     ->once()
         //     ->with($request->hegis_code, $request->universityName)
         //     ->andReturn($data);
@@ -191,22 +190,22 @@ class IndustryControllerTest extends TestCase
 
         $response->assertJsonStructure([
 
-            "someCollege" =>[
-                    0 => [
-                        'title',
-                        'percentage',
-                        'rank',
-                        'image'
-                    ]
-                ],
+            "someCollege" => [
+                0 => [
+                    'title',
+                    'percentage',
+                    'rank',
+                    'image'
+                ]
+            ],
             "post_bacc" => [
-                    0 => [
-                        'title',
-                        'percentage',
-                        'rank',
-                        'image'
-                    ]
-                ],
+                0 => [
+                    'title',
+                    'percentage',
+                    'rank',
+                    'image'
+                ]
+            ],
             "bachelors" => [
                 0 => [
                     'title',
@@ -225,42 +224,42 @@ class IndustryControllerTest extends TestCase
      * method : IndustryController@testGetIndustryPopulationByRank
      * test assert status
      */
-     public function testReturn200GetIndustryPopulationByRank()
-     {
-        //  $response = $this->json('GET', '/api/industry/5021/northridge');
+    public function testReturn200GetIndustryPopulationByRank()
+    {
+        //  $response = $this->json(' GET ', ' / api / industry / 5021 / northridge ');
         //  $response->assertJsonStructure([
         //      "someCollege" => [
         //             "0" => [
-        //             'title',
-        //             'percentage',
-        //             'rank'
+        //             ' title ',
+        //             ' percentage ',
+        //             ' rank '
         //             ]
         //          ],
         //     "bachelors" => [
         //             "0" =>[
-        //                 'title',
-        //                 'percentage',
-        //                 'rank'
+        //                 ' title ',
+        //                 ' percentage ',
+        //                 ' rank '
         //             ]
         //         ],
         //     "post_bacc" => [
         //             "0" =>[
-        //                 'title',
-        //                 'percentage',
-        //                 'rank'
+        //                 ' title ',
+        //                 ' percentage ',
+        //                 ' rank '
         //             ]
         //         ]
          
         //  ]);
         //  $response->assertStatus(200);
-     }
+    }
 
-     /**
-      *  Aggregate tests
-      *  industry/images/5021/all
-      */
-      public function test_return_Aggregate_getIndustryPopulationByRankWithImages()
-      {
+    /**
+     *  Aggregate tests
+     *  industry/images/5021/all
+     */
+    public function test_return_Aggregate_getIndustryPopulationByRankWithImages()
+    {
         $input = [
             'hegis' => 5021,
             'university' => 'all',
@@ -281,7 +280,7 @@ class IndustryControllerTest extends TestCase
         $this->retriever
             ->shouldReceive('getIndustryPopulationByRankWithImages')
             ->once()
-            ->with($request->hegis, $request->university, $request->degreeLevel)
+            ->with($request->hegis, $request->university)
             ->andReturn($firstResult);
 
         $response = $this->controller->getIndustryPopulationByRankWithImages($request);
@@ -296,9 +295,9 @@ class IndustryControllerTest extends TestCase
     {
 
         // $input = [
-        //     'hegis' => 5021,
-        //     'university' =>'all',
-        //     // 'degreeLevel' => 1,
+        //     ' hegis ' => 5021,
+        //     ' university ' =>' all ',
+        //     // ' degreeLevel ' => 1,
         //   ];
 
         // $request = new IndustryFormRequest($input);
@@ -315,7 +314,7 @@ class IndustryControllerTest extends TestCase
         //     ]);
         
         // $this->retriever
-        //         ->shouldReceive('getIndustryPopulationByRank')
+        //         ->shouldReceive(' getIndustryPopulationByRank ')
         //         ->once()
         //         ->with($request->hegis,$request->university)
         //         ->andReturn($firstResult);
@@ -341,51 +340,51 @@ class IndustryControllerTest extends TestCase
 
     //   public function test_IndustryTestController(){
 
-        //   $titles = $this->json('GET','api/industry/naics-titles');
+        //   $titles = $this->json(' GET ',' api / industry / naics - titles ');
         //   $titles = $titles->getOriginalContent();
-        //   $this->assertArrayHasKey('naics_code', $titles[0]);
-        //   $this->assertArrayHasKey('title', $titles[0]);
-        //   $this->assertArrayHasKey('image', $titles[0]);
-        //   $this->assertStringEndsWith('.png', $titles[0]['image']);
+        //   $this->assertArrayHasKey(' naics_code ', $titles[0]);
+        //   $this->assertArrayHasKey(' title ', $titles[0]);
+        //   $this->assertArrayHasKey(' image ', $titles[0]);
+        //   $this->assertStringEndsWith(' . png ', $titles[0][' image ']);
             
         //   /** test the count */
         //   $count = count($titles);
         //   $this->assertEquals(23,$count);
           
         //   /** test the exception */
-        //   $fail = $this->json('GET','api/industry/43244/northridge');
-        //   $code = $fail->original['code'];
-        //   $this->assertFalse($fail->original['success']);
+        //   $fail = $this->json(' GET ',' api / industry / 43244 / northridge ');
+        //   $code = $fail->original[' code '];
+        //   $this->assertFalse($fail->original[' success ']);
         //   $this->assertEquals(409,$code);
 
         //   /** test successful industry call */
-        //   $industry =  $this->json('GET','api/industry/5021/northridge');
+        //   $industry =  $this->json(' GET ',' api / industry / 5021 / northridge ');
         //   $industry->assertStatus(200);
         //   $industry = $industry->getOriginalContent();
 
         //   /** test the industry image call */
-        //   $industryImage = $this->json('GET','api/industry/images/5021/northridge');
+        //   $industryImage = $this->json(' GET ',' api / industry / images / 5021 / northridge ');
         //   $industryImage->assertStatus(200);
         //   $data = $industryImage->getOriginalContent();
 
         //   /** make sure that image data == industry data */
-        //   foreach($data['someCollege'] as $iterate => $industry)
+        //   foreach($data[' someCollege '] as $iterate => $industry)
         //   {
-        //     $this->assertEquals($data['someCollege'][$iterate]['rank'], $industry['rank']);
-        //     $this->assertEquals($data['someCollege'][$iterate]['title'], $industry['title']);
-        //     $this->assertEquals($data['someCollege'][$iterate]['industryWage'], $industry['industryWage']);
+        //     $this->assertEquals($data[' someCollege '][$iterate][' rank '], $industry[' rank ']);
+        //     $this->assertEquals($data[' someCollege '][$iterate][' title '], $industry[' title ']);
+        //     $this->assertEquals($data[' someCollege '][$iterate][' industryWage '], $industry[' industryWage ']);
         //   }
-        //   foreach($data['bachelors'] as $iterate => $industry)
+        //   foreach($data[' bachelors '] as $iterate => $industry)
         //   {
-        //     $this->assertEquals($data['bachelors'][$iterate]['rank'], $industry['rank']);
-        //     $this->assertEquals($data['bachelors'][$iterate]['title'], $industry['title']);
-        //     $this->assertEquals($data['bachelors'][$iterate]['industryWage'], $industry['industryWage']);
+        //     $this->assertEquals($data[' bachelors '][$iterate][' rank '], $industry[' rank ']);
+        //     $this->assertEquals($data[' bachelors '][$iterate][' title '], $industry[' title ']);
+        //     $this->assertEquals($data[' bachelors '][$iterate][' industryWage '], $industry[' industryWage ']);
         //   }          
-        //   foreach($data['post_bacc'] as $iterate => $industry)
+        //   foreach($data[' post_bacc '] as $iterate => $industry)
         //   {
-        //     $this->assertEquals($data['post_bacc'][$iterate]['rank'], $industry['rank']);
-        //     $this->assertEquals($data['post_bacc'][$iterate]['title'], $industry['title']);
-        //     $this->assertEquals($data['post_bacc'][$iterate]['industryWage'], $industry['industryWage']);
+        //     $this->assertEquals($data[' post_bacc '][$iterate][' rank '], $industry[' rank ']);
+        //     $this->assertEquals($data[' post_bacc '][$iterate][' title '], $industry[' title ']);
+        //     $this->assertEquals($data[' post_bacc '][$iterate][' industryWage '], $industry[' industryWage ']);
         //   }
 
         //   /** make a api industry api call with other api calls  */
@@ -395,12 +394,12 @@ class IndustryControllerTest extends TestCase
 
         //   /** test with northridge */
         //   $northridge = $university_call[5];
-        //   $northridge_short_name = $northridge['short_name'];
+        //   $northridge_short_name = $northridge[' short_name '];
 
-          /** get hegis codes */
+    /** get hegis codes */
         //   $northridge_hegis = $this->json("GET","api/major/hegis-codes/university/".$northridge_short_name);
         //   $northridge_hegis = $northridge_hegis->getOriginalContent();
-        //   $northridge_accounting_hegis = $northridge_hegis[0]['hegis_code'];
+        //   $northridge_accounting_hegis = $northridge_hegis[0][' hegis_code '];
 
         //   /** call industry wages, hegis code 5021 is accounting */
         //   /** need to update live data output when we update population percentage */
@@ -424,33 +423,33 @@ class IndustryControllerTest extends TestCase
         //   $northridge_accounting_wages = json_decode($northridge_accounting_wages,true);
         //   $northridge_accounting_images = json_decode($northridge_accounting_images,true);
   
-        //   foreach($northridge_accounting_wages['bachelors'] as $iterate => $northridge_accounting_images)
+        //   foreach($northridge_accounting_wages[' bachelors '] as $iterate => $northridge_accounting_images)
         //   {
-        //       $this->assertEquals($northridge_accounting_wages['bachelors'][$iterate]['rank'], $northridge_accounting_images['rank']);
-        //       $this->assertEquals($northridge_accounting_wages['bachelors'][$iterate]['title'], $northridge_accounting_images['title']);
-        //       $this->assertEquals($northridge_accounting_wages['bachelors'][$iterate]['industryWage'], $northridge_accounting_images['industryWage']);
+        //       $this->assertEquals($northridge_accounting_wages[' bachelors '][$iterate][' rank '], $northridge_accounting_images[' rank ']);
+        //       $this->assertEquals($northridge_accounting_wages[' bachelors '][$iterate][' title '], $northridge_accounting_images[' title ']);
+        //       $this->assertEquals($northridge_accounting_wages[' bachelors '][$iterate][' industryWage '], $northridge_accounting_images[' industryWage ']);
         //   }
-        //   foreach($northridge_accounting_wages['someCollege'] as $iterate => $northridge_accounting_images)
+        //   foreach($northridge_accounting_wages[' someCollege '] as $iterate => $northridge_accounting_images)
         //   {
-        //       $this->assertEquals($northridge_accounting_wages['someCollege'][$iterate]['rank'], $northridge_accounting_images['rank']);
-        //       $this->assertEquals($northridge_accounting_wages['someCollege'][$iterate]['title'], $northridge_accounting_images['title']);
-        //       $this->assertEquals($northridge_accounting_wages['someCollege'][$iterate]['industryWage'], $northridge_accounting_images['industryWage']);
+        //       $this->assertEquals($northridge_accounting_wages[' someCollege '][$iterate][' rank '], $northridge_accounting_images[' rank ']);
+        //       $this->assertEquals($northridge_accounting_wages[' someCollege '][$iterate][' title '], $northridge_accounting_images[' title ']);
+        //       $this->assertEquals($northridge_accounting_wages[' someCollege '][$iterate][' industryWage '], $northridge_accounting_images[' industryWage ']);
         //   }
-        //   foreach($northridge_accounting_wages['post_bacc'] as $iterate => $northridge_accounting_images)
+        //   foreach($northridge_accounting_wages[' post_bacc '] as $iterate => $northridge_accounting_images)
         //   {
-        //       $this->assertEquals($northridge_accounting_wages['post_bacc'][$iterate]['rank'], $northridge_accounting_images['rank']);
-        //       $this->assertEquals($northridge_accounting_wages['post_bacc'][$iterate]['title'], $northridge_accounting_images['title']);
-        //       $this->assertEquals($northridge_accounting_wages['post_bacc'][$iterate]['industryWage'], $northridge_accounting_images['industryWage']);
+        //       $this->assertEquals($northridge_accounting_wages[' post_bacc '][$iterate][' rank '], $northridge_accounting_images[' rank ']);
+        //       $this->assertEquals($northridge_accounting_wages[' post_bacc '][$iterate][' title '], $northridge_accounting_images[' title ']);
+        //       $this->assertEquals($northridge_accounting_wages[' post_bacc '][$iterate][' industryWage '], $northridge_accounting_images[' industryWage ']);
         //   }
 
         //   /** aggregate testing with 8351 Kinseology major  */
         //   $aggregate = $university_call[7];
-        //   $aggregate_short_name = $northridge['short_name'];
+        //   $aggregate_short_name = $northridge[' short_name '];
 
         //   /** get hegis codes */
         //   $aggregate_hegis = $this->json("GET","api/major/hegis-codes/university/".$aggregate_short_name);
         //   $aggregate_hegis = $aggregate_hegis->getOriginalContent();
-        //   $aggregate_kinseology_hegis = $aggregate_hegis[48]['hegis_code'];
+        //   $aggregate_kinseology_hegis = $aggregate_hegis[48][' hegis_code '];
 
         //   /** call the industry api with aggregate short name and 8351 */
         //   $aggregate_kinseology_wages = $this->json("GET","api/industry/".$aggregate_kinseology_hegis."/".$aggregate_short_name);
@@ -472,23 +471,23 @@ class IndustryControllerTest extends TestCase
         //   $aggregate_kinseology_wages = json_decode($aggregate_kinseology_wages,true);
         //   $aggregate_kinseology_images = json_decode($aggregate_kinseology_images,true);
   
-        //   foreach($aggregate_kinseology_wages['someCollege'] as $iterate => $aggregate_kinseology_images)
+        //   foreach($aggregate_kinseology_wages[' someCollege '] as $iterate => $aggregate_kinseology_images)
         //   {
-        //       $this->assertEquals($aggregate_kinseology_wages['someCollege'][$iterate]['rank'], $aggregate_kinseology_images['rank']);
-        //       $this->assertEquals($aggregate_kinseology_wages['someCollege'][$iterate]['title'], $aggregate_kinseology_images['title']);
-        //       $this->assertEquals($aggregate_kinseology_wages['someCollege'][$iterate]['industryWage'], $aggregate_kinseology_images['industryWage']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' someCollege '][$iterate][' rank '], $aggregate_kinseology_images[' rank ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' someCollege '][$iterate][' title '], $aggregate_kinseology_images[' title ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' someCollege '][$iterate][' industryWage '], $aggregate_kinseology_images[' industryWage ']);
         //   }
-        //   foreach($aggregate_kinseology_wages['bachelors'] as $iterate => $aggregate_kinseology_images)
+        //   foreach($aggregate_kinseology_wages[' bachelors '] as $iterate => $aggregate_kinseology_images)
         //   {
-        //       $this->assertEquals($aggregate_kinseology_wages['bachelors'][$iterate]['rank'], $aggregate_kinseology_images['rank']);
-        //       $this->assertEquals($aggregate_kinseology_wages['bachelors'][$iterate]['title'], $aggregate_kinseology_images['title']);
-        //       $this->assertEquals($aggregate_kinseology_wages['bachelors'][$iterate]['industryWage'], $aggregate_kinseology_images['industryWage']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' bachelors '][$iterate][' rank '], $aggregate_kinseology_images[' rank ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' bachelors '][$iterate][' title '], $aggregate_kinseology_images[' title ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' bachelors '][$iterate][' industryWage '], $aggregate_kinseology_images[' industryWage ']);
         //   }
-        //   foreach($aggregate_kinseology_wages['post_bacc'] as $iterate => $aggregate_kinseology_images)
+        //   foreach($aggregate_kinseology_wages[' post_bacc '] as $iterate => $aggregate_kinseology_images)
         //   {
-        //       $this->assertEquals($aggregate_kinseology_wages['post_bacc'][$iterate]['rank'], $aggregate_kinseology_images['rank']);
-        //       $this->assertEquals($aggregate_kinseology_wages['post_bacc'][$iterate]['title'], $aggregate_kinseology_images['title']);
-        //       $this->assertEquals($aggregate_kinseology_wages['post_bacc'][$iterate]['industryWage'], $aggregate_kinseology_images['industryWage']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' post_bacc '][$iterate][' rank '], $aggregate_kinseology_images[' rank ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' post_bacc '][$iterate][' title '], $aggregate_kinseology_images[' title ']);
+        //       $this->assertEquals($aggregate_kinseology_wages[' post_bacc '][$iterate][' industryWage '], $aggregate_kinseology_images[' industryWage']);
         //   }
           
 
