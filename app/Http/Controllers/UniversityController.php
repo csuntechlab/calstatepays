@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\UniversityContract;
+use Illuminate\Support\Facades\Cache;
 
 class UniversityController extends Controller
 {
@@ -16,6 +17,14 @@ class UniversityController extends Controller
     
     public function getAllUniversities() 
     {
-        return $this->universityRetriever->getAllUniversities();
+        $key = "universitysForCalStatePays";
+        if(Cache::has($key)){
+            $data = Cache::get($key);
+            return json_decode($data);
+        }
+        $data = $this->universityRetriever->getAllUniversities();
+        $value = json_encode($data);
+        Cache::forever($key,$value);
+        return $data;
     }
 }
