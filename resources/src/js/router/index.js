@@ -27,7 +27,7 @@ const router = new VueRouter({
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq},
 		{ path: '/research', component: research},
-		{ path: '/tableauHolder', name:'all',component: tableauHolder , props:true}
+		{ path: '/tableau', name:'tableau',component: tableauHolder , props:true}
 	]
 });
 

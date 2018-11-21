@@ -36,7 +36,6 @@ const vm = new Vue({
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
-        this.$store.dispatch('setTableauValue',{university:'all',path_id:1})
     },
 
     computed: {

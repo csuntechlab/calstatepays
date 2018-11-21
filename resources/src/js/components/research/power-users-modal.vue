@@ -1,11 +1,11 @@
 <template>
     <v-dialog width="800" v-model="dialog" >
-      <v-card  >
+      <v-card>
         <v-card-title
           class="headline grey lighten-2  row  no-gutters"
           primary-title
         >
-          <h1 class="col-11"> Market Outcomes for  {{universityName}} </h1>
+          <h1 v-if="university" class="col-11"> Market Outcomes for  {{university.name}} </h1>
           <i role="button"   @click="closeModal();" class="fa fa-times text-center col-1 "></i>
         </v-card-title>
         <v-card-text>
@@ -13,9 +13,7 @@
                 <i class="col-3 fa fa-university fa-5x" ></i> 
                <div class="col-9">
                     <span class="d-block">Earnings by Major + Industries of Employment</span>
-                    <router-link  :to="{name:'all' ,params:{tableauValue:tableauValue.byMajor}}">
-                        <button @click="apple()" type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                        <button @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
             <v-divider></v-divider>
@@ -26,9 +24,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Age at Entry + Industries of Employment</span>
-                    <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byAge}}">
-                    <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <button @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>            
             <v-divider></v-divider>
@@ -39,9 +35,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Race + Industries of Employment</span>
-                    <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byRace}}">
-                        <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                        <button @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
             <v-divider></v-divider>
@@ -52,9 +46,7 @@
                 </div>               
                 <div class="col-9">
                     <span class="d-block">Earnings by Gender + Industries of Employment</span>
-                    <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byGender}}">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                        <button @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div >
             <v-divider></v-divider>
@@ -65,9 +57,7 @@
                 </div>
                 <div class="col-9">
                     <span class="d-block">Earnings by Pell Status at Entry + Industries of Employment</span>
-                    <router-link :to="{name:'all' ,params:{tableauValue:tableauValue.byPellStatus}}">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                        <button @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
         </v-card-text>
@@ -76,9 +66,9 @@
     </v-dialog>
 </template>
 <script>
-import {mapGetters} from 'vuex';
+import {mapGetters,mapActions} from 'vuex';
 export default {
-    props:['showModal','selectedUniversity','universityName'],
+    props:['showModal','university'],
     name: 'power-users-modal',
      data(){
         return{
@@ -86,15 +76,19 @@ export default {
             tabl:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         }
     },methods:{
+        ...mapActions([
+            'setTableauValue'
+        ]),
         closeModal:function(){
             this.$emit('closeModal')
         },
-        apple(){
-            console.log(22222)
+        chooseTableauCategory(university,path_id,callback){
+            this.$store.dispatch('setTableauValue', {university:university,path_id:path_id});
         }
     },computed:{
         ...mapGetters([
-            "universityById"
+            "universityById",
+            "tableauValue"
         ]),
         dialog:{
             get:function(){
@@ -103,35 +97,7 @@ export default {
             set:function(){
                 this.$emit('closeModal',false)
             }
-        },
-        tableauValue(){
-            if(this.selectedUniversity == 'csu7'){
-                return {
-                    byMajor:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData',
-                    byAge:'',
-                    byRace:'CSU7byRaceNOV142018/Story1',
-                    byGender:'CSU7byGenderNOV132018/CSU7byGender',
-                    byPellStatus:''
-            }
-            }
-            else if(this.selectedUniversity =='northridge'){
-                return {
-                    byMajor:'CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor',
-                    byAge:'',
-                    byRace:'',
-                    byGender:'',
-                    byPellStatus:''
-                }
-            }else{
-                return {
-                    byMajor:'',
-                    byAge:'',
-                    byRace:'',
-                    byGender:'',
-                    byPellStatus:''
-                }
-            }
-        }   
+        },   
     }
     
 }
