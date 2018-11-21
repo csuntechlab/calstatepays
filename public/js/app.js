@@ -46205,7 +46205,7 @@ function h(tag, key, args) {
     majorById: function majorById(state) {
         return function (id) {
             var index = state.majors.findIndex(function (major) {
-                return major.majorId === id;
+                return major.majorId === Number(id);
             });
             return state.majors[index];
         };
@@ -48665,7 +48665,7 @@ var render = function() {
             "div",
             { staticClass: "CSUDataImgBanner__campusInfoWrapper col-12" },
             [
-              _c("h1", { staticClass: "h2 CSUDataImgBanner__campusTitle" }, [
+              _c("h1", { staticClass: "CSUDataImgBanner__campusTitle" }, [
                 _vm._v(" " + _vm._s(_vm.getCampusName))
               ]),
               _vm._v(" "),
@@ -48677,7 +48677,8 @@ var render = function() {
                     _c(
                       "span",
                       {
-                        staticClass: "CSUDataImgBanner__changeCampus",
+                        staticClass:
+                          "CSUDataImgBanner__changeCampus font-weight-bold",
                         attrs: { slot: "change button", href: "#" },
                         slot: "change button"
                       },
@@ -72855,7 +72856,7 @@ var render = function() {
         _c(
           "h2",
           {
-            staticClass: "h4 CSUDataImgBanner__dataTitle",
+            staticClass: "CSUDataImgBanner__dataTitle",
             attrs: { slot: "title" },
             slot: "title"
           },
@@ -73632,9 +73633,14 @@ var render = function() {
                     "div",
                     { staticClass: "form-group" },
                     [
-                      _c("label", { attrs: { for: "fieldOfStudy" } }, [
-                        _vm._v("Select a Discipline (Optional)")
-                      ]),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "font-weight-bold",
+                          attrs: { for: "fieldOfStudy" }
+                        },
+                        [_vm._v("Select a Discipline (Optional)")]
+                      ),
                       _vm._v(" "),
                       _c("v-select", {
                         staticClass: "csu-form-input",
@@ -73664,6 +73670,7 @@ var render = function() {
                       _c(
                         "label",
                         {
+                          staticClass: "font-weight-bold",
                           style: [
                             !this.form.majorId && this.submittedOnce
                               ? _vm.errorLabel
@@ -74363,7 +74370,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "banner faq-banner align-items-center" }, [
-      _c("h1", { staticClass: "pt-3 home__heading faq-header" }, [
+      _c("h1", { staticClass: "home__heading faq-header" }, [
         _vm._v("Frequently Asked Questions")
       ])
     ])

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<csu-data-img-banner>
-			<h2 class="h4 CSUDataImgBanner__dataTitle" slot="title">
+			<h2 class="CSUDataImgBanner__dataTitle" slot="title">
 				<span>Major Earnings Over Time</span>
 			</h2>
 			<p class="CSUDataImgBanner__dataCopy" slot="copy">

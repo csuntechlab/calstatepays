@@ -19236,8 +19236,9 @@ figcaption {
 }
 
 .CSUDataImgBanner__campusTitle {
-  font-weight: bold;
-  font-size: 2.4rem;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.4;
 }
 
 .CSUDataImgBanner__changeCampus {
@@ -19255,14 +19256,15 @@ figcaption {
 
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
 .CSUDataImgBanner__dataCopy {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.1rem;
-  line-height: 1.75rem;
+  line-height: 1.6rem;
 }
 
 .landing-page-carousel {
@@ -19709,7 +19711,7 @@ label {
   margin-bottom: 0px;
   font-family: "Open Sans";
   font-weight: regular;
-  color: #363636;
+  color: #565656;
 }
 
 .label--radio {
@@ -20409,7 +20411,7 @@ input[type="button"]:focus {
 }
 
 .industry-title {
-  color: grey;
+  color: #595959;
   text-align: center;
   font-weight: 600;
 }

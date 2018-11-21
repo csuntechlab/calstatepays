@@ -8,7 +8,7 @@
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
 					<div v-if="!industryFormWasSubmitted===true" class="form-group">
-						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
 							:options="fieldOfStudies"
@@ -18,7 +18,7 @@
 						</v-select>
 					</div>
 					<div v-if="!industryFormWasSubmitted" class="form-group">
-						<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
+						<label class="font-weight-bold" for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
 						Select a Major
 						</label>
 						<v-select

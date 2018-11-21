@@ -142,8 +142,9 @@
 	}
 
 	&__campusTitle {
-		font-weight: bold;
-		font-size: 2.4rem;;
+		font-weight: 600;
+		font-size: 2.1rem;
+		line-height: 1.4;
 	}
 
 	&__changeCampus {
@@ -163,16 +164,17 @@
 		@extend .mb-3;
 		span {
 			line-height: 1.5;
-			font-size: 2.3rem;
+			font-size: 1.8rem;
+			font-weight: 700;
 			border-bottom: 0.2rem $green solid;
 		}
 	}
 
 	&__dataCopy {
 		@extend .mb-0;
-		font-weight: normal;
+		font-weight: 500;
 		font-size: 1.1rem;
-		line-height: 1.75rem;
+		line-height: 1.6rem;
 	}
 }
 
