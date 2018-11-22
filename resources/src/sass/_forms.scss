@@ -26,7 +26,13 @@ label {
   border: .13rem #b1b1b1 solid;
   border-radius: 1rem;
   padding: .3rem;
-  margin: .5rem 0;
+  margin: .5rem 0; 
+}
+
+// Customizes open dropdown styling
+.dropdown.v-select.csu-form-input.single.open {
+ border-radius: 1rem 1rem 0 0;
+//  border-bottom: transparent;
 }
 
 .csu-form-input {
@@ -51,7 +57,6 @@ label {
   white-space: normal !important;
   word-break: normal !important;
   border-top: .75px solid #EAEAEA;
-
 }
 
 .currency {

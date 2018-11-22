@@ -19239,6 +19239,7 @@ figcaption {
   font-weight: 600;
   font-size: 2.1rem;
   line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .CSUDataImgBanner__changeCampus {
@@ -19733,6 +19734,10 @@ label {
   margin: .5rem 0;
 }
 
+.dropdown.v-select.csu-form-input.single.open {
+  border-radius: 1rem 1rem 0 0;
+}
+
 .csu-form-input .dropdown-toggle {
   border: none !important;
   min-height: 2rem;
@@ -19916,7 +19921,7 @@ textarea {
   font-family: "Open Sans";
   font-size: 0.9rem;
   height: 45px;
-  font-weight: 300;
+  font-weight: 700 !important;
 }
 
 .btn:focus {
@@ -20193,6 +20198,16 @@ input[type="button"]:focus {
   padding: .5rem;
 }
 
+button.btn-change-campus {
+  background-color: rgba(204, 11, 43, 0.829);
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+button.btn-change-campus:hover {
+  background-color: #cc0b2b;
+}
+
 .echarts {
   min-height: 80%;
   min-width: 100%;
@@ -20326,13 +20341,15 @@ input[type="button"]:focus {
 }
 
 .legend-mobile {
-  font-size: 10px;
+  font-size: .95rem;
   float: left;
   margin-left: 10px;
 }
 
 .legend-mobile p {
-  margin-left: 15px !important;
+  position: relative;
+  top: -4px;
+  left: -4px;
 }
 
 .legend-mobile .majors-header {
@@ -20351,6 +20368,7 @@ input[type="button"]:focus {
           transform: translate(-50%);
 }
 
+/*Legend color key for majors page*/
 .legend-oxford-25 {
   background-color: #7E969A;
 }
@@ -20393,7 +20411,7 @@ input[type="button"]:focus {
 
 .mobile-legend {
   float: left;
-  font-size: 10px;
+  font-size: 1rem;
   margin-left: 10px;
 }
 

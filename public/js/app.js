@@ -46205,7 +46205,7 @@ function h(tag, key, args) {
     majorById: function majorById(state) {
         return function (id) {
             var index = state.majors.findIndex(function (major) {
-                return major.majorId === Number(id);
+                return major.majorId === id;
             });
             return state.majors[index];
         };
@@ -48528,6 +48528,7 @@ var render = function() {
         _c(
           "button",
           {
+            staticClass: "btn-change-campus",
             attrs: { role: "button" },
             on: {
               click: function($event) {
@@ -71792,8 +71793,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['educationLevel'],
@@ -71818,17 +71817,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "pt-md-5" }, [
-    _vm.educationLevel == "allDegrees"
-      ? _c("div", [_vm._m(0)])
-      : _vm.educationLevel == "someCollege"
-        ? _c("div", [_vm._m(1)])
-        : _vm.educationLevel == "bachelors"
-          ? _c("div", [_vm._m(2)])
-          : _vm.educationLevel == "postBacc"
-            ? _c("div", [_vm._m(3)])
-            : _vm._e()
-  ])
+  return _vm.educationLevel == "allDegrees"
+    ? _c("div", [_vm._m(0)])
+    : _vm.educationLevel == "someCollege"
+      ? _c("div", [_vm._m(1)])
+      : _vm.educationLevel == "bachelors"
+        ? _c("div", [_vm._m(2)])
+        : _vm.educationLevel == "postBacc"
+          ? _c("div", [_vm._m(3)])
+          : _vm._e()
 }
 var staticRenderFns = [
   function() {
