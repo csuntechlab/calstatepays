@@ -93,6 +93,7 @@ export default {
         state.majorCards = [
                 {
                     formWasSubmitted: false,
+                    submittedOnce: false,
                     majorsByField: [],
                     industries: [],
                     majorData: [],

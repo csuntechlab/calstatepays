@@ -109,18 +109,25 @@ export default {
 			"resetIndustryCard",
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",
-			"toggleIndustryEducationLevel"
+			"toggleIndustryEducationLevel",
+			"setIndustryMajor"
 			]),
 		submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
-				this.fetchIndustries(this.form);
-				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+                this.fetchIndustries({form: this.form, school: this.selectedUniversity});
+                this.$store.dispatch("setIndustryMajor", this.selected);
+                this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+                this.selected = null;
+                this.submittedOnce = false;
+                this.form.majorId = null;
+				this.form.fieldOfStudyId = null;
 			}
 		},
 		resetIndustries() {
+			this.submittedOnce = false;
 			this.resetIndustryCard();
 		},
 		toggleIndustryEducationLevel(educationInput) {
@@ -146,7 +153,7 @@ export default {
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
 			
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
 	},
