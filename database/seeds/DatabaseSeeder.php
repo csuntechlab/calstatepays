@@ -75,12 +75,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Pomona_Major_Path_Wages_TableSeeder::class);
         $this->call(Pomona_University_Majors_TableSeeder::class);
 
-        $this->call(Master_FRE_Page_Data_TableSeeder::class);
+        // $this->call(Master_FRE_Page_Data_TableSeeder::class);
 
-        $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
-        $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
-        $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
-        $this->call(Majors_Different_Hegis_Same_Major_Table_Seeder::class);
+        // $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
+        // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
+        // $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
+        // $this->call(Majors_Different_Hegis_Same_Major_Table_Seeder::class);
 
         /** IFrame seeders */
         $this->call(Power_User_Data_Aggregate_TableSeeder::class);
