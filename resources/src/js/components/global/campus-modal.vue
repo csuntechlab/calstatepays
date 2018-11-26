@@ -7,12 +7,12 @@
         <v-dialog v-model="showModal" persistent aria-modal="true">
             <v-card  class=" text-xs-center black--text" v-if="universities[0]">
                 <v-card-title class="headline grey lighten-2 ">
-                    Choose Your Campus
+                    Please make your campus selection
                 </v-card-title>
                 <v-card-text class="campus-modal">
                     <div class="row" >
                         <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                            <figure v-if="universities[index].opt_in === 1"  @click="changeCampus(universities[index].short_name);">
+                            <figure v-if="universities[index].opt_in === '1'"  @click="changeCampus(universities[index].short_name);">
                                 <img :src= item.url role="button" class="btn opted-in">   
                                 <figcaption>{{item.name}}</figcaption>
                             </figure>
