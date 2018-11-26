@@ -10,13 +10,13 @@
 					<div class="form-group">
 						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
 						title="Reset"></i>
-						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select label="discipline" :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
 						class="csu-form-input">
 						</v-select>
 					</div>
 					<div class="form-group">
-						<label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+						<label class="font-weight-bold" for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
 							Select a Major</label>
 						<v-select label="major" v-if="this.form.fieldOfStudyId == null" v-model="selected" :options="majors" @input="updateSelect('majorId', 'majorId', $event)"
 						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">

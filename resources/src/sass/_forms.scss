@@ -6,7 +6,7 @@ label {
   margin-bottom: 0px;
   font-family: $font-brand;
   font-weight: regular;
-  color: $darker-gray;
+  color: #565656;
 }
 .label--radio{
   color: $gray;
@@ -21,8 +21,18 @@ label {
   }
 }
 
+/*Edits form field styling*/
 %form-input-base {
-  border-bottom: .2rem $gray solid;
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0; 
+}
+
+// Customizes open dropdown styling
+.dropdown.v-select.csu-form-input.single.open {
+ border-radius: 1rem 1rem 0 0;
+//  border-bottom: transparent;
 }
 
 .csu-form-input {
@@ -42,6 +52,13 @@ label {
   }
 }
 
+/*Targets dropdown menu items*/
+.v-select li>a {
+  white-space: normal !important;
+  word-break: normal !important;
+  border-top: .75px solid #EAEAEA;
+}
+
 .currency {
   position: relative;
 
@@ -58,6 +75,7 @@ label {
     color: #fff;
   }
 }
+
 
 select,
 textarea,
