@@ -9,12 +9,16 @@
             <p class="footer__link text-white text-right"><strong>California State University</strong></p>
             <a href="#" class="footer__link text-white pull-right">Contact Us</a>
         </div>
-        <div class="footer-mobile-positioning"/>
+        <div v-if="!routeIsHome" class="footer-mobile-positioning"/>
     </footer>
 </template>
 <script>
 export default {
-  
+  computed:{
+      routeIsHome(){
+          return this.$route.path == '/'
+      }
+  }
 }
 </script>
 

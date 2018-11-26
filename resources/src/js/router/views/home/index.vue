@@ -1,7 +1,7 @@
-<template>
-	<div>
-		<!-- <landing-page-carousel class="landing-page-carousel" :url='this.url'/> -->
-		<div class="bg mh-90 pt-5">
+ <template>
+	 <div>
+		 
+		<!-- <div class="bg mh-90 pt-5">
 			<div class="p-0 text-center pt-9">
 				<h1 class="m-4 home__heading">Discover Your Earnings After College</h1>
 				<div class="row py-2 fa-wrapper">
@@ -97,8 +97,8 @@
 		</div>
 		<div id="video-section" class="row">
 			<div class="video-placeholder"></div>
-		</div>
-	</div>
+		</div>-->
+	</div> 
 </template>
 <script>
 import landingPageCarousel from "../../../components/global/landing-page-carousel";
