@@ -7,5 +7,5 @@ export default {
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
     industryEducationLevel: "bachelors",
-    industryMajor: null
+    industryMajor: null,
 }
