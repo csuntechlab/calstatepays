@@ -43,7 +43,7 @@
 						</v-select>
 					</div>
 					<div v-if="!industryFormWasSubmitted" class="form-group row">
-						<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+						<button id="submit-btn" type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 				</fieldset>
 			</form>
@@ -53,7 +53,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
 					title="Reset"></i>
-					<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'post_bacc', 'fa fa-circle-thin':industryEducationLevel != 'post_bacc'}" ></i>
 						Post Bacc

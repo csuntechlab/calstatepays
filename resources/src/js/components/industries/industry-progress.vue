@@ -1,52 +1,62 @@
 <template>
     <div>
-        <div class="row IndustryLegend">
-            <div v-if="industryMajor !== null" class="col-12">
-                <h3>{{industryMajor}}</h3>
-            </div>
-            <div class="col-md-3 offset-md-3 col-sm-6">
-                <div class="IndustryLegend__LegendPercentage"/>PERCENTAGE
-            </div>
-            <div class="col-sm-6">
-                <div class="IndustryLegend__LegendSalary"/>AVERAGE EARNINGS
-            </div>
+        <div v-if="industryMajor == null || (Object.keys(industriesByMajor).length === 0 && industriesByMajor.constructor ==+ Object)">
+            <h3 class="text-center pb-md-3">Please make your selection</h3>
+            <p class="lead pl-md-5 pr-md-5">
+                You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+            which resonates the most with you.
+            </p>
+            <p class="lead pl-md-5 pr-md-5">
+                <span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+                For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
+            </p>
         </div>
-        <div v-for="(industry,index) in industriesByMajor" :key="index">
-            <div v-if="industry.percentage > 0 || industry.industryWage != null" class="row IndustryProgressBarWrapper">
-                <div class="col-sm-3">
-                    <h3 class="IndustryProgressBarWrapper__IndustryTitle py-2">
-                        {{industry.title}}
-                    </h3>
+        <div v-else>
+            <div class="row IndustryLegend">
+                <div v-if="industryMajor !== null" class="col-12">
+                    <h3>{{industryMajor}}</h3>
                 </div>
-                <div class="col-sm-9">
-                    <div class="row py-2">
-                        <div class="col-10">
-                            <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
-                        </div>
-                        <div v-if="industry.percentage > 0 && industry != null" class="col-2 pl-0">
-                            <p class="IndustryProgressBarWrapper__PercentageText">
-                                {{industry.percentage}}%
-                            </p>
-                        </div>
-                        <div v-else-if="industry.percentage > 0" class="col-2 pl-0">
-                            <p class="IndustryProgressBarWrapper__PercentageText">
-                                N/A
-                            </p>
-                        </div>
+                <div v-if="industries.length > 0" class="col-12">
+                    <p>5 Years After Exit</p>
+                </div>
+                <div v-if="industries.length > 0" class="col-sm-12 col-md-4 offset-md-3">
+                    <span class="IndustryLegend__LegendPercentage"></span>PERCENTAGE OF STUDENTS
+                </div>
+                <div v-if="industries.length > 0" class="col-sm-12 col-md-5">
+                    <span class="IndustryLegend__LegendSalary"></span>AVERAGE EARNINGS
+                </div>
+                <p class="lead pl-md-5 pr-md-5" v-if="industries.length === 0">
+                    No data is available for this selected Degree Level.<br>Please see the <router-link to="/faq">FAQ</router-link> section for more information on
+                    how we collected the data.
+                </p>
+            </div>
+            <div v-for="(industry, index) in industries" :key="index">
+                <div class="row IndustryProgressBarWrapper">
+                    <div class="col-sm-3">
+                        <h3 class="IndustryProgressBarWrapper__IndustryTitle py-2">
+                            {{industry.title}}
+                        </h3>
                     </div>
-                    <div class="row py-2">
-                        <div class="col-10">
-                            <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                    <div class="col-sm-9">
+                        <div class="row py-2">
+                            <div class="col-10">
+                                <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                            </div>
+                            <div class="col-2 pl-0">
+                                <p class="IndustryProgressBarWrapper__PercentageText">
+                                    {{industry.percentage}}%
+                                </p>
+                            </div>
                         </div>
-                        <div v-if="industry.industryWage != null" class="col-2 pl-0">
-                            <p class="IndustryProgressBarWrapper__SalaryText">
-                                ${{formatDollars(industry.industryWage)}}
-                            </p>
-                        </div>
-                        <div v-else-if="industry.industryWage === null" class="col-2 pl-0">
-                            <p class="IndustryProgressBarWrapper__SalaryText">
-                                N/A
-                            </p>
+                        <div class="row py-2">
+                            <div class="col-10">
+                                <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                            </div>
+                            <div class="col-2 pl-0">
+                                <p class="IndustryProgressBarWrapper__SalaryText">
+                                    ${{formatDollars(industry.industryWage)}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +80,11 @@ export default {
             "industriesByMajor",
             "industryMajor"
         ]),
-
+        industries: function() {
+            return this.industriesByMajor.filter(function (item) {
+                return item.industryWage != null;
+            });
+        }
 	}
 };
 </script>
