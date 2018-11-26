@@ -36,7 +36,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
-					<p v-show="windowWidth > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'fa fa-circle-thin':this.educationLevel(this.index) != 'allDegrees'}"></i>
