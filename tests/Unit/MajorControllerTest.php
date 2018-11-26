@@ -15,6 +15,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Mockery;
 use App\Http\Requests\MajorFormRequest;
 use Illuminate\Support\Facades\Validator;
+
 class MajorControllerTest extends TestCase
 {
     use DatabaseMigrations;
@@ -125,40 +126,6 @@ class MajorControllerTest extends TestCase
     // }
 
     /**
-     * Api route : api//major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
-     *  i.e : /api/major/5021/northridge/1/FTT/2/3
-     * method : MajorController@getFREData
-     * test uses dependency injection 
-     */
-    public function test_getFreData_Success_Contract_Call()
-    {
-        $universityName = "northridge";
-
-        $request = new \Illuminate\Http\Request();
-        $request->major = 5021;
-        $request->university = $universityName;
-        $request->age_range = 1;
-        $request->education_level = 'FTT';
-        $request->annual_earnings = 2;
-        $request->financial_aid = 3;
-
-        $contractResponse =
-            ["id" => 1927, "student_background_id" => 81, "annual_earnings_id" => 2, "annual_financial_aid_id" => 3, "time_to_degree" => 3, "earnings_5_years" => 45000, "roi" => "4.30"];
-
-        $test =
-            ["majorId" => "5021", "universityId" => "northridge", "fre" => ["timeToDegree" => 3, "earningsYearFive" => 45000, "returnOnInvestment" => "4.30"]];
-
-        $this->retriever
-            ->shouldReceive('getFREData')
-            ->with($request)
-            ->once()->andReturn($contractResponse);
-
-        $response = $this->controller->getFREData($request);
-
-        $this->assertEquals($test, $response);
-    }
-
-    /**
      * Api route : api/major/hegis-codes/{universityName}/{fieldOfStudyId}
      * ie : /api/major/hegis-code/northridge/6
      * method : MajorController@filterByFieldOfStudy
@@ -226,35 +193,8 @@ class MajorControllerTest extends TestCase
     }
 
     /**
-     * Api route : api//major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
-     * method : MajorController@getFREData
-     * FRE - Financial Return On Investment, this function populates FRE page bar charts
-     * Assert json structure 
-     */
-    public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
-    {
-        $major = 5021;
-        $university = 'northridge';
-        $age_range = 1;
-        $education_level = 'FTT';
-        $annual_earnings = 2;
-        $financial_aid = 3;
-        $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
-        $response->assertJsonStructure([
-            'majorId',
-            'universityId',
-            'fre' => [
-                'timeToDegree',
-                'earningsYearFive',
-                'returnOnInvestment'
-            ]
-        ]);
-    }
-
-    /**
      * Api route : api/major/hegis-codes/{universityName}/{fieldOfStudyId}
      * method : MajorController@filterByFieldOfStudy
-     * FRE - Financial Return On Investment, this function populates FRE page bar charts
      * i.e. /api/major/hegis-code/northridge/6
      * Assert json structure 
      */
@@ -266,15 +206,15 @@ class MajorControllerTest extends TestCase
         $response = $this->json('GET', "/api/major/hegis-codes/" . $universityName . "/" . $engineeringId);
 
          //use [0] because front end is handling an array of an array of arrays
-         $response = $response->getOriginalContent();
-         $count = count($response[0]);
-         $this->assertEquals($countOfExpectedDropdowns, $count);
-     }
+        $response = $response->getOriginalContent();
+        $count = count($response[0]);
+        $this->assertEquals($countOfExpectedDropdowns, $count);
+    }
 
-     /**
-      * Aggregate earning test
-      * api is /api/major/5021/all
-      */
+    /**
+     * Aggregate earning test
+     * api is /api/major/5021/all
+     */
     //  public function test_Aggregate_major_earnings()
     //  {
     //      $input = [
@@ -302,12 +242,12 @@ class MajorControllerTest extends TestCase
     //      $this->assertEquals($test,$response);
     //  }
 
-     /**
-      *  major/hegis-codes/university/{university_name}
-      *  major/hegis-codes/university/all
-      */
-     public function test_Aggregate_api_for_earnings()
-     {
+    /**
+     *  major/hegis-codes/university/{university_name}
+     *  major/hegis-codes/university/all
+     */
+    public function test_Aggregate_api_for_earnings()
+    {
         $universityName = 'all';
 
         $structure = [
@@ -325,7 +265,7 @@ class MajorControllerTest extends TestCase
             ->andReturn($structure);
 
         $response = $this->controller->getAllHegisCodesByUniversity($universityName);
-        $this->assertEquals($response,$structure);
+        $this->assertEquals($response, $structure);
 
 
     }

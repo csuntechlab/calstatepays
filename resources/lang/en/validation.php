@@ -103,6 +103,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'university' => [
+            'regex' => 'Please select a university.'
+        ],
+        'major' => [
+            'integer' => 'Please select a valid major.',
+        ],
     ],
 
     /*

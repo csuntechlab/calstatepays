@@ -3,10 +3,10 @@
         <div class="container">
             <div class="row justify-content-start">
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
-                    <h2 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h2>
+                    <h1 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h1>
                     <div data-app>
                         <campus-modal>
-                            <span slot="change button" class="CSUDataImgBanner__changeCampus" href="#">Change Campus</span>
+                            <span slot="change button" class="CSUDataImgBanner__changeCampus font-weight-bold" href="#">Change Campus</span>
                          </campus-modal>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ export default {
             var currentName = "";
             this.universities.forEach(university => {
                 if(selectedUniversity===(university.short_name)) {
-                    currentName = university.university_name;
+                    currentName = university.name;
                 }
             });
             return currentName;

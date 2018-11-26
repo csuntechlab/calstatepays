@@ -61,13 +61,12 @@ export default {
         );
     },
 
-    fetchIndustryImages({ commit, dispatch }, payload) {
+    fetchIndustryImages({ commit }, payload) {
         Major.fetchIndustryImagesAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.cardIndex;
-                success.forEach((industry) => industry['majorId'] = payload.majorId);
-                commit(_majors.FETCH_INDUSTRY_IMAGES, success);
+                commit(_majors.FETCH_INDUSTRY_IMAGES,{ industries:success.bachelors,cardIndex:success.cardIndex});
             },
             (error) => commit(_global.ERROR_ALERT,error),
         );

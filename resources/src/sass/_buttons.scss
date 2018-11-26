@@ -3,7 +3,7 @@
   font-family: $font-brand;
   font-size: 0.9rem;
   height: 45px;
-  font-weight: 300;
+  font-weight: 700 !important;
 }
 
 .btn:focus {
@@ -268,4 +268,14 @@ input[type="button"]:focus {
   font-weight: 300;
   height: auto;
   padding: .5rem;
+}
+
+button.btn-change-campus {
+  background-color: rgba(204, 11, 43, 0.829);
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+button.btn-change-campus:hover  {
+  background-color: rgb(204, 11, 43);
 }

@@ -107,7 +107,7 @@ export default {
                     byMajor:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData',
                     byAge:'',
                     byRace:'',
-                    byGender:'',
+                    byGender:'CSU7byGenderNOV132018/Story1',
                     byPellStatus:''
             }
             }
