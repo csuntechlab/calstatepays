@@ -32,6 +32,9 @@ export default {
 	},
 	toggleIndustryEducationLevel({commit}, payload){
 		commit(_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL, payload);
+	},
+	setIndustryMajor({commit}, payload) {
+		commit(_industries.SET_INDUSTRY_MAJOR, payload);
 	}
 
 };

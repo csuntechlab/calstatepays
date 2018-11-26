@@ -3,26 +3,26 @@
 		<div key="1" v-if="!selectedFormWasSubmitted">
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
 						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
 						title="Reset"></i>
-						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select label="discipline" :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
-						@change="updateSelect('fieldOfStudyId', 'id', $event)" class="csu-form-input">
+						class="csu-form-input">
 						</v-select>
 					</div>
 					<div class="form-group">
-						<label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+						<label class="font-weight-bold" for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
 							Select a Major</label>
 						<v-select label="major" v-if="this.form.fieldOfStudyId == null" v-model="selected" :options="majors" @input="updateSelect('majorId', 'majorId', $event)"
-						@change="updateSelect('majorId', 'majorId', $event)" class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 						<v-select label="major" v-else v-model="selected" :options="selectedMajorsByField" @input="updateSelect('majorId', 'majorId', $event)"
-						@change="updateSelect('majorId', 'majorId', $event)" class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 					</div>
 					<div class="form-group row">
@@ -34,9 +34,9 @@
 		<div key="2" v-else >
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
-					<p v-show="windowWidth > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'fa fa-circle-thin':this.educationLevel(this.index) != 'allDegrees'}"></i>
@@ -79,7 +79,6 @@
 					majorId: null,
 					schoolId: null,
 					formWasSubmitted: false,
-					submittedOnce: false,
 					fieldOfStudyId: null,
 					formEducationLevel: "allDegrees",
 					errors: {
@@ -114,13 +113,18 @@
 			},
 
 			submitForm() {
+				//Validation
 				this.formNotFilled = false;
 				this.submittedOnce = true;
+
 				if (this.checkForm()) {
+					this.selected = null;
+					this.submittedOnce = false;
 					this.toggleFormWasSubmitted(this.form.cardIndex);
 					this.fetchIndustryImages(this.form);
 					this.fetchMajorData(this.form);
 					this.form.majorId = null;
+					this.form.fieldOfStudyId = null;
 					this.isShowing = !this.isShowing;
 				}
 			},
@@ -167,9 +171,6 @@
 			selectedMajorsByField() {
 				this.selected = null;
 				return this.majorsByField(this.index);
-			},
-			removeMajorsByField() {
-				return this.majorsByField(null);
 			},
 			selectedFormWasSubmitted() {
 				return this.formWasSubmitted(this.index);

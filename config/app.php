@@ -189,6 +189,7 @@ return [
         App\Providers\IndustryServiceProvider::class,
         App\Providers\MajorServiceProvider::class,
         App\Providers\UniversityServiceProvider::class,
+        App\Providers\PowerUsersServiceProvider::class,
 
     ],
 

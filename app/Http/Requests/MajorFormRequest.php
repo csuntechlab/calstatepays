@@ -12,6 +12,8 @@ class MajorFormRequest extends FormRequest
      *
      * @return bool
      */
+    public $validator = null;
+
     public function authorize()
     {
         return true;
@@ -26,7 +28,7 @@ class MajorFormRequest extends FormRequest
     {
         return [
             'major' => 'required|integer',
-            'university' => 'required|string',
+            'university' => 'required|regex:/^[a-z_A-Z]+$/u',
         ];
     }
 

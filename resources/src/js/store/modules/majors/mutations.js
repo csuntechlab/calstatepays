@@ -48,7 +48,8 @@ export default {
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].industries = payload;
+        state.majorCards[index].industries = payload.industries;
+
     },
 
     [_majors.TOGGLE_EDUCATION_LEVEL](state, payload) {
@@ -92,6 +93,7 @@ export default {
         state.majorCards = [
                 {
                     formWasSubmitted: false,
+                    submittedOnce: false,
                     majorsByField: [],
                     industries: [],
                     majorData: [],

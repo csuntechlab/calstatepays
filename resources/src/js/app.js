@@ -12,11 +12,14 @@ import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
 import vSelect from 'vue-select';
+import VueYoutube from 'vue-youtube'
+
 
 Vue.use(Vuetify, {
     iconfont: 'fa4'
 });
 Vue.use(SocialSharing);
+Vue.use(VueYoutube);
 
 import App from './App.vue';
 import { mapGetters } from 'vuex';

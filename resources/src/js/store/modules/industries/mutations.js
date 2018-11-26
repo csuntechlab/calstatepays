@@ -16,6 +16,8 @@ export default {
 	[_industries.RESET_INDUSTRY_STATE](state) {
 		state.industries = [];
 		state.industryMajorsByField = [];
+		state.industryFormWasSubmitted = false;
+		state.industryFormWasSubmittedOnce = false;
 	},
 	[_industries.RESET_INDUSTRY_CARD](state) {
 		if(state.industryFormWasSubmitted) {
@@ -32,5 +34,8 @@ export default {
 	[_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL](state,payload) {
 		state.industryEducationLevel = payload;
 		state.industries = state.allLevelIndustries[payload];
+	},
+	[_industries.SET_INDUSTRY_MAJOR](state, payload) {
+		state.industryMajor = payload.major;
 	}
 };
