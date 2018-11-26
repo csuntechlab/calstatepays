@@ -47161,7 +47161,7 @@ var render = function() {
                             "div",
                             { key: index, staticClass: "col-12 col-sm" },
                             [
-                              _vm.universities[index].opt_in === "1"
+                              _vm.universities[index].opt_in === 1
                                 ? _c(
                                     "figure",
                                     {
