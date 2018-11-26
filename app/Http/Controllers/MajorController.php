@@ -158,7 +158,7 @@ class MajorController extends Controller
         $data = array_collapse($data);
         sort($data);
 
-        $value = json_encode($data);
+        $value = json_encode([$data]);
 
         Cache::forever($key,$value);
         return [$data];
