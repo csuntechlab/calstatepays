@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="banner faq-banner align-items-center">
-			<h1 class="pt-3 home__heading faq-header">Frequently Asked Questions</h1>
+			<h1 class="home__heading faq-header">Frequently Asked Questions</h1>
 		</div>
 		<div class="container">
 			<div class="row justify-content-start align-items-center">		

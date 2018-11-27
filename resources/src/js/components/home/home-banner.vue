@@ -13,5 +13,8 @@ export default {
 			isShowing: false,
 		};
 	},
+    created() {
+        this.url = window.baseUrl
+    },
 }
 </script>

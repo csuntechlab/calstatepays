@@ -134,11 +134,10 @@
 .CSUDataImgBanner {
 	color: white;
 	font-family: $font-base;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+	background-position: top;
 	background-repeat: no-repeat;
-	height: 18.5rem;
+	height: 20rem;
+	background-size: cover;
 	@media screen and (max-width: $break-medium){
 		// min-height: 16.5rem;
 		height: unset;
@@ -149,8 +148,10 @@
 	}
 
 	&__campusTitle {
-		font-weight: bold;
-		font-size: 2.4rem;
+		font-weight: 600;
+		font-size: 2.1rem;
+		line-height: 1.4;
+		margin-bottom: 4px;
 	}
 
 	&__changeCampus {
@@ -170,17 +171,17 @@
 		@extend .mb-3;
 		span {
 			line-height: 1.5;
-			font-size: 2.3rem;
-			padding-bottom: 0.5rem;
+			font-size: 1.8rem;
+			font-weight: 700;
 			border-bottom: 0.2rem $green solid;
 		}
 	}
 
 	&__dataCopy {
 		@extend .mb-0;
-		font-weight: normal;
+		font-weight: 500;
 		font-size: 1.1rem;
-		line-height: 1.4;
+		line-height: 1.6rem;
 	}
 }
 

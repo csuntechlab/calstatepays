@@ -2,26 +2,26 @@
   {
     "university_id": "70",
     "path_id": 1,
-    "iframe_string": "CSUNLaborMarketOutcomes-ByMajor&#47;Story1"
+    "iframe_string": "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor"
   },
   {
     "university_id": "70",
     "path_id": 2,
-    "iframe_string": null
+    "iframe_string": "CSUNorthridge-ByAge26NOV2018/Northridge"
   },
   {
     "university_id": "70",
     "path_id": 3,
-    "iframe_string": null
+    "iframe_string": "CSUNorthridge-ByRace20NOV2018/CSUNByRace"
   },
   {
     "university_id": "70",
     "path_id": 4,
-    "iframe_string": null
+    "iframe_string": "CSUNorthridge-ByGender20NOV2018/CSUNbyGender"
   },
   {
     "university_id": "70",
     "path_id": 5,
-    "iframe_string": null
+    "iframe_string": "CSUNorthridge-ByPellGrant26NOV2018/Northridge"
   }
 ]
