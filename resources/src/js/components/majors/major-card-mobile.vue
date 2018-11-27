@@ -4,7 +4,11 @@
 			<div class="csu-card">
 				<div class="container-fluid py-3">
 					<div class="row">
-						<div class="col-6">
+						<div class="col-1">
+							<i class="fa fa-times fa-2x btn-remove float-left" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+							<i class="fa fa-refresh fa-2x btn-reset float-left" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
+						</div>
+						<div class="col">
 							<social-sharing 
 							v-if="selectedFormWasSubmitted" 
 							:networks="mobileNetworks" 
@@ -14,28 +18,30 @@
 							:quote="this.shareDescription"
 							hashtags="CalStatePays, ItPaysToGoToCollege" 
 							inline-template>
-								<div>
-									<network network="facebook-m" class="csu-card__share csu-card__share-facebook">
-										<i class="fa fa-facebook-official fa-2x"></i>
-									</network>
-									<network network="linkedin-m" class="csu-card__share csu-card__share-linkedin">
-										<i class="fa fa-linkedin-square fa-2x"></i>
-									</network>
-									<network network="twitter-m" class="csu-card__share csu-card__share-twitter">
-										<i class="fa fa-twitter-square fa-2x"></i>
-									</network>
-								</div>
+							<div>
+								<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
+									<i class="fa fa-twitter-square"></i>
+									Tweet
+								</network>
+								<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
+									<i class="fa fa-linkedin-square"></i>
+									Share
+								</network>
+								<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
+									<i class="fa fa-facebook-official"></i>
+									Share
+								</network>
+							</div>
 							</social-sharing>
-						</div>
-						<div class="col-6">
-							<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+							<h3 v-show="selectedFormWasSubmitted" class="industry-title pt-2">{{selectedMajorTitle}}</h3>
 						</div>
+					</div>
+					<div class="col">
+							<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel" />
 					</div>
 					<div v-show="this.selectedFormWasSubmitted && nullValues">
 						<div class="row text-center">
@@ -46,11 +52,6 @@
 						<div class="row" v-show="selectedFormWasSubmitted" style="height: 400px">
 							<div class="col-12">
 								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col-12">
-								<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel" />
 							</div>
 						</div>
 					</div>

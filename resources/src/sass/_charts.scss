@@ -67,6 +67,7 @@
 .IndustryLegend{
 	//padding: 20px 10px;
 	font-weight: 600;
+	font-size: 0.857rem;
 	%LegendBase{
 		height: 0;
 		width: 10px;
@@ -152,14 +153,16 @@ $colorList: (
 }
 
 .legend-mobile {
-  font-size: .95rem;
+  font-size: 0.857rem;
   float: left;
   margin-left: 10px;
+  padding-top: 1rem !important;
 	p {
 		position: relative;
 		top: -4px;
 		left: -4px;
 		font-weight: 600;
+		margin-bottom: 0;
 	}
   .majors-header {
     display: none !important;

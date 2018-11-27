@@ -71469,7 +71469,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h4", { staticClass: "industry-title" }, [
+      _c("h4", { staticClass: "industry-title pb-3" }, [
         _vm._v("Common Employment Sectors")
       ]),
       _vm._v(" "),
@@ -71843,9 +71843,30 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("h3", { staticClass: "industry-title" }, [
+                  _c("h3", { staticClass: "industry-title pt-2" }, [
                     _vm._v(_vm._s(_vm.selectedMajorTitle))
                   ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("major-legend", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.selectedFormWasSubmittedOnce,
+                            expression: "selectedFormWasSubmittedOnce"
+                          }
+                        ],
+                        attrs: { educationLevel: _vm.selectedEducationLevel }
+                      })
+                    ],
+                    1
+                  )
                 ]),
                 _vm._v(" "),
                 _c(
@@ -71896,29 +71917,6 @@ var render = function() {
                               majorData: _vm.selectedMajorData,
                               educationLevel: _vm.selectedEducationLevel,
                               windowWidth: _vm.windowWidth
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-12" },
-                        [
-                          _c("major-legend", {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.selectedFormWasSubmittedOnce,
-                                expression: "selectedFormWasSubmittedOnce"
-                              }
-                            ],
-                            attrs: {
-                              educationLevel: _vm.selectedEducationLevel
                             }
                           })
                         ],
@@ -72071,6 +72069,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -72403,9 +72402,39 @@ var render = function() {
         _c("div", { staticClass: "csu-card" }, [
           _c("div", { staticClass: "container-fluid py-3" }, [
             _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-1" }, [
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.isNotFirstCard,
+                      expression: "isNotFirstCard"
+                    }
+                  ],
+                  staticClass: "fa fa-times fa-2x btn-remove float-left",
+                  attrs: { title: "Close" },
+                  on: { click: _vm.removeCurrentCard }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  staticClass: "fa fa-refresh fa-2x btn-reset float-left",
+                  attrs: { title: "Reset" },
+                  on: { click: _vm.resetCurrentCard }
+                })
+              ]),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-6" },
+                { staticClass: "col" },
                 [
                   _vm.selectedFormWasSubmitted
                     ? _c("social-sharing", {
@@ -72429,14 +72458,16 @@ var render = function() {
                                   "network",
                                   {
                                     staticClass:
-                                      "csu-card__share csu-card__share-facebook",
-                                    attrs: { network: "facebook-m" }
+                                      "csu-card__share csu-card__share-twitter float-right",
+                                    attrs: { network: "twitter" }
                                   },
                                   [
                                     _c("i", {
-                                      staticClass:
-                                        "fa fa-facebook-official fa-2x"
-                                    })
+                                      staticClass: "fa fa-twitter-square"
+                                    }),
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
+                                    )
                                   ]
                                 ),
                                 _vm._v(" "),
@@ -72444,13 +72475,16 @@ var render = function() {
                                   "network",
                                   {
                                     staticClass:
-                                      "csu-card__share csu-card__share-linkedin",
-                                    attrs: { network: "linkedin-m" }
+                                      "csu-card__share csu-card__share-linkedin float-right",
+                                    attrs: { network: "linkedin" }
                                   },
                                   [
                                     _c("i", {
-                                      staticClass: "fa fa-linkedin-square fa-2x"
-                                    })
+                                      staticClass: "fa fa-linkedin-square"
+                                    }),
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
+                                    )
                                   ]
                                 ),
                                 _vm._v(" "),
@@ -72458,13 +72492,16 @@ var render = function() {
                                   "network",
                                   {
                                     staticClass:
-                                      "csu-card__share csu-card__share-twitter",
-                                    attrs: { network: "twitter-m" }
+                                      "csu-card__share csu-card__share-facebook float-right",
+                                    attrs: { network: "facebook" }
                                   },
                                   [
                                     _c("i", {
-                                      staticClass: "fa fa-twitter-square fa-2x"
-                                    })
+                                      staticClass: "fa fa-facebook-official"
+                                    }),
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
+                                    )
                                   ]
                                 )
                               ],
@@ -72477,37 +72514,7 @@ var render = function() {
                     : _vm._e()
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6" }, [
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isNotFirstCard,
-                      expression: "isNotFirstCard"
-                    }
-                  ],
-                  staticClass: "fa fa-times fa-2x btn-remove float-right",
-                  attrs: { title: "Close" },
-                  on: { click: _vm.removeCurrentCard }
-                }),
-                _vm._v(" "),
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
-                })
-              ])
+              )
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
@@ -72523,12 +72530,31 @@ var render = function() {
                         expression: "selectedFormWasSubmitted"
                       }
                     ],
-                    staticClass: "industry-title"
+                    staticClass: "industry-title pt-2"
                   },
                   [_vm._v(_vm._s(_vm.selectedMajorTitle))]
                 )
               ])
             ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col" },
+              [
+                _c("major-legend", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selectedFormWasSubmitted,
+                      expression: "selectedFormWasSubmitted"
+                    }
+                  ],
+                  attrs: { educationLevel: _vm.selectedEducationLevel }
+                })
+              ],
+              1
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -72589,28 +72615,7 @@ var render = function() {
                       1
                     )
                   ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row justify-content-center" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-12" },
-                    [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmitted,
-                            expression: "selectedFormWasSubmitted"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                )
               ]
             ),
             _vm._v(" "),
@@ -73060,7 +73065,9 @@ var render = function() {
               _vm._v(" "),
               _vm.industries.length > 0
                 ? _c("div", { staticClass: "col-12" }, [
-                    _c("p", [_vm._v("5 Years After Exit")])
+                    _c("p", { staticClass: "h6" }, [
+                      _vm._v("5 Years After Exit")
+                    ])
                   ])
                 : _vm._e(),
               _vm._v(" "),
@@ -73069,14 +73076,14 @@ var render = function() {
                     _c("span", {
                       staticClass: "IndustryLegend__LegendPercentage"
                     }),
-                    _vm._v("PERCENTAGE OF STUDENTS\n            ")
+                    _vm._v("Percentage of Students\n            ")
                   ])
                 : _vm._e(),
               _vm._v(" "),
               _vm.industries.length > 0
                 ? _c("div", { staticClass: "col-sm-12 col-md-5" }, [
                     _c("span", { staticClass: "IndustryLegend__LegendSalary" }),
-                    _vm._v("AVERAGE EARNINGS\n            ")
+                    _vm._v("Average Earnings\n            ")
                   ])
                 : _vm._e(),
               _vm._v(" "),

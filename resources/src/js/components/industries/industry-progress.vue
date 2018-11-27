@@ -17,13 +17,13 @@
                     <h3>{{industryMajor}}</h3>
                 </div>
                 <div v-if="industries.length > 0" class="col-12">
-                    <p>5 Years After Exit</p>
+                    <p class="h6">5 Years After Exit</p>
                 </div>
                 <div v-if="industries.length > 0" class="col-sm-12 col-md-4 offset-md-3">
-                    <span class="IndustryLegend__LegendPercentage"></span>PERCENTAGE OF STUDENTS
+                    <span class="IndustryLegend__LegendPercentage"></span>Percentage of Students
                 </div>
                 <div v-if="industries.length > 0" class="col-sm-12 col-md-5">
-                    <span class="IndustryLegend__LegendSalary"></span>AVERAGE EARNINGS
+                    <span class="IndustryLegend__LegendSalary"></span>Average Earnings
                 </div>
                 <p class="lead pl-md-5 pr-md-5" v-if="industries.length === 0">
                     No data is available for this selected Degree Level.<br>Please see the <router-link to="/faq">FAQ</router-link> section for more information on
