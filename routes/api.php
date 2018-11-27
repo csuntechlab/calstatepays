@@ -27,7 +27,7 @@ Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 /** TODO: $universityId -> $universityName */
 Route::get(
     '/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
-    'MajorController@getFREData'
+    'PfreController@getFREData'
 )->name('major.fre-data');
 
 //Industry
@@ -42,6 +42,8 @@ Route::get('industry/images/{major}/{university}', 'IndustryController@getIndust
 
 //University
 Route::get('/university', 'UniversityController@getAllUniversities');
+
+Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
 
 //Middleware
 Route::middleware('auth:api')->get('/user', function (Request $request) {

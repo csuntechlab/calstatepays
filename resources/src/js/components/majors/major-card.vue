@@ -1,15 +1,15 @@
 <template>
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
 		<aside class="col-md-3">
-			<major-form class="csu-card__form container-fluid" :windowWidth="windowWidth" :index="index" />
+			<major-form :windowWidth="windowWidth" :index="index" />
 		</aside>
 		<div class="col-md-9">
-			<card class="csu-card container-fluid py-3">
+			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid py-3">
 				<div class="row">
 					<div class="col-6">
 						<social-sharing 
 						v-if="selectedFormWasSubmittedOnce && !nullValues" 
-						url="sandbox.csun.edu/metalab/test/csumetrola" 
+						:url="this.url"
 						:title="this.shareDescription"
 						description="Discover Your Earnings After College." 
 						:quote="this.shareDescription" 
@@ -57,6 +57,17 @@
 					</div>
 				</div>
 			</card>
+			<div v-else class="csu-card container-fluid py-3">
+				<h3 class="text-center p-md-4">Please make your selection</h3>
+				<p class="lead pl-md-5 pr-md-5">
+					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+					which resonates the most with you.
+				</p>
+				<p class="lead pl-md-5 pr-md-5">
+					<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+					For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
+				</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -74,6 +85,7 @@ export default {
 	props: ["index", "windowWidth"],
 	data() {
 		return {
+		    url: window.baseUrl,
 			major: this.majorNameById
 		};
 	},
@@ -84,7 +96,8 @@ export default {
 			"educationLevel",
 			"formWasSubmitted",
 			"formWasSubmittedOnce",
-			"majorNameById"
+			"majorNameById",
+			"majors"
 		]),
 		isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
@@ -178,6 +191,9 @@ export default {
 		majorsGraph,
 		industryCarousel,
 		majorLegend
+	},
+	updated() {
+		console.log(this.selectedFormWasSubmitted);
 	}
 };
 </script>
