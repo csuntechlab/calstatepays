@@ -77,7 +77,6 @@
 				form: {
 					cardIndex: this.index,
 					majorId: null,
-					// schoolId: null,
 					formWasSubmitted: false,
 					fieldOfStudyId: null,
 					formEducationLevel: "allDegrees",
@@ -96,9 +95,6 @@
 				}
 			};
 		},
-		// mounted() {
-		// 	this.form.schoolId = this.selectedUniversity;
-		// },
 		methods: {
 			...mapActions([
 				"fetchIndustryImages",

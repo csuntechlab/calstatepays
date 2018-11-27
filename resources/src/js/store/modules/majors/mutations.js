@@ -30,7 +30,6 @@ export default {
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
-        console.log(payload)
         let index = payload.cardIndex;
         state.majorCards[index].majorData = payload;
     },
