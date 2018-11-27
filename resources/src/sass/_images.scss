@@ -259,14 +259,14 @@
 		text-align: center;
 	}
 	figcaption{
-		&:hover{
-			cursor: pointer;
-		}
+		// &:hover{
+		// 	cursor: pointer;
+		// }
 	}
 	.opted-in{
-		&:hover{
-			background-color: darkgray;
-		}
+		// &:hover{
+		// 	background-color: darkgray;
+		// }
 	}
 	.opted-out{
 		img{
@@ -281,6 +281,15 @@
 				cursor: no-drop;
 			}
 		}
-		
+	}
+
+	&__error {
+		display: none;
+		color: red;
+		font-weight: 700;
+
+		&.active {
+			display: block;
+		}
 	}
 }

@@ -19345,14 +19345,6 @@ figcaption {
   text-align: center;
 }
 
-.campus-modal figcaption:hover {
-  cursor: pointer;
-}
-
-.campus-modal .opted-in:hover {
-  background-color: darkgray;
-}
-
 .campus-modal .opted-out img {
   opacity: .3;
 }
@@ -19363,6 +19355,16 @@ figcaption {
 
 .campus-modal .opted-out figcaption:hover {
   cursor: no-drop;
+}
+
+.campus-modal__error {
+  display: none;
+  color: red;
+  font-weight: 700;
+}
+
+.campus-modal__error.active {
+  display: block;
 }
 
 .site-header {

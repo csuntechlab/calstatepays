@@ -7,21 +7,37 @@
         <v-dialog v-model="showModal" persistent aria-modal="true">
             <v-card  class=" text-xs-center black--text" v-if="universities[0]">
                 <v-card-title class="headline grey lighten-2 ">
-                    Please make your campus selection
+                    Choose a Campus
                 </v-card-title>
                 <v-card-text class="campus-modal">
-                    <div class="row" >
-                        <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">      
-                            <figure v-if="universities[index].opt_in === 1"  @click="changeCampus(universities[index].short_name);">
-                                <img :src= item.url role="button" class="btn opted-in">   
-                                <figcaption>{{item.name}}</figcaption>
-                            </figure>
-                            <figure v-else class="opted-out"> 
-                                <img :src= item.url role="button" class="btn">   
-                                <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
-                            </figure>
+                    <form v-on:submit.prevent="onSubmit()">
+                        <div class="row" >
+                            <div class="col-12 col-sm" v-for="(item, index) in universitySeals" :key="index">
+                                <!-- @click="changeCampus(universities[index].short_name);" -->
+                                <div v-if="universities[index].opt_in === 1">
+                                    <input type="radio" name="campuses" :id="universities[index].short_name" :data-shortname="universities[index].short_name">  
+                                    <label :for="item.name">    
+                                        <figure>
+                                            <img :src="item.url" role="button" class="btn opted-in">   
+                                            <figcaption>{{item.name}}</figcaption>
+                                        </figure>
+                                    </label>
+                                </div>
+                                <div v-else class="opted-out"> 
+                                    <figure> 
+                                        <img :src= item.url role="button" class="btn">   
+                                        <figcaption>{{item.name}} <br> <small>(Coming Soon)</small></figcaption>
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="text-center">
+                            <div class="campus-modal__error" id="campus-modal__error">* Select a campus to proceed</div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">Select Campus</button>
+                            </div>
+                        </div>
+                    </form>
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -51,6 +67,7 @@ export default {
     },
     mounted(){
         this.checkSessionData();
+        this.waitForClickOutsideModal();
     },
     computed:{
         ...mapGetters([
@@ -65,16 +82,37 @@ export default {
         ...mapActions([
             'setUniversity'
         ]),
+        waitForClickOutsideModal: function() {
+            document.addEventListener('click', function (event) {
+                if( event.target.classList.contains("v-overlay") ) {
+                    self.onSubmitFunction();
+                }
+            }, false);
+        },
+        onSubmitFunction: function(){
+            var radioBtns = document.querySelectorAll("[name='campuses']")
+            var validationMsg = document.getElementById("campus-modal__error");
+
+            for(var i = 0; i < radioBtns.length; i++) {
+                if( radioBtns[i].checked ) {
+                    this.changeCampus(radioBtns[i].id);
+                    validationMsg.classList.remove("active");
+                    return
+                } else {
+                    validationMsg.classList.add("active");
+                }
+            }
+        },
         changeCampus: function(university){
-        if (this.selectedUniversity != university){
-            sessionStorage.setItem("selectedUniversity", university);
-            this.$store.dispatch('setUniversity', university);
-            this.$store.dispatch('resetMajorState');
-            this.$store.dispatch('resetIndustryState');
-            this.$store.dispatch('resetFreState');
-            this.$store.dispatch('fetchMajors', university);
-            this.$store.dispatch('fetchFieldOfStudies', university);
-        }
+            if (this.selectedUniversity != university){
+                sessionStorage.setItem("selectedUniversity", university);
+                this.$store.dispatch('setUniversity', university);
+                this.$store.dispatch('resetMajorState');
+                this.$store.dispatch('resetIndustryState');
+                this.$store.dispatch('resetFreState');
+                this.$store.dispatch('fetchMajors', university);
+                this.$store.dispatch('fetchFieldOfStudies', university);
+            }
             this.showModal = false;
         },
         checkSessionData() {
@@ -83,7 +121,7 @@ export default {
                 this.showModal = true;
             }
             else {
-            this.$store.dispatch("setUniversity", sessionData);
+                this.$store.dispatch("setUniversity", sessionData);
             }
         }
     }
