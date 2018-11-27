@@ -45056,9 +45056,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 
 var fetchMajorsAPI = function fetchMajorsAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/university/" + payload).then(
-    // window.axios.get(`api/major/hegis-codes/university/1111`).then(
-    function (response) {
+    window.axios.get("api/major/hegis-codes/university/" + payload).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);

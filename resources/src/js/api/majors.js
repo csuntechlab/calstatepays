@@ -1,7 +1,6 @@
 
 const fetchMajorsAPI = (payload, success, error) => {
     window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
-        // window.axios.get(`api/major/hegis-codes/university/1111`).then(
         response => success(response.data),
     ).catch(
         failure=>{ 
