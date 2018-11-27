@@ -44,8 +44,9 @@ class PowerUsersControllerTest extends TestCase
     {
         $university = 'northridge';
         $path_id = 1;
+        $iframeString = "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor";
 
-        $data = ["iframe_string" => "CSUNLaborMarketOutcomes-ByMajor&#47;Story1"];
+        $data = ["iframe_string" => $iframeString];
 
         $this->retriever
             ->shouldReceive('getPowerUserDataByUniversity')
@@ -66,8 +67,9 @@ class PowerUsersControllerTest extends TestCase
     {
         $university = 'aggregate';
         $path_id = 1;
+        $iframeString = "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData";
 
-        $data = ["iframe_string" => "CSU7LaborMarketOutcomes-ByMajor&#47;CSU7AggregareEarningsData"];
+        $data = ["iframe_string" => $iframeString];
 
         $this->retriever
             ->shouldReceive('getPowerUserDataByUniversity')
@@ -87,7 +89,9 @@ class PowerUsersControllerTest extends TestCase
         $response = $this->get('/api/power/' . $university . '/' . $path_id);
         $response = $response->getOriginalContent();
 
-        $this->assertEquals($response['iframe_string'], "CSUNLaborMarketOutcomes-ByMajor&#47;Story1");
+        $iframeString = "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor";
+
+        $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
     /** Test the only route */
@@ -97,8 +101,9 @@ class PowerUsersControllerTest extends TestCase
         $path_id = 1;
         $response = $this->get('/api/power/' . $university . '/' . $path_id);
         $response = $response->getOriginalContent();
+        $iframeString = "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData";
 
-        $this->assertEquals($response['iframe_string'], "CSU7LaborMarketOutcomes-ByMajor&#47;CSU7AggregareEarningsData");
+        $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
     public function test_getPowerUserDataByUniversity_failed()

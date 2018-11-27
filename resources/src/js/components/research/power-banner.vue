@@ -38,13 +38,6 @@
                     <figcaption>Los Angeles</figcaption>
                 </figure>
             </div>
-            <div class="row text-center">
-                <div class="col-12">
-                    <button class="btn btn-success">
-                        All Campuses
-                    </button>
-                </div>
-            </div>
         </div>
     </header>
 </template>
