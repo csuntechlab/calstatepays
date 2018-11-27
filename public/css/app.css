@@ -18796,7 +18796,10 @@ button.bg-dark:focus {
     padding-top: 1.5rem !important;
   }
   .pr-lg-4,
-  .px-lg-4 {
+  .px-lg-4,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-right: 1.5rem !important;
   }
   .pb-lg-4,
@@ -18804,7 +18807,10 @@ button.bg-dark:focus {
     padding-bottom: 1.5rem !important;
   }
   .pl-lg-4,
-  .px-lg-4 {
+  .px-lg-4,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-left: 1.5rem !important;
   }
   .p-lg-5 {
@@ -18815,10 +18821,7 @@ button.bg-dark:focus {
     padding-top: 3rem !important;
   }
   .pr-lg-5,
-  .px-lg-5,
-  .homeCard__Copy--major,
-  .homeCard__Copy--industries,
-  .homeCard__Copy--PFRE {
+  .px-lg-5 {
     padding-right: 3rem !important;
   }
   .pb-lg-5,
@@ -18826,10 +18829,7 @@ button.bg-dark:focus {
     padding-bottom: 3rem !important;
   }
   .pl-lg-5,
-  .px-lg-5,
-  .homeCard__Copy--major,
-  .homeCard__Copy--industries,
-  .homeCard__Copy--PFRE {
+  .px-lg-5 {
     padding-left: 3rem !important;
   }
   .m-lg-auto {
@@ -19071,7 +19071,13 @@ button.bg-dark:focus {
     padding-top: 3rem !important;
   }
   .pr-xl-5,
-  .px-xl-5 {
+  .px-xl-5,
+  .homeCard__title--major,
+  .homeCard__Copy--major,
+  .homeCard__title--industries,
+  .homeCard__Copy--industries,
+  .homeCard__title--PFRE,
+  .homeCard__Copy--PFRE {
     padding-right: 3rem !important;
   }
   .pb-xl-5,
@@ -19079,7 +19085,13 @@ button.bg-dark:focus {
     padding-bottom: 3rem !important;
   }
   .pl-xl-5,
-  .px-xl-5 {
+  .px-xl-5,
+  .homeCard__title--major,
+  .homeCard__Copy--major,
+  .homeCard__title--industries,
+  .homeCard__Copy--industries,
+  .homeCard__title--PFRE,
+  .homeCard__Copy--PFRE {
     padding-left: 3rem !important;
   }
   .m-xl-auto {
@@ -19345,7 +19357,7 @@ html {
 
 .csu-card, .csu-card__form, .card-add, .industry-card {
   background: #FFF;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -19773,11 +19785,10 @@ figcaption {
 .CSUDataImgBanner {
   color: white;
   font-family: "Montserrat";
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: top;
   background-repeat: no-repeat;
-  height: 18.5rem;
+  height: 20rem;
+  background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -19787,8 +19798,10 @@ figcaption {
 }
 
 .CSUDataImgBanner__campusTitle {
-  font-weight: bold;
-  font-size: 2.4rem;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .CSUDataImgBanner__changeCampus {
@@ -19806,15 +19819,15 @@ figcaption {
 
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
-  font-size: 2.3rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
 .CSUDataImgBanner__dataCopy {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.6rem;
 }
 
 .landing-page-carousel {
@@ -19915,18 +19928,12 @@ figcaption {
 }
 
 .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
-  height: 7.75rem;
+  height: 6.75rem;
 }
 
 @media screen and (max-width: 767px) {
   .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
     height: unset;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
-    height: 9.5rem;
   }
 }
 
@@ -19951,25 +19958,25 @@ figcaption {
   color: #14597F;
   font-size: 1.7rem;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .homeCard__title--major:hover {
   color: white;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
   .homeCard__title--major {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 }
 
 .homeCard__titleAndIconWrapper--major {
   -webkit-transition: all .28s ease-out;
   transition: all .28s ease-out;
-  border-top: 0.4rem solid #3A97D1;
-  border-left: 0.4rem solid #3A97D1;
-  border-right: 0.4rem solid #3A97D1;
+  border-top: 0.3rem solid #3A97D1;
+  border-left: 0.3rem solid #3A97D1;
+  border-right: 0.3rem solid #3A97D1;
   background: white;
 }
 
@@ -19996,8 +20003,8 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
-  font-size: .9rem;
-  min-height: 7.5rem;
+  font-size: 1rem;
+  font-weight: 550;
   text-decoration: none;
 }
 
@@ -20031,25 +20038,25 @@ figcaption {
   color: #9D6D02;
   font-size: 1.7rem;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .homeCard__title--industries:hover {
   color: white;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
   .homeCard__title--industries {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 }
 
 .homeCard__titleAndIconWrapper--industries {
   -webkit-transition: all .28s ease-out;
   transition: all .28s ease-out;
-  border-top: 0.4rem solid #D79900;
-  border-left: 0.4rem solid #D79900;
-  border-right: 0.4rem solid #D79900;
+  border-top: 0.3rem solid #D79900;
+  border-left: 0.3rem solid #D79900;
+  border-right: 0.3rem solid #D79900;
   background: white;
 }
 
@@ -20091,8 +20098,8 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
-  font-size: .9rem;
-  min-height: 7.5rem;
+  font-size: 1rem;
+  font-weight: 550;
   text-decoration: none;
 }
 
@@ -20111,25 +20118,25 @@ figcaption {
   color: #7F1426;
   font-size: 1.7rem;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .homeCard__title--PFRE:hover {
   color: white;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
   .homeCard__title--PFRE {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 }
 
 .homeCard__titleAndIconWrapper--PFRE {
   -webkit-transition: all .28s ease-out;
   transition: all .28s ease-out;
-  border-top: 0.4rem solid #C52429;
-  border-left: 0.4rem solid #C52429;
-  border-right: 0.4rem solid #C52429;
+  border-top: 0.3rem solid #C52429;
+  border-left: 0.3rem solid #C52429;
+  border-right: 0.3rem solid #C52429;
   background: white;
 }
 
@@ -20156,8 +20163,8 @@ figcaption {
   color: white;
   margin: 0;
   line-height: 130%;
-  font-size: .9rem;
-  min-height: 7.5rem;
+  font-size: 1rem;
+  font-weight: 550;
   text-decoration: none;
 }
 
@@ -20515,7 +20522,7 @@ label {
   margin-bottom: 0px;
   font-family: "Open Sans";
   font-weight: regular;
-  color: #363636;
+  color: #565656;
 }
 
 .label--radio {
@@ -20529,8 +20536,16 @@ label {
   content: "*";
 }
 
+/*Edits form field styling*/
 .csu-form-input {
-  border-bottom: 0.2rem #777777 solid;
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0;
+}
+
+.dropdown.v-select.csu-form-input.single.open {
+  border-radius: 1rem 1rem 0 0;
 }
 
 .csu-form-input .dropdown-toggle {
@@ -20547,6 +20562,13 @@ label {
 .csu-form-input .dropdown {
   min-height: 2rem;
   position: relative;
+}
+
+/*Targets dropdown menu items*/
+.v-select li > a {
+  white-space: normal !important;
+  word-break: normal !important;
+  border-top: .75px solid #EAEAEA;
 }
 
 .currency {
@@ -20709,7 +20731,7 @@ textarea {
   font-family: "Open Sans";
   font-size: 0.9rem;
   height: 45px;
-  font-weight: 300;
+  font-weight: 700 !important;
 }
 
 .btn:focus {
@@ -20986,6 +21008,16 @@ input[type="button"]:focus {
   padding: .5rem;
 }
 
+button.btn-change-campus {
+  background-color: rgba(204, 11, 43, 0.829);
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+button.btn-change-campus:hover {
+  background-color: #cc0b2b;
+}
+
 .echarts {
   min-height: 80%;
   min-width: 100%;
@@ -21054,7 +21086,6 @@ input[type="button"]:focus {
 }
 
 .IndustryLegend {
-  padding: 20px 10px;
   font-weight: 600;
 }
 
@@ -21119,13 +21150,15 @@ input[type="button"]:focus {
 }
 
 .legend-mobile {
-  font-size: 10px;
+  font-size: .95rem;
   float: left;
   margin-left: 10px;
 }
 
 .legend-mobile p {
-  margin-left: 15px !important;
+  position: relative;
+  top: -4px;
+  left: -4px;
 }
 
 .legend-mobile .majors-header {
@@ -21144,6 +21177,7 @@ input[type="button"]:focus {
           transform: translate(-50%);
 }
 
+/*Legend color key for majors page*/
 .legend-oxford-25 {
   background-color: #7E969A;
 }
@@ -21186,7 +21220,7 @@ input[type="button"]:focus {
 
 .mobile-legend {
   float: left;
-  font-size: 10px;
+  font-size: 1rem;
   margin-left: 10px;
 }
 
@@ -21204,7 +21238,7 @@ input[type="button"]:focus {
 }
 
 .industry-title {
-  color: grey;
+  color: #595959;
   text-align: center;
   font-weight: 600;
 }
@@ -21264,4 +21298,109 @@ input[type="button"]:focus {
 
 .VueCarousel-dot {
   margin-top: 5px !important;
+}
+
+.homepageVideo {
+  height: auto;
+  background: url(../img/homeimages/video-cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.homepageVideo:before {
+  content: " ";
+  background: rgba(235, 235, 235, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: background 0.7s ease;
+  transition: background 0.7s ease;
+}
+
+.homepageVideo__btn {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  padding: 15px 40px;
+}
+
+@media (min-width: 768px) {
+  .homepageVideo__btn {
+    padding: 20px 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__btn {
+    padding: 35px 80px;
+  }
+}
+
+.homepageVideo__btn img {
+  width: 45px;
+}
+
+@media (min-width: 768px) {
+  .homepageVideo__btn img {
+    width: 75px;
+  }
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__btn img {
+    width: auto;
+  }
+}
+
+.homepageVideo__wrapper {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease 0.3s;
+  transition: opacity 1s ease 0.3s;
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__container {
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepageVideo__container {
+    max-width: 1140px;
+  }
+}
+
+.homepageVideo.active:before {
+  background: #ebebeb;
+}
+
+.homepageVideo.active .homepageVideo__wrapper {
+  opacity: 1;
+  z-index: 5;
+}
+
+.homepageVideo.active .homepageVideo__btn {
+  opacity: 0;
+}
+
+.homepageVideo.finished .homepageVideo__container {
+  opacity: 0;
 }

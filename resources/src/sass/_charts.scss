@@ -65,7 +65,7 @@
 }//end IndustryProgressBarWrapper
 
 .IndustryLegend{
-	padding: 20px 10px;
+	//padding: 20px 10px;
 	font-weight: 600;
 	%LegendBase{
 		height: 0;
@@ -152,12 +152,14 @@ $colorList: (
 }
 
 .legend-mobile {
-  font-size: 10px;
+  font-size: .95rem;
   float: left;
   margin-left: 10px;
-  p {
-    margin-left: 15px !important;
-  }
+	p {
+		position: relative;
+		top: -4px;
+		left: -4px;
+	}
   .majors-header {
     display: none !important;
   }
@@ -174,6 +176,8 @@ $colorList: (
 	border-left: 2px dotted #17a2b8;
 	transform: translate(-50%);
 }
+
+/*Legend color key for majors page*/
 @mixin legend-color-mixin($legend-color) {
 	@each $color, $value in $colorList {
 		.legend-#{$color} {
@@ -185,6 +189,15 @@ $colorList: (
 @include legend-color-mixin($colorList);
 .mobile-legend {
 	float: left;
-	font-size: 10px;
+	font-size: 1rem;
 	margin-left: 10px;
 }
+
+// .legend {
+// 	&__text {
+// 		font-size: 1rem;
+// 	}
+// 	&__key-color {
+// 		height:100px;
+// 	}
+// }

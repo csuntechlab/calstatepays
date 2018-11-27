@@ -128,11 +128,10 @@
 .CSUDataImgBanner {
 	color: white;
 	font-family: $font-base;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+	background-position: top;
 	background-repeat: no-repeat;
-	height: 18.5rem;
+	height: 20rem;
+	background-size: cover;
 	@media screen and (max-width: $break-medium){
 		// min-height: 16.5rem;
 		height: unset;
@@ -143,8 +142,10 @@
 	}
 
 	&__campusTitle {
-		font-weight: bold;
-		font-size: 2.4rem;
+		font-weight: 600;
+		font-size: 2.1rem;
+		line-height: 1.4;
+		margin-bottom: 4px;
 	}
 
 	&__changeCampus {
@@ -164,17 +165,17 @@
 		@extend .mb-3;
 		span {
 			line-height: 1.5;
-			font-size: 2.3rem;
-			padding-bottom: 0.5rem;
+			font-size: 1.8rem;
+			font-weight: 700;
 			border-bottom: 0.2rem $green solid;
 		}
 	}
 
 	&__dataCopy {
 		@extend .mb-0;
-		font-weight: normal;
+		font-weight: 500;
 		font-size: 1.1rem;
-		line-height: 1.4;
+		line-height: 1.6rem;
 	}
 }
 
@@ -286,7 +287,7 @@
 
 @mixin make-homeCard__titleAndIconWrapper($color) {
 	@extend .px-2, .py-3, .py-md-4, .p-md-4 ;
-	$border-thickness: .4rem;
+	$border-thickness: .3rem;
 	$constrast-color: white;
 	$border-style: solid;
 	transition: all .28s ease-out;
@@ -301,40 +302,37 @@
 	}
 }
 
-@mixin make-homeCard__title($font-color) {
-	color: $font-color;
+@mixin make-homeCard__title($font-color, $break-point) {
+	@extend .text-left, .text-md-center, .pt-md-3, .px-xl-5 ;
 	$constrast-color: white;
-	@extend .text-left, .text-md-center, .pt-md-3 ;
+	color: $font-color;
 	font-size: 1.7rem;
 	margin: 0;
-	font-weight: bold;
+	font-weight: 600;
 	// text-decoration: none;
 	&:hover{
 		color: $constrast-color;
 	}
-	@media screen and (max-width: 375px) {
-		font-size: 1.5rem;
+	@media screen and (max-width: $break-point) {
+		font-size: 1.45rem;
 	}
 }
 
 %iconWrapperBase{
-	height: 7.75rem;
+	height: 6.75rem;
 	@media screen and (max-width: $break-small) {
 		height: unset;
-	}
-	@media screen and (min-width: $break-xlarge) {
-		height: 9.5rem;
 	}
 }
 
 @mixin make-homeCard__copy($color, $break-point) {
-	@extend .text-center, .p-3, .p-lg-4, .px-lg-5, .py-lg-3 ;
+	@extend .text-center, .p-3, .p-lg-4, .px-lg-4, .px-xl-5, .py-lg-3 ;
 	background: $color;
 	color: white;
 	margin: 0;
 	line-height: 130%;
-	font-size: .9rem;
-	min-height:7.5rem;
+	font-size: 1rem;
+	font-weight: 550;
 	text-decoration: none;
 	@media screen and (max-width: $break-point){
 		font-size: 1rem;
@@ -363,7 +361,7 @@
 	&__icon--major{fill:$CSP-Dark-Blue;}
 
 	&__title--major{
-		@include make-homeCard__title($CSP-Dark-Blue);
+		@include make-homeCard__title($CSP-Dark-Blue, $break-small);
 	}
 	&__titleAndIconWrapper--major{
 		@include make-homeCard__titleAndIconWrapper($CSP-Blue);
@@ -402,7 +400,7 @@
 	}
 
 	&__title--industries{
-		@include make-homeCard__title($CSP-Dark-Gold);
+		@include make-homeCard__title($CSP-Dark-Gold, $break-small);
 	}
 
 	&__titleAndIconWrapper--industries{
@@ -441,7 +439,7 @@
 	&__icon--PFRE{fill:$CSP-Dark-Red;}
 
 	&__title--PFRE{
-		@include make-homeCard__title($CSP-Dark-Red);
+		@include make-homeCard__title($CSP-Dark-Red, $break-small);
 	}
 
 	&__titleAndIconWrapper--PFRE{

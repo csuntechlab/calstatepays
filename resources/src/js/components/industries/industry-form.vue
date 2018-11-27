@@ -8,7 +8,7 @@
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
 					<div v-if="!industryFormWasSubmitted===true" class="form-group">
-						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
 							:options="fieldOfStudies"
@@ -18,7 +18,7 @@
 						</v-select>
 					</div>
 					<div v-if="!industryFormWasSubmitted" class="form-group">
-						<label for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
+						<label class="font-weight-bold" for="Major" v-bind:style="[!this.form.majorId && this.submittedOnce ? errorLabel : '']">
 						Select a Major
 						</label>
 						<v-select
@@ -43,7 +43,7 @@
 						</v-select>
 					</div>
 					<div v-if="!industryFormWasSubmitted" class="form-group row">
-						<button id="submit-btn" type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+						<button id="submit-btn" type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 				</fieldset>
 			</form>
@@ -53,7 +53,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
 					title="Reset"></i>
-					<p v-show="windowSize > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'post_bacc', 'fa fa-circle-thin':industryEducationLevel != 'post_bacc'}" ></i>
 						Post Bacc
@@ -113,18 +113,20 @@ export default {
 			"resetIndustryCard",
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",
-			"toggleIndustryEducationLevel"
+			"toggleIndustryEducationLevel",
+			"setIndustryMajor"
 			]),
 		submitForm() {
 			this.formNotFilled = false;
 			this.submittedOnce = true;
 			if (this.checkForm()) {
-				this.selected = null;
-				this.submittedOnce = false;
 				this.toggleIndustryFormWasSubmitted();
-				this.fetchIndustries(this.form);
-				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
-				this.form.majorId = null;
+                this.fetchIndustries(this.form);
+                this.$store.dispatch("setIndustryMajor", this.selected);
+                this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+                this.selected = null;
+                this.submittedOnce = false;
+                this.form.majorId = null;
 				this.form.fieldOfStudyId = null;
 			}
 		},

@@ -1,13 +1,13 @@
 <template>
 <div>
     <div @keyup.enter="showModal= false">
-        <button @click="showModal = true" role="button">
+        <button class="btn-change-campus" @click="showModal = true" role="button">
                 <slot name="change button"></slot>
         </button>
         <v-dialog v-model="showModal" persistent aria-modal="true">
             <v-card  class=" text-xs-center black--text" v-if="universities[0]">
                 <v-card-title class="headline grey lighten-2 ">
-                    Choose Your Campus
+                    Please make your campus selection
                 </v-card-title>
                 <v-card-text class="campus-modal">
                     <div class="row" >

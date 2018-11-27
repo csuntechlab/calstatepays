@@ -2,7 +2,7 @@
     <div>
        <power-banner/>
         <main class="row">
-            <div class="container">
+            <div class="container" style="min-height:100vh">
                 <div class="row">
                     <div class="col-12">
                         <router-link to="research" class="returnToCampusSelection">
@@ -41,21 +41,14 @@
 </template>
 <script>
 import powerBanner from '../../../components/research/power-banner'
+import {mapGetters} from 'vuex' 
 export default {
-    data () {
-        return {
-            url: '',
-        }
-    },
     components: {
         powerBanner
     },
-    created () {
-        this.url = window.baseUrl;
-    },
     mounted() {
         var divElement = document.getElementById('viz1541533460014');
-        if(this.tableauValueIsNotPresent){
+        if(this.tableauValue == null){
             var divElement = document.getElementById('viz1541533460014');
              divElement.style.width='1000px';divElement.style.height='5rem';         
             divElement.style.backgroundColor='lightgray'
@@ -70,13 +63,13 @@ export default {
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
             var vizEl =  vizElement.getElementsByTagName('param');
-            vizEl[3].value    = this.$route.params.tableauValue;
+            vizEl[3].value= this.tableauValue;
         }
     },
     computed:{
-        tableauValueIsNotPresent(){
-            return this.$route.params.tableauValue == undefined || this.$route.params.tableauValue == '' || this.$route.params.tableauValue == null ;
-        }
+        ...mapGetters([
+            'tableauValue'
+        ])
     }
 }
 </script>
