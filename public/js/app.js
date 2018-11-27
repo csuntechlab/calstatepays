@@ -51387,10 +51387,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "allDegrees",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "allDegrees"
+                        "": this.educationLevel(this.index) != "allDegrees"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
@@ -51417,10 +51416,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "postBacc",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "postBacc"
+                        "": this.educationLevel(this.index) != "postBacc"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
@@ -51447,10 +51445,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "bachelors",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "bachelors"
+                        "": this.educationLevel(this.index) != "bachelors"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
@@ -51477,10 +51474,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "someCollege",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "someCollege"
+                        "": this.educationLevel(this.index) != "someCollege"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
@@ -70813,10 +70809,8 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
-                        _vm.industryEducationLevel == "post_bacc",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "post_bacc"
+                      "fa fa-check": _vm.industryEducationLevel == "post_bacc",
+                      "": _vm.industryEducationLevel != "post_bacc"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
@@ -70839,10 +70833,8 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
-                        _vm.industryEducationLevel == "bachelors",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "bachelors"
+                      "fa fa-check": _vm.industryEducationLevel == "bachelors",
+                      "": _vm.industryEducationLevel != "bachelors"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
@@ -70865,10 +70857,9 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
+                      "fa fa-check":
                         _vm.industryEducationLevel == "someCollege",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "someCollege"
+                      "": _vm.industryEducationLevel != "someCollege"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
