@@ -5,5 +5,6 @@ export default {
     industryMajorsByField: state => state.industryMajorsByField,
     industryFormWasSubmitted: state => state.industryFormWasSubmitted,
     industryFormWasSubmittedOnce: state => state. industryFormWasSubmittedOnce,
-    industryEducationLevel: state => state.industryEducationLevel
+    industryEducationLevel: state => state.industryEducationLevel,
+    industryMajor: state => state.industryMajor,
 }
