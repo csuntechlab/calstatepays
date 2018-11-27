@@ -18795,7 +18795,7 @@ html {
 
 .csu-card, .csu-card__form, .card-add, .industry-card {
   background: #FFF;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -19070,6 +19070,22 @@ figcaption {
   width: fit-content;
 }
 
+.homepageUniversities__headline {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .homepageUniversities__headline {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__headline {
+    font-size: 1.12rem;
+  }
+}
+
 .homeBanner {
   background-image: url("../img/homeimages/home-banner.jpg");
   background-size: cover;
@@ -19173,7 +19189,7 @@ figcaption {
 
 .landing-page__icon {
   font-size: 6rem;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .landing-page__icon--cap {
@@ -19191,6 +19207,48 @@ figcaption {
 .csu-seals {
   height: 10rem;
   widows: 10rem;
+}
+
+.homepageUniversities__seals figure img {
+  width: 100%;
+  max-height: 8.25rem;
+  overflow: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 .5rem;
+}
+
+.homepageUniversities__seals figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding: .25rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__seals figure img {
+    max-height: 5.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure figcaption {
+    font-size: 0.7rem;
+  }
 }
 
 .faq-banner {
@@ -19223,11 +19281,10 @@ figcaption {
 .CSUDataImgBanner {
   color: white;
   font-family: "Montserrat";
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: top;
   background-repeat: no-repeat;
-  height: 18.5rem;
+  height: 20rem;
+  background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -19237,8 +19294,10 @@ figcaption {
 }
 
 .CSUDataImgBanner__campusTitle {
-  font-weight: bold;
-  font-size: 2.4rem;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .CSUDataImgBanner__changeCampus {
@@ -19256,15 +19315,15 @@ figcaption {
 
 .CSUDataImgBanner__dataTitle span {
   line-height: 1.5;
-  font-size: 2.3rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   border-bottom: 0.2rem #2BAE67 solid;
 }
 
 .CSUDataImgBanner__dataCopy {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.6rem;
 }
 
 .landing-page-carousel {
@@ -19353,7 +19412,7 @@ figcaption {
 }
 
 .campus-modal .opted-out img {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .campus-modal .opted-out img:hover {
@@ -19711,7 +19770,7 @@ label {
   margin-bottom: 0px;
   font-family: "Open Sans";
   font-weight: regular;
-  color: #363636;
+  color: #565656;
 }
 
 .label--radio {
@@ -19725,8 +19784,16 @@ label {
   content: "*";
 }
 
+/*Edits form field styling*/
 .csu-form-input {
-  border-bottom: 0.2rem #777777 solid;
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0;
+}
+
+.dropdown.v-select.csu-form-input.single.open {
+  border-radius: 1rem 1rem 0 0;
 }
 
 .csu-form-input .dropdown-toggle {
@@ -19743,6 +19810,13 @@ label {
 .csu-form-input .dropdown {
   min-height: 2rem;
   position: relative;
+}
+
+/*Targets dropdown menu items*/
+.v-select li > a {
+  white-space: normal !important;
+  word-break: normal !important;
+  border-top: .75px solid #EAEAEA;
 }
 
 .currency {
@@ -19905,7 +19979,7 @@ textarea {
   font-family: "Open Sans";
   font-size: 0.9rem;
   height: 45px;
-  font-weight: 300;
+  font-weight: 700 !important;
 }
 
 .btn:focus {
@@ -20182,6 +20256,16 @@ input[type="button"]:focus {
   padding: .5rem;
 }
 
+button.btn-change-campus {
+  background-color: rgba(204, 11, 43, 0.829);
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+button.btn-change-campus:hover {
+  background-color: #cc0b2b;
+}
+
 .echarts {
   min-height: 80%;
   min-width: 100%;
@@ -20250,7 +20334,6 @@ input[type="button"]:focus {
 }
 
 .IndustryLegend {
-  padding: 20px 10px;
   font-weight: 600;
 }
 
@@ -20315,13 +20398,15 @@ input[type="button"]:focus {
 }
 
 .legend-mobile {
-  font-size: 10px;
+  font-size: .95rem;
   float: left;
   margin-left: 10px;
 }
 
 .legend-mobile p {
-  margin-left: 15px !important;
+  position: relative;
+  top: -4px;
+  left: -4px;
 }
 
 .legend-mobile .majors-header {
@@ -20340,6 +20425,7 @@ input[type="button"]:focus {
           transform: translate(-50%);
 }
 
+/*Legend color key for majors page*/
 .legend-oxford-25 {
   background-color: #7E969A;
 }
@@ -20382,7 +20468,7 @@ input[type="button"]:focus {
 
 .mobile-legend {
   float: left;
-  font-size: 10px;
+  font-size: 1rem;
   margin-left: 10px;
 }
 
@@ -20400,7 +20486,7 @@ input[type="button"]:focus {
 }
 
 .industry-title {
-  color: grey;
+  color: #595959;
   text-align: center;
   font-weight: 600;
 }
@@ -20460,4 +20546,109 @@ input[type="button"]:focus {
 
 .VueCarousel-dot {
   margin-top: 5px !important;
+}
+
+.homepageVideo {
+  height: auto;
+  background: url(../img/homeimages/video-cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.homepageVideo:before {
+  content: " ";
+  background: rgba(235, 235, 235, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: background 0.7s ease;
+  transition: background 0.7s ease;
+}
+
+.homepageVideo__btn {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  padding: 15px 40px;
+}
+
+@media (min-width: 768px) {
+  .homepageVideo__btn {
+    padding: 20px 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__btn {
+    padding: 35px 80px;
+  }
+}
+
+.homepageVideo__btn img {
+  width: 45px;
+}
+
+@media (min-width: 768px) {
+  .homepageVideo__btn img {
+    width: 75px;
+  }
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__btn img {
+    width: auto;
+  }
+}
+
+.homepageVideo__wrapper {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease 0.3s;
+  transition: opacity 1s ease 0.3s;
+}
+
+@media (min-width: 992px) {
+  .homepageVideo__container {
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepageVideo__container {
+    max-width: 1140px;
+  }
+}
+
+.homepageVideo.active:before {
+  background: #ebebeb;
+}
+
+.homepageVideo.active .homepageVideo__wrapper {
+  opacity: 1;
+  z-index: 5;
+}
+
+.homepageVideo.active .homepageVideo__btn {
+  opacity: 0;
+}
+
+.homepageVideo.finished .homepageVideo__container {
+  opacity: 0;
 }

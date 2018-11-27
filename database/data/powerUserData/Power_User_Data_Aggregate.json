@@ -2,26 +2,27 @@
   {
     "university_id": "0",
     "path_id": 1,
-    "iframe_string": "CSU7LaborMarketOutcomes-ByMajor&#47;CSU7AggregareEarningsData"
+    "iframe_string": "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData"
   },
   {
     "university_id": "0",
     "path_id": 2,
-    "iframe_string": null
+    "iframe_string": "CSU7byAge21NOV2018/CSU7byAge"
   },
   {
     "university_id": "0",
     "path_id": 3,
-    "iframe_string": null
+    "iframe_string": "CSU7byRaceNOV142018/Story1"
+
   },
   {
     "university_id": "0",
     "path_id": 4,
-    "iframe_string": "CSU7byGenderNOV132018&#47;Story1"
+    "iframe_string": "CSU7byGenderNOV132018/CSU7byGender"
   },
   {
     "university_id": "0",
     "path_id": 5,
-    "iframe_string": null
+    "iframe_string": "CSU7byPell20NOV2018/Story1"
   }
 ]

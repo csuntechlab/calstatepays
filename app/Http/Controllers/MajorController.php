@@ -9,6 +9,7 @@ use App\Models\UniversityMajor;
 use App\Contracts\MajorContract;
 use Validator;
 use App\Http\Requests\MajorFormRequest;
+use Illuminate\Support\Facades\Cache;
 
 class MajorController extends Controller
 {
@@ -21,18 +22,43 @@ class MajorController extends Controller
 
     public function getAllHegisCodesByUniversity($university_name)
     {
-        return $this->majorRetriever->getAllHegisCodesByUniversity($university_name);
+        $key="HegisCodesFor".$university_name;
+        if(Cache::has($key)){
+            $data = Cache::get($key);
+            return json_decode($data);
+        }
+
+        $data = $this->majorRetriever->getAllHegisCodesByUniversity($university_name);
+        $value = json_encode($data);
+        Cache::forever($key, $value);
+        return $data;
     }
 
     public function getAllFieldOfStudies()
     {
-        return $this->majorRetriever->getAllFieldOfStudies();
+        $key="AllFieldsOfStudyMajor";
+        if(Cache::has($key)){
+            $data = Cache::get($key);
+            return json_decode($data);
+        }
+
+        $data =  $this->majorRetriever->getAllFieldOfStudies();
+        $value = json_encode($data);
+        Cache::forever($key, $value);
+        return $data;
     }
 
     public function getMajorEarnings(MajorFormRequest $request)
     {
         if (isset($request->validator) && $request->validator->fails()) {
             return response()->json($request->validator->messages(), 400);
+        }
+
+        $key="getMajorEarnings".$request->major.$request->university;
+        if(Cache::has($key)){
+            $data = Cache::get($key);
+            $data = json_decode($data);
+            return response()->json($data);
         }
 
         $university_major = $this->majorRetriever->getMajorEarnings($request->major, $request->university);
@@ -83,6 +109,10 @@ class MajorController extends Controller
             'bachelors' => isset($bachelors) ? $bachelors : $nullArray,
             'postBacc' => isset($post_bacc) ? $post_bacc : $nullArray
         ];
+        $data =  $majorData;
+        $value = json_encode($data);
+
+        Cache::forever($key,$value);
         return $majorData;
     }
 
@@ -108,6 +138,13 @@ class MajorController extends Controller
 
     public function filterByFieldOfStudy($universityName, $fieldOfStudyId)
     {
+        $key="filterByFoS".$universityName.$fieldOfStudyId;
+        if(Cache::has($key)){
+            $data = Cache::get($key);
+            $data = json_decode($data);
+            return response()->json($data);
+        }
+
         $hegisData = $this->majorRetriever->getHegisCategories($universityName, $fieldOfStudyId);
 
         $data[] = array_map(function ($hegis) {
@@ -120,6 +157,10 @@ class MajorController extends Controller
 
         $data = array_collapse($data);
         sort($data);
+
+        $value = json_encode([$data]);
+
+        Cache::forever($key,$value);
         return [$data];
     }
 

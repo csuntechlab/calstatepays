@@ -1,5 +1,4 @@
 <template>
-    <div class="pt-md-5">
         <div v-if="educationLevel == 'allDegrees'">
             <div class="row justify-content-center">
                 <span class="legend-mobile">
@@ -52,7 +51,6 @@
                 </span>
             </div>
         </div>
-    </div>
 </template>
 <script>
 export default {
