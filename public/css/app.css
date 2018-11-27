@@ -19928,12 +19928,33 @@ figcaption {
 }
 
 .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
-  height: 6.75rem;
+  position: relative;
+  padding-top: 50%;
 }
 
 @media screen and (max-width: 767px) {
   .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
     height: unset;
+    padding-top: 0;
+  }
+}
+
+.homeCard__iconWrapper--major svg, .homeCard__iconWrapper--industries svg, .homeCard__iconWrapper--PFRE svg {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__iconWrapper--major svg, .homeCard__iconWrapper--industries svg, .homeCard__iconWrapper--PFRE svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 

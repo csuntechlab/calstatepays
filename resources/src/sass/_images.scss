@@ -319,9 +319,24 @@
 }
 
 %iconWrapperBase{
-	height: 6.75rem;
+	position: relative;
+	padding-top: 50%; //This from aspect ratio of banner form the mockup.
 	@media screen and (max-width: $break-small) {
 		height: unset;
+		padding-top: 0;
+	}
+	svg{
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@media screen and (max-width: $break-small) {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0,0);
+		}
 	}
 }
 

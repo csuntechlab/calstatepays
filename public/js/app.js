@@ -48028,7 +48028,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--major"
+                      "col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--major"
                   },
                   [
                     _c(
@@ -48128,7 +48128,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--industries"
+                        "col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--industries"
                     },
                     [
                       _c(
@@ -48347,7 +48347,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "col-4 col-sm-3 col-md-12 align-self-center homeCard__iconWrapper--PFRE"
+                      "col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--PFRE"
                   },
                   [
                     _c(
