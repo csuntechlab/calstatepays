@@ -1,17 +1,17 @@
-.homeBanner{
+.homeBanner {
 	background-image: url("../img/homeimages/home-banner.jpg");
 	background-size: cover;
 	position: relative;
 	padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
 	width: 100%;
-	&__CSPLogo{
+	&__CSPLogo {
 		width: 30%;
 		position: absolute;
 		top: 42%;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 	}
-	&__Tagling{
+	&__Tagling {
 		width: 76%;
 		position: absolute;
 		left: 50%;
@@ -81,17 +81,17 @@
 	}
 }
 
-.landing-page__icon{
+.landing-page__icon {
 	font-size: 6rem;
-	padding-bottom: .1rem;
-	&--cap{
+	padding-bottom: 0.1rem;
+	&--cap {
 		color: $oxford;
 	}
-	&--chart{
+	&--chart {
 		color: $gold;
 	}
-	&--usd{
-		color: $green
+	&--usd {
+		color: $green;
 	}
 }
 
@@ -100,6 +100,50 @@
 	widows: 10rem;
 }
 
+.homepageUniversities__seals {
+	figure {
+		img {
+			width: 100%;
+			max-height: 8.25rem;
+			overflow: auto;
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0 .5rem;
+		}
+		figcaption {
+			font-family: $font-base;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 0.85rem;
+			margin-top: 0.5rem;
+			padding: .25rem;
+		}
+		
+		@media screen and (max-width: $break-small) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-Xsmall) {
+			img {
+				max-height: 5.25rem;
+			}
+		}
+
+		@media screen and (min-width: $break-large) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-small) {
+			figcaption {
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
 .faq-banner {
 	background-image: $white-filter, url("../img/faq-banner.jpg");
 	background-size: cover;
@@ -252,36 +296,34 @@
 		}
 	}
 }
-.campus-modal{
+.campus-modal {
 	color: black;
-	img{
-		height: 8rem; 
+	img {
+		height: 8rem;
 		text-align: center;
 	}
-	figcaption{
-		&:hover{
+	figcaption {
+		&:hover {
 			cursor: pointer;
 		}
 	}
-	.opted-in{
-		&:hover{
+	.opted-in {
+		&:hover {
 			background-color: darkgray;
 		}
 	}
-	.opted-out{
-		img{
-			opacity: .3;
-			&:hover{
-				cursor: no-drop;
-			}
-			
-		}
-		figcaption{
-			&:hover{
+	.opted-out {
+		img {
+			opacity: 0.3;
+			&:hover {
 				cursor: no-drop;
 			}
 		}
-		
+		figcaption {
+			&:hover {
+				cursor: no-drop;
+			}
+		}
 	}
 }
 

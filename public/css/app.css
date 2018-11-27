@@ -19632,6 +19632,22 @@ figcaption {
   width: fit-content;
 }
 
+.homepageUniversities__headline {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .homepageUniversities__headline {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__headline {
+    font-size: 1.12rem;
+  }
+}
+
 .homeBanner {
   background-image: url("../img/homeimages/home-banner.jpg");
   background-size: cover;
@@ -19735,7 +19751,7 @@ figcaption {
 
 .landing-page__icon {
   font-size: 6rem;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .landing-page__icon--cap {
@@ -19753,6 +19769,48 @@ figcaption {
 .csu-seals {
   height: 10rem;
   widows: 10rem;
+}
+
+.homepageUniversities__seals figure img {
+  width: 100%;
+  max-height: 8.25rem;
+  overflow: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 .5rem;
+}
+
+.homepageUniversities__seals figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding: .25rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__seals figure img {
+    max-height: 5.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure figcaption {
+    font-size: 0.7rem;
+  }
 }
 
 .faq-banner {
@@ -19916,7 +19974,7 @@ figcaption {
 }
 
 .campus-modal .opted-out img {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .campus-modal .opted-out img:hover {
