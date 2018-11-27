@@ -45489,6 +45489,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.industryMajorsByField = [];
 	state.industryFormWasSubmitted = false;
 	state.industryFormWasSubmittedOnce = false;
+	state.industryMajor = null;
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_CARD, function (state) {
 	if (state.industryFormWasSubmitted) {
 		state.industryFormWasSubmitted = false;
