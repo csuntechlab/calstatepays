@@ -81,7 +81,6 @@ class Handler extends ExceptionHandler
     {
         if ($e instanceof HttpException || $e instanceof ModelNotFoundException) {
             return $this->buildResponse('Resource could not be resolved', 409);
-            // return $this->buildResponse($e->message, 409);
         }
         return parent::render($request, $e);
     }
