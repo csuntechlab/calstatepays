@@ -193,7 +193,6 @@ export default {
 		majorLegend
 	},
 	updated() {
-		console.log(this.selectedFormWasSubmitted);
 	}
 };
 </script>

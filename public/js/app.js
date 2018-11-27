@@ -48657,11 +48657,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     },
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']), {
         getDeviceHeight: function getDeviceHeight() {
-            console.log("getting device");
             this.deviceHeight = window.innerHeight;
         },
         getWindowHeight: function getWindowHeight(event) {
-            console.log(window.innerHeight);
             this.innerHeight = window.innerHeight;
         },
         toggleShowNavOnLoad: function toggleShowNavOnLoad() {
@@ -52152,9 +52150,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
 		majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
 	},
-	updated: function updated() {
-		console.log(this.selectedFormWasSubmitted);
-	}
+	updated: function updated() {}
 });
 
 /***/ }),
