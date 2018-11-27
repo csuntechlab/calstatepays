@@ -31,11 +31,9 @@ export default{
     methods: {
         ...mapActions(['setDataPage']),
         getDeviceHeight(){
-            console.log("getting device");
             this.deviceHeight = window.innerHeight;
         },
         getWindowHeight(event) {
-            console.log(window.innerHeight)
             this.innerHeight = window.innerHeight
         },
         toggleShowNavOnLoad() {
