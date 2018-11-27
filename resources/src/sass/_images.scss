@@ -4,8 +4,7 @@
 	background-position: center center;
 	position: relative;
 	width: 100%;
-	padding-top: 0;
-	height: 85vh;
+	padding-top: 44%;
 	@media screen and (max-width: $break-medium) {
 		padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
 		height: unset;
