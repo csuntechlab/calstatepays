@@ -301,12 +301,18 @@
 	}
 }
 
-%titleBase {
+@mixin make-homeCard__title($font-color) {
+	color: $font-color;
+	$constrast-color: white;
 	@extend .text-left, .text-md-center, .pt-md-3 ;
 	font-size: 1.7rem;
 	margin: 0;
 	font-weight: bold;
-	@media screen and (max-width: $break-small) {
+	// text-decoration: none;
+	&:hover{
+		color: $constrast-color;
+	}
+	@media screen and (max-width: 375px) {
 		font-size: 1.5rem;
 	}
 }
@@ -327,15 +333,28 @@
 	color: white;
 	margin: 0;
 	line-height: 130%;
-	font-size: 1.02rem;
+	font-size: .9rem;
 	min-height:7.5rem;
+	text-decoration: none;
 	@media screen and (max-width: $break-point){
 		font-size: 1rem;
 		min-height: unset;
 	}
 }
 
+%titleHover{
+	color: $white;
+	text-decoration: none;
+}
+
 .homeCard{
+	&__link{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
 	//Major
 	&__iconWrapper--major{
 		@extend %iconWrapperBase;
@@ -344,13 +363,16 @@
 	&__icon--major{fill:$CSP-Dark-Blue;}
 
 	&__title--major{
-		@extend %titleBase;
+		@include make-homeCard__title($CSP-Dark-Blue);
 	}
 	&__titleAndIconWrapper--major{
 		@include make-homeCard__titleAndIconWrapper($CSP-Blue);
 		&:hover{
 			.homeCard__icon--major{
-				fill: white;
+				fill: $white;
+			}
+			.homeCard__title--major{
+				@extend %titleHover;
 			}
 		}
 		
@@ -380,27 +402,30 @@
 	}
 
 	&__title--industries{
-		@extend %titleBase;
+		@include make-homeCard__title($CSP-Dark-Gold);
 	}
 
 	&__titleAndIconWrapper--industries{
 		@include make-homeCard__titleAndIconWrapper($CSP-Gold);
 		&:hover{
 			.homeCard__icon--industries0{
-				fill: white;
+				fill: $white;
 			}
 			.homeCard__icon--industries1{
 				fill:none;
-				stroke:white;
+				stroke:$white;
 				stroke-width:5;
 				stroke-linecap:round;
 				stroke-miterlimit:10;
 			}
 			.homeCard__icon--industries2{
 				fill:none;
-				stroke:white;
+				stroke:$white;
 				stroke-width:3;
 				stroke-miterlimit:10;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
 			}
 		}
 		
@@ -416,14 +441,17 @@
 	&__icon--PFRE{fill:$CSP-Dark-Red;}
 
 	&__title--PFRE{
-		@extend %titleBase;
+		@include make-homeCard__title($CSP-Dark-Red);
 	}
 
 	&__titleAndIconWrapper--PFRE{
 		@include make-homeCard__titleAndIconWrapper($CSP-Red);
 		&:hover{
 			.homeCard__icon--PFRE{
-				fill: white;
+				fill: $white;
+			}
+			.homeCard__title--PFRE{
+				@extend %titleHover;
 			}
 		}
 		
