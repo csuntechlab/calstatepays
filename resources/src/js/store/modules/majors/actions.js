@@ -33,7 +33,7 @@ export default {
         Major.fetchUpdatedMajorsByFieldAPI(
             payload,
             (success) => {
-                success.cardIndex = payload.cardIndex;
+                success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
             },
             (error) =>commit(_global.ERROR_ALERT,error),
@@ -53,7 +53,7 @@ export default {
         Major.fetchMajorDataAPI(
             payload,
             (success) => {
-                success.cardIndex = payload.cardIndex;
+                success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
             },
             (error) => commit(_global.ERROR_ALERT,error),
@@ -64,7 +64,7 @@ export default {
         Major.fetchIndustryImagesAPI(
             payload,
             (success) => {
-                success.cardIndex = payload.cardIndex;
+                success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_INDUSTRY_IMAGES,{ industries:success.bachelors,cardIndex:success.cardIndex});
             },
             (error) => commit(_global.ERROR_ALERT,error),

@@ -87,7 +87,6 @@ export default {
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
 				formEducationLevel: "bachelors",
@@ -102,9 +101,6 @@ export default {
 		};
 	},
 
-	mounted() {
-		this.form.university = this.selectedUniversity;
-	},
 
 	methods: {
 		...mapActions([
@@ -121,7 +117,7 @@ export default {
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
-                this.fetchIndustries(this.form);
+                this.fetchIndustries({form: this.form, school: this.selectedUniversity});
                 this.$store.dispatch("setIndustryMajor", this.selected);
                 this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
                 this.selected = null;
@@ -157,7 +153,7 @@ export default {
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
 			
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
 	},

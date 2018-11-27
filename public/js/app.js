@@ -28834,7 +28834,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
 };
 
 var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -28842,7 +28842,7 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/major/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         if (failure.response.status == 400) {
@@ -28861,7 +28861,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get("api/industry/images/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/industry/images/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         error(failure.response);
@@ -45058,7 +45058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref4.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -45079,7 +45079,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref6.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -45089,7 +45089,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref7.commit;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, { industries: success.bachelors, cardIndex: success.cardIndex });
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -45570,7 +45570,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
+    window.axios.get("api/industry/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         if (failure.response.status == 400) {
@@ -45581,7 +45581,7 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response.data.message);
@@ -50924,7 +50924,7 @@ exports = module.exports = __webpack_require__(77)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51055,7 +51055,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				cardIndex: this.index,
 				majorId: null,
-				schoolId: null,
 				formWasSubmitted: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
@@ -51074,9 +51073,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
-	mounted: function mounted() {
-		this.form.schoolId = this.selectedUniversity;
-	},
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData", "resetMajorCard"]), {
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
@@ -51092,8 +51088,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				this.selected = null;
 				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
-				this.fetchIndustryImages(this.form);
-				this.fetchMajorData(this.form);
+				this.fetchIndustryImages({ form: this.form, school: this.selectedUniversity });
+				this.fetchMajorData({ form: this.form, school: this.selectedUniversity });
 				this.form.majorId = null;
 				this.form.fieldOfStudyId = null;
 				this.isShowing = !this.isShowing;
@@ -51115,7 +51111,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchUpdatedMajorsByField(this.form);
+				this.fetchUpdatedMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		},
 		toggleEducationLevel: function toggleEducationLevel(educationInput) {
@@ -70517,7 +70513,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
 				formEducationLevel: "bachelors"
@@ -70531,9 +70526,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
-	mounted: function mounted() {
-		this.form.university = this.selectedUniversity;
-	},
 
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "resetIndustryCard", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel", "setIndustryMajor"]), {
@@ -70542,7 +70534,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
-				this.fetchIndustries(this.form);
+				this.fetchIndustries({ form: this.form, school: this.selectedUniversity });
 				this.$store.dispatch("setIndustryMajor", this.selected);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 				this.selected = null;
@@ -70575,7 +70567,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
 
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		}
 	}),

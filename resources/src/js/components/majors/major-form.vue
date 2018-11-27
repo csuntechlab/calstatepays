@@ -77,7 +77,6 @@
 				form: {
 					cardIndex: this.index,
 					majorId: null,
-					schoolId: null,
 					formWasSubmitted: false,
 					fieldOfStudyId: null,
 					formEducationLevel: "allDegrees",
@@ -95,9 +94,6 @@
 					fontWeight: "bold"
 				}
 			};
-		},
-		mounted() {
-			this.form.schoolId = this.selectedUniversity;
 		},
 		methods: {
 			...mapActions([
@@ -121,8 +117,8 @@
 					this.selected = null;
 					this.submittedOnce = false;
 					this.toggleFormWasSubmitted(this.form.cardIndex);
-					this.fetchIndustryImages(this.form);
-					this.fetchMajorData(this.form);
+					this.fetchIndustryImages({form:this.form, school:this.selectedUniversity});
+					this.fetchMajorData({form:this.form, school:this.selectedUniversity});
 					this.form.majorId = null;
 					this.form.fieldOfStudyId = null;
 					this.isShowing = !this.isShowing;
@@ -148,7 +144,7 @@
 
 			handleFieldOfStudyMajors(field) {
 				if (field == "fieldOfStudyId") {
-					this.fetchUpdatedMajorsByField(this.form);
+					this.fetchUpdatedMajorsByField({form:this.form, school:this.selectedUniversity});
 				}
 			},
 			toggleEducationLevel(educationInput) {
