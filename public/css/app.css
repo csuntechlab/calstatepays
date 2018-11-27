@@ -19624,6 +19624,12 @@ figcaption {
           transform: translateX(-50%);
 }
 
+@media screen and (max-width: 768px) {
+  .homeBanner__Tagline {
+    width: 83%;
+  }
+}
+
 .img__logo {
   padding-top: 10px;
   max-height: 50px;

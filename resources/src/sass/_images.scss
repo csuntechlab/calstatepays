@@ -22,6 +22,9 @@
 		left: 50%;
 		bottom: 10%;
 		transform: translateX(-50%);
+		@media screen and (max-width: $break-medium) {
+			width: 83%;
+		}
 	}
 }
 
