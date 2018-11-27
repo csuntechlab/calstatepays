@@ -6,7 +6,7 @@
 		<div class="col-md-9">
 			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid py-3">
 				<div class="row">
-					<div class="col-6">
+					<div class="col">
 						<social-sharing 
 						v-if="selectedFormWasSubmittedOnce && !nullValues" 
 						:url="this.url"
@@ -16,19 +16,20 @@
 						hashtags="CalStatePays, ItPaysToGoToCollege"
 						inline-template>
 							<div>
-								<network network="facebook" class="csu-card__share csu-card__share-facebook">
-									<i class="fa fa-facebook-official fa-2x"></i>
+								<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
+									<i class="fa fa-twitter-square"></i>
+									Tweet
 								</network>
-								<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
-									<i class="fa fa-linkedin-square fa-2x"></i>
+								<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
+									<i class="fa fa-linkedin-square"></i>
+									Share
 								</network>
-								<network network="twitter" class="csu-card__share csu-card__share-twitter">
-									<i class="fa fa-twitter-square fa-2x"></i>
+								<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
+									<i class="fa fa-facebook-official"></i>
+									Share
 								</network>
 							</div>
 						</social-sharing>
-					</div>
-					<div class="col-6">
 						<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 					</div>
 				</div>
