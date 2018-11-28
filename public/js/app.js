@@ -29631,7 +29631,7 @@ var fetchFieldOfStudiesAPI = function fetchFieldOfStudiesAPI(success, error) {
 };
 
 var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         error(failure.response.data.message);
@@ -29639,7 +29639,7 @@ var fetchUpdatedMajorsByFieldAPI = function fetchUpdatedMajorsByFieldAPI(payload
 };
 
 var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
-    window.axios.get("api/major/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/major/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         return success(response.data);
     }).catch(function (failure) {
         if (failure.response.status == 400) {
@@ -29658,7 +29658,7 @@ var fetchUniversitiesAPI = function fetchUniversitiesAPI(success, error) {
     });
 };
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
-    window.axios.get("api/industry/images/" + payload.majorId + "/" + payload.schoolId).then(function (response) {
+    window.axios.get("api/industry/images/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         error(failure.response);
@@ -46486,7 +46486,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref4.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchUpdatedMajorsByFieldAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -46507,7 +46507,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             dispatch = _ref6.dispatch;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -46517,7 +46517,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref7.commit;
 
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchIndustryImagesAPI(payload, function (success) {
-            success.cardIndex = payload.cardIndex;
+            success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, { industries: success.bachelors, cardIndex: success.cardIndex });
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
@@ -46917,6 +46917,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.industryMajorsByField = [];
 	state.industryFormWasSubmitted = false;
 	state.industryFormWasSubmittedOnce = false;
+	state.industryMajor = null;
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_CARD, function (state) {
 	if (state.industryFormWasSubmitted) {
 		state.industryFormWasSubmitted = false;
@@ -46998,7 +46999,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
-    window.axios.get("api/industry/" + payload.majorId + "/" + payload.university).then(function (response) {
+    window.axios.get("api/industry/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
     }).catch(function (failure) {
         if (failure.response.status == 400) {
@@ -47009,7 +47010,7 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response.data.message);
@@ -49432,10 +49433,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            deviceHeight: 0,
+            innerHeight: 0
+        };
+    },
+
     created: function created() {
         this.toggleShowNavOnLoad();
     },
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']), {
+        getDeviceHeight: function getDeviceHeight() {
+            this.deviceHeight = window.innerHeight;
+        },
+        getWindowHeight: function getWindowHeight(event) {
+            this.innerHeight = window.innerHeight;
+        },
         toggleShowNavOnLoad: function toggleShowNavOnLoad() {
             var URL = window.location.href;
             if (URL.includes("industries")) {
@@ -49443,8 +49457,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             } else if (URL.includes("pfre")) {
                 this.setDataPage("pfre");
             }
-        }
-    })
+        },
+        inputIsFocused: function inputIsFocused() {}
+    }),
+    mounted: function mounted() {
+        this.getDeviceHeight();
+        this.$nextTick(function () {
+            window.addEventListener("resize", this.getWindowHeight);
+            this.getWindowHeight();
+        });
+    },
+    beforeDestroy: function beforeDestroy() {
+        window.removeEventListener("resize", this.getWindowHeight);
+    }
 });
 
 /***/ }),
@@ -49455,87 +49480,89 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "sub-nav container-fluid" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
+  return _vm.innerHeight > _vm.deviceHeight / 2
+    ? _c("nav", { staticClass: "sub-nav container-fluid" }, [
         _c(
-          "router-link",
-          {
-            staticClass: "col-4 sub-nav__element",
-            attrs: {
-              "active-class": "sub-nav__element--active",
-              to: "/data/majors"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("majors")
-              }
-            }
-          },
+          "div",
+          { staticClass: "row" },
           [
-            _c("i", {
-              staticClass:
-                "mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
-              attrs: { "aria-hidden": "true" }
-            }),
+            _c(
+              "router-link",
+              {
+                staticClass: "col-4 sub-nav__element",
+                attrs: {
+                  "active-class": "sub-nav__element--active",
+                  to: "/data/majors"
+                },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.setDataPage("majors")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass:
+                    "mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("span", [_vm._v("Majors")])
+              ]
+            ),
             _vm._v(" "),
-            _c("span", [_vm._v("Majors")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "col-4 sub-nav__element",
-            attrs: {
-              "exact-active-class": "sub-nav__element--active",
-              to: "/data/industries"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("industries")
-              }
-            }
-          },
-          [
-            _c("i", {
-              staticClass: "mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
-              attrs: { "aria-hidden": "true" }
-            }),
+            _c(
+              "router-link",
+              {
+                staticClass: "col-4 sub-nav__element",
+                attrs: {
+                  "exact-active-class": "sub-nav__element--active",
+                  to: "/data/industries"
+                },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.setDataPage("industries")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("span", [_vm._v("Industries")])
+              ]
+            ),
             _vm._v(" "),
-            _c("span", [_vm._v("Industries")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            staticClass: "col-4 sub-nav__element",
-            attrs: {
-              "active-class": "sub-nav__element--active",
-              to: "/data/pfre"
-            },
-            nativeOn: {
-              click: function($event) {
-                _vm.setDataPage("pfre")
-              }
-            }
-          },
-          [
-            _c("i", {
-              staticClass: "mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
-            _c("span", [_vm._v("FRE")])
-          ]
+            _c(
+              "router-link",
+              {
+                staticClass: "col-4 sub-nav__element",
+                attrs: {
+                  "active-class": "sub-nav__element--active",
+                  to: "/data/pfre"
+                },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.setDataPage("pfre")
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v(" "),
+                _c("span", [_vm._v("FRE")])
+              ]
+            )
+          ],
+          1
         )
-      ],
-      1
-    )
-  ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52911,9 +52938,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
 		majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
 	},
-	updated: function updated() {
-		console.log(this.selectedFormWasSubmitted);
-	}
+	updated: function updated() {}
 });
 
 /***/ }),
@@ -52951,7 +52976,7 @@ exports = module.exports = __webpack_require__(78)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53082,7 +53107,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				cardIndex: this.index,
 				majorId: null,
-				schoolId: null,
 				formWasSubmitted: false,
 				fieldOfStudyId: null,
 				formEducationLevel: "allDegrees",
@@ -53101,9 +53125,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
-	mounted: function mounted() {
-		this.form.schoolId = this.selectedUniversity;
-	},
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryImages", "toggleFormWasSubmitted", "fetchUpdatedMajorsByField", "fetchMajorData", "resetMajorCard"]), {
 		updateForm: __WEBPACK_IMPORTED_MODULE_2__utils_index__["a" /* updateForm */],
@@ -53119,8 +53140,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				this.selected = null;
 				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
-				this.fetchIndustryImages(this.form);
-				this.fetchMajorData(this.form);
+				this.fetchIndustryImages({ form: this.form, school: this.selectedUniversity });
+				this.fetchMajorData({ form: this.form, school: this.selectedUniversity });
 				this.form.majorId = null;
 				this.form.fieldOfStudyId = null;
 				this.isShowing = !this.isShowing;
@@ -53142,7 +53163,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchUpdatedMajorsByField(this.form);
+				this.fetchUpdatedMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		},
 		toggleEducationLevel: function toggleEducationLevel(educationInput) {
@@ -53417,10 +53438,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "allDegrees",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "allDegrees"
+                        "": this.educationLevel(this.index) != "allDegrees"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
@@ -53447,10 +53467,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "postBacc",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "postBacc"
+                        "": this.educationLevel(this.index) != "postBacc"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
@@ -53477,10 +53496,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "bachelors",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "bachelors"
+                        "": this.educationLevel(this.index) != "bachelors"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
@@ -53507,10 +53525,9 @@ var render = function() {
                     _c("i", {
                       staticClass: "major-btn_icon",
                       class: {
-                        "fa fa-check-circle":
+                        "fa fa-check":
                           this.educationLevel(this.index) == "someCollege",
-                        "fa fa-circle-thin":
-                          this.educationLevel(this.index) != "someCollege"
+                        "": this.educationLevel(this.index) != "someCollege"
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
@@ -74294,7 +74311,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
-				university: null,
 				formWasSubmitted: false,
 				formWasSubmittedOnce: false,
 				formEducationLevel: "bachelors"
@@ -74308,9 +74324,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		};
 	},
-	mounted: function mounted() {
-		this.form.university = this.selectedUniversity;
-	},
 
 
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchIndustryMajorsByField", "toggleIndustryFormWasSubmitted", "resetIndustryCard", "fetchUpdatedMajorsByField", "fetchIndustries", "toggleIndustryEducationLevel", "setIndustryMajor"]), {
@@ -74319,7 +74332,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.submittedOnce = true;
 			if (this.checkForm()) {
 				this.toggleIndustryFormWasSubmitted();
-				this.fetchIndustries(this.form);
+				this.fetchIndustries({ form: this.form, school: this.selectedUniversity });
 				this.$store.dispatch("setIndustryMajor", this.selected);
 				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 				this.selected = null;
@@ -74352,7 +74365,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
 
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		}
 	}),
@@ -74597,10 +74610,8 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
-                        _vm.industryEducationLevel == "post_bacc",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "post_bacc"
+                      "fa fa-check": _vm.industryEducationLevel == "post_bacc",
+                      "": _vm.industryEducationLevel != "post_bacc"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
@@ -74623,10 +74634,8 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
-                        _vm.industryEducationLevel == "bachelors",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "bachelors"
+                      "fa fa-check": _vm.industryEducationLevel == "bachelors",
+                      "": _vm.industryEducationLevel != "bachelors"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
@@ -74649,10 +74658,9 @@ var render = function() {
                   _c("i", {
                     staticClass: "major-btn_icon",
                     class: {
-                      "fa fa-check-circle":
+                      "fa fa-check":
                         _vm.industryEducationLevel == "someCollege",
-                      "fa fa-circle-thin":
-                        _vm.industryEducationLevel != "someCollege"
+                      "": _vm.industryEducationLevel != "someCollege"
                     }
                   }),
                   _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
