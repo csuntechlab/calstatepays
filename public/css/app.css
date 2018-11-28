@@ -17441,7 +17441,10 @@ button.bg-dark:focus {
 }
 
 .pr-2,
-.px-2 {
+.px-2,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-right: 0.5rem !important;
 }
 
@@ -17451,16 +17454,22 @@ button.bg-dark:focus {
 }
 
 .pl-2,
-.px-2 {
+.px-2,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-left: 0.5rem !important;
 }
 
-.p-3, .campus, .not-avail {
+.p-3, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE, .campus, .not-avail {
   padding: 1rem !important;
 }
 
 .pt-3,
-.py-3 {
+.py-3,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-top: 1rem !important;
 }
 
@@ -17470,7 +17479,10 @@ button.bg-dark:focus {
 }
 
 .pb-3,
-.py-3 {
+.py-3,
+.homeCard__titleAndIconWrapper--major,
+.homeCard__titleAndIconWrapper--industries,
+.homeCard__titleAndIconWrapper--PFRE {
   padding-bottom: 1rem !important;
 }
 
@@ -17978,7 +17990,7 @@ button.bg-dark:focus {
   .p-md-3 {
     padding: 1rem !important;
   }
-  .pt-md-3,
+  .pt-md-3, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE,
   .py-md-3 {
     padding-top: 1rem !important;
   }
@@ -17994,11 +18006,14 @@ button.bg-dark:focus {
   .px-md-3 {
     padding-left: 1rem !important;
   }
-  .p-md-4 {
+  .p-md-4, .homeCard__titleAndIconWrapper--major, .homeCard__titleAndIconWrapper--industries, .homeCard__titleAndIconWrapper--PFRE {
     padding: 1.5rem !important;
   }
   .pt-md-4,
-  .py-md-4 {
+  .py-md-4,
+  .homeCard__titleAndIconWrapper--major,
+  .homeCard__titleAndIconWrapper--industries,
+  .homeCard__titleAndIconWrapper--PFRE {
     padding-top: 1.5rem !important;
   }
   .pr-md-4,
@@ -18006,7 +18021,10 @@ button.bg-dark:focus {
     padding-right: 1.5rem !important;
   }
   .pb-md-4,
-  .py-md-4 {
+  .py-md-4,
+  .homeCard__titleAndIconWrapper--major,
+  .homeCard__titleAndIconWrapper--industries,
+  .homeCard__titleAndIconWrapper--PFRE {
     padding-bottom: 1.5rem !important;
   }
   .pl-md-4,
@@ -18229,7 +18247,10 @@ button.bg-dark:focus {
     padding: 1rem !important;
   }
   .pt-lg-3,
-  .py-lg-3 {
+  .py-lg-3,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-top: 1rem !important;
   }
   .pr-lg-3,
@@ -18237,14 +18258,17 @@ button.bg-dark:focus {
     padding-right: 1rem !important;
   }
   .pb-lg-3,
-  .py-lg-3 {
+  .py-lg-3,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-bottom: 1rem !important;
   }
   .pl-lg-3,
   .px-lg-3 {
     padding-left: 1rem !important;
   }
-  .p-lg-4 {
+  .p-lg-4, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
     padding: 1.5rem !important;
   }
   .pt-lg-4,
@@ -18252,7 +18276,10 @@ button.bg-dark:focus {
     padding-top: 1.5rem !important;
   }
   .pr-lg-4,
-  .px-lg-4 {
+  .px-lg-4,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-right: 1.5rem !important;
   }
   .pb-lg-4,
@@ -18260,7 +18287,10 @@ button.bg-dark:focus {
     padding-bottom: 1.5rem !important;
   }
   .pl-lg-4,
-  .px-lg-4 {
+  .px-lg-4,
+  .homeCard__Copy--major,
+  .homeCard__Copy--industries,
+  .homeCard__Copy--PFRE {
     padding-left: 1.5rem !important;
   }
   .p-lg-5 {
@@ -18521,7 +18551,13 @@ button.bg-dark:focus {
     padding-top: 3rem !important;
   }
   .pr-xl-5,
-  .px-xl-5 {
+  .px-xl-5,
+  .homeCard__title--major,
+  .homeCard__Copy--major,
+  .homeCard__title--industries,
+  .homeCard__Copy--industries,
+  .homeCard__title--PFRE,
+  .homeCard__Copy--PFRE {
     padding-right: 3rem !important;
   }
   .pb-xl-5,
@@ -18529,7 +18565,13 @@ button.bg-dark:focus {
     padding-bottom: 3rem !important;
   }
   .pl-xl-5,
-  .px-xl-5 {
+  .px-xl-5,
+  .homeCard__title--major,
+  .homeCard__Copy--major,
+  .homeCard__title--industries,
+  .homeCard__Copy--industries,
+  .homeCard__title--PFRE,
+  .homeCard__Copy--PFRE {
     padding-left: 3rem !important;
   }
   .m-xl-auto {
@@ -18571,7 +18613,7 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left, .CSUDataImgBanner__campusInfoWrapper, .returnToCampusSelection {
+.text-left, .CSUDataImgBanner__campusInfoWrapper, .homeCard__title--major, .homeCard__Copy--major, .homeCard__title--industries, .homeCard__Copy--industries, .homeCard__title--PFRE, .homeCard__Copy--PFRE, .returnToCampusSelection {
   text-align: left !important;
 }
 
@@ -18602,7 +18644,7 @@ button.bg-dark:focus {
   .text-md-right, .CSUDataImgBanner__campusInfoWrapper {
     text-align: right !important;
   }
-  .text-md-center {
+  .text-md-center, .homeCard__title--major, .homeCard__Copy--major, .homeCard__title--industries, .homeCard__Copy--industries, .homeCard__title--PFRE, .homeCard__Copy--PFRE {
     text-align: center !important;
   }
 }
@@ -19070,12 +19112,60 @@ figcaption {
   width: fit-content;
 }
 
+.homepageUniversities__headline {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .homepageUniversities__headline {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__headline {
+    font-size: 1.12rem;
+  }
+}
+
 .homeBanner {
-  background-image: url("../img/homeimages/home-banner.jpg");
+  background-image: url("../img/homeimages/banner-xs.jpg");
   background-size: cover;
+  background-position: center center;
   position: relative;
-  padding-top: 51.37%;
   width: 100%;
+  padding-top: 44%;
+}
+
+@media (min-width: 576px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-sm.jpg");
+  }
+}
+
+@media (min-width: 768px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-md.jpg");
+  }
+}
+
+@media (min-width: 992px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-lg.jpg");
+  }
+}
+
+@media (min-width: 1200px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-lg.jpg");
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homeBanner {
+    padding-top: 51.37%;
+    height: unset;
+  }
 }
 
 .homeBanner__CSPLogo {
@@ -19087,13 +19177,19 @@ figcaption {
           transform: translate(-50%, -50%);
 }
 
-.homeBanner__Tagling {
+.homeBanner__Tagline {
   width: 76%;
   position: absolute;
   left: 50%;
   bottom: 10%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .homeBanner__Tagline {
+    width: 83%;
+  }
 }
 
 .img__logo {
@@ -19173,7 +19269,7 @@ figcaption {
 
 .landing-page__icon {
   font-size: 6rem;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
 }
 
 .landing-page__icon--cap {
@@ -19191,6 +19287,48 @@ figcaption {
 .csu-seals {
   height: 10rem;
   widows: 10rem;
+}
+
+.homepageUniversities__seals figure img {
+  width: 100%;
+  max-height: 8.25rem;
+  overflow: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 .5rem;
+}
+
+.homepageUniversities__seals figure figcaption {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding: .25rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepageUniversities__seals figure img {
+    max-height: 5.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .homepageUniversities__seals figure img {
+    max-height: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepageUniversities__seals figure figcaption {
+    font-size: 0.7rem;
+  }
 }
 
 .faq-banner {
@@ -19354,7 +19492,7 @@ figcaption {
 }
 
 .campus-modal .opted-out img {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .campus-modal .opted-out img:hover {
@@ -19363,6 +19501,330 @@ figcaption {
 
 .campus-modal .opted-out figcaption:hover {
   cursor: no-drop;
+}
+
+.homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
+  position: relative;
+  padding-top: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
+    height: unset;
+    padding-top: 0;
+  }
+}
+
+.homeCard__iconWrapper--major svg, .homeCard__iconWrapper--industries svg, .homeCard__iconWrapper--PFRE svg {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__iconWrapper--major svg, .homeCard__iconWrapper--industries svg, .homeCard__iconWrapper--PFRE svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+.homeCard__titleAndIconWrapper--major:hover .homeCard__title--major, .homeCard__link--major:hover .homeCard__title--major, .homeCard__titleAndIconWrapper--industries:hover .homeCard__title--industries, .homeCard__link--industries:hover .homeCard__title--industries, .homeCard__titleAndIconWrapper--PFRE:hover .homeCard__title--PFRE, .homeCard__link--PFRE:hover .homeCard__title--PFRE {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.homeCard__icon--major {
+  fill: #14597F;
+}
+
+.homeCard__title--major {
+  color: #14597F;
+  font-size: 1.7rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.homeCard__title--major:hover {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__title--major {
+    font-size: 1.45rem;
+  }
+}
+
+.homeCard__titleAndIconWrapper--major {
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
+  border-top: 0.3rem solid #3A97D1;
+  border-left: 0.3rem solid #3A97D1;
+  border-right: 0.3rem solid #3A97D1;
+  background: white;
+}
+
+.homeCard__titleAndIconWrapper--major a {
+  margin: 0;
+  text-decoration: none;
+  color: #246d9a;
+}
+
+.homeCard__titleAndIconWrapper--major a:hover {
+  color: white;
+}
+
+.homeCard__titleAndIconWrapper--major:hover {
+  background: #3A97D1;
+}
+
+.homeCard__titleAndIconWrapper--major:hover .homeCard__icon--major {
+  fill: #FFF;
+}
+
+.homeCard__Copy--major {
+  background: #14597F;
+  color: white;
+  margin: 0;
+  line-height: 130%;
+  font-size: 1rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--major {
+    font-size: 1rem;
+    min-height: unset;
+  }
+}
+
+.homeCard__link--major {
+  text-decoration: none;
+}
+
+.homeCard__link--major:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--major:hover .homeCard__titleAndIconWrapper--major {
+  background: #3A97D1;
+}
+
+.homeCard__link--major:hover .homeCard__icon--major {
+  fill: #FFF;
+}
+
+.homeCard__icon--industries0 {
+  fill: #9D6D02;
+}
+
+.homeCard__icon--industries1 {
+  fill: none;
+  stroke: #9D6D02;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__icon--industries2 {
+  fill: none;
+  stroke: #9D6D02;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__title--industries {
+  color: #9D6D02;
+  font-size: 1.7rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.homeCard__title--industries:hover {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__title--industries {
+    font-size: 1.45rem;
+  }
+}
+
+.homeCard__titleAndIconWrapper--industries {
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
+  border-top: 0.3rem solid #D79900;
+  border-left: 0.3rem solid #D79900;
+  border-right: 0.3rem solid #D79900;
+  background: white;
+}
+
+.homeCard__titleAndIconWrapper--industries a {
+  margin: 0;
+  text-decoration: none;
+  color: #8b6300;
+}
+
+.homeCard__titleAndIconWrapper--industries a:hover {
+  color: white;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover {
+  background: #D79900;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries0 {
+  fill: #FFF;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries1 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__titleAndIconWrapper--industries:hover .homeCard__icon--industries2 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__Copy--industries {
+  background: #9D6D02;
+  color: white;
+  margin: 0;
+  line-height: 130%;
+  font-size: 1rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--industries {
+    font-size: 1rem;
+    min-height: unset;
+  }
+}
+
+.homeCard__link--industries {
+  text-decoration: none;
+}
+
+.homeCard__link--industries:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--industries:hover .homeCard__titleAndIconWrapper--industries {
+  background: #D79900;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries0 {
+  fill: #FFF;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries1 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries2 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__icon--PFRE {
+  fill: #7F1426;
+}
+
+.homeCard__title--PFRE {
+  color: #7F1426;
+  font-size: 1.7rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.homeCard__title--PFRE:hover {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__title--PFRE {
+    font-size: 1.45rem;
+  }
+}
+
+.homeCard__titleAndIconWrapper--PFRE {
+  -webkit-transition: all .28s ease-out;
+  transition: all .28s ease-out;
+  border-top: 0.3rem solid #C52429;
+  border-left: 0.3rem solid #C52429;
+  border-right: 0.3rem solid #C52429;
+  background: white;
+}
+
+.homeCard__titleAndIconWrapper--PFRE a {
+  margin: 0;
+  text-decoration: none;
+  color: #84181c;
+}
+
+.homeCard__titleAndIconWrapper--PFRE a:hover {
+  color: white;
+}
+
+.homeCard__titleAndIconWrapper--PFRE:hover {
+  background: #C52429;
+}
+
+.homeCard__titleAndIconWrapper--PFRE:hover .homeCard__icon--PFRE {
+  fill: #FFF;
+}
+
+.homeCard__Copy--PFRE {
+  background: #7F1426;
+  color: white;
+  margin: 0;
+  line-height: 130%;
+  font-size: 1rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .homeCard__Copy--PFRE {
+    font-size: 1rem;
+    min-height: unset;
+  }
+}
+
+.homeCard__link--PFRE {
+  text-decoration: none;
+}
+
+.homeCard__link--PFRE:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--PFRE:hover .homeCard__titleAndIconWrapper--PFRE {
+  background: #C52429;
+}
+
+.homeCard__link--PFRE:hover .homeCard__icon--PFRE {
+  fill: #FFF;
 }
 
 .site-header {
@@ -19474,7 +19936,7 @@ figcaption {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../../../img/homeimages/logo-mini.svg");
+    content: url("../img/logo-mini.svg");
     width: 4rem;
   }
 }

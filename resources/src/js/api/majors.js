@@ -3,7 +3,9 @@ const fetchMajorsAPI = (payload, success, error) => {
     window.axios.get(`api/major/hegis-codes/university/${payload}`).then(
         response => success(response.data),
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{ 
+                error(failure.response.data.message)
+        }
     );
 }
 
@@ -12,12 +14,14 @@ const fetchFieldOfStudiesAPI = (success, error) => {
         response => success(response.data),
          
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{ 
+                error(failure.response.data.message)
+        }
     );
 };
 
 const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
-    window.axios.get(`api/major/hegis-codes/${payload.schoolId}/${payload.fieldOfStudyId}`).then(
+    window.axios.get(`api/major/hegis-codes/${payload.school}/${payload.form.fieldOfStudyId}`).then(
         response => success(response.data),    
     ).catch(
         failure=>{ error(failure.response.data.message)}
@@ -25,23 +29,28 @@ const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
 };
 
 const fetchMajorDataAPI = (payload, success, error) => {
-    window.axios.get(`api/major/${payload.majorId}/${payload.schoolId}`).then(
-        // api / learn - and - earn / major - data / ${ payload.schoolId } / ${ payload.majorId }
-        response => success(response.data),    
+    window.axios.get(`api/major/${payload.form.majorId}/${payload.school}`).then(
+        response => success(response.data),
     ).catch(
-        failure=>{ error(failure.response.data.message)}
+        failure=>{
+            if(failure.response.status == 400){
+            error(failure.response.data.major[0])
+        }else{
+            error(failure.response.data.message)
+        }
+    }
     );
 }
 
 const fetchUniversitiesAPI = (success, error) => {
     window.axios.get(`api/university`).then(
-        response => success(response.data), 
+        response => success(response.data)
     ).catch(
         failure=>{ error(failure.response.data.message)}
     );
 }
 const fetchIndustryImagesAPI = (payload, success, error) => {
-    window.axios.get(`api/industry/images/${payload.majorId}/${payload.schoolId}`).then(
+    window.axios.get(`api/industry/images/${payload.form.majorId}/${payload.school}`).then(
         response => {
         success(response.data)
     },   
