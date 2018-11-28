@@ -46660,7 +46660,7 @@ var render = function() {
                     _c("h2", { staticClass: "homeCard__title--major" }, [
                       _vm._v("Verify "),
                       _c("br"),
-                      _vm._v(" Major Pay")
+                      _vm._v(" Majors Pay")
                     ])
                   ]
                 ),

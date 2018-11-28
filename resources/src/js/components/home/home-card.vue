@@ -23,7 +23,7 @@
                             </svg>
                         </div>
                         <div class="col-6 col-sm-7 col-md-12 align-self-center p-0">
-                            <h2 class="homeCard__title--major">Verify <br> Major Pay</h2>
+                            <h2 class="homeCard__title--major">Verify <br> Majors Pay</h2>
                         </div>
                         <div class="col-2 d-md-none align-self-center">
                             <i class="homeCard__title--major fa fa-chevron-right"></i>
