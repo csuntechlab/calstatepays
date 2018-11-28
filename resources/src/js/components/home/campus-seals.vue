@@ -1,5 +1,4 @@
 <template>
-<div class="container">
     <div class="row">
         <div class="col-md-12 mt-5">
             <h3 class="text-center font-italic">
@@ -16,8 +15,6 @@
             </figure>
         </div>  
     </div>
-</div>
-
 </template>
 
 <script>
