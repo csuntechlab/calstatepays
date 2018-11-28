@@ -7,6 +7,7 @@
 			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid">
 				<div class="row">
 					<div class="col">
+						<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 						<social-sharing 
 						v-if="selectedFormWasSubmittedOnce && !nullValues" 
 						:url="this.url"
@@ -30,7 +31,6 @@
 								</network>
 							</div>
 						</social-sharing>
-						<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 					</div>
 				</div>
 				<div class="row">

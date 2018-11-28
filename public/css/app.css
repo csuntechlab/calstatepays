@@ -19337,6 +19337,8 @@ html {
   padding: 1px 7px;
   margin: 0 0 7px 0;
   font-weight: bold;
+  top: -8px;
+  position: relative;
   cursor: pointer;
 }
 
@@ -20599,6 +20601,9 @@ textarea {
   margin-left: 8px;
   vertical-align: middle;
   display: inline;
+  position: relative;
+  top: -15px;
+  right: -15px;
 }
 
 .btn-reset {

@@ -72051,6 +72051,21 @@ var render = function() {
                     "div",
                     { staticClass: "col" },
                     [
+                      _c("i", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.isNotFirstCard,
+                            expression: "isNotFirstCard"
+                          }
+                        ],
+                        staticClass:
+                          "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
+                        attrs: { title: "Close" },
+                        on: { click: _vm.removeCurrentCard }
+                      }),
+                      _vm._v(" "),
                       _vm.selectedFormWasSubmittedOnce && !_vm.nullValues
                         ? _c("social-sharing", {
                             attrs: {
@@ -72126,21 +72141,7 @@ var render = function() {
                               staticRenderFns: []
                             }
                           })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("i", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isNotFirstCard,
-                            expression: "isNotFirstCard"
-                          }
-                        ],
-                        staticClass: "fa fa-times fa-2x btn-remove float-right",
-                        attrs: { title: "Close" },
-                        on: { click: _vm.removeCurrentCard }
-                      })
+                        : _vm._e()
                     ],
                     1
                   )
