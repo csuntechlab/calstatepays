@@ -403,12 +403,6 @@
 }
 
 .homeCard{
-	&__link{
-		text-decoration: none;
-		&:hover{
-			text-decoration: none;
-		}
-	}
 
 	//Major
 	&__iconWrapper--major{
@@ -434,6 +428,21 @@
 	}
 	&__Copy--major{
 		@include make-homeCard__copy($CSP-Dark-Blue, $break-small);
+	}
+	&__link--major{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--major{
+				background: $CSP-Blue;
+			}
+			.homeCard__title--major{
+				@extend %titleHover;
+			}
+			.homeCard__icon--major{
+				fill: $white;
+			}
+		}
 	}
 
 	//Industries
@@ -489,6 +498,38 @@
 		@include make-homeCard__copy($CSP-Dark-Gold, $break-small);
 	}
 
+	&__link--industries{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--industries{
+				background: $CSP-Gold;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
+			}
+			.homeCard__icon--industries0{
+				fill: $white;
+			}
+			.homeCard__icon--industries1{
+				fill:none;
+				stroke:$white;
+				stroke-width:5;
+				stroke-linecap:round;
+				stroke-miterlimit:10;
+			}
+			.homeCard__icon--industries2{
+				fill:none;
+				stroke:$white;
+				stroke-width:3;
+				stroke-miterlimit:10;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
+			}
+		}
+	}
+
 	//PFRE
 	&__iconWrapper--PFRE{
 		@extend %iconWrapperBase;
@@ -513,5 +554,20 @@
 	}
 	&__Copy--PFRE{
 		@include make-homeCard__copy($CSP-Dark-Red, $break-small);
+	}
+	&__link--PFRE{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--PFRE{
+				background: $CSP-Red;
+			}
+			.homeCard__title--PFRE{
+				@extend %titleHover;
+			}
+			.homeCard__icon--PFRE{
+				fill: $white;
+			}
+		}
 	}
 }

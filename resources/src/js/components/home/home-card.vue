@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
-            <router-link class="homeCard__link" to="/data/majors" @click.native="setDataPage('majors')">
+            <router-link class="homeCard__link--major" to="/data/majors" @click.native="setDataPage('majors')">
                 <div class="homeCard__titleAndIconWrapper--major">
                     <div class="row">
                         <div class="col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--major">
@@ -38,7 +38,7 @@
             </router-link>
         </div>
         <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
-            <router-link class="homeCard__link" to="/data/industries" @click.native="setDataPage('industries')">
+            <router-link class="homeCard__link--industries" to="/data/industries" @click.native="setDataPage('industries')">
                 <div class="homeCard__titleAndIconWrapper--industries">    
                     <div class="row">
                             <div class="col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--industries">
@@ -82,7 +82,7 @@
             </router-link>
         </div>
         <div class="col-12 col-md-4 py-2 px-3 px-lg-5">
-            <router-link class="homeCard__link" to="/data/PFRE" @click.native="setDataPage('PFRE')">
+            <router-link class="homeCard__link--PFRE" to="/data/PFRE" @click.native="setDataPage('PFRE')">
                 <div class="homeCard__titleAndIconWrapper--PFRE">
                     <div class="row">
                         <div class="col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--PFRE">

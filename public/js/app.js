@@ -48018,7 +48018,7 @@ var render = function() {
         _c(
           "router-link",
           {
-            staticClass: "homeCard__link",
+            staticClass: "homeCard__link--major",
             attrs: { to: "/data/majors" },
             nativeOn: {
               click: function($event) {
@@ -48115,7 +48115,7 @@ var render = function() {
         _c(
           "router-link",
           {
-            staticClass: "homeCard__link",
+            staticClass: "homeCard__link--industries",
             attrs: { to: "/data/industries" },
             nativeOn: {
               click: function($event) {
@@ -48337,7 +48337,7 @@ var render = function() {
         _c(
           "router-link",
           {
-            staticClass: "homeCard__link",
+            staticClass: "homeCard__link--PFRE",
             attrs: { to: "/data/PFRE" },
             nativeOn: {
               click: function($event) {

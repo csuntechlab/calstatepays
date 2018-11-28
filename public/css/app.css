@@ -20016,16 +20016,8 @@ figcaption {
   }
 }
 
-.homeCard__titleAndIconWrapper--major:hover .homeCard__title--major, .homeCard__titleAndIconWrapper--industries:hover .homeCard__title--industries, .homeCard__titleAndIconWrapper--PFRE:hover .homeCard__title--PFRE {
+.homeCard__titleAndIconWrapper--major:hover .homeCard__title--major, .homeCard__link--major:hover .homeCard__title--major, .homeCard__titleAndIconWrapper--industries:hover .homeCard__title--industries, .homeCard__link--industries:hover .homeCard__title--industries, .homeCard__titleAndIconWrapper--PFRE:hover .homeCard__title--PFRE, .homeCard__link--PFRE:hover .homeCard__title--PFRE {
   color: #FFF;
-  text-decoration: none;
-}
-
-.homeCard__link {
-  text-decoration: none;
-}
-
-.homeCard__link:hover {
   text-decoration: none;
 }
 
@@ -20092,6 +20084,22 @@ figcaption {
     font-size: 1rem;
     min-height: unset;
   }
+}
+
+.homeCard__link--major {
+  text-decoration: none;
+}
+
+.homeCard__link--major:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--major:hover .homeCard__titleAndIconWrapper--major {
+  background: #3A97D1;
+}
+
+.homeCard__link--major:hover .homeCard__icon--major {
+  fill: #FFF;
 }
 
 .homeCard__icon--industries0 {
@@ -20189,6 +20197,37 @@ figcaption {
   }
 }
 
+.homeCard__link--industries {
+  text-decoration: none;
+}
+
+.homeCard__link--industries:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--industries:hover .homeCard__titleAndIconWrapper--industries {
+  background: #D79900;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries0 {
+  fill: #FFF;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries1 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+.homeCard__link--industries:hover .homeCard__icon--industries2 {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
 .homeCard__icon--PFRE {
   fill: #7F1426;
 }
@@ -20252,6 +20291,22 @@ figcaption {
     font-size: 1rem;
     min-height: unset;
   }
+}
+
+.homeCard__link--PFRE {
+  text-decoration: none;
+}
+
+.homeCard__link--PFRE:hover {
+  text-decoration: none;
+}
+
+.homeCard__link--PFRE:hover .homeCard__titleAndIconWrapper--PFRE {
+  background: #C52429;
+}
+
+.homeCard__link--PFRE:hover .homeCard__icon--PFRE {
+  fill: #FFF;
 }
 
 .site-header {
