@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<h3  class="industry-title pt-2">{{selectedMajorTitle}}</h3>
+					<h3  class="industry-title pt-3">{{selectedMajorTitle}}</h3>
 				</div>
 									<div class="row">
 						<div class="col-12">
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</card>
-			<div v-else class="csu-card py-3">
+			<div v-else class="csu-card">
 				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 				<p class="lead pl-md-5 pr-md-5">
 					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>

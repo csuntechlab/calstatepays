@@ -19317,9 +19317,9 @@ html {
 }
 
 .csu-card {
-  margin-bottom: 50px;
-  min-height: 100%;
+  min-height: 95%;
   padding: 2rem;
+  margin-bottom: 13px;
 }
 
 @media screen and (max-width: 767px) {
@@ -20892,7 +20892,7 @@ button.btn-change-campus:hover {
 }
 
 .industry-card {
-  min-height: 100%;
+  min-height: 95%;
   padding: 2rem;
 }
 

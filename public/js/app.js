@@ -71776,7 +71776,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h4", { staticClass: "industry-title pb-3" }, [
+      _c("h4", { staticClass: "industry-title h3 pb-3 pt-4" }, [
         _vm._v("Common Employment Sectors")
       ]),
       _vm._v(" "),
@@ -72147,7 +72147,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("h3", { staticClass: "industry-title pt-2" }, [
+                  _c("h3", { staticClass: "industry-title pt-3" }, [
                     _vm._v(_vm._s(_vm.selectedMajorTitle))
                   ])
                 ]),
@@ -72251,7 +72251,7 @@ var render = function() {
                   )
                 ])
               ])
-            : _c("div", { staticClass: "csu-card py-3" }, [
+            : _c("div", { staticClass: "csu-card" }, [
                 _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
                   _vm._v("Please make your selection")
                 ]),
@@ -73335,7 +73335,7 @@ var render = function() {
     (Object.keys(_vm.industriesByMajor).length === 0 &&
       _vm.industriesByMajor.constructor == +Object)
       ? _c("div", [
-          _c("h3", { staticClass: "industry-title text-center pb-md-3" }, [
+          _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
             _vm._v("Please make your selection")
           ]),
           _vm._v(" "),
@@ -73397,10 +73397,8 @@ var render = function() {
                     { staticClass: "lead pl-md-5 pr-md-5" },
                     [
                       _vm._v(
-                        "\n                No data is available for this selected Degree Level."
+                        "\n                No data is available for this selected Degree Level. Please see the "
                       ),
-                      _c("br"),
-                      _vm._v("Please see the "),
                       _c("router-link", { attrs: { to: "/faq" } }, [
                         _vm._v("FAQ")
                       ]),

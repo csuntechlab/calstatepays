@@ -7,9 +7,9 @@
 
 .csu-card{
     @extend %card-base;
-    margin-bottom: 50px;
-    min-height: 100%;
+    min-height: 95%;
     padding: 2rem;
+    margin-bottom: 13px;
     @media screen and (max-width: $break-small) {
         min-height: unset;
     }

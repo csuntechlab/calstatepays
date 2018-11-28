@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="industryMajor == null || (Object.keys(industriesByMajor).length === 0 && industriesByMajor.constructor ==+ Object)">
-            <h3 class="industry-title text-center pb-md-3">Please make your selection</h3>
+            <h3 class="industry-title text-center p-md-3">Please make your selection</h3>
             <p class="lead pl-md-5 pr-md-5">
                 You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
             which resonates the most with you.
@@ -26,7 +26,7 @@
                     <span class="IndustryLegend__LegendSalary"></span>Average Earnings
                 </div>
                 <p class="lead pl-md-5 pr-md-5" v-if="industries.length === 0">
-                    No data is available for this selected Degree Level.<br>Please see the <router-link to="/faq">FAQ</router-link> section for more information on
+                    No data is available for this selected Degree Level. Please see the <router-link to="/faq">FAQ</router-link> section for more information on
                     how we collected the data.
                 </p>
             </div>
