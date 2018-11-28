@@ -49266,7 +49266,7 @@ var render = function() {
                       { staticClass: "headline grey lighten-2 " },
                       [
                         _vm._v(
-                          "\r\n                    Please make your campus selection\r\n                "
+                          "\n                    Please make your campus selection\n                "
                         )
                       ]
                     ),
@@ -52874,7 +52874,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors", "universities", "selectedUniversity"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmittedOnce) {
@@ -52910,7 +52910,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			var opening = 'I discovered that ' + this.selectedMajorTitle + ' students from CSUN make an average of ';
+			var universityFullName = this.retrieveUniversityFullName(this.universities, this.selectedUniversity);
+
+			var opening = 'I discovered that ' + this.selectedMajorTitle + ' students from ' + universityFullName + ' make an average of ';
 
 			if (this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees') return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
@@ -52938,11 +52940,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		formatDollars: function formatDollars(input) {
-			if (this.input) {
+			if (input) {
 				var dollarAmount = input.toString();
 				var hundreds = dollarAmount.substr(-3, 3);
 				var thousands = dollarAmount.slice(0, -3);
 				return "$" + thousands + "," + hundreds;
+			}
+		},
+
+		// used for the social sharing
+		retrieveUniversityFullName: function retrieveUniversityFullName(universityArray, selectedUniv) {
+			for (var i = 0; i < universityArray.length; i++) {
+				if (universityArray[i].short_name === selectedUniv) return universityArray[i].name;
 			}
 		}
 	}),
@@ -52968,7 +52977,7 @@ var content = __webpack_require__(265);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(79)("ebcc37ae", content, false, {});
+var update = __webpack_require__(79)("26d294d4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -53793,7 +53802,7 @@ var content = __webpack_require__(271);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(79)("fa1dca66", content, false, {});
+var update = __webpack_require__(79)("09e563c0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73116,7 +73125,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "universities", "selectedUniversity"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
@@ -73155,7 +73164,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 		},
 		shareDescription: function shareDescription() {
-			if (this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
+			var universityFullName = this.retrieveUniversityFullName(this.universities, this.selectedUniversity);
+
+			var opening = 'I discovered that ' + this.selectedMajorTitle + ' students from ' + universityFullName + ' make an average of ';
+
+			if (this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees') return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';else if (this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege') return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';else if (this.selectedMajorData[this.selectedEducationLevel]) return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';else return 'Discover your earnings after college!';
 		},
 		nullValues: function nullValues() {
 			var yearsOut = [2, 5, 10, 15];
@@ -73181,11 +73194,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			this.resetMajorCard(this.index);
 		},
 		formatDollars: function formatDollars(input) {
-			if (this.input) {
+			if (input) {
 				var dollarAmount = input.toString();
 				var hundreds = dollarAmount.substr(-3, 3);
 				var thousands = dollarAmount.slice(0, -3);
 				return "$" + thousands + "," + hundreds;
+			}
+		},
+
+		// used for the social sharing
+		retrieveUniversityFullName: function retrieveUniversityFullName(universityArray, selectedUniv) {
+			for (var i = 0; i < universityArray.length; i++) {
+				if (universityArray[i].short_name === selectedUniv) return universityArray[i].name;
 			}
 		}
 	}),
@@ -76636,7 +76656,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\r\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\r\n    "
+              "\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\n    "
             )
           ]
         )
