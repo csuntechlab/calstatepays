@@ -1,13 +1,17 @@
 <template>
-	<div>
+	<div> 
 		<home-banner/>
-		<campus-seals/>
+		<div class="container">
+			<home-card/>
+			<campus-seals/>
+		</div>		
 		<home-video/>
 	</div>
 </template>
 <script>
 import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import csuSelector from "../../../components/global/csu-selector.vue";
+import homeCard from "../../../components/home/home-card.vue"
 import homeBanner from "../../../components/home/home-banner.vue";
 import campusSeals from "../../../components/home/campus-seals.vue";
 import homeVideo from "../../../components/home/home-video.vue";
@@ -24,6 +28,7 @@ export default {
 	components: {
 		csuSelector,
 		landingPageCarousel,
+		homeCard,
 		homeBanner,
 		campusSeals,
 		homeVideo
