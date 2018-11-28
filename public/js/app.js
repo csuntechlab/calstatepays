@@ -52861,7 +52861,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmitted) {
+			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmittedOnce) {
 				return false;
 			}
 			return true;
@@ -73100,10 +73100,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "majorNameById"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
-			if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
+			if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
 				return false;
 			}
 			return true;
@@ -73125,6 +73125,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmitted: function selectedFormWasSubmitted() {
 			return this.formWasSubmitted(this.index);
+		},
+		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
+			return this.formWasSubmittedOnce(this.index);
 		},
 		selectedMajorId: function selectedMajorId() {
 			return this.majorData(this.index).majorId;
@@ -73559,8 +73562,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
+                        value: _vm.isEmpty,
+                        expression: "isEmpty"
                       }
                     ],
                     attrs: {

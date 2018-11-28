@@ -61,7 +61,7 @@
 					</div>
 						<div class="row">
 							<div class="col-12">
-								<industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId" />
+								<industry-mobile v-show="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
 							</div>
 						</div>
 				</div>
@@ -110,11 +110,12 @@
 				"majorData",
 				"educationLevel",
 				"formWasSubmitted",
+				"formWasSubmittedOnce",
 				"majorNameById"
 			]),
 			isEmpty() {
 				//Check whether the form field was fired off, toggle carousel on
-				if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
+				if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
 					return false;
 				}
 				return true;
@@ -136,6 +137,9 @@
 			},
 			selectedFormWasSubmitted() {
 				return this.formWasSubmitted(this.index);
+			},
+			selectedFormWasSubmittedOnce() {
+				return this.formWasSubmittedOnce(this.index);
 			},
 			selectedMajorId() {
 				return this.majorData(this.index).majorId;
