@@ -48246,12 +48246,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'campus-modal',
     data: function data() {
         return {
+            anIndustryIsSelected: false,
             showModal: false,
             universitySeals: [{ url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton' }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island' }, { url: "https://via.placeholder.com/123x112?",
                 name: "CSU7"
@@ -48259,20 +48265,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         };
     },
     mounted: function mounted() {
-        this.checkSessionData();
-        this.waitForClickOutsideModal();
+        this.$nextTick(function () {
+            this.checkSessionData();
+            this.onClickOutsideModal();
+        });
     },
 
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck'])),
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setUniversity']), {
-        waitForClickOutsideModal: function waitForClickOutsideModal() {
+        onClickOutsideModal: function onClickOutsideModal() {
+            var self = this;
             document.addEventListener('click', function (event) {
                 if (event.target.classList.contains("v-overlay")) {
-                    self.onSubmitFunction();
+                    if (self.anIndustryIsSelected == true) {
+                        self.showModal = false;
+                    } else {
+                        self.onSubmit();
+                    }
                 }
             }, false);
         },
-        onSubmitFunction: function onSubmitFunction() {
+        onSubmit: function onSubmit() {
             var radioBtns = document.querySelectorAll("[name='campuses']");
             var validationMsg = document.getElementById("campus-modal__error");
 
@@ -48297,17 +48310,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.$store.dispatch('fetchFieldOfStudies', university);
             }
             this.showModal = false;
+            this.anIndustryIsSelected = true;
         },
         checkSessionData: function checkSessionData() {
             var sessionData = sessionStorage.getItem("selectedUniversity");
             if (sessionData === null) {
                 this.showModal = true;
+                this.anIndustryIsSelected = false;
             } else {
                 this.$store.dispatch("setUniversity", sessionData);
+                this.anIndustryIsSelected = true;
             }
         }
     })
-
 });
 
 /***/ }),
@@ -48414,7 +48429,13 @@ var render = function() {
                                         _vm._v(" "),
                                         _c(
                                           "label",
-                                          { attrs: { for: item.name } },
+                                          {
+                                            attrs: {
+                                              for:
+                                                _vm.universities[index]
+                                                  .short_name
+                                            }
+                                          },
                                           [
                                             _c("figure", [
                                               _c("img", {
@@ -48464,8 +48485,29 @@ var render = function() {
                                 staticClass: "campus-modal__error",
                                 attrs: { id: "campus-modal__error" }
                               },
-                              [_vm._v("* Select a campus to proceed")]
+                              [
+                                _vm._v(
+                                  "\n                                * Select a campus to proceed\n                            "
+                                )
+                              ]
                             ),
+                            _vm._v(" "),
+                            _vm.anIndustryIsSelected
+                              ? _c("div", [
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass: "btn btn-secondary",
+                                      on: {
+                                        click: function($event) {
+                                          _vm.showModal = false
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Cancel")]
+                                  )
+                                ])
+                              : _vm._e(),
                             _vm._v(" "),
                             _c("div", [
                               _c(

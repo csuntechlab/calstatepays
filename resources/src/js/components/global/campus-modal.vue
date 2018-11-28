@@ -16,7 +16,7 @@
                                 <!-- @click="changeCampus(universities[index].short_name);" -->
                                 <div v-if="universities[index].opt_in === 1">
                                     <input type="radio" name="campuses" :id="universities[index].short_name" :data-shortname="universities[index].short_name">  
-                                    <label :for="item.name">    
+                                    <label :for="universities[index].short_name">    
                                         <figure>
                                             <img :src="item.url" role="button" class="btn opted-in">   
                                             <figcaption>{{item.name}}</figcaption>
@@ -32,7 +32,12 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="campus-modal__error" id="campus-modal__error">* Select a campus to proceed</div>
+                            <div class="campus-modal__error" id="campus-modal__error">
+                                * Select a campus to proceed
+                            </div>
+                            <div v-if="anIndustryIsSelected">
+                                <span class="btn btn-secondary" @click="showModal = false">Cancel</span>
+                            </div>                            
                             <div>
                                 <button type="submit" class="btn btn-primary">Select Campus</button>
                             </div>
@@ -50,6 +55,7 @@ export default {
     name: 'campus-modal',
     data(){
         return {
+            anIndustryIsSelected: false,
             showModal :false,
             universitySeals:[
                 {url: window.baseUrl + '/img/csuseals/fullerton_seal.svg',name:'Fullerton'},
@@ -66,8 +72,10 @@ export default {
         }
     },
     mounted(){
-        this.checkSessionData();
-        this.waitForClickOutsideModal();
+        this.$nextTick(function () {
+            this.checkSessionData();
+            this.onClickOutsideModal();
+        })
     },
     computed:{
         ...mapGetters([
@@ -82,14 +90,19 @@ export default {
         ...mapActions([
             'setUniversity'
         ]),
-        waitForClickOutsideModal: function() {
+        onClickOutsideModal: function() {
+            var self = this;
             document.addEventListener('click', function (event) {
                 if( event.target.classList.contains("v-overlay") ) {
-                    self.onSubmitFunction();
+                    if(self.anIndustryIsSelected == true) {
+                        self.showModal = false;
+                    } else {
+                        self.onSubmit();
+                    }
                 }
             }, false);
         },
-        onSubmitFunction: function(){
+        onSubmit: function(){
             var radioBtns = document.querySelectorAll("[name='campuses']")
             var validationMsg = document.getElementById("campus-modal__error");
 
@@ -114,17 +127,19 @@ export default {
                 this.$store.dispatch('fetchFieldOfStudies', university);
             }
             this.showModal = false;
+            this.anIndustryIsSelected = true;
         },
         checkSessionData() {
             var sessionData = sessionStorage.getItem("selectedUniversity");
             if(sessionData === null){
                 this.showModal = true;
+                this.anIndustryIsSelected = false;
             }
             else {
                 this.$store.dispatch("setUniversity", sessionData);
+                this.anIndustryIsSelected = true;
             }
         }
     }
-
 }
 </script>
