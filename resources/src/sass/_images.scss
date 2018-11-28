@@ -383,7 +383,7 @@
 }
 
 @mixin make-homeCard__copy($color, $break-point) {
-	@extend .text-center, .p-3, .p-lg-4, .px-lg-4, .px-xl-5, .py-lg-3 ;
+	@extend .text-left, .text-md-center, .p-3, .p-lg-4, .px-lg-4, .px-xl-5, .py-lg-3 ;
 	background: $color;
 	color: white;
 	margin: 0;

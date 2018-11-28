@@ -19133,7 +19133,7 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left, .CSUDataImgBanner__campusInfoWrapper, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE, .returnToCampusSelection {
+.text-left, .CSUDataImgBanner__campusInfoWrapper, .homeCard__title--major, .homeCard__Copy--major, .homeCard__title--industries, .homeCard__Copy--industries, .homeCard__title--PFRE, .homeCard__Copy--PFRE, .returnToCampusSelection {
   text-align: left !important;
 }
 
@@ -19141,7 +19141,7 @@ button.bg-dark:focus {
   text-align: right !important;
 }
 
-.text-center, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
+.text-center {
   text-align: center !important;
 }
 
@@ -19164,7 +19164,7 @@ button.bg-dark:focus {
   .text-md-right, .CSUDataImgBanner__campusInfoWrapper {
     text-align: right !important;
   }
-  .text-md-center, .homeCard__title--major, .homeCard__title--industries, .homeCard__title--PFRE {
+  .text-md-center, .homeCard__title--major, .homeCard__Copy--major, .homeCard__title--industries, .homeCard__Copy--industries, .homeCard__title--PFRE, .homeCard__Copy--PFRE {
     text-align: center !important;
   }
 }
