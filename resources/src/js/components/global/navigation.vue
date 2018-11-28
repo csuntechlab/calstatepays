@@ -2,43 +2,48 @@
     <header class="site-header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 col-md-3 order-2 order-md-1 align-self-center">
+                <div  class="col-8 col-sm-3 order-2 order-sm-1 align-self-center py-2">
                     <router-link class="" to="/">
-                        <img :src="this.url + '/img/calstatepays.svg'" class="float-md-left nav-logo mx-auto d-block" alt="Cal State Pays logo">
+                        <img :src="this.url + '/img/csp-logo.svg'" class="float-md-left nav-logo mx-auto d-inline-block" alt="Cal State Pays logo">
+                    </router-link>
+                    <router-link to="/research">
+                        <img :src="this.url + '/img/strada-logo.png'" class=" nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
                     </router-link>
                 </div>
-                <div class="col-3 d-md-none order-3 align-self-center hamburger-btn-position">
+                <div class="col-4 d-sm-none order-3 align-self-center hamburger-btn-position">
                     <button @click="toggleShowNav()" type="button">
                         <i id="nav-icon" class="fa fa-bars"></i>
                     </button>
                 </div>
-                <div class="col-12 col-md-6 order-6 order-md-2 align-self-md-end p-0">
-                    <nav class="navbar navbar-expand-md navbar-light p-0">
+                <div class="col-12 col-sm-6 order-6 order-sm-2 align-self-md-end p-0">
+                    <nav class="navbar navbar-expand-sm p-0">
                         <div class="collapse navbar-collapse justify-content-center" id="nav-list">
-                            <ul class="navbar-nav d-flex justify-content-center text-center">
-                                <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" exact-active-class="hr-nav" to="/">
+                            <ul class="navbar-nav d-flex flex-column flex-sm-row justify-content-center text-center">
+                                <router-link class="nav-link" exact-active-class="hr-nav" to="/">
+                                    <li @click="toggleShowNav()" class="nav-item">
                                         Home
-                                    </router-link>
-                                </li>
-                                <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" :to="{ path: '/data/' + selectedDataPage }">
+                                    
+                                    </li>
+                                </router-link>
+                                <router-link class="nav-link" active-class="hr-nav" :to="{ path: '/data/' + selectedDataPage }">
+                                    <li @click="toggleShowNav()" class="nav-item">
                                         Data
-                                    </router-link>
-                                </li>
-                                <li @click="toggleShowNav()" class="nav-item">
-                                    <router-link class="nav-link" active-class="hr-nav" to="/faq">
-                                        FAQ
-                                    </router-link>
-                                </li>
+                                    </li>
+                                </router-link>
+                                 <router-link class="nav-link" active-class="hr-nav" to="/faq">
+                                    <li @click="toggleShowNav()" class="nav-item">
+                                    FAQ
+                                    </li>
+                                </router-link>
+                                
                             </ul>
                         </div>
                     </nav>
                 </div>
-                <div class="col-3 col-md-3 order-1 order-md-3 align-self-center">
+                <div class=" d-none d-sm-block col-3 col-md-3  order-3 align-self-center">
                     <div class="navbar-text small w-100">
                         <router-link to="/research">
-                            <img :src="this.url + '/img/strada-gray.svg'" class="float-right nav-logo-secondary mx-auto d-block" alt="Strada Logo">
+                            <img :src="this.url + '/img/strada-logo.png'" class="float-right nav-logo-secondary mx-auto d-sm-block" alt="Strada Logo">
                         </router-link>
                     </div>
                 </div>
