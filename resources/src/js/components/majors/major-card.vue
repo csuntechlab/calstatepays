@@ -1,10 +1,10 @@
 <template>
-	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+	<div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
 		<aside class="col-md-3">
 			<major-form :windowWidth="windowWidth" :index="index" />
 		</aside>
 		<div class="col-md-9">
-			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid py-3">
+			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid">
 				<div class="row">
 					<div class="col">
 						<social-sharing 
@@ -58,8 +58,8 @@
 					</div>
 				</div>
 			</card>
-			<div v-else class="csu-card container-fluid py-3">
-				<h3 class="text-center p-md-4">Please make your selection</h3>
+			<div v-else class="csu-card py-3">
+				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 				<p class="lead pl-md-5 pr-md-5">
 					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
 					which resonates the most with you.
@@ -194,7 +194,6 @@ export default {
 		majorLegend
 	},
 	updated() {
-		console.log(this.selectedFormWasSubmitted);
 	}
 };
 </script>

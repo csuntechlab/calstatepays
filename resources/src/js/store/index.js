@@ -6,7 +6,7 @@ import Majors from './modules/majors';
 import Pfre from './modules/pfre';
 import Global from './modules/global-form';
 import Industries from './modules/industries';
-
+import PowerUser from './modules/powerUsers'
 // INIT VUEX
 Vue.use(Vuex);
 
@@ -17,6 +17,7 @@ export default new Vuex.Store({
 		Majors,
 		Pfre,
 		Global,
-		Industries
+		Industries,
+		PowerUser
 	}
 });

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="industryMajor == null || (Object.keys(industriesByMajor).length === 0 && industriesByMajor.constructor ==+ Object)">
-            <h3 class="text-center pb-md-3">Please make your selection</h3>
+            <h3 class="industry-title text-center pb-md-3">Please make your selection</h3>
             <p class="lead pl-md-5 pr-md-5">
                 You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
             which resonates the most with you.
