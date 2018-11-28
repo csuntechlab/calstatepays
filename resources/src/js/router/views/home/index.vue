@@ -3,6 +3,7 @@
 		<home-banner/>
 		<campus-seals/>
 		<home-video/>
+		<home-faq/>
 	</div>
 </template>
 <script>
@@ -11,6 +12,7 @@ import csuSelector from "../../../components/global/csu-selector.vue";
 import homeBanner from "../../../components/home/home-banner.vue";
 import campusSeals from "../../../components/home/campus-seals.vue";
 import homeVideo from "../../../components/home/home-video.vue";
+import homeFaq from "../../../components/home/home-faq.vue";
 import {mapActions} from 'vuex';
 export default {
 	data() {
@@ -26,7 +28,8 @@ export default {
 		landingPageCarousel,
 		homeBanner,
 		campusSeals,
-		homeVideo
+		homeVideo,
+		homeFaq
 	}, 
 	methods: {
 		...mapActions(['setDataPage'])

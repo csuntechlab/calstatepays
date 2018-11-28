@@ -20153,6 +20153,11 @@ input[type="button"]:focus {
   background: #DAA200;
 }
 
+.home-btn__readFaq {
+  color: white;
+  background-color: #14597F;
+}
+
 .fa-bars, .fa-times {
   font-size: 2.5rem;
   color: #777777;
