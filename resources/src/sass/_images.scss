@@ -1,10 +1,27 @@
 .homeBanner{
-	background-image: url("../img/homeimages/home-banner.jpg");
+	background-image: url("../img/homeimages/banner-xs.jpg");
 	background-size: cover;
 	background-position: center center;
 	position: relative;
 	width: 100%;
 	padding-top: 44%;
+
+	@media (min-width: $break-Xsmall) { 
+		background-image: url("../img/homeimages/banner-sm.jpg");
+	}
+
+	@media (min-width: $break-medium) { 
+		background-image: url("../img/homeimages/banner-md.jpg");
+	}
+
+	@media (min-width: $break-large) { 
+		background-image: url("../img/homeimages/banner-lg.jpg");
+	}
+
+	@media (min-width: $break-xlarge) { 
+		background-image: url("../img/homeimages/banner-lg.jpg");
+	}
+
 	@media screen and (max-width: $break-medium) {
 		padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
 		height: unset;
