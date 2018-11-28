@@ -17,7 +17,7 @@ class IndustryServiceTest extends TestCase
         parent::setUp();
         $this->industryService = new IndustryService();
     }
-
+    // Test the JSON structure of getALLIndustryNaicsTitles API
     // route is api/industry/naics-titles
     public function test_getAllIndustryNaicsTitles_returns_all_rows()
     {
@@ -36,7 +36,7 @@ class IndustryServiceTest extends TestCase
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException', $message, 409);
         $response = $this->industryService->getAllIndustryNaicsTitles();
     }
-
+    // Test to see the getIndustryPopulationByRankWithImages JSON structure
     // route is api/industry/{hegis_code}/{university_id}
     // i.e. api/industry/5021/northridge
     public function test_getIndustryPopulationByRankWithImages_returns_relevant_data_respective_to_hegis_code()
@@ -55,7 +55,7 @@ class IndustryServiceTest extends TestCase
         $this->assertArrayHasKey('rank', $response['post_bacc'][0]);
         $this->assertArrayHasKey('image', $response['post_bacc'][0]);
     }
-
+    // Test to check the getIndustryByRank JSON structure
     // route is api/industry/{hegis_code}/{university_id}
     // i.e. api/industry/5021/northridge/1
     public function test_getIndustryPopulationByRank_returns_relevant_data_respective_to_hegis_code()
@@ -69,7 +69,6 @@ class IndustryServiceTest extends TestCase
 
         $university_name = 'northridge';
         $hegis = 5021;
-        // $degreeLevel = 1;
 
         $response = $this->industryService->getIndustryPopulationByRank($hegis, $university_name);
 
@@ -92,6 +91,7 @@ class IndustryServiceTest extends TestCase
     }
 
     /**
+     * Test the populationByRankWithImages API
      * industry/images/{hegis_code}/{university_name}
      * industry/images/5021/all
      * function IndustryController@getIndustryPopulationByRankWithImages
@@ -134,6 +134,7 @@ class IndustryServiceTest extends TestCase
     }
 
     /**
+     *   Test the getIndustryPopulationByRank API
      *   api is industry/{hegis_code}/{universityName}
      *   api is api/industry/5021/all
      *   testing agaisnt real api vals

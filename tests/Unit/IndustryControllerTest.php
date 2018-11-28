@@ -169,7 +169,7 @@ class IndustryControllerTest extends TestCase
         ]);
 
         $this->retriever
-            ->shouldReceive(' getIndustryPopulationByRank ')
+            ->shouldReceive('getIndustryPopulationByRank')
             ->once()
             ->with($request->hegis_code, $request->universityName)
             ->andReturn($data);
