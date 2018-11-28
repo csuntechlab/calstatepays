@@ -103,7 +103,7 @@ export default {
 			//Check whether the form field was fired off, toggle carousel on
 			if (
 				this.industries(this.index).length === 0 ||
-				!this.selectedFormWasSubmitted
+				!this.selectedFormWasSubmittedOnce
 			) {
 				return false;
 			}
@@ -193,7 +193,6 @@ export default {
 		majorLegend
 	},
 	updated() {
-		console.log(this.selectedFormWasSubmitted);
 	}
 };
 </script>

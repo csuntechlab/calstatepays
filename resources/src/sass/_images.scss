@@ -31,7 +31,7 @@
 		position: absolute;
 		top: 42%;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 	}
 	&__Tagline{
 		width: 76%;
@@ -106,17 +106,17 @@
 	}
 }
 
-.landing-page__icon{
+.landing-page__icon {
 	font-size: 6rem;
-	padding-bottom: .1rem;
-	&--cap{
+	padding-bottom: 0.1rem;
+	&--cap {
 		color: $oxford;
 	}
-	&--chart{
+	&--chart {
 		color: $gold;
 	}
-	&--usd{
-		color: $green
+	&--usd {
+		color: $green;
 	}
 }
 
@@ -125,6 +125,50 @@
 	widows: 10rem;
 }
 
+.homepageUniversities__seals {
+	figure {
+		img {
+			width: 100%;
+			max-height: 8.25rem;
+			overflow: auto;
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0 .5rem;
+		}
+		figcaption {
+			font-family: $font-base;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 0.85rem;
+			margin-top: 0.5rem;
+			padding: .25rem;
+		}
+		
+		@media screen and (max-width: $break-small) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-Xsmall) {
+			img {
+				max-height: 5.25rem;
+			}
+		}
+
+		@media screen and (min-width: $break-large) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-small) {
+			figcaption {
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
 .faq-banner {
 	background-image: $white-filter, url("../img/faq-banner.jpg");
 	background-size: cover;
@@ -277,35 +321,278 @@
 		}
 	}
 }
-.campus-modal{
+.campus-modal {
 	color: black;
-	img{
-		height: 8rem; 
+	img {
+		height: 8rem;
 		text-align: center;
 	}
-	figcaption{
-		&:hover{
+	figcaption {
+		&:hover {
 			cursor: pointer;
 		}
 	}
-	.opted-in{
-		&:hover{
+	.opted-in {
+		&:hover {
 			background-color: darkgray;
 		}
 	}
-	.opted-out{
-		img{
-			opacity: .3;
-			&:hover{
+	.opted-out {
+		img {
+			opacity: 0.3;
+			&:hover {
 				cursor: no-drop;
 			}
-			
 		}
-		figcaption{
-			&:hover{
+		figcaption {
+			&:hover {
 				cursor: no-drop;
+			}
+		}
+	}
+}
+
+@mixin make-homeCard__titleAndIconWrapper($color) {
+	@extend .px-2, .py-3, .py-md-4, .p-md-4 ;
+	$border-thickness: .3rem;
+	$constrast-color: white;
+	$border-style: solid;
+	transition: all .28s ease-out;
+	border-top: $border-thickness $border-style $color;
+	border-left: $border-thickness $border-style $color;
+	border-right: $border-thickness $border-style $color;
+	background: $constrast-color;
+	a{margin: 0; text-decoration: none; color: darken($color,15%);}
+	a:hover{color: $constrast-color;}
+	&:hover{
+		background:$color;
+	}
+}
+
+@mixin make-homeCard__title($font-color, $break-point) {
+	@extend .text-left, .text-md-center, .pt-md-3, .px-xl-5 ;
+	$constrast-color: white;
+	color: $font-color;
+	font-size: 1.7rem;
+	margin: 0;
+	font-weight: 600;
+	// text-decoration: none;
+	&:hover{
+		color: $constrast-color;
+	}
+	@media screen and (max-width: $break-point) {
+		font-size: 1.45rem;
+	}
+}
+
+%iconWrapperBase{
+	position: relative;
+	padding-top: 50%; //This from aspect ratio of banner form the mockup.
+	@media screen and (max-width: $break-small) {
+		height: unset;
+		padding-top: 0;
+	}
+	svg{
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@media screen and (max-width: $break-small) {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0,0);
+		}
+	}
+}
+
+@mixin make-homeCard__copy($color, $break-point) {
+	@extend .text-left, .text-md-center, .p-3, .p-lg-4, .px-lg-4, .px-xl-5, .py-lg-3 ;
+	background: $color;
+	color: white;
+	margin: 0;
+	line-height: 130%;
+	font-size: 1rem;
+	font-weight: 550;
+	text-decoration: none;
+	@media screen and (max-width: $break-point){
+		font-size: 1rem;
+		min-height: unset;
+	}
+}
+
+%titleHover{
+	color: $white;
+	text-decoration: none;
+}
+
+.homeCard{
+
+	//Major
+	&__iconWrapper--major{
+		@extend %iconWrapperBase;
+	}
+
+	&__icon--major{fill:$CSP-Dark-Blue;}
+
+	&__title--major{
+		@include make-homeCard__title($CSP-Dark-Blue, $break-small);
+	}
+	&__titleAndIconWrapper--major{
+		@include make-homeCard__titleAndIconWrapper($CSP-Blue);
+		&:hover{
+			.homeCard__icon--major{
+				fill: $white;
+			}
+			.homeCard__title--major{
+				@extend %titleHover;
 			}
 		}
 		
+	}
+	&__Copy--major{
+		@include make-homeCard__copy($CSP-Dark-Blue, $break-small);
+	}
+	&__link--major{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--major{
+				background: $CSP-Blue;
+			}
+			.homeCard__title--major{
+				@extend %titleHover;
+			}
+			.homeCard__icon--major{
+				fill: $white;
+			}
+		}
+	}
+
+	//Industries
+	&__iconWrapper--industries{
+		@extend %iconWrapperBase;
+	}
+	&__icon--industries0{fill:$CSP-Dark-Gold;}
+	&__icon--industries1{
+		fill:none;
+		stroke:$CSP-Dark-Gold;
+		stroke-width:5;
+		stroke-linecap:round;
+		stroke-miterlimit:10;
+	}
+
+	&__icon--industries2{
+		fill:none;
+		stroke:$CSP-Dark-Gold;
+		stroke-width:3;
+		stroke-miterlimit:10;
+	}
+
+	&__title--industries{
+		@include make-homeCard__title($CSP-Dark-Gold, $break-small);
+	}
+
+	&__titleAndIconWrapper--industries{
+		@include make-homeCard__titleAndIconWrapper($CSP-Gold);
+		&:hover{
+			.homeCard__icon--industries0{
+				fill: $white;
+			}
+			.homeCard__icon--industries1{
+				fill:none;
+				stroke:$white;
+				stroke-width:5;
+				stroke-linecap:round;
+				stroke-miterlimit:10;
+			}
+			.homeCard__icon--industries2{
+				fill:none;
+				stroke:$white;
+				stroke-width:3;
+				stroke-miterlimit:10;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
+			}
+		}
+		
+	}
+	&__Copy--industries{
+		@include make-homeCard__copy($CSP-Dark-Gold, $break-small);
+	}
+
+	&__link--industries{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--industries{
+				background: $CSP-Gold;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
+			}
+			.homeCard__icon--industries0{
+				fill: $white;
+			}
+			.homeCard__icon--industries1{
+				fill:none;
+				stroke:$white;
+				stroke-width:5;
+				stroke-linecap:round;
+				stroke-miterlimit:10;
+			}
+			.homeCard__icon--industries2{
+				fill:none;
+				stroke:$white;
+				stroke-width:3;
+				stroke-miterlimit:10;
+			}
+			.homeCard__title--industries{
+				@extend %titleHover;
+			}
+		}
+	}
+
+	//PFRE
+	&__iconWrapper--PFRE{
+		@extend %iconWrapperBase;
+	}
+	&__icon--PFRE{fill:$CSP-Dark-Red;}
+
+	&__title--PFRE{
+		@include make-homeCard__title($CSP-Dark-Red, $break-small);
+	}
+
+	&__titleAndIconWrapper--PFRE{
+		@include make-homeCard__titleAndIconWrapper($CSP-Red);
+		&:hover{
+			.homeCard__icon--PFRE{
+				fill: $white;
+			}
+			.homeCard__title--PFRE{
+				@extend %titleHover;
+			}
+		}
+		
+	}
+	&__Copy--PFRE{
+		@include make-homeCard__copy($CSP-Dark-Red, $break-small);
+	}
+	&__link--PFRE{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+			.homeCard__titleAndIconWrapper--PFRE{
+				background: $CSP-Red;
+			}
+			.homeCard__title--PFRE{
+				@extend %titleHover;
+			}
+			.homeCard__icon--PFRE{
+				fill: $white;
+			}
+		}
 	}
 }
