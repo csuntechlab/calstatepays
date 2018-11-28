@@ -48535,7 +48535,7 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("img", {
-      staticClass: "homeBanner__Tagling",
+      staticClass: "homeBanner__Tagline",
       attrs: {
         src: this.url + "/img/homeimages/visions-verified.svg",
         alt: "Visions Verified"

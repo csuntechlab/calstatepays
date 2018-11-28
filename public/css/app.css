@@ -19649,11 +19649,43 @@ figcaption {
 }
 
 .homeBanner {
-  background-image: url("../img/homeimages/home-banner.jpg");
+  background-image: url("../img/homeimages/banner-xs.jpg");
   background-size: cover;
+  background-position: center center;
   position: relative;
-  padding-top: 51.37%;
   width: 100%;
+  padding-top: 44%;
+}
+
+@media (min-width: 576px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-sm.jpg");
+  }
+}
+
+@media (min-width: 768px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-md.jpg");
+  }
+}
+
+@media (min-width: 992px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-lg.jpg");
+  }
+}
+
+@media (min-width: 1200px) {
+  .homeBanner {
+    background-image: url("../img/homeimages/banner-lg.jpg");
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homeBanner {
+    padding-top: 51.37%;
+    height: unset;
+  }
 }
 
 .homeBanner__CSPLogo {
@@ -19665,13 +19697,19 @@ figcaption {
           transform: translate(-50%, -50%);
 }
 
-.homeBanner__Tagling {
+.homeBanner__Tagline {
   width: 76%;
   position: absolute;
   left: 50%;
   bottom: 10%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .homeBanner__Tagline {
+    width: 83%;
+  }
 }
 
 .img__logo {
