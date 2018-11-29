@@ -48691,7 +48691,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-12 mt-5" }, [
       _c("h3", { staticClass: "text-center font-italic" }, [
         _c("span", { staticClass: "homepageUniversities__headline" }, [
-          _vm._v(" Endorsed by several CSUs,")
+          _vm._v(" Endorsed by 7 CSUs,")
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "homepageUniversities__headline" }, [
@@ -74994,7 +74994,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                   _vm._v(
-                    "Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005."
+                    "Over 600,000 students, all of whom entered one of the seven participating CSU campuses as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2014."
                   )
                 ])
               ])
@@ -75032,7 +75032,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "p-sm-4 faq-panel" }, [
                   _vm._v(
-                    "Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005."
+                    "Only majors pursued by more than a minimum number of students are reported."
                   )
                 ])
               ])
@@ -75187,7 +75187,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "p-sm-4 faq-panel" }, [
-                  _vm._v("Yes, they are adjusted to 2012 dollars.")
+                  _vm._v("Yes, they are adjusted to 2016 dollars.")
                 ])
               ])
             ],
