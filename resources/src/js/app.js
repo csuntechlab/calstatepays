@@ -5,6 +5,7 @@
  */
 require('./bootstrap');
 var SocialSharing = require("vue-social-sharing");
+var _ = require('lodash');
 // import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import Vue from 'vue';
 import axios from 'axios';
@@ -59,7 +60,6 @@ const vm = new Vue({
         }
     }
 });
-
 
 export default vm;
 
