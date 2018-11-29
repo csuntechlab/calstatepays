@@ -192,8 +192,5 @@ export default {
 		industryCarousel,
 		majorLegend
 	},
-	updated() {
-		console.log(this.selectedFormWasSubmitted);
-	}
 };
 </script>

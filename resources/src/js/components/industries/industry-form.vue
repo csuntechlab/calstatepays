@@ -45,7 +45,7 @@
 						<button id="submit-btn" type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 					<div class="form-group row">
-						<button class="btn btn-change-major" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > Degree Level <i class="fas fa fa-chevron-right"></i></button>
+						<button class="btn btn-change-major" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > Select Degree Level <i v-show="windowSize < 500" v class="fas fa fa-chevron-up"></i> <i v-show="windowSize > 500" v class="fas fa fa-chevron-right"></i></button>
 					</div>
 				</fieldset>
 			</form>
@@ -67,7 +67,7 @@
 						Some College
 					</button>
 					<div class="form-group row">
-						<button class="btn btn-change-major " @click="resetIndustries" > <i class="fas fa fa-chevron-left"></i>Change Major </button>
+						<button class="btn btn-change-major " @click="resetIndustries" >  <i v-show="windowSize < 500" v class="fas fa fa-chevron-up"></i> <i v-show="windowSize > 500" v class="fas fa fa-chevron-left"></i>Change Major </button>
 					</div>
 				</fieldset>
     		</form>
