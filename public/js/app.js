@@ -52637,7 +52637,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         this.url = window.baseUrl;
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['majorCards', 'indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
@@ -52657,7 +52657,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { position: "relative" } }, [
-    _vm.indexOfUnsubmittedCard == -1
+    _vm.majorCards[0].submittedOnce
       ? _c(
           "button",
           {
