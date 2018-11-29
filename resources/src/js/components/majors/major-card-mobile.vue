@@ -4,11 +4,11 @@
 			<div class="csu-card">
 				<div class="container-fluid py-3">
 					<div class="row">
-						<div class="col-1">
+						<div class="col">
 							<i class="fa fa-times fa-2x btn-remove " @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 							<i class="fa fa-refresh fa-2x btn-reset" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 						</div>
-						<div class="col-10">
+						<div class="col-11">
 							<!-- <i class="fa fa-refresh fa-2x btn-reset float-left" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i> -->
 							<social-sharing 
 							v-if="selectedFormWasSubmitted" 

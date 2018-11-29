@@ -73397,7 +73397,7 @@ var render = function() {
         _c("div", { staticClass: "csu-card" }, [
           _c("div", { staticClass: "container-fluid py-3" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-1" }, [
+              _c("div", { staticClass: "col" }, [
                 _c("i", {
                   directives: [
                     {
@@ -73429,7 +73429,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-10" },
+                { staticClass: "col-11" },
                 [
                   _vm.selectedFormWasSubmitted
                     ? _c("social-sharing", {
