@@ -47014,7 +47014,7 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.schoolId + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.university + "/" + payload.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response.data.message);
@@ -73491,6 +73491,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -73563,7 +73568,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-
 				this.fetchIndustryMajorsByField(this.form);
 			}
 		}
@@ -73756,7 +73760,29 @@ var render = function() {
                       [_vm._v("Submit")]
                     )
                   ])
-                : _vm._e()
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.industryFormWasSubmittedOnce,
+                        expression: "industryFormWasSubmittedOnce"
+                      }
+                    ],
+                    staticClass: "btn btn-change-major",
+                    on: { click: _vm.resetIndustries }
+                  },
+                  [
+                    _vm._v(" Degree Level "),
+                    _c("i", { staticClass: "fas fa fa-chevron-right" })
+                  ]
+                )
+              ])
             ])
           ])
         ])
@@ -73857,14 +73883,19 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm btn-change-major ",
-                  on: { click: _vm.resetIndustries }
-                },
-                [_vm._v("< Change Major")]
-              )
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-change-major ",
+                    on: { click: _vm.resetIndustries }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa fa-chevron-left" }),
+                    _vm._v("Change Major ")
+                  ]
+                )
+              ])
             ])
           ])
         ])

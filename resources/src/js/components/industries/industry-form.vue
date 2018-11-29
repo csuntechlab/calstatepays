@@ -3,7 +3,6 @@
 		<div key="1" v-if="!industryFormWasSubmitted">
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" title="Reset"></i>
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
@@ -45,6 +44,9 @@
 					<div v-if="!industryFormWasSubmitted" class="form-group row">
 						<button id="submit-btn" type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
+					<div class="form-group row">
+						<button class="btn btn-change-major" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > Degree Level <i class="fas fa fa-chevron-right"></i></button>
+					</div>
 				</fieldset>
 			</form>
 		</div>	
@@ -64,7 +66,9 @@
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'someCollege', 'fa fa-circle-thin':industryEducationLevel != 'someCollege'}"></i>
 						Some College
 					</button>
-					<button class="btn btn-sm btn-change-major " @click="resetIndustries" >&#60; Change Major</button>
+					<div class="form-group row">
+						<button class="btn btn-change-major " @click="resetIndustries" > <i class="fas fa fa-chevron-left"></i>Change Major </button>
+					</div>
 				</fieldset>
     		</form>
 		</div>
@@ -155,7 +159,6 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-			
 				this.fetchIndustryMajorsByField(this.form);
 			}
 		},
