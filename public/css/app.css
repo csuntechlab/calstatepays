@@ -18864,7 +18864,6 @@ html {
   padding: 1px 7px;
   margin: 0 0 7px 0;
   font-weight: bold;
-  top: -8px;
   position: relative;
   cursor: pointer;
 }
@@ -20554,6 +20553,7 @@ textarea {
 .btn-reset {
   position: relative;
   color: #777777;
+  margin: 0 0 7px 0;
   padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
@@ -20581,6 +20581,11 @@ textarea {
   padding-left: .5rem;
   font-size: 1rem;
   text-transform: none;
+}
+
+.btn-change-major:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn-reset-mobile {

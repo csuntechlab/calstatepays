@@ -16,11 +16,7 @@ const fetchIndustriesAPI = (payload, success, error) => {
         );
 }
 const fetchIndustryMajorsByFieldAPI = (payload, success, error) => {
-<<<<<<< HEAD
     window.axios.get(`api/major/hegis-codes/${payload.university}/${payload.fieldOfStudyId}`).then(
-=======
-    window.axios.get(`api/major/hegis-codes/${payload.school}/${payload.form.fieldOfStudyId}`).then(
->>>>>>> 81459fe54c624422a03114f8d7cf0eb0a47d2521
         response => success(response.data),
         response => error(response.data.message)
     );

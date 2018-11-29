@@ -193,10 +193,5 @@ export default {
 		industryCarousel,
 		majorLegend
 	},
-<<<<<<< HEAD
-=======
-	updated() {
-	}
->>>>>>> 81459fe54c624422a03114f8d7cf0eb0a47d2521
 };
 </script>
