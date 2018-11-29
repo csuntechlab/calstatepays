@@ -73491,7 +73491,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -73764,20 +73763,6 @@ var render = function() {
       : _c("div", { key: "2" }, [
           _c("form", { staticClass: "container-fluid csu-card__form" }, [
             _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.industryFormWasSubmittedOnce,
-                    expression: "industryFormWasSubmittedOnce"
-                  }
-                ],
-                staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetIndustries }
-              }),
-              _vm._v(" "),
               _c(
                 "p",
                 {
@@ -73870,6 +73855,15 @@ var render = function() {
                   }),
                   _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
                 ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm btn-change-major ",
+                  on: { click: _vm.resetIndustries }
+                },
+                [_vm._v("< Change Major")]
               )
             ])
           ])

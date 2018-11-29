@@ -51,8 +51,6 @@
 		<div key="2" v-else>
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
-					title="Reset"></i>
 					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'post_bacc', 'fa fa-circle-thin':industryEducationLevel != 'post_bacc'}" ></i>
@@ -66,6 +64,7 @@
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': industryEducationLevel == 'someCollege', 'fa fa-circle-thin':industryEducationLevel != 'someCollege'}"></i>
 						Some College
 					</button>
+					<button class="btn btn-sm btn-change-major " @click="resetIndustries" >&#60; Change Major</button>
 				</fieldset>
     		</form>
 		</div>

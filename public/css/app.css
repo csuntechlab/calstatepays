@@ -20033,6 +20033,12 @@ textarea {
   display: inline;
 }
 
+.btn-change-major {
+  font-weight: 500;
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+
 .btn-reset-mobile {
   color: #777777;
   font-size: 1.6rem;
