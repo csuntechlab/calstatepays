@@ -1,12 +1,13 @@
 <template>
-	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+	<div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
 		<aside class="col-md-3">
 			<major-form :windowWidth="windowWidth" :index="index" />
 		</aside>
 		<div class="col-md-9">
-			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid py-3">
+			<card v-if="selectedFormWasSubmittedOnce" class="csu-card container-fluid">
 				<div class="row">
-					<div class="col-6">
+					<div class="col">
+						<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 						<social-sharing 
 						v-if="selectedFormWasSubmittedOnce && !nullValues" 
 						:url="this.url"
@@ -16,25 +17,30 @@
 						hashtags="CalStatePays, ItPaysToGoToCollege"
 						inline-template>
 							<div>
-								<network network="facebook" class="csu-card__share csu-card__share-facebook">
-									<i class="fa fa-facebook-official fa-2x"></i>
+								<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
+									<i class="fa fa-twitter-square"></i>
+									Tweet
 								</network>
-								<network network="linkedin" class="csu-card__share csu-card__share-linkedin">
-									<i class="fa fa-linkedin-square fa-2x"></i>
+								<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
+									<i class="fa fa-linkedin-square"></i>
+									Share
 								</network>
-								<network network="twitter" class="csu-card__share csu-card__share-twitter">
-									<i class="fa fa-twitter-square fa-2x"></i>
+								<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
+									<i class="fa fa-facebook-official"></i>
+									Share
 								</network>
 							</div>
 						</social-sharing>
 					</div>
-					<div class="col-6">
-						<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-					</div>
 				</div>
 				<div class="row">
-					<h3  class="industry-title">{{selectedMajorTitle}}</h3>
+					<h3  class="industry-title pt-3">{{selectedMajorTitle}}</h3>
 				</div>
+									<div class="row">
+						<div class="col-12">
+							<major-legend v-show="selectedFormWasSubmittedOnce" :educationLevel="selectedEducationLevel"></major-legend>
+						</div>
+					</div>
 					<div v-show="selectedFormWasSubmittedOnce && nullValues" class="row text-center">
 						<h3 class="csu-card__no-data"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
 					</div>
@@ -45,11 +51,6 @@
 							:educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-12">
-							<major-legend v-show="selectedFormWasSubmittedOnce" :educationLevel="selectedEducationLevel"></major-legend>
-						</div>
-					</div>
 				</div>
 				<div class="row p-0">
 					<div class="mt-4">
@@ -57,8 +58,8 @@
 					</div>
 				</div>
 			</card>
-			<div v-else class="csu-card container-fluid py-3">
-				<h3 class="text-center p-md-4">Please make your selection</h3>
+			<div v-else class="csu-card">
+				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 				<p class="lead pl-md-5 pr-md-5">
 					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
 					which resonates the most with you.
@@ -103,7 +104,7 @@ export default {
 			//Check whether the form field was fired off, toggle carousel on
 			if (
 				this.industries(this.index).length === 0 ||
-				!this.selectedFormWasSubmitted
+				!this.selectedFormWasSubmittedOnce
 			) {
 				return false;
 			}
@@ -192,5 +193,10 @@ export default {
 		industryCarousel,
 		majorLegend
 	},
+<<<<<<< HEAD
+=======
+	updated() {
+	}
+>>>>>>> 81459fe54c624422a03114f8d7cf0eb0a47d2521
 };
 </script>
