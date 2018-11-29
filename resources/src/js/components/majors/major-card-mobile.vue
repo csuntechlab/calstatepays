@@ -156,6 +156,9 @@
 			shareDescription() {
 				let universityFullName = this.retrieveUniversityFullName(this.universities, this.selectedUniversity);
 
+				if(universityFullName === 'CSU7')
+					universityFullName = 'the CSU7';
+
 				let opening = 'I discovered that ' + this.selectedMajorTitle + ' students from '+ universityFullName+' make an average of ';
 
 				if(this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees')
