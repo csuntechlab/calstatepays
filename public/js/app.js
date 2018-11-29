@@ -47258,7 +47258,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-12 mt-5" }, [
       _c("h3", { staticClass: "text-center font-italic" }, [
         _c("span", { staticClass: "homepageUniversities__headline" }, [
-          _vm._v(" Endorsed by several CSUs,")
+          _vm._v(" Endorsed by 7 CSUs,")
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "homepageUniversities__headline" }, [
