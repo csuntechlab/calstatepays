@@ -1,69 +1,106 @@
 .site-header {
-	font-family: $font-brand;
+	font-family: $font-base;
 	position: fixed;
 	background: $white;
 	width: 100%;
 	z-index: 99999999;
 	box-shadow: 0 6px 6px -6px #999;
 	top: 0;
-	@media screen and (max-width: $break-small) {
+	@media screen and (max-width: $break-Xsmall) {
 		min-height: $navbar-height;
 		font-size: 1.3rem;
 	}
 	abbr[title] {
 		border-bottom: none;
 	}
-}
-
-.collapse {
-	@media screen and (max-width: $break-small) {
-		height: 0;
-		overflow: hidden;
-		transition: height 0.5s;
+	.collapse {
+		@media screen and (max-width: $break-Xsmall - 1) {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.5s;
+			display: block;
+		}
+	}
+	
+	.show {
+		@media screen and (max-width: 575px) {
+			/* the number refer to the number of nav links*/
+			height:14rem;// $navbar-height * 4;
+		}
+	}
+	.hr-nav {
+		.nav-item{
+			color: #000;
+			
+			@media screen and (max-width: $break-Xsmall - 1){
+				color:#fff
+			}
+		}
+	}
+	.nav-item{
+		color: #000;
+		font-size:18px;
+		@media screen and (max-width: $break-small){
+			font-size:16px;
+		}
+	}
+	.nav-link {
+		padding: 1.5rem 1.5rem !important;
+		@media screen and (min-width:$break-small - 1){
+			padding: 1rem 1.5rem !important;
+		}
+	}
+	.navbar-toggler {
+		margin-top: 0.65rem;
+	}
+	
+	.hr-nav {
+		margin: 0px;
+		@media screen and (max-width: $break-Xsmall - 1) {
+			background: $red;
+			color: $white !important;
+			font-weight: bold;
+		}
+	}
+	.hr-nav::after{
+		content: "";
+		width: 140%;
+		background-color: $red;
+		height: 0.2rem;
 		display: block;
+		margin-top: .3rem;
+		margin-left: -20%;
+		@media screen and (max-width: $break-Xsmall -1) {
+			display: none;
+		}
 	}
-}
-
-.show {
-	@media screen and (max-width: $break-small) {
-		/* the number refer to the number of nav links*/
-		height: $navbar-height * 4;
-	}
-}
-
-.nav-link {
-	padding: 1.5rem 1.5rem !important;
-}
-
-.navbar-toggler {
-	margin-top: 0.65rem;
 }
 
 .nav-logo {
 	max-height: 60px;
 	width: 120px;
-	@media screen and (max-width: $break-small) {
-		height: 2.9rem;
+	@media screen and (max-width: $break-Xsmall - 1) {
+		content:  	url("../img/logo-mini.svg"); 
+		width: 4rem;
 	}
 }
 .nav-logo-secondary {
-	height: 2.35rem;
+	@media screen and (max-width: $break-medium){
+		width:4rem;
+	}
+	@media screen and (max-width: $break-Xsmall) {
+		width: 4rem;
+		margin-left: 1rem;
+	
+	} 
 }
 
-.hr-nav {
-	border-bottom: 3px solid $red;
-	margin: 0px;
-	@media screen and (max-width: $break-small) {
-		background: $red;
-		color: $white !important;
-		font-weight: bold;
-	}
-}
+
 
 .hamburger-btn-position {
-	@media screen and (max-width: $break-small) {
+	@media screen and (max-width: $break-Xsmall) {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 	}
 }
 
@@ -152,7 +189,8 @@
 }
 
 #nav-overlay {
-	@media screen and (max-width: $break-small) {
+	display: none;
+	@media screen and (max-width: $break-Xsmall - 1) {
 		position: fixed;
 		background: $black;
 		opacity: 0.4;

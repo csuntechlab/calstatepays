@@ -37,6 +37,7 @@ const vm = new Vue({
     router,
     render: h => h(App),
     mounted(){
+        this.checkSessionData();
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
@@ -46,6 +47,17 @@ const vm = new Vue({
         ...mapGetters([
             'selectedUniversity'
         ])
+    },
+    methods: {
+        checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if (sessionData === null) {
+                this.showModal = true;
+            }
+            else {
+                this.$store.dispatch("setUniversity", sessionData);
+            }
+        }
     }
 });
 

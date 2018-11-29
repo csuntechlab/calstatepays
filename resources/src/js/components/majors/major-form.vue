@@ -5,7 +5,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
-					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+					<div v-if="!selectedFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
 						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
@@ -39,22 +39,22 @@
 					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'fa fa-circle-thin':this.educationLevel(this.index) != 'allDegrees'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'allDegrees', '':this.educationLevel(this.index) != 'allDegrees'}"></i>
 						All Levels
 					</button>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleEducationLevel('postBacc')"
 					v-bind:class="{'selected-btn_postBacc': this.educationLevel(this.index) == 'postBacc'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'postBacc', 'fa fa-circle-thin':this.educationLevel(this.index) != 'postBacc'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'postBacc', '':this.educationLevel(this.index) != 'postBacc'}"></i>
 						Post Bacc
 					</button>
 					<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleEducationLevel('bachelors')"
 					v-bind:class="{'selected-btn_bachelors': this.educationLevel(this.index) == 'bachelors'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'bachelors', 'fa fa-circle-thin':this.educationLevel(this.index) != 'bachelors'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'bachelors', '':this.educationLevel(this.index) != 'bachelors'}"></i>
 						Bachelors
 					</button>
 					<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')"
 					v-bind:class="{'selected-btn_someCollege': this.educationLevel(this.index) == 'someCollege'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'fa fa-circle-thin':this.educationLevel(this.index) != 'someCollege'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'someCollege', '':this.educationLevel(this.index) != 'someCollege'}"></i>
 						Some College
 					</button>
 				</fieldset>
@@ -77,7 +77,6 @@
 				form: {
 					cardIndex: this.index,
 					majorId: null,
-					schoolId: null,
 					formWasSubmitted: false,
 					fieldOfStudyId: null,
 					formEducationLevel: "allDegrees",
@@ -95,9 +94,6 @@
 					fontWeight: "bold"
 				}
 			};
-		},
-		mounted() {
-			this.form.schoolId = this.selectedUniversity;
 		},
 		methods: {
 			...mapActions([
@@ -121,8 +117,8 @@
 					this.selected = null;
 					this.submittedOnce = false;
 					this.toggleFormWasSubmitted(this.form.cardIndex);
-					this.fetchIndustryImages(this.form);
-					this.fetchMajorData(this.form);
+					this.fetchIndustryImages({form:this.form, school:this.selectedUniversity});
+					this.fetchMajorData({form:this.form, school:this.selectedUniversity});
 					this.form.majorId = null;
 					this.form.fieldOfStudyId = null;
 					this.isShowing = !this.isShowing;
@@ -148,7 +144,7 @@
 
 			handleFieldOfStudyMajors(field) {
 				if (field == "fieldOfStudyId") {
-					this.fetchUpdatedMajorsByField(this.form);
+					this.fetchUpdatedMajorsByField({form:this.form, school:this.selectedUniversity});
 				}
 			},
 			toggleEducationLevel(educationInput) {

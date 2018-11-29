@@ -27,9 +27,10 @@ class PowerUsersServiceTest extends TestCase
         $this->seed('Power_User_Data_Aggregate_TableSeeder');
         $university = 'all';
         $path_id = 1;
+        $iframeString = "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData";
 
         $response = $this->powerUserService->getPowerUserDataByUniversity($university, $path_id);
-        $this->assertEquals($response['iframe_string'], "CSU7LaborMarketOutcomes-ByMajor&#47;CSU7AggregareEarningsData");
+        $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
     /**
@@ -40,9 +41,10 @@ class PowerUsersServiceTest extends TestCase
         $this->seed('Power_User_Data_Northridge_TableSeeder');
         $university = 'northridge';
         $path_id = 1;
+        $iframeString = "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor";
 
         $response = $this->powerUserService->getPowerUserDataByUniversity($university, $path_id);
-        $this->assertEquals($response['iframe_string'], "CSUNLaborMarketOutcomes-ByMajor&#47;Story1");
+        $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
     /**
