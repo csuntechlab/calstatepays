@@ -20576,19 +20576,15 @@ textarea {
   display: inline;
 }
 
-.btn-change-major {
-  color: #777777;
-  margin-top: 1.5rem;
-  margin-bottom: -2rem;
-  padding-left: .5rem;
-  font-size: 1rem;
-  text-transform: none;
+.btn-flip-card {
+  margin-bottom: 5px;
 }
 
-.btn-change-major:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  cursor: pointer;
+@media screen and (max-width: 767px) {
+  .btn-flip-card {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
 }
 
 .btn-reset-mobile {

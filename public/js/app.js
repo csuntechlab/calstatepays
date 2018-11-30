@@ -52992,7 +52992,7 @@ exports = module.exports = __webpack_require__(78)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53044,8 +53044,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
 //
 //
 //
@@ -53412,6 +53410,50 @@ var render = function() {
             [
               _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
                 _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.windowWidth > 500,
+                        expression: "windowWidth > 500"
+                      }
+                    ],
+                    staticClass: "btn",
+                    on: { click: _vm.resetCurrentCard }
+                  },
+                  [
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.windowSize < 500,
+                          expression: "windowSize < 500"
+                        }
+                      ],
+                      staticClass: "fas fa fa-chevron-up",
+                      attrs: { v: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.windowSize > 500,
+                          expression: "windowSize > 500"
+                        }
+                      ],
+                      staticClass: "fas fa fa-chevron-left",
+                      attrs: { v: "" }
+                    }),
+                    _vm._v(" Change Major ")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
                   "p",
                   {
                     directives: [
@@ -53540,58 +53582,6 @@ var render = function() {
                       }
                     }),
                     _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.windowWidth > 500,
-                        expression: "windowWidth > 500"
-                      }
-                    ],
-                    staticClass: "form-group row"
-                  },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-change-major",
-                        on: { click: _vm.resetCurrentCard }
-                      },
-                      [
-                        _c("i", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.windowSize < 500,
-                              expression: "windowSize < 500"
-                            }
-                          ],
-                          staticClass: "fas fa fa-chevron-up",
-                          attrs: { v: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("i", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.windowSize > 500,
-                              expression: "windowSize > 500"
-                            }
-                          ],
-                          staticClass: "fas fa fa-chevron-left",
-                          attrs: { v: "" }
-                        }),
-                        _vm._v(" Change Major ")
-                      ]
-                    )
                   ]
                 )
               ])
@@ -74371,6 +74361,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -74475,6 +74474,59 @@ var render = function() {
       ? _c("div", { key: "1" }, [
           _c("form", { staticClass: "container-fluid csu-card__form" }, [
             _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+              _c(
+                "button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.industryFormWasSubmittedOnce,
+                      expression: "industryFormWasSubmittedOnce"
+                    }
+                  ],
+                  staticClass: "btn-flip-card",
+                  on: { click: _vm.resetIndustries }
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "font-weight-bold\n\t\t\t\t\t\t",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v("Change Degree Level "),
+                      _c("i", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.windowSize < 500,
+                            expression: "windowSize < 500"
+                          }
+                        ],
+                        staticClass: "fas fa fa-chevron-up",
+                        attrs: { v: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("i", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.windowSize > 500,
+                            expression: "windowSize > 500"
+                          }
+                        ],
+                        staticClass: "fas fa fa-chevron-right",
+                        attrs: { v: "" }
+                      })
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
               !_vm.industryFormWasSubmitted
                 ? _c(
                     "div",
@@ -74617,25 +74669,21 @@ var render = function() {
                       [_vm._v("Submit")]
                     )
                   ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.industryFormWasSubmittedOnce,
-                        expression: "industryFormWasSubmittedOnce"
-                      }
-                    ],
-                    staticClass: "btn btn-change-major",
-                    on: { click: _vm.resetIndustries }
-                  },
-                  [
-                    _vm._v(" Select Degree Level "),
+                : _vm._e()
+            ])
+          ])
+        ])
+      : _c("div", { key: "2" }, [
+          _c("form", { staticClass: "container-fluid csu-card__form" }, [
+            _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn-flip-card",
+                  on: { click: _vm.resetIndustries }
+                },
+                [
+                  _c("span", { staticClass: "font-weight-bold" }, [
                     _c("i", {
                       directives: [
                         {
@@ -74658,18 +74706,14 @@ var render = function() {
                           expression: "windowSize > 500"
                         }
                       ],
-                      staticClass: "fas fa fa-chevron-right",
+                      staticClass: "fas fa fa-chevron-left",
                       attrs: { v: "" }
-                    })
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
-      : _c("div", { key: "2" }, [
-          _c("form", { staticClass: "container-fluid csu-card__form" }, [
-            _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+                    }),
+                    _vm._v(" Change Major\n\t\t\t\t\t\t\t")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
               _c(
                 "p",
                 {
@@ -74757,45 +74801,7 @@ var render = function() {
                   }),
                   _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
                 ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-change-major ",
-                    on: { click: _vm.resetIndustries }
-                  },
-                  [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.windowSize < 500,
-                          expression: "windowSize < 500"
-                        }
-                      ],
-                      staticClass: "fas fa fa-chevron-up",
-                      attrs: { v: "" }
-                    }),
-                    _vm._v(" "),
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.windowSize > 500,
-                          expression: "windowSize > 500"
-                        }
-                      ],
-                      staticClass: "fas fa fa-chevron-left",
-                      attrs: { v: "" }
-                    }),
-                    _vm._v(" Change Major ")
-                  ]
-                )
-              ])
+              )
             ])
           ])
         ])
