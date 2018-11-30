@@ -70844,7 +70844,7 @@ var render = function() {
                   },
                   [
                     _c("i", {
-                      staticClass: "fas fa fa-chevron-up",
+                      staticClass: "fas fa fa-chevron-left",
                       attrs: { v: "" }
                     }),
                     _vm._v(" "),
@@ -90819,7 +90819,7 @@ var render = function() {
                           expression: "isNotFirstCard"
                         }
                       ],
-                      staticClass: "fa fa-times fa-2x btn-remove ",
+                      staticClass: "fa fa-times fa-2x btn-remove",
                       attrs: { title: "Close" },
                       on: { click: _vm.removeCurrentCard }
                     })
