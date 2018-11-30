@@ -89507,6 +89507,7 @@ var render = function() {
     [
       _vm.isMobile
         ? _c("majors-graph-mobile", {
+            staticStyle: { width: "auto" },
             attrs: {
               majorData: _vm.parsedMajorData,
               educationLevel: this.educationLevel,
