@@ -1,16 +1,12 @@
 <template>
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+		<major-form class="col-12" :windowWidth="windowWidth" :index="index" />
 		<div class="col-12">
-			<div class="csu-card">
+			<div v-if="selectedFormWasSubmittedOnce" class="csu-card mb-5">
 				<div class="container-fluid py-3">
 					<div class="row">
-						<div class="col-1">
-							<i class="fa fa-times fa-2x btn-remove float-left" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fa fa-refresh fa-2x btn-reset float-left" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
-						</div>
 						<div class="col">
-							<social-sharing 
-							v-if="selectedFormWasSubmitted" 
+							<social-sharing
 							:networks="mobileNetworks" 
 							url="sandbox.csun.edu/metalab/test/csumetrola"
 							:title="this.shareDescription" 
@@ -37,35 +33,39 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h3 v-show="selectedFormWasSubmitted" class="industry-title pt-2">{{selectedMajorTitle}}</h3>
+							<h3 class="industry-title pt-2">{{selectedMajorTitle}}</h3>
 						</div>
 					</div>
 					<div class="col">
-							<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel" />
+							<major-legend :educationLevel="selectedEducationLevel" />
 					</div>
-					<div v-show="this.selectedFormWasSubmitted && nullValues">
+					<div v-show="nullValues">
 						<div class="row text-center">
 							<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
 						</div>
 					</div>
-					<div v-show="!nullValues">
-						<div class="row" v-show="selectedFormWasSubmitted" style="height: 400px">
+						<div v-show="!nullValues" class="row" style="height: 400px">
 							<div class="col-12">
 								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<major-form :index="index" />
-						</div>
-					</div>
 						<div class="row">
 							<div class="col-12">
 								<industry-mobile v-show="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
 							</div>
 						</div>
 				</div>
+			</div>
+			<div v-else class="csu-card mb-5">
+				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+				<p class="lead pl-md-5 pr-md-5">
+					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+					which resonates the most with you.
+				</p>
+				<p class="lead pl-md-5 pr-md-5">
+					<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+					For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -218,7 +218,7 @@
 			majorGraphWrapper,
 			majorsGraph,
 			industryMobile,
-			majorLegend
+			majorLegend,
 		}
 	};
 </script>

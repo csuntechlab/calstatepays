@@ -3,13 +3,11 @@
 		<div key="1" v-if="!selectedFormWasSubmitted">
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce"
 					title="Reset"></i>
 					<div v-if="!selectedFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
-						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
-						title="Reset"></i>
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select label="discipline" :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
 						class="csu-form-input">
@@ -34,9 +32,9 @@
 		<div key="2" v-else >
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce"
 					title="Reset"></i>
-					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'allDegrees', '':this.educationLevel(this.index) != 'allDegrees'}"></i>
