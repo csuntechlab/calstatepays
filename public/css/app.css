@@ -20577,7 +20577,9 @@ textarea {
 }
 
 .btn-change-major {
-  padding-top: 2.5rem;
+  color: #777777;
+  margin-top: 1.5rem;
+  margin-bottom: -2rem;
   padding-left: .5rem;
   font-size: 1rem;
   text-transform: none;
@@ -20586,6 +20588,7 @@ textarea {
 .btn-change-major:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
+  cursor: pointer;
 }
 
 .btn-reset-mobile {
