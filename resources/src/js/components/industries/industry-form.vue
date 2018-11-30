@@ -3,7 +3,9 @@
 		<div key="1" v-if="!industryFormWasSubmitted">
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" title="Reset"></i>
+					<button class="btn btn-flip-card float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > <span class="font-weight-bold
+						" href="#">Change Degree Level <i v class="fas fa fa-chevron-right"></i></span>
+					</button>
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
@@ -45,15 +47,22 @@
 					<div v-if="!industryFormWasSubmitted" class="form-group row">
 						<button id="submit-btn" type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
+					<!-- <div class="form-group row">
+						
+					</div> -->
 				</fieldset>
 			</form>
 		</div>	
 		<div key="2" v-else>
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
-					title="Reset"></i>
-					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
+					<button class="btn btn-flip-card" @click="resetIndustries" >
+							<span class="font-weight-bold">
+								<i class="fas fa fa-chevron-left"></i> Change Major
+							</span> 
+						</button>
+					
+					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check': industryEducationLevel == 'post_bacc', '':industryEducationLevel != 'post_bacc'}" ></i>
 						Post Bacc
@@ -66,6 +75,9 @@
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check': industryEducationLevel == 'someCollege', '':industryEducationLevel != 'someCollege'}"></i>
 						Some College
 					</button>
+					<!-- <div class="form-group row">
+						
+					</div> -->
 				</fieldset>
     		</form>
 		</div>
@@ -152,8 +164,7 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-			
-				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
+				this.fetchIndustryMajorsByField(this.form);
 			}
 		},
 	},
