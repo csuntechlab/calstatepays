@@ -74751,7 +74751,7 @@ var render = function() {
               { staticClass: "col-lg-9 col-12" },
               [
                 _c("industry-progress", {
-                  staticClass: "industry-card mt-md-3"
+                  staticClass: "industry-card mt-md-3 mt-lg-0"
                 })
               ],
               1
