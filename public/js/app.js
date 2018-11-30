@@ -70850,20 +70850,7 @@ var render = function() {
                       staticClass: "fas fa fa-chevron-left",
                       attrs: { v: "" }
                     }),
-                    _vm._v(" "),
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.windowSize > 500,
-                          expression: "windowSize > 500"
-                        }
-                      ],
-                      staticClass: "fas fa fa-chevron-left",
-                      attrs: { v: "" }
-                    }),
-                    _vm._v(" Change Major ")
+                    _vm._v(" Change Major")
                   ]
                 ),
                 _vm._v(" "),
