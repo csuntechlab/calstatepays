@@ -21360,11 +21360,13 @@ button.btn-change-campus:hover {
 .IndustryProgressBarWrapper__PercentageText {
   margin: 0;
   color: #2f98bf;
+  font-size: 1rem;
 }
 
 .IndustryProgressBarWrapper__SalaryText {
   margin: 0;
   color: #2BAE67;
+  font-size: 1rem;
 }
 
 .IndustryProgressBarWrapper__SalaryBar {
