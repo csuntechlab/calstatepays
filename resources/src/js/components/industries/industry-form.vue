@@ -4,7 +4,7 @@
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
 					<button class="btn btn-flip-card float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > <span class="font-weight-bold
-						" href="#">Change Degree Level <i v-show="windowSize < 500" v class="fas fa fa-chevron-up"></i> <i v-show="windowSize > 500" v class="fas fa fa-chevron-right"></i></span>
+						" href="#">Change Degree Level <i v class="fas fa fa-chevron-right"></i></span>
 					</button>
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
@@ -58,7 +58,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<button class="btn btn-flip-card" @click="resetIndustries" >
 							<span class="font-weight-bold">
-								<i v-show="windowSize < 500" v class="fas fa fa-chevron-up"></i> <i v-show="windowSize > 500" v class="fas fa fa-chevron-left"></i> Change Major
+								<i class="fas fa fa-chevron-left"></i> Change Major
 							</span> 
 						</button>
 					
