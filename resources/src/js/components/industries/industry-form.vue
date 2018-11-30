@@ -53,7 +53,7 @@
 				<fieldset class="csu-card__form-sizing">
 					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
 					title="Reset"></i>
-					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
+					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >
 						<i class= "major-btn_icon" v-bind:class="{'fa fa-check': industryEducationLevel == 'post_bacc', '':industryEducationLevel != 'post_bacc'}" ></i>
 						Post Bacc

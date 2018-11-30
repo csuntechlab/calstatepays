@@ -71,18 +71,13 @@
 
 
 .flip-enter-active {
-    transition: all .18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .flip-leave-active {
-    transition: all .18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all .15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
-    opacity: 0;
-    @media screen and (max-width: $break-small) {
-        transform: scaleY(0) translateZ(0);
-        opacity: 0;
-    }
 }

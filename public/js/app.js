@@ -91996,17 +91996,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "p",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
-                    }
-                  ],
-                  staticClass: "text-center h5 majors-header my-5-md my-4"
-                },
+                { staticClass: "text-center h5 majors-header my-5-md my-4" },
                 [_vm._v("Select a Degree Level")]
               ),
               _vm._v(" "),
