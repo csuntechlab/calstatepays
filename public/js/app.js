@@ -70286,6 +70286,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -90329,6 +90332,23 @@ var render = function() {
                 ])
               ])
             : _c("div", { staticClass: "csu-card" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
+                      }
+                    ],
+                    staticClass:
+                      "col fa fa-times fa-2x btn-remove text-right pull-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
+                  })
+                ]),
+                _vm._v(" "),
                 _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
                   _vm._v("Please make your selection")
                 ]),
@@ -90450,6 +90470,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
 //
 //
 //
@@ -91004,6 +91029,24 @@ var render = function() {
               ])
             ])
           : _c("div", { staticClass: "csu-card mb-5" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col" }, [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
+                      }
+                    ],
+                    staticClass: "fa fa-times fa-2x btn-remove pull-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
               _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
                 _vm._v("Please make your selection")
               ]),
