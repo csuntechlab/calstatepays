@@ -19370,6 +19370,9 @@ html {
   .csu-card .industry-title {
     font-size: 1.3rem;
     padding-bottom: .5rem;
+    border-bottom: 0.2rem #2BAE67 dotted;
+    padding-bottom: .4rem;
+    margin-bottom: 1.2rem;
   }
   .csu-card .majors-header {
     color: #595959;
@@ -19383,6 +19386,10 @@ html {
 @media screen and (max-width: 767px) and (max-width: 767px) {
   .csu-card .majors-header {
     padding-top: 3rem;
+    font-size: 1.3rem;
+    border-bottom: 0.2rem #2BAE67 dotted;
+    padding-bottom: .4rem;
+    margin-bottom: 1.2rem;
   }
 }
 
@@ -19443,6 +19450,7 @@ html {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-bottom: 1rem;
 }
 
 .csu-card__form-sizing {
@@ -21430,6 +21438,9 @@ button.btn-change-campus:hover {
 @media screen and (max-width: 767px) {
   .industry-card {
     margin-top: 2%;
+    padding: 7%;
+    font-size: 1.5rem;
+    padding-bottom: .5em;
   }
 }
 

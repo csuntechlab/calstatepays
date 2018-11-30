@@ -73295,7 +73295,7 @@ var render = function() {
       _c("h5", { staticClass: "majors-header" }, [
         _vm._v("Common Employment Sectors"),
         _c("br"),
-        _vm._v(_vm._s(_vm.selectedMajorName))
+        _vm._v(" in " + _vm._s(_vm.selectedMajorName))
       ]),
       _vm._v(" "),
       _vm._l(_vm.industries.slice(0, 3), function(industry, index) {

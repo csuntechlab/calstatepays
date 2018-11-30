@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5 class="majors-header">Common Employment Sectors<br>{{ selectedMajorName }}</h5>
+        <h5 class="majors-header">Common Employment Sectors<br> in {{ selectedMajorName }}</h5>
         <div v-for="(industry, index) in industries.slice(0,3)" :key="index"> 
             <industry-carousel-card :industry="industry"></industry-carousel-card>
         </div>
