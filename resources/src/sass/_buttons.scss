@@ -98,9 +98,9 @@
 }
 
 .btn-reset {
-  z-index: 2;
   position: relative;
   color: $gray;
+  margin: 0 0 7px 0;
   padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
@@ -122,6 +122,12 @@
   vertical-align: middle;
   display: inline;
 }
+
+.btn-flip-card {
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 
 .btn-reset-mobile {
   color: $gray;

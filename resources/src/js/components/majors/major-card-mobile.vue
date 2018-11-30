@@ -6,7 +6,11 @@
 				<div class="container-fluid py-3">
 					<div class="row">
 						<div class="col">
-							<social-sharing
+							<i class="fa fa-times fa-2x btn-remove " @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						</div>
+						<div class="col-11">
+							<social-sharing 
+							v-if="selectedFormWasSubmitted" 
 							:networks="mobileNetworks" 
 							url="sandbox.csun.edu/metalab/test/csumetrola"
 							:title="this.shareDescription" 

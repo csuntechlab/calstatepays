@@ -206,7 +206,5 @@ export default {
 		industryCarousel,
 		majorLegend
 	},
-	updated() {
-	}
 };
 </script>

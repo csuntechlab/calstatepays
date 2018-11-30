@@ -18864,7 +18864,6 @@ html {
   padding: 1px 7px;
   margin: 0 0 7px 0;
   font-weight: bold;
-  top: -8px;
   position: relative;
   cursor: pointer;
 }
@@ -20515,9 +20514,9 @@ textarea {
 }
 
 .btn-reset {
-  z-index: 2;
   position: relative;
   color: #777777;
+  margin: 0 0 7px 0;
   padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
@@ -20538,6 +20537,11 @@ textarea {
   margin-left: 5px;
   vertical-align: middle;
   display: inline;
+}
+
+.btn-flip-card {
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .btn-reset-mobile {
