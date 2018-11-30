@@ -3,7 +3,7 @@
 		<div key="1" v-if="!selectedFormWasSubmitted">
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<button class="btn btn-flip-card" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500" @click="resetCurrentCard" ><i class="fas fa fa-chevron-left"></i> Change Degree Level</button>
+						<button class="btn btn-flip-card" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500" @click="resetCurrentCard" > Change Degree Level <i class="fas fa fa-chevron-right"></i></button>
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
@@ -27,6 +27,7 @@
 					<div class="form-group row">
 						<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
+				
 				</fieldset>
 			</form>
 		</div>
