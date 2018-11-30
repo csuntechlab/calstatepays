@@ -53249,8 +53249,8 @@ var render = function() {
                     on: { click: _vm.resetCurrentCard }
                   },
                   [
-                    _vm._v("Change Degree Level "),
-                    _c("i", { staticClass: "fas fa fa-chevron-right" })
+                    _c("i", { staticClass: "fas fa fa-chevron-left" }),
+                    _vm._v(" Change Degree Level")
                   ]
                 ),
                 _vm._v(" "),
@@ -74492,7 +74492,6 @@ var render = function() {
                       attrs: { href: "#" }
                     },
                     [
-                      _vm._v("Change Degree Level "),
                       _c("i", {
                         directives: [
                           {
@@ -74515,9 +74514,10 @@ var render = function() {
                             expression: "windowSize > 500"
                           }
                         ],
-                        staticClass: "fas fa fa-chevron-right",
+                        staticClass: "fas fa fa-chevron-left",
                         attrs: { v: "" }
-                      })
+                      }),
+                      _vm._v(" Change Degree Level ")
                     ]
                   )
                 ]
