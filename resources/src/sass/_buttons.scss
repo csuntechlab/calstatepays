@@ -122,11 +122,8 @@
 }
 
 .btn-flip-card {
-  margin-bottom: 5px;
-  @media screen and (max-width: $break-small) {
-    padding-left: .5rem;
-    padding-right: .5rem;
-  }
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 
