@@ -20067,35 +20067,6 @@ figcaption {
   }
 }
 
-.campus-modal {
-  color: black;
-}
-
-.campus-modal img {
-  height: 8rem;
-  text-align: center;
-}
-
-.campus-modal figcaption:hover {
-  cursor: pointer;
-}
-
-.campus-modal .opted-in:hover {
-  background-color: darkgray;
-}
-
-.campus-modal .opted-out img {
-  opacity: 0.3;
-}
-
-.campus-modal .opted-out img:hover {
-  cursor: no-drop;
-}
-
-.campus-modal .opted-out figcaption:hover {
-  cursor: no-drop;
-}
-
 .homeCard__iconWrapper--major, .homeCard__iconWrapper--industries, .homeCard__iconWrapper--PFRE {
   position: relative;
   padding-top: 50%;
@@ -21031,7 +21002,8 @@ textarea {
   border-radius: 3rem;
   font-family: "Open Sans";
   font-size: 0.9rem;
-  height: 45px;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-weight: 700 !important;
 }
 
@@ -21055,7 +21027,7 @@ textarea {
 }
 
 .btn-submit {
-  padding: 0 4rem;
+  padding: 0.7rem 4rem;
   font-size: 1.1rem;
   text-transform: none;
   font-weight: 500;
@@ -21635,6 +21607,168 @@ button.btn-change-campus:hover {
 
 .VueCarousel-dot {
   margin-top: 5px !important;
+}
+
+.CSUDataImgBanner .v-dialog__content {
+  z-index: 100000001 !important;
+}
+
+.CSUDataImgBanner .v-overlay {
+  z-index: 100000000 !important;
+}
+
+.campus-modal__btn {
+  min-width: 140px;
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal__btn {
+    min-width: 100px;
+  }
+}
+
+.campus-modal__btn.btn-secondary {
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal__btn.btn-secondary {
+    margin-right: .5rem;
+  }
+}
+
+.campus-modal__error {
+  color: red;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  width: 100%;
+}
+
+.campus-modal-item {
+  position: relative;
+  z-index: 3;
+  border-radius: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal-item {
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+  }
+}
+
+.campus-modal-item__figure {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal-item__figure {
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.campus-modal-item__radio {
+  opacity: 0;
+  position: absolute;
+}
+
+.campus-modal-item__radio:checked + .campus-modal-item {
+  background-color: #d9d9d9;
+}
+
+.campus-modal-item__imgWrapper {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal-item__imgWrapper {
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin-bottom: 0;
+  }
+}
+
+.campus-modal-item__imgWrapper img {
+  height: 8rem;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .campus-modal-item__imgWrapper img {
+    height: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal-item__imgWrapper img {
+    height: 5rem;
+  }
+}
+
+.campus-modal-item__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .campus-modal-item__name {
+    font-size: 0.9rem;
+    width: 116%;
+    margin-left: -8%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .campus-modal-item__name {
+    -ms-flex-item-align: center;
+        align-self: center;
+    text-align: left;
+    margin-left: 20px;
+    width: 125px;
+  }
+}
+
+.campus-modal-item__coming-soon {
+  font-weight: 400;
+  color: gray;
+  margin-top: .3rem;
+}
+
+.campus-modal-item--opted-out .campus-modal-item__imgWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.campus-modal-item--opted-out .campus-modal-item__imgWrapper:before {
+  content: " ";
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  border-radius: 50%;
+}
+
+.campus-modal-item--opted-out .campus-modal-item__imgWrapper:hover {
+  cursor: no-drop;
+}
+
+.campus-modal-item--opted-out .campus-modal-item__name:hover {
+  cursor: no-drop;
 }
 
 .homepageVideo {

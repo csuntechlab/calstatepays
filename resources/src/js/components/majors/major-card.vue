@@ -98,7 +98,9 @@ export default {
 			"formWasSubmitted",
 			"formWasSubmittedOnce",
 			"majorNameById",
-			"majors"
+			"majors",
+			"universities",
+			"selectedUniversity"
 		]),
 		isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
@@ -138,7 +140,12 @@ export default {
 			}
 		},
 		shareDescription() {
-			let opening = 'I discovered that ' + this.selectedMajorTitle + ' students from CSUN make an average of ';
+			let universityFullName = this.retrieveUniversityFullName(this.universities, this.selectedUniversity);
+
+			if(universityFullName === 'CSU7')
+					universityFullName = 'the CSU7';
+
+			let opening = 'I discovered that ' + this.selectedMajorTitle + ' students from '+ universityFullName+' make an average of ';
 
 			if(this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees')
 				return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
@@ -177,11 +184,17 @@ export default {
 			this.resetMajorCard(this.index);
 		},
 		formatDollars(input) {
-			if (this.input) {
+			if (input) {
 				let dollarAmount = input.toString();
 				let hundreds = dollarAmount.substr(-3, 3);
 				let thousands = dollarAmount.slice(0, -3);
 				return "$" + thousands + "," + hundreds;
+			}
+		},
+		// used for the social sharing
+		retrieveUniversityFullName(universityArray,selectedUniv){
+			for(var i = 0; i < universityArray.length; i++){
+				if(universityArray[i].short_name === selectedUniv) return universityArray[i].name;
 			}
 		}
 	},

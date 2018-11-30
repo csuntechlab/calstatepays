@@ -340,36 +340,6 @@
 		}
 	}
 }
-.campus-modal {
-	color: black;
-	img {
-		height: 8rem;
-		text-align: center;
-	}
-	figcaption {
-		&:hover {
-			cursor: pointer;
-		}
-	}
-	.opted-in {
-		&:hover {
-			background-color: darkgray;
-		}
-	}
-	.opted-out {
-		img {
-			opacity: 0.3;
-			&:hover {
-				cursor: no-drop;
-			}
-		}
-		figcaption {
-			&:hover {
-				cursor: no-drop;
-			}
-		}
-	}
-}
 
 @mixin make-homeCard__titleAndIconWrapper($color) {
 	@extend .px-2, .py-3, .py-md-4, .p-md-4 ;
