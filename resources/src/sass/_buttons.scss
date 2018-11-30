@@ -2,7 +2,9 @@
   border-radius: 3rem;
   font-family: $font-brand;
   font-size: 0.9rem;
-  height: 45px;
+  // height: 45px;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-weight: 700 !important;
 }
 
@@ -24,7 +26,7 @@
 }
 
 .btn-submit {
-  padding: 0 4rem;
+  padding: 0.7rem 4rem;
   font-size: 1.1rem;
   text-transform: none;
   font-weight: 500;
