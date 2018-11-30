@@ -87,8 +87,11 @@
 
 .industry-card{
     min-height: 95%;
-    padding: 2rem;
-    @extend %card-base;
+	padding: $content-card__padding;
+	@extend %card-base;
+		@media screen and (max-width: $break-small) {
+			margin-top: 2%;
+		}
 }
 
 .pfre-bar {
@@ -156,7 +159,7 @@ $colorList: (
   font-size: 0.857rem;
   float: left;
   margin-left: 10px;
-  padding-top: 1rem !important;
+  padding-top: 0;
 	p {
 		position: relative;
 		top: -4px;

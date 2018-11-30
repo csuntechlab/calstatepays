@@ -8,19 +8,37 @@
 .csu-card{
     @extend %card-base;
     min-height: 95%;
-    padding: 2rem;
+    padding: $content-card__padding;
     margin-bottom: 13px;
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-small) { //Mobile styling for small breakpoint in CSU card
         min-height: unset;
+        padding:0;
+        .industry-title {
+            font-size: 1.3rem;
+            padding-bottom: .5rem;
+        }
+        .majors-header {
+            color: #595959;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.5;
+            @media screen and (max-width: $break-small) {
+                padding-top: 3rem;
+            }
+        }
+        .csu-card__form-sizing .btn {
+            height: 2.5em;
+        }
     }
-
+    
     &__share {
         margin-left: .3rem;
         font-size: 1em;
         border: #fff 2px solid;
         color: #fff;
         border-radius: 7px;
-        padding: 1px 7px;
+        padding: 0 .3rem;
         margin: 0 0 7px 0;
         font-weight: bold;
         top: -8px;
@@ -50,7 +68,8 @@
 }
 
 .csu-card__form{
-    @extend %card-base, .mb-4, .py-4 ;
+    @extend %card-base;
+    // , .mb-4, .py-4 ;
     display: flex;
     flex-direction: row;
     align-items: flex-start;

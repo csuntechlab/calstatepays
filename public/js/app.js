@@ -73078,8 +73078,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 
@@ -73262,7 +73260,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -73296,10 +73293,8 @@ var render = function() {
     "div",
     [
       _c("h5", { staticClass: "majors-header" }, [
-        _vm._v("Common Employment Sectors for")
-      ]),
-      _vm._v(" "),
-      _c("h5", { staticClass: "majors-header" }, [
+        _vm._v("Common Employment Sectors"),
+        _c("br"),
         _vm._v(_vm._s(_vm.selectedMajorName))
       ]),
       _vm._v(" "),
@@ -73341,43 +73336,43 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "csu-card" }, [
+        _c("div", { staticClass: "csu-card csu-card__form-sizing" }, [
           _c("div", { staticClass: "container-fluid py-3" }, [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-1" }, [
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isNotFirstCard,
-                      expression: "isNotFirstCard"
-                    }
-                  ],
-                  staticClass: "fa fa-times fa-2x btn-remove float-left",
-                  attrs: { title: "Close" },
-                  on: { click: _vm.removeCurrentCard }
-                }),
-                _vm._v(" "),
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-left",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
-                })
-              ]),
-              _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "col" },
                 [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
+                      }
+                    ],
+                    staticClass:
+                      "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
+                  }),
+                  _vm._v(" "),
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmitted,
+                        expression: "selectedFormWasSubmitted"
+                      }
+                    ],
+                    staticClass:
+                      "col-1 fa fa-refresh fa-2x btn-reset float-left",
+                    attrs: { title: "Reset" },
+                    on: { click: _vm.resetCurrentCard }
+                  }),
+                  _vm._v(" "),
                   _vm.selectedFormWasSubmitted
                     ? _c("social-sharing", {
                         attrs: {
@@ -74754,7 +74749,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-lg-9 col-12" },
-              [_c("industry-progress", { staticClass: "industry-card" })],
+              [
+                _c("industry-progress", {
+                  staticClass: "industry-card mt-md-3"
+                })
+              ],
               1
             )
           ])

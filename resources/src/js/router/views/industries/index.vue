@@ -16,7 +16,7 @@
             <industry-form />
           </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress class="industry-card"/>
+            <industry-progress class="industry-card mt-md-3"/>
           </div>
         </div>
       </div>

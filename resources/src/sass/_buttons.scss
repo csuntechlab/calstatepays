@@ -93,6 +93,10 @@
   position: relative;
   top: -15px;
   right: -15px;
+    @media screen and (max-width: $break-small) {
+      top: -9px;
+      right: 1px;
+     }
 }
 
 .btn-reset {
@@ -105,6 +109,10 @@
   cursor: pointer;
   vertical-align: middle;
   display: inline;
+      @media screen and (max-width: $break-small) {
+        top: -9px;
+        left: -14px;
+   }
 }
 
 .major-tool-btn-mobile {

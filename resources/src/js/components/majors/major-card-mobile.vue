@@ -1,14 +1,12 @@
 <template>
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
 		<div class="col-12">
-			<div class="csu-card">
+			<div class="csu-card csu-card__form-sizing">
 				<div class="container-fluid py-3">
 					<div class="row">
-						<div class="col-1">
-							<i class="fa fa-times fa-2x btn-remove float-left" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fa fa-refresh fa-2x btn-reset float-left" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
-						</div>
 						<div class="col">
+							<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+							<i class="col-1 fa fa-refresh fa-2x btn-reset float-left" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 							<social-sharing 
 							v-if="selectedFormWasSubmitted" 
 							:networks="mobileNetworks" 
