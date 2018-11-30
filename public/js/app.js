@@ -66332,7 +66332,7 @@ var render = function() {
                       { staticClass: "headline grey lighten-2 " },
                       [
                         _vm._v(
-                          "\n                    Choose a Campus \n                "
+                          "\r\n                    Choose a Campus \r\n                "
                         )
                       ]
                     ),
@@ -66431,11 +66431,11 @@ var render = function() {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                        " +
+                                                                "\r\n                                                        " +
                                                                   _vm._s(
                                                                     universitySeal.name
                                                                   ) +
-                                                                  "\n                                                    "
+                                                                  "\r\n                                                    "
                                                               )
                                                             ]
                                                           )
@@ -66504,11 +66504,11 @@ var render = function() {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                        " +
+                                                                "\r\n                                                        " +
                                                                   _vm._s(
                                                                     universitySeal.name
                                                                   ) +
-                                                                  "\n                                                        "
+                                                                  "\r\n                                                        "
                                                               ),
                                                               _c(
                                                                 "div",
@@ -66555,7 +66555,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                        * Select a campus to proceed\n                    "
+                                  "\r\n                        * Select a campus to proceed\r\n                    "
                                 )
                               ]
                             )
@@ -69910,7 +69910,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         this.url = window.baseUrl;
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['majorCards', 'indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
@@ -69930,7 +69930,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { position: "relative" } }, [
-    _vm.indexOfUnsubmittedCard == -1
+    _vm.majorCards[0].submittedOnce
       ? _c(
           "button",
           {
@@ -70253,7 +70253,7 @@ var content = __webpack_require__(267);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(79)("26d294d4", content, false, {});
+var update = __webpack_require__(79)("ebcc37ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71077,7 +71077,7 @@ var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(79)("09e563c0", content, false, {});
+var update = __webpack_require__(79)("fa1dca66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -93939,7 +93939,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\n    "
+              "\r\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\r\n    "
             )
           ]
         )
