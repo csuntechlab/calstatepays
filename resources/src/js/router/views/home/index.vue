@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div> 
 		<home-banner/>
 		<div class="container">
 			<home-card/>
