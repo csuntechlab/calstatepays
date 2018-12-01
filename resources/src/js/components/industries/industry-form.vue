@@ -164,7 +164,7 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
 	},
