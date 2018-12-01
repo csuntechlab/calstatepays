@@ -19163,6 +19163,10 @@ figcaption {
   }
 }
 
+.faq-card--text__blue {
+  color: #14597F;
+}
+
 .faq-card--image {
   margin-bottom: 1rem;
   -ms-flex-item-align: center;

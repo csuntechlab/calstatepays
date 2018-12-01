@@ -1,7 +1,7 @@
 <template>
 <div class=" faq-card row mx-auto ">
     <div class="col-6 col-sm-5 faq-card--text">
-        <p  class="">Have Questions?</p><p>We Have Answers.</p>
+        <p  class="faq-card--text__blue">Have Questions?</p><p>We Have Answers.</p>
         <router-link to="/faq">
             <button class="faq-card--button">Read Our FAQ</button>
         </router-link>

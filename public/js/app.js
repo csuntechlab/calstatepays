@@ -48970,7 +48970,9 @@ var render = function() {
       "div",
       { staticClass: "col-6 col-sm-5 faq-card--text" },
       [
-        _c("p", {}, [_vm._v("Have Questions?")]),
+        _c("p", { staticClass: "faq-card--text__blue" }, [
+          _vm._v("Have Questions?")
+        ]),
         _c("p", [_vm._v("We Have Answers.")]),
         _vm._v(" "),
         _c("router-link", { attrs: { to: "/faq" } }, [

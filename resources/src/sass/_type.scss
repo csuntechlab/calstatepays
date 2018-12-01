@@ -205,7 +205,9 @@ figcaption {
     @media screen and (min-width: $break-small){
         font-size: 2rem;
     }
-
+    &__blue{
+        color:#14597F;
+    }
 }
 .faq-card--image{
     margin-bottom: 1rem;
