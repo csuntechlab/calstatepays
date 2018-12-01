@@ -36,7 +36,9 @@ export default {
 		homeCard,
 		homeBanner,
 		homeVideo,
-		faqCard
+		faqCard,
+		campusSeals,
+		homeVideo,
 	}, 
 	methods: {
 		...mapActions(['setDataPage'])
