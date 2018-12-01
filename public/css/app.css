@@ -19365,7 +19365,7 @@ html {
 @media screen and (max-width: 992px) {
   .csu-card {
     min-height: unset;
-    padding: 2rem;
+    padding: 0;
     margin-top: 1rem;
   }
   .csu-card .industry-title {
@@ -19373,6 +19373,9 @@ html {
     padding-bottom: .5rem;
     padding-bottom: .4rem;
     margin-bottom: 1.2rem;
+  }
+  .csu-card .csu-card__instructions {
+    padding: 2rem;
   }
   .csu-card .majors-header {
     color: #595959;

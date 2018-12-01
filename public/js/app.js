@@ -91007,7 +91007,7 @@ var render = function() {
                 ])
               ])
             ])
-          : _c("div", { staticClass: "csu-card mb-5" }, [
+          : _c("div", { staticClass: "csu-card csu-card__instructions mb-5" }, [
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col" }, [
                   _c("i", {
