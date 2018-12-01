@@ -7,7 +7,7 @@
                     <div data-app>
                         <campus-modal>
                             <span slot="change button" class="CSUDataImgBanner__changeCampus font-weight-bold" href="#">Change Campus</span>
-                         </campus-modal>
+                        </campus-modal>
                     </div>
                 </div>
                 <div class="CSUDataImgBanner__dataInfoWrapper col-12 col-md-10 col-lg-8 col-xl-6">

@@ -93,18 +93,12 @@
   vertical-align: middle;
   display: inline;
   position: relative;
-  top: -15px;
-  right: -15px;
-    @media screen and (max-width: $break-small) {
-      top: -9px;
-      right: 1px;
-     }
 }
 
 .btn-reset {
-  z-index: 2;
   position: relative;
   color: $gray;
+  margin: 0 0 7px 0;
   padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
@@ -130,6 +124,12 @@
   vertical-align: middle;
   display: inline;
 }
+
+.btn-flip-card {
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 
 .btn-reset-mobile {
   color: $gray;

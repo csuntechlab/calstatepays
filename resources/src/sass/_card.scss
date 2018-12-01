@@ -12,7 +12,8 @@
     margin-bottom: 13px;
     @media screen and (max-width: $break-large) { //Styles apply up to large breakpoint
         min-height: unset;
-        padding:0;
+        padding: 2rem;
+        margin-top: 1rem;
         .industry-title {
             font-size: 1.3rem;
             padding-bottom: .5rem;
@@ -48,7 +49,6 @@
         padding: 0 .3rem;
         margin: 0 0 7px 0;
         font-weight: bold;
-        top: -8px;
         position: relative;
         cursor: pointer;
             &-twitter {
@@ -98,18 +98,13 @@
 
 
 .flip-enter-active {
-    transition: all .18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .flip-leave-active {
-    transition: all .18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all .15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
-    opacity: 0;
-    @media screen and (max-width: $break-small) {
-        transform: scaleY(0) translateZ(0);
-        opacity: 0;
-    }
 }
