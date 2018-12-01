@@ -18921,27 +18921,18 @@ html {
 }
 
 .flip-enter-active {
-  -webkit-transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  transition: all 0.18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  -webkit-transition: all 0.15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: all 0.15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .flip-leave-active {
-  -webkit-transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .flip-enter, .flip-leave-to {
   -webkit-transform: scaleX(0) translateZ(0);
           transform: scaleX(0) translateZ(0);
-  opacity: 0;
-}
-
-@media screen and (max-width: 767px) {
-  .flip-enter, .flip-leave-to {
-    -webkit-transform: scaleY(0) translateZ(0);
-            transform: scaleY(0) translateZ(0);
-    opacity: 0;
-  }
 }
 
 .text-gray {

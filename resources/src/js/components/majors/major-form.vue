@@ -3,12 +3,10 @@
 		<div key="1" v-if="!selectedFormWasSubmitted">
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-						<button class="btn btn-flip-card float-right" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500" @click="resetCurrentCard" > Change Degree Level <i class="fas fa fa-chevron-right"></i></button>
+					<button class="btn btn-flip-card float-right" v-show="selectedFormWasSubmittedOnce" @click="resetCurrentCard" > Change Degree Level <i class="fas fa fa-chevron-right"></i></button>
 					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
-						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
-						title="Reset"></i>
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select label="discipline" :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
 						class="csu-form-input">
@@ -34,8 +32,8 @@
 		<div key="2" v-else >
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<button v-show="windowWidth > 500" class="btn btn-flip-card" @click="resetCurrentCard" > <i v-show="windowSize < 500" v class="fas fa fa-chevron-up"></i> <i v-show="windowSize > 500" v class="fas fa fa-chevron-left"></i> Change Major </button>
-					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
+					<button v-show="selectedFormWasSubmittedOnce" class="btn btn-flip-card" @click="resetCurrentCard"><i v class="fas fa fa-chevron-left"></i> Change Major</button>
+					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
 						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'allDegrees', '':this.educationLevel(this.index) != 'allDegrees'}"></i>
