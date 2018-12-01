@@ -70698,7 +70698,6 @@ var render = function() {
                   ? _c(
                       "div",
                       {
-                        staticClass: "form-group",
                         class: [
                           this.formNotFilled
                             ? "required-field"
