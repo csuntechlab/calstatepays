@@ -65295,6 +65295,7 @@ var render = function() {
                                     "btn btn-secondary campus-modal__btn",
                                   on: {
                                     click: function($event) {
+                                      $event.preventDefault()
                                       _vm.showModal = false
                                     }
                                   }
@@ -65310,6 +65311,7 @@ var render = function() {
                               attrs: { type: "submit" },
                               on: {
                                 click: function($event) {
+                                  $event.preventDefault()
                                   _vm.onSubmit()
                                 }
                               }
@@ -69254,7 +69256,12 @@ var render = function() {
                       }
                     ],
                     staticClass: "btn btn-flip-card float-right",
-                    on: { click: _vm.resetCurrentCard }
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.resetCurrentCard($event)
+                      }
+                    }
                   },
                   [
                     _vm._v(" Change Degree Level "),
@@ -69380,7 +69387,12 @@ var render = function() {
                     {
                       staticClass: "btn btn-success btn-submit",
                       attrs: { type: "button" },
-                      on: { click: _vm.submitForm }
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.submitForm($event)
+                        }
+                      }
                     },
                     [_vm._v("Submit")]
                   )
@@ -69410,7 +69422,12 @@ var render = function() {
                       }
                     ],
                     staticClass: "btn btn-flip-card",
-                    on: { click: _vm.resetCurrentCard }
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.resetCurrentCard($event)
+                      }
+                    }
                   },
                   [
                     _c("i", {
@@ -88738,7 +88755,12 @@ var render = function() {
                     }
                   ],
                   staticClass: "btn btn-flip-card float-right",
-                  on: { click: _vm.resetIndustries }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.resetIndustries($event)
+                    }
+                  }
                 },
                 [
                   _c(
@@ -88911,7 +88933,12 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-flip-card",
-                  on: { click: _vm.resetIndustries }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.resetIndustries($event)
+                    }
+                  }
                 },
                 [
                   _c("span", { staticClass: "font-weight-bold" }, [
