@@ -176,3 +176,83 @@ figcaption {
         font-size: 1.12rem;
     }
 }
+.faq-card{
+    width: 80%;
+    @media screen and (max-width: $break-Xsmall - 1){
+        width: 70%;
+        border-width: .5rem .5rem 0rem .5rem;
+        
+    }   
+    @media screen and (min-width: $break-xlarge){
+        width: 60%;
+    }
+    // height: 100px;
+    // background-color: #14597F;
+    // margin-top: auto;
+    border:5px solid #14597F;
+    // 
+    // margin: 1rem;
+}
+.faq-card--text{
+    font-weight: 600;
+     font-size:1rem;
+     @media screen and (min-width: 400px){
+        font-size: 1.5rem;
+    }
+    // @media screen and (min-width: $break-Xsmall){
+    //     font-size: 2rem;
+    // }
+    @media screen and (min-width: $break-small){
+        font-size: 2rem;
+    }
+
+}
+.faq-card--image{
+    margin-bottom: 1rem;
+    align-self: center;
+    
+    @media screen and (min-width: $break-Xsmall){
+        height: 11rem;
+        margin-top:1rem;
+    }
+    @media screen and (min-width: $break-small +1 ){
+        height: 15rem;
+    }
+}
+.faq-card--button__mobile{
+    background-color: #14597F;
+    height:2rem;
+    font-weight: 600;
+    text-align: center;
+
+    a{
+        color: #fff;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.faq-card--button{
+    display: none;
+    @media screen and (min-width: $break-Xsmall){
+        display: unset;
+        background-color: #14597F;
+        color: #fff;
+        width: 10rem;
+        font-size: 1rem;
+        border-radius: 12px;
+        padding: 0.1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem
+
+    }
+    @media screen and (min-width: $break-medium){
+       
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+
+    }
+
+}
