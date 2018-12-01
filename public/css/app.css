@@ -19362,7 +19362,7 @@ html {
   margin-bottom: 13px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
   .csu-card {
     min-height: unset;
     padding: 0;
@@ -19370,7 +19370,6 @@ html {
   .csu-card .industry-title {
     font-size: 1.3rem;
     padding-bottom: .5rem;
-    border-bottom: 0.2rem #2BAE67 dotted;
     padding-bottom: .4rem;
     margin-bottom: 1.2rem;
   }
@@ -19380,22 +19379,14 @@ html {
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 767px) and (max-width: 767px) {
-  .csu-card .majors-header {
     padding-top: 3rem;
     font-size: 1.3rem;
-    border-bottom: 0.2rem #2BAE67 dotted;
     padding-bottom: .4rem;
     margin-bottom: 1.2rem;
   }
-}
-
-@media screen and (max-width: 767px) {
   .csu-card .csu-card__form-sizing .btn {
-    height: 2.5em;
+    padding: 0.6rem 2rem;
+    margin: .09em;
   }
 }
 
@@ -21328,8 +21319,15 @@ button.btn-change-campus:hover {
 }
 
 .IndustryProgressBarWrapper {
-  padding: 20px 10px;
+  padding: 1.42rem 0.71rem;
   border-top: 1px solid #EBEBEB;
+}
+
+@media only screen and (max-width: 767px) {
+  .IndustryProgressBarWrapper {
+    padding: .1rem 2rem 0 0;
+    margin: 1rem 0 0 0;
+  }
 }
 
 .IndustryProgressBarWrapper__ProgressBarBase {

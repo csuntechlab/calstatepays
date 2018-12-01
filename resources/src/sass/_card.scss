@@ -10,32 +10,32 @@
     min-height: 95%;
     padding: $content-card__padding;
     margin-bottom: 13px;
-    @media screen and (max-width: $break-small) { //Mobile styling for small breakpoint in CSU card
+    @media screen and (max-width: $break-large) { //Styles apply up to large breakpoint
         min-height: unset;
         padding:0;
         .industry-title {
             font-size: 1.3rem;
             padding-bottom: .5rem;
-            border-bottom: 0.2rem #2BAE67 dotted;
             padding-bottom: .4rem;
             margin-bottom: 1.2rem;
+            // border-bottom: 0.2rem #2BAE67 dotted;
         }
-        .majors-header {
+
+        .majors-header { // Industry carousel styling in mobile view
             color: #595959;
             text-align: center;
             font-weight: 700;
             font-size: 1rem;
             line-height: 1.5;
-            @media screen and (max-width: $break-small) {
-                padding-top: 3rem;
-                font-size:1.3rem;
-                border-bottom: 0.2rem #2BAE67 dotted;
-                padding-bottom: .4rem;
-                margin-bottom: 1.2rem;
-            }
+            padding-top: 3rem;
+            font-size:1.3rem;
+            // border-bottom: 0.2rem #2BAE67 dotted;
+            padding-bottom: .4rem;
+            margin-bottom: 1.2rem;
         }
         .csu-card__form-sizing .btn {
-            height: 2.5em;
+            padding: 0.6rem 2rem;
+            margin: .09em;
         }
     }
     
