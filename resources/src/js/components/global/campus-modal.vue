@@ -64,8 +64,8 @@
                         * Select a campus to proceed
                     </div>
                     <div>
-                        <span v-if="aCampusIsSelected" class="btn btn-secondary campus-modal__btn" @click="showModal = false">Cancel</span>
-                        <button type="submit" class="btn btn-success campus-modal__btn" @click="onSubmit()">Select Campus</button>
+                        <span v-if="aCampusIsSelected" class="btn btn-secondary campus-modal__btn" @click.prevent="showModal = false">Cancel</span>
+                        <button type="submit" class="btn btn-success campus-modal__btn" @click.prevent="onSubmit()">Select Campus</button>
                     </div>
                 </v-card-actions>
             </v-card>

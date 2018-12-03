@@ -3,7 +3,7 @@
 		<div key="1" v-if="!industryFormWasSubmitted">
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<button class="btn btn-flip-card float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" > <span class="font-weight-bold
+					<button class="btn btn-flip-card float-right" v-show="industryFormWasSubmittedOnce" @click.prevent="resetIndustries" > <span class="font-weight-bold
 						" href="#">Change Degree Level <i v class="fas fa fa-chevron-right"></i></span>
 					</button>
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
@@ -56,7 +56,7 @@
 		<div key="2" v-else>
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<button class="btn btn-flip-card" @click="resetIndustries" >
+					<button class="btn btn-flip-card" @click.prevent="resetIndustries" >
 							<span class="font-weight-bold">
 								<i class="fas fa fa-chevron-left"></i> Change Major
 							</span> 
@@ -164,7 +164,7 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
 	},

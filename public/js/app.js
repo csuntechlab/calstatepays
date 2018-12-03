@@ -63532,6 +63532,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.majors.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_FIELD_OF_STUDIES, function (state, payload) {
+    state.fieldOfStudy = [];
     payload.forEach(function (fieldOfStudy) {
         fieldOfStudy.discipline = fieldOfStudy.name;
         delete fieldOfStudy.name;
@@ -64165,7 +64166,7 @@ var fetchIndustriesAPI = function fetchIndustriesAPI(payload, success, error) {
     });
 };
 var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(payload, success, error) {
-    window.axios.get("api/major/hegis-codes/" + payload.university + "/" + payload.fieldOfStudyId).then(function (response) {
+    window.axios.get("api/major/hegis-codes/" + payload.school + "/" + payload.form.fieldOfStudyId).then(function (response) {
         return success(response.data);
     }, function (response) {
         return error(response.data.message);
@@ -66722,6 +66723,7 @@ var render = function() {
                                     "btn btn-secondary campus-modal__btn",
                                   on: {
                                     click: function($event) {
+                                      $event.preventDefault()
                                       _vm.showModal = false
                                     }
                                   }
@@ -66737,6 +66739,7 @@ var render = function() {
                               attrs: { type: "submit" },
                               on: {
                                 click: function($event) {
+                                  $event.preventDefault()
                                   _vm.onSubmit()
                                 }
                               }
@@ -70431,7 +70434,7 @@ exports = module.exports = __webpack_require__(78)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70483,6 +70486,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
 //
 //
 //
@@ -70669,6 +70676,7 @@ var render = function() {
             },
             [
               _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+                _vm._v("\n<<<<<<< HEAD\n\t\t\t\t\t"),
                 _c(
                   "button",
                   {
@@ -70688,7 +70696,34 @@ var render = function() {
                     _c("i", { staticClass: "fas fa fa-chevron-right" })
                   ]
                 ),
-                _vm._v(" "),
+                _vm._v("\n=======\n\t\t\t\t\t"),
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmittedOnce,
+                        expression: "selectedFormWasSubmittedOnce"
+                      }
+                    ],
+                    staticClass: "btn btn-flip-card float-right",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.resetCurrentCard($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(" Change Degree Level "),
+                    _c("i", { staticClass: "fas fa fa-chevron-right" })
+                  ]
+                ),
+                _vm._v(
+                  "\n>>>>>>> d8dc38be356b948731c6b2b8657904e7cd76ece3\n\t\t\t\t\t"
+                ),
                 !_vm.selectedFormWasSubmitted
                   ? _c(
                       "div",
@@ -70750,7 +70785,7 @@ var render = function() {
                         ],
                         attrs: { for: "Major" }
                       },
-                      [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
+                      [_vm._v("\n\t\t\t\t\t\t\tSelect a Major")]
                     ),
                     _vm._v(" "),
                     this.form.fieldOfStudyId == null
@@ -70807,7 +70842,12 @@ var render = function() {
                     {
                       staticClass: "btn btn-success btn-submit",
                       attrs: { type: "button" },
-                      on: { click: _vm.submitForm }
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.submitForm($event)
+                        }
+                      }
                     },
                     [_vm._v("Submit")]
                   )
@@ -70837,7 +70877,12 @@ var render = function() {
                       }
                     ],
                     staticClass: "btn btn-flip-card",
-                    on: { click: _vm.resetCurrentCard }
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.resetCurrentCard($event)
+                      }
+                    }
                   },
                   [
                     _c("i", {
@@ -70879,7 +70924,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "allDegrees"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\t\tAll Levels\n\t\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -70908,7 +70953,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "postBacc"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -70937,7 +70982,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "bachelors"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -70966,7 +71011,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "someCollege"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
                   ]
                 )
               ])
@@ -91475,7 +91520,7 @@ var render = function() {
               _vm.industries.length > 0
                 ? _c("div", { staticClass: "col-12" }, [
                     _c("p", { staticClass: "h6" }, [
-                      _vm._v("5 Years After Exit")
+                      _vm._v("Employment 5 Years After Exit")
                     ])
                   ])
                 : _vm._e(),
@@ -91485,7 +91530,7 @@ var render = function() {
                     _c("span", {
                       staticClass: "IndustryLegend__LegendPercentage"
                     }),
-                    _vm._v("Percentage of Students\n            ")
+                    _vm._v("Percentage of Students Employed\n            ")
                   ])
                 : _vm._e(),
               _vm._v(" "),
@@ -91864,7 +91909,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField(this.form);
+				this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		}
 	}),
@@ -91912,7 +91957,12 @@ var render = function() {
                     }
                   ],
                   staticClass: "btn btn-flip-card float-right",
-                  on: { click: _vm.resetIndustries }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.resetIndustries($event)
+                    }
+                  }
                 },
                 [
                   _c(
@@ -92085,7 +92135,12 @@ var render = function() {
                 "button",
                 {
                   staticClass: "btn btn-flip-card",
-                  on: { click: _vm.resetIndustries }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.resetIndustries($event)
+                    }
+                  }
                 },
                 [
                   _c("span", { staticClass: "font-weight-bold" }, [

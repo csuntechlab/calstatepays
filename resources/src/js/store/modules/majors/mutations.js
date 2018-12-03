@@ -12,6 +12,7 @@ export default {
     },
 
     [_majors.FETCH_FIELD_OF_STUDIES](state, payload){
+        state.fieldOfStudy = [];
         payload.forEach((fieldOfStudy) => {
             fieldOfStudy.discipline = fieldOfStudy.name;
             delete fieldOfStudy.name;
