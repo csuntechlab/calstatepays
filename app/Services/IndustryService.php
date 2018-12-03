@@ -71,7 +71,7 @@ class IndustryService implements IndustryContract
         /** no longer using degree level, must extract degree 1,2,4 for equal population total */
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
+        }, 'industryPathTypes.population', 'industryPathTypes.industryWage', 'industryPathTypes.naicsTitle'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();

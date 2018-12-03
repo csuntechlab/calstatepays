@@ -3,7 +3,7 @@
 		<div key="1" v-if="!industryFormWasSubmitted">
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries" title="Reset"></i>
+					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click.prevent="resetIndustries" title="Reset"></i>
 					<div  v-if="!industryFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major.
 					</div>
@@ -51,7 +51,7 @@
 		<div key="2" v-else>
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click="resetIndustries"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" v-show="industryFormWasSubmittedOnce" @click.prevent="resetIndustries"
 					title="Reset"></i>
 					<p v-show="windowSize > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >

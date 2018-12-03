@@ -19,7 +19,7 @@ class MajorService implements MajorContract
             ->where('opt_in', 1)
             ->with(['universityMajors' => function ($query) {
                 $query->orderBy('major', 'asc');
-            }])
+            }, 'universityMajors.university'])
             ->get();
       
         // Given the situation where the CSU Opts out

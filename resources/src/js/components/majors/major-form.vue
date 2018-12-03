@@ -3,7 +3,7 @@
 		<div key="1" v-if="!selectedFormWasSubmitted">
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click.prevent="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
 					<div v-if="!selectedFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
@@ -26,7 +26,7 @@
 						</v-select>
 					</div>
 					<div class="form-group row">
-						<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+						<button type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 				</fieldset>
 			</form>
@@ -34,7 +34,7 @@
 		<div key="2" v-else >
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
+					<i class="fa fa-refresh fa-2x btn-reset float-right" @click.prevent="resetCurrentCard" v-show="selectedFormWasSubmittedOnce != false && windowWidth > 500"
 					title="Reset"></i>
 					<p v-show="windowWidth > 500" class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"

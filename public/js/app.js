@@ -47853,6 +47853,7 @@ var render = function() {
                                     {
                                       on: {
                                         click: function($event) {
+                                          $event.preventDefault()
                                           _vm.changeCampus(
                                             _vm.universities[index].short_name
                                           )
@@ -51815,7 +51816,12 @@ var render = function() {
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                   attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.resetCurrentCard($event)
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 !_vm.selectedFormWasSubmitted
@@ -51950,7 +51956,12 @@ var render = function() {
                     {
                       staticClass: "btn btn-success btn-submit",
                       attrs: { type: "button" },
-                      on: { click: _vm.submitForm }
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.submitForm($event)
+                        }
+                      }
                     },
                     [_vm._v("Submit")]
                   )
@@ -51982,7 +51993,12 @@ var render = function() {
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                   attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.resetCurrentCard($event)
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 _c(
@@ -70178,7 +70194,12 @@ var render = function() {
                   ],
                   staticClass: "fa fa-times fa-2x btn-remove float-left",
                   attrs: { title: "Close" },
-                  on: { click: _vm.removeCurrentCard }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.removeCurrentCard($event)
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 _c("i", {
@@ -70192,7 +70213,12 @@ var render = function() {
                   ],
                   staticClass: "fa fa-refresh fa-2x btn-reset float-left",
                   attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.resetCurrentCard($event)
+                    }
+                  }
                 })
               ]),
               _vm._v(" "),
@@ -71255,7 +71281,12 @@ var render = function() {
                 ],
                 staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                 attrs: { title: "Reset" },
-                on: { click: _vm.resetIndustries }
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.resetIndustries($event)
+                  }
+                }
               }),
               _vm._v(" "),
               !_vm.industryFormWasSubmitted
@@ -71418,7 +71449,12 @@ var render = function() {
                 ],
                 staticClass: "fa fa-refresh fa-2x btn-reset float-right",
                 attrs: { title: "Reset" },
-                on: { click: _vm.resetIndustries }
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.resetIndustries($event)
+                  }
+                }
               }),
               _vm._v(" "),
               _c(
