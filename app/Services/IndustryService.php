@@ -29,18 +29,11 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-
-
     public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $opt_in->id)
-            ->firstOrFail();
+        $university_major = industryRelation($hegis_code, $opt_in);
 
         /** Seperate each student_path for fair population found comparison */
         $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
@@ -70,13 +63,7 @@ class IndustryService implements IndustryContract
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
 
-        /** no longer using degree level, must extract degree 1,2,4 for equal population total */
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.industryWage', 'industryPathTypes.naicsTitle'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $opt_in->id)
-            ->firstOrFail();
+        $university_major = industryRelation($hegis_code, $opt_in);
 
         /** Seperate each student_path for fair population found comparison */
         $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
@@ -99,6 +86,16 @@ class IndustryService implements IndustryContract
         $industry_wages["bachelors"] = $bachelors_population;
         $industry_wages["post_bacc"] = $post_bacc_population;
         return $industry_wages;
+    }
+
+    private function industryRelation(){
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+            $query->where('entry_status', 'FTF + FTT');
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $opt_in->id)
+            ->firstOrFail();
+            return $university_major;
     }
 
     private function sortIndustryPopulation($university_major)
