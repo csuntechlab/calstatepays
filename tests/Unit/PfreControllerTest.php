@@ -54,15 +54,13 @@ class PfreControllerTest extends TestCase
      */
     public function test_getFreData_Success_Contract_Call()
     {
-        $universityName = "northridge";
+        $university = "northridge";
+        $major = 5021;
+        $age_range = 1;
+        $education_level = 1;
+        $annual_earnings = 2;
 
-        $request = new \Illuminate\Http\Request();
-        $request->major = 5021;
-        $request->university = $universityName;
-        $request->age_range = 1;
-        $request->education_level = 'FTT';
-        $request->annual_earnings = 2;
-        $request->financial_aid = 3;
+        $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
 
         $contractResponse =
             ["id" => 1927, "student_background_id" => 81, "annual_earnings_id" => 2, "annual_financial_aid_id" => 3, "time_to_degree" => 3, "earnings_5_years" => 45000, "roi" => "4.30"];

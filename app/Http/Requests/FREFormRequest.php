@@ -26,13 +26,11 @@
     {
         return [
             'major' => 'required|integer',
-            'university' => 'required|string',
-            'age_range' => 'required|integer|max:1',
-            'education_level' => 'required|integer|max:1',
-            'annual_earning' => 'required|integer|max:1',
-            'financial_aid' => 'required|integer|max:1',
-            'hegis_code' => 'required|integer',
-            'universityName' => 'required|string',
+            'university' => 'required|string|regex:/^[a-z_A-Z]+$/u',
+            'age_range' => 'required|integer|max:5',
+            'education_level' => 'required|integer|max:5',
+            'annual_earnings' => 'required|integer|max:5',
+            'financial_aid' => 'required|integer|max:5',
         ];
     }
 
@@ -49,10 +47,8 @@
         $request['university'] = $this->route('university');
         $request['age_range'] = $this->route('age_range');
         $request['education_level'] = $this->route('education_level');
-        $request['annual_earning'] = $this->route('annual_earning');
+        $request['annual_earnings'] = $this->route('annual_earnings');
         $request['financial_aid'] = $this->route('financial_aid');
-        $request['hegis_code'] = $this->route('hegis_code');
-        $request['universityName'] = $this->route('universityName');
         return $request;
     }
 }

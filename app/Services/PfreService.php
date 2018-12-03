@@ -13,7 +13,7 @@ class PfreService implements PfreContract
   public function getFREData($request)
   {
     /**
-     * ugly bad easy way to go from uni_name -> uni_id
+     *  check if university opted in or not.
      */
     $university_id = University::where('short_name', $request->university)->firstOrFail();
 
@@ -26,6 +26,8 @@ class PfreService implements PfreContract
         $query->where('annual_earnings_id', $request->annual_earnings);
         $query->where('annual_financial_aid_id', $request->financial_aid);
       }])->firstOrFail();
+
+      dd($data);
 
     $freData = $data->studentBackground->first();
     $freData = $freData->investment->first();

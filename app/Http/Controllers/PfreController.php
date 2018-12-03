@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\FREFormRequest;
 use App\Contracts\PfreContract;
 
 class PfreController extends Controller
@@ -14,8 +15,12 @@ class PfreController extends Controller
         $this->pfreRetriever = $pfreContract;
     }
 
-    public function getFREData(Request $request)
+    public function getFREData(FREFormRequest $request)
     {
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+        
         $freData = $this->pfreRetriever->getFREData($request);
         return [
             'majorId' => $request->major,
