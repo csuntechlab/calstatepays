@@ -70434,7 +70434,7 @@ exports = module.exports = __webpack_require__(78)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70486,10 +70486,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
-//
 //
 //
 //
@@ -70676,7 +70672,6 @@ var render = function() {
             },
             [
               _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-                _vm._v("\n<<<<<<< HEAD\n\t\t\t\t\t"),
                 _c(
                   "button",
                   {
@@ -70696,34 +70691,7 @@ var render = function() {
                     _c("i", { staticClass: "fas fa fa-chevron-right" })
                   ]
                 ),
-                _vm._v("\n=======\n\t\t\t\t\t"),
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmittedOnce,
-                        expression: "selectedFormWasSubmittedOnce"
-                      }
-                    ],
-                    staticClass: "btn btn-flip-card float-right",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.resetCurrentCard($event)
-                      }
-                    }
-                  },
-                  [
-                    _vm._v(" Change Degree Level "),
-                    _c("i", { staticClass: "fas fa fa-chevron-right" })
-                  ]
-                ),
-                _vm._v(
-                  "\n>>>>>>> d8dc38be356b948731c6b2b8657904e7cd76ece3\n\t\t\t\t\t"
-                ),
+                _vm._v(" "),
                 !_vm.selectedFormWasSubmitted
                   ? _c(
                       "div",
@@ -70785,7 +70753,7 @@ var render = function() {
                         ],
                         attrs: { for: "Major" }
                       },
-                      [_vm._v("\n\t\t\t\t\t\t\tSelect a Major")]
+                      [_vm._v("\n\t\t\t\t\t\tSelect a Major")]
                     ),
                     _vm._v(" "),
                     this.form.fieldOfStudyId == null
@@ -70924,7 +70892,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "allDegrees"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\t\tAll Levels\n\t\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\tAll Levels\n\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -70953,7 +70921,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "postBacc"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\t\tPost Bacc\n\t\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\tPost Bacc\n\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -70982,7 +70950,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "bachelors"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\t\tBachelors\n\t\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\tBachelors\n\t\t\t\t")
                   ]
                 ),
                 _vm._v(" "),
@@ -71011,7 +70979,7 @@ var render = function() {
                         "": this.educationLevel(this.index) != "someCollege"
                       }
                     }),
-                    _vm._v("\n\t\t\t\t\t\tSome College\n\t\t\t\t\t")
+                    _vm._v("\n\t\t\t\t\tSome College\n\t\t\t\t")
                   ]
                 )
               ])
