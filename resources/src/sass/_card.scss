@@ -22,10 +22,6 @@
             // border-bottom: 0.2rem #2BAE67 dotted;
         }
 
-        .csu-card__instructions {
-            padding: 2rem;
-        }
-
         .majors-header { // Industry carousel styling in mobile view
             color: #595959;
             text-align: center;
@@ -44,6 +40,11 @@
         }
     }
     
+    &__instructions {
+        padding: 2rem;
+        background-color: red;
+    }
+
     &__share {
         margin-left: .3rem;
         font-size: 1em;

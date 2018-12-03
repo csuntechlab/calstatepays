@@ -19348,6 +19348,10 @@ html {
           box-sizing: border-box;
 }
 
+.lead {
+  color: #595959;
+}
+
 .csu-card, .csu-card__form, .card-add, .industry-card {
   background: #FFF;
   border-radius: 10px;
@@ -19374,9 +19378,6 @@ html {
     padding-bottom: .4rem;
     margin-bottom: 1.2rem;
   }
-  .csu-card .csu-card__instructions {
-    padding: 2rem;
-  }
   .csu-card .majors-header {
     color: #595959;
     text-align: center;
@@ -19392,6 +19393,11 @@ html {
     padding: 0.6rem 2rem;
     margin: .09em;
   }
+}
+
+.csu-card__instructions {
+  padding: 2rem;
+  background-color: red;
 }
 
 .csu-card__share {
@@ -20973,6 +20979,8 @@ textarea {
 }
 
 .required-field {
+  padding: 1rem 0;
+  clear: both;
   color: red;
   font-weight: bold;
   visibility: visible;
