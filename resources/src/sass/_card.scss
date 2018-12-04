@@ -8,10 +8,40 @@
 .csu-card{
     @extend %card-base;
     min-height: 95%;
-    padding: 2rem;
+    padding: $content-card__padding;
     margin-bottom: 13px;
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-large) { //Styles apply up to large breakpoint
         min-height: unset;
+        padding: 0;
+        margin-top: 1rem;
+        .industry-title {
+            font-size: 1.3rem;
+            padding-bottom: .5rem;
+            padding-bottom: .4rem;
+            margin-bottom: 1.2rem;
+            // border-bottom: 0.2rem #2BAE67 dotted;
+        }
+
+        .majors-header { // Industry carousel styling in mobile view
+            color: #595959;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.5;
+            padding-top: 3rem;
+            font-size:1.3rem;
+            // border-bottom: 0.2rem #2BAE67 dotted;
+            padding-bottom: .4rem;
+            margin-bottom: 1.2rem;
+        }
+        .csu-card__form-sizing .btn {
+            padding: 0.6rem 2rem;
+            margin: .09em;
+        }
+    }
+    
+    &__instructions {
+        padding: 2rem;
     }
 
     &__share {
@@ -20,10 +50,9 @@
         border: #fff 2px solid;
         color: #fff;
         border-radius: 7px;
-        padding: 1px 7px;
+        padding: 0 .3rem;
         margin: 0 0 7px 0;
         font-weight: bold;
-        top: -8px;
         position: relative;
         cursor: pointer;
             &-twitter {
@@ -50,10 +79,12 @@
 }
 
 .csu-card__form{
-    @extend %card-base, .mb-4, .py-4 ;
+    @extend %card-base;
+    // , .mb-4, .py-4 ;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    padding-bottom: 1rem;
     &-sizing{
         width: 100%;
     }
@@ -71,18 +102,13 @@
 
 
 .flip-enter-active {
-    transition: all .18s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .flip-leave-active {
-    transition: all .18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all .15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
-    opacity: 0;
-    @media screen and (max-width: $break-small) {
-        transform: scaleY(0) translateZ(0);
-        opacity: 0;
-    }
 }

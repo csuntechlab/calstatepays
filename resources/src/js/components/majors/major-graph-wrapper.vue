@@ -1,7 +1,7 @@
 <template>
     <div>
-        <majors-graph-mobile v-if="isMobile" :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth"></majors-graph-mobile>
-        <majors-graph v-else :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth"></majors-graph>
+        <majors-graph-mobile v-if="isMobile" :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth" style="width:auto"/>
+        <majors-graph v-else :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth"/>
     </div>
 </template>
 

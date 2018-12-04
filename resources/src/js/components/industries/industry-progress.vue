@@ -17,10 +17,10 @@
                     <h3>{{industryMajor}}</h3>
                 </div>
                 <div v-if="industries.length > 0" class="col-12">
-                    <p class="h6">5 Years After Exit</p>
+                    <p class="h6">Employment 5 Years After Exit</p>
                 </div>
                 <div v-if="industries.length > 0" class="col-sm-12 col-md-4 offset-md-3">
-                    <span class="IndustryLegend__LegendPercentage"></span>Percentage of Students
+                    <span class="IndustryLegend__LegendPercentage"></span>Percentage of Students Employed
                 </div>
                 <div v-if="industries.length > 0" class="col-sm-12 col-md-5">
                     <span class="IndustryLegend__LegendSalary"></span>Average Earnings
