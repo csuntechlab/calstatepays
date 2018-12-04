@@ -70684,7 +70684,12 @@ var render = function() {
                       }
                     ],
                     staticClass: "btn btn-flip-card float-right",
-                    on: { click: _vm.resetCurrentCard }
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.resetCurrentCard($event)
+                      }
+                    }
                   },
                   [
                     _vm._v(" Change Degree Level "),
