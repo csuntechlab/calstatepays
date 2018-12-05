@@ -92937,9 +92937,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             tabl: 'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         };
     },
+    created: function created() {
+        document.addEventListener('keyup', this.onEscKey);
+    },
+
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTableauValue']), {
         closeModal: function closeModal() {
             this.$emit('closeModal');
+        },
+        onEscKey: function onEscKey(event) {
+            if (event.keyCode === 27) {
+                this.closeModal();
+            }
         },
         chooseTableauCategory: function chooseTableauCategory(university, path_id, callback) {
             this.$store.dispatch('setTableauValue', { university: university, path_id: path_id });
