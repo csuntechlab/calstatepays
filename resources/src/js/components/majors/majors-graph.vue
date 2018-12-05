@@ -119,7 +119,8 @@ export default {
                     trigger: 'axis',
                     axisPointer: {
                         type: 'cross'
-                    }
+                    },
+                    // formatter: '{b} years out <br/> {a0}: ${c0} <br/> {a1}: ${c1} <br/> {a2}: ${c2}',
                 },
                 xAxis: {
                     name: "Years Out of College",
