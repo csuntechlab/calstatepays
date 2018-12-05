@@ -1,22 +1,33 @@
 <template>
-<div class=" faq-card row mx-auto ">
-    <div class="col-6 col-sm-5 faq-card--text">
-        <p  class="faq-card--text__blue">Have Questions?</p><p>We Have Answers.</p>
-        <router-link to="/faq">
-            <button class="faq-card--button">Read Our FAQ</button>
-        </router-link>
-        
-    </div>
-    <div  class="col-6 col-sm-5 d-sm-flex" >
-        <img class="faq-card--image" :src="this.url + '/img/homeimages/faq_graphic.svg'">
-    </div>
+<div class="row mx-auto">
+    <div class=" f faq-card col-12 col-sm-10 col-lg-8">
+        <div class="row">
+            <div class="col-6 col-sm-5 faq-card__text">
+                <p  class="faq-card__text--blue">Have Questions?</p>
+                <p  class="faq-card__text--gray">We Have Answers.</p>
+                <router-link to="/faq" class="faq-card__button">
+                    Read Our FAQ
+                </router-link>
+                
+            </div>
+            <div  class="col-6 col-sm-5 d-sm-flex" >
+                <img class="faq-card__image mx-auto" :src="this.url + '/img/homeimages/icon-faq.jpg'">
+            </div>
+        </div>
 
-    <div   class="faq-card--button__mobile col-12 d-sm-none" > 
+        <div   class="faq-card__button--mobile row d-sm-none" > 
+            <router-link to="/faq">
+                Read Our FAQ
+            </router-link>
+        </div>
+    </div>
+    <!-- <div class="row faq-card__button--mobile d-sm-none mx-auto">
         <router-link to="/faq">
             Read Our FAQ
         </router-link>
-    </div>
+    </div> -->
 </div>
+
 </template>
 <script>
 export default {

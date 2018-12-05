@@ -177,12 +177,10 @@ figcaption {
     }
 }
 .faq-card{
-    width: 80%;
     @media screen and (max-width: $break-Xsmall - 1){
-        width: 70%;
+
         border-width: .5rem .5rem 0rem .5rem;
-        
-    }   
+    }
     @media screen and (min-width: $break-xlarge){
         width: 60%;
     }
@@ -193,26 +191,42 @@ figcaption {
     // 
     // margin: 1rem;
 }
-.faq-card--text{
-    font-weight: 600;
-     font-size:1rem;
+.faq-card__text{
+    font-weight: 500;
+     font-size:1.4rem;
+     margin-top:1rem;
      @media screen and (min-width: 400px){
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
     }
     // @media screen and (min-width: $break-Xsmall){
     //     font-size: 2rem;
     // }
     @media screen and (min-width: $break-small){
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
-    &__blue{
+    &--blue{
         color:#14597F;
+        margin-bottom: 0.4rem;
+    }
+    &--gray{
+        color: #707070;
     }
 }
-.faq-card--image{
+.faq-card__image{
     margin-bottom: 1rem;
     align-self: center;
-    
+    height: 7.6rem;
+    margin-top: 1.2rem;
+    display: block;
+    @media screen and (min-width: 400px){
+        height:11rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
+    }
     @media screen and (min-width: $break-Xsmall){
         height: 11rem;
         margin-top:1rem;
@@ -221,14 +235,18 @@ figcaption {
         height: 15rem;
     }
 }
-.faq-card--button__mobile{
+.faq-card__button--mobile{
     background-color: #14597F;
-    height:2rem;
+    height: 2rem;
     font-weight: 600;
     text-align: center;
+    // width: 80%;
+    position: relative;
+    // top: -1rem;
 
     a{
         color: #fff;
+        align-self: center; 
         &:hover{
             text-decoration: none;
         }
@@ -236,19 +254,20 @@ figcaption {
     
 }
 
-.faq-card--button{
+.faq-card__button{
     display: none;
     @media screen and (min-width: $break-Xsmall){
-        display: unset;
+        display: block;
         background-color: #14597F;
         color: #fff;
-        width: 10rem;
+        width: 12rem;
         font-size: 1rem;
         border-radius: 12px;
         padding: 0.1rem;
         margin-top: 1rem;
-        margin-bottom: 1rem
-
+        margin-bottom: 1rem;
+        text-align: center
+        
     }
     @media screen and (min-width: $break-medium){
        
@@ -256,5 +275,15 @@ figcaption {
         margin-bottom: 2rem;
 
     }
+   
 
+}
+
+a.faq-card__button {
+    color: #fff;
+
+    &:hover{
+        color: #fff;
+    text-decoration: none;
+    }
 }

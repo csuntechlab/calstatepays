@@ -19137,13 +19137,11 @@ figcaption {
 }
 
 .faq-card {
-  width: 80%;
   border: 5px solid #14597F;
 }
 
 @media screen and (max-width: 575px) {
   .faq-card {
-    width: 70%;
     border-width: .5rem .5rem 0rem .5rem;
   }
 }
@@ -19154,84 +19152,124 @@ figcaption {
   }
 }
 
-.faq-card--text {
-  font-weight: 600;
-  font-size: 1rem;
+.faq-card__text {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 400px) {
-  .faq-card--text {
-    font-size: 1.5rem;
+  .faq-card__text {
+    font-size: 1.8rem;
   }
 }
 
-@media screen and (min-width: 767px) {
-  .faq-card--text {
+@media screen and (min-width: 500px) {
+  .faq-card__text {
     font-size: 2rem;
   }
 }
 
-.faq-card--text__blue {
-  color: #14597F;
+@media screen and (min-width: 767px) {
+  .faq-card__text {
+    font-size: 1.9rem;
+  }
 }
 
-.faq-card--image {
+.faq-card__text--blue {
+  color: #14597F;
+  margin-bottom: 0.4rem;
+}
+
+.faq-card__text--gray {
+  color: #707070;
+}
+
+.faq-card__image {
   margin-bottom: 1rem;
   -ms-flex-item-align: center;
       align-self: center;
+  height: 7.6rem;
+  margin-top: 1.2rem;
+  display: block;
+}
+
+@media screen and (min-width: 400px) {
+  .faq-card__image {
+    height: 11rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .faq-card__image {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width: 576px) {
-  .faq-card--image {
+  .faq-card__image {
     height: 11rem;
     margin-top: 1rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .faq-card--image {
+  .faq-card__image {
     height: 15rem;
   }
 }
 
-.faq-card--button__mobile {
+.faq-card__button--mobile {
   background-color: #14597F;
   height: 2rem;
   font-weight: 600;
   text-align: center;
+  position: relative;
 }
 
-.faq-card--button__mobile a {
+.faq-card__button--mobile a {
   color: #fff;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
-.faq-card--button__mobile a:hover {
+.faq-card__button--mobile a:hover {
   text-decoration: none;
 }
 
-.faq-card--button {
+.faq-card__button {
   display: none;
 }
 
 @media screen and (min-width: 576px) {
-  .faq-card--button {
-    display: unset;
+  .faq-card__button {
+    display: block;
     background-color: #14597F;
     color: #fff;
-    width: 10rem;
+    width: 12rem;
     font-size: 1rem;
     border-radius: 12px;
     padding: 0.1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    text-align: center;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .faq-card--button {
+  .faq-card__button {
     margin-top: 4rem;
     margin-bottom: 2rem;
   }
+}
+
+a.faq-card__button {
+  color: #fff;
+}
+
+a.faq-card__button:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .homeBanner {

@@ -66092,6 +66092,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     computed: {
@@ -66109,42 +66120,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: " faq-card row mx-auto " }, [
-    _c(
-      "div",
-      { staticClass: "col-6 col-sm-5 faq-card--text" },
-      [
-        _c("p", { staticClass: "faq-card--text__blue" }, [
-          _vm._v("Have Questions?")
-        ]),
-        _c("p", [_vm._v("We Have Answers.")]),
+  return _c("div", { staticClass: "row mx-auto" }, [
+    _c("div", { staticClass: " f faq-card col-12 col-sm-10 col-lg-8" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-6 col-sm-5 faq-card__text" },
+          [
+            _c("p", { staticClass: "faq-card__text--blue" }, [
+              _vm._v("Have Questions?")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "faq-card__text--gray" }, [
+              _vm._v("We Have Answers.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "faq-card__button", attrs: { to: "/faq" } },
+              [
+                _vm._v(
+                  "\r\n                    Read Our FAQ\r\n                "
+                )
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("router-link", { attrs: { to: "/faq" } }, [
-          _c("button", { staticClass: "faq-card--button" }, [
-            _vm._v("Read Our FAQ")
+        _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
+          _c("img", {
+            staticClass: "faq-card__image mx-auto",
+            attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "faq-card__button--mobile row d-sm-none" },
+        [
+          _c("router-link", { attrs: { to: "/faq" } }, [
+            _vm._v("\r\n                Read Our FAQ\r\n            ")
           ])
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
-      _c("img", {
-        staticClass: "faq-card--image",
-        attrs: { src: this.url + "/img/homeimages/faq_graphic.svg" }
-      })
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "faq-card--button__mobile col-12 d-sm-none" },
-      [
-        _c("router-link", { attrs: { to: "/faq" } }, [
-          _vm._v("\r\n            Read Our FAQ\r\n        ")
-        ])
-      ],
-      1
-    )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
