@@ -81,7 +81,7 @@ export default {
             showModal :false,
             showValidationMsg: false,
             universitySeals:[
-                {url: window.baseUrl + '/img/csuseals/all.svg', name: "All Campuses", short_name: "all"},
+                {url: window.baseUrl + '/img/csuseals/all.svg', name: "All 7 Campuses", short_name: "all"},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island', short_name: "channel_islands"},
                 {url: window.baseUrl + '/img/csuseals/dominguez_seal.svg',name:'Dominguez Hills', short_name: "dominguez_hills"},
                 {url: window.baseUrl + '/img/csuseals/fullerton_seal.svg',name:'Fullerton', short_name: "fullerton"},
