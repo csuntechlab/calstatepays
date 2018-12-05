@@ -3,7 +3,7 @@
 		<navigation/>
 		
 		<main class="contentWrapper">	
-			<error-alert/>
+			<!-- <error-alert/> -->
 			<router-view></router-view>
 		</main>
 		<csu-footer/>
