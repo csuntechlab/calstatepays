@@ -1,18 +1,17 @@
 <template>
-<div>
-    <div @keyup.enter="showModal= false">
+    <div>
         <button class="btn-change-campus" @click="showModal = true" role="button">
                 <slot name="change button"></slot>
         </button>
         
         <v-dialog v-model="showModal" persistent scrollable aria-modal="true">
-            <v-card  class="text-xs-center black--text campus-modal" v-if="universities[0]">
+            <v-card class="text-xs-center black--text campus-modal" v-if="universities[0]">
                 <v-card-title class="headline grey lighten-2 ">
                     Choose a Campus 
                 </v-card-title>
                 <v-card-text>
-                    <div class="row" >
-                        <div class="col-12 col-sm-6 col-md-3 col-lg" v-for="(item, index) in orderedUniversities" :key="index">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-3 col-lg" v-for="(item, index) in orderedUniversities" :key="index" @dblclick="onSubmit()">
                             <template v-for="(universitySeal, index2) in universitySeals">
                                 <template v-if="universitySeal.short_name == item.short_name">
                                     
@@ -38,7 +37,7 @@
                                             </label>
                                         </div>
                                     </template>
-                                    <template v-else > 
+                                    <template v-else> 
                                         <div class="campus-modal-item campus-modal-item--opted-out clearfix">
                                             <input class="campus-modal-item__radio" disabled type="radio" name="campuses" :id="item.short_name">  
                                             <label :for="item.short_name">    
@@ -71,7 +70,6 @@
             </v-card>
         </v-dialog>
     </div>
-</div>  
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
@@ -94,6 +92,9 @@ export default {
             ]
         }
     },
+    created() {
+        document.addEventListener('keyup', this.onEscKey)
+    },
     mounted(){
         this.$nextTick(function () {
             this.checkSessionData();
@@ -104,8 +105,7 @@ export default {
         ...mapGetters([
             'universities',
             'selectedUniversity',
-            'selectedDataPage',
-            'modalCheck'
+            'selectedDataPage'
         ]),
         orderedUniversities: function () {
             return _.orderBy(this.universities, ['short_name'], ['asc'])
@@ -126,6 +126,15 @@ export default {
                     }
                 }
             }, false);
+        },
+        onEscKey(event) {
+                if( event.keyCode === 27 ) {
+                    if(this.aCampusIsSelected == true) {
+                        this.showModal = false;
+                    } else {
+                        this.showValidationMsg = true;
+                    }
+                }
         },
         onSubmit: function(){
             var radioBtns = document.querySelectorAll("[name='campuses']")
