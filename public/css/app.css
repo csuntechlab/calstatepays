@@ -19179,6 +19179,7 @@ figcaption {
 .faq-card__text--blue {
   color: #14597F;
   margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .faq-card__text--gray {
@@ -19221,10 +19222,11 @@ figcaption {
 
 .faq-card__button--mobile {
   background-color: #14597F;
-  height: 2rem;
   font-weight: 600;
   text-align: center;
   position: relative;
+  font-size: 1.4rem;
+  padding: 0.7rem 0;
 }
 
 .faq-card__button--mobile a {
@@ -19247,9 +19249,9 @@ figcaption {
     background-color: #14597F;
     color: #fff;
     width: 12rem;
-    font-size: 1rem;
-    border-radius: 12px;
-    padding: 0.1rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    padding: 0.4rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;

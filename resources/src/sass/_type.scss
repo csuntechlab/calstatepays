@@ -210,6 +210,7 @@ figcaption {
     &--blue{
         color:#14597F;
         margin-bottom: 0.4rem;
+        font-weight: 600;
     }
     &--gray{
         color: #707070;
@@ -237,12 +238,15 @@ figcaption {
 }
 .faq-card__button--mobile{
     background-color: #14597F;
-    height: 2rem;
+    // height: 2rem;
     font-weight: 600;
     text-align: center;
     // width: 80%;
     position: relative;
     // top: -1rem;
+    font-size: 1.4rem;
+    padding: 0.7rem 0;
+
 
     a{
         color: #fff;
@@ -261,22 +265,18 @@ figcaption {
         background-color: #14597F;
         color: #fff;
         width: 12rem;
-        font-size: 1rem;
-        border-radius: 12px;
-        padding: 0.1rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        padding: 0.4rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
         text-align: center
         
     }
     @media screen and (min-width: $break-medium){
-       
         margin-top: 4rem;
         margin-bottom: 2rem;
-
     }
-   
-
 }
 
 a.faq-card__button {
