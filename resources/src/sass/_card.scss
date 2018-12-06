@@ -114,9 +114,13 @@
 }
 
 .loading-icon {
-    margin-top: 3.5rem;
+    margin-top: 6rem;
     color: $blue;
     @media screen and (max-width: $break-large){
         margin-top: 0;
     }
+}
+.loading-major-mobile {
+    color: $blue;
+    margin: 2rem 0 !important;
 }

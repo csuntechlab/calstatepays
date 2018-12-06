@@ -27026,7 +27026,7 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
-
+var TRIGGER_MAJOR_IS_LOADING = 'majors/TRIGGER_MAJOR_IS_LOADING';
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
     FETCH_FIELD_OF_STUDIES: FETCH_FIELD_OF_STUDIES,
@@ -27040,7 +27040,8 @@ var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
     ADD_MAJOR_CARD: ADD_MAJOR_CARD,
     DELETE_MAJOR_CARD: DELETE_MAJOR_CARD,
     RESET_MAJOR_CARD: RESET_MAJOR_CARD,
-    RESET_MAJOR_STATE: RESET_MAJOR_STATE
+    RESET_MAJOR_STATE: RESET_MAJOR_STATE,
+    TRIGGER_MAJOR_IS_LOADING: TRIGGER_MAJOR_IS_LOADING
 });
 
 /***/ }),
@@ -63431,7 +63432,8 @@ function h(tag, key, args) {
         majorsByField: [],
         industries: [],
         majorData: [],
-        educationLevel: 'allDegrees'
+        educationLevel: 'allDegrees',
+        majorIsLoading: false
     }]
 });
 
@@ -63505,6 +63507,11 @@ function h(tag, key, args) {
     formWasSubmittedOnce: function formWasSubmittedOnce(state) {
         return function (index) {
             return state.majorCards[index].submittedOnce;
+        };
+    },
+    majorIsLoading: function majorIsLoading(state) {
+        return function (index) {
+            return state.majorCards[index].majorIsLoading;
         };
     },
     indexOfUnsubmittedCard: function indexOfUnsubmittedCard(state) {
@@ -63581,7 +63588,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         industries: [],
         majorData: [],
         formWasSubmitted: false,
-        submittedOnce: false
+        submittedOnce: false,
+        majorIsLoading: false
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
@@ -63602,8 +63610,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         majorsByField: [],
         industries: [],
         majorData: [],
+        majorIsLoading: false,
         educationLevel: 'allDegrees'
     }];
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, function (state, payload) {
+    var index = payload;
+    if (state.majorCards[index].majorIsLoading === false) {
+        state.majorCards[index].majorIsLoading = true;
+    } else {
+        state.majorCards[index].majorIsLoading = false;
+    }
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -63669,9 +63685,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref6.commit,
             dispatch = _ref6.dispatch;
 
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
             success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
@@ -70203,6 +70221,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -70222,7 +70253,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors", "universities", "selectedUniversity"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors", "universities", "selectedUniversity", "majorIsLoading"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmittedOnce) {
@@ -70250,6 +70281,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
+		},
+		selectedMajorIsLoading: function selectedMajorIsLoading() {
+			return this.majorIsLoading(this.index);
 		},
 		selectedMajorTitle: function selectedMajorTitle() {
 			if (this.selectedMajorData.length != 0) {
@@ -90026,292 +90060,324 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
-    [
-      _c(
-        "aside",
-        { staticClass: "col-md-3" },
-        [
-          _c("major-form", {
-            attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-9" },
-        [
-          _vm.selectedFormWasSubmittedOnce
-            ? _c("card", { staticClass: "csu-card container-fluid" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("i", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isNotFirstCard,
-                            expression: "isNotFirstCard"
-                          }
-                        ],
-                        staticClass:
-                          "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
-                        attrs: { title: "Close" },
-                        on: { click: _vm.removeCurrentCard }
-                      }),
-                      _vm._v(" "),
-                      _vm.selectedFormWasSubmittedOnce && !_vm.nullValues
-                        ? _c("social-sharing", {
-                            attrs: {
-                              url: this.url,
-                              title: this.shareDescription,
-                              description:
-                                "Discover Your Earnings After College.",
-                              quote: this.shareDescription,
-                              hashtags: "CalStatePays, ItPaysToGoToCollege"
-                            },
-                            inlineTemplate: {
-                              render: function() {
-                                var _vm = this
-                                var _h = _vm.$createElement
-                                var _c = _vm._self._c || _h
-                                return _c(
-                                  "div",
-                                  [
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-twitter float-right",
-                                        attrs: { network: "twitter" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-twitter-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-linkedin float-right",
-                                        attrs: { network: "linkedin" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-linkedin-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-facebook float-right",
-                                        attrs: { network: "facebook" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-facebook-official"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              },
-                              staticRenderFns: []
-                            }
-                          })
-                        : _vm._e()
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("h3", { staticClass: "industry-title pt-3" }, [
-                    _vm._v(_vm._s(_vm.selectedMajorTitle))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-12" },
-                    [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmittedOnce,
-                            expression: "selectedFormWasSubmittedOnce"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value:
-                          _vm.selectedFormWasSubmittedOnce && _vm.nullValues,
-                        expression: "selectedFormWasSubmittedOnce && nullValues"
-                      }
-                    ],
-                    staticClass: "row text-center"
-                  },
-                  [
-                    _c("h3", { staticClass: "csu-card__no-data" }, [
-                      _c("i", {
-                        staticClass: "fa fa-exclamation-circle required-field"
-                      }),
-                      _vm._v(" No data available")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.nullValues,
-                        expression: "!nullValues"
-                      }
-                    ]
-                  },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c(
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+      [
+        _c(
+          "aside",
+          { staticClass: "col-md-3" },
+          [
+            _c("major-form", {
+              attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-9" },
+          [
+            _vm.selectedFormWasSubmittedOnce
+              ? _c("card", { staticClass: "csu-card container-fluid" }, [
+                  _vm.selectedMajorIsLoading
+                    ? _c(
                         "div",
-                        { staticClass: "col-12" },
+                        { staticClass: "form-group row" },
                         [
-                          _c("major-graph-wrapper", {
-                            attrs: {
-                              id: "majorGraphWrapperIndex-" + this.index,
-                              majorData: _vm.selectedMajorData,
-                              educationLevel: _vm.selectedEducationLevel,
-                              windowWidth: _vm.windowWidth
-                            }
+                          _c("v-progress-circular", {
+                            staticClass: "loading-icon",
+                            attrs: { size: 100, width: 10, indeterminate: "" }
                           })
                         ],
                         1
                       )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "mt-4" },
-                    [
-                      _c("industry-carousel", {
-                        directives: [
+                    : _c("div", [
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col" },
+                            [
+                              _c("i", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.isNotFirstCard,
+                                    expression: "isNotFirstCard"
+                                  }
+                                ],
+                                staticClass:
+                                  "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
+                                attrs: { title: "Close" },
+                                on: { click: _vm.removeCurrentCard }
+                              }),
+                              _vm._v(" "),
+                              _vm.selectedFormWasSubmittedOnce &&
+                              !_vm.nullValues
+                                ? _c("social-sharing", {
+                                    attrs: {
+                                      url: this.url,
+                                      title: this.shareDescription,
+                                      description:
+                                        "Discover Your Earnings After College.",
+                                      quote: this.shareDescription,
+                                      hashtags:
+                                        "CalStatePays, ItPaysToGoToCollege"
+                                    },
+                                    inlineTemplate: {
+                                      render: function() {
+                                        var _vm = this
+                                        var _h = _vm.$createElement
+                                        var _c = _vm._self._c || _h
+                                        return _c(
+                                          "div",
+                                          [
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-twitter float-right",
+                                                attrs: { network: "twitter" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-twitter-square"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-linkedin float-right",
+                                                attrs: { network: "linkedin" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-linkedin-square"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-facebook float-right",
+                                                attrs: { network: "facebook" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-facebook-official"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      },
+                                      staticRenderFns: []
+                                    }
+                                  })
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("h3", { staticClass: "industry-title pt-3" }, [
+                            _vm._v(_vm._s(_vm.selectedMajorTitle))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-12" },
+                            [
+                              _c("major-legend", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.selectedFormWasSubmittedOnce,
+                                    expression: "selectedFormWasSubmittedOnce"
+                                  }
+                                ],
+                                attrs: {
+                                  educationLevel: _vm.selectedEducationLevel
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
                           {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
-                        ],
-                        attrs: { industries: _vm.selectedIndustries }
-                      })
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value:
+                                  _vm.selectedFormWasSubmittedOnce &&
+                                  _vm.nullValues,
+                                expression:
+                                  "selectedFormWasSubmittedOnce && nullValues"
+                              }
+                            ],
+                            staticClass: "row text-center"
+                          },
+                          [
+                            _c("h3", { staticClass: "csu-card__no-data" }, [
+                              _c("i", {
+                                staticClass:
+                                  "fa fa-exclamation-circle required-field"
+                              }),
+                              _vm._v(" No data available")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: !_vm.nullValues,
+                                expression: "!nullValues"
+                              }
+                            ]
+                          },
+                          [
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-12" },
+                                [
+                                  _c("major-graph-wrapper", {
+                                    attrs: {
+                                      id:
+                                        "majorGraphWrapperIndex-" + this.index,
+                                      majorData: _vm.selectedMajorData,
+                                      educationLevel:
+                                        _vm.selectedEducationLevel,
+                                      windowWidth: _vm.windowWidth
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row p-0" }, [
+                          _c(
+                            "div",
+                            { staticClass: "mt-4" },
+                            [
+                              _c("industry-carousel", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.isEmpty,
+                                    expression: "isEmpty"
+                                  }
+                                ],
+                                attrs: { industries: _vm.selectedIndustries }
+                              })
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                ])
+              : _c("div", { staticClass: "csu-card" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isNotFirstCard,
+                          expression: "isNotFirstCard"
+                        }
+                      ],
+                      staticClass:
+                        "col fa fa-times fa-2x btn-remove text-right pull-right",
+                      attrs: { title: "Close" },
+                      on: { click: _vm.removeCurrentCard }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    { staticClass: "industry-title text-center p-md-3" },
+                    [_vm._v("Please make your selection")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
+                    ),
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("discipline")
+                    ]),
+                    _vm._v(" or choosing the "),
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("major")
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\twhich resonates the most with you.\n\t\t\t\t\t"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "lead pl-md-5 pr-md-5" },
+                    [
+                      _c("span", { staticClass: "font-weight-bold" }, [
+                        _vm._v("Please Note:")
+                      ]),
+                      _vm._v(
+                        " Some majors might not have any data available at the moment.\n\t\t\t\t\t\tFor more information on how we gathered the data, please read the "
+                      ),
+                      _c("router-link", { attrs: { to: "/faq" } }, [
+                        _vm._v("FAQ")
+                      ]),
+                      _vm._v(".\n\t\t\t\t\t")
                     ],
                     1
                   )
                 ])
-              ])
-            : _c("div", { staticClass: "csu-card" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isNotFirstCard,
-                        expression: "isNotFirstCard"
-                      }
-                    ],
-                    staticClass:
-                      "col fa fa-times fa-2x btn-remove text-right pull-right",
-                    attrs: { title: "Close" },
-                    on: { click: _vm.removeCurrentCard }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-                  _vm._v("Please make your selection")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
-                  _vm._v(
-                    "\n\t\t\t\tYou have the option of either filtering out majors by "
-                  ),
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("discipline")
-                  ]),
-                  _vm._v(" or choosing the "),
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("major")
-                  ]),
-                  _vm._v("\n\t\t\t\twhich resonates the most with you.\n\t\t\t")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "lead pl-md-5 pr-md-5" },
-                  [
-                    _c("span", { staticClass: "font-weight-bold" }, [
-                      _vm._v("Please Note:")
-                    ]),
-                    _vm._v(
-                      " Some majors might not have any data available at the moment.\n\t\t\t\tFor more information on how we gathered the data, please read the "
-                    ),
-                    _c("router-link", { attrs: { to: "/faq" } }, [
-                      _vm._v("FAQ")
-                    ]),
-                    _vm._v(".\n\t\t\t")
-                  ],
-                  1
-                )
-              ])
-        ],
-        1
-      )
-    ]
-  )
+          ],
+          1
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -90473,6 +90539,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -90505,7 +90581,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "universities", "selectedUniversity"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "universities", "selectedUniversity", "majorIsLoading"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
@@ -90533,6 +90609,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
+		},
+		selectedMajorIsLoading: function selectedMajorIsLoading() {
+			return this.majorIsLoading(this.index);
 		},
 		selectedMajorId: function selectedMajorId() {
 			return this.majorData(this.index).majorId;
@@ -90749,244 +90828,274 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _vm.selectedFormWasSubmittedOnce
-          ? _c("div", { staticClass: "csu-card mb-5" }, [
-              _c("div", { staticClass: "container-fluid py-3" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isNotFirstCard,
-                          expression: "isNotFirstCard"
-                        }
-                      ],
-                      staticClass: "fa fa-times fa-2x btn-remove",
-                      attrs: { title: "Close" },
-                      on: { click: _vm.removeCurrentCard }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-11" },
-                    [
-                      _vm.selectedFormWasSubmitted
-                        ? _c("social-sharing", {
+        _vm.selectedMajorIsLoading
+          ? _c(
+              "div",
+              { staticClass: "mr-0 ml-0 form-group csu-card row" },
+              [
+                _c("v-progress-circular", {
+                  staticClass: "loading-major-mobile",
+                  attrs: { size: 100, width: 10, indeterminate: "" }
+                })
+              ],
+              1
+            )
+          : _c("div", [
+              _vm.selectedFormWasSubmittedOnce
+                ? _c("div", { staticClass: "csu-card mb-5" }, [
+                    _c("div", { staticClass: "container-fluid py-3" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c("i", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.isNotFirstCard,
+                                expression: "isNotFirstCard"
+                              }
+                            ],
+                            staticClass: "fa fa-times fa-2x btn-remove",
+                            attrs: { title: "Close" },
+                            on: { click: _vm.removeCurrentCard }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-11" },
+                          [
+                            _vm.selectedFormWasSubmitted
+                              ? _c("social-sharing", {
+                                  attrs: {
+                                    networks: _vm.mobileNetworks,
+                                    url:
+                                      "sandbox.csun.edu/metalab/test/csumetrola",
+                                    title: this.shareDescription,
+                                    description:
+                                      "Discover Your Earnings After College.",
+                                    quote: this.shareDescription,
+                                    hashtags:
+                                      "CalStatePays, ItPaysToGoToCollege"
+                                  },
+                                  inlineTemplate: {
+                                    render: function() {
+                                      var _vm = this
+                                      var _h = _vm.$createElement
+                                      var _c = _vm._self._c || _h
+                                      return _c(
+                                        "div",
+                                        [
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-twitter float-right",
+                                              attrs: { network: "twitter" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-twitter-square"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-linkedin float-right",
+                                              attrs: { network: "linkedin" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-linkedin-square"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-facebook float-right",
+                                              attrs: { network: "facebook" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-facebook-official"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    },
+                                    staticRenderFns: []
+                                  }
+                                })
+                              : _vm._e()
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("h3", { staticClass: "industry-title pt-2" }, [
+                            _vm._v(_vm._s(_vm.selectedMajorTitle))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [
+                          _c("major-legend", {
                             attrs: {
-                              networks: _vm.mobileNetworks,
-                              url: "sandbox.csun.edu/metalab/test/csumetrola",
-                              title: this.shareDescription,
-                              description:
-                                "Discover Your Earnings After College.",
-                              quote: this.shareDescription,
-                              hashtags: "CalStatePays, ItPaysToGoToCollege"
-                            },
-                            inlineTemplate: {
-                              render: function() {
-                                var _vm = this
-                                var _h = _vm.$createElement
-                                var _c = _vm._self._c || _h
-                                return _c(
-                                  "div",
-                                  [
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-twitter float-right",
-                                        attrs: { network: "twitter" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-twitter-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-linkedin float-right",
-                                        attrs: { network: "linkedin" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-linkedin-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-facebook float-right",
-                                        attrs: { network: "facebook" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-facebook-official"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              },
-                              staticRenderFns: []
+                              educationLevel: _vm.selectedEducationLevel
                             }
                           })
-                        : _vm._e()
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12" }, [
-                    _c("h3", { staticClass: "industry-title pt-2" }, [
-                      _vm._v(_vm._s(_vm.selectedMajorTitle))
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.nullValues,
+                              expression: "nullValues"
+                            }
+                          ]
+                        },
+                        [_vm._m(0)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.nullValues,
+                              expression: "!nullValues"
+                            }
+                          ],
+                          staticClass: "row",
+                          staticStyle: { height: "400px" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "col-12" },
+                            [
+                              _c("major-graph-wrapper", {
+                                attrs: {
+                                  id: "majorGraphWrapperIndex-" + this.index,
+                                  majorData: _vm.selectedMajorData,
+                                  educationLevel: _vm.selectedEducationLevel,
+                                  windowWidth: _vm.windowWidth
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c("industry-mobile", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.isEmpty,
+                                  expression: "isEmpty"
+                                }
+                              ],
+                              attrs: {
+                                industries: _vm.selectedIndustries,
+                                majorId: _vm.selectedMajorId
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ])
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col" },
-                  [
-                    _c("major-legend", {
-                      attrs: { educationLevel: _vm.selectedEducationLevel }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.nullValues,
-                        expression: "nullValues"
-                      }
-                    ]
-                  },
-                  [_vm._m(0)]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.nullValues,
-                        expression: "!nullValues"
-                      }
-                    ],
-                    staticClass: "row",
-                    staticStyle: { height: "400px" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "col-12" },
-                      [
-                        _c("major-graph-wrapper", {
-                          attrs: {
-                            id: "majorGraphWrapperIndex-" + this.index,
-                            majorData: _vm.selectedMajorData,
-                            educationLevel: _vm.selectedEducationLevel,
-                            windowWidth: _vm.windowWidth
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
+                : _c(
                     "div",
-                    { staticClass: "col-12" },
+                    { staticClass: "csu-card csu-card__instructions mb-5" },
                     [
-                      _c("industry-mobile", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c("i", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.isNotFirstCard,
+                                expression: "isNotFirstCard"
+                              }
+                            ],
+                            staticClass:
+                              "fa fa-times fa-2x btn-remove pull-right",
+                            attrs: { title: "Close" },
+                            on: { click: _vm.removeCurrentCard }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "h3",
+                        { staticClass: "industry-title text-center p-md-3" },
+                        [_vm._v("Please make your selection")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "lead pl-md-5 pr-md-5" },
+                        [
+                          _c("span", { staticClass: "font-weight-bold" }, [
+                            _vm._v("Please Note:")
+                          ]),
+                          _vm._v(
+                            " Some majors might not have any data available at the moment.\n\t\t\t\t\t\tFor more information on how we gathered the data, please read the "
+                          ),
+                          _c("router-link", { attrs: { to: "/faq" } }, [
+                            _vm._v("FAQ")
+                          ]),
+                          _vm._v(".\n\t\t\t\t\t")
                         ],
-                        attrs: {
-                          industries: _vm.selectedIndustries,
-                          majorId: _vm.selectedMajorId
-                        }
-                      })
-                    ],
-                    1
+                        1
+                      )
+                    ]
                   )
-                ])
-              ])
-            ])
-          : _c("div", { staticClass: "csu-card csu-card__instructions mb-5" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col" }, [
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isNotFirstCard,
-                        expression: "isNotFirstCard"
-                      }
-                    ],
-                    staticClass: "fa fa-times fa-2x btn-remove pull-right",
-                    attrs: { title: "Close" },
-                    on: { click: _vm.removeCurrentCard }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-                _vm._v("Please make your selection")
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "lead pl-md-5 pr-md-5" },
-                [
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Please Note:")
-                  ]),
-                  _vm._v(
-                    " Some majors might not have any data available at the moment.\n\t\t\t\tFor more information on how we gathered the data, please read the "
-                  ),
-                  _c("router-link", { attrs: { to: "/faq" } }, [_vm._v("FAQ")]),
-                  _vm._v(".\n\t\t\t")
-                ],
-                1
-              )
             ])
       ])
     ],
@@ -91011,12 +91120,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
       _vm._v(
-        "\n\t\t\t\tYou have the option of either filtering out majors by "
+        "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
       ),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
       _vm._v(" or choosing the "),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
-      _vm._v("\n\t\t\t\twhich resonates the most with you.\n\t\t\t")
+      _vm._v("\n\t\t\t\t\t\twhich resonates the most with you.\n\t\t\t\t\t")
     ])
   }
 ]
@@ -91288,7 +91397,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
 //
 //
 //

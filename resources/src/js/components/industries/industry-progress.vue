@@ -6,7 +6,6 @@
                 :width="10"
                 indeterminate
                 ></v-progress-circular>
-        
         </div>
         <div v-else>
             <div v-if="industryMajor == null || (Object.keys(industriesByMajor).length === 0 && industriesByMajor.constructor ==+ Object)">
