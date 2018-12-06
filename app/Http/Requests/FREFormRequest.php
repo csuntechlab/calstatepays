@@ -28,7 +28,7 @@
             'major' => 'required|integer',
             'university' => 'required|string|regex:/^[a-z_A-Z]+$/u',
             'age_range' => 'required|integer|max:5',
-            'education_level' => 'required|integer|max:5',
+            'education_level' => 'required|string|max:3',
             'annual_earnings' => 'required|integer|max:5',
             'financial_aid' => 'required|integer|max:5',
         ];

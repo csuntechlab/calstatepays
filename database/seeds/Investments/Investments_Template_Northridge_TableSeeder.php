@@ -23,8 +23,8 @@ class Investments_Template_Northridge_TableSeeder extends Seeder
             $investment = new Investment();
             $investment->id = $row->id;
             $investment->student_background_id = $row->student_background_id;
-            $investment->annual_earnings_id = $row->annual_earnings_id; // during school
-            $investment->annual_financial_aid_id = $row->annual_earnings_id;
+            $investment->annual_earnings_id = $row->annual_earnings_during_school_id; // during school
+            $investment->annual_financial_aid_id = $row->annual_financial_aid_id;
             $investment->time_to_degree = $row->estimated_time_to_degree;// in years
             $investment->earnings_5_years = $row->estimated_earnings_5_years_after_exit;
             $investment->roi = $row->fre_financial_return_on_education;

@@ -49,7 +49,7 @@ class PfreControllerTest extends TestCase
     }
 
     /**
-     * Api route : api//major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
+     * Api route : api/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
      *  i.e : /api/major/5021/northridge/1/FTT/2/3
      * method : MajorController@getFREData
      * test uses dependency injection 
