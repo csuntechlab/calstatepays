@@ -42,42 +42,34 @@ class PfreControllerTest extends TestCase
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
         $this->seed('Northridge_University_Majors_TableSeeder');
 
-        $this->seed('Master_FRE_Page_Data_TableSeeder');
         $this->seed("Investments_Template_Northridge_TableSeeder");
+        $this->seed("Student_Backgrounds_Template_Northridge_TableSeeder");
 
         $this->controller = new PfreController($this->retriever);
     }
 
     /**
      * Api route : api/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
-     *  i.e : /api/major/5021/northridge/1/FTT/2/3
+     *  i.e : /api/major/5021/northridge/1/FTT/1/1
      * method : MajorController@getFREData
-     * test uses dependency injection 
+     * test is updated to hit the route, dependency injection does not work well with form requests
      */
     public function test_getFreData_Success_Contract_Call()
     {
         $university = "northridge";
         $major = 4011;
         $age_range = 1;
-        $education_level = 1;
-        $annual_earnings = 2;
+        $education_level = "FTF";
+        $annual_earnings = 1;
+        $financial_aid = 1;
 
         $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+        $response = $response->getOriginalContent();
+        $response = json_encode($response);
 
-        $contractResponse =
-            ["id" => 1927, "student_background_id" => 81, "annual_earnings_id" => 2, "annual_financial_aid_id" => 3, "time_to_degree" => 3, "earnings_5_years" => 45000, "roi" => "4.30"];
-
-        $test =
-            ["majorId" => "5021", "universityId" => "northridge", "fre" => ["timeToDegree" => 3, "earningsYearFive" => 45000, "returnOnInvestment" => "4.30"]];
-
-        $this->retriever
-            ->shouldReceive('getFREData')
-            ->with($request)
-            ->once()->andReturn($contractResponse);
-
-        $response = $this->controller->getFREData($request);
-
-        $this->assertEquals($test, $response);
+        $actualResponse  = ["majorId"=> "4011","universityId"=> "northridge","fre"=> ["timeToDegree"=> "3.9","earningsYearFive"=> "30277","returnOnInvestment"=> "7.81"]];
+        $actualResponse = json_encode($actualResponse);
+        $this->assertEquals($response, $actualResponse);
     }
 
     /**
