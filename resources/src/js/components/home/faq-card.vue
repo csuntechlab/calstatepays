@@ -11,7 +11,7 @@
                 
             </div>
             <div  class="col-6 col-sm-5 d-sm-flex" >
-                <img class="faq-card__image mx-auto" :src="this.url + '/img/homeimages/icon-faq.jpg'">
+                <img class="faq-card__image " :src="this.url + '/img/homeimages/icon-faq.jpg'">
             </div>
         </div>
 
@@ -21,11 +21,6 @@
             </router-link>
         </div>
     </div>
-    <!-- <div class="row faq-card__button--mobile d-sm-none mx-auto">
-        <router-link to="/faq">
-            Read Our FAQ
-        </router-link>
-    </div> -->
 </div>
 
 </template>
