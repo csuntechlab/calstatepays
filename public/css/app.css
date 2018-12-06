@@ -17465,7 +17465,7 @@ button.bg-dark:focus {
   padding: 1rem !important;
 }
 
-.pt-3,
+.pt-3, .CSUTile__DisableMessage,
 .py-3,
 .homeCard__titleAndIconWrapper--major,
 .homeCard__titleAndIconWrapper--industries,
@@ -17475,7 +17475,8 @@ button.bg-dark:focus {
 
 .pr-3,
 .px-3,
-.CSUTile__CSUName {
+.CSUTile__CSUName,
+.CSUTile__DisableMessage {
   padding-right: 1rem !important;
 }
 
@@ -17489,7 +17490,8 @@ button.bg-dark:focus {
 
 .pl-3,
 .px-3,
-.CSUTile__CSUName {
+.CSUTile__CSUName,
+.CSUTile__DisableMessage {
   padding-left: 1rem !important;
 }
 
@@ -20115,6 +20117,19 @@ footer, .footer {
   font-weight: 400;
 }
 
+.CSUTile__Image, .CSUTile__Image--Opt {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .55s;
+  transition: all .55s;
+  background-position: center, center;
+}
+
 .CSUTile {
   padding-top: 100%;
   width: 100%;
@@ -20144,19 +20159,6 @@ footer, .footer {
 .CSUTile__CSUName:hover .CSUTile__Image {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-}
-
-.CSUTile__Image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-transition: all .55s;
-  transition: all .55s;
-  background-position: center, center;
 }
 
 .CSUTile__Image:hover {
@@ -20205,6 +20207,12 @@ footer, .footer {
 }
 
 .CSUTile__DisableMessage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: white;
   opacity: 0;
   font-size: 1.4rem;

@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
-                    <active-c-s-u-tile :campus="campus.AllCSU.img" :title="campus.AllCSU.title"/>
+                    <active-c-s-u-tile @click="displayModal = true; id=0;" :campus="campus.AllCSU.img" :title="campus.AllCSU.title"/>
                     <active-c-s-u-tile :campus="campus.CSUN.img" :title="campus.CSUN.title"/>
                     <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
                         <div class="CSUTile--Disable">
@@ -28,30 +28,12 @@
                         <p>Data Not Available At This Time</p>
                         <h3>California State University Los Angeles</h3>  
                     </div> -->
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div id="csuf" class=" campus not-avail">
-                            <p>Data Not Available At This Time</p>
-                            <h3>California State University Fullerton</h3>
-                        </div> 
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div id="csudh" class=" campus not-avail">
-                            <p>Data Not Available At This Time</p>
-                            <h3>California State University Dominguez Hills</h3>
-                        </div>  
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div id="csuci" class=" campus not-avail">
-                            <p>Data Not Available At This Time</p>
-                            <h3>California State University Channel Island</h3>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div id="csup" class=" campus not-avail">
-                            <p>Data Not Available At This Time</p>
-                            <h3>California State University Pomona</h3>
-                        </div>
-                    </div>
+                    <opt-out-c-s-u-tile :campus="campus.CSULB.img" :title="campus.CSULB.title"/>
+                    <opt-out-c-s-u-tile :campus="campus.CSULA.img" :title="campus.CSULA.title"/>
+                    <opt-out-c-s-u-tile :campus="campus.CSUF.img" :title="campus.CSUF.title"/>
+                    <opt-out-c-s-u-tile :campus="campus.CSUDH.img" :title="campus.CSUDH.title"/>
+                    <opt-out-c-s-u-tile :campus="campus.CSUCI.img" :title="campus.CSUCI.title"/>
+                    <opt-out-c-s-u-tile :campus="campus.CSUP.img" :title="campus.CSUP.title"/>
                 </div>
             </div>
         </main>
@@ -61,6 +43,7 @@
 import powerBanner from '../../../components/research/power-banner'
 import powerUsersModal from '../../../components/research/power-users-modal'
 import ActiveCSUTile from '../../../components/research/active-csu-tile'
+import OptOutCSUTile from '../../../components/research/opt-out-csu-tile'
 import {mapGetters} from 'vuex';
 export default {
     data(){
@@ -71,14 +54,38 @@ export default {
             selectedUniversity:'',
             id:0,
             campus:{
-                    AllCSU: {
-                        img: window.baseUrl  + '/img/csucampuses/allcsu.png',
-                        title: 'Aggregate Data Across the 7 CSUs'
-                    },
-                    CSUN: {
-                        img: window.baseUrl + '/img/csucampuses/northridge.png',
-                        title: 'California State University Northridge'
-                    } 
+                AllCSU: {
+                    img: window.baseUrl  + '/img/csucampuses/allcsu.png',
+                    title: 'Aggregate Data Across the 7 CSUs'
+                },
+                CSUN: {
+                    img: window.baseUrl + '/img/csucampuses/northridge.png',
+                    title: 'California State University Northridge'
+                },
+                CSULB: {
+                    img: window.baseUrl + '/img/csucampuses/longBeach.png',
+                    title: 'California State University Long Beach'
+                }, 
+                CSULA: {
+                    img: window.baseUrl + '/img/csucampuses/losAngeles.png',
+                    title: 'California State University Los Angeles'
+                },
+                CSUF: {
+                    img: window.baseUrl + '/img/csucampuses/fullerton.png',
+                    title: 'California State University Fullerton'
+                },
+                CSUDH: {
+                    img: window.baseUrl + '/img/csucampuses/dominguezHills.png',
+                    title: 'California State University Dominguez Hills'
+                },
+                CSUCI: {
+                    img: window.baseUrl + '/img/csucampuses/channelIslands.png',
+                    title: 'California State University Channel Islands'
+                },
+                CSUP: {
+                    img: window.baseUrl + '/img/csucampuses/pomona.png',
+                    title: 'Cal Poly Pomona'
+                } 
             }
         }
     },
@@ -96,7 +103,8 @@ export default {
     components: {
         powerBanner,
         powerUsersModal,
-        ActiveCSUTile
+        ActiveCSUTile,
+        OptOutCSUTile
     }
 };
 </script>
