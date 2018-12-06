@@ -12,14 +12,14 @@
                     </div>
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
-                    <active-c-s-u-tile :campus="campus.AllCSU.img" :title="campus.AllCSU.title"/>
-                    <active-c-s-u-tile :campus="campus.CSUN.img" :title="campus.CSUN.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSULB.img" :title="campus.CSULB.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSULA.img" :title="campus.CSULA.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSUF.img" :title="campus.CSUF.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSUDH.img" :title="campus.CSUDH.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSUCI.img" :title="campus.CSUCI.title"/>
-                    <opt-out-c-s-u-tile :campus="campus.CSUP.img" :title="campus.CSUP.title"/>
+                    <active-c-s-u-tile @click.native="openModal(universityById(0).id)" :campusImg="campus.AllCSU.img" :title="campus.AllCSU.title"/>
+                    <active-c-s-u-tile @click.native="openModal(universityById(70).id)" :campusImg="campus.CSUN.img" :title="universityById(70).name"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSULB.img" :title="campus.CSULB.title"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSULA.img" :title="campus.CSULA.title"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSUF.img" :title="campus.CSUF.title"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSUDH.img" :title="campus.CSUDH.title"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSUCI.img" :title="campus.CSUCI.title"/>
+                    <opt-out-c-s-u-tile :campusImg="campus.CSUP.img" :title="campus.CSUP.title"/>
                 </div>
             </div>
         </main>
@@ -46,11 +46,13 @@ export default {
             campus:{
                 AllCSU: {
                     img: window.baseUrl  + '/img/csucampuses/allcsu.png',
-                    title: 'Aggregate Data Across the 7 CSUs'
+                    title: 'Aggregate Data Across the 7 CSUs',
+                    id: 0
                 },
                 CSUN: {
                     img: window.baseUrl + '/img/csucampuses/northridge.png',
-                    title: 'California State University Northridge'
+                    title: 'California State University Northridge',
+                    id: 70
                 },
                 CSULB: {
                     img: window.baseUrl + '/img/csucampuses/longBeach.png',
@@ -82,6 +84,10 @@ export default {
     methods:{
         closeModal(){
             this.displayModal = false;
+        },
+        openModal(id){
+            this.displayModal = true;
+            this.id = id;
         }
     },
     computed:{

@@ -92782,11 +92782,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             campus: {
                 AllCSU: {
                     img: window.baseUrl + '/img/csucampuses/allcsu.png',
-                    title: 'Aggregate Data Across the 7 CSUs'
+                    title: 'Aggregate Data Across the 7 CSUs',
+                    id: 0
                 },
                 CSUN: {
                     img: window.baseUrl + '/img/csucampuses/northridge.png',
-                    title: 'California State University Northridge'
+                    title: 'California State University Northridge',
+                    id: 70
                 },
                 CSULB: {
                     img: window.baseUrl + '/img/csucampuses/longBeach.png',
@@ -92819,6 +92821,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: {
         closeModal: function closeModal() {
             this.displayModal = false;
+        },
+        openModal: function openModal(id) {
+            this.displayModal = true;
+            this.id = id;
         }
     },
     computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapGetters */])(['universityById']), {
@@ -93475,12 +93481,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/*
-@click="displayModal = true; id=0;"
-*/
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ["campus", "title"],
+    props: ["campusImg", "title"],
     data: function data() {
         return {};
     }
@@ -93504,7 +93507,7 @@ var render = function() {
           style: {
             backgroundImage:
               "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)), url(" +
-              _vm.campus +
+              _vm.campusImg +
               ")"
           }
         }),
@@ -93593,7 +93596,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ["campus", "title"]
+    props: ["campusImg", "title"]
 });
 
 /***/ }),
@@ -93614,17 +93617,17 @@ var render = function() {
           style: {
             backgroundImage:
               "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(" +
-              _vm.campus +
+              _vm.campusImg +
               ")"
           }
         }),
         _vm._v(" "),
-        _c("p", { staticClass: "CSUTile__DisableMessage" }, [
-          _vm._v("Data Not Available At This Time")
-        ]),
-        _vm._v(" "),
         _c("h3", { staticClass: "CSUTile__CSUName" }, [
           _vm._v(_vm._s(_vm.title))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "CSUTile__DisableMessage" }, [
+          _vm._v("Data Not Available At This Time")
         ])
       ])
     ]
@@ -93674,56 +93677,66 @@ var render = function() {
             [
               _c("active-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.AllCSU.img,
+                  campusImg: _vm.campus.AllCSU.img,
                   title: _vm.campus.AllCSU.title
+                },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.openModal(_vm.universityById(0).id)
+                  }
                 }
               }),
               _vm._v(" "),
               _c("active-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSUN.img,
-                  title: _vm.campus.CSUN.title
+                  campusImg: _vm.campus.CSUN.img,
+                  title: _vm.universityById(70).name
+                },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.openModal(_vm.universityById(70).id)
+                  }
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSULB.img,
+                  campusImg: _vm.campus.CSULB.img,
                   title: _vm.campus.CSULB.title
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSULA.img,
+                  campusImg: _vm.campus.CSULA.img,
                   title: _vm.campus.CSULA.title
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSUF.img,
+                  campusImg: _vm.campus.CSUF.img,
                   title: _vm.campus.CSUF.title
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSUDH.img,
+                  campusImg: _vm.campus.CSUDH.img,
                   title: _vm.campus.CSUDH.title
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSUCI.img,
+                  campusImg: _vm.campus.CSUCI.img,
                   title: _vm.campus.CSUCI.title
                 }
               }),
               _vm._v(" "),
               _c("opt-out-c-s-u-tile", {
                 attrs: {
-                  campus: _vm.campus.CSUP.img,
+                  campusImg: _vm.campus.CSUP.img,
                   title: _vm.campus.CSUP.title
                 }
               })
