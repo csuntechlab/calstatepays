@@ -29703,6 +29703,7 @@ var TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED = "industries/TOGGLE_INDUSTRY_FORM_WAS_SU
 var RESET_INDUSTRY_CARD = "industries/RESET_INDUSTRY_CARD";
 var TOGGLE_INDUSTRY_EDUCATION_LEVEL = "industries/TOGGLE_INDUSTRY_EDUCATION_LEVEL";
 var SET_INDUSTRY_MAJOR = "industries/SET_INDUSTRY_MAJOR";
+var TRIGGER_IS_LOADING = "industries/TRIGGER_IS_LOADING";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
@@ -29711,7 +29712,8 @@ var SET_INDUSTRY_MAJOR = "industries/SET_INDUSTRY_MAJOR";
 	RESET_INDUSTRY_CARD: RESET_INDUSTRY_CARD,
 	TOGGLE_INDUSTRY_EDUCATION_LEVEL: TOGGLE_INDUSTRY_EDUCATION_LEVEL,
 	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE,
-	SET_INDUSTRY_MAJOR: SET_INDUSTRY_MAJOR
+	SET_INDUSTRY_MAJOR: SET_INDUSTRY_MAJOR,
+	TRIGGER_IS_LOADING: TRIGGER_IS_LOADING
 });
 
 /***/ }),
@@ -64020,7 +64022,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
     industryEducationLevel: "bachelors",
-    industryMajor: null
+    industryMajor: null,
+    industryIsLoading: false
 });
 
 /***/ }),
@@ -64048,6 +64051,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     industryMajor: function industryMajor(state) {
         return state.industryMajor;
+    },
+    industryIsLoading: function industryIsLoading(state) {
+        return state.industryIsLoading;
     }
 });
 
@@ -64093,6 +64099,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.industries = state.allLevelIndustries[payload];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].SET_INDUSTRY_MAJOR, function (state, payload) {
 	state.industryMajor = payload.major;
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING, function (state) {
+	if (state.industryIsLoading === false) {
+		state.industryIsLoading = true;
+	} else {
+		state.industryIsLoading = false;
+	}
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -64111,8 +64123,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		var commit = _ref.commit,
 		    dispatch = _ref.dispatch;
 
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING);
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(payload, function (success) {
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
+			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING);
 		}, function (error) {
 			commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
 		});
@@ -91340,6 +91354,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -91351,7 +91376,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return thousands + ',' + hundreds;
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor", "industryMajor"]), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor", "industryMajor", "industryIsLoading"]), {
         industries: function industries() {
             return this.industriesByMajor.filter(function (item) {
                 return item.industryWage != null;
@@ -91369,192 +91394,221 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.industryMajor == null ||
-    (Object.keys(_vm.industriesByMajor).length === 0 &&
-      _vm.industriesByMajor.constructor == +Object)
-      ? _c("div", [
-          _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-            _vm._v("Please make your selection")
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "lead pl-md-5 pr-md-5" },
-            [
-              _c("span", { staticClass: "font-weight-bold" }, [
-                _vm._v("Please Note:")
-              ]),
-              _vm._v(
-                " Some majors might not have any data available at the moment.\n            For more information on how we gathered the data, please read the "
-              ),
-              _c("router-link", { attrs: { to: "/faq" } }, [_vm._v("FAQ")]),
-              _vm._v(".\n        ")
-            ],
-            1
-          )
-        ])
-      : _c(
+    _vm.industryIsLoading
+      ? _c(
           "div",
           [
-            _c("div", { staticClass: "row IndustryLegend" }, [
-              _vm.industryMajor !== null
-                ? _c("div", { staticClass: "col-12" }, [
-                    _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-12" }, [
-                    _c("p", { staticClass: "h6" }, [
-                      _vm._v("Employment 5 Years After Exit")
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-sm-12 col-md-4 offset-md-3" }, [
-                    _c("span", {
-                      staticClass: "IndustryLegend__LegendPercentage"
-                    }),
-                    _vm._v("Percentage of Students Employed\n            ")
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-sm-12 col-md-5" }, [
-                    _c("span", { staticClass: "IndustryLegend__LegendSalary" }),
-                    _vm._v("Average Earnings\n            ")
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length === 0
-                ? _c(
-                    "p",
-                    { staticClass: "lead pl-md-5 pr-md-5" },
-                    [
-                      _vm._v(
-                        "\n                No data is available for this selected Degree Level. Please see the "
-                      ),
-                      _c("router-link", { attrs: { to: "/faq" } }, [
-                        _vm._v("FAQ")
-                      ]),
-                      _vm._v(
-                        " section for more information on\n                how we collected the data.\n            "
-                      )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.industries, function(industry, index) {
-              return _c("div", { key: index }, [
-                _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
-                  _c("div", { staticClass: "col-sm-3" }, [
-                    _c(
-                      "h3",
-                      {
-                        staticClass:
-                          "IndustryProgressBarWrapper__IndustryTitle py-2"
-                      },
-                      [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(industry.title) +
-                            "\n                    "
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9" }, [
-                    _c("div", { staticClass: "row py-2" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-10" },
-                        [
-                          _c("v-progress-linear", {
-                            staticClass:
-                              "IndustryProgressBarWrapper__ProgressBarBase",
-                            attrs: {
-                              value: industry.percentage,
-                              height: "25",
-                              color:
-                                "IndustryProgressBarWrapper__PercentageBar",
-                              "background-color":
-                                "IndustryProgressBarWrapper__PercentageBar--Background"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-2 pl-0" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "IndustryProgressBarWrapper__PercentageText"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(industry.percentage) +
-                                "%\n                            "
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row py-2" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-10" },
-                        [
-                          _c("v-progress-linear", {
-                            staticClass:
-                              "IndustryProgressBarWrapper__ProgressBarBase",
-                            attrs: {
-                              value: industry.industryWage / 1500,
-                              height: "25",
-                              color: "IndustryProgressBarWrapper__SalaryBar",
-                              "background-color":
-                                "IndustryProgressBarWrapper__PercentageBar--Background"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-2 pl-0" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "IndustryProgressBarWrapper__SalaryText"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                $" +
-                                _vm._s(
-                                  _vm.formatDollars(industry.industryWage)
-                                ) +
-                                "\n                            "
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
+            _c("v-progress-circular", {
+              attrs: { size: 100, width: 10, color: "red", indeterminate: "" }
             })
           ],
-          2
+          1
         )
+      : _c("div", [
+          _vm.industryMajor == null ||
+          (Object.keys(_vm.industriesByMajor).length === 0 &&
+            _vm.industriesByMajor.constructor == +Object)
+            ? _c("div", [
+                _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
+                  _vm._v("Please make your selection")
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "lead pl-md-5 pr-md-5" },
+                  [
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("Please Note:")
+                    ]),
+                    _vm._v(
+                      " Some majors might not have any data available at the moment.\n                For more information on how we gathered the data, please read the "
+                    ),
+                    _c("router-link", { attrs: { to: "/faq" } }, [
+                      _vm._v("FAQ")
+                    ]),
+                    _vm._v(".\n            ")
+                  ],
+                  1
+                )
+              ])
+            : _c(
+                "div",
+                [
+                  _c("div", { staticClass: "row IndustryLegend" }, [
+                    _vm.industryMajor !== null
+                      ? _c("div", { staticClass: "col-12" }, [
+                          _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c("div", { staticClass: "col-12" }, [
+                          _c("p", { staticClass: "h6" }, [
+                            _vm._v("Employment 5 Years After Exit")
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c(
+                          "div",
+                          { staticClass: "col-sm-12 col-md-4 offset-md-3" },
+                          [
+                            _c("span", {
+                              staticClass: "IndustryLegend__LegendPercentage"
+                            }),
+                            _vm._v(
+                              "Percentage of Students Employed\n                "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c("div", { staticClass: "col-sm-12 col-md-5" }, [
+                          _c("span", {
+                            staticClass: "IndustryLegend__LegendSalary"
+                          }),
+                          _vm._v("Average Earnings\n                ")
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length === 0
+                      ? _c(
+                          "p",
+                          { staticClass: "lead pl-md-5 pr-md-5" },
+                          [
+                            _vm._v(
+                              "\n                    No data is available for this selected Degree Level. Please see the "
+                            ),
+                            _c("router-link", { attrs: { to: "/faq" } }, [
+                              _vm._v("FAQ")
+                            ]),
+                            _vm._v(
+                              " section for more information on\n                    how we collected the data.\n                "
+                            )
+                          ],
+                          1
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.industries, function(industry, index) {
+                    return _c("div", { key: index }, [
+                      _c(
+                        "div",
+                        { staticClass: "row IndustryProgressBarWrapper" },
+                        [
+                          _c("div", { staticClass: "col-sm-3" }, [
+                            _c(
+                              "h3",
+                              {
+                                staticClass:
+                                  "IndustryProgressBarWrapper__IndustryTitle py-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(industry.title) +
+                                    "\n                        "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9" }, [
+                            _c("div", { staticClass: "row py-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-10" },
+                                [
+                                  _c("v-progress-linear", {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__ProgressBarBase",
+                                    attrs: {
+                                      value: industry.percentage,
+                                      height: "25",
+                                      color:
+                                        "IndustryProgressBarWrapper__PercentageBar",
+                                      "background-color":
+                                        "IndustryProgressBarWrapper__PercentageBar--Background"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-2 pl-0" }, [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__PercentageText"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(industry.percentage) +
+                                        "%\n                                "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row py-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-10" },
+                                [
+                                  _c("v-progress-linear", {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__ProgressBarBase",
+                                    attrs: {
+                                      value: industry.industryWage / 1500,
+                                      height: "25",
+                                      color:
+                                        "IndustryProgressBarWrapper__SalaryBar",
+                                      "background-color":
+                                        "IndustryProgressBarWrapper__PercentageBar--Background"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-2 pl-0" }, [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__SalaryText"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    $" +
+                                        _vm._s(
+                                          _vm.formatDollars(
+                                            industry.industryWage
+                                          )
+                                        ) +
+                                        "\n                                "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+        ])
   ])
 }
 var staticRenderFns = [
@@ -91564,12 +91618,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
       _vm._v(
-        "\n            You have the option of either filtering out majors by "
+        "\n                You have the option of either filtering out majors by "
       ),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
       _vm._v(" or choosing the "),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
-      _vm._v("\n        which resonates the most with you.\n        ")
+      _vm._v("\n            which resonates the most with you.\n            ")
     ])
   }
 ]
