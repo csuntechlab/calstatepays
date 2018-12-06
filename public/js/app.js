@@ -91397,9 +91397,11 @@ var render = function() {
     _vm.industryIsLoading
       ? _c(
           "div",
+          { staticClass: "form-group row" },
           [
             _c("v-progress-circular", {
-              attrs: { size: 100, width: 10, color: "red", indeterminate: "" }
+              staticClass: "loading-icon",
+              attrs: { size: 100, width: 10, indeterminate: "" }
             })
           ],
           1

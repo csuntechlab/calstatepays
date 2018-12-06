@@ -112,3 +112,11 @@
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
 }
+
+.loading-icon {
+    margin-top: 3.5rem;
+    color: $blue;
+    @media screen and (max-width: $break-large){
+        margin-top: 0;
+    }
+}

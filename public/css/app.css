@@ -18965,6 +18965,17 @@ html {
           transform: scaleX(0) translateZ(0);
 }
 
+.loading-icon {
+  margin-top: 3.5rem;
+  color: #2f98bf;
+}
+
+@media screen and (max-width: 992px) {
+  .loading-icon {
+    margin-top: 0;
+  }
+}
+
 .text-gray {
   color: #777777;
 }
