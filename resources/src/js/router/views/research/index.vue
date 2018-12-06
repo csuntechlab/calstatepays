@@ -12,22 +12,8 @@
                     </div>
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
-                    <active-c-s-u-tile @click="displayModal = true; id=0;" :campus="campus.AllCSU.img" :title="campus.AllCSU.title"/>
+                    <active-c-s-u-tile :campus="campus.AllCSU.img" :title="campus.AllCSU.title"/>
                     <active-c-s-u-tile :campus="campus.CSUN.img" :title="campus.CSUN.title"/>
-                    <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div class="CSUTile--Disable">
-                            <div id="csulb" >
-                                <p>Data Not Available At This Time</p>
-                                <h3 class="CSUTile__CSUName">California State University Long Beach</h3>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3">
-                        <div id="csula" class=" campus not-avail">
-                        </div>
-                        <p>Data Not Available At This Time</p>
-                        <h3>California State University Los Angeles</h3>  
-                    </div> -->
                     <opt-out-c-s-u-tile :campus="campus.CSULB.img" :title="campus.CSULB.title"/>
                     <opt-out-c-s-u-tile :campus="campus.CSULA.img" :title="campus.CSULA.title"/>
                     <opt-out-c-s-u-tile :campus="campus.CSUF.img" :title="campus.CSUF.title"/>
@@ -40,6 +26,10 @@
     </div>
 </template>
 <script>
+/*
+    @click="displayModal = true; id=0;"
+    @click="displayModal = true ; id=70;"
+*/
 import powerBanner from '../../../components/research/power-banner'
 import powerUsersModal from '../../../components/research/power-users-modal'
 import ActiveCSUTile from '../../../components/research/active-csu-tile'
