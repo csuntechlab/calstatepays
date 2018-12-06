@@ -1,60 +1,57 @@
 <template>
 	<transition name="flip" mode="out-in">
 		<div key="1" v-if="!selectedFormWasSubmitted">
-			<form v-bind:id="'majorForm-' + form.cardIndex">
+			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
-					title="Reset"></i>
-					<div v-if="!selectedFormWasSubmitted" class="form-group" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
+					<button class="btn btn-flip-card float-right" v-show="selectedFormWasSubmittedOnce" @click.prevent="resetCurrentCard" > Change Degree Level <i class="fas fa fa-chevron-right"></i></button>
+					<div v-if="!selectedFormWasSubmitted" v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
-						<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted"
-						title="Reset"></i>
-						<label for="fieldOfStudy">Select a Discipline (Optional)</label>
+						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select label="discipline" :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
-						@change="updateSelect('fieldOfStudyId', 'id', $event)" class="csu-form-input">
+						class="csu-form-input">
 						</v-select>
 					</div>
 					<div class="form-group">
-						<label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+						<label class="font-weight-bold" for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
 							Select a Major</label>
 						<v-select label="major" v-if="this.form.fieldOfStudyId == null" v-model="selected" :options="majors" @input="updateSelect('majorId', 'majorId', $event)"
-						@change="updateSelect('majorId', 'majorId', $event)" class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 						<v-select label="major" v-else v-model="selected" :options="selectedMajorsByField" @input="updateSelect('majorId', 'majorId', $event)"
-						@change="updateSelect('majorId', 'majorId', $event)" class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 					</div>
 					<div class="form-group row">
-						<button type="button" @click="submitForm" class="btn btn-success btn-submit">Submit</button>
+						<button type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
+				
 				</fieldset>
 			</form>
 		</div>
 		<div key="2" v-else >
-			<form v-bind:id="'majorForm-' + form.cardIndex">
+			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
-					<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmittedOnce && windowWidth > 500"
-					title="Reset"></i>
-					<p v-show="windowWidth > 500" class="text-center h3 majors-header my-5-md my-4">Select a Degree Level</p>
+					<button v-show="selectedFormWasSubmittedOnce" class="btn btn-flip-card" @click.prevent="resetCurrentCard"><i v class="fas fa fa-chevron-left"></i> Change Major</button>
+					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_all" :id="'allDegrees-' + form.cardIndex" @click.prevent="toggleEducationLevel('allDegrees')"
 					v-bind:class="{'selected-btn_all': this.educationLevel(this.index) == 'allDegrees'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'allDegrees', 'fa fa-circle-thin':this.educationLevel(this.index) != 'allDegrees'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'allDegrees', '':this.educationLevel(this.index) != 'allDegrees'}"></i>
 						All Levels
 					</button>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleEducationLevel('postBacc')"
 					v-bind:class="{'selected-btn_postBacc': this.educationLevel(this.index) == 'postBacc'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'postBacc', 'fa fa-circle-thin':this.educationLevel(this.index) != 'postBacc'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'postBacc', '':this.educationLevel(this.index) != 'postBacc'}"></i>
 						Post Bacc
 					</button>
 					<button class="btn btn-sm major-btn_bachelors" :id="'bachelors-' + form.cardIndex" @click.prevent="toggleEducationLevel('bachelors')"
 					v-bind:class="{'selected-btn_bachelors': this.educationLevel(this.index) == 'bachelors'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'bachelors', 'fa fa-circle-thin':this.educationLevel(this.index) != 'bachelors'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'bachelors', '':this.educationLevel(this.index) != 'bachelors'}"></i>
 						Bachelors
 					</button>
 					<button class="btn btn-sm major-btn_someCollege" :id="'someCollege-' + form.cardIndex" @click.prevent="toggleEducationLevel('someCollege')"
 					v-bind:class="{'selected-btn_someCollege': this.educationLevel(this.index) == 'someCollege'}">
-						<i class="major-btn_icon" v-bind:class="{'fa fa-check-circle': this.educationLevel(this.index) == 'someCollege', 'fa fa-circle-thin':this.educationLevel(this.index) != 'someCollege'}"></i>
+						<i class="major-btn_icon" v-bind:class="{'fa fa-check': this.educationLevel(this.index) == 'someCollege', '':this.educationLevel(this.index) != 'someCollege'}"></i>
 						Some College
 					</button>
 				</fieldset>
@@ -77,9 +74,7 @@
 				form: {
 					cardIndex: this.index,
 					majorId: null,
-					schoolId: null,
 					formWasSubmitted: false,
-					submittedOnce: false,
 					fieldOfStudyId: null,
 					formEducationLevel: "allDegrees",
 					errors: {
@@ -97,9 +92,6 @@
 				}
 			};
 		},
-		mounted() {
-			this.form.schoolId = this.selectedUniversity;
-		},
 		methods: {
 			...mapActions([
 				"fetchIndustryImages",
@@ -114,13 +106,18 @@
 			},
 
 			submitForm() {
+				//Validation
 				this.formNotFilled = false;
 				this.submittedOnce = true;
+
 				if (this.checkForm()) {
+					this.selected = null;
+					this.submittedOnce = false;
 					this.toggleFormWasSubmitted(this.form.cardIndex);
-					this.fetchIndustryImages(this.form);
-					this.fetchMajorData(this.form);
+					this.fetchIndustryImages({form:this.form, school:this.selectedUniversity});
+					this.fetchMajorData({form:this.form, school:this.selectedUniversity});
 					this.form.majorId = null;
+					this.form.fieldOfStudyId = null;
 					this.isShowing = !this.isShowing;
 				}
 			},
@@ -144,7 +141,7 @@
 
 			handleFieldOfStudyMajors(field) {
 				if (field == "fieldOfStudyId") {
-					this.fetchUpdatedMajorsByField(this.form);
+					this.fetchUpdatedMajorsByField({form:this.form, school:this.selectedUniversity});
 				}
 			},
 			toggleEducationLevel(educationInput) {
@@ -167,9 +164,6 @@
 			selectedMajorsByField() {
 				this.selected = null;
 				return this.majorsByField(this.index);
-			},
-			removeMajorsByField() {
-				return this.majorsByField(null);
 			},
 			selectedFormWasSubmitted() {
 				return this.formWasSubmitted(this.index);

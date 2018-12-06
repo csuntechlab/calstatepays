@@ -28,7 +28,7 @@ class IndustryFormRequest extends FormRequest
     {
         return [
             'major' => 'required|integer',
-            'university' => 'required|string',
+            'university' => 'required|regex:/^[a-z_A-Z]+$/u',
         ];
     }
 

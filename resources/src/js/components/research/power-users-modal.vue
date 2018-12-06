@@ -1,34 +1,30 @@
 <template>
     <v-dialog width="800" v-model="dialog" >
-      <v-card  >
+      <v-card>
         <v-card-title
-          class="headline grey lighten-2 justify-content-between /flex-column-reverse /flex-md-row"
+          class="headline grey lighten-2  row  no-gutters"
           primary-title
         >
-          <h1> Market Out Comes for  {{universityName}} </h1>
-          <i role="button"   @click="closeModal();" class="fa fa-times d-block     "></i>
+          <h1 v-if="university" class="col-11"> Market Outcomes for  {{university.name}} </h1>
+          <i role="button"   @click="closeModal();" class="fa fa-times text-center col-1 "></i>
         </v-card-title>
         <v-card-text>
             <div class="row">
                 <i class="col-3 fa fa-university fa-5x" ></i> 
                <div class="col-9">
-                    <span class="d-block">Earnings by Major + Industires of Employment</span>
-                    <router-link :to="universityLink">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <span class="d-block">Earnings by Major + Industries of Employment</span>
+                        <button @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
             <v-divider></v-divider>
-            <div class="row"> <!--display flex/ jsutify content evenly? -->
+            <div class="row">
                 <div class="col-3">
                     <i class="fa fa-child fa-2x"></i>
                     <i class="fa fa-male fa-5x"></i>
                 </div>
                 <div class="col-9">
-                    <span class="d-block">Earnings by Age at Entry + Industires of Employment</span>
-                    <router-link :to="universityLink">
-                    <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <span class="d-block">Earnings by Age at Entry + Industries of Employment</span>
+                    <button @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>            
             <v-divider></v-divider>
@@ -38,10 +34,8 @@
                     <i class="fa fa-male fa-5x blue--text"></i>
                 </div>
                 <div class="col-9">
-                    <span class="d-block">Earnings by Race + Industires of Employment</span>
-                    <router-link :to="universityLink">
-                        <button type="button" class=" power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <span class="d-block">Earnings by Race + Industries of Employment</span>
+                        <button @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
             <v-divider></v-divider>
@@ -51,10 +45,8 @@
                     <i class="fa fa-venus fa-5x"></i>
                 </div>               
                 <div class="col-9">
-                    <span class="d-block">Earnings by Gender + Industires of Employment</span>
-                    <router-link :to="universityLink">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <span class="d-block">Earnings by Gender + Industries of Employment</span>
+                        <button @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div >
             <v-divider></v-divider>
@@ -64,10 +56,8 @@
                     <i class="fa fa-times fa-4x text-danger"></i>
                 </div>
                 <div class="col-9">
-                    <span class="d-block">Earnings by Pell Status at Entry + Industires of Employment</span>
-                    <router-link :to="universityLink">
-                        <button type="button" class="power-user-modal-btn btn-success">View Data</button>          
-                    </router-link>
+                    <span class="d-block">Earnings by Pell Status at Entry + Industries of Employment</span>
+                        <button @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
                 </div>
             </div>
         </v-card-text>
@@ -76,21 +66,38 @@
     </v-dialog>
 </template>
 <script>
-import {mapGetters} from 'vuex';
+import {mapGetters,mapActions} from 'vuex';
 export default {
-    props:['showModal','universityName','universityLink'],
+    props:['showModal','university'],
     name: 'power-users-modal',
      data(){
         return{
-            str:'researchcsun'
+            str:'researchcsun',
+            tabl:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         }
-    },methods:{
+    },
+    created() {
+        document.addEventListener('keyup', this.onEscKey)
+    },
+    methods:{
+        ...mapActions([
+            'setTableauValue'
+        ]),
         closeModal:function(){
             this.$emit('closeModal')
+        },
+        onEscKey(event) {
+            if( event.keyCode === 27 ) {
+                this.closeModal()
+            }
+        },
+        chooseTableauCategory(university,path_id,callback){
+            this.$store.dispatch('setTableauValue', {university:university,path_id:path_id});
         }
     },computed:{
         ...mapGetters([
-            "universityById"
+            "universityById",
+            "tableauValue"
         ]),
         dialog:{
             get:function(){
@@ -99,7 +106,8 @@ export default {
             set:function(){
                 this.$emit('closeModal',false)
             }
-        },
+        },   
     }
+    
 }
 </script>

@@ -12,6 +12,7 @@ export default {
     },
 
     [_majors.FETCH_FIELD_OF_STUDIES](state, payload){
+        state.fieldOfStudy = [];
         payload.forEach((fieldOfStudy) => {
             fieldOfStudy.discipline = fieldOfStudy.name;
             delete fieldOfStudy.name;
@@ -48,7 +49,8 @@ export default {
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].industries = payload;
+        state.majorCards[index].industries = payload.industries;
+
     },
 
     [_majors.TOGGLE_EDUCATION_LEVEL](state, payload) {
@@ -92,6 +94,7 @@ export default {
         state.majorCards = [
                 {
                     formWasSubmitted: false,
+                    submittedOnce: false,
                     majorsByField: [],
                     industries: [],
                     majorData: [],

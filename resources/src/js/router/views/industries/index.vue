@@ -13,10 +13,10 @@
       <div class="container">
         <div class="row">
           <aside class="col-lg-3 col-12">
-            <industry-form/>
+            <industry-form />
           </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress class="industry-card"/>
+            <industry-progress class="industry-card mt-md-3 mt-lg-0"/>
           </div>
         </div>
       </div>
@@ -34,6 +34,6 @@ export default {
       industryProgress,
       industryForm,
       subNav
-    },
+    }
   };
 </script>

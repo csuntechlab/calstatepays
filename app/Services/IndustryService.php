@@ -29,6 +29,8 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
+
+
     public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
@@ -41,9 +43,9 @@ class IndustryService implements IndustryContract
             ->firstOrFail();
 
         /** Seperate each student_path for fair population found comparison */
-        $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
-        $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
-        $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
+        $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
 
         /** Get the population total for each */
         $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
@@ -52,14 +54,14 @@ class IndustryService implements IndustryContract
 
 
         /** Calculate the percentages and get the images */
-        $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($someCollege_population,$someCollege_total);
-        $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($bachelors_population,$bachelors_total);
-        $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($post_bacc_population,$post_bacc_total);
+        $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($someCollege_population, $someCollege_total);
+        $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($bachelors_population, $bachelors_total);
+        $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($post_bacc_population, $post_bacc_total);
 
         /** concatenate each array to finalize the API */
         $industry_population_images["someCollege"] = $someCollege_population;
-        $industry_population_images["bachelors"]  = $bachelors_population;
-        $industry_population_images["post_bacc"]  = $post_bacc_population;
+        $industry_population_images["bachelors"] = $bachelors_population;
+        $industry_population_images["post_bacc"] = $post_bacc_population;
 
         return $industry_population_images;
     }
@@ -67,19 +69,19 @@ class IndustryService implements IndustryContract
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
         $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-        
+
         /** no longer using degree level, must extract degree 1,2,4 for equal population total */
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.industryWage'])
+        }, 'industryPathTypes.population', 'industryPathTypes.industryWage', 'industryPathTypes.naicsTitle'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
             ->firstOrFail();
-        
+
         /** Seperate each student_path for fair population found comparison */
-        $someCollege_population = $university_major->industryPathTypes->where('student_path',2)->sortByDesc('population.population_found')->values();
-        $bachelors_population = $university_major->industryPathTypes->where('student_path',1)->sortByDesc('population.population_found')->values();
-        $post_bacc_population = $university_major->industryPathTypes->where('student_path',4)->sortByDesc('population.population_found')->values();
+        $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
 
         /** Get the population total for each */
         $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
@@ -88,14 +90,14 @@ class IndustryService implements IndustryContract
 
 
         /** Calculate the percentages */
-        $someCollege_population = $this->calculatePopulationPercentages($someCollege_population,$someCollege_total);
-        $bachelors_population = $this->calculatePopulationPercentages($bachelors_population,$bachelors_total);
-        $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population,$post_bacc_total);
+        $someCollege_population = $this->calculatePopulationPercentages($someCollege_population, $someCollege_total);
+        $bachelors_population = $this->calculatePopulationPercentages($bachelors_population, $bachelors_total);
+        $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population, $post_bacc_total);
 
         /** concatenate each array to finalize the API */
         $industry_wages["someCollege"] = $someCollege_population;
-        $industry_wages["bachelors"]  = $bachelors_population;
-        $industry_wages["post_bacc"]  = $post_bacc_population;
+        $industry_wages["bachelors"] = $bachelors_population;
+        $industry_wages["post_bacc"] = $post_bacc_population;
         return $industry_wages;
     }
 

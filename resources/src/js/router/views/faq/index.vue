@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="banner faq-banner align-items-center">
-			<h1 class="pt-3 home__heading faq-header">Frequently Asked Questions</h1>
+			<h1 class="home__heading faq-header">Frequently Asked Questions</h1>
 		</div>
 		<div class="container">
 			<div class="row justify-content-start align-items-center">		
@@ -14,7 +14,7 @@
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header">How many students were followed-up in this study?</div>
-						<div class="p-sm-4 faq-panel">Over 95,000 students, all of whom entered CSU Northridge as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2005.</div>
+						<div class="p-sm-4 faq-panel">Over 600,000 students, all of whom entered one of the seven participating CSU campuses as first-time freshmen, transfer students, or post-baccalaureate students between 1995 and 2014.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
@@ -26,7 +26,7 @@
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header">I can not find my major.</div>
-						<div class="p-sm-4 faq-panel">Only majors pursued by more than a minimum number of students are reported. Furthermore, newly added or modified majors have not been pursued by students who entered before 2005.</div>
+						<div class="p-sm-4 faq-panel">Only majors pursued by more than a minimum number of students are reported.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
@@ -74,7 +74,7 @@
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header">Are the earnings shown adjusted for inflation?</div>
-						<div class="p-sm-4 faq-panel">Yes, they are adjusted to 2012 dollars.</div>
+						<div class="p-sm-4 faq-panel">Yes, they are adjusted to 2016 dollars.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">

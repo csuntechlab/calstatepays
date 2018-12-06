@@ -32,6 +32,12 @@ class MajorServiceTest extends TestCase
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
     }
 
+    /**
+     *  test to receive the required expected amount of majors
+     *  example api call
+     *  /major/hegis-codes/university/northridge
+     *  Expect northridge to receive 86  
+     */
     public function test_getAllHegisCodes_ensure_returns_all_rows()
     {
         $this->seed('Northridge_University_Majors_TableSeeder');
@@ -46,11 +52,6 @@ class MajorServiceTest extends TestCase
         $this->assertArrayHasKey("major", $response[0]);
         $this->assertArrayHasKey("university_id", $response[0]);
 
-        /**
-         *  example api call
-         *  /major/hegis-codes/university/northridge
-         *  Expect northridge to receive 86  
-         */
         $count = University::where('short_name', $univ_name)
             ->with('universityMajors')
             ->get();
@@ -61,7 +62,6 @@ class MajorServiceTest extends TestCase
     public function test_getAllHegisCodes_throws_a_model_not_found_exception()
     {
         $univ_id = 25;    
-        // $message = ''.$univ_id.' was not found';
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
@@ -103,52 +103,15 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getMajorEarnings(22021, 'northridge');
     }
 
-    public function test_getFREData_ensure_returns_all_keys()
-    {
-        $this->seed('Universities_TableSeeder');
-        $this->seed('Northridge_University_Majors_TableSeeder');
-        $this->seed('Master_FRE_Page_Data_TableSeeder');
-
-        $request = new Request();
-        $request->major = 22021;
-        $request->university = 'northridge';
-        $request->age_range = 2;
-        $request->education_level = 'FTF';
-        $request->annual_earnings = 3;
-        $request->financial_aid = 2;
-        
-        //  dd($this->majorService->getFREData($request));
-        $response = $this->majorService->getFREData($request);
-        $this->arrayHasKey("student_background_id", $response);
-        $this->arrayHasKey("annual_earnings_id", $response);
-        $this->arrayHasKey("annual_financial_aid_id", $response);
-        $this->arrayHasKey("time_to_degree", $response);
-        $this->arrayHasKey("earnings_5_years", $response);
-        $this->arrayHasKey("roi", $response);
-    }
-
-    public function test_getFREData_throws_a_model_not_found_exception()
-    {
-        $request = new Request();
-        $request->major = 22021;
-        $request->university = 'northridge';
-        $request->age_range = 2;
-        $request->education_level = 'FTF';
-        $request->annual_earnings = 3;
-        $request->financial_aid = 2;
-
-        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
-        $response = $this->majorService->getFREData($request);
-    }
-
-
+    /**  test the opt in functionality
+    *    api route is
+    *    major/hegis-codes/university/{universityId}
+    *    i.e. major/hegis-codes/university/70
+    */
     public function test_getAllHegisCodesByUniversity_Opt_in_CSU()
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('Northridge_University_Majors_TableSeeder');
-        // api route is
-        // major/hegis-codes/university/{universityId}
-        // i.e. major/hegis-codes/university/70
         $university_name = 'northridge';
         $northridge_majors = 84;
 
@@ -179,29 +142,7 @@ class MajorServiceTest extends TestCase
         $this->assertArrayHasKey('major_path_wage', $response[0]);
     }
 
-    public function test_Aggregate_getFREData_ensure_returns_all_keys()
-    {
-        $this->seed('Universities_TableSeeder');
-        $this->seed('Aggregate_University_Majors_TableSeeder');
-        $this->seed('Master_FRE_Page_Data_TableSeeder');
 
-        $request = new Request();
-        $request->major = 22021;
-        $request->university = 'all';
-        $request->age_range = 1;
-        $request->education_level = 'FTF';
-        $request->annual_earnings = 1;
-        $request->financial_aid = 1;
-
-        $response = $this->majorService->getFREData($request);
-
-        $this->arrayHasKey("student_background_id", $response);
-        $this->arrayHasKey("annual_earnings_id", $response);
-        $this->arrayHasKey("annual_financial_aid_id", $response);
-        $this->arrayHasKey("time_to_degree", $response);
-        $this->arrayHasKey("earnings_5_years", $response);
-        $this->arrayHasKey("roi", $response);
-    }
 
     public function test_Aggregate_return_major_count()
     {
@@ -215,6 +156,11 @@ class MajorServiceTest extends TestCase
         $this->assertEquals($expected_count, count($response));
     }
 
+    /**  Test the getMajorEarnings API, expect to see 3 arrays with 4 values in each
+    *    need 12 arrays response, year responses, 2,5,10,15
+    *    some college -> 4, bacc -> 4, post -> 4 ..
+    *    these tests make sure the relationships were made
+    */
     public function test_Able_to_retrieve_Aggregate_major_earnings()
     {
         $this->seed('Universities_TableSeeder');
@@ -222,9 +168,6 @@ class MajorServiceTest extends TestCase
 
         $response = $this->majorService->getMajorEarnings(5021, 'all');
 
-        // need 12 arrays response, year responses, 2,5,10,15
-        // some college -> 4, bacc -> 4, post -> 4 ..
-        // these tests make sure the relationships were made
         $this->assertEquals(12, count($response));
         $this->assertEquals(4, count($response[0]['major_path_wage']));
 
@@ -234,7 +177,6 @@ class MajorServiceTest extends TestCase
         $this->assertArrayHasKey("entry_status", $response[0]);
         $this->assertArrayHasKey("years", $response[0]);
         $this->assertArrayHasKey("major_path_wage", $response[0]);
-
     }
 
 }
