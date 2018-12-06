@@ -9,6 +9,7 @@
 
 .graphContent{
     background-color: $light-gray;
+    min-height: stretch;
 }
 
 abbr[title] {
@@ -19,4 +20,8 @@ abbr[title] {
 html {
   min-height: 100vh;
   box-sizing: border-box;
+}
+
+.lead {
+    color: $text-gray;
 }

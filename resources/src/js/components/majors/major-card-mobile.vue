@@ -1,10 +1,14 @@
 <template>
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
+		<major-form class="col-12" :windowWidth="windowWidth" :index="index" />
 		<div class="col-12">
-			<div class="csu-card">
+			<div v-if="selectedFormWasSubmittedOnce" class="csu-card mb-5">
 				<div class="container-fluid py-3">
 					<div class="row">
-						<div class="col-6">
+						<div class="col">
+							<i class="fa fa-times fa-2x btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						</div>
+						<div class="col-11">
 							<social-sharing 
 							v-if="selectedFormWasSubmitted" 
 							:networks="mobileNetworks" 
@@ -14,57 +18,63 @@
 							:quote="this.shareDescription"
 							hashtags="CalStatePays, ItPaysToGoToCollege" 
 							inline-template>
-								<div>
-									<network network="facebook-m" class="csu-card__share csu-card__share-facebook">
-										<i class="fa fa-facebook-official fa-2x"></i>
-									</network>
-									<network network="linkedin-m" class="csu-card__share csu-card__share-linkedin">
-										<i class="fa fa-linkedin-square fa-2x"></i>
-									</network>
-									<network network="twitter-m" class="csu-card__share csu-card__share-twitter">
-										<i class="fa fa-twitter-square fa-2x"></i>
-									</network>
-								</div>
+							<div>
+								<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
+									<i class="fa fa-twitter-square"></i>
+									Tweet
+								</network>
+								<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
+									<i class="fa fa-linkedin-square"></i>
+									Share
+								</network>
+								<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
+									<i class="fa fa-facebook-official"></i>
+									Share
+								</network>
+							</div>
 							</social-sharing>
-						</div>
-						<div class="col-6">
-							<i class="fa fa-times fa-2x btn-remove float-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-							<i class="fa fa-refresh fa-2x btn-reset float-right" @click="resetCurrentCard" v-show="selectedFormWasSubmitted" title="Reset"></i>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h3 v-show="selectedFormWasSubmitted" class="industry-title">{{selectedMajorTitle}}</h3>
+							<h3 class="industry-title pt-2">{{selectedMajorTitle}}</h3>
 						</div>
 					</div>
-					<div v-show="this.selectedFormWasSubmitted && nullValues">
+					<div class="col">
+							<major-legend :educationLevel="selectedEducationLevel" />
+					</div>
+					<div v-show="nullValues">
 						<div class="row text-center">
 							<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
 						</div>
 					</div>
-					<div v-show="!nullValues">
-						<div class="row" v-show="selectedFormWasSubmitted" style="height: 400px">
+						<div v-show="!nullValues" class="row" style="height: 400px">
 							<div class="col-12">
 								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
 							</div>
 						</div>
-						<div class="row justify-content-center">
-							<div class="col-12">
-								<major-legend v-show="selectedFormWasSubmitted" :educationLevel="selectedEducationLevel" />
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<major-form :index="index" />
-						</div>
-					</div>
 						<div class="row">
 							<div class="col-12">
-								<industry-mobile v-show="selectedFormWasSubmitted" :industries="selectedIndustries" :majorId="selectedMajorId" />
+								<industry-mobile v-show="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
 							</div>
 						</div>
 				</div>
+			</div>
+			<div v-else class="csu-card csu-card__instructions mb-5">
+				<div class="row">
+					<div class="col">
+						<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+					</div>
+				</div>
+				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+				<p class="lead pl-md-5 pr-md-5">
+					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+					which resonates the most with you.
+				</p>
+				<p class="lead pl-md-5 pr-md-5">
+					<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+					For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -110,11 +120,14 @@
 				"majorData",
 				"educationLevel",
 				"formWasSubmitted",
-				"majorNameById"
+				"formWasSubmittedOnce",
+				"majorNameById",
+				"universities",
+				"selectedUniversity"
 			]),
 			isEmpty() {
 				//Check whether the form field was fired off, toggle carousel on
-				if (!this.selectedFormWasSubmitted || this.industries(this.index).length === 0) {
+				if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
 					return false;
 				}
 				return true;
@@ -137,6 +150,9 @@
 			selectedFormWasSubmitted() {
 				return this.formWasSubmitted(this.index);
 			},
+			selectedFormWasSubmittedOnce() {
+				return this.formWasSubmittedOnce(this.index);
+			},
 			selectedMajorId() {
 				return this.majorData(this.index).majorId;
 			},
@@ -147,12 +163,22 @@
 				}
 			},
 			shareDescription() {
-				if(this.selectedEducationLevel == 'allDegrees' && this.selectedMajorData.bachelors)
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+				let universityFullName = this.retrieveUniversityFullName(this.universities, this.selectedUniversity);
+
+				if(universityFullName === 'CSU7')
+					universityFullName = 'the CSU7';
+
+				let opening = 'I discovered that ' + this.selectedMajorTitle + ' students from '+ universityFullName+' make an average of ';
+
+				if(this.selectedMajorData.bachelors && this.selectedEducationLevel == 'allDegrees')
+					return opening + this.formatDollars(this.selectedMajorData.bachelors[5]._50th) + ' five years after graduating!';
+
 				else if(this.selectedMajorData[this.selectedEducationLevel] && this.selectedEducationLevel == 'someCollege')
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+					return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after dropping out of college!';
+
 				else if(this.selectedMajorData[this.selectedEducationLevel])
-					return 'I discovered that ' + this.selectedMajorTitle + ' students from ' + 'CSUN' + ' make an average of ' + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+					return opening + this.formatDollars(this.selectedMajorData[this.selectedEducationLevel][5]._50th) + ' five years after graduating with a ' + this.selectedEducationLevel + ' degree!';
+
 				else
 					return 'Discover your earnings after college!'
 			},
@@ -181,11 +207,17 @@
 				this.resetMajorCard(this.index);
 			},
 			formatDollars(input) {
-				if (this.input) {
+				if (input) {
 					let dollarAmount = input.toString();
 					let hundreds = dollarAmount.substr(-3, 3);
 					let thousands = dollarAmount.slice(0, -3);
 					return "$" + thousands + "," + hundreds;
+				}
+			},
+			// used for the social sharing
+			retrieveUniversityFullName(universityArray,selectedUniv){
+				for(var i = 0; i < universityArray.length; i++){
+					if(universityArray[i].short_name === selectedUniv) return universityArray[i].name;
 				}
 			}
 		},
@@ -195,7 +227,7 @@
 			majorGraphWrapper,
 			majorsGraph,
 			industryMobile,
-			majorLegend
+			majorLegend,
 		}
 	};
 </script>

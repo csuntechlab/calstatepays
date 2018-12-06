@@ -1,13 +1,13 @@
 // MAJORS STATE
-//
 
 export default {
-    majors:[],
+    majors: [],
     universities: [],
     fieldOfStudy: [],
     majorCards: [
         {
             formWasSubmitted: false,
+            submittedOnce: false,
             majorsByField: [],
             industries: [],
             majorData: [],

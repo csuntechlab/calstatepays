@@ -1,0 +1,148 @@
+.CSUDataImgBanner {
+    .v-dialog__content {
+        z-index: 100000001 !important;
+    }
+    .v-overlay {
+        z-index: 100000000 !important;
+    }  
+} 
+
+.campus-modal {
+    &__btn {
+		min-width: 140px;
+
+		@media screen and (max-width: $break-small) {
+			min-width: 100px;
+		}
+
+		&.btn-secondary {
+			margin-right: 2rem;
+
+			@media screen and (max-width: $break-small) {
+				margin-right: .5rem;
+			}
+		}
+	}
+
+	&__error {
+		color: red;
+		font-weight: 700;
+		margin-bottom: .5rem;
+		width: 100%;
+	}
+
+	&-item {
+		position: relative;
+		z-index: 3;
+		border-radius: 25px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+
+		@media screen and (max-width: $break-small) {
+			padding-top: .2rem;
+			padding-bottom: .2rem;		
+		}
+
+		&__figure {
+			margin: 0;
+
+			@media screen and (max-width: $break-small) {
+				padding-top: .2rem;
+				padding-bottom: .2rem;	
+				display: flex;		
+				justify-content: center;
+			}
+
+		}
+	
+		&__radio {
+			opacity: 0;
+			position: absolute;
+	
+			&:checked + .campus-modal-item {
+				background-color: #d9d9d9;
+			}
+		}
+	
+		&__imgWrapper {
+			margin-bottom: 1rem;
+
+
+			@media screen and (max-width: $break-small) {
+				align-self: center;
+				margin-bottom: 0;
+			}
+
+			img{
+				height: 8rem; 
+				text-align: center;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				
+				@media screen and (max-width: $break-xlarge - 1) and (min-width: $break-large) {
+					height: 5.5rem;
+				}	
+			
+				@media screen and (max-width: $break-small) {
+					height: 5rem;
+				}
+
+			}
+		}
+	
+		&__name {
+			font-weight: 700;
+			font-size: 1rem;
+
+			@media screen and (max-width: $break-xlarge - 1) and (min-width: $break-large) {
+				font-size: 0.9rem;
+				width: 116%;
+				margin-left: -8%;
+			}
+
+			@media screen and (max-width: $break-small) {
+				align-self: center;
+				text-align: left;
+				margin-left: 20px;
+				width: 125px;
+			}
+		}
+	
+		&__coming-soon {
+			font-weight: 400;
+			color: gray;
+			margin-top: .3rem;
+		}
+	
+		&--opted-out {
+	
+			.campus-modal-item__imgWrapper {
+				display: inline-block;
+				position: relative;
+	
+				&:before {
+					content: " ";
+					background: rgba(0,0,0,0.7);
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 4;
+					border-radius: 50%;
+				}
+				
+				&:hover {
+					cursor: no-drop;
+				}
+			}
+	
+			.campus-modal-item__name {
+				&:hover {
+					cursor: no-drop;
+				}
+			}
+		}
+	}
+}

@@ -12,6 +12,7 @@ export default {
     },
 
     [_majors.FETCH_FIELD_OF_STUDIES](state, payload){
+        state.fieldOfStudy = [];
         payload.forEach((fieldOfStudy) => {
             fieldOfStudy.discipline = fieldOfStudy.name;
             delete fieldOfStudy.name;
@@ -48,7 +49,8 @@ export default {
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].industries = payload;
+        state.majorCards[index].industries = payload.industries;
+
     },
 
     [_majors.TOGGLE_EDUCATION_LEVEL](state, payload) {
@@ -59,6 +61,7 @@ export default {
     [_majors.TOGGLE_FORM_WAS_SUBMITTED](state, payload) {
         let index = payload;
         state.majorCards[index].formWasSubmitted = true;
+        state.majorCards[index].submittedOnce = true;
     },
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
@@ -67,6 +70,7 @@ export default {
             industries: [],
             majorData: [],
             formWasSubmitted: false,
+            submittedOnce: false
         });
     },
 
@@ -79,10 +83,23 @@ export default {
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
-        state.majorCards[index].formWasSubmitted = false;
-        state.majorCards[index].majorsByField=[];
-        state.majorCards[index].educationLevel = "allDegrees"
-        state.majorCards[index].industries=[];
-        state.majorCards[index].majorData = [];
+        if(state.majorCards[index].formWasSubmitted===true) {
+            state.majorCards[index].formWasSubmitted = false;
+        }
+        else {
+            state.majorCards[index].formWasSubmitted = true;
+        }
+    },
+    [_majors.RESET_MAJOR_STATE](state){
+        state.majorCards = [
+                {
+                    formWasSubmitted: false,
+                    submittedOnce: false,
+                    majorsByField: [],
+                    industries: [],
+                    majorData: [],
+                    educationLevel: 'allDegrees'
+                }
+        ];
     },
 }

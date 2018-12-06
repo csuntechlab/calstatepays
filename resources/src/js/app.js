@@ -5,18 +5,22 @@
  */
 require('./bootstrap');
 var SocialSharing = require("vue-social-sharing");
-import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+var _ = require('lodash');
+// import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import Vue from 'vue';
 import axios from 'axios';
 import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
 import vSelect from 'vue-select';
+import VueYoutube from 'vue-youtube'
+
 
 Vue.use(Vuetify, {
     iconfont: 'fa4'
 });
 Vue.use(SocialSharing);
+Vue.use(VueYoutube);
 
 import App from './App.vue';
 import { mapGetters } from 'vuex';
@@ -33,6 +37,7 @@ const vm = new Vue({
     router,
     render: h => h(App),
     mounted(){
+        this.checkSessionData();
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
@@ -42,9 +47,19 @@ const vm = new Vue({
         ...mapGetters([
             'selectedUniversity'
         ])
+    },
+    methods: {
+        checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if (sessionData === null) {
+                this.showModal = true;
+            }
+            else {
+                this.$store.dispatch("setUniversity", sessionData);
+            }
+        }
     }
 });
-
 
 export default vm;
 

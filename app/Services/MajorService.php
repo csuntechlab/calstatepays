@@ -19,11 +19,9 @@ class MajorService implements MajorContract
             ->where('opt_in', 1)
             ->with(['universityMajors' => function ($query) {
                 $query->orderBy('major', 'asc');
-            }])
+            }, 'universityMajors.university'])
             ->get();
-      
-        // Given the situation where the CSU Opts out
-        // TODO: MUST CHECK WITH FRONT END HOW TO DEAL WITH NULL
+
         if ($allHegisCodes->isEmpty()) {
             $message = '' . $university_name . ' was not found';
             throw new ModelNotFoundException($message, 409);
@@ -127,41 +125,4 @@ class MajorService implements MajorContract
         }
         return $universityMajorId->id;
     }
-
-    public function getFREData($request)
-    {
-        /**
-         * ugly bad easy way to go from uni_name -> uni_id
-         */
-        $university_id = University::where('short_name', $request->university)->firstOrFail();
-
-        $data = UniversityMajor::where('hegis_code', $request->major)
-            ->where('university_id', $university_id->id)
-            ->with(['studentBackground' => function ($query) use ($request) {
-                $query->where('age_range_id', $request->age_range);
-                $query->where('education_level', $request->education_level);
-            }, 'studentBackground.investment' => function ($query) use ($request) {
-                $query->where('annual_earnings_id', $request->annual_earnings);
-                $query->where('annual_financial_aid_id', $request->financial_aid);
-            }])->firstOrFail();
-
-        $freData = $data->studentBackground->first();
-        $freData = $freData->investment->first();
-        if (empty($freData)) {
-            $message = 'Investment not found';
-            throw new ModelNotFoundException($message, 409);
-        }
-        $freData = $freData->toArray();
-        return $freData;
-    }
-
-    public function getPotentialNumberOfStudents($uid, $student_path, $entry_status)
-    {
-        $query = MajorPath::where('student_path', $student_path)
-            ->where('university_majors_id', $uid)
-            ->where('entry_status', $entry_status)
-            ->firstOrFail();
-        return $query;
-    }
-
 }

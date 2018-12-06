@@ -11,55 +11,96 @@
 	}
 }
 
-.industry-bar {
-	border-radius: 50px;
-	margin-bottom: 0.5rem;
-	margin: 0;
-	background-color: $light-gray;
-}
-
-.industry-bar__salary {
-	background-color: $green;
-	border-radius: 50px;
-	&-text {
-		padding-left: 0;
-		color: $green;
+.IndustryProgressBarWrapper {
+	padding: 1.42rem 0.71rem;
+	border-top: 1px solid $light-gray;
+	@media only screen and (max-width: $break-small) {
+	padding: .1rem 2rem 0 0;
+	margin: 1rem 0 0 0;
 	}
-}
+	
+	&__ProgressBarBase{
+		border-radius: 50px;
+		margin: 0;
+	}
+	
+	&__IndustryTitle{
+		font-size: 1rem;
+		margin: 0;
+	}
 
-.industry-bar__percentage {
-	background-color: $blue;
-	border-radius: 50px;
-	&-text {
-		padding-left: 0;
+	&__PercentageBar--Background{
+		border-radius: 50px;
+		background-color: $light-gray;
+	}
+
+	&__PercentageBar{
+		border-radius: 50px;
+		background-color: $blue;
+	}
+	
+	&__SalaryBar {
+		border-radius: 50px;
+		background-color: $green;
+	}
+
+	&__PercentageText{
+		margin: 0;
 		color: $blue;
+		font-size: 1rem;
+	}
+	
+	&__SalaryText {
+		margin: 0;
+		color: $green;
+		font-size: 1rem;
+	}
+
+	&__SalaryBar {
+		background-color: $green;
+	}
+	
+	&__collapse {
+		text-align: left;
+		color: $blue-light;
+		border-top: 1px solid rgba(0,0,0,.1);
+		&:hover{
+			color: $oxford;
+		}
+	}
+}//end IndustryProgressBarWrapper
+
+.IndustryLegend{
+	//padding: 20px 10px;
+	font-weight: 600;
+	font-size: 0.857rem;
+	%LegendBase{
+		height: 0;
+		width: 10px;
+		padding-bottom: 10px;
+		margin-right: 5px;
+		display: inline-block;
+	}
+	&__LegendPercentage{
+		@extend %LegendBase;
+		background-color: $blue;
+	}
+	&__LegendSalary{
+		@extend %LegendBase;
+		background-color: $green;
 	}
 }
 
-.industry-card__legend-salary{
-    height: 0;
-    width: 10px;
-    padding-bottom: 10px;
-    margin-right: 5px;
-    background-color: $green;
-    display: inline-block;
-}
-
-.industry-card__legend-percentage{
-    height: 0;
-    width: 10px;
-    padding-bottom: 10px;
-    margin-right: 5px;
-    background-color: $blue;
-    display: inline-block;
-}
-
-.industry-bar__background {
-	background-color: $light-gray;
-}
-
-.industry-bar__padding {
-	margin-bottom: 10px;
+.industry-card{
+    min-height: 95%;
+	padding: $content-card__padding;
+	@extend %card-base;
+		@media screen and (max-width: $break-small) {
+			margin-top: 2%;
+			padding: 7%;
+			font-size: 1.5rem;
+			padding-bottom: .5em;
+		}
 }
 
 .pfre-bar {
@@ -124,12 +165,17 @@ $colorList: (
 }
 
 .legend-mobile {
-  font-size: 10px;
+  font-size: 0.857rem;
   float: left;
   margin-left: 10px;
-  p {
-    margin-left: 15px !important;
-  }
+  padding-top: 0;
+	p {
+		position: relative;
+		top: -4px;
+		left: -4px;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
   .majors-header {
     display: none !important;
   }
@@ -146,6 +192,8 @@ $colorList: (
 	border-left: 2px dotted #17a2b8;
 	transform: translate(-50%);
 }
+
+/*Legend color key for majors page*/
 @mixin legend-color-mixin($legend-color) {
 	@each $color, $value in $colorList {
 		.legend-#{$color} {
@@ -157,6 +205,15 @@ $colorList: (
 @include legend-color-mixin($colorList);
 .mobile-legend {
 	float: left;
-	font-size: 10px;
+	font-size: 1rem;
 	margin-left: 10px;
 }
+
+// .legend {
+// 	&__text {
+// 		font-size: 1rem;
+// 	}
+// 	&__key-color {
+// 		height:100px;
+// 	}
+// }

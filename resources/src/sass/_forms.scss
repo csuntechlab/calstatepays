@@ -6,7 +6,7 @@ label {
   margin-bottom: 0px;
   font-family: $font-brand;
   font-weight: regular;
-  color: $darker-gray;
+  color: #565656;
 }
 .label--radio{
   color: $gray;
@@ -21,19 +21,42 @@ label {
   }
 }
 
+/*Edits form field styling*/
 %form-input-base {
-  border-bottom: .2rem $gray solid;
-  .dropdown-toggle {
-    border-radius: 0 !important;
-    border: none !important;
-  }
+  border: .13rem #b1b1b1 solid;
+  border-radius: 1rem;
+  padding: .3rem;
+  margin: .5rem 0; 
+}
+
+// Customizes open dropdown styling
+.dropdown.v-select.csu-form-input.single.open {
+ border-radius: 1rem 1rem 0 0;
+//  border-bottom: transparent;
 }
 
 .csu-form-input {
   @extend %form-input-base;
   .dropdown-toggle {
-    height: 2.75rem;
+    border: none !important;
+    min-height: 2rem;
   }
+  input[type="search"]{
+    position: absolute;
+    background: purple;
+    width: 80% !important;
+  }
+  .dropdown{
+    min-height: 2rem;
+    position: relative;
+  }
+}
+
+/*Targets dropdown menu items*/
+.v-select li>a {
+  white-space: normal !important;
+  word-break: normal !important;
+  border-top: .75px solid #EAEAEA;
 }
 
 .currency {
@@ -52,6 +75,7 @@ label {
     color: #fff;
   }
 }
+
 
 select,
 textarea,
@@ -139,6 +163,8 @@ textarea {
 }
 
 .required-field{
+  padding: 1rem 0;
+  clear: both;
   color: red;
   font-weight: bold;
   visibility: visible;

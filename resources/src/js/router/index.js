@@ -10,24 +10,24 @@ import majors from './views/majors/index.vue';
 import industries from './views/industries/index.vue';
 import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
-import researchcsun from './views/researchcsun/index.vue';
+import tableauHolder from './views/tableauHolder/index.vue';
+
 import about from './views/about/index.vue';
 import splashPage from './views/splashPage/index.vue';
 
 // INIT VUE-ROUTER
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
-
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{path: '/data/pfre',component: splashPage},
+		{ path: '/data/pfre',component: splashPage },
 		//{ path: '/data/pfre', component: pfre },
-		{ path: '/data/industries', component: industries},
+		{ path: '/data/industries', component: industries },
 		{ path: '/data/majors', component: majors },
-		{ path: '/faq', component: faq},
-		{ path: '/research', component: research},
-		{ path: '/researchcsun', component: researchcsun }
+		{ path: '/faq', component: faq },
+		{ path: '/research', component: research },
+		{ path: '/tableau', name:'tableau', component: tableauHolder , props:true }
 	]
 });
 

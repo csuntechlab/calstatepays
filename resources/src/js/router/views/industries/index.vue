@@ -5,8 +5,7 @@
         <span>Top Industries by Major</span>
       </h3>
       <p class="CSUDataImgBanner__dataCopy" slot="copy">
-        Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla
-        metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
+        Different majors lead to jobs in different industries. Select a major and find out where CSU students work, and what they earn, five years after they leave.
       </p>
     </csu-data-img-banner>
     <sub-nav/>
@@ -14,10 +13,10 @@
       <div class="container">
         <div class="row">
           <aside class="col-lg-3 col-12">
-            <industry-form v-on:triggerLoadingScreen="triggerLoadingScreen($event)" />
+            <industry-form />
           </aside>
           <div class="col-lg-9 col-12">
-            <industry-progress :loadingCheck="loadingCheck" class="card-item industry-card"/>
+            <industry-progress class="industry-card mt-md-3 mt-lg-0"/>
           </div>
         </div>
       </div>
@@ -40,18 +39,6 @@ export default {
       industryProgress,
       industryForm,
       subNav
-    },
-    methods: {
-      triggerLoadingScreen(event){
-      if (event===true){
-        // console.log(this.loadingCheck);
-        this.loadingCheck = true;
-      }
-      else{
-        this.loadingCheck = false; 
-      }
-      }
-      
     }
   };
 </script>

@@ -1,6 +1,11 @@
 // Industries State
 
 export default {
+    allLevelIndustries: {},
     industries: [],
-    industryMajorsByField: []
+    industryMajorsByField: [],
+    industryFormWasSubmitted: false,
+    industryFormWasSubmittedOnce: false,
+    industryEducationLevel: "bachelors",
+    industryMajor: null,
 }

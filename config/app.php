@@ -138,7 +138,6 @@ return [
     'providers' => [
         CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -173,7 +172,6 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         CSUNMetaLab\ForceHttps\Providers\ForceHttpsServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -183,6 +181,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\PfreServiceProvider::class,
 
         /*
          * CSU METRO SERVICE PROVIDERS
@@ -190,6 +189,7 @@ return [
         App\Providers\IndustryServiceProvider::class,
         App\Providers\MajorServiceProvider::class,
         App\Providers\UniversityServiceProvider::class,
+        App\Providers\PowerUsersServiceProvider::class,
 
     ],
 
@@ -208,7 +208,6 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
         'Form' => Collective\Html\FormFacade::class,
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -222,7 +221,6 @@ return [
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
