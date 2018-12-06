@@ -64343,19 +64343,25 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -64384,14 +64390,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		this.url = window.baseUrl;
 	},
 
-	components: {
-		csuSelector: __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default.a,
+	components: _defineProperty({
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a,
-		homeCard: __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue___default.a,
-		homeBanner: __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue___default.a,
-		campusSeals: __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue___default.a,
-		homeVideo: __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue___default.a
-	},
+		homeCard: __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue___default.a,
+		homeBanner: __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue___default.a,
+		homeVideo: __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a,
+		faqCard: __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default.a,
+		campusSeals: __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default.a
+	}, "homeVideo", __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
@@ -64741,7 +64747,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-selector.vue"
+Component.options.__file = "resources/src/js/components/home/home-card.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -64750,9 +64756,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c723ba6", Component.options)
+    hotAPI.createRecord("data-v-92fe7638", Component.options)
   } else {
-    hotAPI.reload("data-v-3c723ba6", Component.options)
+    hotAPI.reload("data-v-92fe7638", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -64818,342 +64824,72 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	name: "csu-selector",
-
-	props: ["url"],
-
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["selectedUniversity"])),
-
-	mounted: function mounted() {
-		if (this.selectedUniversity != null) document.getElementById(this.selectedUniversity).className = "";
-	},
-
-
-	methods: {
-		selectUniversity: function selectUniversity(id) {
-			var previousSelect = document.getElementsByClassName = "";
-			if (previousSelect) previousSelect[0].className = "unselected-university";
-			document.getElementById(id).className = "";
-			this.$store.dispatch("setUniversity", id);
-		}
-	}
-});
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1139" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/long_beach_seal.svg",
-              alt: "California State University, Long Beach Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Long Beach")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1144" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/poly_seal.svg",
-              alt: "California State University, Pomona Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Pomona")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1141" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/dominguez_seal.svg",
-              alt: "California State University, Dominguez Hills Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Dominguez Hills")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "unselected-university",
-          attrs: { id: "70" },
-          on: {
-            click: function($event) {
-              _vm.selectUniversity(70)
-            }
-          }
-        },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/northridge_seal.svg",
-              alt: "California State University, Northridge Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Northridge")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "39803" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/channel_islands_seal.svg",
-              alt: "California State University, Channel Islands Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Channel Islands")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1137" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/fulleton_seal.svg",
-              alt: "California State University, Fullerton Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Fullerton")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1140" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/los_angeles_seal.svg",
-              alt: "California State University, Los Angeles Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Los Angeles")])
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3c723ba6", module.exports)
-  }
-}
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(203)
-/* template */
-var __vue_template__ = __webpack_require__(204)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/components/home/home-card.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-92fe7638", Component.options)
-  } else {
-    hotAPI.reload("data-v-92fe7638", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 203 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -65161,11 +64897,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			url: "",
 			isShowing: false
 		};
-	}
+	},
+
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
-/* 204 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65606,15 +65344,15 @@ if (false) {
 }
 
 /***/ }),
-/* 205 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(206)
+var __vue_script__ = __webpack_require__(203)
 /* template */
-var __vue_template__ = __webpack_require__(207)
+var __vue_template__ = __webpack_require__(204)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65653,7 +65391,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 206 */
+/* 203 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65679,7 +65417,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 207 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65715,15 +65453,15 @@ if (false) {
 }
 
 /***/ }),
-/* 208 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(209)
+var __vue_script__ = __webpack_require__(206)
 /* template */
-var __vue_template__ = __webpack_require__(210)
+var __vue_template__ = __webpack_require__(207)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65762,7 +65500,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 209 */
+/* 206 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65799,7 +65537,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 210 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65864,15 +65602,15 @@ if (false) {
 }
 
 /***/ }),
-/* 211 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(212)
+var __vue_script__ = __webpack_require__(209)
 /* template */
-var __vue_template__ = __webpack_require__(213)
+var __vue_template__ = __webpack_require__(210)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65911,7 +65649,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 212 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65966,7 +65704,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 213 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66011,6 +65749,166 @@ if (false) {
 }
 
 /***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/components/home/faq-card.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4f73929e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4f73929e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        url: function url() {
+            return window.baseUrl;
+        }
+    }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row mx-auto" }, [
+    _c("div", { staticClass: " f faq-card col-12 col-sm-10 col-lg-8" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-6 col-sm-5 faq-card__text" },
+          [
+            _c("p", { staticClass: "faq-card__text--blue" }, [
+              _vm._v("Have Questions?")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "faq-card__text--gray" }, [
+              _vm._v("We Have Answers.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "faq-card__button", attrs: { to: "/faq" } },
+              [
+                _vm._v(
+                  "\r\n                    Read Our FAQ\r\n                "
+                )
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
+          _c("img", {
+            staticClass: "faq-card__image mx-auto",
+            attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "faq-card__button--mobile row d-sm-none" },
+        [
+          _c("router-link", { attrs: { to: "/faq" } }, [
+            _vm._v("\r\n                Read Our FAQ\r\n            ")
+          ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4f73929e", module.exports)
+  }
+}
+
+/***/ }),
 /* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66030,7 +65928,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("home-video")
+      _c("home-video"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_c("faq-card")], 1)
     ],
     1
   )
@@ -66349,8 +66249,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -66360,8 +66258,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             aCampusIsSelected: false,
             showModal: false,
             showValidationMsg: false,
-            universitySeals: [{ url: window.baseUrl + '/img/csuseals/all.svg', name: "All Campuses", short_name: "all" }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island', short_name: "channel_islands" }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez Hills', short_name: "dominguez_hills" }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton', short_name: "fullerton" }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach', short_name: "long_beach" }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles', short_name: "los_angeles" }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge', short_name: "northridge" }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona', short_name: "pomona" }]
+            universitySeals: [{ url: window.baseUrl + '/img/csuseals/all.svg', name: "All 7 Campuses", short_name: "all" }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island', short_name: "channel_islands" }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez Hills', short_name: "dominguez_hills" }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton', short_name: "fullerton" }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach', short_name: "long_beach" }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles', short_name: "los_angeles" }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge', short_name: "northridge" }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona', short_name: "pomona" }]
         };
+    },
+    created: function created() {
+        document.addEventListener('keyup', this.onEscKey);
     },
     mounted: function mounted() {
         this.$nextTick(function () {
@@ -66370,7 +66271,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         });
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage']), {
         orderedUniversities: function orderedUniversities() {
             return _.orderBy(this.universities, ['short_name'], ['asc']);
         }
@@ -66388,6 +66289,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 }
             }, false);
         },
+        onEscKey: function onEscKey(event) {
+            if (event.keyCode === 27) {
+                if (this.aCampusIsSelected == true) {
+                    this.showModal = false;
+                } else {
+                    this.showValidationMsg = true;
+                }
+            }
+        },
+
         onSubmit: function onSubmit() {
             var radioBtns = document.querySelectorAll("[name='campuses']");
 
@@ -66435,336 +66346,323 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        on: {
-          keyup: function($event) {
-            if (
-              !("button" in $event) &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
+  return _c(
+    "div",
+    [
+      _c(
+        "button",
+        {
+          staticClass: "btn-change-campus",
+          attrs: { role: "button" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.showModal = true
             }
-            _vm.showModal = false
           }
-        }
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn-change-campus",
-            attrs: { role: "button" },
-            on: {
-              click: function($event) {
-                _vm.showModal = true
-              }
-            }
-          },
-          [_vm._t("change button")],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "v-dialog",
-          {
-            attrs: { persistent: "", scrollable: "", "aria-modal": "true" },
-            model: {
-              value: _vm.showModal,
-              callback: function($$v) {
-                _vm.showModal = $$v
-              },
-              expression: "showModal"
-            }
-          },
-          [
-            _vm.universities[0]
-              ? _c(
-                  "v-card",
-                  { staticClass: "text-xs-center black--text campus-modal" },
-                  [
+        },
+        [_vm._t("change button")],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { persistent: "", scrollable: "", "aria-modal": "true" },
+          model: {
+            value: _vm.showModal,
+            callback: function($$v) {
+              _vm.showModal = $$v
+            },
+            expression: "showModal"
+          }
+        },
+        [
+          _vm.universities[0]
+            ? _c(
+                "v-card",
+                { staticClass: "text-xs-center black--text campus-modal" },
+                [
+                  _c(
+                    "v-card-title",
+                    { staticClass: "headline grey lighten-2 " },
+                    [_vm._v("\n                Choose a Campus \n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-card-text", [
                     _c(
-                      "v-card-title",
-                      { staticClass: "headline grey lighten-2 " },
-                      [
-                        _vm._v(
-                          "\r\n                    Choose a Campus \r\n                "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("v-card-text", [
-                      _c(
-                        "div",
-                        { staticClass: "row" },
-                        _vm._l(_vm.orderedUniversities, function(item, index) {
-                          return _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass: "col-12 col-sm-6 col-md-3 col-lg"
-                            },
-                            [
-                              _vm._l(_vm.universitySeals, function(
-                                universitySeal,
-                                index2
-                              ) {
-                                return [
-                                  universitySeal.short_name == item.short_name
-                                    ? [
-                                        item.opt_in === 1
-                                          ? [
-                                              _vm.aCampusIsSelected &&
-                                              _vm.selectedUniversity ==
-                                                item.short_name
-                                                ? [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "campus-modal-item__radio",
-                                                      attrs: {
-                                                        type: "radio",
-                                                        name: "campuses",
-                                                        id: item.short_name,
-                                                        checked: ""
-                                                      }
-                                                    })
-                                                  ]
-                                                : [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "campus-modal-item__radio",
-                                                      attrs: {
-                                                        type: "radio",
-                                                        name: "campuses",
-                                                        id: item.short_name
-                                                      }
-                                                    })
-                                                  ],
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "campus-modal-item clearfix"
-                                                },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for: item.short_name
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "figure",
-                                                        {
-                                                          staticClass:
-                                                            "campus-modal-item__figure"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__imgWrapper"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src:
-                                                                    universitySeal.url
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "figcaption",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__name"
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\r\n                                                        " +
-                                                                  _vm._s(
-                                                                    universitySeal.name
-                                                                  ) +
-                                                                  "\r\n                                                    "
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          : [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "campus-modal-item campus-modal-item--opted-out clearfix"
-                                                },
-                                                [
+                      "div",
+                      { staticClass: "row" },
+                      _vm._l(_vm.orderedUniversities, function(item, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "col-12 col-sm-6 col-md-3 col-lg",
+                            on: {
+                              dblclick: function($event) {
+                                _vm.onSubmit()
+                              }
+                            }
+                          },
+                          [
+                            _vm._l(_vm.universitySeals, function(
+                              universitySeal,
+                              index2
+                            ) {
+                              return [
+                                universitySeal.short_name == item.short_name
+                                  ? [
+                                      item.opt_in === 1
+                                        ? [
+                                            _vm.aCampusIsSelected &&
+                                            _vm.selectedUniversity ==
+                                              item.short_name
+                                              ? [
                                                   _c("input", {
                                                     staticClass:
                                                       "campus-modal-item__radio",
                                                     attrs: {
-                                                      disabled: "",
+                                                      type: "radio",
+                                                      name: "campuses",
+                                                      id: item.short_name,
+                                                      checked: ""
+                                                    }
+                                                  })
+                                                ]
+                                              : [
+                                                  _c("input", {
+                                                    staticClass:
+                                                      "campus-modal-item__radio",
+                                                    attrs: {
                                                       type: "radio",
                                                       name: "campuses",
                                                       id: item.short_name
                                                     }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for: item.short_name
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "figure",
-                                                        {
-                                                          staticClass:
-                                                            "campus-modal-item__figure"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__imgWrapper"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src:
-                                                                    universitySeal.url
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "figcaption",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__name"
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\r\n                                                        " +
-                                                                  _vm._s(
-                                                                    universitySeal.name
-                                                                  ) +
-                                                                  "\r\n                                                        "
-                                                              ),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "campus-modal-item__coming-soon"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "Coming Soon"
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                      ]
-                                    : _vm._e()
-                                ]
-                              })
-                            ],
-                            2
-                          )
-                        })
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "v-card-actions",
-                      { staticClass: "justify-content-center flex-wrap" },
-                      [
-                        _vm.showValidationMsg
-                          ? _c(
-                              "div",
-                              {
-                                staticClass: "campus-modal__error",
-                                attrs: { id: "campus-modal__error" }
-                              },
-                              [
-                                _vm._v(
-                                  "\r\n                        * Select a campus to proceed\r\n                    "
-                                )
+                                                  })
+                                                ],
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "campus-modal-item clearfix"
+                                              },
+                                              [
+                                                _c(
+                                                  "label",
+                                                  {
+                                                    attrs: {
+                                                      for: item.short_name
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "figure",
+                                                      {
+                                                        staticClass:
+                                                          "campus-modal-item__figure"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__imgWrapper"
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  universitySeal.url
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "figcaption",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__name"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\n                                                    " +
+                                                                _vm._s(
+                                                                  universitySeal.name
+                                                                ) +
+                                                                "\n                                                "
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        : [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "campus-modal-item campus-modal-item--opted-out clearfix"
+                                              },
+                                              [
+                                                _c("input", {
+                                                  staticClass:
+                                                    "campus-modal-item__radio",
+                                                  attrs: {
+                                                    disabled: "",
+                                                    type: "radio",
+                                                    name: "campuses",
+                                                    id: item.short_name
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "label",
+                                                  {
+                                                    attrs: {
+                                                      for: item.short_name
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "figure",
+                                                      {
+                                                        staticClass:
+                                                          "campus-modal-item__figure"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__imgWrapper"
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  universitySeal.url
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "figcaption",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__name"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\n                                                    " +
+                                                                _vm._s(
+                                                                  universitySeal.name
+                                                                ) +
+                                                                "\n                                                    "
+                                                            ),
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "campus-modal-item__coming-soon"
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Coming Soon"
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                    ]
+                                  : _vm._e()
                               ]
+                            })
+                          ],
+                          2
+                        )
+                      })
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    { staticClass: "justify-content-center flex-wrap" },
+                    [
+                      _vm.showValidationMsg
+                        ? _c(
+                            "div",
+                            {
+                              staticClass: "campus-modal__error",
+                              attrs: { id: "campus-modal__error" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                    * Select a campus to proceed\n                "
+                              )
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm.aCampusIsSelected
+                          ? _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "btn btn-secondary campus-modal__btn",
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    _vm.showModal = false
+                                  }
+                                }
+                              },
+                              [_vm._v("Cancel")]
                             )
                           : _vm._e(),
                         _vm._v(" "),
-                        _c("div", [
-                          _vm.aCampusIsSelected
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "btn btn-secondary campus-modal__btn",
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      _vm.showModal = false
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancel")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-success campus-modal__btn",
-                              attrs: { type: "submit" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  _vm.onSubmit()
-                                }
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-success campus-modal__btn",
+                            attrs: { type: "submit" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                _vm.onSubmit()
                               }
-                            },
-                            [_vm._v("Select Campus")]
-                          )
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              : _vm._e()
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
+                            }
+                          },
+                          [_vm._v("Select Campus")]
+                        )
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e()
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -93213,9 +93111,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             tabl: 'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         };
     },
+    created: function created() {
+        document.addEventListener('keyup', this.onEscKey);
+    },
+
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTableauValue']), {
         closeModal: function closeModal() {
             this.$emit('closeModal');
+        },
+        onEscKey: function onEscKey(event) {
+            if (event.keyCode === 27) {
+                this.closeModal();
+            }
         },
         chooseTableauCategory: function chooseTableauCategory(university, path_id, callback) {
             this.$store.dispatch('setTableauValue', { university: university, path_id: path_id });
