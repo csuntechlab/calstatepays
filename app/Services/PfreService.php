@@ -27,8 +27,6 @@ class PfreService implements PfreContract
         $query->where('annual_financial_aid_id', $request->financial_aid);
       }])->firstOrFail();
 
-      dd($data);
-
     $freData = $data->studentBackground->first();
     $freData = $freData->investment->first();
     if (empty($freData)) {

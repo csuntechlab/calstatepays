@@ -43,6 +43,8 @@ class PfreControllerTest extends TestCase
         $this->seed('Northridge_University_Majors_TableSeeder');
 
         $this->seed('Master_FRE_Page_Data_TableSeeder');
+        $this->seed("Investments_Template_Northridge_TableSeeder");
+
         $this->controller = new PfreController($this->retriever);
     }
 
@@ -55,7 +57,7 @@ class PfreControllerTest extends TestCase
     public function test_getFreData_Success_Contract_Call()
     {
         $university = "northridge";
-        $major = 5021;
+        $major = 4011;
         $age_range = 1;
         $education_level = 1;
         $annual_earnings = 2;

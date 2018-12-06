@@ -28,6 +28,7 @@ class PfreServiceTest extends TestCase
         $this->seed('Aggregate_Major_Path_Wages_TableSeeder');
         $this->seed('Northridge_Major_Path_TableSeeder');
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
+        $this->seed("Investments_Template_Northridge_TableSeeder");
     }
 
     public function test_Aggregate_getFREData_ensure_returns_all_keys()
