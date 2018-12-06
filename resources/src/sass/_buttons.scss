@@ -93,8 +93,6 @@
   vertical-align: middle;
   display: inline;
   position: relative;
-  top: -15px;
-  right: -15px;
 }
 
 .btn-reset {
@@ -107,6 +105,10 @@
   cursor: pointer;
   vertical-align: middle;
   display: inline;
+      @media screen and (max-width: $break-small) {
+        top: -9px;
+        left: -14px;
+   }
 }
 
 .major-tool-btn-mobile {
@@ -195,6 +197,8 @@ input[type="button"]:focus {
   }
 }
 /*degree level button colors and animations*/
+
+
 .major-btn_icon {
   position: absolute;
   right: 7%;

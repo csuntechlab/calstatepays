@@ -60,7 +60,7 @@
 						</div>
 				</div>
 			</div>
-			<div v-else class="csu-card mb-5">
+			<div v-else class="csu-card csu-card__instructions mb-5">
 				<div class="row">
 					<div class="col">
 						<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>

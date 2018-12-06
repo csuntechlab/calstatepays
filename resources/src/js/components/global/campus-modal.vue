@@ -1,18 +1,17 @@
 <template>
-<div>
-    <div @keyup.enter="showModal= false">
-        <button class="btn-change-campus" @click="showModal = true" role="button">
+    <div>
+        <button class="btn-change-campus" @click.prevent="showModal = true" role="button">
                 <slot name="change button"></slot>
         </button>
         
         <v-dialog v-model="showModal" persistent scrollable aria-modal="true">
-            <v-card  class="text-xs-center black--text campus-modal" v-if="universities[0]">
+            <v-card class="text-xs-center black--text campus-modal" v-if="universities[0]">
                 <v-card-title class="headline grey lighten-2 ">
                     Choose a Campus 
                 </v-card-title>
                 <v-card-text>
-                    <div class="row" >
-                        <div class="col-12 col-sm-6 col-md-3 col-lg" v-for="(item, index) in orderedUniversities" :key="index">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-3 col-lg" v-for="(item, index) in orderedUniversities" :key="index" @dblclick="onSubmit()">
                             <template v-for="(universitySeal, index2) in universitySeals">
                                 <template v-if="universitySeal.short_name == item.short_name">
                                     
@@ -38,7 +37,7 @@
                                             </label>
                                         </div>
                                     </template>
-                                    <template v-else > 
+                                    <template v-else> 
                                         <div class="campus-modal-item campus-modal-item--opted-out clearfix">
                                             <input class="campus-modal-item__radio" disabled type="radio" name="campuses" :id="item.short_name">  
                                             <label :for="item.short_name">    
@@ -64,14 +63,13 @@
                         * Select a campus to proceed
                     </div>
                     <div>
-                        <span v-if="aCampusIsSelected" class="btn btn-secondary campus-modal__btn" @click="showModal = false">Cancel</span>
-                        <button type="submit" class="btn btn-success campus-modal__btn" @click="onSubmit()">Select Campus</button>
+                        <span v-if="aCampusIsSelected" class="btn btn-secondary campus-modal__btn" @click.prevent="showModal = false">Cancel</span>
+                        <button type="submit" class="btn btn-success campus-modal__btn" @click.prevent="onSubmit()">Select Campus</button>
                     </div>
                 </v-card-actions>
             </v-card>
         </v-dialog>
     </div>
-</div>  
 </template>
 <script>
 import {  mapActions, mapGetters  } from 'vuex';
@@ -83,7 +81,7 @@ export default {
             showModal :false,
             showValidationMsg: false,
             universitySeals:[
-                {url: window.baseUrl + '/img/csuseals/all.svg', name: "All Campuses", short_name: "all"},
+                {url: window.baseUrl + '/img/csuseals/all.svg', name: "All 7 Campuses", short_name: "all"},
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Island', short_name: "channel_islands"},
                 {url: window.baseUrl + '/img/csuseals/dominguez_seal.svg',name:'Dominguez Hills', short_name: "dominguez_hills"},
                 {url: window.baseUrl + '/img/csuseals/fullerton_seal.svg',name:'Fullerton', short_name: "fullerton"},
@@ -93,6 +91,9 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/poly_seal.svg',name:'Pomona', short_name: "pomona"}
             ]
         }
+    },
+    created() {
+        document.addEventListener('keyup', this.onEscKey)
     },
     mounted(){
         this.$nextTick(function () {
@@ -104,8 +105,7 @@ export default {
         ...mapGetters([
             'universities',
             'selectedUniversity',
-            'selectedDataPage',
-            'modalCheck'
+            'selectedDataPage'
         ]),
         orderedUniversities: function () {
             return _.orderBy(this.universities, ['short_name'], ['asc'])
@@ -126,6 +126,15 @@ export default {
                     }
                 }
             }, false);
+        },
+        onEscKey(event) {
+                if( event.keyCode === 27 ) {
+                    if(this.aCampusIsSelected == true) {
+                        this.showModal = false;
+                    } else {
+                        this.showValidationMsg = true;
+                    }
+                }
         },
         onSubmit: function(){
             var radioBtns = document.querySelectorAll("[name='campuses']")

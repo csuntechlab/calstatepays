@@ -75,12 +75,21 @@ export default {
             str:'researchcsun',
             tabl:'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         }
-    },methods:{
+    },
+    created() {
+        document.addEventListener('keyup', this.onEscKey)
+    },
+    methods:{
         ...mapActions([
             'setTableauValue'
         ]),
         closeModal:function(){
             this.$emit('closeModal')
+        },
+        onEscKey(event) {
+            if( event.keyCode === 27 ) {
+                this.closeModal()
+            }
         },
         chooseTableauCategory(university,path_id,callback){
             this.$store.dispatch('setTableauValue', {university:university,path_id:path_id});
