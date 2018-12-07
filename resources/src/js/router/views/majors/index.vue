@@ -84,7 +84,7 @@
 				if (
 					window.scrollY + window.innerHeight >
 					document.body.clientHeight -
-					document.getElementById("main-footer").clientHeight
+					(document.getElementById("main-footer").clientHeight + 1000)
 				) {
 					console.log("bttom");
 					var addBtn = document.getElementById("compare-major-button");
