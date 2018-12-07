@@ -71042,8 +71042,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     trigger: 'axis',
                     axisPointer: {
                         type: 'cross'
+                    },
+                    formatter: function formatter(params) {
+                        var colorSpan = function colorSpan(color) {
+                            return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+                        };
+                        var rez = '<h6>' + params[0].axisValue + ' Years Out</h6>';
+                        params.forEach(function (item) {
+                            var val = '';
+                            //format data
+                            if (item.data > 999) {
+                                var strVal = item.data.toString();
+                                var first = strVal.slice(0, -3);
+                                var second = strVal.slice(-3);
+                                val = '$' + first + ',' + second;
+                            } else if (item.data === null) val = 'No Data';else val = '$' + item.data;
+
+                            var xx = '<h6>' + colorSpan(item.color) + ' ' + item.seriesName + ': ' + val + '</h6>';
+                            rez += xx;
+                        });
+                        return rez;
                     }
-                    // formatter: '{b} years out <br/> {a0}: ${c0} <br/> {a1}: ${c1} <br/> {a2}: ${c2}',
                 },
                 xAxis: {
                     name: "Years Out of College",
@@ -89441,9 +89460,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           position: function position(pos, params, dom, rect, size) {
             // tooltip will be fixed on the right if mouse hovering on the left,
             // and on the left if hovering on the right.
-            var obj = { top: '10%' };
+            var obj = { top: "10%" };
             obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
             return obj;
+          },
+          formatter: function formatter(params) {
+            var colorSpan = function colorSpan(color) {
+              return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+            };
+            var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+            params.forEach(function (item) {
+              var val = "";
+              //format data
+              if (item.data > 999) {
+                var strVal = item.data.toString();
+                var first = strVal.slice(0, -3);
+                var second = strVal.slice(-3);
+                val = "$" + first + "," + second;
+              } else if (item.data === null) val = "No Data";else val = "$" + item.data;
+
+              var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+              rez += xx;
+            });
+            return rez;
           }
         },
         xAxis: {
