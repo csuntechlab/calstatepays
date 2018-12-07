@@ -20331,6 +20331,15 @@ footer, .footer {
   overflow: hidden;
 }
 
+.CSUTile:hover .CSUTile__Image {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.CSUTile:hover .CSUTile__DisableMessage {
+  opacity: .5;
+}
+
 .CSUTile__CSUName {
   position: absolute;
   bottom: 0;
@@ -20342,16 +20351,6 @@ footer, .footer {
   line-height: 140%;
   font-weight: bold;
   color: white;
-}
-
-.CSUTile__CSUName:hover .CSUTile__Image {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-}
-
-.CSUTile__Image:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
 }
 
 .CSUTile__Image--CSUN {
@@ -20405,10 +20404,6 @@ footer, .footer {
   opacity: 0;
   font-size: 1.4rem;
   font-weight: bold;
-}
-
-.CSUTile__DisableMessage:hover {
-  opacity: .5;
 }
 
 .CSUTile--Disabled {
