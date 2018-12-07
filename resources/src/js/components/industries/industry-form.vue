@@ -1,6 +1,6 @@
 <template>
 	<transition name="flip" mode="out-in">
-		<div key="1" v-if="!industryFormWasSubmitted">
+		<div @key="1" v-if="!industryFormWasSubmitted">
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
 					<button class="btn btn-flip-card float-right" v-show="industryFormWasSubmittedOnce" @click.prevent="resetIndustries" > <span class="font-weight-bold
@@ -15,7 +15,7 @@
 							label="discipline"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event)"
-							@change="updateSelect('fieldOfStudyId', 'id', $event)"
+							@click.native="selected = null"
 							class="csu-form-input">
 						</v-select>
 					</div>
@@ -167,6 +167,10 @@ export default {
 				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
+		apple(){
+			console.log(12);
+			this.selected = null;
+		}
 	},
 
 	computed: {

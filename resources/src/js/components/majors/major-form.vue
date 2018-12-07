@@ -8,7 +8,11 @@
 						<i class="fa fa-exclamation-circle"></i> Please select a Major. </div>
 					<div class="form-group">
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
-						<v-select label="discipline" @click.native="this.selected = null"  :options="fieldOfStudies" @input="updateSelect('fieldOfStudyId', 'id', $event)"
+						<v-select 
+						label="discipline" 
+						@click.native="this.selected = null"  
+						:options="fieldOfStudies" 
+						@input="updateSelect('fieldOfStudyId', 'id', $event)"
 						class="csu-form-input">
 						</v-select>
 					</div>
