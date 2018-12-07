@@ -20,10 +20,12 @@ class Student_Backgrounds_Template_Northridge_TableSeeder extends Seeder
 
         foreach ($industry_path as $row) {
             $studentBackground = new StudentBackground();
-            $studentBackground->id = $row->id;
+            $studentBackground->id = $row->student_background_id;
             $studentBackground->university_major_id = $row->university_majors_id;
             $studentBackground->age_range_id = $row->age_range_id;
             $studentBackground->education_level = $row->entry_stat;
+            $studentBackground->annual_earnings_id = $row->annual_earnings_during_school_id; // during school
+            $studentBackground->annual_financial_aid_id = $row->annual_financial_aid_id;
             $studentBackground->save();
         }
     }

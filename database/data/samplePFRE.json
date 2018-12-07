@@ -14,7 +14,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 1,
+        "investment_id": 1,
         "age_range_id": 1
     },
     {
@@ -32,7 +32,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 2,
+        "investment_id": 2,
         "age_range_id": 1
     },
     {
@@ -50,7 +50,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 3,
+        "investment_id": 3,
         "age_range_id": 1
     },
     {
@@ -68,7 +68,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 4,
+        "investment_id": 4,
         "age_range_id": 1
     },
     {
@@ -86,7 +86,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 5,
+        "investment_id": 5,
         "age_range_id": 1
     },
     {
@@ -104,7 +104,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 6,
+        "investment_id": 6,
         "age_range_id": 2
     },
     {
@@ -122,7 +122,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 7,
+        "investment_id": 7,
         "age_range_id": 2
     },
     {
@@ -140,7 +140,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 8,
+        "investment_id": 8,
         "age_range_id": 2
     },
     {
@@ -158,7 +158,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 9,
+        "investment_id": 9,
         "age_range_id": 2
     },
     {
@@ -176,7 +176,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 10,
+        "investment_id": 10,
         "age_range_id": 2
     },
     {
@@ -194,7 +194,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 11,
+        "investment_id": 11,
         "age_range_id": 3
     },
     {
@@ -212,7 +212,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 12,
+        "investment_id": 12,
         "age_range_id": 3
     },
     {
@@ -230,7 +230,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 13,
+        "investment_id": 13,
         "age_range_id": 3
     },
     {
@@ -248,7 +248,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 14,
+        "investment_id": 14,
         "age_range_id": 3
     },
     {
@@ -266,7 +266,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 15,
+        "investment_id": 15,
         "age_range_id": 3
     },
     {
@@ -284,7 +284,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 16,
+        "investment_id": 16,
         "age_range_id": 4
     },
     {
@@ -302,7 +302,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 17,
+        "investment_id": 17,
         "age_range_id": 4
     },
     {
@@ -320,7 +320,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 18,
+        "investment_id": 18,
         "age_range_id": 4
     },
     {
@@ -338,7 +338,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 19,
+        "investment_id": 19,
         "age_range_id": 4
     },
     {
@@ -356,7 +356,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 20,
+        "investment_id": 20,
         "age_range_id": 4
     },
     {
@@ -374,7 +374,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 21,
+        "investment_id": 21,
         "age_range_id": 5
     },
     {
@@ -392,7 +392,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 22,
+        "investment_id": 22,
         "age_range_id": 5
     },
     {
@@ -410,7 +410,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 23,
+        "investment_id": 23,
         "age_range_id": 5
     },
     {
@@ -428,7 +428,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 24,
+        "investment_id": 24,
         "age_range_id": 5
     },
     {
@@ -446,7 +446,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 25,
+        "investment_id": 25,
         "age_range_id": 5
     },
     {
@@ -464,7 +464,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 26,
+        "investment_id": 26,
         "age_range_id": 1
     },
     {
@@ -482,7 +482,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 27,
+        "investment_id": 27,
         "age_range_id": 1
     },
     {
@@ -500,7 +500,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 28,
+        "investment_id": 28,
         "age_range_id": 1
     },
     {
@@ -518,7 +518,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 29,
+        "investment_id": 29,
         "age_range_id": 1
     },
     {
@@ -536,7 +536,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 30,
+        "investment_id": 30,
         "age_range_id": 1
     },
     {
@@ -554,7 +554,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 31,
+        "investment_id": 31,
         "age_range_id": 2
     },
     {
@@ -572,7 +572,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 32,
+        "investment_id": 32,
         "age_range_id": 2
     },
     {
@@ -590,7 +590,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 33,
+        "investment_id": 33,
         "age_range_id": 2
     },
     {
@@ -608,7 +608,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 34,
+        "investment_id": 34,
         "age_range_id": 2
     },
     {
@@ -626,7 +626,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 35,
+        "investment_id": 35,
         "age_range_id": 2
     },
     {
@@ -644,7 +644,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 36,
+        "investment_id": 36,
         "age_range_id": 3
     },
     {
@@ -662,7 +662,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 37,
+        "investment_id": 37,
         "age_range_id": 3
     },
     {
@@ -680,7 +680,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 38,
+        "investment_id": 38,
         "age_range_id": 3
     },
     {
@@ -698,7 +698,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 39,
+        "investment_id": 39,
         "age_range_id": 3
     },
     {
@@ -716,7 +716,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 40,
+        "investment_id": 40,
         "age_range_id": 3
     },
     {
@@ -734,7 +734,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 41,
+        "investment_id": 41,
         "age_range_id": 4
     },
     {
@@ -752,7 +752,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 42,
+        "investment_id": 42,
         "age_range_id": 4
     },
     {
@@ -770,7 +770,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 43,
+        "investment_id": 43,
         "age_range_id": 4
     },
     {
@@ -788,7 +788,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 44,
+        "investment_id": 44,
         "age_range_id": 4
     },
     {
@@ -806,7 +806,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 45,
+        "investment_id": 45,
         "age_range_id": 4
     },
     {
@@ -824,7 +824,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 46,
+        "investment_id": 46,
         "age_range_id": 5
     },
     {
@@ -842,7 +842,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 47,
+        "investment_id": 47,
         "age_range_id": 5
     },
     {
@@ -860,7 +860,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 48,
+        "investment_id": 48,
         "age_range_id": 5
     },
     {
@@ -878,7 +878,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 49,
+        "investment_id": 49,
         "age_range_id": 5
     },
     {
@@ -896,7 +896,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 50,
+        "investment_id": 50,
         "age_range_id": 5
     },
     {
@@ -914,7 +914,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 51,
+        "investment_id": 51,
         "age_range_id": 1
     },
     {
@@ -932,7 +932,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 52,
+        "investment_id": 52,
         "age_range_id": 1
     },
     {
@@ -950,7 +950,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 53,
+        "investment_id": 53,
         "age_range_id": 1
     },
     {
@@ -968,7 +968,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 54,
+        "investment_id": 54,
         "age_range_id": 1
     },
     {
@@ -986,7 +986,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 55,
+        "investment_id": 55,
         "age_range_id": 1
     },
     {
@@ -1004,7 +1004,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 56,
+        "investment_id": 56,
         "age_range_id": 2
     },
     {
@@ -1022,7 +1022,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 57,
+        "investment_id": 57,
         "age_range_id": 2
     },
     {
@@ -1040,7 +1040,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 58,
+        "investment_id": 58,
         "age_range_id": 2
     },
     {
@@ -1058,7 +1058,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 59,
+        "investment_id": 59,
         "age_range_id": 2
     },
     {
@@ -1076,7 +1076,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 60,
+        "investment_id": 60,
         "age_range_id": 2
     },
     {
@@ -1094,7 +1094,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 61,
+        "investment_id": 61,
         "age_range_id": 3
     },
     {
@@ -1112,7 +1112,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 62,
+        "investment_id": 62,
         "age_range_id": 3
     },
     {
@@ -1130,7 +1130,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 63,
+        "investment_id": 63,
         "age_range_id": 3
     },
     {
@@ -1148,7 +1148,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 64,
+        "investment_id": 64,
         "age_range_id": 3
     },
     {
@@ -1166,7 +1166,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 65,
+        "investment_id": 65,
         "age_range_id": 3
     },
     {
@@ -1184,7 +1184,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 66,
+        "investment_id": 66,
         "age_range_id": 4
     },
     {
@@ -1202,7 +1202,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 67,
+        "investment_id": 67,
         "age_range_id": 4
     },
     {
@@ -1220,7 +1220,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 68,
+        "investment_id": 68,
         "age_range_id": 4
     },
     {
@@ -1238,7 +1238,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 69,
+        "investment_id": 69,
         "age_range_id": 4
     },
     {
@@ -1256,7 +1256,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 70,
+        "investment_id": 70,
         "age_range_id": 4
     },
     {
@@ -1274,7 +1274,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 71,
+        "investment_id": 71,
         "age_range_id": 5
     },
     {
@@ -1292,7 +1292,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 72,
+        "investment_id": 72,
         "age_range_id": 5
     },
     {
@@ -1310,7 +1310,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 73,
+        "investment_id": 73,
         "age_range_id": 5
     },
     {
@@ -1328,7 +1328,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 74,
+        "investment_id": 74,
         "age_range_id": 5
     },
     {
@@ -1346,7 +1346,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 75,
+        "investment_id": 75,
         "age_range_id": 5
     },
     {
@@ -1364,7 +1364,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 76,
+        "investment_id": 76,
         "age_range_id": 1
     },
     {
@@ -1382,7 +1382,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 77,
+        "investment_id": 77,
         "age_range_id": 1
     },
     {
@@ -1400,7 +1400,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 78,
+        "investment_id": 78,
         "age_range_id": 1
     },
     {
@@ -1418,7 +1418,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 79,
+        "investment_id": 79,
         "age_range_id": 1
     },
     {
@@ -1436,7 +1436,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 80,
+        "investment_id": 80,
         "age_range_id": 1
     },
     {
@@ -1454,7 +1454,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 81,
+        "investment_id": 81,
         "age_range_id": 2
     },
     {
@@ -1472,7 +1472,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 82,
+        "investment_id": 82,
         "age_range_id": 2
     },
     {
@@ -1490,7 +1490,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 83,
+        "investment_id": 83,
         "age_range_id": 2
     },
     {
@@ -1508,7 +1508,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 84,
+        "investment_id": 84,
         "age_range_id": 2
     },
     {
@@ -1526,7 +1526,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 85,
+        "investment_id": 85,
         "age_range_id": 2
     },
     {
@@ -1544,7 +1544,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 86,
+        "investment_id": 86,
         "age_range_id": 3
     },
     {
@@ -1562,7 +1562,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 87,
+        "investment_id": 87,
         "age_range_id": 3
     },
     {
@@ -1580,7 +1580,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 88,
+        "investment_id": 88,
         "age_range_id": 3
     },
     {
@@ -1598,7 +1598,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 89,
+        "investment_id": 89,
         "age_range_id": 3
     },
     {
@@ -1616,7 +1616,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 90,
+        "investment_id": 90,
         "age_range_id": 3
     },
     {
@@ -1634,7 +1634,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 91,
+        "investment_id": 91,
         "age_range_id": 4
     },
     {
@@ -1652,7 +1652,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 92,
+        "investment_id": 92,
         "age_range_id": 4
     },
     {
@@ -1670,7 +1670,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 93,
+        "investment_id": 93,
         "age_range_id": 4
     },
     {
@@ -1688,7 +1688,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 94,
+        "investment_id": 94,
         "age_range_id": 4
     },
     {
@@ -1706,7 +1706,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 95,
+        "investment_id": 95,
         "age_range_id": 4
     },
     {
@@ -1724,7 +1724,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 96,
+        "investment_id": 96,
         "age_range_id": 5
     },
     {
@@ -1742,7 +1742,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 97,
+        "investment_id": 97,
         "age_range_id": 5
     },
     {
@@ -1760,7 +1760,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 98,
+        "investment_id": 98,
         "age_range_id": 5
     },
     {
@@ -1778,7 +1778,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 99,
+        "investment_id": 99,
         "age_range_id": 5
     },
     {
@@ -1796,7 +1796,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 100,
+        "investment_id": 100,
         "age_range_id": 5
     },
     {
@@ -1814,7 +1814,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 101,
+        "investment_id": 101,
         "age_range_id": 1
     },
     {
@@ -1832,7 +1832,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 102,
+        "investment_id": 102,
         "age_range_id": 1
     },
     {
@@ -1850,7 +1850,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 103,
+        "investment_id": 103,
         "age_range_id": 1
     },
     {
@@ -1868,7 +1868,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 104,
+        "investment_id": 104,
         "age_range_id": 1
     },
     {
@@ -1886,7 +1886,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 105,
+        "investment_id": 105,
         "age_range_id": 1
     },
     {
@@ -1904,7 +1904,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 106,
+        "investment_id": 106,
         "age_range_id": 2
     },
     {
@@ -1922,7 +1922,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 107,
+        "investment_id": 107,
         "age_range_id": 2
     },
     {
@@ -1940,7 +1940,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 108,
+        "investment_id": 108,
         "age_range_id": 2
     },
     {
@@ -1958,7 +1958,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 109,
+        "investment_id": 109,
         "age_range_id": 2
     },
     {
@@ -1976,7 +1976,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 110,
+        "investment_id": 110,
         "age_range_id": 2
     },
     {
@@ -1994,7 +1994,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 111,
+        "investment_id": 111,
         "age_range_id": 3
     },
     {
@@ -2012,7 +2012,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 112,
+        "investment_id": 112,
         "age_range_id": 3
     },
     {
@@ -2030,7 +2030,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 113,
+        "investment_id": 113,
         "age_range_id": 3
     },
     {
@@ -2048,7 +2048,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 114,
+        "investment_id": 114,
         "age_range_id": 3
     },
     {
@@ -2066,7 +2066,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 115,
+        "investment_id": 115,
         "age_range_id": 3
     },
     {
@@ -2084,7 +2084,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 116,
+        "investment_id": 116,
         "age_range_id": 4
     },
     {
@@ -2102,7 +2102,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 117,
+        "investment_id": 117,
         "age_range_id": 4
     },
     {
@@ -2120,7 +2120,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 118,
+        "investment_id": 118,
         "age_range_id": 4
     },
     {
@@ -2138,7 +2138,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 119,
+        "investment_id": 119,
         "age_range_id": 4
     },
     {
@@ -2156,7 +2156,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 120,
+        "investment_id": 120,
         "age_range_id": 4
     },
     {
@@ -2174,7 +2174,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 121,
+        "investment_id": 121,
         "age_range_id": 5
     },
     {
@@ -2192,7 +2192,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 122,
+        "investment_id": 122,
         "age_range_id": 5
     },
     {
@@ -2210,7 +2210,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 123,
+        "investment_id": 123,
         "age_range_id": 5
     },
     {
@@ -2228,7 +2228,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 124,
+        "investment_id": 124,
         "age_range_id": 5
     },
     {
@@ -2246,7 +2246,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 125,
+        "investment_id": 125,
         "age_range_id": 5
     },
     {
@@ -2264,7 +2264,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 126,
+        "investment_id": 126,
         "age_range_id": 1
     },
     {
@@ -2282,7 +2282,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 127,
+        "investment_id": 127,
         "age_range_id": 1
     },
     {
@@ -2300,7 +2300,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 128,
+        "investment_id": 128,
         "age_range_id": 1
     },
     {
@@ -2318,7 +2318,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 129,
+        "investment_id": 129,
         "age_range_id": 1
     },
     {
@@ -2336,7 +2336,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 130,
+        "investment_id": 130,
         "age_range_id": 1
     },
     {
@@ -2354,7 +2354,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 131,
+        "investment_id": 131,
         "age_range_id": 2
     },
     {
@@ -2372,7 +2372,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 132,
+        "investment_id": 132,
         "age_range_id": 2
     },
     {
@@ -2390,7 +2390,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 133,
+        "investment_id": 133,
         "age_range_id": 2
     },
     {
@@ -2408,7 +2408,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 134,
+        "investment_id": 134,
         "age_range_id": 2
     },
     {
@@ -2426,7 +2426,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 135,
+        "investment_id": 135,
         "age_range_id": 2
     },
     {
@@ -2444,7 +2444,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 136,
+        "investment_id": 136,
         "age_range_id": 3
     },
     {
@@ -2462,7 +2462,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 137,
+        "investment_id": 137,
         "age_range_id": 3
     },
     {
@@ -2480,7 +2480,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 138,
+        "investment_id": 138,
         "age_range_id": 3
     },
     {
@@ -2498,7 +2498,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 139,
+        "investment_id": 139,
         "age_range_id": 3
     },
     {
@@ -2516,7 +2516,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 140,
+        "investment_id": 140,
         "age_range_id": 3
     },
     {
@@ -2534,7 +2534,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 141,
+        "investment_id": 141,
         "age_range_id": 4
     },
     {
@@ -2552,7 +2552,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 142,
+        "investment_id": 142,
         "age_range_id": 4
     },
     {
@@ -2570,7 +2570,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 143,
+        "investment_id": 143,
         "age_range_id": 4
     },
     {
@@ -2588,7 +2588,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 144,
+        "investment_id": 144,
         "age_range_id": 4
     },
     {
@@ -2606,7 +2606,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 145,
+        "investment_id": 145,
         "age_range_id": 4
     },
     {
@@ -2624,7 +2624,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 146,
+        "investment_id": 146,
         "age_range_id": 5
     },
     {
@@ -2642,7 +2642,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 147,
+        "investment_id": 147,
         "age_range_id": 5
     },
     {
@@ -2660,7 +2660,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 148,
+        "investment_id": 148,
         "age_range_id": 5
     },
     {
@@ -2678,7 +2678,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 149,
+        "investment_id": 149,
         "age_range_id": 5
     },
     {
@@ -2696,7 +2696,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 150,
+        "investment_id": 150,
         "age_range_id": 5
     },
     {
@@ -2714,7 +2714,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 151,
+        "investment_id": 151,
         "age_range_id": 1
     },
     {
@@ -2732,7 +2732,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 152,
+        "investment_id": 152,
         "age_range_id": 1
     },
     {
@@ -2750,7 +2750,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 153,
+        "investment_id": 153,
         "age_range_id": 1
     },
     {
@@ -2768,7 +2768,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 154,
+        "investment_id": 154,
         "age_range_id": 1
     },
     {
@@ -2786,7 +2786,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 155,
+        "investment_id": 155,
         "age_range_id": 1
     },
     {
@@ -2804,7 +2804,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 156,
+        "investment_id": 156,
         "age_range_id": 2
     },
     {
@@ -2822,7 +2822,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 157,
+        "investment_id": 157,
         "age_range_id": 2
     },
     {
@@ -2840,7 +2840,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 158,
+        "investment_id": 158,
         "age_range_id": 2
     },
     {
@@ -2858,7 +2858,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 159,
+        "investment_id": 159,
         "age_range_id": 2
     },
     {
@@ -2876,7 +2876,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 160,
+        "investment_id": 160,
         "age_range_id": 2
     },
     {
@@ -2894,7 +2894,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 161,
+        "investment_id": 161,
         "age_range_id": 3
     },
     {
@@ -2912,7 +2912,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 162,
+        "investment_id": 162,
         "age_range_id": 3
     },
     {
@@ -2930,7 +2930,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 163,
+        "investment_id": 163,
         "age_range_id": 3
     },
     {
@@ -2948,7 +2948,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 164,
+        "investment_id": 164,
         "age_range_id": 3
     },
     {
@@ -2966,7 +2966,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 165,
+        "investment_id": 165,
         "age_range_id": 3
     },
     {
@@ -2984,7 +2984,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 166,
+        "investment_id": 166,
         "age_range_id": 4
     },
     {
@@ -3002,7 +3002,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 167,
+        "investment_id": 167,
         "age_range_id": 4
     },
     {
@@ -3020,7 +3020,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 168,
+        "investment_id": 168,
         "age_range_id": 4
     },
     {
@@ -3038,7 +3038,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 169,
+        "investment_id": 169,
         "age_range_id": 4
     },
     {
@@ -3056,7 +3056,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 170,
+        "investment_id": 170,
         "age_range_id": 4
     },
     {
@@ -3074,7 +3074,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 171,
+        "investment_id": 171,
         "age_range_id": 5
     },
     {
@@ -3092,7 +3092,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 172,
+        "investment_id": 172,
         "age_range_id": 5
     },
     {
@@ -3110,7 +3110,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 173,
+        "investment_id": 173,
         "age_range_id": 5
     },
     {
@@ -3128,7 +3128,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 174,
+        "investment_id": 174,
         "age_range_id": 5
     },
     {
@@ -3146,7 +3146,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 175,
+        "investment_id": 175,
         "age_range_id": 5
     },
     {
@@ -3164,7 +3164,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 176,
+        "investment_id": 176,
         "age_range_id": 1
     },
     {
@@ -3182,7 +3182,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 177,
+        "investment_id": 177,
         "age_range_id": 1
     },
     {
@@ -3200,7 +3200,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 178,
+        "investment_id": 178,
         "age_range_id": 1
     },
     {
@@ -3218,7 +3218,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 179,
+        "investment_id": 179,
         "age_range_id": 1
     },
     {
@@ -3236,7 +3236,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 180,
+        "investment_id": 180,
         "age_range_id": 1
     },
     {
@@ -3254,7 +3254,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 181,
+        "investment_id": 181,
         "age_range_id": 2
     },
     {
@@ -3272,7 +3272,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 182,
+        "investment_id": 182,
         "age_range_id": 2
     },
     {
@@ -3290,7 +3290,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 183,
+        "investment_id": 183,
         "age_range_id": 2
     },
     {
@@ -3308,7 +3308,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 184,
+        "investment_id": 184,
         "age_range_id": 2
     },
     {
@@ -3326,7 +3326,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 185,
+        "investment_id": 185,
         "age_range_id": 2
     },
     {
@@ -3344,7 +3344,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 186,
+        "investment_id": 186,
         "age_range_id": 3
     },
     {
@@ -3362,7 +3362,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 187,
+        "investment_id": 187,
         "age_range_id": 3
     },
     {
@@ -3380,7 +3380,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 188,
+        "investment_id": 188,
         "age_range_id": 3
     },
     {
@@ -3398,7 +3398,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 189,
+        "investment_id": 189,
         "age_range_id": 3
     },
     {
@@ -3416,7 +3416,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 190,
+        "investment_id": 190,
         "age_range_id": 3
     },
     {
@@ -3434,7 +3434,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 191,
+        "investment_id": 191,
         "age_range_id": 4
     },
     {
@@ -3452,7 +3452,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 192,
+        "investment_id": 192,
         "age_range_id": 3
     },
     {
@@ -3470,7 +3470,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 193,
+        "investment_id": 193,
         "age_range_id": 3
     },
     {
@@ -3488,7 +3488,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 194,
+        "investment_id": 194,
         "age_range_id": 3
     },
     {
@@ -3506,7 +3506,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 195,
+        "investment_id": 195,
         "age_range_id": 3
     },
     {
@@ -3524,7 +3524,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 196,
+        "investment_id": 196,
         "age_range_id": 5
     },
     {
@@ -3542,7 +3542,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 197,
+        "investment_id": 197,
         "age_range_id": 5
     },
     {
@@ -3560,7 +3560,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 198,
+        "investment_id": 198,
         "age_range_id": 5
     },
     {
@@ -3578,7 +3578,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 199,
+        "investment_id": 199,
         "age_range_id": 5
     },
     {
@@ -3596,7 +3596,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 200,
+        "investment_id": 200,
         "age_range_id": 5
     },
     {
@@ -3614,7 +3614,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 201,
+        "investment_id": 201,
         "age_range_id": 1
     },
     {
@@ -3632,7 +3632,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 202,
+        "investment_id": 202,
         "age_range_id": 1
     },
     {
@@ -3650,7 +3650,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 203,
+        "investment_id": 203,
         "age_range_id": 1
     },
     {
@@ -3668,7 +3668,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 204,
+        "investment_id": 204,
         "age_range_id": 1
     },
     {
@@ -3686,7 +3686,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 205,
+        "investment_id": 205,
         "age_range_id": 1
     },
     {
@@ -3704,7 +3704,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 206,
+        "investment_id": 206,
         "age_range_id": 2
     },
     {
@@ -3722,7 +3722,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 207,
+        "investment_id": 207,
         "age_range_id": 2
     },
     {
@@ -3740,7 +3740,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 208,
+        "investment_id": 208,
         "age_range_id": 2
     },
     {
@@ -3758,7 +3758,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 209,
+        "investment_id": 209,
         "age_range_id": 2
     },
     {
@@ -3776,7 +3776,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 210,
+        "investment_id": 210,
         "age_range_id": 2
     },
     {
@@ -3794,7 +3794,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 211,
+        "investment_id": 211,
         "age_range_id": 3
     },
     {
@@ -3812,7 +3812,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 212,
+        "investment_id": 212,
         "age_range_id": 3
     },
     {
@@ -3830,7 +3830,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 213,
+        "investment_id": 213,
         "age_range_id": 3
     },
     {
@@ -3848,7 +3848,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 214,
+        "investment_id": 214,
         "age_range_id": 3
     },
     {
@@ -3866,7 +3866,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 215,
+        "investment_id": 215,
         "age_range_id": 3
     },
     {
@@ -3884,7 +3884,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 216,
+        "investment_id": 216,
         "age_range_id": 4
     },
     {
@@ -3902,7 +3902,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 217,
+        "investment_id": 217,
         "age_range_id": 4
     },
     {
@@ -3920,7 +3920,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 218,
+        "investment_id": 218,
         "age_range_id": 4
     },
     {
@@ -3938,7 +3938,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 219,
+        "investment_id": 219,
         "age_range_id": 4
     },
     {
@@ -3956,7 +3956,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 220,
+        "investment_id": 220,
         "age_range_id": 4
     },
     {
@@ -3974,7 +3974,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 221,
+        "investment_id": 221,
         "age_range_id": 5
     },
     {
@@ -3992,7 +3992,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 222,
+        "investment_id": 222,
         "age_range_id": 5
     },
     {
@@ -4010,7 +4010,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 223,
+        "investment_id": 223,
         "age_range_id": 5
     },
     {
@@ -4028,7 +4028,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 224,
+        "investment_id": 224,
         "age_range_id": 5
     },
     {
@@ -4046,7 +4046,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 225,
+        "investment_id": 225,
         "age_range_id": 5
     },
     {
@@ -4064,7 +4064,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 226,
+        "investment_id": 226,
         "age_range_id": 1
     },
     {
@@ -4082,7 +4082,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 227,
+        "investment_id": 227,
         "age_range_id": 1
     },
     {
@@ -4100,7 +4100,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 228,
+        "investment_id": 228,
         "age_range_id": 1
     },
     {
@@ -4118,7 +4118,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 229,
+        "investment_id": 229,
         "age_range_id": 1
     },
     {
@@ -4136,7 +4136,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 230,
+        "investment_id": 230,
         "age_range_id": 1
     },
     {
@@ -4154,7 +4154,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 231,
+        "investment_id": 231,
         "age_range_id": 2
     },
     {
@@ -4172,7 +4172,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 232,
+        "investment_id": 232,
         "age_range_id": 2
     },
     {
@@ -4190,7 +4190,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 233,
+        "investment_id": 233,
         "age_range_id": 2
     },
     {
@@ -4208,7 +4208,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 234,
+        "investment_id": 234,
         "age_range_id": 2
     },
     {
@@ -4226,7 +4226,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 235,
+        "investment_id": 235,
         "age_range_id": 2
     },
     {
@@ -4244,7 +4244,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 236,
+        "investment_id": 236,
         "age_range_id": 3
     },
     {
@@ -4262,7 +4262,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 237,
+        "investment_id": 237,
         "age_range_id": 3
     },
     {
@@ -4280,7 +4280,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 238,
+        "investment_id": 238,
         "age_range_id": 3
     },
     {
@@ -4298,7 +4298,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 239,
+        "investment_id": 239,
         "age_range_id": 3
     },
     {
@@ -4316,7 +4316,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 240,
+        "investment_id": 240,
         "age_range_id": 3
     },
     {
@@ -4334,7 +4334,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 241,
+        "investment_id": 241,
         "age_range_id": 4
     },
     {
@@ -4352,7 +4352,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 242,
+        "investment_id": 242,
         "age_range_id": 4
     },
     {
@@ -4370,7 +4370,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 243,
+        "investment_id": 243,
         "age_range_id": 4
     },
     {
@@ -4388,7 +4388,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 244,
+        "investment_id": 244,
         "age_range_id": 4
     },
     {
@@ -4406,7 +4406,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 245,
+        "investment_id": 245,
         "age_range_id": 4
     },
     {
@@ -4424,7 +4424,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 246,
+        "investment_id": 246,
         "age_range_id": 5
     },
     {
@@ -4442,7 +4442,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 247,
+        "investment_id": 247,
         "age_range_id": 5
     },
     {
@@ -4460,7 +4460,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 248,
+        "investment_id": 248,
         "age_range_id": 5
     },
     {
@@ -4478,7 +4478,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 249,
+        "investment_id": 249,
         "age_range_id": 5
     },
     {
@@ -4496,7 +4496,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 250,
+        "investment_id": 250,
         "age_range_id": 5
     },
     {
@@ -4514,7 +4514,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 251,
+        "investment_id": 251,
         "age_range_id": 1
     },
     {
@@ -4532,7 +4532,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 252,
+        "investment_id": 252,
         "age_range_id": 1
     },
     {
@@ -4550,7 +4550,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 253,
+        "investment_id": 253,
         "age_range_id": 1
     },
     {
@@ -4568,7 +4568,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 254,
+        "investment_id": 254,
         "age_range_id": 1
     },
     {
@@ -4586,7 +4586,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 255,
+        "investment_id": 255,
         "age_range_id": 1
     },
     {
@@ -4604,7 +4604,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 256,
+        "investment_id": 256,
         "age_range_id": 2
     },
     {
@@ -4622,7 +4622,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 257,
+        "investment_id": 257,
         "age_range_id": 2
     },
     {
@@ -4640,7 +4640,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 258,
+        "investment_id": 258,
         "age_range_id": 2
     },
     {
@@ -4658,7 +4658,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 259,
+        "investment_id": 259,
         "age_range_id": 2
     },
     {
@@ -4676,7 +4676,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 260,
+        "investment_id": 260,
         "age_range_id": 2
     },
     {
@@ -4694,7 +4694,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 261,
+        "investment_id": 261,
         "age_range_id": 3
     },
     {
@@ -4712,7 +4712,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 262,
+        "investment_id": 262,
         "age_range_id": 3
     },
     {
@@ -4730,7 +4730,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 263,
+        "investment_id": 263,
         "age_range_id": 3
     },
     {
@@ -4748,7 +4748,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 264,
+        "investment_id": 264,
         "age_range_id": 3
     },
     {
@@ -4766,7 +4766,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 265,
+        "investment_id": 265,
         "age_range_id": 3
     },
     {
@@ -4784,7 +4784,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 266,
+        "investment_id": 266,
         "age_range_id": 4
     },
     {
@@ -4802,7 +4802,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 267,
+        "investment_id": 267,
         "age_range_id": 4
     },
     {
@@ -4820,7 +4820,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 268,
+        "investment_id": 268,
         "age_range_id": 4
     },
     {
@@ -4838,7 +4838,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 269,
+        "investment_id": 269,
         "age_range_id": 4
     },
     {
@@ -4856,7 +4856,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 270,
+        "investment_id": 270,
         "age_range_id": 4
     },
     {
@@ -4874,7 +4874,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 271,
+        "investment_id": 271,
         "age_range_id": 5
     },
     {
@@ -4892,7 +4892,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 272,
+        "investment_id": 272,
         "age_range_id": 5
     },
     {
@@ -4910,7 +4910,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 273,
+        "investment_id": 273,
         "age_range_id": 5
     },
     {
@@ -4928,7 +4928,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 274,
+        "investment_id": 274,
         "age_range_id": 5
     },
     {
@@ -4946,7 +4946,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 275,
+        "investment_id": 275,
         "age_range_id": 5
     },
     {
@@ -4964,7 +4964,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 276,
+        "investment_id": 276,
         "age_range_id": 1
     },
     {
@@ -4982,7 +4982,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 277,
+        "investment_id": 277,
         "age_range_id": 1
     },
     {
@@ -5000,7 +5000,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 278,
+        "investment_id": 278,
         "age_range_id": 1
     },
     {
@@ -5018,7 +5018,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 279,
+        "investment_id": 279,
         "age_range_id": 1
     },
     {
@@ -5036,7 +5036,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 280,
+        "investment_id": 280,
         "age_range_id": 1
     },
     {
@@ -5054,7 +5054,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 281,
+        "investment_id": 281,
         "age_range_id": 2
     },
     {
@@ -5072,7 +5072,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 282,
+        "investment_id": 282,
         "age_range_id": 2
     },
     {
@@ -5090,7 +5090,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 283,
+        "investment_id": 283,
         "age_range_id": 2
     },
     {
@@ -5108,7 +5108,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 284,
+        "investment_id": 284,
         "age_range_id": 2
     },
     {
@@ -5126,7 +5126,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 285,
+        "investment_id": 285,
         "age_range_id": 2
     },
     {
@@ -5144,7 +5144,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 286,
+        "investment_id": 286,
         "age_range_id": 3
     },
     {
@@ -5162,7 +5162,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 287,
+        "investment_id": 287,
         "age_range_id": 3
     },
     {
@@ -5180,7 +5180,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 288,
+        "investment_id": 288,
         "age_range_id": 3
     },
     {
@@ -5198,7 +5198,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 289,
+        "investment_id": 289,
         "age_range_id": 3
     },
     {
@@ -5216,7 +5216,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 290,
+        "investment_id": 290,
         "age_range_id": 3
     },
     {
@@ -5234,7 +5234,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 291,
+        "investment_id": 291,
         "age_range_id": 4
     },
     {
@@ -5252,7 +5252,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 292,
+        "investment_id": 292,
         "age_range_id": 4
     },
     {
@@ -5270,7 +5270,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 293,
+        "investment_id": 293,
         "age_range_id": 4
     },
     {
@@ -5288,7 +5288,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 294,
+        "investment_id": 294,
         "age_range_id": 4
     },
     {
@@ -5306,7 +5306,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 295,
+        "investment_id": 295,
         "age_range_id": 4
     },
     {
@@ -5324,7 +5324,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 296,
+        "investment_id": 296,
         "age_range_id": 5
     },
     {
@@ -5342,7 +5342,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 297,
+        "investment_id": 297,
         "age_range_id": 5
     },
     {
@@ -5360,7 +5360,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 298,
+        "investment_id": 298,
         "age_range_id": 5
     },
     {
@@ -5378,7 +5378,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 299,
+        "investment_id": 299,
         "age_range_id": 5
     },
     {
@@ -5396,7 +5396,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 300,
+        "investment_id": 300,
         "age_range_id": 5
     },
     {
@@ -5414,7 +5414,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 301,
+        "investment_id": 301,
         "age_range_id": 1
     },
     {
@@ -5432,7 +5432,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 302,
+        "investment_id": 302,
         "age_range_id": 1
     },
     {
@@ -5450,7 +5450,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 303,
+        "investment_id": 303,
         "age_range_id": 1
     },
     {
@@ -5468,7 +5468,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 304,
+        "investment_id": 304,
         "age_range_id": 1
     },
     {
@@ -5486,7 +5486,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 305,
+        "investment_id": 305,
         "age_range_id": 1
     },
     {
@@ -5504,7 +5504,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 306,
+        "investment_id": 306,
         "age_range_id": 2
     },
     {
@@ -5522,7 +5522,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 307,
+        "investment_id": 307,
         "age_range_id": 2
     },
     {
@@ -5540,7 +5540,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 308,
+        "investment_id": 308,
         "age_range_id": 2
     },
     {
@@ -5558,7 +5558,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 309,
+        "investment_id": 309,
         "age_range_id": 2
     },
     {
@@ -5576,7 +5576,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 310,
+        "investment_id": 310,
         "age_range_id": 2
     },
     {
@@ -5594,7 +5594,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 311,
+        "investment_id": 311,
         "age_range_id": 3
     },
     {
@@ -5612,7 +5612,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 312,
+        "investment_id": 312,
         "age_range_id": 3
     },
     {
@@ -5630,7 +5630,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 313,
+        "investment_id": 313,
         "age_range_id": 3
     },
     {
@@ -5648,7 +5648,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 314,
+        "investment_id": 314,
         "age_range_id": 3
     },
     {
@@ -5666,7 +5666,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 315,
+        "investment_id": 315,
         "age_range_id": 3
     },
     {
@@ -5684,7 +5684,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 316,
+        "investment_id": 316,
         "age_range_id": 4
     },
     {
@@ -5702,7 +5702,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 317,
+        "investment_id": 317,
         "age_range_id": 4
     },
     {
@@ -5720,7 +5720,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 318,
+        "investment_id": 318,
         "age_range_id": 4
     },
     {
@@ -5738,7 +5738,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 319,
+        "investment_id": 319,
         "age_range_id": 4
     },
     {
@@ -5756,7 +5756,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 320,
+        "investment_id": 320,
         "age_range_id": 4
     },
     {
@@ -5774,7 +5774,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 321,
+        "investment_id": 321,
         "age_range_id": 5
     },
     {
@@ -5792,7 +5792,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 322,
+        "investment_id": 322,
         "age_range_id": 5
     },
     {
@@ -5810,7 +5810,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 323,
+        "investment_id": 323,
         "age_range_id": 5
     },
     {
@@ -5828,7 +5828,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 324,
+        "investment_id": 324,
         "age_range_id": 5
     },
     {
@@ -5846,7 +5846,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 325,
+        "investment_id": 325,
         "age_range_id": 5
     },
     {
@@ -5864,7 +5864,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 326,
+        "investment_id": 326,
         "age_range_id": 1
     },
     {
@@ -5882,7 +5882,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 327,
+        "investment_id": 327,
         "age_range_id": 1
     },
     {
@@ -5900,7 +5900,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 328,
+        "investment_id": 328,
         "age_range_id": 1
     },
     {
@@ -5918,7 +5918,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 329,
+        "investment_id": 329,
         "age_range_id": 1
     },
     {
@@ -5936,7 +5936,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 330,
+        "investment_id": 330,
         "age_range_id": 1
     },
     {
@@ -5954,7 +5954,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 331,
+        "investment_id": 331,
         "age_range_id": 2
     },
     {
@@ -5972,7 +5972,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 332,
+        "investment_id": 332,
         "age_range_id": 2
     },
     {
@@ -5990,7 +5990,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 333,
+        "investment_id": 333,
         "age_range_id": 2
     },
     {
@@ -6008,7 +6008,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 334,
+        "investment_id": 334,
         "age_range_id": 2
     },
     {
@@ -6026,7 +6026,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 335,
+        "investment_id": 335,
         "age_range_id": 2
     },
     {
@@ -6044,7 +6044,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 336,
+        "investment_id": 336,
         "age_range_id": 3
     },
     {
@@ -6062,7 +6062,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 337,
+        "investment_id": 337,
         "age_range_id": 3
     },
     {
@@ -6080,7 +6080,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 338,
+        "investment_id": 338,
         "age_range_id": 3
     },
     {
@@ -6098,7 +6098,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 339,
+        "investment_id": 339,
         "age_range_id": 3
     },
     {
@@ -6116,7 +6116,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 340,
+        "investment_id": 340,
         "age_range_id": 3
     },
     {
@@ -6134,7 +6134,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 341,
+        "investment_id": 341,
         "age_range_id": 4
     },
     {
@@ -6152,7 +6152,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 342,
+        "investment_id": 342,
         "age_range_id": 4
     },
     {
@@ -6170,7 +6170,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 343,
+        "investment_id": 343,
         "age_range_id": 4
     },
     {
@@ -6188,7 +6188,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 344,
+        "investment_id": 344,
         "age_range_id": 4
     },
     {
@@ -6206,7 +6206,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 345,
+        "investment_id": 345,
         "age_range_id": 4
     },
     {
@@ -6224,7 +6224,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 346,
+        "investment_id": 346,
         "age_range_id": 5
     },
     {
@@ -6242,7 +6242,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 347,
+        "investment_id": 347,
         "age_range_id": 5
     },
     {
@@ -6260,7 +6260,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 348,
+        "investment_id": 348,
         "age_range_id": 5
     },
     {
@@ -6278,7 +6278,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 349,
+        "investment_id": 349,
         "age_range_id": 5
     },
     {
@@ -6296,7 +6296,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 350,
+        "investment_id": 350,
         "age_range_id": 5
     },
     {
@@ -6314,7 +6314,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 351,
+        "investment_id": 351,
         "age_range_id": 1
     },
     {
@@ -6332,7 +6332,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 352,
+        "investment_id": 352,
         "age_range_id": 1
     },
     {
@@ -6350,7 +6350,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 353,
+        "investment_id": 353,
         "age_range_id": 1
     },
     {
@@ -6368,7 +6368,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 354,
+        "investment_id": 354,
         "age_range_id": 1
     },
     {
@@ -6386,7 +6386,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 355,
+        "investment_id": 355,
         "age_range_id": 1
     },
     {
@@ -6404,7 +6404,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 356,
+        "investment_id": 356,
         "age_range_id": 2
     },
     {
@@ -6422,7 +6422,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 357,
+        "investment_id": 357,
         "age_range_id": 2
     },
     {
@@ -6440,7 +6440,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 358,
+        "investment_id": 358,
         "age_range_id": 2
     },
     {
@@ -6458,7 +6458,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 359,
+        "investment_id": 359,
         "age_range_id": 2
     },
     {
@@ -6476,7 +6476,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 360,
+        "investment_id": 360,
         "age_range_id": 2
     },
     {
@@ -6494,7 +6494,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 361,
+        "investment_id": 361,
         "age_range_id": 3
     },
     {
@@ -6512,7 +6512,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 362,
+        "investment_id": 362,
         "age_range_id": 3
     },
     {
@@ -6530,7 +6530,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 363,
+        "investment_id": 363,
         "age_range_id": 3
     },
     {
@@ -6548,7 +6548,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 364,
+        "investment_id": 364,
         "age_range_id": 3
     },
     {
@@ -6566,7 +6566,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 365,
+        "investment_id": 365,
         "age_range_id": 3
     },
     {
@@ -6584,7 +6584,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 366,
+        "investment_id": 366,
         "age_range_id": 4
     },
     {
@@ -6602,7 +6602,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 367,
+        "investment_id": 367,
         "age_range_id": 4
     },
     {
@@ -6620,7 +6620,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 368,
+        "investment_id": 368,
         "age_range_id": 4
     },
     {
@@ -6638,7 +6638,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 369,
+        "investment_id": 369,
         "age_range_id": 4
     },
     {
@@ -6656,7 +6656,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 370,
+        "investment_id": 370,
         "age_range_id": 4
     },
     {
@@ -6674,7 +6674,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 371,
+        "investment_id": 371,
         "age_range_id": 5
     },
     {
@@ -6692,7 +6692,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 372,
+        "investment_id": 372,
         "age_range_id": 5
     },
     {
@@ -6710,7 +6710,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 373,
+        "investment_id": 373,
         "age_range_id": 5
     },
     {
@@ -6728,7 +6728,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 374,
+        "investment_id": 374,
         "age_range_id": 5
     },
     {
@@ -6746,7 +6746,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 375,
+        "investment_id": 375,
         "age_range_id": 5
     },
     {
@@ -6764,7 +6764,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 376,
+        "investment_id": 376,
         "age_range_id": 1
     },
     {
@@ -6782,7 +6782,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 377,
+        "investment_id": 377,
         "age_range_id": 1
     },
     {
@@ -6800,7 +6800,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 378,
+        "investment_id": 378,
         "age_range_id": 1
     },
     {
@@ -6818,7 +6818,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 379,
+        "investment_id": 379,
         "age_range_id": 1
     },
     {
@@ -6836,7 +6836,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 1,
         "university_majors_id": 81,
-        "id": 380,
+        "investment_id": 380,
         "age_range_id": 1
     },
     {
@@ -6854,7 +6854,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 381,
+        "investment_id": 381,
         "age_range_id": 2
     },
     {
@@ -6872,7 +6872,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 382,
+        "investment_id": 382,
         "age_range_id": 2
     },
     {
@@ -6890,7 +6890,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 383,
+        "investment_id": 383,
         "age_range_id": 2
     },
     {
@@ -6908,7 +6908,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 384,
+        "investment_id": 384,
         "age_range_id": 2
     },
     {
@@ -6926,7 +6926,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 2,
         "university_majors_id": 81,
-        "id": 385,
+        "investment_id": 385,
         "age_range_id": 2
     },
     {
@@ -6944,7 +6944,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 386,
+        "investment_id": 386,
         "age_range_id": 3
     },
     {
@@ -6962,7 +6962,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 387,
+        "investment_id": 387,
         "age_range_id": 3
     },
     {
@@ -6980,7 +6980,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 388,
+        "investment_id": 388,
         "age_range_id": 3
     },
     {
@@ -6998,7 +6998,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 389,
+        "investment_id": 389,
         "age_range_id": 3
     },
     {
@@ -7016,7 +7016,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 390,
+        "investment_id": 390,
         "age_range_id": 3
     },
     {
@@ -7034,7 +7034,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 4,
         "university_majors_id": 81,
-        "id": 391,
+        "investment_id": 391,
         "age_range_id": 4
     },
     {
@@ -7052,7 +7052,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 392,
+        "investment_id": 392,
         "age_range_id": 3
     },
     {
@@ -7070,7 +7070,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 393,
+        "investment_id": 393,
         "age_range_id": 3
     },
     {
@@ -7088,7 +7088,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 394,
+        "investment_id": 394,
         "age_range_id": 3
     },
     {
@@ -7106,7 +7106,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 3,
         "university_majors_id": 81,
-        "id": 395,
+        "investment_id": 395,
         "age_range_id": 3
     },
     {
@@ -7124,7 +7124,7 @@
         "annual_financial_aid_id": 1,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 396,
+        "investment_id": 396,
         "age_range_id": 5
     },
     {
@@ -7142,7 +7142,7 @@
         "annual_financial_aid_id": 2,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 397,
+        "investment_id": 397,
         "age_range_id": 5
     },
     {
@@ -7160,7 +7160,7 @@
         "annual_financial_aid_id": 3,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 398,
+        "investment_id": 398,
         "age_range_id": 5
     },
     {
@@ -7178,7 +7178,7 @@
         "annual_financial_aid_id": 4,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 399,
+        "investment_id": 399,
         "age_range_id": 5
     },
     {
@@ -7196,7 +7196,7 @@
         "annual_financial_aid_id": 5,
         "annual_earnings_during_school_id": 5,
         "university_majors_id": 81,
-        "id": 400,
+        "investment_id": 400,
         "age_range_id": 5
     }
 ]
