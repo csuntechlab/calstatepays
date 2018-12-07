@@ -20457,7 +20457,7 @@ label {
 .csu-form-input input[type="search"] {
   position: absolute;
   background: purple;
-  width: 80% !important;
+  width: 100% !important;
 }
 
 .csu-form-input .dropdown {
