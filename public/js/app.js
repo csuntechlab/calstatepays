@@ -70934,213 +70934,213 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'windowWidth'],
-    data: function data() {
-        return {
-            xAxis: ['2', '5', '10', '15'],
-            graphColors: {
-                color1: '#000',
-                color2: '#000',
-                color3: '#FFF'
-            }
-        };
-    },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-    components: {
-        'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-    },
-    computed: {
-        mastersEarnings: function mastersEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[0];
-            }
-            return null;
-        },
-        bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[1];
-            }
-            return null;
-        },
-        someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[2];
-            }
-            return null;
-        },
-        mobileYAxis: function mobileYAxis() {
-            var currentWidth = window.innerWidth;
-            if (currentWidth <= 750) {
-                return 90;
-            } else {
-                return 0;
-            }
-        },
-        toolTipTitles1: function toolTipTitles1() {
-            var title = "Some College";
-            if (this.educationLevel !== "allDegrees") {
-                title = "25th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles2: function toolTipTitles2() {
-            var title = "Bachelor's Degree";
-            if (this.educationLevel !== "allDegrees") {
-                title = "50th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles3: function toolTipTitles3() {
-            var title = "Post Bacc";
-            if (this.educationLevel !== "allDegrees") {
-                title = "75th Percentile";
-            }
-            return title;
-        },
-        toolColors1: function toolColors1() {
-            var color = '#476A6F';
-            if (this.educationLevel === 'someCollege') {
-                color = '#7E969A';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#EDAC17';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#55BE85';
-            }
-            return color;
-        },
-        toolColors2: function toolColors2() {
-            var color = '#EDAC17';
-            if (this.educationLevel === 'someCollege') {
-                color = '#476A6F';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#ECA400';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#2BAE67';
-            }
-            return color;
-        },
-        toolColors3: function toolColors3() {
-            var color = '#279D5D';
-            if (this.educationLevel === 'someCollege') {
-                color = '#2c4144';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#987100';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#1B6E41';
-            }
-            return color;
-        },
-        polar: function polar() {
-            return {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    },
-                    formatter: function formatter(params) {
-                        var colorSpan = function colorSpan(color) {
-                            return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
-                        };
-                        var rez = '<h6>' + params[0].axisValue + ' Years Out</h6>';
-                        params.forEach(function (item) {
-                            var val = '';
-                            //format data
-                            if (item.data > 999) {
-                                var strVal = item.data.toString();
-                                var first = strVal.slice(0, -3);
-                                var second = strVal.slice(-3);
-                                val = '$' + first + ',' + second;
-                            } else if (item.data === null) val = 'No Data';else val = '$' + item.data;
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	},
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		mobileYAxis: function mobileYAxis() {
+			var currentWidth = window.innerWidth;
+			if (currentWidth <= 750) {
+				return 90;
+			} else {
+				return 0;
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#EDAC17";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#55BE85";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
 
-                            var xx = '<h6>' + colorSpan(item.color) + ' ' + item.seriesName + ': ' + val + '</h6>';
-                            rez += xx;
-                        });
-                        return rez;
-                    }
-                },
-                xAxis: {
-                    name: "Years Out of College",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [10, 0, 0, 0]
-                    },
-                    data: this.xAxis,
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    axisLabel: {
-                        rotate: this.mobileYAxis,
-                        formatter: function formatter(value) {
-                            if (value > 999) {
-                                var strVal = value.toString();
-                                strVal = strVal.slice(0, -3);
-                                return '$' + strVal + 'k';
-                            } else return '$' + value;
-                        }
-                    },
-                    min: 0,
-                    max: 150000,
-                    axisLine: {
-                        show: false
-                    },
-                    splitNumber: 5,
-                    axisTick: {
-                        show: false
-                    }
-                },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors3
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors2
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors1
-                    }
-                }],
-                animationDuration: 2000
-            };
-            return null;
-        }
-    }
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: this.mobileYAxis,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					min: 0,
+					max: 150000,
+					axisLine: {
+						show: false
+					},
+					splitNumber: 5,
+					axisTick: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	}
 });
 
 /***/ }),
@@ -89338,242 +89338,242 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["majorData", "educationLevel", "windowWidth"],
-  data: function data() {
-    return {
-      xAxis: ["2", "5", "10", "15"],
-      graphColors: {
-        color1: "#000",
-        color2: "#000",
-        color3: "#FFF"
-      }
-    };
-  },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-  computed: {
-    mastersEarnings: function mastersEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[0];
-      }
-      return null;
-    },
-    bachelorsEarnings: function bachelorsEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[1];
-      }
-      return null;
-    },
-    someCollegeEarnings: function someCollegeEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[2];
-      }
-      return null;
-    },
-    chartDimensions: function chartDimensions() {
-      var currentWidth = window.innerWidth;
-      if (this.windowWidth >= 768 && this.windowWidth < 1000) {
-        return {
-          height: 400,
-          width: 710
-          // width: this.windowWidth / 1.75
-        };
-      } else if (this.windowWidth >= 540 && this.windowWidth < 768) {
-        return {
-          height: 400,
-          width: 490
-        };
-      } else {
-        return {
-          height: 400,
-          width: this.windowWidth - 48
-          // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
-        };
-      }
-    },
-    toolTipTitles1: function toolTipTitles1() {
-      var title = "Some College";
-      if (this.educationLevel !== "allDegrees") {
-        title = "25th Percentile";
-      }
-      return title;
-    },
-    toolTipTitles2: function toolTipTitles2() {
-      var title = "Bachelor's Degree";
-      if (this.educationLevel !== "allDegrees") {
-        title = "50th Percentile";
-      }
-      return title;
-    },
-    toolTipTitles3: function toolTipTitles3() {
-      var title = "Post Bacc";
-      if (this.educationLevel !== "allDegrees") {
-        title = "75th Percentile";
-      }
-      return title;
-    },
-    toolColors1: function toolColors1() {
-      var color = "#476A6F";
-      if (this.educationLevel === "someCollege") {
-        color = "#7E969A";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#F2C55C";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#3EFA94";
-      }
-      return color;
-    },
-    toolColors2: function toolColors2() {
-      var color = "#EDAC17";
-      if (this.educationLevel === "someCollege") {
-        color = "#476A6F";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#ECA400";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#2BAE67";
-      }
-      return color;
-    },
-    toolColors3: function toolColors3() {
-      var color = "#279D5D";
-      if (this.educationLevel === "someCollege") {
-        color = "#2c4144";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#987100";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#1B6E41";
-      }
-      return color;
-    },
-    polar: function polar() {
-      return {
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "cross"
-          },
-          position: function position(pos, params, dom, rect, size) {
-            // tooltip will be fixed on the right if mouse hovering on the left,
-            // and on the left if hovering on the right.
-            var obj = { top: "10%" };
-            obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
-            return obj;
-          },
-          formatter: function formatter(params) {
-            var colorSpan = function colorSpan(color) {
-              return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
-            };
-            var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
-            params.forEach(function (item) {
-              var val = "";
-              //format data
-              if (item.data > 999) {
-                var strVal = item.data.toString();
-                var first = strVal.slice(0, -3);
-                var second = strVal.slice(-3);
-                val = "$" + first + "," + second;
-              } else if (item.data === null) val = "No Data";else val = "$" + item.data;
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		chartDimensions: function chartDimensions() {
+			var currentWidth = window.innerWidth;
+			if (this.windowWidth >= 768 && this.windowWidth < 1000) {
+				return {
+					height: 400,
+					width: 710
+					// width: this.windowWidth / 1.75
+				};
+			} else if (this.windowWidth >= 540 && this.windowWidth < 768) {
+				return {
+					height: 400,
+					width: 490
+				};
+			} else {
+				return {
+					height: 400,
+					width: this.windowWidth - 48
+					// width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
+				};
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#F2C55C";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#3EFA94";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					},
+					position: function position(pos, params, dom, rect, size) {
+						// tooltip will be fixed on the right if mouse hovering on the left,
+						// and on the left if hovering on the right.
+						var obj = { top: "10%" };
+						obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+						return obj;
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
 
-              var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
-              rez += xx;
-            });
-            return rez;
-          }
-        },
-        xAxis: {
-          name: "Years Out of College",
-          nameLocation: "middle",
-          nameTextStyle: {
-            padding: [10, 0, 0, 0]
-          },
-          data: this.xAxis,
-          axisTick: {
-            show: false
-          },
-          axisLine: {
-            show: false
-          }
-        },
-        name: "Years Out of College",
-        nameLocation: "middle",
-        nameTextStyle: {
-          padding: [10, 0, 0, 0]
-        },
-        legend: {
-          data: ["line"]
-        },
-        yAxis: {
-          axisLabel: {
-            rotate: 90,
-            formatter: function formatter(value) {
-              if (value > 999) {
-                var strVal = value.toString();
-                strVal = strVal.slice(0, -3);
-                return "$" + strVal + "k";
-              } else return "$" + value;
-            }
-          },
-          splitNumber: 5,
-          min: 0,
-          max: 150000,
-          splitLine: {
-            show: true
-          },
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				name: "Years Out of College",
+				nameLocation: "middle",
+				nameTextStyle: {
+					padding: [10, 0, 0, 0]
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: 90,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					splitNumber: 5,
+					min: 0,
+					max: 150000,
+					splitLine: {
+						show: true
+					},
 
-          axisTick: {
-            show: false
-          },
-          axisLine: {
-            show: false
-          }
-        },
-        series: [{
-          type: "line",
-          name: this.toolTipTitles3,
-          data: this.mastersEarnings,
-          lineStyle: {
-            color: this.toolColors3,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors3
-          }
-        }, {
-          type: "line",
-          name: this.toolTipTitles2,
-          data: this.bachelorsEarnings,
-          lineStyle: {
-            color: this.toolColors2,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors2
-          }
-        }, {
-          type: "line",
-          name: this.toolTipTitles1,
-          data: this.someCollegeEarnings,
-          lineStyle: {
-            color: this.toolColors1,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors1
-          }
-        }],
-        animationDuration: 2000
-      };
-      return null;
-    }
-  },
-  components: {
-    chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-  }
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	},
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	}
 });
 
 /***/ }),
