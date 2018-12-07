@@ -77,9 +77,7 @@
 					window.scrollY + window.innerHeight <
 					document.body.clientHeight -
 					(document.getElementById("main-footer").clientHeight - 1000)
-				) {
-				
-					
+				) {	
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "5rem";
 				}
@@ -88,13 +86,12 @@
 					document.body.clientHeight -
 					(document.getElementById("main-footer").clientHeight -140)
 				) {
-					console.log("reached bottom");
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "11rem";
 				}
 				}
 				else {
-					addBtn.style.bottom = "7rem";
+					addBtn.style.position = "fixed";
 				}
 				
 			}

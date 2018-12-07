@@ -69855,17 +69855,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var addBtn = document.getElementById("compare-major-button");
 			if (window.innerWidth < 767) {
 				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 1000)) {
-
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "5rem";
 				}
 				if (window.scrollY + window.innerHeight > document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 140)) {
-					console.log("reached bottom");
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "11rem";
 				}
 			} else {
-				addBtn.style.bottom = "7rem";
+				addBtn.style.position = "fixed";
 			}
 		}
 	},
