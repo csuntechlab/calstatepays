@@ -18994,12 +18994,6 @@ body {
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 767px) {
-  .landing-page__seals {
-    margin-bottom: 3rem;
-  }
-}
-
 .text-gray {
   color: #777777;
 }
