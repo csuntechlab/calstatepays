@@ -26,10 +26,6 @@
     </div>
 </template>
 <script>
-/*
-    @click="displayModal = true; id=0;"
-    @click="displayModal = true ; id=70;"
-*/
 import powerBanner from '../../../components/research/power-banner'
 import powerUsersModal from '../../../components/research/power-users-modal'
 import ActiveCSUTile from '../../../components/research/active-csu-tile'
