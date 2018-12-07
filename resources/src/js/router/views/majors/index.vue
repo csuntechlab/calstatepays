@@ -76,7 +76,7 @@
 					if (
 					window.scrollY + window.innerHeight <
 					document.body.clientHeight -
-					document.getElementById("main-footer").clientHeight
+					(document.getElementById("main-footer").clientHeight - 1000)
 				) {
 				
 					
@@ -86,8 +86,9 @@
 				if (
 					window.scrollY + window.innerHeight >
 					document.body.clientHeight -
-					(document.getElementById("main-footer").clientHeight)
+					(document.getElementById("main-footer").clientHeight -140)
 				) {
+					console.log("reached bottom");
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "11rem";
 				}
