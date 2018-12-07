@@ -12,8 +12,8 @@
                     </div>
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
-                    <active-c-s-u-tile @click.native="openModal(universityById(0).id)" :campusImg="campus.AllCSU.img" :title="campus.AllCSU.title"/>
-                    <active-c-s-u-tile @click.native="openModal(universityById(70).id)" :campusImg="campus.CSUN.img" :title="universityById(70).name"/>
+                    <active-c-s-u-tile @click.native="openModal(0)" :campusImg="campus.AllCSU.img" :title="campus.AllCSU.title"/>
+                    <active-c-s-u-tile @click.native="openModal(70)" :campusImg="campus.CSUN.img" :title="campus.CSUN.title"/>
                     <opt-out-c-s-u-tile :campusImg="campus.CSULB.img" :title="campus.CSULB.title"/>
                     <opt-out-c-s-u-tile :campusImg="campus.CSULA.img" :title="campus.CSULA.title"/>
                     <opt-out-c-s-u-tile :campusImg="campus.CSUF.img" :title="campus.CSUF.title"/>

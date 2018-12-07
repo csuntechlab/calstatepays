@@ -93631,7 +93631,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("h3", { staticClass: "CSUTile__CSUName" }, [
+        _c("h3", { staticClass: "CSUTile__CSUName--Opt" }, [
           _vm._v(_vm._s(_vm.title))
         ]),
         _vm._v(" "),
@@ -93691,7 +93691,7 @@ var render = function() {
                 },
                 nativeOn: {
                   click: function($event) {
-                    _vm.openModal(_vm.universityById(0).id)
+                    _vm.openModal(0)
                   }
                 }
               }),
@@ -93699,11 +93699,11 @@ var render = function() {
               _c("active-c-s-u-tile", {
                 attrs: {
                   campusImg: _vm.campus.CSUN.img,
-                  title: _vm.universityById(70).name
+                  title: _vm.campus.CSUN.title
                 },
                 nativeOn: {
                   click: function($event) {
-                    _vm.openModal(_vm.universityById(70).id)
+                    _vm.openModal(70)
                   }
                 }
               }),

@@ -41,6 +41,19 @@
     background-position: center, center;
 }
 
+%CSUTileText{
+    @extend .px-3, .pb-3, .m-0 ;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    line-height: 140%;
+    font-weight: bold;
+    color: white;
+}
+
 .CSUTile{
     padding-top: 100%;
     width: 100%;
@@ -53,29 +66,25 @@
     overflow: hidden;
     &:hover{
         .CSUTile__Image{
-            transform: scale(1.3);
+            transform: scale(1.2);
         }
         .CSUTile__DisableMessage{
             opacity: .5;
         }
     }
     &__CSUName{
-        @extend .px-3, .pb-3, .m-0 ;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-        font-size: 1.25rem;
-        line-height: 140%;
-        font-weight: bold;
-        color: white;
+        @extend %CSUTileText;
+    }
+    &__CSUName--Opt{
+        @extend %CSUTileText;
+        cursor: not-allowed;
     }
     &__Image{
         @extend %ImagePosition;
     }
-    &__Image--Opt{
+    &__Image--Opt {
         @extend %ImagePosition;
+        cursor: not-allowed;
     }
     &__Image--CSUN{
         @include make-activeCSUImage($available-campus, url('https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg'));
@@ -94,6 +103,7 @@
         opacity:0;
         font-size: 1.4rem;
         font-weight:bold;
+        cursor: not-allowed;
     }
     &--Disabled{
         opacity: .3;
