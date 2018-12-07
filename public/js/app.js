@@ -69852,17 +69852,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleScroll: function handleScroll(event) {
 			var footer = document.querySelector("footer");
 			var bounding = footer.getBoundingClientRect();
-			if (window.scrollY + window.innerHeight - 800 < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				console.log("top");
-				var addBtn = document.getElementById("compare-major-button");
-				addBtn.style.position = "fixed";
-				addBtn.style.bottom = "5rem";
-			}
-			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				console.log("bttom");
-				var addBtn = document.getElementById("compare-major-button");
-				addBtn.style.position = "fixed";
-				addBtn.style.bottom = "10rem";
+			var addBtn = document.getElementById("compare-major-button");
+			if (window.innerWidth < 767) {
+				if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
+
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "5rem";
+				}
+				if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "11rem";
+				}
+			} else {
+				addBtn.style.bottom = "7rem";
 			}
 		}
 	},
