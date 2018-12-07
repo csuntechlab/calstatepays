@@ -65926,7 +65926,7 @@ var render = function() {
         [
           _c("home-card", { staticClass: "landing-page__home-cards" }),
           _vm._v(" "),
-          _c("campus-seals")
+          _c("campus-seals", { staticClass: "landing-page__seals" })
         ],
         1
       ),

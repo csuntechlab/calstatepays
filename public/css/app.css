@@ -18835,6 +18835,7 @@ html {
 
 body {
   overflow-x: hidden;
+  background-color: #EBEBEB;
 }
 
 .lead {
@@ -18986,6 +18987,16 @@ body {
 @media screen and (max-width: 767px) {
   .landing-page__faq-cards {
     margin: 2rem 0;
+  }
+}
+
+.landing-page__seals {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .landing-page__seals {
+    margin-bottom: 3rem;
   }
 }
 
@@ -19191,6 +19202,7 @@ figcaption {
 }
 
 .faq-card {
+  background-color: #EBEBEB;
   border: 5px solid #14597F;
 }
 

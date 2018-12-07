@@ -3,7 +3,7 @@
 		<home-banner/>
 		<div class="container">
 			<home-card class="landing-page__home-cards"/>
-			<campus-seals/>
+			<campus-seals class="landing-page__seals"/>
 		</div>		
 		<home-video/>
 			<div class="container">
