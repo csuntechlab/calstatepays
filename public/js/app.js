@@ -63537,6 +63537,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         state.majors.push(major);
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_FIELD_OF_STUDIES, function (state, payload) {
+    state.fieldOfStudy = [];
     payload.forEach(function (fieldOfStudy) {
         fieldOfStudy.discipline = fieldOfStudy.name;
         delete fieldOfStudy.name;
@@ -64342,19 +64343,25 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -64383,14 +64390,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		this.url = window.baseUrl;
 	},
 
-	components: {
-		csuSelector: __WEBPACK_IMPORTED_MODULE_1__components_global_csu_selector_vue___default.a,
+	components: _defineProperty({
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a,
-		homeCard: __WEBPACK_IMPORTED_MODULE_2__components_home_home_card_vue___default.a,
-		homeBanner: __WEBPACK_IMPORTED_MODULE_3__components_home_home_banner_vue___default.a,
-		campusSeals: __WEBPACK_IMPORTED_MODULE_4__components_home_campus_seals_vue___default.a,
-		homeVideo: __WEBPACK_IMPORTED_MODULE_5__components_home_home_video_vue___default.a
-	},
+		homeCard: __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue___default.a,
+		homeBanner: __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue___default.a,
+		homeVideo: __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a,
+		faqCard: __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default.a,
+		campusSeals: __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default.a
+	}, "homeVideo", __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
@@ -64740,7 +64747,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/src/js/components/global/csu-selector.vue"
+Component.options.__file = "resources/src/js/components/home/home-card.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -64749,9 +64756,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c723ba6", Component.options)
+    hotAPI.createRecord("data-v-92fe7638", Component.options)
   } else {
-    hotAPI.reload("data-v-3c723ba6", Component.options)
+    hotAPI.reload("data-v-92fe7638", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -64817,342 +64824,72 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	name: "csu-selector",
-
-	props: ["url"],
-
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["selectedUniversity"])),
-
-	mounted: function mounted() {
-		if (this.selectedUniversity != null) document.getElementById(this.selectedUniversity).className = "";
-	},
-
-
-	methods: {
-		selectUniversity: function selectUniversity(id) {
-			var previousSelect = document.getElementsByClassName = "";
-			if (previousSelect) previousSelect[0].className = "unselected-university";
-			document.getElementById(id).className = "";
-			this.$store.dispatch("setUniversity", id);
-		}
-	}
-});
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row mt-2 csu-wrapper" }, [
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1139" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/long_beach_seal.svg",
-              alt: "California State University, Long Beach Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Long Beach")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1144" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/poly_seal.svg",
-              alt: "California State University, Pomona Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Pomona")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1141" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/dominguez_seal.svg",
-              alt: "California State University, Dominguez Hills Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Dominguez Hills")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "unselected-university",
-          attrs: { id: "70" },
-          on: {
-            click: function($event) {
-              _vm.selectUniversity(70)
-            }
-          }
-        },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/northridge_seal.svg",
-              alt: "California State University, Northridge Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Northridge")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "39803" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/channel_islands_seal.svg",
-              alt: "California State University, Channel Islands Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Channel Islands")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1137" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/fulleton_seal.svg",
-              alt: "California State University, Fullerton Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Fullerton")])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
-      _c(
-        "button",
-        { staticClass: "disabled-university", attrs: { id: "1140" } },
-        [
-          _c("img", {
-            attrs: {
-              src: this.url + "/img/csuseals/los_angeles_seal.svg",
-              alt: "California State University, Los Angeles Seal"
-            }
-          }),
-          _vm._v(" "),
-          _c("figcaption", [_vm._v("Los Angeles")])
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3c723ba6", module.exports)
-  }
-}
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(203)
-/* template */
-var __vue_template__ = __webpack_require__(204)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/src/js/components/home/home-card.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-92fe7638", Component.options)
-  } else {
-    hotAPI.reload("data-v-92fe7638", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 203 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -65160,11 +64897,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			url: "",
 			isShowing: false
 		};
-	}
+	},
+
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
-/* 204 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65605,15 +65344,15 @@ if (false) {
 }
 
 /***/ }),
-/* 205 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(206)
+var __vue_script__ = __webpack_require__(203)
 /* template */
-var __vue_template__ = __webpack_require__(207)
+var __vue_template__ = __webpack_require__(204)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65652,7 +65391,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 206 */
+/* 203 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65678,7 +65417,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 207 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65714,15 +65453,15 @@ if (false) {
 }
 
 /***/ }),
-/* 208 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(209)
+var __vue_script__ = __webpack_require__(206)
 /* template */
-var __vue_template__ = __webpack_require__(210)
+var __vue_template__ = __webpack_require__(207)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65761,7 +65500,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 209 */
+/* 206 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65798,7 +65537,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 210 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65863,15 +65602,15 @@ if (false) {
 }
 
 /***/ }),
-/* 211 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(212)
+var __vue_script__ = __webpack_require__(209)
 /* template */
-var __vue_template__ = __webpack_require__(213)
+var __vue_template__ = __webpack_require__(210)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65910,7 +65649,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 212 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65965,7 +65704,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 213 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66010,6 +65749,162 @@ if (false) {
 }
 
 /***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/components/home/faq-card.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4f73929e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4f73929e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        url: function url() {
+            return window.baseUrl;
+        }
+    }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row mx-auto" }, [
+    _c("div", { staticClass: " f faq-card col-12 col-sm-10 col-lg-8" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-6 col-sm-5 faq-card__text" },
+          [
+            _c("p", { staticClass: "faq-card__text--blue" }, [
+              _vm._v("Have Questions?")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "faq-card__text--gray" }, [
+              _vm._v("We Have Answers.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "faq-card__button", attrs: { to: "/faq" } },
+              [_vm._v("\n                    Read Our FAQ\n                ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
+          _c("img", {
+            staticClass: "faq-card__image mx-auto",
+            attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "faq-card__button--mobile row d-sm-none" },
+        [
+          _c("router-link", { attrs: { to: "/faq" } }, [
+            _vm._v("\n                Read Our FAQ\n            ")
+          ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4f73929e", module.exports)
+  }
+}
+
+/***/ }),
 /* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66029,7 +65924,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("home-video")
+      _c("home-video"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_c("faq-card")], 1)
     ],
     1
   )
@@ -66348,8 +66245,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -66359,8 +66254,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             aCampusIsSelected: false,
             showModal: false,
             showValidationMsg: false,
-            universitySeals: [{ url: window.baseUrl + '/img/csuseals/all.svg', name: "All Campuses", short_name: "all" }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island', short_name: "channel_islands" }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez Hills', short_name: "dominguez_hills" }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton', short_name: "fullerton" }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach', short_name: "long_beach" }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles', short_name: "los_angeles" }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge', short_name: "northridge" }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona', short_name: "pomona" }]
+            universitySeals: [{ url: window.baseUrl + '/img/csuseals/all.svg', name: "All 7 Campuses", short_name: "all" }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Island', short_name: "channel_islands" }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez Hills', short_name: "dominguez_hills" }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton', short_name: "fullerton" }, { url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach', short_name: "long_beach" }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles', short_name: "los_angeles" }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge', short_name: "northridge" }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona', short_name: "pomona" }]
         };
+    },
+    created: function created() {
+        document.addEventListener('keyup', this.onEscKey);
     },
     mounted: function mounted() {
         this.$nextTick(function () {
@@ -66369,7 +66267,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         });
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage', 'modalCheck']), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['universities', 'selectedUniversity', 'selectedDataPage']), {
         orderedUniversities: function orderedUniversities() {
             return _.orderBy(this.universities, ['short_name'], ['asc']);
         }
@@ -66387,6 +66285,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 }
             }, false);
         },
+        onEscKey: function onEscKey(event) {
+            if (event.keyCode === 27) {
+                if (this.aCampusIsSelected == true) {
+                    this.showModal = false;
+                } else {
+                    this.showValidationMsg = true;
+                }
+            }
+        },
+
         onSubmit: function onSubmit() {
             var radioBtns = document.querySelectorAll("[name='campuses']");
 
@@ -66434,334 +66342,323 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        on: {
-          keyup: function($event) {
-            if (
-              !("button" in $event) &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
+  return _c(
+    "div",
+    [
+      _c(
+        "button",
+        {
+          staticClass: "btn-change-campus",
+          attrs: { role: "button" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.showModal = true
             }
-            _vm.showModal = false
           }
-        }
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn-change-campus",
-            attrs: { role: "button" },
-            on: {
-              click: function($event) {
-                _vm.showModal = true
-              }
-            }
-          },
-          [_vm._t("change button")],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "v-dialog",
-          {
-            attrs: { persistent: "", scrollable: "", "aria-modal": "true" },
-            model: {
-              value: _vm.showModal,
-              callback: function($$v) {
-                _vm.showModal = $$v
-              },
-              expression: "showModal"
-            }
-          },
-          [
-            _vm.universities[0]
-              ? _c(
-                  "v-card",
-                  { staticClass: "text-xs-center black--text campus-modal" },
-                  [
+        },
+        [_vm._t("change button")],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { persistent: "", scrollable: "", "aria-modal": "true" },
+          model: {
+            value: _vm.showModal,
+            callback: function($$v) {
+              _vm.showModal = $$v
+            },
+            expression: "showModal"
+          }
+        },
+        [
+          _vm.universities[0]
+            ? _c(
+                "v-card",
+                { staticClass: "text-xs-center black--text campus-modal" },
+                [
+                  _c(
+                    "v-card-title",
+                    { staticClass: "headline grey lighten-2 " },
+                    [_vm._v("\n                Choose a Campus \n            ")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-card-text", [
                     _c(
-                      "v-card-title",
-                      { staticClass: "headline grey lighten-2 " },
-                      [
-                        _vm._v(
-                          "\n                    Choose a Campus \n                "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("v-card-text", [
-                      _c(
-                        "div",
-                        { staticClass: "row" },
-                        _vm._l(_vm.orderedUniversities, function(item, index) {
-                          return _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass: "col-12 col-sm-6 col-md-3 col-lg"
-                            },
-                            [
-                              _vm._l(_vm.universitySeals, function(
-                                universitySeal,
-                                index2
-                              ) {
-                                return [
-                                  universitySeal.short_name == item.short_name
-                                    ? [
-                                        item.opt_in === 1
-                                          ? [
-                                              _vm.aCampusIsSelected &&
-                                              _vm.selectedUniversity ==
-                                                item.short_name
-                                                ? [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "campus-modal-item__radio",
-                                                      attrs: {
-                                                        type: "radio",
-                                                        name: "campuses",
-                                                        id: item.short_name,
-                                                        checked: ""
-                                                      }
-                                                    })
-                                                  ]
-                                                : [
-                                                    _c("input", {
-                                                      staticClass:
-                                                        "campus-modal-item__radio",
-                                                      attrs: {
-                                                        type: "radio",
-                                                        name: "campuses",
-                                                        id: item.short_name
-                                                      }
-                                                    })
-                                                  ],
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "campus-modal-item clearfix"
-                                                },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for: item.short_name
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "figure",
-                                                        {
-                                                          staticClass:
-                                                            "campus-modal-item__figure"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__imgWrapper"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src:
-                                                                    universitySeal.url
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "figcaption",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__name"
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\n                                                        " +
-                                                                  _vm._s(
-                                                                    universitySeal.name
-                                                                  ) +
-                                                                  "\n                                                    "
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          : [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass:
-                                                    "campus-modal-item campus-modal-item--opted-out clearfix"
-                                                },
-                                                [
+                      "div",
+                      { staticClass: "row" },
+                      _vm._l(_vm.orderedUniversities, function(item, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "col-12 col-sm-6 col-md-3 col-lg",
+                            on: {
+                              dblclick: function($event) {
+                                _vm.onSubmit()
+                              }
+                            }
+                          },
+                          [
+                            _vm._l(_vm.universitySeals, function(
+                              universitySeal,
+                              index2
+                            ) {
+                              return [
+                                universitySeal.short_name == item.short_name
+                                  ? [
+                                      item.opt_in === 1
+                                        ? [
+                                            _vm.aCampusIsSelected &&
+                                            _vm.selectedUniversity ==
+                                              item.short_name
+                                              ? [
                                                   _c("input", {
                                                     staticClass:
                                                       "campus-modal-item__radio",
                                                     attrs: {
-                                                      disabled: "",
+                                                      type: "radio",
+                                                      name: "campuses",
+                                                      id: item.short_name,
+                                                      checked: ""
+                                                    }
+                                                  })
+                                                ]
+                                              : [
+                                                  _c("input", {
+                                                    staticClass:
+                                                      "campus-modal-item__radio",
+                                                    attrs: {
                                                       type: "radio",
                                                       name: "campuses",
                                                       id: item.short_name
                                                     }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for: item.short_name
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "figure",
-                                                        {
-                                                          staticClass:
-                                                            "campus-modal-item__figure"
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__imgWrapper"
-                                                            },
-                                                            [
-                                                              _c("img", {
-                                                                attrs: {
-                                                                  src:
-                                                                    universitySeal.url
-                                                                }
-                                                              })
-                                                            ]
-                                                          ),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "figcaption",
-                                                            {
-                                                              staticClass:
-                                                                "campus-modal-item__name"
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\n                                                        " +
-                                                                  _vm._s(
-                                                                    universitySeal.name
-                                                                  ) +
-                                                                  "\n                                                        "
-                                                              ),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "campus-modal-item__coming-soon"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "Coming Soon"
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                      ]
-                                    : _vm._e()
-                                ]
-                              })
-                            ],
-                            2
-                          )
-                        })
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "v-card-actions",
-                      { staticClass: "justify-content-center flex-wrap" },
-                      [
-                        _vm.showValidationMsg
-                          ? _c(
-                              "div",
-                              {
-                                staticClass: "campus-modal__error",
-                                attrs: { id: "campus-modal__error" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                        * Select a campus to proceed\n                    "
-                                )
+                                                  })
+                                                ],
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "campus-modal-item clearfix"
+                                              },
+                                              [
+                                                _c(
+                                                  "label",
+                                                  {
+                                                    attrs: {
+                                                      for: item.short_name
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "figure",
+                                                      {
+                                                        staticClass:
+                                                          "campus-modal-item__figure"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__imgWrapper"
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  universitySeal.url
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "figcaption",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__name"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\n                                                    " +
+                                                                _vm._s(
+                                                                  universitySeal.name
+                                                                ) +
+                                                                "\n                                                "
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        : [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "campus-modal-item campus-modal-item--opted-out clearfix"
+                                              },
+                                              [
+                                                _c("input", {
+                                                  staticClass:
+                                                    "campus-modal-item__radio",
+                                                  attrs: {
+                                                    disabled: "",
+                                                    type: "radio",
+                                                    name: "campuses",
+                                                    id: item.short_name
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "label",
+                                                  {
+                                                    attrs: {
+                                                      for: item.short_name
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "figure",
+                                                      {
+                                                        staticClass:
+                                                          "campus-modal-item__figure"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__imgWrapper"
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  universitySeal.url
+                                                              }
+                                                            })
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "figcaption",
+                                                          {
+                                                            staticClass:
+                                                              "campus-modal-item__name"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\n                                                    " +
+                                                                _vm._s(
+                                                                  universitySeal.name
+                                                                ) +
+                                                                "\n                                                    "
+                                                            ),
+                                                            _c(
+                                                              "div",
+                                                              {
+                                                                staticClass:
+                                                                  "campus-modal-item__coming-soon"
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Coming Soon"
+                                                                )
+                                                              ]
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                    ]
+                                  : _vm._e()
                               ]
+                            })
+                          ],
+                          2
+                        )
+                      })
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    { staticClass: "justify-content-center flex-wrap" },
+                    [
+                      _vm.showValidationMsg
+                        ? _c(
+                            "div",
+                            {
+                              staticClass: "campus-modal__error",
+                              attrs: { id: "campus-modal__error" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                    * Select a campus to proceed\n                "
+                              )
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", [
+                        _vm.aCampusIsSelected
+                          ? _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "btn btn-secondary campus-modal__btn",
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    _vm.showModal = false
+                                  }
+                                }
+                              },
+                              [_vm._v("Cancel")]
                             )
                           : _vm._e(),
                         _vm._v(" "),
-                        _c("div", [
-                          _vm.aCampusIsSelected
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "btn btn-secondary campus-modal__btn",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.showModal = false
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancel")]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-success campus-modal__btn",
-                              attrs: { type: "submit" },
-                              on: {
-                                click: function($event) {
-                                  _vm.onSubmit()
-                                }
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-success campus-modal__btn",
+                            attrs: { type: "submit" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                _vm.onSubmit()
                               }
-                            },
-                            [_vm._v("Select Campus")]
-                          )
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              : _vm._e()
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
+                            }
+                          },
+                          [_vm._v("Select Campus")]
+                        )
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _vm._e()
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -70067,7 +69964,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         this.url = window.baseUrl;
     },
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['indexOfUnsubmittedCard'])),
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['majorCards', 'indexOfUnsubmittedCard'])),
     methods: {
         onPlus: function onPlus() {
             this.$store.dispatch('addMajorCard');
@@ -70087,7 +69984,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { position: "relative" } }, [
-    _vm.indexOfUnsubmittedCard == -1
+    _vm.majorCards[0].submittedOnce
       ? _c(
           "button",
           {
@@ -70286,6 +70183,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -70395,8 +70295,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		majorsGraph: __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default.a,
 		industryCarousel: __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default.a,
 		majorLegend: __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default.a
-	},
-	updated: function updated() {}
+	}
 });
 
 /***/ }),
@@ -70434,7 +70333,7 @@ exports = module.exports = __webpack_require__(78)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70486,9 +70385,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
 //
 //
 //
@@ -70675,22 +70571,30 @@ var render = function() {
             },
             [
               _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value:
-                        _vm.selectedFormWasSubmittedOnce != false &&
-                        _vm.windowWidth > 500,
-                      expression:
-                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
+                _c(
+                  "button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedFormWasSubmittedOnce,
+                        expression: "selectedFormWasSubmittedOnce"
+                      }
+                    ],
+                    staticClass: "btn btn-flip-card float-right",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.resetCurrentCard($event)
+                      }
                     }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
-                }),
+                  },
+                  [
+                    _vm._v(" Change Degree Level "),
+                    _c("i", { staticClass: "fas fa fa-chevron-right" })
+                  ]
+                ),
                 _vm._v(" "),
                 !_vm.selectedFormWasSubmitted
                   ? _c(
@@ -70713,20 +70617,6 @@ var render = function() {
                   "div",
                   { staticClass: "form-group" },
                   [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.selectedFormWasSubmitted,
-                          expression: "selectedFormWasSubmitted"
-                        }
-                      ],
-                      staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                      attrs: { title: "Reset" },
-                      on: { click: _vm.resetCurrentCard }
-                    }),
-                    _vm._v(" "),
                     _c(
                       "label",
                       {
@@ -70824,7 +70714,12 @@ var render = function() {
                     {
                       staticClass: "btn btn-success btn-submit",
                       attrs: { type: "button" },
-                      on: { click: _vm.submitForm }
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.submitForm($event)
+                        }
+                      }
                     },
                     [_vm._v("Submit")]
                   )
@@ -70842,36 +70737,37 @@ var render = function() {
             },
             [
               _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value:
-                        _vm.selectedFormWasSubmittedOnce != false &&
-                        _vm.windowWidth > 500,
-                      expression:
-                        "selectedFormWasSubmittedOnce != false && windowWidth > 500"
-                    }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
-                }),
-                _vm._v(" "),
                 _c(
-                  "p",
+                  "button",
                   {
                     directives: [
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.windowWidth > 500,
-                        expression: "windowWidth > 500"
+                        value: _vm.selectedFormWasSubmittedOnce,
+                        expression: "selectedFormWasSubmittedOnce"
                       }
                     ],
-                    staticClass: "text-center h5 majors-header my-5-md my-4"
+                    staticClass: "btn btn-flip-card",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.resetCurrentCard($event)
+                      }
+                    }
                   },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa fa-chevron-left",
+                      attrs: { v: "" }
+                    }),
+                    _vm._v(" Change Major")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "text-center h5 majors-header my-5-md my-4" },
                   [_vm._v("Select a Degree Level")]
                 ),
                 _vm._v(" "),
@@ -71034,193 +70930,213 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'windowWidth'],
-    data: function data() {
-        return {
-            xAxis: ['2', '5', '10', '15'],
-            graphColors: {
-                color1: '#000',
-                color2: '#000',
-                color3: '#FFF'
-            }
-        };
-    },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-    components: {
-        'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-    },
-    computed: {
-        mastersEarnings: function mastersEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[0];
-            }
-            return null;
-        },
-        bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[1];
-            }
-            return null;
-        },
-        someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[2];
-            }
-            return null;
-        },
-        mobileYAxis: function mobileYAxis() {
-            var currentWidth = window.innerWidth;
-            if (currentWidth <= 750) {
-                return 90;
-            } else {
-                return 0;
-            }
-        },
-        toolTipTitles1: function toolTipTitles1() {
-            var title = "Some College";
-            if (this.educationLevel !== "allDegrees") {
-                title = "25th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles2: function toolTipTitles2() {
-            var title = "Bachelor's Degree";
-            if (this.educationLevel !== "allDegrees") {
-                title = "50th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles3: function toolTipTitles3() {
-            var title = "Post Bacc";
-            if (this.educationLevel !== "allDegrees") {
-                title = "75th Percentile";
-            }
-            return title;
-        },
-        toolColors1: function toolColors1() {
-            var color = '#476A6F';
-            if (this.educationLevel === 'someCollege') {
-                color = '#7E969A';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#EDAC17';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#55BE85';
-            }
-            return color;
-        },
-        toolColors2: function toolColors2() {
-            var color = '#EDAC17';
-            if (this.educationLevel === 'someCollege') {
-                color = '#476A6F';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#ECA400';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#2BAE67';
-            }
-            return color;
-        },
-        toolColors3: function toolColors3() {
-            var color = '#279D5D';
-            if (this.educationLevel === 'someCollege') {
-                color = '#2c4144';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#987100';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#1B6E41';
-            }
-            return color;
-        },
-        polar: function polar() {
-            return {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                xAxis: {
-                    name: "Years Out of College",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [10, 0, 0, 0]
-                    },
-                    data: this.xAxis,
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    axisLabel: {
-                        rotate: this.mobileYAxis,
-                        formatter: function formatter(value) {
-                            if (value > 999) {
-                                var strVal = value.toString();
-                                strVal = strVal.slice(0, -3);
-                                return '$' + strVal + 'k';
-                            } else return '$' + value;
-                        }
-                    },
-                    min: 0,
-                    max: 150000,
-                    axisLine: {
-                        show: false
-                    },
-                    splitNumber: 5,
-                    axisTick: {
-                        show: false
-                    }
-                },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors3
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors2
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors1
-                    }
-                }],
-                animationDuration: 2000
-            };
-            return null;
-        }
-    }
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	},
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		mobileYAxis: function mobileYAxis() {
+			var currentWidth = window.innerWidth;
+			if (currentWidth <= 750) {
+				return 90;
+			} else {
+				return 0;
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#EDAC17";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#55BE85";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
+
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: this.mobileYAxis,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					min: 0,
+					max: 150000,
+					axisLine: {
+						show: false
+					},
+					splitNumber: 5,
+					axisTick: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	}
 });
 
 /***/ }),
@@ -89536,6 +89452,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					trigger: "axis",
 					axisPointer: {
 						type: "cross"
+					},
+					position: function position(pos, params, dom, rect, size) {
+						// tooltip will be fixed on the right if mouse hovering on the left,
+						// and on the left if hovering on the right.
+						var obj = { top: "10%" };
+						obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+						return obj;
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
+
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
 					}
 				},
 				xAxis: {
@@ -90334,6 +90277,23 @@ var render = function() {
                 ])
               ])
             : _c("div", { staticClass: "csu-card" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("i", {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
+                      }
+                    ],
+                    staticClass:
+                      "col fa fa-times fa-2x btn-remove text-right pull-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
+                  })
+                ]),
+                _vm._v(" "),
                 _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
                   _vm._v("Please make your selection")
                 ]),
@@ -90455,6 +90415,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -90722,7 +90691,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -90756,11 +90724,9 @@ var render = function() {
     "div",
     [
       _c("h5", { staticClass: "majors-header" }, [
-        _vm._v("Common Employment Sectors for")
-      ]),
-      _vm._v(" "),
-      _c("h5", { staticClass: "majors-header" }, [
-        _vm._v(_vm._s(_vm.selectedMajorName))
+        _vm._v("Common Employment Sectors"),
+        _c("br"),
+        _vm._v(" in " + _vm._s(_vm.selectedMajorName))
       ]),
       _vm._v(" "),
       _vm._l(_vm.industries.slice(0, 3), function(industry, index) {
@@ -90800,192 +90766,137 @@ var render = function() {
       attrs: { id: "majorCardHasIndex-" + this.index }
     },
     [
+      _c("major-form", {
+        staticClass: "col-12",
+        attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
+      }),
+      _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "csu-card" }, [
-          _c("div", { staticClass: "container-fluid py-3" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-1" }, [
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isNotFirstCard,
-                      expression: "isNotFirstCard"
-                    }
-                  ],
-                  staticClass: "fa fa-times fa-2x btn-remove float-left",
-                  attrs: { title: "Close" },
-                  on: { click: _vm.removeCurrentCard }
-                }),
-                _vm._v(" "),
-                _c("i", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
-                  ],
-                  staticClass: "fa fa-refresh fa-2x btn-reset float-left",
-                  attrs: { title: "Reset" },
-                  on: { click: _vm.resetCurrentCard }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col" },
-                [
-                  _vm.selectedFormWasSubmitted
-                    ? _c("social-sharing", {
-                        attrs: {
-                          networks: _vm.mobileNetworks,
-                          url: "sandbox.csun.edu/metalab/test/csumetrola",
-                          title: this.shareDescription,
-                          description: "Discover Your Earnings After College.",
-                          quote: this.shareDescription,
-                          hashtags: "CalStatePays, ItPaysToGoToCollege"
-                        },
-                        inlineTemplate: {
-                          render: function() {
-                            var _vm = this
-                            var _h = _vm.$createElement
-                            var _c = _vm._self._c || _h
-                            return _c(
-                              "div",
-                              [
-                                _c(
-                                  "network",
-                                  {
-                                    staticClass:
-                                      "csu-card__share csu-card__share-twitter float-right",
-                                    attrs: { network: "twitter" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fa fa-twitter-square"
-                                    }),
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "network",
-                                  {
-                                    staticClass:
-                                      "csu-card__share csu-card__share-linkedin float-right",
-                                    attrs: { network: "linkedin" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fa fa-linkedin-square"
-                                    }),
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "network",
-                                  {
-                                    staticClass:
-                                      "csu-card__share csu-card__share-facebook float-right",
-                                    attrs: { network: "facebook" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fa fa-facebook-official"
-                                    }),
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          },
-                          staticRenderFns: []
+        _vm.selectedFormWasSubmittedOnce
+          ? _c("div", { staticClass: "csu-card mb-5" }, [
+              _c("div", { staticClass: "container-fluid py-3" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col" }, [
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isNotFirstCard,
+                          expression: "isNotFirstCard"
                         }
-                      })
-                    : _vm._e()
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-12" }, [
-                _c(
-                  "h3",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
-                      }
+                      ],
+                      staticClass: "fa fa-times fa-2x btn-remove",
+                      attrs: { title: "Close" },
+                      on: { click: _vm.removeCurrentCard }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-11" },
+                    [
+                      _vm.selectedFormWasSubmitted
+                        ? _c("social-sharing", {
+                            attrs: {
+                              networks: _vm.mobileNetworks,
+                              url: "sandbox.csun.edu/metalab/test/csumetrola",
+                              title: this.shareDescription,
+                              description:
+                                "Discover Your Earnings After College.",
+                              quote: this.shareDescription,
+                              hashtags: "CalStatePays, ItPaysToGoToCollege"
+                            },
+                            inlineTemplate: {
+                              render: function() {
+                                var _vm = this
+                                var _h = _vm.$createElement
+                                var _c = _vm._self._c || _h
+                                return _c(
+                                  "div",
+                                  [
+                                    _c(
+                                      "network",
+                                      {
+                                        staticClass:
+                                          "csu-card__share csu-card__share-twitter float-right",
+                                        attrs: { network: "twitter" }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-twitter-square"
+                                        }),
+                                        _vm._v(
+                                          "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "network",
+                                      {
+                                        staticClass:
+                                          "csu-card__share csu-card__share-linkedin float-right",
+                                        attrs: { network: "linkedin" }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-linkedin-square"
+                                        }),
+                                        _vm._v(
+                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "network",
+                                      {
+                                        staticClass:
+                                          "csu-card__share csu-card__share-facebook float-right",
+                                        attrs: { network: "facebook" }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "fa fa-facebook-official"
+                                        }),
+                                        _vm._v(
+                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              },
+                              staticRenderFns: []
+                            }
+                          })
+                        : _vm._e()
                     ],
-                    staticClass: "industry-title pt-2"
-                  },
-                  [_vm._v(_vm._s(_vm.selectedMajorTitle))]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col" },
-              [
-                _c("major-legend", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.selectedFormWasSubmitted,
-                      expression: "selectedFormWasSubmitted"
-                    }
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12" }, [
+                    _c("h3", { staticClass: "industry-title pt-2" }, [
+                      _vm._v(_vm._s(_vm.selectedMajorTitle))
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("major-legend", {
+                      attrs: { educationLevel: _vm.selectedEducationLevel }
+                    })
                   ],
-                  attrs: { educationLevel: _vm.selectedEducationLevel }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: this.selectedFormWasSubmitted && _vm.nullValues,
-                    expression: "this.selectedFormWasSubmitted && nullValues"
-                  }
-                ]
-              },
-              [_vm._m(0)]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.nullValues,
-                    expression: "!nullValues"
-                  }
-                ]
-              },
-              [
+                  1
+                ),
+                _vm._v(" "),
                 _c(
                   "div",
                   {
@@ -90993,8 +90904,23 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedFormWasSubmitted,
-                        expression: "selectedFormWasSubmitted"
+                        value: _vm.nullValues,
+                        expression: "nullValues"
+                      }
+                    ]
+                  },
+                  [_vm._m(0)]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.nullValues,
+                        expression: "!nullValues"
                       }
                     ],
                     staticClass: "row",
@@ -91017,46 +90943,77 @@ var render = function() {
                       1
                     )
                   ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [_c("major-form", { attrs: { index: _vm.index } })],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-12" },
-                [
-                  _c("industry-mobile", {
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-12" },
+                    [
+                      _c("industry-mobile", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.isEmpty,
+                            expression: "isEmpty"
+                          }
+                        ],
+                        attrs: {
+                          industries: _vm.selectedIndustries,
+                          majorId: _vm.selectedMajorId
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
+          : _c("div", { staticClass: "csu-card csu-card__instructions mb-5" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col" }, [
+                  _c("i", {
                     directives: [
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.isEmpty,
-                        expression: "isEmpty"
+                        value: _vm.isNotFirstCard,
+                        expression: "isNotFirstCard"
                       }
                     ],
-                    attrs: {
-                      industries: _vm.selectedIndustries,
-                      majorId: _vm.selectedMajorId
-                    }
+                    staticClass: "fa fa-times fa-2x btn-remove pull-right",
+                    attrs: { title: "Close" },
+                    on: { click: _vm.removeCurrentCard }
                   })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
+                _vm._v("Please make your selection")
+              ]),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "lead pl-md-5 pr-md-5" },
+                [
+                  _c("span", { staticClass: "font-weight-bold" }, [
+                    _vm._v("Please Note:")
+                  ]),
+                  _vm._v(
+                    " Some majors might not have any data available at the moment.\n\t\t\t\tFor more information on how we gathered the data, please read the "
+                  ),
+                  _c("router-link", { attrs: { to: "/faq" } }, [_vm._v("FAQ")]),
+                  _vm._v(".\n\t\t\t")
                 ],
                 1
               )
             ])
-          ])
-        ])
       ])
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = [
@@ -91069,6 +91026,20 @@ var staticRenderFns = [
         _c("i", { staticClass: "fa fa-exclamation-circle required-field" }),
         _vm._v(" No data available")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
+      _vm._v(
+        "\n\t\t\t\tYou have the option of either filtering out majors by "
+      ),
+      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
+      _vm._v(" or choosing the "),
+      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
+      _vm._v("\n\t\t\t\twhich resonates the most with you.\n\t\t\t")
     ])
   }
 ]
@@ -91468,7 +91439,7 @@ var render = function() {
               _vm.industries.length > 0
                 ? _c("div", { staticClass: "col-12" }, [
                     _c("p", { staticClass: "h6" }, [
-                      _vm._v("5 Years After Exit")
+                      _vm._v("Employment 5 Years After Exit")
                     ])
                   ])
                 : _vm._e(),
@@ -91478,7 +91449,7 @@ var render = function() {
                     _c("span", {
                       staticClass: "IndustryLegend__LegendPercentage"
                     }),
-                    _vm._v("Percentage of Students\n            ")
+                    _vm._v("Percentage of Students Employed\n            ")
                   ])
                 : _vm._e(),
               _vm._v(" "),
@@ -91777,6 +91748,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -91845,7 +91828,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-
 				this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
 		}
@@ -91882,19 +91864,42 @@ var render = function() {
       ? _c("div", { key: "1" }, [
           _c("form", { staticClass: "container-fluid csu-card__form" }, [
             _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.industryFormWasSubmittedOnce,
-                    expression: "industryFormWasSubmittedOnce"
+              _c(
+                "button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.industryFormWasSubmittedOnce,
+                      expression: "industryFormWasSubmittedOnce"
+                    }
+                  ],
+                  staticClass: "btn btn-flip-card float-right",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.resetIndustries($event)
+                    }
                   }
-                ],
-                staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetIndustries }
-              }),
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "font-weight-bold\n\t\t\t\t\t\t",
+                      attrs: { href: "#" }
+                    },
+                    [
+                      _vm._v("Change Degree Level "),
+                      _c("i", {
+                        staticClass: "fas fa fa-chevron-right",
+                        attrs: { v: "" }
+                      })
+                    ]
+                  )
+                ]
+              ),
               _vm._v(" "),
               !_vm.industryFormWasSubmitted
                 ? _c(
@@ -92045,33 +92050,28 @@ var render = function() {
       : _c("div", { key: "2" }, [
           _c("form", { staticClass: "container-fluid csu-card__form" }, [
             _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-              _c("i", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.industryFormWasSubmittedOnce,
-                    expression: "industryFormWasSubmittedOnce"
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-flip-card",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.resetIndustries($event)
+                    }
                   }
-                ],
-                staticClass: "fa fa-refresh fa-2x btn-reset float-right",
-                attrs: { title: "Reset" },
-                on: { click: _vm.resetIndustries }
-              }),
+                },
+                [
+                  _c("span", { staticClass: "font-weight-bold" }, [
+                    _c("i", { staticClass: "fas fa fa-chevron-left" }),
+                    _vm._v(" Change Major\n\t\t\t\t\t\t\t")
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "p",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.windowSize > 500,
-                      expression: "windowSize > 500"
-                    }
-                  ],
-                  staticClass: "text-center h5 majors-header my-5-md my-4"
-                },
+                { staticClass: "text-center h5 majors-header my-5-md my-4" },
                 [_vm._v("Select a Degree Level")]
               ),
               _vm._v(" "),
@@ -92214,7 +92214,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-lg-9 col-12" },
-              [_c("industry-progress", { staticClass: "industry-card" })],
+              [
+                _c("industry-progress", {
+                  staticClass: "industry-card mt-md-3 mt-lg-0"
+                })
+              ],
               1
             )
           ])
@@ -93157,9 +93161,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             tabl: 'CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData'
         };
     },
+    created: function created() {
+        document.addEventListener('keyup', this.onEscKey);
+    },
+
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTableauValue']), {
         closeModal: function closeModal() {
             this.$emit('closeModal');
+        },
+        onEscKey: function onEscKey(event) {
+            if (event.keyCode === 27) {
+                this.closeModal();
+            }
         },
         chooseTableauCategory: function chooseTableauCategory(university, path_id, callback) {
             this.$store.dispatch('setTableauValue', { university: university, path_id: path_id });

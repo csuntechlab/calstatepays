@@ -93,20 +93,22 @@
   vertical-align: middle;
   display: inline;
   position: relative;
-  top: -15px;
-  right: -15px;
 }
 
 .btn-reset {
-  z-index: 2;
   position: relative;
   color: $gray;
+  margin: 0 0 7px 0;
   padding-top: 3px;
   font-size: 1.6rem;
   outline: none;
   cursor: pointer;
   vertical-align: middle;
   display: inline;
+      @media screen and (max-width: $break-small) {
+        top: -9px;
+        left: -14px;
+   }
 }
 
 .major-tool-btn-mobile {
@@ -122,6 +124,12 @@
   vertical-align: middle;
   display: inline;
 }
+
+.btn-flip-card {
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 
 .btn-reset-mobile {
   color: $gray;
@@ -189,6 +197,8 @@ input[type="button"]:focus {
   }
 }
 /*degree level button colors and animations*/
+
+
 .major-btn_icon {
   position: absolute;
   right: 7%;

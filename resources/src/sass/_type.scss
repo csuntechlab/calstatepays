@@ -176,3 +176,114 @@ figcaption {
         font-size: 1.12rem;
     }
 }
+.faq-card{
+    @media screen and (max-width: $break-Xsmall - 1){
+
+        border-width: .5rem .5rem 0rem .5rem;
+    }
+    @media screen and (min-width: $break-xlarge){
+        width: 60%;
+    }
+    // height: 100px;
+    // background-color: #14597F;
+    // margin-top: auto;
+    border:5px solid #14597F;
+    // 
+    // margin: 1rem;
+}
+.faq-card__text{
+    font-weight: 500;
+     font-size:1.4rem;
+     margin-top:1rem;
+     @media screen and (min-width: 400px){
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
+    }
+    // @media screen and (min-width: $break-Xsmall){
+    //     font-size: 2rem;
+    // }
+    @media screen and (min-width: $break-small){
+        font-size: 1.9rem;
+    }
+    &--blue{
+        color:#14597F;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+    }
+    &--gray{
+        color: #707070;
+    }
+}
+.faq-card__image{
+    margin-bottom: 1rem;
+    align-self: center;
+    height: 7.6rem;
+    margin-top: 1.2rem;
+    display: block;
+    @media screen and (min-width: 400px){
+        height:11rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
+    }
+    @media screen and (min-width: $break-Xsmall){
+        height: 11rem;
+        margin-top:1rem;
+    }
+    @media screen and (min-width: $break-small +1 ){
+        height: 15rem;
+    }
+}
+.faq-card__button--mobile{
+    background-color: #14597F;
+    // height: 2rem;
+    font-weight: 600;
+    text-align: center;
+    // width: 80%;
+    position: relative;
+    // top: -1rem;
+    font-size: 1.4rem;
+    padding: 0.7rem 0;
+
+
+    a{
+        color: #fff;
+        align-self: center; 
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.faq-card__button{
+    display: none;
+    @media screen and (min-width: $break-Xsmall){
+        display: block;
+        background-color: #14597F;
+        color: #fff;
+        width: 12rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        padding: 0.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center
+        
+    }
+    @media screen and (min-width: $break-medium){
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+a.faq-card__button {
+    color: #fff;
+
+    &:hover{
+        color: #fff;
+    text-decoration: none;
+    }
+}
