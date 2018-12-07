@@ -2,13 +2,12 @@
 	<div> 
 		<home-banner/>
 		<div class="container">
-			<home-card/>
+			<home-card class="landing-page__home-cards"/>
 			<campus-seals/>
 		</div>		
 		<home-video/>
-		
 			<div class="container">
-				<faq-card/>
+				<faq-card class="landing-page__faq-cards"/>
 			</div>
 	</div>
 </template>

@@ -112,3 +112,17 @@
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
 }
+
+.landing-page__home-cards{
+    margin: 3rem -1rem;
+    @media screen and (max-width: $break-small){
+        margin: 1rem 0 0;
+    }
+}
+
+.landing-page__faq-cards{
+    margin: 3rem 0;
+    @media screen and (max-width: $break-small){
+        margin: 2rem 0 ;
+    }
+}
