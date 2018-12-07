@@ -70,7 +70,8 @@ export default {
             industries: [],
             majorData: [],
             formWasSubmitted: false,
-            submittedOnce: false
+            submittedOnce: false,
+            majorIsLoading: false
         });
     },
 
@@ -98,8 +99,18 @@ export default {
                     majorsByField: [],
                     industries: [],
                     majorData: [],
+                    majorIsLoading: false,
                     educationLevel: 'allDegrees'
                 }
         ];
     },
+    [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
+        let index = payload;
+        if(state.majorCards[index].majorIsLoading ===false){
+            state.majorCards[index].majorIsLoading = true;
+        }
+        else {
+            state.majorCards[index].majorIsLoading = false;
+        }
+    }
 }

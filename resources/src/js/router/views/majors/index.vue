@@ -91,6 +91,7 @@
 				}
 				}
 				else {
+					addBtn.style.bottom = "7rem";
 					addBtn.style.position = "fixed";
 				}
 				
