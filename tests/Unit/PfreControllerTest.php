@@ -80,13 +80,14 @@ class PfreControllerTest extends TestCase
      */
     public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
     {
-        $major = 5021;
+        $major = 4011;
         $university = 'northridge';
         $age_range = 1;
         $education_level = 'FTT';
-        $annual_earnings = 2;
-        $financial_aid = 3;
+        $annual_earnings = 1;
+        $financial_aid = 1;
         $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+
         $response->assertJsonStructure([
             'majorId',
             'universityId',
