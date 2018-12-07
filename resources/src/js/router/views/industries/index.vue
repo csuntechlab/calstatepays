@@ -29,6 +29,11 @@ import subNav from "../../../components/global/sub-nav.vue";
 import industryProgress from "../../../components/industries/industry-progress.vue";
 import industryForm from "../../../components/industries/industry-form.vue"
 export default {
+    data(){
+      return {
+        loadingCheck: false
+      }
+    },
     components: {
       csuDataImgBanner,
       industryProgress,

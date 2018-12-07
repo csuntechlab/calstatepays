@@ -112,3 +112,15 @@
 .flip-enter, .flip-leave-to {
     transform: scaleX(0) translateZ(0);
 }
+
+.loading-icon {
+    margin-top: 6rem;
+    color: $blue;
+    @media screen and (max-width: $break-large){
+        margin-top: 0;
+    }
+}
+.loading-major-mobile {
+    color: $blue;
+    margin: 2rem 0 !important;
+}
