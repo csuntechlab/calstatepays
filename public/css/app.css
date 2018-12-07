@@ -21096,7 +21096,6 @@ button.btn-change-campus:hover {
 
 .progress-median:after {
   content: "";
-  position: absolute;
   top: 0;
   z-index: 1;
   bottom: 0;

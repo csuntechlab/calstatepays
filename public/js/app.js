@@ -69859,8 +69859,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			}
 			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
 				var addBtn = document.getElementById("compare-major-button");
-				addBtn.style.position = "absolute";
-				addBtn.style.bottom = "1rem";
+				addBtn.style.position = "fixed";
+				addBtn.style.bottom = "11rem";
 			}
 		}
 	},
@@ -91087,7 +91087,6 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("card-add", {
-                staticClass: "row",
                 attrs: { id: "plus" },
                 on: {
                   cardPlusError: function($event) {
