@@ -83,8 +83,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Student_Backgrounds_Template_Northridge_TableSeeder::class);
         $this->call(Student_Backgrounds_Template_All_TableSeeder::class);
 
-        // $this->call(Master_FRE_Page_Data_TableSeeder::class);
-
         // $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
         // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
         // $this->call(Majors_Same_Hegis_Different_Major_Table_Seeder::class);
