@@ -67,6 +67,7 @@
     &:hover{
         .CSUTile__Image{
             transform: scale(1.2);
+            cursor: pointer;
         }
         .CSUTile__DisableMessage{
             opacity: .5;
@@ -74,6 +75,7 @@
     }
     &__CSUName{
         @extend %CSUTileText;
+        cursor: pointer;
     }
     &__CSUName--Opt{
         @extend %CSUTileText;

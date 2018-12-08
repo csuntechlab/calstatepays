@@ -20349,10 +20349,15 @@ footer, .footer {
 .CSUTile:hover .CSUTile__Image {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  cursor: pointer;
 }
 
 .CSUTile:hover .CSUTile__DisableMessage {
   opacity: .5;
+}
+
+.CSUTile__CSUName {
+  cursor: pointer;
 }
 
 .CSUTile__CSUName--Opt {
