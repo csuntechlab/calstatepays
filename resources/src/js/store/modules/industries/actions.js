@@ -3,10 +3,12 @@ import _industries from "../../mutation-types/industries"
 import _global from '../../mutation-types/global-form';
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
+		commit(_industries.TRIGGER_IS_LOADING);
 		Industries.fetchIndustriesAPI(
 			payload,
 			success => {
 				commit(_industries.FETCH_INDUSTRIES, success);
+				commit(_industries.TRIGGER_IS_LOADING);
 			},
 			(error) =>{commit(_global.ERROR_ALERT,error)
             }

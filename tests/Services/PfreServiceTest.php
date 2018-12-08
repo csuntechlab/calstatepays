@@ -83,7 +83,6 @@ class PfreServiceTest extends TestCase
         $request->annual_earnings = 3;
         $request->financial_aid = 2;
         
-        //  dd($this->pfreService->getFREData($request));
         $response = $this->pfreService->getFREData($request);
         $this->arrayHasKey("student_background_id", $response);
         $this->arrayHasKey("annual_earnings_id", $response);

@@ -50,11 +50,13 @@ export default {
     },
 
     fetchMajorData({ commit, dispatch }, payload) {
+        commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
         Major.fetchMajorDataAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
+                commit(_majors.TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
             },
             (error) => commit(_global.ERROR_ALERT,error),
         );

@@ -1,5 +1,5 @@
 <template>
-    <chart :initOptions="chartDimensions" :options="polar"></chart>
+	<chart :initOptions="chartDimensions" :options="polar"></chart>
 </template>
 
 <script>
@@ -127,6 +127,45 @@ export default {
 					trigger: "axis",
 					axisPointer: {
 						type: "cross"
+					},
+					position: function(pos, params, dom, rect, size) {
+						// tooltip will be fixed on the right if mouse hovering on the left,
+						// and on the left if hovering on the right.
+						var obj = { top: "10%" };
+						obj[
+							["left", "right"][+(pos[0] < size.viewSize[0] / 2)]
+						] = 5;
+						return obj;
+					},
+					formatter: function(params) {
+						var colorSpan = color =>
+							'<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' +
+							color +
+							'"></span>';
+						let rez =
+							"<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(item => {
+							let val = "";
+							//format data
+							if (item.data > 999) {
+								let strVal = item.data.toString();
+								let first = strVal.slice(0, -3);
+								let second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";
+							else val = "$" + item.data;
+
+							var xx =
+								"<h6>" +
+								colorSpan(item.color) +
+								" " +
+								item.seriesName +
+								": " +
+								val +
+								"</h6>";
+							rez += xx;
+						});
+						return rez;
 					}
 				},
 				xAxis: {

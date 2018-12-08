@@ -32,6 +32,12 @@ class MajorServiceTest extends TestCase
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
     }
 
+    /**
+     *  test to receive the required expected amount of majors
+     *  example api call
+     *  /major/hegis-codes/university/northridge
+     *  Expect northridge to receive 86  
+     */
     public function test_getAllHegisCodes_ensure_returns_all_rows()
     {
         $this->seed('Northridge_University_Majors_TableSeeder');
@@ -46,11 +52,6 @@ class MajorServiceTest extends TestCase
         $this->assertArrayHasKey("major", $response[0]);
         $this->assertArrayHasKey("university_id", $response[0]);
 
-        /**
-         *  example api call
-         *  /major/hegis-codes/university/northridge
-         *  Expect northridge to receive 86  
-         */
         $count = University::where('short_name', $univ_name)
             ->with('universityMajors')
             ->get();
@@ -61,7 +62,6 @@ class MajorServiceTest extends TestCase
     public function test_getAllHegisCodes_throws_a_model_not_found_exception()
     {
         $univ_id = 25;    
-        // $message = ''.$univ_id.' was not found';
         $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
@@ -103,13 +103,15 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getMajorEarnings(22021, 'northridge');
     }
 
+    /**  test the opt in functionality
+    *    api route is
+    *    major/hegis-codes/university/{universityId}
+    *    i.e. major/hegis-codes/university/70
+    */
     public function test_getAllHegisCodesByUniversity_Opt_in_CSU()
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('Northridge_University_Majors_TableSeeder');
-        // api route is
-        // major/hegis-codes/university/{universityId}
-        // i.e. major/hegis-codes/university/70
         $university_name = 'northridge';
         $northridge_majors = 84;
 
@@ -154,6 +156,11 @@ class MajorServiceTest extends TestCase
         $this->assertEquals($expected_count, count($response));
     }
 
+    /**  Test the getMajorEarnings API, expect to see 3 arrays with 4 values in each
+    *    need 12 arrays response, year responses, 2,5,10,15
+    *    some college -> 4, bacc -> 4, post -> 4 ..
+    *    these tests make sure the relationships were made
+    */
     public function test_Able_to_retrieve_Aggregate_major_earnings()
     {
         $this->seed('Universities_TableSeeder');
@@ -161,9 +168,6 @@ class MajorServiceTest extends TestCase
 
         $response = $this->majorService->getMajorEarnings(5021, 'all');
 
-        // need 12 arrays response, year responses, 2,5,10,15
-        // some college -> 4, bacc -> 4, post -> 4 ..
-        // these tests make sure the relationships were made
         $this->assertEquals(12, count($response));
         $this->assertEquals(4, count($response[0]['major_path_wage']));
 
@@ -173,7 +177,6 @@ class MajorServiceTest extends TestCase
         $this->assertArrayHasKey("entry_status", $response[0]);
         $this->assertArrayHasKey("years", $response[0]);
         $this->assertArrayHasKey("major_path_wage", $response[0]);
-
     }
 
 }

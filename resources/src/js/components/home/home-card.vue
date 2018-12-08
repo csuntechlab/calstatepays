@@ -111,12 +111,16 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
     data() {
 		return {
 			url: "",
 			isShowing: false,
 		};
-	}
+    },
+    methods: {
+		...mapActions(['setDataPage'])
+	} 
 }
 </script>
