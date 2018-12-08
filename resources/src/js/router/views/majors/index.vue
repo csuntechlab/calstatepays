@@ -86,7 +86,6 @@
 				) {
 					var addBtn = document.getElementById("compare-major-button");
 					addBtn.style.position = "absolute";
-					addBtn.style.bottom = "1rem";
 				}
 			}
 		},
