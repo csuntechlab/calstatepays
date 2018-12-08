@@ -19220,7 +19220,7 @@ figcaption {
   margin-bottom: 1rem;
   -ms-flex-item-align: center;
       align-self: center;
-  height: 7.6rem;
+  height: 7.4rem;
   margin-top: 1.2rem;
   display: block;
 }
@@ -19238,15 +19238,8 @@ figcaption {
   }
 }
 
-@media screen and (min-width: 500px) {
-  .faq-card__image {
-    font-size: 2rem;
-  }
-}
-
 @media screen and (min-width: 576px) {
   .faq-card__image {
-    height: 11rem;
     margin-top: 1rem;
   }
 }
@@ -19297,7 +19290,6 @@ figcaption {
 
 @media screen and (min-width: 768px) {
   .faq-card__button {
-    margin-top: 4rem;
     margin-bottom: 2rem;
   }
 }

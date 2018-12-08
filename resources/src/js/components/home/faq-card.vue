@@ -11,7 +11,7 @@
                 
             </div>
             <div  class="col-6 col-sm-5 d-sm-flex" >
-                <img class="faq-card__image " :src="this.url + '/img/homeimages/icon-faq.jpg'">
+                <img class="faq-card__image " :src="this.url + '/img/homeimages/faq_graphic.svg'">
             </div>
         </div>
 

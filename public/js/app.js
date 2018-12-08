@@ -65875,7 +65875,7 @@ var render = function() {
         _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
           _c("img", {
             staticClass: "faq-card__image ",
-            attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+            attrs: { src: this.url + "/img/homeimages/faq_graphic.svg" }
           })
         ])
       ]),
