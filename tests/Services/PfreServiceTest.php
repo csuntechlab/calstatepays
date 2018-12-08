@@ -29,21 +29,21 @@ class PfreServiceTest extends TestCase
         $this->seed('Northridge_Major_Path_TableSeeder');
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
         $this->seed("Investments_Template_Northridge_TableSeeder");
+        $this->seed("Student_Backgrounds_Template_Northridge_TableSeeder");
     }
 
     public function test_Aggregate_getFREData_ensure_returns_all_keys()
     {
         $this->seed('Universities_TableSeeder');
         $this->seed('Aggregate_University_Majors_TableSeeder');
-        $this->seed('Master_FRE_Page_Data_TableSeeder');
 
         $request = new Request();
-        $request->major = 22021;
+        $request->major = 5021;
         $request->university = 'all';
-        $request->age_range = 1;
+        $request->age_range = 5;
         $request->education_level = 'FTF';
-        $request->annual_earnings = 1;
-        $request->financial_aid = 1;
+        $request->annual_earnings = 5;
+        $request->financial_aid = 5;
 
         $response = $this->pfreService->getFREData($request);
 
