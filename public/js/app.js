@@ -69835,6 +69835,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -69883,14 +69884,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleScroll: function handleScroll(event) {
 			var footer = document.querySelector("footer");
 			var bounding = footer.getBoundingClientRect();
-			if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				var addBtn = document.getElementById("compare-major-button");
+			var addBtn = document.getElementById("compare-major-button");
+			if (window.innerWidth < 767) {
+				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 1000)) {
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "5rem";
+				}
+				if (window.scrollY + window.innerHeight > document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 140)) {
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "11rem";
+				}
+			} else {
+				addBtn.style.bottom = "7rem";
 				addBtn.style.position = "fixed";
-				addBtn.style.bottom = "5rem";
-			}
-			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				var addBtn = document.getElementById("compare-major-button");
-				addBtn.style.position = "absolute";
 			}
 		}
 	},
@@ -91209,7 +91215,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n\t\t\tCollege graduates earn more money over time. Select a major and find out how earnings for graduates, non-completers, and post graduates change over time.\n\t\t"
+              "\n\t\t\tInteger enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla\n\t\t\tmetus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n\t\t"
             )
           ]
         )
@@ -91248,7 +91254,6 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("card-add", {
-                staticClass: "row",
                 attrs: { id: "plus" },
                 on: {
                   cardPlusError: function($event) {
