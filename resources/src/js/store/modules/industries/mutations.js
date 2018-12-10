@@ -4,6 +4,7 @@ export default {
 	[_industries.FETCH_INDUSTRIES](state, payload) {
 		state.allLevelIndustries = payload;
 		state.industries = payload[state.industryEducationLevel];
+
 	},
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state,payload) {
 		state.industryMajorsByField = [];
@@ -18,6 +19,7 @@ export default {
 		state.industryMajorsByField = [];
 		state.industryFormWasSubmitted = false;
 		state.industryFormWasSubmittedOnce = false;
+		state.industryMajor = null;
 	},
 	[_industries.RESET_INDUSTRY_CARD](state) {
 		if(state.industryFormWasSubmitted) {
@@ -37,5 +39,13 @@ export default {
 	},
 	[_industries.SET_INDUSTRY_MAJOR](state, payload) {
 		state.industryMajor = payload.major;
+	},
+	[_industries.TRIGGER_IS_LOADING](state){
+		if (state.industryIsLoading ===false) {
+			state.industryIsLoading = true;
+		}
+		else {
+			state.industryIsLoading = false;
+		}
 	}
 };

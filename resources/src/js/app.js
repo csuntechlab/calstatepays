@@ -5,6 +5,7 @@
  */
 require('./bootstrap');
 var SocialSharing = require("vue-social-sharing");
+var _ = require('lodash');
 // import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import Vue from 'vue';
 import axios from 'axios';
@@ -36,6 +37,7 @@ const vm = new Vue({
     router,
     render: h => h(App),
     mounted(){
+        this.checkSessionData();
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
@@ -45,9 +47,19 @@ const vm = new Vue({
         ...mapGetters([
             'selectedUniversity'
         ])
+    },
+    methods: {
+        checkSessionData() {
+            var sessionData = sessionStorage.getItem("selectedUniversity");
+            if (sessionData === null) {
+                this.showModal = true;
+            }
+            else {
+                this.$store.dispatch("setUniversity", sessionData);
+            }
+        }
     }
 });
-
 
 export default vm;
 
