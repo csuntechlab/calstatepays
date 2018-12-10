@@ -10,7 +10,6 @@
                 <p class="footer__link text-white text-right"><strong>California State University</strong></p>
                 <a href="#" class="footer__link text-white pull-right">Contact Us</a>
             </div>
-            <div v-if="routeIsHome" class="footer-mobile-positioning"/>
         </footer>
         <div class="footer-meta">
             <div class="row">
@@ -31,10 +30,10 @@
 <script>
 export default {
     data() {
-		return {
-			url: ""
-		};
-	},
+        return {
+            url: ""
+        };
+    },
     created() {
         this.url = window.baseUrl
     },
