@@ -18547,8 +18547,6 @@ html {
     line-height: 1.5;
     padding-top: 3rem;
     font-size: 1.3rem;
-    padding-bottom: .4rem;
-    margin-bottom: 1.2rem;
   }
   .csu-card .csu-card__form-sizing .btn {
     padding: 0.6rem 2rem;
@@ -18592,11 +18590,12 @@ html {
 }
 
 .csu-card__no-data {
-  line-height: 25rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .csu-card__no-data--mobile {
-  line-height: 18rem;
+  padding-top: 3.5rem;
 }
 
 .csu-card__form {
@@ -18639,6 +18638,22 @@ html {
 .flip-enter, .flip-leave-to {
   -webkit-transform: scaleX(0) translateZ(0);
           transform: scaleX(0) translateZ(0);
+}
+
+.loading-icon {
+  margin-top: 6rem;
+  color: #2f98bf;
+}
+
+@media screen and (max-width: 992px) {
+  .loading-icon {
+    margin-top: 0;
+  }
+}
+
+.loading-major-mobile {
+  color: #2f98bf;
+  margin: 2rem 0 !important;
 }
 
 .text-gray {
@@ -20772,7 +20787,6 @@ button.btn-change-campus:hover {
 
 .progress-median:after {
   content: "";
-  position: absolute;
   top: 0;
   z-index: 1;
   bottom: 0;

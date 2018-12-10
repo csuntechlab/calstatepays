@@ -3,7 +3,7 @@
 export default {
     majors: state => state.majors,
     majorById: (state) => (id) => {
-        const index = state.majors.findIndex((major) => major.majorId === Number(id));
+        const index = state.majors.findIndex((major) => major.majorId === id);
         return state.majors[index];
     },
     majorNameById: (state, getters) => id => {
@@ -23,6 +23,7 @@ export default {
     majorsByField: state => index => state.majorCards[index].majorsByField,
     formWasSubmitted:state=> index => state.majorCards[index].formWasSubmitted,
     formWasSubmittedOnce: state => index => state.majorCards[index].submittedOnce,
+    majorIsLoading: state => index => state.majorCards[index].majorIsLoading,
     indexOfUnsubmittedCard: state => {
         // let bool = state.majorCards.every((el) => {
         //     return el.formWasSubmitted === true;

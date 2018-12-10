@@ -2,79 +2,90 @@
 	<div class="row mb-3" v-bind:id="'majorCardHasIndex-' + this.index">
 		<major-form class="col-12" :windowWidth="windowWidth" :index="index" />
 		<div class="col-12">
-			<div v-if="selectedFormWasSubmittedOnce" class="csu-card mb-5">
-				<div class="container-fluid py-3">
-					<div class="row">
-						<div class="col">
-							<i class="fa fa-times fa-2x btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
-						</div>
-						<div class="col-11">
-							<social-sharing 
-							v-if="selectedFormWasSubmitted" 
-							:networks="mobileNetworks" 
-							url="sandbox.csun.edu/metalab/test/csumetrola"
-							:title="this.shareDescription" 
-							description="Discover Your Earnings After College." 
-							:quote="this.shareDescription"
-							hashtags="CalStatePays, ItPaysToGoToCollege" 
-							inline-template>
-							<div>
-								<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
-									<i class="fa fa-twitter-square"></i>
-									Tweet
-								</network>
-								<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
-									<i class="fa fa-linkedin-square"></i>
-									Share
-								</network>
-								<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
-									<i class="fa fa-facebook-official"></i>
-									Share
-								</network>
+			<div v-if="selectedMajorIsLoading" class="mr-0 ml-0 form-group csu-card row">
+						<v-progress-circular class="loading-major-mobile"
+               			 :size="100"
+                		:width="10"
+                		indeterminate
+                		></v-progress-circular>
+			</div>
+			<div v-else>
+					<div v-if="selectedFormWasSubmittedOnce" class="csu-card mb-5">
+					<div class="container-fluid py-3">
+						<div class="row">
+							<div class="col">
+								<i class="fa fa-times fa-2x btn-remove" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 							</div>
-							</social-sharing>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<h3 class="industry-title pt-2">{{selectedMajorTitle}}</h3>
-						</div>
-					</div>
-					<div class="col">
-							<major-legend :educationLevel="selectedEducationLevel" />
-					</div>
-					<div v-show="nullValues">
-						<div class="row text-center">
-							<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
-						</div>
-					</div>
-						<div v-show="!nullValues" class="row" style="height: 400px">
-							<div class="col-12">
-								<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+							<div class="col-11">
+								<social-sharing 
+								v-if="selectedFormWasSubmitted"
+								:class="{'invisible': nullValues}"
+								:networks="mobileNetworks" 
+								url="sandbox.csun.edu/metalab/test/csumetrola"
+								:title="this.shareDescription" 
+								description="Discover Your Earnings After College." 
+								:quote="this.shareDescription"
+								hashtags="CalStatePays, ItPaysToGoToCollege" 
+								inline-template>
+								<div>
+									<network network="twitter" class="csu-card__share csu-card__share-twitter float-right">
+										<i class="fa fa-twitter-square"></i>
+										Tweet
+									</network>
+									<network network="linkedin" class="csu-card__share csu-card__share-linkedin float-right">
+										<i class="fa fa-linkedin-square"></i>
+										Share
+									</network>
+									<network network="facebook" class="csu-card__share csu-card__share-facebook float-right">
+										<i class="fa fa-facebook-official"></i>
+										Share
+									</network>
+								</div>
+								</social-sharing>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<industry-mobile v-show="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
+								<h3 class="industry-title pt-2">{{selectedMajorTitle}}</h3>
 							</div>
 						</div>
-				</div>
-			</div>
-			<div v-else class="csu-card csu-card__instructions mb-5">
-				<div class="row">
-					<div class="col">
-						<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						<div class="col">
+								<major-legend :educationLevel="selectedEducationLevel" />
+						</div>
+						<div v-show="nullValues">
+							<div class="csu-card__no-data--mobile">
+								<p class="lead pl-5 pr-5">No data is available for this selected Degree Level.</p>
+								<p class="lead pl-5 pr-5">Please see the <router-link to="/faq">FAQ</router-link> section for more information on how we collected the data.</p>
+							</div>
+						</div>
+							<div v-show="!nullValues" class="row" style="height: 400px">
+								<div class="col-12">
+									<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :educationLevel="selectedEducationLevel" :windowWidth=windowWidth />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<industry-mobile :empty="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
+								</div>
+							</div>
 					</div>
 				</div>
-				<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
-				<p class="lead pl-md-5 pr-md-5">
-					You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
-					which resonates the most with you.
-				</p>
-				<p class="lead pl-md-5 pr-md-5">
-					<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
-					For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
-				</p>
+				<div v-else class="csu-card csu-card__instructions mb-5">
+					<div class="row">
+						<div class="col">
+							<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						</div>
+					</div>
+					<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+					<p class="lead pl-md-5 pr-md-5">
+						You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+						which resonates the most with you.
+					</p>
+					<p class="lead pl-md-5 pr-md-5">
+						<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+						For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -123,7 +134,8 @@
 				"formWasSubmittedOnce",
 				"majorNameById",
 				"universities",
-				"selectedUniversity"
+				"selectedUniversity",
+				"majorIsLoading"
 			]),
 			isEmpty() {
 				//Check whether the form field was fired off, toggle carousel on
@@ -152,6 +164,9 @@
 			},
 			selectedFormWasSubmittedOnce() {
 				return this.formWasSubmittedOnce(this.index);
+			},
+			selectedMajorIsLoading(){
+				return this.majorIsLoading(this.index);
 			},
 			selectedMajorId() {
 				return this.majorData(this.index).majorId;
