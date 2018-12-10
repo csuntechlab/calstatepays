@@ -8,7 +8,6 @@
 	</div>
 </template>
 <script>
-import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import homeCard from "../../../components/home/home-card.vue"
 import homeBanner from "../../../components/home/home-banner.vue";
 import campusSeals from "../../../components/home/campus-seals.vue";
@@ -25,7 +24,6 @@ export default {
 		this.url = window.baseUrl;
 	},
 	components: {
-		landingPageCarousel,
 		homeCard,
 		homeBanner,
 		homeVideo,

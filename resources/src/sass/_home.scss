@@ -66,6 +66,81 @@
     }
 }
 
+@mixin make-homeCard__titleAndIconWrapper($color) {
+	@extend .px-2, .py-3, .py-md-4, .p-md-4 ;
+	$border-thickness: .3rem;
+	$constrast-color: white;
+	$border-style: solid;
+	transition: all .28s ease-out;
+	border-top: $border-thickness $border-style $color;
+	border-left: $border-thickness $border-style $color;
+	border-right: $border-thickness $border-style $color;
+	background: $constrast-color;
+	a{margin: 0; text-decoration: none; color: darken($color,15%);}
+	a:hover{color: $constrast-color;}
+	&:hover{
+		background:$color;
+	}
+}
+
+@mixin make-homeCard__title($font-color, $break-point) {
+	@extend .text-left, .text-md-center, .pt-md-3, .px-xl-5 ;
+	$constrast-color: white;
+	color: $font-color;
+	font-size: 1.7rem;
+	margin: 0;
+	font-weight: 600;
+	// text-decoration: none;
+	&:hover{
+		color: $constrast-color;
+	}
+	@media screen and (max-width: $break-point) {
+		font-size: 1.45rem;
+	}
+}
+
+%iconWrapperBase{
+	position: relative;
+	padding-top: 50%; //This from aspect ratio of banner form the mockup.
+	@media screen and (max-width: $break-small) {
+		height: unset;
+		padding-top: 0;
+	}
+	svg{
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		@media screen and (max-width: $break-small) {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0,0);
+		}
+	}
+}
+
+@mixin make-homeCard__copy($color, $break-point) {
+	@extend .text-left, .text-md-center, .p-3, .p-lg-4, .px-lg-4, .px-xl-5, .py-lg-3 ;
+	background: $color;
+	color: white;
+	margin: 0;
+	line-height: 130%;
+	font-size: 1rem;
+	font-weight: 550;
+	text-decoration: none;
+	@media screen and (max-width: $break-point){
+		font-size: 1rem;
+		min-height: unset;
+	}
+}
+
+%titleHover{
+	color: $white;
+	text-decoration: none;
+}
+
 .homeCard{
     //Major
     &__iconWrapper--major{
@@ -234,6 +309,9 @@
         }
     }
 }
+
+
+
 
 //--------------------------
 //--------------------------
