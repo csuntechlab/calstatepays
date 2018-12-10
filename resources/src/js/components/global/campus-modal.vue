@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn-change-campus" @click="showModal = true" role="button">
+        <button class="btn-change-campus" @click.prevent="showModal = true" role="button">
                 <slot name="change button"></slot>
         </button>
         

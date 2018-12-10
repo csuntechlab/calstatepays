@@ -2366,7 +2366,7 @@ Object.defineProperty(exports, "withParams", {
 });
 exports.regex = exports.ref = exports.len = exports.req = void 0;
 
-var _withParams = _interopRequireDefault(__webpack_require__(225));
+var _withParams = _interopRequireDefault(__webpack_require__(228));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2434,7 +2434,7 @@ exports.regex = regex;
 
 var zrUtil = __webpack_require__(0);
 
-var pathTool = __webpack_require__(287);
+var pathTool = __webpack_require__(290);
 
 var colorTool = __webpack_require__(29);
 
@@ -2454,55 +2454,55 @@ var Group = __webpack_require__(37);
 
 exports.Group = Group;
 
-var Text = __webpack_require__(294);
+var Text = __webpack_require__(297);
 
 exports.Text = Text;
 
-var Circle = __webpack_require__(295);
+var Circle = __webpack_require__(298);
 
 exports.Circle = Circle;
 
-var Sector = __webpack_require__(296);
+var Sector = __webpack_require__(299);
 
 exports.Sector = Sector;
 
-var Ring = __webpack_require__(297);
+var Ring = __webpack_require__(300);
 
 exports.Ring = Ring;
 
-var Polygon = __webpack_require__(298);
+var Polygon = __webpack_require__(301);
 
 exports.Polygon = Polygon;
 
-var Polyline = __webpack_require__(301);
+var Polyline = __webpack_require__(304);
 
 exports.Polyline = Polyline;
 
-var Rect = __webpack_require__(302);
+var Rect = __webpack_require__(305);
 
 exports.Rect = Rect;
 
-var Line = __webpack_require__(303);
+var Line = __webpack_require__(306);
 
 exports.Line = Line;
 
-var BezierCurve = __webpack_require__(304);
+var BezierCurve = __webpack_require__(307);
 
 exports.BezierCurve = BezierCurve;
 
-var Arc = __webpack_require__(305);
+var Arc = __webpack_require__(308);
 
 exports.Arc = Arc;
 
-var CompoundPath = __webpack_require__(306);
+var CompoundPath = __webpack_require__(309);
 
 exports.CompoundPath = CompoundPath;
 
-var LinearGradient = __webpack_require__(307);
+var LinearGradient = __webpack_require__(310);
 
 exports.LinearGradient = LinearGradient;
 
-var RadialGradient = __webpack_require__(308);
+var RadialGradient = __webpack_require__(311);
 
 exports.RadialGradient = RadialGradient;
 
@@ -2510,7 +2510,7 @@ var BoundingRect = __webpack_require__(13);
 
 exports.BoundingRect = BoundingRect;
 
-var IncrementalDisplayable = __webpack_require__(309);
+var IncrementalDisplayable = __webpack_require__(312);
 
 exports.IncrementalDisplayable = IncrementalDisplayable;
 
@@ -3610,11 +3610,11 @@ var ExtensionAPI = __webpack_require__(103);
 
 var CoordinateSystemManager = __webpack_require__(56);
 
-var OptionManager = __webpack_require__(313);
+var OptionManager = __webpack_require__(316);
 
-var backwardCompat = __webpack_require__(314);
+var backwardCompat = __webpack_require__(317);
 
-var dataStack = __webpack_require__(316);
+var dataStack = __webpack_require__(319);
 
 var ComponentModel = __webpack_require__(16);
 
@@ -3632,19 +3632,19 @@ var _throttle = __webpack_require__(59);
 
 var throttle = _throttle.throttle;
 
-var seriesColor = __webpack_require__(318);
+var seriesColor = __webpack_require__(321);
 
-var aria = __webpack_require__(319);
+var aria = __webpack_require__(322);
 
-var loadingDefault = __webpack_require__(321);
+var loadingDefault = __webpack_require__(324);
 
-var Scheduler = __webpack_require__(322);
+var Scheduler = __webpack_require__(325);
 
-var lightTheme = __webpack_require__(323);
+var lightTheme = __webpack_require__(326);
 
-var darkTheme = __webpack_require__(324);
+var darkTheme = __webpack_require__(327);
 
-__webpack_require__(325);
+__webpack_require__(328);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -5638,7 +5638,7 @@ exports.setCanvasCreator = setCanvasCreator;
 exports.registerMap = registerMap;
 exports.getMap = getMap;
 exports.dataTool = dataTool;
-var ___ec_export = __webpack_require__(326);
+var ___ec_export = __webpack_require__(329);
 (function () {
     for (var key in ___ec_export) {
         if (___ec_export.hasOwnProperty(key)) {
@@ -6650,7 +6650,7 @@ var zrUtil = __webpack_require__(0);
 
 var PathProxy = __webpack_require__(40);
 
-var pathContain = __webpack_require__(288);
+var pathContain = __webpack_require__(291);
 
 var Pattern = __webpack_require__(90);
 
@@ -7726,13 +7726,13 @@ var _clazz = __webpack_require__(19);
 var enableClassExtend = _clazz.enableClassExtend;
 var enableClassCheck = _clazz.enableClassCheck;
 
-var lineStyleMixin = __webpack_require__(284);
+var lineStyleMixin = __webpack_require__(287);
 
-var areaStyleMixin = __webpack_require__(285);
+var areaStyleMixin = __webpack_require__(288);
 
-var textStyleMixin = __webpack_require__(286);
+var textStyleMixin = __webpack_require__(289);
 
-var itemStyleMixin = __webpack_require__(310);
+var itemStyleMixin = __webpack_require__(313);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -7953,7 +7953,7 @@ var makeInner = _model.makeInner;
 
 var layout = __webpack_require__(17);
 
-var boxLayoutMixin = __webpack_require__(311);
+var boxLayoutMixin = __webpack_require__(314);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -10574,7 +10574,7 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var OrdinalScale = __webpack_require__(329);
+var OrdinalScale = __webpack_require__(332);
 
 var IntervalScale = __webpack_require__(61);
 
@@ -10582,7 +10582,7 @@ var Scale = __webpack_require__(43);
 
 var numberUtil = __webpack_require__(9);
 
-var _barGrid = __webpack_require__(330);
+var _barGrid = __webpack_require__(333);
 
 var prepareLayoutBarSeries = _barGrid.prepareLayoutBarSeries;
 var makeColumnLayout = _barGrid.makeColumnLayout;
@@ -10590,9 +10590,9 @@ var retrieveColumnLayout = _barGrid.retrieveColumnLayout;
 
 var BoundingRect = __webpack_require__(13);
 
-__webpack_require__(331);
+__webpack_require__(334);
 
-__webpack_require__(332);
+__webpack_require__(335);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -23651,9 +23651,9 @@ exports.retrieveRawAttr = retrieveRawAttr;
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(214)
+var __vue_script__ = __webpack_require__(217)
 /* template */
-var __vue_template__ = __webpack_require__(218)
+var __vue_template__ = __webpack_require__(221)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -23698,9 +23698,9 @@ module.exports = Component.exports
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(219)
+var __vue_script__ = __webpack_require__(222)
 /* template */
-var __vue_template__ = __webpack_require__(220)
+var __vue_template__ = __webpack_require__(223)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -24102,7 +24102,7 @@ var Style = __webpack_require__(88);
 
 var Element = __webpack_require__(83);
 
-var RectText = __webpack_require__(280);
+var RectText = __webpack_require__(283);
 
 /**
  * 可绘制的图形基类
@@ -27022,7 +27022,7 @@ var ADD_MAJOR_CARD = 'majors/ADD_MAJOR_CARD';
 var DELETE_MAJOR_CARD = 'majors/DELETE_MAJOR_CARD';
 var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
-
+var TRIGGER_MAJOR_IS_LOADING = 'majors/TRIGGER_MAJOR_IS_LOADING';
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MAJORS: FETCH_MAJORS,
     FETCH_FIELD_OF_STUDIES: FETCH_FIELD_OF_STUDIES,
@@ -27036,7 +27036,8 @@ var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
     ADD_MAJOR_CARD: ADD_MAJOR_CARD,
     DELETE_MAJOR_CARD: DELETE_MAJOR_CARD,
     RESET_MAJOR_CARD: RESET_MAJOR_CARD,
-    RESET_MAJOR_STATE: RESET_MAJOR_STATE
+    RESET_MAJOR_STATE: RESET_MAJOR_STATE,
+    TRIGGER_MAJOR_IS_LOADING: TRIGGER_MAJOR_IS_LOADING
 });
 
 /***/ }),
@@ -27048,7 +27049,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(221)
+var __vue_template__ = __webpack_require__(224)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -27224,47 +27225,47 @@ Object.defineProperty(exports, "decimal", {
 });
 exports.helpers = void 0;
 
-var _alpha = _interopRequireDefault(__webpack_require__(224));
+var _alpha = _interopRequireDefault(__webpack_require__(227));
 
-var _alphaNum = _interopRequireDefault(__webpack_require__(227));
+var _alphaNum = _interopRequireDefault(__webpack_require__(230));
 
-var _numeric = _interopRequireDefault(__webpack_require__(228));
+var _numeric = _interopRequireDefault(__webpack_require__(231));
 
-var _between = _interopRequireDefault(__webpack_require__(229));
+var _between = _interopRequireDefault(__webpack_require__(232));
 
-var _email = _interopRequireDefault(__webpack_require__(230));
+var _email = _interopRequireDefault(__webpack_require__(233));
 
-var _ipAddress = _interopRequireDefault(__webpack_require__(231));
+var _ipAddress = _interopRequireDefault(__webpack_require__(234));
 
-var _macAddress = _interopRequireDefault(__webpack_require__(232));
+var _macAddress = _interopRequireDefault(__webpack_require__(235));
 
-var _maxLength = _interopRequireDefault(__webpack_require__(233));
+var _maxLength = _interopRequireDefault(__webpack_require__(236));
 
-var _minLength = _interopRequireDefault(__webpack_require__(234));
+var _minLength = _interopRequireDefault(__webpack_require__(237));
 
-var _required = _interopRequireDefault(__webpack_require__(235));
+var _required = _interopRequireDefault(__webpack_require__(238));
 
-var _requiredIf = _interopRequireDefault(__webpack_require__(236));
+var _requiredIf = _interopRequireDefault(__webpack_require__(239));
 
-var _requiredUnless = _interopRequireDefault(__webpack_require__(237));
+var _requiredUnless = _interopRequireDefault(__webpack_require__(240));
 
-var _sameAs = _interopRequireDefault(__webpack_require__(238));
+var _sameAs = _interopRequireDefault(__webpack_require__(241));
 
-var _url = _interopRequireDefault(__webpack_require__(239));
+var _url = _interopRequireDefault(__webpack_require__(242));
 
-var _or = _interopRequireDefault(__webpack_require__(240));
+var _or = _interopRequireDefault(__webpack_require__(243));
 
-var _and = _interopRequireDefault(__webpack_require__(241));
+var _and = _interopRequireDefault(__webpack_require__(244));
 
-var _not = _interopRequireDefault(__webpack_require__(242));
+var _not = _interopRequireDefault(__webpack_require__(245));
 
-var _minValue = _interopRequireDefault(__webpack_require__(243));
+var _minValue = _interopRequireDefault(__webpack_require__(246));
 
-var _maxValue = _interopRequireDefault(__webpack_require__(244));
+var _maxValue = _interopRequireDefault(__webpack_require__(247));
 
-var _integer = _interopRequireDefault(__webpack_require__(245));
+var _integer = _interopRequireDefault(__webpack_require__(248));
 
-var _decimal = _interopRequireDefault(__webpack_require__(246));
+var _decimal = _interopRequireDefault(__webpack_require__(249));
 
 var helpers = _interopRequireWildcard(__webpack_require__(4));
 
@@ -27281,9 +27282,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(268)
+var __vue_script__ = __webpack_require__(271)
 /* template */
-var __vue_template__ = __webpack_require__(381)
+var __vue_template__ = __webpack_require__(384)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29415,21 +29416,21 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_home_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue__ = __webpack_require__(405);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(414);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_research_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue__ = __webpack_require__(425);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__ = __webpack_require__(428);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_about_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_about_index_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue__ = __webpack_require__(431);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue__);
 
 
@@ -29699,6 +29700,7 @@ var TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED = "industries/TOGGLE_INDUSTRY_FORM_WAS_SU
 var RESET_INDUSTRY_CARD = "industries/RESET_INDUSTRY_CARD";
 var TOGGLE_INDUSTRY_EDUCATION_LEVEL = "industries/TOGGLE_INDUSTRY_EDUCATION_LEVEL";
 var SET_INDUSTRY_MAJOR = "industries/SET_INDUSTRY_MAJOR";
+var TRIGGER_IS_LOADING = "industries/TRIGGER_IS_LOADING";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	FETCH_INDUSTRIES: FETCH_INDUSTRIES,
@@ -29707,7 +29709,8 @@ var SET_INDUSTRY_MAJOR = "industries/SET_INDUSTRY_MAJOR";
 	RESET_INDUSTRY_CARD: RESET_INDUSTRY_CARD,
 	TOGGLE_INDUSTRY_EDUCATION_LEVEL: TOGGLE_INDUSTRY_EDUCATION_LEVEL,
 	RESET_INDUSTRY_STATE: RESET_INDUSTRY_STATE,
-	SET_INDUSTRY_MAJOR: SET_INDUSTRY_MAJOR
+	SET_INDUSTRY_MAJOR: SET_INDUSTRY_MAJOR,
+	TRIGGER_IS_LOADING: TRIGGER_IS_LOADING
 });
 
 /***/ }),
@@ -29738,9 +29741,9 @@ var SET_TABLEAU_VALUE = "global-form/SET_TABLEAU_VALUE";
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(248)
+var __vue_script__ = __webpack_require__(251)
 /* template */
-var __vue_template__ = __webpack_require__(249)
+var __vue_template__ = __webpack_require__(252)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29785,13 +29788,13 @@ module.exports = Component.exports
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(263)
+  __webpack_require__(266)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(266)
+var __vue_script__ = __webpack_require__(269)
 /* template */
-var __vue_template__ = __webpack_require__(267)
+var __vue_template__ = __webpack_require__(270)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29931,7 +29934,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(265)
+var listToStyles = __webpack_require__(268)
 
 /*
 type StyleObject = {
@@ -30146,13 +30149,13 @@ function applyToTag (styleElement, obj) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(269)
+  __webpack_require__(272)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(271)
+var __vue_script__ = __webpack_require__(274)
 /* template */
-var __vue_template__ = __webpack_require__(347)
+var __vue_template__ = __webpack_require__(350)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30200,15 +30203,15 @@ var env = __webpack_require__(10);
 
 var zrUtil = __webpack_require__(0);
 
-var Handler = __webpack_require__(272);
+var Handler = __webpack_require__(275);
 
-var Storage = __webpack_require__(274);
+var Storage = __webpack_require__(277);
 
-var Painter = __webpack_require__(278);
+var Painter = __webpack_require__(281);
 
-var Animation = __webpack_require__(281);
+var Animation = __webpack_require__(284);
 
-var HandlerProxy = __webpack_require__(282);
+var HandlerProxy = __webpack_require__(285);
 
 /*!
 * ZRender, a high performance 2d drawing library.
@@ -30676,7 +30679,7 @@ var Eventful = __webpack_require__(28);
 
 var Transformable = __webpack_require__(84);
 
-var Animatable = __webpack_require__(275);
+var Animatable = __webpack_require__(278);
 
 var zrUtil = __webpack_require__(0);
 
@@ -31232,7 +31235,7 @@ module.exports = _default;
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Clip = __webpack_require__(276);
+var Clip = __webpack_require__(279);
 
 var color = __webpack_require__(29);
 
@@ -33278,7 +33281,7 @@ var Model = __webpack_require__(15);
 
 var ComponentModel = __webpack_require__(16);
 
-var globalDefault = __webpack_require__(312);
+var globalDefault = __webpack_require__(315);
 
 var colorPaletteMixin = __webpack_require__(101);
 
@@ -34295,9 +34298,9 @@ module.exports = _default;
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var smoothSpline = __webpack_require__(299);
+var smoothSpline = __webpack_require__(302);
 
-var smoothBezier = __webpack_require__(300);
+var smoothBezier = __webpack_require__(303);
 
 function buildPath(ctx, shape, closePath) {
   var points = shape.points;
@@ -34626,7 +34629,7 @@ var ComponentModel = __webpack_require__(16);
 
 var colorPaletteMixin = __webpack_require__(101);
 
-var dataFormatMixin = __webpack_require__(317);
+var dataFormatMixin = __webpack_require__(320);
 
 var _layout = __webpack_require__(17);
 
@@ -35630,7 +35633,7 @@ var zrUtil = __webpack_require__(0);
 
 var Model = __webpack_require__(15);
 
-var DataDiffer = __webpack_require__(328);
+var DataDiffer = __webpack_require__(331);
 
 var Source = __webpack_require__(31);
 
@@ -38301,7 +38304,7 @@ var _number = __webpack_require__(9);
 var linearMap = _number.linearMap;
 var getPixelPrecision = _number.getPixelPrecision;
 
-var _axisTickLabelBuilder = __webpack_require__(336);
+var _axisTickLabelBuilder = __webpack_require__(339);
 
 var createAxisTicks = _axisTickLabelBuilder.createAxisTicks;
 var createAxisLabels = _axisTickLabelBuilder.createAxisLabels;
@@ -38676,7 +38679,7 @@ module.exports = isObject;
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(339);
+var freeGlobal = __webpack_require__(342);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -38705,17 +38708,17 @@ module.exports = Symbol;
 
 var echarts = __webpack_require__(7);
 
-__webpack_require__(348);
+__webpack_require__(351);
 
-__webpack_require__(349);
+__webpack_require__(352);
 
-var visualSymbol = __webpack_require__(354);
+var visualSymbol = __webpack_require__(357);
 
-var layoutPoints = __webpack_require__(355);
+var layoutPoints = __webpack_require__(358);
 
-var dataSample = __webpack_require__(356);
+var dataSample = __webpack_require__(359);
 
-__webpack_require__(357);
+__webpack_require__(360);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -38757,7 +38760,7 @@ var _number = __webpack_require__(9);
 
 var parsePercent = _number.parsePercent;
 
-var _labelHelper = __webpack_require__(351);
+var _labelHelper = __webpack_require__(354);
 
 var getDefaultLabel = _labelHelper.getDefaultLabel;
 
@@ -39241,7 +39244,7 @@ var zrUtil = __webpack_require__(0);
 
 var ComponentModel = __webpack_require__(16);
 
-var axisModelCreator = __webpack_require__(363);
+var axisModelCreator = __webpack_require__(366);
 
 var axisModelCommonMixin = __webpack_require__(113);
 
@@ -40164,11 +40167,11 @@ exports.layout = layout;
 
 var echarts = __webpack_require__(7);
 
-__webpack_require__(367);
+__webpack_require__(370);
 
-__webpack_require__(373);
+__webpack_require__(376);
 
-__webpack_require__(374);
+__webpack_require__(377);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -40900,13 +40903,13 @@ echarts.extendComponentView({
 
 var echarts = __webpack_require__(7);
 
-__webpack_require__(376);
+__webpack_require__(379);
 
-__webpack_require__(377);
+__webpack_require__(380);
 
-__webpack_require__(378);
+__webpack_require__(381);
 
-var legendFilter = __webpack_require__(380);
+var legendFilter = __webpack_require__(383);
 
 var Component = __webpack_require__(16);
 
@@ -40943,9 +40946,9 @@ Component.registerSubTypeDefaulter('legend', function () {
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(382)
+var __vue_script__ = __webpack_require__(385)
 /* template */
-var __vue_template__ = __webpack_require__(386)
+var __vue_template__ = __webpack_require__(389)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40990,9 +40993,9 @@ module.exports = Component.exports
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(389)
+var __vue_script__ = __webpack_require__(392)
 /* template */
-var __vue_template__ = __webpack_require__(390)
+var __vue_template__ = __webpack_require__(393)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41037,9 +41040,9 @@ module.exports = Component.exports
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(392)
+var __vue_script__ = __webpack_require__(395)
 /* template */
-var __vue_template__ = __webpack_require__(393)
+var __vue_template__ = __webpack_require__(396)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41084,9 +41087,9 @@ module.exports = Component.exports
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(416)
+var __vue_script__ = __webpack_require__(419)
 /* template */
-var __vue_template__ = __webpack_require__(417)
+var __vue_template__ = __webpack_require__(420)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41129,7 +41132,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(136);
-module.exports = __webpack_require__(457);
+module.exports = __webpack_require__(460);
 
 
 /***/ }),
@@ -41144,13 +41147,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuetify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_youtube__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_youtube__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue_youtube___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vue_youtube__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__App_vue__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__App_vue__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__App_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -63427,7 +63430,8 @@ function h(tag, key, args) {
         majorsByField: [],
         industries: [],
         majorData: [],
-        educationLevel: 'allDegrees'
+        educationLevel: 'allDegrees',
+        majorIsLoading: false
     }]
 });
 
@@ -63501,6 +63505,11 @@ function h(tag, key, args) {
     formWasSubmittedOnce: function formWasSubmittedOnce(state) {
         return function (index) {
             return state.majorCards[index].submittedOnce;
+        };
+    },
+    majorIsLoading: function majorIsLoading(state) {
+        return function (index) {
+            return state.majorCards[index].majorIsLoading;
         };
     },
     indexOfUnsubmittedCard: function indexOfUnsubmittedCard(state) {
@@ -63577,7 +63586,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         industries: [],
         majorData: [],
         formWasSubmitted: false,
-        submittedOnce: false
+        submittedOnce: false,
+        majorIsLoading: false
     });
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].DELETE_MAJOR_CARD, function (state, payload) {
     var index = payload;
@@ -63598,8 +63608,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         majorsByField: [],
         industries: [],
         majorData: [],
+        majorIsLoading: false,
         educationLevel: 'allDegrees'
     }];
+}), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, function (state, payload) {
+    var index = payload;
+    if (state.majorCards[index].majorIsLoading === false) {
+        state.majorCards[index].majorIsLoading = true;
+    } else {
+        state.majorCards[index].majorIsLoading = false;
+    }
 }), _majors$FETCH_MAJORS$);
 
 /***/ }),
@@ -63665,9 +63683,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref6.commit,
             dispatch = _ref6.dispatch;
 
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
         __WEBPACK_IMPORTED_MODULE_0__api_majors__["a" /* default */].fetchMajorDataAPI(payload, function (success) {
             success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
         }, function (error) {
             return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
@@ -64018,7 +64038,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
     industryEducationLevel: "bachelors",
-    industryMajor: null
+    industryMajor: null,
+    industryIsLoading: false
 });
 
 /***/ }),
@@ -64046,6 +64067,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     industryMajor: function industryMajor(state) {
         return state.industryMajor;
+    },
+    industryIsLoading: function industryIsLoading(state) {
+        return state.industryIsLoading;
     }
 });
 
@@ -64091,6 +64115,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.industries = state.allLevelIndustries[payload];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].SET_INDUSTRY_MAJOR, function (state, payload) {
 	state.industryMajor = payload.major;
+}), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING, function (state) {
+	if (state.industryIsLoading === false) {
+		state.industryIsLoading = true;
+	} else {
+		state.industryIsLoading = false;
+	}
 }), _industries$FETCH_IND);
 
 /***/ }),
@@ -64109,8 +64139,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		var commit = _ref.commit,
 		    dispatch = _ref.dispatch;
 
+		commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING);
 		__WEBPACK_IMPORTED_MODULE_0__api_industries__["a" /* default */].fetchIndustriesAPI(payload, function (success) {
 			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].FETCH_INDUSTRIES, success);
+			commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_industries__["a" /* default */].TRIGGER_IS_LOADING);
 		}, function (error) {
 			commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
 		});
@@ -64295,7 +64327,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(193)
 /* template */
-var __vue_template__ = __webpack_require__(211)
+var __vue_template__ = __webpack_require__(214)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -64349,8 +64381,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
 //
@@ -64362,6 +64398,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
@@ -64379,14 +64420,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		this.url = window.baseUrl;
 	},
 
-	components: {
+	components: _defineProperty({
 		landingPageCarousel: __WEBPACK_IMPORTED_MODULE_0__components_global_landing_page_carousel___default.a,
 		homeCard: __WEBPACK_IMPORTED_MODULE_1__components_home_home_card_vue___default.a,
 		homeBanner: __WEBPACK_IMPORTED_MODULE_2__components_home_home_banner_vue___default.a,
-		campusSeals: __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default.a,
-		homeVideo: __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a
-	},
-	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_5_vuex__["b" /* mapActions */])(['setDataPage']))
+		homeVideo: __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a,
+		faqCard: __WEBPACK_IMPORTED_MODULE_5__components_home_faq_card_vue___default.a,
+		campusSeals: __WEBPACK_IMPORTED_MODULE_3__components_home_campus_seals_vue___default.a
+	}, "homeVideo", __WEBPACK_IMPORTED_MODULE_4__components_home_home_video_vue___default.a),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_6_vuex__["b" /* mapActions */])(['setDataPage']))
 });
 
 /***/ }),
@@ -65740,6 +65782,162 @@ if (false) {
 /* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/components/home/faq-card.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4f73929e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4f73929e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        url: function url() {
+            return window.baseUrl;
+        }
+    }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row mx-auto" }, [
+    _c("div", { staticClass: " f faq-card col-12 col-sm-10 col-lg-8" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-6 col-sm-5 faq-card__text" },
+          [
+            _c("p", { staticClass: "faq-card__text--blue" }, [
+              _vm._v("Have Questions?")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "faq-card__text--gray" }, [
+              _vm._v("We Have Answers.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "faq-card__button", attrs: { to: "/faq" } },
+              [_vm._v("\n                    Read Our FAQ\n                ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
+          _c("img", {
+            staticClass: "faq-card__image mx-auto",
+            attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "faq-card__button--mobile row d-sm-none" },
+        [
+          _c("router-link", { attrs: { to: "/faq" } }, [
+            _vm._v("\n                Read Our FAQ\n            ")
+          ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4f73929e", module.exports)
+  }
+}
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -65756,7 +65954,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("home-video")
+      _c("home-video"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [_c("faq-card")], 1)
     ],
     1
   )
@@ -65772,15 +65972,15 @@ if (false) {
 }
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(213)
+var __vue_script__ = __webpack_require__(216)
 /* template */
-var __vue_template__ = __webpack_require__(255)
+var __vue_template__ = __webpack_require__(258)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65819,7 +66019,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65830,11 +66030,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_card__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_global_card__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex__ = __webpack_require__(2);
 //
@@ -65888,13 +66088,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__campus_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__campus_modal_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -65947,15 +66147,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 215 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(216)
+var __vue_script__ = __webpack_require__(219)
 /* template */
-var __vue_template__ = __webpack_require__(217)
+var __vue_template__ = __webpack_require__(220)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65994,7 +66194,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 216 */
+/* 219 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66165,7 +66365,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 217 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66182,6 +66382,7 @@ var render = function() {
           attrs: { role: "button" },
           on: {
             click: function($event) {
+              $event.preventDefault()
               _vm.showModal = true
             }
           }
@@ -66500,7 +66701,7 @@ if (false) {
 }
 
 /***/ }),
-/* 218 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66576,7 +66777,7 @@ if (false) {
 }
 
 /***/ }),
-/* 219 */
+/* 222 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66645,7 +66846,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 220 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66747,7 +66948,7 @@ if (false) {
 }
 
 /***/ }),
-/* 221 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66767,15 +66968,15 @@ if (false) {
 }
 
 /***/ }),
-/* 222 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(223)
+var __vue_script__ = __webpack_require__(226)
 /* template */
-var __vue_template__ = __webpack_require__(247)
+var __vue_template__ = __webpack_require__(250)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -66814,7 +67015,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 223 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67007,7 +67208,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 224 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67025,7 +67226,7 @@ var _default = (0, _common.regex)('alpha', /^[a-zA-Z]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 225 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67035,12 +67236,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var withParams = Object({"NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(226).withParams : __webpack_require__(69).withParams;
+var withParams = Object({"NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(229).withParams : __webpack_require__(69).withParams;
 var _default = withParams;
 exports.default = _default;
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67068,7 +67269,7 @@ exports.withParams = withParams;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67086,7 +67287,7 @@ var _default = (0, _common.regex)('alphaNum', /^[a-zA-Z0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67104,7 +67305,7 @@ var _default = (0, _common.regex)('numeric', /^[0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67130,7 +67331,7 @@ var _default = function _default(min, max) {
 exports.default = _default;
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67150,7 +67351,7 @@ var _default = (0, _common.regex)('email', emailRegex);
 exports.default = _default;
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67198,7 +67399,7 @@ var nibbleValid = function nibbleValid(nibble) {
 };
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67236,7 +67437,7 @@ var hexValid = function hexValid(hex) {
 };
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67261,7 +67462,7 @@ var _default = function _default(length) {
 exports.default = _default;
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67286,7 +67487,7 @@ var _default = function _default(length) {
 exports.default = _default;
 
 /***/ }),
-/* 235 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67306,7 +67507,7 @@ var _default = (0, _common.withParams)({
 exports.default = _default;
 
 /***/ }),
-/* 236 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67331,7 +67532,7 @@ var _default = function _default(prop) {
 exports.default = _default;
 
 /***/ }),
-/* 237 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67356,7 +67557,7 @@ var _default = function _default(prop) {
 exports.default = _default;
 
 /***/ }),
-/* 238 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67381,7 +67582,7 @@ var _default = function _default(equalTo) {
 exports.default = _default;
 
 /***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67401,7 +67602,7 @@ var _default = (0, _common.regex)('url', urlRegex);
 exports.default = _default;
 
 /***/ }),
-/* 240 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67437,7 +67638,7 @@ var _default = function _default() {
 exports.default = _default;
 
 /***/ }),
-/* 241 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67473,7 +67674,7 @@ var _default = function _default() {
 exports.default = _default;
 
 /***/ }),
-/* 242 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67497,7 +67698,7 @@ var _default = function _default(validator) {
 exports.default = _default;
 
 /***/ }),
-/* 243 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67522,7 +67723,7 @@ var _default = function _default(min) {
 exports.default = _default;
 
 /***/ }),
-/* 244 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67547,7 +67748,7 @@ var _default = function _default(max) {
 exports.default = _default;
 
 /***/ }),
-/* 245 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67565,7 +67766,7 @@ var _default = (0, _common.regex)('integer', /^-?[0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 246 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67583,7 +67784,7 @@ var _default = (0, _common.regex)('decimal', /^[-]?\d*(\.\d+)?$/);
 exports.default = _default;
 
 /***/ }),
-/* 247 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67866,7 +68067,7 @@ if (false) {
 }
 
 /***/ }),
-/* 248 */
+/* 251 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67904,7 +68105,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 249 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67972,15 +68173,15 @@ if (false) {
 }
 
 /***/ }),
-/* 250 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(251)
+var __vue_script__ = __webpack_require__(254)
 /* template */
-var __vue_template__ = __webpack_require__(254)
+var __vue_template__ = __webpack_require__(257)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -68019,12 +68220,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 251 */
+/* 254 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__filters__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
@@ -68140,13 +68341,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 252 */
+/* 255 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return percentage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return currency; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_numeral__);
 // FILTERS
 
@@ -68162,7 +68363,7 @@ var currency = function currency(data) {
 
 
 /***/ }),
-/* 253 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
@@ -69185,7 +69386,7 @@ return numeral;
 
 
 /***/ }),
-/* 254 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -69465,7 +69666,7 @@ if (false) {
 }
 
 /***/ }),
-/* 255 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -69543,15 +69744,15 @@ if (false) {
 }
 
 /***/ }),
-/* 256 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(257)
+var __vue_script__ = __webpack_require__(260)
 /* template */
-var __vue_template__ = __webpack_require__(401)
+var __vue_template__ = __webpack_require__(404)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -69590,24 +69791,25 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 257 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_card_add__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_card_add__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_card_add___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_card_add__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_vue__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_vue__ = __webpack_require__(264);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_majors_major_card_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue__ = __webpack_require__(398);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_majors_major_card_mobile_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_global_sub_nav_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -69676,15 +69878,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleScroll: function handleScroll(event) {
 			var footer = document.querySelector("footer");
 			var bounding = footer.getBoundingClientRect();
-			if (window.scrollY + window.innerHeight < document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				var addBtn = document.getElementById("compare-major-button");
+			var addBtn = document.getElementById("compare-major-button");
+			if (window.innerWidth < 767) {
+				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 1000)) {
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "5rem";
+				}
+				if (window.scrollY + window.innerHeight > document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 140)) {
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "11rem";
+				}
+			} else {
+				addBtn.style.bottom = "7rem";
 				addBtn.style.position = "fixed";
-				addBtn.style.bottom = "5rem";
-			}
-			if (window.scrollY + window.innerHeight > document.body.clientHeight - document.getElementById("main-footer").clientHeight) {
-				var addBtn = document.getElementById("compare-major-button");
-				addBtn.style.position = "absolute";
-				addBtn.style.bottom = "1rem";
 			}
 		}
 	},
@@ -69714,15 +69920,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 258 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(259)
+var __vue_script__ = __webpack_require__(262)
 /* template */
-var __vue_template__ = __webpack_require__(260)
+var __vue_template__ = __webpack_require__(263)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -69761,7 +69967,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 259 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69805,7 +70011,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 260 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -69870,15 +70076,15 @@ if (false) {
 }
 
 /***/ }),
-/* 261 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(262)
+var __vue_script__ = __webpack_require__(265)
 /* template */
-var __vue_template__ = __webpack_require__(394)
+var __vue_template__ = __webpack_require__(397)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -69917,7 +70123,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 262 */
+/* 265 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69930,7 +70136,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue__ = __webpack_require__(390);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__industries_industry_carousel_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
@@ -69938,6 +70144,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -70034,7 +70253,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors", "universities", "selectedUniversity"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "majors", "universities", "selectedUniversity", "majorIsLoading"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (this.industries(this.index).length === 0 || !this.selectedFormWasSubmittedOnce) {
@@ -70062,6 +70281,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
+		},
+		selectedMajorIsLoading: function selectedMajorIsLoading() {
+			return this.majorIsLoading(this.index);
 		},
 		selectedMajorTitle: function selectedMajorTitle() {
 			if (this.selectedMajorData.length != 0) {
@@ -70128,13 +70350,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 263 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(264);
+var content = __webpack_require__(267);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -70154,7 +70376,7 @@ if(false) {
 }
 
 /***/ }),
-/* 264 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(78)(false);
@@ -70168,7 +70390,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 265 */
+/* 268 */
 /***/ (function(module, exports) {
 
 /**
@@ -70201,7 +70423,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 266 */
+/* 269 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70382,7 +70604,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 267 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -70732,7 +70954,7 @@ if (false) {
 }
 
 /***/ }),
-/* 268 */
+/* 271 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70759,203 +70981,223 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['majorData', 'educationLevel', 'windowWidth'],
-    data: function data() {
-        return {
-            xAxis: ['2', '5', '10', '15'],
-            graphColors: {
-                color1: '#000',
-                color2: '#000',
-                color3: '#FFF'
-            }
-        };
-    },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-    components: {
-        'chart': __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-    },
-    computed: {
-        mastersEarnings: function mastersEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[0];
-            }
-            return null;
-        },
-        bachelorsEarnings: function bachelorsEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[1];
-            }
-            return null;
-        },
-        someCollegeEarnings: function someCollegeEarnings() {
-            if (this.majorData.length > 0) {
-                return this.majorData[2];
-            }
-            return null;
-        },
-        mobileYAxis: function mobileYAxis() {
-            var currentWidth = window.innerWidth;
-            if (currentWidth <= 750) {
-                return 90;
-            } else {
-                return 0;
-            }
-        },
-        toolTipTitles1: function toolTipTitles1() {
-            var title = "Some College";
-            if (this.educationLevel !== "allDegrees") {
-                title = "25th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles2: function toolTipTitles2() {
-            var title = "Bachelor's Degree";
-            if (this.educationLevel !== "allDegrees") {
-                title = "50th Percentile";
-            }
-            return title;
-        },
-        toolTipTitles3: function toolTipTitles3() {
-            var title = "Post Bacc";
-            if (this.educationLevel !== "allDegrees") {
-                title = "75th Percentile";
-            }
-            return title;
-        },
-        toolColors1: function toolColors1() {
-            var color = '#476A6F';
-            if (this.educationLevel === 'someCollege') {
-                color = '#7E969A';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#EDAC17';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#55BE85';
-            }
-            return color;
-        },
-        toolColors2: function toolColors2() {
-            var color = '#EDAC17';
-            if (this.educationLevel === 'someCollege') {
-                color = '#476A6F';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#ECA400';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#2BAE67';
-            }
-            return color;
-        },
-        toolColors3: function toolColors3() {
-            var color = '#279D5D';
-            if (this.educationLevel === 'someCollege') {
-                color = '#2c4144';
-            }
-            if (this.educationLevel === 'bachelors') {
-                color = '#987100';
-            }
-            if (this.educationLevel === 'postBacc') {
-                color = '#1B6E41';
-            }
-            return color;
-        },
-        polar: function polar() {
-            return {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross'
-                    }
-                },
-                xAxis: {
-                    name: "Years Out of College",
-                    nameLocation: 'middle',
-                    nameTextStyle: {
-                        padding: [10, 0, 0, 0]
-                    },
-                    data: this.xAxis,
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    }
-                },
-                legend: {
-                    data: ['line']
-                },
-                yAxis: {
-                    axisLabel: {
-                        rotate: this.mobileYAxis,
-                        formatter: function formatter(value) {
-                            if (value > 999) {
-                                var strVal = value.toString();
-                                strVal = strVal.slice(0, -3);
-                                return '$' + strVal + 'k';
-                            } else return '$' + value;
-                        }
-                    },
-                    min: 0,
-                    max: 150000,
-                    axisLine: {
-                        show: false
-                    },
-                    splitNumber: 5,
-                    axisTick: {
-                        show: false
-                    }
-                },
-                series: [{
-                    type: 'line',
-                    name: this.toolTipTitles3,
-                    data: this.mastersEarnings,
-                    lineStyle: {
-                        color: this.toolColors3,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors3
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles2,
-                    data: this.bachelorsEarnings,
-                    lineStyle: {
-                        color: this.toolColors2,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors2
-                    }
-                }, {
-                    type: 'line',
-                    name: this.toolTipTitles1,
-                    data: this.someCollegeEarnings,
-                    lineStyle: {
-                        color: this.toolColors1,
-                        width: 4
-                    },
-                    itemStyle: {
-                        color: this.toolColors1
-                    }
-                }],
-                animationDuration: 2000
-            };
-            return null;
-        }
-    }
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	},
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		mobileYAxis: function mobileYAxis() {
+			var currentWidth = window.innerWidth;
+			if (currentWidth <= 750) {
+				return 90;
+			} else {
+				return 0;
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#EDAC17";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#55BE85";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
+
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: this.mobileYAxis,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					min: 0,
+					max: 150000,
+					axisLine: {
+						show: false
+					},
+					splitNumber: 5,
+					axisTick: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	}
 });
 
 /***/ }),
-/* 269 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(270);
+var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -70975,7 +71217,7 @@ if(false) {
 }
 
 /***/ }),
-/* 270 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(78)(false);
@@ -70989,16 +71231,16 @@ exports.push([module.i, "\n.echarts {\n  width: 600px;\n  height: 400px;\n}\n", 
 
 
 /***/ }),
-/* 271 */
+/* 274 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_echarts_lib_echarts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce__ = __webpack_require__(340);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_debounce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_debounce__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_resize_detector__ = __webpack_require__(349);
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 //
@@ -71265,14 +71507,14 @@ var EVENTS = ['legendselectchanged', 'legendselected', 'legendunselected', 'lege
 });
 
 /***/ }),
-/* 272 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
 
 var vec2 = __webpack_require__(8);
 
-var Draggable = __webpack_require__(273);
+var Draggable = __webpack_require__(276);
 
 var Eventful = __webpack_require__(28);
 
@@ -71595,7 +71837,7 @@ var _default = Handler;
 module.exports = _default;
 
 /***/ }),
-/* 273 */
+/* 276 */
 /***/ (function(module, exports) {
 
 // TODO Draggable for group
@@ -71679,7 +71921,7 @@ var _default = Draggable;
 module.exports = _default;
 
 /***/ }),
-/* 274 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -71916,7 +72158,7 @@ var _default = Storage;
 module.exports = _default;
 
 /***/ }),
-/* 275 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Animator = __webpack_require__(85);
@@ -72175,10 +72417,10 @@ var _default = Animatable;
 module.exports = _default;
 
 /***/ }),
-/* 276 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var easingFuncs = __webpack_require__(277);
+var easingFuncs = __webpack_require__(280);
 
 /**
  * 动画主控制器
@@ -72281,7 +72523,7 @@ var _default = Clip;
 module.exports = _default;
 
 /***/ }),
-/* 277 */
+/* 280 */
 /***/ (function(module, exports) {
 
 /**
@@ -72664,7 +72906,7 @@ var _default = easing;
 module.exports = _default;
 
 /***/ }),
-/* 278 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(38);
@@ -72679,7 +72921,7 @@ var BoundingRect = __webpack_require__(13);
 
 var timsort = __webpack_require__(52);
 
-var Layer = __webpack_require__(279);
+var Layer = __webpack_require__(282);
 
 var requestAnimationFrame = __webpack_require__(91);
 
@@ -73673,7 +73915,7 @@ var _default = Painter;
 module.exports = _default;
 
 /***/ }),
-/* 279 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -73911,7 +74153,7 @@ var _default = Layer;
 module.exports = _default;
 
 /***/ }),
-/* 280 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textHelper = __webpack_require__(93);
@@ -73971,7 +74213,7 @@ var _default = RectText;
 module.exports = _default;
 
 /***/ }),
-/* 281 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var util = __webpack_require__(0);
@@ -74223,7 +74465,7 @@ var _default = Animation;
 module.exports = _default;
 
 /***/ }),
-/* 282 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _event = __webpack_require__(30);
@@ -74238,7 +74480,7 @@ var Eventful = __webpack_require__(28);
 
 var env = __webpack_require__(10);
 
-var GestureMgr = __webpack_require__(283);
+var GestureMgr = __webpack_require__(286);
 
 var TOUCH_CLICK_DELAY = 300;
 var mouseHandlerNames = ['click', 'dblclick', 'mousewheel', 'mouseout', 'mouseup', 'mousedown', 'mousemove', 'contextmenu'];
@@ -74561,7 +74803,7 @@ var _default = HandlerDomProxy;
 module.exports = _default;
 
 /***/ }),
-/* 283 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eventUtil = __webpack_require__(30);
@@ -74665,7 +74907,7 @@ var _default = GestureMgr;
 module.exports = _default;
 
 /***/ }),
-/* 284 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(54);
@@ -74710,7 +74952,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 285 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(54);
@@ -74742,7 +74984,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 286 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var textContain = __webpack_require__(22);
@@ -74798,14 +75040,14 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 287 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
 
 var PathProxy = __webpack_require__(40);
 
-var transformPath = __webpack_require__(293);
+var transformPath = __webpack_require__(296);
 
 // command chars
 var cc = ['m', 'M', 'l', 'L', 'v', 'V', 'h', 'H', 'z', 'Z', 'c', 'C', 'q', 'Q', 't', 'T', 's', 'S', 'a', 'A'];
@@ -75212,18 +75454,18 @@ exports.extendFromString = extendFromString;
 exports.mergePath = mergePath;
 
 /***/ }),
-/* 288 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(40);
 
-var line = __webpack_require__(289);
+var line = __webpack_require__(292);
 
-var cubic = __webpack_require__(290);
+var cubic = __webpack_require__(293);
 
-var quadratic = __webpack_require__(291);
+var quadratic = __webpack_require__(294);
 
-var arc = __webpack_require__(292);
+var arc = __webpack_require__(295);
 
 var _util = __webpack_require__(97);
 
@@ -75612,7 +75854,7 @@ exports.contain = contain;
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 289 */
+/* 292 */
 /***/ (function(module, exports) {
 
 /**
@@ -75656,7 +75898,7 @@ function containStroke(x0, y0, x1, y1, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 290 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var curve = __webpack_require__(23);
@@ -75694,7 +75936,7 @@ function containStroke(x0, y0, x1, y1, x2, y2, x3, y3, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 291 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _curve = __webpack_require__(23);
@@ -75732,7 +75974,7 @@ function containStroke(x0, y0, x1, y1, x2, y2, lineWidth, x, y) {
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 292 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(97);
@@ -75797,7 +76039,7 @@ function containStroke(cx, cy, r, startAngle, endAngle, anticlockwise, lineWidth
 exports.containStroke = containStroke;
 
 /***/ }),
-/* 293 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var PathProxy = __webpack_require__(40);
@@ -75902,7 +76144,7 @@ function _default(path, m) {
 module.exports = _default;
 
 /***/ }),
-/* 294 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Displayable = __webpack_require__(39);
@@ -75978,7 +76220,7 @@ var _default = Text;
 module.exports = _default;
 
 /***/ }),
-/* 295 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76015,7 +76257,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 296 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76064,7 +76306,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 297 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76095,7 +76337,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 298 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76121,7 +76363,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 299 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(8);
@@ -76194,7 +76436,7 @@ function _default(points, isLoop) {
 module.exports = _default;
 
 /***/ }),
-/* 300 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _vector = __webpack_require__(8);
@@ -76303,7 +76545,7 @@ function _default(points, smooth, isLoop, constraint) {
 module.exports = _default;
 
 /***/ }),
-/* 301 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76332,7 +76574,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 302 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76377,7 +76619,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 303 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76436,7 +76678,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 304 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76554,7 +76796,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 305 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76594,7 +76836,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 306 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -76655,7 +76897,7 @@ var _default = Path.extend({
 module.exports = _default;
 
 /***/ }),
-/* 307 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -76694,7 +76936,7 @@ var _default = LinearGradient;
 module.exports = _default;
 
 /***/ }),
-/* 308 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -76731,7 +76973,7 @@ var _default = RadialGradient;
 module.exports = _default;
 
 /***/ }),
-/* 309 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -76883,7 +77125,7 @@ var _default = IncrementalDisplayble;
 module.exports = _default;
 
 /***/ }),
-/* 310 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var makeStyleMapper = __webpack_require__(54);
@@ -76922,7 +77164,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 311 */
+/* 314 */
 /***/ (function(module, exports) {
 
 /*
@@ -76958,7 +77200,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 312 */
+/* 315 */
 /***/ (function(module, exports) {
 
 /*
@@ -77032,7 +77274,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 313 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -77470,7 +77712,7 @@ var _default = OptionManager;
 module.exports = _default;
 
 /***/ }),
-/* 314 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -77479,7 +77721,7 @@ var each = _util.each;
 var isArray = _util.isArray;
 var isObject = _util.isObject;
 
-var compatStyle = __webpack_require__(315);
+var compatStyle = __webpack_require__(318);
 
 var _model = __webpack_require__(3);
 
@@ -77597,7 +77839,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 315 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -77901,7 +78143,7 @@ function _default(option, isTheme) {
 module.exports = _default;
 
 /***/ }),
-/* 316 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -78024,7 +78266,7 @@ function calculateStack(stackInfoList) {
 module.exports = _default;
 
 /***/ }),
-/* 317 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(33);
@@ -78152,7 +78394,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 318 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Gradient = __webpack_require__(55);
@@ -78214,12 +78456,12 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 319 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var lang = __webpack_require__(320);
+var lang = __webpack_require__(323);
 
 var _dataProvider = __webpack_require__(33);
 
@@ -78372,7 +78614,7 @@ function _default(dom, ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 320 */
+/* 323 */
 /***/ (function(module, exports) {
 
 /*
@@ -78493,7 +78735,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 321 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -78609,7 +78851,7 @@ function _default(api, opts) {
 module.exports = _default;
 
 /***/ }),
-/* 322 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -79160,7 +79402,7 @@ var _default = Scheduler;
 module.exports = _default;
 
 /***/ }),
-/* 323 */
+/* 326 */
 /***/ (function(module, exports) {
 
 /*
@@ -79189,7 +79431,7 @@ var _default = {
 module.exports = _default;
 
 /***/ }),
-/* 324 */
+/* 327 */
 /***/ (function(module, exports) {
 
 /*
@@ -79343,7 +79585,7 @@ var _default = theme;
 module.exports = _default;
 
 /***/ }),
-/* 325 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ComponentModel = __webpack_require__(16);
@@ -79408,7 +79650,7 @@ ComponentView.extend({
 });
 
 /***/ }),
-/* 326 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrender = __webpack_require__(81);
@@ -79446,11 +79688,11 @@ var _throttle = __webpack_require__(59);
 var throttle = _throttle.throttle;
 exports.throttle = _throttle.throttle;
 
-var ecHelper = __webpack_require__(327);
+var ecHelper = __webpack_require__(330);
 
 exports.helper = ecHelper;
 
-var parseGeoJSON = __webpack_require__(333);
+var parseGeoJSON = __webpack_require__(336);
 
 exports.parseGeoJSON = parseGeoJSON;
 
@@ -79501,7 +79743,7 @@ exports.parseGeoJson = parseGeoJson;
 exports.util = ecUtil;
 
 /***/ }),
-/* 327 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -79629,7 +79871,7 @@ exports.createScale = createScale;
 exports.mixinAxisModelCommonMethods = mixinAxisModelCommonMethods;
 
 /***/ }),
-/* 328 */
+/* 331 */
 /***/ (function(module, exports) {
 
 /*
@@ -79777,7 +80019,7 @@ var _default = DataDiffer;
 module.exports = _default;
 
 /***/ }),
-/* 329 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -79911,7 +80153,7 @@ var _default = OrdinalScale;
 module.exports = _default;
 
 /***/ }),
-/* 330 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -80334,7 +80576,7 @@ exports.layout = layout;
 exports.largeLayout = largeLayout;
 
 /***/ }),
-/* 331 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -80546,7 +80788,7 @@ var _default = TimeScale;
 module.exports = _default;
 
 /***/ }),
-/* 332 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -80736,12 +80978,12 @@ var _default = LogScale;
 module.exports = _default;
 
 /***/ }),
-/* 333 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Region = __webpack_require__(334);
+var Region = __webpack_require__(337);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -80875,7 +81117,7 @@ function _default(geoJson) {
 module.exports = _default;
 
 /***/ }),
-/* 334 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var BoundingRect = __webpack_require__(13);
@@ -80884,7 +81126,7 @@ var bbox = __webpack_require__(96);
 
 var vec2 = __webpack_require__(8);
 
-var polygonContain = __webpack_require__(335);
+var polygonContain = __webpack_require__(338);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -81062,7 +81304,7 @@ var _default = Region;
 module.exports = _default;
 
 /***/ }),
-/* 335 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var windingLine = __webpack_require__(98);
@@ -81100,7 +81342,7 @@ function contain(points, x, y) {
 exports.contain = contain;
 
 /***/ }),
-/* 336 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -81455,12 +81697,12 @@ exports.createAxisTicks = createAxisTicks;
 exports.calculateCategoryInterval = calculateCategoryInterval;
 
 /***/ }),
-/* 337 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(115),
-    now = __webpack_require__(338),
-    toNumber = __webpack_require__(340);
+    now = __webpack_require__(341),
+    toNumber = __webpack_require__(343);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -81651,7 +81893,7 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 338 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(116);
@@ -81680,7 +81922,7 @@ module.exports = now;
 
 
 /***/ }),
-/* 339 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -81691,11 +81933,11 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 340 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(115),
-    isSymbol = __webpack_require__(341);
+    isSymbol = __webpack_require__(344);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -81763,11 +82005,11 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 341 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(342),
-    isObjectLike = __webpack_require__(345);
+var baseGetTag = __webpack_require__(345),
+    isObjectLike = __webpack_require__(348);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -81798,12 +82040,12 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 342 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(117),
-    getRawTag = __webpack_require__(343),
-    objectToString = __webpack_require__(344);
+    getRawTag = __webpack_require__(346),
+    objectToString = __webpack_require__(347);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -81832,7 +82074,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 343 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(117);
@@ -81884,7 +82126,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 344 */
+/* 347 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -81912,7 +82154,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 345 */
+/* 348 */
 /***/ (function(module, exports) {
 
 /**
@@ -81947,7 +82189,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 346 */
+/* 349 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82245,7 +82487,7 @@ function resetTriggers (elem) {
 
 
 /***/ }),
-/* 347 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -82265,7 +82507,7 @@ if (false) {
 }
 
 /***/ }),
-/* 348 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(6);
@@ -82357,7 +82599,7 @@ var _default = SeriesModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 349 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(6);
@@ -82366,17 +82608,17 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var SymbolDraw = __webpack_require__(350);
+var SymbolDraw = __webpack_require__(353);
 
 var SymbolClz = __webpack_require__(119);
 
-var lineAnimationDiff = __webpack_require__(352);
+var lineAnimationDiff = __webpack_require__(355);
 
 var graphic = __webpack_require__(5);
 
 var modelUtil = __webpack_require__(3);
 
-var _poly = __webpack_require__(353);
+var _poly = __webpack_require__(356);
 
 var Polyline = _poly.Polyline;
 var Polygon = _poly.Polygon;
@@ -83106,7 +83348,7 @@ var _default = ChartView.extend({
 module.exports = _default;
 
 /***/ }),
-/* 350 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(5);
@@ -83315,7 +83557,7 @@ var _default = SymbolDraw;
 module.exports = _default;
 
 /***/ }),
-/* 351 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _dataProvider = __webpack_require__(33);
@@ -83367,7 +83609,7 @@ function getDefaultLabel(data, dataIndex) {
 exports.getDefaultLabel = getDefaultLabel;
 
 /***/ }),
-/* 352 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _helper = __webpack_require__(120);
@@ -83543,7 +83785,7 @@ function _default(oldData, newData, oldStackedOnPoints, newStackedOnPoints, oldC
 module.exports = _default;
 
 /***/ }),
-/* 353 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Path = __webpack_require__(11);
@@ -83909,7 +84151,7 @@ exports.Polyline = Polyline;
 exports.Polygon = Polygon;
 
 /***/ }),
-/* 354 */
+/* 357 */
 /***/ (function(module, exports) {
 
 /*
@@ -83993,7 +84235,7 @@ function _default(seriesType, defaultSymbolType, legendSymbol) {
 module.exports = _default;
 
 /***/ }),
-/* 355 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _util = __webpack_require__(0);
@@ -84094,7 +84336,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 356 */
+/* 359 */
 /***/ (function(module, exports) {
 
 /*
@@ -84210,7 +84452,7 @@ function _default(seriesType) {
 module.exports = _default;
 
 /***/ }),
-/* 357 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -84219,9 +84461,9 @@ var zrUtil = __webpack_require__(0);
 
 var graphic = __webpack_require__(5);
 
-__webpack_require__(358);
+__webpack_require__(361);
 
-__webpack_require__(365);
+__webpack_require__(368);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -84267,7 +84509,7 @@ echarts.registerPreprocessor(function (option) {
 });
 
 /***/ }),
-/* 358 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(6);
@@ -84293,9 +84535,9 @@ var ifAxisCrossZero = _axisHelper.ifAxisCrossZero;
 var niceScaleExtent = _axisHelper.niceScaleExtent;
 var estimateLabelUnionRect = _axisHelper.estimateLabelUnionRect;
 
-var Cartesian2D = __webpack_require__(359);
+var Cartesian2D = __webpack_require__(362);
 
-var Axis2D = __webpack_require__(361);
+var Axis2D = __webpack_require__(364);
 
 var CoordinateSystem = __webpack_require__(56);
 
@@ -84303,7 +84545,7 @@ var _dataStackHelper = __webpack_require__(24);
 
 var getStackedDimension = _dataStackHelper.getStackedDimension;
 
-__webpack_require__(362);
+__webpack_require__(365);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -84860,12 +85102,12 @@ var _default = Grid;
 module.exports = _default;
 
 /***/ }),
-/* 359 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Cartesian = __webpack_require__(360);
+var Cartesian = __webpack_require__(363);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -84987,7 +85229,7 @@ var _default = Cartesian2D;
 module.exports = _default;
 
 /***/ }),
-/* 360 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85111,7 +85353,7 @@ var _default = Cartesian;
 module.exports = _default;
 
 /***/ }),
-/* 361 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85243,7 +85485,7 @@ var _default = Axis2D;
 module.exports = _default;
 
 /***/ }),
-/* 362 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(121);
@@ -85300,12 +85542,12 @@ var _default = ComponentModel.extend({
 module.exports = _default;
 
 /***/ }),
-/* 363 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var axisDefault = __webpack_require__(364);
+var axisDefault = __webpack_require__(367);
 
 var ComponentModel = __webpack_require__(16);
 
@@ -85403,7 +85645,7 @@ function _default(axisName, BaseAxisModelClass, axisTypeDefaulter, extraDefaultO
 module.exports = _default;
 
 /***/ }),
-/* 364 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85579,15 +85821,15 @@ var _default = axisDefault;
 module.exports = _default;
 
 /***/ }),
-/* 365 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(121);
 
-__webpack_require__(366);
+__webpack_require__(369);
 
 /***/ }),
-/* 366 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -85824,7 +86066,7 @@ CartesianAxisView.extend({
 });
 
 /***/ }),
-/* 367 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -85833,13 +86075,13 @@ var zrUtil = __webpack_require__(0);
 
 var axisPointerModelHelper = __webpack_require__(45);
 
-var axisTrigger = __webpack_require__(368);
+var axisTrigger = __webpack_require__(371);
 
-__webpack_require__(369);
+__webpack_require__(372);
 
-__webpack_require__(370);
+__webpack_require__(373);
 
-__webpack_require__(371);
+__webpack_require__(374);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -85890,7 +86132,7 @@ echarts.registerAction({
 }, axisTrigger);
 
 /***/ }),
-/* 368 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -86306,7 +86548,7 @@ function illegalPoint(point) {
 module.exports = _default;
 
 /***/ }),
-/* 369 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -86415,7 +86657,7 @@ var _default = AxisPointerModel;
 module.exports = _default;
 
 /***/ }),
-/* 370 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -86480,12 +86722,12 @@ var _default = AxisPointerView;
 module.exports = _default;
 
 /***/ }),
-/* 371 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var graphic = __webpack_require__(5);
 
-var BaseAxisPointer = __webpack_require__(372);
+var BaseAxisPointer = __webpack_require__(375);
 
 var viewHelper = __webpack_require__(128);
 
@@ -86616,7 +86858,7 @@ var _default = CartesianAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 372 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -87128,7 +87370,7 @@ var _default = BaseAxisPointer;
 module.exports = _default;
 
 /***/ }),
-/* 373 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -87229,7 +87471,7 @@ var _default = echarts.extendComponentModel({
 module.exports = _default;
 
 /***/ }),
-/* 374 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -87238,7 +87480,7 @@ var zrUtil = __webpack_require__(0);
 
 var env = __webpack_require__(10);
 
-var TooltipContent = __webpack_require__(375);
+var TooltipContent = __webpack_require__(378);
 
 var formatUtil = __webpack_require__(14);
 
@@ -87968,7 +88210,7 @@ function isCenterAlign(align) {
 module.exports = _default;
 
 /***/ }),
-/* 375 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -88223,7 +88465,7 @@ var _default = TooltipContent;
 module.exports = _default;
 
 /***/ }),
-/* 376 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -88463,7 +88705,7 @@ var _default = LegendModel;
 module.exports = _default;
 
 /***/ }),
-/* 377 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var echarts = __webpack_require__(7);
@@ -88557,7 +88799,7 @@ echarts.registerAction('legendSelect', 'legendselected', zrUtil.curry(legendSele
 echarts.registerAction('legendUnSelect', 'legendunselected', zrUtil.curry(legendSelectActionHandler, 'unSelect'));
 
 /***/ }),
-/* 378 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _config = __webpack_require__(6);
@@ -88574,7 +88816,7 @@ var createSymbol = _symbol.createSymbol;
 
 var graphic = __webpack_require__(5);
 
-var _listComponent = __webpack_require__(379);
+var _listComponent = __webpack_require__(382);
 
 var makeBackground = _listComponent.makeBackground;
 
@@ -88882,7 +89124,7 @@ function dispatchDownplayAction(seriesModel, dataName, api, excludeSeriesId) {
 module.exports = _default;
 
 /***/ }),
-/* 379 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _layout = __webpack_require__(17);
@@ -88960,7 +89202,7 @@ exports.layout = layout;
 exports.makeBackground = makeBackground;
 
 /***/ }),
-/* 380 */
+/* 383 */
 /***/ (function(module, exports) {
 
 /*
@@ -89004,7 +89246,7 @@ function _default(ecModel) {
 module.exports = _default;
 
 /***/ }),
-/* 381 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89024,14 +89266,14 @@ if (false) {
 }
 
 /***/ }),
-/* 382 */
+/* 385 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__majors_graph_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_mobile_vue__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_mobile_vue__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__majors_graph_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__majors_graph_mobile_vue__);
 //
 //
@@ -89068,15 +89310,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 383 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(384)
+var __vue_script__ = __webpack_require__(387)
 /* template */
-var __vue_template__ = __webpack_require__(385)
+var __vue_template__ = __webpack_require__(388)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -89115,7 +89357,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 384 */
+/* 387 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89143,226 +89385,246 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["majorData", "educationLevel", "windowWidth"],
-  data: function data() {
-    return {
-      xAxis: ["2", "5", "10", "15"],
-      graphColors: {
-        color1: "#000",
-        color2: "#000",
-        color3: "#FFF"
-      }
-    };
-  },
+	props: ["majorData", "educationLevel", "windowWidth"],
+	data: function data() {
+		return {
+			xAxis: ["2", "5", "10", "15"],
+			graphColors: {
+				color1: "#000",
+				color2: "#000",
+				color3: "#FFF"
+			}
+		};
+	},
 
-  computed: {
-    mastersEarnings: function mastersEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[0];
-      }
-      return null;
-    },
-    bachelorsEarnings: function bachelorsEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[1];
-      }
-      return null;
-    },
-    someCollegeEarnings: function someCollegeEarnings() {
-      if (this.majorData.length > 0) {
-        return this.majorData[2];
-      }
-      return null;
-    },
-    chartDimensions: function chartDimensions() {
-      var currentWidth = window.innerWidth;
-      if (this.windowWidth >= 768 && this.windowWidth < 1000) {
-        return {
-          height: 400,
-          width: 710
-          // width: this.windowWidth / 1.75
-        };
-      } else if (this.windowWidth >= 540 && this.windowWidth < 768) {
-        return {
-          height: 400,
-          width: 490
-        };
-      } else {
-        return {
-          height: 400,
-          width: this.windowWidth - 48
-          // width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
-        };
-      }
-    },
-    toolTipTitles1: function toolTipTitles1() {
-      var title = "Some College";
-      if (this.educationLevel !== "allDegrees") {
-        title = "25th Percentile";
-      }
-      return title;
-    },
-    toolTipTitles2: function toolTipTitles2() {
-      var title = "Bachelor's Degree";
-      if (this.educationLevel !== "allDegrees") {
-        title = "50th Percentile";
-      }
-      return title;
-    },
-    toolTipTitles3: function toolTipTitles3() {
-      var title = "Post Bacc";
-      if (this.educationLevel !== "allDegrees") {
-        title = "75th Percentile";
-      }
-      return title;
-    },
-    toolColors1: function toolColors1() {
-      var color = "#476A6F";
-      if (this.educationLevel === "someCollege") {
-        color = "#7E969A";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#F2C55C";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#3EFA94";
-      }
-      return color;
-    },
-    toolColors2: function toolColors2() {
-      var color = "#EDAC17";
-      if (this.educationLevel === "someCollege") {
-        color = "#476A6F";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#ECA400";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#2BAE67";
-      }
-      return color;
-    },
-    toolColors3: function toolColors3() {
-      var color = "#279D5D";
-      if (this.educationLevel === "someCollege") {
-        color = "#2c4144";
-      }
-      if (this.educationLevel === "bachelors") {
-        color = "#987100";
-      }
-      if (this.educationLevel === "postBacc") {
-        color = "#1B6E41";
-      }
-      return color;
-    },
-    polar: function polar() {
-      return {
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "cross"
-          },
-          position: function position(pos, params, dom, rect, size) {
-            // tooltip will be fixed on the right if mouse hovering on the left,
-            // and on the left if hovering on the right.
-            var obj = { top: '10%' };
-            obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
-            return obj;
-          }
-        },
-        xAxis: {
-          name: "Years Out of College",
-          nameLocation: "middle",
-          nameTextStyle: {
-            padding: [10, 0, 0, 0]
-          },
-          data: this.xAxis,
-          axisTick: {
-            show: false
-          },
-          axisLine: {
-            show: false
-          }
-        },
-        name: "Years Out of College",
-        nameLocation: "middle",
-        nameTextStyle: {
-          padding: [10, 0, 0, 0]
-        },
-        legend: {
-          data: ["line"]
-        },
-        yAxis: {
-          axisLabel: {
-            rotate: 90,
-            formatter: function formatter(value) {
-              if (value > 999) {
-                var strVal = value.toString();
-                strVal = strVal.slice(0, -3);
-                return "$" + strVal + "k";
-              } else return "$" + value;
-            }
-          },
-          splitNumber: 5,
-          min: 0,
-          max: 150000,
-          splitLine: {
-            show: true
-          },
+	computed: {
+		mastersEarnings: function mastersEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[0];
+			}
+			return null;
+		},
+		bachelorsEarnings: function bachelorsEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[1];
+			}
+			return null;
+		},
+		someCollegeEarnings: function someCollegeEarnings() {
+			if (this.majorData.length > 0) {
+				return this.majorData[2];
+			}
+			return null;
+		},
+		chartDimensions: function chartDimensions() {
+			var currentWidth = window.innerWidth;
+			if (this.windowWidth >= 768 && this.windowWidth < 1000) {
+				return {
+					height: 400,
+					width: 710
+					// width: this.windowWidth / 1.75
+				};
+			} else if (this.windowWidth >= 540 && this.windowWidth < 768) {
+				return {
+					height: 400,
+					width: 490
+				};
+			} else {
+				return {
+					height: 400,
+					width: this.windowWidth - 48
+					// width: document.getElementById('majorCardHasIndex-0').clientWidth - 35,
+				};
+			}
+		},
+		toolTipTitles1: function toolTipTitles1() {
+			var title = "Some College";
+			if (this.educationLevel !== "allDegrees") {
+				title = "25th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles2: function toolTipTitles2() {
+			var title = "Bachelor's Degree";
+			if (this.educationLevel !== "allDegrees") {
+				title = "50th Percentile";
+			}
+			return title;
+		},
+		toolTipTitles3: function toolTipTitles3() {
+			var title = "Post Bacc";
+			if (this.educationLevel !== "allDegrees") {
+				title = "75th Percentile";
+			}
+			return title;
+		},
+		toolColors1: function toolColors1() {
+			var color = "#476A6F";
+			if (this.educationLevel === "someCollege") {
+				color = "#7E969A";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#F2C55C";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#3EFA94";
+			}
+			return color;
+		},
+		toolColors2: function toolColors2() {
+			var color = "#EDAC17";
+			if (this.educationLevel === "someCollege") {
+				color = "#476A6F";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#ECA400";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#2BAE67";
+			}
+			return color;
+		},
+		toolColors3: function toolColors3() {
+			var color = "#279D5D";
+			if (this.educationLevel === "someCollege") {
+				color = "#2c4144";
+			}
+			if (this.educationLevel === "bachelors") {
+				color = "#987100";
+			}
+			if (this.educationLevel === "postBacc") {
+				color = "#1B6E41";
+			}
+			return color;
+		},
+		polar: function polar() {
+			return {
+				tooltip: {
+					trigger: "axis",
+					axisPointer: {
+						type: "cross"
+					},
+					position: function position(pos, params, dom, rect, size) {
+						// tooltip will be fixed on the right if mouse hovering on the left,
+						// and on the left if hovering on the right.
+						var obj = { top: "10%" };
+						obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+						return obj;
+					},
+					formatter: function formatter(params) {
+						var colorSpan = function colorSpan(color) {
+							return '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+						};
+						var rez = "<h6>" + params[0].axisValue + " Years Out</h6>";
+						params.forEach(function (item) {
+							var val = "";
+							//format data
+							if (item.data > 999) {
+								var strVal = item.data.toString();
+								var first = strVal.slice(0, -3);
+								var second = strVal.slice(-3);
+								val = "$" + first + "," + second;
+							} else if (item.data === null) val = "No Data";else val = "$" + item.data;
 
-          axisTick: {
-            show: false
-          },
-          axisLine: {
-            show: false
-          }
-        },
-        series: [{
-          type: "line",
-          name: this.toolTipTitles3,
-          data: this.mastersEarnings,
-          lineStyle: {
-            color: this.toolColors3,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors3
-          }
-        }, {
-          type: "line",
-          name: this.toolTipTitles2,
-          data: this.bachelorsEarnings,
-          lineStyle: {
-            color: this.toolColors2,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors2
-          }
-        }, {
-          type: "line",
-          name: this.toolTipTitles1,
-          data: this.someCollegeEarnings,
-          lineStyle: {
-            color: this.toolColors1,
-            width: 4
-          },
-          itemStyle: {
-            color: this.toolColors1
-          }
-        }],
-        animationDuration: 2000
-      };
-      return null;
-    }
-  },
-  components: {
-    chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
-  }
+							var xx = "<h6>" + colorSpan(item.color) + " " + item.seriesName + ": " + val + "</h6>";
+							rez += xx;
+						});
+						return rez;
+					}
+				},
+				xAxis: {
+					name: "Years Out of College",
+					nameLocation: "middle",
+					nameTextStyle: {
+						padding: [10, 0, 0, 0]
+					},
+					data: this.xAxis,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				name: "Years Out of College",
+				nameLocation: "middle",
+				nameTextStyle: {
+					padding: [10, 0, 0, 0]
+				},
+				legend: {
+					data: ["line"]
+				},
+				yAxis: {
+					axisLabel: {
+						rotate: 90,
+						formatter: function formatter(value) {
+							if (value > 999) {
+								var strVal = value.toString();
+								strVal = strVal.slice(0, -3);
+								return "$" + strVal + "k";
+							} else return "$" + value;
+						}
+					},
+					splitNumber: 5,
+					min: 0,
+					max: 150000,
+					splitLine: {
+						show: true
+					},
+
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						show: false
+					}
+				},
+				series: [{
+					type: "line",
+					name: this.toolTipTitles3,
+					data: this.mastersEarnings,
+					lineStyle: {
+						color: this.toolColors3,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors3
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles2,
+					data: this.bachelorsEarnings,
+					lineStyle: {
+						color: this.toolColors2,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors2
+					}
+				}, {
+					type: "line",
+					name: this.toolTipTitles1,
+					data: this.someCollegeEarnings,
+					lineStyle: {
+						color: this.toolColors1,
+						width: 4
+					},
+					itemStyle: {
+						color: this.toolColors1
+					}
+				}],
+				animationDuration: 2000
+			};
+			return null;
+		}
+	},
+	components: {
+		chart: __WEBPACK_IMPORTED_MODULE_0_vue_echarts_components_ECharts___default.a
+	}
 });
 
 /***/ }),
-/* 385 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89384,7 +89646,7 @@ if (false) {
 }
 
 /***/ }),
-/* 386 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89425,15 +89687,15 @@ if (false) {
 }
 
 /***/ }),
-/* 387 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(388)
+var __vue_script__ = __webpack_require__(391)
 /* template */
-var __vue_template__ = __webpack_require__(391)
+var __vue_template__ = __webpack_require__(394)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -89472,7 +89734,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 388 */
+/* 391 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89512,7 +89774,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 389 */
+/* 392 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89533,7 +89795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 390 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89579,7 +89841,7 @@ if (false) {
 }
 
 /***/ }),
-/* 391 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89642,7 +89904,7 @@ if (false) {
 }
 
 /***/ }),
-/* 392 */
+/* 395 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89718,7 +89980,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 393 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -89831,299 +90093,331 @@ if (false) {
 }
 
 /***/ }),
-/* 394 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
-    [
-      _c(
-        "aside",
-        { staticClass: "col-md-3" },
-        [
-          _c("major-form", {
-            attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-9" },
-        [
-          _vm.selectedFormWasSubmittedOnce
-            ? _c("card", { staticClass: "csu-card container-fluid" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _c("i", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isNotFirstCard,
-                            expression: "isNotFirstCard"
-                          }
-                        ],
-                        staticClass:
-                          "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
-                        attrs: { title: "Close" },
-                        on: { click: _vm.removeCurrentCard }
-                      }),
-                      _vm._v(" "),
-                      _vm.selectedFormWasSubmittedOnce && !_vm.nullValues
-                        ? _c("social-sharing", {
-                            attrs: {
-                              url: this.url,
-                              title: this.shareDescription,
-                              description:
-                                "Discover Your Earnings After College.",
-                              quote: this.shareDescription,
-                              hashtags: "CalStatePays, ItPaysToGoToCollege"
-                            },
-                            inlineTemplate: {
-                              render: function() {
-                                var _vm = this
-                                var _h = _vm.$createElement
-                                var _c = _vm._self._c || _h
-                                return _c(
-                                  "div",
-                                  [
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-twitter float-right",
-                                        attrs: { network: "twitter" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-twitter-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-linkedin float-right",
-                                        attrs: { network: "linkedin" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-linkedin-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-facebook float-right",
-                                        attrs: { network: "facebook" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-facebook-official"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              },
-                              staticRenderFns: []
-                            }
-                          })
-                        : _vm._e()
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("h3", { staticClass: "industry-title pt-3" }, [
-                    _vm._v(_vm._s(_vm.selectedMajorTitle))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-12" },
-                    [
-                      _c("major-legend", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.selectedFormWasSubmittedOnce,
-                            expression: "selectedFormWasSubmittedOnce"
-                          }
-                        ],
-                        attrs: { educationLevel: _vm.selectedEducationLevel }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value:
-                          _vm.selectedFormWasSubmittedOnce && _vm.nullValues,
-                        expression: "selectedFormWasSubmittedOnce && nullValues"
-                      }
-                    ],
-                    staticClass: "row text-center"
-                  },
-                  [
-                    _c("h3", { staticClass: "csu-card__no-data" }, [
-                      _c("i", {
-                        staticClass: "fa fa-exclamation-circle required-field"
-                      }),
-                      _vm._v(" No data available")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.nullValues,
-                        expression: "!nullValues"
-                      }
-                    ]
-                  },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c(
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+      [
+        _c(
+          "aside",
+          { staticClass: "col-md-3" },
+          [
+            _c("major-form", {
+              attrs: { windowWidth: _vm.windowWidth, index: _vm.index }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-9" },
+          [
+            _vm.selectedFormWasSubmittedOnce
+              ? _c("card", { staticClass: "csu-card container-fluid" }, [
+                  _vm.selectedMajorIsLoading
+                    ? _c(
                         "div",
-                        { staticClass: "col-12" },
+                        { staticClass: "form-group row" },
                         [
-                          _c("major-graph-wrapper", {
-                            attrs: {
-                              id: "majorGraphWrapperIndex-" + this.index,
-                              majorData: _vm.selectedMajorData,
-                              educationLevel: _vm.selectedEducationLevel,
-                              windowWidth: _vm.windowWidth
-                            }
+                          _c("v-progress-circular", {
+                            staticClass: "loading-icon",
+                            attrs: { size: 100, width: 10, indeterminate: "" }
                           })
                         ],
                         1
                       )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row p-0" }, [
-                  _c(
-                    "div",
-                    { staticClass: "mt-4" },
-                    [
-                      _c("industry-carousel", {
-                        directives: [
+                    : _c("div", [
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col" },
+                            [
+                              _c("i", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.isNotFirstCard,
+                                    expression: "isNotFirstCard"
+                                  }
+                                ],
+                                staticClass:
+                                  "col-1 fa fa-times fa-2x btn-remove text-right pull-right",
+                                attrs: { title: "Close" },
+                                on: { click: _vm.removeCurrentCard }
+                              }),
+                              _vm._v(" "),
+                              _vm.selectedFormWasSubmittedOnce &&
+                              !_vm.nullValues
+                                ? _c("social-sharing", {
+                                    attrs: {
+                                      url: this.url,
+                                      title: this.shareDescription,
+                                      description:
+                                        "Discover Your Earnings After College.",
+                                      quote: this.shareDescription,
+                                      hashtags:
+                                        "CalStatePays, ItPaysToGoToCollege"
+                                    },
+                                    inlineTemplate: {
+                                      render: function() {
+                                        var _vm = this
+                                        var _h = _vm.$createElement
+                                        var _c = _vm._self._c || _h
+                                        return _c(
+                                          "div",
+                                          [
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-twitter float-right",
+                                                attrs: { network: "twitter" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-twitter-square"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-linkedin float-right",
+                                                attrs: { network: "linkedin" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-linkedin-square"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "network",
+                                              {
+                                                staticClass:
+                                                  "csu-card__share csu-card__share-facebook float-right",
+                                                attrs: { network: "facebook" }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-facebook-official"
+                                                }),
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      },
+                                      staticRenderFns: []
+                                    }
+                                  })
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("h3", { staticClass: "industry-title pt-3" }, [
+                            _vm._v(_vm._s(_vm.selectedMajorTitle))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-12" },
+                            [
+                              _c("major-legend", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.selectedFormWasSubmittedOnce,
+                                    expression: "selectedFormWasSubmittedOnce"
+                                  }
+                                ],
+                                attrs: {
+                                  educationLevel: _vm.selectedEducationLevel
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
                           {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
-                        ],
-                        attrs: { industries: _vm.selectedIndustries }
-                      })
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value:
+                                  _vm.selectedFormWasSubmittedOnce &&
+                                  _vm.nullValues,
+                                expression:
+                                  "selectedFormWasSubmittedOnce && nullValues"
+                              }
+                            ],
+                            staticClass: "row text-center"
+                          },
+                          [
+                            _c("h3", { staticClass: "csu-card__no-data" }, [
+                              _c("i", {
+                                staticClass:
+                                  "fa fa-exclamation-circle required-field"
+                              }),
+                              _vm._v(" No data available")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: !_vm.nullValues,
+                                expression: "!nullValues"
+                              }
+                            ]
+                          },
+                          [
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-12" },
+                                [
+                                  _c("major-graph-wrapper", {
+                                    attrs: {
+                                      id:
+                                        "majorGraphWrapperIndex-" + this.index,
+                                      majorData: _vm.selectedMajorData,
+                                      educationLevel:
+                                        _vm.selectedEducationLevel,
+                                      windowWidth: _vm.windowWidth
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row p-0" }, [
+                          _c(
+                            "div",
+                            { staticClass: "mt-4" },
+                            [
+                              _c("industry-carousel", {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.isEmpty,
+                                    expression: "isEmpty"
+                                  }
+                                ],
+                                attrs: { industries: _vm.selectedIndustries }
+                              })
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                ])
+              : _c("div", { staticClass: "csu-card" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("i", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.isNotFirstCard,
+                          expression: "isNotFirstCard"
+                        }
+                      ],
+                      staticClass:
+                        "col fa fa-times fa-2x btn-remove text-right pull-right",
+                      attrs: { title: "Close" },
+                      on: { click: _vm.removeCurrentCard }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "h3",
+                    { staticClass: "industry-title text-center p-md-3" },
+                    [_vm._v("Please make your selection")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
+                    ),
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("discipline")
+                    ]),
+                    _vm._v(" or choosing the "),
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("major")
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\twhich resonates the most with you.\n\t\t\t\t\t"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "lead pl-md-5 pr-md-5" },
+                    [
+                      _c("span", { staticClass: "font-weight-bold" }, [
+                        _vm._v("Please Note:")
+                      ]),
+                      _vm._v(
+                        " Some majors might not have any data available at the moment.\n\t\t\t\t\t\tFor more information on how we gathered the data, please read the "
+                      ),
+                      _c("router-link", { attrs: { to: "/faq" } }, [
+                        _vm._v("FAQ")
+                      ]),
+                      _vm._v(".\n\t\t\t\t\t")
                     ],
                     1
                   )
                 ])
-              ])
-            : _c("div", { staticClass: "csu-card" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isNotFirstCard,
-                        expression: "isNotFirstCard"
-                      }
-                    ],
-                    staticClass:
-                      "col fa fa-times fa-2x btn-remove text-right pull-right",
-                    attrs: { title: "Close" },
-                    on: { click: _vm.removeCurrentCard }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-                  _vm._v("Please make your selection")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
-                  _vm._v(
-                    "\n\t\t\t\tYou have the option of either filtering out majors by "
-                  ),
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("discipline")
-                  ]),
-                  _vm._v(" or choosing the "),
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("major")
-                  ]),
-                  _vm._v("\n\t\t\t\twhich resonates the most with you.\n\t\t\t")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "lead pl-md-5 pr-md-5" },
-                  [
-                    _c("span", { staticClass: "font-weight-bold" }, [
-                      _vm._v("Please Note:")
-                    ]),
-                    _vm._v(
-                      " Some majors might not have any data available at the moment.\n\t\t\t\tFor more information on how we gathered the data, please read the "
-                    ),
-                    _c("router-link", { attrs: { to: "/faq" } }, [
-                      _vm._v("FAQ")
-                    ]),
-                    _vm._v(".\n\t\t\t")
-                  ],
-                  1
-                )
-              ])
-        ],
-        1
-      )
-    ]
-  )
+          ],
+          1
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -90136,15 +90430,15 @@ if (false) {
 }
 
 /***/ }),
-/* 395 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(396)
+var __vue_script__ = __webpack_require__(399)
 /* template */
-var __vue_template__ = __webpack_require__(400)
+var __vue_template__ = __webpack_require__(403)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -90183,7 +90477,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 396 */
+/* 399 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90196,7 +90490,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_graph_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__majors_graph_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__major_graph_wrapper_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue__ = __webpack_require__(397);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue__ = __webpack_require__(400);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__industries_industry_mobile_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__major_legend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__major_legend_vue__);
@@ -90204,6 +90498,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -90317,7 +90621,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		};
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "universities", "selectedUniversity"]), {
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["c" /* mapGetters */])(["universityById", "industries", "majorData", "educationLevel", "formWasSubmitted", "formWasSubmittedOnce", "majorNameById", "universities", "selectedUniversity", "majorIsLoading"]), {
 		isEmpty: function isEmpty() {
 			//Check whether the form field was fired off, toggle carousel on
 			if (!this.selectedFormWasSubmittedOnce || this.industries(this.index).length === 0) {
@@ -90345,6 +90649,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		selectedFormWasSubmittedOnce: function selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
+		},
+		selectedMajorIsLoading: function selectedMajorIsLoading() {
+			return this.majorIsLoading(this.index);
 		},
 		selectedMajorId: function selectedMajorId() {
 			return this.majorData(this.index).majorId;
@@ -90414,15 +90721,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 397 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(398)
+var __vue_script__ = __webpack_require__(401)
 /* template */
-var __vue_template__ = __webpack_require__(399)
+var __vue_template__ = __webpack_require__(402)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -90461,7 +90768,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 398 */
+/* 401 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90502,7 +90809,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 399 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -90541,7 +90848,7 @@ if (false) {
 }
 
 /***/ }),
-/* 400 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -90561,244 +90868,274 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _vm.selectedFormWasSubmittedOnce
-          ? _c("div", { staticClass: "csu-card mb-5" }, [
-              _c("div", { staticClass: "container-fluid py-3" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col" }, [
-                    _c("i", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.isNotFirstCard,
-                          expression: "isNotFirstCard"
-                        }
-                      ],
-                      staticClass: "fa fa-times fa-2x btn-remove",
-                      attrs: { title: "Close" },
-                      on: { click: _vm.removeCurrentCard }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-11" },
-                    [
-                      _vm.selectedFormWasSubmitted
-                        ? _c("social-sharing", {
+        _vm.selectedMajorIsLoading
+          ? _c(
+              "div",
+              { staticClass: "mr-0 ml-0 form-group csu-card row" },
+              [
+                _c("v-progress-circular", {
+                  staticClass: "loading-major-mobile",
+                  attrs: { size: 100, width: 10, indeterminate: "" }
+                })
+              ],
+              1
+            )
+          : _c("div", [
+              _vm.selectedFormWasSubmittedOnce
+                ? _c("div", { staticClass: "csu-card mb-5" }, [
+                    _c("div", { staticClass: "container-fluid py-3" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c("i", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.isNotFirstCard,
+                                expression: "isNotFirstCard"
+                              }
+                            ],
+                            staticClass: "fa fa-times fa-2x btn-remove",
+                            attrs: { title: "Close" },
+                            on: { click: _vm.removeCurrentCard }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-11" },
+                          [
+                            _vm.selectedFormWasSubmitted
+                              ? _c("social-sharing", {
+                                  attrs: {
+                                    networks: _vm.mobileNetworks,
+                                    url:
+                                      "sandbox.csun.edu/metalab/test/csumetrola",
+                                    title: this.shareDescription,
+                                    description:
+                                      "Discover Your Earnings After College.",
+                                    quote: this.shareDescription,
+                                    hashtags:
+                                      "CalStatePays, ItPaysToGoToCollege"
+                                  },
+                                  inlineTemplate: {
+                                    render: function() {
+                                      var _vm = this
+                                      var _h = _vm.$createElement
+                                      var _c = _vm._self._c || _h
+                                      return _c(
+                                        "div",
+                                        [
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-twitter float-right",
+                                              attrs: { network: "twitter" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-twitter-square"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-linkedin float-right",
+                                              attrs: { network: "linkedin" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-linkedin-square"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "network",
+                                            {
+                                              staticClass:
+                                                "csu-card__share csu-card__share-facebook float-right",
+                                              attrs: { network: "facebook" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-facebook-official"
+                                              }),
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    },
+                                    staticRenderFns: []
+                                  }
+                                })
+                              : _vm._e()
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("h3", { staticClass: "industry-title pt-2" }, [
+                            _vm._v(_vm._s(_vm.selectedMajorTitle))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [
+                          _c("major-legend", {
                             attrs: {
-                              networks: _vm.mobileNetworks,
-                              url: "sandbox.csun.edu/metalab/test/csumetrola",
-                              title: this.shareDescription,
-                              description:
-                                "Discover Your Earnings After College.",
-                              quote: this.shareDescription,
-                              hashtags: "CalStatePays, ItPaysToGoToCollege"
-                            },
-                            inlineTemplate: {
-                              render: function() {
-                                var _vm = this
-                                var _h = _vm.$createElement
-                                var _c = _vm._self._c || _h
-                                return _c(
-                                  "div",
-                                  [
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-twitter float-right",
-                                        attrs: { network: "twitter" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-twitter-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tTweet\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-linkedin float-right",
-                                        attrs: { network: "linkedin" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-linkedin-square"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "network",
-                                      {
-                                        staticClass:
-                                          "csu-card__share csu-card__share-facebook float-right",
-                                        attrs: { network: "facebook" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "fa fa-facebook-official"
-                                        }),
-                                        _vm._v(
-                                          "\n\t\t\t\t\t\t\t\tShare\n\t\t\t\t\t\t\t"
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              },
-                              staticRenderFns: []
+                              educationLevel: _vm.selectedEducationLevel
                             }
                           })
-                        : _vm._e()
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12" }, [
-                    _c("h3", { staticClass: "industry-title pt-2" }, [
-                      _vm._v(_vm._s(_vm.selectedMajorTitle))
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.nullValues,
+                              expression: "nullValues"
+                            }
+                          ]
+                        },
+                        [_vm._m(0)]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.nullValues,
+                              expression: "!nullValues"
+                            }
+                          ],
+                          staticClass: "row",
+                          staticStyle: { height: "400px" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "col-12" },
+                            [
+                              _c("major-graph-wrapper", {
+                                attrs: {
+                                  id: "majorGraphWrapperIndex-" + this.index,
+                                  majorData: _vm.selectedMajorData,
+                                  educationLevel: _vm.selectedEducationLevel,
+                                  windowWidth: _vm.windowWidth
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-12" },
+                          [
+                            _c("industry-mobile", {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.isEmpty,
+                                  expression: "isEmpty"
+                                }
+                              ],
+                              attrs: {
+                                industries: _vm.selectedIndustries,
+                                majorId: _vm.selectedMajorId
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ])
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col" },
-                  [
-                    _c("major-legend", {
-                      attrs: { educationLevel: _vm.selectedEducationLevel }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.nullValues,
-                        expression: "nullValues"
-                      }
-                    ]
-                  },
-                  [_vm._m(0)]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.nullValues,
-                        expression: "!nullValues"
-                      }
-                    ],
-                    staticClass: "row",
-                    staticStyle: { height: "400px" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "col-12" },
-                      [
-                        _c("major-graph-wrapper", {
-                          attrs: {
-                            id: "majorGraphWrapperIndex-" + this.index,
-                            majorData: _vm.selectedMajorData,
-                            educationLevel: _vm.selectedEducationLevel,
-                            windowWidth: _vm.windowWidth
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
+                : _c(
                     "div",
-                    { staticClass: "col-12" },
+                    { staticClass: "csu-card csu-card__instructions mb-5" },
                     [
-                      _c("industry-mobile", {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.isEmpty,
-                            expression: "isEmpty"
-                          }
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c("i", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.isNotFirstCard,
+                                expression: "isNotFirstCard"
+                              }
+                            ],
+                            staticClass:
+                              "fa fa-times fa-2x btn-remove pull-right",
+                            attrs: { title: "Close" },
+                            on: { click: _vm.removeCurrentCard }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "h3",
+                        { staticClass: "industry-title text-center p-md-3" },
+                        [_vm._v("Please make your selection")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticClass: "lead pl-md-5 pr-md-5" },
+                        [
+                          _c("span", { staticClass: "font-weight-bold" }, [
+                            _vm._v("Please Note:")
+                          ]),
+                          _vm._v(
+                            " Some majors might not have any data available at the moment.\n\t\t\t\t\t\tFor more information on how we gathered the data, please read the "
+                          ),
+                          _c("router-link", { attrs: { to: "/faq" } }, [
+                            _vm._v("FAQ")
+                          ]),
+                          _vm._v(".\n\t\t\t\t\t")
                         ],
-                        attrs: {
-                          industries: _vm.selectedIndustries,
-                          majorId: _vm.selectedMajorId
-                        }
-                      })
-                    ],
-                    1
+                        1
+                      )
+                    ]
                   )
-                ])
-              ])
-            ])
-          : _c("div", { staticClass: "csu-card csu-card__instructions mb-5" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col" }, [
-                  _c("i", {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.isNotFirstCard,
-                        expression: "isNotFirstCard"
-                      }
-                    ],
-                    staticClass: "fa fa-times fa-2x btn-remove pull-right",
-                    attrs: { title: "Close" },
-                    on: { click: _vm.removeCurrentCard }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-                _vm._v("Please make your selection")
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "lead pl-md-5 pr-md-5" },
-                [
-                  _c("span", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Please Note:")
-                  ]),
-                  _vm._v(
-                    " Some majors might not have any data available at the moment.\n\t\t\t\tFor more information on how we gathered the data, please read the "
-                  ),
-                  _c("router-link", { attrs: { to: "/faq" } }, [_vm._v("FAQ")]),
-                  _vm._v(".\n\t\t\t")
-                ],
-                1
-              )
             ])
       ])
     ],
@@ -90823,12 +91160,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
       _vm._v(
-        "\n\t\t\t\tYou have the option of either filtering out majors by "
+        "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
       ),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
       _vm._v(" or choosing the "),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
-      _vm._v("\n\t\t\t\twhich resonates the most with you.\n\t\t\t")
+      _vm._v("\n\t\t\t\t\t\twhich resonates the most with you.\n\t\t\t\t\t")
     ])
   }
 ]
@@ -90842,7 +91179,7 @@ if (false) {
 }
 
 /***/ }),
-/* 401 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -90872,7 +91209,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n\t\t\tCollege graduates earn more money over time. Select a major and find out how earnings for graduates, non-completers, and post graduates change over time.\n\t\t"
+              "\n\t\t\tInteger enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla\n\t\t\tmetus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n\t\t"
             )
           ]
         )
@@ -90911,7 +91248,6 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("card-add", {
-                staticClass: "row",
                 attrs: { id: "plus" },
                 on: {
                   cardPlusError: function($event) {
@@ -90939,15 +91275,15 @@ if (false) {
 }
 
 /***/ }),
-/* 402 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(403)
+var __vue_script__ = __webpack_require__(406)
 /* template */
-var __vue_template__ = __webpack_require__(410)
+var __vue_template__ = __webpack_require__(413)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -90986,7 +91322,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 403 */
+/* 406 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90995,9 +91331,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__ = __webpack_require__(410);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_industries_industry_form_vue__);
 //
 //
@@ -91030,6 +91366,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loadingCheck: false
+    };
+  },
+
   components: {
     csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
     industryProgress: __WEBPACK_IMPORTED_MODULE_2__components_industries_industry_progress_vue___default.a,
@@ -91039,15 +91381,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 404 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(405)
+var __vue_script__ = __webpack_require__(408)
 /* template */
-var __vue_template__ = __webpack_require__(406)
+var __vue_template__ = __webpack_require__(409)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -91086,7 +91428,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 405 */
+/* 408 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91094,6 +91436,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -91171,7 +91523,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return thousands + ',' + hundreds;
         }
     },
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor", "industryMajor"]), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["industriesByMajor", "industryMajor", "industryIsLoading"]), {
         industries: function industries() {
             return this.industriesByMajor.filter(function (item) {
                 return item.industryWage != null;
@@ -91181,7 +91533,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 406 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -91189,192 +91541,223 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.industryMajor == null ||
-    (Object.keys(_vm.industriesByMajor).length === 0 &&
-      _vm.industriesByMajor.constructor == +Object)
-      ? _c("div", [
-          _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
-            _vm._v("Please make your selection")
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "lead pl-md-5 pr-md-5" },
-            [
-              _c("span", { staticClass: "font-weight-bold" }, [
-                _vm._v("Please Note:")
-              ]),
-              _vm._v(
-                " Some majors might not have any data available at the moment.\n            For more information on how we gathered the data, please read the "
-              ),
-              _c("router-link", { attrs: { to: "/faq" } }, [_vm._v("FAQ")]),
-              _vm._v(".\n        ")
-            ],
-            1
-          )
-        ])
-      : _c(
+    _vm.industryIsLoading
+      ? _c(
           "div",
+          { staticClass: "form-group row" },
           [
-            _c("div", { staticClass: "row IndustryLegend" }, [
-              _vm.industryMajor !== null
-                ? _c("div", { staticClass: "col-12" }, [
-                    _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-12" }, [
-                    _c("p", { staticClass: "h6" }, [
-                      _vm._v("Employment 5 Years After Exit")
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-sm-12 col-md-4 offset-md-3" }, [
-                    _c("span", {
-                      staticClass: "IndustryLegend__LegendPercentage"
-                    }),
-                    _vm._v("Percentage of Students Employed\n            ")
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length > 0
-                ? _c("div", { staticClass: "col-sm-12 col-md-5" }, [
-                    _c("span", { staticClass: "IndustryLegend__LegendSalary" }),
-                    _vm._v("Average Earnings\n            ")
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.industries.length === 0
-                ? _c(
-                    "p",
-                    { staticClass: "lead pl-md-5 pr-md-5" },
-                    [
-                      _vm._v(
-                        "\n                No data is available for this selected Degree Level. Please see the "
-                      ),
-                      _c("router-link", { attrs: { to: "/faq" } }, [
-                        _vm._v("FAQ")
-                      ]),
-                      _vm._v(
-                        " section for more information on\n                how we collected the data.\n            "
-                      )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.industries, function(industry, index) {
-              return _c("div", { key: index }, [
-                _c("div", { staticClass: "row IndustryProgressBarWrapper" }, [
-                  _c("div", { staticClass: "col-sm-3" }, [
-                    _c(
-                      "h3",
-                      {
-                        staticClass:
-                          "IndustryProgressBarWrapper__IndustryTitle py-2"
-                      },
-                      [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(industry.title) +
-                            "\n                    "
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm-9" }, [
-                    _c("div", { staticClass: "row py-2" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-10" },
-                        [
-                          _c("v-progress-linear", {
-                            staticClass:
-                              "IndustryProgressBarWrapper__ProgressBarBase",
-                            attrs: {
-                              value: industry.percentage,
-                              height: "25",
-                              color:
-                                "IndustryProgressBarWrapper__PercentageBar",
-                              "background-color":
-                                "IndustryProgressBarWrapper__PercentageBar--Background"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-2 pl-0" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "IndustryProgressBarWrapper__PercentageText"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(industry.percentage) +
-                                "%\n                            "
-                            )
-                          ]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row py-2" }, [
-                      _c(
-                        "div",
-                        { staticClass: "col-10" },
-                        [
-                          _c("v-progress-linear", {
-                            staticClass:
-                              "IndustryProgressBarWrapper__ProgressBarBase",
-                            attrs: {
-                              value: industry.industryWage / 1500,
-                              height: "25",
-                              color: "IndustryProgressBarWrapper__SalaryBar",
-                              "background-color":
-                                "IndustryProgressBarWrapper__PercentageBar--Background"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-2 pl-0" }, [
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "IndustryProgressBarWrapper__SalaryText"
-                          },
-                          [
-                            _vm._v(
-                              "\n                                $" +
-                                _vm._s(
-                                  _vm.formatDollars(industry.industryWage)
-                                ) +
-                                "\n                            "
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
+            _c("v-progress-circular", {
+              staticClass: "loading-icon",
+              attrs: { size: 100, width: 10, indeterminate: "" }
             })
           ],
-          2
+          1
         )
+      : _c("div", [
+          _vm.industryMajor == null ||
+          (Object.keys(_vm.industriesByMajor).length === 0 &&
+            _vm.industriesByMajor.constructor == +Object)
+            ? _c("div", [
+                _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
+                  _vm._v("Please make your selection")
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "lead pl-md-5 pr-md-5" },
+                  [
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("Please Note:")
+                    ]),
+                    _vm._v(
+                      " Some majors might not have any data available at the moment.\n                For more information on how we gathered the data, please read the "
+                    ),
+                    _c("router-link", { attrs: { to: "/faq" } }, [
+                      _vm._v("FAQ")
+                    ]),
+                    _vm._v(".\n            ")
+                  ],
+                  1
+                )
+              ])
+            : _c(
+                "div",
+                [
+                  _c("div", { staticClass: "row IndustryLegend" }, [
+                    _vm.industryMajor !== null
+                      ? _c("div", { staticClass: "col-12" }, [
+                          _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c("div", { staticClass: "col-12" }, [
+                          _c("p", { staticClass: "h6" }, [
+                            _vm._v("Employment 5 Years After Exit")
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c(
+                          "div",
+                          { staticClass: "col-sm-12 col-md-4 offset-md-3" },
+                          [
+                            _c("span", {
+                              staticClass: "IndustryLegend__LegendPercentage"
+                            }),
+                            _vm._v(
+                              "Percentage of Students Employed\n                "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length > 0
+                      ? _c("div", { staticClass: "col-sm-12 col-md-5" }, [
+                          _c("span", {
+                            staticClass: "IndustryLegend__LegendSalary"
+                          }),
+                          _vm._v("Average Earnings\n                ")
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.industries.length === 0
+                      ? _c(
+                          "p",
+                          { staticClass: "lead pl-md-5 pr-md-5" },
+                          [
+                            _vm._v(
+                              "\n                    No data is available for this selected Degree Level. Please see the "
+                            ),
+                            _c("router-link", { attrs: { to: "/faq" } }, [
+                              _vm._v("FAQ")
+                            ]),
+                            _vm._v(
+                              " section for more information on\n                    how we collected the data.\n                "
+                            )
+                          ],
+                          1
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.industries, function(industry, index) {
+                    return _c("div", { key: index }, [
+                      _c(
+                        "div",
+                        { staticClass: "row IndustryProgressBarWrapper" },
+                        [
+                          _c("div", { staticClass: "col-sm-3" }, [
+                            _c(
+                              "h3",
+                              {
+                                staticClass:
+                                  "IndustryProgressBarWrapper__IndustryTitle py-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(industry.title) +
+                                    "\n                        "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-9" }, [
+                            _c("div", { staticClass: "row py-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-10" },
+                                [
+                                  _c("v-progress-linear", {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__ProgressBarBase",
+                                    attrs: {
+                                      value: industry.percentage,
+                                      height: "25",
+                                      color:
+                                        "IndustryProgressBarWrapper__PercentageBar",
+                                      "background-color":
+                                        "IndustryProgressBarWrapper__PercentageBar--Background"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-2 pl-0" }, [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__PercentageText"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(industry.percentage) +
+                                        "%\n                                "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row py-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-10" },
+                                [
+                                  _c("v-progress-linear", {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__ProgressBarBase",
+                                    attrs: {
+                                      value: industry.industryWage / 1500,
+                                      height: "25",
+                                      color:
+                                        "IndustryProgressBarWrapper__SalaryBar",
+                                      "background-color":
+                                        "IndustryProgressBarWrapper__PercentageBar--Background"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-2 pl-0" }, [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "IndustryProgressBarWrapper__SalaryText"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    $" +
+                                        _vm._s(
+                                          _vm.formatDollars(
+                                            industry.industryWage
+                                          )
+                                        ) +
+                                        "\n                                "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  })
+                ],
+                2
+              )
+        ])
   ])
 }
 var staticRenderFns = [
@@ -91384,12 +91767,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
       _vm._v(
-        "\n            You have the option of either filtering out majors by "
+        "\n                You have the option of either filtering out majors by "
       ),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
       _vm._v(" or choosing the "),
       _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
-      _vm._v("\n        which resonates the most with you.\n        ")
+      _vm._v("\n            which resonates the most with you.\n            ")
     ])
   }
 ]
@@ -91403,15 +91786,15 @@ if (false) {
 }
 
 /***/ }),
-/* 407 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(408)
+var __vue_script__ = __webpack_require__(411)
 /* template */
-var __vue_template__ = __webpack_require__(409)
+var __vue_template__ = __webpack_require__(412)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -91450,7 +91833,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 408 */
+/* 411 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91641,7 +92024,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 409 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -91952,7 +92335,7 @@ if (false) {
 }
 
 /***/ }),
-/* 410 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -92028,15 +92411,15 @@ if (false) {
 }
 
 /***/ }),
-/* 411 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(412)
+var __vue_script__ = __webpack_require__(415)
 /* template */
-var __vue_template__ = __webpack_require__(413)
+var __vue_template__ = __webpack_require__(416)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -92075,7 +92458,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 412 */
+/* 415 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92173,7 +92556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 413 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -92464,15 +92847,15 @@ if (false) {
 }
 
 /***/ }),
-/* 414 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(415)
+var __vue_script__ = __webpack_require__(418)
 /* template */
-var __vue_template__ = __webpack_require__(421)
+var __vue_template__ = __webpack_require__(424)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -92511,14 +92894,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 415 */
+/* 418 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal__ = __webpack_require__(418);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal__ = __webpack_require__(421);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -92619,7 +93002,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 416 */
+/* 419 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92680,7 +93063,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 417 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -92802,15 +93185,15 @@ if (false) {
 }
 
 /***/ }),
-/* 418 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(419)
+var __vue_script__ = __webpack_require__(422)
 /* template */
-var __vue_template__ = __webpack_require__(420)
+var __vue_template__ = __webpack_require__(423)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -92849,7 +93232,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 419 */
+/* 422 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92965,7 +93348,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 420 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -93205,7 +93588,7 @@ if (false) {
 }
 
 /***/ }),
-/* 421 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -93439,15 +93822,15 @@ if (false) {
 }
 
 /***/ }),
-/* 422 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(423)
+var __vue_script__ = __webpack_require__(426)
 /* template */
-var __vue_template__ = __webpack_require__(424)
+var __vue_template__ = __webpack_require__(427)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -93486,7 +93869,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 423 */
+/* 426 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93568,7 +93951,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 424 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -93705,15 +94088,15 @@ if (false) {
 }
 
 /***/ }),
-/* 425 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(426)
+var __vue_script__ = __webpack_require__(429)
 /* template */
-var __vue_template__ = __webpack_require__(427)
+var __vue_template__ = __webpack_require__(430)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -93752,7 +94135,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 426 */
+/* 429 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93767,7 +94150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 427 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -93787,15 +94170,15 @@ if (false) {
 }
 
 /***/ }),
-/* 428 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(429)
+var __vue_script__ = __webpack_require__(432)
 /* template */
-var __vue_template__ = __webpack_require__(430)
+var __vue_template__ = __webpack_require__(433)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -93834,7 +94217,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 429 */
+/* 432 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93870,7 +94253,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 430 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -93933,7 +94316,7 @@ if (false) {
 }
 
 /***/ }),
-/* 431 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -115136,7 +115519,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 //# sourceMappingURL=vuetify.js.map
 
 /***/ }),
-/* 432 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -115210,7 +115593,7 @@ var getYoutubeId = createCommonjsModule(function (module, exports) {
 }));
 });
 
-var player = __webpack_require__(433);
+var player = __webpack_require__(436);
 
 var UNSTARTED = -1;
 var ENDED = 0;
@@ -115324,7 +115707,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 433 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115336,15 +115719,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _sister = __webpack_require__(434);
+var _sister = __webpack_require__(437);
 
 var _sister2 = _interopRequireDefault(_sister);
 
-var _loadYouTubeIframeApi = __webpack_require__(435);
+var _loadYouTubeIframeApi = __webpack_require__(438);
 
 var _loadYouTubeIframeApi2 = _interopRequireDefault(_loadYouTubeIframeApi);
 
-var _YouTubePlayer = __webpack_require__(437);
+var _YouTubePlayer = __webpack_require__(440);
 
 var _YouTubePlayer2 = _interopRequireDefault(_YouTubePlayer);
 
@@ -115423,7 +115806,7 @@ exports.default = function (maybeElementId) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 434 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115491,7 +115874,7 @@ module.exports = Sister;
 
 
 /***/ }),
-/* 435 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115501,7 +115884,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _loadScript = __webpack_require__(436);
+var _loadScript = __webpack_require__(439);
 
 var _loadScript2 = _interopRequireDefault(_loadScript);
 
@@ -115546,7 +115929,7 @@ exports.default = function (emitter) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 436 */
+/* 439 */
 /***/ (function(module, exports) {
 
 
@@ -115617,7 +116000,7 @@ function ieOnEnd (script, cb) {
 
 
 /***/ }),
-/* 437 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115627,19 +116010,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _debug = __webpack_require__(438);
+var _debug = __webpack_require__(441);
 
 var _debug2 = _interopRequireDefault(_debug);
 
-var _functionNames = __webpack_require__(441);
+var _functionNames = __webpack_require__(444);
 
 var _functionNames2 = _interopRequireDefault(_functionNames);
 
-var _eventNames = __webpack_require__(442);
+var _eventNames = __webpack_require__(445);
 
 var _eventNames2 = _interopRequireDefault(_eventNames);
 
-var _FunctionStateMap = __webpack_require__(443);
+var _FunctionStateMap = __webpack_require__(446);
 
 var _FunctionStateMap2 = _interopRequireDefault(_FunctionStateMap);
 
@@ -115819,7 +116202,7 @@ exports.default = YouTubePlayer;
 module.exports = exports['default'];
 
 /***/ }),
-/* 438 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -115828,7 +116211,7 @@ module.exports = exports['default'];
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(439);
+exports = module.exports = __webpack_require__(442);
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -116011,7 +116394,7 @@ function localstorage() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
 
 /***/ }),
-/* 439 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -116027,7 +116410,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = __webpack_require__(440);
+exports.humanize = __webpack_require__(443);
 
 /**
  * The currently active debug mode names, and names to skip.
@@ -116219,7 +116602,7 @@ function coerce(val) {
 
 
 /***/ }),
-/* 440 */
+/* 443 */
 /***/ (function(module, exports) {
 
 /**
@@ -116377,7 +116760,7 @@ function plural(ms, n, name) {
 
 
 /***/ }),
-/* 441 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -116395,7 +116778,7 @@ exports.default = ['cueVideoById', 'loadVideoById', 'cueVideoByUrl', 'loadVideoB
 module.exports = exports['default'];
 
 /***/ }),
-/* 442 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -116415,7 +116798,7 @@ exports.default = ['ready', 'stateChange', 'playbackQualityChange', 'playbackRat
 module.exports = exports['default'];
 
 /***/ }),
-/* 443 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -116425,7 +116808,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _PlayerStates = __webpack_require__(444);
+var _PlayerStates = __webpack_require__(447);
 
 var _PlayerStates2 = _interopRequireDefault(_PlayerStates);
 
@@ -116452,7 +116835,7 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 444 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -116472,15 +116855,15 @@ exports.default = {
 module.exports = exports["default"];
 
 /***/ }),
-/* 445 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(446)
+var __vue_script__ = __webpack_require__(449)
 /* template */
-var __vue_template__ = __webpack_require__(456)
+var __vue_template__ = __webpack_require__(459)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116519,16 +116902,16 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 446 */
+/* 449 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__ = __webpack_require__(450);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_global_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__ = __webpack_require__(453);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_global_csu_footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_error_alert_vue__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_error_alert_vue__ = __webpack_require__(456);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_error_alert_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_global_error_alert_vue__);
 //
 //
@@ -116554,15 +116937,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 447 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(448)
+var __vue_script__ = __webpack_require__(451)
 /* template */
-var __vue_template__ = __webpack_require__(449)
+var __vue_template__ = __webpack_require__(452)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116601,7 +116984,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 448 */
+/* 451 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -116700,7 +117083,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 449 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -116922,15 +117305,15 @@ if (false) {
 }
 
 /***/ }),
-/* 450 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(451)
+var __vue_script__ = __webpack_require__(454)
 /* template */
-var __vue_template__ = __webpack_require__(452)
+var __vue_template__ = __webpack_require__(455)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -116969,7 +117352,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 451 */
+/* 454 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117017,7 +117400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 452 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -117137,15 +117520,15 @@ if (false) {
 }
 
 /***/ }),
-/* 453 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(454)
+var __vue_script__ = __webpack_require__(457)
 /* template */
-var __vue_template__ = __webpack_require__(455)
+var __vue_template__ = __webpack_require__(458)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -117184,7 +117567,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 454 */
+/* 457 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117218,7 +117601,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 455 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -117267,7 +117650,7 @@ if (false) {
 }
 
 /***/ }),
-/* 456 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -117297,7 +117680,7 @@ if (false) {
 }
 
 /***/ }),
-/* 457 */
+/* 460 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
