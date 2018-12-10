@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("../Downloads/PFRE_Sample.csv")
+df = pd.read_csv("./PFRE_Sample.csv")
 
 # sanitize each column 
 df.columns = df.columns.str.replace(' ', '_')

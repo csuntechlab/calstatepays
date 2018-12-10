@@ -27,10 +27,10 @@
         return [
             'major' => 'required|integer',
             'university' => 'required|string|regex:/^[a-z_A-Z]+$/u',
-            'age_range' => 'required|integer|max:5',
-            'education_level' => 'required|string|max:3',
-            'annual_earnings' => 'required|integer|max:5',
-            'financial_aid' => 'required|integer|max:5',
+            'age_range' => 'required|integer|min:1|max:4',
+            'education_level' => 'required|string|min:3|max:3',
+            'annual_earnings' => 'required|integer|min:1|max:5',
+            'financial_aid' => 'required|integer|min:1|max:5',
         ];
     }
 
