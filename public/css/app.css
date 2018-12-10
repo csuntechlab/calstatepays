@@ -21171,8 +21171,8 @@ button.btn-change-campus:hover {
           transform: translate(-50%, -50%);
   border-radius: 15px;
   cursor: pointer;
-  -webkit-transition: opacity .3s ease;
-  transition: opacity .3s ease;
+  -webkit-transition: opacity .3s ease, background .3s ease;
+  transition: opacity .3s ease, background .3s ease;
   padding: 15px 40px;
 }
 
@@ -21186,6 +21186,10 @@ button.btn-change-campus:hover {
   .homeVideo__btn {
     padding: 35px 80px;
   }
+}
+
+.homeVideo__btn:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .homeVideo__btn img {

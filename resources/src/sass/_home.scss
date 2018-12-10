@@ -414,7 +414,7 @@
         transform: translate(-50%, -50%);
         border-radius: 15px;
         cursor: pointer;
-        transition: opacity .3s ease;
+        transition: opacity .3s ease, background .3s ease;
         padding: 15px 40px;
         
         @include media-breakpoint-up(md) {
@@ -423,6 +423,10 @@
         
         @include media-breakpoint-up(lg) {
             padding: 35px 80px;
+        }
+
+        &:hover {
+            background: rgba(0,0,0,0.8);
         }
         
         img {
