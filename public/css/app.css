@@ -18969,6 +18969,22 @@ body {
           transform: scaleX(0) translateZ(0);
 }
 
+.loading-icon {
+  margin-top: 6rem;
+  color: #2f98bf;
+}
+
+@media screen and (max-width: 992px) {
+  .loading-icon {
+    margin-top: 0;
+  }
+}
+
+.loading-major-mobile {
+  color: #2f98bf;
+  margin: 2rem 0 !important;
+}
+
 .text-gray {
   color: #777777;
 }
@@ -20367,7 +20383,6 @@ button.btn-change-campus:hover {
 
 .progress-median:after {
   content: "";
-  position: absolute;
   top: 0;
   z-index: 1;
   bottom: 0;
