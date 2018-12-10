@@ -18,8 +18,12 @@ abbr[title] {
 }
 
 html {
-  min-height: 100vh;
-  box-sizing: border-box;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 .lead {
