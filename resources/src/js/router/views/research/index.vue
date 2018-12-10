@@ -12,14 +12,9 @@
                     </div>
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
-                    <active-c-s-u-tile @click.native="openModal(0)" :campusImg="campus.AllCSU.img" :title="campus.AllCSU.title"/>
-                    <active-c-s-u-tile @click.native="openModal(70)" :campusImg="campus.CSUN.img" :title="campus.CSUN.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSULB.img" :title="campus.CSULB.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSULA.img" :title="campus.CSULA.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSUF.img" :title="campus.CSUF.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSUDH.img" :title="campus.CSUDH.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSUCI.img" :title="campus.CSUCI.title"/>
-                    <opt-out-c-s-u-tile :campusImg="campus.CSUP.img" :title="campus.CSUP.title"/>
+                    <template v-for="item in campus">
+                        <c-s-u-tile @click.native="openModal(item)" :campusImg="item.img" :title="item.title" :active="item.active" />
+                    </template>
                 </div>
             </div>
         </main>
@@ -28,8 +23,7 @@
 <script>
 import powerBanner from '../../../components/research/power-banner'
 import powerUsersModal from '../../../components/research/power-users-modal'
-import ActiveCSUTile from '../../../components/research/active-csu-tile'
-import OptOutCSUTile from '../../../components/research/opt-out-csu-tile'
+import CSUTile from '../../../components/research/csu-tile'
 import {mapGetters} from 'vuex';
 export default {
     data(){
@@ -43,36 +37,44 @@ export default {
                 AllCSU: {
                     img: window.baseUrl  + '/img/csucampuses/allcsu.png',
                     title: 'Aggregate Data Across the 7 CSUs',
-                    id: 0
+                    id: 0,
+                    active: true
                 },
                 CSUN: {
                     img: window.baseUrl + '/img/csucampuses/northridge.png',
                     title: 'California State University Northridge',
-                    id: 70
+                    id: 70,
+                    active: true
                 },
                 CSULB: {
                     img: window.baseUrl + '/img/csucampuses/longBeach.png',
-                    title: 'California State University Long Beach'
+                    title: 'California State University Long Beach',
+                    active: false
                 }, 
                 CSULA: {
                     img: window.baseUrl + '/img/csucampuses/losAngeles.png',
-                    title: 'California State University Los Angeles'
+                    title: 'California State University Los Angeles',
+                    active: false
                 },
                 CSUF: {
                     img: window.baseUrl + '/img/csucampuses/fullerton.png',
-                    title: 'California State University Fullerton'
+                    title: 'California State University Fullerton',
+                    active: false
                 },
                 CSUDH: {
                     img: window.baseUrl + '/img/csucampuses/dominguezHills.png',
-                    title: 'California State University Dominguez Hills'
+                    title: 'California State University Dominguez Hills',
+                    active: false
                 },
                 CSUCI: {
                     img: window.baseUrl + '/img/csucampuses/channelIslands.png',
-                    title: 'California State University Channel Islands'
+                    title: 'California State University Channel Islands',
+                    active: false
                 },
                 CSUP: {
                     img: window.baseUrl + '/img/csucampuses/pomona.png',
-                    title: 'Cal Poly Pomona'
+                    title: 'Cal Poly Pomona',
+                    active: false
                 } 
             }
         }
@@ -81,9 +83,11 @@ export default {
         closeModal(){
             this.displayModal = false;
         },
-        openModal(id){
-            this.displayModal = true;
-            this.id = id;
+        openModal(item){
+            if( item.active ) {
+                this.displayModal = true;
+                this.id = item.id;
+            }
         }
     },
     computed:{
@@ -95,8 +99,7 @@ export default {
     components: {
         powerBanner,
         powerUsersModal,
-        ActiveCSUTile,
-        OptOutCSUTile
+        CSUTile
     }
 };
 </script>
