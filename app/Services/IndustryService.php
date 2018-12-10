@@ -31,9 +31,8 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        $university_major = $this->industryRelation($hegis_code, $opt_in);
+        $university = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
+        $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
         $population  = $this->retrievePopulation($university_major);
@@ -56,9 +55,8 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        $university_major = $this->industryRelation($hegis_code, $opt_in);
+        $university = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
+        $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
         $population  = $this->retrievePopulation($university_major);
@@ -78,12 +76,15 @@ class IndustryService implements IndustryContract
         return $industry_wages;
     }
 
-    private function industryRelation($hegis_code,$opt_in){
+    private function industryRelation($hegis_code, $university){
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
+            $query->whereHas('industryWage', function($query) {
+                $query->whereNotNull('avg_annual_wage_5');
+            });
         }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
-            ->where('university_id', $opt_in->id)
+            ->where('university_id', $university->id)
             ->firstOrFail();
             return $university_major;
     }
