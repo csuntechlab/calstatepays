@@ -65008,7 +65008,7 @@ var render = function() {
                               return [
                                 universitySeal.short_name == item.short_name
                                   ? [
-                                      item.opt_in === "1"
+                                      item.opt_in === 1
                                         ? [
                                             _vm.aCampusIsSelected &&
                                             _vm.selectedUniversity ==
