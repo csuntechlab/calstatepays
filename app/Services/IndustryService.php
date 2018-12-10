@@ -37,6 +37,9 @@ class IndustryService implements IndustryContract
 
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
+            $query->whereHas('industryWage', function($query) {
+                $query->whereNotNull('avg_annual_wage_5');
+            });
         }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
@@ -73,6 +76,9 @@ class IndustryService implements IndustryContract
         /** no longer using degree level, must extract degree 1,2,4 for equal population total */
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
+            $query->whereHas('industryWage', function($query) {
+                $query->whereNotNull('avg_annual_wage_5');
+            });
         }, 'industryPathTypes.population', 'industryPathTypes.industryWage', 'industryPathTypes.naicsTitle'])
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $opt_in->id)
