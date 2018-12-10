@@ -1,0 +1,531 @@
+//--------------------------
+//--------------------------
+// HOMEPAGE: BANNER SECTION
+//--------------------------
+//--------------------------
+
+.homeBanner{
+	background-image: url("../img/homeimages/banner-xs.jpg");
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	width: 100%;
+	padding-top: 44%;
+
+	@media (min-width: $break-Xsmall) { 
+		background-image: url("../img/homeimages/banner-sm.jpg");
+	}
+
+	@media (min-width: $break-medium) { 
+		background-image: url("../img/homeimages/banner-md.jpg");
+	}
+
+	@media (min-width: $break-large) { 
+		background-image: url("../img/homeimages/banner-lg.jpg");
+	}
+
+	@media (min-width: $break-xlarge) { 
+		background-image: url("../img/homeimages/banner-lg.jpg");
+	}
+
+	@media screen and (max-width: $break-medium) {
+		padding-top: 51.37%; //This from aspect ratio of banner form the mockup.
+		height: unset;
+	}
+	&__CSPLogo{
+		width: 30%;
+		position: absolute;
+		top: 42%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__Tagline{
+		width: 76%;
+		position: absolute;
+		left: 50%;
+		bottom: 10%;
+		transform: translateX(-50%);
+		@media screen and (max-width: $break-medium) {
+			width: 83%;
+		}
+	}
+}
+
+//--------------------------
+//--------------------------
+// HOMEPAGE: CARDS SECTION
+//--------------------------
+//--------------------------
+
+.homeCards{
+    padding: 2rem 0;
+    background: #ebebeb;
+
+    @media screen and (max-width: $break-small){
+        padding: 1rem 0;
+    }
+}
+
+.homeCard{
+    //Major
+    &__iconWrapper--major{
+        @extend %iconWrapperBase;
+    }
+
+    &__icon--major{fill:$CSP-Dark-Blue;}
+
+    &__title--major{
+        @include make-homeCard__title($CSP-Dark-Blue, $break-small);
+    }
+    &__titleAndIconWrapper--major{
+        @include make-homeCard__titleAndIconWrapper($CSP-Blue);
+        &:hover{
+            .homeCard__icon--major{
+                fill: $white;
+            }
+            .homeCard__title--major{
+                @extend %titleHover;
+            }
+        }
+        
+    }
+    &__Copy--major{
+        @include make-homeCard__copy($CSP-Dark-Blue, $break-small);
+    }
+    &__link--major{
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+            .homeCard__titleAndIconWrapper--major{
+                background: $CSP-Blue;
+            }
+            .homeCard__title--major{
+                @extend %titleHover;
+            }
+            .homeCard__icon--major{
+                fill: $white;
+            }
+        }
+    }
+
+    //Industries
+    &__iconWrapper--industries{
+        @extend %iconWrapperBase;
+    }
+    &__icon--industries0{fill:$CSP-Dark-Gold;}
+    &__icon--industries1{
+        fill:none;
+        stroke:$CSP-Dark-Gold;
+        stroke-width:5;
+        stroke-linecap:round;
+        stroke-miterlimit:10;
+    }
+
+    &__icon--industries2{
+        fill:none;
+        stroke:$CSP-Dark-Gold;
+        stroke-width:3;
+        stroke-miterlimit:10;
+    }
+
+    &__title--industries{
+        @include make-homeCard__title($CSP-Dark-Gold, $break-small);
+    }
+
+    &__titleAndIconWrapper--industries{
+        @include make-homeCard__titleAndIconWrapper($CSP-Gold);
+        &:hover{
+            .homeCard__icon--industries0{
+                fill: $white;
+            }
+            .homeCard__icon--industries1{
+                fill:none;
+                stroke:$white;
+                stroke-width:5;
+                stroke-linecap:round;
+                stroke-miterlimit:10;
+            }
+            .homeCard__icon--industries2{
+                fill:none;
+                stroke:$white;
+                stroke-width:3;
+                stroke-miterlimit:10;
+            }
+            .homeCard__title--industries{
+                @extend %titleHover;
+            }
+        }
+        
+    }
+    &__Copy--industries{
+        @include make-homeCard__copy($CSP-Dark-Gold, $break-small);
+    }
+
+    &__link--industries{
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+            .homeCard__titleAndIconWrapper--industries{
+                background: $CSP-Gold;
+            }
+            .homeCard__title--industries{
+                @extend %titleHover;
+            }
+            .homeCard__icon--industries0{
+                fill: $white;
+            }
+            .homeCard__icon--industries1{
+                fill:none;
+                stroke:$white;
+                stroke-width:5;
+                stroke-linecap:round;
+                stroke-miterlimit:10;
+            }
+            .homeCard__icon--industries2{
+                fill:none;
+                stroke:$white;
+                stroke-width:3;
+                stroke-miterlimit:10;
+            }
+            .homeCard__title--industries{
+                @extend %titleHover;
+            }
+        }
+    }
+
+    //PFRE
+    &__iconWrapper--PFRE{
+        @extend %iconWrapperBase;
+    }
+    &__icon--PFRE{fill:$CSP-Dark-Red;}
+
+    &__title--PFRE{
+        @include make-homeCard__title($CSP-Dark-Red, $break-small);
+    }
+
+    &__titleAndIconWrapper--PFRE{
+        @include make-homeCard__titleAndIconWrapper($CSP-Red);
+        &:hover{
+            .homeCard__icon--PFRE{
+                fill: $white;
+            }
+            .homeCard__title--PFRE{
+                @extend %titleHover;
+            }
+        }
+        
+    }
+    &__Copy--PFRE{
+        @include make-homeCard__copy($CSP-Dark-Red, $break-small);
+    }
+    &__link--PFRE{
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+            .homeCard__titleAndIconWrapper--PFRE{
+                background: $CSP-Red;
+            }
+            .homeCard__title--PFRE{
+                @extend %titleHover;
+            }
+            .homeCard__icon--PFRE{
+                fill: $white;
+            }
+        }
+    }
+}
+
+//--------------------------
+//--------------------------
+// HOMEPAGE: CSU SEALS SECTION
+//--------------------------
+//--------------------------
+
+.homeSeals{
+    padding-bottom: 3.5rem;
+    background: #ebebeb;
+
+    @media screen and (max-width: $break-small){
+        padding-bottom: 1rem;
+    }
+
+    figure {
+        margin: 0;
+
+        @media screen and (max-width: $break-small){
+            margin-bottom: 1.2rem;
+        }
+        
+		img {
+			width: 100%;
+			max-height: 8.25rem;
+			overflow: auto;
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0 .5rem;
+		}
+		figcaption {
+			font-family: $font-base;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 0.85rem;
+			margin-top: 0.5rem;
+			padding: .25rem;
+		}
+		
+		@media screen and (max-width: $break-small) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-Xsmall) {
+			img {
+				max-height: 5.25rem;
+			}
+		}
+
+		@media screen and (min-width: $break-large) {
+			img {
+				max-height: 7.25rem;
+			}
+		}
+
+		@media screen and (max-width: $break-small) {
+			figcaption {
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+}
+
+//--------------------------
+//--------------------------
+// HOMEPAGE: VIDEO SECTION
+//--------------------------
+//--------------------------
+
+.homeVideo {
+    height: auto;
+    background: url(../img/homeimages/video-cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    &:before {
+        content: " ";
+        background: rgba(235,235,235,0);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: background 0.7s ease;
+    }
+
+
+    &__btn {
+        opacity: 1;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        cursor: pointer;
+        transition: opacity .3s ease;
+        padding: 15px 40px;
+        
+        @include media-breakpoint-up(md) {
+            padding: 20px 50px;
+        }    
+        
+        @include media-breakpoint-up(lg) {
+            padding: 35px 80px;
+        }
+        
+        img {
+            width: 45px;
+        
+            @include media-breakpoint-up(md) {
+                width: 75px;
+            }
+            
+            @include media-breakpoint-up(lg) {
+                width: auto;
+            }
+        
+        }
+    }
+
+    &__wrapper {
+        opacity: 0;
+        transition: opacity 1s ease 0.3s;
+    }
+
+    &__container {
+
+        .embed-responsive-16by9::before {
+            padding-top: 55.05%;
+        }
+
+        @include media-breakpoint-up(lg) { 
+            max-width: 960px;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @include media-breakpoint-up(xl) { 
+            max-width: 1140px;
+        }
+    }
+
+    &.active {
+        &:before {
+            background: rgba(235,235,235,1);
+        }
+            
+        .homeVideo__wrapper {
+            opacity: 1;
+            z-index: 5; 
+        }
+        
+        .homeVideo__btn {
+            opacity: 0; 
+        }
+    }
+
+    &.finished {
+        .homeVideo__container {
+            opacity: 0;
+        }
+    }
+}
+
+//--------------------------
+//--------------------------
+// HOMEPAGE: FAQ SECTION
+//--------------------------
+//--------------------------
+
+.homeFaq{
+    background: #ebebeb;
+    padding: 4.3rem 0;
+    
+    @media screen and (max-width: $break-small){
+        padding: 2rem 0 ;
+    }
+}
+
+.faq-card{
+    background-color: white;
+    @media screen and (max-width: $break-Xsmall - 1){
+
+        border-width: .5rem .5rem 0rem .5rem;
+    }
+    @media screen and (min-width: $break-xlarge){
+        width: 60%;
+    }
+
+    border:5px solid #14597F;
+}
+
+.faq-card__text{
+    font-weight: 500;
+     font-size:1.4rem;
+     margin-top:1rem;
+     @media screen and (min-width: 400px){
+        font-size: 1.8rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
+    }
+  
+    @media screen and (min-width: $break-small){
+        font-size: 1.9rem;
+    }
+    &--blue{
+        color:#14597F;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+    }
+    &--gray{
+        color: #707070;
+    }
+}
+
+.faq-card__image{
+    margin-bottom: 1rem;
+    align-self: center;
+    height: 7.6rem;
+    margin-top: 1.2rem;
+    display: block;
+    @media screen and (min-width: 400px){
+        height:11rem;
+    }
+    @media screen and (min-width: 500px){
+        font-size: 2rem;
+    }
+    @media screen and (min-width: $break-Xsmall){
+        height: 11rem;
+        margin-top:1rem;
+    }
+    @media screen and (min-width: $break-small +1 ){
+        height: 15rem;
+    }
+}
+
+.faq-card__button--mobile{
+    background-color: #14597F;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    font-size: 1.4rem;
+    padding: 0.7rem 0;
+
+
+    a{
+        color: #fff;
+        align-self: center; 
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.faq-card__button{
+    display: none;
+    @media screen and (min-width: $break-Xsmall){
+        display: block;
+        background-color: #14597F;
+        color: #fff;
+        width: 12rem;
+        font-size: 1.1rem;
+        border-radius: 2rem;
+        padding: 0.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center
+        
+    }
+    @media screen and (min-width: $break-medium){
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+a.faq-card__button {
+    color: #fff;
+
+    &:hover{
+        color: #fff;
+    text-decoration: none;
+    }
+}

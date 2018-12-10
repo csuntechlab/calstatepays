@@ -1,14 +1,10 @@
 <template>
 	<div> 
 		<home-banner/>
-		<div class="container">
-			<home-card class="landing-page__home-cards"/>
-			<campus-seals class="landing-page__seals"/>
-		</div>		
+		<home-card/>
+		<campus-seals/>
 		<home-video/>
-			<div class="container">
-				<faq-card class="landing-page__faq-cards"/>
-			</div>
+		<faq-card/>
 	</div>
 </template>
 <script>
