@@ -117086,12 +117086,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: {
-        routeIsHome: function routeIsHome() {
-            return this.$route.path.includes("data");
-        }
+    data: function data() {
+        return {
+            url: ""
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
     }
 });
 
@@ -117103,36 +117122,65 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "footer", attrs: { id: "main-footer" } }, [
-    _c(
-      "div",
-      { staticClass: "footer__links pl-4" },
-      [
-        _c(
-          "router-link",
-          {
-            staticClass: "footer__link text-white",
-            attrs: { to: "/research" }
-          },
-          [_vm._v("Power Users")]
-        ),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "router-link",
-          { staticClass: "footer__link text-white", attrs: { to: "/faq" } },
-          [_vm._v("FAQ")]
-        )
-      ],
-      1
-    ),
+  return _c("div", [
+    _c("footer", { staticClass: "footer", attrs: { id: "main-footer" } }, [
+      _c(
+        "div",
+        { staticClass: "footer__links pl-4" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "footer__link text-white",
+              attrs: { to: "/research" }
+            },
+            [_vm._v("Power Users")]
+          ),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            { staticClass: "footer__link text-white", attrs: { to: "/faq" } },
+            [_vm._v("FAQ")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm.routeIsHome
+        ? _c("div", { staticClass: "footer-mobile-positioning" })
+        : _vm._e()
+    ]),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm.routeIsHome
-      ? _c("div", { staticClass: "footer-mobile-positioning" })
-      : _vm._e()
+    _c("div", { staticClass: "footer-meta" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3 col-12" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "//www.csun.edu/academic-affairs/meta-lab",
+                target: "csun"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "footer-meta__logo mb-2 mb-md-0",
+                attrs: {
+                  src: this.url + "/img/metalab-logo.svg",
+                  alt: "META+LAB Logo"
+                }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -117152,6 +117200,27 @@ var staticRenderFns = [
           attrs: { href: "#" }
         },
         [_vm._v("Contact Us")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9 col-12 text-md-right" }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "//www.csun.edu/academic-affairs/meta-lab",
+            target: "csun"
+          }
+        },
+        [
+          _vm._v(
+            "\n                    Built by students at California State University Northridge META+LAB \n                "
+          )
+        ]
       )
     ])
   }
