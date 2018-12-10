@@ -26,42 +26,23 @@ footer, .footer {
 
 
 
-.footer-metaphor {
-    // margin-top: 5rem;
-    font-size: 1.3rem;
+.footer-meta {
+    background: #212529;
+    color: #adb5bd;
+    padding: .8rem 1.5rem;
+    line-height: 1.2;
 
-    @media (max-width: 767.98px){
-        text-align: center;
+    @media screen and (max-width: $break-small) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
-    a {
-        color: #55565a;
+    a{
+        color:#adb5bd;
     }
 
-    &__emblem {
-        width: 7.2rem;
-        height: 7.2rem;
-
-        @media (max-width: 767.98px){
-            width: 10rem;
-        }
-    }
 
     &__logo {
-        width: 10rem;
-
-        @media (max-width: 991.98px) {
-            width: auto;
-        }
-    }
-
-    .footer-metaphor__subfooter {
-        background: #212529;
-        color: #adb5bd;
-        padding: 0 1.5rem 0 1.5rem;
-
-        a{
-            color:#adb5bd;
-        }
+        width: 8rem;
     }
 }

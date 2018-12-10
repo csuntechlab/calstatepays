@@ -117004,64 +117004,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: {
-        routeIsHome: function routeIsHome() {
-            return this.$route.path.includes("data");
-        }
+    data: function data() {
+        return {
+            url: ""
+        };
+    },
+    created: function created() {
+        this.url = window.baseUrl;
     }
 });
 
@@ -117106,7 +117057,32 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _c("div", { staticClass: "footer-meta" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3 col-12" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "//www.csun.edu/academic-affairs/meta-lab",
+                target: "csun"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "footer-meta__logo mb-2 mb-md-0",
+                attrs: {
+                  src: this.url + "/img/metalab-logo.svg",
+                  alt: "META+LAB Logo"
+                }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -117133,43 +117109,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer-metaphor" }, [
-      _c("div", { staticClass: "footer-metaphor__subfooter" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }, [
-              _c("img", {
-                staticClass: "footer-metaphor__logo mb-3",
-                attrs: {
-                  src:
-                    "//s3-us-west-2.amazonaws.com/csun-metalab/metaphor/dist/img/metalab-logo.svg",
-                  alt: "META+LAB Logo"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "mb-2 mb-md-0" }, [
-                _c(
-                  "a",
-                  { attrs: { href: "//www.metalab.csun.edu", target: "csun" } },
-                  [_vm._v("metalab.csun.edu")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "offset-md-6 col-md-4 align-self-center" },
-              [
-                _c("div", { staticClass: "text-center text-md-right" }, [
-                  _vm._v(
-                    "\n                            Explore. Learn. Go Beyond.\n                        "
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "col-md-9 col-12 text-md-right" }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "//www.csun.edu/academic-affairs/meta-lab",
+            target: "csun"
+          }
+        },
+        [
+          _vm._v(
+            "\n                    Built by students at California State University Northridge META+LAB \n                "
+          )
+        ]
+      )
     ])
   }
 ]
