@@ -62018,7 +62018,7 @@ function h(tag, key, args) {
     majorById: function majorById(state) {
         return function (id) {
             var index = state.majors.findIndex(function (major) {
-                return major.majorId === id;
+                return major.majorId === Number(id);
             });
             return state.majors[index];
         };

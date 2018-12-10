@@ -3,7 +3,7 @@
 export default {
     majors: state => state.majors,
     majorById: (state) => (id) => {
-        const index = state.majors.findIndex((major) => major.majorId === id);
+        const index = state.majors.findIndex((major) => major.majorId === Number(id));
         return state.majors[index];
     },
     majorNameById: (state, getters) => id => {
