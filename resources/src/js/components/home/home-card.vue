@@ -84,7 +84,7 @@
                     </router-link>
                 </div>
                 <div class="col-12 col-md-4 px-3 px-lg-5">
-                    <router-link class="homeCard__link--PFRE" to="/data/PFRE" @click.native="setDataPage('PFRE')">
+                    <router-link class="homeCard__link--PFRE" to="/data/pfre" @click.native="setDataPage('pfre')">
                         <div class="homeCard__titleAndIconWrapper--PFRE">
                             <div class="row">
                                 <div class="col-4 col-sm-3 col-md-12 pr-0 pr-md-3 align-self-center homeCard__iconWrapper--PFRE">

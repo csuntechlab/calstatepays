@@ -63514,10 +63514,10 @@ var render = function() {
               "router-link",
               {
                 staticClass: "homeCard__link--PFRE",
-                attrs: { to: "/data/PFRE" },
+                attrs: { to: "/data/pfre" },
                 nativeOn: {
                   click: function($event) {
-                    _vm.setDataPage("PFRE")
+                    _vm.setDataPage("pfre")
                   }
                 }
               },
@@ -87803,7 +87803,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n\t\t\tInteger enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla\n\t\t\tmetus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.\n\t\t"
+              "\n\t\t\tCollege graduates earn more money over time. Select a major and find out how earnings for graduates,\n\t\t\tnon-completers, and post graduates change over time.\n\t\t"
             )
           ]
         )
