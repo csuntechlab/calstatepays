@@ -68583,7 +68583,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return false;
 					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
 						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
 					}
 				}
@@ -87253,7 +87253,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 						return false;
 					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
 						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
 					}
 				}

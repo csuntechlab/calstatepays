@@ -205,7 +205,7 @@
 							return false
 						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null){
 							return false
-						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
+						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null){
 							return false
 						}
 					}
