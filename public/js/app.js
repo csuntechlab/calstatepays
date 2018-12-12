@@ -68579,11 +68579,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var yearsOut = [2, 5, 10, 15];
 			for (var i = 0; i < yearsOut.length; i++) {
 				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null || this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null || this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
 					}
 				} else if (this.selectedEducationLevel === "allDegrees") {
-					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null && this.selectedMajorData.bachelors[yearsOut[i]]._50th != null && this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
+					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null || this.selectedMajorData.bachelors[yearsOut[i]]._50th != null || this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
 						return false;
 					}
 				}
@@ -87252,11 +87252,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			var yearsOut = [2, 5, 10, 15];
 			for (var i = 0; i < yearsOut.length; i++) {
 				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null || this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null || this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
 					}
 				} else if (this.selectedEducationLevel === "allDegrees") {
-					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null && this.selectedMajorData.bachelors[yearsOut[i]]._50th != null && this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
+					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null || this.selectedMajorData.bachelors[yearsOut[i]]._50th != null || this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
 						return false;
 					}
 				}
