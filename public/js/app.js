@@ -68577,18 +68577,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		nullValues: function nullValues() {
 			var yearsOut = [2, 5, 10, 15];
-			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-				for (var i = 0; i < yearsOut.length; i++) {
-					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+			for (var i = 0; i < yearsOut.length; i++) {
+				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
-						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+					}
+				} else if (this.selectedEducationLevel === "allDegrees") {
+					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null && this.selectedMajorData.bachelors[yearsOut[i]]._50th != null && this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
 						return false;
 					}
 				}
-				return true;
 			}
+			return true;
 		},
 		applyHiddenClass: function applyHiddenClass() {
 			if (this.nullValues) {
@@ -86657,7 +86657,10 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "row", attrs: { id: "majorCardHasIndex-" + this.index } },
+      {
+        staticClass: "row pt-md-2",
+        attrs: { id: "majorCardHasIndex-" + this.index }
+      },
       [
         _c(
           "aside",
@@ -87247,18 +87250,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		},
 		nullValues: function nullValues() {
 			var yearsOut = [2, 5, 10, 15];
-			if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-				for (var i = 0; i < yearsOut.length; i++) {
-					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null) {
+			for (var i = 0; i < yearsOut.length; i++) {
+				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+					if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null && this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
 						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null) {
-						return false;
-					} else if (this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+					}
+				} else if (this.selectedEducationLevel === "allDegrees") {
+					if (this.selectedMajorData.postBacc[yearsOut[i]]._50th != null && this.selectedMajorData.bachelors[yearsOut[i]]._50th != null && this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
 						return false;
 					}
 				}
-				return true;
 			}
+			return true;
 		}
 	}),
 	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_7_vuex__["b" /* mapActions */])(["deleteMajorCard", "resetMajorCard"]), {
@@ -88105,6 +88108,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -88210,22 +88214,28 @@ var render = function() {
                       : _vm._e(),
                     _vm._v(" "),
                     _vm.industriesByMajor.length === 0
-                      ? _c(
-                          "p",
-                          { staticClass: "lead pl-md-5 pr-md-5" },
-                          [
+                      ? _c("div", { staticClass: "col-12" }, [
+                          _c("p", { staticClass: "lead pl-md-5 pr-md-5" }, [
                             _vm._v(
-                              "\n                    No data is available for this selected Degree Level. Please see the "
-                            ),
-                            _c("router-link", { attrs: { to: "/faq" } }, [
-                              _vm._v("FAQ")
-                            ]),
-                            _vm._v(
-                              " section for more information on\n                    how we collected the data.\n                "
+                              "No data is available for this selected Degree Level."
                             )
-                          ],
-                          1
-                        )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            { staticClass: "lead pl-md-5 pr-md-5" },
+                            [
+                              _vm._v("Please see the "),
+                              _c("router-link", { attrs: { to: "/faq" } }, [
+                                _vm._v("FAQ")
+                              ]),
+                              _vm._v(
+                                " section for more information on\n                        how we collected the data."
+                              )
+                            ],
+                            1
+                          )
+                        ])
                       : _vm._e()
                   ]),
                   _vm._v(" "),
@@ -88962,7 +88972,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "graphContent" }, [
         _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "row pt-md-2" }, [
             _c(
               "aside",
               { staticClass: "col-lg-3 col-12" },

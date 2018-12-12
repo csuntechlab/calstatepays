@@ -33,10 +33,11 @@
                     <div v-if="industriesByMajor.length > 0" class="col-sm-12 col-md-5">
                         <span class="IndustryLegend__LegendSalary"></span>Average Earnings
                     </div>
-                    <p class="lead pl-md-5 pr-md-5" v-if="industriesByMajor.length === 0">
-                        No data is available for this selected Degree Level. Please see the <router-link to="/faq">FAQ</router-link> section for more information on
-                        how we collected the data.
-                    </p>
+                    <div v-if="industriesByMajor.length === 0" class="col-12">
+                        <p class="lead pl-md-5 pr-md-5" >No data is available for this selected Degree Level.</p>
+                        <p class="lead pl-md-5 pr-md-5">Please see the <router-link to="/faq">FAQ</router-link> section for more information on
+                            how we collected the data.</p>
+                    </div>
                 </div>
                 <div v-for="(industry, index) in industriesByMajor" :key="index">
                     <div class="row IndustryProgressBarWrapper">

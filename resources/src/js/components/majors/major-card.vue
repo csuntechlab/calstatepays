@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
+		<div class="row pt-md-2" v-bind:id="'majorCardHasIndex-' + this.index">
 			<aside class="col-md-3">
 				<major-form :windowWidth="windowWidth" :index="index" />
 			</aside>
@@ -183,18 +183,22 @@ export default {
 		},
 		nullValues() {
 			var yearsOut = [2,5,10,15]
-            if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-                for(var i=0; i< yearsOut.length; i++){
-                    if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
-                        return false
-                    }else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null){
-                        return false
-                    }else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null){
-                        return false
+            for(var i=0; i< yearsOut.length; i++) {
+				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+                    if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null &&
+                    this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null &&
+                    this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+                        return false;
+                    }
+                } else if(this.selectedEducationLevel === "allDegrees") {
+                    if(this.selectedMajorData.postBacc[yearsOut[i]]._50th != null &&
+                        this.selectedMajorData.bachelors[yearsOut[i]]._50th != null &&
+						this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
+                        return false;
                     }
                 }
-                return true;
             }
+			return true;
         },
 		applyHiddenClass() {
 		    if (this.nullValues) {
