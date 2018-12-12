@@ -63877,7 +63877,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "homepageUniversities__headline" }, [
-          _vm._v(" soCal's top public universities")
+          _vm._v(" SoCal's top public universities")
         ])
       ])
     ])

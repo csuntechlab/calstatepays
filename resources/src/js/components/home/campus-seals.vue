@@ -7,7 +7,7 @@
                         <span class="homepageUniversities__headline"> Endorsed by 7 CSUs,</span>
                         <span class="homepageUniversities__headline"> CalStatePays combines</span>
                         <span class="homepageUniversities__headline"> the data of</span>
-                        <span class="homepageUniversities__headline"> soCal's top public universities</span>
+                        <span class="homepageUniversities__headline"> SoCal's top public universities</span>
                     </h3>
                 </div>
                 <div class="row no-gutters">
