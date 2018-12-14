@@ -1,19 +1,13 @@
 <template>
 	<div> 
 		<home-banner/>
-		<div class="container">
-			<home-card/>
-			<campus-seals/>
-		</div>		
+		<home-card/>
+		<campus-seals/>
 		<home-video/>
-		
-			<div class="container">
-				<faq-card/>
-			</div>
+		<faq-card/>
 	</div>
 </template>
 <script>
-import landingPageCarousel from "../../../components/global/landing-page-carousel";
 import homeCard from "../../../components/home/home-card.vue"
 import homeBanner from "../../../components/home/home-banner.vue";
 import campusSeals from "../../../components/home/campus-seals.vue";
@@ -30,7 +24,6 @@ export default {
 		this.url = window.baseUrl;
 	},
 	components: {
-		landingPageCarousel,
 		homeCard,
 		homeBanner,
 		homeVideo,

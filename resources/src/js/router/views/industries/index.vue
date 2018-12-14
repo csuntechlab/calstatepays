@@ -11,7 +11,7 @@
     <sub-nav/>
     <div class="graphContent">
       <div class="container">
-        <div class="row">
+        <div class="row pt-md-2">
           <aside class="col-lg-3 col-12">
             <industry-form />
           </aside>
@@ -29,6 +29,11 @@ import subNav from "../../../components/global/sub-nav.vue";
 import industryProgress from "../../../components/industries/industry-progress.vue";
 import industryForm from "../../../components/industries/industry-form.vue"
 export default {
+    data(){
+      return {
+        loadingCheck: false
+      }
+    },
     components: {
       csuDataImgBanner,
       industryProgress,
