@@ -23,4 +23,17 @@ class PowerUsersService implements PowerUsersContract
 
         return $iFrameString;
     }
+
+
+    public function getTableauOptInUniversityData()
+    {
+
+        $powerUserData = PowerUsersData::where('opt_in', 1)->get();
+
+        return $powerUserData;
+        
+        $iFrameString['iframe_string'] = $powerUserData['iframe_string'];
+
+        return $iFrameString;
+    }
 }
