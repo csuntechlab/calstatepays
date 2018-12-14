@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Models\University;
-use App\Contracts\PowerUsersContract;
 use App\Models\PowerUsersData;
+use App\Contracts\PowerUsersContract;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PowerUsersService implements PowerUsersContract
 {
@@ -30,8 +31,11 @@ class PowerUsersService implements PowerUsersContract
 
         $powerUserData = PowerUsersData::where('opt_in', 1)->get();
 
-        $powerUserData = $powerUserData->groupBy('university_id');
+        if ($powerUserData->isEmpty()) {
+            $message = 'No Power User Data';
+            throw new ModelNotFoundException($message, 409);
+        }
 
-        return $powerUserData;
+        return $powerUserData->groupBy('university_id');
     }
 }
