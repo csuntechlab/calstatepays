@@ -1,19 +1,23 @@
 <template>
-    <div class="row">
-        <div class="col-md-12 mt-5">
-            <h3 class="text-center font-italic">
-                <span class="homepageUniversities__headline"> Endorsed by 7 CSUs,</span>
-                <span class="homepageUniversities__headline"> CalStatePays combines</span>
-                <span class="homepageUniversities__headline"> the data of</span>
-                <span class="homepageUniversities__headline"> soCal's top public universities</span>
-            </h3>
+    <div class="homeSeals">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <h3 class="text-center font-italic">
+                        <span class="homepageUniversities__headline"> Endorsed by 7 CSUs,</span>
+                        <span class="homepageUniversities__headline"> CalStatePays combines</span>
+                        <span class="homepageUniversities__headline"> the data of</span>
+                        <span class="homepageUniversities__headline"> SoCal's top public universities</span>
+                    </h3>
+                </div>
+                <div class="row no-gutters">
+                    <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3">
+                        <img :src="item.url" :alt="item.alt">
+                        <figcaption class="text-center" >{{item.name}}</figcaption>
+                    </figure>
+                </div>  
+            </div>
         </div>
-        <div class="row no-gutters homepageUniversities__seals mt-4">
-            <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3">
-                <img :src="item.url" :alt="item.alt">
-                <figcaption class="text-center" >{{item.name}}</figcaption>
-            </figure>
-        </div>  
     </div>
 </template>
 

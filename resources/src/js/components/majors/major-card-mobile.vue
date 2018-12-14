@@ -18,7 +18,8 @@
 							</div>
 							<div class="col-11">
 								<social-sharing 
-								v-if="selectedFormWasSubmitted" 
+								v-if="selectedFormWasSubmitted"
+								:class="{'invisible': nullValues}"
 								:networks="mobileNetworks" 
 								url="sandbox.csun.edu/metalab/test/csumetrola"
 								:title="this.shareDescription" 
@@ -52,8 +53,9 @@
 								<major-legend :educationLevel="selectedEducationLevel" />
 						</div>
 						<div v-show="nullValues">
-							<div class="row text-center">
-								<h3 class="csu-card__no-data--mobile"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
+							<div class="csu-card__no-data--mobile">
+								<p class="lead pl-5 pr-5">No data is available for this selected Degree Level.</p>
+								<p class="lead pl-5 pr-5">Please see the <router-link to="/faq">FAQ</router-link> section for more information on how we collected the data.</p>
 							</div>
 						</div>
 							<div v-show="!nullValues" class="row" style="height: 400px">
@@ -63,7 +65,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<industry-mobile v-show="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
+									<industry-mobile :empty="isEmpty" :industries="selectedIndustries" :majorId="selectedMajorId" />
 								</div>
 							</div>
 					</div>
@@ -85,7 +87,6 @@
 					</p>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 </template>
@@ -198,18 +199,22 @@
 			},
 			nullValues() {
 				var yearsOut = [2,5,10,15]
-				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-					for(var i=0; i< yearsOut.length; i++){
-						if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
-							return false
-						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null){
-							return false
-						}else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
-							return false
-						}
-					}
-					return true;
-				}
+                for(var i=0; i< yearsOut.length; i++) {
+                    if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+                        if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null ||
+                            this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null ||
+                            this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+                            return false;
+                        }
+                    } else if(this.selectedEducationLevel === "allDegrees") {
+                        if(this.selectedMajorData.postBacc[yearsOut[i]]._50th != null ||
+                            this.selectedMajorData.bachelors[yearsOut[i]]._50th != null ||
+                            this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
        		}
 		},
 		methods: {

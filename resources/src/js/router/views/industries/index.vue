@@ -11,7 +11,7 @@
     <sub-nav/>
     <div class="graphContent">
       <div class="container">
-        <div class="row">
+        <div class="row pt-md-2">
           <aside class="col-lg-3 col-12">
             <industry-form />
           </aside>
