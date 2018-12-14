@@ -43,6 +43,7 @@ Route::get('industry/images/{major}/{university}', 'IndustryController@getIndust
 //University
 Route::get('/university', 'UniversityController@getAllUniversities');
 
+//Power User data
 Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
 
 //Middleware
