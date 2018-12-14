@@ -16,9 +16,11 @@ class PowerUsersService implements PowerUsersContract
 
         $universityId = $university->id;
 
-        $data = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->firstOrFail();
-        $test['iframe_string'] = $data['iframe_string'];
+        $powerUserData = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->where('opt_in', 1)->firstOrFail();
 
-        return $test;
+        
+        $iFrameString['iframe_string'] = $powerUserData['iframe_string'];
+
+        return $iFrameString;
     }
 }
