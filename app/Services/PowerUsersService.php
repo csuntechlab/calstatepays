@@ -18,7 +18,7 @@ class PowerUsersService implements PowerUsersContract
 
         $powerUserData = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->where('opt_in', 1)->firstOrFail();
 
-        
+
         $iFrameString['iframe_string'] = $powerUserData['iframe_string'];
 
         return $iFrameString;
@@ -30,10 +30,8 @@ class PowerUsersService implements PowerUsersContract
 
         $powerUserData = PowerUsersData::where('opt_in', 1)->get();
 
-        return $powerUserData;
-        
-        $iFrameString['iframe_string'] = $powerUserData['iframe_string'];
+        $powerUserData = $powerUserData->groupBy('university_id');
 
-        return $iFrameString;
+        return $powerUserData;
     }
 }

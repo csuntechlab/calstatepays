@@ -81,6 +81,12 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($response, $data);
     }
 
+
+    // public function test_getTableauOptInUniversityData()
+    // {
+
+    // }
+
     /** Test the only route */
     public function test_getPowerUserDataByUniversity_by_route_northridge()
     {
@@ -94,6 +100,7 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
+
     /** Test the only route */
     public function test_getPowerUserDataByUniversity_by_route_aggregate()
     {
@@ -105,6 +112,7 @@ class PowerUsersControllerTest extends TestCase
 
         $this->assertEquals($response['iframe_string'], $iframeString);
     }
+
 
     public function test_getPowerUserDataByUniversity_failed()
     {
