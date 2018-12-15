@@ -69751,7 +69751,10 @@ var render = function() {
           "button",
           {
             staticClass: "btn-add",
-            attrs: { id: "compare-major-button" },
+            attrs: {
+              id: "compare-major-button",
+              title: "Compare another major"
+            },
             on: {
               click: function($event) {
                 _vm.onPlus()

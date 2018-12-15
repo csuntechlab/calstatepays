@@ -1,6 +1,6 @@
 <template>
     <div style="position: relative">
-        <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="majorCards[0].submittedOnce">
+        <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="majorCards[0].submittedOnce" title="Compare another major">
             <img :src="this.url + '/img/add-btn.svg'" alt="Compare Major Button">
         </button>
         <button class="btn-add__disabled" id="compare-major-button" @click="cardPlusError()" v-else>
