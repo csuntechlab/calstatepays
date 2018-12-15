@@ -71,6 +71,14 @@
     img {
       width: 5rem;
       filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, .24));
+
+      &:active{
+        filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, .40));
+      }
+    }
+
+    &:focus{
+      outline: none;
     }
 }
 

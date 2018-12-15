@@ -69618,7 +69618,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				//footer height
 				document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight - (
 				//difference between scroll position and page height
-				document.body.clientHeight - (window.innerHeight + window.pageYOffset)) + "px";else addBtn.style.bottom = "1rem";
+				document.body.clientHeight - (window.innerHeight + window.pageYOffset)) + "px";else addBtn.style.bottom = "0";
 		}
 	},
 	mounted: function mounted() {

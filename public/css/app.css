@@ -20002,6 +20002,15 @@ textarea {
           filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
 }
 
+.btn-add img:active {
+  -webkit-filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.4));
+}
+
+.btn-add:focus {
+  outline: none;
+}
+
 .btn-add__disabled {
   display: none;
 }

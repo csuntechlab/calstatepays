@@ -124,7 +124,7 @@ export default {
 					(document.body.clientHeight -
 						(window.innerHeight + window.pageYOffset)) +
 					"px";
-			else addBtn.style.bottom = "1rem";
+			else addBtn.style.bottom = "0";
 		}
 	},
 	mounted() {
