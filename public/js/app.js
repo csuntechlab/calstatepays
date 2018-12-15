@@ -91732,7 +91732,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -91927,10 +91926,6 @@ var render = function() {
                           on: {
                             input: function($event) {
                               _vm.updateSelect("fieldOfStudyId", "id", $event)
-                            }
-                          },
-                          nativeOn: {
-                            click: function($event) {
                               _vm.selected = null
                             }
                           }

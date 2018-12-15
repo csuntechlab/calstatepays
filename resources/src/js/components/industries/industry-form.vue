@@ -14,8 +14,7 @@
 						<v-select
 							label="discipline"
 							:options="fieldOfStudies"
-							@input="updateSelect('fieldOfStudyId', 'id', $event)"
-							@click.native="selected = null"
+							@input="updateSelect('fieldOfStudyId', 'id', $event);selected = null"
 							class="csu-form-input">
 						</v-select>
 					</div>
