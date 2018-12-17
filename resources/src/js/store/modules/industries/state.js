@@ -8,4 +8,5 @@ export default {
     industryFormWasSubmittedOnce: false,
     industryEducationLevel: "bachelors",
     industryMajor: null,
+    industryIsLoading: false
 }

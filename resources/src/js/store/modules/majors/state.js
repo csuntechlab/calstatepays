@@ -11,7 +11,8 @@ export default {
             majorsByField: [],
             industries: [],
             majorData: [],
-            educationLevel: 'allDegrees'
+            educationLevel: 'allDegrees',
+            majorIsLoading: false
         }
     ],
 };
