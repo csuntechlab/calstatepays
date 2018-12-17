@@ -125,4 +125,17 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($responseFailed, $response);
     }
 
+    /**
+     * test the api 
+     * api/power/images
+     */
+    public function test_getPowerUserImage(){
+        $this->seed('Power_User_Card_Images_TableSeeder');
+        $test = json_encode(
+            [["card_image"=> "http://localhost/img/csucampuses/allcsu.png","university"=> "Aggregate data Across the 7 CSUS","opt_in"=> "1"],["card_image"=> "http://localhost/img/csucampuses/northridge.png","university"=> "California State University Northridge","opt_in"=> "1"]]);
+        $response = $this->get('/api/power/images');
+        $response = $response->getOriginalContent();
+        $response = json_encode($response);
+        $this->assertEquals($response,$test);
+    }
 }

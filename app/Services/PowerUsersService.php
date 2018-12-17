@@ -25,7 +25,7 @@ class PowerUsersService implements PowerUsersContract
 
     /** The card images for the landing page of the power users. */
     public function getPowerUsersCardImages(){
-        $university_card_images = PowerUserImage::all();
+        $university_card_images = PowerUserImage::all()->where('opt_in',1);
         $setImages = $university_card_images = $university_card_images->map(function($university_card){
             return [
                 "card_image" => asset($university_card->card_image),
@@ -33,6 +33,10 @@ class PowerUsersService implements PowerUsersContract
                 "opt_in" => $university_card->opt_in
             ];
         });
+        if ($setImages->isEmpty()) {
+            $message = 'No image data';
+            throw new ModelNotFoundException($message, 409);
+        }
         return $setImages;
     }
 }
