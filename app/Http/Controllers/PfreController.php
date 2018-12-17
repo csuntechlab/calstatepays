@@ -21,7 +21,6 @@ class PfreController extends Controller
         $key = "getFreData:" . ":" . $request->major . ":" . $request->university . ":" . $request->age_range . ":" . $request->education_level . ":" . $request->annual_earnings . ":" . $request->financial_aid;
 
         if (Cache::has($key)) {
-            dd("so we did not forget the key ");
             $data = Cache::get($key);
             $data = json_decode($data);
             return response()->json($data);
