@@ -27,6 +27,10 @@ class PowerUsersController extends Controller
             $data = json_decode($data);
             return response()->json($data);
         }
-        return $this->powerUsersRetrieval->getPowerUsersCardImages();
+        
+        $data =  $this->powerUsersRetrieval->getPowerUsersCardImages();
+        $value = json_encode($data);
+        Cache::forever($key, $value);
+        return $data;
     }
 }
