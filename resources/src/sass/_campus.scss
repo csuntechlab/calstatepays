@@ -65,7 +65,7 @@
     color: $white;
     overflow: hidden;
     &:hover{
-        .CSUTile__Image{
+        .CSUTile__Image--Active{
             transform: scale(1.2);
             cursor: pointer;
         }
@@ -84,15 +84,13 @@
     &__Image{
         @extend %ImagePosition;
     }
+    &__Image--Active{
+        @extend %ImagePosition;
+        cursor: pointer;
+    }
     &__Image--Opt {
         @extend %ImagePosition;
         cursor: not-allowed;
-    }
-    &__Image--CSUN{
-        @include make-activeCSUImage($available-campus, url('https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg'));
-    }
-    &__Image--All {
-        @include make-activeCSUImage($available-campus, url("../img/csucampuses/allcsu.png"));
     }
     &__DisableMessage{
         @extend .px-3, .pt-3 ;

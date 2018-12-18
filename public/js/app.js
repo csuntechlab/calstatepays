@@ -93426,14 +93426,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -93455,51 +93447,45 @@ var render = function() {
     "div",
     { staticClass: "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 py-3" },
     [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("div", { staticClass: "CSUTile" }, [
-          _vm.active
-            ? _c("div", [
-                _c("div", {
-                  staticClass: "CSUTile__Image",
-                  style: {
-                    backgroundImage:
-                      "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(" +
-                      _vm.campusImg +
-                      ")"
-                  }
-                })
+      _c("div", { staticClass: "CSUTile" }, [
+        _vm.active
+          ? _c("div", {
+              staticClass: "CSUTile__Image CSUTile__Image--Active",
+              style: {
+                backgroundImage:
+                  "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(" +
+                  _vm.campusImg +
+                  ")"
+              }
+            })
+          : _c("div", {
+              staticClass: "CSUTile__Image CSUTile__Image--Opt",
+              style: {
+                backgroundImage:
+                  "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(" +
+                  _vm.campusImg +
+                  ")"
+              }
+            }),
+        _vm._v(" "),
+        _c(
+          "h3",
+          {
+            class: [
+              { "CSUTile__CSUName--Opt": !_vm.active },
+              "CSUTile__CSUName"
+            ]
+          },
+          [_vm._v(_vm._s(_vm.title))]
+        ),
+        _vm._v(" "),
+        !_vm.active
+          ? _c("div", [
+              _c("p", { staticClass: "CSUTile__DisableMessage" }, [
+                _vm._v("Data Not Available At This Time")
               ])
-            : _c("div", [
-                _c("div", {
-                  staticClass: "CSUTile__Image--Opt",
-                  style: {
-                    backgroundImage:
-                      "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(" +
-                      _vm.campusImg +
-                      ")"
-                  }
-                })
-              ]),
-          _vm._v(" "),
-          _c(
-            "h3",
-            {
-              class: [
-                { "CSUTile__CSUName--Opt": !_vm.active },
-                "CSUTile__CSUName"
-              ]
-            },
-            [_vm._v(_vm._s(_vm.title))]
-          ),
-          _vm._v(" "),
-          !_vm.active
-            ? _c("div", [
-                _c("p", { staticClass: "CSUTile__DisableMessage" }, [
-                  _vm._v("Data Not Available At This Time")
-                ])
-              ])
-            : _vm._e()
-        ])
+            ])
+          : _vm._e()
       ])
     ]
   )
