@@ -10,28 +10,37 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PfreService implements PfreContract
 {
-  public function getFREData($request)
-  {
-    /**
-     *  check if university opted in or not.
-     */
-    $university_id = University::where('short_name', $request->university)->firstOrFail();
-    $data = UniversityMajor::where('hegis_code', $request->major)
-      ->where('university_id', $university_id->id)
-      ->with(['studentBackground' => function ($query) use ($request) {
-        $query->where('age_range_id', $request->age_range);
-        $query->where('education_level', $request->education_level);
-        $query->where('annual_earnings_id', $request->annual_earnings);
-        $query->where('annual_financial_aid_id', $request->financial_aid);
-      }, 'studentBackground.investment'])->firstOrFail();
+    public function getFREData($request)
+    {
+        /**
+         *  check if university opted in or not.
+         */
+        $university_id = University::where('short_name', $request->university)->firstOrFail();
+        $data = UniversityMajor::where('hegis_code', $request->major)
+        ->where('university_id', $university_id->id)
+        ->with(['studentBackground' => function ($query) use ($request) {
+            $query->where('age_range_id', $request->age_range);
+            $query->where('education_level', $request->education_level);
+            $query->where('annual_earnings_id', $request->annual_earnings);
+            $query->where('annual_financial_aid_id', $request->financial_aid);
+        }, 'studentBackground.investment'])->firstOrFail();
 
-    $freData = $data->studentBackground->first();
-    $freData = $freData->investment->first();
-    if (empty($freData)) {
-      $message = 'Investment not found';
-      throw new ModelNotFoundException($message, 409);
+
+        if (empty($data)) {
+            $message = 'FRE data not found';
+            new ModelNotFoundException($message, 409);
+        }
+
+        if (empty($freData = $data->studentBackground->first())) {
+            $message = 'There is no student background related to this FRE request';
+            throw new ModelNotFoundException($message, 409);
+        }
+        if (empty($freData = $freData->investment->first())) {
+            $message = 'Investment not found';
+            throw new ModelNotFoundException($message, 409);
+        }
+
+        $freData = $freData->toArray();
+        return $freData;
     }
-    $freData = $freData->toArray();
-    return $freData;
-  }
 }
