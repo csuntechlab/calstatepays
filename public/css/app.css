@@ -19781,14 +19781,40 @@ footer, .footer {
 .CSUTile {
   padding-top: 100%;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  margin: auto;
+  height: unset;
+}
+
+.CSUTile {
   font-family: "Montserrat";
   text-transform: uppercase;
   border-radius: 5%;
-  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #FFF;
-  overflow: hidden;
+}
+
+@media screen and (min-width: 766px) {
+  .CSUTile {
+    padding-top: 0;
+    max-width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .CSUTile {
+    padding-top: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+    margin: auto;
+    height: unset;
+  }
 }
 
 .CSUTile:hover .CSUTile__Image--Active {
@@ -19799,6 +19825,14 @@ footer, .footer {
 
 .CSUTile:hover .CSUTile__DisableMessage {
   opacity: .5;
+}
+
+@media screen and (max-width: 767px) {
+  .CSUTile {
+    max-width: 20rem;
+    height: 20rem;
+    padding-top: 0;
+  }
 }
 
 .CSUTile__CSUName {
