@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="row" v-bind:id="'majorCardHasIndex-' + this.index">
+		<div class="row pt-md-2" v-bind:id="'majorCardHasIndex-' + this.index">
 			<aside class="col-md-3">
 				<major-form :windowWidth="windowWidth" :index="index" />
 			</aside>
@@ -16,9 +16,10 @@
 					<div v-else>
 							<div class="row">
 							<div class="col">
-								<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+								<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click.prevent="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 								<social-sharing 
-								v-if="selectedFormWasSubmittedOnce && !nullValues" 
+								v-if="selectedFormWasSubmittedOnce"
+								:class="{'invisible': nullValues}"
 								:url="this.url"
 								:title="this.shareDescription"
 								description="Discover Your Earnings After College." 
@@ -50,8 +51,9 @@
 									<major-legend v-show="selectedFormWasSubmittedOnce" :educationLevel="selectedEducationLevel"></major-legend>
 								</div>
 							</div>
-							<div v-show="selectedFormWasSubmittedOnce && nullValues" class="row text-center">
-								<h3 class="csu-card__no-data"><i class="fa fa-exclamation-circle required-field"/> No data available</h3>
+							<div v-show="selectedFormWasSubmittedOnce && nullValues" class="csu-card__no-data">
+								<p class="lead pl-5 pr-5">No data is available for this selected Degree Level.</p>
+								<p class="lead pl-5 pr-5">Please see the <router-link to="/faq">FAQ</router-link> section for more information on how we collected the data.</p>
 							</div>
 						<div v-show="!nullValues">
 							<div class="row">
@@ -63,7 +65,7 @@
 						</div>
 						<div class="row p-0">
 							<div class="mt-4">
-								<industry-carousel v-show="isEmpty" :industries="selectedIndustries"></industry-carousel>
+								<industry-carousel :empty="isEmpty" :industries="selectedIndustries" :major="selectedMajorTitle"></industry-carousel>
 							</div>
 						</div>
 
@@ -72,7 +74,7 @@
 				</card>
 				<div v-else class="csu-card">
 					<div class="row">
-						<i class="col fa fa-times fa-2x btn-remove text-right pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+						<i class="col fa fa-times fa-2x btn-remove text-right pull-right" @click.prevent="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 					</div>
 					<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 					<p class="lead pl-md-5 pr-md-5">
@@ -181,19 +183,29 @@ export default {
 		},
 		nullValues() {
 			var yearsOut = [2,5,10,15]
-            if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
-                for(var i=0; i< yearsOut.length; i++){
-                    if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
-                        return false
-                    }else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null){
-                        return false
-                    }else if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null){
-                        return false
+            for(var i=0; i< yearsOut.length; i++) {
+				if (this.selectedEducationLevel != "allDegrees" && this.selectedMajorData) {
+                    if(this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._25th != null ||
+                    this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._50th != null ||
+                    this.selectedMajorData[this.selectedEducationLevel][yearsOut[i]]._75th != null) {
+                        return false;
+                    }
+                } else if(this.selectedEducationLevel === "allDegrees") {
+                    if(this.selectedMajorData.postBacc[yearsOut[i]]._50th != null ||
+                        this.selectedMajorData.bachelors[yearsOut[i]]._50th != null ||
+						this.selectedMajorData.someCollege[yearsOut[i]]._50th != null) {
+                        return false;
                     }
                 }
-                return true;
             }
-        }
+			return true;
+        },
+		applyHiddenClass() {
+		    if (this.nullValues) {
+		        return 'invisible';
+			}
+			return '';
+		}
     }, 
 	methods: {
 		...mapActions(["deleteMajorCard", "resetMajorCard"]),

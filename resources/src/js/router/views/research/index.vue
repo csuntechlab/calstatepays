@@ -4,7 +4,7 @@
         <power-users-modal :showModal=displayModal :university=university  v-on:closeModal="closeModal($event)"></power-users-modal>
         <main>
             <div class="container">
-                <div>
+                <div class="row">
                     <div class="col-12">
                         <h2 class="returnToCampusSelection">
                             Select a CSU

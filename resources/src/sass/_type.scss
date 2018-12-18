@@ -219,17 +219,17 @@ figcaption {
 .faq-card__image{
     margin-bottom: 1rem;
     align-self: center;
-    height: 7.6rem;
+    height: 7.4rem;
     margin-top: 1.2rem;
     display: block;
     @media screen and (min-width: 400px){
         height:11rem;
     }
-    @media screen and (min-width: 500px){
-        font-size: 2rem;
+    @media screen and (min-width: 400px) and (max-width: 425px){
+        z-index: -1;
+        margin-left: -1rem;
     }
     @media screen and (min-width: $break-Xsmall){
-        height: 11rem;
         margin-top:1rem;
     }
     @media screen and (min-width: $break-small +1 ){
@@ -274,7 +274,6 @@ figcaption {
         
     }
     @media screen and (min-width: $break-medium){
-        margin-top: 4rem;
         margin-bottom: 2rem;
     }
 }
