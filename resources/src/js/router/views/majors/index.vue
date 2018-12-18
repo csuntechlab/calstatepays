@@ -5,8 +5,8 @@
 				<span>Major Earnings Over Time</span>
 			</h2>
 			<p class="CSUDataImgBanner__dataCopy" slot="copy">
-				Integer enim est, accumsan eget lobortis eget, pulvinar nec mauris. Nunc nec neque laoreet, consectetur odio et, fringilla
-				metus. Etiam eu massa nec lacus hendrerit hendrerit sit amet quis quam.
+				College graduates earn more money over time. Select a major and find out how earnings for graduates,
+				non-completers, and post graduates change over time.
 			</p>
 		</csu-data-img-banner>
 		<sub-nav/>

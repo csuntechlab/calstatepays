@@ -42,7 +42,6 @@ class MajorControllerTest extends TestCase
         $this->seed('Northridge_Major_Path_Wages_TableSeeder');
         $this->seed('Northridge_University_Majors_TableSeeder');
 
-        $this->seed('Master_FRE_Page_Data_TableSeeder');
         $this->controller = new MajorController($this->retriever);
     }
 
@@ -133,7 +132,10 @@ class MajorControllerTest extends TestCase
      */
     public function test_getMajorEarnings_returns_data_for_3_paths()
     {
-        $major = 22021;
+        $this->seed('Investments_Template_Northridge_TableSeeder');
+        $this->seed('Student_Backgrounds_Template_Northridge_TableSeeder');
+
+        $major = 4011;
         $universityName = 'northridge';
         $response = $this->get('/api/major/' . $major . '/' . $universityName);
         $response->assertStatus(200);

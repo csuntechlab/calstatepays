@@ -12,7 +12,8 @@ class StudentBackground extends Model
     protected $fillable = [
         'university_major_id',
         'age_range_id',
-        'education_level'
+        'education_level',
+        'student_background_id'
     ];
 
     public function investment(){
