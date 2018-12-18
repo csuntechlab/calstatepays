@@ -5,7 +5,8 @@
 				<span>Major Earnings Over Time</span>
 			</h2>
 			<p class="CSUDataImgBanner__dataCopy" slot="copy">
-				College graduates earn more money over time. Select a major and find out how earnings for graduates, non-completers, and post graduates change over time.
+				College graduates earn more money over time. Select a major and find out how earnings for graduates,
+				non-completers, and post graduates change over time.
 			</p>
 		</csu-data-img-banner>
 		<sub-nav/>
@@ -13,7 +14,7 @@
 			<div class="container">
 				<major-card  v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
 				<major-card-mobile v-if="isMobile" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
-				<card-add class="row" id="plus" v-on:cardPlusError="scrollToNextCard($event)" />		
+				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)" />		
 			</div>		
 		</div>
 	</div>
@@ -70,24 +71,30 @@
 			handleScroll(event) {
 				var footer = document.querySelector("footer");
 				var bounding = footer.getBoundingClientRect();
-				if (
+				var addBtn = document.getElementById("compare-major-button");
+				if(window.innerWidth< 767) {
+					if (
 					window.scrollY + window.innerHeight <
 					document.body.clientHeight -
-					document.getElementById("main-footer").clientHeight
-				) {
-					var addBtn = document.getElementById("compare-major-button");
+					(document.getElementById("main-footer").clientHeight - 1000)
+				) {	
 					addBtn.style.position = "fixed";
 					addBtn.style.bottom = "5rem";
 				}
 				if (
 					window.scrollY + window.innerHeight >
 					document.body.clientHeight -
-					document.getElementById("main-footer").clientHeight
+					(document.getElementById("main-footer").clientHeight -140)
 				) {
-					var addBtn = document.getElementById("compare-major-button");
-					addBtn.style.position = "absolute";
-					addBtn.style.bottom = "1rem";
+					addBtn.style.position = "fixed";
+					addBtn.style.bottom = "11rem";
 				}
+				}
+				else {
+					addBtn.style.bottom = "7rem";
+					addBtn.style.position = "fixed";
+				}
+				
 			}
 		},
 		mounted() {

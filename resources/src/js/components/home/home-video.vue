@@ -1,10 +1,10 @@
 <template>
-    <div class="homepageVideo" ref="homepageVideo">
-        <div class="homepageVideo__btn" @click="playVideo">
+    <div class="homeVideo" ref="homeVideo">
+        <div class="homeVideo__btn" @click="playVideo">
             <img :src="this.url + '/img/icon-play.png'">
         </div>
-        <div class="homepageVideo__container">
-            <div class="embed-responsive embed-responsive-16by9 homepageVideo__wrapper">
+        <div class="homeVideo__container">
+            <div class="embed-responsive embed-responsive-16by9 homeVideo__wrapper">
                 <youtube class="embed-responsive-item" :video-id="videoId" :player-vars="playerVars" @ended="ended" ref="youtube"></youtube>
             </div>
         </div>
@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             url: '',
-            videoId: 'ScMzIvxBSi4',
+            videoId: 'JUUR4Hc3qmg',
             playerVars: {
                 modestbranding: 1,
                 iv_load_policy: 3,
@@ -30,15 +30,15 @@ export default {
     },
     methods: {
         playVideo() {
-            this.$refs.homepageVideo.classList.add("active");
+            this.$refs.homeVideo.classList.add("active");
             this.$refs.youtube.player.playVideo()
         },
         ended() {
-            this.$refs.homepageVideo.classList.add("finished");
-            this.$refs.homepageVideo.classList.remove("active");
+            this.$refs.homeVideo.classList.add("finished");
+            this.$refs.homeVideo.classList.remove("active");
 
             setTimeout(()=>{
-                this.$refs.homepageVideo.classList.remove("finished");
+                this.$refs.homeVideo.classList.remove("finished");
             },1200);
         }
     }

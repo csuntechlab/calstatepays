@@ -29,34 +29,21 @@ class IndustryService implements IndustryContract
         return $allNaicsTitles;
     }
 
-
-
     public function getIndustryPopulationByRankWithImages($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $opt_in->id)
-            ->firstOrFail();
+        $university = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
+        $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
-        $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
-        $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
-        $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
+        $population  = $this->retrievePopulation($university_major);
 
         /** Get the population total for each */
-        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
-        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
-        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
+        $population_total = $this->retrievePopulationTotal($population);
 
-
-        /** Calculate the percentages and get the images */
-        $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($someCollege_population, $someCollege_total);
-        $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($bachelors_population, $bachelors_total);
-        $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($post_bacc_population, $post_bacc_total);
+        /** Calculate the percentages */
+        $someCollege_population = $this->calculatePopulationPercentagesAndReturnImages($population["some_college"], $population_total["some_college"]);
+        $bachelors_population = $this->calculatePopulationPercentagesAndReturnImages($population["bachelors"], $population_total["bachelors"]);
+        $post_bacc_population = $this->calculatePopulationPercentagesAndReturnImages($population["post_bacc"], $population_total["post_bacc"]);
 
         /** concatenate each array to finalize the API */
         $industry_population_images["someCollege"] = $someCollege_population;
@@ -68,37 +55,59 @@ class IndustryService implements IndustryContract
 
     public function getIndustryPopulationByRank($hegis_code, $universityName)
     {
-        $opt_in = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
-
-        /** no longer using degree level, must extract degree 1,2,4 for equal population total */
-        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
-            $query->where('entry_status', 'FTF + FTT');
-        }, 'industryPathTypes.population', 'industryPathTypes.industryWage', 'industryPathTypes.naicsTitle'])
-            ->where('hegis_code', $hegis_code)
-            ->where('university_id', $opt_in->id)
-            ->firstOrFail();
+        $university = University::where('short_name', $universityName)->where('opt_in', 1)->firstOrFail();
+        $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
-        $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
-        $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
-        $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
+        $population  = $this->retrievePopulation($university_major);
 
         /** Get the population total for each */
-        $someCollege_total = $this->getIndustryPopulationTotals($someCollege_population);
-        $bachelors_total = $this->getIndustryPopulationTotals($bachelors_population);
-        $post_bacc_total = $this->getIndustryPopulationTotals($post_bacc_population);
-
+        $population_total = $this->retrievePopulationTotal($population);
 
         /** Calculate the percentages */
-        $someCollege_population = $this->calculatePopulationPercentages($someCollege_population, $someCollege_total);
-        $bachelors_population = $this->calculatePopulationPercentages($bachelors_population, $bachelors_total);
-        $post_bacc_population = $this->calculatePopulationPercentages($post_bacc_population, $post_bacc_total);
+        $someCollege_population = $this->calculatePopulationPercentages($population["some_college"], $population_total["some_college"]);
+        $bachelors_population = $this->calculatePopulationPercentages($population["bachelors"], $population_total["bachelors"]);
+        $post_bacc_population = $this->calculatePopulationPercentages($population["post_bacc"], $population_total["post_bacc"]);
 
         /** concatenate each array to finalize the API */
         $industry_wages["someCollege"] = $someCollege_population;
         $industry_wages["bachelors"] = $bachelors_population;
         $industry_wages["post_bacc"] = $post_bacc_population;
         return $industry_wages;
+    }
+
+    private function industryRelation($hegis_code, $university){
+        $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
+            $query->where('entry_status', 'FTF + FTT');
+            // when phpunit is not running we'll filter the relationship
+            if (!env('PHPUNIT_RUNNING')) {
+                $query->whereHas('industryWage', function ($query) {
+                    $query->whereNotNull('avg_annual_wage_5');
+                });
+            }
+        }, 'industryPathTypes.population', 'industryPathTypes.naicsTitle', 'industryPathTypes.industryWage'])
+            ->where('hegis_code', $hegis_code)
+            ->where('university_id', $university->id)
+            ->firstOrFail();
+            return $university_major;
+    }
+
+    private function retrievePopulation($university_major){
+        $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
+        $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
+        $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
+
+        $data = ["some_college"=>$someCollege_population,"bachelors"=>$bachelors_population,"post_bacc"=>$post_bacc_population];
+        return $data;
+    }
+
+    private function retrievePopulationTotal($population){
+        $someCollege_total = $this->getIndustryPopulationTotals($population["some_college"]);
+        $bachelors_total = $this->getIndustryPopulationTotals($population["bachelors"]);
+        $post_bacc_total = $this->getIndustryPopulationTotals($population["post_bacc"]);
+
+        $data = ["some_college"=>$someCollege_total, "bachelors"=>$bachelors_total,"post_bacc"=>$post_bacc_total];
+        return $data;
     }
 
     private function sortIndustryPopulation($university_major)
