@@ -25,7 +25,7 @@ class PowerUsersService implements PowerUsersContract
 
     /** The card images for the landing page of the power users. */
     public function getPowerUsersCardImages(){
-        $university_card_images = PowerUserImage::all()->where('opt_in',1);
+        $university_card_images = PowerUserImage::all();
         $setImages = $university_card_images = $university_card_images->map(function($university_card){
             return [
                 "card_image" => asset($university_card->card_image),
