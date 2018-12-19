@@ -2,9 +2,9 @@
     <div>
         <div v-if="industryIsLoading" class="form-group row">
             <v-progress-circular class="loading-icon"
-                                 :size="100"
-                                 :width="10"
-                                 indeterminate
+                    :size="100"
+                    :width="10"
+                    indeterminate
             ></v-progress-circular>
         </div>
         <div v-else>

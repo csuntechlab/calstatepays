@@ -1,3 +1,4 @@
 export default{
-    tableauValue: state => {return state.tableauValue}
+    tableauValue: state => state.tableauValue, 
+    tableauIsLoading: state => state.tableauIsLoading
 }
