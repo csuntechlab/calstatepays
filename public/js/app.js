@@ -65547,18 +65547,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: {
-        url: function url() {
-            return window.baseUrl;
-        }
-    }
+	computed: {
+		url: function url() {
+			return window.baseUrl;
+		}
+	}
 });
 
 /***/ }),
@@ -65572,13 +65567,15 @@ var render = function() {
   return _c("div", { staticClass: "homeFaq" }, [
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row mx-auto" }, [
-        _c("div", { staticClass: "faq-card col-12 col-sm-10 col-lg-8" }, [
+        _c("div", { staticClass: "f faq-card col-12 col-sm-10 col-lg-8" }, [
           _c("div", { staticClass: "row" }, [
             _c(
               "div",
               { staticClass: "col-6 col-sm-5 faq-card__text" },
               [
-                _vm._m(0),
+                _c("p", { staticClass: "faq-card__text--blue" }, [
+                  _vm._v("Have Questions?")
+                ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "faq-card__text--gray" }, [
                   _vm._v("We Have Answers.")
@@ -65587,11 +65584,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "faq-card__button", attrs: { to: "/faq" } },
-                  [
-                    _vm._v(
-                      "\n                            Read Our FAQ\n                        "
-                    )
-                  ]
+                  [_vm._v("Read Our FAQ")]
                 )
               ],
               1
@@ -65599,8 +65592,8 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "col-6 col-sm-5 d-sm-flex" }, [
               _c("img", {
-                staticClass: "faq-card__image mx-auto",
-                attrs: { src: this.url + "/img/homeimages/icon-faq.jpg" }
+                staticClass: "faq-card__image",
+                attrs: { src: this.url + "/img/homeimages/faq_graphic.svg" }
               })
             ])
           ]),
@@ -65610,9 +65603,7 @@ var render = function() {
             { staticClass: "faq-card__button--mobile row d-sm-none" },
             [
               _c("router-link", { attrs: { to: "/faq" } }, [
-                _vm._v(
-                  "\n                        Read Our FAQ\n                    "
-                )
+                _vm._v("Read Our FAQ")
               ])
             ],
             1
@@ -65622,18 +65613,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "faq-card__text--blue" }, [
-      _vm._v("Have"),
-      _c("br", { staticClass: "d-none d-lg-block" }),
-      _vm._v(" Questions?")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

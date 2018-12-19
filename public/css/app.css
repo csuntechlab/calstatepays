@@ -19185,6 +19185,143 @@ figcaption {
   }
 }
 
+.faq-card {
+  border: 5px solid #14597F;
+}
+
+@media screen and (max-width: 575px) {
+  .faq-card {
+    border-width: .5rem .5rem 0rem .5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .faq-card {
+    width: 60%;
+  }
+}
+
+.faq-card__text {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+  .faq-card__text {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .faq-card__text {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .faq-card__text {
+    font-size: 1.9rem;
+  }
+}
+
+.faq-card__text--blue {
+  color: #14597F;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.faq-card__text--gray {
+  color: #707070;
+}
+
+.faq-card__image {
+  margin-bottom: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 7.4rem;
+  margin-top: 1.2rem;
+  display: block;
+}
+
+@media screen and (min-width: 400px) {
+  .faq-card__image {
+    height: 11rem;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 425px) {
+  .faq-card__image {
+    z-index: -1;
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .faq-card__image {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .faq-card__image {
+    height: 15rem;
+  }
+}
+
+.faq-card__button--mobile {
+  background-color: #14597F;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  font-size: 1.4rem;
+  padding: 0.7rem 0;
+}
+
+.faq-card__button--mobile a {
+  color: #fff;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.faq-card__button--mobile a:hover {
+  text-decoration: none;
+}
+
+.faq-card__button {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .faq-card__button {
+    display: block;
+    background-color: #14597F;
+    color: #fff;
+    width: 12rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    padding: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .faq-card__button {
+    margin-bottom: 2rem;
+  }
+}
+
+a.faq-card__button {
+  color: #fff;
+}
+
+a.faq-card__button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .faq-banner {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../img/faq-banner.jpg");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../img/faq-banner.jpg");
