@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-3 col-12">
                     <a href="//www.csun.edu/academic-affairs/meta-lab" target="csun">
-                        <img class="footer-meta__logo mb-2 mb-md-0" :src="this.url + '/img/metalab-logo.svg'" alt="META+LAB Logo">
+                        <img class="footer-meta__logo mb-2 mb-md-0" :src="this.url + '/img/otherLogos/metalab-logo.svg'" alt="META+LAB Logo">
                     </a>
                 </div>
                 <div class="col-md-9 col-12 text-md-right">

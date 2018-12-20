@@ -65437,7 +65437,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { ref: "homeVideo", staticClass: "homeVideo" }, [
     _c("div", { staticClass: "homeVideo__btn", on: { click: _vm.playVideo } }, [
-      _c("img", { attrs: { src: this.url + "/img/icon-play.png" } })
+      _c("img", { attrs: { src: this.url + "/img/homeimages/icon-play.png" } })
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "homeVideo__container" }, [
@@ -65824,7 +65824,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }),
     data: function data() {
         return {
-            CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
+            CSUNImg: window.baseUrl + '/img/campusbanners/csun.jpg',
             CSUImg: ''
         };
     },
@@ -69720,7 +69720,7 @@ var render = function() {
           [
             _c("img", {
               attrs: {
-                src: this.url + "/img/add-btn.svg",
+                src: this.url + "/img/majorsPage/add-btn.svg",
                 alt: "Compare Major Button"
               }
             })
@@ -116864,7 +116864,7 @@ var render = function() {
               _c("img", {
                 staticClass: "float-md-left nav-logo mx-auto d-inline-block",
                 attrs: {
-                  src: this.url + "/img/csp-logo.svg",
+                  src: this.url + "/img/cspLogos/csp-logo.svg",
                   alt: "Cal State Pays logo"
                 }
               })
@@ -116874,7 +116874,7 @@ var render = function() {
               _c("img", {
                 staticClass: " nav-logo-secondary d-inline-block d-sm-none",
                 attrs: {
-                  src: this.url + "/img/strada-logo.png",
+                  src: this.url + "/img/otherLogos/strada-logo.png",
                   alt: "Strada Logo"
                 }
               })
@@ -117038,7 +117038,7 @@ var render = function() {
                     staticClass:
                       "float-right nav-logo-secondary mx-auto d-sm-block",
                     attrs: {
-                      src: this.url + "/img/strada-logo.png",
+                      src: this.url + "/img/otherLogos/strada-logo.png",
                       alt: "Strada Logo"
                     }
                   })
@@ -117210,7 +117210,7 @@ var render = function() {
               _c("img", {
                 staticClass: "footer-meta__logo mb-2 mb-md-0",
                 attrs: {
-                  src: this.url + "/img/metalab-logo.svg",
+                  src: this.url + "/img/otherLogos/metalab-logo.svg",
                   alt: "META+LAB Logo"
                 }
               })

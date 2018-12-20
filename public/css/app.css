@@ -19323,8 +19323,8 @@ a.faq-card__button:hover {
 }
 
 .faq-banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../img/faq-banner.jpg");
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../img/faq-banner.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../img/faqPage/faq-banner.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../img/faqPage/faq-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 35vh;
@@ -19536,7 +19536,7 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../img/logo-mini.svg");
+    content: url("../img/cspLogos/logo-mini.svg");
     width: 4rem;
   }
 }
