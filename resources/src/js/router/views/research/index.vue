@@ -13,7 +13,7 @@
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
                     <template v-for="item in campus">
-                        <c-s-u-tile @click.native="openModal(item)" :campusImg="item.img" :title="item.title" :active="item.active" />
+                        <c-s-u-tile @click.native="openModal(item)" :key="item.title" :campusImg="item.img" :title="item.title" :active="item.active" />
                     </template>
                 </div>
             </div>
@@ -29,7 +29,6 @@ export default {
     data(){
         return{
             displayModal:false,
-            // universityName:'',
             universityLink:'',
             selectedUniversity:'',
             id:0,

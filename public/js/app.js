@@ -92728,7 +92728,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             displayModal: false,
-            // universityName:'',
             universityLink: '',
             selectedUniversity: '',
             id: 0,
@@ -93583,6 +93582,7 @@ var render = function() {
               _vm._l(_vm.campus, function(item) {
                 return [
                   _c("c-s-u-tile", {
+                    key: item.title,
                     attrs: {
                       campusImg: item.img,
                       title: item.title,
