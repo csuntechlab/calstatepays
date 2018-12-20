@@ -1,26 +1,31 @@
 [
   {
     "university_id": "10",
+    "opt_in": 0,
     "path_id": 1,
     "iframe_string": null
   },
   {
     "university_id": "10",
+    "opt_in": 0,
     "path_id": 2,
     "iframe_string": null
   },
   {
     "university_id": "10",
+    "opt_in": 0,
     "path_id": 3,
     "iframe_string": null
   },
   {
     "university_id": "10",
+    "opt_in": 0,
     "path_id": 4,
     "iframe_string": null
   },
   {
     "university_id": "10",
+    "opt_in": 0,
     "path_id": 5,
     "iframe_string": null
   }
