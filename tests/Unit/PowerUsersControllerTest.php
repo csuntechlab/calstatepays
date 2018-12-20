@@ -81,6 +81,21 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($response, $data);
     }
 
+
+    public function test_getTableauOptInUniversityData()
+    {
+
+        $data = json_encode(["0" => [["university_id" => 0, "path_id" => 1, "iframe_string" => "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData", "opt_in" => 1], ["university_id" => 0, "path_id" => 2, "iframe_string" => "CSU7byAge21NOV2018/CSU7byAge", "opt_in" => 1], ["university_id" => 0, "path_id" => 3, "iframe_string" => "CSU7byRaceNOV142018/CSU7byRace", "opt_in" => 1], ["university_id" => 0, "path_id" => 4, "iframe_string" => "CSU7byGenderNOV132018/CSU7byGender", "opt_in" => 1], ["university_id" => 0, "path_id" => 5, "iframe_string" => "CSU7byPell20NOV2018/Story1", "opt_in" => 1]], "70" => [["university_id" => 70, "path_id" => 1, "iframe_string" => "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor", "opt_in" => 1], ["university_id" => 70, "path_id" => 2, "iframe_string" => "CSUNorthridge-ByAge26NOV2018/Northridge", "opt_in" => 1], ["university_id" => 70, "path_id" => 3, "iframe_string" => "CSUNorthridge-ByRace20NOV2018/CSUNByRace", "opt_in" => 1], ["university_id" => 70, "path_id" => 4, "iframe_string" => "CSUNorthridge-ByGender20NOV2018/CSUNbyGender", "opt_in" => 1], ["university_id" => 70, "path_id" => 5, "iframe_string" => "CSUNorthridge-ByPellGrant26NOV2018/Northridge", "opt_in" => 1]]]);
+
+        $this->retriever
+            ->shouldReceive('getTableauOptInUniversityData')
+            ->once()
+            ->andReturn($data);
+
+        $response = $this->controller->getTableauOptInUniversityData();
+        $this->assertEquals($response, $data);
+    }
+
     /** Test the only route */
     public function test_getPowerUserDataByUniversity_by_route_northridge()
     {
@@ -94,6 +109,7 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($response['iframe_string'], $iframeString);
     }
 
+
     /** Test the only route */
     public function test_getPowerUserDataByUniversity_by_route_aggregate()
     {
@@ -105,6 +121,7 @@ class PowerUsersControllerTest extends TestCase
 
         $this->assertEquals($response['iframe_string'], $iframeString);
     }
+
 
     public function test_getPowerUserDataByUniversity_failed()
     {
