@@ -1,0 +1,50 @@
+[
+    {
+        "university_id":0,
+        "university": "Aggregate data Across the 7 CSUS",
+        "card_image": "/img/csucampuses/allcsu.png",
+        "opt_in":1
+    },
+    {
+        "university_id":70,
+        "university": "California State University Northridge",
+        "card_image": "/img/csucampuses/northridge.png",
+        "opt_in":1
+    },
+    {
+        "university_id":40,
+        "university": "California State University Long Beach",
+        "card_image": "/img/csucampuses/longBeach.png",
+        "opt_in":0
+    },
+    {
+        "university_id":45,
+        "university": "California State University Los Angeles",
+        "card_image": "/img/csucampuses/losAngeles.png",
+        "opt_in":0
+    },
+    {
+        "university_id":50,
+        "university": "California State University Fullerton",
+        "card_image": "/img/csucampuses/fullerton.png",
+        "opt_in":0
+    },
+    {
+        "university_id": 55,
+        "university": "California State University Dominguez Hills",
+        "card_image": "/img/csucampuses/dominguezHills.png",
+        "opt_in":0
+    },
+    {
+        "university_id":73,
+        "university": "California State University Channel Island",
+        "card_image": "/img/csucampuses/channelIslands.png",
+        "opt_in":0
+    },
+    {
+        "university_id":10,
+        "university": "California State University Pomona",
+        "card_image": "/img/csucampuses/pomona.png",
+        "opt_in":0
+    }
+]
