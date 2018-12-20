@@ -142,4 +142,16 @@ class PowerUsersControllerTest extends TestCase
         $this->assertEquals($responseFailed, $response);
     }
 
+    /**
+     * test the api 
+     * api/power/images
+     */
+    public function test_getPowerUserImage(){
+        $this->seed('Power_User_Card_Images_TableSeeder');
+        $test = json_encode([["id"=> 0,"card_image"=> "http://localhost/img/csucampuses/allcsu.png","university"=> "Aggregate data Across the 7 CSUS","opt_in"=> "1"],["id"=> 70,"card_image"=> "http://localhost/img/csucampuses/northridge.png","university"=> "California State University Northridge","opt_in"=> "1"],["id"=> 40,"card_image"=> "http://localhost/img/csucampuses/longBeach.png","university"=> "California State University Long Beach","opt_in"=> "0"],["id"=> 45,"card_image"=> "http://localhost/img/csucampuses/losAngeles.png","university"=> "California State University Los Angeles","opt_in"=> "0"],["id"=> 50,"card_image"=> "http://localhost/img/csucampuses/fullerton.png","university"=> "California State University Fullerton","opt_in"=> "0"],["id"=> 55,"card_image"=> "http://localhost/img/csucampuses/dominguezHills.png","university"=> "California State University Dominguez Hills","opt_in"=> "0"],["id"=> 73,"card_image"=> "http://localhost/img/csucampuses/channelIslands.png","university"=> "California State University Channel Island","opt_in"=> "0"],["id"=> 10,"card_image"=> "http://localhost/img/csucampuses/pomona.png","university"=> "California State University Pomona","opt_in"=> "0"]]);
+        $response = $this->get('/api/power/images');
+        $response = $response->getOriginalContent();
+        $response = json_encode($response);
+        $this->assertEquals($response,$test);
+    }
 }
