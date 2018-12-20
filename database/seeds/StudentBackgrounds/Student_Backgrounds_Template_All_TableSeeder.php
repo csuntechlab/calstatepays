@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use App\Models\StudentBackground;
 
-class Student_Backgrounds_Template_Northridge_TableSeeder extends Seeder
+class Student_Backgrounds_Template_All_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +12,7 @@ class Student_Backgrounds_Template_Northridge_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get('database/data/sample_northridge_PFRE.json');
-        // do not delete
-        // $json = File::get('database/data/studentBackgroundData/Student_Background_northridge.json');
+        $json = File::get('database/data/sample_all_PFRE.json');
         $industry_path = json_decode($json);
 
         foreach ($industry_path as $row) {

@@ -14,12 +14,13 @@ class Universities_TableSeeder extends Seeder
     {
         $json = File::get("database/data/universities.json");
         $data = json_decode($json);
-        foreach($data as $row){
+        foreach ($data as $row) {
             DB::table('universities')->insert([
-                'id'              => $row->id,
+                'id' => $row->id,
                 'university_name' => $row->university,
                 'short_name' => $row->short_name,
-                'opt_in'          => $row->opt_in
+                'acronym' => $row->acronym,
+                'opt_in' => $row->opt_in
             ]);
         };
     }

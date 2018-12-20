@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use App\Models\Investment;
 
-class Investments_Template_Northridge_TableSeeder extends Seeder
+class Investments_Template_All_TableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,10 +12,7 @@ class Investments_Template_Northridge_TableSeeder extends Seeder
      */
     public function run()
     {
-
-        $json = File::get('database/data/sample_northridge_PFRE.json');
-        // do not delete, need for future
-        // $json = File::get('database/data/investmentsData/investments_northridge.json');
+        $json = File::get('database/data/sample_all_PFRE.json');
         $industry_path = json_decode($json);
 
         foreach ($industry_path as $row) {
