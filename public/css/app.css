@@ -19515,11 +19515,6 @@ body {
   top: 33%;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
-  display: block;
-  z-index: 2;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .tableau-loading-container {
