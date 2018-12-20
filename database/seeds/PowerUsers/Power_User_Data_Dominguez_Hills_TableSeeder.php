@@ -18,6 +18,7 @@ class Power_User_Data_Dominguez_Hills_TableSeeder extends Seeder
                 'university_id' => $row->university_id,
                 'path_id' => $row->path_id,
                 'iframe_string' => $row->iframe_string,
+                'opt_in' => $row->opt_in
             ]);
         };
     }

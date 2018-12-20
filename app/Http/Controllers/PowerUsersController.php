@@ -33,4 +33,9 @@ class PowerUsersController extends Controller
         // Cache::forever($key, $value);
         return $data;
     }
+    
+    public function getTableauOptInUniversityData()
+    {
+        return $this->powerUsersRetrieval->getTableauOptInUniversityData();
+    }
 }
