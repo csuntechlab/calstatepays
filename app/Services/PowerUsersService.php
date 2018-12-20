@@ -28,6 +28,7 @@ class PowerUsersService implements PowerUsersContract
         $university_card_images = PowerUserImage::all();
         $setImages = $university_card_images = $university_card_images->map(function($university_card){
             return [
+                "id" => $university_card->id,
                 "card_image" => asset($university_card->card_image),
                 "university" => $university_card->university,
                 "opt_in" => $university_card->opt_in
