@@ -93083,8 +93083,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -93178,191 +93176,190 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("v-card-text", [
-            _vm.tableauIsLoading
-              ? _c(
-                  "div",
-                  { staticClass: "form-group row" },
-                  [
-                    _c("v-progress-circular", {
-                      staticClass: "loading-icon",
-                      attrs: { size: 100, width: 10, indeterminate: "" }
-                    })
-                  ],
-                  1
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "div",
-              { class: { "tableau-loading": _vm.tableauIsLoading } },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("i", { staticClass: "col-3 fa fa-university fa-5x" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-9" }, [
-                    _c("span", { staticClass: "d-block" }, [
-                      _vm._v("Earnings by Major + Industries of Employment")
-                    ]),
+          _c(
+            "v-card-text",
+            [
+              _vm.tableauIsLoading
+                ? _c("v-progress-circular", {
+                    staticClass: "tableau-loading-icon",
+                    attrs: { size: 100, width: 10, indeterminate: "" }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                { class: { "tableau-loading": _vm.tableauIsLoading } },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("i", { staticClass: "col-3 fa fa-university fa-5x" }),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "power-user-modal-btn btn-success",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.chooseTableauCategory(
-                              _vm.university.short_name,
-                              1
-                            )
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Major + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                1
+                              )
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("View Data")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3" }, [
-                    _c("i", { staticClass: "fa fa-child fa-2x" }),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "fa fa-male fa-5x" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-9" }, [
-                    _c("span", { staticClass: "d-block" }, [
-                      _vm._v(
-                        "Earnings by Age at Entry + Industries of Employment"
+                        },
+                        [_vm._v("View Data")]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: " power-user-modal-btn btn-success",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.chooseTableauCategory(
-                              _vm.university.short_name,
-                              2
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("View Data")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3" }, [
-                    _c("i", { staticClass: "fa fa-male fa-5x brown--text" }),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "fa fa-male fa-5x blue--text" })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-9" }, [
-                    _c("span", { staticClass: "d-block" }, [
-                      _vm._v("Earnings by Race + Industries of Employment")
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-child fa-2x" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-male fa-5x" })
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: " power-user-modal-btn btn-success",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.chooseTableauCategory(
-                              _vm.university.short_name,
-                              3
-                            )
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v(
+                          "Earnings by Age at Entry + Industries of Employment"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: " power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                2
+                              )
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("View Data")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3" }, [
-                    _c("i", { staticClass: "fa fa-mars fa-5x" }),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "fa fa-venus fa-5x" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-9" }, [
-                    _c("span", { staticClass: "d-block" }, [
-                      _vm._v("Earnings by Gender + Industries of Employment")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "power-user-modal-btn btn-success",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.chooseTableauCategory(
-                              _vm.university.short_name,
-                              4
-                            )
-                          }
-                        }
-                      },
-                      [_vm._v("View Data")]
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("v-divider"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-3" }, [
-                    _c("i", { staticClass: "fa fa-check fa-4x text-success" }),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "fa fa-times fa-4x text-danger" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-9" }, [
-                    _c("span", { staticClass: "d-block" }, [
-                      _vm._v(
-                        "Earnings by Pell Status at Entry + Industries of Employment"
+                        },
+                        [_vm._v("View Data")]
                       )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-male fa-5x brown--text" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-male fa-5x blue--text" })
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "power-user-modal-btn btn-success",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.chooseTableauCategory(
-                              _vm.university.short_name,
-                              5
-                            )
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Race + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: " power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                3
+                              )
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("View Data")]
-                    )
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-mars fa-5x" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-venus fa-5x" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Gender + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                4
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", {
+                        staticClass: "fa fa-check fa-4x text-success"
+                      }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-times fa-4x text-danger" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v(
+                          "Earnings by Pell Status at Entry + Industries of Employment"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                5
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
                   ])
-                ])
-              ],
-              1
-            )
-          ]),
+                ],
+                1
+              )
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("v-divider")
         ],

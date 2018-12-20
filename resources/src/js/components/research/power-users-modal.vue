@@ -8,14 +8,12 @@
         <h1 v-if="university" class="col-11"> Market Outcomes for  {{university.name}} </h1>
         <i role="button"   @click="closeModal();" class="fa fa-times text-center col-1 "></i>
         </v-card-title>
-        <v-card-text>
-            <div v-if="tableauIsLoading" class="form-group row">
-                <v-progress-circular class="loading-icon"
+        <v-card-text >
+                <v-progress-circular v-if="tableauIsLoading" class="tableau-loading-icon"
                     :size="100"
                     :width="10"
                     indeterminate
-                ></v-progress-circular>
-            </div>  
+            ></v-progress-circular>
             <div v-bind:class="{'tableau-loading':tableauIsLoading}">
                 <div class="row">
                     <i class="col-3 fa fa-university fa-5x" ></i> 
