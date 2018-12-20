@@ -29,18 +29,6 @@
     }
 }
 
-%ImagePosition{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: all .55s;
-    background-position: center, center;
-}
-
 %CSUTileText{
     @extend .px-3, .pb-3, .m-0 ;
     position: absolute;
@@ -102,26 +90,30 @@
         cursor: not-allowed;
     }
     &__Image{
-        @extend %ImagePosition;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all .55s;
+        background-position: center, center;
     }
     &__Image--Active{
-        @extend %ImagePosition;
         cursor: pointer;
     }
     &__Image--Opt {
-        @extend %ImagePosition;
         cursor: not-allowed;
     }
     &__DisableMessage{
         @extend .px-3, .pt-3 ;
         position: absolute;
         top: 0;
-        left: 50%;
         width: 100%;
-        transform: translateX(-50%);
         color: white;
         opacity:0;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         font-weight:bold;
         cursor: not-allowed;
     }

@@ -19752,19 +19752,6 @@ footer, .footer {
   font-weight: 400;
 }
 
-.CSUTile__Image, .CSUTile__Image--Active, .CSUTile__Image--Opt {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-transition: all .55s;
-  transition: all .55s;
-  background-position: center, center;
-}
-
 .CSUTile__CSUName, .CSUTile__CSUName--Opt {
   position: absolute;
   bottom: 0;
@@ -19829,6 +19816,19 @@ footer, .footer {
   cursor: not-allowed;
 }
 
+.CSUTile__Image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .55s;
+  transition: all .55s;
+  background-position: center, center;
+}
+
 .CSUTile__Image--Active {
   cursor: pointer;
 }
@@ -19840,13 +19840,10 @@ footer, .footer {
 .CSUTile__DisableMessage {
   position: absolute;
   top: 0;
-  left: 50%;
   width: 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   color: white;
   opacity: 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: not-allowed;
 }
