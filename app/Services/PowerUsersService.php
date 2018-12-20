@@ -49,7 +49,7 @@ class PowerUsersService implements PowerUsersContract
             throw new ModelNotFoundException($message, 409);
         }
     
-        // $university_card_images = $this->mapPowerUsersCardImages($university_card_images);
+        $university_card_images = $this->mapPowerUsersCardImages($university_card_images);
 
         return $university_card_images;
     }
