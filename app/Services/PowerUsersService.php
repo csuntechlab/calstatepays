@@ -43,18 +43,18 @@ class PowerUsersService implements PowerUsersContract
     /** The card images for the landing page of the power users. */
     public function getPowerUsersCardImages(){
         $university_card_images = PowerUserImage::all();
-    
-        $university_card_images = $this->mappPowerUsersCardImages($university_card_images);
 
         if ($university_card_images->isEmpty()) {
             $message = 'No image data';
             throw new ModelNotFoundException($message, 409);
         }
+    
+        // $university_card_images = $this->mapPowerUsersCardImages($university_card_images);
 
         return $university_card_images;
     }
 
-    public function mappPowerUsersCardImages($university_card_images){
+    public function mapPowerUsersCardImages($university_card_images){
        
         $setImages = $university_card_images->map(function($university_card){
             return [
