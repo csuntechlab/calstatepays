@@ -18990,6 +18990,28 @@ body {
   margin: 2rem 0 !important;
 }
 
+.tableau-loading {
+  z-index: -1;
+  opacity: 0.2;
+  -webkit-transition: width 5s;
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.tableau-loading-icon {
+  color: #2f98bf !important;
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.tableau-loading-container {
+  position: absolute;
+}
+
 .text-gray {
   color: #777777;
 }

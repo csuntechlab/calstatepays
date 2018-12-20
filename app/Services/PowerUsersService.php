@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Models\University;
-use App\Contracts\PowerUsersContract;
 use App\Models\PowerUsersData;
+use App\Contracts\PowerUsersContract;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PowerUsersService implements PowerUsersContract
 {
@@ -16,9 +17,25 @@ class PowerUsersService implements PowerUsersContract
 
         $universityId = $university->id;
 
-        $data = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->firstOrFail();
-        $test['iframe_string'] = $data['iframe_string'];
+        $powerUserData = PowerUsersData::where('university_id', $universityId)->where('path_id', $path_id)->where('opt_in', 1)->firstOrFail();
 
-        return $test;
+
+        $iFrameString['iframe_string'] = $powerUserData['iframe_string'];
+
+        return $iFrameString;
+    }
+
+
+    public function getTableauOptInUniversityData()
+    {
+
+        $powerUserData = PowerUsersData::where('opt_in', 1)->get();
+
+        if ($powerUserData->isEmpty()) {
+            $message = 'No Power User Data';
+            throw new ModelNotFoundException($message, 409);
+        }
+
+        return $powerUserData->groupBy('university_id');
     }
 }

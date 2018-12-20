@@ -18,4 +18,9 @@ class PowerUsersController extends Controller
     {
         return $this->powerUsersRetrieval->getPowerUserDataByUniversity($university, $path_id);
     }
+
+    public function getTableauOptInUniversityData()
+    {
+        return $this->powerUsersRetrieval->getTableauOptInUniversityData();
+    }
 }
