@@ -19768,11 +19768,8 @@ footer, .footer {
 .CSUTile__CSUName, .CSUTile__CSUName--Opt {
   position: absolute;
   bottom: 0;
-  left: 50%;
   width: 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 140%;
   font-weight: bold;
   color: white;
@@ -19789,11 +19786,8 @@ footer, .footer {
 }
 
 .CSUTile {
-  font-family: "Montserrat";
   text-transform: uppercase;
   border-radius: 5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   color: #FFF;
 }
 

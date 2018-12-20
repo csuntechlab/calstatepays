@@ -93468,7 +93468,10 @@ var render = function() {
       _c(
         "h3",
         {
-          class: [{ "CSUTile__CSUName--Opt": !_vm.active }, "CSUTile__CSUName"]
+          class: [
+            { "CSUTile__CSUName CSUTile__CSUName--Opt": !_vm.active },
+            "CSUTile__CSUName"
+          ]
         },
         [_vm._v(_vm._s(_vm.title))]
       ),

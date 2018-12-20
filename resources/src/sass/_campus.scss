@@ -45,10 +45,8 @@
     @extend .px-3, .pb-3, .m-0 ;
     position: absolute;
     bottom: 0;
-    left: 50%;
     width: 100%;
-    transform: translateX(-50%);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 140%;
     font-weight: bold;
     color: white;
@@ -67,10 +65,8 @@
 
 .CSUTile{
     @extend %CSUTileSizing;
-    font-family: $font-base;
     text-transform: uppercase;
     border-radius: 5%;
-    box-sizing: border-box;
     color: $white;
     @media screen and (max-width: $break-small) {
         max-width: 25rem;
