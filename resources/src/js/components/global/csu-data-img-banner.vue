@@ -43,7 +43,7 @@ export default {
     }, 
     data() {
         return {
-            CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
+            CSUNImg: window.baseUrl + '/img/campusbanners/csun.jpg',
             CSUImg: '',
         }
     },

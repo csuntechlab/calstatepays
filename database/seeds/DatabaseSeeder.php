@@ -98,6 +98,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Power_User_Data_Los_Angeles_TableSeeder::class);
         $this->call(Power_User_Data_Pomona_TableSeeder::class);
 
+        $this->call(Power_User_Card_Images_TableSeeder::class);
 
     }
 }

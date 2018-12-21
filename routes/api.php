@@ -40,10 +40,16 @@ Route::get('industry/{major}/{university}', 'IndustryController@getIndustryPopul
 Route::get('industry/images/{major}/{university}', 'IndustryController@getIndustryPopulationByRankWithImages');
 
 
-//University
+// University
 Route::get('/university', 'UniversityController@getAllUniversities');
 
+// Power User data
+
 Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
+
+Route::get('/power/images','PowerUsersController@getPowerUsersCardImages');
+
+Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
 
 //Middleware
 Route::middleware('auth:api')->get('/user', function (Request $request) {

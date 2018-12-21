@@ -59,4 +59,14 @@ class PowerUsersServiceTest extends TestCase
 
         $response = $this->powerUserService->getPowerUserDataByUniversity($university, $path_id);
     }
+
+    /**
+     * Test the university image link and return proper json
+     */
+    public function test_getUniversityImage(){
+        $this->seed('Power_User_Card_Images_TableSeeder');
+        $university_image = asset("/img/csucampuses/allcsu.png");
+        $response = $this->powerUserService->getPowerUsersCardImages();
+        $this->assertEquals($university_image,$response[0]["card_image"]);
+    }
 }
