@@ -19623,8 +19623,8 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 767px) {
   .sub-nav__element {
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     padding: 0;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -19657,12 +19657,12 @@ a.faq-card__button:hover {
   }
 }
 
-.mobile-icon {
+.sub-nav__element__mobile-icon {
   display: none !important;
 }
 
 @media screen and (max-width: 767px) {
-  .mobile-icon {
+  .sub-nav__element__mobile-icon {
     margin-left: 0;
     display: initial !important;
   }
