@@ -14,5 +14,9 @@ export default{
         else {
             state.tableauIsLoading = false;
         }
+    },
+    [_powerUsers.FETCH_OPT_IN_VALUES](state,payload) {
+        console.log(`this is mutations ${payload}`)
+        state.optInValues = payload;
     }
 }

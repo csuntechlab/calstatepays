@@ -17,5 +17,15 @@ export default{
             
         );
 
+    },
+
+    fetchOptInValues({commit, dispatch}, payload) {
+        PowerUsers.fetchOptInValuesAPI(
+            (success)=> {
+                console.log(`this is success ${success}`)
+                commit(_powerUsers.FETCH_OPT_IN_VALUES,success);
+            },
+            (error) => commit(global.ERROR_ALERT,error)
+        );
     }
 }

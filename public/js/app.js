@@ -3582,7 +3582,7 @@ if (typeof dev === 'undefined') {
 
 var __DEV__ = dev;
 exports.__DEV__ = __DEV__;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 7 */
@@ -3616,7 +3616,7 @@ var backwardCompat = __webpack_require__(311);
 
 var dataStack = __webpack_require__(313);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 var SeriesModel = __webpack_require__(102);
 
@@ -7711,6 +7711,33 @@ exports.getTextRect = getTextRect;
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -7933,12 +7960,12 @@ var _default = Model;
 module.exports = _default;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 var componentUtil = __webpack_require__(41);
 
@@ -7951,7 +7978,7 @@ var _model = __webpack_require__(3);
 
 var makeInner = _model.makeInner;
 
-var layout = __webpack_require__(17);
+var layout = __webpack_require__(18);
 
 var boxLayoutMixin = __webpack_require__(308);
 
@@ -8162,7 +8189,7 @@ var _default = ComponentModel;
 module.exports = _default;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var zrUtil = __webpack_require__(0);
@@ -8668,33 +8695,6 @@ exports.sizeCalculable = sizeCalculable;
 exports.mergeLayoutParam = mergeLayoutParam;
 exports.getLayoutParams = getLayoutParams;
 exports.copyLayoutParams = copyLayoutParams;
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
 
 /***/ }),
 /* 19 */
@@ -21916,7 +21916,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(155).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(155).setImmediate))
 
 /***/ }),
 /* 27 */
@@ -26406,7 +26406,7 @@ exports.createSymbol = createSymbol;
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -29658,9 +29658,11 @@ var TRIGGER_IS_LOADING = "industries/TRIGGER_IS_LOADING";
 "use strict";
 var SET_TABLEAU_VALUE = "global-form/SET_TABLEAU_VALUE";
 var TRIGGER_TABLEAU_IS_LOADING = "powerUsers/TRIGGER_TABLEAU_IS_LOADING";
+var FETCH_OPT_IN_VALUES = "powerUsers/FETCH_OPT_IN_VALUES";
 /* harmony default export */ __webpack_exports__["a"] = ({
     SET_TABLEAU_VALUE: SET_TABLEAU_VALUE,
-    TRIGGER_TABLEAU_IS_LOADING: TRIGGER_TABLEAU_IS_LOADING
+    TRIGGER_TABLEAU_IS_LOADING: TRIGGER_TABLEAU_IS_LOADING,
+    FETCH_OPT_IN_VALUES: FETCH_OPT_IN_VALUES
 });
 
 /***/ }),
@@ -33206,9 +33208,9 @@ var mixin = _util.mixin;
 
 var modelUtil = __webpack_require__(3);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 var globalDefault = __webpack_require__(309);
 
@@ -34554,13 +34556,13 @@ var getTooltipMarker = _format.getTooltipMarker;
 
 var modelUtil = __webpack_require__(3);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 var colorPaletteMixin = __webpack_require__(99);
 
 var dataFormatMixin = __webpack_require__(314);
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
@@ -35560,7 +35562,7 @@ var __DEV__ = _config.__DEV__;
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 var DataDiffer = __webpack_require__(325);
 
@@ -39171,7 +39173,7 @@ exports.getStackedOnPoint = getStackedOnPoint;
 
 var zrUtil = __webpack_require__(0);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 var axisModelCreator = __webpack_require__(360);
 
@@ -39272,7 +39274,7 @@ var formatUtil = __webpack_require__(14);
 
 var graphic = __webpack_require__(5);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 var _number = __webpack_require__(9);
 
@@ -40619,7 +40621,7 @@ var echarts = __webpack_require__(7);
 
 var graphic = __webpack_require__(5);
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutRect = _layout.getLayoutRect;
 
@@ -40840,7 +40842,7 @@ __webpack_require__(375);
 
 var legendFilter = __webpack_require__(377);
 
-var Component = __webpack_require__(16);
+var Component = __webpack_require__(17);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -41130,6 +41132,7 @@ var vm = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         this.$store.dispatch('fetchMajors', this.selectedUniversity);
         this.$store.dispatch('fetchFieldOfStudies', this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
+        this.$store.dispatch('fetchOptInValues');
     },
 
 
@@ -42510,7 +42513,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 156 */
@@ -42703,7 +42706,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(47)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(47)))
 
 /***/ }),
 /* 157 */
@@ -59818,7 +59821,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(158)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15), __webpack_require__(158)(module)))
 
 /***/ }),
 /* 158 */
@@ -64230,7 +64233,8 @@ var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(paylo
 //Power user state
 /* harmony default export */ __webpack_exports__["a"] = ({
     tableauValue: '',
-    tableauIsLoading: false
+    tableauIsLoading: false,
+    optInValues: []
 });
 
 /***/ }),
@@ -64244,6 +64248,9 @@ var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(paylo
     },
     tableauIsLoading: function tableauIsLoading(state) {
         return state.tableauIsLoading;
+    },
+    optInValues: function optInValues(state) {
+        return state.optInValues;
     }
 });
 
@@ -64273,6 +64280,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     } else {
         state.tableauIsLoading = false;
     }
+}), _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].FETCH_OPT_IN_VALUES, function (state, payload) {
+    console.log('this is mutations ' + payload);
+    state.optInValues = payload;
 }), _powerUsers$SET_TABLE);
 
 /***/ }),
@@ -64280,7 +64290,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_powerUser__ = __webpack_require__(190);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_powerUser__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__ = __webpack_require__(20);
 
@@ -64299,8 +64309,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, function (error) {
             commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
+    },
+    fetchOptInValues: function fetchOptInValues(_ref2, payload) {
+        var commit = _ref2.commit,
+            dispatch = _ref2.dispatch;
+
+        __WEBPACK_IMPORTED_MODULE_0__api_powerUser__["a" /* default */].fetchOptInValuesAPI(function (success) {
+            console.log('this is success ' + success);
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].FETCH_OPT_IN_VALUES, success);
+        }, function (error) {
+            return commit(global.ERROR_ALERT, error);
+        });
     }
 });
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(15)))
 
 /***/ }),
 /* 190 */
@@ -64308,14 +64330,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 var fetchPowerUserValue = function fetchPowerUserValue(payload, success, error) {
-    window.axios.get("api/power/" + payload.university + "/" + payload.path_id).then(function (response) {
+    window.axios.get('api/power/' + payload.university + '/' + payload.path_id).then(function (response) {
         return success(response.data.iframe_string);
     }).catch(function (failure) {
         return error(failure.response.data);
     });
 };
+var fetchOptInValuesAPI = function fetchOptInValuesAPI(success, error) {
+    window.axios.get('api/power').then(function (response) {
+        return success(response.data);
+    }).catch(function (failure) {
+        return error(failure.response.data);
+    });
+};
+
 /* harmony default export */ __webpack_exports__["a"] = ({
-    fetchPowerUserValue: fetchPowerUserValue
+    fetchPowerUserValue: fetchPowerUserValue,
+    fetchOptInValuesAPI: fetchOptInValuesAPI
 });
 
 /***/ }),
@@ -66961,7 +66992,7 @@ var fakeWithParams = function fakeWithParams(paramsOrClosure, maybeValidator) {
 
 var withParams = root.vuelidate ? root.vuelidate.withParams : fakeWithParams;
 exports.withParams = withParams;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 224 */
@@ -76993,7 +77024,7 @@ var zrUtil = __webpack_require__(0);
 
 var modelUtil = __webpack_require__(3);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -79300,7 +79331,7 @@ module.exports = _default;
 /* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 var ComponentView = __webpack_require__(103);
 
@@ -79412,7 +79443,7 @@ var _List = __webpack_require__(106);
 
 exports.List = _List;
 
-var _Model = __webpack_require__(15);
+var _Model = __webpack_require__(16);
 
 exports.Model = _Model;
 
@@ -79466,9 +79497,9 @@ var axisHelper = __webpack_require__(25);
 
 var axisModelCommonMixin = __webpack_require__(111);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutRect = _layout.getLayoutRect;
 exports.getLayoutRect = _layout.getLayoutRect;
@@ -81642,7 +81673,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 337 */
@@ -84236,7 +84267,7 @@ var map = _util.map;
 var indexOf = _util.indexOf;
 var retrieve = _util.retrieve;
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutRect = _layout.getLayoutRect;
 
@@ -85202,7 +85233,7 @@ module.exports = _default;
 
 __webpack_require__(119);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -85261,9 +85292,9 @@ var zrUtil = __webpack_require__(0);
 
 var axisDefault = __webpack_require__(361);
 
-var ComponentModel = __webpack_require__(16);
+var ComponentModel = __webpack_require__(17);
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutParams = _layout.getLayoutParams;
 var mergeLayoutParam = _layout.mergeLayoutParam;
@@ -87202,9 +87233,9 @@ var graphic = __webpack_require__(5);
 
 var findPointFromSeries = __webpack_require__(124);
 
-var layoutUtil = __webpack_require__(17);
+var layoutUtil = __webpack_require__(18);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 var globalListener = __webpack_require__(125);
 
@@ -88184,7 +88215,7 @@ var echarts = __webpack_require__(7);
 
 var zrUtil = __webpack_require__(0);
 
-var Model = __webpack_require__(15);
+var Model = __webpack_require__(16);
 
 var _model = __webpack_require__(3);
 
@@ -88532,7 +88563,7 @@ var _listComponent = __webpack_require__(376);
 
 var makeBackground = _listComponent.makeBackground;
 
-var layoutUtil = __webpack_require__(17);
+var layoutUtil = __webpack_require__(18);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -88839,7 +88870,7 @@ module.exports = _default;
 /* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _layout = __webpack_require__(17);
+var _layout = __webpack_require__(18);
 
 var getLayoutRect = _layout.getLayoutRect;
 var layoutBox = _layout.box;
@@ -117155,7 +117186,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 434 */
