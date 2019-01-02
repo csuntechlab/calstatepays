@@ -45,7 +45,3 @@ Route::get('/university', 'UniversityController@getAllUniversities');
 
 Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
 
-//Middleware
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});

@@ -22,7 +22,9 @@ class MajorController extends Controller
 
     public function getAllHegisCodesByUniversity($university_name)
     {
+        
         $key="HegisCodesFor".$university_name;
+
         if(Cache::has($key)){
             $data = Cache::get($key);
             return json_decode($data);
