@@ -41,13 +41,11 @@ class MajorServiceTest extends TestCase
     {
         $this->seed('Northridge_University_Majors_TableSeeder');
         $this->seed('Universities_TableSeeder');
-        /**
-         *  Should we test every univ id?
-         */
+
         $univ_name = 'northridge';
         $response = $this->majorService->getAllHegisCodesByUniversity($univ_name);
         $this->assertArrayHasKey(0, $response);
-        $this->assertArrayHasKey("hegis_code", $response[0]);
+        $this->assertArrayHasKey("majorId", $response[0]);
         $this->assertArrayHasKey("major", $response[0]);
         $this->assertArrayHasKey("university_id", $response[0]);
 
@@ -65,12 +63,16 @@ class MajorServiceTest extends TestCase
         $this->majorService->getAllHegisCodesByUniversity($univ_id);
     }
 
+    /**
+     *  Api is
+     *  api/major/field-of-study
+     */
     public function test_getAllFieldOfStudies_ensure_returns_all_rows()
     {
         $this->seed('Field_Of_Studies_TableSeeder');
         $response = $this->majorService->getAllFieldOfStudies();
 
-        $this->assertArrayHasKey("name", $response[0]);
+        $this->assertArrayHasKey("discipline", $response[0]);
         $this->assertArrayHasKey("id", $response[0]);
         $this->assertEquals(FieldOfStudy::count(), count($response));
     }
@@ -102,10 +104,11 @@ class MajorServiceTest extends TestCase
         $response = $this->majorService->getMajorEarnings(22021, 'northridge');
     }
 
-    /**  test the opt in functionality
+    /**  
+    *    test the opt in functionality
     *    api route is
-    *    major/hegis-codes/university/{universityId}
-    *    i.e. major/hegis-codes/university/70
+    *    api/major/hegis-codes/university/{university}
+    *    i.e. major/hegis-codes/university/northidge
     */
     public function test_getAllHegisCodesByUniversity_Opt_in_CSU()
     {
@@ -116,7 +119,7 @@ class MajorServiceTest extends TestCase
 
         $response = $this->majorService->getAllHegisCodesByUniversity($university_name);
         $this->assertArrayHasKey('major', $response[0]);
-        $this->assertArrayHasKey('hegis_code', $response[0]);
+        $this->assertArrayHasKey('majorId', $response[0]);
         $this->assertArrayHasKey('university_id', $response[0]);
         $this->assertEquals(count($response), $northridge_majors);
     }
