@@ -4,10 +4,10 @@
             <div class="row">
                 <div  class="col-8 col-sm-3 order-2 order-sm-1 align-self-center py-2">
                     <router-link class="" to="/">
-                        <img :src="this.url + '/img/csp-logo.svg'" class="float-md-left nav-logo mx-auto d-inline-block" alt="Cal State Pays logo">
+                        <img :src="this.url + '/img/cspLogos/csp-logo.svg'" class="float-md-left nav-logo mx-auto d-inline-block" alt="Cal State Pays logo">
                     </router-link>
                     <router-link to="/research">
-                        <img :src="this.url + '/img/strada-logo.png'" class=" nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
+                        <img :src="this.url + '/img/otherLogos/strada-logo.png'" class=" nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
                     </router-link>
                 </div>
                 <div class="col-4 d-sm-none order-3 align-self-center hamburger-btn-position">
@@ -43,7 +43,7 @@
                 <div class=" d-none d-sm-block col-3 col-md-3  order-3 align-self-center">
                     <div class="navbar-text small w-100">
                         <router-link to="/research">
-                            <img :src="this.url + '/img/strada-logo.png'" class="float-right nav-logo-secondary mx-auto d-sm-block" alt="Strada Logo">
+                            <img :src="this.url + '/img/otherLogos/strada-logo.png'" class="float-right nav-logo-secondary mx-auto d-sm-block" alt="Strada Logo">
                         </router-link>
                     </div>
                 </div>
