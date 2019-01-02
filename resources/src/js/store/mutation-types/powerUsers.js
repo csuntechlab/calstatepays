@@ -1,3 +1,4 @@
+
 const SET_TABLEAU_VALUE= "global-form/SET_TABLEAU_VALUE";
 const TRIGGER_TABLEAU_IS_LOADING = "powerUsers/TRIGGER_TABLEAU_IS_LOADING";
 export default{
