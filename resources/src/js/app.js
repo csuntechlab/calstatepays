@@ -37,13 +37,12 @@ const vm = new Vue({
     router,
     render: h => h(App),
     mounted(){
-        this.checkSessionData();
-        this.$store.dispatch('fetchMajors', this.selectedUniversity);
+        this.checkSessionData(); 
         this.$store.dispatch('fetchFieldOfStudies',this.selectedUniversity);
         this.$store.dispatch('fetchUniversities');
         this.$store.dispatch('fetchOptInValues');
+        this.$store.dispatch('fetchMajors', this.selectedUniversity);
     },
-
     computed: {
         ...mapGetters([
             'selectedUniversity'
