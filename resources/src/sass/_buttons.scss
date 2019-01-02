@@ -1,309 +1,311 @@
 .btn {
-  border-radius: 3rem;
-  font-family: $font-brand;
-  font-size: 0.9rem;
-  // height: 45px;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-  font-weight: 700 !important;
+	border-radius: 3rem;
+	font-family: $font-brand;
+	font-size: 0.9rem;
+	// height: 45px;
+	padding-top: 0.9rem;
+	padding-bottom: 0.9rem;
+	font-weight: 700 !important;
 }
 
 .btn:focus {
-  outline: none;
-  border: none;
+	outline: none;
+	border: none;
 }
 .btn:active {
-  outline: none;
-  border: none;
+	outline: none;
+	border: none;
 }
 
 .btn:hover {
-  box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
 }
 
 .btn-success {
-  background: $green;
+	background: $green;
 }
 
 .btn-submit {
-  padding: 0.7rem 4rem;
-  font-size: 1.1rem;
-  text-transform: none;
-  font-weight: 500;
+	padding: 0.7rem 4rem;
+	font-size: 1.1rem;
+	text-transform: none;
+	font-weight: 500;
 }
 
 %fixed-btn-base {
-    padding: 0px;
-    outline: none;
-    position: fixed;
-    right: 1rem;
-    bottom: 5rem;
-    .tooltiptext {
-        visibility: hidden;
-        line-height: normal;
-        width: 15rem;
-        height: 2.8rem;
-        background-color: $light-gray;
-        color: $black;
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.5rem;
-        font-family: $font-brand;
-        border-radius: 6px;
-        padding: .25rem;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
-        position: absolute;
-        z-index: 99999999;
-        bottom: 5rem;
-        left: -4rem; 
-        transform: translateX(-50%);
-    }
-    :hover {
-        .tooltiptext {
-            visibility: visible;
-        }
-    }
+	padding: 0px;
+	outline: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 5rem;
+	.tooltiptext {
+		visibility: hidden;
+		line-height: normal;
+		width: 15rem;
+		height: 2.8rem;
+		background-color: $light-gray;
+		color: $black;
+		text-align: center;
+		font-weight: 500;
+		font-size: 1.5rem;
+		font-family: $font-brand;
+		border-radius: 6px;
+		padding: 0.25rem;
+		box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+		position: absolute;
+		z-index: 99999999;
+		bottom: 5rem;
+		left: -4rem;
+		transform: translateX(-50%);
+	}
+	:hover {
+		.tooltiptext {
+			visibility: visible;
+		}
+	}
 }
 
-.btn-add{
-    @extend %fixed-btn-base;
-    margin-bottom: 1rem;
-    img {
-      width: 5rem;
-      filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, .24));
+.btn-add {
+	@extend %fixed-btn-base;
+	margin-bottom: 1rem;
+	img {
+		width: 3.9rem;
+		@media screen and (min-width: $break-small) {
+			width: 5rem;
+		}
+		filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.24));
 
-      &:active{
-        filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, .40));
-      }
-    }
+		&:active {
+			filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.4));
+		}
+	}
 
-    &:focus{
-      outline: none;
-    }
+	&:focus {
+		outline: none;
+	}
 }
 
-.btn-add__disabled{
-    display: none;
+.btn-add__disabled {
+	display: none;
 }
 
 .major-tool-btn {
-  float: left;
-  position: absolute;
-  right: 0;
-  padding-top: 1rem;
+	float: left;
+	position: absolute;
+	right: 0;
+	padding-top: 1rem;
 }
 
 .btn-remove {
-  color: $gray;
-  font-size: 2rem;
-  outline: none;
-  cursor: pointer;
-  margin-left: 8px;
-  vertical-align: middle;
-  display: inline;
-  position: relative;
+	color: $gray;
+	font-size: 2rem;
+	outline: none;
+	cursor: pointer;
+	margin-left: 8px;
+	vertical-align: middle;
+	display: inline;
+	position: relative;
 }
 
 .btn-reset {
-  position: relative;
-  color: $gray;
-  margin: 0 0 7px 0;
-  padding-top: 3px;
-  font-size: 1.6rem;
-  outline: none;
-  cursor: pointer;
-  vertical-align: middle;
-  display: inline;
-      @media screen and (max-width: $break-small) {
-        top: -9px;
-        left: -14px;
-  }
+	position: relative;
+	color: $gray;
+	margin: 0 0 7px 0;
+	padding-top: 3px;
+	font-size: 1.6rem;
+	outline: none;
+	cursor: pointer;
+	vertical-align: middle;
+	display: inline;
+	@media screen and (max-width: $break-small) {
+		top: -9px;
+		left: -14px;
+	}
 }
 
 .major-tool-btn-mobile {
-  padding-left: 80%;
-  padding-top: 1rem;
+	padding-left: 80%;
+	padding-top: 1rem;
 }
 
 .btn-remove-mobile {
-  color: $gray;
-  font-size: 2rem;
-  outline: none;
-  margin-left: 5px;
-  vertical-align: middle;
-  display: inline;
+	color: $gray;
+	font-size: 2rem;
+	outline: none;
+	margin-left: 5px;
+	vertical-align: middle;
+	display: inline;
 }
 
 .btn-flip-card {
-  border-radius: 5px;
-  font-size: 1rem;
+	border-radius: 5px;
+	font-size: 1rem;
 }
 
-
 .btn-reset-mobile {
-  color: $gray;
-  font-size: 1.6rem;
-  outline: none;
-  vertical-align: middle;
-  display: inline;
+	color: $gray;
+	font-size: 1.6rem;
+	outline: none;
+	vertical-align: middle;
+	display: inline;
 }
 
 .btn-plus {
-  display: block;
+	display: block;
 }
 
 .btn-info {
-  color: $white;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  float: left;
-  @media screen and (max-width: $break-small) {
-    float: right;
-  }
+	color: $white;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	float: left;
+	@media screen and (max-width: $break-small) {
+		float: right;
+	}
 }
 .btn-info:focus {
-  outline: none;
+	outline: none;
 }
 
 input[type="button"]:focus {
-  outline: none;
+	outline: none;
 }
 .home-btn {
-  border-radius: 5rem;
-  width: 70%;
-  font-size: 0.9rem;
-  font-family: $font-brand;
-  height: 45px;
-  color: white;
+	border-radius: 5rem;
+	width: 70%;
+	font-size: 0.9rem;
+	font-family: $font-brand;
+	height: 45px;
+	color: white;
 }
 .button-link {
-  .home-btn__degrees,
-  .home-btn__pfre,
-  .home-btn__majors {
-    text-decoration: none;
-    color: $white;
-  }
+	.home-btn__degrees,
+	.home-btn__pfre,
+	.home-btn__majors {
+		text-decoration: none;
+		color: $white;
+	}
 }
 
 .home-btn__degrees {
-  background: $oxford;
+	background: $oxford;
 }
 
 .home-btn__pfre {
-  background: $green;
+	background: $green;
 }
 
 .home-btn__majors {
-  background: $gold;
+	background: $gold;
 }
 
-.fa-bars, .fa-times {
-  font-size: 2.5rem;
-  color: $gray;
-  @media screen and (max-width: $break-small) {
-      font-size: 1.75rem;
-  }
+.fa-bars,
+.fa-times {
+	font-size: 2.5rem;
+	color: $gray;
+	@media screen and (max-width: $break-small) {
+		font-size: 1.75rem;
+	}
 }
 /*degree level button colors and animations*/
 
-
 .major-btn_icon {
-  position: absolute;
-  right: 7%;
-  font-size: 1.3em !important;
+	position: absolute;
+	right: 7%;
+	font-size: 1.3em !important;
 }
 
 .major-btn_all {
-  background: $candy;
+	background: $candy;
 }
 
 .major-btn_postBacc {
-  background: $green;
+	background: $green;
 }
 
 .major-btn_bachelors {
-  background: $gold;
+	background: $gold;
 }
 
 .major-btn_someCollege {
-  background: $oxford;
+	background: $oxford;
 }
 
 .major-btn_all,
 .major-btn_bachelors,
 .major-btn_postBacc,
 .major-btn_someCollege {
-  position: relative;
-  color: $white;
-  margin-left: 0;
-  font-size: 1rem;
-  text-transform: none;
-  font-weight: 500;
-  transition: .2s;
+	position: relative;
+	color: $white;
+	margin-left: 0;
+	font-size: 1rem;
+	text-transform: none;
+	font-weight: 500;
+	transition: 0.2s;
 }
 
 @media only screen and (min-width: $break-large) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 100%;
-    margin-bottom: .5rem
-  }
+	.major-btn_all,
+	.major-btn_bachelors,
+	.major-btn_postBacc,
+	.major-btn_someCollege {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
 
-  .major-btn_all:hover,
-  .major-btn_postBacc:hover,
-  .major-btn_bachelors:hover,
-  .major-btn_someCollege:hover {
-    margin-left: 7.5px;
-  }
+	.major-btn_all:hover,
+	.major-btn_postBacc:hover,
+	.major-btn_bachelors:hover,
+	.major-btn_someCollege:hover {
+		margin-left: 7.5px;
+	}
 
-  .selected-btn_all:hover,
-  .selected-btn_postBacc:hover,
-  .selected-btn_bachelors:hover,
-  .selected-btn_someCollege:hover {
-    margin-left: 0 !important;
-  }
+	.selected-btn_all:hover,
+	.selected-btn_postBacc:hover,
+	.selected-btn_bachelors:hover,
+	.selected-btn_someCollege:hover {
+		margin-left: 0 !important;
+	}
 }
 @media only screen and (min-width: $break-medium) and (max-width: $break-large) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 100%;
-    margin-bottom: .5rem;
-  }
+	.major-btn_all,
+	.major-btn_bachelors,
+	.major-btn_postBacc,
+	.major-btn_someCollege {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
 }
 @media only screen and (max-width: $break-medium) {
-  .major-btn_all,
-  .major-btn_bachelors,
-  .major-btn_postBacc,
-  .major-btn_someCollege {
-    width: 100%;
-    margin-bottom: .5rem;
-  }
+	.major-btn_all,
+	.major-btn_bachelors,
+	.major-btn_postBacc,
+	.major-btn_someCollege {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
 }
 
 .majorBtnWrapper {
-  @extend .m-auto ;
-  width: 80%;
+	@extend .m-auto;
+	width: 80%;
 }
-.power-user-modal-btn{
-  border-radius: 3rem;
-  font-family: $font-brand;
-  font-size: 0.9rem;
-  font-weight: 300;
-  height: auto;
-  padding: .5rem;
+.power-user-modal-btn {
+	border-radius: 3rem;
+	font-family: $font-brand;
+	font-size: 0.9rem;
+	font-weight: 300;
+	height: auto;
+	padding: 0.5rem;
 }
 
 button.btn-change-campus {
-  background-color: rgb(204, 11, 43);
-  padding: 3px 10px;
-  border-radius: 5px;
+	background-color: rgb(204, 11, 43);
+	padding: 3px 10px;
+	border-radius: 5px;
 }
 
-button.btn-change-campus:hover  {
-  box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
+button.btn-change-campus:hover {
+	box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
 }
