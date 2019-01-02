@@ -1,5 +1,5 @@
 <template>
-    <div style="position: relative">
+    <div>
         <button class="btn-add" id="compare-major-button" @click="onPlus()" v-if="majorCards[0].submittedOnce" title="Compare another major">
             <img :src="this.url + '/img/majorsPage/add-btn.svg'" alt="Compare Major Button">
         </button>

@@ -83,7 +83,7 @@ export default {
 		handleScroll(event) {
 			var addBtn = document.getElementById("compare-major-button");
 			//mobile
-			if (window.innerWidth < 767) {
+			if (window.innerWidth < 768) {
 				if (
 					window.scrollY + window.innerHeight <
 					document.body.clientHeight -

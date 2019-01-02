@@ -69604,7 +69604,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 		handleScroll: function handleScroll(event) {
 			var addBtn = document.getElementById("compare-major-button");
 			//mobile
-			if (window.innerWidth < 767) {
+			if (window.innerWidth < 768) {
 				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight)) {
 					addBtn.style.bottom = "4rem";
 				}
@@ -69748,7 +69748,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { position: "relative" } }, [
+  return _c("div", [
     _vm.majorCards[0].submittedOnce
       ? _c(
           "button",
