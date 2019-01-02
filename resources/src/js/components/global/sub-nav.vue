@@ -1,5 +1,5 @@
 <template>
-    <nav class="sub-nav container-fluid" v-if="(innerHeight) > (deviceHeight/2)">
+    <nav id="sub-nav" class="sub-nav container-fluid" v-if="(innerHeight) > (deviceHeight/2)">
         <div class="row">
             <router-link class="col-4 sub-nav__element" active-class="sub-nav__element--active" to="/data/majors" @click.native="setDataPage('majors')">
                 <i class="sub-nav__mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x" aria-hidden="true"></i>

@@ -12,112 +12,142 @@
 		<sub-nav/>
 		<div class="graphContent" id="majorCardWrapper" @scroll="handleScroll">
 			<div class="container">
-				<major-card  v-if="isDesktop" v-for="(majorCard, index) in desktopCards" :key="index" :index=index :windowWidth=windowWidth />
-				<major-card-mobile v-if="isMobile" v-for="(majorCard, index) in mobileCards" :key="index" :index=index :windowWidth=windowWidth />
-				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)" />		
-			</div>		
+				<major-card
+					v-if="isDesktop"
+					v-for="(majorCard, index) in desktopCards"
+					:key="index"
+					:index="index"
+					:windowWidth="windowWidth"
+				/>
+				<major-card-mobile
+					v-if="isMobile"
+					v-for="(majorCard, index) in mobileCards"
+					:key="index"
+					:index="index"
+					:windowWidth="windowWidth"
+				/>
+				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"/>
+			</div>
 		</div>
 	</div>
 </template>
 <script>
-	import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
-	import cardAdd from "../../../components/global/card-add";
-	import majorCard from "../../../components/majors/major-card.vue";
-	import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
-	import subNav from "../../../components/global/sub-nav.vue";
-	import { mapGetters } from "vuex";
+import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
+import cardAdd from "../../../components/global/card-add";
+import majorCard from "../../../components/majors/major-card.vue";
+import majorCardMobile from "../../../components/majors/major-card-mobile.vue";
+import subNav from "../../../components/global/sub-nav.vue";
+import { mapGetters } from "vuex";
 
-	export default {
-		data() {
-			return {
-				windowWidth: 0,
-				isDesktop: true,
-				isMobile: false,
-			};
+export default {
+	data() {
+		return {
+			windowWidth: 0,
+			isDesktop: true,
+			isMobile: false
+		};
+	},
+	computed: {
+		...mapGetters(["majorCards"]),
+		desktopCards() {
+			return this.isDesktop ? this.majorCards : null;
 		},
-		computed: {
-			...mapGetters(["majorCards"]),
-			desktopCards() {
-				return this.isDesktop ? this.majorCards : null;
-			},
-			mobileCards() {
-				return this.isDesktop ? null : this.majorCards;
-			}
+		mobileCards() {
+			return this.isDesktop ? null : this.majorCards;
+		}
+	},
+	updated: function() {
+		//Only run if more than one card exists
+		let lastCardIndex = this.majorCards.length - 1;
+		if (lastCardIndex > 0) {
+			this.scrollToNextCard(lastCardIndex);
+		}
+	},
+	methods: {
+		getWindowWidth(event) {
+			this.windowWidth = document.documentElement.clientWidth;
+			this.windowWidth < 992
+				? ((this.isDesktop = false), (this.isMobile = true))
+				: ((this.isDesktop = true), (this.isMobile = false));
 		},
-		updated: function () {
-			//Only run if more than one card exists
-			let lastCardIndex = this.majorCards.length - 1;
-			if (lastCardIndex > 0) {
-				this.scrollToNextCard(lastCardIndex);
-			}
-		},
-		methods: {
-			getWindowWidth(event) {
-				this.windowWidth = document.documentElement.clientWidth;
-				this.windowWidth < 992
-					? ((this.isDesktop = false), (this.isMobile = true))
-					: ((this.isDesktop = true), (this.isMobile = false));
-			},
-			scrollToNextCard(lastCardIndex) {
-				let progressBar = document.getElementById(
-					"majorCardHasIndex-" + lastCardIndex
-				);
-				progressBar.scrollIntoView({
-					behavior: "smooth",
-					block: "end",
-					inline: "nearest"
-				});
-			},
-			handleScroll(event) {
-				var footer = document.querySelector("footer");
-				var bounding = footer.getBoundingClientRect();
-				var addBtn = document.getElementById("compare-major-button");
-				if(window.innerWidth< 767) {
-					if (
-					window.scrollY + window.innerHeight <
-					document.body.clientHeight -
-					(document.getElementById("main-footer").clientHeight - 1000)
-				) {	
-					addBtn.style.position = "fixed";
-					addBtn.style.bottom = "5rem";
-				}
-				if (
-					window.scrollY + window.innerHeight >
-					document.body.clientHeight -
-					(document.getElementById("main-footer").clientHeight -140)
-				) {
-					addBtn.style.position = "fixed";
-					addBtn.style.bottom = "11rem";
-				}
-				}
-				else {
-					addBtn.style.bottom = "7rem";
-					addBtn.style.position = "fixed";
-				}
-				
-			}
-		},
-		mounted() {
-			this.$nextTick(function () {
-				window.addEventListener("resize", this.getWindowWidth);
-				this.getWindowWidth();
+		scrollToNextCard(lastCardIndex) {
+			let progressBar = document.getElementById(
+				"majorCardHasIndex-" + lastCardIndex
+			);
+			progressBar.scrollIntoView({
+				behavior: "smooth",
+				block: "end",
+				inline: "nearest"
 			});
 		},
-		beforeDestroy() {
-			window.removeEventListener("resize", this.getWindowWidth);
-		},
-		created() {
-			window.addEventListener("scroll", this.handleScroll);
-		},
-		destroyed() {
-			window.removeEventListener("scroll", this.handleScroll);
-		},
-		components: {
-			majorCard,
-			majorCardMobile,
-			cardAdd,
-			subNav,
-			csuDataImgBanner
+		handleScroll(event) {
+			var addBtn = document.getElementById("compare-major-button");
+			//mobile
+			if (window.innerWidth < 768) {
+				if (
+					window.scrollY + window.innerHeight <
+					document.body.clientHeight -
+						(document.getElementById("main-footer").clientHeight +
+						document.getElementById("footer-meta").clientHeight)
+				) {
+					addBtn.style.bottom = "4rem";
+				}
+				if (
+					window.scrollY + window.innerHeight >=
+					document.body.offsetHeight -
+						(document.getElementById("main-footer").clientHeight +
+						document.getElementById("footer-meta").clientHeight)
+				) {
+					addBtn.style.bottom = 
+					//footer height
+					(document.getElementById("main-footer").clientHeight +
+					document.getElementById("footer-meta").clientHeight +
+					document.getElementById("sub-nav").clientHeight) -
+					//difference between scroll position and page height
+					(document.body.clientHeight -
+						(window.innerHeight + window.pageYOffset)) +
+					"px";
+				}
+			}
+			//desktop
+			else if (
+				window.innerHeight + window.pageYOffset >=
+				document.body.offsetHeight -
+					(document.getElementById("main-footer").clientHeight +
+						document.getElementById("footer-meta").clientHeight)
+			)
+				addBtn.style.bottom =
+					//footer height
+					document.getElementById("main-footer").clientHeight +
+					document.getElementById("footer-meta").clientHeight -
+					//difference between scroll position and page height
+					(document.body.clientHeight -
+						(window.innerHeight + window.pageYOffset)) +
+					"px";
+			else addBtn.style.bottom = "0";
 		}
-	};
+	},
+	mounted() {
+		this.$nextTick(function() {
+			window.addEventListener("resize", this.getWindowWidth);
+			this.getWindowWidth();
+		});
+	},
+	beforeDestroy() {
+		window.removeEventListener("resize", this.getWindowWidth);
+	},
+	created() {
+		window.addEventListener("scroll", this.handleScroll);
+	},
+	destroyed() {
+		window.removeEventListener("scroll", this.handleScroll);
+	},
+	components: {
+		majorCard,
+		majorCardMobile,
+		cardAdd,
+		subNav,
+		csuDataImgBanner
+	}
+};
 </script>

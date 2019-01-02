@@ -66563,89 +66563,93 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.innerHeight > _vm.deviceHeight / 2
-    ? _c("nav", { staticClass: "sub-nav container-fluid" }, [
-        _c(
-          "div",
-          { staticClass: "row" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "col-4 sub-nav__element",
-                attrs: {
-                  "active-class": "sub-nav__element--active",
-                  to: "/data/majors"
-                },
-                nativeOn: {
-                  click: function($event) {
-                    _vm.setDataPage("majors")
+    ? _c(
+        "nav",
+        { staticClass: "sub-nav container-fluid", attrs: { id: "sub-nav" } },
+        [
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "col-4 sub-nav__element",
+                  attrs: {
+                    "active-class": "sub-nav__element--active",
+                    to: "/data/majors"
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("majors")
+                    }
                   }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass:
-                    "sub-nav__mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", [_vm._v("Majors")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "col-4 sub-nav__element",
-                attrs: {
-                  "exact-active-class": "sub-nav__element--active",
-                  to: "/data/industries"
                 },
-                nativeOn: {
-                  click: function($event) {
-                    _vm.setDataPage("industries")
+                [
+                  _c("i", {
+                    staticClass:
+                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("Majors")])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "col-4 sub-nav__element",
+                  attrs: {
+                    "exact-active-class": "sub-nav__element--active",
+                    to: "/data/industries"
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("industries")
+                    }
                   }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass:
-                    "sub-nav__mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", [_vm._v("Industries")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "col-4 sub-nav__element",
-                attrs: {
-                  "active-class": "sub-nav__element--active",
-                  to: "/data/pfre"
                 },
-                nativeOn: {
-                  click: function($event) {
-                    _vm.setDataPage("pfre")
+                [
+                  _c("i", {
+                    staticClass:
+                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("Industries")])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "col-4 sub-nav__element",
+                  attrs: {
+                    "active-class": "sub-nav__element--active",
+                    to: "/data/pfre"
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.setDataPage("pfre")
+                    }
                   }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass:
-                    "sub-nav__mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("span", [_vm._v("FRE")])
-              ]
-            )
-          ],
-          1
-        )
-      ])
+                },
+                [
+                  _c("i", {
+                    staticClass:
+                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("FRE")])
+                ]
+              )
+            ],
+            1
+          )
+        ]
+      )
     : _vm._e()
 }
 var staticRenderFns = []
@@ -69541,6 +69545,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -69587,22 +69603,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			});
 		},
 		handleScroll: function handleScroll(event) {
-			var footer = document.querySelector("footer");
-			var bounding = footer.getBoundingClientRect();
 			var addBtn = document.getElementById("compare-major-button");
-			if (window.innerWidth < 767) {
-				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 1000)) {
-					addBtn.style.position = "fixed";
-					addBtn.style.bottom = "5rem";
+			//mobile
+			if (window.innerWidth < 768) {
+				if (window.scrollY + window.innerHeight < document.body.clientHeight - (document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight)) {
+					addBtn.style.bottom = "4rem";
 				}
-				if (window.scrollY + window.innerHeight > document.body.clientHeight - (document.getElementById("main-footer").clientHeight - 140)) {
-					addBtn.style.position = "fixed";
-					addBtn.style.bottom = "11rem";
+				if (window.scrollY + window.innerHeight >= document.body.offsetHeight - (document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight)) {
+					addBtn.style.bottom =
+					//footer height
+					document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight + document.getElementById("sub-nav").clientHeight - (
+					//difference between scroll position and page height
+					document.body.clientHeight - (window.innerHeight + window.pageYOffset)) + "px";
 				}
-			} else {
-				addBtn.style.bottom = "7rem";
-				addBtn.style.position = "fixed";
 			}
+			//desktop
+			else if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - (document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight)) addBtn.style.bottom =
+				//footer height
+				document.getElementById("main-footer").clientHeight + document.getElementById("footer-meta").clientHeight - (
+				//difference between scroll position and page height
+				document.body.clientHeight - (window.innerHeight + window.pageYOffset)) + "px";else addBtn.style.bottom = "0";
 		}
 	},
 	mounted: function mounted() {
@@ -69729,13 +69749,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { position: "relative" } }, [
+  return _c("div", [
     _vm.majorCards[0].submittedOnce
       ? _c(
           "button",
           {
             staticClass: "btn-add",
-            attrs: { id: "compare-major-button" },
+            attrs: {
+              id: "compare-major-button",
+              title: "Compare another major"
+            },
             on: {
               click: function($event) {
                 _vm.onPlus()
@@ -117223,7 +117246,7 @@ var render = function() {
       _vm._m(0)
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "footer-meta" }, [
+    _c("div", { staticClass: "footer-meta", attrs: { id: "footer-meta" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-3 col-12" }, [
           _c(
