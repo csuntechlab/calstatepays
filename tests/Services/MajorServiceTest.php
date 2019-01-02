@@ -23,7 +23,6 @@ class MajorServiceTest extends TestCase
         $this->majorService = new MajorService();
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
 
         $this->seed('Aggregate_Major_Path_TableSeeder');

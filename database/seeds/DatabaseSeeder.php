@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Hegis_Categories_TableSeeder::class);
         $this->call(Hegis_Codes_TableSeeder::class);
         $this->call(Naics_Titles_TableSeeder::class);
-        $this->call(Student_Paths_TableSeeder::class);
         $this->call(Universities_TableSeeder::class);
 
         $this->call(Aggregate_Industry_Path_Types_TableSeeder::class);
