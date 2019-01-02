@@ -152,7 +152,7 @@ class MajorController extends Controller
         $data[] = array_map(function ($hegis) {
             return [
                 'major' => $hegis['university_majors']['major'],
-                'hegisCode' => $hegis['hegis_code'],
+                'majorId' => $hegis['hegis_code'],
                 'hegis_category_id' => $hegis['hegis_category_id'],
             ];
         }, $hegisData);

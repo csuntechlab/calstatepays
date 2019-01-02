@@ -63659,12 +63659,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     state.fieldOfStudy = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
     var index = payload.cardIndex;
-    state.majorCards[index].majorsByField = [];
-    payload[0].forEach(function (major) {
-        major.majorId = major.hegisCode;
-        delete major.hegisCode;
-        state.majorCards[index].majorsByField.push(major);
-    });
+    state.majorCards[index].majorsByField = payload[0];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].majorData = payload;

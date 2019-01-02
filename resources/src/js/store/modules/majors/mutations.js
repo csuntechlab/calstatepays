@@ -12,12 +12,7 @@ export default {
 
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].majorsByField = [];
-        payload[0].forEach((major) => {
-            major.majorId = major.hegisCode;
-            delete major.hegisCode;
-            state.majorCards[index].majorsByField.push(major);
-        });
+        state.majorCards[index].majorsByField = payload[0];
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
