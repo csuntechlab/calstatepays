@@ -19512,6 +19512,7 @@ body {
   /* For Safari 3.1 to 6.0 */
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  cursor: no-drop;
 }
 
 .tableau-loading-icon {
