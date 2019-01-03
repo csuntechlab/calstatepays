@@ -11,7 +11,7 @@
                 <a href="#" class="footer__link text-white pull-right">Contact Us</a>
             </div>
         </footer>
-        <div class="footer-meta">
+        <div class="footer-meta" id="footer-meta">
             <div class="row">
                 <div class="col-md-3 col-12">
                     <a href="//www.csun.edu/academic-affairs/meta-lab" target="csun">
