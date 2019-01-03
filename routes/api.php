@@ -47,3 +47,6 @@ Route::get('/university', 'UniversityController@getAllUniversities');
 
 Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
 
+Route::get('/power/images','PowerUsersController@getPowerUsersCardImages');
+
+Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
