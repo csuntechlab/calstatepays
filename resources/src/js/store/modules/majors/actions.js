@@ -1,11 +1,12 @@
 //MAJORS ACTIONS
 import Major from '../../../api/majors';
+import Global from '../../../api/global';
 import _majors from '../../mutation-types/majors';
 import _global from '../../mutation-types/global-form';
 export default {
 
     fetchMajors({commit, dispatch}, payload){
-        Major.fetchMajorsAPI(
+        Global.fetchMajorsAPI(
             payload,
             (success) => {
                 commit(_majors.FETCH_MAJORS, success);
@@ -17,7 +18,7 @@ export default {
     },
 
     fetchFieldOfStudies({commit, dispatch},payload){
-        Major.fetchFieldOfStudiesAPI(
+        Global.fetchFieldOfStudiesAPI(
             (success) => {
                 commit(_majors.FETCH_FIELD_OF_STUDIES, success);
             },
@@ -30,7 +31,7 @@ export default {
     },
 
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
-        Major.fetchUpdatedMajorsByFieldAPI(
+        Global.fetchUpdatedMajorsByFieldAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
@@ -41,7 +42,7 @@ export default {
     },
 
     fetchUniversities({ commit, dispatch }) {
-        Major.fetchUniversitiesAPI(
+        Global.fetchUniversitiesAPI(
             (success) => {
                 commit(_majors.FETCH_UNIVERSITIES, success);
             },
