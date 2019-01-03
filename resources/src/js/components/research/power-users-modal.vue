@@ -20,7 +20,7 @@
                     <div class="col-9">
                         <span class="d-block">Earnings by Major + Industries of Employment</span>
                             <button v-if="majorsDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>
-                            <button v-else type="button" class="power-user-modal-btn btn-success">View Data</button>           
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
                 <v-divider></v-divider> 
@@ -32,7 +32,7 @@
                     <div class="col-9">
                         <span class="d-block">Earnings by Age at Entry + Industries of Employment</span>
                         <button v-if="ageDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
-                        <button v-else type="button" class="power-user-modal-btn btn-success">View Data</button>            
+                        <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>            
                     </div>
                 </div>            
                 <v-divider></v-divider>
@@ -44,7 +44,7 @@
                     <div class="col-9">
                         <span class="d-block">Earnings by Race + Industries of Employment</span>
                             <button v-if="raceDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
-                            <button v-else type="button" class="power-user-modal-btn btn-success">View Data</button>           
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
                 <v-divider></v-divider>
@@ -56,7 +56,7 @@
                     <div class="col-9">
                         <span class="d-block">Earnings by Gender + Industries of Employment</span>
                             <button v-if="genderDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>
-                            <button v-else type="button" class="power-user-modal-btn btn-success">View Data</button>           
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div >
                 <v-divider></v-divider>
@@ -68,7 +68,7 @@
                     <div class="col-9">
                         <span class="d-block">Earnings by Pell Status at Entry + Industries of Employment</span>
                             <button v-if="pellDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>
-                            <button v-else type="button" class="power-user-modal-btn btn-success">View Data</button>          
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>          
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[0].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue!==1 ? true :false;
             } else {
                 return false;
             }

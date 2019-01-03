@@ -93182,7 +93182,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[0].opt_in;
-                return currentOptInValue === 1 ? true : false;
+                return currentOptInValue !== 1 ? true : false;
             } else {
                 return false;
             }
@@ -93349,7 +93349,8 @@ var render = function() {
                           : _c(
                               "button",
                               {
-                                staticClass: "power-user-modal-btn btn-success",
+                                staticClass:
+                                  "power-user-modal-btn btn-success btn-locked",
                                 attrs: { type: "button" }
                               },
                               [_vm._v("View Data")]
@@ -93402,7 +93403,8 @@ var render = function() {
                           : _c(
                               "button",
                               {
-                                staticClass: "power-user-modal-btn btn-success",
+                                staticClass:
+                                  "power-user-modal-btn btn-success btn-locked",
                                 attrs: { type: "button" }
                               },
                               [_vm._v("View Data")]
@@ -93455,7 +93457,8 @@ var render = function() {
                           : _c(
                               "button",
                               {
-                                staticClass: "power-user-modal-btn btn-success",
+                                staticClass:
+                                  "power-user-modal-btn btn-success btn-locked",
                                 attrs: { type: "button" }
                               },
                               [_vm._v("View Data")]
@@ -93507,7 +93510,8 @@ var render = function() {
                           : _c(
                               "button",
                               {
-                                staticClass: "power-user-modal-btn btn-success",
+                                staticClass:
+                                  "power-user-modal-btn btn-success btn-locked",
                                 attrs: { type: "button" }
                               },
                               [_vm._v("View Data")]
@@ -93563,7 +93567,8 @@ var render = function() {
                           : _c(
                               "button",
                               {
-                                staticClass: "power-user-modal-btn btn-success",
+                                staticClass:
+                                  "power-user-modal-btn btn-success btn-locked",
                                 attrs: { type: "button" }
                               },
                               [_vm._v("View Data")]
