@@ -1,5 +1,6 @@
 //Power user state
 export default {
     tableauValue:'',
-    tableauIsLoading: false
+    tableauIsLoading: false,
+    optInValues: []
 }
