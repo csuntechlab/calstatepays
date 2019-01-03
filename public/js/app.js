@@ -63500,38 +63500,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
-    state.majors = [];
-    payload.forEach(function (major) {
-        major.majorId = major.hegis_code;
-        delete major.hegis_code;
-        state.majors.push(major);
-    });
+    state.majors = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_FIELD_OF_STUDIES, function (state, payload) {
-    state.fieldOfStudy = [];
-    payload.forEach(function (fieldOfStudy) {
-        fieldOfStudy.discipline = fieldOfStudy.name;
-        delete fieldOfStudy.name;
-        state.fieldOfStudy.push(fieldOfStudy);
-    });
+    state.fieldOfStudy = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
     var index = payload.cardIndex;
-    state.majorCards[index].majorsByField = [];
-    payload[0].forEach(function (major) {
-        major.majorId = major.hegisCode;
-        delete major.hegisCode;
-        state.majorCards[index].majorsByField.push(major);
-    });
+    state.majorCards[index].majorsByField = payload[0];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].majorData = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_SELECTIONS, function (state) {
     state.majors = [];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
-    payload.forEach(function (university) {
-        university.name = university.university_name;
-        delete university.university_name;
-        state.universities.push(university);
-    });
+    state.universities = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].industries = payload.industries;
@@ -64118,12 +64099,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.allLevelIndustries = payload;
 	state.industries = payload[state.industryEducationLevel];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
-	state.industryMajorsByField = [];
-	payload[0].forEach(function (major) {
-		major.majorId = major.hegisCode;
-		delete major.hegisCode;
-		state.industryMajorsByField.push(major);
-	});
+	state.industryMajorsByField = payload[0];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];

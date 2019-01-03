@@ -350,7 +350,7 @@ class IndustryControllerTest extends TestCase
           /** get hegis codes */
           $northridge_hegis = $this->json("GET","api/major/hegis-codes/university/".$northridge_short_name);
           $northridge_hegis = $northridge_hegis->getOriginalContent();
-          $northridge_accounting_hegis = $northridge_hegis[0]['hegis_code'];
+          $northridge_accounting_hegis = $northridge_hegis[0]['majorId'];
 
           /** call industry wages, and images in hegis code 5021 is accounting */
           $northridge_accounting_wages = $this->industryWagesAPIHelper($northridge_short_name,$northridge_accounting_hegis);
@@ -375,7 +375,7 @@ class IndustryControllerTest extends TestCase
           /** get hegis codes */
           $aggregate_hegis = $this->json("GET","api/major/hegis-codes/university/".$aggregate_short_name);
           $aggregate_hegis = $aggregate_hegis->getOriginalContent();
-          $aggregate_kinseology_hegis = $aggregate_hegis[48]->hegis_code;
+          $aggregate_kinseology_hegis = $aggregate_hegis[48]->majorId;
 
           /** call the industry api with aggregate short name and 8351 */
           $aggregate_kinseology_wages = $this->industryWagesAPIHelper($aggregate_short_name,$aggregate_kinseology_hegis);
