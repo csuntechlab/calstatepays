@@ -16,9 +16,7 @@ export default{
             }
             
         );
-
     },
-
     fetchOptInValues({commit, dispatch}, payload) {
         PowerUsers.fetchOptInValuesAPI(
             (success)=> {
