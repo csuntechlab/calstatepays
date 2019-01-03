@@ -15,55 +15,60 @@
                     indeterminate
             ></v-progress-circular>
             <div v-bind:class="{'tableau-loading':tableauIsLoading}">
-                <div class="row">
+                <div :class="(majorsDisplayIsAllowed) ? 'row': 'row tableau-loading'">
                     <i class="col-3 fa fa-university fa-5x" ></i> 
                     <div class="col-9">
                         <span class="d-block">Earnings by Major + Industries of Employment</span>
-                            <button @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>          
+                            <button v-if="majorsDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
-                <v-divider></v-divider>
-                <div class="row">
+                <v-divider></v-divider> 
+                <div :class="(ageDisplayIsAllowed) ? 'row': 'row tableau-loading'">
                     <div class="col-3">
                         <i class="fa fa-child fa-2x"></i>
                         <i class="fa fa-male fa-5x"></i>
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Age at Entry + Industries of Employment</span>
-                        <button @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
+                        <button v-if="ageDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
+                        <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>            
                     </div>
                 </div>            
                 <v-divider></v-divider>
-                <div class="row">
+                <div :class="(raceDisplayIsAllowed) ? 'row': 'row tableau-loading'">
                     <div class="col-3">
                         <i class="fa fa-male fa-5x brown--text"></i>
                         <i class="fa fa-male fa-5x blue--text"></i>
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Race + Industries of Employment</span>
-                            <button @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>          
+                            <button v-if="raceDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
                 <v-divider></v-divider>
-                <div class="row"> 
+                <div :class="(genderDisplayIsAllowed) ? 'row': 'row tableau-loading'"> 
                     <div class="col-3">
                         <i class="fa fa-mars fa-5x"></i>
                         <i class="fa fa-venus fa-5x"></i>
                     </div>               
                     <div class="col-9">
                         <span class="d-block">Earnings by Gender + Industries of Employment</span>
-                            <button @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
+                            <button v-if="genderDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div >
                 <v-divider></v-divider>
-                <div class="row">
+                <div :class="(pellDisplayIsAllowed) ? 'row': 'row tableau-loading'">
                     <div class="col-3">
                         <i class="fa fa-check fa-4x text-success"></i>
                         <i class="fa fa-times fa-4x text-danger"></i>
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Pell Status at Entry + Industries of Employment</span>
-                            <button @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>          
+                            <button v-if="pellDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>          
                     </div>
                 </div>
             </div>
@@ -105,8 +110,69 @@ export default {
         ...mapGetters([
             "universityById",
             "tableauValue",
-            "tableauIsLoading"
+            "tableauIsLoading",
+            "optInValues"
         ]),
+        majorsDisplayIsAllowed: function() {
+            var currentUniversityId; 
+            var currentOptInValue;
+            if(this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[0].opt_in;
+                return currentOptInValue===1 ? true :false;
+            } else {
+                return false;
+            }
+        },
+        ageDisplayIsAllowed: function() {
+            var currentUniversityId; 
+            var currentOptInValue;
+            if(this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[1].opt_in;
+                return currentOptInValue===1 ? true :false;
+            } else {
+                return false;
+            }
+        },
+        raceDisplayIsAllowed: function() {
+            var currentUniversityId; 
+            var currentOptInValue;
+            if(this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[2].opt_in;
+                return currentOptInValue===1 ? true :false;
+            } else {
+                return false;
+            }
+        },
+        genderDisplayIsAllowed: function() {
+            var currentUniversityId; 
+            var currentOptInValue;
+            if(this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[3].opt_in;
+                return currentOptInValue===1 ? true :false;
+            } else {
+                return false;
+            }
+        },
+        pellDisplayIsAllowed: function() {
+            var currentUniversityId; 
+            var currentOptInValue;
+            if(this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[4].opt_in;
+                return currentOptInValue===1 ? true :false;
+            } else {
+                return false;
+            }
+        },
         dialog:{
             get:function(){
                 return this.showModal;
