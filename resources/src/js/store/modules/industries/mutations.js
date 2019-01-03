@@ -5,8 +5,10 @@ export default {
 		state.allLevelIndustries = payload;
 		state.industries = payload[state.industryEducationLevel];
 	},
+	// TODO: ZANE fix this 
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state, payload) {
-		state.industryMajorsByField = payload[0].majorId
+		state.industryMajorsByField = payload[0]
+
 	},
 	[_industries.RESET_INDUSTRY_STATE](state) {
 		state.industries = [];

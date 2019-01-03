@@ -63931,7 +63931,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.allLevelIndustries = payload;
 	state.industries = payload[state.industryEducationLevel];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
-	state.industryMajorsByField = payload[0].majorId;
+	state.industryMajorsByField = payload[0];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];
