@@ -64306,7 +64306,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = (_powerUsers$SET_TABLE = {}, _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, function (state, payload) {
     state.tableauValue = payload;
-    __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
+    // router.push({name:'tableau' , params:{tableauValue:this.tableauValue}});
+    //find the correct url given the stuff
 }), _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING, function (state) {
     if (state.tableauIsLoading === false) {
         state.tableauIsLoading = true;
@@ -64334,13 +64335,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
 
-        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
-        __WEBPACK_IMPORTED_MODULE_0__api_powerUser__["a" /* default */].fetchPowerUserValue(payload, function (success) {
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, success);
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
-        }, function (error) {
-            commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
-        });
+        // commit(_powerUsers.TRIGGER_TABLEAU_IS_LOADING);
+        // PowerUsers.fetchPowerUserValue(payload,
+        // success =>{
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, success);
+        // commit(_powerUsers.TRIGGER_TABLEAU_IS_LOADING);
+        // },
+        // error =>{
+        // commit(_global.ERROR_ALERT,error)
+        // }
+
+        // );
     },
     fetchOptInValues: function fetchOptInValues(_ref2, payload) {
         var commit = _ref2.commit,
