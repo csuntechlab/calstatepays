@@ -99,7 +99,7 @@ class MajorControllerTest extends TestCase
 
     /**
      * Api route : api/major/hegis-codes/{universityName}/{fieldOfStudyId}
-     * ie : /api/major/hegis-code/northridge/6
+     * ie : /api/major/hegis-codes/northridge/6
      * method : MajorController@filterByFieldOfStudy
      * test uses dependency injection 
      */
@@ -112,7 +112,7 @@ class MajorControllerTest extends TestCase
             [["hegis_code" => 7012, "hegis_category_id" => 7, "university_majors" => ["id" => 24, "hegis_code" => 7012, "university_id" => 70, "major" => "Computer Science and Information Technology"]]];
 
         $test =
-            [[["major" => "Computer Science and Information Technology", "hegisCode" => 7012, "hegis_category_id" => 7]]];
+            [[["major" => "Computer Science and Information Technology", "majorId" => 7012, "hegis_category_id" => 7]]];
 
 
         $this->retriever
@@ -281,7 +281,7 @@ class MajorControllerTest extends TestCase
 
         foreach ($filterByFieldOfStudy[0] as $iterate => $success) {
             $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegisCode', $success);
+            $this->assertArrayHasKey('majorId', $success);
             $this->assertArrayHasKey('hegis_category_id', $success);
             $this->assertNotNull('major', $success);
             $this->assertNotNull('hegisCode', $success);
