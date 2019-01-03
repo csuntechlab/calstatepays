@@ -1,4 +1,5 @@
 //Power user state
-export default{
-    tableauValue:''
+export default {
+    tableauValue:'',
+    tableauIsLoading: false
 }

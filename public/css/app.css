@@ -17798,7 +17798,7 @@ button.bg-dark:focus {
   max-height: 100% !important;
 }
 
-.m-0 {
+.m-0, .CSUTile__CSUName, .CSUTile__CSUName--Opt {
   margin: 0 !important;
 }
 
@@ -18022,11 +18022,11 @@ button.bg-dark:focus {
   padding-left: 0.5rem !important;
 }
 
-.p-3, .campus, .not-avail, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
+.p-3, .homeCard__Copy--major, .homeCard__Copy--industries, .homeCard__Copy--PFRE {
   padding: 1rem !important;
 }
 
-.pt-3,
+.pt-3, .CSUTile__DisableMessage,
 .py-3,
 .homeCard__titleAndIconWrapper--major,
 .homeCard__titleAndIconWrapper--industries,
@@ -18035,11 +18035,14 @@ button.bg-dark:focus {
 }
 
 .pr-3,
-.px-3 {
+.px-3,
+.CSUTile__CSUName,
+.CSUTile__CSUName--Opt,
+.CSUTile__DisableMessage {
   padding-right: 1rem !important;
 }
 
-.pb-3,
+.pb-3, .CSUTile__CSUName, .CSUTile__CSUName--Opt,
 .py-3,
 .homeCard__titleAndIconWrapper--major,
 .homeCard__titleAndIconWrapper--industries,
@@ -18048,7 +18051,10 @@ button.bg-dark:focus {
 }
 
 .pl-3,
-.px-3 {
+.px-3,
+.CSUTile__CSUName,
+.CSUTile__CSUName--Opt,
+.CSUTile__DisableMessage {
   padding-left: 1rem !important;
 }
 
@@ -19545,6 +19551,28 @@ body {
   margin: 2rem 0 !important;
 }
 
+.tableau-loading {
+  z-index: -1;
+  opacity: 0.2;
+  -webkit-transition: width 5s;
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.tableau-loading-icon {
+  color: #2f98bf !important;
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.tableau-loading-container {
+  position: absolute;
+}
+
 .text-gray {
   color: #777777;
 }
@@ -19884,8 +19912,8 @@ a.faq-card__button:hover {
 }
 
 .faq-banner {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../img/faq-banner.jpg");
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../img/faq-banner.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.8))), url("../img/faqPage/faq-banner.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../img/faqPage/faq-banner.jpg");
   background-size: cover;
   background-position: center;
   height: 35vh;
@@ -20097,7 +20125,7 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../img/logo-mini.svg");
+    content: url("../img/cspLogos/logo-mini.svg");
     width: 4rem;
   }
 }
@@ -20307,100 +20335,107 @@ footer, .footer {
   font-weight: 400;
 }
 
-.campus, .not-avail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 22rem;
-  min-width: 100%;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-family: "Montserrat";
+.CSUTile__CSUName, .CSUTile__CSUName--Opt {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 140%;
+  font-weight: bold;
+  color: white;
+}
+
+.CSUTile {
+  padding-top: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  margin: auto;
+  height: unset;
+}
+
+.CSUTile {
   text-transform: uppercase;
   border-radius: 5%;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   color: #FFF;
 }
 
-.campus h3, .not-avail h3 {
-  position: absolute;
-  bottom: .5rem;
-  left: 1rem;
-  font-size: 1.25rem;
-  line-height: 140%;
-  font-weight: bold;
+@media screen and (max-width: 767px) {
+  .CSUTile {
+    max-width: 25rem;
+    height: 25rem;
+    padding-top: 0;
+  }
 }
 
-.not-avail p {
-  color: white;
-  opacity: 0;
-  font-size: 1.4rem;
-  font-weight: bold;
+@media screen and (min-width: 768px) {
+  .CSUTile {
+    padding-top: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+    margin: auto;
+    height: unset;
+  }
 }
 
-.not-avail p:hover {
+.CSUTile:hover .CSUTile__Image--Active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
+.CSUTile:hover .CSUTile__DisableMessage {
   opacity: .5;
 }
 
-.disabled-university {
+.CSUTile__CSUName {
+  cursor: pointer;
+}
+
+.CSUTile__CSUName--Opt {
+  cursor: not-allowed;
+}
+
+.CSUTile__Image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .55s;
+  transition: all .55s;
+  background-position: center, center;
+}
+
+.CSUTile__Image--Active {
+  cursor: pointer;
+}
+
+.CSUTile__Image--Opt {
+  cursor: not-allowed;
+}
+
+.CSUTile__DisableMessage {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: white;
+  opacity: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+.CSUTile--Disabled {
   opacity: .3;
   -webkit-filter: brightness(30%);
           filter: brightness(30%);
   cursor: not-allowed;
-}
-
-.unselected-university {
-  opacity: .3;
-}
-
-#csun {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65))), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)), url("https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg");
-}
-
-#csulb {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csulb.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csulb.jpg");
-}
-
-#csula {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csula.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csula.jpg");
-}
-
-#csuf {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csuf.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csuf.jpg");
-}
-
-#csudh {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csudh.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csudh.jpg");
-}
-
-#csuci {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csuci.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csuci.jpg");
-}
-
-#csup {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg");
-}
-
-#allcampus {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65))), url("../img/csucampuses/allcsu.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)), url("../img/csucampuses/allcsu.png");
-}
-
-#csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
-  background-size: cover;
-  background-position: center;
 }
 
 .returnToCampusSelection {

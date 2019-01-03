@@ -29854,8 +29854,10 @@ var TRIGGER_IS_LOADING = "industries/TRIGGER_IS_LOADING";
 
 "use strict";
 var SET_TABLEAU_VALUE = "global-form/SET_TABLEAU_VALUE";
+var TRIGGER_TABLEAU_IS_LOADING = "powerUsers/TRIGGER_TABLEAU_IS_LOADING";
 /* harmony default export */ __webpack_exports__["a"] = ({
-    SET_TABLEAU_VALUE: SET_TABLEAU_VALUE
+    SET_TABLEAU_VALUE: SET_TABLEAU_VALUE,
+    TRIGGER_TABLEAU_IS_LOADING: TRIGGER_TABLEAU_IS_LOADING
 });
 
 /***/ }),
@@ -64339,7 +64341,8 @@ var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(paylo
 "use strict";
 //Power user state
 /* harmony default export */ __webpack_exports__["a"] = ({
-    tableauValue: ''
+    tableauValue: '',
+    tableauIsLoading: false
 });
 
 /***/ }),
@@ -64350,6 +64353,9 @@ var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(paylo
 /* harmony default export */ __webpack_exports__["a"] = ({
     tableauValue: function tableauValue(state) {
         return state.tableauValue;
+    },
+    tableauIsLoading: function tableauIsLoading(state) {
+        return state.tableauIsLoading;
     }
 });
 
@@ -64359,21 +64365,27 @@ var fetchIndustryMajorsByFieldAPI = function fetchIndustryMajorsByFieldAPI(paylo
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_majors__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutation_types_majors__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutation_types_global_form__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__router__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(68);
+var _powerUsers$SET_TABLE;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
-
-/* harmony default export */ __webpack_exports__["a"] = (_defineProperty({}, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, function (state, payload) {
+/* harmony default export */ __webpack_exports__["a"] = (_powerUsers$SET_TABLE = {}, _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, function (state, payload) {
     state.tableauValue = payload;
-    __WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
-}));
+    __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
+}), _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING, function (state) {
+    if (state.tableauIsLoading === false) {
+        state.tableauIsLoading = true;
+    } else {
+        state.tableauIsLoading = false;
+    }
+}), _powerUsers$SET_TABLE);
 
 /***/ }),
 /* 189 */
@@ -64392,8 +64404,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
 
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
         __WEBPACK_IMPORTED_MODULE_0__api_powerUser__["a" /* default */].fetchPowerUserValue(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, success);
+            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
         }, function (error) {
             commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
@@ -65545,7 +65559,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { ref: "homeVideo", staticClass: "homeVideo" }, [
     _c("div", { staticClass: "homeVideo__btn", on: { click: _vm.playVideo } }, [
-      _c("img", { attrs: { src: this.url + "/img/icon-play.png" } })
+      _c("img", { attrs: { src: this.url + "/img/homeimages/icon-play.png" } })
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "homeVideo__container" }, [
@@ -65932,7 +65946,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }),
     data: function data() {
         return {
-            CSUNImg: window.baseUrl + '/img/dataimgbanner/csun.jpg',
+            CSUNImg: window.baseUrl + '/img/campusbanners/csun.jpg',
             CSUImg: ''
         };
     },
@@ -69829,7 +69843,7 @@ var render = function() {
           [
             _c("img", {
               attrs: {
-                src: this.url + "/img/add-btn.svg",
+                src: this.url + "/img/majorsPage/add-btn.svg",
                 alt: "Compare Major Button"
               }
             })
@@ -92792,7 +92806,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_research_power_banner__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal__ = __webpack_require__(416);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_research_csu_tile__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_research_csu_tile___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_research_csu_tile__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -92817,49 +92833,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -92871,22 +92845,74 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             // universityName:'',
             universityLink: '',
             selectedUniversity: '',
-            id: 0
+            id: 0,
+            campus: {
+                AllCSU: {
+                    img: window.baseUrl + '/img/csucampuses/allcsu.png',
+                    title: 'Aggregate Data Across the 7 CSUs',
+                    id: 0,
+                    active: true
+                },
+                CSUN: {
+                    img: window.baseUrl + '/img/csucampuses/northridge.png',
+                    title: 'California State University Northridge',
+                    id: 70,
+                    active: true
+                },
+                CSULB: {
+                    img: window.baseUrl + '/img/csucampuses/longBeach.png',
+                    title: 'California State University Long Beach',
+                    active: false
+                },
+                CSULA: {
+                    img: window.baseUrl + '/img/csucampuses/losAngeles.png',
+                    title: 'California State University Los Angeles',
+                    active: false
+                },
+                CSUF: {
+                    img: window.baseUrl + '/img/csucampuses/fullerton.png',
+                    title: 'California State University Fullerton',
+                    active: false
+                },
+                CSUDH: {
+                    img: window.baseUrl + '/img/csucampuses/dominguezHills.png',
+                    title: 'California State University Dominguez Hills',
+                    active: false
+                },
+                CSUCI: {
+                    img: window.baseUrl + '/img/csucampuses/channelIslands.png',
+                    title: 'California State University Channel Islands',
+                    active: false
+                },
+                CSUP: {
+                    img: window.baseUrl + '/img/csucampuses/pomona.png',
+                    title: 'Cal Poly Pomona',
+                    active: false
+                }
+            }
         };
     },
+
     methods: {
         closeModal: function closeModal() {
             this.displayModal = false;
+        },
+        openModal: function openModal(item) {
+            if (item.active) {
+                this.displayModal = true;
+                this.id = item.id;
+            }
         }
-    }, computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["c" /* mapGetters */])(['universityById']), {
+    },
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(['universityById']), {
         university: function university() {
             return this.universityById(this.id);
         }
     }),
-
     components: {
         powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a,
-        powerUsersModal: __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal___default.a
+        powerUsersModal: __WEBPACK_IMPORTED_MODULE_1__components_research_power_users_modal___default.a,
+        CSUTile: __WEBPACK_IMPORTED_MODULE_2__components_research_csu_tile___default.a
     }
 });
 
@@ -93196,6 +93222,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -93223,7 +93256,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         chooseTableauCategory: function chooseTableauCategory(university, path_id, callback) {
             this.$store.dispatch('setTableauValue', { university: university, path_id: path_id });
         }
-    }), computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue"]), {
+    }), computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading"]), {
         dialog: {
             get: function get() {
                 return this.showModal;
@@ -93292,168 +93325,184 @@ var render = function() {
           _c(
             "v-card-text",
             [
-              _c("div", { staticClass: "row" }, [
-                _c("i", { staticClass: "col-3 fa fa-university fa-5x" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-9" }, [
-                  _c("span", { staticClass: "d-block" }, [
-                    _vm._v("Earnings by Major + Industries of Employment")
+              _vm.tableauIsLoading
+                ? _c("v-progress-circular", {
+                    staticClass: "tableau-loading-icon",
+                    attrs: { size: 100, width: 10, indeterminate: "" }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                { class: { "tableau-loading": _vm.tableauIsLoading } },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("i", { staticClass: "col-3 fa fa-university fa-5x" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Major + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                1
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "power-user-modal-btn btn-success",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          _vm.chooseTableauCategory(
-                            _vm.university.short_name,
-                            1
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("View Data")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3" }, [
-                  _c("i", { staticClass: "fa fa-child fa-2x" }),
+                  _c("v-divider"),
                   _vm._v(" "),
-                  _c("i", { staticClass: "fa fa-male fa-5x" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-9" }, [
-                  _c("span", { staticClass: "d-block" }, [
-                    _vm._v(
-                      "Earnings by Age at Entry + Industries of Employment"
-                    )
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-child fa-2x" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-male fa-5x" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v(
+                          "Earnings by Age at Entry + Industries of Employment"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: " power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                2
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: " power-user-modal-btn btn-success",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          _vm.chooseTableauCategory(
-                            _vm.university.short_name,
-                            2
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("View Data")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3" }, [
-                  _c("i", { staticClass: "fa fa-male fa-5x brown--text" }),
+                  _c("v-divider"),
                   _vm._v(" "),
-                  _c("i", { staticClass: "fa fa-male fa-5x blue--text" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-9" }, [
-                  _c("span", { staticClass: "d-block" }, [
-                    _vm._v("Earnings by Race + Industries of Employment")
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-male fa-5x brown--text" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-male fa-5x blue--text" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Race + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: " power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                3
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: " power-user-modal-btn btn-success",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          _vm.chooseTableauCategory(
-                            _vm.university.short_name,
-                            3
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("View Data")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3" }, [
-                  _c("i", { staticClass: "fa fa-mars fa-5x" }),
+                  _c("v-divider"),
                   _vm._v(" "),
-                  _c("i", { staticClass: "fa fa-venus fa-5x" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-9" }, [
-                  _c("span", { staticClass: "d-block" }, [
-                    _vm._v("Earnings by Gender + Industries of Employment")
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", { staticClass: "fa fa-mars fa-5x" }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-venus fa-5x" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v("Earnings by Gender + Industries of Employment")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                4
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "power-user-modal-btn btn-success",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          _vm.chooseTableauCategory(
-                            _vm.university.short_name,
-                            4
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("View Data")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("v-divider"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-3" }, [
-                  _c("i", { staticClass: "fa fa-check fa-4x text-success" }),
+                  _c("v-divider"),
                   _vm._v(" "),
-                  _c("i", { staticClass: "fa fa-times fa-4x text-danger" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-9" }, [
-                  _c("span", { staticClass: "d-block" }, [
-                    _vm._v(
-                      "Earnings by Pell Status at Entry + Industries of Employment"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "power-user-modal-btn btn-success",
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          _vm.chooseTableauCategory(
-                            _vm.university.short_name,
-                            5
-                          )
-                        }
-                      }
-                    },
-                    [_vm._v("View Data")]
-                  )
-                ])
-              ])
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-3" }, [
+                      _c("i", {
+                        staticClass: "fa fa-check fa-4x text-success"
+                      }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fa fa-times fa-4x text-danger" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-9" }, [
+                      _c("span", { staticClass: "d-block" }, [
+                        _vm._v(
+                          "Earnings by Pell Status at Entry + Industries of Employment"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "power-user-modal-btn btn-success",
+                          attrs: { type: "button" },
+                          on: {
+                            click: function($event) {
+                              _vm.chooseTableauCategory(
+                                _vm.university.short_name,
+                                5
+                              )
+                            }
+                          }
+                        },
+                        [_vm._v("View Data")]
+                      )
+                    ])
+                  ])
+                ],
+                1
+              )
             ],
             1
           ),
@@ -93508,70 +93557,24 @@ var render = function() {
               staticClass: "row justify-content-start justify-content-xl-center"
             },
             [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "campus not-avail",
-                      attrs: { id: "allcampus" },
-                      on: {
-                        click: function($event) {
-                          _vm.displayModal = true
-                          _vm.id = 0
-                        }
-                      }
+              _vm._l(_vm.campus, function(item) {
+                return [
+                  _c("c-s-u-tile", {
+                    attrs: {
+                      campusImg: item.img,
+                      title: item.title,
+                      active: item.active
                     },
-                    [_c("h3", [_vm._v("Aggregate Data Across the 7 CSUs")])]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3"
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "campus",
-                      attrs: { id: "csun" },
-                      on: {
-                        click: function($event) {
-                          _vm.displayModal = true
-                          _vm.id = 70
-                        }
+                    nativeOn: {
+                      click: function($event) {
+                        _vm.openModal(item)
                       }
-                    },
-                    [
-                      _c("h3", [
-                        _vm._v("California State University Northridge")
-                      ])
-                    ]
-                  )
+                    }
+                  })
                 ]
-              ),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._m(6)
-            ]
+              })
+            ],
+            2
           )
         ])
       ])
@@ -93584,121 +93587,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
         _c("h2", { staticClass: "returnToCampusSelection" }, [
           _vm._v("\n                        Select a CSU\n                    ")
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c("div", { staticClass: "campus not-avail", attrs: { id: "csulb" } }, [
-          _c("p", [_vm._v("Data Not Available At This Time")]),
-          _vm._v(" "),
-          _c("h3", [_vm._v("California State University Long Beach")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c(
-          "div",
-          { staticClass: " campus not-avail", attrs: { id: "csula" } },
-          [
-            _c("p", [_vm._v("Data Not Available At This Time")]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("California State University Los Angeles")])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c("div", { staticClass: " campus not-avail", attrs: { id: "csuf" } }, [
-          _c("p", [_vm._v("Data Not Available At This Time")]),
-          _vm._v(" "),
-          _c("h3", [_vm._v("California State University Fullerton")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c(
-          "div",
-          { staticClass: " campus not-avail", attrs: { id: "csudh" } },
-          [
-            _c("p", [_vm._v("Data Not Available At This Time")]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("California State University Dominguez Hills")])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c(
-          "div",
-          { staticClass: " campus not-avail", attrs: { id: "csuci" } },
-          [
-            _c("p", [_vm._v("Data Not Available At This Time")]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("California State University Channel Island")])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 py-3" },
-      [
-        _c("div", { staticClass: " campus not-avail", attrs: { id: "csup" } }, [
-          _c("p", [_vm._v("Data Not Available At This Time")]),
-          _vm._v(" "),
-          _c("h3", [_vm._v("California State University Pomona")])
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -118703,7 +118598,7 @@ var render = function() {
               _c("img", {
                 staticClass: "float-md-left nav-logo mx-auto d-inline-block",
                 attrs: {
-                  src: this.url + "/img/csp-logo.svg",
+                  src: this.url + "/img/cspLogos/csp-logo.svg",
                   alt: "Cal State Pays logo"
                 }
               })
@@ -118713,7 +118608,7 @@ var render = function() {
               _c("img", {
                 staticClass: " nav-logo-secondary d-inline-block d-sm-none",
                 attrs: {
-                  src: this.url + "/img/strada-logo.png",
+                  src: this.url + "/img/otherLogos/strada-logo.png",
                   alt: "Strada Logo"
                 }
               })
@@ -118877,7 +118772,7 @@ var render = function() {
                     staticClass:
                       "float-right nav-logo-secondary mx-auto d-sm-block",
                     attrs: {
-                      src: this.url + "/img/strada-logo.png",
+                      src: this.url + "/img/otherLogos/strada-logo.png",
                       alt: "Strada Logo"
                     }
                   })
@@ -119049,7 +118944,7 @@ var render = function() {
               _c("img", {
                 staticClass: "footer-meta__logo mb-2 mb-md-0",
                 attrs: {
-                  src: this.url + "/img/metalab-logo.svg",
+                  src: this.url + "/img/otherLogos/metalab-logo.svg",
                   alt: "META+LAB Logo"
                 }
               })
@@ -119278,6 +119173,148 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(462)
+/* template */
+var __vue_template__ = __webpack_require__(463)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/src/js/components/research/csu-tile.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-bb262df8", Component.options)
+  } else {
+    hotAPI.reload("data-v-bb262df8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 462 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["campusImg", "title", "active"],
+    data: function data() {
+        return {};
+    }
+});
+
+/***/ }),
+/* 463 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col-12 col-md-6 col-lg-4 col-xl-3 py-3" }, [
+    _c("div", { staticClass: "CSUTile" }, [
+      _vm.active
+        ? _c("div", {
+            staticClass: "CSUTile__Image CSUTile__Image--Active",
+            style: {
+              backgroundImage:
+                "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(" +
+                _vm.campusImg +
+                ")"
+            }
+          })
+        : _c("div", {
+            staticClass: "CSUTile__Image CSUTile__Image--Opt",
+            style: {
+              backgroundImage:
+                "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(" +
+                _vm.campusImg +
+                ")"
+            }
+          }),
+      _vm._v(" "),
+      _c(
+        "h3",
+        {
+          class: [
+            { "CSUTile__CSUName CSUTile__CSUName--Opt": !_vm.active },
+            "CSUTile__CSUName"
+          ]
+        },
+        [_vm._v(_vm._s(_vm.title))]
+      ),
+      _vm._v(" "),
+      !_vm.active
+        ? _c("div", [
+            _c("p", { staticClass: "CSUTile__DisableMessage" }, [
+              _vm._v("Data Not Available At This Time")
+            ])
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-bb262df8", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -1,7 +1,7 @@
 .researchMainBanner {
     background-image:
-     $white-filter,
-     url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
+        $white-filter,
+        url('https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a878b325b176e5402b37d27b342963e&auto=format&fit=crop&w=1510&q=80');
     background-size: cover;
     min-height: 30vh;
     h2 {
@@ -13,97 +13,115 @@
     }
 }
 
-.campus{
-    @extend .p-3 ;
-    display: flex;
-    height: 22rem;
-    min-width: 100%;
-    align-self: center;
-    justify-content: center;
-    font-family: $font-base;
+@mixin make-activeCSUImage($gradient, $image) {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $gradient, $image;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .55s;
+    background-position: center, center;
+    &:hover, h3:hover{
+        transform: scale(1.3);
+    }
+}
+
+%CSUTileText{
+    @extend .px-3, .pb-3, .m-0 ;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 140%;
+    font-weight: bold;
+    color: white;
+}
+
+%CSUTileSizing{
+    padding-top: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+    margin: auto;
+    height: unset;
+}
+
+
+.CSUTile{
+    @extend %CSUTileSizing;
     text-transform: uppercase;
     border-radius: 5%;
-    position: relative;
-    box-sizing: border-box;
     color: $white;
-    h3 {
-        position: absolute;
-        bottom: .5rem;
-        left: 1rem;
-        font-size: 1.25rem;
-        line-height: 140%;
-        font-weight: bold;
+    @media screen and (max-width: $break-small) {
+        max-width: 25rem;
+        height: 25rem;
+        padding-top: 0;
     }
-}
+    @media screen and (min-width: $break-medium) {
+        padding-top: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        max-width: none;
+        margin: auto;
+        height: unset;
+    }
+    &:hover{
+        .CSUTile__Image--Active{
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .CSUTile__DisableMessage{
+            opacity: .5;
+        }
+    }
+    
 
-.not-avail {
-    @extend .campus;
-    p{
+    &__CSUName{
+        @extend %CSUTileText;
+        cursor: pointer;
+    }
+    &__CSUName--Opt{
+        @extend %CSUTileText;
+        cursor: not-allowed;
+    }
+    &__Image{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all .55s;
+        background-position: center, center;
+    }
+    &__Image--Active{
+        cursor: pointer;
+    }
+    &__Image--Opt {
+        cursor: not-allowed;
+    }
+    &__DisableMessage{
+        @extend .px-3, .pt-3 ;
+        position: absolute;
+        top: 0;
+        width: 100%;
         color: white;
         opacity:0;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         font-weight:bold;
+        cursor: not-allowed;
     }
-    p:hover{
-        opacity: .5;
+    &--Disabled{
+        opacity: .3;
+        filter: brightness(30%);
+        cursor: not-allowed;
     }
-}
-
-.disabled-university{
-    opacity: .3;
-    filter: brightness(30%);
-    cursor: not-allowed;
-}
-
-.unselected-university{
-    opacity: .3;
-}
-
-#csun {
-    background-image: 
-        $available-campus, 
-        url('https://www.metalab.csun.edu/learnandearn/imgs/csun.jpg');
-}
-#csulb {
-    background-image: 
-        $black-filter,
-        url('https://www.metalab.csun.edu/learnandearn/imgs/csulb.jpg');
-
-}
-#csula {
-    background-image: 
-        $black-filter,
-        url('https://www.metalab.csun.edu/learnandearn/imgs/csula.jpg');
-}
-#csuf {
-    background-image: 
-        $black-filter,
-        url('https://www.metalab.csun.edu/learnandearn/imgs/csuf.jpg');
-}
-#csudh {
-    background-image: 
-        $black-filter,
-         url('https://www.metalab.csun.edu/learnandearn/imgs/csudh.jpg');
-}
-#csuci {
-    background-image: 
-        $black-filter,
-         url('https://www.metalab.csun.edu/learnandearn/imgs/csuci.jpg');
-}
-#csup {
-    background-image: 
-        $black-filter,
-         url('https://www.metalab.csun.edu/learnandearn/imgs/csupp.jpg');
-}
-#allcampus {
-    background-image:
-        $available-campus,
-        url("../img/csucampuses/allcsu.png");
-}
-
-#csun, #csulb, #csula, #csuf, #csudh, #csuci, #csup {
-    background-size: cover;
-    background-position: center;
 }
 
 .returnToCampusSelection {

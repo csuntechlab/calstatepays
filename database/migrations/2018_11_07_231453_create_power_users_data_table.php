@@ -18,7 +18,7 @@ class CreatePowerUsersDataTable extends Migration
             $table->integer('university_id');
             $table->integer('path_id');
             $table->string('iframe_string')->nullable();
-            $table->nullableTimestamps();
+            $table->integer('opt_in');
         });
     }
 
