@@ -93182,7 +93182,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[0].opt_in;
-                return currentOptInValue !== 1 ? true : false;
+                return currentOptInValue === 1 ? true : false;
             } else {
                 return false;
             }

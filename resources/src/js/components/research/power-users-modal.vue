@@ -120,7 +120,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[0].opt_in;
-                return currentOptInValue!==1 ? true :false;
+                return currentOptInValue===1 ? true :false;
             } else {
                 return false;
             }
