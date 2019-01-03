@@ -21,7 +21,6 @@ class PfreServiceTest extends TestCase
         $this->pfreService = new PfreService();
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
 
         $this->seed('Aggregate_Major_Path_TableSeeder');
