@@ -93147,7 +93147,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -93177,29 +93176,64 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         }
     }), computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading", "optInValues"]), {
         majorsDisplayIsAllowed: function majorsDisplayIsAllowed() {
-            var currentUniversityId = this.university.id;
-            var currentValues = this.optInValues[currentUniversityId];
-            return currentValues[0].opt_in === 1 ? true : false;
+            var currentUniversityId;
+            var currentOptInValue;
+            if (this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[0].opt_in;
+                return currentOptInValue === 1 ? true : false;
+            } else {
+                return false;
+            }
         },
         ageDisplayIsAllowed: function ageDisplayIsAllowed() {
-            var currentUniversityId = this.university.id;
-            var currentValues = this.optInValues[currentUniversityId];
-            return currentValues[1].opt_in === 1 ? true : false;
+            var currentUniversityId;
+            var currentOptInValue;
+            if (this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[1].opt_in;
+                return currentOptInValue === 1 ? true : false;
+            } else {
+                return false;
+            }
         },
         raceDisplayIsAllowed: function raceDisplayIsAllowed() {
-            var currentUniversityId = this.university.id;
-            var currentValues = this.optInValues[currentUniversityId];
-            return currentValues[2].opt_in === 1 ? true : false;
+            var currentUniversityId;
+            var currentOptInValue;
+            if (this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[2].opt_in;
+                return currentOptInValue === 1 ? true : false;
+            } else {
+                return false;
+            }
         },
         genderDisplayIsAllowed: function genderDisplayIsAllowed() {
-            var currentUniversityId = this.university.id;
-            var currentValues = this.optInValues[currentUniversityId];
-            return currentValues[3].opt_in === 1 ? true : false;
+            var currentUniversityId;
+            var currentOptInValue;
+            if (this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[3].opt_in;
+                return currentOptInValue === 1 ? true : false;
+            } else {
+                return false;
+            }
         },
         pellDisplayIsAllowed: function pellDisplayIsAllowed() {
-            var currentUniversityId = this.university.id;
-            var currentValues = this.optInValues[currentUniversityId];
-            return currentValues[4].opt_in === 1 ? true : false;
+            var currentUniversityId;
+            var currentOptInValue;
+            if (this.university != undefined && this.optInValues['0'] != undefined) {
+                currentUniversityId = this.university.id;
+                var currentValues = this.optInValues[currentUniversityId];
+                currentOptInValue = currentValues[4].opt_in;
+                return currentOptInValue === 1 ? true : false;
+            } else {
+                return false;
+            }
         },
         dialog: {
             get: function get() {
