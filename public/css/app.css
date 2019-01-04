@@ -3252,6 +3252,9 @@ p {
 .text-lowercase {
   text-transform: lowercase !important;
 }
+.text-none {
+  text-transform: none !important;
+}
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -3294,6 +3297,16 @@ p {
   [hidden~="screen"]:not(:active):not(:focus):not(:target) {
     position: absolute !important;
     clip: rect(0 0 0 0) !important;
+  }
+}
+@media only print {
+  .hidden-print-only {
+    display: none !important;
+  }
+}
+@media only screen {
+  .hidden-screen-only {
+    display: none !important;
   }
 }
 @media only screen and (max-width: 599px) {
@@ -3587,20 +3600,21 @@ p {
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   vertical-align: text-bottom;
 }
+.v-icon--right {
+  margin-left: 16px;
+}
+.v-icon--left {
+  margin-right: 16px;
+}
 .v-icon.v-icon.v-icon--link {
   cursor: pointer;
 }
-.v-icon.v-icon--large {
-  font-size: 2.5rem;
-}
-.v-icon.v-icon--medium {
-  font-size: 2rem;
-}
-.v-icon.v-icon--x-large {
-  font-size: 3rem;
-}
-.v-icon.v-icon--disabled {
+.v-icon--disabled {
   pointer-events: none;
+  opacity: 0.6;
+}
+.v-icon--is-component {
+  height: 24px;
 }
 
 .v-autocomplete.v-input > .v-input__control > .v-input__slot {
@@ -4209,8 +4223,8 @@ p {
   color: rgba(0,0,0,0.38);
 }
 .theme--dark.v-chip {
-  background: #fff;
-  color: rgba(0,0,0,0.87);
+  background: #555;
+  color: #fff;
 }
 .theme--dark.v-chip--disabled {
   color: rgba(255,255,255,0.5);
@@ -4375,7 +4389,6 @@ p {
 
 .v-menu {
   display: block;
-  position: relative;
   vertical-align: middle;
 }
 .v-menu--inline {
@@ -4389,13 +4402,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
 }
 .v-menu__activator * {
   cursor: pointer;
-}
-.v-menu__activator--disabled {
-  pointer-events: none;
 }
 .v-menu__content {
   position: absolute;
@@ -4470,15 +4479,7 @@ p {
   color: #fff;
 }
 .v-card {
-  display: block;
-  border-radius: 2px;
-  min-width: 0;
-  position: relative;
   text-decoration: none;
-  -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  -webkit-box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-          box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
 }
 .v-card > *:first-child:not(.v-btn):not(.v-chip) {
   border-top-left-radius: inherit;
@@ -4487,17 +4488,6 @@ p {
 .v-card > *:last-child:not(.v-btn):not(.v-chip) {
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
-}
-.v-card--raised {
-  -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
-          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
-}
-.v-card--tile {
-  border-radius: 0;
-}
-.v-card--flat {
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12);
-          box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12);
 }
 .v-card--hover {
   cursor: pointer;
@@ -4509,8 +4499,8 @@ p {
   transition-property: box-shadow, -webkit-box-shadow;
 }
 .v-card--hover:hover {
-  -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
-          box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12) !important;
+          box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12) !important;
 }
 .v-card__title {
   -webkit-box-align: center;
@@ -4790,7 +4780,6 @@ p {
           flex-grow: 1;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: relative;
   width: 100%;
 }
 .v-input__icon {
@@ -5048,8 +5037,8 @@ p {
   padding: 0 16px;
   position: relative;
   text-decoration: none;
-  -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  -webkit-transition: background 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: background 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .v-list__tile--link {
   cursor: pointer;
@@ -5635,8 +5624,14 @@ p {
 .theme--light.v-bottom-nav {
   background-color: #fff;
 }
+.theme--light.v-bottom-nav .v-btn:not(.v-btn--active) {
+  color: rgba(0,0,0,0.54) !important;
+}
 .theme--dark.v-bottom-nav {
   background-color: #424242;
+}
+.theme--dark.v-bottom-nav .v-btn:not(.v-btn--active) {
+  color: rgba(255,255,255,0.7) !important;
 }
 .v-item-group.v-bottom-nav {
   bottom: 0;
@@ -5678,7 +5673,6 @@ p {
   min-width: 80px;
   padding: 8px 12px 10px;
   text-transform: none;
-  opacity: 0.5;
   width: 100%;
   -ms-flex-negative: 1;
       flex-shrink: 1;
@@ -5702,7 +5696,6 @@ p {
   line-height: 1;
 }
 .v-item-group.v-bottom-nav .v-btn--active {
-  opacity: 1;
   padding-top: 6px;
 }
 .v-item-group.v-bottom-nav .v-btn--active:before {
@@ -5714,10 +5707,6 @@ p {
 .v-item-group.v-bottom-nav .v-btn--active .v-btn__content .v-icon {
   -webkit-transform: none;
           transform: none;
-}
-.v-item-group.v-bottom-nav .v-btn:not(.v-btn--active) {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
 }
 .v-item-group.v-bottom-nav--shift .v-btn__content {
   font-size: 14px;
@@ -5736,7 +5725,7 @@ p {
   -webkit-transform: scale(1, 1) translate(0, 8px);
           transform: scale(1, 1) translate(0, 8px);
 }
-.v-bottom-nav--shift .v-btn:not(.v-btn--active) .v-btn__content span {
+.v-bottom-nav--shift .v-btn:not(.v-btn--active) .v-btn__content > span:not(.v-badge) {
   color: transparent;
 }
 
@@ -5819,9 +5808,6 @@ p {
 }
 .v-dialog__activator * {
   cursor: pointer;
-}
-.v-dialog__activator--disabled {
-  pointer-events: none;
 }
 .v-dialog__container {
   display: inline-block;
@@ -6403,13 +6389,6 @@ p {
 .v-btn--round:after {
   border-radius: 28px;
 }
-/** Button w/ directional Icon */
-.v-btn .v-icon--right {
-  margin-left: 16px;
-}
-.v-btn .v-icon--left {
-  margin-right: 16px;
-}
 /** Themes */
 .v-btn:not(.v-btn--outline).primary,
 .v-btn:not(.v-btn--outline).secondary,
@@ -6573,6 +6552,26 @@ p {
 .v-btn-toggle--selected {
   -webkit-box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
           box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+/* Themes */
+.theme--light.v-sheet {
+  background-color: #fff;
+  border-color: #fff;
+  color: rgba(0,0,0,0.87);
+}
+.theme--dark.v-sheet {
+  background-color: #424242;
+  border-color: #424242;
+  color: #fff;
+}
+.v-sheet {
+  display: block;
+  border-radius: 2px;
+  position: relative;
+}
+.v-sheet--tile {
+  border-radius: 0;
 }
 
 .v-image {
@@ -7345,17 +7344,20 @@ table.v-table tfoot tr td {
 .v-date-picker-title__date > div {
   position: relative;
 }
-
-.theme--light.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) strong:not(:hover) {
-  color: rgba(0,0,0,0.87) !important;
+.v-date-picker-title--disabled {
+  pointer-events: none;
 }
-.theme--light.v-date-picker-header .v-date-picker-header__value--disabled strong {
+
+.theme--light.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) button:not(:hover):not(:focus) {
+  color: rgba(0,0,0,0.87);
+}
+.theme--light.v-date-picker-header .v-date-picker-header__value--disabled button {
   color: rgba(0,0,0,0.38);
 }
-.theme--dark.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) strong:not(:hover) {
-  color: #fff !important;
+.theme--dark.v-date-picker-header .v-date-picker-header__value:not(.v-date-picker-header__value--disabled) button:not(:hover):not(:focus) {
+  color: #fff;
 }
-.theme--dark.v-date-picker-header .v-date-picker-header__value--disabled strong {
+.theme--dark.v-date-picker-header .v-date-picker-header__value--disabled button {
   color: rgba(255,255,255,0.5);
 }
 .v-date-picker-header {
@@ -7390,18 +7392,29 @@ table.v-table tfoot tr td {
   position: relative;
   overflow: hidden;
 }
-.v-date-picker-header__value strong {
-  cursor: pointer;
+.v-date-picker-header__value div {
   -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  display: block;
   width: 100%;
 }
+.v-date-picker-header__value button {
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  padding: 0.5rem;
+  -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+.v-date-picker-header--disabled {
+  pointer-events: none;
+}
 
-.theme--light.v-date-picker-table th {
+.theme--light.v-date-picker-table th,
+.theme--light.v-date-picker-table .v-date-picker-table--date__week {
   color: rgba(0,0,0,0.38);
 }
-.theme--dark.v-date-picker-table th {
+.theme--dark.v-date-picker-table th,
+.theme--dark.v-date-picker-table .v-date-picker-table--date__week {
   color: rgba(255,255,255,0.5);
 }
 .v-date-picker-table {
@@ -7455,17 +7468,29 @@ table.v-table tfoot tr td {
 .v-date-picker-table--date td {
   width: 45px;
 }
-.v-date-picker-table__event {
-  border-radius: 50%;
-  bottom: 2px;
-  content: "";
-  display: block;
+.v-date-picker-table__events {
   height: 8px;
-  left: 50%;
+  left: 0;
   position: absolute;
-  -webkit-transform: translateX(-4px);
-          transform: translateX(-4px);
+  text-align: center;
+  white-space: pre;
+  width: 100%;
+}
+.v-date-picker-table__events > div {
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin: 0 1px;
   width: 8px;
+}
+.v-date-picker-table--date .v-date-picker-table__events {
+  bottom: 6px;
+}
+.v-date-picker-table--month .v-date-picker-table__events {
+  bottom: 8px;
+}
+.v-date-picker-table--disabled {
+  pointer-events: none;
 }
 
 .v-date-picker-years {
@@ -7676,10 +7701,10 @@ table.v-table tfoot tr td {
   -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
-.v-expansion-panel__body .v-card {
+.v-expansion-panel__body > .v-card {
   border-radius: 0;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12);
-          box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12) !important;
+          box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 0px 0px 0px rgba(0,0,0,0.12) !important;
 }
 .v-expansion-panel--popout,
 .v-expansion-panel--inset {
@@ -8059,6 +8084,9 @@ table.v-table tfoot tr td {
 }
 .d-inline {
   display: inline !important;
+}
+.d-none {
+  display: none !important;
 }
 @media only screen and (min-width: 960px) {
   .container {
@@ -11478,9 +11506,6 @@ table.v-table tfoot tr td {
   }
 }
 
-.v-tooltip {
-  position: relative;
-}
 .v-tooltip__content {
   background: #616161;
   border-radius: 2px;
