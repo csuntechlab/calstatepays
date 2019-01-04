@@ -13,6 +13,7 @@ class CreateFeedBacksTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('feed_back');
         Schema::create('feed_back', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->nullable();
@@ -28,6 +29,6 @@ class CreateFeedBacksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feed_backs');
+        Schema::dropIfExists('feed_back');
     }
 }

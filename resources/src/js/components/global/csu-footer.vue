@@ -8,7 +8,7 @@
             </div>
             <div class="footer__links pr-4 ml-auto">
                 <p class="footer__link text-white text-right"><strong>California State University</strong></p>
-                <a href="#" class="footer__link text-white pull-right">Contact Us</a>
+                <router-link class="footer__link text-white pull-right" :to="`/feedback`">Feedback</router-link>
             </div>
         </footer>
         <div class="footer-meta" id="footer-meta">

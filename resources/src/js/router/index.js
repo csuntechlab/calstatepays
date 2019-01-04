@@ -11,6 +11,7 @@ import industries from './views/industries/index.vue';
 import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
 import tableauHolder from './views/tableauHolder/index.vue';
+import feedback from './views/feedback/index.vue'
 
 import about from './views/about/index.vue';
 import splashPage from './views/splashPage/index.vue';
@@ -21,19 +22,20 @@ Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/data/pfre',component: splashPage },
+		{ path: '/data/pfre', component: splashPage },
 		//{ path: '/data/pfre', component: pfre },
 		{ path: '/data/industries', component: industries },
 		{ path: '/data/majors', component: majors },
 		{ path: '/faq', component: faq },
 		{ path: '/research', component: research },
-		{ path: '/tableau', name:'tableau', component: tableauHolder , props:true }
+		{ path: '/tableau', name: 'tableau', component: tableauHolder, props: true },
+		{ path: '/feedback', component: feedback }
 	]
 });
 
 router.beforeEach(function (to, from, next) {
 	setTimeout(() => {
-		window.scrollTo(0,0);
+		window.scrollTo(0, 0);
 	}, 100);
 	next();
 })
