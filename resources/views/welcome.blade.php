@@ -12,14 +12,7 @@
                     echo $iosFix;
                 }
             }
-
         @endphp
-
-        {{-- @mobile --}}
-        {{-- @browser('isSafari') --}}
-        
-        {{-- @endbrowser         --}}
-        {{-- @endmobile --}}
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="app-url" content="{{ url('/') }}">
