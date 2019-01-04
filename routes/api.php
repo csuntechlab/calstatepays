@@ -58,4 +58,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Feedback
 
-Route::get('/feedback/post', 'FeedBackController@postFeedBack');
+Route::post('/feedback/post', 'FeedBackController@postFeedBack');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\FeedBackContract;
+use App\Contracts\FeedBackContract;
 
 class FeedBackController extends Controller
 {
