@@ -93892,34 +93892,50 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1541533460014');
-        if (this.tableauValue == null) {
-            var divElement = document.getElementById('viz1541533460014');
-            divElement.style.width = '1000px';divElement.style.height = '5rem';
-            divElement.style.backgroundColor = 'lightgray';
-            var heading = document.createElement("h1");
-            heading.innerText = "Tableau visual is not available";
-            divElement.appendChild(heading);
-        } else {
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '1016px';vizElement.style.height = '991px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            var vizEl = vizElement.getElementsByTagName('param');
-            vizEl[3].value = this.tableauValue;
-        }
-    },
+	components: {
+		powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
+	},
+	beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+		next(function (vm) {
+			if (vm.tableauValue === "") {
+				vm.$router.push("research");
+			} else next();
+		});
+	},
+	mounted: function mounted() {
+		var divElement = document.getElementById("viz1541533460014");
+		if (this.tableauValue == null) {
+			var divElement = document.getElementById("viz1541533460014");
+			divElement.style.width = "1000px";
+			divElement.style.height = "5rem";
+			divElement.style.backgroundColor = "lightgray";
+			var heading = document.createElement("h1");
+			heading.innerText = "Tableau visual is not available";
+			divElement.appendChild(heading);
+		} else {
+			var vizElement = divElement.getElementsByTagName("object")[0];
+			vizElement.style.width = "1016px";
+			vizElement.style.height = "991px";
+			var scriptElement = document.createElement("script");
+			scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+			vizElement.parentNode.insertBefore(scriptElement, vizElement);
+			var vizEl = vizElement.getElementsByTagName("param");
+			vizEl[3].value = this.tableauValue;
+		}
+	},
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['tableauValue']))
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(["tableauValue"]))
 });
 
 /***/ }),
@@ -93954,9 +93970,7 @@ var render = function() {
                     [
                       _c("h2", [
                         _c("i", { staticClass: "fa fa-arrow-left" }),
-                        _vm._v(
-                          " Return to CSU Campus Selection\n                        "
-                        )
+                        _vm._v(" Return to CSU Campus Selection\n\t\t\t\t\t\t")
                       ])
                     ]
                   )
