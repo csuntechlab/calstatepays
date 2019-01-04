@@ -29457,9 +29457,9 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a },
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a, name: 'pfre' },
 	//{ path: '/data/pfre', component: pfre },
-	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
+	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -70100,7 +70100,7 @@ var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(78)("ebcc37ae", content, false, {});
+var update = __webpack_require__(78)("26d294d4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -70950,7 +70950,7 @@ var content = __webpack_require__(267);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(78)("fa1dca66", content, false, {});
+var update = __webpack_require__(78)("09e563c0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -117367,6 +117367,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.url = window.baseUrl;
+    },
+
+    computed: {
+        onData: function onData() {
+            return this.$route.name === 'majors' || this.$route.name === 'pfre' || this.$route.name === 'industries';
+        }
     }
 });
 
@@ -117407,32 +117413,40 @@ var render = function() {
       _vm._m(0)
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "footer-meta", attrs: { id: "footer-meta" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3 col-12" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "//www.csun.edu/academic-affairs/meta-lab",
-                target: "csun"
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "footer-meta__logo mb-2 mb-md-0",
+    _c(
+      "div",
+      {
+        staticClass: "footer-meta",
+        class: { "footer-meta--data": this.onData },
+        attrs: { id: "footer-meta" }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-12" }, [
+            _c(
+              "a",
+              {
                 attrs: {
-                  src: this.url + "/img/otherLogos/metalab-logo.svg",
-                  alt: "META+LAB Logo"
+                  href: "//www.csun.edu/academic-affairs/meta-lab",
+                  target: "csun"
                 }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ])
-    ])
+              },
+              [
+                _c("img", {
+                  staticClass: "footer-meta__logo mb-2 mb-md-0",
+                  attrs: {
+                    src: this.url + "/img/otherLogos/metalab-logo.svg",
+                    alt: "META+LAB Logo"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
