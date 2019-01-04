@@ -8982,6 +8982,7 @@ var FETCH_UNIVERSITIES = "global-form/FETCH_UNIVERSITIES";
 	FETCH_MAJORS: FETCH_MAJORS,
 	FETCH_FIELD_OF_STUDIES: FETCH_FIELD_OF_STUDIES,
 	FETCH_UNIVERSITIES: FETCH_UNIVERSITIES
+
 });
 
 /***/ }),
@@ -26885,9 +26886,9 @@ var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
 var TRIGGER_MAJOR_IS_LOADING = 'majors/TRIGGER_MAJOR_IS_LOADING';
 /* harmony default export */ __webpack_exports__["a"] = ({
-    FETCH_MAJORS: FETCH_MAJORS,
-    FETCH_FIELD_OF_STUDIES: FETCH_FIELD_OF_STUDIES,
-    FETCH_UPDATED_MAJORS_BY_FIELD: FETCH_UPDATED_MAJORS_BY_FIELD,
+    // FETCH_MAJORS,
+    // FETCH_FIELD_OF_STUDIES,
+    // FETCH_UPDATED_MAJORS_BY_FIELD,
     RESET_MAJOR_SELECTIONS: RESET_MAJOR_SELECTIONS,
     FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
     FETCH_UNIVERSITIES: FETCH_UNIVERSITIES,
@@ -63728,6 +63729,7 @@ var fetchFreDataAPI = function fetchFreDataAPI(payload, success, error) {
     errorMessage: function errorMessage(state) {
         return state.errorMessage;
     },
+
     majors: function majors(state) {
         return state.majors;
     },
