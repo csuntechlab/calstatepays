@@ -14,8 +14,8 @@ class FeedBackController extends Controller
         $this->feedbackRetriever = $feedBackContract;
     }
 
-    public function postFeedBack()
+    public function postFeedBack(Request $request)
     {
-        return $this->feedbackRetriever->postFeedBack();
+        return $this->feedbackRetriever->postFeedBack($request);
     }
 }

@@ -1,8 +1,7 @@
 <?php
-
 namespace App\Contracts;
 
 interface FeedBackContract 
 {
-    public function postFeedBack();
+    public function postFeedBack($request);
 }

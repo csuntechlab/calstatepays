@@ -13,8 +13,10 @@ class CreateFeedBacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feed_backs', function (Blueprint $table) {
+        Schema::create('feed_back', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('email')->nullable();
+            $table->string('body');
             $table->timestamps();
         });
     }
