@@ -10,7 +10,14 @@ const fetchMajorDataAPI = (payload, success, error) => {
         }
     }
     );
-}
+};
+const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
+    window.axios.get(`api/major/hegis-codes/${payload.school}/${payload.form.fieldOfStudyId}`).then(
+        response => success(response.data),    
+    ).catch(
+        failure=>error(failure.response.data.message)
+    );
+};
 
 const fetchIndustryImagesAPI = (payload, success, error) => {
     window.axios.get(`api/industry/images/${payload.form.majorId}/${payload.school}`).then(
@@ -24,5 +31,6 @@ const fetchIndustryImagesAPI = (payload, success, error) => {
 
 export default {
     fetchMajorDataAPI,
-    fetchIndustryImagesAPI
+    fetchIndustryImagesAPI,
+    fetchUpdatedMajorsByFieldAPI
 }

@@ -6,12 +6,7 @@ export default {
     
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].majorsByField = [];
-        payload[0].forEach((major) => {
-            major.majorId = major.hegisCode;
-            delete major.hegisCode;
-            state.majorCards[index].majorsByField.push(major);
-        });
+        state.majorCards[index].majorsByField = payload[0];
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
@@ -53,41 +48,37 @@ export default {
         });
     },
 
-    [_majors.DELETE_MAJOR_CARD](state,payload) {
+    [_majors.DELETE_MAJOR_CARD](state, payload) {
         let index = payload;
-        if(index !== 0){
-            state.majorCards.splice(index,1);
+        if (index !== 0) {
+            state.majorCards.splice(index, 1);
         }
     },
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
-        if(state.majorCards[index].formWasSubmitted===true) {
+        if (state.majorCards[index].formWasSubmitted === true) {
             state.majorCards[index].formWasSubmitted = false;
-        }
-        else {
+        } else {
             state.majorCards[index].formWasSubmitted = true;
         }
     },
-    [_majors.RESET_MAJOR_STATE](state){
-        state.majorCards = [
-                {
-                    formWasSubmitted: false,
-                    submittedOnce: false,
-                    majorsByField: [],
-                    industries: [],
-                    majorData: [],
-                    majorIsLoading: false,
-                    educationLevel: 'allDegrees'
-                }
-        ];
+    [_majors.RESET_MAJOR_STATE](state) {
+        state.majorCards = [{
+            formWasSubmitted: false,
+            submittedOnce: false,
+            majorsByField: [],
+            industries: [],
+            majorData: [],
+            majorIsLoading: false,
+            educationLevel: 'allDegrees'
+        }];
     },
     [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
         let index = payload;
-        if(state.majorCards[index].majorIsLoading ===false){
+        if (state.majorCards[index].majorIsLoading === false) {
             state.majorCards[index].majorIsLoading = true;
-        }
-        else {
+        } else {
             state.majorCards[index].majorIsLoading = false;
         }
     }

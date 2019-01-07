@@ -45,13 +45,6 @@ Route::get('/university', 'UniversityController@getAllUniversities');
 
 // Power User data
 
-Route::get('/power/{university}/{path_id}', 'PowerUsersController@getPowerUserDataByUniversity');
-
 Route::get('/power/images','PowerUsersController@getPowerUsersCardImages');
 
 Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
-
-//Middleware
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});

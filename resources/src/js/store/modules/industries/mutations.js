@@ -4,15 +4,11 @@ export default {
 	[_industries.FETCH_INDUSTRIES](state, payload) {
 		state.allLevelIndustries = payload;
 		state.industries = payload[state.industryEducationLevel];
-
 	},
-	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state,payload) {
-		state.industryMajorsByField = [];
-		payload[0].forEach(major => {
-			major.majorId = major.hegisCode;
-			delete major.hegisCode;
-			state.industryMajorsByField.push(major);
-		});
+	// TODO: ZANE fix this 
+	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state, payload) {
+		state.industryMajorsByField = payload[0]
+
 	},
 	[_industries.RESET_INDUSTRY_STATE](state) {
 		state.industries = [];
@@ -22,10 +18,9 @@ export default {
 		state.industryMajor = null;
 	},
 	[_industries.RESET_INDUSTRY_CARD](state) {
-		if(state.industryFormWasSubmitted) {
+		if (state.industryFormWasSubmitted) {
 			state.industryFormWasSubmitted = false;
-		}
-		else {
+		} else {
 			state.industryFormWasSubmitted = true;
 		}
 	},
@@ -33,18 +28,17 @@ export default {
 		state.industryFormWasSubmitted = true;
 		state.industryFormWasSubmittedOnce = true;
 	},
-	[_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL](state,payload) {
+	[_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL](state, payload) {
 		state.industryEducationLevel = payload;
 		state.industries = state.allLevelIndustries[payload];
 	},
 	[_industries.SET_INDUSTRY_MAJOR](state, payload) {
 		state.industryMajor = payload.major;
 	},
-	[_industries.TRIGGER_IS_LOADING](state){
-		if (state.industryIsLoading ===false) {
+	[_industries.TRIGGER_IS_LOADING](state) {
+		if (state.industryIsLoading === false) {
 			state.industryIsLoading = true;
-		}
-		else {
+		} else {
 			state.industryIsLoading = false;
 		}
 	}

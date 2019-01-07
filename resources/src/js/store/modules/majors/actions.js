@@ -8,7 +8,7 @@ export default {
                 commit(_majors.RESET_MAJOR_SELECTIONS);
     },
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
-        Global.fetchUpdatedMajorsByFieldAPI(
+        Major.fetchUpdatedMajorsByFieldAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;

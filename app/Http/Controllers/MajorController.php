@@ -22,7 +22,9 @@ class MajorController extends Controller
 
     public function getAllHegisCodesByUniversity($university_name)
     {
+        
         $key="HegisCodesFor".$university_name;
+
         if(Cache::has($key)){
             $data = Cache::get($key);
             return json_decode($data);
@@ -150,7 +152,7 @@ class MajorController extends Controller
         $data[] = array_map(function ($hegis) {
             return [
                 'major' => $hegis['university_majors']['major'],
-                'hegisCode' => $hegis['hegis_code'],
+                'majorId' => $hegis['hegis_code'],
                 'hegis_category_id' => $hegis['hegis_category_id'],
             ];
         }, $hegisData);

@@ -14,5 +14,8 @@ export default{
         else {
             state.tableauIsLoading = false;
         }
+    },
+    [_powerUsers.FETCH_OPT_IN_VALUES](state,payload) {
+        state.optInValues = payload;
     }
 }

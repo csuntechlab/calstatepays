@@ -29,7 +29,6 @@ class MajorControllerTest extends TestCase
         $this->retriever = Mockery::mock(MajorContract::class);
         $this->seed('Hegis_Codes_TableSeeder');
         $this->seed('Naics_Titles_TableSeeder');
-        $this->seed('Student_Paths_TableSeeder');
         $this->seed('Field_Of_Studies_TableSeeder');
         $this->seed('Hegis_Categories_TableSeeder');
         $this->seed('Universities_TableSeeder');
@@ -100,7 +99,7 @@ class MajorControllerTest extends TestCase
 
     /**
      * Api route : api/major/hegis-codes/{universityName}/{fieldOfStudyId}
-     * ie : /api/major/hegis-code/northridge/6
+     * ie : /api/major/hegis-codes/northridge/6
      * method : MajorController@filterByFieldOfStudy
      * test uses dependency injection 
      */
@@ -113,7 +112,7 @@ class MajorControllerTest extends TestCase
             [["hegis_code" => 7012, "hegis_category_id" => 7, "university_majors" => ["id" => 24, "hegis_code" => 7012, "university_id" => 70, "major" => "Computer Science and Information Technology"]]];
 
         $test =
-            [[["major" => "Computer Science and Information Technology", "hegisCode" => 7012, "hegis_category_id" => 7]]];
+            [[["major" => "Computer Science and Information Technology", "majorId" => 7012, "hegis_category_id" => 7]]];
 
 
         $this->retriever
@@ -233,7 +232,11 @@ class MajorControllerTest extends TestCase
         $this->assertEquals($response, $structure);
     }
 
-    /** test getAllFieldOfStudies assert count */
+    /** 
+     *  test getAllFieldOfStudies assert count 
+     *  api/major/field-of-study
+     *  assert JSON structure
+    */
     public function test_field_Of_Study_Api()
     {
         $fieldOfStudies = $this->json('GET', 'api/major/field-of-study');
@@ -242,9 +245,9 @@ class MajorControllerTest extends TestCase
 
         foreach ($fieldOfStudies as $iterate => $success) {
             $this->assertArrayHasKey('id', $success);
-            $this->assertArrayHasKey('name', $success);
+            $this->assertArrayHasKey('discipline', $success);
             $this->assertNotNull('id', $success);
-            $this->assertNotNull('name', $success);
+            $this->assertNotNull('discipline', $success);
         }
 
         $count = count($fieldOfStudies);
@@ -259,10 +262,10 @@ class MajorControllerTest extends TestCase
 
         foreach ($getAllHegisCodesBy as $iterate => $success) {
             $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegis_code', $success);
+            $this->assertArrayHasKey('majorId', $success);
             $this->assertArrayHasKey('university_id', $success);
             $this->assertNotNull('major', $success);
-            $this->assertNotNull('hegis_code', $success);
+            $this->assertNotNull('majorId', $success);
             $this->assertNotNull('university_id', $success);
         }
 
@@ -278,7 +281,7 @@ class MajorControllerTest extends TestCase
 
         foreach ($filterByFieldOfStudy[0] as $iterate => $success) {
             $this->assertArrayHasKey('major', $success);
-            $this->assertArrayHasKey('hegisCode', $success);
+            $this->assertArrayHasKey('majorId', $success);
             $this->assertArrayHasKey('hegis_category_id', $success);
             $this->assertNotNull('major', $success);
             $this->assertNotNull('hegisCode', $success);
