@@ -18,7 +18,8 @@ const fetchMajorDataAPI = (payload, success, error) => {
             }
         }
     );
-}
+};
+
 const fetchIndustryImagesAPI = (payload, success, error) => {
     window.axios.get(`api/industry/images/${payload.form.majorId}/${payload.school}`).then(
         response => {

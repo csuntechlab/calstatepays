@@ -1,6 +1,5 @@
 import _global from "../../mutation-types/global-form";
 import Global from '../../../api/global';
-
 export default {
     setUniversity({commit}, payload){
         commit(_global.SET_UNIVERSITY, payload);

@@ -26872,12 +26872,9 @@ process.umask = function() { return 0; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// const FETCH_MAJORS = 'majors/FETCH_MAJORS';
-var FETCH_FIELD_OF_STUDIES = 'majors/FETCH_FIELD_OF_STUDIES';
 var FETCH_UPDATED_MAJORS_BY_FIELD = 'majors/FETCH_UPDATED_MAJORS_BY_FIELD';
 var RESET_MAJOR_SELECTIONS = 'majors/RESET_MAJOR_SELECTIONS';
 var FETCH_MAJOR_DATA = 'majors/FETCH_MAJOR_DATA';
-// const FETCH_UNIVERSITIES = 'majors/FETCH_UNIVERSITIES';
 var FETCH_INDUSTRY_IMAGES = 'majors/FETCH_INDUSTRY_IMAGES';
 var TOGGLE_EDUCATION_LEVEL = 'majors/TOGGLE_EDUCATION_LEVEL';
 var TOGGLE_FORM_WAS_SUBMITTED = 'majors/TOGGLE_FORM_WAS_SUBMITTED';
@@ -26887,12 +26884,9 @@ var RESET_MAJOR_CARD = 'majors/RESET_MAJOR_CARD';
 var RESET_MAJOR_STATE = 'majors/RESET_MAJOR_STATE';
 var TRIGGER_MAJOR_IS_LOADING = 'majors/TRIGGER_MAJOR_IS_LOADING';
 /* harmony default export */ __webpack_exports__["a"] = ({
-    // FETCH_MAJORS,
-    // FETCH_FIELD_OF_STUDIES,
     FETCH_UPDATED_MAJORS_BY_FIELD: FETCH_UPDATED_MAJORS_BY_FIELD,
     RESET_MAJOR_SELECTIONS: RESET_MAJOR_SELECTIONS,
     FETCH_MAJOR_DATA: FETCH_MAJOR_DATA,
-    // FETCH_UNIVERSITIES,
     FETCH_INDUSTRY_IMAGES: FETCH_INDUSTRY_IMAGES,
     TOGGLE_EDUCATION_LEVEL: TOGGLE_EDUCATION_LEVEL,
     TOGGLE_FORM_WAS_SUBMITTED: TOGGLE_FORM_WAS_SUBMITTED,
@@ -63417,31 +63411,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_majors__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_global__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutation_types_global_form__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__ = __webpack_require__(20);
 //MAJORS ACTIONS
 
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = ({
-
-    // fetchMajors({commit, dispatch}, payload){
-    //     Global.fetchMajorsAPI(
-    //         payload,
-    //         (success) => {
-    //             commit(_majors.FETCH_MAJORS, success);
-    //         },
-    //         (error) =>{
-    //             commit(_global.ERROR_ALERT,error)  
-    //         }
-    //     );
-    // },
-
-    // majorById: (state) => (id) => {
-    //     const index = state.majors.findIndex((major) => major.majorId === Number(id));
-    //     return state.majors[index];
-    // },
     majorNameById: function majorNameById(state, getters) {
         return function (id) {
             var major = getters.majorById(id);
@@ -63462,20 +63437,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, success);
         }, function (error) {
-            return commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
+            return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
     },
-
-
-    // fetchUniversities({ commit, dispatch }) {
-    //     Global.fetchUniversitiesAPI(
-    //         (success) => {
-    //             commit(_majors.FETCH_UNIVERSITIES, success);
-    //         },
-    //         (error) => commit(_global.ERROR_ALERT,error),
-    //     );
-    // },
-
     fetchMajorData: function fetchMajorData(_ref3, payload) {
         var commit = _ref3.commit,
             dispatch = _ref3.dispatch;
@@ -63486,7 +63450,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, success);
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
         }, function (error) {
-            return commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
+            return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
     },
     fetchIndustryImages: function fetchIndustryImages(_ref4, payload) {
@@ -63496,7 +63460,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             success.cardIndex = payload.form.cardIndex;
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, { industries: success.bachelors, cardIndex: success.cardIndex });
         }, function (error) {
-            return commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
+            return commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
         });
     },
     toggleEducationLevel: function toggleEducationLevel(_ref5, payload) {
@@ -63555,6 +63519,7 @@ var fetchMajorDataAPI = function fetchMajorDataAPI(payload, success, error) {
         }
     });
 };
+
 var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, error) {
     window.axios.get("api/industry/images/" + payload.form.majorId + "/" + payload.school).then(function (response) {
         success(response.data);
@@ -63860,7 +63825,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_global_form__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_global__ = __webpack_require__(71);
-
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
