@@ -2,14 +2,6 @@
 import _majors from '../../mutation-types/majors';
 
 export default {
-    [_majors.FETCH_MAJORS](state, payload) {
-        state.majors = payload
-    },
-
-    [_majors.FETCH_FIELD_OF_STUDIES](state, payload) {
-        state.fieldOfStudy = payload
-    },
-
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
         let index = payload.cardIndex;
         state.majorCards[index].majorsByField = payload[0];
@@ -23,11 +15,7 @@ export default {
     [_majors.RESET_MAJOR_SELECTIONS](state) {
         state.majors = [];
     },
-
-    [_majors.FETCH_UNIVERSITIES](state, payload) {
-        state.universities = payload;
-    },
-
+    
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
         let index = payload.cardIndex;
         state.majorCards[index].industries = payload.industries;

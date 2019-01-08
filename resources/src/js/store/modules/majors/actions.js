@@ -1,28 +1,29 @@
 //MAJORS ACTIONS
 import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
+import Global from '../../../api/global';
 import _global from '../../mutation-types/global-form';
 export default {
 
-    fetchMajors({commit, dispatch}, payload){
-        Major.fetchMajorsAPI(
-            payload,
-            (success) => {
-                commit(_majors.FETCH_MAJORS, success);
-            },
-            (error) =>{
-                commit(_global.ERROR_ALERT,error)  
-            }
-        );
-    },
+    // fetchMajors({commit, dispatch}, payload){
+    //     Global.fetchMajorsAPI(
+    //         payload,
+    //         (success) => {
+    //             commit(_majors.FETCH_MAJORS, success);
+    //         },
+    //         (error) =>{
+    //             commit(_global.ERROR_ALERT,error)  
+    //         }
+    //     );
+    // },
 
-    fetchFieldOfStudies({commit, dispatch},payload){
-        Major.fetchFieldOfStudiesAPI(
-            (success) => {
-                commit(_majors.FETCH_FIELD_OF_STUDIES, success);
-            },
-            (error) => commit(_global.ERROR_ALERT,error),
-        );
+    // majorById: (state) => (id) => {
+    //     const index = state.majors.findIndex((major) => major.majorId === Number(id));
+    //     return state.majors[index];
+    // },
+    majorNameById: (state, getters) => id => {
+        const major = getters.majorById(id);
+        return major.major;
     },
 
     clearMajorSelection({commit}){
@@ -40,14 +41,14 @@ export default {
         );
     },
 
-    fetchUniversities({ commit, dispatch }) {
-        Major.fetchUniversitiesAPI(
-            (success) => {
-                commit(_majors.FETCH_UNIVERSITIES, success);
-            },
-            (error) => commit(_global.ERROR_ALERT,error),
-        );
-    },
+    // fetchUniversities({ commit, dispatch }) {
+    //     Global.fetchUniversitiesAPI(
+    //         (success) => {
+    //             commit(_majors.FETCH_UNIVERSITIES, success);
+    //         },
+    //         (error) => commit(_global.ERROR_ALERT,error),
+    //     );
+    // },
 
     fetchMajorData({ commit, dispatch }, payload) {
         commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
