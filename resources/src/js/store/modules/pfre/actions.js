@@ -10,6 +10,7 @@ export default {
     },
 
     fetchFreData({commit, dispatch}, payload){
+        console.log(payload)
         Pfre.fetchFreDataAPI(
             payload,
             (success) => {   

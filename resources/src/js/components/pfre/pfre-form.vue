@@ -97,7 +97,7 @@
                     education: null,
                     earnings: null,
                     financialAid: null,
-                    university: 70
+                    university: "northridge"
                 },
 
                 errorLabel: {
