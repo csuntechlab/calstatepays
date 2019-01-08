@@ -4,25 +4,36 @@
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
         <div class="row no-gutters">
           <span class="col-auto"> 
-             <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
+            <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
           </span>
           <span class="col">
             <p class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')">Estimated time to degree:</p>
           </span>  
-          <span class="col align-self-end"><p class="float-right mb-0">{{pfreData.years.actual}}</p>
-          </span>
         </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"/>
-        <div class="progress-footer">
-          <span class="col-4">
-            <p class="float-left mb-0">{{pfreData.years.start}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="text-center mb-0">{{pfreData.years.middle}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="float-right mb-0">{{pfreData.years.end}}</p>  
-          </span>
+        <div class="row">
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-12">
+                 <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="progress-footer">
+                <span class="col-4">
+                  <p class="float-left mb-0">{{pfreData.years.start}}</p>  
+                </span>
+                <span class="col-4">
+                  <p class="text-center mb-0">{{pfreData.years.middle}}</p>  
+                </span>
+                <span class="col-4">
+                  <p class="float-right mb-0">{{pfreData.years.end}}</p>  
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <p class="mb-0">{{pfreData.years.actual}}</p>
+          </div>
         </div>
       </div>
     </div>

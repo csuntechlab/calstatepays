@@ -68160,6 +68160,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -69271,46 +69282,62 @@ var render = function() {
                   },
                   [_vm._v("Estimated time to degree:")]
                 )
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "col align-self-end" }, [
-                _c("p", { staticClass: "float-right mb-0" }, [
-                  _vm._v(_vm._s(_vm.pfreData.years.actual))
-                ])
               ])
             ]),
             _vm._v(" "),
-            _c("v-progress-linear", {
-              staticClass: "pfre-bar progress-median",
-              attrs: {
-                value:
-                  (_vm.pfreData.years.actual / _vm.pfreData.years.end) * 100,
-                height: "55",
-                color: "pfre-year"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "progress-footer" }, [
-              _c("span", { staticClass: "col-4" }, [
-                _c("p", { staticClass: "float-left mb-0" }, [
-                  _vm._v(_vm._s(_vm.pfreData.years.start))
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-10" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-12" },
+                    [
+                      _c("v-progress-linear", {
+                        staticClass: "pfre-bar progress-median",
+                        attrs: {
+                          value:
+                            (_vm.pfreData.years.actual /
+                              _vm.pfreData.years.end) *
+                            100,
+                          height: "55",
+                          color: "pfre-year"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "progress-footer" }, [
+                    _c("span", { staticClass: "col-4" }, [
+                      _c("p", { staticClass: "float-left mb-0" }, [
+                        _vm._v(_vm._s(_vm.pfreData.years.start))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "col-4" }, [
+                      _c("p", { staticClass: "text-center mb-0" }, [
+                        _vm._v(_vm._s(_vm.pfreData.years.middle))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "col-4" }, [
+                      _c("p", { staticClass: "float-right mb-0" }, [
+                        _vm._v(_vm._s(_vm.pfreData.years.end))
+                      ])
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "col-4" }, [
-                _c("p", { staticClass: "text-center mb-0" }, [
-                  _vm._v(_vm._s(_vm.pfreData.years.middle))
-                ])
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "col-4" }, [
-                _c("p", { staticClass: "float-right mb-0" }, [
-                  _vm._v(_vm._s(_vm.pfreData.years.end))
+              _c("div", { staticClass: "col-sm-2" }, [
+                _c("p", { staticClass: "mb-0" }, [
+                  _vm._v(_vm._s(_vm.pfreData.years.actual))
                 ])
               ])
             ])
-          ],
-          1
+          ]
         )
       ]),
       _vm._v(" "),
