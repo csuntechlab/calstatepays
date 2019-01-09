@@ -64005,7 +64005,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref2.commit,
             dispatch = _ref2.dispatch;
 
-        console.log(payload);
         __WEBPACK_IMPORTED_MODULE_0__api_pfre__["a" /* default */].fetchFreDataAPI(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].FETCH_FRE_DATA, success);
         }, function (error) {
@@ -68207,7 +68206,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
     smallestScreen: function smallestScreen() {
       var width = window.innerWidth;
-      console.log(width);
       return width > 320 ? true : false;
     }
   }),
@@ -69476,7 +69474,7 @@ var render = function() {
                           _vm._v(
                             _vm._s(
                               _vm._f("currency")(
-                                _vm.pfreData.earnings.maximum / 1000
+                                _vm.pfreData.earnings.maximum / 10000
                               )
                             ) + "k"
                           )
@@ -92056,10 +92054,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			if (field == "fieldOfStudyId") {
 				this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
 			}
-		},
-		apple: function apple() {
-			console.log(12);
-			this.selected = null;
 		}
 	}),
 

@@ -64,7 +64,7 @@
             </span>
             <span class="col-4">
               <p v-if="smallestScreen" class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>
-              <p v-else class="text-center mb-0">{{pfreData.earnings.maximum/1000 | currency}}k</p></p>  
+              <p v-else class="text-center mb-0">{{pfreData.earnings.maximum/10000 | currency}}k</p></p>  
             </span>
           </div>  
       </div>
@@ -134,7 +134,6 @@ export default {
     ]),
     smallestScreen() {
       var width = window.innerWidth;
-      console.log(width);
       return width > 320 ? true : false;
     }
   },
