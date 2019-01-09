@@ -19384,9 +19384,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .graphContent {
   background-color: #EBEBEB;
-  min-height: -webkit-fill-available;
-  min-height: -moz-available;
-  min-height: stretch;
+  min-height: calc(100vh - 540px);
 }
 
 abbr[title] {
@@ -19731,8 +19729,6 @@ figcaption {
 }
 
 .splashPage {
-  background-color: #EBEBEB;
-  height: calc(100vh - 409px);
   position: relative;
   font-size: 3rem;
   color: black;
@@ -19744,13 +19740,7 @@ figcaption {
 
 .splashPage p {
   padding: 6rem;
-}
-
-@media screen and (max-width: 960px) {
-  .splashPage {
-    height: calc(100vh - 430px);
-    min-height: 20rem;
-  }
+  margin: 0;
 }
 
 .errorAlert {
@@ -20316,7 +20306,6 @@ footer, .footer {
   .footer-meta {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -20326,6 +20315,12 @@ footer, .footer {
 
 .footer-meta__logo {
   width: 8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-meta--data {
+    margin-bottom: 4rem;
+  }
 }
 
 .researchMainBanner {

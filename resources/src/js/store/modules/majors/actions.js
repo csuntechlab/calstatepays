@@ -3,32 +3,14 @@ import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
 import _global from '../../mutation-types/global-form';
 export default {
-
-    fetchMajors({commit, dispatch}, payload){
-        Major.fetchMajorsAPI(
-            payload,
-            (success) => {
-                commit(_majors.FETCH_MAJORS, success);
-            },
-            (error) =>{
-                commit(_global.ERROR_ALERT,error)  
-            }
-        );
-    },
-
-    fetchFieldOfStudies({commit, dispatch},payload){
-        Major.fetchFieldOfStudiesAPI(
-            (success) => {
-                commit(_majors.FETCH_FIELD_OF_STUDIES, success);
-            },
-            (error) => commit(_global.ERROR_ALERT,error),
-        );
+    majorNameById: (state, getters) => id => {
+        const major = getters.majorById(id);
+        return major.major;
     },
 
     clearMajorSelection({commit}){
                 commit(_majors.RESET_MAJOR_SELECTIONS);
     },
-
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
         Major.fetchUpdatedMajorsByFieldAPI(
             payload,
@@ -39,16 +21,6 @@ export default {
             (error) =>commit(_global.ERROR_ALERT,error),
         );
     },
-
-    fetchUniversities({ commit, dispatch }) {
-        Major.fetchUniversitiesAPI(
-            (success) => {
-                commit(_majors.FETCH_UNIVERSITIES, success);
-            },
-            (error) => commit(_global.ERROR_ALERT,error),
-        );
-    },
-
     fetchMajorData({ commit, dispatch }, payload) {
         commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
         Major.fetchMajorDataAPI(
@@ -61,7 +33,6 @@ export default {
             (error) => commit(_global.ERROR_ALERT,error),
         );
     },
-
     fetchIndustryImages({ commit }, payload) {
         Major.fetchIndustryImagesAPI(
             payload,

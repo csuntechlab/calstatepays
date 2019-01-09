@@ -144,8 +144,6 @@ figcaption {
     z-index: 1000000 !important;;
 }
 .splashPage{
-    background-color: $light-gray;
-    height: calc(100vh - 409px);
     position: relative;
     font-size: 3rem;
     color:black;
@@ -153,12 +151,12 @@ figcaption {
     text-align: center;
     p{
         padding: 6rem;
-        
+        margin:0;
     }
-    @media screen and (max-width: 960px){
-        height: calc(100vh - 430px);
-        min-height: 20rem;
-    }
+    // @media screen and (max-width: 960px){
+    //     height: calc(100vh - 430px);
+    //     min-height: 20rem;
+    // }
     // @media screen and (max-height: 960px){
     //     height: 2rem
     // }
