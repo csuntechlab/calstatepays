@@ -66790,7 +66790,7 @@ var render = function() {
                 [
                   _c("i", {
                     staticClass:
-                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
+                      "sub-nav__element__mobile-icon fa fa-cog fa-fw fa-graduation-cap fa-2x",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
@@ -66815,7 +66815,7 @@ var render = function() {
                 [
                   _c("i", {
                     staticClass:
-                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
+                      "sub-nav__element__mobile-icon fa fa-cog fa-fw fa-industry fa-2x",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
@@ -66840,7 +66840,7 @@ var render = function() {
                 [
                   _c("i", {
                     staticClass:
-                      "sub-nav__mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
+                      "sub-nav__element__mobile-icon fa fa-cog fa-fw fa-usd fa-2x",
                     attrs: { "aria-hidden": "true" }
                   }),
                   _vm._v(" "),
