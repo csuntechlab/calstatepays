@@ -94098,6 +94098,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -94119,11 +94124,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         email: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["email"],
         required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
       },
-      message: {}
+      message: {
+        required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
+        maxLength: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["maxLength"])(400)
+      }
     }
   },
   methods: {
-    submitForm: function submitForm() {},
+    submitForm: function submitForm() {
+      if (!this.$v.$invalid) {
+        this.postNow();
+        this.clearPost();
+      }
+    },
     postNow: function postNow() {
       axios.post("api/feedback/post", {
         headers: {
@@ -94132,6 +94145,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         body: this.formdata.message,
         email: this.formdata.email
       });
+    },
+    clearPost: function clearPost() {
+      this.$refs.myFileInput.value = "";
+      this.$v.$reset();
+      this.formdata = {
+        email: "",
+        message: ""
+      };
     }
   },
   components: {
@@ -94179,9 +94200,9 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            !_vm.$v.formdata.email.email
+            _vm.$v.formdata.email.$error
               ? _c("p", { staticClass: "label--required" }, [
-                  _vm._v("The input must be a proper email!")
+                  _vm._v("This field requires a valid email!")
                 ])
               : _vm._e()
           ],
@@ -94200,7 +94221,11 @@ var render = function() {
             _vm._v(" "),
             _c("v-textarea", {
               attrs: { outline: "" },
-              on: { blur: _vm.$v.formdata.message },
+              on: {
+                blur: function($event) {
+                  _vm.$v.formdata.message.$touch()
+                }
+              },
               model: {
                 value: _vm.formdata.message,
                 callback: function($$v) {
@@ -94208,7 +94233,23 @@ var render = function() {
                 },
                 expression: "formdata.message"
               }
-            })
+            }),
+            _vm._v(" "),
+            _vm.$v.formdata.message.$error
+              ? _c("p", { staticClass: "label--required" }, [
+                  _vm._v("Message is required!")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.$v.formdata.message.maxLength
+              ? _c("p", { staticClass: "label--required" }, [
+                  _vm._v(
+                    "Must not be greater " +
+                      _vm._s(_vm.$v.formdata.message.$params.maxLength.max) +
+                      " characters!"
+                  )
+                ])
+              : _vm._e()
           ],
           1
         ),

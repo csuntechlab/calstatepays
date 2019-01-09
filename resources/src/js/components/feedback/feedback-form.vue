@@ -7,12 +7,17 @@
           <v-text-field outline v-model="formdata.email" @blur="$v.formdata.email.$touch()"/>
           <p
             class="label--required"
-            v-if="!$v.formdata.email.email"
-          >The input must be a proper email!</p>
+            v-if="$v.formdata.email.$error"
+          >This field requires a valid email!</p>
         </div>
         <div class="form-group">
           <label class="font-weight-bold" for="feedback">Feedback</label>
-          <v-textarea outline v-model="formdata.message" @blur="$v.formdata.message"/>
+          <v-textarea outline v-model="formdata.message" @blur="$v.formdata.message.$touch()"/>
+          <p class="label--required" v-if="$v.formdata.message.$error">Message is required!</p>
+          <p
+            class="label--required"
+            v-if="!$v.formdata.message.maxLength"
+          >Must not be greater {{ $v.formdata.message.$params.maxLength.max }} characters!</p>
         </div>
         <div class="form-group row">
           <button
@@ -27,7 +32,7 @@
 </template>
 
 <script>
-import { email, required } from "vuelidate/lib/validators";
+import { email, required, maxLength } from "vuelidate/lib/validators";
 import card from "./../global/card";
 import { mapGetters, mapActions } from "vuex";
 
@@ -46,11 +51,19 @@ export default {
         email,
         required
       },
-      message: {}
+      message: {
+        required,
+        maxLength: maxLength(400)
+      }
     }
   },
   methods: {
-    submitForm() {},
+    submitForm() {
+      if (!this.$v.$invalid) {
+        this.postNow();
+        this.clearPost();
+      }
+    },
     postNow() {
       axios.post("api/feedback/post", {
         headers: {
@@ -59,6 +72,14 @@ export default {
         body: this.formdata.message,
         email: this.formdata.email
       });
+    },
+    clearPost() {
+      this.$refs.myFileInput.value = "";
+      this.$v.$reset();
+      this.formdata = {
+        email: "",
+        message: ""
+      };
     }
   },
   components: {
