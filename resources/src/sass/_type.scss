@@ -1,5 +1,10 @@
 .text-gray { color: $gray }
 .text-white { color: $white }
+.text--smallest-screen {
+    @media screen and (max-width: 365px) {
+        font-size: 12px;
+    }
+}
 
 .home__heading {
     font-size: 4rem;

@@ -30,7 +30,7 @@
               </div>
           </div>
           <div class="col-2 px-0 py-4">
-            <p class="mb-0">{{pfreData.years.actual}} yrs</p>
+            <p class="mb-0 text--smallest-screen">{{pfreData.years.actual}} yrs</p>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
           </div>  
       </div>
         <div class="col-2 px-0 py-4">
-          <p class="mb-0">{{pfreData.earnings.actual | currency}}</p>
+          <p class="mb-0 text--smallest-screen">{{pfreData.earnings.actual | currency}}</p>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
             </div>   
           </div>
           <div class="col-2 px-0 py-4">
-            <p class="mb-0">{{pfreData.earnings.actual | currency}}</p>
+            <p class="mb-0 text--smallest-screen">{{pfreData.earnings.actual | currency}}</p>
           </div>
         </div>
       </div>
@@ -134,6 +134,7 @@ export default {
     ]),
     smallestScreen() {
       var width = window.innerWidth;
+      console.log(width);
       return width > 320 ? true : false;
     }
   },

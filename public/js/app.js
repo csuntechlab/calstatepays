@@ -68206,6 +68206,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
     smallestScreen: function smallestScreen() {
       var width = window.innerWidth;
+      console.log(width);
       return width > 320 ? true : false;
     }
   }),
@@ -69351,7 +69352,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0" }, [
+                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
                   _vm._v(_vm._s(_vm.pfreData.years.actual) + " yrs")
                 ])
               ])
@@ -69485,7 +69486,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0" }, [
+                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
                   )
@@ -69593,7 +69594,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0" }, [
+                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
                   _vm._v(
                     _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
                   )
