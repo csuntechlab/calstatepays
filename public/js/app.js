@@ -29457,9 +29457,9 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a },
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a, name: 'pfre' },
 	//{ path: '/data/pfre', component: pfre },
-	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
+	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -93892,34 +93892,50 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1541533460014');
-        if (this.tableauValue == null) {
-            var divElement = document.getElementById('viz1541533460014');
-            divElement.style.width = '1000px';divElement.style.height = '5rem';
-            divElement.style.backgroundColor = 'lightgray';
-            var heading = document.createElement("h1");
-            heading.innerText = "Tableau visual is not available";
-            divElement.appendChild(heading);
-        } else {
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '1016px';vizElement.style.height = '991px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            var vizEl = vizElement.getElementsByTagName('param');
-            vizEl[3].value = this.tableauValue;
-        }
-    },
+	components: {
+		powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
+	},
+	beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+		next(function (vm) {
+			if (vm.tableauValue === "") {
+				vm.$router.push("research");
+			} else next();
+		});
+	},
+	mounted: function mounted() {
+		var divElement = document.getElementById("viz1541533460014");
+		if (this.tableauValue == null) {
+			var divElement = document.getElementById("viz1541533460014");
+			divElement.style.width = "1000px";
+			divElement.style.height = "5rem";
+			divElement.style.backgroundColor = "lightgray";
+			var heading = document.createElement("h1");
+			heading.innerText = "Tableau visual is not available";
+			divElement.appendChild(heading);
+		} else {
+			var vizElement = divElement.getElementsByTagName("object")[0];
+			vizElement.style.width = "1016px";
+			vizElement.style.height = "991px";
+			var scriptElement = document.createElement("script");
+			scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+			vizElement.parentNode.insertBefore(scriptElement, vizElement);
+			var vizEl = vizElement.getElementsByTagName("param");
+			vizEl[3].value = this.tableauValue;
+		}
+	},
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['tableauValue']))
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(["tableauValue"]))
 });
 
 /***/ }),
@@ -93954,9 +93970,7 @@ var render = function() {
                     [
                       _c("h2", [
                         _c("i", { staticClass: "fa fa-arrow-left" }),
-                        _vm._v(
-                          " Return to CSU Campus Selection\n                        "
-                        )
+                        _vm._v(" Return to CSU Campus Selection\n\t\t\t\t\t\t")
                       ])
                     ]
                   )
@@ -117367,6 +117381,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.url = window.baseUrl;
+    },
+
+    computed: {
+        onData: function onData() {
+            return this.$route.name === 'majors' || this.$route.name === 'pfre' || this.$route.name === 'industries';
+        }
     }
 });
 
@@ -117407,32 +117427,40 @@ var render = function() {
       _vm._m(0)
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "footer-meta", attrs: { id: "footer-meta" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3 col-12" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "//www.csun.edu/academic-affairs/meta-lab",
-                target: "csun"
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "footer-meta__logo mb-2 mb-md-0",
+    _c(
+      "div",
+      {
+        staticClass: "footer-meta",
+        class: { "footer-meta--data": this.onData },
+        attrs: { id: "footer-meta" }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-12" }, [
+            _c(
+              "a",
+              {
                 attrs: {
-                  src: this.url + "/img/otherLogos/metalab-logo.svg",
-                  alt: "META+LAB Logo"
+                  href: "//www.csun.edu/academic-affairs/meta-lab",
+                  target: "csun"
                 }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ])
-    ])
+              },
+              [
+                _c("img", {
+                  staticClass: "footer-meta__logo mb-2 mb-md-0",
+                  attrs: {
+                    src: this.url + "/img/otherLogos/metalab-logo.svg",
+                    alt: "META+LAB Logo"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
