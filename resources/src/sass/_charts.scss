@@ -109,12 +109,15 @@
 	margin: 0 !important;
 	background-color: $light-gray !important;
 	&__years-text {
-		color: $gold;
+		color: $CSP-Dark-Gold;
+		font-weight: 600;
 	}
 	&__earnings-text {
+		font-weight: 600;
 		color: $dark-green;
 	}
 	&__return-investment-text {
+		font-weight: 600;
 		color: $oxford;
 	}
 }

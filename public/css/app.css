@@ -19582,7 +19582,7 @@ body {
 
 @media screen and (max-width: 365px) {
   .text--smallest-screen {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
@@ -21103,14 +21103,17 @@ button.btn-change-campus:hover {
 }
 
 .pfre-bar__years-text {
-  color: #DAA200;
+  color: #9D6D02;
+  font-weight: 600;
 }
 
 .pfre-bar__earnings-text {
+  font-weight: 600;
   color: #279D5D;
 }
 
 .pfre-bar__return-investment-text {
+  font-weight: 600;
   color: #476A6F;
 }
 
