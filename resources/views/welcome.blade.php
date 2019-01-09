@@ -2,7 +2,18 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        @php   
+        $iosFix = '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">';
+            if(Browser::isMobile()){
+                if(Browser::isSafari()){
+                    echo $iosFix;
+                }
+            }
+        @endphp
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="app-url" content="{{ url('/') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
