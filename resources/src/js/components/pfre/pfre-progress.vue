@@ -8,16 +8,15 @@
           </span>
           <span class="col">
             <p class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')">Estimated time to degree:</p>
-          </span>  
+          </span>
         </div>
-        <div class="row">
-          <div class="col-sm-10">
+        <div class="row my-3">
+          <div class="col-10">
             <div class="row">
               <div class="col-sm-12">
                  <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"/>
               </div>
             </div>
-            <div class="row">
               <div class="progress-footer">
                 <span class="col-4">
                   <p class="float-left mb-0">{{pfreData.years.start}}</p>  
@@ -29,72 +28,87 @@
                   <p class="float-right mb-0">{{pfreData.years.end}}</p>  
                 </span>
               </div>
-            </div>
           </div>
-          <div class="col-sm-2">
-            <p class="mb-0">{{pfreData.years.actual}}</p>
+          <div class="col-2 px-0 py-4">
+            <p class="mb-0">{{pfreData.years.actual}} yrs</p>
           </div>
         </div>
       </div>
     </div>
+
     <div class="row no-gutters my-3">
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
-       <div class="row no-gutters">
+      <div class="row no-gutters">
         <span class="col-auto ">
-             <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
+            <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
         </span>
-         <span class="col-8 ">
-           <p class="float-left font-weight-bold mb-0" @click="toggleInfo('earnings')">Estimated Earnings 5 Years After Exit:</p>
-           </span> 
-       
-        <span class="col align-self-end">
-          <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
-          </span>
+        <span class="col">
+          <p class="float-left font-weight-bold mb-0" @click="toggleInfo('earnings')">Estimated Earnings 5 Years After Exit:</p>
+          </span> 
     </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"/>
-        <div class="progress-footer">
-          <span class="col-4">
-            <p class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="text-center mb-0">{{pfreData.earnings.average | currency}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>  
-          </span>
-        </div>  
+    <div class="row my-3">
+      <div class="col-10">
+        <div class="row">
+          <div class="col-sm-12">
+            <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"/>
+          </div>
+        </div>
+          <div class="progress-footer">
+            <span class="col-4">
+              <p class="float-left mb-0">{{(pfreData.earnings.minimum/1000) | currency}}</p>  
+            </span>
+            <span class="col-4">
+              <p class="text-center mb-0">{{pfreData.earnings.average | currency}}</p>  
+            </span>
+            <span class="col-4">
+              <p class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>  
+            </span>
+          </div>  
+      </div>
+        <div class="col-2 px-0 py-4">
+          <p class="mb-0">{{pfreData.earnings.actual | currency}}</p>
+        </div>
       </div>
     </div>
-    <div class="row no-gutters my-3">
+  </div>
+  <div class="row no-gutters my-3">
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
-       <div class="row no-gutters">
-         
+      <div class="row no-gutters">
         <span class="col-auto">
           <pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
         </span>
-        <span class="col-8">
-           <p class="float-left font-weight-bold mb-0" @click="toggleInfo('return')" >FRE - Financial Return on Education: </p>
+        <span class="col">
+          <p class="float-left font-weight-bold mb-0" @click="toggleInfo('return')" >FRE - Financial Return on Education: </p>
         </span>  
-        <span class="col align-self-end">
-          <p class="float-right mb-0">{{pfreData.earnings.actual | currency}}</p>
-        </span>
       </div>
-        <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"/>
-        <div class="progress-footer">
-          <span class="col-4">
-            <p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="text-center mb-0">{{pfreData.returnOnInvestment.average | percentage}}</p>  
-          </span>
-          <span class="col-4">
-            <p class="float-right mb-0">{{pfreData.returnOnInvestment.maximum | percentage}}</p>  
-          </span>
-        </div>   
+      <div class="row my-3">
+        <div class="col-10">
+          <div class="row">
+            <div class="col-sm-12">
+              <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"/>
+            </div>
+          </div>
+            <div class="progress-footer">
+              <span class="col-4">
+                <p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>  
+              </span>
+              <span class="col-4">
+                <p class="text-center mb-0">{{pfreData.returnOnInvestment.average | percentage}}</p>  
+              </span>
+              <span class="col-4">
+                <p class="float-right mb-0">{{pfreData.returnOnInvestment.maximum | percentage}}</p>  
+              </span>
+            </div>   
+          </div>
+          <div class="col-2 px-0 py-4">
+            <p class="mb-0">{{pfreData.earnings.actual | currency}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import {currency, percentage} from '../../filters';
