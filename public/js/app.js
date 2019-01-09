@@ -94228,6 +94228,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -94287,9 +94289,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "splashPage" }, [
-      _c("p", [_vm._v("Coming soon")])
-    ])
+    return _c(
+      "div",
+      { staticClass: "splashPage graphContent row align-items-center" },
+      [_c("div", { staticClass: "col" }, [_c("p", [_vm._v("Coming soon")])])]
+    )
   }
 ]
 render._withStripped = true

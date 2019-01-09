@@ -9,7 +9,8 @@
 
 .graphContent{
     background-color: $light-gray;
-    min-height: stretch;
+    // min-height: stretch;
+    min-height: calc(100vh - 540px);
 }
 
 abbr[title] {

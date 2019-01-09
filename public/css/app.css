@@ -18823,9 +18823,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .graphContent {
   background-color: #EBEBEB;
-  min-height: -webkit-fill-available;
-  min-height: -moz-available;
-  min-height: stretch;
+  min-height: calc(100vh - 540px);
 }
 
 abbr[title] {
@@ -19164,8 +19162,6 @@ figcaption {
 }
 
 .splashPage {
-  background-color: #EBEBEB;
-  height: calc(100vh - 409px);
   position: relative;
   font-size: 3rem;
   color: black;
@@ -19177,13 +19173,7 @@ figcaption {
 
 .splashPage p {
   padding: 6rem;
-}
-
-@media screen and (max-width: 960px) {
-  .splashPage {
-    height: calc(100vh - 430px);
-    min-height: 20rem;
-  }
+  margin: 0;
 }
 
 .errorAlert {
