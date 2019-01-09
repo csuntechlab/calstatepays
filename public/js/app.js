@@ -94084,9 +94084,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -94097,8 +94094,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       formdata: {
         email: "",
-        message: ""
-      }
+        body: ""
+      },
+      done: false
     };
   },
 
@@ -94108,17 +94106,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         email: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["email"],
         required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
       },
-      message: {
-        required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-        maxLength: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["maxLength"])(400)
-      }
+      body: { required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"] }
     }
   },
   methods: {
     submitForm: function submitForm() {
+      this.$v.$touch();
       if (!this.$v.$invalid) {
         this.postNow();
         this.clearPost();
+        this.done = true;
+      } else {
+        return false;
       }
     },
     postNow: function postNow() {
@@ -94126,12 +94125,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         headers: {
           "Content-type": "application/x-www-form-urlencoded"
         },
-        body: this.formdata.message,
+        body: this.formdata.body,
         email: this.formdata.email
       });
     },
     clearPost: function clearPost() {
-      this.$refs.myFileInput.value = "";
       this.$v.$reset();
       this.formdata = {
         email: "",
@@ -94153,109 +94151,94 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card" }, [
-    _c("form", { staticClass: "container-fluid csu-card__form" }, [
-      _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
-        _c(
-          "div",
-          { staticClass: "form-group" },
-          [
+    !_vm.done
+      ? _c("form", { staticClass: "container-fluid csu-card__form" }, [
+          _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
             _c(
-              "label",
-              {
-                staticClass: "font-weight-bold label",
-                attrs: { for: "email" }
-              },
-              [_vm._v("Email")]
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-weight-bold label",
+                    attrs: { for: "email" }
+                  },
+                  [_vm._v("Email")]
+                ),
+                _vm._v(" "),
+                _c("v-text-field", {
+                  attrs: { outline: "" },
+                  model: {
+                    value: _vm.formdata.email,
+                    callback: function($$v) {
+                      _vm.$set(_vm.formdata, "email", $$v)
+                    },
+                    expression: "formdata.email"
+                  }
+                }),
+                _vm._v(" "),
+                _vm.$v.formdata.email.$error
+                  ? _c("p", { staticClass: "label--required" }, [
+                      _vm._v("This field requires a valid email!")
+                    ])
+                  : _vm._e()
+              ],
+              1
             ),
             _vm._v(" "),
-            _c("v-text-field", {
-              attrs: { outline: "" },
-              on: {
-                blur: function($event) {
-                  _vm.$v.formdata.email.$touch()
-                }
-              },
-              model: {
-                value: _vm.formdata.email,
-                callback: function($$v) {
-                  _vm.$set(_vm.formdata, "email", $$v)
-                },
-                expression: "formdata.email"
-              }
-            }),
-            _vm._v(" "),
-            _vm.$v.formdata.email.$error
-              ? _c("p", { staticClass: "label--required" }, [
-                  _vm._v("This field requires a valid email!")
-                ])
-              : _vm._e()
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "form-group" },
-          [
             _c(
-              "label",
-              { staticClass: "font-weight-bold", attrs: { for: "feedback" } },
-              [_vm._v("Feedback")]
+              "div",
+              { staticClass: "form-group" },
+              [
+                _c(
+                  "label",
+                  {
+                    staticClass: "font-weight-bold",
+                    attrs: { for: "feedback" }
+                  },
+                  [_vm._v("Feedback")]
+                ),
+                _vm._v(" "),
+                _c("v-textarea", {
+                  attrs: { outline: "" },
+                  model: {
+                    value: _vm.formdata.body,
+                    callback: function($$v) {
+                      _vm.$set(_vm.formdata, "body", $$v)
+                    },
+                    expression: "formdata.body"
+                  }
+                }),
+                _vm._v(" "),
+                _vm.$v.formdata.body.$error
+                  ? _c("p", { staticClass: "label--required" }, [
+                      _vm._v("Message is required!")
+                    ])
+                  : _vm._e()
+              ],
+              1
             ),
             _vm._v(" "),
-            _c("v-textarea", {
-              attrs: { outline: "" },
-              on: {
-                blur: function($event) {
-                  _vm.$v.formdata.message.$touch()
-                }
-              },
-              model: {
-                value: _vm.formdata.message,
-                callback: function($$v) {
-                  _vm.$set(_vm.formdata, "message", $$v)
+            _c("div", { staticClass: "form-group row" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success btn-submit",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.submitForm($event)
+                    }
+                  }
                 },
-                expression: "formdata.message"
-              }
-            }),
-            _vm._v(" "),
-            _vm.$v.formdata.message.$error
-              ? _c("p", { staticClass: "label--required" }, [
-                  _vm._v("Message is required!")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            !_vm.$v.formdata.message.maxLength
-              ? _c("p", { staticClass: "label--required" }, [
-                  _vm._v(
-                    "Must not be greater " +
-                      _vm._s(_vm.$v.formdata.message.$params.maxLength.max) +
-                      " characters!"
-                  )
-                ])
-              : _vm._e()
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group row" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-success btn-submit",
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.submitForm($event)
-                }
-              }
-            },
-            [_vm._v("Submit")]
-          )
+                [_vm._v("Submit")]
+              )
+            ])
+          ])
         ])
-      ])
-    ])
+      : _c("p", [_vm._v("Thank you for your feedback")])
   ])
 }
 var staticRenderFns = []

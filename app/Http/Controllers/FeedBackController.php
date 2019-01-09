@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Contracts\FeedBackContract;
 use App\Http\Requests\FeedBackRequest;
-
+use App\Http\Controllers\Controller;
 
 class FeedBackController extends Controller
 {

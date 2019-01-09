@@ -1,10 +1,10 @@
 <template>
   <div class="card">
-    <form class="container-fluid csu-card__form">
+    <form v-if="!done" class="container-fluid csu-card__form">
       <fieldset class="csu-card__form-sizing">
         <div class="form-group">
           <label class="font-weight-bold label" for="email">Email</label>
-          <v-text-field outline v-model="formdata.email" @blur="$v.formdata.email.$touch()"/>
+          <v-text-field outline v-model="formdata.email"/>
           <p
             class="label--required"
             v-if="$v.formdata.email.$error"
@@ -12,12 +12,8 @@
         </div>
         <div class="form-group">
           <label class="font-weight-bold" for="feedback">Feedback</label>
-          <v-textarea outline v-model="formdata.message" @blur="$v.formdata.message.$touch()"/>
-          <p class="label--required" v-if="$v.formdata.message.$error">Message is required!</p>
-          <p
-            class="label--required"
-            v-if="!$v.formdata.message.maxLength"
-          >Must not be greater {{ $v.formdata.message.$params.maxLength.max }} characters!</p>
+          <v-textarea outline v-model="formdata.body"/>
+          <p class="label--required" v-if="$v.formdata.body.$error">Message is required!</p>
         </div>
         <div class="form-group row">
           <button
@@ -28,6 +24,7 @@
         </div>
       </fieldset>
     </form>
+    <p v-else>Thank you for your feedback</p>
   </div>
 </template>
 
@@ -41,8 +38,9 @@ export default {
     return {
       formdata: {
         email: "",
-        message: ""
-      }
+        body: ""
+      },
+      done: false
     };
   },
   validations: {
@@ -51,17 +49,18 @@ export default {
         email,
         required
       },
-      message: {
-        required,
-        maxLength: maxLength(400)
-      }
+      body: { required }
     }
   },
   methods: {
     submitForm() {
+      this.$v.$touch();
       if (!this.$v.$invalid) {
         this.postNow();
         this.clearPost();
+        this.done = true;
+      } else {
+        return false;
       }
     },
     postNow() {
@@ -69,12 +68,11 @@ export default {
         headers: {
           "Content-type": "application/x-www-form-urlencoded"
         },
-        body: this.formdata.message,
+        body: this.formdata.body,
         email: this.formdata.email
       });
     },
     clearPost() {
-      this.$refs.myFileInput.value = "";
       this.$v.$reset();
       this.formdata = {
         email: "",
