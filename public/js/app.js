@@ -68185,6 +68185,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -68201,7 +68204,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     };
   },
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
+    smallestScreen: function smallestScreen() {
+      var width = window.innerWidth;
+      console.log(width);
+      return width > 320 ? true : false;
+    }
+  }),
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData', 'toggleInfo'])),
   filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
   components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
@@ -69413,35 +69422,66 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "progress-footer" }, [
                   _c("span", { staticClass: "col-4" }, [
-                    _c("p", { staticClass: "float-left mb-0" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm._f("currency")(
-                            _vm.pfreData.earnings.minimum / 1000
+                    _vm.smallestScreen
+                      ? _c("p", { staticClass: "float-left mb-0" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("currency")(_vm.pfreData.earnings.minimum)
+                            )
                           )
-                        )
-                      )
-                    ])
+                        ])
+                      : _c("p", { staticClass: "float-left mb-0" }, [
+                          _vm._v(
+                            " " +
+                              _vm._s(
+                                _vm._f("currency")(
+                                  _vm.pfreData.earnings.minimum / 1000
+                                )
+                              ) +
+                              "k "
+                          )
+                        ])
                   ]),
                   _vm._v(" "),
                   _c("span", { staticClass: "col-4" }, [
-                    _c("p", { staticClass: "text-center mb-0" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm._f("currency")(_vm.pfreData.earnings.average)
-                        )
-                      )
-                    ])
+                    _vm.smallestScreen
+                      ? _c("p", { staticClass: "text-center mb-0" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("currency")(_vm.pfreData.earnings.average)
+                            )
+                          )
+                        ])
+                      : _c("p", { staticClass: "text-center mb-0" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("currency")(
+                                _vm.pfreData.earnings.average / 1000
+                              )
+                            ) + "k"
+                          )
+                        ])
                   ]),
                   _vm._v(" "),
                   _c("span", { staticClass: "col-4" }, [
-                    _c("p", { staticClass: "float-right mb-0" }, [
-                      _vm._v(
-                        _vm._s(
-                          _vm._f("currency")(_vm.pfreData.earnings.maximum)
-                        )
-                      )
-                    ])
+                    _vm.smallestScreen
+                      ? _c("p", { staticClass: "float-right mb-0" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("currency")(_vm.pfreData.earnings.maximum)
+                            )
+                          )
+                        ])
+                      : _c("p", { staticClass: "text-center mb-0" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm._f("currency")(
+                                _vm.pfreData.earnings.maximum / 1000
+                              )
+                            ) + "k"
+                          )
+                        ]),
+                    _c("p")
                   ])
                 ])
               ]),

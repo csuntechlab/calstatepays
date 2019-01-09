@@ -55,13 +55,16 @@
         </div>
           <div class="progress-footer">
             <span class="col-4">
-              <p class="float-left mb-0">{{(pfreData.earnings.minimum/1000) | currency}}</p>  
+              <p v-if="smallestScreen" class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>
+              <p v-else class="float-left mb-0"> {{pfreData.earnings.minimum/1000 | currency}}k </p>
             </span>
             <span class="col-4">
-              <p class="text-center mb-0">{{pfreData.earnings.average | currency}}</p>  
+              <p v-if="smallestScreen" class="text-center mb-0">{{pfreData.earnings.average | currency}}</p>
+              <p v-else class="text-center mb-0">{{pfreData.earnings.average/1000 | currency}}k</p>  
             </span>
             <span class="col-4">
-              <p class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>  
+              <p v-if="smallestScreen" class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>
+              <p v-else class="text-center mb-0">{{pfreData.earnings.maximum/1000 | currency}}k</p></p>  
             </span>
           </div>  
       </div>
@@ -129,6 +132,11 @@ export default {
      ...mapGetters([
        'pfreData'
     ]),
+    smallestScreen() {
+      var width = window.innerWidth;
+      console.log(width);
+      return width > 320 ? true : false;
+    }
   },
   methods: {
     ...mapActions([
