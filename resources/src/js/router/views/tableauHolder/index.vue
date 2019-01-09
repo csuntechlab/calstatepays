@@ -61,26 +61,27 @@ export default {
 		});
 	},
 	mounted() {
-		var divElement = document.getElementById("viz1541533460014");
-		if (this.tableauValue == null) {
-			var divElement = document.getElementById("viz1541533460014");
-			divElement.style.width = "1000px";
-			divElement.style.height = "5rem";
-			divElement.style.backgroundColor = "lightgray";
-			var heading = document.createElement("h1");
-			heading.innerText = "Tableau visual is not available";
-			divElement.appendChild(heading);
-		} else {
-			var vizElement = divElement.getElementsByTagName("object")[0];
-			vizElement.style.width = "1016px";
-			vizElement.style.height = "991px";
-			var scriptElement = document.createElement("script");
-			scriptElement.src =
-				"https://public.tableau.com/javascripts/api/viz_v1.js";
-			vizElement.parentNode.insertBefore(scriptElement, vizElement);
-			var vizEl = vizElement.getElementsByTagName("param");
-			vizEl[3].value = this.tableauValue;
-		}
+		this.$nextTick(function() {
+            var divElement = document.getElementById("viz1541533460014");
+			if (this.tableauValue === "" || this.tableauValue === null) {
+				divElement.style.width = "1000px";
+				divElement.style.height = "5rem";
+				divElement.style.backgroundColor = "lightgray";
+				var heading = document.createElement("h1");
+				heading.innerText = "Tableau visual is not available";
+				divElement.appendChild(heading);
+			} else {
+				var vizElement = divElement.getElementsByTagName("object")[0];
+				vizElement.style.width = "1016px";
+				vizElement.style.height = "991px";
+				var scriptElement = document.createElement("script");
+				scriptElement.src =
+					"https://public.tableau.com/javascripts/api/viz_v1.js";
+				vizElement.parentNode.insertBefore(scriptElement, vizElement);
+				var vizEl = vizElement.getElementsByTagName("param");
+				vizEl[3].value = this.tableauValue;
+			}
+		});
 	},
 	computed: {
 		...mapGetters(["tableauValue"])

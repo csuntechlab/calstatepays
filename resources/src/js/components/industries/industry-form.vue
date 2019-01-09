@@ -166,10 +166,6 @@ export default {
 				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
-		apple(){
-			console.log(12);
-			this.selected = null;
-		}
 	},
 
 	
