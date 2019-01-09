@@ -30,7 +30,7 @@
               </div>
           </div>
           <div class="col-2 px-0 py-4">
-            <p class="mb-0 text--smallest-screen">{{pfreData.years.actual}} yrs</p>
+            <p class="mb-0 text--smallest-screen pfre-bar__years-text">{{pfreData.years.actual}} yrs</p>
           </div>
         </div>
       </div>
@@ -55,21 +55,21 @@
         </div>
           <div class="progress-footer">
             <span class="col-4">
-              <p v-if="smallestScreen" class="float-left mb-0">{{pfreData.earnings.minimum | currency}}</p>
+              <p v-if="smallestScreen" class="float-left text--smallest-screen mb-0">{{pfreData.earnings.minimum | currency}}</p>
               <p v-else class="float-left mb-0"> {{pfreData.earnings.minimum/1000 | currency}}k </p>
             </span>
             <span class="col-4">
-              <p v-if="smallestScreen" class="text-center mb-0">{{pfreData.earnings.average | currency}}</p>
+              <p v-if="smallestScreen" class="text-center text--smallest-screen mb-0">{{pfreData.earnings.average | currency}}</p>
               <p v-else class="text-center mb-0">{{pfreData.earnings.average/1000 | currency}}k</p>  
             </span>
             <span class="col-4">
-              <p v-if="smallestScreen" class="float-right mb-0">{{pfreData.earnings.maximum | currency}}</p>
+              <p v-if="smallestScreen" class="float-right text--smallest-screen mb-0">{{pfreData.earnings.maximum | currency}}</p>
               <p v-else class="text-center mb-0">{{pfreData.earnings.maximum/10000 | currency}}k</p></p>  
             </span>
           </div>  
       </div>
         <div class="col-2 px-0 py-4">
-          <p class="mb-0 text--smallest-screen">{{pfreData.earnings.actual | currency}}</p>
+          <p class="mb-0 text--smallest-screen pfre-bar__earnings-text">{{pfreData.earnings.actual | currency}}</p>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
             </div>   
           </div>
           <div class="col-2 px-0 py-4">
-            <p class="mb-0 text--smallest-screen">{{pfreData.earnings.actual | currency}}</p>
+            <p class="mb-0 text--smallest-screen pfre-bar__return-investment-text">{{pfreData.earnings.actual | currency}}</p>
           </div>
         </div>
       </div>

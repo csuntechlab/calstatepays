@@ -21107,6 +21107,18 @@ button.btn-change-campus:hover {
   background-color: #EBEBEB !important;
 }
 
+.pfre-bar__years-text {
+  color: #DAA200;
+}
+
+.pfre-bar__earnings-text {
+  color: #279D5D;
+}
+
+.pfre-bar__return-investment-text {
+  color: #476A6F;
+}
+
 .pfre-year {
   background-color: #DAA200 !important;
   border-radius: 50px;

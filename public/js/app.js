@@ -29589,7 +29589,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a },
-	// { path: '/data/pfre',component: splashPage },
+	// 	{ path: '/data/pfre',component: splashPage },
 	{ path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
@@ -69352,9 +69352,14 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
-                  _vm._v(_vm._s(_vm.pfreData.years.actual) + " yrs")
-                ])
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "mb-0 text--smallest-screen pfre-bar__years-text"
+                  },
+                  [_vm._v(_vm._s(_vm.pfreData.years.actual) + " yrs")]
+                )
               ])
             ])
           ]
@@ -69422,13 +69427,21 @@ var render = function() {
                 _c("div", { staticClass: "progress-footer" }, [
                   _c("span", { staticClass: "col-4" }, [
                     _vm.smallestScreen
-                      ? _c("p", { staticClass: "float-left mb-0" }, [
-                          _vm._v(
-                            _vm._s(
-                              _vm._f("currency")(_vm.pfreData.earnings.minimum)
+                      ? _c(
+                          "p",
+                          {
+                            staticClass: "float-left text--smallest-screen mb-0"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm._f("currency")(
+                                  _vm.pfreData.earnings.minimum
+                                )
+                              )
                             )
-                          )
-                        ])
+                          ]
+                        )
                       : _c("p", { staticClass: "float-left mb-0" }, [
                           _vm._v(
                             " " +
@@ -69444,13 +69457,22 @@ var render = function() {
                   _vm._v(" "),
                   _c("span", { staticClass: "col-4" }, [
                     _vm.smallestScreen
-                      ? _c("p", { staticClass: "text-center mb-0" }, [
-                          _vm._v(
-                            _vm._s(
-                              _vm._f("currency")(_vm.pfreData.earnings.average)
+                      ? _c(
+                          "p",
+                          {
+                            staticClass:
+                              "text-center text--smallest-screen mb-0"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm._f("currency")(
+                                  _vm.pfreData.earnings.average
+                                )
+                              )
                             )
-                          )
-                        ])
+                          ]
+                        )
                       : _c("p", { staticClass: "text-center mb-0" }, [
                           _vm._v(
                             _vm._s(
@@ -69464,13 +69486,22 @@ var render = function() {
                   _vm._v(" "),
                   _c("span", { staticClass: "col-4" }, [
                     _vm.smallestScreen
-                      ? _c("p", { staticClass: "float-right mb-0" }, [
-                          _vm._v(
-                            _vm._s(
-                              _vm._f("currency")(_vm.pfreData.earnings.maximum)
+                      ? _c(
+                          "p",
+                          {
+                            staticClass:
+                              "float-right text--smallest-screen mb-0"
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm._f("currency")(
+                                  _vm.pfreData.earnings.maximum
+                                )
+                              )
                             )
-                          )
-                        ])
+                          ]
+                        )
                       : _c("p", { staticClass: "text-center mb-0" }, [
                           _vm._v(
                             _vm._s(
@@ -69486,11 +69517,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
-                  _vm._v(
-                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
-                  )
-                ])
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "mb-0 text--smallest-screen pfre-bar__earnings-text"
+                  },
+                  [
+                    _vm._v(
+                      _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
+                    )
+                  ]
+                )
               ])
             ])
           ]
@@ -69594,11 +69632,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-2 px-0 py-4" }, [
-                _c("p", { staticClass: "mb-0 text--smallest-screen" }, [
-                  _vm._v(
-                    _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
-                  )
-                ])
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "mb-0 text--smallest-screen pfre-bar__return-investment-text"
+                  },
+                  [
+                    _vm._v(
+                      _vm._s(_vm._f("currency")(_vm.pfreData.earnings.actual))
+                    )
+                  ]
+                )
               ])
             ])
           ]

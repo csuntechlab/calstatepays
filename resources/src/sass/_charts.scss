@@ -108,6 +108,15 @@
 	margin-bottom: 0.5rem;
 	margin: 0 !important;
 	background-color: $light-gray !important;
+	&__years-text {
+		color: $gold;
+	}
+	&__earnings-text {
+		color: $dark-green;
+	}
+	&__return-investment-text {
+		color: $oxford;
+	}
 }
 
 .pfre-year {
