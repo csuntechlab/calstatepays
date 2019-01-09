@@ -53,6 +53,13 @@ export default {
 	components: {
 		powerBanner
 	},
+	beforeRouteEnter(to, from, next) {
+		next(vm => {
+			if (vm.tableauValue === "") {
+				vm.$router.push("research");
+			} else next();
+		});
+	},
 	mounted() {
 		this.$nextTick(function() {
             var divElement = document.getElementById("viz1541533460014");
