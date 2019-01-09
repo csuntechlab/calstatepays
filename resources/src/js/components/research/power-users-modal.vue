@@ -19,7 +19,7 @@
                     <i class="col-3 fa fa-university fa-5x" ></i> 
                     <div class="col-9">
                         <span class="d-block">Earnings by Major + Industries of Employment</span>
-                            <button v-if="majorsDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,1)"  type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-if="majorsDisplayIsAllowed" @click="chooseTableauCategory(university.id,0)"  type="button" class="power-user-modal-btn btn-success">View Data</button>
                             <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Age at Entry + Industries of Employment</span>
-                        <button v-if="ageDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
+                        <button v-if="ageDisplayIsAllowed" @click="chooseTableauCategory(university.id,1)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
                         <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>            
                     </div>
                 </div>            
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Race + Industries of Employment</span>
-                            <button v-if="raceDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,3)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
+                            <button v-if="raceDisplayIsAllowed" @click="chooseTableauCategory(university.id,2)"  type="button" class=" power-user-modal-btn btn-success">View Data</button>
                             <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>               
                     <div class="col-9">
                         <span class="d-block">Earnings by Gender + Industries of Employment</span>
-                            <button v-if="genderDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-if="genderDisplayIsAllowed" @click="chooseTableauCategory(university.id,3)" type="button" class="power-user-modal-btn btn-success">View Data</button>
                             <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>           
                     </div>
                 </div >
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-9">
                         <span class="d-block">Earnings by Pell Status at Entry + Industries of Employment</span>
-                            <button v-if="pellDisplayIsAllowed" @click="chooseTableauCategory(university.short_name,5)" type="button" class="power-user-modal-btn btn-success">View Data</button>
+                            <button v-if="pellDisplayIsAllowed" @click="chooseTableauCategory(university.id,4)" type="button" class="power-user-modal-btn btn-success">View Data</button>
                             <button v-else type="button" class="power-user-modal-btn btn-success btn-locked">View Data</button>          
                     </div>
                 </div>
@@ -92,9 +92,6 @@ export default {
         document.addEventListener('keyup', this.onEscKey)
     },
     methods:{
-        ...mapActions([
-            'setTableauValue'
-        ]),
         closeModal:function(){
             this.$emit('closeModal')
         },
@@ -103,8 +100,8 @@ export default {
                 this.closeModal()
             }
         },
-        chooseTableauCategory(university,path_id,callback){
-            this.$store.dispatch('setTableauValue', {university:university,path_id:path_id});
+        chooseTableauCategory(university,path_id){
+            this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
         }
     },computed:{
         ...mapGetters([

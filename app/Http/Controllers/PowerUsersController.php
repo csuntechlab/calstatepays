@@ -15,11 +15,6 @@ class PowerUsersController extends Controller
         $this->powerUsersRetrieval = $powerUsersContract;
     }
 
-    public function getPowerUserDataByUniversity($university, $path_id)
-    {
-        return $this->powerUsersRetrieval->getPowerUserDataByUniversity($university, $path_id);
-    }
-
     public function getPowerUsersCardImages(){
         $key = 'powerUserCardImagesCSP';
         // if (Cache::has($key)) {

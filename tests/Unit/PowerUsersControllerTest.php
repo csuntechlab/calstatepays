@@ -35,53 +35,6 @@ class PowerUsersControllerTest extends TestCase
 
     }
 
-    /**
-     * Api route : api/power/northridge/1
-     * method : powerUsersController@getPowerUserDataByUniversity
-     * test uses dependency injection 
-     */
-    public function test_getPowerUserDataByUniversity_northridge()
-    {
-        $university = 'northridge';
-        $path_id = 1;
-        $iframeString = "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor";
-
-        $data = ["iframe_string" => $iframeString];
-
-        $this->retriever
-            ->shouldReceive('getPowerUserDataByUniversity')
-            ->with($university, $path_id)
-            ->once()
-            ->andReturn($data);
-
-        $response = $this->controller->getPowerUserDataByUniversity($university, $path_id);
-        $this->assertEquals($response, $data);
-    }
-
-    /**
-     * Api route : api/power/all/1
-     * method : powerUsersController@getPowerUserDataByUniversity
-     * test uses dependency injection 
-     */
-    public function test_getPowerUserDataByUniversity_aggregate()
-    {
-        $university = 'aggregate';
-        $path_id = 1;
-        $iframeString = "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData";
-
-        $data = ["iframe_string" => $iframeString];
-
-        $this->retriever
-            ->shouldReceive('getPowerUserDataByUniversity')
-            ->with($university, $path_id)
-            ->once()
-            ->andReturn($data);
-
-        $response = $this->controller->getPowerUserDataByUniversity($university, $path_id);
-        $this->assertEquals($response, $data);
-    }
-
-
     public function test_getTableauOptInUniversityData()
     {
 
@@ -94,52 +47,6 @@ class PowerUsersControllerTest extends TestCase
 
         $response = $this->controller->getTableauOptInUniversityData();
         $this->assertEquals($response, $data);
-    }
-
-    /** Test the only route */
-    public function test_getPowerUserDataByUniversity_by_route_northridge()
-    {
-        $university = 'northridge';
-        $path_id = 1;
-        $response = $this->get('/api/power/' . $university . '/' . $path_id);
-        $response = $response->getOriginalContent();
-
-        $iframeString = "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor";
-
-        $this->assertEquals($response['iframe_string'], $iframeString);
-    }
-
-
-    /** Test the only route */
-    public function test_getPowerUserDataByUniversity_by_route_aggregate()
-    {
-        $university = 'all';
-        $path_id = 1;
-        $response = $this->get('/api/power/' . $university . '/' . $path_id);
-        $response = $response->getOriginalContent();
-        $iframeString = "CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData";
-
-        $this->assertEquals($response['iframe_string'], $iframeString);
-    }
-
-
-    public function test_getPowerUserDataByUniversity_failed()
-    {
-        $university = 'random_University';
-        $path_id = 1;
-        $response = $this->get('/api/power/' . $university . '/' . $path_id);
-        $response = $response->getOriginalContent();
-
-        $responseFailed = [
-            "collection" => "errors",
-            "success" => false,
-            "api" => "csuMetro",
-            "version" => "1.0",
-            "code" => 409,
-            "message" => "Resource could not be resolved",
-        ];
-
-        $this->assertEquals($responseFailed, $response);
     }
 
     /**

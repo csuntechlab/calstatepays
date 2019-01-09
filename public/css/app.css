@@ -20010,7 +20010,6 @@ footer, .footer {
   .footer-meta {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -20020,6 +20019,12 @@ footer, .footer {
 
 .footer-meta__logo {
   width: 8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-meta--data {
+    margin-bottom: 4rem;
+  }
 }
 
 .researchMainBanner {

@@ -2,32 +2,17 @@
 import _majors from '../../mutation-types/majors';
 
 export default {
-    [_majors.FETCH_MAJORS](state, payload){
-        state.majors=[];
-        payload.forEach((major) => {
-            major.majorId = major.hegis_code;
-            delete major.hegis_code;
-            state.majors.push(major);
-        });
+    [_majors.FETCH_MAJORS](state, payload) {
+        state.majors = payload
     },
 
-    [_majors.FETCH_FIELD_OF_STUDIES](state, payload){
-        state.fieldOfStudy = [];
-        payload.forEach((fieldOfStudy) => {
-            fieldOfStudy.discipline = fieldOfStudy.name;
-            delete fieldOfStudy.name;
-            state.fieldOfStudy.push(fieldOfStudy);
-        });
+    [_majors.FETCH_FIELD_OF_STUDIES](state, payload) {
+        state.fieldOfStudy = payload
     },
 
     [_majors.FETCH_UPDATED_MAJORS_BY_FIELD](state, payload) {
         let index = payload.cardIndex;
-        state.majorCards[index].majorsByField = [];
-        payload[0].forEach((major) => {
-            major.majorId = major.hegisCode;
-            delete major.hegisCode;
-            state.majorCards[index].majorsByField.push(major);
-        });
+        state.majorCards[index].majorsByField = payload[0];
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
@@ -40,11 +25,7 @@ export default {
     },
 
     [_majors.FETCH_UNIVERSITIES](state, payload) {
-        payload.forEach((university) => {
-            university.name = university.university_name;
-            delete university.university_name;
-            state.universities.push(university);
-        });
+        state.universities = payload;
     },
 
     [_majors.FETCH_INDUSTRY_IMAGES](state, payload) {
@@ -75,41 +56,37 @@ export default {
         });
     },
 
-    [_majors.DELETE_MAJOR_CARD](state,payload) {
+    [_majors.DELETE_MAJOR_CARD](state, payload) {
         let index = payload;
-        if(index !== 0){
-            state.majorCards.splice(index,1);
+        if (index !== 0) {
+            state.majorCards.splice(index, 1);
         }
     },
 
     [_majors.RESET_MAJOR_CARD](state, payload) {
         let index = payload;
-        if(state.majorCards[index].formWasSubmitted===true) {
+        if (state.majorCards[index].formWasSubmitted === true) {
             state.majorCards[index].formWasSubmitted = false;
-        }
-        else {
+        } else {
             state.majorCards[index].formWasSubmitted = true;
         }
     },
-    [_majors.RESET_MAJOR_STATE](state){
-        state.majorCards = [
-                {
-                    formWasSubmitted: false,
-                    submittedOnce: false,
-                    majorsByField: [],
-                    industries: [],
-                    majorData: [],
-                    majorIsLoading: false,
-                    educationLevel: 'allDegrees'
-                }
-        ];
+    [_majors.RESET_MAJOR_STATE](state) {
+        state.majorCards = [{
+            formWasSubmitted: false,
+            submittedOnce: false,
+            majorsByField: [],
+            industries: [],
+            majorData: [],
+            majorIsLoading: false,
+            educationLevel: 'allDegrees'
+        }];
     },
     [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
         let index = payload;
-        if(state.majorCards[index].majorIsLoading ===false){
+        if (state.majorCards[index].majorIsLoading === false) {
             state.majorCards[index].majorIsLoading = true;
-        }
-        else {
+        } else {
             state.majorCards[index].majorIsLoading = false;
         }
     }

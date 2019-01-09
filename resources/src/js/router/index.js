@@ -22,10 +22,10 @@ Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
 		{ path: '/', component: home },
-		{ path: '/data/pfre', component: splashPage },
+		{ path: '/data/pfre', component: splashPage, name: 'pfre' },
 		//{ path: '/data/pfre', component: pfre },
-		{ path: '/data/industries', component: industries },
-		{ path: '/data/majors', component: majors },
+		{ path: '/data/industries', component: industries, name: 'industries' },
+		{ path: '/data/majors', component: majors, name: 'majors' },
 		{ path: '/faq', component: faq },
 		{ path: '/research', component: research },
 		{ path: '/tableau', name: 'tableau', component: tableauHolder, props: true },

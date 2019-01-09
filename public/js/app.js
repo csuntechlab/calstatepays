@@ -29311,9 +29311,9 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue___default.a },
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_13__views_splashPage_index_vue___default.a, name: 'pfre' },
 	//{ path: '/data/pfre', component: pfre },
-	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }, { path: '/feedback', component: __WEBPACK_IMPORTED_MODULE_11__views_feedback_index_vue___default.a }]
+	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }, { path: '/feedback', component: __WEBPACK_IMPORTED_MODULE_11__views_feedback_index_vue___default.a }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -63346,38 +63346,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_majors$FETCH_MAJORS$ = {}, _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJORS, function (state, payload) {
-    state.majors = [];
-    payload.forEach(function (major) {
-        major.majorId = major.hegis_code;
-        delete major.hegis_code;
-        state.majors.push(major);
-    });
+    state.majors = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_FIELD_OF_STUDIES, function (state, payload) {
-    state.fieldOfStudy = [];
-    payload.forEach(function (fieldOfStudy) {
-        fieldOfStudy.discipline = fieldOfStudy.name;
-        delete fieldOfStudy.name;
-        state.fieldOfStudy.push(fieldOfStudy);
-    });
+    state.fieldOfStudy = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UPDATED_MAJORS_BY_FIELD, function (state, payload) {
     var index = payload.cardIndex;
-    state.majorCards[index].majorsByField = [];
-    payload[0].forEach(function (major) {
-        major.majorId = major.hegisCode;
-        delete major.hegisCode;
-        state.majorCards[index].majorsByField.push(major);
-    });
+    state.majorCards[index].majorsByField = payload[0];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_MAJOR_DATA, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].majorData = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].RESET_MAJOR_SELECTIONS, function (state) {
     state.majors = [];
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_UNIVERSITIES, function (state, payload) {
-    payload.forEach(function (university) {
-        university.name = university.university_name;
-        delete university.university_name;
-        state.universities.push(university);
-    });
+    state.universities = payload;
 }), _defineProperty(_majors$FETCH_MAJORS$, __WEBPACK_IMPORTED_MODULE_0__mutation_types_majors__["a" /* default */].FETCH_INDUSTRY_IMAGES, function (state, payload) {
     var index = payload.cardIndex;
     state.majorCards[index].industries = payload.industries;
@@ -63964,12 +63945,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 	state.allLevelIndustries = payload;
 	state.industries = payload[state.industryEducationLevel];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].FETCH_INDUSTRY_MAJORS_BY_FIELD, function (state, payload) {
-	state.industryMajorsByField = [];
-	payload[0].forEach(function (major) {
-		major.majorId = major.hegisCode;
-		delete major.hegisCode;
-		state.industryMajorsByField.push(major);
-	});
+	state.industryMajorsByField = payload[0];
 }), _defineProperty(_industries$FETCH_IND, __WEBPACK_IMPORTED_MODULE_0__mutation_types_industries__["a" /* default */].RESET_INDUSTRY_STATE, function (state) {
 	state.industries = [];
 	state.industryMajorsByField = [];
@@ -64185,13 +64161,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref.commit,
             dispatch = _ref.dispatch;
 
-        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
-        __WEBPACK_IMPORTED_MODULE_0__api_powerUser__["a" /* default */].fetchPowerUserValue(payload, function (success) {
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, success);
-            commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING);
-        }, function (error) {
-            commit(__WEBPACK_IMPORTED_MODULE_2__mutation_types_global_form__["a" /* default */].ERROR_ALERT, error);
-        });
+        commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, payload);
     },
     fetchOptInValues: function fetchOptInValues(_ref2, payload) {
         var commit = _ref2.commit,
@@ -93013,7 +92983,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         document.addEventListener('keyup', this.onEscKey);
     },
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['setTableauValue']), {
+    methods: {
         closeModal: function closeModal() {
             this.$emit('closeModal');
         },
@@ -93022,10 +92992,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 this.closeModal();
             }
         },
-        chooseTableauCategory: function chooseTableauCategory(university, path_id, callback) {
-            this.$store.dispatch('setTableauValue', { university: university, path_id: path_id });
+        chooseTableauCategory: function chooseTableauCategory(university, path_id) {
+            this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
         }
-    }), computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading", "optInValues"]), {
+    }, computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading", "optInValues"]), {
         majorsDisplayIsAllowed: function majorsDisplayIsAllowed() {
             var currentUniversityId;
             var currentOptInValue;
@@ -93189,8 +93159,8 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     _vm.chooseTableauCategory(
-                                      _vm.university.short_name,
-                                      1
+                                      _vm.university.id,
+                                      0
                                     )
                                   }
                                 }
@@ -93243,8 +93213,8 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     _vm.chooseTableauCategory(
-                                      _vm.university.short_name,
-                                      2
+                                      _vm.university.id,
+                                      1
                                     )
                                   }
                                 }
@@ -93297,8 +93267,8 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     _vm.chooseTableauCategory(
-                                      _vm.university.short_name,
-                                      3
+                                      _vm.university.id,
+                                      2
                                     )
                                   }
                                 }
@@ -93350,8 +93320,8 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     _vm.chooseTableauCategory(
-                                      _vm.university.short_name,
-                                      4
+                                      _vm.university.id,
+                                      3
                                     )
                                   }
                                 }
@@ -93407,8 +93377,8 @@ var render = function() {
                                 on: {
                                   click: function($event) {
                                     _vm.chooseTableauCategory(
-                                      _vm.university.short_name,
-                                      5
+                                      _vm.university.id,
+                                      4
                                     )
                                   }
                                 }
@@ -93766,34 +93736,50 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
-    },
-    mounted: function mounted() {
-        var divElement = document.getElementById('viz1541533460014');
-        if (this.tableauValue == null) {
-            var divElement = document.getElementById('viz1541533460014');
-            divElement.style.width = '1000px';divElement.style.height = '5rem';
-            divElement.style.backgroundColor = 'lightgray';
-            var heading = document.createElement("h1");
-            heading.innerText = "Tableau visual is not available";
-            divElement.appendChild(heading);
-        } else {
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            vizElement.style.width = '1016px';vizElement.style.height = '991px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            var vizEl = vizElement.getElementsByTagName('param');
-            vizEl[3].value = this.tableauValue;
-        }
-    },
+	components: {
+		powerBanner: __WEBPACK_IMPORTED_MODULE_0__components_research_power_banner___default.a
+	},
+	beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+		next(function (vm) {
+			if (vm.tableauValue === "") {
+				vm.$router.push("research");
+			} else next();
+		});
+	},
+	mounted: function mounted() {
+		var divElement = document.getElementById("viz1541533460014");
+		if (this.tableauValue == null) {
+			var divElement = document.getElementById("viz1541533460014");
+			divElement.style.width = "1000px";
+			divElement.style.height = "5rem";
+			divElement.style.backgroundColor = "lightgray";
+			var heading = document.createElement("h1");
+			heading.innerText = "Tableau visual is not available";
+			divElement.appendChild(heading);
+		} else {
+			var vizElement = divElement.getElementsByTagName("object")[0];
+			vizElement.style.width = "1016px";
+			vizElement.style.height = "991px";
+			var scriptElement = document.createElement("script");
+			scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+			vizElement.parentNode.insertBefore(scriptElement, vizElement);
+			var vizEl = vizElement.getElementsByTagName("param");
+			vizEl[3].value = this.tableauValue;
+		}
+	},
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['tableauValue']))
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(["tableauValue"]))
 });
 
 /***/ }),
@@ -93828,9 +93814,7 @@ var render = function() {
                     [
                       _c("h2", [
                         _c("i", { staticClass: "fa fa-arrow-left" }),
-                        _vm._v(
-                          " Return to CSU Campus Selection\n                        "
-                        )
+                        _vm._v(" Return to CSU Campus Selection\n\t\t\t\t\t\t")
                       ])
                     ]
                   )
@@ -120236,6 +120220,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         this.url = window.baseUrl;
+    },
+
+    computed: {
+        onData: function onData() {
+            return this.$route.name === 'majors' || this.$route.name === 'pfre' || this.$route.name === 'industries';
+        }
     }
 });
 
@@ -120292,32 +120282,40 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "footer-meta", attrs: { id: "footer-meta" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3 col-12" }, [
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "//www.csun.edu/academic-affairs/meta-lab",
-                target: "csun"
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "footer-meta__logo mb-2 mb-md-0",
+    _c(
+      "div",
+      {
+        staticClass: "footer-meta",
+        class: { "footer-meta--data": this.onData },
+        attrs: { id: "footer-meta" }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-12" }, [
+            _c(
+              "a",
+              {
                 attrs: {
-                  src: this.url + "/img/otherLogos/metalab-logo.svg",
-                  alt: "META+LAB Logo"
+                  href: "//www.csun.edu/academic-affairs/meta-lab",
+                  target: "csun"
                 }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ])
-    ])
+              },
+              [
+                _c("img", {
+                  staticClass: "footer-meta__logo mb-2 mb-md-0",
+                  attrs: {
+                    src: this.url + "/img/otherLogos/metalab-logo.svg",
+                    alt: "META+LAB Logo"
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [

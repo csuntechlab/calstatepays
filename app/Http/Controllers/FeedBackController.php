@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\FeedBackContract;
+use App\Http\Requests\FeedBackRequest;
+
 
 class FeedBackController extends Controller
 {
@@ -14,7 +16,7 @@ class FeedBackController extends Controller
         $this->feedbackRetriever = $feedBackContract;
     }
 
-    public function postFeedBack(Request $request)
+    public function postFeedBack(FeedBackRequest $request)
     {
         return $this->feedbackRetriever->postFeedBack($request);
     }

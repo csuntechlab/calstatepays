@@ -32,7 +32,7 @@ class MajorService implements MajorContract
             ->map(function ($item) {
                 return [
                     'major' => $item['major'],
-                    'hegis_code' => $item['hegis_code'],
+                    'majorId' => $item['hegis_code'],
                     'university_id' => $item['university']->id
                 ];
             });
@@ -48,6 +48,13 @@ class MajorService implements MajorContract
             $message = 'Field of Study table has no data';
             throw new ModelNotFoundException($message, 409);
         }
+
+        $fieldOfStudies = $fieldOfStudies->map(function ($item) {
+                return [
+                    'id' => $item['id'],
+                    'discipline' => $item['name'],
+                ];
+        });
 
         return $fieldOfStudies->toArray();
     }
