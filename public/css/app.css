@@ -20425,26 +20425,26 @@ input[type="button"]:focus {
   width: 100%;
 }
 
-.pfre-btn--selected {
-  color: #FFF;
-  background-color: #476A6F;
-  border-color: #476A6F;
-}
-
 .pfre-btn:hover {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   margin-left: 5px;
 }
 
+.pfre-btn:focus {
+  outline: none !important;
+}
+
+.pfre-btn--selected {
+  color: #FFF;
+  background-color: #476A6F;
+  border-color: #476A6F;
+}
+
 .pfre-btn--selected:hover {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   margin-left: 0 !important;
-}
-
-.pfre-btn:focus {
-  outline: none !important;
 }
 
 .power-user-modal-btn {

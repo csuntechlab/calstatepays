@@ -308,42 +308,26 @@ input[type="button"]:focus {
 	margin-bottom: 0.5rem;
 	width: 100%;
 
+	&:hover {
+		box-shadow: none !important;
+		margin-left: 5px;
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+
 	&--selected {
 		color: $white;
 		background-color: $oxford;
 		border-color: $oxford;
+
+		&:hover {
+			box-shadow: none !important;
+			margin-left: 0 !important;
+		}
 	}
 }
-
-// @media only screen and (min-width: $break-large) {
-// 	.pfre-btn {
-// 		margin-bottom: 0.5rem;
-// 	}
-
-.pfre-btn:hover {
-	box-shadow: none !important;
-	margin-left: 5px;
-}
-
-.pfre-btn--selected:hover {
-	box-shadow: none !important;
-	margin-left: 0 !important;
-}
-
-.pfre-btn:focus {
-	outline: none !important;
-}
-// }
-// @media only screen and (min-width: $break-medium) and (max-width: $break-large) {
-// 	.pfre-btn {
-// 		margin-bottom: 0.5rem;
-// 	}
-// }
-// @media only screen and (max-width: $break-medium) {
-// 	.pfre-btn {
-// 		margin-bottom: 0.5rem;
-// 	}
-// }
 
 .power-user-modal-btn {
 	border-radius: 3rem;
