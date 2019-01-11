@@ -20410,52 +20410,41 @@ input[type="button"]:focus {
 
 .pfre-btn {
   position: relative;
-  margin-left: 0;
+  padding: 5px 0;
   color: #476A6F;
   background-color: #FFF;
   font-size: 1rem;
   text-transform: none;
   font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.18s;
+  transition: 0.18s;
   border-color: #476A6F;
-  border: 3px solid;
+  border: 2px solid;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .pfre-btn--selected {
   color: #FFF;
   background-color: #476A6F;
+  border-color: #476A6F;
 }
 
-@media only screen and (min-width: 992px) {
-  .pfre-btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .pfre-btn:hover {
-    margin-left: 7.5px;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-  }
-  .pfre-btn--selected:hover {
-    margin-left: 0 !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-  }
+.pfre-btn:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 5px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .pfre-btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
+.pfre-btn--selected:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 0 !important;
 }
 
-@media only screen and (max-width: 768px) {
-  .pfre-btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
+.pfre-btn:focus {
+  outline: none !important;
 }
 
 .power-user-modal-btn {

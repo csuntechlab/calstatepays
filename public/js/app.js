@@ -66858,6 +66858,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67554,7 +67564,7 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fa fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n\t\t\t\t")
+            _vm._v(" Please fill out all fields.\n\t\t\t")
           ]
         )
       ]),
@@ -67566,6 +67576,7 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.majorId ? _vm.errorLabel : ""
               ],
@@ -67600,6 +67611,7 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
               ],
@@ -67626,7 +67638,7 @@ var render = function() {
         _c(
           "label",
           {
-            staticClass: "form-group",
+            staticClass: "form-group font-weight-bold",
             style: [
               this.submittedOnce && !this.form.education ? _vm.errorLabel : ""
             ],
@@ -67635,85 +67647,45 @@ var render = function() {
           [_vm._v("Select an Education Level")]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "form-group row justify-content-between mb-0" },
-            [
-              _c("label", { attrs: { for: "freshman" } }, [
-                _vm._v("First Time Freshman "),
-                _c("i", {
-                  class: {
-                    "fa fa-2x fa-check-circle-o": this.form.education == "FTF",
-                    "fa fa-2x fa-circle-o": this.form.education != "FTF"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.education,
-                    expression: "form.education"
-                  }
-                ],
-                attrs: {
-                  for: "freshman",
-                  type: "radio",
-                  id: "freshman",
-                  value: "FTF"
-                },
-                domProps: { checked: _vm._q(_vm.form.education, "FTF") },
-                on: {
-                  input: function($event) {
-                    _vm.updateSelect("education", $event.target)
-                  },
-                  change: function($event) {
-                    _vm.$set(_vm.form, "education", "FTF")
-                  }
-                }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group row justify-content-between" }, [
-            _c("label", { attrs: { for: "transfer" } }, [
-              _vm._v("First Time Transfer "),
-              _c("i", {
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
                 class: {
-                  "fa fa-2x fa-check-circle-o": this.form.education == "FTT",
-                  "fa fa-2x fa-circle-o": this.form.education != "FTT"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.education,
-                  expression: "form.education"
-                }
-              ],
-              attrs: {
-                for: "transfer",
-                type: "radio",
-                id: "transfer",
-                value: "FTT"
-              },
-              domProps: { checked: _vm._q(_vm.form.education, "FTT") },
-              on: {
-                input: function($event) {
-                  _vm.updateSelect("education", $event.target)
+                  "pfre-btn--selected": this.form.education == "FTF",
+                  "": this.form.education != "FTF"
                 },
-                change: function($event) {
-                  _vm.$set(_vm.form, "education", "FTT")
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTF")
+                  }
                 }
-              }
-            })
+              },
+              [_vm._v("First Time Freshmen")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
+                class: {
+                  "pfre-btn--selected": this.form.education == "FTT",
+                  "": this.form.education != "FTT"
+                },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTT")
+                  }
+                }
+              },
+              [_vm._v("First Time Transfer")]
+            )
           ])
         ])
       ]),
@@ -67725,6 +67697,7 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.earnings ? _vm.errorLabel : ""
               ],
@@ -67759,6 +67732,7 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.financialAid
                   ? _vm.errorLabel
@@ -70146,7 +70120,7 @@ var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(78)("26d294d4", content, false, {});
+var update = __webpack_require__(78)("ebcc37ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -70996,7 +70970,7 @@ var content = __webpack_require__(267);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(78)("09e563c0", content, false, {});
+var update = __webpack_require__(78)("fa1dca66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
