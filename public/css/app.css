@@ -18823,9 +18823,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .graphContent {
   background-color: #EBEBEB;
-  min-height: -webkit-fill-available;
-  min-height: -moz-available;
-  min-height: stretch;
+  min-height: calc(100vh - 540px);
 }
 
 abbr[title] {
@@ -19021,6 +19019,12 @@ body {
   color: #FFF;
 }
 
+@media screen and (max-width: 365px) {
+  .text--smallest-screen {
+    font-size: 11px;
+  }
+}
+
 .home__heading {
   font-size: 4rem;
   font-weight: 600;
@@ -19164,8 +19168,6 @@ figcaption {
 }
 
 .splashPage {
-  background-color: #EBEBEB;
-  height: calc(100vh - 409px);
   position: relative;
   font-size: 3rem;
   color: black;
@@ -19177,13 +19179,7 @@ figcaption {
 
 .splashPage p {
   padding: 6rem;
-}
-
-@media screen and (max-width: 960px) {
-  .splashPage {
-    height: calc(100vh - 430px);
-    min-height: 20rem;
-  }
+  margin: 0;
 }
 
 .errorAlert {
@@ -19749,7 +19745,6 @@ footer, .footer {
   .footer-meta {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -19759,6 +19754,12 @@ footer, .footer {
 
 .footer-meta__logo {
   width: 8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-meta--data {
+    margin-bottom: 4rem;
+  }
 }
 
 .researchMainBanner {
@@ -20595,6 +20596,21 @@ input[type="radio"] {
   margin-bottom: 0.5rem;
   margin: 0 !important;
   background-color: #EBEBEB !important;
+}
+
+.pfre-bar__years-text {
+  color: #9D6D02;
+  font-weight: 600;
+}
+
+.pfre-bar__earnings-text {
+  font-weight: 600;
+  color: #279D5D;
+}
+
+.pfre-bar__return-investment-text {
+  font-weight: 600;
+  color: #476A6F;
 }
 
 .pfre-year {

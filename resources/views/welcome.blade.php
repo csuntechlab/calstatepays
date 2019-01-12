@@ -2,7 +2,18 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        @php   
+        $iosFix = '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">';
+            if(Browser::isMobile()){
+                if(Browser::isSafari()){
+                    echo $iosFix;
+                }
+            }
+        @endphp
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="app-url" content="{{ url('/') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,20 +25,23 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">        
     </head>
     <body>
-       <div id="app">
-           <v-app/>
-       </div>
-       <script src="{{ asset('js/app.js') }}"></script>
-       @if(env('GOOGLE_ANALYTICS_TRACKING_ID'))
-       <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_TRACKING_ID') }}"></script>
-       <script>
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
+        <div id="app">
+            <v-app/>
+        </div>
+        <script src="{{ asset('js/app.js') }}"></script>
+        @if(env('GOOGLE_ANALYTICS_TRACKING_ID'))
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_TRACKING_ID') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-           gtag('config', '{{env('GOOGLE_ANALYTICS_TRACKING_ID')}}');
-       </script>
-       @endif
+            gtag('config', '{{env('GOOGLE_ANALYTICS_TRACKING_ID')}}');
+        </script>
+        @endif
+        <noscript>
+            <h1>Please have JavaScript enabled.</h1>
+        </noscript>
     </body>
 </html>

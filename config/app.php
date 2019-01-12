@@ -172,6 +172,9 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         CSUNMetaLab\ForceHttps\Providers\ForceHttpsServiceProvider::class,
+        
+        // https://github.com/hisorange/browser-detect
+        \hisorange\BrowserDetect\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -242,6 +245,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // https://github.com/hisorange/browser-detect
+        'Browser' => \hisorange\BrowserDetect\Facade::class,
 
     ],
 

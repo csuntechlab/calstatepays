@@ -41,30 +41,6 @@
 					for="education"
 					v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']"
 				>Select an Education Level</label>
-				<!-- <div class="col-12">
-					<div class="form-group row justify-content-between mb-0">
-						<label for="freshman">First Time Freshman <i :class="{'fa fa-2x fa-check-circle-o': this.form.education == 'FTF', 'fa fa-2x fa-circle-o':this.form.education != 'FTF'}"/></label>
-						<input
-							for="freshman"
-							type="radio"
-							id="freshman"
-							v-model="form.education"
-							value="FTF"
-							@input="updateSelect('education', $event.target)"
-						>
-					</div>
-					<div class="form-group row justify-content-between">
-						<label for="transfer">First Time Transfer <i :class="{'fa fa-2x fa-check-circle-o': this.form.education == 'FTT', 'fa fa-2x fa-circle-o':this.form.education != 'FTT'}"/></label>
-						<input
-							for="transfer"
-							type="radio"
-							id="transfer"
-							v-model="form.education"
-							value="FTT"
-							@input="updateSelect('education', $event.target)"
-						>
-					</div>
-				</div>-->
 				<div class="row">
 					<div class="col-sm-6 col-lg-12">
 						<button
@@ -131,19 +107,19 @@ import { updateForm } from "../../utils/index";
 import { required } from "vuelidate/lib/validators";
 import { mapGetters, mapActions } from "vuex";
 
-export default {
-	data() {
-		return {
-			formNotFilled: false,
-			submittedOnce: false,
-			form: {
-				majorId: null,
-				age: null,
-				education: null,
-				earnings: null,
-				financialAid: null,
-				university: 70
-			},
+    export default {
+        data() {
+            return {
+                formNotFilled: false,
+                submittedOnce: false,
+                form: {
+                    majorId: null,
+                    age: null,
+                    education: null,
+                    earnings: null,
+                    financialAid: null,
+                    university: "northridge"
+                },
 
 			errorLabel: {
 				color: "red",

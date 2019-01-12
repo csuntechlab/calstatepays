@@ -45,17 +45,22 @@ const vm = new Vue({
     },
     computed: {
         ...mapGetters([
-            'selectedUniversity'
+            'selectedUniversity',
+            'tableauValue'
         ])
     },
     methods: {
         checkSessionData() {
-            var sessionData = sessionStorage.getItem("selectedUniversity");
-            if (sessionData === null) {
+            var sessionUniversityData = sessionStorage.getItem("selectedUniversity");
+            var sessionTableauData = sessionStorage.getItem("tableauValue");
+            if (sessionUniversityData === null) {
                 this.showModal = true;
             }
             else {
-                this.$store.dispatch("setUniversity", sessionData);
+                this.$store.dispatch("setUniversity", sessionUniversityData);
+            }
+            if (sessionTableauData !== null){
+                this.$store.dispatch('setTableauValue', sessionTableauData)
             }
         }
     }

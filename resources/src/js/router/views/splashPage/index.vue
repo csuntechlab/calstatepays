@@ -9,8 +9,10 @@
     </p>
   </csu-data-img-banner>
     <sub-nav/>
-    <div class="splashPage">       
-      <p>Coming soon</p>
+    <div class="splashPage graphContent row align-items-center">
+      <div class="col">
+        <p>Coming soon</p>
+      </div>
     </div> 
 </div>   
 </template>

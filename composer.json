@@ -11,6 +11,7 @@
         "csun-metalab/laravel-proxypass": "^1.1",
         "doctrine/dbal": "^2.7",
         "guzzlehttp/guzzle": "~6.0",
+        "hisorange/browser-detect": "^3.1",
         "intervention/image": "^2.4",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
