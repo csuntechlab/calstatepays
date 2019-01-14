@@ -25,12 +25,9 @@ class PfreController extends Controller
             $data = json_decode($data);
             return response()->json($data);
         }
-
-        if (isset($request->validator) && $request->validator->fails()) {
-            return response()->json($request->validator->messages(), 400);
-        }
         
         $freData = $this->pfreRetriever->getFREData($request);
+        
         $data = [
             'majorId' => $request->major,
             'universityId' => $request->university,
