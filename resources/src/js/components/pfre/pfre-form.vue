@@ -7,6 +7,16 @@
                 </div>
             </div>
             <div class="form-group">
+					<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
+					<v-select
+						label="discipline"
+						:options="fieldOfStudies"
+						@input="updateGrandfatherSelect('fieldOfStudyId', 'id', $event);
+                        selected = null"
+						class="csu-form-input">
+					</v-select>
+			</div>
+            <div class="form-group">
                 <label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
                     Select a Major
                 </label>
@@ -127,14 +137,24 @@
             };
         },
         methods: {
-            ...mapActions(["fetchFreData"]),
+            ...mapActions([
+                "fetchFreData",
+                "fetchIndustryMajorsByField"
+            ]),
             updateGrandfatherSelect(field, dataKey, data) {
                 if (data) {
                     this.form[field] = data[dataKey];
+                    this.handleFieldOfStudyMajors(field);
                 } else {
                     this.form[field] = null;
                 }
             },
+            handleFieldOfStudyMajors(field) {
+			if (field == "fieldOfStudyId") {
+                console.log(this.selectedUniversity);
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
+			}
+		},
             updateSelect(field, data) {
                 if (data) {
                     this.form[field] = data.value;
@@ -142,6 +162,7 @@
                     this.form[field] = null;
                 }
             },
+            
             scrollWin() {
                 if (window.innerWidth <= 767) {
                     var scrollTop;
@@ -173,7 +194,12 @@
             }
         },
         computed: {
-            ...mapGetters(["majors", "majorNameById"]),
+            ...mapGetters([
+                "majors",
+                "majorNameById",
+                "fieldOfStudies",
+                "selectedUniversity"
+                ]),
             selectedMajorName() {
                 if (this.form.majorId == null) {
                     return "";
