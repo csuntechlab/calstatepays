@@ -67058,7 +67058,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     data: function data() {
         return {
             formNotFilled: false,
-            submittedOnce: false,
+            submitted: false,
             form: {
                 majorId: null,
                 age: null,
@@ -67082,6 +67082,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
     methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchFreData", "fetchIndustryMajorsByField"]), {
         updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
+            this.submitted = false;
             if (data) {
                 this.form[field] = data[dataKey];
                 this.handleFieldOfStudyMajors(field);
@@ -67091,7 +67092,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         handleFieldOfStudyMajors: function handleFieldOfStudyMajors(field) {
             if (field == "fieldOfStudyId") {
-                console.log(this.selectedUniversity);
                 this.fetchIndustryMajorsByField({ form: this.form, school: this.selectedUniversity });
             }
         },
@@ -67115,7 +67115,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         },
         submitForm: function submitForm() {
             this.formNotFilled = false;
-            this.submittedOnce = true;
+            this.submitted = true;
+            this.submitted = true;
             if (this.checkForm()) {
                 this.scrollWin();
                 document.getElementById("submit-btn").innerHTML = "Resubmit";
@@ -67789,7 +67790,7 @@ var render = function() {
             "label",
             {
               style: [
-                this.submittedOnce && !this.form.majorId ? _vm.errorLabel : ""
+                this.submitted && !this.form.majorId ? _vm.errorLabel : ""
               ],
               attrs: { for: "Major" }
             },
@@ -67800,7 +67801,7 @@ var render = function() {
             ? _c("v-select", {
                 staticClass: "csu-form-input",
                 class: {
-                  "border-danger": this.submittedOnce && !this.form.majorId
+                  "border-danger": this.submitted && !this.form.majorId
                 },
                 attrs: { label: "major", options: _vm.majors },
                 on: {
@@ -67815,7 +67816,7 @@ var render = function() {
             : _c("v-select", {
                 staticClass: "csu-form-input",
                 class: {
-                  "border-danger": this.submittedOnce && !this.form.majorId
+                  "border-danger": this.submitted && !this.form.majorId
                 },
                 attrs: { label: "major", options: _vm.selectedMajorsByField },
                 on: {
@@ -67845,9 +67846,7 @@ var render = function() {
           _c(
             "label",
             {
-              style: [
-                this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
-              ],
+              style: [this.submitted && !this.form.age ? _vm.errorLabel : ""],
               attrs: { for: "age" }
             },
             [
@@ -67859,7 +67858,7 @@ var render = function() {
           _vm._v(" "),
           _c("v-select", {
             staticClass: "csu-form-input",
-            class: { "border-danger": this.submittedOnce && !this.form.age },
+            class: { "border-danger": this.submitted && !this.form.age },
             attrs: { label: "age", options: _vm.ageRanges },
             on: {
               input: function($event) {
@@ -67877,7 +67876,7 @@ var render = function() {
           {
             staticClass: "form-group",
             style: [
-              this.submittedOnce && !this.form.education ? _vm.errorLabel : ""
+              this.submitted && !this.form.education ? _vm.errorLabel : ""
             ],
             attrs: { for: "education" }
           },
@@ -67967,7 +67966,7 @@ var render = function() {
             "label",
             {
               style: [
-                this.submittedOnce && !this.form.earnings ? _vm.errorLabel : ""
+                this.submitted && !this.form.earnings ? _vm.errorLabel : ""
               ],
               attrs: { for: "earnings" }
             },
@@ -67980,9 +67979,7 @@ var render = function() {
           _vm._v(" "),
           _c("v-select", {
             staticClass: "csu-form-input",
-            class: {
-              "border-danger": this.submittedOnce && !this.form.earnings
-            },
+            class: { "border-danger": this.submitted && !this.form.earnings },
             attrs: { label: "earn", options: _vm.earningRanges },
             on: {
               input: function($event) {
@@ -68005,9 +68002,7 @@ var render = function() {
             "label",
             {
               style: [
-                this.submittedOnce && !this.form.financialAid
-                  ? _vm.errorLabel
-                  : ""
+                this.submitted && !this.form.financialAid ? _vm.errorLabel : ""
               ],
               attrs: { for: "financialAid" }
             },
@@ -68017,7 +68012,7 @@ var render = function() {
           _c("v-select", {
             staticClass: "csu-form-input",
             class: {
-              "border-danger": this.submittedOnce && !this.form.financialAid
+              "border-danger": this.submitted && !this.form.financialAid
             },
             attrs: { label: "finAid", options: _vm.financialAidRanges },
             on: {

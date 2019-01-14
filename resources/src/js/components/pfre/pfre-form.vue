@@ -17,7 +17,7 @@
 					</v-select>
 			</div>
             <div class="form-group">
-                <label for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
+                <label for="Major" v-bind:style="[this.submitted && !this.form.majorId ? errorLabel : '']">
                     Select a Major
                 </label>
                 <v-select
@@ -27,7 +27,7 @@
                     @input="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     class="csu-form-input"
-                    v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+                    v-bind:class="{'border-danger': this.submitted && !this.form.majorId}">
                 </v-select>
                 <v-select
 							label="major"
@@ -37,13 +37,13 @@
 							@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 							@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 							class="csu-form-input"
-							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+							v-bind:class="{'border-danger': this.submitted && !this.form.majorId}">
 						</v-select>
             </div>
             <div class="form-group">
                 <label 
                     for="age" 
-                    v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']">
+                    v-bind:style="[this.submitted && !this.form.age ? errorLabel : '']">
                     Select an Age Range
                 </label>
                 <v-select
@@ -51,11 +51,11 @@
                     :options="ageRanges"
                     @input="updateSelect('age', $event)"
                     class="csu-form-input"
-                    v-bind:class="{'border-danger': this.submittedOnce && !this.form.age}">
+                    v-bind:class="{'border-danger': this.submitted && !this.form.age}">
                 </v-select>
             </div>
             <div class="form-group">
-                    <label class="form-group" for="education" v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']">
+                    <label class="form-group" for="education" v-bind:style="[this.submitted && !this.form.education ? errorLabel : '']">
                         Select an Education Level
                     </label>
                     <div class="col-12">
@@ -70,7 +70,7 @@
                     </div>
             </div>
             <div class="form-group">
-                <label for="earnings" v-bind:style="[this.submittedOnce && !this.form.earnings ? errorLabel : '']">
+                <label for="earnings" v-bind:style="[this.submitted && !this.form.earnings ? errorLabel : '']">
                     Estimated Annual Earnings In School</label>
                 <v-select
                 label="earn" 
@@ -78,11 +78,11 @@
                 @input="updateSelect('earnings', $event)" 
                 @change="updateSelect('earnings', $event)"
                 class="csu-form-input" 
-                v-bind:class="{'border-danger': this.submittedOnce && !this.form.earnings}">
+                v-bind:class="{'border-danger': this.submitted && !this.form.earnings}">
                 </v-select>
             </div>
             <div class="form-group">
-                <label for="financialAid" v-bind:style="[this.submittedOnce && !this.form.financialAid ? errorLabel : '']">
+                <label for="financialAid" v-bind:style="[this.submitted && !this.form.financialAid ? errorLabel : '']">
                         Estimated Annual Financial Aid</label>
                     <v-select 
                         label="finAid" 
@@ -90,7 +90,7 @@
                         @input="updateSelect('financialAid', $event)" 
                         @change="updateSelect('financialAid', $event)"
                         class="csu-form-input" 
-                        v-bind:class="{'border-danger': this.submittedOnce && !this.form.financialAid}">
+                        v-bind:class="{'border-danger': this.submitted && !this.form.financialAid}">
                     </v-select>
             </div>
             <div class="row row--condensed" id="submit-btn-container">
@@ -111,7 +111,7 @@
         data() {
             return {
                 formNotFilled: false,
-                submittedOnce: false,
+                submitted: false,
                 form: {
                     majorId: null,
                     age: null,
@@ -154,6 +154,7 @@
                 "fetchIndustryMajorsByField"
             ]),
             updateGrandfatherSelect(field, dataKey, data) {
+                this.submitted = false;
                 if (data) {
                     this.form[field] = data[dataKey];
                     this.handleFieldOfStudyMajors(field);
@@ -163,7 +164,6 @@
             },
             handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-                console.log(this.selectedUniversity);
 				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
 			}
 		},
@@ -190,7 +190,8 @@
             },
             submitForm() {
                 this.formNotFilled = false;
-                this.submittedOnce = true;
+                this.submitted = true;
+                this.submitted = true;
                 if (this.checkForm()) {
                     this.scrollWin();
                     document.getElementById("submit-btn").innerHTML = "Resubmit";
