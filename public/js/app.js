@@ -93378,7 +93378,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         chooseTableauCategory: function chooseTableauCategory(university, path_id) {
             sessionStorage.setItem('tableauValue', this.optInValues[university][path_id].iframe_string);
             this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
-            router.push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
+            this.$router.push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
         }
     }, computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading", "optInValues"]), {
         majorsDisplayIsAllowed: function majorsDisplayIsAllowed() {
