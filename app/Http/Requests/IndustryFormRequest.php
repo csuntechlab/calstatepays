@@ -50,7 +50,7 @@ class IndustryFormRequest extends FormRequest
             // 'comment.required' => 'Comment input was left Null',
             'university.required' => 'Choosing a University is required.',
             'university.regex' => 'Invalid University.',
-            'university.unique' => 'University has yet to have choosen to opt in to Cal State Pays.',
+            'university.exists' => 'University has yet to have choosen to opt in to Cal State Pays.',
         ];
     }
 
