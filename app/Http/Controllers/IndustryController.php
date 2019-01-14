@@ -45,10 +45,6 @@ class IndustryController extends Controller
             return response()->json($data);
         }
 
-        if (isset($request->validator) && $request->validator->fails()) {
-            return response()->json($request->validator->messages(), 400);
-        }
-
         $data = $this->industryRetriever->getIndustryPopulationByRankWithImages($request->major, $request->university);
 
         $value = json_encode($data);
