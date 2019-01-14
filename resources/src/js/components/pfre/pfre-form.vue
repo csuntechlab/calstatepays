@@ -97,7 +97,6 @@
                     education: null,
                     earnings: null,
                     financialAid: null,
-                    university: "northridge"
                 },
 
                 errorLabel: {
@@ -160,6 +159,7 @@
                 this.submittedOnce = true;
                 if (this.checkForm()) {
                     this.scrollWin();
+                    this.form.university = this.selectedUniversity;
                     document.getElementById("submit-btn").innerHTML = "Resubmit";
                     this.fetchFreData(this.form);
                 }
@@ -173,7 +173,11 @@
             }
         },
         computed: {
-            ...mapGetters(["majors", "majorNameById"]),
+            ...mapGetters([
+                "majors",
+                "majorNameById",
+                "selectedUniversity"
+                ]),
             selectedMajorName() {
                 if (this.form.majorId == null) {
                     return "";
@@ -188,8 +192,7 @@
                 age: { required },
                 education: { required },
                 earnings: { required },
-                financialAid: { required },
-                university: { required }
+                financialAid: { required },  
             }
         },
         components: {
