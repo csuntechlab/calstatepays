@@ -67114,9 +67114,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             }
         },
         submitForm: function submitForm() {
+            this.submitted = true;
             this.formNotFilled = false;
-            this.submitted = true;
-            this.submitted = true;
             if (this.checkForm()) {
                 this.scrollWin();
                 document.getElementById("submit-btn").innerHTML = "Resubmit";
