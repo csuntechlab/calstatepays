@@ -67037,6 +67037,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67051,6 +67062,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             form: {
                 majorId: null,
                 age: null,
+                fieldOfStudyId: null,
                 education: null,
                 earnings: null,
                 financialAid: null,
@@ -67117,13 +67129,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             } else return true;
         }
     }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById", "fieldOfStudies", "selectedUniversity"]), {
+    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById", "fieldOfStudies", "selectedUniversity", "industryMajorsByField"]), {
         selectedMajorName: function selectedMajorName() {
             if (this.form.majorId == null) {
                 return "";
             } else {
                 return this.majorNameById(this.form.majorId);
             }
+        },
+        selectedMajorsByField: function selectedMajorsByField() {
+            return this.industryMajorsByField;
         }
     }),
     validations: {
@@ -67781,21 +67796,44 @@ var render = function() {
             [_vm._v("\n                    Select a Major\n                ")]
           ),
           _vm._v(" "),
-          _c("v-select", {
-            staticClass: "csu-form-input",
-            class: {
-              "border-danger": this.submittedOnce && !this.form.majorId
-            },
-            attrs: { label: "major", options: _vm.majors },
-            on: {
-              input: function($event) {
-                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
-              },
-              change: function($event) {
-                _vm.updateGrandfatherSelect("majorId", "majorId", $event)
-              }
-            }
-          })
+          this.form.fieldOfStudyId == null
+            ? _c("v-select", {
+                staticClass: "csu-form-input",
+                class: {
+                  "border-danger": this.submittedOnce && !this.form.majorId
+                },
+                attrs: { label: "major", options: _vm.majors },
+                on: {
+                  input: function($event) {
+                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                  },
+                  change: function($event) {
+                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                  }
+                }
+              })
+            : _c("v-select", {
+                staticClass: "csu-form-input",
+                class: {
+                  "border-danger": this.submittedOnce && !this.form.majorId
+                },
+                attrs: { label: "major", options: _vm.selectedMajorsByField },
+                on: {
+                  input: function($event) {
+                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                  },
+                  change: function($event) {
+                    _vm.updateGrandfatherSelect("majorId", "majorId", $event)
+                  }
+                },
+                model: {
+                  value: _vm.selected,
+                  callback: function($$v) {
+                    _vm.selected = $$v
+                  },
+                  expression: "selected"
+                }
+              })
         ],
         1
       ),
@@ -68331,7 +68369,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
     smallestScreen: function smallestScreen() {
       var width = window.innerWidth;
-      console.log(width);
       return width > 320 ? true : false;
     }
   }),

@@ -22,12 +22,23 @@
                 </label>
                 <v-select
                     label="major"
+					v-if="this.form.fieldOfStudyId == null"
                     :options="majors"
                     @input="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     class="csu-form-input"
                     v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
                 </v-select>
+                <v-select
+							label="major"
+							v-else
+							v-model="selected"
+							:options="selectedMajorsByField"
+							@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
+							@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+							class="csu-form-input"
+							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
+						</v-select>
             </div>
             <div class="form-group">
                 <label 
@@ -104,6 +115,7 @@
                 form: {
                     majorId: null,
                     age: null,
+                    fieldOfStudyId: null,
                     education: null,
                     earnings: null,
                     financialAid: null,
@@ -198,7 +210,8 @@
                 "majors",
                 "majorNameById",
                 "fieldOfStudies",
-                "selectedUniversity"
+                "selectedUniversity",
+                "industryMajorsByField"
                 ]),
             selectedMajorName() {
                 if (this.form.majorId == null) {
@@ -206,7 +219,10 @@
                 } else {
                     return this.majorNameById(this.form.majorId);
                 }
-            }
+            },
+            selectedMajorsByField() {
+			return this.industryMajorsByField;	
+		    },
         },
         validations: {
             form: {
