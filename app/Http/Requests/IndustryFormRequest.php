@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Validation\Rule;
 
 class IndustryFormRequest extends FormRequest
 {
@@ -26,9 +27,30 @@ class IndustryFormRequest extends FormRequest
      */
     public function rules()
     {
+        $university = $this->route('university');
+        $major = $this->route('major');
+
+        $errors = [
+            'major' => 'required|integer|exists:hegis_codes,hegis_code',
+            'university' => 'required|regex:/^[a-z_A-Z]+$/u|exists:universities,short_name',
+            // 'university' => ['required', 'regex:/^[a-z_A-Z]+$/u', Rule::exists('universities')->where(function ($query) use ($university) {
+            //     $query->where('short_name', $university);
+            //     $query->where('opt_in', 1);
+            // })],
+        ];
+
+        // dd($errors);
+
+        return $errors;
+    }
+
+    public function message()
+    {
         return [
-            'major' => 'required|integer',
-            'university' => 'required|regex:/^[a-z_A-Z]+$/u',
+            // 'comment.required' => 'Comment input was left Null',
+            'university.required' => 'Choosing a University is required.',
+            'university.regex' => 'Invalid University.',
+            'university.unique' => 'University has yet to have choosen to opt in to Cal State Pays.',
         ];
     }
 
