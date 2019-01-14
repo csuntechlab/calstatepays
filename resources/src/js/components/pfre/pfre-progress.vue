@@ -14,7 +14,7 @@
           <div class="col-10">
             <div class="row">
               <div class="col-sm-12">
-                 <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year"/>
+                 <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.years.actual/ pfreData.years.end) * 100" height="55" color="pfre-year" background-color="pfre-bar__background"/>
               </div>
             </div>
               <div class="progress-footer">
@@ -50,7 +50,7 @@
       <div class="col-10">
         <div class="row">
           <div class="col-sm-12">
-            <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings"/>
+            <v-progress-linear class="pfre-bar progress-median" :value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100" height="55" color="pfre-earnings" background-color="pfre-bar__background"/>
           </div>
         </div>
           <div class="progress-footer">
@@ -88,7 +88,7 @@
         <div class="col-10">
           <div class="row">
             <div class="col-sm-12">
-              <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre"/>
+              <v-progress-linear class="pfre-bar progress-median" :value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))" height="55" color="pfre-fre" background-color="pfre-bar__background"/>
             </div>
           </div>
             <div class="progress-footer">

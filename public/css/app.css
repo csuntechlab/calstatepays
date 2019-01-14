@@ -20567,6 +20567,11 @@ button.btn-change-campus:hover {
   color: #476A6F;
 }
 
+.pfre-bar__background {
+  border-radius: 50px;
+  background-color: #EBEBEB;
+}
+
 .pfre-year {
   background-color: #DAA200 !important;
   border-radius: 50px;

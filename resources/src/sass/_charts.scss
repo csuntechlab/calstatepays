@@ -120,6 +120,11 @@
 		font-weight: 600;
 		color: $oxford;
 	}
+
+	&__background {
+		border-radius: 50px;
+		background-color: $light-gray;
+	}
 }
 
 .pfre-year {
