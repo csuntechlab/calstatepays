@@ -29619,12 +29619,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 var FETCH_MOCK_DATA = 'pfre/FETCH_MOCK_DATA';
 var FETCH_FRE_DATA = 'pfre/FETCH_FRE_DATA';
 var TOGGLE_INFO = 'pfre/TOGGLE_INFO';
+var SUBMIT_PFRE = "pfre/SUBMIT_PFRE";
 var RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     FETCH_MOCK_DATA: FETCH_MOCK_DATA,
     FETCH_FRE_DATA: FETCH_FRE_DATA,
     TOGGLE_INFO: TOGGLE_INFO,
+    SUBMIT_PFRE: SUBMIT_PFRE,
     RESET_FRE_STATE: RESET_FRE_STATE
 });
 
@@ -63693,6 +63695,7 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, e
 // everything in the state needs to be initially set to 0.
 
 /* harmony default export */ __webpack_exports__["a"] = ({
+    pfreFormWasSubmitted: false,
     pfreShowInfo: false,
     pfreInfoKey: null,
     pfreData: {
@@ -63725,6 +63728,9 @@ var fetchIndustryImagesAPI = function fetchIndustryImagesAPI(payload, success, e
 // PFRE GETTERS
 
 /* harmony default export */ __webpack_exports__["a"] = ({
+    pfreFormWasSubmitted: function pfreFormWasSubmitted(state) {
+        return state.pfreFormWasSubmitted;
+    },
     pfreData: function pfreData(state) {
         return state.pfreData;
     },
@@ -63768,6 +63774,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 			state.pfreInfoKey = payload;
 		}
 	}
+}), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].SUBMIT_PFRE, function (state) {
+	state.pfreFormWasSubmitted = true;
 }), _defineProperty(_pfre$FETCH_MOCK_DATA, __WEBPACK_IMPORTED_MODULE_0__mutation_types_pfre__["a" /* default */].RESET_FRE_STATE, function (state, payload) {
 	state.pfreData.years.actual = 0;
 	state.pfreData.earnings.actual = 0;
@@ -63807,8 +63815,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].TOGGLE_INFO, payload);
     },
-    resetFreState: function resetFreState(_ref4) {
+    submitPfreForm: function submitPfreForm(_ref4) {
         var commit = _ref4.commit;
+
+        commit(_.pfre.SUBMIT_PFRE);
+    },
+    resetFreState: function resetFreState(_ref5) {
+        var commit = _ref5.commit;
 
         commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].RESET_FRE_STATE);
     }
@@ -65798,6 +65811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -65807,14 +65821,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
-    card: __WEBPACK_IMPORTED_MODULE_2__components_global_card___default.a,
-    pfreForm: __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue___default.a,
-    pfreInfo: __WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue___default.a,
-    pfreProgress: __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue___default.a,
-    subNav: __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default.a
-  }
+	components: {
+		csuDataImgBanner: __WEBPACK_IMPORTED_MODULE_0__components_global_csu_data_img_banner___default.a,
+		card: __WEBPACK_IMPORTED_MODULE_2__components_global_card___default.a,
+		pfreForm: __WEBPACK_IMPORTED_MODULE_3__components_pfre_pfre_form_vue___default.a,
+		pfreInfo: __WEBPACK_IMPORTED_MODULE_4__components_pfre_pfre_info_vue___default.a,
+		pfreProgress: __WEBPACK_IMPORTED_MODULE_5__components_pfre_pfre_progress_vue___default.a,
+		subNav: __WEBPACK_IMPORTED_MODULE_1__components_global_sub_nav_vue___default.a
+	}
 });
 
 /***/ }),
@@ -66899,6 +66913,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -66906,94 +66945,95 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            formNotFilled: false,
-            submittedOnce: false,
-            form: {
-                majorId: null,
-                age: null,
-                education: null,
-                earnings: null,
-                financialAid: null,
-                university: "northridge"
-            },
+	data: function data() {
+		return {
+			formNotFilled: false,
+			submittedOnce: false,
+			form: {
+				majorId: null,
+				age: null,
+				education: null,
+				earnings: null,
+				financialAid: null,
+				university: "northridge"
+			},
 
-            errorLabel: {
-                color: "red",
-                fontWeight: "bold"
-            },
+			errorLabel: {
+				color: "red",
+				fontWeight: "bold"
+			},
 
-            ageRanges: [{ age: "18-19", value: 1 }, { age: "20-24", value: 2 }, { age: "24-26", value: 3 }, { age: "26 +", value: 4 }],
-            earningRanges: [{ earn: "0", value: 1 }, { earn: "0 - 20,000", value: 2 }, { earn: "30,000 - 45,000", value: 3 }, { earn: "45,000 - 60,000", value: 4 }, { earn: "60,000 +", value: 5 }],
-            financialAidRanges: [{ finAid: "0", value: 1 }, { finAid: "0 - 5,000", value: 2 }, { finAid: "5,000 - 15,000", value: 3 }, { finAid: "15,000 +", value: 4 }]
-        };
-    },
+			ageRanges: [{ age: "18-19", value: 1 }, { age: "20-24", value: 2 }, { age: "24-26", value: 3 }, { age: "26 +", value: 4 }],
+			earningRanges: [{ earn: "0", value: 1 }, { earn: "0 - 20,000", value: 2 }, { earn: "30,000 - 45,000", value: 3 }, { earn: "45,000 - 60,000", value: 4 }, { earn: "60,000 +", value: 5 }],
+			financialAidRanges: [{ finAid: "0", value: 1 }, { finAid: "0 - 5,000", value: 2 }, { finAid: "5,000 - 15,000", value: 3 }, { finAid: "15,000 +", value: 4 }]
+		};
+	},
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchFreData"]), {
-        updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
-            if (data) {
-                this.form[field] = data[dataKey];
-            } else {
-                this.form[field] = null;
-            }
-        },
-        updateSelect: function updateSelect(field, data) {
-            if (data) {
-                this.form[field] = data.value;
-            } else {
-                this.form[field] = null;
-            }
-        },
-        scrollWin: function scrollWin() {
-            if (window.innerWidth <= 767) {
-                var scrollTop;
-                var progressBar = document.getElementById("submit-btn-container");
-                progressBar.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "end"
-                });
-            }
-        },
-        submitForm: function submitForm() {
-            this.formNotFilled = false;
-            this.submittedOnce = true;
-            if (this.checkForm()) {
-                this.scrollWin();
-                document.getElementById("submit-btn").innerHTML = "Resubmit";
-                this.fetchFreData(this.form);
-            }
-        },
-        checkForm: function checkForm() {
-            if (this.$v.$invalid) {
-                this.formNotFilled = true;
-                return false;
-            } else return true;
-        }
-    }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById"]), {
-        selectedMajorName: function selectedMajorName() {
-            if (this.form.majorId == null) {
-                return "";
-            } else {
-                return this.majorNameById(this.form.majorId);
-            }
-        }
-    }),
-    validations: {
-        form: {
-            majorId: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            age: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            education: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            earnings: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            financialAid: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            university: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] }
-        }
-    },
-    components: {
-        vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
-    }
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchFreData"]), {
+		updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
+			if (data) {
+				this.form[field] = data[dataKey];
+			} else {
+				this.form[field] = null;
+			}
+		},
+		updateSelect: function updateSelect(field, data) {
+			if (data) {
+				this.form[field] = data.value;
+			} else {
+				this.form[field] = null;
+			}
+		},
+		scrollWin: function scrollWin() {
+			if (window.innerWidth <= 767) {
+				var scrollTop;
+				var progressBar = document.getElementById("submit-btn-container");
+				progressBar.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+					inline: "end"
+				});
+			}
+		},
+		submitForm: function submitForm() {
+			this.formNotFilled = false;
+			this.submittedOnce = true;
+			if (this.checkForm()) {
+				this.$store.dispatch('submitPfreForm');
+				this.scrollWin();
+				document.getElementById("submit-btn").innerHTML = "Resubmit";
+				this.fetchFreData(this.form);
+			}
+		},
+		checkForm: function checkForm() {
+			if (this.$v.$invalid) {
+				this.formNotFilled = true;
+				return false;
+			} else return true;
+		}
+	}),
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById"]), {
+		selectedMajorName: function selectedMajorName() {
+			if (this.form.majorId == null) {
+				return "";
+			} else {
+				return this.majorNameById(this.form.majorId);
+			}
+		}
+	}),
+	validations: {
+		form: {
+			majorId: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			age: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			education: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			earnings: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			financialAid: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			university: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] }
+		}
+	},
+	components: {
+		vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
+	}
 });
 
 /***/ }),
@@ -67592,7 +67632,7 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fa fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n            ")
+            _vm._v(" Please fill out all fields.\n\t\t\t")
           ]
         )
       ]),
@@ -67609,7 +67649,7 @@ var render = function() {
               ],
               attrs: { for: "Major" }
             },
-            [_vm._v("\n                Select a Major\n            ")]
+            [_vm._v("Select a Major")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67643,7 +67683,7 @@ var render = function() {
               ],
               attrs: { for: "age" }
             },
-            [_vm._v("\n                Select an Age Range\n            ")]
+            [_vm._v("Select an Age Range")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67670,11 +67710,7 @@ var render = function() {
             ],
             attrs: { for: "education" }
           },
-          [
-            _vm._v(
-              "\n                    Select an Education Level\n                "
-            )
-          ]
+          [_vm._v("Select an Education Level")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "col-12" }, [
@@ -67760,7 +67796,7 @@ var render = function() {
               ],
               attrs: { for: "earnings" }
             },
-            [_vm._v("\n                Estimated Annual Earnings In School")]
+            [_vm._v("Estimated Annual Earnings In School")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67796,7 +67832,7 @@ var render = function() {
               ],
               attrs: { for: "financialAid" }
             },
-            [_vm._v("\n                    Estimated Annual Financial Aid")]
+            [_vm._v("Estimated Annual Financial Aid")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -68135,32 +68171,77 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      userYears: {
-        start: 0,
-        middle: 0,
-        end: 0,
-        actual: 0
-      }
-    };
-  },
+	data: function data() {
+		return {
+			userYears: {
+				start: 0,
+				middle: 0,
+				end: 0,
+				actual: 0
+			}
+		};
+	},
 
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
-    smallestScreen: function smallestScreen() {
-      var width = window.innerWidth;
-      console.log(width);
-      return width > 320 ? true : false;
-    }
-  }),
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(['fetchFreData', 'toggleInfo'])),
-  filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
-  components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
+	props: ['formWasSubmitted'],
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(["pfreData", "pfreFormWasSubmitted"]), {
+		smallestScreen: function smallestScreen() {
+			var width = window.innerWidth;
+			console.log(width);
+			return width > 320 ? true : false;
+		}
+	}),
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapActions */])(["fetchFreData", "toggleInfo"])),
+	filters: { percentage: __WEBPACK_IMPORTED_MODULE_0__filters__["b" /* percentage */], currency: __WEBPACK_IMPORTED_MODULE_0__filters__["a" /* currency */] },
+	components: { pfreInfo: __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default.a }
 });
 
 /***/ }),
@@ -69323,11 +69404,11 @@ var render = function() {
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-auto " },
+                { staticClass: "col-auto" },
                 [
                   _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                     _vm._v(
-                      "After you successfully complete a degree and find a career, Your estimated earnings would be this. "
+                      "After you successfully complete a degree and find a career, Your estimated earnings would be this."
                     )
                   ])
                 ],
@@ -69394,13 +69475,11 @@ var render = function() {
                         )
                       : _c("p", { staticClass: "float-left mb-0" }, [
                           _vm._v(
-                            " " +
-                              _vm._s(
-                                _vm._f("currency")(
-                                  _vm.pfreData.earnings.minimum / 1000
-                                )
-                              ) +
-                              "k "
+                            _vm._s(
+                              _vm._f("currency")(
+                                _vm.pfreData.earnings.minimum / 1000
+                              )
+                            ) + "k"
                           )
                         ])
                   ]),
@@ -69460,8 +69539,7 @@ var render = function() {
                               )
                             ) + "k"
                           )
-                        ]),
-                    _c("p")
+                        ])
                   ])
                 ])
               ]),
@@ -69515,7 +69593,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("FRE - Financial Return on Education: ")]
+                  [_vm._v("FRE - Financial Return on Education:")]
                 )
               ])
             ]),
@@ -69644,7 +69722,7 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n      Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.\n    "
+              "Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments."
             )
           ]
         )

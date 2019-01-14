@@ -34,6 +34,10 @@ export default {
 			}
 		}
     },
+
+    [_pfre.SUBMIT_PFRE](state) {
+        state.pfreFormWasSubmitted = true;
+    },
     
 	[_pfre.RESET_FRE_STATE](state, payload) {
 		state.pfreData.years.actual = 0;

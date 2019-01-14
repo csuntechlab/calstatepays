@@ -23,6 +23,10 @@ export default {
         commit(_pfre.TOGGLE_INFO, payload);
     },
 
+    submitPfreForm({commit}){
+        commit(_.pfre.SUBMIT_PFRE);
+    },
+
     resetFreState({commit}){
         commit(_pfre.RESET_FRE_STATE);
     }

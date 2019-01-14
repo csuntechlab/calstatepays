@@ -1,33 +1,34 @@
 <template>
-  <div>
-    <csu-data-img-banner>
-      <h3 class="CSUDataImgBanner__dataTitle" slot="title">
-        <span>Financial Return on Education</span>
-      </h3>
-      <p class="CSUDataImgBanner__dataCopy" slot="copy">
-        Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.
-      </p>
-    </csu-data-img-banner>
-    <sub-nav/>
-    <div class="graphContent">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-12">
-              <pfre-form/>
-          </div>
-          <div class="col-lg-9 col-12">
-            <card class="csu-card py-3">
-              <div class="container-fluid">
-              <div class="row-fluid">
-              <pfre-progress/>
-              </div>
-            </div>
-          </card>
-          </div>
-      </div>
-    </div>
-    </div>
-  </div>
+	<div>
+		<csu-data-img-banner>
+			<h3 class="CSUDataImgBanner__dataTitle" slot="title">
+				<span>Financial Return on Education</span>
+			</h3>
+			<p
+				class="CSUDataImgBanner__dataCopy"
+				slot="copy"
+			>Education costs money and takes time. In return, it increases earnings after graduation. Financial return is an interest-rate-like number describing the monetary rewards to education that you can compare to financial investments.</p>
+		</csu-data-img-banner>
+		<sub-nav/>
+		<div class="graphContent">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-12">
+						<pfre-form/>
+					</div>
+					<div class="col-lg-9 col-12">
+						<card class="csu-card py-3">
+							<div class="container-fluid">
+								<div class="row-fluid">
+									<pfre-progress/>
+								</div>
+							</div>
+						</card>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 <script>
 import csuDataImgBanner from "../../../components/global/csu-data-img-banner";
@@ -38,13 +39,13 @@ import pfreInfo from "../../../components/pfre/pfre-info.vue";
 import pfreProgress from "../../../components/pfre/pfre-progress.vue";
 import { mapGetters } from "vuex";
 export default {
-  components: {
-    csuDataImgBanner,
-    card,
-    pfreForm,
-    pfreInfo,
-    pfreProgress,
-    subNav
-  },
+	components: {
+		csuDataImgBanner,
+		card,
+		pfreForm,
+		pfreInfo,
+		pfreProgress,
+		subNav
+	}
 };
 </script>

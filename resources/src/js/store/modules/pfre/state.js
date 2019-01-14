@@ -3,6 +3,7 @@
 // everything in the state needs to be initially set to 0.
 
 export default {
+    pfreFormWasSubmitted: false,
     pfreShowInfo: false,
     pfreInfoKey: null,
     pfreData: {
