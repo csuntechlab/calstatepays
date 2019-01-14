@@ -29590,9 +29590,9 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a },
-	// { path: '/data/pfre',component: splashPage, name: 'pfre' },
-	{ path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a, name: 'pfre' },
+	// { path: '/data/pfre', component: pfre },
+	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -63922,7 +63922,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var commit = _ref2.commit,
             dispatch = _ref2.dispatch;
 
-        console.log(payload);
         __WEBPACK_IMPORTED_MODULE_0__api_pfre__["a" /* default */].fetchFreDataAPI(payload, function (success) {
             commit(__WEBPACK_IMPORTED_MODULE_1__mutation_types_pfre__["a" /* default */].FETCH_FRE_DATA, success);
         }, function (error) {
