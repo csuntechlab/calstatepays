@@ -32,7 +32,7 @@
                                         Data
                                     </li>
                                 </router-link>
-                                 <router-link class="nav-link" active-class="hr-nav" to="/faq">
+                                <router-link class="nav-link" active-class="hr-nav" to="/faq">
                                     <li @click="toggleShowNav()" class="nav-item">
                                     FAQ
                                     </li>
