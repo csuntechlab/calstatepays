@@ -32,7 +32,6 @@
             'annual_earnings' => 'required|integer|min:1|max:5',
             'financial_aid' => 'required|integer|min:1|max:5',
         ];
-
         return $error;
     }
 
@@ -51,7 +50,6 @@
         $request['education_level'] = $this->route('education_level');
         $request['annual_earnings'] = $this->route('annual_earnings');
         $request['financial_aid'] = $this->route('financial_aid');
-        // dd($request);
         return $request;
     }
 }

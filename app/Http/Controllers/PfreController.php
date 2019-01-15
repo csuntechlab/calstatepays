@@ -18,6 +18,10 @@ class PfreController extends Controller
 
     public function getFREData(FREFormRequest $request)
     {
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+
         $key = "getFreData:" . ":" . $request->major . ":" . $request->university . ":" . $request->age_range . ":" . $request->education_level . ":" . $request->annual_earnings . ":" . $request->financial_aid;
 
         if (Cache::has($key)) {
@@ -27,7 +31,6 @@ class PfreController extends Controller
         }
         
         $freData = $this->pfreRetriever->getFREData($request);
-        
         $data = [
             'majorId' => $request->major,
             'universityId' => $request->university,
