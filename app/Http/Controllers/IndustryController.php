@@ -37,6 +37,11 @@ class IndustryController extends Controller
 
     public function getIndustryPopulationByRankWithImages(IndustryFormRequest $request)
     {
+
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+
         $key = 'industryPopulationByRankWithImages:' . $request->major . ':' . $request->university;
 
         if (Cache::has($key)) {
@@ -55,6 +60,10 @@ class IndustryController extends Controller
     public function getIndustryPopulationByRank(IndustryFormRequest $request)
     {
 
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json($request->validator->messages(), 400);
+        }
+
         $key = 'industryPopulationByRank:' . $request->major . ':' . $request->university;
 
         if (Cache::has($key)) {
@@ -63,10 +72,6 @@ class IndustryController extends Controller
             return response()->json($data);
         }
 
-        // if there is an error, return the error messages, with response code 400
-        if (isset($request->validator) && $request->validator->fails()) {
-            return response()->json($request->validator->messages(), 400);
-        }
         $data = $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
 
         $value = json_encode($data);
