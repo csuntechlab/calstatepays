@@ -9,7 +9,8 @@
 					<div class="form-group">
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select 
-						label="discipline" 
+						label="discipline"
+						aria-label="Select Discipline Optional"
 						@click.native="this.selected = null"  
 						:options="fieldOfStudies" 
 						@input="updateSelect('fieldOfStudyId', 'id', $event)"
@@ -19,10 +20,10 @@
 					<div class="form-group">
 						<label class="font-weight-bold" for="Major" v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']">
 							Select a Major</label>
-						<v-select label="major" v-if="this.form.fieldOfStudyId == null" v-model="selected" :options="majors" @input="updateSelect('majorId', 'majorId', $event)"
+						<v-select label="major" aria-label="Select Major" v-if="this.form.fieldOfStudyId == null" v-model="selected" :options="majors" @input="updateSelect('majorId', 'majorId', $event)"
 						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
-						<v-select label="major" v-else v-model="selected" :options="selectedMajorsByField" @input="updateSelect('majorId', 'majorId', $event)"
+						<v-select label="major" aria-label="Select Major" v-else v-model="selected" :options="selectedMajorsByField" @input="updateSelect('majorId', 'majorId', $event)"
 						class="csu-form-input" v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 					</div>
