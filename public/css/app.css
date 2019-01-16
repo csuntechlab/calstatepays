@@ -19684,6 +19684,9 @@ body {
   background-color: rgba(97, 97, 97, 0.9);
   margin-top: 2rem;
   border-radius: 10px;
+  opacity: 1;
+  -webkit-animation: fadeIn 5s ease;
+          animation: fadeIn 5s ease;
   padding: .5rem;
   z-index: 2;
 }
@@ -19691,6 +19694,24 @@ body {
 @media screen and (max-width: 576px) {
   .pfre-info--show {
     margin-top: 3rem;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

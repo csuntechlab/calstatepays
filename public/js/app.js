@@ -68254,11 +68254,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -69351,50 +69346,32 @@ var render = function() {
           [
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
-                "div",
-                { staticClass: "col-12" },
+                "span",
+                { staticClass: "col-auto" },
                 [
-                  _c(
-                    "v-tooltip",
-                    {
-                      attrs: {
-                        "content-class": "",
-                        absoulte: "",
-                        bottom: "",
-                        "allow-overflow": "",
-                        "nudge-right": "10",
-                        "nudge-bottom": "-10"
-                      }
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "float-left font-weight-bold mb-0",
-                          attrs: { slot: "activator" },
-                          on: {
-                            click: function($event) {
-                              _vm.toggleInfo("timeToDegree")
-                            }
-                          },
-                          slot: "activator"
-                        },
-                        [
-                          _c("i", { staticClass: "fa fa-info-circle" }),
-                          _vm._v(" Estimated time to degree:")
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "tooltip" }, [
-                        _vm._v(
-                          "\n            The estimated time it would take for you to complete your degree if you choose this major.\n            "
-                        )
-                      ])
-                    ]
-                  )
+                  _c("pfre-info", { attrs: { infoKey: "timeToDegree" } }, [
+                    _vm._v(
+                      "The estimated time it would take for you to complete your degree if you choose this major."
+                    )
+                  ])
                 ],
                 1
-              )
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "col" }, [
+                _c(
+                  "p",
+                  {
+                    staticClass: "float-left font-weight-bold mb-0",
+                    on: {
+                      click: function($event) {
+                        _vm.toggleInfo("timeToDegree")
+                      }
+                    }
+                  },
+                  [_vm._v("Estimated time to degree:")]
+                )
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row my-3" }, [
@@ -69464,7 +69441,7 @@ var render = function() {
             _c("div", { staticClass: "row no-gutters" }, [
               _c(
                 "span",
-                { staticClass: "col-12 " },
+                { staticClass: "col-auto " },
                 [
                   _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                     _vm._v(
@@ -69475,7 +69452,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("span", { staticClass: "col-12" }, [
+              _c("span", { staticClass: "col" }, [
                 _c(
                   "p",
                   {
@@ -69486,10 +69463,7 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _c("i", { staticClass: "fa fa-info-circle" }),
-                    _vm._v("\n          Estimated Earnings 5 Years After Exit:")
-                  ]
+                  [_vm._v("Estimated Earnings 5 Years After Exit:")]
                 )
               ])
             ]),

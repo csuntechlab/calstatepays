@@ -100,11 +100,21 @@ body {
     background-color: rgba(97,97,97,.9);
     margin-top: 2rem;
     border-radius: 10px;
-    // left: 1.9rem;
+    opacity: 1;
+    animation: fadeIn 5s ease;
     padding: .5rem;
     z-index: 2;
     @media screen and (max-width:576px){
         margin-top: 3rem;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
