@@ -14,6 +14,7 @@
 				<v-select
 					label="major"
 					:options="majors"
+                    v-model="selected.majorName"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
@@ -27,6 +28,7 @@
 				>Select an Age Range</label>
 				<v-select
 					label="age"
+                    v-model="selected.ageRange"
 					:options="ageRanges"
 					@input="updateSelect('age', $event)"
 					class="csu-form-input"
@@ -46,7 +48,7 @@
 							for="freshman"
 							type="radio"
 							id="freshman"
-							v-model="form.education"
+							v-model="selected.education"
 							value="FTF"
 							@input="updateSelect('education', $event.target)"
 						>
@@ -57,7 +59,7 @@
 							for="transfer"
 							type="radio"
 							id="transfer"
-							v-model="form.education"
+							v-model="selected.education"
 							value="FTT"
 							@input="updateSelect('education', $event.target)"
 						>
@@ -72,6 +74,7 @@
 				<v-select
 					label="earn"
 					:options="earningRanges"
+                    v-model="selected.earnings"
 					@input="updateSelect('earnings', $event)"
 					@change="updateSelect('earnings', $event)"
 					class="csu-form-input"
@@ -86,6 +89,7 @@
 				<v-select
 					label="finAid"
 					:options="financialAidRanges"
+                    v-model="selected.financialAid"
 					@input="updateSelect('financialAid', $event)"
 					@change="updateSelect('financialAid', $event)"
 					class="csu-form-input"
@@ -115,14 +119,20 @@ export default {
 	data() {
 		return {
 			formNotFilled: false,
-			submittedOnce: false,
+            submittedOnce: false,
+            selected: {
+                majorName: null,
+                ageRange: null,
+                education: null,
+                earnings: null,
+                financialAid: null
+            },
 			form: {
 				majorId: null,
 				age: null,
 				education: null,
 				earnings: null,
-				financialAid: null,
-				university: "northridge"
+                financialAid: null,
 			},
 
 			errorLabel: {
@@ -137,17 +147,17 @@ export default {
 				{ age: "26 +", value: 4 }
 			],
 			earningRanges: [
-				{ earn: "0", value: 1 },
-				{ earn: "0 - 20,000", value: 2 },
-				{ earn: "30,000 - 45,000", value: 3 },
-				{ earn: "45,000 - 60,000", value: 4 },
-				{ earn: "60,000 +", value: 5 }
+				{ earn: "$0", value: 1 },
+				{ earn: "$0 - $20,000", value: 2 },
+				{ earn: "$30,000 - $45,000", value: 3 },
+				{ earn: "$45,000 - $60,000", value: 4 },
+				{ earn: "$60,000 +", value: 5 }
 			],
 			financialAidRanges: [
-				{ finAid: "0", value: 1 },
-				{ finAid: "0 - 5,000", value: 2 },
-				{ finAid: "5,000 - 15,000", value: 3 },
-				{ finAid: "15,000 +", value: 4 }
+				{ finAid: "$0", value: 1 },
+				{ finAid: "$0 - $5,000", value: 2 },
+				{ finAid: "$5,000 - $15,000", value: 3 },
+				{ finAid: "$15,000 +", value: 4 }
 			]
 		};
 	},
@@ -182,30 +192,24 @@ export default {
 		},
 		submitForm() {
 			this.formNotFilled = false;
-			this.submittedOnce = true;
+            this.submittedOnce = true;
 			if (this.checkForm()) {
-                this.$store.dispatch('submitPfreForm');
                 this.scrollWin();
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
-				this.fetchFreData(this.form);
+                this.$store.dispatch('submitPfreForm');
+                this.$store.dispatch('setPfreSelections', this.selected)
+				this.fetchFreData({form: this.form, school: this.selectedUniversity});
 			}
-		},
+        },
 		checkForm() {
-			if (this.$v.$invalid) {
-				this.formNotFilled = true;
+            if (this.$v.$invalid) {
+                this.formNotFilled = true;
 				return false;
 			} else return true;
-		}
+		},
 	},
 	computed: {
-		...mapGetters(["majors", "majorNameById"]),
-		selectedMajorName() {
-			if (this.form.majorId == null) {
-				return "";
-			} else {
-				return this.majorNameById(this.form.majorId);
-			}
-		}
+		...mapGetters(["majors", 'selectedUniversity']),
 	},
 	validations: {
 		form: {
@@ -213,8 +217,7 @@ export default {
 			age: { required },
 			education: { required },
 			earnings: { required },
-			financialAid: { required },
-			university: { required }
+			financialAid: { required }
 		}
 	},
 	components: {

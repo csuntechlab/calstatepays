@@ -24,10 +24,14 @@ export default {
     },
 
     submitPfreForm({commit}){
-        commit(_.pfre.SUBMIT_PFRE);
+        commit(_pfre.SUBMIT_PFRE);
     },
 
     resetFreState({commit}){
         commit(_pfre.RESET_FRE_STATE);
+    },
+
+    setPfreSelections({commit}, payload){
+        commit(_pfre.SET_PFRE, payload);
     }
 }

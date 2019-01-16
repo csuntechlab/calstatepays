@@ -1,7 +1,32 @@
 <template>
-	<div class="progress-wrapper" id="progress-bars">
-		<div class="row no-gutters my-3">
-			<div class="col-12 col-lg-11 col-xl-10 align-self-center">
+	<div v-if="!this.pfreFormWasSubmitted">
+		<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+		<p class="lead pl-md-5 pr-md-5">
+			You have the option of either filtering out majors by
+			<span class="font-weight-bold">discipline</span> or choosing the
+			<span class="font-weight-bold">major</span>
+			which resonates the most with you.
+		</p>
+		<p class="lead pl-md-5 pr-md-5">
+			<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+			For more information on how we gathered the data, please read the
+			<router-link to="/faq">FAQ</router-link>.
+		</p>
+	</div>
+	<div v-else id="progress-bars">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="csu-card__title">{{this.pfreSelected.majorName}}</h3>
+			</div>
+			<div class="col-12">
+				<span class="h6 pfre__sub-header"><b class="csu-card__tags">Age:</b> {{this.pfreSelected.ageRange}} &bull; </span>
+                <span class="h6 pfre__sub-header"><b class="csu-card__tags">Education Level:</b> {{this.pfreSelected.education}} &bull; </span>
+                <span class="h6 pfre__sub-header"><b class="csu-card__tags">Earnings:</b> {{this.pfreSelected.earnings}} &bull; </span>
+                <span class="h6 pfre__sub-header"><b class="csu-card__tags">Financial Aid:</b> {{this.pfreSelected.financialAid}}</span>
+			</div>
+		</div>
+		<div class="row my-3 pfre-bar__wrapper">
+			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
 					<span class="col-auto">
 						<pfre-info
@@ -12,11 +37,11 @@
 						<p
 							class="float-left font-weight-bold mb-0"
 							@click="toggleInfo('timeToDegree')"
-						>Estimated time to degree:</p>
+						>Estimated Time to Completion of Degree</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-10">
+					<div class="col-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -40,15 +65,15 @@
 							</span>
 						</div>
 					</div>
-					<div class="col-2 px-0 py-4">
+					<div class="col-1 px-0 py-4">
 						<p class="mb-0 text--smallest-screen pfre-bar__years-text">{{pfreData.years.actual}} yrs</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="row no-gutters my-3">
-			<div class="col-12 col-lg-11 col-xl-10 align-self-center">
+		<div class="row no-gutters my-3 pfre-bar__wrapper">
+			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
 					<span class="col-auto">
 						<pfre-info
@@ -59,11 +84,11 @@
 						<p
 							class="float-left font-weight-bold mb-0"
 							@click="toggleInfo('earnings')"
-						>Estimated Earnings 5 Years After Exit:</p>
+						>Estimated Earnings 5 Years After Exit</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-10">
+					<div class="col-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -99,7 +124,7 @@
 							</span>
 						</div>
 					</div>
-					<div class="col-2 px-0 py-4">
+					<div class="col-1 px-0 py-4">
 						<p
 							class="mb-0 text--smallest-screen pfre-bar__earnings-text"
 						>{{pfreData.earnings.actual | currency}}</p>
@@ -107,8 +132,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row no-gutters my-3">
-			<div class="col-12 col-lg-11 col-xl-10 align-self-center">
+		<div class="row no-gutters my-3 pfre-bar__wrapper">
+			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
 					<span class="col-auto">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
@@ -117,11 +142,11 @@
 						<p
 							class="float-left font-weight-bold mb-0"
 							@click="toggleInfo('return')"
-						>FRE - Financial Return on Education:</p>
+						>FRE - Financial Return on Education</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-10">
+					<div class="col-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -145,10 +170,10 @@
 							</span>
 						</div>
 					</div>
-					<div class="col-2 px-0 py-4">
+					<div class="col-1 px-0 py-4">
 						<p
 							class="mb-0 text--smallest-screen pfre-bar__return-investment-text"
-						>{{pfreData.earnings.actual | currency}}</p>
+						>{{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
 					</div>
 				</div>
 			</div>
@@ -171,10 +196,9 @@ export default {
 				actual: 0
 			}
 		};
-    },
-    props: ['formWasSubmitted'],
+	},
 	computed: {
-		...mapGetters(["pfreData", "pfreFormWasSubmitted"]),
+		...mapGetters(["pfreData", "pfreFormWasSubmitted", "pfreSelected"]),
 		smallestScreen() {
 			var width = window.innerWidth;
 			console.log(width);

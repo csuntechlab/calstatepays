@@ -12,18 +12,12 @@
 		<sub-nav/>
 		<div class="graphContent">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-12">
+				<div class="row pt-md-2">
+					<aside class="col-lg-3 col-12">
 						<pfre-form/>
-					</div>
+					</aside>
 					<div class="col-lg-9 col-12">
-						<card class="csu-card py-3">
-							<div class="container-fluid">
-								<div class="row-fluid">
-									<pfre-progress/>
-								</div>
-							</div>
-						</card>
+						<pfre-progress class="bar-graph-card mt-md-3 mt-lg-0"/>
 					</div>
 				</div>
 			</div>

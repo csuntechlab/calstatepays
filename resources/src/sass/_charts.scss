@@ -15,41 +15,41 @@
 	padding: 1.42rem 0.71rem;
 	border-top: 1px solid $light-gray;
 	@media only screen and (max-width: $break-small) {
-	padding: .1rem 2rem 0 0;
-	margin: 1rem 0 0 0;
+		padding: 0.1rem 2rem 0 0;
+		margin: 1rem 0 0 0;
 	}
-	
-	&__ProgressBarBase{
+
+	&__ProgressBarBase {
 		border-radius: 50px;
 		margin: 0;
 	}
-	
-	&__IndustryTitle{
+
+	&__IndustryTitle {
 		font-size: 1rem;
 		margin: 0;
 	}
 
-	&__PercentageBar--Background{
+	&__PercentageBar--Background {
 		border-radius: 50px;
 		background-color: $light-gray;
 	}
 
-	&__PercentageBar{
+	&__PercentageBar {
 		border-radius: 50px;
 		background-color: $blue;
 	}
-	
+
 	&__SalaryBar {
 		border-radius: 50px;
 		background-color: $green;
 	}
 
-	&__PercentageText{
+	&__PercentageText {
 		margin: 0;
 		color: $blue;
 		font-size: 1rem;
 	}
-	
+
 	&__SalaryText {
 		margin: 0;
 		color: $green;
@@ -59,48 +59,48 @@
 	&__SalaryBar {
 		background-color: $green;
 	}
-	
+
 	&__collapse {
 		text-align: left;
 		color: $blue-light;
-		border-top: 1px solid rgba(0,0,0,.1);
-		&:hover{
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		&:hover {
 			color: $oxford;
 		}
 	}
-}//end IndustryProgressBarWrapper
+} //end IndustryProgressBarWrapper
 
-.IndustryLegend{
+.IndustryLegend {
 	//padding: 20px 10px;
 	font-weight: 600;
 	font-size: 0.857rem;
-	%LegendBase{
+	%LegendBase {
 		height: 0;
 		width: 10px;
 		padding-bottom: 10px;
 		margin-right: 5px;
 		display: inline-block;
 	}
-	&__LegendPercentage{
+	&__LegendPercentage {
 		@extend %LegendBase;
 		background-color: $blue;
 	}
-	&__LegendSalary{
+	&__LegendSalary {
 		@extend %LegendBase;
 		background-color: $green;
 	}
 }
 
-.industry-card{
-    min-height: 95%;
+.bar-graph-card {
+	min-height: 100%;
 	padding: $content-card__padding;
 	@extend %card-base;
-		@media screen and (max-width: $break-small) {
-			margin-top: 2%;
-			padding: 7%;
-			font-size: 1.5rem;
-			padding-bottom: .5em;
-		}
+	@media screen and (max-width: $break-small) {
+		margin-top: 2%;
+		padding: 7%;
+		font-size: 1.5rem;
+		padding-bottom: 0.5em;
+	}
 }
 
 .pfre-bar {
@@ -120,10 +120,17 @@
 		font-weight: 600;
 		color: $oxford;
 	}
-
 	&__background {
 		border-radius: 50px;
 		background-color: $light-gray;
+	}
+	&__wrapper {
+		padding: 1.42rem 0.71rem;
+		border-top: 1px solid $light-gray;
+		@media only screen and (max-width: $break-small) {
+			padding: 0.1rem 2rem 0 0;
+			margin: 1rem 0 0 0;
+		}
 	}
 }
 
@@ -146,10 +153,6 @@
 	display: flex;
 }
 
-// .progress-wrapper{
-//   margin-top: 60px;
-// }
-
 .progress-linear__bar__determinate {
 	border-radius: 50px;
 }
@@ -168,24 +171,21 @@ $colorList: (
 );
 
 // %legend {
-//   height: 15px;
-//   width: 15px;
-
+// height: 15px;
+// width: 15px;
 // }
-
-
 %legend {
-  height: 10px;
-  width: 10px;
-  margin-left: 5px;
-  float: left;
-}
+	height: 10px;
 
+	width: 10px;
+	margin-left: 5px;
+	float: left;
+}
 .legend-mobile {
-  font-size: 0.857rem;
-  float: left;
-  margin-left: 10px;
-  padding-top: 0;
+	font-size: 0.857rem;
+	float: left;
+	margin-left: 10px;
+	padding-top: 0;
 	p {
 		position: relative;
 		top: -4px;
@@ -193,15 +193,12 @@ $colorList: (
 		font-weight: 600;
 		margin-bottom: 0;
 	}
-  .majors-header {
-    display: none !important;
-  }
+	.majors-header {
+		display: none !important;
+	}
 }
-
-
 .progress-median:after {
 	content: "";
-	;
 	top: 0;
 	z-index: 1;
 	bottom: 0;
@@ -210,7 +207,7 @@ $colorList: (
 	transform: translate(-50%);
 }
 
-/*Legend color key for majors page*/
+/* Legend color key for majors page */
 @mixin legend-color-mixin($legend-color) {
 	@each $color, $value in $colorList {
 		.legend-#{$color} {
@@ -225,12 +222,10 @@ $colorList: (
 	font-size: 1rem;
 	margin-left: 10px;
 }
-
 // .legend {
-// 	&__text {
-// 		font-size: 1rem;
-// 	}
-// 	&__key-color {
-// 		height:100px;
-// 	}
+// &__text {
+// font-size: 1rem;
+// &__key-color {
+// height:100px;
+// }
 // }
