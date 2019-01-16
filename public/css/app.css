@@ -20122,7 +20122,17 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../img/cspLogos/logo-mini.svg");
+    display: none !important;
+  }
+}
+
+.nav-logo--small {
+  display: none !important;
+}
+
+@media screen and (max-width: 575px) {
+  .nav-logo--small {
+    display: inline !important;
     width: 4rem;
   }
 }

@@ -119099,6 +119099,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -119158,6 +119160,15 @@ var render = function() {
                 staticClass: "float-md-left nav-logo mx-auto d-inline-block",
                 attrs: {
                   src: this.url + "/img/cspLogos/csp-logo.svg",
+                  alt: "Cal State Pays logo"
+                }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass:
+                  "float-md-left nav-logo--small mx-auto d-inline-block",
+                attrs: {
+                  src: this.url + "/img/cspLogos/logo-mini.svg",
                   alt: "Cal State Pays logo"
                 }
               })
