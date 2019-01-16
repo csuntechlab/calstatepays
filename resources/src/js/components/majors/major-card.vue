@@ -44,7 +44,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<h2  class="industry-title pt-3">{{selectedMajorTitle}}</h2>
+							<h2 class="industry-title pt-3">{{selectedMajorTitle}}</h2>
 						</div>
 											<div class="row">
 								<div class="col-12">

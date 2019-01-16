@@ -1,9 +1,9 @@
 <template>
   <div>
     <csu-data-img-banner>
-      <h3 class="CSUDataImgBanner__dataTitle" slot="title">
+      <h2 class="CSUDataImgBanner__dataTitle" slot="title">
         <span>Top Industries by Major</span>
-      </h3>
+      </h2>
       <p class="CSUDataImgBanner__dataCopy" slot="copy">
         Different majors lead to jobs in different industries. Select a major and find out where CSU students work, and what they earn, five years after they leave.
       </p>

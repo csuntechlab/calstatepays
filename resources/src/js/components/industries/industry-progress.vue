@@ -9,7 +9,7 @@
         </div>
         <div v-else>
             <div v-if="industryMajor == null || industriesByMajor == null">
-                <h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+                <h2 class="industry-title text-center p-md-3">Please make your selection</h2>
                 <p class="lead pl-md-5 pr-md-5">
                     You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
                     which resonates the most with you.
@@ -22,7 +22,7 @@
             <div v-else>
                 <div class="row IndustryLegend">
                     <div v-if="industryMajor !== null" class="col-12">
-                        <h3>{{industryMajor}}</h3>
+                        <h2>{{industryMajor}}</h2>
                     </div>
                     <div v-if="industriesByMajor.length > 0" class="col-12">
                         <p class="h6">Employment 5 Years After Exit</p>

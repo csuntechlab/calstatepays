@@ -91753,7 +91753,7 @@ var render = function() {
       : _c("div", [
           _vm.industryMajor == null || _vm.industriesByMajor == null
             ? _c("div", [
-                _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
+                _c("h2", { staticClass: "industry-title text-center p-md-3" }, [
                   _vm._v("Please make your selection")
                 ]),
                 _vm._v(" "),
@@ -91783,7 +91783,7 @@ var render = function() {
                   _c("div", { staticClass: "row IndustryLegend" }, [
                     _vm.industryMajor !== null
                       ? _c("div", { staticClass: "col-12" }, [
-                          _c("h3", [_vm._v(_vm._s(_vm.industryMajor))])
+                          _c("h2", [_vm._v(_vm._s(_vm.industryMajor))])
                         ])
                       : _vm._e(),
                     _vm._v(" "),
@@ -92557,7 +92557,7 @@ var render = function() {
     [
       _c("csu-data-img-banner", [
         _c(
-          "h3",
+          "h2",
           {
             staticClass: "CSUDataImgBanner__dataTitle",
             attrs: { slot: "title" },
