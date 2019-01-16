@@ -64436,7 +64436,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["a"] = (_powerUsers$SET_TABLE = {}, _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].SET_TABLEAU_VALUE, function (state, payload) {
     state.tableauValue = payload;
-    __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
 }), _defineProperty(_powerUsers$SET_TABLE, __WEBPACK_IMPORTED_MODULE_0__mutation_types_powerUsers__["a" /* default */].TRIGGER_TABLEAU_IS_LOADING, function (state) {
     if (state.tableauIsLoading === false) {
         state.tableauIsLoading = true;
@@ -67048,6 +67047,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67101,6 +67121,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             } else {
                 this.form[field] = null;
             }
+        },
+        setEducationLevel: function setEducationLevel(data) {
+            this.form.education = data;
         },
         scrollWin: function scrollWin() {
             if (window.innerWidth <= 767) {
@@ -67752,7 +67775,7 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fa fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n                ")
+            _vm._v(" Please fill out all fields.\n\t\t\t\t")
           ]
         )
       ]),
@@ -67788,12 +67811,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submitted && !this.form.majorId ? _vm.errorLabel : ""
               ],
               attrs: { for: "Major" }
             },
-            [_vm._v("\n                    Select a Major\n                ")]
+            [_vm._v("Select a Major")]
           ),
           _vm._v(" "),
           this.form.fieldOfStudyId == null
@@ -67845,14 +67869,11 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [this.submitted && !this.form.age ? _vm.errorLabel : ""],
               attrs: { for: "age" }
             },
-            [
-              _vm._v(
-                "\n                    Select an Age Range\n                "
-              )
-            ]
+            [_vm._v("Select an Age Range")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67873,86 +67894,54 @@ var render = function() {
         _c(
           "label",
           {
-            staticClass: "form-group",
+            staticClass: "form-group font-weight-bold",
             style: [
               this.submitted && !this.form.education ? _vm.errorLabel : ""
             ],
             attrs: { for: "education" }
           },
-          [
-            _vm._v(
-              "\n                        Select an Education Level\n                    "
-            )
-          ]
+          [_vm._v("Select an Education Level")]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "form-group row justify-content-between mb-0" },
-            [
-              _c("label", { attrs: { for: "freshman" } }, [
-                _vm._v("First Time Freshman:")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.education,
-                    expression: "form.education"
-                  }
-                ],
-                attrs: {
-                  for: "freshman",
-                  type: "radio",
-                  id: "freshman",
-                  value: "FTF"
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
+                class: {
+                  "pfre-btn--selected": this.form.education == "FTF",
+                  "": this.form.education != "FTF"
                 },
-                domProps: { checked: _vm._q(_vm.form.education, "FTF") },
                 on: {
-                  input: function($event) {
-                    _vm.updateSelect("education", $event.target)
-                  },
-                  change: function($event) {
-                    _vm.$set(_vm.form, "education", "FTF")
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTF")
                   }
                 }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group row justify-content-between" }, [
-            _c("label", { attrs: { for: "transfer" } }, [
-              _vm._v("First Time Transfer")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.education,
-                  expression: "form.education"
-                }
-              ],
-              attrs: {
-                for: "transfer",
-                type: "radio",
-                id: "transfer",
-                value: "FTT"
               },
-              domProps: { checked: _vm._q(_vm.form.education, "FTT") },
-              on: {
-                input: function($event) {
-                  _vm.updateSelect("education", $event.target)
+              [_vm._v("First Time Freshman")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
+                class: {
+                  "pfre-btn--selected": this.form.education == "FTT",
+                  "": this.form.education != "FTT"
                 },
-                change: function($event) {
-                  _vm.$set(_vm.form, "education", "FTT")
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTT")
+                  }
                 }
-              }
-            })
+              },
+              [_vm._v("First Time Transfer")]
+            )
           ])
         ])
       ]),
@@ -67964,16 +67953,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submitted && !this.form.earnings ? _vm.errorLabel : ""
               ],
               attrs: { for: "earnings" }
             },
-            [
-              _vm._v(
-                "\n                    Estimated Annual Earnings In School"
-              )
-            ]
+            [_vm._v("Estimated Annual Earnings In School")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -68000,12 +67986,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submitted && !this.form.financialAid ? _vm.errorLabel : ""
               ],
               attrs: { for: "financialAid" }
             },
-            [_vm._v("\n                        Estimated Annual Financial Aid")]
+            [_vm._v("Estimated Annual Financial Aid")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -93587,6 +93574,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         chooseTableauCategory: function chooseTableauCategory(university, path_id) {
             sessionStorage.setItem('tableauValue', this.optInValues[university][path_id].iframe_string);
             this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
+            this.$router.push({ name: 'tableau', params: { tableauValue: this.tableauValue } });
         }
     }, computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(["universityById", "tableauValue", "tableauIsLoading", "optInValues"]), {
         majorsDisplayIsAllowed: function majorsDisplayIsAllowed() {
@@ -119184,6 +119172,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -119243,6 +119233,15 @@ var render = function() {
                 staticClass: "float-md-left nav-logo mx-auto d-inline-block",
                 attrs: {
                   src: this.url + "/img/cspLogos/csp-logo.svg",
+                  alt: "Cal State Pays logo"
+                }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass:
+                  "float-md-left nav-logo--small mx-auto d-inline-block",
+                attrs: {
+                  src: this.url + "/img/cspLogos/logo-mini.svg",
                   alt: "Cal State Pays logo"
                 }
               })

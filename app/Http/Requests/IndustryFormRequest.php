@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Validation\Rule;
 
 class IndustryFormRequest extends FormRequest
 {
@@ -27,8 +28,8 @@ class IndustryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'major' => 'required|integer',
-            'university' => 'required|regex:/^[a-z_A-Z]+$/u',
+            'university' => ['required', 'regex:/^[a-z_A-Z]+$/u', Rule::exists('universities', 'short_name')->where('opt_in', 1)],
+            'major' => 'required|integer|exists:hegis_codes,hegis_code',
         ];
     }
 

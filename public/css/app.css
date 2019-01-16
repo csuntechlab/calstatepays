@@ -20122,7 +20122,17 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../img/cspLogos/logo-mini.svg");
+    display: none !important;
+  }
+}
+
+.nav-logo--small {
+  display: none !important;
+}
+
+@media screen and (max-width: 575px) {
+  .nav-logo--small {
+    display: inline !important;
     width: 4rem;
   }
 }
@@ -20959,6 +20969,45 @@ input[type="button"]:focus {
   width: 80%;
 }
 
+.pfre-btn {
+  position: relative;
+  padding: 5px 0;
+  color: #476A6F;
+  background-color: #FFF;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+  -webkit-transition: 0.18s;
+  transition: 0.18s;
+  border-color: #476A6F;
+  border: 2px solid;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.pfre-btn:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 5px;
+}
+
+.pfre-btn:focus {
+  outline: none !important;
+}
+
+.pfre-btn--selected {
+  color: #FFF;
+  background-color: #476A6F;
+  border-color: #476A6F;
+}
+
+.pfre-btn--selected:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 0 !important;
+}
+
 .power-user-modal-btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -20982,6 +21031,13 @@ button.btn-change-campus:hover {
 .btn-locked {
   cursor: not-allowed;
   pointer-events: none;
+}
+
+/* hide the OS/browser checkboxes/radio buttons */
+input[type="radio"] {
+  visibility: hidden;
+  margin: 0;
+  width: 0 !important;
 }
 
 .echarts {

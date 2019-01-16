@@ -5,6 +5,8 @@
                 <div  class="col-8 col-sm-3 order-2 order-sm-1 align-self-center py-2">
                     <router-link class="" to="/">
                         <img :src="this.url + '/img/cspLogos/csp-logo.svg'" class="float-md-left nav-logo mx-auto d-inline-block" alt="Cal State Pays logo">
+                        <img :src="this.url + '/img/cspLogos/logo-mini.svg'" class="float-md-left nav-logo--small mx-auto d-inline-block" alt="Cal State Pays logo">
+
                     </router-link>
                     <router-link to="/research">
                         <img :src="this.url + '/img/otherLogos/strada-logo.png'" class=" nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
@@ -30,7 +32,7 @@
                                         Data
                                     </li>
                                 </router-link>
-                                 <router-link class="nav-link" active-class="hr-nav" to="/faq">
+                                <router-link class="nav-link" active-class="hr-nav" to="/faq">
                                     <li @click="toggleShowNav()" class="nav-item">
                                     FAQ
                                     </li>

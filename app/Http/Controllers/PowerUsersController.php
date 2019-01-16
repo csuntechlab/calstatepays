@@ -17,15 +17,15 @@ class PowerUsersController extends Controller
 
     public function getPowerUsersCardImages(){
         $key = 'powerUserCardImagesCSP';
-        // if (Cache::has($key)) {
-        //     $data = Cache::get($key);
-        //     $data = json_decode($data);
-        //     return response()->json($data);
-        // }
+        if (Cache::has($key)) {
+            $data = Cache::get($key);
+            $data = json_decode($data);
+            return response()->json($data);
+        }
         
         $data =  $this->powerUsersRetrieval->getPowerUsersCardImages();
-        // $value = json_encode($data);
-        // Cache::forever($key, $value);
+        $value = json_encode($data);
+        Cache::forever($key, $value);
         return $data;
     }
     
