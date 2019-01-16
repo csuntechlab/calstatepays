@@ -89972,7 +89972,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm.industry
-          ? _c("p", { staticClass: "text-white h6" }, [
+          ? _c("h4", { staticClass: "text-white h6" }, [
               _vm._v(_vm._s(_vm.industry.title))
             ])
           : _vm._e()
@@ -90001,7 +90001,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h4", { staticClass: "industry-title h3 pt-4" }, [
+      _c("h3", { staticClass: "industry-title h3 pt-4" }, [
         _vm._v("Common Employment Sectors"),
         _c("br"),
         _vm._v("in " + _vm._s(_vm.major))
@@ -90410,7 +90410,7 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "row" }, [
-                          _c("h3", { staticClass: "industry-title pt-3" }, [
+                          _c("h2", { staticClass: "industry-title pt-3" }, [
                             _vm._v(_vm._s(_vm.selectedMajorTitle))
                           ])
                         ]),
@@ -90555,7 +90555,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c(
-                    "h3",
+                    "h2",
                     { staticClass: "industry-title text-center p-md-3" },
                     [_vm._v("Please make your selection")]
                   ),
@@ -90564,11 +90564,11 @@ var render = function() {
                     _vm._v(
                       "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
                     ),
-                    _c("span", { staticClass: "font-weight-bold" }, [
+                    _c("strong", { staticClass: "font-weight-bold" }, [
                       _vm._v("discipline")
                     ]),
                     _vm._v(" or choosing the "),
-                    _c("span", { staticClass: "font-weight-bold" }, [
+                    _c("strong", { staticClass: "font-weight-bold" }, [
                       _vm._v("major")
                     ]),
                     _vm._v(
@@ -90580,7 +90580,7 @@ var render = function() {
                     "p",
                     { staticClass: "lead pl-md-5 pr-md-5" },
                     [
-                      _c("span", { staticClass: "font-weight-bold" }, [
+                      _c("strong", { staticClass: "font-weight-bold" }, [
                         _vm._v("Please Note:")
                       ]),
                       _vm._v(
@@ -91188,7 +91188,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
                         _c("div", { staticClass: "col-12" }, [
-                          _c("h3", { staticClass: "industry-title pt-2" }, [
+                          _c("h2", { staticClass: "industry-title pt-2" }, [
                             _vm._v(_vm._s(_vm.selectedMajorTitle))
                           ])
                         ])
@@ -91335,7 +91335,7 @@ var render = function() {
                         "p",
                         { staticClass: "lead pl-md-5 pr-md-5" },
                         [
-                          _c("span", { staticClass: "font-weight-bold" }, [
+                          _c("strong", { staticClass: "font-weight-bold" }, [
                             _vm._v("Please Note:")
                           ]),
                           _vm._v(
@@ -91365,9 +91365,9 @@ var staticRenderFns = [
       _vm._v(
         "\n\t\t\t\t\t\tYou have the option of either filtering out majors by "
       ),
-      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
+      _c("strong", { staticClass: "font-weight-bold" }, [_vm._v("discipline")]),
       _vm._v(" or choosing the "),
-      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
+      _c("strong", { staticClass: "font-weight-bold" }, [_vm._v("major")]),
       _vm._v("\n\t\t\t\t\t\twhich resonates the most with you.\n\t\t\t\t\t")
     ])
   }
