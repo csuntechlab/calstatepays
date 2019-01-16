@@ -47,7 +47,7 @@
 							class="pfre-btn"
 							:class="{'pfre-btn--selected': this.form.education == 'FTF', '':this.form.education != 'FTF'}"
 							@click.prevent="setEducationLevel('FTF')"
-						>First Time Freshmen</button>
+						>First Time Freshman</button>
 					</div>
 					<div class="col-sm-6 col-lg-12">
 						<button
