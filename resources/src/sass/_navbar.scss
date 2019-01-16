@@ -80,10 +80,17 @@
 	max-height: 60px;
 	width: 120px;
 	@media screen and (max-width: $break-Xsmall - 1) {
-		content:  	url("../img/cspLogos/logo-mini.svg"); 
-		width: 4rem;
+		display: none !important;
+	}
+	&--small {
+		display: none !important;
+		@media screen and (max-width: $break-Xsmall - 1) {
+			display: inline !important;
+			width: 4rem;
+		}
 	}
 }
+
 .nav-logo-secondary {
 	@media screen and (max-width: $break-medium){
 		width:4rem;
