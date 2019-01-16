@@ -120210,7 +120210,7 @@ var render = function() {
             _c(
               "button",
               {
-                attrs: { type: "button" },
+                attrs: { type: "button", role: "button" },
                 on: {
                   click: function($event) {
                     _vm.toggleShowNav()
@@ -120220,8 +120220,14 @@ var render = function() {
               [
                 _c("i", {
                   staticClass: "fa fa-bars",
-                  attrs: { id: "nav-icon" }
-                })
+                  attrs: {
+                    id: "nav-icon",
+                    role: "button",
+                    alt: "mobile menu toggle"
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "sr-only" }, [_vm._v("Toggle Menu")])
               ]
             )
           ]
@@ -120261,6 +120267,7 @@ var render = function() {
                             "li",
                             {
                               staticClass: "nav-item",
+                              attrs: { role: "menuitem" },
                               on: {
                                 click: function($event) {
                                   _vm.toggleShowNav()
@@ -120269,7 +120276,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                    Home\n                                \n                                "
+                                "\n                                    Home\n                                "
                               )
                             ]
                           )
@@ -120290,6 +120297,7 @@ var render = function() {
                             "li",
                             {
                               staticClass: "nav-item",
+                              attrs: { role: "menuitem" },
                               on: {
                                 click: function($event) {
                                   _vm.toggleShowNav()
@@ -120316,6 +120324,7 @@ var render = function() {
                             "li",
                             {
                               staticClass: "nav-item",
+                              attrs: { role: "menuitem" },
                               on: {
                                 click: function($event) {
                                   _vm.toggleShowNav()

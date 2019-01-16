@@ -11,8 +11,9 @@
                     </router-link>
                 </div>
                 <div class="col-4 d-sm-none order-3 align-self-center hamburger-btn-position">
-                    <button @click="toggleShowNav()" type="button">
-                        <i id="nav-icon" class="fa fa-bars"></i>
+                    <button @click="toggleShowNav()" type="button" role="button">
+                        <i id="nav-icon" class="fa fa-bars" role="button" alt="mobile menu toggle"></i>
+                        <span class="sr-only">Toggle Menu</span> 
                     </button>
                 </div>
                 <div class="col-12 col-sm-6 order-6 order-sm-2 align-self-md-end p-0">
@@ -20,18 +21,17 @@
                         <div class="collapse navbar-collapse justify-content-center" id="nav-list">
                             <ul class="navbar-nav d-flex flex-column flex-sm-row justify-content-center text-center">
                                 <router-link class="nav-link" exact-active-class="hr-nav" to="/">
-                                    <li @click="toggleShowNav()" class="nav-item">
+                                    <li @click="toggleShowNav()" class="nav-item" role="menuitem">
                                         Home
-                                    
                                     </li>
                                 </router-link>
                                 <router-link class="nav-link" active-class="hr-nav" :to="{ path: '/data/' + selectedDataPage }">
-                                    <li @click="toggleShowNav()" class="nav-item">
+                                    <li @click="toggleShowNav()" class="nav-item" role="menuitem">
                                         Data
                                     </li>
                                 </router-link>
-                                 <router-link class="nav-link" active-class="hr-nav" to="/faq">
-                                    <li @click="toggleShowNav()" class="nav-item">
+                                <router-link class="nav-link" active-class="hr-nav" to="/faq">
+                                    <li @click="toggleShowNav()" class="nav-item" role="menuitem">
                                     FAQ
                                     </li>
                                 </router-link>
