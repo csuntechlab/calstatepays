@@ -67068,6 +67068,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -67079,6 +67080,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return {
             formNotFilled: false,
             submitted: false,
+            selected: null,
             form: {
                 majorId: null,
                 age: null,
@@ -67834,6 +67836,13 @@ var render = function() {
                   change: function($event) {
                     _vm.updateGrandfatherSelect("majorId", "majorId", $event)
                   }
+                },
+                model: {
+                  value: _vm.selected,
+                  callback: function($$v) {
+                    _vm.selected = $$v
+                  },
+                  expression: "selected"
                 }
               })
             : _c("v-select", {

@@ -25,6 +25,7 @@
 				<v-select
                     label="major"
 					v-if="this.form.fieldOfStudyId == null"
+					v-model="selected"
                     :options="majors"
                     @input="updateGrandfatherSelect('majorId', 'majorId', $event)"
                     @change="updateGrandfatherSelect('majorId', 'majorId', $event)"
@@ -32,15 +33,15 @@
                     v-bind:class="{'border-danger': this.submitted && !this.form.majorId}">
                 </v-select>
                 <v-select
-							label="major"
-							v-else
-							v-model="selected"
-							:options="selectedMajorsByField"
-							@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-							@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
-							class="csu-form-input"
-							v-bind:class="{'border-danger': this.submitted && !this.form.majorId}">
-						</v-select>
+					label="major"
+					v-else
+					v-model="selected"
+					:options="selectedMajorsByField"
+					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					class="csu-form-input"
+					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}">
+				</v-select>
 			</div>
 			<div class="form-group">
 				<label
@@ -132,7 +133,8 @@ import { mapGetters, mapActions } from "vuex";
         data() {
             return {
                 formNotFilled: false,
-                submitted: false,
+				submitted: false,
+				selected: null,
                 form: {
                     majorId: null,
                     age: null,
@@ -216,7 +218,7 @@ import { mapGetters, mapActions } from "vuex";
                 this.formNotFilled = false;
                 if (this.checkForm()) {
                     this.scrollWin();
-                    document.getElementById("submit-btn").innerHTML = "Resubmit";
+					document.getElementById("submit-btn").innerHTML = "Resubmit";
                     this.fetchFreData(this.form);
                 }
             },
