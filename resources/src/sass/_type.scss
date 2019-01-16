@@ -95,13 +95,16 @@ body {
 
 .pfre-info--show {
     position: absolute;
-    background: $light-gray;
-    border-radius: 15px;
-    width: 18rem;
-   // left: 1.9rem;
+    color: #fff;
+    font-size: 13px;
+    background-color: rgba(97,97,97,.9);
+    margin-top: 2rem;
+    border-radius: 10px;
+    // left: 1.9rem;
     padding: .5rem;
     z-index: 2;
     @media screen and (max-width:576px){
+        margin-top: 3rem;
     }
 }
 
@@ -118,8 +121,6 @@ body {
 
 .pfre-info__wrapper{
     position: relative;
-    font-weight: 600;
-
     @media screen and (max-width: 479px) {
         font-size: 1.1rem;
     }

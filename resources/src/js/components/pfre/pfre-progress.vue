@@ -3,12 +3,15 @@
     <div class="row no-gutters my-3">
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
         <div class="row no-gutters">
-          <span class="col-auto"> 
-            <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
-          </span>
-          <span class="col">
-            <p class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')">Estimated time to degree:</p>
-          </span>
+          <div class="col-12">
+            <v-tooltip content-class="" absoulte bottom allow-overflow nudge-right="10" nudge-bottom="-10"> 
+              <p slot="activator" class="float-left font-weight-bold mb-0" @click="toggleInfo('timeToDegree')"><i class="fa fa-info-circle"></i> Estimated time to degree:</p>
+              <span class="tooltip">
+              The estimated time it would take for you to complete your degree if you choose this major.
+              </span>
+            </v-tooltip>
+          </div>
+            <!-- <pfre-info infoKey="timeToDegree">The estimated time it would take for you to complete your degree if you choose this major.</pfre-info> -->
         </div>
         <div class="row my-3">
           <div class="col-10">
@@ -39,11 +42,13 @@
     <div class="row no-gutters my-3">
       <div class="col-12 col-lg-11 col-xl-10 align-self-center">
       <div class="row no-gutters">
-        <span class="col-auto ">
+        <span class="col-12 ">
             <pfre-info infoKey="earnings">After you successfully complete a degree and find a career, Your estimated earnings would be this. </pfre-info>
         </span>
-        <span class="col">
-          <p class="float-left font-weight-bold mb-0" @click="toggleInfo('earnings')">Estimated Earnings 5 Years After Exit:</p>
+        <span class="col-12">
+          <p class="float-left font-weight-bold mb-0" @click="toggleInfo('earnings')">
+            <i class="fa fa-info-circle"></i>
+            Estimated Earnings 5 Years After Exit:</p>
           </span> 
     </div>
     <div class="row my-3">
