@@ -25,7 +25,7 @@
                 <span class="h6 pfre__sub-header"><b class="csu-card__tags">Financial Aid:</b> {{this.pfreSelected.financialAid}}</span>
 			</div>
 		</div>
-		<div class="row my-3 pfre-bar__wrapper">
+		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
 					<span class="col-auto">
@@ -35,13 +35,13 @@
 					</span>
 					<span class="col">
 						<p
-							class="float-left font-weight-bold mb-0"
+							class="float-left pfre__chart-header font-weight-bold mb-0"
 							@click="toggleInfo('timeToDegree')"
 						>Estimated Time to Completion of Degree</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-11">
+					<div class="col-9 col-sm-10 col-lg-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -55,18 +55,18 @@
 						</div>
 						<div class="progress-footer">
 							<span class="col-4">
-								<p class="float-left mb-0">{{pfreData.years.start}}</p>
+								<p class="float-left pfre__chart-text mb-0">{{pfreData.years.start}}</p>
 							</span>
 							<span class="col-4">
-								<p class="text-center mb-0">{{pfreData.years.middle}}</p>
+								<p class="text-center pfre__chart-text mb-0">{{pfreData.years.middle}}</p>
 							</span>
 							<span class="col-4">
-								<p class="float-right mb-0">{{pfreData.years.end}}</p>
+								<p class="float-right pfre__chart-text mb-0">{{pfreData.years.end}}</p>
 							</span>
 						</div>
 					</div>
-					<div class="col-1 px-0 py-4">
-						<p class="mb-0 text--smallest-screen pfre-bar__years-text">{{pfreData.years.actual}} yrs</p>
+					<div class="col-3 col-sm-2 col-lg-1 px-0 py-4">
+						<p class="mb-0 pfre__chart-text pfre-bar__years-text">{{pfreData.years.actual}} yrs</p>
 					</div>
 				</div>
 			</div>
@@ -82,13 +82,13 @@
 					</span>
 					<span class="col">
 						<p
-							class="float-left font-weight-bold mb-0"
+							class="float-left pfre__chart-header font-weight-bold mb-0"
 							@click="toggleInfo('earnings')"
 						>Estimated Earnings 5 Years After Exit</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-11">
+					<div class="col-9 col-sm-10 col-lg-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -103,30 +103,30 @@
 						<div class="progress-footer">
 							<span class="col-4">
 								<p
-									v-if="smallestScreen"
-									class="float-left text--smallest-screen mb-0"
+									v-show="smallestScreen"
+									class="float-left pfre__chart-text mb-0"
 								>{{pfreData.earnings.minimum | currency}}</p>
-								<p v-else class="float-left mb-0">{{pfreData.earnings.minimum/1000 | currency}}k</p>
+								<p v-show="!smallestScreen" class="float-left pfre__chart-text mb-0">{{pfreData.earnings.minimum/1000 | currency}}k</p>
 							</span>
 							<span class="col-4">
 								<p
-									v-if="smallestScreen"
-									class="text-center text--smallest-screen mb-0"
+									v-show="smallestScreen"
+									class="text-center pfre__chart-text mb-0"
 								>{{pfreData.earnings.average | currency}}</p>
-								<p v-else class="text-center mb-0">{{pfreData.earnings.average/1000 | currency}}k</p>
+								<p v-show="!smallestScreen" class="text-center pfre__chart-text mb-0">{{pfreData.earnings.average/1000 | currency}}k</p>
 							</span>
 							<span class="col-4">
 								<p
-									v-if="smallestScreen"
-									class="float-right text--smallest-screen mb-0"
+									v-show="smallestScreen"
+									class="float-right pfre__chart-text mb-0"
 								>{{pfreData.earnings.maximum | currency}}</p>
-								<p v-else class="text-center mb-0">{{pfreData.earnings.maximum/10000 | currency}}k</p>
+								<p v-show="!smallestScreen" class="text-center pfre__chart-text mb-0">{{pfreData.earnings.maximum/1000 | currency}}k</p>
 							</span>
 						</div>
 					</div>
-					<div class="col-1 px-0 py-4">
+					<div class="col-3 col-sm-2 col-lg-1 px-0 py-4">
 						<p
-							class="mb-0 text--smallest-screen pfre-bar__earnings-text"
+							class="mb-0 pfre__chart-text pfre-bar__earnings-text"
 						>{{pfreData.earnings.actual | currency}}</p>
 					</div>
 				</div>
@@ -140,13 +140,13 @@
 					</span>
 					<span class="col">
 						<p
-							class="float-left font-weight-bold mb-0"
+							class="float-left pfre__chart-header font-weight-bold mb-0"
 							@click="toggleInfo('return')"
 						>FRE - Financial Return on Education</p>
 					</span>
 				</div>
 				<div class="row my-3">
-					<div class="col-11">
+					<div class="col-9 col-sm-10 col-lg-11">
 						<div class="row">
 							<div class="col-sm-12">
 								<v-progress-linear
@@ -160,19 +160,19 @@
 						</div>
 						<div class="progress-footer">
 							<span class="col-4">
-								<p class="float-left mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>
+								<p class="float-left pfre__chart-text mb-0">{{pfreData.returnOnInvestment.minimum | percentage}}</p>
 							</span>
 							<span class="col-4">
-								<p class="text-center mb-0">{{pfreData.returnOnInvestment.average | percentage}}</p>
+								<p class="text-center pfre__chart-text mb-0">{{pfreData.returnOnInvestment.average | percentage}}</p>
 							</span>
 							<span class="col-4">
-								<p class="float-right mb-0">{{pfreData.returnOnInvestment.maximum | percentage}}</p>
+								<p class="float-right pfre__chart-text mb-0">{{pfreData.returnOnInvestment.maximum | percentage}}</p>
 							</span>
 						</div>
 					</div>
-					<div class="col-1 px-0 py-4">
+					<div class="col-3 col-sm-2 col-lg-1 px-0 py-4">
 						<p
-							class="mb-0 text--smallest-screen pfre-bar__return-investment-text"
+							class="mb-0 pfre__chart-text pfre-bar__return-investment-text"
 						>{{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
 					</div>
 				</div>
@@ -201,8 +201,7 @@ export default {
 		...mapGetters(["pfreData", "pfreFormWasSubmitted", "pfreSelected"]),
 		smallestScreen() {
 			var width = window.innerWidth;
-			console.log(width);
-			return width > 320 ? true : false;
+			return (width > 500);
 		}
 	},
 	methods: {

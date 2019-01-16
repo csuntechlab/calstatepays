@@ -72,16 +72,17 @@ body {
     white-space: nowrap;
 }
 
-.pfre-info{
-    position: absolute;
-    margin-left: 80px;
-    margin-top: 100px;
-    background: $light-gray;
-    border-radius: 15px;
-    float: right;
-    width: 10rem;
+.pfre__chart-header{
+    font-size: 1rem;
+    @media screen and (max-width: $break-medium) {
+        padding-top: 1rem;
+    }
+
 }
 
+.pfre__chart-text{
+    font-size: 1rem;
+}
 
 .pfre-info {
     /*add line height*/
