@@ -134,7 +134,6 @@ export default {
     ]),
     smallestScreen() {
       var width = window.innerWidth;
-      console.log(width);
       return width > 320 ? true : false;
     }
   },

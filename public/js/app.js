@@ -29590,9 +29590,9 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a }, { path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_12__views_splashPage_index_vue___default.a, name: 'pfre' },
-	// { path: '/data/pfre', component: pfre },
-	{ path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a },
+	// { path: '/data/pfre',component: splashPage, name: 'pfre' },
+	{ path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }]
 });
 
 router.beforeEach(function (to, from, next) {
@@ -67027,6 +67027,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67034,94 +67055,97 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            formNotFilled: false,
-            submittedOnce: false,
-            form: {
-                majorId: null,
-                age: null,
-                education: null,
-                earnings: null,
-                financialAid: null,
-                university: "northridge"
-            },
+	data: function data() {
+		return {
+			formNotFilled: false,
+			submittedOnce: false,
+			form: {
+				majorId: null,
+				age: null,
+				education: null,
+				earnings: null,
+				financialAid: null,
+				university: "northridge"
+			},
 
-            errorLabel: {
-                color: "red",
-                fontWeight: "bold"
-            },
+			errorLabel: {
+				color: "red",
+				fontWeight: "bold"
+			},
 
-            ageRanges: [{ age: "18-19", value: 1 }, { age: "20-24", value: 2 }, { age: "24-26", value: 3 }, { age: "26 +", value: 4 }],
-            earningRanges: [{ earn: "0", value: 1 }, { earn: "0 - 20,000", value: 2 }, { earn: "30,000 - 45,000", value: 3 }, { earn: "45,000 - 60,000", value: 4 }, { earn: "60,000 +", value: 5 }],
-            financialAidRanges: [{ finAid: "0", value: 1 }, { finAid: "0 - 5,000", value: 2 }, { finAid: "5,000 - 15,000", value: 3 }, { finAid: "15,000 +", value: 4 }]
-        };
-    },
+			ageRanges: [{ age: "18-19", value: 1 }, { age: "20-24", value: 2 }, { age: "24-26", value: 3 }, { age: "26 +", value: 4 }],
+			earningRanges: [{ earn: "0", value: 1 }, { earn: "0 - 20,000", value: 2 }, { earn: "30,000 - 45,000", value: 3 }, { earn: "45,000 - 60,000", value: 4 }, { earn: "60,000 +", value: 5 }],
+			financialAidRanges: [{ finAid: "0", value: 1 }, { finAid: "0 - 5,000", value: 2 }, { finAid: "5,000 - 15,000", value: 3 }, { finAid: "15,000 +", value: 4 }]
+		};
+	},
 
-    methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchFreData"]), {
-        updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
-            if (data) {
-                this.form[field] = data[dataKey];
-            } else {
-                this.form[field] = null;
-            }
-        },
-        updateSelect: function updateSelect(field, data) {
-            if (data) {
-                this.form[field] = data.value;
-            } else {
-                this.form[field] = null;
-            }
-        },
-        scrollWin: function scrollWin() {
-            if (window.innerWidth <= 767) {
-                var scrollTop;
-                var progressBar = document.getElementById("submit-btn-container");
-                progressBar.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "end"
-                });
-            }
-        },
-        submitForm: function submitForm() {
-            this.formNotFilled = false;
-            this.submittedOnce = true;
-            if (this.checkForm()) {
-                this.scrollWin();
-                document.getElementById("submit-btn").innerHTML = "Resubmit";
-                this.fetchFreData(this.form);
-            }
-        },
-        checkForm: function checkForm() {
-            if (this.$v.$invalid) {
-                this.formNotFilled = true;
-                return false;
-            } else return true;
-        }
-    }),
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById"]), {
-        selectedMajorName: function selectedMajorName() {
-            if (this.form.majorId == null) {
-                return "";
-            } else {
-                return this.majorNameById(this.form.majorId);
-            }
-        }
-    }),
-    validations: {
-        form: {
-            majorId: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            age: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            education: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            earnings: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            financialAid: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
-            university: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] }
-        }
-    },
-    components: {
-        vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
-    }
+	methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["b" /* mapActions */])(["fetchFreData"]), {
+		updateGrandfatherSelect: function updateGrandfatherSelect(field, dataKey, data) {
+			if (data) {
+				this.form[field] = data[dataKey];
+			} else {
+				this.form[field] = null;
+			}
+		},
+		updateSelect: function updateSelect(field, data) {
+			if (data) {
+				this.form[field] = data.value;
+			} else {
+				this.form[field] = null;
+			}
+		},
+		setEducationLevel: function setEducationLevel(data) {
+			this.form.education = data;
+		},
+		scrollWin: function scrollWin() {
+			if (window.innerWidth <= 767) {
+				var scrollTop;
+				var progressBar = document.getElementById("submit-btn-container");
+				progressBar.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+					inline: "end"
+				});
+			}
+		},
+		submitForm: function submitForm() {
+			this.formNotFilled = false;
+			this.submittedOnce = true;
+			if (this.checkForm()) {
+				this.scrollWin();
+				document.getElementById("submit-btn").innerHTML = "Resubmit";
+				this.fetchFreData(this.form);
+			}
+		},
+		checkForm: function checkForm() {
+			if (this.$v.$invalid) {
+				this.formNotFilled = true;
+				return false;
+			} else return true;
+		}
+	}),
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_3_vuex__["c" /* mapGetters */])(["majors", "majorNameById"]), {
+		selectedMajorName: function selectedMajorName() {
+			if (this.form.majorId == null) {
+				return "";
+			} else {
+				return this.majorNameById(this.form.majorId);
+			}
+		}
+	}),
+	validations: {
+		form: {
+			majorId: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			age: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			education: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			earnings: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			financialAid: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] },
+			university: { required: __WEBPACK_IMPORTED_MODULE_2_vuelidate_lib_validators__["required"] }
+		}
+	},
+	components: {
+		vSelect: __WEBPACK_IMPORTED_MODULE_0_vue_select___default.a
+	}
 });
 
 /***/ }),
@@ -67720,7 +67744,7 @@ var render = function() {
           },
           [
             _c("i", { staticClass: "fa fa-exclamation-circle" }),
-            _vm._v(" Please fill out all fields.\n            ")
+            _vm._v(" Please fill out all fields.\n\t\t\t")
           ]
         )
       ]),
@@ -67732,12 +67756,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.majorId ? _vm.errorLabel : ""
               ],
               attrs: { for: "Major" }
             },
-            [_vm._v("\n                Select a Major\n            ")]
+            [_vm._v("Select a Major")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67766,12 +67791,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.age ? _vm.errorLabel : ""
               ],
               attrs: { for: "age" }
             },
-            [_vm._v("\n                Select an Age Range\n            ")]
+            [_vm._v("Select an Age Range")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67792,86 +67818,54 @@ var render = function() {
         _c(
           "label",
           {
-            staticClass: "form-group",
+            staticClass: "form-group font-weight-bold",
             style: [
               this.submittedOnce && !this.form.education ? _vm.errorLabel : ""
             ],
             attrs: { for: "education" }
           },
-          [
-            _vm._v(
-              "\n                    Select an Education Level\n                "
-            )
-          ]
+          [_vm._v("Select an Education Level")]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-12" }, [
-          _c(
-            "div",
-            { staticClass: "form-group row justify-content-between mb-0" },
-            [
-              _c("label", { attrs: { for: "freshman" } }, [
-                _vm._v("First Time Freshman:")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.education,
-                    expression: "form.education"
-                  }
-                ],
-                attrs: {
-                  for: "freshman",
-                  type: "radio",
-                  id: "freshman",
-                  value: "FTF"
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
+                class: {
+                  "pfre-btn--selected": this.form.education == "FTF",
+                  "": this.form.education != "FTF"
                 },
-                domProps: { checked: _vm._q(_vm.form.education, "FTF") },
                 on: {
-                  input: function($event) {
-                    _vm.updateSelect("education", $event.target)
-                  },
-                  change: function($event) {
-                    _vm.$set(_vm.form, "education", "FTF")
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTF")
                   }
                 }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group row justify-content-between" }, [
-            _c("label", { attrs: { for: "transfer" } }, [
-              _vm._v("First Time Transfer")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.education,
-                  expression: "form.education"
-                }
-              ],
-              attrs: {
-                for: "transfer",
-                type: "radio",
-                id: "transfer",
-                value: "FTT"
               },
-              domProps: { checked: _vm._q(_vm.form.education, "FTT") },
-              on: {
-                input: function($event) {
-                  _vm.updateSelect("education", $event.target)
+              [_vm._v("First Time Freshman")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6 col-lg-12" }, [
+            _c(
+              "button",
+              {
+                staticClass: "pfre-btn",
+                class: {
+                  "pfre-btn--selected": this.form.education == "FTT",
+                  "": this.form.education != "FTT"
                 },
-                change: function($event) {
-                  _vm.$set(_vm.form, "education", "FTT")
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.setEducationLevel("FTT")
+                  }
                 }
-              }
-            })
+              },
+              [_vm._v("First Time Transfer")]
+            )
           ])
         ])
       ]),
@@ -67883,12 +67877,13 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.earnings ? _vm.errorLabel : ""
               ],
               attrs: { for: "earnings" }
             },
-            [_vm._v("\n                Estimated Annual Earnings In School")]
+            [_vm._v("Estimated Annual Earnings In School")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -67917,6 +67912,7 @@ var render = function() {
           _c(
             "label",
             {
+              staticClass: "font-weight-bold",
               style: [
                 this.submittedOnce && !this.form.financialAid
                   ? _vm.errorLabel
@@ -67924,7 +67920,7 @@ var render = function() {
               ],
               attrs: { for: "financialAid" }
             },
-            [_vm._v("\n                    Estimated Annual Financial Aid")]
+            [_vm._v("Estimated Annual Financial Aid")]
           ),
           _vm._v(" "),
           _c("v-select", {
@@ -68282,7 +68278,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['pfreData']), {
     smallestScreen: function smallestScreen() {
       var width = window.innerWidth;
-      console.log(width);
       return width > 320 ? true : false;
     }
   }),
