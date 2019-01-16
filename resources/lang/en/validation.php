@@ -100,18 +100,17 @@ return [
      */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
         'university' => [
+            'regex' => 'Please select a university.',
             'required' => 'Choosing a University is required.',
             'exists' => 'University does not exist or has not opted into Cal State Pays.',
-            'regex' => 'Please select a university.'
         ],
         'major' => [
             'required' => 'Choosing a Major is required.',
             'exists' => 'Major does not exist.',
             'integer' => 'Please select a valid major.',
+            'required' => 'Choosing a Major is required.',
+            'exists' => 'Major does not exist.',
         ],
     ],
 
