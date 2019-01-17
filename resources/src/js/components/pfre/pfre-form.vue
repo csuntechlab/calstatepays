@@ -7,93 +7,109 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
+				<v-select
+					label="discipline"
+					:options="fieldOfStudies"
+					@input="updateGrandfatherSelect('fieldOfStudyId', 'id', $event); selected.majorName = null"
+					class="csu-form-input"
+				></v-select>
+			</div>
+			<div class="form-group">
 				<label
+					class="font-weight-bold"
 					for="Major"
-					v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.majorId ? errorLabel : '']"
 				>Select a Major</label>
 				<v-select
 					label="major"
+					v-if="this.form.fieldOfStudyId === null"
+					v-model="selected.majorName"
 					:options="majors"
-                    v-model="selected.majorName"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
+				></v-select>
+				<v-select
+					label="major"
+					v-else
+					v-model="selected.majorName"
+					:options="selectedMajorsByField"
+					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					class="csu-form-input"
+					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
 			<div class="form-group">
 				<label
+					class="font-weight-bold"
 					for="age"
-					v-bind:style="[this.submittedOnce && !this.form.age ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.age ? errorLabel : '']"
 				>Select an Age Range</label>
 				<v-select
 					label="age"
-                    v-model="selected.ageRange"
+					v-model="selected.ageRange"
 					:options="ageRanges"
 					@input="updateSelect('age', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submittedOnce && !this.form.age}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.age}"
 				></v-select>
 			</div>
 			<div class="form-group">
 				<label
-					class="form-group"
+					class="form-group font-weight-bold"
 					for="education"
-					v-bind:style="[this.submittedOnce && !this.form.education ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.education ? errorLabel : '']"
 				>Select an Education Level</label>
-				<div class="col-12">
-					<div class="form-group row justify-content-between mb-0">
-						<label for="freshman">First Time Freshman:</label>
-						<input
-							for="freshman"
-							type="radio"
-							id="freshman"
-							v-model="selected.education"
-							value="FTF"
-							@input="updateSelect('education', $event.target)"
-						>
+				<div class="row">
+					<div class="col-sm-6 col-lg-12">
+						<button
+							class="pfre-btn"
+							:class="{'pfre-btn--selected': this.form.education == 'FTF', '':this.form.education != 'FTF'}"
+							@click.prevent="setEducationLevel('FTF')"
+						>First Time Freshman</button>
 					</div>
-					<div class="form-group row justify-content-between">
-						<label for="transfer">First Time Transfer</label>
-						<input
-							for="transfer"
-							type="radio"
-							id="transfer"
-							v-model="selected.education"
-							value="FTT"
-							@input="updateSelect('education', $event.target)"
-						>
+					<div class="col-sm-6 col-lg-12">
+						<button
+							class="pfre-btn"
+							:class="{'pfre-btn--selected': this.form.education == 'FTT', '':this.form.education != 'FTT'}"
+							@click.prevent="setEducationLevel('FTT')"
+						>First Time Transfer</button>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label
+					class="font-weight-bold"
 					for="earnings"
-					v-bind:style="[this.submittedOnce && !this.form.earnings ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.earnings ? errorLabel : '']"
 				>Estimated Annual Earnings In School</label>
 				<v-select
 					label="earn"
 					:options="earningRanges"
-                    v-model="selected.earnings"
+					v-model="selected.earnings"
 					@input="updateSelect('earnings', $event)"
 					@change="updateSelect('earnings', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submittedOnce && !this.form.earnings}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.earnings}"
 				></v-select>
 			</div>
 			<div class="form-group">
 				<label
 					for="financialAid"
-					v-bind:style="[this.submittedOnce && !this.form.financialAid ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.financialAid ? errorLabel : '']"
+					class="font-weight-bold"
 				>Estimated Annual Financial Aid</label>
 				<v-select
 					label="finAid"
 					:options="financialAidRanges"
-                    v-model="selected.financialAid"
+					v-model="selected.financialAid"
 					@input="updateSelect('financialAid', $event)"
 					@change="updateSelect('financialAid', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submittedOnce && !this.form.financialAid}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.financialAid}"
 				></v-select>
 			</div>
 			<div class="row row--condensed" id="submit-btn-container">
@@ -119,20 +135,21 @@ export default {
 	data() {
 		return {
 			formNotFilled: false,
-            submittedOnce: false,
-            selected: {
-                majorName: null,
-                ageRange: null,
-                education: null,
-                earnings: null,
-                financialAid: null
-            },
+			submitted: false,
+			selected: {
+				majorName: null,
+				ageRange: null,
+				education: null,
+				earnings: null,
+				financialAid: null
+			},
 			form: {
+                fieldOfStudyId: null,
 				majorId: null,
 				age: null,
 				education: null,
 				earnings: null,
-                financialAid: null,
+				financialAid: null
 			},
 
 			errorLabel: {
@@ -162,20 +179,34 @@ export default {
 		};
 	},
 	methods: {
-		...mapActions(["fetchFreData"]),
+		...mapActions(["fetchFreData", "fetchIndustryMajorsByField"]),
 		updateGrandfatherSelect(field, dataKey, data) {
+			this.submitted = false;
 			if (data) {
-				this.form[field] = data[dataKey];
+                this.form[field] = data[dataKey];
+                this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
 			}
 		},
+		handleFieldOfStudyMajors(field) {
+			if (field == "fieldOfStudyId") {
+				this.fetchIndustryMajorsByField({
+					form: this.form,
+					school: this.selectedUniversity
+				});
+			}
+		},
 		updateSelect(field, data) {
 			if (data) {
-				this.form[field] = data.value;
+                this.form[field] = data.value;
 			} else {
 				this.form[field] = null;
 			}
+		},
+		setEducationLevel(data) {
+            this.form.education = data;
+            this.selected.education = data;
 		},
 		scrollWin() {
 			if (window.innerWidth <= 767) {
@@ -192,24 +223,37 @@ export default {
 		},
 		submitForm() {
 			this.formNotFilled = false;
-            this.submittedOnce = true;
+			this.submitted = true;
 			if (this.checkForm()) {
-                this.scrollWin();
+				this.scrollWin();
 				document.getElementById("submit-btn").innerHTML = "Resubmit";
-                this.$store.dispatch('submitPfreForm');
-                this.$store.dispatch('setPfreSelections', this.selected)
-				this.fetchFreData({form: this.form, school: this.selectedUniversity});
+				this.$store.dispatch("submitPfreForm");
+				this.$store.dispatch("setPfreSelections", this.selected);
+				this.fetchFreData({
+					form: this.form,
+					school: this.selectedUniversity
+				});
 			}
-        },
+		},
 		checkForm() {
-            if (this.$v.$invalid) {
-                this.formNotFilled = true;
+			if (this.$v.$invalid) {
+				this.formNotFilled = true;
 				return false;
 			} else return true;
-		},
+		}
 	},
 	computed: {
-		...mapGetters(["majors", 'selectedUniversity']),
+		...mapGetters([
+			"majors",
+			"selectedUniversity",
+			"fieldOfStudies",
+			"selectedUniversity",
+			"industryMajorsByField"
+		]),
+
+		selectedMajorsByField() {
+			return this.industryMajorsByField;
+		}
 	},
 	validations: {
 		form: {
