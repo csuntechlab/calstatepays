@@ -20,13 +20,13 @@
 					:windowWidth="windowWidth"
 				/>
 				<major-card-mobile
-					v-if="isMobile"
+					v-else="isMobile"
 					v-for="(majorCard, index) in mobileCards"
 					:key="index"
 					:index="index"
 					:windowWidth="windowWidth"
 				/>
-				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)"/>
+				<card-add id="plus" v-on:cardPlusError="scrollToNextCard($event)" @addCard="scrollToNextCard(majorCards.length - 1)"/>
 			</div>
 		</div>
 	</div>
@@ -56,13 +56,13 @@ export default {
 			return this.isDesktop ? null : this.majorCards;
 		}
 	},
-	updated: function() {
-		//Only run if more than one card exists
-		let lastCardIndex = this.majorCards.length - 1;
-		if (lastCardIndex > 0) {
-			this.scrollToNextCard(lastCardIndex);
-		}
-	},
+	// updated: function() {
+	// 	//Only run if more than one card exists
+	// 	let lastCardIndex = this.majorCards.length - 1;
+	// 	if (lastCardIndex > 0) {
+	// 		this.scrollToNextCard(lastCardIndex);
+	// 	}
+	// },
 	methods: {
 		getWindowWidth(event) {
 			this.windowWidth = document.documentElement.clientWidth;
