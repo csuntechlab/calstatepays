@@ -69888,13 +69888,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 			return this.isDesktop ? null : this.majorCards;
 		}
 	}),
-	// updated: function() {
-	// 	//Only run if more than one card exists
-	// 	let lastCardIndex = this.majorCards.length - 1;
-	// 	if (lastCardIndex > 0) {
-	// 		this.scrollToNextCard(lastCardIndex);
-	// 	}
-	// },
 	methods: {
 		getWindowWidth: function getWindowWidth(event) {
 			this.windowWidth = document.documentElement.clientWidth;
