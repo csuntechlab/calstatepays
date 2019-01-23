@@ -28,11 +28,11 @@
 		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
-					<!-- <span class="col-auto">
+					<span class="col-auto">
 						<pfre-info
 							infoKey="timeToDegree"
 						>The estimated time it would take for you to complete your degree if you choose this major.</pfre-info>
-					</span> -->
+					</span>
 					<span class="col">
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
@@ -75,11 +75,11 @@
 		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
-					<!-- <span class="col-auto">
+					<span class="col-auto">
 						<pfre-info
 							infoKey="earnings"
 						>After you successfully complete a degree and find a career, Your estimated earnings would be this.</pfre-info>
-					</span> -->
+					</span>
 					<span class="col">
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
@@ -135,9 +135,9 @@
 		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
-					<!-- <span class="col-auto">
+					<span class="col-auto">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-					</span> -->
+					</span>
 					<span class="col">
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
