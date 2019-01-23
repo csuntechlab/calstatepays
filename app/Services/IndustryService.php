@@ -35,7 +35,7 @@ class IndustryService implements IndustryContract
         $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
-        $population  = $this->retrievePopulation($university_major);
+        $population = $this->retrievePopulation($university_major);
 
         /** Get the population total for each */
         $population_total = $this->retrievePopulationTotal($population);
@@ -59,7 +59,7 @@ class IndustryService implements IndustryContract
         $university_major = $this->industryRelation($hegis_code, $university);
 
         /** Seperate each student_path for fair population found comparison */
-        $population  = $this->retrievePopulation($university_major);
+        $population = $this->retrievePopulation($university_major);
 
         /** Get the population total for each */
         $population_total = $this->retrievePopulationTotal($population);
@@ -76,7 +76,8 @@ class IndustryService implements IndustryContract
         return $industry_wages;
     }
 
-    private function industryRelation($hegis_code, $university){
+    private function industryRelation($hegis_code, $university)
+    {
         $university_major = UniversityMajor::with(['industryPathTypes' => function ($query) {
             $query->where('entry_status', 'FTF + FTT');
             // when phpunit is not running we'll filter the relationship
@@ -89,24 +90,26 @@ class IndustryService implements IndustryContract
             ->where('hegis_code', $hegis_code)
             ->where('university_id', $university->id)
             ->firstOrFail();
-            return $university_major;
+        return $university_major;
     }
 
-    private function retrievePopulation($university_major){
+    private function retrievePopulation($university_major)
+    {
         $someCollege_population = $university_major->industryPathTypes->where('student_path', 2)->sortByDesc('population.population_found')->values();
         $bachelors_population = $university_major->industryPathTypes->where('student_path', 1)->sortByDesc('population.population_found')->values();
         $post_bacc_population = $university_major->industryPathTypes->where('student_path', 4)->sortByDesc('population.population_found')->values();
 
-        $data = ["some_college"=>$someCollege_population,"bachelors"=>$bachelors_population,"post_bacc"=>$post_bacc_population];
+        $data = ["some_college" => $someCollege_population, "bachelors" => $bachelors_population, "post_bacc" => $post_bacc_population];
         return $data;
     }
 
-    private function retrievePopulationTotal($population){
+    private function retrievePopulationTotal($population)
+    {
         $someCollege_total = $this->getIndustryPopulationTotals($population["some_college"]);
         $bachelors_total = $this->getIndustryPopulationTotals($population["bachelors"]);
         $post_bacc_total = $this->getIndustryPopulationTotals($population["post_bacc"]);
 
-        $data = ["some_college"=>$someCollege_total, "bachelors"=>$bachelors_total,"post_bacc"=>$post_bacc_total];
+        $data = ["some_college" => $someCollege_total, "bachelors" => $bachelors_total, "post_bacc" => $post_bacc_total];
         return $data;
     }
 
