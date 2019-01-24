@@ -1,5 +1,5 @@
 <template>
-<div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper">
+<div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper m-0">
     <div class=""> 
       <button class="" type="button" @click="toggleInfo(infoKey);">
         <i class="fa fa-info-circle"></i>
@@ -9,7 +9,7 @@
       <slot ></slot>
     </div>
 </div>
-<div v-else class="">
+<div v-else class="pfre-info__wrapper m-0">
     <div class="">
       <button class="" type="button" @click="toggleInfo(infoKey)">
         <i class="fa fa-info-circle"></i>

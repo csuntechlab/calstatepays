@@ -68163,7 +68163,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
-    ? _c("div", { staticClass: "pfre-info__wrapper" }, [
+    ? _c("div", { staticClass: "pfre-info__wrapper m-0" }, [
         _c("div", {}, [
           _c(
             "button",
@@ -68195,7 +68195,7 @@ var render = function() {
             )
           : _vm._e()
       ])
-    : _c("div", {}, [
+    : _c("div", { staticClass: "pfre-info__wrapper m-0" }, [
         _c("div", {}, [
           _c(
             "button",
@@ -69546,7 +69546,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return !this.pfreFormWasSubmitted
+  return this.pfreFormWasSubmitted
     ? _c("div", [
         _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
           _vm._v("Please make your selection")
