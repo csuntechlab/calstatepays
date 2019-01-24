@@ -91447,12 +91447,16 @@ var render = function() {
                       key: index,
                       attrs: { index: index, windowWidth: _vm.windowWidth }
                     })
-                  : _vm._l(_vm.mobileCards, function(majorCard, index) {
-                      return _c("major-card-mobile", {
-                        key: index,
-                        attrs: { index: index, windowWidth: _vm.windowWidth }
-                      })
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._l(_vm.mobileCards, function(majorCard, index) {
+                return _vm.isMobile
+                  ? _c("major-card-mobile", {
+                      key: index,
+                      attrs: { index: index, windowWidth: _vm.windowWidth }
                     })
+                  : _vm._e()
               }),
               _vm._v(" "),
               _c("card-add", {

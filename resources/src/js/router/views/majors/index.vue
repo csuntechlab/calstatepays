@@ -20,7 +20,7 @@
 					:windowWidth="windowWidth"
 				/>
 				<major-card-mobile
-					v-else="isMobile"
+					v-if="isMobile"
 					v-for="(majorCard, index) in mobileCards"
 					:key="index"
 					:index="index"
