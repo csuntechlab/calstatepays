@@ -103,6 +103,7 @@ export default {
         chooseTableauCategory(university,path_id){
             sessionStorage.setItem('tableauValue', this.optInValues[university][path_id].iframe_string);
             this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
+            this.$router.push({name:'tableau' , params:{tableauValue:this.tableauValue}});
         }
     },computed:{
         ...mapGetters([

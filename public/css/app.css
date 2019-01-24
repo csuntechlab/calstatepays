@@ -19406,7 +19406,7 @@ body {
   color: #595959;
 }
 
-.csu-card, .csu-card__form, .card-add, .industry-card {
+.csu-card, .csu-card__form, .card-add, .bar-graph-card {
   background: #FFF;
   border-radius: 10px;
   -webkit-box-pack: center;
@@ -19415,36 +19415,9 @@ body {
 }
 
 .csu-card {
-  min-height: 95%;
+  min-height: 100%;
   padding: 2%;
   margin-bottom: 13px;
-}
-
-@media screen and (max-width: 992px) {
-  .csu-card {
-    min-height: unset;
-    padding: 0;
-    margin-top: 1rem;
-  }
-  .csu-card .industry-title {
-    font-size: 1.3rem;
-    padding-bottom: .5rem;
-    padding-bottom: .4rem;
-    margin-bottom: 1.2rem;
-  }
-  .csu-card .majors-header {
-    color: #595959;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.5;
-    padding-top: 3rem;
-    font-size: 1.3rem;
-  }
-  .csu-card .csu-card__form-sizing .btn {
-    padding: 0.6rem 2rem;
-    margin: .09em;
-  }
 }
 
 .csu-card__instructions {
@@ -19452,12 +19425,12 @@ body {
 }
 
 .csu-card__share {
-  margin-left: .3rem;
+  margin-left: 0.3rem;
   font-size: 1em;
   border: #fff 2px solid;
   color: #fff;
   border-radius: 7px;
-  padding: 0 .3rem;
+  padding: 0 0.3rem;
   margin: 0 0 7px 0;
   font-weight: bold;
   position: relative;
@@ -19465,15 +19438,15 @@ body {
 }
 
 .csu-card__share-twitter {
-  background-color: #00C6FF;
+  background-color: #00c6ff;
 }
 
 .csu-card__share-facebook {
-  background-color: #3B5998;
+  background-color: #3b5998;
 }
 
 .csu-card__share-linkedin {
-  background-color: #0077B5;
+  background-color: #0077b5;
 }
 
 .csu-card__share:hover {
@@ -19489,6 +19462,41 @@ body {
 
 .csu-card__no-data--mobile {
   padding-top: 3.5rem;
+}
+
+.csu-card__title {
+  color: #595959;
+  font-weight: 700;
+}
+
+.csu-card__tags {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 992px) {
+  .csu-card {
+    min-height: unset;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .csu-card__title {
+    font-size: 1.5rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .csu-card .majors-header {
+    color: #595959;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-top: 3rem;
+    font-size: 1.3rem;
+  }
+  .csu-card .csu-card__form-sizing .btn {
+    padding: 0.6rem 2rem;
+    margin: 0.09em;
+  }
 }
 
 .csu-card__form {
@@ -19528,7 +19536,8 @@ body {
   transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.flip-enter, .flip-leave-to {
+.flip-enter,
+.flip-leave-to {
   -webkit-transform: scaleX(0) translateZ(0);
           transform: scaleX(0) translateZ(0);
 }
@@ -19652,14 +19661,32 @@ body {
   }
 }
 
-.pfre-info {
-  position: absolute;
-  margin-left: 80px;
-  margin-top: 100px;
-  background: #EBEBEB;
-  border-radius: 15px;
-  float: right;
-  width: 10rem;
+.pfre__sub-header {
+  white-space: nowrap;
+}
+
+.pfre__chart-header {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .pfre__chart-header {
+    padding-top: 1rem;
+  }
+}
+
+.pfre__chart-actual {
+  font-size: 1rem;
+}
+
+.pfre__chart-text {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .pfre__chart-text {
+    font-size: 0.8rem;
+  }
 }
 
 .pfre-info {
@@ -19800,12 +19827,12 @@ figcaption {
 }
 
 .faq-card {
-  border: 5px solid #14597F;
+  border: 5px solid #14597f;
 }
 
 @media screen and (max-width: 575px) {
   .faq-card {
-    border-width: .5rem .5rem 0rem .5rem;
+    border-width: 0.5rem 0.5rem 0rem 0.5rem;
   }
 }
 
@@ -19840,7 +19867,7 @@ figcaption {
 }
 
 .faq-card__text--blue {
-  color: #14597F;
+  color: #14597f;
   margin-bottom: 0.4rem;
   font-weight: 600;
 }
@@ -19884,7 +19911,7 @@ figcaption {
 }
 
 .faq-card__button--mobile {
-  background-color: #14597F;
+  background-color: #14597f;
   font-weight: 600;
   text-align: center;
   position: relative;
@@ -19909,7 +19936,7 @@ figcaption {
 @media screen and (min-width: 576px) {
   .faq-card__button {
     display: block;
-    background-color: #14597F;
+    background-color: #14597f;
     color: #fff;
     width: 12rem;
     font-size: 1.1rem;
@@ -20150,7 +20177,17 @@ a.faq-card__button:hover {
 
 @media screen and (max-width: 575px) {
   .nav-logo {
-    content: url("../img/cspLogos/logo-mini.svg");
+    display: none !important;
+  }
+}
+
+.nav-logo--small {
+  display: none !important;
+}
+
+@media screen and (max-width: 575px) {
+  .nav-logo--small {
+    display: inline !important;
     width: 4rem;
   }
 }
@@ -20987,6 +21024,45 @@ input[type="button"]:focus {
   width: 80%;
 }
 
+.pfre-btn {
+  position: relative;
+  padding: 5px 0;
+  color: #476A6F;
+  background-color: #FFF;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+  -webkit-transition: 0.18s;
+  transition: 0.18s;
+  border-color: #476A6F;
+  border: 2px solid;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.pfre-btn:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 5px;
+}
+
+.pfre-btn:focus {
+  outline: none !important;
+}
+
+.pfre-btn--selected {
+  color: #FFF;
+  background-color: #476A6F;
+  border-color: #476A6F;
+}
+
+.pfre-btn--selected:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 0 !important;
+}
+
 .power-user-modal-btn {
   border-radius: 3rem;
   font-family: "Open Sans";
@@ -21012,6 +21088,13 @@ button.btn-change-campus:hover {
   pointer-events: none;
 }
 
+/* hide the OS/browser checkboxes/radio buttons */
+input[type="radio"] {
+  visibility: hidden;
+  margin: 0;
+  width: 0 !important;
+}
+
 .echarts {
   min-height: 80%;
   min-width: 100%;
@@ -21032,7 +21115,7 @@ button.btn-change-campus:hover {
 
 @media only screen and (max-width: 767px) {
   .IndustryProgressBarWrapper {
-    padding: .1rem 2rem 0 0;
+    padding: 0.1rem 2rem 0 0;
     margin: 1rem 0 0 0;
   }
 }
@@ -21109,17 +21192,17 @@ button.btn-change-campus:hover {
   background-color: #2BAE67;
 }
 
-.industry-card {
-  min-height: 95%;
+.bar-graph-card {
+  min-height: 100%;
   padding: 2%;
 }
 
 @media screen and (max-width: 767px) {
-  .industry-card {
+  .bar-graph-card {
     margin-top: 2%;
     padding: 7%;
     font-size: 1.5rem;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
   }
 }
 
@@ -21143,6 +21226,23 @@ button.btn-change-campus:hover {
 .pfre-bar__return-investment-text {
   font-weight: 600;
   color: #476A6F;
+}
+
+.pfre-bar__background {
+  border-radius: 50px;
+  background-color: #EBEBEB;
+}
+
+.pfre-bar__wrapper {
+  padding: 1.42rem 0.71rem;
+  border-top: 1px solid #EBEBEB;
+}
+
+@media only screen and (max-width: 767px) {
+  .pfre-bar__wrapper {
+    padding: 0.1rem 2rem 0 0;
+    margin: 1rem 0 0 0;
+  }
 }
 
 .pfre-year {
@@ -21207,7 +21307,7 @@ button.btn-change-campus:hover {
           transform: translate(-50%);
 }
 
-/*Legend color key for majors page*/
+/* Legend color key for majors page */
 .legend-oxford-25 {
   background-color: #7E969A;
 }

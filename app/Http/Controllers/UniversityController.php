@@ -14,17 +14,21 @@ class UniversityController extends Controller
     {
         $this->universityRetriever = $universityContract;
     }
-    
-    public function getAllUniversities() 
+
+    public function getAllUniversities()
     {
         $key = "universitysForCalStatePays";
-        // if(Cache::has($key)){
-        //     $data = Cache::get($key);
-        //     return json_decode($data);
-        // }
+
+        if (Cache::has($key)) {
+            $data = Cache::get($key);
+            return json_decode($data);
+        }
+
         $data = $this->universityRetriever->getAllUniversities();
-        // $value = json_encode($data);
-        // Cache::forever($key,$value);
+
+        $value = json_encode($data);
+        Cache::forever($key, $value);
+
         return $data;
     }
 }

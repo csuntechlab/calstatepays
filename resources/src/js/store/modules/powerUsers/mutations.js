@@ -5,7 +5,6 @@ import router from '../../../router'
 export default{
     [_powerUsers.SET_TABLEAU_VALUE](state,payload){
         state.tableauValue = payload;
-        router.push({name:'tableau' , params:{tableauValue:this.tableauValue}});
     },
     [_powerUsers.TRIGGER_TABLEAU_IS_LOADING](state) {
         if (state.tableauIsLoading===false) {

@@ -22,7 +22,7 @@
             <div v-else>
                 <div class="row IndustryLegend">
                     <div v-if="industryMajor !== null" class="col-12">
-                        <h3>{{industryMajor}}</h3>
+                        <h3 class="csu-card__title">{{industryMajor}}</h3>
                     </div>
                     <div v-if="industriesByMajor.length > 0" class="col-12">
                         <p class="h6">Employment 5 Years After Exit</p>
