@@ -208,8 +208,8 @@ input[type="button"]:focus {
 		font-size: 1.75rem;
 	}
 }
-/*degree level button colors and animations*/
 
+/*degree level button colors and animations*/
 .major-btn_icon {
 	position: absolute;
 	right: 7%;
@@ -291,6 +291,44 @@ input[type="button"]:focus {
 	@extend .m-auto;
 	width: 80%;
 }
+
+// pfre radio buttons
+.pfre-btn {
+	position: relative;
+	padding: 5px 0;
+	color: $oxford;
+	background-color: $white;
+	font-size: 1rem;
+	text-transform: none;
+	font-weight: 500;
+	transition: 0.18s;
+	border-color: $oxford;
+	border: 2px solid;
+	border-radius: 3rem;
+	margin-bottom: 0.5rem;
+	width: 100%;
+
+	&:hover {
+		box-shadow: none !important;
+		margin-left: 5px;
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+
+	&--selected {
+		color: $white;
+		background-color: $oxford;
+		border-color: $oxford;
+
+		&:hover {
+			box-shadow: none !important;
+			margin-left: 0 !important;
+		}
+	}
+}
+
 .power-user-modal-btn {
 	border-radius: 3rem;
 	font-family: $font-brand;
@@ -306,11 +344,18 @@ button.btn-change-campus {
 	border-radius: 5px;
 }
 
-button.btn-change-campus:hover  {
-  box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
+button.btn-change-campus:hover {
+	box-shadow: inset 0 0 50px 50px rgba(0, 0, 0, 0.2);
 }
 
 .btn-locked {
-  cursor: not-allowed;
-  pointer-events: none;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* hide the OS/browser checkboxes/radio buttons */
+input[type="radio"] {
+	visibility: hidden;
+	margin: 0;
+	width: 0 !important;
 }

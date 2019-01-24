@@ -1,11 +1,15 @@
 const FETCH_MOCK_DATA = 'pfre/FETCH_MOCK_DATA';
 const FETCH_FRE_DATA = 'pfre/FETCH_FRE_DATA';
 const TOGGLE_INFO = 'pfre/TOGGLE_INFO';
+const SUBMIT_PFRE = "pfre/SUBMIT_PFRE";
 const RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
+const SET_PFRE = "pfre/SET_PFRE";
 
 export default {
     FETCH_MOCK_DATA,
     FETCH_FRE_DATA,
     TOGGLE_INFO,
-    RESET_FRE_STATE
+    SUBMIT_PFRE,
+    RESET_FRE_STATE,
+    SET_PFRE
 }
