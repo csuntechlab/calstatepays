@@ -68137,15 +68137,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -68165,17 +68156,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
     ? _c("div", { staticClass: "pfre-info__wrapper" }, [
-        _c("div", {}, [
-          _c("button", {
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.toggleInfo(_vm.infoKey)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
         _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
           ? _c(
               "div",
@@ -68192,18 +68172,7 @@ var render = function() {
             )
           : _vm._e()
       ])
-    : _c("div", {}, [
-        _c("div", {}, [
-          _c("button", {
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.toggleInfo(_vm.infoKey)
-              }
-            }
-          })
-        ])
-      ])
+    : _c("div", {})
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -68274,14 +68243,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -69715,35 +69676,35 @@ var render = function() {
               _c("div", { staticClass: "row no-gutters" }, [
                 _c(
                   "span",
-                  { staticClass: "col-auto" },
+                  { staticClass: "col-12" },
                   [
                     _c("pfre-info", { attrs: { infoKey: "earnings" } }, [
                       _vm._v(
                         "After you successfully complete a degree and find a career, Your estimated earnings would be this."
                       )
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "float-left pfre__chart-header font-weight-bold mb-0",
+                        on: {
+                          click: function($event) {
+                            _vm.toggleInfo("earnings")
+                          }
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-info-circle" }),
+                        _vm._v(
+                          " \n\t\t\t\t\t\t\tEstimated Earnings 5 Years After Exit\n\t\t\t\t\t\t"
+                        )
+                      ]
+                    )
                   ],
                   1
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "col" }, [
-                  _c(
-                    "p",
-                    {
-                      staticClass:
-                        "float-left pfre__chart-header font-weight-bold mb-0",
-                      on: {
-                        click: function($event) {
-                          _vm.toggleInfo("earnings")
-                        }
-                      }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-info-circle" }),
-                      _vm._v(" Estimated Earnings 5 Years After Exit")
-                    ]
-                  )
-                ])
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row my-3" }, [

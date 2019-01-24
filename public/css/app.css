@@ -19666,6 +19666,7 @@ body {
 }
 
 .pfre__chart-header {
+  cursor: pointer;
   font-size: 1rem;
 }
 
@@ -19709,7 +19710,7 @@ body {
   color: #fff;
   font-size: 13px;
   width: 18rem;
-  background-color: rgba(97, 97, 97, 0.9);
+  background-color: rgba(97, 97, 97, 0.99);
   margin-top: 2rem;
   border-radius: 10px;
   opacity: 1;
