@@ -1,5 +1,5 @@
 <template>
-	<div v-if="this.pfreFormWasSubmitted">
+	<div v-if="!this.pfreFormWasSubmitted">
 		<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 		<p class="lead pl-md-5 pr-md-5">
 			You have the option of either filtering out majors by
@@ -37,7 +37,7 @@
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
 							@click="toggleInfo('timeToDegree')"
-						>Estimated Time to Completion of Degree</p>
+						> <i class="fa fa-info-circle"></i> Estimated Time to Completion of Degree</p>
 					</span>
 				</div>
 				<div class="row my-3">
@@ -84,7 +84,7 @@
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
 							@click="toggleInfo('earnings')"
-						>Estimated Earnings 5 Years After Exit</p>
+						><i class="fa fa-info-circle"></i> Estimated Earnings 5 Years After Exit</p>
 					</span>
 				</div>
 				<div class="row my-3">
@@ -137,7 +137,7 @@
 				<div class="row no-gutters">
 					<div class="col-12">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-						<p class="float-left pfre__chart-header font-weight-bold mb-0" @click="toggleInfo('return')">FRE - Financial Return on Education</p>
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @click="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
 					</div>
 					<!-- <span class="col">
 						<p

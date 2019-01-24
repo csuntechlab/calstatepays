@@ -19708,12 +19708,13 @@ body {
   position: absolute;
   color: #fff;
   font-size: 13px;
+  width: 18rem;
   background-color: rgba(97, 97, 97, 0.9);
   margin-top: 2rem;
   border-radius: 10px;
   opacity: 1;
-  -webkit-animation: fadeIn 1s ease;
-          animation: fadeIn 1s ease;
+  -webkit-animation: fadeIn .5s ease;
+          animation: fadeIn .5s ease;
   padding: .5rem;
   z-index: 2;
 }

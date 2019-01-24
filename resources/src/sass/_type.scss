@@ -110,12 +110,13 @@ body {
 .pfre-info--show {
     position: absolute;
     color: #fff;
-    font-size: 13px;
+	font-size: 13px;
+	width: 18rem;
     background-color: rgba(97,97,97,.9);
     margin-top: 2rem;
     border-radius: 10px;
     opacity: 1;
-    animation: fadeIn 1s ease;
+    animation: fadeIn .5s ease;
     padding: .5rem;
     z-index: 2;
     @media screen and (max-width:576px){

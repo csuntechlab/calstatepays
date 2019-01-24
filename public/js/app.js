@@ -68145,6 +68145,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -68163,20 +68164,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
-    ? _c("div", { staticClass: "pfre-info__wrapper m-0" }, [
+    ? _c("div", { staticClass: "pfre-info__wrapper" }, [
         _c("div", {}, [
-          _c(
-            "button",
-            {
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.toggleInfo(_vm.infoKey)
-                }
+          _c("button", {
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.toggleInfo(_vm.infoKey)
               }
-            },
-            [_c("i", { staticClass: "fa fa-info-circle" })]
-          )
+            }
+          })
         ]),
         _vm._v(" "),
         _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
@@ -68195,20 +68192,16 @@ var render = function() {
             )
           : _vm._e()
       ])
-    : _c("div", { staticClass: "pfre-info__wrapper m-0" }, [
+    : _c("div", {}, [
         _c("div", {}, [
-          _c(
-            "button",
-            {
-              attrs: { type: "button" },
-              on: {
-                click: function($event) {
-                  _vm.toggleInfo(_vm.infoKey)
-                }
+          _c("button", {
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                _vm.toggleInfo(_vm.infoKey)
               }
-            },
-            [_c("i", { staticClass: "fa fa-info-circle" })]
-          )
+            }
+          })
         ])
       ])
 }
@@ -69546,7 +69539,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return this.pfreFormWasSubmitted
+  return !this.pfreFormWasSubmitted
     ? _c("div", [
         _c("h3", { staticClass: "industry-title text-center p-md-3" }, [
           _vm._v("Please make your selection")
@@ -69636,7 +69629,10 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Estimated Time to Completion of Degree")]
+                    [
+                      _c("i", { staticClass: "fa fa-info-circle" }),
+                      _vm._v(" Estimated Time to Completion of Degree")
+                    ]
                   )
                 ])
               ]),
@@ -69742,7 +69738,10 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Estimated Earnings 5 Years After Exit")]
+                    [
+                      _c("i", { staticClass: "fa fa-info-circle" }),
+                      _vm._v(" Estimated Earnings 5 Years After Exit")
+                    ]
                   )
                 ])
               ]),
@@ -69970,7 +69969,10 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("FRE - Financial Return on Education")]
+                      [
+                        _c("i", { staticClass: "fa fa-info-circle" }),
+                        _vm._v(" FRE - Financial Return on Education")
+                      ]
                     )
                   ],
                   1

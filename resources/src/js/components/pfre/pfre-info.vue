@@ -1,21 +1,22 @@
 <template>
-<div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper m-0">
+<div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper">
     <div class=""> 
       <button class="" type="button" @click="toggleInfo(infoKey);">
-        <i class="fa fa-info-circle"></i>
+        <!-- <i class="fa fa-info-circle"></i> -->
       </button>
     </div>
     <div @click="toggleInfo(infoKey);" v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
       <slot ></slot>
     </div>
-</div>
-<div v-else class="pfre-info__wrapper m-0">
-    <div class="">
-      <button class="" type="button" @click="toggleInfo(infoKey)">
-        <i class="fa fa-info-circle"></i>
-      </button>
-    </div>
-</div>
+
+  </div>
+     <div v-else class="">
+       <div class="">
+        <button class="" type="button" @click="toggleInfo(infoKey)">
+          <!-- <i class="fa fa-info-circle"></i> -->
+        </button>
+      </div>
+  </div>
   </template>
  <script> 
 
