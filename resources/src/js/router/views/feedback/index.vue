@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <feed-back-form/>
-  </div>
+	<div class="graphContent">
+		<div class="container">
+			<feed-back-form/>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -16,9 +18,8 @@ export default {
 		this.url = window.baseUrl;
 	},
 	components: {
-    feedBackForm
-	}, 
-	methods: {
-	} 
+		feedBackForm
+	},
+	methods: {}
 };
 </script>
