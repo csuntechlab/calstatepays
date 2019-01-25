@@ -3,30 +3,35 @@
     "university_id": "70",
     "opt_in": 1,
     "path_id": 1,
+    "iframe_server":"https://public.tableau.com/javascripts/api/viz_v1.js",
     "iframe_string": "CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 2,
+    "iframe_server":"https://public.tableau.com/javascripts/api/viz_v1.js",
     "iframe_string": "CSUNorthridge-ByAge26NOV2018/Northridge"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 3,
+    "iframe_server":"https://public.tableau.com/javascripts/api/viz_v1.js",
     "iframe_string": "CSUNorthridge-ByRace20NOV2018/CSUNByRace"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 4,
+    "iframe_server":"https://public.tableau.com/javascripts/api/viz_v1.js",
     "iframe_string": "CSUNorthridge-ByGender20NOV2018/CSUNbyGender"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 5,
+    "iframe_server":"https://public.tableau.com/javascripts/api/viz_v1.js",
     "iframe_string": "CSUNorthridge-ByPellGrant26NOV2018/Northridge"
   }
 ]

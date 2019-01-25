@@ -3,30 +3,35 @@
     "university_id": "55",
     "opt_in": 0,
     "path_id": 1,
+    "iframe_server":null,
     "iframe_string": null
   },
   {
     "university_id": "55",
     "opt_in": 0,
     "path_id": 2,
+    "iframe_server":null,
     "iframe_string": null
   },
   {
     "university_id": "55",
     "opt_in": 0,
     "path_id": 3,
+    "iframe_server":null,
     "iframe_string": null
   },
   {
     "university_id": "55",
     "opt_in": 0,
     "path_id": 4,
+    "iframe_server":null,
     "iframe_string": null
   },
   {
     "university_id": "55",
     "opt_in": 0,
     "path_id": 5,
+    "iframe_server":null,
     "iframe_string": null
   }
 ]
