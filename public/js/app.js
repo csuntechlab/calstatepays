@@ -93527,7 +93527,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src: this.url + "/img/csuseals/fulleton_seal.svg",
+                src: this.url + "/img/csuseals/fullerton_seal.svg",
                 alt: "CSU Fullerton Seal"
               }
             }),
