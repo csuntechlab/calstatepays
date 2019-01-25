@@ -17,6 +17,7 @@ class Power_User_Data_Los_Angeles_TableSeeder extends Seeder
             DB::table('power_users_data')->insert([
                 'university_id' => $row->university_id,
                 'path_id' => $row->path_id,
+                'iframe_server' => $row->iframe_server,
                 'iframe_string' => $row->iframe_string,
                 'opt_in' => $row->opt_in
             ]);
