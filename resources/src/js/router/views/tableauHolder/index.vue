@@ -62,8 +62,10 @@ export default {
 	},
 	mounted() {
 		this.$nextTick(function() {
-            var divElement = document.getElementById("viz1541533460014");
-			if (this.tableauValue === "" || this.tableauValue === null) {
+			var divElement = document.getElementById("viz1541533460014");
+			console.log(this.tableauValue);
+			console.log(this.tableauServer);
+			if (this.tableauValue === "" || this.tableauValue === null || this.tableauServer == null || this.tableauServer == "") {
 				divElement.style.width = "1000px";
 				divElement.style.height = "5rem";
 				divElement.style.backgroundColor = "lightgray";
@@ -75,8 +77,7 @@ export default {
 				vizElement.style.width = "1016px";
 				vizElement.style.height = "991px";
 				var scriptElement = document.createElement("script");
-				scriptElement.src =
-					"https://public.tableau.com/javascripts/api/viz_v1.js";
+				scriptElement.src = this.tableauServer;
 				vizElement.parentNode.insertBefore(scriptElement, vizElement);
 				var vizEl = vizElement.getElementsByTagName("param");
 				vizEl[3].value = this.tableauValue;
@@ -84,7 +85,8 @@ export default {
 		});
 	},
 	computed: {
-		...mapGetters(["tableauValue"])
+		...mapGetters(["tableauValue","tableauServer"])
+		
 	}
 };
 </script>

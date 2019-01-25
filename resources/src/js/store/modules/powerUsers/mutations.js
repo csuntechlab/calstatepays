@@ -4,7 +4,8 @@ import _global from '../../mutation-types/global-form';
 import router from '../../../router'
 export default{
     [_powerUsers.SET_TABLEAU_VALUE](state,payload){
-        state.tableauValue = payload;
+        state.tableauValue = payload['iframe_string'];
+        state.tableauServer = payload['iframe_server'];
     },
     [_powerUsers.TRIGGER_TABLEAU_IS_LOADING](state) {
         if (state.tableauIsLoading===false) {
