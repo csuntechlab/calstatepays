@@ -36,7 +36,7 @@
 					<span class="col">
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
-							@click="toggleInfo('timeToDegree')"
+							@mouseover="toggleInfo('timeToDegree')" @mouseout="toggleInfo('timeToDegree')"
 						> <i class="fa fa-info-circle"></i> Estimated Time to Completion of Degree</p>
 					</span>
 				</div>
@@ -79,7 +79,7 @@
 						<pfre-info
 							infoKey="earnings"
 						>After you successfully complete a degree and find a career, Your estimated earnings would be this.</pfre-info>
-						<p class="float-left pfre__chart-header font-weight-bold mb-0" @click="toggleInfo('earnings')">
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseout="toggleInfo('earnings')" @mouseover="toggleInfo('earnings')">
 							<i class="fa fa-info-circle"></i> 
 							Estimated Earnings 5 Years After Exit
 						</p>
@@ -135,7 +135,7 @@
 				<div class="row no-gutters">
 					<div class="col-12">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-						<p class="float-left pfre__chart-header font-weight-bold mb-0" @click="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseover="toggleInfo('return')"  @mouseleave="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
 					</div>
 				</div>
 				<div class="row my-3">
@@ -198,7 +198,7 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(["fetchFreData", "toggleInfo"])
+		...mapActions(["fetchFreData", "toggleInfo"]),
 	},
 	filters: { percentage, currency },
 	components: { pfreInfo }

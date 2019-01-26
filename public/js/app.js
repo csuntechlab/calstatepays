@@ -69585,7 +69585,10 @@ var render = function() {
                       staticClass:
                         "float-left pfre__chart-header font-weight-bold mb-0",
                       on: {
-                        click: function($event) {
+                        mouseover: function($event) {
+                          _vm.toggleInfo("timeToDegree")
+                        },
+                        mouseout: function($event) {
                           _vm.toggleInfo("timeToDegree")
                         }
                       }
@@ -69690,7 +69693,10 @@ var render = function() {
                         staticClass:
                           "float-left pfre__chart-header font-weight-bold mb-0",
                         on: {
-                          click: function($event) {
+                          mouseout: function($event) {
+                            _vm.toggleInfo("earnings")
+                          },
+                          mouseover: function($event) {
                             _vm.toggleInfo("earnings")
                           }
                         }
@@ -69925,7 +69931,10 @@ var render = function() {
                         staticClass:
                           "float-left pfre__chart-header font-weight-bold mb-0",
                         on: {
-                          click: function($event) {
+                          mouseover: function($event) {
+                            _vm.toggleInfo("return")
+                          },
+                          mouseleave: function($event) {
                             _vm.toggleInfo("return")
                           }
                         }
