@@ -80257,12 +80257,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             isShowing: false,
             universitySeals: [{ url: window.baseUrl + '/img/csuseals/long_beach_seal.svg', name: 'Long Beach', alt: 'Cal State Long Beach Seal' }, { url: window.baseUrl + '/img/csuseals/poly_seal.svg', name: 'Pomona', alt: 'Cal State Pomona Seal' }, { url: window.baseUrl + '/img/csuseals/fullerton_seal.svg', name: 'Fullerton', alt: 'Cal State Fullerton Seal' }, { url: window.baseUrl + '/img/csuseals/northridge_seal.svg', name: 'Northridge', alt: 'Cal State Northridge Seal' }, { url: window.baseUrl + '/img/csuseals/dominguez_seal.svg', name: 'Dominguez Hills', alt: 'Cal State Dominguez Hills Seal' }, { url: window.baseUrl + '/img/csuseals/los_angeles_seal.svg', name: 'Los Angeles', alt: 'Cal State Los Angeles Seal' }, { url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg', name: 'Channel Islands', alt: 'Cal State Channel Islands Seal' }]
         };
-    },
-
-    computed: {
-        getTimeStamp: function getTimeStamp() {
-            return "" + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('year') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('hour') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('minute') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('second');
-        }
     }
 });
 
@@ -80555,12 +80549,7 @@ var render = function() {
               "figure",
               { key: index, staticClass: "col-md col-sm-3 col-3" },
               [
-                _c("img", {
-                  attrs: {
-                    src: item.url + "?version=" + _vm.getTimeStamp,
-                    alt: item.alt
-                  }
-                }),
+                _c("img", { attrs: { src: item.url, alt: item.alt } }),
                 _vm._v(" "),
                 _c("figcaption", { staticClass: "text-center" }, [
                   _vm._v(_vm._s(item.name))
@@ -81286,7 +81275,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 				short_name: "all"
 			}, {
 				url: window.baseUrl + "/img/csuseals/channel_islands_seal.svg",
-				name: "Channel Island",
+				name: "Channel Islands",
 				short_name: "channel_islands"
 			}, {
 				url: window.baseUrl + "/img/csuseals/dominguez_seal.svg",
@@ -81528,7 +81517,10 @@ var render = function() {
                                                             _c("img", {
                                                               attrs: {
                                                                 src:
-                                                                  universitySeal.url
+                                                                  universitySeal.url,
+                                                                alt:
+                                                                  universitySeal.name +
+                                                                  "Seal Image"
                                                               }
                                                             })
                                                           ]
@@ -81599,7 +81591,10 @@ var render = function() {
                                                             _c("img", {
                                                               attrs: {
                                                                 src:
-                                                                  universitySeal.url
+                                                                  universitySeal.url,
+                                                                alt:
+                                                                  universitySeal.name +
+                                                                  "Seal Image"
                                                               }
                                                             })
                                                           ]
@@ -106916,12 +106911,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   created: function created() {
     this.url = window.baseUrl;
-  },
-
-  computed: {
-    getTimeStamp: function getTimeStamp() {
-      return '' + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('year') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('hour') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('minute') + __WEBPACK_IMPORTED_MODULE_0_moment___default()().get('second');
-    }
   }
 });
 
@@ -106944,10 +106933,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/long_beach_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/long_beach_seal.svg",
                 alt: "CSU Long Beach Seal"
               }
             }),
@@ -106958,10 +106944,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/poly_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/poly_seal.svg",
                 alt: "CSU Pomona Seal"
               }
             }),
@@ -106972,10 +106955,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/dominguez_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/dominguez_seal.svg",
                 alt: "CSU Dominguez Hills Seal"
               }
             }),
@@ -106986,10 +106966,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/northridge_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/northridge_seal.svg",
                 alt: "CSU Northridge Seal"
               }
             }),
@@ -107000,10 +106977,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/channel_islands_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/channel_islands_seal.svg",
                 alt: "CSU Channel Islands Seal"
               }
             }),
@@ -107014,10 +106988,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/fullerton_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/fullerton_seal.svg",
                 alt: "CSU Fullerton Seal"
               }
             }),
@@ -107028,10 +106999,7 @@ var render = function() {
           _c("figure", { staticClass: "col-md col-sm-4 col-4 text-center" }, [
             _c("img", {
               attrs: {
-                src:
-                  this.url +
-                  "/img/csuseals/los_angeles_seal.svg?version=" +
-                  _vm.getTimeStamp,
+                src: this.url + "/img/csuseals/los_angeles_seal.svg",
                 alt: "CSU Los Angeles Seal"
               }
             }),

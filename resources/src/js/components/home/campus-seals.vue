@@ -12,7 +12,7 @@
                 </div>
                 <div class="row no-gutters">
                     <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3">
-                        <img :src="item.url + '?version=' + getTimeStamp" :alt="item.alt">
+                        <img :src="item.url" :alt="item.alt">
                         <figcaption class="text-center" >{{item.name}}</figcaption>
                     </figure>
                 </div>  
@@ -39,11 +39,6 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Islands',alt:'Cal State Channel Islands Seal'},                
             ]
         };
-    },
-    computed: {
-        getTimeStamp() {
-            return `${moment().get('year')}${moment().get('hour')}${moment().get('minute')}${moment().get('second')}`;
-        }
     }
 }
 </script>
