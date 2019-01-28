@@ -30,7 +30,7 @@
                     <figcaption>Channel Islands</figcaption>
                 </figure>
                 <figure class="col-md col-sm-4 col-4 text-center">
-                    <img :src="this.url + '/img/csuseals/fulleton_seal.svg'" alt="CSU Fullerton Seal">
+                    <img :src="this.url + '/img/csuseals/fullerton_seal.svg'" alt="CSU Fullerton Seal">
                     <figcaption>Fullerton</figcaption>
                 </figure>
                 <figure class="col-md col-sm-4 col-4 text-center">

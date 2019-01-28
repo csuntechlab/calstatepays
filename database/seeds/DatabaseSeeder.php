@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         /** Investment Data Seeders */
         $this->call(Investments_Template_Northridge_TableSeeder::class);
         $this->call(Investments_Template_All_TableSeeder::class);
-        
+
         /** Student Backgrounds */
         $this->call(Student_Backgrounds_Template_Northridge_TableSeeder::class);
         $this->call(Student_Backgrounds_Template_All_TableSeeder::class);
