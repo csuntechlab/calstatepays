@@ -12,7 +12,7 @@
                 </div>
                 <div class="row no-gutters">
                     <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3">
-                        <img :src="item.url" :alt="item.alt">
+                        <img :src="item.url + '?version=' + getTimeStamp" :alt="item.alt">
                         <figcaption class="text-center" >{{item.name}}</figcaption>
                     </figure>
                 </div>  
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
     name: "campus-seals",
     data() {
@@ -39,6 +40,11 @@ export default {
             ]
         };
     },
+    computed: {
+        getTimeStamp() {
+            return `${moment().get('year')}${moment().get('hour')}${moment().get('minute')}${moment().get('second')}`;
+        }
+    }
 }
 </script>
 
