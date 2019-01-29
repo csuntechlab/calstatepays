@@ -19,7 +19,7 @@ class Mailer
      */
     public function sendToOne($view, array $data, $email, $subject)
     {
-        return Mail::to($email)->send(new FeedBackMail($view, $data, $email, $subject));
+        return Mail::to($data['email'])->send(new FeedBackMail($view, $data, $email, $subject));
     }
 
 }

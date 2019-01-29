@@ -37,7 +37,7 @@ class FeedBackMail extends Mailable
     public function build()
     {
         return $this->from(config('mail.from.address'))
-                    ->subject($this->subject)
+                    ->subject($this->title)
                     ->view($this->view)
                     ->with([
                         'email' => $this->email,
