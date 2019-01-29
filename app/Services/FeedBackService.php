@@ -42,7 +42,7 @@ class FeedBackService implements FeedBackContract
             'body' => $request->body,
         ];
         
-        $this->mailer->sendToOne('emails.feedback', $emailItems, $this->feedback, 'Test');
+        $this->mailer->sendToOneGeneric('emails.thankyou', $emailItems, $this->feedback, 'CalStatePays');
         return;
     }
 }

@@ -21,7 +21,7 @@ class FeedBackMail extends Mailable
      *
      * @return void
      */
-    public function __construct($view, $data, $sender, $subject)
+    public function __construct(String $view, Array $data, String $sender, String $subject)
     {
         $this->view = $view;
         $this->email = $data['email'];

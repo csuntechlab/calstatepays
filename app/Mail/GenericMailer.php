@@ -12,24 +12,22 @@ class GenericMailer extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject;
-    public $data;
+    private $title;
+    private $email;
+    private $body;
     public $view;
-    public $replyTo;
-    
+
     /**
-     * GenericMailer constructor.
-     * @param String $view
-     * @param array $data
-     * @param String $subject
-     * @param array $replyTo
+     * Create a new message instance.
+     *
+     * @return void
      */
-    public function __construct(String $view, array $data, String $subject, array $replyTo)
+    public function __construct(String $view, Array $data, String $sender, String $subject)
     {
         $this->view = $view;
-        $this->subject = $subject;
-        $this->data = $data;
-        $this->replyTo($replyTo["address"],$replyTo["name"]);
+        $this->email = $data['email'];
+        $this->body = $data['body'];
+        $this->title = $subject;
     }
     /**
      * Build the message.
@@ -38,9 +36,12 @@ class GenericMailer extends Mailable
      */
     public function build()
     {
-            return $this->from(config('mail.username'))
-                    ->subject($this->subject)
+        return $this->from(config('mail.from.address'))
+                    ->subject($this->title)
                     ->view($this->view)
-                    ->with($this->data);
+                    ->with([
+                        'email' => $this->email,
+                        'body' => $this->body
+                    ]);     
     }
 }
