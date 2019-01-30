@@ -49,7 +49,7 @@
                         <div class="col-sm-9">
                             <div class="row py-2">
                                 <div class="col-10">
-                                    <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                                    <v-progress-linear aria-label="Percentage of Students Employed" class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
                                 </div>
                                 <div class="col-2 pl-0">
                                     <p class="IndustryProgressBarWrapper__PercentageText">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="row py-2">
                                 <div class="col-10">
-                                    <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                                    <v-progress-linear aria-label="Average Earnings" class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
                                 </div>
                                 <div class="col-2 pl-0">
                                     <p class="IndustryProgressBarWrapper__SalaryText">

@@ -67120,6 +67120,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -67851,7 +67853,11 @@ var render = function() {
           _vm._v(" "),
           _c("v-select", {
             staticClass: "csu-form-input",
-            attrs: { label: "discipline", options: _vm.fieldOfStudies },
+            attrs: {
+              label: "discipline",
+              "aria-label": "Select Discipline Optional",
+              options: _vm.fieldOfStudies
+            },
             on: {
               input: function($event) {
                 _vm.updateGrandfatherSelect("fieldOfStudyId", "id", $event)
@@ -67885,7 +67891,11 @@ var render = function() {
                 class: {
                   "border-danger": this.submitted && !this.form.majorId
                 },
-                attrs: { label: "major", options: _vm.majors },
+                attrs: {
+                  label: "major",
+                  "aria-label": "Select a Major",
+                  options: _vm.majors
+                },
                 on: {
                   input: function($event) {
                     _vm.updateGrandfatherSelect("majorId", "majorId", $event)
@@ -70134,7 +70144,7 @@ var render = function() {
     [
       _c("csu-data-img-banner", [
         _c(
-          "h3",
+          "h2",
           {
             staticClass: "CSUDataImgBanner__dataTitle",
             attrs: { slot: "title" },
@@ -92236,6 +92246,8 @@ var render = function() {
                                     staticClass:
                                       "IndustryProgressBarWrapper__ProgressBarBase",
                                     attrs: {
+                                      "aria-label":
+                                        "Percentage of Students Employed",
                                       value: industry.percentage,
                                       height: "25",
                                       color:
@@ -92275,6 +92287,7 @@ var render = function() {
                                     staticClass:
                                       "IndustryProgressBarWrapper__ProgressBarBase",
                                     attrs: {
+                                      "aria-label": "Average Earnings",
                                       value: industry.industryWage / 1500,
                                       height: "25",
                                       color:
@@ -92407,6 +92420,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
 //
 //
 //
@@ -92677,6 +92692,7 @@ var render = function() {
                           staticClass: "csu-form-input",
                           attrs: {
                             label: "discipline",
+                            "aria-label": "Select Discipline Optional",
                             options: _vm.fieldOfStudies
                           },
                           on: {
@@ -92717,7 +92733,11 @@ var render = function() {
                                 "border-danger":
                                   !this.form.majorId && this.submittedOnce
                               },
-                              attrs: { label: "major", options: _vm.majors },
+                              attrs: {
+                                label: "major",
+                                "aria-label": "Select a Major",
+                                options: _vm.majors
+                              },
                               on: {
                                 input: function($event) {
                                   _vm.updateSelect("majorId", "majorId", $event)
