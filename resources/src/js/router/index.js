@@ -21,7 +21,7 @@ Vue.use(VueRouter);
 Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
-		{ path: '/', component: home },
+		{ path: '/', component: home, name: 'home' },
 		// { path: '/data/pfre',component: splashPage, name: 'pfre' },
 		{ path: '/data/pfre', component: pfre },
 		{ path: '/data/industries', component: industries, name: 'industries' },

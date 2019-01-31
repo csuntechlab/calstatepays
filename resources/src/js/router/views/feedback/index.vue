@@ -1,7 +1,9 @@
 <template>
-	<div class="graphContent">
-		<div class="container">
-			<feed-back-form/>
+	<div>
+		<div class="graphContent">
+			<div class="feedbackContainer">
+				<feed-back-form/>
+			</div>
 		</div>
 	</div>
 </template>

@@ -1,16 +1,28 @@
 <template>
 	<div class="row">
 		<div class="col-12">
-			<form v-if="!done" class="container-fluid csu-card__form">
-				<fieldset class="csu-card__form-sizing">
+			<form class="container-fluid csu-card csu-card__feedback">
+				<div v-show="submitted">
+					<h3 class="industry-title py-5">Thank you for your feedback!</h3>
+					<router-link class="text-center" to="/">
+						<p>Return to the Home Page</p>
+					</router-link>
+				</div>
+				<fieldset v-show="!submitted">
+					<div class="row">
+						<h3 class="industry-title pb-4">Send Us Your Feedback</h3>
+					</div>
 					<div class="form-group">
-						<label class="font-weight-bold label" for="email">Email</label>
-						<v-text-field outline v-model="formdata.email"/>
+						<v-text-field
+							outline
+							v-model="formdata.email"
+							:label="'Enter Your Email'"
+							:hint="'example@email.com'"
+						/>
 						<p class="label--required" v-if="$v.formdata.email.$error">This field requires a valid email!</p>
 					</div>
 					<div class="form-group">
-						<label class="font-weight-bold" for="feedback">Feedback</label>
-						<v-textarea outline v-model="formdata.body"/>
+						<v-textarea outline v-model="formdata.body" :label="'Enter Your Message'"/>
 						<p class="label--required" v-if="$v.formdata.body.$error">Message is required!</p>
 					</div>
 					<div class="form-group row">
@@ -18,7 +30,6 @@
 					</div>
 				</fieldset>
 			</form>
-			<p v-else>Thank you for your feedback</p>
 		</div>
 	</div>
 </template>
@@ -35,7 +46,7 @@ export default {
 				email: "",
 				body: ""
 			},
-			done: false
+			submitted: false
 		};
 	},
 	validations: {
@@ -53,7 +64,7 @@ export default {
 			if (!this.$v.$invalid) {
 				this.postNow();
 				this.clearPost();
-				this.done = true;
+				this.submitted = true;
 			} else {
 				return false;
 			}

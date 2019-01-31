@@ -29462,7 +29462,7 @@ module.exports = Cancel;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuelidate___default.a);
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a },
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_4__views_home_index_vue___default.a, name: 'home' },
 	// { path: '/data/pfre',component: splashPage, name: 'pfre' },
 	{ path: '/data/pfre', component: __WEBPACK_IMPORTED_MODULE_5__views_pfre_index_vue___default.a }, { path: '/data/industries', component: __WEBPACK_IMPORTED_MODULE_7__views_industries_index_vue___default.a, name: 'industries' }, { path: '/data/majors', component: __WEBPACK_IMPORTED_MODULE_6__views_majors_index_vue___default.a, name: 'majors' }, { path: '/faq', component: __WEBPACK_IMPORTED_MODULE_8__views_faq_index_vue___default.a }, { path: '/research', component: __WEBPACK_IMPORTED_MODULE_9__views_research_index_vue___default.a }, { path: '/tableau', name: 'tableau', component: __WEBPACK_IMPORTED_MODULE_10__views_tableauHolder_index_vue___default.a, props: true }, { path: '/feedback', component: __WEBPACK_IMPORTED_MODULE_11__views_feedback_index_vue___default.a }]
 });
@@ -94728,6 +94728,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -94829,6 +94831,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -94841,7 +94854,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				email: "",
 				body: ""
 			},
-			done: false
+			submitted: false
 		};
 	},
 
@@ -94860,7 +94873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			if (!this.$v.$invalid) {
 				this.postNow();
 				this.clearPost();
-				this.done = true;
+				this.submitted = true;
 			} else {
 				return false;
 			}
@@ -94897,24 +94910,61 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-12" }, [
-      !_vm.done
-        ? _c("form", { staticClass: "container-fluid csu-card__form" }, [
-            _c("fieldset", { staticClass: "csu-card__form-sizing" }, [
+      _c(
+        "form",
+        { staticClass: "container-fluid csu-card csu-card__feedback" },
+        [
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.submitted,
+                  expression: "submitted"
+                }
+              ]
+            },
+            [
+              _c("h3", { staticClass: "industry-title py-5" }, [
+                _vm._v("Thank you for your feedback!")
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                { staticClass: "text-center", attrs: { to: "/" } },
+                [_c("p", [_vm._v("Return to the Home Page")])]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "fieldset",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.submitted,
+                  expression: "!submitted"
+                }
+              ]
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "form-group" },
                 [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "font-weight-bold label",
-                      attrs: { for: "email" }
-                    },
-                    [_vm._v("Email")]
-                  ),
-                  _vm._v(" "),
                   _c("v-text-field", {
-                    attrs: { outline: "" },
+                    attrs: {
+                      outline: "",
+                      label: "Enter Your Email",
+                      hint: "example@email.com"
+                    },
                     model: {
                       value: _vm.formdata.email,
                       callback: function($$v) {
@@ -94937,17 +94987,8 @@ var render = function() {
                 "div",
                 { staticClass: "form-group" },
                 [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "font-weight-bold",
-                      attrs: { for: "feedback" }
-                    },
-                    [_vm._v("Feedback")]
-                  ),
-                  _vm._v(" "),
                   _c("v-textarea", {
-                    attrs: { outline: "" },
+                    attrs: { outline: "", label: "Enter Your Message" },
                     model: {
                       value: _vm.formdata.body,
                       callback: function($$v) {
@@ -94982,13 +95023,25 @@ var render = function() {
                   [_vm._v("Submit")]
                 )
               ])
-            ])
-          ])
-        : _c("p", [_vm._v("Thank you for your feedback")])
+            ]
+          )
+        ]
+      )
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h3", { staticClass: "industry-title pb-4" }, [
+        _vm._v("Send Us Your Feedback")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -95006,8 +95059,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "graphContent" }, [
-    _c("div", { staticClass: "container" }, [_c("feed-back-form")], 1)
+  return _c("div", [
+    _c("div", { staticClass: "graphContent" }, [
+      _c("div", { staticClass: "feedbackContainer" }, [_c("feed-back-form")], 1)
+    ])
   ])
 }
 var staticRenderFns = []
