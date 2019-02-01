@@ -16,7 +16,7 @@
 					<div v-else>
 							<div class="row">
 							<div class="col">
-								<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click.prevent="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
+								<i class="col-1 fa fa-times fa-2x btn-remove text-right pull-right" @click.prevent="removeCurrentCard" v-show="isNotFirstCard" title="Close"/>
 								<social-sharing 
 								v-if="selectedFormWasSubmittedOnce"
 								:class="{'invisible': nullValues}"

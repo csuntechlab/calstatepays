@@ -57,11 +57,16 @@
 		<div key="2" v-else>
 			<form class="container-fluid csu-card__form">
 				<fieldset class="csu-card__form-sizing">
-					<button class="btn btn-flip-card" @click.prevent="resetIndustries" >
-							<span class="font-weight-bold">
-								<i class="fas fa fa-chevron-left"></i> Change Major
-							</span> 
+					<div class="row">
+                        <div class="col-12 text-right">
+						<button
+							class="btn btn-flip-card"
+							@click.prevent="resetIndustries"
+						>
+                            Change Major <i v class="fas fa fa-chevron-right"/>
 						</button>
+                        </div>
+					</div>
 					
 					<p class="text-center h5 majors-header my-5-md my-4">Select a Degree Level</p>
 					<button class="btn btn-sm major-btn_postBacc" :id="'postBacc-' + form.cardIndex" @click.prevent="toggleIndustryEducationLevel('post_bacc')" >

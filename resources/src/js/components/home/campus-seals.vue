@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
     name: "campus-seals",
     data() {
@@ -38,7 +39,7 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Islands',alt:''},                
             ]
         };
-    },
+    }
 }
 </script>
 
