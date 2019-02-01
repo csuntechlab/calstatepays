@@ -41,7 +41,7 @@
 											<label :for="item.short_name">
 												<figure class="campus-modal-item__figure">
 													<div class="campus-modal-item__imgWrapper">
-														<img :src="universitySeal.url">
+														<img :src="universitySeal.url" :alt="universitySeal.name + 'Seal Image'">
 													</div>
 													<figcaption class="campus-modal-item__name">{{universitySeal.name}}</figcaption>
 												</figure>
@@ -60,7 +60,7 @@
 											<label :for="item.short_name">
 												<figure class="campus-modal-item__figure">
 													<div class="campus-modal-item__imgWrapper">
-														<img :src="universitySeal.url">
+														<img :src="universitySeal.url" :alt="universitySeal.name + 'Seal Image'">
 													</div>
 													<figcaption class="campus-modal-item__name">
 														{{universitySeal.name}}
@@ -117,7 +117,7 @@ export default {
 					url:
 						window.baseUrl +
 						"/img/csuseals/channel_islands_seal.svg",
-					name: "Channel Island",
+					name: "Channel Islands",
 					short_name: "channel_islands"
 				},
 				{

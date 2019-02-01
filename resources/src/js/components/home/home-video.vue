@@ -1,7 +1,7 @@
 <template>
     <div class="homeVideo" ref="homeVideo">
         <div class="homeVideo__btn" @click="playVideo">
-            <img :src="this.url + '/img/homeimages/icon-play.png'">
+            <img :src="this.url + '/img/homeimages/icon-play.png'" alt="Video Play Button">
         </div>
         <div class="homeVideo__container">
             <div class="embed-responsive embed-responsive-16by9 homeVideo__wrapper">
