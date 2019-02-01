@@ -135,7 +135,8 @@
 				<div class="row no-gutters">
 					<div class="col-12">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseover="toggleInfo('return')"  @mouseleave="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseout="toggleInfo('return')"  @mouseover="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
+						
 					</div>
 				</div>
 				<div class="row my-3">

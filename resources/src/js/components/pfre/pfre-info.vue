@@ -1,13 +1,10 @@
 <template>
 <div v-if ="pfreShowInfo && pfreInfoKey == infoKey" class="pfre-info__wrapper">
-
-    <div @click="toggleInfo(infoKey);" v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
+    <div v-if="pfreShowInfo && pfreInfoKey == infoKey" :class="(infoKey) ? 'pfre-info--show' : 'pfre-info'"> 
       <slot ></slot>
     </div>
+</div>
 
-  </div>
-    <div v-else class="">
-    </div>
 </template>
 <script> 
 

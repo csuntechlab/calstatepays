@@ -68134,9 +68134,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 
 
@@ -68159,20 +68156,13 @@ var render = function() {
         _vm.pfreShowInfo && _vm.pfreInfoKey == _vm.infoKey
           ? _c(
               "div",
-              {
-                class: _vm.infoKey ? "pfre-info--show" : "pfre-info",
-                on: {
-                  click: function($event) {
-                    _vm.toggleInfo(_vm.infoKey)
-                  }
-                }
-              },
+              { class: _vm.infoKey ? "pfre-info--show" : "pfre-info" },
               [_vm._t("default")],
               2
             )
           : _vm._e()
       ])
-    : _c("div", {})
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -68243,6 +68233,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pfre_info_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pfre_info_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -69931,10 +69922,10 @@ var render = function() {
                         staticClass:
                           "float-left pfre__chart-header font-weight-bold mb-0",
                         on: {
-                          mouseover: function($event) {
+                          mouseout: function($event) {
                             _vm.toggleInfo("return")
                           },
-                          mouseleave: function($event) {
+                          mouseover: function($event) {
                             _vm.toggleInfo("return")
                           }
                         }
