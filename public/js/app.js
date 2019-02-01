@@ -71480,6 +71480,89 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -89760,9 +89843,223 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("chart", { attrs: { options: _vm.polar } })
+  return _c(
+    "div",
+    [
+      _c("chart", { attrs: { options: _vm.polar } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "sr-only" }, [
+        this.educationLevel === "allDegrees"
+          ? _c("h3", [_vm._v("All Degrees Level")])
+          : this.educationLevel == "postBacc"
+          ? _c("h3", [_vm._v(" Post Bacc Level ")])
+          : this.educationLevel == "bachelors"
+          ? _c("h3", [_vm._v(" Bachelor Level ")])
+          : this.educationLevel == "someCollege"
+          ? _c("h3", [_vm._v(" Some College Level ")])
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "table",
+          { staticClass: "table" },
+          [
+            this.educationLevel !== "allDegrees"
+              ? [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("2 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("75th $" + _vm._s(this.mastersEarnings[0]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("50th $" + _vm._s(this.bachelorsEarnings[0]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("25th $" + _vm._s(this.someCollegeEarnings[0]))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("5 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("75th $" + _vm._s(this.mastersEarnings[1]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("50th $" + _vm._s(this.bachelorsEarnings[1]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("25th $" + _vm._s(this.someCollegeEarnings[1]))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("10 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("75th $" + _vm._s(this.mastersEarnings[2]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("50th $" + _vm._s(this.bachelorsEarnings[2]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("25th $" + _vm._s(this.someCollegeEarnings[2]))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("15 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("75th $" + _vm._s(this.mastersEarnings[3]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("50th $" + _vm._s(this.bachelorsEarnings[3]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("25th $" + _vm._s(this.someCollegeEarnings[3]))
+                      ])
+                    ])
+                  ])
+                ]
+              : [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("2 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("Post Bacc $" + _vm._s(this.mastersEarnings[0]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Bachelors $" + _vm._s(this.bachelorsEarnings[0])
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Some College $" + _vm._s(this.someCollegeEarnings[0])
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("5 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("Post Bacc $" + _vm._s(this.mastersEarnings[1]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Bachelors $" + _vm._s(this.bachelorsEarnings[1])
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Some College $" + _vm._s(this.someCollegeEarnings[1])
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("10 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("Post Bacc $" + _vm._s(this.mastersEarnings[2]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Bachelors $" + _vm._s(this.bachelorsEarnings[2])
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Some College $" + _vm._s(this.someCollegeEarnings[2])
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [_vm._v("15 Years")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v("Post Bacc $" + _vm._s(this.mastersEarnings[3]))
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Bachelors $" + _vm._s(this.bachelorsEarnings[3])
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "Some College $" + _vm._s(this.someCollegeEarnings[3])
+                        )
+                      ])
+                    ])
+                  ])
+                ]
+          ],
+          2
+        )
+      ])
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "table-header" }, [
+      _c("tr", [
+        _c("th", [_vm._v("Years")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("75th")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("50th")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("25th")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "table-header" }, [
+      _c("tr", [
+        _c("th", [_vm._v("Years")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Post Bacc")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Bachelors")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Some College")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -90053,6 +90350,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 						show: false
 					}
 				},
+				toolbox: { show: true },
 				name: "Years Out of College",
 				nameLocation: "middle",
 				nameTextStyle: {
