@@ -63,8 +63,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="row p-0">
-							<div class="mt-4">
+						<div class="row">
+							<div class="col-12">
 								<industry-carousel :empty="isEmpty" :industries="selectedIndustries" :major="selectedMajorTitle"></industry-carousel>
 							</div>
 						</div>

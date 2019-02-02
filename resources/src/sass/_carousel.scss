@@ -3,14 +3,14 @@
   background-position: center;
   background-size: cover;
   height: 8em;
-  width: 42em;
   border-radius: 1rem;
-
-  
+  width: 80%;
+  margin: auto;
 }
 .industry-carousel-card{
+  @extend .px-1 ;
   height: 8em;
-  width: 14em;
+  box-sizing: border-box;
 }
 
 .industry-title{
@@ -67,7 +67,6 @@
 .VueCarousel{
   &-pagination{
     position: absolute;
-    margin-top: -39px;
     background: rgba(255,255,255,.2);
   }
   &-dot{
