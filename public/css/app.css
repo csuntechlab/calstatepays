@@ -11991,7 +11991,7 @@ template {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .IndustryCarousel__MajorTitle, .h4, .h5, .h6, .IndustryCarousel__MajorSubTitle {
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
@@ -12007,7 +12007,7 @@ h2, .h2 {
   font-size: 2rem;
 }
 
-h3, .h3 {
+h3, .h3, .IndustryCarousel__MajorTitle {
   font-size: 1.75rem;
 }
 
@@ -12019,11 +12019,11 @@ h5, .h5 {
   font-size: 1.25rem;
 }
 
-h6, .h6 {
+h6, .h6, .IndustryCarousel__MajorSubTitle {
   font-size: 1rem;
 }
 
-.lead {
+.lead, .IndustryCarousel__NoIndustryMessage {
   font-size: 1.25rem;
   font-weight: 300;
 }
@@ -18018,7 +18018,7 @@ button.bg-dark:focus {
   height: 100vh !important;
 }
 
-.m-0, .CSUTile__CSUName, .CSUTile__CSUName--Opt {
+.m-0, .CSUTile__CSUName, .CSUTile__CSUName--Opt, .IndustryCarousel__IndustryTitle, .IndustryCarousel__Percentage {
   margin: 0 !important;
 }
 
@@ -18199,7 +18199,7 @@ button.bg-dark:focus {
 
 .pr-1,
 .px-1,
-.industry-carousel-card {
+.IndustryCarousel__VueCarouselSlide {
   padding-right: 0.25rem !important;
 }
 
@@ -18210,7 +18210,7 @@ button.bg-dark:focus {
 
 .pl-1,
 .px-1,
-.industry-carousel-card {
+.IndustryCarousel__VueCarouselSlide {
   padding-left: 0.25rem !important;
 }
 
@@ -18264,7 +18264,7 @@ button.bg-dark:focus {
   padding-right: 1rem !important;
 }
 
-.pb-3, .CSUTile__CSUName, .CSUTile__CSUName--Opt,
+.pb-3, .CSUTile__CSUName, .CSUTile__CSUName--Opt, .IndustryCarousel__MajorSubTitle,
 .py-3,
 .homeCard__titleAndIconWrapper--major,
 .homeCard__titleAndIconWrapper--industries,
@@ -18284,7 +18284,7 @@ button.bg-dark:focus {
   padding: 1.5rem !important;
 }
 
-.pt-4,
+.pt-4, .IndustryCarousel__MajorTitle,
 .py-4 {
   padding-top: 1.5rem !important;
 }
@@ -19912,7 +19912,7 @@ button.bg-dark:focus {
   text-align: right !important;
 }
 
-.text-center {
+.text-center, .IndustryCarousel__MajorSubTitle {
   text-align: center !important;
 }
 
@@ -20144,7 +20144,7 @@ body {
   overflow-x: hidden;
 }
 
-.lead {
+.lead, .IndustryCarousel__NoIndustryMessage {
   color: #595959;
 }
 
@@ -22069,40 +22069,43 @@ input[type="radio"] {
   margin-left: 10px;
 }
 
-.industry-carousel {
+.IndustryCarousel {
+  width: 100%;
+}
+
+.IndustryCarousel__VueCarousel {
   background-position: center;
   background-size: cover;
-  height: 8em;
   border-radius: 1rem;
   width: 80%;
   margin: auto;
+  position: relative;
 }
 
-.industry-carousel-card {
-  height: 8em;
+.IndustryCarousel__VueCarouselSlide {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
-.industry-title {
+.IndustryCarousel__MajorTitle {
   color: #595959;
   text-align: center;
   font-weight: 700;
 }
 
-.info-wrapper {
+.IndustryCarousel__InfoWrapper {
   color: white;
-  padding: 1% 0% 12% 10%;
   border-radius: 1rem;
   line-height: 3px;
   background-size: cover;
   background: rgba(0, 0, 0, 0.5);
-  max-width: 300px;
   height: 100px;
+  padding: .75;
 }
 
 @media (max-width: 700px) {
-  .info-wrapper {
+  .IndustryCarousel__InfoWrapper {
     width: 100% !important;
     margin: 0 auto;
     padding: 1% 0% 12% 10% !important;
@@ -22110,25 +22113,27 @@ input[type="radio"] {
   }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
-  .info-wrapper {
-    float: left;
-    width: 31%;
-    margin: 0 auto;
-    margin-left: 2%;
-    padding: 1% 0% 12% 10% !important;
-    margin-bottom: 10px;
-    background-size: cover;
-    background: rgba(0, 0, 0, 0.5);
-  }
+.IndustryCarousel__IndustryTitle {
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 0 .75rem;
+}
+
+.IndustryCarousel__Percentage {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 30%;
+  padding: 0 .75rem;
+}
+
+.IndustryCarousel__NoIndustryMessage {
+  text-align: center;
 }
 
 .industry-carousel__text {
   line-height: 1.3rem;
-}
-
-.industry-info {
-  margin-top: 5%;
 }
 
 .row {
@@ -22143,7 +22148,7 @@ input[type="radio"] {
 }
 
 .VueCarousel-dot {
-  margin-top: 5px !important;
+  margin-top: .45rem !important;
 }
 
 .CSUDataImgBanner .v-dialog__content {

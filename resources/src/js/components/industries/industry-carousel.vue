@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h3 class="industry-title h3 pt-4">Common Employment Sectors<br>in {{major}}</h3>
-    <p class="h6 text-center pb-3">Employment 5 Years After Exit</p>
-    <p v-if="!empty" class="lead pl-5 pr-5">No Employment Sector data is available for this major.</p>
-    <carousel v-else :navigationEnabled="true" :perPage=3 class="industry-carousel" :paginationEnabled=true>
-      <slide  v-for="(industry,index) in industries" :key="index" class="industry-carousel">
-        <industry-carousel-card :industry="industry" class="industry-carousel-card"></industry-carousel-card>
+  <div class="IndustryCarousel">
+    <h3 class="IndustryCarousel__MajorTitle">Common Employment Sectors<br>in {{major}}</h3>
+    <p class="IndustryCarousel__MajorSubTitle">Employment 5 Years After Exit</p>
+    <p v-if="!empty" class="IndustryCarousel__NoIndustryMessage">No Employment Sector data is available for this major.</p>
+    <carousel v-else :navigationEnabled="true" :perPage=3 class="IndustryCarousel__VueCarousel" :paginationEnabled=true>
+      <slide  v-for="(industry,index) in industries" :key="index">
+        <industry-carousel-card :industry="industry" class="IndustryCarousel__VueCarouselSlide"/>
       </slide>
     </carousel>
     <br>

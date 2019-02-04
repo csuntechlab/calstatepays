@@ -1,8 +1,8 @@
 <template>
-  <div class="industry-filter">
-    <div class="info-wrapper" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + industry.image + ')', borderRadius: '1rem', backgroundSize: 'cover' }">
-        <p class="text-white h4 industry-info">{{ industry.percentage }}%</p>
-        <p v-if="industry" class="text-white h6">{{ industry.title }}</p>
+  <div>
+    <div class="IndustryCarousel__InfoWrapper" v-bind:style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + industry.image + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
+        <h4 v-if="industry" class="IndustryCarousel__IndustryTitle">{{ industry.title }}</h4>
+        <p class="IndustryCarousel__Percentage">{{ industry.percentage }}%</p>
     </div>
   </div>
 </template>
