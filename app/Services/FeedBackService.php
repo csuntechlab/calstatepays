@@ -12,12 +12,12 @@ use App\Mailer\Mailer;
 class FeedBackService implements FeedBackContract
 {
     public $mailer;
-    public $feedback;
+    public $from_email;
 
     public function __construct(Mailer $mailer)
     {
         $this->mailer = $mailer;
-        $this->feedback = env('MAIL_FROM');
+        $this->from_email = config('mail.from.address');
     }
 
     public function postFeedBack($request)
@@ -41,8 +41,8 @@ class FeedBackService implements FeedBackContract
             'email' => $request->email,
             'body' => $request->body,
         ];
-        
-        $this->mailer->sendToOneGeneric('emails.thankyou', $emailItems, $this->feedback, 'CalStatePays');
+
+        $this->mailer->sentToOneCreateTicket('emails.feedback', $emailItems, $this->from_email, 'CalStatePays');
         return;
     }
 }

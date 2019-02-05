@@ -98,6 +98,8 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
+    'to_support' => env('SUPPORT_EMAIL_TO'),
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

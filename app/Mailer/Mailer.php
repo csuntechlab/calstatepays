@@ -20,12 +20,6 @@ class Mailer
      */
     public function sentToOneCreateTicket($view, array $data, $email, $subject)
     {
-        return Mail::to($data['email'])->send(new FeedBackMail($view, $data, $email, $subject));
+        return Mail::to(config('mail.to_support'))->send(new FeedBackMail($view, $data, $email, $subject));
     }
-
-    public function sendToOneGeneric(String $view, Array $data, String $email, String $subject)
-    {
-        return Mail::to($data['email'])->send(new GenericMailer($view, $data, $email, $subject));
-    }
-
 }
