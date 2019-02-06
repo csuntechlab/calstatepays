@@ -18821,9 +18821,27 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.feedbackContainer {
+  max-width: 95%;
+  margin: auto;
+  padding: 24px;
+}
+
+@media screen and (min-width: 767px) {
+  .feedbackContainer {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .feedbackContainer {
+    max-width: 50%;
+  }
+}
+
 .graphContent {
   background-color: #EBEBEB;
-  min-height: calc(100vh - 540px);
+  min-height: calc(100vh - 197px);
 }
 
 abbr[title] {
@@ -18936,6 +18954,16 @@ body {
   .csu-card .csu-card__form-sizing .btn {
     padding: 0.6rem 2rem;
     margin: 0.09em;
+  }
+}
+
+.csu-card__feedback {
+  padding: 2rem 15% 0;
+}
+
+@media screen and (max-width: 767px) {
+  .csu-card__feedback {
+    padding: 1rem 10% 0;
   }
 }
 
@@ -20039,7 +20067,6 @@ input[type="password"] {
   padding: 0px;
   color: #777777;
   border: 0;
-  border-bottom: 2px solid #777777;
 }
 
 select::-webkit-input-placeholder,

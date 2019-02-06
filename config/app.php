@@ -184,7 +184,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\PfreServiceProvider::class,
 
         /*
          * CSU METRO SERVICE PROVIDERS
@@ -193,6 +192,8 @@ return [
         App\Providers\MajorServiceProvider::class,
         App\Providers\UniversityServiceProvider::class,
         App\Providers\PowerUsersServiceProvider::class,
+        App\Providers\FeedBackServiceProvider::class,
+        App\Providers\PfreServiceProvider::class,
 
     ],
 

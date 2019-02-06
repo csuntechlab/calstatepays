@@ -48,7 +48,7 @@
 		&--mobile {
 			padding-top: 3.5rem;
 		}
-	}
+    }
     
     &__title {
 		color: #595959;
@@ -67,7 +67,7 @@
 			font-size: 1.5rem;
 			padding-bottom: 0.4rem;
 			margin-bottom: 1.2rem;
-		}
+        }
 
 		.majors-header {
 			// Industry carousel styling in mobile view
@@ -83,7 +83,14 @@
 			padding: 0.6rem 2rem;
 			margin: 0.09em;
 		}
-	}
+    }
+    
+     &__feedback {
+        padding: 2rem 15% 0;
+        @media screen and (max-width: $break-small) {
+            padding: 1rem 10% 0;
+        }
+    }
 }
 
 .csu-card__form {
