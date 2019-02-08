@@ -39,16 +39,27 @@ export default {
     });
   },
   mounted() {
-    let uri =
-      "https://counts.csun.edu/t/IR/views/CSU7byMajor/CSU7AggregareEarningsData?:isGuestRedirectFromVizportal=y&:embed=y";
+    // let uri =
+    // "https://counts.csun.edu/t/IR/views/CSU7byMajor/CSU7AggregareEarningsData?:isGuestRedirectFromVizportal=y&:embed=y";
 
-    console.log(uri);
-    this.url = uri;
+    // console.log(uri);
+    // this.url = uri;
+    console.log(typeof this.tableauValue);
+    console.log(this.tableauValue);
 
-    console.log(this.url);
+    if (this.tableauValue === "" || this.tableauValue === null) {
+      // divElement.style.width = "1000px";
+      // divElement.style.height = "5rem";
+      // divElement.style.backgroundColor = "lightgray";
+      // var heading = document.createElement("h1");
+      // heading.innerText = "Tableau visual is not available";
+      // divElement.appendChild(heading);
+    } else {
+      this.url = this.tableauValue;
+    }
   },
   computed: {
-    ...mapGetters(["tableauValue", "tableauServer"])
+    ...mapGetters(["tableauValue"])
   }
 };
 </script>
