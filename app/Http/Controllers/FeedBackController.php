@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Contracts\FeedBackContract;
+use App\Http\Requests\FeedBackRequest;
+use App\Http\Controllers\Controller;
+
+class FeedBackController extends Controller
+{
+    protected $feedbackRetriever;
+
+    public function __construct(FeedBackContract $feedBackContract)
+    {
+        $this->feedbackRetriever = $feedBackContract;
+    }
+
+    public function postFeedBack(FeedBackRequest $request)
+    {
+        return $this->feedbackRetriever->postFeedBack($request);
+    }
+}
