@@ -20409,6 +20409,7 @@ body {
 }
 
 .pfre__chart-header {
+  cursor: pointer;
   font-size: 1rem;
 }
 
@@ -20449,11 +20450,41 @@ body {
 
 .pfre-info--show {
   position: absolute;
-  background: #EBEBEB;
-  border-radius: 15px;
+  color: #fff;
+  font-size: 13px;
   width: 18rem;
-  padding: 0.5rem;
+  background-color: rgba(97, 97, 97, 0.99);
+  margin-top: 2rem;
+  border-radius: 10px;
+  opacity: 1;
+  -webkit-animation: fadeIn .5s ease;
+          animation: fadeIn .5s ease;
+  padding: .5rem;
   z-index: 2;
+}
+
+@media screen and (max-width: 576px) {
+  .pfre-info--show {
+    margin-top: 4rem;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .info {
@@ -20468,7 +20499,6 @@ body {
 
 .pfre-info__wrapper {
   position: relative;
-  font-weight: 600;
 }
 
 @media screen and (max-width: 479px) {
@@ -22069,6 +22099,11 @@ input[type="radio"] {
   margin-left: 10px;
 }
 
+.tooltip {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .IndustryCarousel {
   width: 100%;
 }
@@ -22094,6 +22129,18 @@ input[type="radio"] {
   font-weight: 700;
 }
 
+@media screen and (max-width: 992px) {
+  .IndustryCarousel__MajorTitle {
+    color: #595959;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-top: 3rem;
+    font-size: 1.3rem;
+  }
+}
+
 .IndustryCarousel__InfoWrapper {
   color: white;
   border-radius: 1rem;
@@ -22102,13 +22149,13 @@ input[type="radio"] {
   background: rgba(0, 0, 0, 0.5);
   height: 100px;
   padding: .75;
+  position: relative;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 992px) {
   .IndustryCarousel__InfoWrapper {
     width: 100% !important;
     margin: 0 auto;
-    padding: 1% 0% 12% 10% !important;
     margin-bottom: 10px;
   }
 }

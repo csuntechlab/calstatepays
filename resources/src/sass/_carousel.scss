@@ -19,6 +19,15 @@
     color: #595959;
     text-align:center;
     font-weight: 700;
+    @media screen and (max-width: $break-large) {
+      color: #595959;
+			text-align: center;
+			font-weight: 700;
+			font-size: 1rem;
+			line-height: 1.5;
+			padding-top: 3rem;
+      font-size: 1.3rem;
+    }
   }
   &__MajorSubTitle{
     @extend .h6, .text-center, .pb-3 ;
@@ -31,10 +40,11 @@
     background: rgba(0, 0, 0, 0.5);
     height: 100px;
     padding: .75;
-    @media (max-width: 700px) {
+    position: relative;
+    @media (max-width: $break-large) {
       width: 100% !important;
       margin: 0 auto;
-      padding: 1% 0% 12% 10% !important;
+      // padding: 1% 0% 12% 10% !important;
       margin-bottom: 10px;
     }
   }
