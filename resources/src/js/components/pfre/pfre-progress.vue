@@ -36,8 +36,8 @@
 					<span class="col">
 						<p
 							class="float-left pfre__chart-header font-weight-bold mb-0"
-							@click="toggleInfo('timeToDegree')"
-						>Estimated Time to Completion of Degree</p>
+							@mouseover="toggleInfo('timeToDegree')" @mouseout="toggleInfo('timeToDegree')"
+						> <i class="fa fa-info-circle"></i> Estimated Time to Completion of Degree</p>
 					</span>
 				</div>
 				<div class="row my-3">
@@ -75,16 +75,14 @@
 		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
-					<span class="col-auto">
+					<span class="col-12">
 						<pfre-info
 							infoKey="earnings"
 						>After you successfully complete a degree and find a career, Your estimated earnings would be this.</pfre-info>
-					</span>
-					<span class="col">
-						<p
-							class="float-left pfre__chart-header font-weight-bold mb-0"
-							@click="toggleInfo('earnings')"
-						>Estimated Earnings 5 Years After Exit</p>
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseout="toggleInfo('earnings')" @mouseover="toggleInfo('earnings')">
+							<i class="fa fa-info-circle"></i> 
+							Estimated Earnings 5 Years After Exit
+						</p>
 					</span>
 				</div>
 				<div class="row my-3">
@@ -135,15 +133,11 @@
 		<div class="row no-gutters my-3 pfre-bar__wrapper">
 			<div class="col-12 col-lg-11 col-xl-11 align-self-center">
 				<div class="row no-gutters">
-					<span class="col-auto">
+					<div class="col-12">
 						<pfre-info infoKey="return">Your estimated financial return on your education investment.</pfre-info>
-					</span>
-					<span class="col">
-						<p
-							class="float-left pfre__chart-header font-weight-bold mb-0"
-							@click="toggleInfo('return')"
-						>FRE - Financial Return on Education</p>
-					</span>
+						<p class="float-left pfre__chart-header font-weight-bold mb-0" @mouseout="toggleInfo('return')"  @mouseover="toggleInfo('return')"><i class="fa fa-info-circle"></i> FRE - Financial Return on Education</p>
+						
+					</div>
 				</div>
 				<div class="row my-3">
 					<div class="col-9 col-sm-10 col-lg-11">
@@ -205,7 +199,7 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(["fetchFreData", "toggleInfo"])
+		...mapActions(["fetchFreData", "toggleInfo"]),
 	},
 	filters: { percentage, currency },
 	components: { pfreInfo }

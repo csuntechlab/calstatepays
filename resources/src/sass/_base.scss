@@ -1,32 +1,44 @@
-.contentWrapper{
-    align-items: center;
-    justify-content: center;
-    margin-top: $navbar-height + .6;
-    @media screen and (max-width: $break-small) {
-        margin-top: $navbar-height;
-    }
+.contentWrapper {
+	align-items: center;
+	justify-content: center;
+	margin-top: $navbar-height + 0.6;
+	@media screen and (max-width: $break-small) {
+		margin-top: $navbar-height;
+	}
 }
 
-.graphContent{
-    background-color: $light-gray;
-    // min-height: stretch;
-    min-height: calc(100vh - 540px);
+.feedbackContainer {
+	max-width: 95%;
+	margin: auto;
+	padding: 24px;
+	@media screen and (min-width: $break-small) {
+		max-width: 70%;
+	}
+	@media screen and (min-width: $break-large) {
+		max-width: 50%;
+	}
+}
+
+.graphContent {
+	background-color: $light-gray;
+	// min-height: stretch;
+	min-height: calc(100vh - 197px);
 }
 
 abbr[title] {
-    border-bottom: none;
-    text-decoration: none;
+	border-bottom: none;
+	text-decoration: none;
 }
 
 html {
-    min-height: 100vh;
-    box-sizing: border-box;
+	min-height: 100vh;
+	box-sizing: border-box;
 }
 
-body{
-    overflow-x: hidden;
+body {
+	overflow-x: hidden;
 }
 
 .lead {
-    color: $text-gray;
+	color: $text-gray;
 }
