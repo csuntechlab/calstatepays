@@ -1,55 +1,71 @@
 
-.industry-carousel {
-  background-position: center;
-  background-size: cover;
-  height: 8em;
-  width: 42em;
-  border-radius: 1rem;
-
-  
-}
-.industry-carousel-card{
-  height: 8em;
-  width: 14em;
-}
-
-.industry-title{
-  color: #595959;
-  text-align:center;
-  font-weight: 700;
-}
-
-.info-wrapper {
-  color: white;
-  padding: 1% 0% 12% 10%;
-  border-radius: 1rem;
-  line-height: 3px;
-  background-size: cover;
-  background: rgba(0, 0, 0, 0.5);
-  max-width: 300px;
-  height: 100px;
-}
-
-@media (max-width: 700px) {
-  .info-wrapper {
-    width: 100% !important;
-    margin: 0 auto;
-    padding: 1% 0% 12% 10% !important;
-    margin-bottom: 10px;
+.IndustryCarousel{
+  width: 100%;
+  &__VueCarousel{
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+    width: 80%;
+    margin: auto;
+    position: relative;
   }
-}
-
-@media (min-width: 701px) and (max-width: 1000px) {
-  .info-wrapper {
-    float: left;
-    width: 31%;
-    margin: 0 auto;
-    margin-left: 2%;
-    padding: 1% 0% 12% 10% !important;
-    margin-bottom: 10px;
-    background-size: cover;    
+  &__VueCarouselSlide{
+    @extend .px-1 ;
+    box-sizing: border-box;
+    position: relative;
+  }
+  &__MajorTitle{
+    @extend .h3, .pt-4 ;
+    color: #595959;
+    text-align:center;
+    font-weight: 700;
+    @media screen and (max-width: $break-large) {
+      color: #595959;
+			text-align: center;
+			font-weight: 700;
+			font-size: 1rem;
+			line-height: 1.5;
+			padding-top: 3rem;
+      font-size: 1.3rem;
+    }
+  }
+  &__MajorSubTitle{
+    @extend .h6, .text-center, .pb-3 ;
+  }
+  &__InfoWrapper{
+    color: white;
+    border-radius: 1rem;
+    line-height: 3px;
+    background-size: cover;
     background: rgba(0, 0, 0, 0.5);
-    
+    height: 100px;
+    padding: .75;
+    position: relative;
+    @media (max-width: $break-large) {
+      width: 100% !important;
+      margin: 0 auto;
+      // padding: 1% 0% 12% 10% !important;
+      margin-bottom: 10px;
+    }
+  }
+  &__IndustryTitle{
+    @extend .m-0 ;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0 .75rem;
+  }
+  &__Percentage{
+    @extend .m-0 ;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 30%;
+    padding: 0 .75rem;
+  }
+  &__NoIndustryMessage{
+    @extend .lead ;
+    text-align: center;
   }
 }
 
@@ -57,9 +73,6 @@
   line-height: 1.3rem;
 }
 
-.industry-info{
-  margin-top: 5%; 
-}
 .row{
   justify-content: center;
 }
@@ -67,10 +80,9 @@
 .VueCarousel{
   &-pagination{
     position: absolute;
-    margin-top: -39px;
     background: rgba(255,255,255,.2);
   }
   &-dot{
-    margin-top: 5px !important;
+    margin-top: .45rem !important;
   }
 }
