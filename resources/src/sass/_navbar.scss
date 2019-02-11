@@ -127,6 +127,10 @@
 			display: block;
 			}	
 	}
+	@media screen and (max-height: $break-height-xsmall) {
+		display: none !important;
+		
+	}
 }
 
 
