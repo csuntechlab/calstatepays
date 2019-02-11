@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="row">
-          <Tableau :url="url" :height="1000" :width="1000" ref="tableau"></Tableau>
+          <div ref="tableau"></div>
         </div>
       </div>
     </main>
@@ -38,26 +38,35 @@ export default {
       } else next();
     });
   },
-  mounted() {
-    // let uri =
-    // "https://counts.csun.edu/t/IR/views/CSU7byMajor/CSU7AggregareEarningsData?:isGuestRedirectFromVizportal=y&:embed=y";
+  methods: {
+    initViz: function() {
+      // this.url = uri;
+      console.log(typeof this.tableauValue);
+      console.log(this.tableauValue);
 
-    // console.log(uri);
-    // this.url = uri;
-    console.log(typeof this.tableauValue);
-    console.log(this.tableauValue);
-
-    if (this.tableauValue === "" || this.tableauValue === null) {
-      // divElement.style.width = "1000px";
-      // divElement.style.height = "5rem";
-      // divElement.style.backgroundColor = "lightgray";
-      // var heading = document.createElement("h1");
-      // heading.innerText = "Tableau visual is not available";
-      // divElement.appendChild(heading);
-    } else {
-      this.url = this.tableauValue;
+      if (this.tableauValue === "" || this.tableauValue === null) {
+        // divElement.style.width = "1000px";
+        // divElement.style.height = "5rem";
+        // divElement.style.backgroundColor = "lightgray";
+        // var heading = document.createElement("h1");
+        // heading.innerText = "Tableau visual is not available";
+        // divElement.appendChild(heading);
+      } else {
+        this.url = this.tableauValue;
+      }
+      let viz = new tableau.Viz(this.$refs.tableau, this.url, this.options);
     }
   },
+  mounted: function() {
+    this.initViz();
+  },
+
+  // mounted() {
+  //   // let uri =
+  //   // "https://counts.csun.edu/t/IR/views/CSU7byMajor/CSU7AggregareEarningsData?:isGuestRedirectFromVizportal=y&:embed=y";
+
+  //   // console.log(uri);
+  // },
   computed: {
     ...mapGetters(["tableauValue"])
   }
