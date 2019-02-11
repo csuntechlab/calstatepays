@@ -15,10 +15,6 @@ import Vuetify from "vuetify";
 import vSelect from "vue-select";
 import VueYoutube from "vue-youtube";
 
-import tableau from "vue-tableau";
-
-Vue.use(tableau);
-
 Vue.use(Vuetify, {
   iconfont: "fa4"
 });
