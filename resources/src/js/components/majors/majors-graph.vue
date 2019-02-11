@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<chart :options="polar"></chart>
-		<div class="sr-only">
+		<!-- <div class="sr-only">
 			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level</h3>
 			<h3 v-else-if='this.educationLevel == "postBacc"'> Post Bacc Level </h3>
 			<h3 v-else-if='this.educationLevel == "bachelors"'> Bachelor Level </h3>
@@ -80,7 +80,7 @@
 					</tbody>
 				</template>
 			</table>
-		</div>
+		</div> -->
 		
 	</div>
 </template>
@@ -243,6 +243,34 @@ export default {
 					},
 					axisLine: {
 						show: false
+					}
+				},
+				aria:{
+					show: true,
+					general: {
+						// withTitle: 'A line Chart with annual earning for {title} major with '
+						withoutTitle: 'A line Chart '
+					},
+					series: {
+						multiple:{
+							prefix: '{seriesCount} lines.',
+							withName: ' {seriesName} ',
+							separator: {
+								middle: '',
+								end: ''
+							}
+						},
+						separator: {
+							middle: ',',
+							end: '. '
+						}
+					},
+					data: {
+						allData: '',
+						withName: '{name} years out ${value}',
+						separator: {
+							end: '. '
+						}
 					}
 				},
 				legend: {
