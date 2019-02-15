@@ -213,6 +213,7 @@ export default {
 			}
 		},
 		changeCampus: function(university) {
+			sessionStorage.setItem("selectedUniversity", university);
 			if (this.selectedUniversity != university) {
 				sessionStorage.setItem("selectedUniversity", university);
 				this.$store.dispatch("setUniversity", university);
