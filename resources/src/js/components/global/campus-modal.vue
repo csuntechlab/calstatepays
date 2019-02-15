@@ -24,6 +24,7 @@
 												class="campus-modal-item__radio"
 												type="radio"
 												name="campuses"
+												:key="item.short_name"
 												:id="item.short_name"
 												checked
 											>
