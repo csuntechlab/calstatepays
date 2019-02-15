@@ -13,7 +13,6 @@
 							class="col-12 col-sm-6 col-md-3 col-lg"
 							v-for="(item, index) in orderedUniversities"
 							:key="index"
-							@dblclick="onSubmit()"
 						>
 							<template v-for="(universitySeal, index2) in universitySeals">
 								<template v-if="universitySeal.short_name == item.short_name">
@@ -24,6 +23,7 @@
 												class="campus-modal-item__radio"
 												type="radio"
 												name="campuses"
+												:key="item.short_name"
 												:id="item.short_name"
 												checked
 											>
@@ -37,7 +37,7 @@
 											>
 										</template>
 
-										<div class="campus-modal-item clearfix">
+										<div class="campus-modal-item clearfix" @dblclick="onSubmit()">
 											<label :for="item.short_name">
 												<figure class="campus-modal-item__figure">
 													<div class="campus-modal-item__imgWrapper">
