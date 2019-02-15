@@ -21,15 +21,77 @@ Vue.use(VueRouter);
 Vue.use(Vuelidate);
 const router = new VueRouter({
 	routes: [
-		{ path: '/', component: home },
-		{ path: '/data/pfre',component: splashPage, name: 'pfre' },
-		// { path: '/data/pfre', component: pfre },
-		{ path: '/data/industries', component: industries, name: 'industries' },
-		{ path: '/data/majors', component: majors, name: 'majors' },
-		{ path: '/faq', component: faq },
-		{ path: '/research', component: research },
-		{ path: '/tableau', name: 'tableau', component: tableauHolder, props: true },
-		{ path: '/feedback', component: feedback }
+		{ 
+			path: '/', 
+			component: home,
+			meta: {
+				title: 'Home | CalStatePays'
+			}
+		},
+		// { 
+		// 	path: '/data/pfre',
+		// 	component: splashPage,
+		// 	name: 'pfre',
+		// 	meta: {
+		// 		title: 'FRE | CalStatePays'
+		// 	}
+		// },
+		{ 
+			path: '/data/pfre',
+			component: pfre,
+			name: 'pfre',
+			meta: {
+				title: 'FRE | CalStatePays'
+			}
+		},
+		{ 
+			path: '/data/industries', 
+			component: industries, 
+			name: 'industries',
+			meta: {
+				title: 'Industries | CalStatePays'
+			}
+		},
+		{ 
+			path: '/data/majors', 
+			component: majors, 
+			name: 'majors',
+			meta: {
+				title: 'Majors | CalStatePays'
+			} 
+		},
+		{ 
+			path: '/faq', 
+			component: faq,
+			name: 'FAQ',
+			meta: {
+				title: 'FAQ | CalStatePays'
+			}
+		},
+		{ 
+			path: '/research', 
+			component: research,
+			meta: {
+				title: 'Research | CalStatePays'
+			} 
+		},
+		{ 
+			path: '/tableau', 
+			name: 'tableau', 
+			component: tableauHolder, 
+			props: true,
+			meta: {
+				title: 'Tableau Info | CalStatePays'
+			}
+		},
+		{
+			path: '/feedback',
+			component: feedback,
+			name: 'feedback',
+			meta: {
+				title: 'Feedback | CalStatePays'
+			}
+		}
 	]
 });
 
@@ -37,6 +99,8 @@ router.beforeEach(function (to, from, next) {
 	setTimeout(() => {
 		window.scrollTo(0, 0);
 	}, 100);
+	document.title = to.meta.title
+
 	next();
 })
 
