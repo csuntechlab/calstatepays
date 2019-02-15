@@ -18929,12 +18929,15 @@ body {
   font-weight: 700;
 }
 
+<<<<<<< HEAD
 .csu-card__title--center {
   color: #595959;
   font-weight: 700;
   text-align: center;
 }
 
+=======
+>>>>>>> dev
 .csu-card__tags {
   font-weight: 600;
 }
@@ -19722,6 +19725,15 @@ a.faq-card__button:hover {
   }
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-height: 335px) and (max-width: 400px) {
+  .sub-nav {
+    display: none !important;
+  }
+}
+
+>>>>>>> dev
 .sub-nav__element {
   color: rgba(0, 0, 0, 0.5);
   padding: 1.2rem 0;
