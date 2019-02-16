@@ -33,13 +33,21 @@ export default {
 		state.industries = state.allLevelIndustries[payload];
 	},
 	[_industries.SET_INDUSTRY_MAJOR](state, payload) {
+		state.industryMajorId = payload.majorId
 		state.industryMajor = payload.major;
 	},
-	[_industries.TRIGGER_IS_LOADING](state) {
-		if (state.industryIsLoading === false) {
+	[_industries.TRIGGER_IS_LOADING](state, payload) {
+		if(!state.industryIsLoading) {
 			state.industryIsLoading = true;
-		} else {
-			state.industryIsLoading = false;
+		}
+		else if (state.industryIsLoading) {
+			if(state.industryMajorId===payload.major_id){
+				state.industryIsLoading = false;
+			}
+			else if (payload.major_id === undefined) {
+				state.industryIsLoading = true;
+			}
+			
 		}
 	}
 };

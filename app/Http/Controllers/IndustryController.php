@@ -69,6 +69,7 @@ class IndustryController extends Controller
         if (Cache::has($key)) {
             $data = Cache::get($key);
             $data = json_decode($data);
+            $data->major_id = (int) $request->major;
             return response()->json($data);
         }
 
