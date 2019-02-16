@@ -74,7 +74,7 @@ class IndustryController extends Controller
         }
 
         $data = $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
-
+        $data->major_id = (int) $request->major;
         $value = json_encode($data);
         Cache::forever($key, $value);
         return $data;
