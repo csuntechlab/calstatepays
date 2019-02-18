@@ -71,11 +71,27 @@ export default {
         }];
     },
     [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
-        let index = payload;
-        if (state.majorCards[index].majorIsLoading === false) {
+        console.log(payload);
+        let index = 0;
+        if(payload.cardIndex ===undefined) {
+            index = payload.form.cardIndex
+        }
+        else {
+            index = payload.cardIndex;
+        }
+        if (!state.majorCards[index].majorIsLoading) {
+            console.log("major wasnt loading");
             state.majorCards[index].majorIsLoading = true;
-        } else {
-            state.majorCards[index].majorIsLoading = false;
+        } else if (state.majorCards[index].majorIsLoading) {
+            console.log("major was loading");
+            if(state.majorCards[index].majorData.majorId === payload.majorId) {
+                console.log("call matched major state");
+                state.majorCards[index].majorIsLoading= false;
+            }
+            else if(payload.majorId===undefined) {
+                console.log("this is a new call while loading is still happening");
+                state.majorCards[index].majorIsLoading= true;
+            }
         }
     }
 }

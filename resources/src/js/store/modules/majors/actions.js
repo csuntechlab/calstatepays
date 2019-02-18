@@ -9,7 +9,7 @@ export default {
     },
 
     clearMajorSelection({commit}){
-                commit(_majors.RESET_MAJOR_SELECTIONS);
+        commit(_majors.RESET_MAJOR_SELECTIONS);
     },
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
         Major.fetchUpdatedMajorsByFieldAPI(
@@ -22,13 +22,13 @@ export default {
         );
     },
     fetchMajorData({ commit, dispatch }, payload) {
-        commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
+        commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload);
         Major.fetchMajorDataAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
-                commit(_majors.TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
+                commit(_majors.TRIGGER_MAJOR_IS_LOADING, success);
             },
             (error) => commit(_global.ERROR_ALERT,error),
         );
