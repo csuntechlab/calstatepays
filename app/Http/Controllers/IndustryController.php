@@ -69,12 +69,10 @@ class IndustryController extends Controller
         if (Cache::has($key)) {
             $data = Cache::get($key);
             $data = json_decode($data);
-            $data->major_id = (int) $request->major;
             return response()->json($data);
         }
 
         $data = $this->industryRetriever->getIndustryPopulationByRank($request->major, $request->university);
-        $data->major_id = (int) $request->major;
         $value = json_encode($data);
         Cache::forever($key, $value);
         return $data;
