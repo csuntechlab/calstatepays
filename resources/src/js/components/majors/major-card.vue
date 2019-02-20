@@ -44,7 +44,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<h2 class="industry-title pt-3">{{selectedMajorTitle}}</h2>
+							<h2 class="major-title pt-3">{{selectedMajorTitle}}</h2>
 						</div>
 											<div class="row">
 								<div class="col-12">
@@ -63,8 +63,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="row p-0">
-							<div class="mt-4">
+						<div class="row">
+							<div class="col-12">
 								<industry-carousel :empty="isEmpty" :industries="selectedIndustries" :major="selectedMajorTitle"></industry-carousel>
 							</div>
 						</div>

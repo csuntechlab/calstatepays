@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <h5 class="majors-header">Common Employment Sectors<br> in {{ selectedMajorName }}</h5>
-        <p class="h6 text-center pb-3">Employment 5 Years After Exit</p>
-        <p class="lead pl-5 pr-5" v-if="!empty">No Employment Sector data is available for this major.</p>
+    <div class="IndustryCarousel">
+        <h3 class="IndustryCarousel__MajorTitle">Common Employment Sectors<br> in {{ selectedMajorName }}</h3>
+        <p class="IndustryCarousel__MajorSubTitle">Employment 5 Years After Exit</p>
+        <p class="IndustryCarousel__NoIndustryMessage" v-if="!empty">No Employment Sector data is available for this major.</p>
         <div v-else v-for="(industry, index) in industries.slice(0,3)" :key="index">
-            <industry-carousel-card :industry="industry"></industry-carousel-card>
+            <industry-carousel-card :industry="industry"/>
         </div>
     </div>
 </template>

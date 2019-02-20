@@ -3,14 +3,14 @@
 		<div class="col-12">
 			<form class="container-fluid csu-card csu-card__feedback">
 				<div v-show="submitted">
-					<h3 class="industry-title py-5">Thank you for your feedback!</h3>
+					<h3 class="csu-card__title--center py-5">Thank you for your feedback!</h3>
 					<router-link class="text-center" to="/">
 						<p>Return to the Home Page</p>
 					</router-link>
 				</div>
 				<fieldset v-show="!submitted">
 					<div class="row">
-						<h3 class="industry-title pb-4">Send Us Your Feedback</h3>
+						<h3 class="csu-card__title--center pb-4">Send Us Your Feedback</h3>
 					</div>
 					<div class="form-group">
 						<v-text-field

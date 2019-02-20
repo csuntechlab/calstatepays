@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<chart :options="polar"></chart>
+		<chart :options="polar" aria-label="line chart"></chart>
 		<!-- <div class="sr-only">
 			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level</h3>
 			<h3 v-else-if='this.educationLevel == "postBacc"'> Post Bacc Level </h3>
@@ -247,6 +247,7 @@ export default {
 				},
 				aria:{
 					show: true,
+					description: 'line chart',
 					general: {
 						// withTitle: 'A line Chart with annual earning for {title} major with '
 						withoutTitle: 'A line Chart '

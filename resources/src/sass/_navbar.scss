@@ -127,6 +127,9 @@
 			display: block;
 			}	
 	}
+	@media screen and (max-height: 335px) and (max-width:400px){
+		display: none !important;	
+	}
 }
 
 
@@ -179,11 +182,7 @@
 			background: none;
 			box-shadow: none;
 			text-decoration: none;
-			color: rgb(160, 13, 13);
-			font-weight: bold;
-			.fa-usd,.fa-graduation-cap{	
-				color: rgb(160, 13, 13);	
-			}
+			color: $gray;
 		}	
 	}
 	&__mobile-icon{
