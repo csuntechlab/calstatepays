@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Contracts\FeedBackContract;
 use App\Http\Requests\FeedBackRequest;
-use App\Http\Controllers\Controller;
 
 class FeedBackController extends Controller
 {

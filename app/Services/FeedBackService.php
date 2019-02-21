@@ -2,30 +2,25 @@
 
 namespace App\Services;
 
-use Illuminate\Http\Request;
 use App\Contracts\FeedBackContract;
-use App\Models\FeedBack;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\FeedBackMail;
-use App\Mailer\Mailer;
+use Illuminate\Support\Facades\Mail;
 
 class FeedBackService implements FeedBackContract
 {
-    public $mailer;
     public $from_email;
 
-    public function __construct(Mailer $mailer)
+    public function __construct()
     {
-        $this->mailer = $mailer;
         $this->from_email = config('mail.from.address');
     }
 
     public function postFeedBack($request)
     {
-        $feedBack = new FeedBack;
-        $feedBack->email = $request->email;
-        $feedBack->body = $request->body;
-        $feedBack->save();
+//        $feedBack = new FeedBack;
+//        $feedBack->email = $request->email;
+//        $feedBack->body = $request->body;
+//        $feedBack->save();
 
         $this->sendEmail($request);
 
@@ -40,9 +35,8 @@ class FeedBackService implements FeedBackContract
         $emailItems = [
             'email' => $request->email,
             'body' => $request->body,
+            'subject' => 'CalStatePays Feedback'
         ];
-
-        $this->mailer->sentToOneCreateTicket('emails.feedback', $emailItems, $this->from_email, 'CalStatePays');
-        return;
+        Mail::to(config('mail.to_support'))->send(new FeedBackMail($emailItems));
     }
 }

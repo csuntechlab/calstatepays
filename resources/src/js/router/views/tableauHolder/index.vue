@@ -13,34 +13,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div id="viz1541533460014" class="tableauPlaceholder text-center position-relative">
-						<noscript>
-							<a href="#">
-								<img
-									alt=" "
-									src="https://public.tableau.com/static/images/CS/CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1_rss.png"
-									style="border: none"
-								>
-							</a>
-						</noscript>
-						<object class="tableauViz" style="display:none;">
-							<param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
-							<param name="embed_code_version" value="3">
-							<param name="site_root" value>
-							<param name="name" value>
-							<param name="tabs" value="no">
-							<param name="toolbar" value="yes">
-							<param
-								name="static_image"
-								value="https://public.tableau.com/static/images//CSU7LaborMarketOutcomes-ByMajor/CSU7AggregareEarningsData/1.png"
-							>
-							<param name="animate_transition" value="yes">
-							<param name="display_static_image" value="yes">
-							<param name="display_spinner" value="yes">
-							<param name="display_overlay" value="yes">
-							<param name="display_count" value="yes">
-						</object>
-					</div>
+					<div id="tableauFrame" ref="tableau" :class="this.tableauValueExists ? 'tableau__frame' : 'tablea__placeholder'"/>
 				</div>
 			</div>
 		</main>
@@ -53,6 +26,12 @@ export default {
 	components: {
 		powerBanner
 	},
+	data() {
+		return {
+            url: "",
+            tableauValueExists: false,
+		};
+	},
 	beforeRouteEnter(to, from, next) {
 		next(vm => {
 			if (vm.tableauValue === "") {
@@ -60,27 +39,24 @@ export default {
 			} else next();
 		});
 	},
-	mounted() {
-		this.$nextTick(function() {
-            var divElement = document.getElementById("viz1541533460014");
+	methods: {
+		initViz: function() {
+            var divElement = document.getElementById("tableauFrame");
 			if (this.tableauValue === "" || this.tableauValue === null) {
-				divElement.style.width = "1000px";
-				divElement.style.height = "5rem";
 				divElement.style.backgroundColor = "lightgray";
 				var heading = document.createElement("h1");
 				heading.innerText = "Tableau visual is not available";
 				divElement.appendChild(heading);
 			} else {
-				var vizElement = divElement.getElementsByTagName("object")[0];
-				vizElement.style.width = "1016px";
-				vizElement.style.height = "991px";
-				var scriptElement = document.createElement("script");
-				scriptElement.src =
-					"https://public.tableau.com/javascripts/api/viz_v1.js";
-				vizElement.parentNode.insertBefore(scriptElement, vizElement);
-				var vizEl = vizElement.getElementsByTagName("param");
-				vizEl[3].value = this.tableauValue;
+                this.tableauValueExists = true;
+				this.url = this.tableauValue;
 			}
+            let viz = new tableau.Viz(this.$refs.tableau, this.url);
+		}
+	},
+	mounted: function() {
+	    this.$nextTick(function() {
+			this.initViz();
 		});
 	},
 	computed: {

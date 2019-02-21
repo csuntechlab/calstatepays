@@ -5,28 +5,27 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class FeedBackMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $title;
-    private $email;
-    private $body;
-    public $view;
+    public $title;
+    public $email;
+    public $body;
 
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param String $view
+     * @param array $data
+     * @param String $subject
      */
-    public function __construct(String $view, Array $data, String $sender, String $subject)
+    public function __construct(Array $data)
     {
-        $this->view = $view;
         $this->email = $data['email'];
         $this->body = $data['body'];
-        $this->title = $subject;
+        $this->title = $data['subject'];
     }
 
     /**
@@ -38,10 +37,6 @@ class FeedBackMail extends Mailable
     {
         return $this->from(config('mail.from.address'))
                     ->subject($this->title)
-                    ->view($this->view)
-                    ->with([
-                        'email' => $this->email,
-                        'body' => $this->body
-                    ]);     
+                    ->view('emails.feedback');
     }
 }

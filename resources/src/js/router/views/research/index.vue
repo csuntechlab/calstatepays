@@ -1,7 +1,9 @@
 <template>
     <div>
         <power-banner/>
-        <power-users-modal :showModal=displayModal :university=university  v-on:closeModal="closeModal($event)"></power-users-modal>
+        <div data-app>
+            <power-users-modal :showModal=displayModal :university=university  v-on:closeModal="closeModal($event)"></power-users-modal>
+        </div>
         <main>
             <div class="container">
                 <div class="row">
