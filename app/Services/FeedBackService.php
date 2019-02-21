@@ -3,8 +3,12 @@
 namespace App\Services;
 
 use App\Contracts\FeedBackContract;
-use App\Mail\FeedBackMail;
+use App\Mail\FeedbackMail;
+use App\Models\FeedbackEmail;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Mail;
+use ReCaptcha\ReCaptcha;
 
 class FeedBackService implements FeedBackContract
 {
@@ -17,17 +21,28 @@ class FeedBackService implements FeedBackContract
 
     public function postFeedBack($request)
     {
-//        $feedBack = new FeedBack;
-//        $feedBack->email = $request->email;
-//        $feedBack->body = $request->body;
-//        $feedBack->save();
+        $captchaCheck = $this->recaptchaCheck($request->captcha);
+        return response()->json($captchaCheck);
+        $response = [
+            'success' => $captchaCheck,
+            'message' => 'There was an issue verifying that you are not a human.'
+        ];
+        if ($captchaCheck) {
+            $result = $this->sendEmail($request);
 
-        $this->sendEmail($request);
+            $feedBack = new FeedbackEmail();
+            $feedBack->email = $request->email;
+            $feedBack->body = $request->body;
+            $feedBack->status = $result ? 'sent' : 'failed';
+            $feedBack->save();
 
-        return response()->json([
-            'success' => 'true',
-            'message' => 'Thanks for your feed back!'
-        ]);
+            $response['success'] = $result;
+            $response['message'] = 'There was an issue sending the email.';
+            if ($result) {
+                $response['message'] ='Thanks for your feedback!';
+            }
+        }
+        return response()->json($response);
     }
 
     private function sendEmail($request)
@@ -35,8 +50,44 @@ class FeedBackService implements FeedBackContract
         $emailItems = [
             'email' => $request->email,
             'body' => $request->body,
-            'subject' => 'CalStatePays Feedback'
         ];
-        Mail::to(config('mail.to_support'))->send(new FeedBackMail($emailItems));
+
+        Mail::to(config('support.recipients.feedback'))->send(new FeedbackMail($emailItems));
+
+        if (empty(Mail::failures())) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Verifies that a reCaptcha has been accepted.
+     * You can use this return value in a validator,
+     * especially if you would like to flash a message
+     * upon failure to accept.
+     *
+     * @param $recaptchaResponse
+     * @return bool
+     */
+    private function recaptchaCheck($recaptchaResponse)
+    {
+        if(empty($recaptchaResponse)) {
+            return false;
+        }
+        $secret = config('app.re_cap_secret_key');
+        $client = new Client();
+        try {
+            $response = $client->post(config('app.google_captcha_url'), [
+                'form_params' => [
+                    'secret' => $secret,
+                    'response' => $recaptchaResponse
+                ]
+            ]);
+            $status = json_decode($response->getBody());
+            dd($status);
+            return $status->status;
+        } catch (RequestException $e) {
+            return false;
+        }
     }
 }

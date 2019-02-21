@@ -126,6 +126,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Google ReCaptcha Secret Key
+    |--------------------------------------------------------------------------
+    |
+    | We utilize this to verify the captcha.
+    |
+     */
+
+    're_cap_secret_key' => env('RE_CAP_SECRET_KEY', 'secret_key'),
+
+    'google_captcha_url' => env('GOOGLE_CAPTCHA_URL', 'http://exmaple.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |

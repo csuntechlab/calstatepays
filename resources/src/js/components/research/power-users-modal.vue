@@ -123,7 +123,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[0].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue==='1' ? true :false;
             } else {
                 return false;
             }
@@ -135,7 +135,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[1].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue==='1' ? true :false;
             } else {
                 return false;
             }
@@ -147,7 +147,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[2].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue==='1' ? true :false;
             } else {
                 return false;
             }
@@ -159,7 +159,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[3].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue==='1' ? true :false;
             } else {
                 return false;
             }
@@ -171,7 +171,7 @@ export default {
                 currentUniversityId = this.university.id;
                 var currentValues = this.optInValues[currentUniversityId];
                 currentOptInValue = currentValues[4].opt_in;
-                return currentOptInValue===1 ? true :false;
+                return currentOptInValue==='1' ? true :false;
             } else {
                 return false;
             }
