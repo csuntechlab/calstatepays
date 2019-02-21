@@ -55,7 +55,10 @@ return [
     |
     */
 
-    'from' => ['address' => 'donotreply@metalab.csun.edu', 'name' => 'Meta+Lab Communications'],
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -97,8 +100,6 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
-    'to_support' => env('SUPPORT_EMAIL_TO'),
 
     /*
     |--------------------------------------------------------------------------
