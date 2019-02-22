@@ -22,17 +22,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="(item, index) in majorData" :key="index">
+					<tr v-for="(item, index) in majorData[0]" :key="index">
 						<td v-if="index === 0">2</td>
 						<td v-if="index === 1">5</td>
 						<td v-if="index === 2">10</td>
+						<td v-if="index === 3">15</td>
 						<!-- <td v-if="index === 3">2</td> -->
 						<td v-for="(item, val) in majorData" :key="val">
-							<!-- <template v-if=" majorData[val][index] === null">
-								No Data
-							</template> -->
-							<template>
+							<template v-if=" majorData[val][index] !== null">
 								${{ majorData[val][index] }}
+							</template>
+							<template v-else>
+								No Data
 							</template>
 						</td>
 					</tr>
