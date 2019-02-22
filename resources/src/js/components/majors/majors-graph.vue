@@ -1,11 +1,12 @@
 <template>
 	<figure>
-		<chart :options="polar" aria-label="line chart"></chart>
+		<chart :options="polar" :aria-label='"Line Graph for " + majorTitle'></chart>
 		<figcaption>
-			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level Data Table - {{ majorTitle }}</h3>
-			<h3 v-else-if='this.educationLevel == "postBacc"'>Post Bacc Level Data Table - {{ majorTitle }}</h3>
-			<h3 v-else-if='this.educationLevel == "bachelors"'>Bachelors Level Data Table - {{ majorTitle }}</h3>
-			<h3 v-else-if='this.educationLevel == "someCollege"'>Some College Level Data Table - {{ majorTitle }}</h3>
+			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level Data - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "postBacc"'>Post Bacc Level Data - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "bachelors"'>Bachelors Level Data - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "someCollege"'>Some College Level Data - {{ majorTitle }}</h3>
+			<h4>Data Table</h4>
 			<table class="table">
 				<thead class="table-header">
 					<tr v-if='this.educationLevel === "allDegrees"'>

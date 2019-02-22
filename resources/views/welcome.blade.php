@@ -23,6 +23,9 @@
         <link rel="icon" type="image/png" href="{{ asset('img/cspLogos/cspfavicon.png') }}">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">        
+
+        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
     </head>
     <body>
         <div id="app">

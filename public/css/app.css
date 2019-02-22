@@ -22145,6 +22145,16 @@ input[type="radio"] {
   margin-right: 1rem;
 }
 
+.tableau__frame {
+  width: 1016px;
+  height: 991px;
+}
+
+.tableau__placeholder {
+  width: 1000px;
+  height: 5rem;
+}
+
 .IndustryCarousel {
   width: 100%;
 }
