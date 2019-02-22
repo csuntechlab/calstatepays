@@ -50,6 +50,7 @@
 									height="35"
 									color="pfre-year"
 									background-color="pfre-bar__background"
+									aria-label="Estimated Time to Completion of Degree"
 								/>
 							</div>
 						</div>
@@ -95,6 +96,7 @@
 									height="35"
 									color="pfre-earnings"
 									background-color="pfre-bar__background"
+									aria-label="Estimated Earnings 5 Years After Exit"
 								/>
 							</div>
 						</div>
@@ -149,6 +151,7 @@
 									height="35"
 									color="pfre-fre"
 									background-color="pfre-bar__background"
+									aria-label="Financial Return on Education"
 								/>
 							</div>
 						</div>

@@ -52,6 +52,7 @@
 				>Select an Age Range</label>
 				<v-select
 					label="age"
+					aria-label="Select an Age Range"
 					v-model="selected.ageRange"
 					:options="ageRanges"
 					@input="updateSelect('age', $event)"
@@ -90,6 +91,7 @@
 				>Estimated Annual Earnings In School</label>
 				<v-select
 					label="earn"
+					aria-label="Estimated Annual Earnings In School"
 					:options="earningRanges"
 					v-model="selected.earnings"
 					@input="updateSelect('earnings', $event)"
@@ -106,6 +108,7 @@
 				>Estimated Annual Financial Aid</label>
 				<v-select
 					label="finAid"
+					aria-label="Estimated Annual Financial Aid"
 					:options="financialAidRanges"
 					v-model="selected.financialAid"
 					@input="updateSelect('financialAid', $event)"
