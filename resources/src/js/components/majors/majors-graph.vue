@@ -4,14 +4,14 @@
 		<figcaption>
 			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level Data Table - {{ majorTitle }}</h3>
 			<h3 v-else-if='this.educationLevel == "postBacc"'>Post Bacc Level Data Table - {{ majorTitle }}</h3>
-			<h3 v-else-if='this.educationLevel == "bachelors"'>Bachelor Level Data Table - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "bachelors"'>Bachelors Level Data Table - {{ majorTitle }}</h3>
 			<h3 v-else-if='this.educationLevel == "someCollege"'>Some College Level Data Table - {{ majorTitle }}</h3>
 			<table class="table">
 				<thead class="table-header">
 					<tr v-if='this.educationLevel === "allDegrees"'>
 						<th>Years</th>
 						<th>Post Bacc</th>
-						<th>Bachelor</th>
+						<th>Bachelors</th>
 						<th>Some College</th>
 					</tr>
 					<tr v-else>
@@ -27,7 +27,6 @@
 						<td v-if="index === 1">5</td>
 						<td v-if="index === 2">10</td>
 						<td v-if="index === 3">15</td>
-						<!-- <td v-if="index === 3">2</td> -->
 						<td v-for="(item, val) in majorData" :key="val">
 							<template v-if=" majorData[val][index] !== null">
 								${{ majorData[val][index] }}
@@ -204,24 +203,24 @@ export default {
 					}
 				},
 				aria:{
-					show: true,
+					show: false,
 					// description: 'line chart',
 					general: {
-						withTitle: 'A line Chart with annual earning for {title} major with '
+						withTitle: 'A line Chart with annual earning for {title}.'
 						// withoutTitle: 'A line Chart '
 					},
 					series: {
 						multiple:{
-							prefix: '{seriesCount} lines.',
-							withName: ' {seriesName} ',
+							prefix: '',
+							withName: '',
 							separator: {
 								middle: '',
 								end: ''
 							}
 						},
 						separator: {
-							middle: ',',
-							end: '. '
+							middle: '',
+							end: ''
 						}
 					},
 					data: {
