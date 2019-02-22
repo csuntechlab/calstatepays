@@ -1,88 +1,45 @@
 <template>
-	<div>
+	<figure>
 		<chart :options="polar" aria-label="line chart"></chart>
-		<!-- <div class="sr-only">
-			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level</h3>
-			<h3 v-else-if='this.educationLevel == "postBacc"'> Post Bacc Level </h3>
-			<h3 v-else-if='this.educationLevel == "bachelors"'> Bachelor Level </h3>
-			<h3 v-else-if='this.educationLevel == "someCollege"'> Some College Level </h3>
+		<figcaption>
+			<h3 v-if='this.educationLevel === "allDegrees"'>All Degrees Level Data Table - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "postBacc"'>Post Bacc Level Data Table - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "bachelors"'>Bachelor Level Data Table - {{ majorTitle }}</h3>
+			<h3 v-else-if='this.educationLevel == "someCollege"'>Some College Level Data Table - {{ majorTitle }}</h3>
 			<table class="table">
-				<template v-if='this.educationLevel !== "allDegrees"'>
-					<thead class="table-header">
-						<tr>
-							<th>Years</th>
-							<th>75th</th>
-							<th>50th</th>
-							<th>25th</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>2 Years</td>
-							<td>75th ${{ this.mastersEarnings[0] }}</td>
-							<td>50th ${{ this.bachelorsEarnings[0] }}</td>
-							<td>25th ${{ this.someCollegeEarnings[0] }}</td>
-						</tr>
-						<tr>
-							<td>5 Years</td>
-							<td>75th ${{ this.mastersEarnings[1] }}</td>
-							<td>50th ${{ this.bachelorsEarnings[1] }}</td>
-							<td>25th ${{ this.someCollegeEarnings[1] }}</td>
-						</tr>
-						<tr>
-							<td>10 Years</td>
-							<td>75th ${{ this.mastersEarnings[2] }}</td>
-							<td>50th ${{ this.bachelorsEarnings[2] }}</td>
-							<td>25th ${{ this.someCollegeEarnings[2] }}</td>
-						</tr>
-						<tr>
-							<td>15 Years</td>
-							<td>75th ${{ this.mastersEarnings[3] }}</td>
-							<td>50th ${{ this.bachelorsEarnings[3] }}</td>
-							<td>25th ${{ this.someCollegeEarnings[3] }}</td>
-						</tr>
-					</tbody>
-				</template>
-				<template v-else>
-					<thead class="table-header">
-						<tr>
-							<th>Years</th>
-							<th>Post Bacc</th>
-							<th>Bachelors</th>
-							<th>Some College</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>2 Years</td>
-							<td>Post Bacc ${{ this.mastersEarnings[0] }}</td>
-							<td>Bachelors ${{ this.bachelorsEarnings[0] }}</td>
-							<td>Some College ${{ this.someCollegeEarnings[0] }}</td>
-						</tr>
-						<tr>
-							<td>5 Years</td>
-							<td>Post Bacc ${{ this.mastersEarnings[1] }}</td>
-							<td>Bachelors ${{ this.bachelorsEarnings[1] }}</td>
-							<td>Some College ${{ this.someCollegeEarnings[1] }}</td>
-						</tr>
-						<tr>
-							<td>10 Years</td>
-							<td>Post Bacc ${{ this.mastersEarnings[2] }}</td>
-							<td>Bachelors ${{ this.bachelorsEarnings[2] }}</td>
-							<td>Some College ${{ this.someCollegeEarnings[2] }}</td>
-						</tr>
-						<tr>
-							<td>15 Years</td>
-							<td>Post Bacc ${{ this.mastersEarnings[3] }}</td>
-							<td>Bachelors ${{ this.bachelorsEarnings[3] }}</td>
-							<td>Some College ${{ this.someCollegeEarnings[3] }}</td>
-						</tr>
-					</tbody>
-				</template>
+				<thead class="table-header">
+					<tr v-if='this.educationLevel === "allDegrees"'>
+						<th>Years</th>
+						<th>Post Bacc</th>
+						<th>Bachelor</th>
+						<th>Some College</th>
+					</tr>
+					<tr v-else>
+						<th>Years</th>
+						<th>75th</th>
+						<th>50th</th>
+						<th>25th</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item, index) in majorData" :key="index">
+						<td v-if="index === 0">2</td>
+						<td v-if="index === 1">5</td>
+						<td v-if="index === 2">10</td>
+						<!-- <td v-if="index === 3">2</td> -->
+						<td v-for="(item, val) in majorData" :key="val">
+							<!-- <template v-if=" majorData[val][index] === null">
+								No Data
+							</template> -->
+							<template>
+								${{ majorData[val][index] }}
+							</template>
+						</td>
+					</tr>
+				</tbody>
 			</table>
-		</div> -->
-		
-	</div>
+		</figcaption>		
+	</figure>
 </template>
 <script>
 import ECharts from "vue-echarts/components/ECharts";
@@ -92,7 +49,7 @@ import "echarts/lib/component/title";
 import "echarts/lib/component/legend";
 import { mapGetters } from "vuex";
 export default {
-	props: ["majorData", "educationLevel", "windowWidth"],
+	props: ["majorData", "educationLevel", "windowWidth", "majorTitle"],
 	data() {
 		return {
 			xAxis: ["2", "5", "10", "15"],
@@ -247,10 +204,10 @@ export default {
 				},
 				aria:{
 					show: true,
-					description: 'line chart',
+					// description: 'line chart',
 					general: {
-						// withTitle: 'A line Chart with annual earning for {title} major with '
-						withoutTitle: 'A line Chart '
+						withTitle: 'A line Chart with annual earning for {title} major with '
+						// withoutTitle: 'A line Chart '
 					},
 					series: {
 						multiple:{
@@ -337,6 +294,10 @@ export default {
 					}
 				],
 				animationDuration: 2000,
+				title: {
+					show: false,
+					text: this.majorTitle
+				}
 			};
 			return null;
 		}

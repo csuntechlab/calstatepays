@@ -58,7 +58,7 @@
 						<div v-show="!nullValues">
 							<div class="row">
 								<div class="col-12">
-									<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData"
+									<major-graph-wrapper v-bind:id="'majorGraphWrapperIndex-' + this.index" :majorData="selectedMajorData" :majorTitle="selectedMajorTitle"
 									:educationLevel="selectedEducationLevel" :windowWidth="windowWidth"></major-graph-wrapper>
 								</div>
 							</div>
@@ -112,6 +112,7 @@ export default {
 		...mapGetters([
 			"industries",
 			"majorData",
+			"majorTitle",
 			"educationLevel",
 			"formWasSubmitted",
 			"formWasSubmittedOnce",
