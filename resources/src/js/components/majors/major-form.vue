@@ -35,6 +35,7 @@
 							v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']"
 						>Select a Major</label>
 						<v-select
+                            label="major"
 							aria-label="Select Major"
 							v-model="selected"
 							:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
@@ -215,6 +216,7 @@ export default {
 					form: this.form,
 					school: this.selectedUniversity
 				}).then(() => {
+                    console.log("aight so boom")
 					this.disciplineLoad = false;
 				});
 			}

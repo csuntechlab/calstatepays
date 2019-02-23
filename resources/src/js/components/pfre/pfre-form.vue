@@ -25,22 +25,12 @@
 				<v-select
 					label="major"
 					aria-label="Select a Major"
-					v-if="this.form.fieldOfStudyId === null"
 					v-model="selected.majorName"
-					:options="majors"
+					:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
-				></v-select>
-				<v-select
-					label="major"
-					v-else
-					v-model="selected.majorName"
-					:options="selectedMajorsByField"
-					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					class="csu-form-input"
+                    :loading="disciplineLoad"
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
@@ -141,6 +131,7 @@ export default {
 		return {
 			formNotFilled: false,
 			submitted: false,
+			disciplineLoad: false,
 			selected: {
 				majorName: null,
 				ageRange: null,
@@ -149,7 +140,7 @@ export default {
 				financialAid: null
 			},
 			form: {
-                fieldOfStudyId: null,
+				fieldOfStudyId: null,
 				majorId: null,
 				age: null,
 				education: null,
@@ -188,30 +179,33 @@ export default {
 		updateGrandfatherSelect(field, dataKey, data) {
 			this.submitted = false;
 			if (data) {
-                this.form[field] = data[dataKey];
-                this.handleFieldOfStudyMajors(field);
+				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
 			}
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
+				this.disciplineLoad = true;
 				this.fetchIndustryMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
+				}).then(() => {
+					this.disciplineLoad = false;
 				});
 			}
 		},
 		updateSelect(field, data) {
 			if (data) {
-                this.form[field] = data.value;
+				this.form[field] = data.value;
 			} else {
 				this.form[field] = null;
 			}
 		},
 		setEducationLevel(data) {
-            this.form.education = data;
-            this.selected.education = data;
+			this.form.education = data;
+			this.selected.education = data;
 		},
 		scrollWin() {
 			if (window.innerWidth <= 767) {
