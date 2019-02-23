@@ -41,7 +41,7 @@ const router = new VueRouter({
 			component: pfre,
 			name: 'pfre',
 			meta: {
-				title: 'FRE | CalStatePays'
+				title: 'Data - FRE | CalStatePays'
 			}
 		},
 		{ 
@@ -49,7 +49,7 @@ const router = new VueRouter({
 			component: industries, 
 			name: 'industries',
 			meta: {
-				title: 'Industries | CalStatePays'
+				title: 'Data - Industries | CalStatePays'
 			}
 		},
 		{ 
@@ -57,7 +57,7 @@ const router = new VueRouter({
 			component: majors, 
 			name: 'majors',
 			meta: {
-				title: 'Majors | CalStatePays'
+				title: 'Data - Majors | CalStatePays'
 			} 
 		},
 		{ 
