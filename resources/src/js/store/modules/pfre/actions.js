@@ -15,7 +15,7 @@ export default {
             (success) => {   
                 commit(_pfre.FETCH_FRE_DATA, success);
             },
-            (error) => console.log(error),
+            (error) => console.error(error),
         );
     },
 

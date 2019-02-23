@@ -46,7 +46,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h3 class="major-title pt-2">{{selectedMajorTitle}}</h3>
+								<h2 class="major-title pt-2">{{selectedMajorTitle}}</h2>
 							</div>
 						</div>
 						<div class="col">
@@ -76,13 +76,13 @@
 							<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 						</div>
 					</div>
-					<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+					<h3 class="csu-card__title--center p-md-3">Please make your selection</h3>
 					<p class="lead pl-md-5 pr-md-5">
-						You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
+						You have the option of either filtering out majors by <strong class="font-weight-bold">discipline</strong> or choosing the <strong class="font-weight-bold">major</strong>
 						which resonates the most with you.
 					</p>
 					<p class="lead pl-md-5 pr-md-5">
-						<span class="font-weight-bold">Please Note:</span> Some majors might not have any data available at the moment.
+						<strong class="font-weight-bold">Please Note:</strong> Some majors might not have any data available at the moment.
 						For more information on how we gathered the data, please read the <router-link to="/faq">FAQ</router-link>.
 					</p>
 				</div>

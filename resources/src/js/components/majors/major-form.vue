@@ -21,6 +21,7 @@
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
+							aria-label="Select Discipline Optional"
 							@click.native="this.selected = null"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event)"
@@ -34,7 +35,7 @@
 							v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']"
 						>Select a Major</label>
 						<v-select
-							label="major"
+							aria-label="Select Major"
 							v-model="selected"
 							:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
                             :loading="disciplineLoad"

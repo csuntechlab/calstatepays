@@ -13,6 +13,7 @@
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
+							aria-label="Select Discipline Optional"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event);selected = null"
 							class="csu-form-input">
@@ -24,6 +25,7 @@
 						</label>
 						<v-select
 							label="major"
+							aria-label="Select a Major"
 							v-if="this.form.fieldOfStudyId == null"
 							v-model="selected"
 							:options="majors"

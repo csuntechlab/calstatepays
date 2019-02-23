@@ -1,5 +1,46 @@
 <template>
-	<chart :options="polar"></chart>
+	<figure>
+			<h3 class="sr-only" v-if='this.educationLevel === "allDegrees"'>All Degrees Level Data for {{ majorTitle }}</h3>
+			<h3 class="sr-only" v-else-if='this.educationLevel == "postBacc"'>Post Bacc Level Data for {{ majorTitle }}</h3>
+			<h3 class="sr-only" v-else-if='this.educationLevel == "bachelors"'>Bachelors Level Data for {{ majorTitle }}</h3>
+			<h3 class="sr-only" v-else-if='this.educationLevel == "someCollege"'>Some College Level Data for {{ majorTitle }}</h3>
+		<chart :options="polar" :aria-label='"Line Graph for " + majorTitle'></chart>
+		<figcaption class="sr-only">
+			<h4>Data Table</h4>
+			<table>
+				<thead class="table-header">
+					<tr v-if='this.educationLevel === "allDegrees"'>
+						<th>Years</th>
+						<th>Post Bacc</th>
+						<th>Bachelors</th>
+						<th>Some College</th>
+					</tr>
+					<tr v-else>
+						<th>Years</th>
+						<th>75th</th>
+						<th>50th</th>
+						<th>25th</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item, index) in majorData[0]" :key="index">
+						<td v-if="index === 0">2</td>
+						<td v-if="index === 1">5</td>
+						<td v-if="index === 2">10</td>
+						<td v-if="index === 3">15</td>
+						<td v-for="(item, val) in majorData" :key="val">
+							<template v-if=" majorData[val][index] !== null">
+								${{ majorData[val][index] }}
+							</template>
+							<template v-else>
+								No Data
+							</template>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</figcaption>		
+	</figure>
 </template>
 <script>
 import ECharts from "vue-echarts/components/ECharts";
@@ -9,7 +50,7 @@ import "echarts/lib/component/title";
 import "echarts/lib/component/legend";
 import { mapGetters } from "vuex";
 export default {
-	props: ["majorData", "educationLevel", "windowWidth"],
+	props: ["majorData", "educationLevel", "windowWidth", "majorTitle"],
 	data() {
 		return {
 			xAxis: ["2", "5", "10", "15"],
@@ -162,6 +203,35 @@ export default {
 						show: false
 					}
 				},
+				aria:{
+					show: false,
+					// description: 'line chart',
+					general: {
+						withTitle: 'A line Chart with annual earning for {title}.'
+						// withoutTitle: 'A line Chart '
+					},
+					series: {
+						multiple:{
+							prefix: '',
+							withName: '',
+							separator: {
+								middle: '',
+								end: ''
+							}
+						},
+						separator: {
+							middle: '',
+							end: ''
+						}
+					},
+					data: {
+						allData: '',
+						withName: '{name} years out ${value}',
+						separator: {
+							end: '. '
+						}
+					}
+				},
 				legend: {
 					data: ["line"]
 				},
@@ -224,7 +294,11 @@ export default {
 						}
 					}
 				],
-				animationDuration: 2000
+				animationDuration: 2000,
+				title: {
+					show: false,
+					text: this.majorTitle
+				}
 			};
 			return null;
 		}

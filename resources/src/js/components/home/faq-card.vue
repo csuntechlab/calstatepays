@@ -5,12 +5,12 @@
 				<div class="f faq-card col-12 col-sm-10 col-lg-8">
 					<div class="row">
 						<div class="col-6 col-sm-5 faq-card__text">
-							<p class="faq-card__text--blue">Have Questions?</p>
+							<h2 class="faq-card__text--blue">Have Questions?</h2>
 							<p class="faq-card__text--gray">We Have Answers.</p>
 							<router-link to="/faq" class="faq-card__button">Read Our FAQ</router-link>
 						</div>
 						<div class="col-6 col-sm-5 d-sm-flex">
-							<img class="faq-card__image" :src="this.url + '/img/homeimages/faq_graphic.svg'">
+							<img class="faq-card__image" :src="this.url + '/img/homeimages/faq_graphic.svg'" alt="">
 						</div>
 					</div>
 
