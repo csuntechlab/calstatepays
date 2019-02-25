@@ -31,7 +31,7 @@
 							@input="updateSelect('majorId', 'majorId', $event)"
 							@change="updateSelect('majorId', 'majorId', $event)"
 							class="csu-form-input"
-                            :loading="disciplineLoad"
+                            :loading="industryDisciplineLoad"
 							v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
 						</v-select>
 					</div>
@@ -91,8 +91,7 @@ export default {
 		return {
 			//temp data property to simulate the functionality
 			//of the degree selector; should ultimately be removed
-			isActive: true,
-            disciplineLoad: false,
+            isActive: true,
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
@@ -161,11 +160,7 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-                this.disciplineLoad = true;
 				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity})
-                .then(() => {
-                    this.disciplineLoad = false;
-                });
 			}
 		},
 	},
@@ -180,7 +175,8 @@ export default {
 			"industryEducationLevel",
 			"industryMajorsByField",
 			"selectedUniversity",
-			"fieldOfStudies",
+            "fieldOfStudies",
+            "industryDisciplineLoad"
 		]),
 		windowSize() {
 			return window.innerWidth;

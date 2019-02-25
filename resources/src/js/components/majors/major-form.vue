@@ -39,9 +39,9 @@
 							aria-label="Select Major"
 							v-model="selected"
 							:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
-                            :loading="disciplineLoad"
 							@input="updateSelect('majorId', 'majorId', $event)"
 							class="csu-form-input"
+                             :loading="selectedMajorDisciplineLoad"
 							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}"
 						></v-select>
 					</div>
@@ -134,7 +134,6 @@ export default {
 	data() {
 		return {
             isShowing: false,
-            disciplineLoad: false,
 			form: {
 				cardIndex: this.index,
 				majorId: null,
@@ -211,14 +210,10 @@ export default {
 
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.disciplineLoad = true;
 				this.fetchUpdatedMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
-				}).then(() => {
-                    console.log("aight so boom")
-					this.disciplineLoad = false;
-				});
+				})
 			}
 		},
 		toggleEducationLevel(educationInput) {
@@ -236,7 +231,8 @@ export default {
 			"formWasSubmitted",
 			"formWasSubmittedOnce",
 			"educationLevel",
-			"selectedUniversity"
+            "selectedUniversity",
+            "majorDisciplineLoad"
 		]),
 		selectedMajorsByField() {
 			this.selected = null;
@@ -247,7 +243,10 @@ export default {
 		},
 		selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
-		},
+        },
+        selectedMajorDisciplineLoad() {
+            return this.majorDisciplineLoad(this.index);
+        },
 		windowSize() {
 			return window.innerWidth;
 		}
@@ -262,6 +261,3 @@ export default {
 	}
 };
 </script>
-
-<style>
-</style>

@@ -15,10 +15,12 @@ export default {
 		);
 	},
 	fetchIndustryMajorsByField({commit, dispatch}, payload) {
+        commit(_industries.SET_DISCIPLINE_LOAD, true);
 		Industries.fetchIndustryMajorsByFieldAPI(
 			payload, 
 			(success) => {
-				commit(_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
+                commit(_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
+                commit(_industries.SET_DISCIPLINE_LOAD, false);
 			},
 			(error) => commit(_global.ERROR_ALERT,error)
 		);

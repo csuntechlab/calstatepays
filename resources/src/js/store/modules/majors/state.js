@@ -5,6 +5,7 @@ export default {
         {
             formWasSubmitted: false,
             submittedOnce: false,
+            majorDisciplineLoad: false,
             majorsByField: [],
             industries: [],
             majorData: [],

@@ -26,11 +26,11 @@
 					label="major"
 					aria-label="Select a Major"
 					v-model="selected.majorName"
-					:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
+					:options="this.form.fieldOfStudyId == null ? majors : pfreMajorsByField"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
-                    :loading="disciplineLoad"
+					:loading="pfreDisciplineLoad"
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
@@ -131,7 +131,6 @@ export default {
 		return {
 			formNotFilled: false,
 			submitted: false,
-			disciplineLoad: false,
 			selected: {
 				majorName: null,
 				ageRange: null,
@@ -175,7 +174,7 @@ export default {
 		};
 	},
 	methods: {
-		...mapActions(["fetchFreData", "fetchIndustryMajorsByField"]),
+		...mapActions(["fetchFreData", "fetchPfreMajorsByField"]),
 		updateGrandfatherSelect(field, dataKey, data) {
 			this.submitted = false;
 			if (data) {
@@ -187,12 +186,9 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.disciplineLoad = true;
-				this.fetchIndustryMajorsByField({
+				this.fetchPfreMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
-				}).then(() => {
-					this.disciplineLoad = false;
 				});
 			}
 		},
@@ -247,7 +243,8 @@ export default {
 			"selectedUniversity",
 			"fieldOfStudies",
 			"selectedUniversity",
-			"industryMajorsByField"
+			"pfreMajorsByField",
+			"pfreDisciplineLoad"
 		]),
 
 		selectedMajorsByField() {

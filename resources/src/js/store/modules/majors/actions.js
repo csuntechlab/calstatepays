@@ -12,11 +12,13 @@ export default {
                 commit(_majors.RESET_MAJOR_SELECTIONS);
     },
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
+        commit(_majors.SET_DISCIPLINE_LOAD, {status: true, cardIndex: payload.form.cardIndex});
         Major.fetchUpdatedMajorsByFieldAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
+                commit(_majors.SET_DISCIPLINE_LOAD, { status: false, cardIndex: payload.form.cardIndex });
             },
             (error) =>commit(_global.ERROR_ALERT,error),
         );
