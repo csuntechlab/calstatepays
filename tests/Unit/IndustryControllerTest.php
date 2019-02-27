@@ -103,7 +103,8 @@ class IndustryControllerTest extends TestCase
                 "rank" => 2,
                 "image" => "http://localhost:8888/metalab/CSU-Metro-LA/public/img/industries/finance_insurance.png",
                 "industryWage" => 71888
-            ]
+            ],
+            "major_id" => 5021
         ]);
 
         $this->retriever
@@ -166,7 +167,8 @@ class IndustryControllerTest extends TestCase
                     "student_path" => 1,
                     "industryWage" => 73073
                 ],
-            ]
+            ],
+            "major_id" => 5021
         ]);
 
         $this->retriever
@@ -228,10 +230,14 @@ class IndustryControllerTest extends TestCase
     {
 
         $response = $this->json('GET', '/api/industry/5021/northridge');
-        //  $response = $response->getOriginalContent();
 
         $response->assertStatus(200)
-            ->assertJsonStructure(["someCollege" => ["0" => ["title", "percentage", "rank"]], "bachelors" => ["0" => ['title', 'percentage', 'rank']], "post_bacc" => ["0" => ['title', 'percentage', 'rank']]]);
+            ->assertJsonStructure([
+                "someCollege" => ["0" => ["title", "percentage", "rank"]],
+                "bachelors" => ["0" => ['title', 'percentage', 'rank']],
+                "post_bacc" => ["0" => ['title', 'percentage', 'rank']],
+                "major_id"
+            ]);
     }
 
     /**
@@ -280,7 +286,7 @@ class IndustryControllerTest extends TestCase
 
         $request = new IndustryFormRequest($input);
 
-        $firstResult = json_encode(["bachelors" => ["0" => ["title" => "Professional, Scientific, & Technical Skills", "percentage" => 40, "rank" => 1, "industryWage" => 69328]]]);
+        $firstResult = json_encode(["bachelors" => ["0" => ["title" => "Professional, Scientific, & Technical Skills", "percentage" => 40, "rank" => 1, "industryWage" => 69328]], "major_id" => 5021]);
 
         $this->retriever
             ->shouldReceive('getIndustryPopulationByRank')
@@ -300,7 +306,7 @@ class IndustryControllerTest extends TestCase
             'degreeLevel' => 1
         ];
 
-         // test the validator
+        // test the validator
         $request = new IndustryFormRequest($input);
         $rules = $request->rules();
         $validator = Validator::make($input, $rules);
@@ -336,9 +342,9 @@ class IndustryControllerTest extends TestCase
 
         $this->industryWagesHelper($industry, $data);
 
-          // Now make a industry api by calling other apis
+        // Now make a industry api by calling other apis
 
-          // call the universities
+        // call the universities
         $university_call = $this->json("GET", "api/university");
         $university_call = $university_call->getOriginalContent();
 
@@ -419,7 +425,7 @@ class IndustryControllerTest extends TestCase
             $this->assertEquals($data['post_bacc'][$iterate]['industryWage'], $industry['industryWage']);
         }
     }
-    
+
     // goes through all steps to get the api call
     // used for the industry controller test
     private function industryWagesAPIHelper($university_short_name, $hegis)
