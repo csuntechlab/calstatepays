@@ -6,7 +6,8 @@ export default {
 	pfreFormWasSubmitted: false,
 	pfreShowInfo: false,
 	pfreInfoKey: null,
-	pfreSelected: {},
+    pfreSelected: {},
+    pfreIsLoading: false,
 	pfreData: {
 		id: null,
 		years: {

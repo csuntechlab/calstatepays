@@ -4,6 +4,7 @@ const TOGGLE_INFO = 'pfre/TOGGLE_INFO';
 const SUBMIT_PFRE = "pfre/SUBMIT_PFRE";
 const RESET_FRE_STATE = "pfre/RESET_FRE_STATE";
 const SET_PFRE = "pfre/SET_PFRE";
+const TRIGGER_IS_LOADING = "pfre/TRIGGER_IS_LOADING"
 
 export default {
     FETCH_MOCK_DATA,
@@ -11,5 +12,6 @@ export default {
     TOGGLE_INFO,
     SUBMIT_PFRE,
     RESET_FRE_STATE,
-    SET_PFRE
+    SET_PFRE,
+    TRIGGER_IS_LOADING
 }

@@ -18,7 +18,7 @@ export default {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
             },
-            (error) =>commit(_global.ERROR_ALERT,error),
+            (error) => commit(_global.ERROR_ALERT, { message: 'Oops! Major data unavailable' }),
         );
     },
     fetchMajorData({ commit, dispatch }, payload) {
