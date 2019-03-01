@@ -25,22 +25,12 @@
 				<v-select
 					label="major"
 					aria-label="Select a Major"
-					v-if="this.form.fieldOfStudyId === null"
 					v-model="selected.majorName"
-					:options="majors"
+					:options="this.form.fieldOfStudyId == null ? majors : pfreMajorsByField"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
-				></v-select>
-				<v-select
-					label="major"
-					v-else
-					v-model="selected.majorName"
-					:options="selectedMajorsByField"
-					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					class="csu-form-input"
+					:loading="pfreDisciplineLoad"
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
@@ -149,7 +139,7 @@ export default {
 				financialAid: null
 			},
 			form: {
-                fieldOfStudyId: null,
+				fieldOfStudyId: null,
 				majorId: null,
 				age: null,
 				education: null,
@@ -184,19 +174,19 @@ export default {
 		};
 	},
 	methods: {
-		...mapActions(["fetchFreData", "fetchIndustryMajorsByField"]),
+		...mapActions(["fetchFreData", "fetchPfreMajorsByField"]),
 		updateGrandfatherSelect(field, dataKey, data) {
 			this.submitted = false;
 			if (data) {
-                this.form[field] = data[dataKey];
-                this.handleFieldOfStudyMajors(field);
+				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
 			}
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField({
+				this.fetchPfreMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
 				});
@@ -204,14 +194,14 @@ export default {
 		},
 		updateSelect(field, data) {
 			if (data) {
-                this.form[field] = data.value;
+				this.form[field] = data.value;
 			} else {
 				this.form[field] = null;
 			}
 		},
 		setEducationLevel(data) {
-            this.form.education = data;
-            this.selected.education = data;
+			this.form.education = data;
+			this.selected.education = data;
 		},
 		scrollWin() {
 			if (window.innerWidth <= 767) {
@@ -253,7 +243,8 @@ export default {
 			"selectedUniversity",
 			"fieldOfStudies",
 			"selectedUniversity",
-			"industryMajorsByField"
+			"pfreMajorsByField",
+			"pfreDisciplineLoad"
 		]),
 
 		selectedMajorsByField() {

@@ -7,5 +7,6 @@ export default {
     industryFormWasSubmittedOnce: state => state. industryFormWasSubmittedOnce,
     industryEducationLevel: state => state.industryEducationLevel,
     industryMajor: state => state.industryMajor,
+    industryDisciplineLoad: state => state.industryDisciplineLoad,
     industryIsLoading: state => state.industryIsLoading
 }

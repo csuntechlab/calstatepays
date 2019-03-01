@@ -70,7 +70,7 @@
 							</div>
 					</div>
 				</div>
-				<div v-else class="bar-graph-card mb-5">
+				<div v-else class="bar-graph-card mb-5 mt-md-3">
 					<div class="row">
 						<div class="col">
 							<i class="fa fa-times fa-2x btn-remove pull-right" @click="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
