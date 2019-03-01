@@ -139,7 +139,6 @@ export default {
 			return false;
 		},
 		selectedMajorData() {
-			console.log(this.majorData(this.index));
 			return this.majorData(this.index);
 		},
 		selectedIndustries() {
