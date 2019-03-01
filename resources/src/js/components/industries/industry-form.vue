@@ -91,7 +91,7 @@ export default {
 		return {
 			//temp data property to simulate the functionality
 			//of the degree selector; should ultimately be removed
-            isActive: true,
+      isActive: true,
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
