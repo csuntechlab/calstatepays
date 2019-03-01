@@ -1,17 +1,20 @@
 // PFRE ACTIONS
-import Pfre from "../../../api/pfre";
-import _pfre from "../../mutation-types/pfre";
+import Pfre from '../../../api/pfre';
+import Industries from '../../../api/industries';
+import _pfre from '../../mutation-types/pfre';
 import _global from "../../mutation-types/global-form"
 
-export default {
-	fetchMockData({ commit, dispatch }) {
-		commit(_pfre.FETCH_MOCK_DATA);
-	},
 
-	fetchFreData({ commit, dispatch }, payload) {
-		commit(_pfre.TRIGGER_IS_LOADING);
-		Pfre.fetchFreDataAPI(
-			payload,
+export default {
+
+    fetchMockData({commit, dispatch}) {
+        commit(_pfre.FETCH_MOCK_DATA);
+    },
+
+    fetchFreData({commit, dispatch}, payload){
+        commit(_pfre.TRIGGER_IS_LOADING);
+        Pfre.fetchFreDataAPI(
+            payload,
 			success => {
 				commit(_pfre.FETCH_FRE_DATA, success);
 				commit(_pfre.TRIGGER_IS_LOADING);
@@ -20,22 +23,34 @@ export default {
 				commit(_global.ERROR_ALERT, {message: 'Oops! Major data unavailable'});
 				commit(_pfre.TRIGGER_IS_LOADING);
 			}
-		);
-	},
+        );
+    },
 
-	toggleInfo({ commit }, payload) {
-		commit(_pfre.TOGGLE_INFO, payload);
-	},
+    fetchPfreMajorsByField({ commit, dispatch }, payload) {
+        commit(_pfre.SET_DISCIPLINE_LOAD, true);
+        Industries.fetchIndustryMajorsByFieldAPI(
+            payload,
+            (success) => {
+                commit(_pfre.FETCH_PFRE_MAJORS_BY_FIELD, success);
+                commit(_pfre.SET_DISCIPLINE_LOAD, false);
+            },
+            (error) => commit(_global.ERROR_ALERT, error)
+        );
+    },
 
-	submitPfreForm({ commit }) {
-		commit(_pfre.SUBMIT_PFRE);
-	},
+    toggleInfo({commit}, payload) {
+        commit(_pfre.TOGGLE_INFO, payload);
+    },
 
-	resetFreState({ commit }) {
-		commit(_pfre.RESET_FRE_STATE);
-	},
+    submitPfreForm({commit}){
+        commit(_pfre.SUBMIT_PFRE);
+    },
 
-	setPfreSelections({ commit }, payload) {
-		commit(_pfre.SET_PFRE, payload);
-	}
-};
+    resetFreState({commit}){
+        commit(_pfre.RESET_FRE_STATE);
+    },
+
+    setPfreSelections({commit}, payload){
+        commit(_pfre.SET_PFRE, payload);
+    }
+}

@@ -1,7 +1,9 @@
 <template>
     <div>
         <power-banner/>
-        <power-users-modal :showModal=displayModal :university=university  v-on:closeModal="closeModal($event)"></power-users-modal>
+        <div data-app>
+            <power-users-modal :showModal=displayModal :university=university  v-on:closeModal="closeModal($event)"></power-users-modal>
+        </div>
         <main>
             <div class="container">
                 <div class="row">
@@ -13,7 +15,7 @@
                 </div>
                 <div class="row justify-content-start justify-content-xl-center">
                     <template v-for="item in this.campuses">
-                        <c-s-u-tile @click.native="openModal(item)" :key="item.university" :campusImg="item.card_image" :title="item.university" :optIn="item.opt_in" />
+                            <c-s-u-tile @click.native="openModal(item)" :key="item.university" :campusImg="item.card_image" :title="item.university" :optIn="item.opt_in" />
                     </template>
                 </div>
             </div>

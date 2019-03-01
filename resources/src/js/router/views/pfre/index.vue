@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<csu-data-img-banner>
-			<h3 class="CSUDataImgBanner__dataTitle" slot="title">
+			<h2 class="CSUDataImgBanner__dataTitle" slot="title">
 				<span>Financial Return on Education</span>
-			</h3>
+			</h2>
 			<p
 				class="CSUDataImgBanner__dataCopy"
 				slot="copy"

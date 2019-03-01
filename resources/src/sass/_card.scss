@@ -52,7 +52,12 @@
     
     &__title {
 		color: #595959;
-		font-weight: 700;
+        font-weight: 700;
+        &--center{
+            color: #595959;
+            font-weight: 700;
+            text-align: center;
+        }
     }
     
     &__tags {

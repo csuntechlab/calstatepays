@@ -21,6 +21,7 @@
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
+							aria-label="Select Discipline Optional"
 							@click.native="this.selected = null"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event)"
@@ -34,21 +35,13 @@
 							v-bind:style="[this.submittedOnce && !this.form.majorId ? errorLabel : '']"
 						>Select a Major</label>
 						<v-select
-							label="major"
-							v-if="this.form.fieldOfStudyId == null"
+                            label="major"
+							aria-label="Select Major"
 							v-model="selected"
-							:options="majors"
+							:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
 							@input="updateSelect('majorId', 'majorId', $event)"
 							class="csu-form-input"
-							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}"
-						></v-select>
-						<v-select
-							label="major"
-							v-else
-							v-model="selected"
-							:options="selectedMajorsByField"
-							@input="updateSelect('majorId', 'majorId', $event)"
-							class="csu-form-input"
+                             :loading="selectedMajorDisciplineLoad"
 							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}"
 						></v-select>
 					</div>
@@ -62,15 +55,16 @@
 			<form class="container-fluid csu-card__form" v-bind:id="'majorForm-' + form.cardIndex">
 				<fieldset class="csu-card__form-sizing">
 					<div class="row">
-                        <div class="col-12 text-right">
-						<button
-							v-show="selectedFormWasSubmittedOnce"
-							class="btn btn-flip-card"
-							@click.prevent="resetCurrentCard"
-						>
-                            Change Major <i v class="fas fa fa-chevron-right"/>
-						</button>
-                        </div>
+						<div class="col-12 text-right">
+							<button
+								v-show="selectedFormWasSubmittedOnce"
+								class="btn btn-flip-card"
+								@click.prevent="resetCurrentCard"
+							>
+								Change Major
+								<i v class="fas fa fa-chevron-right"/>
+							</button>
+						</div>
 					</div>
 					<div class="row">
 						<p class="text-center h5 majors-header my-5-md my-4 col-12">Select a Degree Level</p>
@@ -139,7 +133,7 @@ export default {
 	props: ["index", "windowWidth"],
 	data() {
 		return {
-			isShowing: false,
+            isShowing: false,
 			form: {
 				cardIndex: this.index,
 				majorId: null,
@@ -219,7 +213,7 @@ export default {
 				this.fetchUpdatedMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
-				});
+				})
 			}
 		},
 		toggleEducationLevel(educationInput) {
@@ -237,7 +231,8 @@ export default {
 			"formWasSubmitted",
 			"formWasSubmittedOnce",
 			"educationLevel",
-			"selectedUniversity"
+            "selectedUniversity",
+            "majorDisciplineLoad"
 		]),
 		selectedMajorsByField() {
 			this.selected = null;
@@ -248,7 +243,10 @@ export default {
 		},
 		selectedFormWasSubmittedOnce() {
 			return this.formWasSubmittedOnce(this.index);
-		},
+        },
+        selectedMajorDisciplineLoad() {
+            return this.majorDisciplineLoad(this.index);
+        },
 		windowSize() {
 			return window.innerWidth;
 		}
@@ -263,6 +261,3 @@ export default {
 	}
 };
 </script>
-
-<style>
-</style>

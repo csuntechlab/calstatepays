@@ -13,8 +13,14 @@ export default {
 			Math.random() * (0 - 0.15) +
 			0.15
 		).toFixed(2);
-	},
+    },
+    [_pfre.FETCH_PFRE_MAJORS_BY_FIELD](state, payload) {
+        state.pfreMajorsByField = payload[0]
 
+    },
+    [_pfre.SET_DISCIPLINE_LOAD](state, payload) {
+        state.pfreDisciplineLoad = payload
+    },
 	[_pfre.FETCH_FRE_DATA](state, payload) {
         state.pfreData.id = payload.majorId;
 		state.pfreData.years.actual = payload.fre.timeToDegree;

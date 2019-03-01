@@ -13,7 +13,6 @@
 							class="col-12 col-sm-6 col-md-3 col-lg"
 							v-for="(item, index) in orderedUniversities"
 							:key="index"
-							@dblclick="onSubmit()"
 						>
 							<template v-for="(universitySeal, index2) in universitySeals">
 								<template v-if="universitySeal.short_name == item.short_name">
@@ -24,6 +23,7 @@
 												class="campus-modal-item__radio"
 												type="radio"
 												name="campuses"
+												:key="item.short_name"
 												:id="item.short_name"
 												checked
 											>
@@ -37,7 +37,7 @@
 											>
 										</template>
 
-										<div class="campus-modal-item clearfix">
+										<div class="campus-modal-item clearfix" @dblclick="onSubmit()">
 											<label :for="item.short_name">
 												<figure class="campus-modal-item__figure">
 													<div class="campus-modal-item__imgWrapper">
@@ -111,7 +111,8 @@ export default {
 				{
 					url: window.baseUrl + "/img/csuseals/all.svg",
 					name: "All 7 Campuses",
-					short_name: "all"
+					short_name: "all",
+					alt:""
 				},
 				{
 					url:
@@ -123,32 +124,38 @@ export default {
 				{
 					url: window.baseUrl + "/img/csuseals/dominguez_seal.svg",
 					name: "Dominguez Hills",
-					short_name: "dominguez_hills"
+					short_name: "dominguez_hills",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/fullerton_seal.svg",
 					name: "Fullerton",
-					short_name: "fullerton"
+					short_name: "fullerton",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/long_beach_seal.svg",
 					name: "Long Beach",
-					short_name: "long_beach"
+					short_name: "long_beach",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/los_angeles_seal.svg",
 					name: "Los Angeles",
-					short_name: "los_angeles"
+					short_name: "los_angeles",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/northridge_seal.svg",
 					name: "Northridge",
-					short_name: "northridge"
+					short_name: "northridge",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/poly_seal.svg",
 					name: "Pomona",
-					short_name: "pomona"
+					short_name: "pomona",
+					alt:""
 				}
 			]
 		};
@@ -213,6 +220,7 @@ export default {
 			}
 		},
 		changeCampus: function(university) {
+			sessionStorage.setItem("selectedUniversity", university);
 			if (this.selectedUniversity != university) {
 				sessionStorage.setItem("selectedUniversity", university);
 				this.$store.dispatch("setUniversity", university);

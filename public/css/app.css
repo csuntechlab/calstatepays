@@ -18929,6 +18929,12 @@ body {
   font-weight: 700;
 }
 
+.csu-card__title--center {
+  color: #595959;
+  font-weight: 700;
+  text-align: center;
+}
+
 .csu-card__tags {
   font-weight: 600;
 }
@@ -19722,6 +19728,12 @@ a.faq-card__button:hover {
   }
 }
 
+@media screen and (max-height: 335px) and (max-width: 400px) {
+  .sub-nav {
+    display: none !important;
+  }
+}
+
 .sub-nav__element {
   color: rgba(0, 0, 0, 0.5);
   padding: 1.2rem 0;
@@ -19778,11 +19790,7 @@ a.faq-card__button:hover {
     -webkit-box-shadow: none;
             box-shadow: none;
     text-decoration: none;
-    color: #a00d0d;
-    font-weight: bold;
-  }
-  .sub-nav__element:hover .fa-usd, .sub-nav__element:hover .fa-graduation-cap {
-    color: #a00d0d;
+    color: #777777;
   }
 }
 
@@ -20851,6 +20859,16 @@ input[type="radio"] {
 .tooltip {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.tableau__frame {
+  width: 1016px;
+  height: 991px;
+}
+
+.tableau__placeholder {
+  width: 1000px;
+  height: 5rem;
 }
 
 .IndustryCarousel {

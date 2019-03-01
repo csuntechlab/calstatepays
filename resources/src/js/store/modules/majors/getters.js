@@ -10,6 +10,7 @@ export default {
     formWasSubmitted:state=> index => state.majorCards[index].formWasSubmitted,
     formWasSubmittedOnce: state => index => state.majorCards[index].submittedOnce,
     majorIsLoading: state => index => state.majorCards[index].majorIsLoading,
+    majorDisciplineLoad: state => index => state.majorCards[index].majorDisciplineLoad,
     indexOfUnsubmittedCard: state => {
         // let bool = state.majorCards.every((el) => {
         //     return el.formWasSubmitted === true;
