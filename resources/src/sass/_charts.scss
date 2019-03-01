@@ -228,10 +228,17 @@ $colorList: (
 	margin-right: 1rem;
 }
 
-// .legend {
-// &__text {
-// font-size: 1rem;
-// &__key-color {
-// height:100px;
-// }
-// }
+//tableau styling
+
+.tableau{
+    &__frame{
+        width: 1016px;
+        height: 991px;
+    }
+
+    &__placeholder{
+        width: 1000px;
+        height: 5rem;
+    }
+}
+

@@ -101,8 +101,12 @@ export default {
             }
         },
         chooseTableauCategory(university,path_id){
-            sessionStorage.setItem('tableauValue', this.optInValues[university][path_id].iframe_string);
-            this.$store.dispatch('setTableauValue', this.optInValues[university][path_id].iframe_string);
+            let tableauObj = {
+                "iframe_server":this.optInValues[university][path_id].iframe_server,
+                "iframe_string":this.optInValues[university][path_id].iframe_string
+            } 
+            sessionStorage.setItem('tableauValue', tableauObj["iframe_string"]);
+            this.$store.dispatch('setTableauValue', tableauObj["iframe_string"]);
             this.$router.push({name:'tableau' , params:{tableauValue:this.tableauValue}});
         }
     },computed:{

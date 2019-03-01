@@ -1,5 +1,6 @@
 // PFRE ACTIONS
 import Pfre from '../../../api/pfre';
+import Industries from '../../../api/industries';
 import _pfre from '../../mutation-types/pfre';
 
 
@@ -15,7 +16,19 @@ export default {
             (success) => {   
                 commit(_pfre.FETCH_FRE_DATA, success);
             },
-            (error) => console.log(error),
+            (error) => console.error(error),
+        );
+    },
+
+    fetchPfreMajorsByField({ commit, dispatch }, payload) {
+        commit(_pfre.SET_DISCIPLINE_LOAD, true);
+        Industries.fetchIndustryMajorsByFieldAPI(
+            payload,
+            (success) => {
+                commit(_pfre.FETCH_PFRE_MAJORS_BY_FIELD, success);
+                commit(_pfre.SET_DISCIPLINE_LOAD, false);
+            },
+            (error) => commit(_global.ERROR_ALERT, error)
         );
     },
 

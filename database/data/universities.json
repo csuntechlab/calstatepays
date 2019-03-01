@@ -4,7 +4,7 @@
     "university": "California State University, Fullerton",
     "short_name": "fullerton",
     "acronym": "csuf",
-    "opt_in": 0
+    "opt_in": 1
   },
   {
     "id": "40",
@@ -32,7 +32,7 @@
     "university": "California State Polytechnic University, Pomona",
     "short_name": "pomona",
     "acronym": "csup",
-    "opt_in": 0
+    "opt_in": 1
   },
   {
     "id": "70",
@@ -46,7 +46,7 @@
     "university": "California State University, Channel Islands",
     "short_name": "channel_islands",
     "acronym": "csuci",
-    "opt_in": 0
+    "opt_in": 1
   },
   {
     "id": "0",

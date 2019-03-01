@@ -12,6 +12,11 @@ export default {
         state.majorCards[index].majorData = payload;
     },
 
+    [_majors.SET_DISCIPLINE_LOAD](state, payload) {
+        let index = payload.cardIndex;
+        state.majorCards[index].majorDisciplineLoad = payload.status;
+    },
+
     [_majors.RESET_MAJOR_SELECTIONS](state) {
         state.majors = [];
     },

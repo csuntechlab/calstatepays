@@ -9,7 +9,7 @@
         </div>
         <div v-else>
             <div v-if="industryMajor == null || industriesByMajor == null">
-                <h3 class="industry-title text-center p-md-3">Please make your selection</h3>
+                <h2 class="industry-title text-center p-md-3">Please make your selection</h2>
                 <p class="lead pl-md-5 pr-md-5">
                     You have the option of either filtering out majors by <span class="font-weight-bold">discipline</span> or choosing the <span class="font-weight-bold">major</span>
                     which resonates the most with you.
@@ -22,7 +22,7 @@
             <div v-else>
                 <div class="row IndustryLegend">
                     <div v-if="industryMajor !== null" class="col-12">
-                        <h3 class="csu-card__title">{{industryMajor}}</h3>
+                        <h2 class="csu-card__title">{{industryMajor}}</h2>
                     </div>
                     <div v-if="industriesByMajor.length > 0" class="col-12">
                         <p class="h6">Employment 5 Years After Exit</p>
@@ -49,7 +49,7 @@
                         <div class="col-sm-9">
                             <div class="row py-2">
                                 <div class="col-10">
-                                    <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                                    <v-progress-linear aria-label="Percentage of Students Employed" class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.percentage" height="25" color="IndustryProgressBarWrapper__PercentageBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
                                 </div>
                                 <div class="col-2 pl-0">
                                     <p class="IndustryProgressBarWrapper__PercentageText">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="row py-2">
                                 <div class="col-10">
-                                    <v-progress-linear class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
+                                    <v-progress-linear aria-label="Average Earnings" class="IndustryProgressBarWrapper__ProgressBarBase" :value="industry.industryWage/1500" height="25" color="IndustryProgressBarWrapper__SalaryBar" background-color="IndustryProgressBarWrapper__PercentageBar--Background"/>
                                 </div>
                                 <div class="col-2 pl-0">
                                     <p class="IndustryProgressBarWrapper__SalaryText">
