@@ -20,7 +20,8 @@ export default {
 				commit(_pfre.TRIGGER_IS_LOADING);
 			},
 			error => {
-				commit(_global.ERROR_ALERT, {message: 'Oops! Major data unavailable'});
+                commit(_global.ERROR_ALERT, {message: 'Oops! Major data unavailable'});
+                commit(_pfre.FETCH_FRE_DATA, { majorId: '', fre: { timeToDegree: '', earningsYearFive: '', returnOnInvestment: ''}});
 				commit(_pfre.TRIGGER_IS_LOADING);
 			}
         );
