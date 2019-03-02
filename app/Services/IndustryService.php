@@ -49,6 +49,7 @@ class IndustryService implements IndustryContract
         $industry_population_images["someCollege"] = $someCollege_population;
         $industry_population_images["bachelors"] = $bachelors_population;
         $industry_population_images["post_bacc"] = $post_bacc_population;
+        $industry_population_images['major_id'] = (int)$hegis_code;
 
         return $industry_population_images;
     }
@@ -73,6 +74,8 @@ class IndustryService implements IndustryContract
         $industry_wages["someCollege"] = $someCollege_population;
         $industry_wages["bachelors"] = $bachelors_population;
         $industry_wages["post_bacc"] = $post_bacc_population;
+        $industry_wages['major_id'] = (int)$hegis_code;
+
         return $industry_wages;
     }
 
