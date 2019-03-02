@@ -10,7 +10,8 @@ export default {
 				commit(_industries.FETCH_INDUSTRIES, success);
 				commit(_industries.TRIGGER_IS_LOADING, success);
 			},
-			(error) =>{commit(_global.ERROR_ALERT,error)
+            (error) => {
+                commit(_global.ERROR_ALERT, { message: 'Oops! Major data unavailable' })
             }
 		);
 	},

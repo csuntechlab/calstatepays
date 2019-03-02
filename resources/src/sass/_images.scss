@@ -1,4 +1,6 @@
 .faq-banner {
+    display: flex;
+    justify-content: center;
 	background-image: $white-filter, url("../img/faqPage/faq-banner.jpg");
 	background-size: cover;
 	background-position: center;

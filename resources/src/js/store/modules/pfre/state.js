@@ -8,6 +8,7 @@ export default {
 	pfreShowInfo: false,
     pfreInfoKey: null,
     pfreMajorsByField: [],
+    pfreIsLoading: false,
 	pfreSelected: {},
 	pfreData: {
 		id: null,

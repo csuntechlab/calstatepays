@@ -20,7 +20,7 @@ export default {
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
                 commit(_majors.SET_DISCIPLINE_LOAD, { status: false, cardIndex: payload.form.cardIndex });
             },
-            (error) =>commit(_global.ERROR_ALERT,error),
+            (error) => commit(_global.ERROR_ALERT, { message: 'Oops! Major data unavailable' }),
         );
     },
     fetchMajorData({ commit, dispatch }, payload) {

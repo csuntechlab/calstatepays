@@ -28,6 +28,15 @@ export default {
 		state.pfreData.returnOnInvestment.actual =
 			payload.fre.returnOnInvestment;
     },
+    
+    [_pfre.TRIGGER_IS_LOADING](state) {
+        if (state.pfreIsLoading === false) {
+            state.pfreIsLoading = true;
+        } else {
+            state.pfreIsLoading = false;
+        }
+    },
+
 	[_pfre.TOGGLE_INFO](state, payload) {
 		if (!state.pfreShowInfo) {
 			state.pfreInfoKey = payload;
