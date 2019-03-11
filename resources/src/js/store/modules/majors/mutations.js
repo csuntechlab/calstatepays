@@ -12,6 +12,11 @@ export default {
         state.majorCards[index].majorData = payload;
     },
 
+    [_majors.SET_DISCIPLINE_LOAD](state, payload) {
+        let index = payload.cardIndex;
+        state.majorCards[index].majorDisciplineLoad = payload.status;
+    },
+
     [_majors.RESET_MAJOR_SELECTIONS](state) {
         state.majors = [];
     },
@@ -71,11 +76,22 @@ export default {
         }];
     },
     [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
-        let index = payload;
-        if (state.majorCards[index].majorIsLoading === false) {
+        var index;
+        if(payload.cardIndex ===undefined) {
+            index = payload.form.cardIndex
+        }
+        else {
+            index = payload.cardIndex;
+        }
+        if (!state.majorCards[index].majorIsLoading) {
             state.majorCards[index].majorIsLoading = true;
-        } else {
-            state.majorCards[index].majorIsLoading = false;
+        } else if (state.majorCards[index].majorIsLoading) {
+            if(state.majorCards[index].majorData.majorId === payload.majorId) {
+                state.majorCards[index].majorIsLoading= false;
+            }
+            else if(payload.majorId===undefined) {
+                state.majorCards[index].majorIsLoading= true;
+            }
         }
     }
 }

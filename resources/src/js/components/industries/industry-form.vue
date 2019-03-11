@@ -13,6 +13,7 @@
 						<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 						<v-select
 							label="discipline"
+							aria-label="Select Discipline Optional"
 							:options="fieldOfStudies"
 							@input="updateSelect('fieldOfStudyId', 'id', $event);selected = null"
 							class="csu-form-input">
@@ -24,23 +25,14 @@
 						</label>
 						<v-select
 							label="major"
-							v-if="this.form.fieldOfStudyId == null"
+							aria-label="Select a Major"
 							v-model="selected"
-							:options="majors"
+							:options="this.form.fieldOfStudyId == null ? majors : selectedMajorsByField"
 							@input="updateSelect('majorId', 'majorId', $event)"
 							@change="updateSelect('majorId', 'majorId', $event)"
 							class="csu-form-input"
+                            :loading="industryDisciplineLoad"
 							v-bind:class="{ 'border-danger': !this.form.majorId && this.submittedOnce}">
-						</v-select>
-						<v-select
-							label="major"
-							v-else
-							v-model="selected"
-							:options="selectedMajorsByField"
-							@input="updateSelect('majorId', 'majorId', $event)"
-							@change="updateSelect('majorId', 'majorId', $event)"
-							class="csu-form-input"
-							v-bind:class="{'border-danger': this.submittedOnce && !this.form.majorId}">
 						</v-select>
 					</div>
 					<div v-if="!industryFormWasSubmitted" class="form-group row">
@@ -99,7 +91,7 @@ export default {
 		return {
 			//temp data property to simulate the functionality
 			//of the degree selector; should ultimately be removed
-			isActive: true,
+      isActive: true,
 			form: {
 				majorId: null,
 				fieldOfStudyId: null,
@@ -168,7 +160,7 @@ export default {
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity});
+				this.fetchIndustryMajorsByField({form: this.form, school: this.selectedUniversity})
 			}
 		},
 	},
@@ -183,7 +175,8 @@ export default {
 			"industryEducationLevel",
 			"industryMajorsByField",
 			"selectedUniversity",
-			"fieldOfStudies",
+            "fieldOfStudies",
+            "industryDisciplineLoad"
 		]),
 		windowSize() {
 			return window.innerWidth;

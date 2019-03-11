@@ -111,7 +111,8 @@ export default {
 				{
 					url: window.baseUrl + "/img/csuseals/all.svg",
 					name: "All 7 Campuses",
-					short_name: "all"
+					short_name: "all",
+					alt:""
 				},
 				{
 					url:
@@ -123,32 +124,38 @@ export default {
 				{
 					url: window.baseUrl + "/img/csuseals/dominguez_seal.svg",
 					name: "Dominguez Hills",
-					short_name: "dominguez_hills"
+					short_name: "dominguez_hills",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/fullerton_seal.svg",
 					name: "Fullerton",
-					short_name: "fullerton"
+					short_name: "fullerton",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/long_beach_seal.svg",
 					name: "Long Beach",
-					short_name: "long_beach"
+					short_name: "long_beach",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/los_angeles_seal.svg",
 					name: "Los Angeles",
-					short_name: "los_angeles"
+					short_name: "los_angeles",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/northridge_seal.svg",
 					name: "Northridge",
-					short_name: "northridge"
+					short_name: "northridge",
+					alt:""
 				},
 				{
 					url: window.baseUrl + "/img/csuseals/poly_seal.svg",
 					name: "Pomona",
-					short_name: "pomona"
+					short_name: "pomona",
+					alt:""
 				}
 			]
 		};

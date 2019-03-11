@@ -1,7 +1,7 @@
 <template>
     <div>
-        <majors-graph-mobile v-if="isMobile" :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth" style="width:auto"/>
-        <majors-graph v-else :majorData="parsedMajorData" :educationLevel="this.educationLevel" :windowWidth="windowWidth"/>
+        <majors-graph-mobile v-if="isMobile" :majorData="parsedMajorData" :majorTitle="majorTitle" :educationLevel="this.educationLevel" :windowWidth="windowWidth" style="width:auto"/>
+        <majors-graph role="figure" v-else :majorData="parsedMajorData" :majorTitle="majorTitle" :educationLevel="this.educationLevel" :windowWidth="windowWidth"/>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
     import majorsGraphMobile from './majors-graph-mobile.vue';    
 
     export default {
-        props: ['majorData', 'educationLevel', 'windowWidth'],
+        props: ['majorData', 'educationLevel', 'windowWidth', 'majorTitle'],
         computed: {
             isMobile() {
                 return this.windowWidth < 1000 ? true : false;

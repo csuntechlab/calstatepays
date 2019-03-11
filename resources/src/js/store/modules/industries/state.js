@@ -4,9 +4,11 @@ export default {
     allLevelIndustries: {},
     industries: [],
     industryMajorsByField: [],
+    industryDisciplineLoad: false,
     industryFormWasSubmitted: false,
     industryFormWasSubmittedOnce: false,
     industryEducationLevel: "bachelors",
     industryMajor: null,
-    industryIsLoading: false
+    industryIsLoading: false,
+    industryMajorId: null
 }

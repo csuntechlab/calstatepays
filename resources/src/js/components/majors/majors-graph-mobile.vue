@@ -182,6 +182,7 @@ export default {
 						show: false
 					}
 				},
+				toolbox: {show: true},
 				name: "Years Out of College",
 				nameLocation: "middle",
 				nameTextStyle: {

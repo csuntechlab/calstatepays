@@ -9,26 +9,28 @@ export default {
     },
 
     clearMajorSelection({commit}){
-                commit(_majors.RESET_MAJOR_SELECTIONS);
+        commit(_majors.RESET_MAJOR_SELECTIONS);
     },
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
+        commit(_majors.SET_DISCIPLINE_LOAD, {status: true, cardIndex: payload.form.cardIndex});
         Major.fetchUpdatedMajorsByFieldAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_UPDATED_MAJORS_BY_FIELD, success);
+                commit(_majors.SET_DISCIPLINE_LOAD, { status: false, cardIndex: payload.form.cardIndex });
             },
-            (error) =>commit(_global.ERROR_ALERT,error),
+            (error) => commit(_global.ERROR_ALERT, { message: 'Oops! Major data unavailable' }),
         );
     },
     fetchMajorData({ commit, dispatch }, payload) {
-        commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload.form.cardIndex);
+        commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload);
         Major.fetchMajorDataAPI(
             payload,
             (success) => {
                 success.cardIndex = payload.form.cardIndex;
                 commit(_majors.FETCH_MAJOR_DATA, success);
-                commit(_majors.TRIGGER_MAJOR_IS_LOADING, success.cardIndex);
+                commit(_majors.TRIGGER_MAJOR_IS_LOADING, success);
             },
             (error) => commit(_global.ERROR_ALERT,error),
         );

@@ -3,22 +3,25 @@ import _industries from "../../mutation-types/industries"
 import _global from '../../mutation-types/global-form';
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
-		commit(_industries.TRIGGER_IS_LOADING);
+		commit(_industries.TRIGGER_IS_LOADING, payload);
 		Industries.fetchIndustriesAPI(
 			payload,
 			success => {
 				commit(_industries.FETCH_INDUSTRIES, success);
-				commit(_industries.TRIGGER_IS_LOADING);
+				commit(_industries.TRIGGER_IS_LOADING, success);
 			},
-			(error) =>{commit(_global.ERROR_ALERT,error)
+            (error) => {
+                commit(_global.ERROR_ALERT, { message: 'Oops! Major data unavailable' })
             }
 		);
 	},
 	fetchIndustryMajorsByField({commit, dispatch}, payload) {
+        commit(_industries.SET_DISCIPLINE_LOAD, true);
 		Industries.fetchIndustryMajorsByFieldAPI(
 			payload, 
 			(success) => {
-				commit(_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
+                commit(_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD, success);
+                commit(_industries.SET_DISCIPLINE_LOAD, false);
 			},
 			(error) => commit(_global.ERROR_ALERT,error)
 		);

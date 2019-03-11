@@ -1,7 +1,7 @@
 <template>
 	<form class="container-fluid csu-card__form">
 		<fieldset class="csu-card__form-sizing">
-			<div class="form-group">
+			<div v-if="this.formNotFilled" class="form-group">
 				<div v-bind:class="[this.formNotFilled ? 'required-field' : 'required-field--hidden']">
 					<i class="fa fa-exclamation-circle"></i> Please fill out all required fields.
 				</div>
@@ -10,6 +10,7 @@
 				<label class="font-weight-bold" for="fieldOfStudy">Select a Discipline (Optional)</label>
 				<v-select
 					label="discipline"
+					aria-label="Select Discipline Optional"
 					:options="fieldOfStudies"
 					@input="updateGrandfatherSelect('fieldOfStudyId', 'id', $event); selected.majorName = null"
 					class="csu-form-input"
@@ -23,22 +24,13 @@
 				>Select a Major</label>
 				<v-select
 					label="major"
-					v-if="this.form.fieldOfStudyId === null"
+					aria-label="Select a Major"
 					v-model="selected.majorName"
-					:options="majors"
+					:options="this.form.fieldOfStudyId == null ? majors : pfreMajorsByField"
 					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
-				></v-select>
-				<v-select
-					label="major"
-					v-else
-					v-model="selected.majorName"
-					:options="selectedMajorsByField"
-					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					class="csu-form-input"
+					:loading="pfreDisciplineLoad"
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
@@ -50,6 +42,7 @@
 				>Select an Age Range</label>
 				<v-select
 					label="age"
+					aria-label="Select an Age Range"
 					v-model="selected.ageRange"
 					:options="ageRanges"
 					@input="updateSelect('age', $event)"
@@ -88,6 +81,7 @@
 				>Estimated Annual Earnings In School</label>
 				<v-select
 					label="earn"
+					aria-label="Estimated Annual Earnings In School"
 					:options="earningRanges"
 					v-model="selected.earnings"
 					@input="updateSelect('earnings', $event)"
@@ -104,6 +98,7 @@
 				>Estimated Annual Financial Aid</label>
 				<v-select
 					label="finAid"
+					aria-label="Estimated Annual Financial Aid"
 					:options="financialAidRanges"
 					v-model="selected.financialAid"
 					@input="updateSelect('financialAid', $event)"
@@ -144,7 +139,7 @@ export default {
 				financialAid: null
 			},
 			form: {
-                fieldOfStudyId: null,
+				fieldOfStudyId: null,
 				majorId: null,
 				age: null,
 				education: null,
@@ -179,19 +174,19 @@ export default {
 		};
 	},
 	methods: {
-		...mapActions(["fetchFreData", "fetchIndustryMajorsByField"]),
+		...mapActions(["fetchFreData", "fetchPfreMajorsByField"]),
 		updateGrandfatherSelect(field, dataKey, data) {
 			this.submitted = false;
 			if (data) {
-                this.form[field] = data[dataKey];
-                this.handleFieldOfStudyMajors(field);
+				this.form[field] = data[dataKey];
+				this.handleFieldOfStudyMajors(field);
 			} else {
 				this.form[field] = null;
 			}
 		},
 		handleFieldOfStudyMajors(field) {
 			if (field == "fieldOfStudyId") {
-				this.fetchIndustryMajorsByField({
+				this.fetchPfreMajorsByField({
 					form: this.form,
 					school: this.selectedUniversity
 				});
@@ -199,14 +194,14 @@ export default {
 		},
 		updateSelect(field, data) {
 			if (data) {
-                this.form[field] = data.value;
+				this.form[field] = data.value;
 			} else {
 				this.form[field] = null;
 			}
 		},
 		setEducationLevel(data) {
-            this.form.education = data;
-            this.selected.education = data;
+			this.form.education = data;
+			this.selected.education = data;
 		},
 		scrollWin() {
 			if (window.innerWidth <= 767) {
@@ -248,7 +243,8 @@ export default {
 			"selectedUniversity",
 			"fieldOfStudies",
 			"selectedUniversity",
-			"industryMajorsByField"
+			"pfreMajorsByField",
+			"pfreDisciplineLoad"
 		]),
 
 		selectedMajorsByField() {

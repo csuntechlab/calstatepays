@@ -28,28 +28,28 @@ const router = new VueRouter({
 				title: 'Home | CalStatePays'
 			}
 		},
-		// { 
-		// 	path: '/data/pfre',
-		// 	component: splashPage,
-		// 	name: 'pfre',
-		// 	meta: {
-		// 		title: 'FRE | CalStatePays'
-		// 	}
-		// },
 		{ 
 			path: '/data/pfre',
-			component: pfre,
+			component: splashPage,
 			name: 'pfre',
 			meta: {
 				title: 'FRE | CalStatePays'
 			}
 		},
+		// { 
+		// 	path: '/data/pfre',
+		// 	component: pfre,
+		// 	name: 'pfre',
+		// 	meta: {
+		// 		title: 'Data - FRE | CalStatePays'
+		// 	}
+		// },
 		{ 
 			path: '/data/industries', 
 			component: industries, 
 			name: 'industries',
 			meta: {
-				title: 'Industries | CalStatePays'
+				title: 'Data - Industries | CalStatePays'
 			}
 		},
 		{ 
@@ -57,7 +57,7 @@ const router = new VueRouter({
 			component: majors, 
 			name: 'majors',
 			meta: {
-				title: 'Majors | CalStatePays'
+				title: 'Data - Majors | CalStatePays'
 			} 
 		},
 		{ 

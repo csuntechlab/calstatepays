@@ -5,11 +5,14 @@ export default {
 		state.allLevelIndustries = payload;
 		state.industries = payload[state.industryEducationLevel];
 	},
-	// TODO: ZANE fix this 
+	
 	[_industries.FETCH_INDUSTRY_MAJORS_BY_FIELD](state, payload) {
 		state.industryMajorsByField = payload[0]
 
-	},
+    },
+    [_industries.SET_DISCIPLINE_LOAD](state, payload){
+        state.industryDisciplineLoad = payload
+    },
 	[_industries.RESET_INDUSTRY_STATE](state) {
 		state.industries = [];
 		state.industryMajorsByField = [];
@@ -33,13 +36,21 @@ export default {
 		state.industries = state.allLevelIndustries[payload];
 	},
 	[_industries.SET_INDUSTRY_MAJOR](state, payload) {
+		state.industryMajorId = payload.majorId
 		state.industryMajor = payload.major;
 	},
-	[_industries.TRIGGER_IS_LOADING](state) {
-		if (state.industryIsLoading === false) {
+	[_industries.TRIGGER_IS_LOADING](state, payload) {
+		if(!state.industryIsLoading) {
 			state.industryIsLoading = true;
-		} else {
-			state.industryIsLoading = false;
+		}
+		else if (state.industryIsLoading) {
+			if(state.industryMajorId===payload.major_id){
+				state.industryIsLoading = false;
+			}
+			else if (payload.major_id === undefined) {
+				state.industryIsLoading = true;
+			}
+			
 		}
 	}
 };
