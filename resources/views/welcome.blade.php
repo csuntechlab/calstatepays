@@ -20,7 +20,7 @@
         <title>{{ env('APP_NAME') }}</title>
         <meta name="description" content="{{ env('APP_NAME') }}">
         @if(config('app.env') === 'production')
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ url('/').mix('css/app.css') }}">
         @else
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         @endif
@@ -36,7 +36,7 @@
             <v-app/>
         </div>
         @if (config('app.env') === 'production')
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ url('/').mix('js/app.js') }}"></script>
         @else
         <script src="{{ asset('js/app.js') }}"></script>
         @endif
