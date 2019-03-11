@@ -19,7 +19,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ env('APP_NAME') }}</title>
         <meta name="description" content="{{ env('APP_NAME') }}">
+        @if(config('app.env') === 'production')
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        @else
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        @endif
         <link rel="icon" type="image/png" href="{{ asset('img/cspLogos/cspfavicon.png') }}">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">        
@@ -31,7 +35,11 @@
         <div id="app">
             <v-app/>
         </div>
+        @if (config('app.env') === 'production')
+        <script src="{{ mix('js/app.js') }}"></script>
+        @else
         <script src="{{ asset('js/app.js') }}"></script>
+        @endif
         @if(env('GOOGLE_ANALYTICS_TRACKING_ID'))
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_TRACKING_ID') }}"></script>

@@ -22,7 +22,6 @@ class FeedBackService implements FeedBackContract
     public function postFeedBack($request)
     {
         $captchaCheck = $this->recaptchaCheck($request->captcha);
-        return response()->json($captchaCheck);
         $response = [
             'success' => $captchaCheck,
             'message' => 'There was an issue verifying that you are not a human.'
@@ -83,9 +82,8 @@ class FeedBackService implements FeedBackContract
                     'response' => $recaptchaResponse
                 ]
             ]);
-            $status = json_decode($response->getBody());
-            dd($status);
-            return $status->status;
+            $status = json_decode($response->getBody(), true);
+            return $status['success'];
         } catch (RequestException $e) {
             return false;
         }

@@ -85,12 +85,13 @@ export default {
 				body: this.formdata.body,
 				email: this.formdata.email,
 				captcha: this.recaptcha
-			}).then(function(resp) {
+			}).then((resp) => {
 				if (resp.data.success) {
 					this.submitted = true;
 					this.clearPost();
+				} else {
+					this.showError = true;
 				}
-				this.showError = true;
 			});
 		},
 		clearPost() {

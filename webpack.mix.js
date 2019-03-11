@@ -1,6 +1,12 @@
 let mix = require('laravel-mix');
 
-mix.options({ processCssUrls: false })
+mix.options({
+    processCssUrls: false,
+    uglify: {
+        parallel: true
+    }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -15,3 +21,7 @@ mix.options({ processCssUrls: false })
 mix.js('resources/src/js/app.js', 'public/js')
     .sass('resources/src/sass/app.scss', 'public/css');
 mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
+
+if (mix.inProduction()) {
+    mix.version();
+}
