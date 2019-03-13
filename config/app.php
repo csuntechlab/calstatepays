@@ -149,7 +149,6 @@ return [
      */
 
     'providers' => [
-        CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
