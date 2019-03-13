@@ -183,6 +183,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         CSUNMetaLab\ForceHttps\Providers\ForceHttpsServiceProvider::class,
+        CSUNMetaLab\ProxyPass\Providers\ProxyPassServiceProvider::class,
         
         // https://github.com/hisorange/browser-detect
         \hisorange\BrowserDetect\ServiceProvider::class,
