@@ -8,7 +8,6 @@
         "php": ">=5.6.4",
         "barryvdh/laravel-debugbar": "^2.4",
         "csun-metalab/laravel-force-https": "^1.0",
-        "csun-metalab/laravel-proxypass": "^1.1",
         "doctrine/dbal": "^2.7",
         "guzzlehttp/guzzle": "~6.0",
         "hisorange/browser-detect": "^3.1",
