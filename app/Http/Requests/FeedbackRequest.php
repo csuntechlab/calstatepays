@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 
 use Illuminate\Http\Exceptions\HttpResponseException;
-class FeedBackRequest extends FormRequest
+class FeedbackRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,6 +28,7 @@ class FeedBackRequest extends FormRequest
         return [
             'email' => 'required|email',
             'body' => 'required|string|max:400',
+            'captcha' => 'required'
         ];
     }
 
@@ -41,6 +42,7 @@ class FeedBackRequest extends FormRequest
         return [
             'email.required' => 'Email is required!',
             'body.required' => 'Body is required!',
+            'captcha.required' => 'Please prove that you\'re not a robot!'
         ];
     }
 

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\FeedBackContract;
-use App\Http\Requests\FeedBackRequest;
-use App\Http\Controllers\Controller;
+use App\Http\Requests\FeedbackRequest;
 
 class FeedBackController extends Controller
 {
@@ -15,7 +14,7 @@ class FeedBackController extends Controller
         $this->feedbackRetriever = $feedBackContract;
     }
 
-    public function postFeedBack(FeedBackRequest $request)
+    public function postFeedBack(FeedbackRequest $request)
     {
         return $this->feedbackRetriever->postFeedBack($request);
     }
