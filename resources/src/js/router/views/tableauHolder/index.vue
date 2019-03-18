@@ -59,12 +59,12 @@ export default {
 			this.initViz();
 		});
 	},
-	beforeCreate() {
-		let fileref=document.createElement('script');
-		fileref.setAttribute("type","text/javascript");
-		fileref.setAttribute("src", "https://public.tableau.com/javascripts/api/tableau-2.min.js");
-		document.getElementsByTagName("head")[0].appendChild(fileref);
-	},
+	// beforeCreate() {
+	// 	let fileref=document.createElement('script');
+	// 	fileref.setAttribute("type","text/javascript");
+	// 	fileref.setAttribute("src", "https://public.tableau.com/javascripts/api/tableau-2.min.js");
+	// 	document.getElementsByTagName("head")[0].appendChild(fileref);
+	// },
 	computed: {
 		...mapGetters(["tableauValue"])
 	}
