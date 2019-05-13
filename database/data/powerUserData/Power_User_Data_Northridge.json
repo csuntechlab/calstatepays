@@ -3,30 +3,30 @@
     "university_id": "70",
     "opt_in": 1,
     "path_id": 1,
-    "iframe_string": "https://public.tableau.com/views/CSUNLaborMarketOutcomes-ByMajor/CSUNbyMajor?:embed=y&:display_count=yes"
+    "iframe_string": "https://counts.csun.edu/t/IR/views/CSUNorthridge-ByMajor/CSUNbyMajor?iframeSizedToWindow=true&:embed=y&:display_count=no&:showAppBanner=false&:showVizHome=no"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 2,
-    "iframe_string": "https://public.tableau.com/views/CSUNorthridge-ByAge26NOV2018/Northridge?:embed=y&:display_count=yes"
+    "iframe_string": "https://counts.csun.edu/t/IR/views/CSUNorthridge-ByAge/NorthridgebyAge?iframeSizedToWindow=true&:embed=y&:display_count=no&:showAppBanner=false&:showVizHome=no"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 3,
-    "iframe_string": "https://public.tableau.com/views/CSUNorthridge-ByRace20NOV2018/CSUNByRace?:embed=y&:display_count=yes"
+    "iframe_string": "https://counts.csun.edu/t/IR/views/CSUNorthridge-ByRace/CSUNByRace?iframeSizedToWindow=true&:embed=y&:display_count=no&:showAppBanner=false&:showVizHome=no"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 4,
-    "iframe_string": "https://public.tableau.com/views/CSUNorthridge-ByGender20NOV2018/CSUNbyGender?:embed=y&:display_count=yes"
+    "iframe_string": "https://counts.csun.edu/t/IR/views/CSUNorthridge-ByGender/CSUNbyGender?iframeSizedToWindow=true&:embed=y&:display_count=no&:showAppBanner=false&:showVizHome=no"
   },
   {
     "university_id": "70",
     "opt_in": 1,
     "path_id": 5,
-    "iframe_string": "https://public.tableau.com/views/CSUNorthridge-ByPellGrant26NOV2018/Northridge?:embed=y&:display_count=yes"
+    "iframe_string": "https://counts.csun.edu/t/IR/views/CSUNorthridge-ByPellGrant/Northridge?iframeSizedToWindow=true&:embed=y&:display_count=no&:showAppBanner=false&:showVizHome=no"
   }
 ]
