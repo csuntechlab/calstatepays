@@ -14,7 +14,7 @@ class CreatePfresTable extends Migration
     public function up()
     {
         Schema::create('pfres', function (Blueprint $table) {
-            $table->string('guid');
+            $table->integer('id');
             $table->string('entry_status');
             $table->string('major');
             $table->string('in_school_earning');

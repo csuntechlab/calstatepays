@@ -11,11 +11,11 @@ class Pfre_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/pfre/pfre_data.json");
+        $json = File::get("database/data/pfre_data.json");
         $data = json_decode($json);
-        foreach($data as $row) {
+        foreach ($data as $row) {
             DB::table('pfres')->insert([
-                'guid'                  => $row->guid,
+                'id'                  => $row->guid,
                 'entry_status'          => $row->entry_status,
                 'major'                 => $row->major,
                 'in_school_earning'     => $row->in_school_earning,

@@ -39,7 +39,7 @@ Route::get('/university', 'UniversityController@getAllUniversities');
 
 // Power User data
 
-Route::get('/power/images','PowerUsersController@getPowerUsersCardImages');
+Route::get('/power/images', 'PowerUsersController@getPowerUsersCardImages');
 Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
 
 // Feedback

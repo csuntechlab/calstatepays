@@ -65,7 +65,7 @@ class PfreControllerTest extends TestCase
         $response = $response->getOriginalContent();
         $response = json_encode($response);
 
-        $actualResponse  = ["pfre" => "14.01%"];
+        $actualResponse  = ["pfre" => "No data."];
         $actualResponse = json_encode($actualResponse);
         $this->assertEquals($response, $actualResponse);
     }
@@ -89,5 +89,4 @@ class PfreControllerTest extends TestCase
             'pfre'
         ]);
     }
-
 }

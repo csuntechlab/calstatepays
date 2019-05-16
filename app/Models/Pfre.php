@@ -10,9 +10,6 @@ class Pfre extends Model
         'fin_aid_0',
         'fin_aid_3000',
         'fin_aid_10000',
-    ];
-
-    protected $hidden = [
         'guid',
         'entry_status',
         'major',
@@ -21,4 +18,14 @@ class Pfre extends Model
         'updated_at'
     ];
 
+    public $incrementing = false;
+
+    // protected $hidden = [
+    //     'guid',
+    //     'entry_status',
+    //     'major',
+    //     'in_school_earning',
+    //     'created_at',
+    //     'updated_at'
+    // ];
 }

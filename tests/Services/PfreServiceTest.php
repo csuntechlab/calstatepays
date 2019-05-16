@@ -37,7 +37,6 @@ class PfreServiceTest extends TestCase
 
         $this->seed('Universities_TableSeeder');
         $this->seed('Pfre_TableSeeder');
-
     }
 
     public function test_fre_request()
@@ -61,8 +60,10 @@ class PfreServiceTest extends TestCase
         $request->in_school_earning = 1;
         $request->financial_aid     = 1;
 
-        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
+        $expectedResponse = [
+            "pfre" => "No data."
+        ];
         $response = $this->pfreService->getFREData($request);
+        $this->assertEquals($response, $expectedResponse);
     }
-
 }
