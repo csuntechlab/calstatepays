@@ -18,9 +18,9 @@ class CreatePfresTable extends Migration
             $table->string('entry_status');
             $table->string('major');
             $table->string('in_school_earning');
-            $table->string('fin_aid_0');
-            $table->string('fin_aid_3000');
-            $table->string('fin_aid_10000');
+            $table->string('fin_aid_0')->nullable();
+            $table->string('fin_aid_3000')->nullable();
+            $table->string('fin_aid_10000')->nullable();
             $table->timestamps();
         });
     }
