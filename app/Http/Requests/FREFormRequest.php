@@ -25,12 +25,10 @@
     public function rules()
     {
         $error = [
-            'university' => ['required', 'regex:/^[a-z_A-Z]+$/u',Rule::exists('universities', 'short_name')->where('opt_in', 1)],
-            'major' => 'required|integer|exists:hegis_codes,hegis_code',
-            'age_range' => 'required|integer|min:1|max:4',
-            'education_level' => 'required|string|min:3|max:3',
-            'annual_earnings' => 'required|integer|min:1|max:5',
-            'financial_aid' => 'required|integer|min:1|max:5',
+            'entry_status'          => 'required|string|min:3|max:3',
+            'major'                 => 'required|string',
+            'in_school_earning'     => 'required|integer|min:0|max:10500',
+            'financial_aid'         => 'required|integer|min:1|max:3',
         ];
         return $error;
     }
@@ -44,11 +42,9 @@
     {
         // Include the next line if you need form data, too.
         $request = Input::all();
+        $request['entry_status'] = $this->route('entry_status');
         $request['major'] = $this->route('major');
-        $request['university'] = $this->route('university');
-        $request['age_range'] = $this->route('age_range');
-        $request['education_level'] = $this->route('education_level');
-        $request['annual_earnings'] = $this->route('annual_earnings');
+        $request['in_school_earning'] = $this->route('in_school_earning');
         $request['financial_aid'] = $this->route('financial_aid');
         return $request;
     }

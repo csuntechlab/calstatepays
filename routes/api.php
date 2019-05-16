@@ -24,12 +24,6 @@ Route::get('major/hegis-codes/{university}/{fieldOfStudyId}', 'MajorController@f
 /** $university_id -> $university_name */
 Route::get('major/{major}/{university}', 'MajorController@getMajorEarnings');
 
-/** TODO: $universityId -> $universityName */
-Route::get(
-    '/major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}',
-    'PfreController@getFREData'
-)->name('major.fre-data');
-
 //Industry
 
 Route::get('industry/naics-titles', 'IndustryController@getAllIndustryNaicsTitles')->name('industry.naics-titles');
@@ -50,3 +44,9 @@ Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
 
 // Feedback
 Route::post('/feedback/post', 'FeedBackController@postFeedBack');
+
+// pfre
+Route::get(
+    '/pfre/{entry_status}/{major}/{in_school_earning}/{financial_aid}',
+    'PfreController@getFREData'
+);

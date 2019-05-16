@@ -22,28 +22,19 @@ class PfreController extends Controller
             return response()->json($request->validator->messages(), 400);
         }
 
-        $key = "getFreData:" . ":" . $request->major . ":" . $request->university . ":" . $request->age_range . ":" . $request->education_level . ":" . $request->annual_earnings . ":" . $request->financial_aid;
+        // $key = "getFreData:" . ":" . $request->major . ":" . $request->university . ":" . $request->age_range . ":" . $request->education_level . ":" . $request->annual_earnings . ":" . $request->financial_aid;
 
-        if (Cache::has($key)) {
-            $data = Cache::get($key);
-            $data = json_decode($data);
-            return response()->json($data);
-        }
-        
+        // if (Cache::has($key)) {
+        //     $data = Cache::get($key);
+        //     $data = json_decode($data);
+        //     return response()->json($data);
+        // }
+
         $freData = $this->pfreRetriever->getFREData($request);
-        $data = [
-            'majorId' => $request->major,
-            'universityId' => $request->university,
-            'fre' => [
-                'timeToDegree' => $freData['time_to_degree'],
-                'earningsYearFive' => $freData['earnings_5_years'],
-                'returnOnInvestment' => $freData['roi']
-            ]
-        ];
 
-        $value = json_encode($data);
-        Cache::forever($key, $value);
+        // $value = json_encode($data);
+        // Cache::forever($key, $value);
 
-        return $data;
+        return $freData;
     }
 }

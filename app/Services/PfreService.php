@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
-use App\Models\UniversityMajor;
+use App\Models\Pfre;
 use App\Models\University;
 use App\Contracts\PfreContract;
+use App\Models\UniversityMajor;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -12,36 +13,34 @@ class PfreService implements PfreContract
 {
     public function getFREData($request)
     {
-        /**
-         *  check if university opted in or not.
-         */
-        $university_id = University::where('short_name', $request->university)->firstOrFail();
-
-        $data = UniversityMajor::where('hegis_code', $request->major)
-            ->where('university_id', $university_id->id)
-            ->with(['studentBackground' => function ($query) use ($request) {
-                $query->where('age_range_id', $request->age_range);
-                $query->where('education_level', $request->education_level);
-                $query->where('annual_earnings_id', $request->annual_earnings);
-                $query->where('annual_financial_aid_id', $request->financial_aid);
-            }, 'studentBackground.investment'])->firstOrFail();
-
+        $data = Pfre::where('entry_status', $request->entry_status)
+                    ->where('major', $request->major)
+                    ->where('in_school_earning', $request->in_school_earning)
+                    ->firstOrFail();
 
         if (empty($data)) {
             $message = 'FRE data not found';
             new ModelNotFoundException($message, 409);
         }
 
-        if (empty($freData = $data->studentBackground->first())) {
-            $message = 'There is no student background related to this FRE request';
-            throw new ModelNotFoundException($message, 409);
-        }
-        if (empty($freData = $freData->investment->first())) {
-            $message = 'Investment not found';
-            throw new ModelNotFoundException($message, 409);
-        }
+        $data = $this->selectDataWithFinancialAid($data, $request->financial_aid);
+        $data = number_format((float)$data, 2, '.', '') . "%";
+        $data = [
+            'pfre' => $data
+        ];
 
-        $freData = $freData->toArray();
-        return $freData;
+        return $data;
+    }
+
+    private function selectDataWithFinancialAid($data, $fin_aid)
+    {
+        switch($fin_aid){
+            case 1:
+                return $data['fin_aid_0'];
+            case 2:
+                return $data['fin_aid_3000'];
+            default:
+                return $data['fin_aid_10000'];
+        }
     }
 }
