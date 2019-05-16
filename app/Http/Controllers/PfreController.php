@@ -22,18 +22,18 @@ class PfreController extends Controller
             return response()->json($request->validator->messages(), 400);
         }
 
-        // $key = "getFreData:" . ":" . $request->major . ":" . $request->university . ":" . $request->age_range . ":" . $request->education_level . ":" . $request->annual_earnings . ":" . $request->financial_aid;
+        $key = "getFreData:" . ":" . $request->major . ":" . $request->entry_status . ":" . $request->financial_aid . ":" . $request->in_school_earnings;
 
-        // if (Cache::has($key)) {
-        //     $data = Cache::get($key);
-        //     $data = json_decode($data);
-        //     return response()->json($data);
-        // }
+        if (Cache::has($key)) {
+            $data = Cache::get($key);
+            $data = json_decode($data);
+            return response()->json($data);
+        }
 
         $freData = $this->pfreRetriever->getFREData($request);
 
-        // $value = json_encode($data);
-        // Cache::forever($key, $value);
+        $value = json_encode($freData);
+        Cache::forever($key, $value);
 
         return $freData;
     }
