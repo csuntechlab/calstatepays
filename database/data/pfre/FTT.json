@@ -1,0 +1,4329 @@
+{
+    "guid": "77de3a09-02cd-4879-9dcf-891e4f21364a",
+    "entry_status": "FTT",
+    "major": "Accounting",
+    "in_school_earning": 4500,
+    "fin_aid_0": 16.18577461,
+    "fin_aid_3000": 19.25035537,
+    "fin_aid_10000": 28.704565000000002
+},
+{
+    "guid": "77316162-7b7f-4e70-ac88-200d38c35dfb",
+    "entry_status": "FTT",
+    "major": "Accounting",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.82917152,
+    "fin_aid_3000": 27.09138002,
+    "fin_aid_10000": 41.44670097
+},
+{
+    "guid": "1b48acb5-95c1-48a2-8682-c0f07d0694fa",
+    "entry_status": "FTT",
+    "major": "Advertising",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.129552459,
+    "fin_aid_3000": 6.692936779,
+    "fin_aid_10000": 11.37814906
+},
+{
+    "guid": "7551f493-8e57-4fc6-8464-85f229e55488",
+    "entry_status": "FTT",
+    "major": "Advertising",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.549354307000001,
+    "fin_aid_3000": 9.473247147999999,
+    "fin_aid_10000": 15.98724062
+},
+{
+    "guid": "78bfec45-fc72-446e-a694-055235b4cf64",
+    "entry_status": "FTT",
+    "major": "Advertising",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.80320491,
+    "fin_aid_3000": 14.78197043,
+    "fin_aid_10000": 27.69643201
+},
+{
+    "guid": "8f67fe3d-8cdd-4517-bdeb-0c34670f7eb4",
+    "entry_status": "FTT",
+    "major": "Aerospace Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 34.77283869,
+    "fin_aid_3000": 40.14593348,
+    "fin_aid_10000": 57.80346205
+},
+{
+    "guid": "588e602e-4945-4c03-8abe-ac63609add52",
+    "entry_status": "FTT",
+    "major": "Aerospace Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 43.2056688,
+    "fin_aid_3000": 50.35789401,
+    "fin_aid_10000": 77.44883936
+},
+{
+    "guid": "59afdf49-5035-4a20-a866-8683bee23190",
+    "entry_status": "FTT",
+    "major": "Aerospace Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 59.514395799999996,
+    "fin_aid_3000": 72.05830475,
+    "fin_aid_10000": 151.6373828
+},
+{
+    "guid": "7ee38d48-33b3-4352-a604-22a92e1be7f8",
+    "entry_status": "FTT",
+    "major": "African-American Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "334140aa-d6cd-4dd7-a1d3-d00d16b5343d",
+    "entry_status": "FTT",
+    "major": "African-American Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "f518ec28-76f5-42b2-9df2-2d5018bd270a",
+    "entry_status": "FTT",
+    "major": "African-American Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "9030ace6-98ee-4375-a950-ca7fc9d7d022",
+    "entry_status": "FTT",
+    "major": "Agricultural Biology and Plant & Irrigation Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.773708053,
+    "fin_aid_3000": 12.10149663,
+    "fin_aid_10000": 19.63201841
+},
+{
+    "guid": "60f33603-4074-4f9f-a82b-e1676716c0b4",
+    "entry_status": "FTT",
+    "major": "Agricultural Biology and Plant & Irrigation Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 13.4207019,
+    "fin_aid_3000": 16.4849074,
+    "fin_aid_10000": 27.55255991
+},
+{
+    "guid": "502ba583-0efd-4d14-b84b-6adc356aa7bb",
+    "entry_status": "FTT",
+    "major": "Agricultural Biology and Plant & Irrigation Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 20.346606,
+    "fin_aid_3000": 25.44947531,
+    "fin_aid_10000": 48.89163419
+},
+{
+    "guid": "019ca60c-c6db-4e84-b8e4-558a33f4e2eb",
+    "entry_status": "FTT",
+    "major": "Agricultural Business",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.041076052,
+    "fin_aid_3000": 5.3451316360000005,
+    "fin_aid_10000": 8.987153321000001
+},
+{
+    "guid": "b0b523f4-b8b0-42c4-b877-fedb9880e306",
+    "entry_status": "FTT",
+    "major": "Agricultural Business",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.040898423,
+    "fin_aid_3000": 7.554701352,
+    "fin_aid_10000": 12.20617016
+},
+{
+    "guid": "db9f0826-e206-4637-b2e0-e2ca276d31d2",
+    "entry_status": "FTT",
+    "major": "Agricultural Business",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.298075843,
+    "fin_aid_3000": 11.39482842,
+    "fin_aid_10000": 19.40449401
+},
+{
+    "guid": "6df73361-7da8-4c71-a55d-3b33aab392df",
+    "entry_status": "FTT",
+    "major": "Agriculture/Agricultural Science & Horticulture",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.30006533,
+    "fin_aid_3000": 12.73347663,
+    "fin_aid_10000": 20.15525028
+},
+{
+    "guid": "fa5497b0-6816-4e5d-9f14-02786cebf329",
+    "entry_status": "FTT",
+    "major": "Agriculture/Agricultural Science & Horticulture",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.08980306,
+    "fin_aid_3000": 17.1547914,
+    "fin_aid_10000": 26.98047449
+},
+{
+    "guid": "08b4a0c9-4cd0-4341-bd21-232158574a09",
+    "entry_status": "FTT",
+    "major": "Agriculture/Agricultural Science & Horticulture",
+    "in_school_earning": 10500,
+    "fin_aid_0": 20.81399806,
+    "fin_aid_3000": 25.26958199,
+    "fin_aid_10000": 40.91565097
+},
+{
+    "guid": "f8f1f4f4-f311-47d4-9b58-c27456362108",
+    "entry_status": "FTT",
+    "major": "American Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.74643707,
+    "fin_aid_3000": 8.684919902999999,
+    "fin_aid_10000": 14.83283792
+},
+{
+    "guid": "6d9b7674-b495-4b63-b61f-59777e016017",
+    "entry_status": "FTT",
+    "major": "American Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.773646863,
+    "fin_aid_3000": 12.28234363,
+    "fin_aid_10000": 21.07758368
+},
+{
+    "guid": "b55de226-d7bd-4f6f-9e25-27c5f2f8a717",
+    "entry_status": "FTT",
+    "major": "American Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.40783439,
+    "fin_aid_3000": 19.45202808,
+    "fin_aid_10000": 35.69435183
+},
+{
+    "guid": "16d530cf-0d15-4220-ac2b-53d18c6c0c20",
+    "entry_status": "FTT",
+    "major": "Animal Science/Animal Health Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.927907814,
+    "fin_aid_3000": 6.676130718,
+    "fin_aid_10000": 12.55607853
+},
+{
+    "guid": "49d5387b-8f5f-48f6-837e-a2b35e6b85e9",
+    "entry_status": "FTT",
+    "major": "Animal Science/Animal Health Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.668619592000001,
+    "fin_aid_3000": 10.01749936,
+    "fin_aid_10000": 19.94005662
+},
+{
+    "guid": "b02ca154-9636-47fe-a425-dde72f2b319f",
+    "entry_status": "FTT",
+    "major": "Animal Science/Animal Health Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.1580157,
+    "fin_aid_3000": 17.81585606,
+    "fin_aid_10000": 46.04232676
+},
+{
+    "guid": "bed2ab60-0e32-4fb6-851a-13649d78c42e",
+    "entry_status": "FTT",
+    "major": "Anthropology",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.483190857,
+    "fin_aid_3000": 7.202983848,
+    "fin_aid_10000": 12.68448042
+},
+{
+    "guid": "e959cb14-dc6a-41e7-8876-a48001450ce2",
+    "entry_status": "FTT",
+    "major": "Anthropology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.16475232,
+    "fin_aid_3000": 10.38636901,
+    "fin_aid_10000": 18.74903822
+},
+{
+    "guid": "aa75fc4e-9cb3-4f01-bc60-cd4d26ec6cf7",
+    "entry_status": "FTT",
+    "major": "Anthropology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.212432199999999,
+    "fin_aid_3000": 17.08725584,
+    "fin_aid_10000": 38.19692245
+},
+{
+    "guid": "97ac768c-1012-49ab-978d-c47ccad752f1",
+    "entry_status": "FTT",
+    "major": "Apparel Merchandising and Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.870183004,
+    "fin_aid_3000": 12.87841464,
+    "fin_aid_10000": 24.01805426
+},
+{
+    "guid": "c971045a-c5de-4b8f-9410-63c015f20172",
+    "entry_status": "FTT",
+    "major": "Apparel Merchandising and Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.68181901,
+    "fin_aid_3000": 19.13096862,
+    "fin_aid_10000": 37.33482062
+},
+{
+    "guid": "73a215ec-be7d-447b-beaf-343799a3456a",
+    "entry_status": "FTT",
+    "major": "Apparel Merchandising and Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 25.16416864,
+    "fin_aid_3000": 33.67119681,
+    "fin_aid_10000": 85.01852535
+},
+{
+    "guid": "5ce3645d-5d16-4354-86ef-d487024226b4",
+    "entry_status": "FTT",
+    "major": "Applied Mathematics",
+    "in_school_earning": 0,
+    "fin_aid_0": 11.01960299,
+    "fin_aid_3000": 13.48148414,
+    "fin_aid_10000": 21.27856439
+},
+{
+    "guid": "8063d489-1d62-45b7-89ed-6154f866ed46",
+    "entry_status": "FTT",
+    "major": "Applied Mathematics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.86684799,
+    "fin_aid_3000": 18.05292996,
+    "fin_aid_10000": 29.22085425
+},
+{
+    "guid": "409b1622-2395-45a0-bc6e-06f33af6cf4e",
+    "entry_status": "FTT",
+    "major": "Applied Mathematics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.0048031,
+    "fin_aid_3000": 27.13319925,
+    "fin_aid_10000": 49.91989659
+},
+{
+    "guid": "24adf9c1-e9d7-4650-bfa9-5ed5272e1053",
+    "entry_status": "FTT",
+    "major": "Applied Physics",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.238719577,
+    "fin_aid_3000": 9.232480817999999,
+    "fin_aid_10000": 15.58992135
+},
+{
+    "guid": "361379cf-4718-42a5-8d66-14c06041d68f",
+    "entry_status": "FTT",
+    "major": "Applied Physics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.354519400000001,
+    "fin_aid_3000": 12.94591104,
+    "fin_aid_10000": 22.12326453
+},
+{
+    "guid": "32e5c84a-1e6e-41f5-9d10-1bd8e1e6af7f",
+    "entry_status": "FTT",
+    "major": "Applied Physics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.18757374,
+    "fin_aid_3000": 20.41240154,
+    "fin_aid_10000": 37.93764677
+},
+{
+    "guid": "12d13bef-e692-4dfd-950f-450ddd05213b",
+    "entry_status": "FTT",
+    "major": "Architecture",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.615927051,
+    "fin_aid_3000": 8.415492018,
+    "fin_aid_10000": 13.76102501
+},
+{
+    "guid": "0e202496-513b-472c-8c77-4c5ea0165d9b",
+    "entry_status": "FTT",
+    "major": "Architecture",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.404175214,
+    "fin_aid_3000": 11.61502795,
+    "fin_aid_10000": 18.59142311
+},
+{
+    "guid": "0da0b2c1-7ccf-4b05-9bba-5b18ed952422",
+    "entry_status": "FTT",
+    "major": "Architecture",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.230522,
+    "fin_aid_3000": 17.3891362,
+    "fin_aid_10000": 27.9350017
+},
+{
+    "guid": "17a9d2c7-cbc1-4e9d-801a-8f89cc7e84c2",
+    "entry_status": "FTT",
+    "major": "Art",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.316362217000001,
+    "fin_aid_3000": 8.272841448,
+    "fin_aid_10000": 14.84089379
+},
+{
+    "guid": "cac790a9-d10e-4b31-93e9-7c408f7bdb3e",
+    "entry_status": "FTT",
+    "major": "Art",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.389208086,
+    "fin_aid_3000": 12.02912407,
+    "fin_aid_10000": 22.47220457
+},
+{
+    "guid": "986a6c12-fbe5-47aa-a162-1b5ce2cd618e",
+    "entry_status": "FTT",
+    "major": "Art",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.49634119,
+    "fin_aid_3000": 20.37016741,
+    "fin_aid_10000": 45.97888485
+},
+{
+    "guid": "951a671b-6bed-4e9e-a372-981bee2dd718",
+    "entry_status": "FTT",
+    "major": "Art History",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.011508362000001,
+    "fin_aid_3000": 7.873353812,
+    "fin_aid_10000": 13.95957602
+},
+{
+    "guid": "8638c8c6-7401-459a-a668-fad0cc18730c",
+    "entry_status": "FTT",
+    "major": "Art History",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.925630414,
+    "fin_aid_3000": 11.38428851,
+    "fin_aid_10000": 20.77997789
+},
+{
+    "guid": "d0641280-ad6d-4d0e-9f73-206f6f08350b",
+    "entry_status": "FTT",
+    "major": "Art History",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.55411358,
+    "fin_aid_3000": 18.9202755,
+    "fin_aid_10000": 40.90903474
+},
+{
+    "guid": "c827116c-df83-4717-86d8-7e28bb231e78",
+    "entry_status": "FTT",
+    "major": "Asian/Asian-American Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.627968905,
+    "fin_aid_3000": 8.426625373,
+    "fin_aid_10000": 13.95887989
+},
+{
+    "guid": "0ae35c8b-1c26-4fa1-a32a-c8864f86d8ed",
+    "entry_status": "FTT",
+    "major": "Asian/Asian-American Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.423700295,
+    "fin_aid_3000": 11.68932443,
+    "fin_aid_10000": 19.49482841
+},
+{
+    "guid": "e1e5eff2-5560-4f98-b273-2241a8b1c49f",
+    "entry_status": "FTT",
+    "major": "Asian/Asian-American Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.46772171,
+    "fin_aid_3000": 18.04542203,
+    "fin_aid_10000": 33.66268132
+},
+{
+    "guid": "8f9fe494-da8d-4984-a183-1daf7d967efa",
+    "entry_status": "FTT",
+    "major": "Asian/East Asian Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.695968064,
+    "fin_aid_3000": 8.520905937,
+    "fin_aid_10000": 14.13457012
+},
+{
+    "guid": "93b37644-ef3f-4e25-8b29-27d97b2907cb",
+    "entry_status": "FTT",
+    "major": "Asian/East Asian Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.533579468,
+    "fin_aid_3000": 11.83477438,
+    "fin_aid_10000": 19.6676677
+},
+{
+    "guid": "32afd50f-0097-4a1a-b212-402c789946ff",
+    "entry_status": "FTT",
+    "major": "Asian/East Asian Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.64862221,
+    "fin_aid_3000": 18.23452506,
+    "fin_aid_10000": 32.60835125
+},
+{
+    "guid": "f1f616a1-9f93-496f-839d-81036b7b252c",
+    "entry_status": "FTT",
+    "major": "Athletic Training",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.65439567,
+    "fin_aid_3000": 11.34235774,
+    "fin_aid_10000": 22.28741137
+},
+{
+    "guid": "efadbde0-b812-4e40-b543-7fea298464bc",
+    "entry_status": "FTT",
+    "major": "Athletic Training",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.97870728,
+    "fin_aid_3000": 17.19446785,
+    "fin_aid_10000": 39.75709497
+},
+{
+    "guid": "fdfd2f15-8d92-4a1e-83d7-86c6f8ef1240",
+    "entry_status": "FTT",
+    "major": "Athletic Training",
+    "in_school_earning": 10500,
+    "fin_aid_0": 23.57081631,
+    "fin_aid_3000": 34.35312014,
+    "fin_aid_10000": 189.6863199
+},
+{
+    "guid": "97046ab0-f8ce-4c40-b7c3-8aaca1f1c79b",
+    "entry_status": "FTT",
+    "major": "Aviation",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.650493561000001,
+    "fin_aid_3000": 11.28545627,
+    "fin_aid_10000": 21.32619443
+},
+{
+    "guid": "3907845a-b3c1-46fc-8e35-13177ae59f0b",
+    "entry_status": "FTT",
+    "major": "Aviation",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.86446675,
+    "fin_aid_3000": 16.81584161,
+    "fin_aid_10000": 34.76128809
+},
+{
+    "guid": "6cd7a8b7-6515-416a-8e64-c328c14deadb",
+    "entry_status": "FTT",
+    "major": "Aviation",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.41578873,
+    "fin_aid_3000": 30.89717716,
+    "fin_aid_10000": 62.33890388
+},
+{
+    "guid": "2927811a-6e82-49bd-9eb7-fdc50e62a2cd",
+    "entry_status": "FTT",
+    "major": "Behavioral Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.898073762,
+    "fin_aid_3000": 8.686535725,
+    "fin_aid_10000": 13.99968871
+},
+{
+    "guid": "9557a704-a391-4971-a7c5-83fdaa840820",
+    "entry_status": "FTT",
+    "major": "Behavioral Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.668000864,
+    "fin_aid_3000": 11.8628364,
+    "fin_aid_10000": 18.88087081
+},
+{
+    "guid": "775e1fcc-98d1-4c65-b4e9-c47d619751c4",
+    "entry_status": "FTT",
+    "major": "Behavioral Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.4689073,
+    "fin_aid_3000": 17.65258039,
+    "fin_aid_10000": 28.92310091
+},
+{
+    "guid": "9008f138-6a93-4e8f-b5c7-b7f230b06ecb",
+    "entry_status": "FTT",
+    "major": "Biochemistry",
+    "in_school_earning": 0,
+    "fin_aid_0": 13.32743579,
+    "fin_aid_3000": 16.84058119,
+    "fin_aid_10000": 30.20876974
+},
+{
+    "guid": "9e38e7e9-8add-4849-8d95-c8418c4e4297",
+    "entry_status": "FTT",
+    "major": "Biochemistry",
+    "in_school_earning": 4500,
+    "fin_aid_0": 18.95192667,
+    "fin_aid_3000": 24.21762555,
+    "fin_aid_10000": 48.79054072
+},
+{
+    "guid": "5b9cc627-1b6d-4f76-bb8d-835a5e149f61",
+    "entry_status": "FTT",
+    "major": "Biochemistry",
+    "in_school_earning": 10500,
+    "fin_aid_0": 31.66151393,
+    "fin_aid_3000": 43.248801799999995,
+    "fin_aid_10000": 182.42564019999998
+},
+{
+    "guid": "b74cc8d6-ab75-4182-8992-8d6c31394bc6",
+    "entry_status": "FTT",
+    "major": "Biology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.993081019,
+    "fin_aid_3000": 10.06892883,
+    "fin_aid_10000": 16.76668548
+},
+{
+    "guid": "e5749a46-f5ee-4b51-9546-cbb1b54a1364",
+    "entry_status": "FTT",
+    "major": "Biology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.24113497,
+    "fin_aid_3000": 13.96210787,
+    "fin_aid_10000": 23.92883925
+},
+{
+    "guid": "4ea70601-5aa1-4fe8-889b-17a2835a893c",
+    "entry_status": "FTT",
+    "major": "Biology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.40611104,
+    "fin_aid_3000": 22.00993668,
+    "fin_aid_10000": 44.56304175
+},
+{
+    "guid": "99a2da2d-0c9c-40d8-b0ba-9a6739555610",
+    "entry_status": "FTT",
+    "major": "Biomedical Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.3560617829999995,
+    "fin_aid_3000": 9.378804684,
+    "fin_aid_10000": 15.84420416
+},
+{
+    "guid": "69ee74d3-0e36-4e0e-8fc8-dc1f04e1b753",
+    "entry_status": "FTT",
+    "major": "Biomedical Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.51864926,
+    "fin_aid_3000": 13.1539136,
+    "fin_aid_10000": 22.48410388
+},
+{
+    "guid": "1798841c-31b2-4dc2-b556-e11990ba722f",
+    "entry_status": "FTT",
+    "major": "Biomedical Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.45224064,
+    "fin_aid_3000": 20.7470661,
+    "fin_aid_10000": 38.18836295
+},
+{
+    "guid": "0c9bbc36-379d-428f-9aa7-afdbac0d0af8",
+    "entry_status": "FTT",
+    "major": "Biomedical Physics",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.005874576,
+    "fin_aid_3000": 10.06509707,
+    "fin_aid_10000": 16.37490034
+},
+{
+    "guid": "2ecbfe59-0ce0-4ec7-bfae-f2ef1a4abc4e",
+    "entry_status": "FTT",
+    "major": "Biomedical Physics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.21092794,
+    "fin_aid_3000": 13.80836322,
+    "fin_aid_10000": 22.33657946
+},
+{
+    "guid": "7f05d208-56b3-424e-8c83-5ad502d3db76",
+    "entry_status": "FTT",
+    "major": "Biomedical Physics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.94249813,
+    "fin_aid_3000": 20.82502791,
+    "fin_aid_10000": 35.10875124
+},
+{
+    "guid": "9c8d6fff-314d-4349-b3c5-5fd72865a5f4",
+    "entry_status": "FTT",
+    "major": "Biotechnology",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.83723264,
+    "fin_aid_3000": 15.98989877,
+    "fin_aid_10000": 26.80876876
+},
+{
+    "guid": "24eda1ff-6f07-4a40-b34a-8444abc488a8",
+    "entry_status": "FTT",
+    "major": "Biotechnology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 17.822014300000003,
+    "fin_aid_3000": 22.18626343,
+    "fin_aid_10000": 39.07299571
+},
+{
+    "guid": "334038a5-0c73-4666-b530-ffde1c7da495",
+    "entry_status": "FTT",
+    "major": "Biotechnology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 27.87722741,
+    "fin_aid_3000": 35.72028201,
+    "fin_aid_10000": 78.83955501
+},
+{
+    "guid": "85f4a12c-0c71-46a2-b68a-9dda037c1db4",
+    "entry_status": "FTT",
+    "major": "Botany",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.449163716000001,
+    "fin_aid_3000": 10.98729344,
+    "fin_aid_10000": 20.82131373
+},
+{
+    "guid": "7ada8ca3-e22c-49ca-a8e3-423c0cbf3869",
+    "entry_status": "FTT",
+    "major": "Botany",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.50611417,
+    "fin_aid_3000": 16.33083718,
+    "fin_aid_10000": 36.39087796
+},
+{
+    "guid": "e33be9e3-cd6d-41db-8af5-ec1d4576217a",
+    "entry_status": "FTT",
+    "major": "Botany",
+    "in_school_earning": 10500,
+    "fin_aid_0": 21.93970923,
+    "fin_aid_3000": 31.40011414,
+    "fin_aid_10000": 49.72896501
+},
+{
+    "guid": "97f6ef3b-29ce-43fd-84e7-45167fd37313",
+    "entry_status": "FTT",
+    "major": "Business Administration",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.534904837000001,
+    "fin_aid_3000": 9.48460496,
+    "fin_aid_10000": 15.3997717
+},
+{
+    "guid": "2724860a-39da-4492-9375-c3fdd41c4003",
+    "entry_status": "FTT",
+    "major": "Business Administration",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.56460318,
+    "fin_aid_3000": 13.00239544,
+    "fin_aid_10000": 20.92624159
+},
+{
+    "guid": "52292fbf-b8d6-4e31-9ed1-c881b860ccc5",
+    "entry_status": "FTT",
+    "major": "Business Administration",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.92859847,
+    "fin_aid_3000": 19.53164153,
+    "fin_aid_10000": 32.36117037
+},
+{
+    "guid": "5c1acc24-f415-4976-bba9-50102927c820",
+    "entry_status": "FTT",
+    "major": "Business Economics",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.855036533,
+    "fin_aid_3000": 8.663606742999999,
+    "fin_aid_10000": 14.06113821
+},
+{
+    "guid": "848bb35e-d963-4840-99f0-623e494095a0",
+    "entry_status": "FTT",
+    "major": "Business Economics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.657992633,
+    "fin_aid_3000": 11.88633677,
+    "fin_aid_10000": 19.04198934
+},
+{
+    "guid": "e211a1a5-5b22-4c81-bc3f-61bc9440ff30",
+    "entry_status": "FTT",
+    "major": "Business Economics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.53926912,
+    "fin_aid_3000": 17.78743389,
+    "fin_aid_10000": 29.31961193
+},
+{
+    "guid": "50d5bb70-b679-49c9-93ee-27505d2deeaf",
+    "entry_status": "FTT",
+    "major": "Business Education",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.476618306000001,
+    "fin_aid_3000": 5.694986173999999,
+    "fin_aid_10000": 8.830709667
+},
+{
+    "guid": "bd65e5c9-5d76-4716-9a62-6313c1d4607f",
+    "entry_status": "FTT",
+    "major": "Business Education",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.327045554,
+    "fin_aid_3000": 7.651151477999999,
+    "fin_aid_10000": 11.18553124
+},
+{
+    "guid": "c4376f0c-e46f-4479-96fe-fe4ff1b084c7",
+    "entry_status": "FTT",
+    "major": "Business Education",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.076469548,
+    "fin_aid_3000": 10.63218013,
+    "fin_aid_10000": 14.97746997
+},
+{
+    "guid": "86860453-865e-412b-bad4-aa5af29a2d0d",
+    "entry_status": "FTT",
+    "major": "Business Law",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.33459225,
+    "fin_aid_3000": 13.39861616,
+    "fin_aid_10000": 24.18359856
+},
+{
+    "guid": "7d09d2e9-b14f-4f68-8f9f-929f1bc15ecb",
+    "entry_status": "FTT",
+    "major": "Business Law",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.21483,
+    "fin_aid_3000": 19.59200043,
+    "fin_aid_10000": 35.37114361
+},
+{
+    "guid": "2a42b868-7026-44a7-8a82-49655719b514",
+    "entry_status": "FTT",
+    "major": "Business Law",
+    "in_school_earning": 10500,
+    "fin_aid_0": 25.22389118,
+    "fin_aid_3000": 32.49062793,
+    "fin_aid_10000": 60.78619555
+},
+{
+    "guid": "ddf1a589-4166-422b-be9d-4947d5d7567e",
+    "entry_status": "FTT",
+    "major": "Cell and Molecular Biology",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.86118311,
+    "fin_aid_3000": 16.44807795,
+    "fin_aid_10000": 29.96394148
+},
+{
+    "guid": "55f7d6e3-db1e-46a2-b740-996406f27d0b",
+    "entry_status": "FTT",
+    "major": "Cell and Molecular Biology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 18.60030046,
+    "fin_aid_3000": 23.94024721,
+    "fin_aid_10000": 48.59901519
+},
+{
+    "guid": "4ae3e7f2-2785-439b-8379-8433def507f7",
+    "entry_status": "FTT",
+    "major": "Cell and Molecular Biology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 31.41844232,
+    "fin_aid_3000": 43.01204851,
+    "fin_aid_10000": 139.2903321
+},
+{
+    "guid": "91f4268f-a7cf-4881-8eda-5b88eb8c2467",
+    "entry_status": "FTT",
+    "major": "Chemical Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 20.31862189,
+    "fin_aid_3000": 23.72818395,
+    "fin_aid_10000": 34.19036969
+},
+{
+    "guid": "a0636336-afc0-46a0-83d9-0f24842bc87c",
+    "entry_status": "FTT",
+    "major": "Chemical Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 25.62836806,
+    "fin_aid_3000": 29.93420298,
+    "fin_aid_10000": 44.18268981
+},
+{
+    "guid": "8cd0733d-e816-4627-920d-a4237a46f780",
+    "entry_status": "FTT",
+    "major": "Chemical Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 35.13336031,
+    "fin_aid_3000": 41.6254099,
+    "fin_aid_10000": 66.98662893
+},
+{
+    "guid": "8b3a59e7-6d64-4951-92b4-d8a3611e83fb",
+    "entry_status": "FTT",
+    "major": "Chemistry",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.703109126000001,
+    "fin_aid_3000": 11.07078604,
+    "fin_aid_10000": 19.04276577
+},
+{
+    "guid": "e43a7b72-e4da-4257-a064-d34e4106a0b5",
+    "entry_status": "FTT",
+    "major": "Chemistry",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.43254978,
+    "fin_aid_3000": 15.65409318,
+    "fin_aid_10000": 27.83730484
+},
+{
+    "guid": "26eb74d1-b569-4d2f-bf14-6c77b9785d49",
+    "entry_status": "FTT",
+    "major": "Chemistry",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.82216523,
+    "fin_aid_3000": 25.47319573,
+    "fin_aid_10000": 53.13018677
+},
+{
+    "guid": "670fe511-dcce-461f-93ec-0c539e8f333f",
+    "entry_status": "FTT",
+    "major": "Child Development",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.274694455,
+    "fin_aid_3000": 10.660176400000001,
+    "fin_aid_10000": 18.86428961
+},
+{
+    "guid": "43b009a5-e35a-449b-88df-415b605d19be",
+    "entry_status": "FTT",
+    "major": "Child Development",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.04303835,
+    "fin_aid_3000": 15.34689419,
+    "fin_aid_10000": 28.08514796
+},
+{
+    "guid": "d2f78c8b-46c2-4d59-a199-bd9da1897fd9",
+    "entry_status": "FTT",
+    "major": "Child Development",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.67787078,
+    "fin_aid_3000": 25.60275276,
+    "fin_aid_10000": 54.10260487
+},
+{
+    "guid": "7a3315b1-269a-4281-8d47-f7fc733b6d6e",
+    "entry_status": "FTT",
+    "major": "Chinese",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.373382896,
+    "fin_aid_3000": 5.680017329,
+    "fin_aid_10000": 9.256920085
+},
+{
+    "guid": "ae375869-19a8-4762-a76a-3f7496b565c1",
+    "entry_status": "FTT",
+    "major": "Chinese",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.37278059,
+    "fin_aid_3000": 7.86613457,
+    "fin_aid_10000": 12.27477041
+},
+{
+    "guid": "ff6a6e7d-fd5c-4a4a-986f-ec3eb2b052ed",
+    "entry_status": "FTT",
+    "major": "Chinese",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.555376247,
+    "fin_aid_3000": 11.53031283,
+    "fin_aid_10000": 18.29075384
+},
+{
+    "guid": "dabbe7b7-ed4d-46fc-a8b8-34dfeb8779c2",
+    "entry_status": "FTT",
+    "major": "Cinema/Film",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.347622522999999,
+    "fin_aid_3000": 9.461181646,
+    "fin_aid_10000": 16.5261033
+},
+{
+    "guid": "ed616f0d-ca8c-49a4-81e5-ac6530f1a350",
+    "entry_status": "FTT",
+    "major": "Cinema/Film",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.66902359,
+    "fin_aid_3000": 13.51854503,
+    "fin_aid_10000": 24.50533532
+},
+{
+    "guid": "5b002313-1b68-4755-ae64-6201ba02ebb6",
+    "entry_status": "FTT",
+    "major": "Cinema/Film",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.2216789,
+    "fin_aid_3000": 22.32919989,
+    "fin_aid_10000": 48.88671944
+},
+{
+    "guid": "8560f81a-0367-4de7-90c8-ee1f42d8a1c9",
+    "entry_status": "FTT",
+    "major": "City and Regional Planning",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.24110731,
+    "fin_aid_3000": 14.71937118,
+    "fin_aid_10000": 22.18019881
+},
+{
+    "guid": "fabcc57d-95ea-4132-ac01-c92b1950143b",
+    "entry_status": "FTT",
+    "major": "City and Regional Planning",
+    "in_school_earning": 4500,
+    "fin_aid_0": 16.090084400000002,
+    "fin_aid_3000": 19.17012209,
+    "fin_aid_10000": 29.12272787
+},
+{
+    "guid": "4d487148-cd9b-4ded-aa2f-7235c7144f9c",
+    "entry_status": "FTT",
+    "major": "City and Regional Planning",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.842608399999996,
+    "fin_aid_3000": 27.36131905,
+    "fin_aid_10000": 44.49791716
+},
+{
+    "guid": "a24e8a99-fb58-472b-a792-8c7de0d6f669",
+    "entry_status": "FTT",
+    "major": "Civil Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 15.61591107,
+    "fin_aid_3000": 18.59453746,
+    "fin_aid_10000": 27.66726732
+},
+{
+    "guid": "2359231d-e5a3-4e0f-844b-4b928de18208",
+    "entry_status": "FTT",
+    "major": "Civil Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 20.25127519,
+    "fin_aid_3000": 23.99240191,
+    "fin_aid_10000": 36.18347122
+},
+{
+    "guid": "fa6a6522-c64d-4295-a181-daba3722bd1c",
+    "entry_status": "FTT",
+    "major": "Civil Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 28.4778723,
+    "fin_aid_3000": 34.0197542,
+    "fin_aid_10000": 55.00158967
+},
+{
+    "guid": "112cef4c-d300-40b9-8846-5e1afdf5a9f9",
+    "entry_status": "FTT",
+    "major": "Classics",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.233375002,
+    "fin_aid_3000": 6.696926652999999,
+    "fin_aid_10000": 10.84098322
+},
+{
+    "guid": "03d89673-298b-4073-abb0-cb1d52ce0ed1",
+    "entry_status": "FTT",
+    "major": "Classics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.483396892999999,
+    "fin_aid_3000": 9.204844718,
+    "fin_aid_10000": 14.49904694
+},
+{
+    "guid": "746268fb-bf57-4cb0-886a-b3678cfbf8c9",
+    "entry_status": "FTT",
+    "major": "Classics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.19625091,
+    "fin_aid_3000": 13.5834009,
+    "fin_aid_10000": 22.16563635
+},
+{
+    "guid": "cc2cc481-a9ed-41d4-98ae-8cea8369746d",
+    "entry_status": "FTT",
+    "major": "Communications",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.298086577,
+    "fin_aid_3000": 9.389490561,
+    "fin_aid_10000": 16.28209323
+},
+{
+    "guid": "84fd0db2-b379-4880-8654-d235c4c26328",
+    "entry_status": "FTT",
+    "major": "Communications",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.58032889,
+    "fin_aid_3000": 13.37217423,
+    "fin_aid_10000": 23.72161621
+},
+{
+    "guid": "17f065f7-e6ee-43f8-8b8f-eb2821da79a2",
+    "entry_status": "FTT",
+    "major": "Communications",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.94830158,
+    "fin_aid_3000": 21.74130537,
+    "fin_aid_10000": 43.1288384
+},
+{
+    "guid": "591ccde9-83c8-49eb-981e-b5a5d66e3821",
+    "entry_status": "FTT",
+    "major": "Communicative Disorders",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.321180003,
+    "fin_aid_3000": 11.82677503,
+    "fin_aid_10000": 20.18670647
+},
+{
+    "guid": "52655742-f353-423d-9215-1fd0073f4d2f",
+    "entry_status": "FTT",
+    "major": "Communicative Disorders",
+    "in_school_earning": 4500,
+    "fin_aid_0": 13.26684511,
+    "fin_aid_3000": 16.65804062,
+    "fin_aid_10000": 29.12118128
+},
+{
+    "guid": "2c362f1e-fe13-4fed-b9a7-e67fccdbe328",
+    "entry_status": "FTT",
+    "major": "Communicative Disorders",
+    "in_school_earning": 10500,
+    "fin_aid_0": 20.99162927,
+    "fin_aid_3000": 26.750543,
+    "fin_aid_10000": 53.23683199999999
+},
+{
+    "guid": "d1a555f3-082c-42a3-9f01-129186a6de66",
+    "entry_status": "FTT",
+    "major": "Comparative Literature",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.868289415,
+    "fin_aid_3000": 11.51763449,
+    "fin_aid_10000": 21.28569595
+},
+{
+    "guid": "30f1f91c-bf77-4daa-b6c1-adff9f60c8de",
+    "entry_status": "FTT",
+    "major": "Comparative Literature",
+    "in_school_earning": 4500,
+    "fin_aid_0": 13.09341657,
+    "fin_aid_3000": 16.97912859,
+    "fin_aid_10000": 33.12844512
+},
+{
+    "guid": "60d69a64-3fb5-4e4b-be11-cbcced187f65",
+    "entry_status": "FTT",
+    "major": "Comparative Literature",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.30276453,
+    "fin_aid_3000": 29.88355804,
+    "fin_aid_10000": 68.99433334
+},
+{
+    "guid": "df9941de-ec11-4c6d-9cf6-5fa5e233b604",
+    "entry_status": "FTT",
+    "major": "Computer Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 14.00991705,
+    "fin_aid_3000": 17.07959561,
+    "fin_aid_10000": 26.69832023
+},
+{
+    "guid": "50187c93-8f8e-4284-84ff-e9e1c0ecbc7a",
+    "entry_status": "FTT",
+    "major": "Computer Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 18.80798946,
+    "fin_aid_3000": 22.75968096,
+    "fin_aid_10000": 36.00183989
+},
+{
+    "guid": "a10ea85a-1110-4838-b048-0f477f138bb4",
+    "entry_status": "FTT",
+    "major": "Computer Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 27.57381518,
+    "fin_aid_3000": 33.61700335,
+    "fin_aid_10000": 57.32227059
+},
+{
+    "guid": "62cc85a0-4f1d-40a0-b706-febd5ec6a999",
+    "entry_status": "FTT",
+    "major": "Computer Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.486250561,
+    "fin_aid_3000": 10.89537879,
+    "fin_aid_10000": 19.09985051
+},
+{
+    "guid": "f9763218-ecdb-4d86-9800-055aa3111f05",
+    "entry_status": "FTT",
+    "major": "Computer Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.29010616,
+    "fin_aid_3000": 15.60784242,
+    "fin_aid_10000": 27.909467699999997
+},
+{
+    "guid": "d5cdef4f-4a67-49e2-833c-96c3f141903f",
+    "entry_status": "FTT",
+    "major": "Computer Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.89929826,
+    "fin_aid_3000": 25.59756545,
+    "fin_aid_10000": 48.8465332
+},
+{
+    "guid": "dc9ed000-3053-442e-8f83-b9681d695e63",
+    "entry_status": "FTT",
+    "major": "Computer Science and Information Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.95851149,
+    "fin_aid_3000": 15.37706844,
+    "fin_aid_10000": 22.35723258
+},
+{
+    "guid": "85f85057-1692-43dc-a1e6-08e3fdea26c9",
+    "entry_status": "FTT",
+    "major": "Computer Science and Information Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 16.69501707,
+    "fin_aid_3000": 19.59992617,
+    "fin_aid_10000": 28.37872
+},
+{
+    "guid": "d687ab4d-5253-4b76-855f-9d04c578ace4",
+    "entry_status": "FTT",
+    "major": "Computer Science and Information Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.95257307,
+    "fin_aid_3000": 26.89771718,
+    "fin_aid_10000": 39.86345845
+},
+{
+    "guid": "e9a7b77e-ef2b-4ba0-892a-e931dae07061",
+    "entry_status": "FTT",
+    "major": "Construction Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.695756279,
+    "fin_aid_3000": 11.63686784,
+    "fin_aid_10000": 17.26294173
+},
+{
+    "guid": "0da57f74-d18b-4010-a058-e46d62618382",
+    "entry_status": "FTT",
+    "major": "Construction Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.6947911,
+    "fin_aid_3000": 15.03267267,
+    "fin_aid_10000": 22.16441985
+},
+{
+    "guid": "78f3d394-d098-49b7-9cfd-3af3ef8177a3",
+    "entry_status": "FTT",
+    "major": "Construction Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.74596283,
+    "fin_aid_3000": 20.95672544,
+    "fin_aid_10000": 31.42965427
+},
+{
+    "guid": "f6f534db-3c82-4e1d-ad31-0cbdeee55367",
+    "entry_status": "FTT",
+    "major": "Creative Writing",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "6937216b-18d9-4df5-a410-f3b933ca9755",
+    "entry_status": "FTT",
+    "major": "Creative Writing",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "6501286f-eeb4-4d34-94eb-e701e8b055ee",
+    "entry_status": "FTT",
+    "major": "Creative Writing",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "26da2279-fae9-481e-bf3d-30170c3598f1",
+    "entry_status": "FTT",
+    "major": "Criminal Justice",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.620987507000001,
+    "fin_aid_3000": 7.166477616,
+    "fin_aid_10000": 11.61353454
+},
+{
+    "guid": "02e3d7d9-6f54-44dd-939c-842f25588a52",
+    "entry_status": "FTT",
+    "major": "Criminal Justice",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.002614397,
+    "fin_aid_3000": 9.846112864,
+    "fin_aid_10000": 15.59971454
+},
+{
+    "guid": "e7804e23-9c8c-482b-ba94-6def0445e107",
+    "entry_status": "FTT",
+    "major": "Criminal Justice",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.99897375,
+    "fin_aid_3000": 14.59951315,
+    "fin_aid_10000": 23.86644266
+},
+{
+    "guid": "5fb5f142-3aac-4dc9-b8e2-bde2579ae0ea",
+    "entry_status": "FTT",
+    "major": "Cultural Resources Management",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "25b79d64-d178-4da5-8270-4fc1c6c538e8",
+    "entry_status": "FTT",
+    "major": "Cultural Resources Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "f955e8c2-a78a-4571-8a6d-0fe3e29e5590",
+    "entry_status": "FTT",
+    "major": "Cultural Resources Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "ee89eef4-4061-4776-a463-5221d83fe704",
+    "entry_status": "FTT",
+    "major": "Dance",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "29edc834-6044-48db-b828-aca1e648440b",
+    "entry_status": "FTT",
+    "major": "Dance",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "c9912502-9ad3-43fd-8ebe-95defdb001ad",
+    "entry_status": "FTT",
+    "major": "Dance",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "b1af55ea-6869-474b-af5d-e0f91b8083e0",
+    "entry_status": "FTT",
+    "major": "Dance - Performance",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.007527987,
+    "fin_aid_3000": 6.41503897,
+    "fin_aid_10000": 10.335525599999999
+},
+{
+    "guid": "8b392161-7d39-4191-9eb5-1238f44a4ac7",
+    "entry_status": "FTT",
+    "major": "Dance - Performance",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.16674921,
+    "fin_aid_3000": 8.799859357,
+    "fin_aid_10000": 13.7077456
+},
+{
+    "guid": "d25a04fe-e8fa-4cba-85b0-1d2a0cfca688",
+    "entry_status": "FTT",
+    "major": "Dance - Performance",
+    "in_school_earning": 10500,
+    "fin_aid_0": 10.66677327,
+    "fin_aid_3000": 12.87168812,
+    "fin_aid_10000": 20.50111784
+},
+{
+    "guid": "78756901-d9be-42e6-b127-66268821ab6d",
+    "entry_status": "FTT",
+    "major": "Deaf Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.813482222,
+    "fin_aid_3000": 7.813423257999999,
+    "fin_aid_10000": 15.012867199999999
+},
+{
+    "guid": "5cd5ab7e-75f5-4dfc-bdad-00e9772d8bd7",
+    "entry_status": "FTT",
+    "major": "Deaf Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.976739429,
+    "fin_aid_3000": 11.81552652,
+    "fin_aid_10000": 24.75123807
+},
+{
+    "guid": "e7692244-8f28-4267-b65e-c9b1f8da1a0c",
+    "entry_status": "FTT",
+    "major": "Deaf Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.78786049,
+    "fin_aid_3000": 21.91825339,
+    "fin_aid_10000": 64.32205970000001
+},
+{
+    "guid": "6400dbcd-2b1e-4426-b3e7-c2da841c7a21",
+    "entry_status": "FTT",
+    "major": "Design",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.64745614,
+    "fin_aid_3000": 8.512996405,
+    "fin_aid_10000": 14.44437665
+},
+{
+    "guid": "b84d499f-82e9-4905-9cc1-b46c845b52df",
+    "entry_status": "FTT",
+    "major": "Design",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.5586609,
+    "fin_aid_3000": 11.97079916,
+    "fin_aid_10000": 20.74853716
+},
+{
+    "guid": "29fb40b1-4d9f-4895-b7f3-aacc1cfc2af8",
+    "entry_status": "FTT",
+    "major": "Design",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.00749528,
+    "fin_aid_3000": 19.05981132,
+    "fin_aid_10000": 38.62617253
+},
+{
+    "guid": "99935b59-61c3-4f5f-97b1-931f8a3d63eb",
+    "entry_status": "FTT",
+    "major": "Dietetics/Nutritional Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.68433499,
+    "fin_aid_3000": 13.58312442,
+    "fin_aid_10000": 23.85381896
+},
+{
+    "guid": "24775aac-7c2f-4b68-89e5-b7a24d458494",
+    "entry_status": "FTT",
+    "major": "Dietetics/Nutritional Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.28530471,
+    "fin_aid_3000": 19.40076973,
+    "fin_aid_10000": 36.11812883
+},
+{
+    "guid": "49634fd4-932b-49c2-9174-59f4198b42b6",
+    "entry_status": "FTT",
+    "major": "Dietetics/Nutritional Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 24.89640793,
+    "fin_aid_3000": 32.69936364,
+    "fin_aid_10000": 86.24969234
+},
+{
+    "guid": "423777be-71de-499f-83b6-f00cbabd90ef",
+    "entry_status": "FTT",
+    "major": "Earth Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.42433122,
+    "fin_aid_3000": 13.69467775,
+    "fin_aid_10000": 26.44600461
+},
+{
+    "guid": "6af1b52b-b4aa-4f26-b7eb-c3a07b713ed7",
+    "entry_status": "FTT",
+    "major": "Earth Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.69695758,
+    "fin_aid_3000": 20.75497461,
+    "fin_aid_10000": 42.06538711
+},
+{
+    "guid": "eee70b5f-a75a-4bc6-ba5f-33a3e4fd9374",
+    "entry_status": "FTT",
+    "major": "Earth Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 27.79211471,
+    "fin_aid_3000": 37.79685471,
+    "fin_aid_10000": 77.25073244
+},
+{
+    "guid": "0ab39140-2774-4bf9-85a4-c9569e91ead8",
+    "entry_status": "FTT",
+    "major": "Economics",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.821023165,
+    "fin_aid_3000": 7.41744771,
+    "fin_aid_10000": 12.0883164
+},
+{
+    "guid": "e66f3cbd-f9ce-459b-9272-5b2ed3a07761",
+    "entry_status": "FTT",
+    "major": "Economics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.286436251,
+    "fin_aid_3000": 10.216975099999999,
+    "fin_aid_10000": 16.38774784
+},
+{
+    "guid": "793771b0-735a-48e3-bc9d-4250e49cd3c5",
+    "entry_status": "FTT",
+    "major": "Economics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.499219300000002,
+    "fin_aid_3000": 15.29853816,
+    "fin_aid_10000": 25.63749689
+},
+{
+    "guid": "4bcca9ae-9a55-42d4-8354-89054170c24f",
+    "entry_status": "FTT",
+    "major": "Education",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.213679983,
+    "fin_aid_3000": 4.440383756,
+    "fin_aid_10000": 7.779818669
+},
+{
+    "guid": "7c233ba1-b117-4620-9e79-6cee524ec4b4",
+    "entry_status": "FTT",
+    "major": "Education",
+    "in_school_earning": 4500,
+    "fin_aid_0": 5.088831356,
+    "fin_aid_3000": 6.483377575,
+    "fin_aid_10000": 10.59313397
+},
+{
+    "guid": "95b283aa-2742-48de-85af-95c6b761bffc",
+    "entry_status": "FTT",
+    "major": "Education",
+    "in_school_earning": 10500,
+    "fin_aid_0": 8.05791909,
+    "fin_aid_3000": 9.898671267000001,
+    "fin_aid_10000": 16.20180688
+},
+{
+    "guid": "92ba4127-d6c2-4317-bb63-c8a04644860c",
+    "entry_status": "FTT",
+    "major": "Electrical and Electronic Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 18.26796817,
+    "fin_aid_3000": 22.17137995,
+    "fin_aid_10000": 33.59141383
+},
+{
+    "guid": "2a6dfa60-5784-4d9d-97ea-7cd138f35357",
+    "entry_status": "FTT",
+    "major": "Electrical and Electronic Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 24.30917096,
+    "fin_aid_3000": 29.04687129,
+    "fin_aid_10000": 43.80945951
+},
+{
+    "guid": "6290ad01-33de-4715-91db-ffc60add7fad",
+    "entry_status": "FTT",
+    "major": "Electrical and Electronic Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 34.58116386,
+    "fin_aid_3000": 41.24693434,
+    "fin_aid_10000": 65.54081281
+},
+{
+    "guid": "d80aa9cd-840e-4bd0-978e-aa909ce10c48",
+    "entry_status": "FTT",
+    "major": "Electrical Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 13.11393798,
+    "fin_aid_3000": 15.59786691,
+    "fin_aid_10000": 22.79284459
+},
+{
+    "guid": "79f886f1-d6f4-4970-9717-e0cda88e45b5",
+    "entry_status": "FTT",
+    "major": "Electrical Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 16.95378454,
+    "fin_aid_3000": 19.94702217,
+    "fin_aid_10000": 29.01940259
+},
+{
+    "guid": "18e0d3e2-eb4d-4ce0-8db7-1f1d8e409ebe",
+    "entry_status": "FTT",
+    "major": "Electrical Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 23.40779003,
+    "fin_aid_3000": 27.48663305,
+    "fin_aid_10000": 40.93672094
+},
+{
+    "guid": "4393bc42-8e79-4b6e-91a9-07dcb32d5c0c",
+    "entry_status": "FTT",
+    "major": "Electronic Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 14.40976628,
+    "fin_aid_3000": 17.372948899999997,
+    "fin_aid_10000": 26.42232487
+},
+{
+    "guid": "80e927e2-f628-4f24-b9e6-c4ed77562dc9",
+    "entry_status": "FTT",
+    "major": "Electronic Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 19.02536543,
+    "fin_aid_3000": 22.76001517,
+    "fin_aid_10000": 34.83109414
+},
+{
+    "guid": "d93176bb-69da-42e9-8ae5-b97bbf527a3f",
+    "entry_status": "FTT",
+    "major": "Electronic Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 27.22821676,
+    "fin_aid_3000": 32.70862487,
+    "fin_aid_10000": 52.70709704
+},
+{
+    "guid": "ed8ab0d6-8294-422f-ab39-416e7064173c",
+    "entry_status": "FTT",
+    "major": "Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 17.14718575,
+    "fin_aid_3000": 19.97312609,
+    "fin_aid_10000": 28.12610416
+},
+{
+    "guid": "97d45a9b-814c-4627-bc9f-5c669982d28a",
+    "entry_status": "FTT",
+    "major": "Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 21.5125033,
+    "fin_aid_3000": 24.904757699999998,
+    "fin_aid_10000": 35.18140258
+},
+{
+    "guid": "b1ecacda-d6fc-426d-8f4e-5ba528b91a43",
+    "entry_status": "FTT",
+    "major": "Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 28.82213944,
+    "fin_aid_3000": 33.44235199,
+    "fin_aid_10000": 48.80418012
+},
+{
+    "guid": "e672c9c3-5354-425e-9ca6-550cefa92432",
+    "entry_status": "FTT",
+    "major": "Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.426928876,
+    "fin_aid_3000": 9.118813949,
+    "fin_aid_10000": 13.92069683
+},
+{
+    "guid": "34ad4879-a453-4159-9d31-317f61a3b2de",
+    "entry_status": "FTT",
+    "major": "Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.03200495,
+    "fin_aid_3000": 12.03171906,
+    "fin_aid_10000": 18.03124892
+},
+{
+    "guid": "2101770f-293e-43bb-90e8-d00c49a4abe5",
+    "entry_status": "FTT",
+    "major": "Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.32790098,
+    "fin_aid_3000": 17.02205736,
+    "fin_aid_10000": 25.75894082
+},
+{
+    "guid": "41d67dec-004e-4c0e-93f4-f90e6700bd99",
+    "entry_status": "FTT",
+    "major": "English",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.359149363999999,
+    "fin_aid_3000": 9.408812844,
+    "fin_aid_10000": 16.04799103
+},
+{
+    "guid": "f80414e8-25a3-4b52-9425-0ce8f5ba491c",
+    "entry_status": "FTT",
+    "major": "English",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.568498,
+    "fin_aid_3000": 13.26578264,
+    "fin_aid_10000": 23.08175331
+},
+{
+    "guid": "07315676-a23a-4f73-8a84-d2986e5acacc",
+    "entry_status": "FTT",
+    "major": "English",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.68149627,
+    "fin_aid_3000": 21.21487956,
+    "fin_aid_10000": 41.68107553
+},
+{
+    "guid": "5d7d7069-b3cb-4156-87c9-e6845d148b2a",
+    "entry_status": "FTT",
+    "major": "English Literature",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.833333743999999,
+    "fin_aid_3000": 12.50944066,
+    "fin_aid_10000": 21.55485129
+},
+{
+    "guid": "ad0d4d82-00eb-4115-b73e-c25f134f5444",
+    "entry_status": "FTT",
+    "major": "English Literature",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.05921871,
+    "fin_aid_3000": 17.72921017,
+    "fin_aid_10000": 31.11991808
+},
+{
+    "guid": "ef7b0184-7185-4f23-8a69-22067d4906e7",
+    "entry_status": "FTT",
+    "major": "English Literature",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.42572656,
+    "fin_aid_3000": 28.60842981,
+    "fin_aid_10000": 55.04096516
+},
+{
+    "guid": "7203f07b-b2ed-4778-b14f-d5bcec2a2e4e",
+    "entry_status": "FTT",
+    "major": "Entrepreneurship & Small Business Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.589999344,
+    "fin_aid_3000": 11.06544634,
+    "fin_aid_10000": 19.71458429
+},
+{
+    "guid": "d2400b04-e9cd-44d7-bc09-6825dd111cce",
+    "entry_status": "FTT",
+    "major": "Entrepreneurship & Small Business Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.51069349,
+    "fin_aid_3000": 15.9888911,
+    "fin_aid_10000": 29.40349236
+},
+{
+    "guid": "48126efe-7971-4e3f-aaef-200472ee5d86",
+    "entry_status": "FTT",
+    "major": "Entrepreneurship & Small Business Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 20.57694563,
+    "fin_aid_3000": 26.82208275,
+    "fin_aid_10000": 53.99214122
+},
+{
+    "guid": "3ecb9e66-5f2a-4926-afa4-aa273b09d239",
+    "entry_status": "FTT",
+    "major": "Environmental and Occupational Health",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.14481302,
+    "fin_aid_3000": 12.43202367,
+    "fin_aid_10000": 19.37819404
+},
+{
+    "guid": "f3f763eb-187f-4a35-a4b7-5c8c7c9c7c25",
+    "entry_status": "FTT",
+    "major": "Environmental and Occupational Health",
+    "in_school_earning": 4500,
+    "fin_aid_0": 13.70201274,
+    "fin_aid_3000": 16.56761448,
+    "fin_aid_10000": 25.84250248
+},
+{
+    "guid": "414c77ea-4a8d-4b1f-a822-83f71f1cdb38",
+    "entry_status": "FTT",
+    "major": "Environmental and Occupational Health",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.99707648,
+    "fin_aid_3000": 24.2097293,
+    "fin_aid_10000": 39.57063113
+},
+{
+    "guid": "9e521fbf-5fd8-4aa9-98ec-256ca19231a4",
+    "entry_status": "FTT",
+    "major": "Environmental Biology & Ecology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.08018859,
+    "fin_aid_3000": 8.836765714,
+    "fin_aid_10000": 14.11025281
+},
+{
+    "guid": "5dfb80d9-6ddd-4159-a44b-a135b993796c",
+    "entry_status": "FTT",
+    "major": "Environmental Biology & Ecology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.802100951,
+    "fin_aid_3000": 11.97134873,
+    "fin_aid_10000": 19.20435751
+},
+{
+    "guid": "a167911a-708a-45c8-b8be-4c7c6829be12",
+    "entry_status": "FTT",
+    "major": "Environmental Biology & Ecology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.58531507,
+    "fin_aid_3000": 17.88480934,
+    "fin_aid_10000": 31.90730937
+},
+{
+    "guid": "bbb377a0-e087-4a99-a552-a7eb0aa665db",
+    "entry_status": "FTT",
+    "major": "Environmental Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.038567467999999,
+    "fin_aid_3000": 8.967071914,
+    "fin_aid_10000": 15.02559037
+},
+{
+    "guid": "13407224-185d-4abc-8535-5ece89a0133e",
+    "entry_status": "FTT",
+    "major": "Environmental Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.04620849,
+    "fin_aid_3000": 12.52181471,
+    "fin_aid_10000": 21.13982804
+},
+{
+    "guid": "614e14f7-82be-46b5-8891-105d6da1bdd3",
+    "entry_status": "FTT",
+    "major": "Environmental Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.58880025,
+    "fin_aid_3000": 19.54663689,
+    "fin_aid_10000": 35.72259892
+},
+{
+    "guid": "75f86077-d1ed-434f-9c5c-39b6cf136cec",
+    "entry_status": "FTT",
+    "major": "Environmental Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.560620822000001,
+    "fin_aid_3000": 8.442036748,
+    "fin_aid_10000": 14.64048904
+},
+{
+    "guid": "bfe0bed1-171d-4b8a-a803-5c279bcd4116",
+    "entry_status": "FTT",
+    "major": "Environmental Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.506236929,
+    "fin_aid_3000": 12.000343199999998,
+    "fin_aid_10000": 22.04958152
+},
+{
+    "guid": "7bf2097e-8431-4655-b5cc-607d840073f6",
+    "entry_status": "FTT",
+    "major": "Environmental Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.257116199999999,
+    "fin_aid_3000": 19.93494352,
+    "fin_aid_10000": 46.74464542
+},
+{
+    "guid": "d0fa87d6-220e-4abb-b9c4-513b27868df4",
+    "entry_status": "FTT",
+    "major": "Ethnic Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.234935566,
+    "fin_aid_3000": 8.126186695,
+    "fin_aid_10000": 14.61641994
+},
+{
+    "guid": "dd226f24-c22b-4470-93e5-39fc68c2c33c",
+    "entry_status": "FTT",
+    "major": "Ethnic Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.207727969,
+    "fin_aid_3000": 11.78900979,
+    "fin_aid_10000": 23.301016399999998
+},
+{
+    "guid": "b510a574-5985-47d7-9956-f06c79ce355d",
+    "entry_status": "FTT",
+    "major": "Ethnic Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.294046300000002,
+    "fin_aid_3000": 20.69302424,
+    "fin_aid_10000": 51.00946629999999
+},
+{
+    "guid": "5f7b34fe-d83f-4d5b-96a4-953a68499e2b",
+    "entry_status": "FTT",
+    "major": "European Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.469730666,
+    "fin_aid_3000": 6.998658578,
+    "fin_aid_10000": 11.41680723
+},
+{
+    "guid": "013c8866-9bc6-4546-b514-ed565f67eb95",
+    "entry_status": "FTT",
+    "major": "European Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.826436791,
+    "fin_aid_3000": 9.655160385,
+    "fin_aid_10000": 15.44802479
+},
+{
+    "guid": "4aad2985-6bc5-4b3e-9946-31be29c405c2",
+    "entry_status": "FTT",
+    "major": "European Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.80256987,
+    "fin_aid_3000": 14.42639832,
+    "fin_aid_10000": 24.35156513
+},
+{
+    "guid": "ebbcb4a3-d870-4203-96f8-2e11d80c50fc",
+    "entry_status": "FTT",
+    "major": "Exercise Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.516438121,
+    "fin_aid_3000": 9.659944479,
+    "fin_aid_10000": 17.00181135
+},
+{
+    "guid": "a533edb0-1d81-4e32-b78c-f2478a275359",
+    "entry_status": "FTT",
+    "major": "Exercise Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.89299915,
+    "fin_aid_3000": 13.83374125,
+    "fin_aid_10000": 25.88610404
+},
+{
+    "guid": "22d7ed06-a755-4c51-916f-c7daebb35092",
+    "entry_status": "FTT",
+    "major": "Exercise Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.74609398,
+    "fin_aid_3000": 23.3788479,
+    "fin_aid_10000": 43.07739227
+},
+{
+    "guid": "ffa29110-81f6-411e-8a92-52c707ad920b",
+    "entry_status": "FTT",
+    "major": "Family and Consumer Sciences",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.3976840710000005,
+    "fin_aid_3000": 7.168118809,
+    "fin_aid_10000": 13.01986831
+},
+{
+    "guid": "29a3ec9e-12b1-449b-9a7a-e5236ccbd1ef",
+    "entry_status": "FTT",
+    "major": "Family and Consumer Sciences",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.16903846,
+    "fin_aid_3000": 10.51922605,
+    "fin_aid_10000": 20.0468062
+},
+{
+    "guid": "2a972b98-9067-4ddf-b626-020cac7f804f",
+    "entry_status": "FTT",
+    "major": "Family and Consumer Sciences",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.60593418,
+    "fin_aid_3000": 18.05566566,
+    "fin_aid_10000": 46.15963275
+},
+{
+    "guid": "23751057-2671-4cc0-bacc-b5087dc9a625",
+    "entry_status": "FTT",
+    "major": "Finance",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.067621713,
+    "fin_aid_3000": 10.00843005,
+    "fin_aid_10000": 15.74291493
+},
+{
+    "guid": "bf1bc415-7d84-4146-b439-8bd94691e2ea",
+    "entry_status": "FTT",
+    "major": "Finance",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.07361689,
+    "fin_aid_3000": 13.44865044,
+    "fin_aid_10000": 20.88498625
+},
+{
+    "guid": "6ad96f30-faf6-4d36-9c3f-d075547e5263",
+    "entry_status": "FTT",
+    "major": "Finance",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.24352737,
+    "fin_aid_3000": 19.60512598,
+    "fin_aid_10000": 31.02493035
+},
+{
+    "guid": "9f00a126-4f1c-4c95-97d7-b491d68e7e21",
+    "entry_status": "FTT",
+    "major": "Fire Protection Administration",
+    "in_school_earning": 0,
+    "fin_aid_0": 2.343167246,
+    "fin_aid_3000": 3.24879037,
+    "fin_aid_10000": 5.460981867
+},
+{
+    "guid": "cfced882-a446-4c2e-8ca1-512900ddaa65",
+    "entry_status": "FTT",
+    "major": "Fire Protection Administration",
+    "in_school_earning": 4500,
+    "fin_aid_0": 3.708108732,
+    "fin_aid_3000": 4.647896151,
+    "fin_aid_10000": 7.025127434
+},
+{
+    "guid": "5e99f6bc-6afe-4f97-acd8-f9543e5b60df",
+    "entry_status": "FTT",
+    "major": "Fire Protection Administration",
+    "in_school_earning": 10500,
+    "fin_aid_0": 5.627720889,
+    "fin_aid_3000": 6.663889857000001,
+    "fin_aid_10000": 9.425310681000001
+},
+{
+    "guid": "29467ab8-74c3-42da-b92b-ff52e79148e1",
+    "entry_status": "FTT",
+    "major": "Food Science and Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.581836817,
+    "fin_aid_3000": 8.316082163999999,
+    "fin_aid_10000": 13.41271773
+},
+{
+    "guid": "d6f421ff-d485-433a-a0c0-7bbace9de161",
+    "entry_status": "FTT",
+    "major": "Food Science and Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.263774508,
+    "fin_aid_3000": 11.37276817,
+    "fin_aid_10000": 18.02793264
+},
+{
+    "guid": "14b330b0-775f-4f3a-beb2-24756b8bb141",
+    "entry_status": "FTT",
+    "major": "Food Science and Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.85897055,
+    "fin_aid_3000": 16.87192757,
+    "fin_aid_10000": 27.37943357
+},
+{
+    "guid": "0be9805f-8459-4596-9711-c2358242e8f0",
+    "entry_status": "FTT",
+    "major": "French",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.440848825,
+    "fin_aid_3000": 8.506273699,
+    "fin_aid_10000": 15.74533635
+},
+{
+    "guid": "10935717-27a2-4058-bec9-5cfe357b45cc",
+    "entry_status": "FTT",
+    "major": "French",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.701851582,
+    "fin_aid_3000": 12.58471361,
+    "fin_aid_10000": 24.73706659
+},
+{
+    "guid": "62d568cc-ab41-4e07-a935-95cdfb815bd9",
+    "entry_status": "FTT",
+    "major": "French",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.495162,
+    "fin_aid_3000": 22.20779062,
+    "fin_aid_10000": 56.29174701
+},
+{
+    "guid": "504eb228-756c-404b-a376-6e3a3b975e50",
+    "entry_status": "FTT",
+    "major": "Geography",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.888361997,
+    "fin_aid_3000": 5.181852581,
+    "fin_aid_10000": 8.769920393
+},
+{
+    "guid": "9402591b-fea6-4dcc-b5f2-28491dfaf1db",
+    "entry_status": "FTT",
+    "major": "Geography",
+    "in_school_earning": 4500,
+    "fin_aid_0": 5.8704651960000005,
+    "fin_aid_3000": 7.364069852999999,
+    "fin_aid_10000": 11.88964978
+},
+{
+    "guid": "e0cd425e-778a-48c4-8a6d-ec7c026d54f2",
+    "entry_status": "FTT",
+    "major": "Geography",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.073883999,
+    "fin_aid_3000": 11.10972294,
+    "fin_aid_10000": 18.50447905
+},
+{
+    "guid": "a4aeb005-bf3e-40bd-967a-177c4dc4af9f",
+    "entry_status": "FTT",
+    "major": "Geology",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.93876521,
+    "fin_aid_3000": 13.58709025,
+    "fin_aid_10000": 21.99717612
+},
+{
+    "guid": "0d671e5d-d4cf-4aaf-b076-1e11c99ae520",
+    "entry_status": "FTT",
+    "major": "Geology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.08681864,
+    "fin_aid_3000": 18.53776979,
+    "fin_aid_10000": 30.16034063
+},
+{
+    "guid": "74a7b7cd-710d-444a-a962-5399f4335dd3",
+    "entry_status": "FTT",
+    "major": "Geology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.76721079,
+    "fin_aid_3000": 28.0749848,
+    "fin_aid_10000": 48.35976326
+},
+{
+    "guid": "90d0cab9-81ca-4d33-8873-1eb36bed7f6b",
+    "entry_status": "FTT",
+    "major": "German",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.521804667,
+    "fin_aid_3000": 5.073704007,
+    "fin_aid_10000": 10.28015582
+},
+{
+    "guid": "3d9c7f5f-7781-41fb-b7cd-7e8b1773483f",
+    "entry_status": "FTT",
+    "major": "German",
+    "in_school_earning": 4500,
+    "fin_aid_0": 5.948088765,
+    "fin_aid_3000": 8.013370721,
+    "fin_aid_10000": 17.88762844
+},
+{
+    "guid": "33683b65-f50d-4f1a-8768-52d982c3af95",
+    "entry_status": "FTT",
+    "major": "German",
+    "in_school_earning": 10500,
+    "fin_aid_0": 10.83054496,
+    "fin_aid_3000": 15.44758198,
+    "fin_aid_10000": 55.23193323
+},
+{
+    "guid": "a7a5ac39-5969-4cff-a6b3-bebab1a22900",
+    "entry_status": "FTT",
+    "major": "Graphic Communications",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.957253431,
+    "fin_aid_3000": 7.560386556,
+    "fin_aid_10000": 12.18992894
+},
+{
+    "guid": "9ab5bdd5-a00c-4136-b10d-29aa141d88db",
+    "entry_status": "FTT",
+    "major": "Graphic Communications",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.429536709,
+    "fin_aid_3000": 10.34874639,
+    "fin_aid_10000": 16.33063152
+},
+{
+    "guid": "48e4549e-3342-4030-8de9-130dcee788de",
+    "entry_status": "FTT",
+    "major": "Graphic Communications",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.59128819,
+    "fin_aid_3000": 15.294360199999998,
+    "fin_aid_10000": 24.78929702
+},
+{
+    "guid": "ffe5c0fd-95aa-414e-baac-2cbda30d8f84",
+    "entry_status": "FTT",
+    "major": "Graphic Design",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.461409048999999,
+    "fin_aid_3000": 9.667389162000001,
+    "fin_aid_10000": 17.30804336
+},
+{
+    "guid": "380e3492-f5c6-4911-8581-9bb1221baa88",
+    "entry_status": "FTT",
+    "major": "Graphic Design",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.94312167,
+    "fin_aid_3000": 14.00155158,
+    "fin_aid_10000": 26.45554159
+},
+{
+    "guid": "c460d6eb-de85-4045-9ed2-929efcc1b61e",
+    "entry_status": "FTT",
+    "major": "Graphic Design",
+    "in_school_earning": 10500,
+    "fin_aid_0": 18.08426788,
+    "fin_aid_3000": 23.90998717,
+    "fin_aid_10000": 58.5626975
+},
+{
+    "guid": "ebb75dfd-ee5b-44e5-8d61-2cfd0e40b93e",
+    "entry_status": "FTT",
+    "major": "Health Care Management/Administration",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.585340974,
+    "fin_aid_3000": 9.524260137999999,
+    "fin_aid_10000": 15.52452286
+},
+{
+    "guid": "462811ab-4e42-4e34-826d-3657fb7bb3af",
+    "entry_status": "FTT",
+    "major": "Health Care Management/Administration",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.603461099999999,
+    "fin_aid_3000": 13.06183871,
+    "fin_aid_10000": 21.47776523
+},
+{
+    "guid": "c541f16d-d74d-4fb7-a7e7-bea44d3d2771",
+    "entry_status": "FTT",
+    "major": "Health Care Management/Administration",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.07567622,
+    "fin_aid_3000": 19.93012365,
+    "fin_aid_10000": 35.96584579
+},
+{
+    "guid": "9359f8f6-361a-4edc-aa69-71fec251c73d",
+    "entry_status": "FTT",
+    "major": "Health Education",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.424053165,
+    "fin_aid_3000": 9.566226907999999,
+    "fin_aid_10000": 17.04352717
+},
+{
+    "guid": "aa495149-f9d7-4fcc-bc4b-277609f41907",
+    "entry_status": "FTT",
+    "major": "Health Education",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.80399736,
+    "fin_aid_3000": 13.78072774,
+    "fin_aid_10000": 26.69488589
+},
+{
+    "guid": "92b2b121-6b02-4223-8692-c7cf1efc0d38",
+    "entry_status": "FTT",
+    "major": "Health Education",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.82089067,
+    "fin_aid_3000": 23.87810022,
+    "fin_aid_10000": 57.55691423
+},
+{
+    "guid": "8c5541c2-1ab8-450f-ba5b-941e530ead18",
+    "entry_status": "FTT",
+    "major": "Health Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.228249841,
+    "fin_aid_3000": 6.794073842,
+    "fin_aid_10000": 11.47101387
+},
+{
+    "guid": "4c110bce-2cfd-400d-893d-f147d6b17873",
+    "entry_status": "FTT",
+    "major": "Health Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.650995965,
+    "fin_aid_3000": 9.573053692,
+    "fin_aid_10000": 16.0378599
+},
+{
+    "guid": "75f32b8f-c97c-4f13-8749-80bb09b322f4",
+    "entry_status": "FTT",
+    "major": "Health Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.89371908,
+    "fin_aid_3000": 14.8471708,
+    "fin_aid_10000": 27.55455935
+},
+{
+    "guid": "0346e488-f177-4516-9841-7f338a8723cc",
+    "entry_status": "FTT",
+    "major": "History",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.640801159,
+    "fin_aid_3000": 8.450919038,
+    "fin_aid_10000": 14.04678571
+},
+{
+    "guid": "d600293f-1d70-4a24-9612-b7909abb97dc",
+    "entry_status": "FTT",
+    "major": "History",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.456289527000001,
+    "fin_aid_3000": 11.746108300000001,
+    "fin_aid_10000": 19.67304002
+},
+{
+    "guid": "91bda4ab-98a8-4a0a-84ab-fd3eeb196289",
+    "entry_status": "FTT",
+    "major": "History",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.56338516,
+    "fin_aid_3000": 18.1998754,
+    "fin_aid_10000": 33.79569236
+},
+{
+    "guid": "d6632ad4-d77a-45a3-9025-41d7f494786e",
+    "entry_status": "FTT",
+    "major": "Hotel and Restaurant/Hospitality Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.994576575,
+    "fin_aid_3000": 8.999409641,
+    "fin_aid_10000": 15.39763942
+},
+{
+    "guid": "4603eefc-9e91-4eb3-9e95-c2ef7fff89e1",
+    "entry_status": "FTT",
+    "major": "Hotel and Restaurant/Hospitality Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.1289111,
+    "fin_aid_3000": 12.73868448,
+    "fin_aid_10000": 21.90623084
+},
+{
+    "guid": "7d7ca59d-db88-4eb5-b00c-617471a9a22a",
+    "entry_status": "FTT",
+    "major": "Hotel and Restaurant/Hospitality Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.997353599999999,
+    "fin_aid_3000": 20.21348197,
+    "fin_aid_10000": 37.099932700000004
+},
+{
+    "guid": "76e77f19-627b-4a54-9bd3-eb5183230d76",
+    "entry_status": "FTT",
+    "major": "Human Development",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.492953835,
+    "fin_aid_3000": 11.20849424,
+    "fin_aid_10000": 22.45674646
+},
+{
+    "guid": "0e86f2bc-7250-45ec-a370-c1b5b03e357b",
+    "entry_status": "FTT",
+    "major": "Human Development",
+    "in_school_earning": 4500,
+    "fin_aid_0": 12.87416976,
+    "fin_aid_3000": 17.20402608,
+    "fin_aid_10000": 39.44734954
+},
+{
+    "guid": "60657576-c985-44c3-8c82-b4f8c6bb1459",
+    "entry_status": "FTT",
+    "major": "Human Development",
+    "in_school_earning": 10500,
+    "fin_aid_0": 23.77233388,
+    "fin_aid_3000": 34.44305868,
+    "fin_aid_10000": 129.6074763
+},
+{
+    "guid": "07699df9-9f8c-4a14-acab-fa9f6407efaa",
+    "entry_status": "FTT",
+    "major": "Human Resources/Personnel Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.801439208,
+    "fin_aid_3000": 7.2996932679999995,
+    "fin_aid_10000": 11.47036619
+},
+{
+    "guid": "aaae6c7e-f81f-4307-b7cf-d23f1b28024a",
+    "entry_status": "FTT",
+    "major": "Human Resources/Personnel Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.101218326,
+    "fin_aid_3000": 9.841591412,
+    "fin_aid_10000": 14.97914154
+},
+{
+    "guid": "1e31481e-68d7-432a-82c9-5eecbc00afd5",
+    "entry_status": "FTT",
+    "major": "Human Resources/Personnel Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 11.81989833,
+    "fin_aid_3000": 14.1212889,
+    "fin_aid_10000": 21.48601228
+},
+{
+    "guid": "927f9c77-d1de-4015-9e8c-823d78993043",
+    "entry_status": "FTT",
+    "major": "Human Services",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.396241171000001,
+    "fin_aid_3000": 7.06991249,
+    "fin_aid_10000": 12.17676051
+},
+{
+    "guid": "537f28a1-8c3a-4bd8-8069-9c60a2d98eed",
+    "entry_status": "FTT",
+    "major": "Human Services",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.9942454839999995,
+    "fin_aid_3000": 10.08777081,
+    "fin_aid_10000": 17.21308609
+},
+{
+    "guid": "ff4ecae2-4436-4f6c-a454-0f3141f0fe55",
+    "entry_status": "FTT",
+    "major": "Human Services",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.64385132,
+    "fin_aid_3000": 15.90697063,
+    "fin_aid_10000": 28.85706387
+},
+{
+    "guid": "df4a9850-aa1d-4bca-acd2-52f065430fb4",
+    "entry_status": "FTT",
+    "major": "Humanities",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "d9ae2326-b752-42c9-80a2-d31d32df349b",
+    "entry_status": "FTT",
+    "major": "Humanities",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "38042404-536e-484b-8aa7-487a08d1b2eb",
+    "entry_status": "FTT",
+    "major": "Humanities",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "0f4871ef-f2e9-4351-bf73-b90a1e194d71",
+    "entry_status": "FTT",
+    "major": "Industrial Arts",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.180849683,
+    "fin_aid_3000": 6.398221297999999,
+    "fin_aid_10000": 9.489523572000001
+},
+{
+    "guid": "ffcd0ded-f267-4869-9d62-793f524923ad",
+    "entry_status": "FTT",
+    "major": "Industrial Arts",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.026603037,
+    "fin_aid_3000": 8.33475446,
+    "fin_aid_10000": 11.76169823
+},
+{
+    "guid": "351c7143-8b58-4ec1-9aa3-8414d168acb3",
+    "entry_status": "FTT",
+    "major": "Industrial Arts",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.728767122999999,
+    "fin_aid_3000": 11.23187669,
+    "fin_aid_10000": 15.32561828
+},
+{
+    "guid": "00bf7c64-47aa-459e-a554-344db189544a",
+    "entry_status": "FTT",
+    "major": "Industrial Design",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.98555703,
+    "fin_aid_3000": 14.08033583,
+    "fin_aid_10000": 24.38041396
+},
+{
+    "guid": "0386fef3-cda6-40bc-b80f-4ca7e310bf94",
+    "entry_status": "FTT",
+    "major": "Industrial Design",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.87734563,
+    "fin_aid_3000": 20.09454323,
+    "fin_aid_10000": 34.52324443
+},
+{
+    "guid": "47c310b7-a9b9-4b2c-b522-0b7ea94a9941",
+    "entry_status": "FTT",
+    "major": "Industrial Design",
+    "in_school_earning": 10500,
+    "fin_aid_0": 25.33729189,
+    "fin_aid_3000": 31.93386981,
+    "fin_aid_10000": 57.33468901
+},
+{
+    "guid": "c9a38a30-60bf-4f8e-865a-120b2ac71968",
+    "entry_status": "FTT",
+    "major": "Industrial Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 16.060265400000002,
+    "fin_aid_3000": 19.25352291,
+    "fin_aid_10000": 28.73790599
+},
+{
+    "guid": "927e8282-3ae7-4ae5-a788-c2da47d5a884",
+    "entry_status": "FTT",
+    "major": "Industrial Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 21.0155997,
+    "fin_aid_3000": 24.94775914,
+    "fin_aid_10000": 37.21055904
+},
+{
+    "guid": "ce3699e3-fa1b-45ec-9ea3-727dbd3936ec",
+    "entry_status": "FTT",
+    "major": "Industrial Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 29.56351476,
+    "fin_aid_3000": 35.1010349,
+    "fin_aid_10000": 54.21172088
+},
+{
+    "guid": "5af67dd1-8158-4122-8a1d-45b8803a7531",
+    "entry_status": "FTT",
+    "major": "Industrial Management & Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.074280648999999,
+    "fin_aid_3000": 7.689824837000001,
+    "fin_aid_10000": 12.33286834
+},
+{
+    "guid": "7bcc6e6c-3c58-4e15-b59c-7390804d8305",
+    "entry_status": "FTT",
+    "major": "Industrial Management & Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.564655927,
+    "fin_aid_3000": 10.49204216,
+    "fin_aid_10000": 16.42892309
+},
+{
+    "guid": "a01b5044-a973-4a4f-82b9-0d2dba3e1180",
+    "entry_status": "FTT",
+    "major": "Industrial Management & Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.73278932,
+    "fin_aid_3000": 15.41054458,
+    "fin_aid_10000": 23.83271403
+},
+{
+    "guid": "5d67693f-2a21-45d1-8774-c9f1a59d0467",
+    "entry_status": "FTT",
+    "major": "Industrial Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.5316059420000006,
+    "fin_aid_3000": 8.295698548999999,
+    "fin_aid_10000": 13.50984651
+},
+{
+    "guid": "a702c50d-7701-4cb4-9844-55831a7edfbf",
+    "entry_status": "FTT",
+    "major": "Industrial Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.262369981,
+    "fin_aid_3000": 11.41920177,
+    "fin_aid_10000": 18.23041688
+},
+{
+    "guid": "b8df53c2-7a4a-4ac3-b4ac-df42015c2fee",
+    "entry_status": "FTT",
+    "major": "Industrial Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.96732383,
+    "fin_aid_3000": 17.051498600000002,
+    "fin_aid_10000": 27.56520328
+},
+{
+    "guid": "79925053-a6b8-4242-b7c6-bb261f67d9d4",
+    "entry_status": "FTT",
+    "major": "Information Systems",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.99139821,
+    "fin_aid_3000": 9.798358041,
+    "fin_aid_10000": 14.96514524
+},
+{
+    "guid": "44a61306-cf4e-46c4-bcb4-cf512f01fdb6",
+    "entry_status": "FTT",
+    "major": "Information Systems",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.77742423,
+    "fin_aid_3000": 12.92819345,
+    "fin_aid_10000": 19.3998344
+},
+{
+    "guid": "69cac329-b8b8-4790-af5b-e4207d73d13c",
+    "entry_status": "FTT",
+    "major": "Information Systems",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.40456821,
+    "fin_aid_3000": 18.31175455,
+    "fin_aid_10000": 27.69473143
+},
+{
+    "guid": "0189649d-bc8d-4c5d-bac5-0d32b6e7dcf7",
+    "entry_status": "FTT",
+    "major": "Interior Design",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.88658396,
+    "fin_aid_3000": 17.43655668,
+    "fin_aid_10000": 36.13618645
+},
+{
+    "guid": "4aafd30c-8969-4caa-b3d6-f9b59f20a318",
+    "entry_status": "FTT",
+    "major": "Interior Design",
+    "in_school_earning": 4500,
+    "fin_aid_0": 20.32558946,
+    "fin_aid_3000": 27.75169021,
+    "fin_aid_10000": 59.96439516
+},
+{
+    "guid": "7740fd28-fbb8-49bc-9181-be0a630f238b",
+    "entry_status": "FTT",
+    "major": "Interior Design",
+    "in_school_earning": 10500,
+    "fin_aid_0": 38.12418427,
+    "fin_aid_3000": 53.21305668,
+    "fin_aid_10000": 197.638269
+},
+{
+    "guid": "9f6df17f-0bc6-4ecc-9c59-2514adb021b2",
+    "entry_status": "FTT",
+    "major": "International Business",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.758257386,
+    "fin_aid_3000": 8.704808871000001,
+    "fin_aid_10000": 14.95151574
+},
+{
+    "guid": "959908b1-e808-4795-b7a2-2b36e3550ced",
+    "entry_status": "FTT",
+    "major": "International Business",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.80186145,
+    "fin_aid_3000": 12.343462800000001,
+    "fin_aid_10000": 21.45511548
+},
+{
+    "guid": "79a0a887-1b44-4f53-819b-c5f5bd0f5abc",
+    "entry_status": "FTT",
+    "major": "International Business",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.54326123,
+    "fin_aid_3000": 19.74620005,
+    "fin_aid_10000": 37.14627022
+},
+{
+    "guid": "47398618-59e5-4f07-8686-2021076c785e",
+    "entry_status": "FTT",
+    "major": "Japanese",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.107756362999999,
+    "fin_aid_3000": 8.11845632,
+    "fin_aid_10000": 15.46894917
+},
+{
+    "guid": "c6760551-f520-4264-97fa-3d04e608f456",
+    "entry_status": "FTT",
+    "major": "Japanese",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.291385775,
+    "fin_aid_3000": 12.17167733,
+    "fin_aid_10000": 26.19971552
+},
+{
+    "guid": "6cef2bee-9c44-4bcc-ace1-0d0b95b0100e",
+    "entry_status": "FTT",
+    "major": "Japanese",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.28057091,
+    "fin_aid_3000": 22.94493885,
+    "fin_aid_10000": 65.99294405
+},
+{
+    "guid": "4b7dfb5a-a448-47b7-aecd-7a5415585693",
+    "entry_status": "FTT",
+    "major": "Jewish Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.739136729,
+    "fin_aid_3000": 9.971247116,
+    "fin_aid_10000": 17.82380623
+},
+{
+    "guid": "30480840-6348-4681-a10a-42f1996c049e",
+    "entry_status": "FTT",
+    "major": "Jewish Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.26679943,
+    "fin_aid_3000": 14.39366803,
+    "fin_aid_10000": 27.80360901
+},
+{
+    "guid": "1ef770c2-2152-47e8-893a-dd78a991710d",
+    "entry_status": "FTT",
+    "major": "Jewish Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 18.63915286,
+    "fin_aid_3000": 24.93053166,
+    "fin_aid_10000": 45.86611894
+},
+{
+    "guid": "cf4df302-46e6-4e11-bf65-940c4dea50d9",
+    "entry_status": "FTT",
+    "major": "Journalism",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.142019779,
+    "fin_aid_3000": 6.863095827,
+    "fin_aid_10000": 12.4537052
+},
+{
+    "guid": "e22ae427-bb00-4aa8-8531-3d371cc32899",
+    "entry_status": "FTT",
+    "major": "Journalism",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.830859106,
+    "fin_aid_3000": 10.08579744,
+    "fin_aid_10000": 18.88651467
+},
+{
+    "guid": "82665e83-fb3c-4073-85cf-3d63ecfcd3ea",
+    "entry_status": "FTT",
+    "major": "Journalism",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.00334349,
+    "fin_aid_3000": 17.10068165,
+    "fin_aid_10000": 39.336699100000004
+},
+{
+    "guid": "82b5ad96-e130-4f0c-9cb3-c7ccea93aed1",
+    "entry_status": "FTT",
+    "major": "Kinesiology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.1650771120000005,
+    "fin_aid_3000": 9.206257432000001,
+    "fin_aid_10000": 16.00181384
+},
+{
+    "guid": "cda534d6-cbbe-4aa5-a109-70fcfec1779a",
+    "entry_status": "FTT",
+    "major": "Kinesiology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.36935806,
+    "fin_aid_3000": 13.10847756,
+    "fin_aid_10000": 23.76359945
+},
+{
+    "guid": "b53721c9-1f19-411f-946c-94af265777f0",
+    "entry_status": "FTT",
+    "major": "Kinesiology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.67255843,
+    "fin_aid_3000": 21.63010999,
+    "fin_aid_10000": 49.48096208
+},
+{
+    "guid": "eebef8df-7697-4bc5-9a65-8aca19271701",
+    "entry_status": "FTT",
+    "major": "Labor Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 11.9667982,
+    "fin_aid_3000": 13.82807725,
+    "fin_aid_10000": 18.68994556
+},
+{
+    "guid": "649068d3-c1ac-4bff-b966-8b9d8fa7abbe",
+    "entry_status": "FTT",
+    "major": "Labor Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.80270828,
+    "fin_aid_3000": 16.85605475,
+    "fin_aid_10000": 22.33562043
+},
+{
+    "guid": "89fb121a-7ef7-4d47-b4fc-d41cdbf84a30",
+    "entry_status": "FTT",
+    "major": "Labor Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.071825399999998,
+    "fin_aid_3000": 21.48235999,
+    "fin_aid_10000": 28.09977109
+},
+{
+    "guid": "79c2dd99-cc27-46eb-8770-d26698b28c47",
+    "entry_status": "FTT",
+    "major": "Land Resource Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 13.66813288,
+    "fin_aid_3000": 18.45563882,
+    "fin_aid_10000": 38.09310466
+},
+{
+    "guid": "ea0067cc-91b6-43c5-afcf-89b559e14443",
+    "entry_status": "FTT",
+    "major": "Land Resource Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 21.480574,
+    "fin_aid_3000": 29.23851883,
+    "fin_aid_10000": 64.97774614
+},
+{
+    "guid": "e5ec4da8-fd86-4947-a41c-53567063784d",
+    "entry_status": "FTT",
+    "major": "Land Resource Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 40.22335569,
+    "fin_aid_3000": 56.99972298,
+    "fin_aid_10000": 165.8415155
+},
+{
+    "guid": "cab2ba84-f57a-4cb5-beae-e0c4674d4b1f",
+    "entry_status": "FTT",
+    "major": "Landscape Architecture",
+    "in_school_earning": 0,
+    "fin_aid_0": 11.38828042,
+    "fin_aid_3000": 14.31866354,
+    "fin_aid_10000": 23.51594238
+},
+{
+    "guid": "a060bfbb-6380-4318-9f18-708f38e2970d",
+    "entry_status": "FTT",
+    "major": "Landscape Architecture",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.97746651,
+    "fin_aid_3000": 19.76934953,
+    "fin_aid_10000": 32.11722369
+},
+{
+    "guid": "20aea3d9-2582-4232-818a-f5216aeb44da",
+    "entry_status": "FTT",
+    "major": "Landscape Architecture",
+    "in_school_earning": 10500,
+    "fin_aid_0": 24.34147792,
+    "fin_aid_3000": 29.95011117,
+    "fin_aid_10000": 50.31191642
+},
+{
+    "guid": "7ec96e9f-0660-4710-ab3d-55150b5bb2c4",
+    "entry_status": "FTT",
+    "major": "Latin/Central American Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.426520998,
+    "fin_aid_3000": 5.887529402,
+    "fin_aid_10000": 10.19774761
+},
+{
+    "guid": "5542e70c-a8d6-40c3-be5e-329ae57ae923",
+    "entry_status": "FTT",
+    "major": "Latin/Central American Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.682531824,
+    "fin_aid_3000": 8.455982712,
+    "fin_aid_10000": 14.38001509
+},
+{
+    "guid": "685ccfc4-01c2-4479-a28d-48d3bb8e2a23",
+    "entry_status": "FTT",
+    "major": "Latin/Central American Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 10.58489327,
+    "fin_aid_3000": 13.28841759,
+    "fin_aid_10000": 25.04465703
+},
+{
+    "guid": "1a5e1f60-503f-4871-8516-c6d94efcf7e6",
+    "entry_status": "FTT",
+    "major": "Liberal Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.458982263,
+    "fin_aid_3000": 10.66369605,
+    "fin_aid_10000": 17.74742393
+},
+{
+    "guid": "45b66666-cd0f-473f-b2bf-da4b4d0158ac",
+    "entry_status": "FTT",
+    "major": "Liberal Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.9106066,
+    "fin_aid_3000": 14.79875151,
+    "fin_aid_10000": 25.0238635
+},
+{
+    "guid": "570ebda3-5bbe-4e6d-a2fe-1211b7d351c8",
+    "entry_status": "FTT",
+    "major": "Liberal Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 18.41346912,
+    "fin_aid_3000": 23.11757156,
+    "fin_aid_10000": 43.20580548
+},
+{
+    "guid": "38c559d6-0cc6-4e46-a538-47e2ec630d0e",
+    "entry_status": "FTT",
+    "major": "Linguistics",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.4067491480000003,
+    "fin_aid_3000": 4.804697504,
+    "fin_aid_10000": 8.995944733
+},
+{
+    "guid": "18ebe234-2f70-41bf-8ebd-541bba1c528b",
+    "entry_status": "FTT",
+    "major": "Linguistics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 5.567334324,
+    "fin_aid_3000": 7.281218300000001,
+    "fin_aid_10000": 13.38817644
+},
+{
+    "guid": "4f1e0f92-fd45-4ab2-883c-4f48af7a5a56",
+    "entry_status": "FTT",
+    "major": "Linguistics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.383455538,
+    "fin_aid_3000": 12.18849544,
+    "fin_aid_10000": 30.01897658
+},
+{
+    "guid": "5f5a242e-412a-4548-b2ee-e5e9a57cc3c2",
+    "entry_status": "FTT",
+    "major": "Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.701996804,
+    "fin_aid_3000": 8.473648421,
+    "fin_aid_10000": 13.77764011
+},
+{
+    "guid": "2f664459-9a63-4d46-ba73-1ab0f4d0405a",
+    "entry_status": "FTT",
+    "major": "Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.448053218,
+    "fin_aid_3000": 11.63501378,
+    "fin_aid_10000": 18.73352549
+},
+{
+    "guid": "2442da93-9159-40c9-ba4f-6625d2fc1316",
+    "entry_status": "FTT",
+    "major": "Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.25018395,
+    "fin_aid_3000": 17.47790899,
+    "fin_aid_10000": 29.19950275
+},
+{
+    "guid": "ea53bdfe-805d-46ae-ab25-8d63a910c508",
+    "entry_status": "FTT",
+    "major": "Management Systems Analysis / Operations Research",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.020410995,
+    "fin_aid_3000": 4.052639873,
+    "fin_aid_10000": 6.645334227
+},
+{
+    "guid": "c92565da-49f3-4ccd-805e-7a0f4b5c9a8f",
+    "entry_status": "FTT",
+    "major": "Management Systems Analysis / Operations Research",
+    "in_school_earning": 4500,
+    "fin_aid_0": 4.582194427,
+    "fin_aid_3000": 5.679582633,
+    "fin_aid_10000": 8.550111321000001
+},
+{
+    "guid": "8611db5c-c9f0-4514-978f-2353975e279e",
+    "entry_status": "FTT",
+    "major": "Management Systems Analysis / Operations Research",
+    "in_school_earning": 10500,
+    "fin_aid_0": 6.845367782,
+    "fin_aid_3000": 8.104445545,
+    "fin_aid_10000": 11.60470133
+},
+{
+    "guid": "f08a07ab-b5b8-44a5-be90-51ba1b130e20",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 22.09278514,
+    "fin_aid_3000": 26.21637223,
+    "fin_aid_10000": 39.12218134
+},
+{
+    "guid": "1c657d16-84cc-484e-887b-b132a1aa183e",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 28.53043591,
+    "fin_aid_3000": 33.82058573,
+    "fin_aid_10000": 51.93161737
+},
+{
+    "guid": "7529ef55-8b85-453f-962b-6d429c516cd8",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 40.30784098,
+    "fin_aid_3000": 48.59732848,
+    "fin_aid_10000": 84.23984861
+},
+{
+    "guid": "d7cfc99b-b706-4843-82f1-a6af2b41b1ba",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 11.40727539,
+    "fin_aid_3000": 14.060619400000002,
+    "fin_aid_10000": 21.41157564
+},
+{
+    "guid": "e453a17a-9b13-4372-8834-88d88afd8dbe",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.49531418,
+    "fin_aid_3000": 18.59152481,
+    "fin_aid_10000": 27.08049646
+},
+{
+    "guid": "e8721c36-5fbf-4d7b-9ba8-433aeac32386",
+    "entry_status": "FTT",
+    "major": "Manufacturing Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.00275787,
+    "fin_aid_3000": 25.75060488,
+    "fin_aid_10000": 36.05255475
+},
+{
+    "guid": "0b9711b6-a9b1-467c-9b36-2d4d9831b502",
+    "entry_status": "FTT",
+    "major": "Marine Biology",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.714276054,
+    "fin_aid_3000": 7.442185447000001,
+    "fin_aid_10000": 13.03694241
+},
+{
+    "guid": "f1b6e9bb-348e-4364-8e70-e28140e7861c",
+    "entry_status": "FTT",
+    "major": "Marine Biology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.411936412000001,
+    "fin_aid_3000": 10.66736673,
+    "fin_aid_10000": 19.66224788
+},
+{
+    "guid": "bc63d699-7a4e-49b5-b253-08b47dae5db5",
+    "entry_status": "FTT",
+    "major": "Marine Biology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.58886485,
+    "fin_aid_3000": 17.77124553,
+    "fin_aid_10000": 52.61685217
+},
+{
+    "guid": "634604ee-b1ce-4136-aa0e-c2cd63cf209d",
+    "entry_status": "FTT",
+    "major": "Marketing",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.831201286000001,
+    "fin_aid_3000": 9.893678976,
+    "fin_aid_10000": 16.33492103
+},
+{
+    "guid": "fcbce598-aad5-4de0-92a3-2a750ce69e2c",
+    "entry_status": "FTT",
+    "major": "Marketing",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.04846865,
+    "fin_aid_3000": 13.68949865,
+    "fin_aid_10000": 22.62051347
+},
+{
+    "guid": "54c052c0-832f-4e28-bacc-2ad2452f06fb",
+    "entry_status": "FTT",
+    "major": "Marketing",
+    "in_school_earning": 10500,
+    "fin_aid_0": 16.92500257,
+    "fin_aid_3000": 21.00921461,
+    "fin_aid_10000": 36.568617700000004
+},
+{
+    "guid": "0ad3842c-4e4c-4338-a67d-695da53e20a5",
+    "entry_status": "FTT",
+    "major": "Materials Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 22.95706722,
+    "fin_aid_3000": 27.64030767,
+    "fin_aid_10000": 40.51738902
+},
+{
+    "guid": "00d422fb-240c-4f57-b4fd-caebcfe35c47",
+    "entry_status": "FTT",
+    "major": "Materials Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 30.13776481,
+    "fin_aid_3000": 35.5248082,
+    "fin_aid_10000": 51.14762346
+},
+{
+    "guid": "f553e84d-bc14-47e0-a838-34a1ff384f36",
+    "entry_status": "FTT",
+    "major": "Materials Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 41.58297303,
+    "fin_aid_3000": 48.55914026,
+    "fin_aid_10000": 70.93592235
+},
+{
+    "guid": "70e078d9-3f5e-43f9-a1fd-266139f38a45",
+    "entry_status": "FTT",
+    "major": "Mathematics",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.93245047,
+    "fin_aid_3000": 13.54323773,
+    "fin_aid_10000": 21.95046927
+},
+{
+    "guid": "a8bf61d4-df33-474f-9cc6-654f67250bbd",
+    "entry_status": "FTT",
+    "major": "Mathematics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.02498596,
+    "fin_aid_3000": 18.457171600000002,
+    "fin_aid_10000": 30.53804615
+},
+{
+    "guid": "4ba6da6d-eabb-43af-8712-3cd9312c5abb",
+    "entry_status": "FTT",
+    "major": "Mathematics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.73771653,
+    "fin_aid_3000": 28.28776009,
+    "fin_aid_10000": 52.68450992
+},
+{
+    "guid": "07b2c863-cbc3-43e8-96e6-4d261cc753f3",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering",
+    "in_school_earning": 0,
+    "fin_aid_0": 16.54774397,
+    "fin_aid_3000": 19.64420218,
+    "fin_aid_10000": 29.02899227
+},
+{
+    "guid": "6cd212d8-8a99-4d34-924b-196cfc719656",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering",
+    "in_school_earning": 4500,
+    "fin_aid_0": 21.36332459,
+    "fin_aid_3000": 25.23644377,
+    "fin_aid_10000": 37.77456687
+},
+{
+    "guid": "890aa8ee-48a5-4c5b-9a88-7ed296fcf260",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering",
+    "in_school_earning": 10500,
+    "fin_aid_0": 29.86399567,
+    "fin_aid_3000": 35.55812238,
+    "fin_aid_10000": 56.89381554
+},
+{
+    "guid": "19813987-0d97-4319-8b94-5b09d77da35a",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.038567467999999,
+    "fin_aid_3000": 8.967071914,
+    "fin_aid_10000": 15.02559037
+},
+{
+    "guid": "013a8bd8-32e8-4d92-82ca-1cb908e44909",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.04620849,
+    "fin_aid_3000": 12.52181471,
+    "fin_aid_10000": 21.13982804
+},
+{
+    "guid": "950220af-0d77-4cdc-bd5c-6d757d54f641",
+    "entry_status": "FTT",
+    "major": "Mechanical Engineering Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.58880025,
+    "fin_aid_3000": 19.54663689,
+    "fin_aid_10000": 35.72259892
+},
+{
+    "guid": "4c9708d2-ed4f-46a1-b72c-f3f628be0637",
+    "entry_status": "FTT",
+    "major": "Medical Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 17.76007998,
+    "fin_aid_3000": 20.9417544,
+    "fin_aid_10000": 30.58776284
+},
+{
+    "guid": "4580be68-45fa-4b95-87c5-94681ef56bc2",
+    "entry_status": "FTT",
+    "major": "Medical Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 22.70598249,
+    "fin_aid_3000": 26.68219537,
+    "fin_aid_10000": 39.69903507
+},
+{
+    "guid": "e20385c9-ded4-4c51-a289-42b2e94bec08",
+    "entry_status": "FTT",
+    "major": "Medical Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 31.45039608,
+    "fin_aid_3000": 37.37152015,
+    "fin_aid_10000": 60.60744852
+},
+{
+    "guid": "01a223b0-ee54-4ad9-aaba-d6330156521d",
+    "entry_status": "FTT",
+    "major": "Mexican-American Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.158700869,
+    "fin_aid_3000": 7.822653535,
+    "fin_aid_10000": 12.661134599999999
+},
+{
+    "guid": "d1566cae-c435-4deb-be78-8f583781b280",
+    "entry_status": "FTT",
+    "major": "Mexican-American Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.727655211,
+    "fin_aid_3000": 10.73215967,
+    "fin_aid_10000": 17.00731462
+},
+{
+    "guid": "b5e5c40a-74ea-4d1c-b868-1ac92e90cd4c",
+    "entry_status": "FTT",
+    "major": "Mexican-American Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.08214977,
+    "fin_aid_3000": 15.91958913,
+    "fin_aid_10000": 25.84978252
+},
+{
+    "guid": "9d1e3e19-db8e-4276-ab50-98e959339861",
+    "entry_status": "FTT",
+    "major": "Microbiology",
+    "in_school_earning": 0,
+    "fin_aid_0": 10.80632837,
+    "fin_aid_3000": 13.48451892,
+    "fin_aid_10000": 22.60330528
+},
+{
+    "guid": "4e0f9840-5589-4f2a-bd0f-dfda286ecdb9",
+    "entry_status": "FTT",
+    "major": "Microbiology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 15.03207943,
+    "fin_aid_3000": 18.70885298,
+    "fin_aid_10000": 32.95771076
+},
+{
+    "guid": "6582e494-837f-4e55-9ebd-f9435e01628b",
+    "entry_status": "FTT",
+    "major": "Microbiology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 23.50433825,
+    "fin_aid_3000": 30.12647665,
+    "fin_aid_10000": 67.36117215
+},
+{
+    "guid": "bb290e67-436b-43e3-9446-a85524f20994",
+    "entry_status": "FTT",
+    "major": "Multimedia",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.825782739,
+    "fin_aid_3000": 7.877097325,
+    "fin_aid_10000": 16.22485893
+},
+{
+    "guid": "1e16223d-8d88-4221-8533-778fcd9de2e9",
+    "entry_status": "FTT",
+    "major": "Multimedia",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.100914519,
+    "fin_aid_3000": 12.24290291,
+    "fin_aid_10000": 34.61860081
+},
+{
+    "guid": "70a0242c-9e0d-4514-9d82-52e503347493",
+    "entry_status": "FTT",
+    "major": "Multimedia",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.29519652,
+    "fin_aid_3000": 28.01652639,
+    "fin_aid_10000": 244.65632459999998
+},
+{
+    "guid": "83eab1dd-3c3d-447b-865e-00d704db7ca1",
+    "entry_status": "FTT",
+    "major": "Music",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.653829405,
+    "fin_aid_3000": 11.40702145,
+    "fin_aid_10000": 22.27533473
+},
+{
+    "guid": "265d3f58-7052-4b30-8fdd-8a68aecb65ea",
+    "entry_status": "FTT",
+    "major": "Music",
+    "in_school_earning": 4500,
+    "fin_aid_0": 13.07664573,
+    "fin_aid_3000": 17.32056851,
+    "fin_aid_10000": 37.82721405
+},
+{
+    "guid": "72cf751a-da9c-471f-9d06-208e8691c62b",
+    "entry_status": "FTT",
+    "major": "Music",
+    "in_school_earning": 10500,
+    "fin_aid_0": 23.48978799,
+    "fin_aid_3000": 33.20904937,
+    "fin_aid_10000": 127.4788598
+},
+{
+    "guid": "f0a60feb-e48a-4a8a-a0b5-90c0f548616d",
+    "entry_status": "FTT",
+    "major": "Music - Performance",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "fb619724-c619-469b-a662-34ccbdfd044d",
+    "entry_status": "FTT",
+    "major": "Music - Performance",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "81b2b06e-319a-435e-aa4f-12de5364bd15",
+    "entry_status": "FTT",
+    "major": "Music - Performance",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "2bcc4b36-61eb-46f7-8d2a-33f13f2860dc",
+    "entry_status": "FTT",
+    "major": "Music Education",
+    "in_school_earning": 0,
+    "fin_aid_0": 15.48991076,
+    "fin_aid_3000": 20.33696193,
+    "fin_aid_10000": 38.28969687
+},
+{
+    "guid": "c07b7a47-5c29-479d-bebc-fcadd651d2c9",
+    "entry_status": "FTT",
+    "major": "Music Education",
+    "in_school_earning": 4500,
+    "fin_aid_0": 23.26241735,
+    "fin_aid_3000": 30.437405199999997,
+    "fin_aid_10000": 60.90383469
+},
+{
+    "guid": "c69f4156-70e2-43b8-bb08-c91569301379",
+    "entry_status": "FTT",
+    "major": "Music Education",
+    "in_school_earning": 10500,
+    "fin_aid_0": 40.14398395,
+    "fin_aid_3000": 54.37258804,
+    "fin_aid_10000": 180.3223486
+},
+{
+    "guid": "b80f46b7-5829-4bb0-a05b-2bb5f649851f",
+    "entry_status": "FTT",
+    "major": "Natural Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 19.68476505,
+    "fin_aid_3000": 27.20004432,
+    "fin_aid_10000": 60.86715083
+},
+{
+    "guid": "0259884c-6d77-4517-a915-6c4b97b5fa87",
+    "entry_status": "FTT",
+    "major": "Natural Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 31.99001857,
+    "fin_aid_3000": 44.69944704,
+    "fin_aid_10000": 148.0271291
+},
+{
+    "guid": "9deb5063-7e5f-4c6e-a9ff-a1222fa813b4",
+    "entry_status": "FTT",
+    "major": "Natural Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 65.17578023,
+    "fin_aid_3000": 110.2897711,
+    "fin_aid_10000": 180.0
+},
+{
+    "guid": "d4fc2d7d-8a9b-423b-b98f-481632d66d73",
+    "entry_status": "FTT",
+    "major": "Nursing",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.749556051,
+    "fin_aid_3000": 5.8380264760000005,
+    "fin_aid_10000": 8.521750474
+},
+{
+    "guid": "db912ce4-0bd9-4aec-811e-7e3f0bae6c43",
+    "entry_status": "FTT",
+    "major": "Nursing",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.393168887000001,
+    "fin_aid_3000": 7.5333611970000005,
+    "fin_aid_10000": 10.41492575
+},
+{
+    "guid": "b13cb7f9-9d85-44f7-9c94-9b6accf62c07",
+    "entry_status": "FTT",
+    "major": "Nursing",
+    "in_school_earning": 10500,
+    "fin_aid_0": 8.72434146,
+    "fin_aid_3000": 9.979696612,
+    "fin_aid_10000": 13.24298823
+},
+{
+    "guid": "6559e507-f083-40fe-b5d7-386ceafce71c",
+    "entry_status": "FTT",
+    "major": "Occupational Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.644367921000001,
+    "fin_aid_3000": 8.298091365,
+    "fin_aid_10000": 12.93846323
+},
+{
+    "guid": "59072ee3-96c2-4958-a626-4c807d1bdd27",
+    "entry_status": "FTT",
+    "major": "Occupational Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.187439754,
+    "fin_aid_3000": 11.12483794,
+    "fin_aid_10000": 16.80550099
+},
+{
+    "guid": "1131d5a5-b59b-4d51-bb0c-ea4bd77fdf1c",
+    "entry_status": "FTT",
+    "major": "Occupational Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.32684336,
+    "fin_aid_3000": 15.86812644,
+    "fin_aid_10000": 23.64523522
+},
+{
+    "guid": "e55313ec-9c91-4b6e-beae-9e3f37da5af2",
+    "entry_status": "FTT",
+    "major": "Occupational Therapy",
+    "in_school_earning": 0,
+    "fin_aid_0": 20.60140747,
+    "fin_aid_3000": 24.55853235,
+    "fin_aid_10000": 36.73533764
+},
+{
+    "guid": "6b5e28ce-7f47-4462-84af-7dea5e060e2b",
+    "entry_status": "FTT",
+    "major": "Occupational Therapy",
+    "in_school_earning": 4500,
+    "fin_aid_0": 26.76679358,
+    "fin_aid_3000": 31.77574727,
+    "fin_aid_10000": 48.448605900000004
+},
+{
+    "guid": "fde28f5a-dd2c-4656-855f-125ee3d1342c",
+    "entry_status": "FTT",
+    "major": "Occupational Therapy",
+    "in_school_earning": 10500,
+    "fin_aid_0": 37.83583063,
+    "fin_aid_3000": 45.43768331,
+    "fin_aid_10000": 76.06857411
+},
+{
+    "guid": "89cec0d7-0273-4033-bb64-19dc1b4c27e8",
+    "entry_status": "FTT",
+    "major": "Performing Arts",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.146035526,
+    "fin_aid_3000": 5.438344666,
+    "fin_aid_10000": 8.986804028
+},
+{
+    "guid": "0c3b74ef-553d-48d3-85a5-afb5a755f0b5",
+    "entry_status": "FTT",
+    "major": "Performing Arts",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.124023101000001,
+    "fin_aid_3000": 7.60425026,
+    "fin_aid_10000": 12.00822593
+},
+{
+    "guid": "72e6b2ca-0e82-4daf-b564-ef8377f759d4",
+    "entry_status": "FTT",
+    "major": "Performing Arts",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.284158747000001,
+    "fin_aid_3000": 11.25949162,
+    "fin_aid_10000": 18.17769118
+},
+{
+    "guid": "2082e1d5-d50f-4ff5-b1a3-5cd6f0dfeb24",
+    "entry_status": "FTT",
+    "major": "Philosophy",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.100928255,
+    "fin_aid_3000": 6.79035184,
+    "fin_aid_10000": 12.22626128
+},
+{
+    "guid": "2bb2d1f0-8918-49e9-9f5f-6d03a9be145a",
+    "entry_status": "FTT",
+    "major": "Philosophy",
+    "in_school_earning": 4500,
+    "fin_aid_0": 7.736755492,
+    "fin_aid_3000": 9.932248539,
+    "fin_aid_10000": 18.4770098
+},
+{
+    "guid": "2f677621-6d1b-42b9-8050-83a918f31943",
+    "entry_status": "FTT",
+    "major": "Philosophy",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.75782008,
+    "fin_aid_3000": 16.72895985,
+    "fin_aid_10000": 41.55071036
+},
+{
+    "guid": "669143f1-487b-4030-b374-dc85cc2c8ab3",
+    "entry_status": "FTT",
+    "major": "Physics",
+    "in_school_earning": 0,
+    "fin_aid_0": 11.00331242,
+    "fin_aid_3000": 13.51687603,
+    "fin_aid_10000": 21.61042134
+},
+{
+    "guid": "0f98385e-cf59-43f2-9898-2670cf6b70f8",
+    "entry_status": "FTT",
+    "major": "Physics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.94182178,
+    "fin_aid_3000": 18.24338544,
+    "fin_aid_10000": 29.91640548
+},
+{
+    "guid": "6fbcc215-efe2-435e-84ab-5c3b2b0376e5",
+    "entry_status": "FTT",
+    "major": "Physics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 22.37041632,
+    "fin_aid_3000": 27.73807564,
+    "fin_aid_10000": 51.00737728
+},
+{
+    "guid": "10dddd52-bffa-4464-b065-917274ceb3d4",
+    "entry_status": "FTT",
+    "major": "Political Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.756006942000001,
+    "fin_aid_3000": 7.407202268,
+    "fin_aid_10000": 12.37206877
+},
+{
+    "guid": "4c7b260f-99d0-4fa5-81e8-01d4cb73c226",
+    "entry_status": "FTT",
+    "major": "Political Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.314368054,
+    "fin_aid_3000": 10.35506855,
+    "fin_aid_10000": 17.17896566
+},
+{
+    "guid": "286ed097-6039-46f5-bcfc-2e3883a91ba4",
+    "entry_status": "FTT",
+    "major": "Political Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 12.82066239,
+    "fin_aid_3000": 15.93670935,
+    "fin_aid_10000": 28.45421063
+},
+{
+    "guid": "ed2dd693-d9ad-4a95-833b-1e280856c75a",
+    "entry_status": "FTT",
+    "major": "Production and Operations Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 12.36527966,
+    "fin_aid_3000": 15.21120559,
+    "fin_aid_10000": 23.88159379
+},
+{
+    "guid": "e8da48f6-5f0c-48db-86b3-e4e1e89c1a86",
+    "entry_status": "FTT",
+    "major": "Production and Operations Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 16.801015600000003,
+    "fin_aid_3000": 20.38851587,
+    "fin_aid_10000": 31.73069603
+},
+{
+    "guid": "b49e6bf0-6413-4166-a3db-1ec6b54bf09e",
+    "entry_status": "FTT",
+    "major": "Production and Operations Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 24.64521745,
+    "fin_aid_3000": 29.77629681,
+    "fin_aid_10000": 47.32862843
+},
+{
+    "guid": "caddeb2f-02ee-4f5f-8ceb-22043471b8cc",
+    "entry_status": "FTT",
+    "major": "Psychology",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.454557881,
+    "fin_aid_3000": 8.403204946,
+    "fin_aid_10000": 14.85577515
+},
+{
+    "guid": "474a473a-2eb2-4f79-9e6e-039b22ca5509",
+    "entry_status": "FTT",
+    "major": "Psychology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.51063545,
+    "fin_aid_3000": 12.113076699999999,
+    "fin_aid_10000": 22.14891835
+},
+{
+    "guid": "e5ac8240-bfe5-46f4-b390-bc560742bf95",
+    "entry_status": "FTT",
+    "major": "Psychology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.49057275,
+    "fin_aid_3000": 20.15977086,
+    "fin_aid_10000": 43.75083462
+},
+{
+    "guid": "98ec2f8f-db0b-4cd0-9516-ef7638416b18",
+    "entry_status": "FTT",
+    "major": "Public Administration",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.606903916,
+    "fin_aid_3000": 8.209283021000001,
+    "fin_aid_10000": 12.69940349
+},
+{
+    "guid": "ce679841-39dc-47c5-a63f-7083a1757a3e",
+    "entry_status": "FTT",
+    "major": "Public Administration",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.069544856,
+    "fin_aid_3000": 10.94267686,
+    "fin_aid_10000": 16.4829562
+},
+{
+    "guid": "eafe5c68-bd4e-44c6-80be-3fde72e1535d",
+    "entry_status": "FTT",
+    "major": "Public Administration",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.07656327,
+    "fin_aid_3000": 15.55883502,
+    "fin_aid_10000": 23.45902687
+},
+{
+    "guid": "f76ae5ad-2b96-4f40-ad7c-7a2787781704",
+    "entry_status": "FTT",
+    "major": "Public Health",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.292206165,
+    "fin_aid_3000": 9.422061622000001,
+    "fin_aid_10000": 16.96598096
+},
+{
+    "guid": "fb6f6def-c05f-4623-90eb-be004ac3e814",
+    "entry_status": "FTT",
+    "major": "Public Health",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.65661497,
+    "fin_aid_3000": 13.64474657,
+    "fin_aid_10000": 27.24312577
+},
+{
+    "guid": "46a56aad-10d4-4d9e-8fa0-5f94054f63c8",
+    "entry_status": "FTT",
+    "major": "Public Health",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.76643902,
+    "fin_aid_3000": 24.15912932,
+    "fin_aid_10000": 138.2422537
+},
+{
+    "guid": "23fdbe5f-eec6-4b63-aa83-5f5593fa4f73",
+    "entry_status": "FTT",
+    "major": "Public Relations",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.5722704389999995,
+    "fin_aid_3000": 8.46925329,
+    "fin_aid_10000": 14.619586300000002
+},
+{
+    "guid": "e2ca53a1-fc07-4579-a546-79e0148d0648",
+    "entry_status": "FTT",
+    "major": "Public Relations",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.53959542,
+    "fin_aid_3000": 12.030882400000001,
+    "fin_aid_10000": 21.34086378
+},
+{
+    "guid": "cec5b427-eb42-4c4d-a9de-afe7be728944",
+    "entry_status": "FTT",
+    "major": "Public Relations",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.21356545,
+    "fin_aid_3000": 19.52874297,
+    "fin_aid_10000": 39.90471468
+},
+{
+    "guid": "a8f84745-8d9a-4acb-ac7b-c659f50d69b5",
+    "entry_status": "FTT",
+    "major": "Radio/Television/Broadcast",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.278608800000001,
+    "fin_aid_3000": 9.491361057,
+    "fin_aid_10000": 17.33904806
+},
+{
+    "guid": "0614184e-9267-400d-b545-a1cab6df9a25",
+    "entry_status": "FTT",
+    "major": "Radio/Television/Broadcast",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.77993829,
+    "fin_aid_3000": 13.90282199,
+    "fin_aid_10000": 27.1334396
+},
+{
+    "guid": "bfe961a8-30c5-4c99-84e7-5d9de8d096a3",
+    "entry_status": "FTT",
+    "major": "Radio/Television/Broadcast",
+    "in_school_earning": 10500,
+    "fin_aid_0": 18.15484422,
+    "fin_aid_3000": 24.373423499999998,
+    "fin_aid_10000": 63.46601039
+},
+{
+    "guid": "88c0ce40-0a8f-4d90-9ced-69621e032da3",
+    "entry_status": "FTT",
+    "major": "Radiologic Science & Technology",
+    "in_school_earning": 0,
+    "fin_aid_0": 14.19412355,
+    "fin_aid_3000": 17.8541797,
+    "fin_aid_10000": 30.92031221
+},
+{
+    "guid": "bf3ac97e-6204-47c7-b091-6a42203bf9c9",
+    "entry_status": "FTT",
+    "major": "Radiologic Science & Technology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 20.02180703,
+    "fin_aid_3000": 25.27513239,
+    "fin_aid_10000": 45.85180798
+},
+{
+    "guid": "7c738cad-9e21-4806-8069-3edd15376825",
+    "entry_status": "FTT",
+    "major": "Radiologic Science & Technology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 32.22979174,
+    "fin_aid_3000": 41.80743344,
+    "fin_aid_10000": 91.4805243
+},
+{
+    "guid": "0cf0b9c9-f764-4e87-96b2-4877558b0f09",
+    "entry_status": "FTT",
+    "major": "Real Estate",
+    "in_school_earning": 0,
+    "fin_aid_0": 9.419194639,
+    "fin_aid_3000": 12.35361698,
+    "fin_aid_10000": 23.15385993
+},
+{
+    "guid": "11aac2b8-187d-4587-8bb9-7c5faccb67f8",
+    "entry_status": "FTT",
+    "major": "Real Estate",
+    "in_school_earning": 4500,
+    "fin_aid_0": 14.1118346,
+    "fin_aid_3000": 18.43945949,
+    "fin_aid_10000": 35.60820595
+},
+{
+    "guid": "729ee406-c052-4b86-9995-8244d34b0b02",
+    "entry_status": "FTT",
+    "major": "Real Estate",
+    "in_school_earning": 10500,
+    "fin_aid_0": 24.25041405,
+    "fin_aid_3000": 32.24891793,
+    "fin_aid_10000": 73.90599191
+},
+{
+    "guid": "fdcd2c31-53e1-4056-9d01-11f991754b25",
+    "entry_status": "FTT",
+    "major": "Recreation Management & Administration",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.177559068,
+    "fin_aid_3000": 7.976396901,
+    "fin_aid_10000": 14.3587184
+},
+{
+    "guid": "f3386a77-cabb-407e-aa4e-1c9abbcb90ba",
+    "entry_status": "FTT",
+    "major": "Recreation Management & Administration",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.041283016,
+    "fin_aid_3000": 11.59728239,
+    "fin_aid_10000": 22.36975883
+},
+{
+    "guid": "bae862a7-89ae-451e-bbe3-735735a76157",
+    "entry_status": "FTT",
+    "major": "Recreation Management & Administration",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.01219783,
+    "fin_aid_3000": 20.05743567,
+    "fin_aid_10000": 57.07920603
+},
+{
+    "guid": "a2ff4029-aa44-4fc0-839c-e3022df4f981",
+    "entry_status": "FTT",
+    "major": "Rehabilitation Counseling",
+    "in_school_earning": 0,
+    "fin_aid_0": 4.313174678,
+    "fin_aid_3000": 5.770007815,
+    "fin_aid_10000": 10.4879993
+},
+{
+    "guid": "4e3faaf8-5f1a-4437-9e7b-3f3a3c03922a",
+    "entry_status": "FTT",
+    "major": "Rehabilitation Counseling",
+    "in_school_earning": 4500,
+    "fin_aid_0": 6.6011828999999995,
+    "fin_aid_3000": 8.519159134,
+    "fin_aid_10000": 15.79662355
+},
+{
+    "guid": "586212d9-7241-42f2-8650-614059dc167e",
+    "entry_status": "FTT",
+    "major": "Rehabilitation Counseling",
+    "in_school_earning": 10500,
+    "fin_aid_0": 10.94049928,
+    "fin_aid_3000": 14.30639522,
+    "fin_aid_10000": 38.44218988
+},
+{
+    "guid": "0b653496-a881-4764-9b24-f0847e0c2ec6",
+    "entry_status": "FTT",
+    "major": "Religious Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 3.4746200010000003,
+    "fin_aid_3000": 4.8342901110000005,
+    "fin_aid_10000": 9.061338757
+},
+{
+    "guid": "95b1ba3c-ad23-4059-8f42-5e35e67ad8ba",
+    "entry_status": "FTT",
+    "major": "Religious Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 5.598099688,
+    "fin_aid_3000": 7.330004552,
+    "fin_aid_10000": 13.46239341
+},
+{
+    "guid": "2d610ce1-13cf-41f5-b0af-2c1d8b258c7e",
+    "entry_status": "FTT",
+    "major": "Religious Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 9.452082897999999,
+    "fin_aid_3000": 12.26832134,
+    "fin_aid_10000": 28.46836426
+},
+{
+    "guid": "9a3804e3-7092-4d95-bde1-252bfc165d25",
+    "entry_status": "FTT",
+    "major": "Social Science",
+    "in_school_earning": 0,
+    "fin_aid_0": 8.831034718,
+    "fin_aid_3000": 10.81494653,
+    "fin_aid_10000": 17.0820092
+},
+{
+    "guid": "cbeda496-97d4-42af-a00d-d742bb84e17d",
+    "entry_status": "FTT",
+    "major": "Social Science",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.96199111,
+    "fin_aid_3000": 14.56307739,
+    "fin_aid_10000": 22.74382031
+},
+{
+    "guid": "f6bf1218-9d7e-406b-a783-a01513b77b3b",
+    "entry_status": "FTT",
+    "major": "Social Science",
+    "in_school_earning": 10500,
+    "fin_aid_0": 17.63217671,
+    "fin_aid_3000": 21.33178972,
+    "fin_aid_10000": 34.1150374
+},
+{
+    "guid": "df8c0676-6356-43f8-ae8f-952bd9b4b5fc",
+    "entry_status": "FTT",
+    "major": "Social Work",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.845335767000001,
+    "fin_aid_3000": 8.728798977,
+    "fin_aid_10000": 15.15078537
+},
+{
+    "guid": "8fc0a07a-78a3-442a-862c-cab277e17842",
+    "entry_status": "FTT",
+    "major": "Social Work",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.838232974,
+    "fin_aid_3000": 12.45264856,
+    "fin_aid_10000": 21.89672303
+},
+{
+    "guid": "cf6799d7-2a74-48d6-b9f1-1465b90ef593",
+    "entry_status": "FTT",
+    "major": "Social Work",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.764421599999999,
+    "fin_aid_3000": 20.12636232,
+    "fin_aid_10000": 37.82457827
+},
+{
+    "guid": "6834c9b0-77a2-4f38-a34c-ff6dcc7e3ef7",
+    "entry_status": "FTT",
+    "major": "Sociology",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.326750685,
+    "fin_aid_3000": 8.001048876,
+    "fin_aid_10000": 13.39118701
+},
+{
+    "guid": "f076b19e-7d0b-47f7-81cc-2a25a904a83a",
+    "entry_status": "FTT",
+    "major": "Sociology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.965154996,
+    "fin_aid_3000": 11.17883531,
+    "fin_aid_10000": 18.73273884
+},
+{
+    "guid": "06d81d9d-8669-48fc-809e-126db3d24970",
+    "entry_status": "FTT",
+    "major": "Sociology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 13.88608108,
+    "fin_aid_3000": 17.34567533,
+    "fin_aid_10000": 31.369412
+},
+{
+    "guid": "f3b007ad-54ca-4c7e-b4c5-a422a2ca319d",
+    "entry_status": "FTT",
+    "major": "Spanish",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.876169373,
+    "fin_aid_3000": 8.666047032,
+    "fin_aid_10000": 14.56158571
+},
+{
+    "guid": "e6ea087c-1046-4b01-9f49-d96deaa10115",
+    "entry_status": "FTT",
+    "major": "Spanish",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.707137114,
+    "fin_aid_3000": 12.12113751,
+    "fin_aid_10000": 20.54300827
+},
+{
+    "guid": "d044e4de-5881-428f-ac0f-f635593f2e43",
+    "entry_status": "FTT",
+    "major": "Spanish",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.11086403,
+    "fin_aid_3000": 18.979477499999998,
+    "fin_aid_10000": 35.12031861
+},
+{
+    "guid": "a4c71463-1995-4feb-9969-f14b610d2a7b",
+    "entry_status": "FTT",
+    "major": "Speech Communication",
+    "in_school_earning": 0,
+    "fin_aid_0": 6.43895666,
+    "fin_aid_3000": 8.310909256,
+    "fin_aid_10000": 14.87713248
+},
+{
+    "guid": "75b227d8-f130-4d74-b8e9-10b320bc5180",
+    "entry_status": "FTT",
+    "major": "Speech Communication",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.420312095,
+    "fin_aid_3000": 12.07014963,
+    "fin_aid_10000": 22.32394297
+},
+{
+    "guid": "29bb9673-064e-400a-b26f-255b9b94168e",
+    "entry_status": "FTT",
+    "major": "Speech Communication",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.52787599,
+    "fin_aid_3000": 20.30473777,
+    "fin_aid_10000": 42.89543997
+},
+{
+    "guid": "bd48a81a-3811-4563-9ecd-670b3f429d52",
+    "entry_status": "FTT",
+    "major": "Speech Language Pathology",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.012373217,
+    "fin_aid_3000": 8.871749817000001,
+    "fin_aid_10000": 15.25732628
+},
+{
+    "guid": "eecae034-9e16-45da-b285-0bb6d5a5911d",
+    "entry_status": "FTT",
+    "major": "Speech Language Pathology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 9.967637989,
+    "fin_aid_3000": 12.55744001,
+    "fin_aid_10000": 22.29391637
+},
+{
+    "guid": "6c8ba9c3-b03d-43de-9b81-7a4080b99b9a",
+    "entry_status": "FTT",
+    "major": "Speech Language Pathology",
+    "in_school_earning": 10500,
+    "fin_aid_0": 15.87774928,
+    "fin_aid_3000": 20.39318873,
+    "fin_aid_10000": 42.15165727
+},
+{
+    "guid": "710ad4f7-537c-47af-97b8-9ad1da843ec4",
+    "entry_status": "FTT",
+    "major": "Statistics",
+    "in_school_earning": 0,
+    "fin_aid_0": 15.53717915,
+    "fin_aid_3000": 18.72332354,
+    "fin_aid_10000": 30.19428496
+},
+{
+    "guid": "f5e6e8e1-8548-4b16-8415-dd7515e60c26",
+    "entry_status": "FTT",
+    "major": "Statistics",
+    "in_school_earning": 4500,
+    "fin_aid_0": 20.671308800000002,
+    "fin_aid_3000": 25.32781352,
+    "fin_aid_10000": 43.09998344
+},
+{
+    "guid": "80052edd-3275-43fd-9367-39de90e8d7ed",
+    "entry_status": "FTT",
+    "major": "Statistics",
+    "in_school_earning": 10500,
+    "fin_aid_0": 31.31442773,
+    "fin_aid_3000": 39.54784961,
+    "fin_aid_10000": 94.32798009999999
+},
+{
+    "guid": "08b9fe73-f31b-485a-beb5-945cd23e3338",
+    "entry_status": "FTT",
+    "major": "Theatre Arts",
+    "in_school_earning": 0,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "5eafb576-e15f-4bbc-9cbd-b707a7eb949d",
+    "entry_status": "FTT",
+    "major": "Theatre Arts",
+    "in_school_earning": 4500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "05ecadc4-b637-4b47-a0e7-1cb811660984",
+    "entry_status": "FTT",
+    "major": "Theatre Arts",
+    "in_school_earning": 10500,
+    "fin_aid_0": NaN,
+    "fin_aid_3000": NaN,
+    "fin_aid_10000": NaN
+},
+{
+    "guid": "d3213cc3-cd9d-4202-9e8d-304ea1484443",
+    "entry_status": "FTT",
+    "major": "Theatre Arts - Performance",
+    "in_school_earning": 0,
+    "fin_aid_0": 0.9890292620000001,
+    "fin_aid_3000": 1.936716514,
+    "fin_aid_10000": 4.417537937
+},
+{
+    "guid": "fc726a05-2524-4c5c-9d05-886f695010b8",
+    "entry_status": "FTT",
+    "major": "Theatre Arts - Performance",
+    "in_school_earning": 4500,
+    "fin_aid_0": 2.435267139,
+    "fin_aid_3000": 3.482510586,
+    "fin_aid_10000": 6.3261159739999995
+},
+{
+    "guid": "9b4d665b-620f-4260-9268-8be8974a84bf",
+    "entry_status": "FTT",
+    "major": "Theatre Arts - Performance",
+    "in_school_earning": 10500,
+    "fin_aid_0": 4.613372937,
+    "fin_aid_3000": 5.869393324,
+    "fin_aid_10000": 9.754336859
+},
+{
+    "guid": "54d0f686-3031-4091-8c5b-fbd6dedcabb5",
+    "entry_status": "FTT",
+    "major": "Travel and Tourism/Tourism Management",
+    "in_school_earning": 0,
+    "fin_aid_0": 2.528261339,
+    "fin_aid_3000": 3.7529352999999994,
+    "fin_aid_10000": 7.495058824
+},
+{
+    "guid": "27be685d-70ed-41ae-9119-4c804fc14078",
+    "entry_status": "FTT",
+    "major": "Travel and Tourism/Tourism Management",
+    "in_school_earning": 4500,
+    "fin_aid_0": 4.433359048,
+    "fin_aid_3000": 5.9652325610000005,
+    "fin_aid_10000": 11.57125081
+},
+{
+    "guid": "a3d543d5-5658-46d5-af2b-383afefe813b",
+    "entry_status": "FTT",
+    "major": "Travel and Tourism/Tourism Management",
+    "in_school_earning": 10500,
+    "fin_aid_0": 7.8421911479999995,
+    "fin_aid_3000": 10.41148305,
+    "fin_aid_10000": 93.29183686
+},
+{
+    "guid": "a47aecae-abba-4267-8791-2250aee693b9",
+    "entry_status": "FTT",
+    "major": "Undeclared/Unknown",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.934075837000001,
+    "fin_aid_3000": 10.13990887,
+    "fin_aid_10000": 18.22699506
+},
+{
+    "guid": "0e32e81f-87e6-4d23-a72e-556f978362bd",
+    "entry_status": "FTT",
+    "major": "Undeclared/Unknown",
+    "in_school_earning": 4500,
+    "fin_aid_0": 11.4781413,
+    "fin_aid_3000": 14.73417476,
+    "fin_aid_10000": 27.43440754
+},
+{
+    "guid": "d6f8df56-16a3-4c53-8c50-d9cc4d6d2517",
+    "entry_status": "FTT",
+    "major": "Undeclared/Unknown",
+    "in_school_earning": 10500,
+    "fin_aid_0": 19.03792376,
+    "fin_aid_3000": 24.95685039,
+    "fin_aid_10000": 52.82741381
+},
+{
+    "guid": "bfef044b-0d21-45a6-92fe-f8d0703454a9",
+    "entry_status": "FTT",
+    "major": "Urban Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 15.10083301,
+    "fin_aid_3000": 17.77117795,
+    "fin_aid_10000": 26.62607318
+},
+{
+    "guid": "c2774316-5bf0-4631-91ff-b269822b42c5",
+    "entry_status": "FTT",
+    "major": "Urban Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 19.35795866,
+    "fin_aid_3000": 23.013388100000004,
+    "fin_aid_10000": 35.15298415
+},
+{
+    "guid": "c6f488ca-309b-4912-ab0e-80f31278e7d4",
+    "entry_status": "FTT",
+    "major": "Urban Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 27.42712971,
+    "fin_aid_3000": 32.95973411,
+    "fin_aid_10000": 55.57259953
+},
+{
+    "guid": "eb952d18-1771-4121-a5d6-c33562f81b7c",
+    "entry_status": "FTT",
+    "major": "Women's Studies",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.523241929,
+    "fin_aid_3000": 7.29752806,
+    "fin_aid_10000": 13.99217393
+},
+{
+    "guid": "db60cc06-da66-4b2e-9f99-a6f27323f039",
+    "entry_status": "FTT",
+    "major": "Women's Studies",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.360302735,
+    "fin_aid_3000": 10.98260894,
+    "fin_aid_10000": 24.4055393
+},
+{
+    "guid": "2f29b3fa-0264-48b3-aabf-68c1e8a88ff8",
+    "entry_status": "FTT",
+    "major": "Women's Studies",
+    "in_school_earning": 10500,
+    "fin_aid_0": 14.74043014,
+    "fin_aid_3000": 21.11650574,
+    "fin_aid_10000": 71.49733199
+},
+{
+    "guid": "258c703a-3255-42ec-800f-b524be043e24",
+    "entry_status": "FTT",
+    "major": "World Languages and Cultures/Translation",
+    "in_school_earning": 0,
+    "fin_aid_0": 7.604017863999999,
+    "fin_aid_3000": 9.696557528,
+    "fin_aid_10000": 17.69311836
+},
+{
+    "guid": "35d72b1e-1b43-450c-a4ad-b6f577d3ad3b",
+    "entry_status": "FTT",
+    "major": "World Languages and Cultures/Translation",
+    "in_school_earning": 4500,
+    "fin_aid_0": 10.9711227,
+    "fin_aid_3000": 14.12921235,
+    "fin_aid_10000": 28.90459827
+},
+{
+    "guid": "0ebe4748-19ad-4c4d-bc79-5623ecccded9",
+    "entry_status": "FTT",
+    "major": "World Languages and Cultures/Translation",
+    "in_school_earning": 10500,
+    "fin_aid_0": 18.55936434,
+    "fin_aid_3000": 25.53580966,
+    "fin_aid_10000": 108.9243574
+},
+{
+    "guid": "f3c3aa54-4e5b-4b3a-b537-04a793e6a9f3",
+    "entry_status": "FTT",
+    "major": "Zoology",
+    "in_school_earning": 0,
+    "fin_aid_0": 5.758223602999999,
+    "fin_aid_3000": 7.561474615,
+    "fin_aid_10000": 14.23218296
+},
+{
+    "guid": "3b54b2df-ef42-42ea-a7e9-81a5733194c4",
+    "entry_status": "FTT",
+    "major": "Zoology",
+    "in_school_earning": 4500,
+    "fin_aid_0": 8.63879816,
+    "fin_aid_3000": 11.27439397,
+    "fin_aid_10000": 23.69171763
+}
