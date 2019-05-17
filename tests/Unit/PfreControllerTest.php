@@ -43,6 +43,7 @@ class PfreControllerTest extends TestCase
 
         $this->seed("Investments_Template_Northridge_TableSeeder");
         $this->seed("Student_Backgrounds_Template_Northridge_TableSeeder");
+        $this->seed('Pfre_TableSeeder');
 
         $this->controller = new PfreController($this->retriever);
     }
@@ -55,47 +56,37 @@ class PfreControllerTest extends TestCase
      */
     public function test_getFreData_Success_Contract_Call()
     {
-        $university = "northridge";
-        $major = 4011;
-        $age_range = 1;
-        $education_level = "FTF";
-        $annual_earnings = 1;
-        $financial_aid = 1;
+        $entry_status       =   "FTT";
+        $major              =   "Computer Engineering";
+        $in_school_earning  =   0;
+        $financial_aid      =   1;
 
-        $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+        $response = $this->json('GET', "/api/pfre/$entry_status/$major/$in_school_earning/$financial_aid");
         $response = $response->getOriginalContent();
         $response = json_encode($response);
 
-        $actualResponse  = ["majorId"=> "4011","universityId"=> "northridge","fre"=> ["timeToDegree"=> "3.9","earningsYearFive"=> "30277","returnOnInvestment"=> "7.81"]];
+        $actualResponse  = ["pfre" => "No data."];
         $actualResponse = json_encode($actualResponse);
         $this->assertEquals($response, $actualResponse);
     }
 
     /**
-     * Api route : api//major/{major}/{university}/{age_range}/{education_level}/{annual_earnings}/{financial_aid}
+     * Api route : api/pfre/$entry_status/$major/$in_school_earning/$financial_aid
      * method : MajorController@getFREData
      * FRE - Financial Return On Investment, this function populates FRE page bar charts
      * Assert json structure 
      */
     public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
     {
-        $major = 4011;
-        $university = 'northridge';
-        $age_range = 1;
-        $education_level = 'FTT';
-        $annual_earnings = 1;
-        $financial_aid = 1;
-        $response = $this->json('GET', "/api/major/$major/$university/$age_range/$education_level/$annual_earnings/$financial_aid");
+        $entry_status       =   "FTT";
+        $major              =   "Computer Engineering";
+        $in_school_earning  =   0;
+        $financial_aid      =   1;
+
+        $response = $this->json('GET', "/api/pfre/$entry_status/$major/$in_school_earning/$financial_aid");
 
         $response->assertJsonStructure([
-            'majorId',
-            'universityId',
-            'fre' => [
-                'timeToDegree',
-                'earningsYearFive',
-                'returnOnInvestment'
-            ]
+            'pfre'
         ]);
     }
-
 }

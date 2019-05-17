@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(Pfre_TableSeeder::class);
         $this->call(Field_Of_Studies_TableSeeder::class);
         $this->call(Hegis_Categories_TableSeeder::class);
         $this->call(Hegis_Codes_TableSeeder::class);
