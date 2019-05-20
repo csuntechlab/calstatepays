@@ -36,11 +36,16 @@
 							<b class="csu-card__tags">Financial Aid:</b>
 							{{this.pfreSelected.financialAid}}
 						</span>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
+						<h4>Annual Finacial Return on Your Education</h4>
 						<p>{{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
+						<p>
+							This percentage reflects a return on the investment you make on a bachelor’s education. This calculated by accounting for your earnings potential and your cost of getting that education. Over your professional career, you will get and annual return on your education. You can compare this return with other investment you make.
+						</p>
 					</div>
 				</div>
 			</div>
