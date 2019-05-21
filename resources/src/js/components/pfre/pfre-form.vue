@@ -34,7 +34,7 @@
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label
 					class="font-weight-bold"
 					for="age"
@@ -49,7 +49,7 @@
 					class="csu-form-input"
 					v-bind:class="{'border-danger': this.submitted && !this.form.age}"
 				></v-select>
-			</div>
+			</div> -->
 			<div class="form-group">
 				<label
 					class="form-group font-weight-bold"
@@ -141,7 +141,6 @@ export default {
 			form: {
 				fieldOfStudyId: null,
 				majorId: null,
-				age: null,
 				education: null,
 				earnings: null,
 				financialAid: null
@@ -152,12 +151,6 @@ export default {
 				fontWeight: "bold"
 			},
 
-			ageRanges: [
-				{ age: "18-19", value: 1 },
-				{ age: "20-24", value: 2 },
-				{ age: "24-26", value: 3 },
-				{ age: "26 +", value: 4 }
-			],
 			earningRanges: [
 				{ earn: "$0", value: 1 },
 				{ earn: "$0 - $20,000", value: 2 },

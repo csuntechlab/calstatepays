@@ -31,7 +31,7 @@ import card from "../../../components/global/card";
 import pfreForm from "../../../components/pfre/pfre-form.vue";
 import pfreInfo from "../../../components/pfre/pfre-info.vue";
 import pfreProgress from "../../../components/pfre/pfre-progress.vue";
-import { mapGetters } from "vuex";
+import { mapGetters ,mapActions} from "vuex";
 export default {
 	components: {
 		csuDataImgBanner,
@@ -40,6 +40,12 @@ export default {
 		pfreInfo,
 		pfreProgress,
 		subNav
-	}
+	},
+	methods: {
+		...mapActions(['setUniversity'])
+	},
+	mounted() {
+		this.setUniversity('all')
+	},
 };
 </script>

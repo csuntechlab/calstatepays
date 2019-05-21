@@ -234,13 +234,16 @@ export default {
 			this.aCampusIsSelected = true;
 		},
 		checkSessionData() {
+			// console.log('session storage check')
 			var sessionData = sessionStorage.getItem("selectedUniversity");
 			if (sessionData === null) {
 				this.showModal = true;
 				this.aCampusIsSelected = false;
-			} else {
+			} else if(sessionData !== this.selectedUniversity ){
 				this.$store.dispatch("setUniversity", sessionData);
 				this.aCampusIsSelected = true;
+			} else{
+				 console.log('poop')
 			}
 		}
 	}
