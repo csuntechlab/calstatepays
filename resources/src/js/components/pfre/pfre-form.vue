@@ -34,22 +34,6 @@
 					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
 				></v-select>
 			</div>
-			<!-- <div class="form-group">
-				<label
-					class="font-weight-bold"
-					for="age"
-					v-bind:style="[this.submitted && !this.form.age ? errorLabel : '']"
-				>Select an Age Range</label>
-				<v-select
-					label="age"
-					aria-label="Select an Age Range"
-					v-model="selected.ageRange"
-					:options="ageRanges"
-					@input="updateSelect('age', $event)"
-					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.age}"
-				></v-select>
-			</div> -->
 			<div class="form-group">
 				<label
 					class="form-group font-weight-bold"
@@ -133,7 +117,6 @@ export default {
 			submitted: false,
 			selected: {
 				majorName: null,
-				ageRange: null,
 				education: null,
 				earnings: null,
 				financialAid: null
@@ -152,18 +135,15 @@ export default {
 			},
 
 			earningRanges: [
-				{ earn: "$0", value: 1 },
-				{ earn: "$0 - $20,000", value: 2 },
-				{ earn: "$30,000 - $45,000", value: 3 },
-				{ earn: "$45,000 - $60,000", value: 4 },
-				{ earn: "$60,000 +", value: 5 }
+				{ earn: "$0", value: 0 },
+				{ earn: "$4,500", value: 4500},
+				{ earn: "$10,000", value: 10000 }
 			],
 			financialAidRanges: [
-				{ finAid: "$0", value: 1 },
-				{ finAid: "$0 - $5,000", value: 2 },
-				{ finAid: "$5,000 - $15,000", value: 3 },
-				{ finAid: "$15,000 +", value: 4 }
-			]
+				{ finAid: "$0", value: 0 },
+				{ finAid: "$3,000", value: 3000 },
+				{ finAid: "$10,000", value: 10000 },
+				]
 		};
 	},
 	methods: {
@@ -218,7 +198,7 @@ export default {
 				this.$store.dispatch("submitPfreForm");
 				this.$store.dispatch("setPfreSelections", this.selected);
 				this.fetchFreData({
-					form: this.form,
+					...this.form,
 					school: this.selectedUniversity
 				});
 			}
@@ -239,15 +219,10 @@ export default {
 			"pfreMajorsByField",
 			"pfreDisciplineLoad"
 		]),
-
-		selectedMajorsByField() {
-			return this.industryMajorsByField;
-		}
 	},
 	validations: {
 		form: {
 			majorId: { required },
-			age: { required },
 			education: { required },
 			earnings: { required },
 			financialAid: { required }

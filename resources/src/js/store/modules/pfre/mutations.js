@@ -64,7 +64,6 @@ export default {
         state.pfreSelected.majorName = payload.majorName.major;
         state.pfreSelected.earnings = payload.earnings.earn;
         state.pfreSelected.financialAid = payload.financialAid.finAid;
-        state.pfreSelected.ageRange = payload.ageRange.age;
 
         if(payload.education === 'FTF')
             state.pfreSelected.education = 'Freshman';

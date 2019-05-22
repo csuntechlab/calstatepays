@@ -164,10 +164,8 @@ export default {
 		document.addEventListener("keyup", this.onEscKey);
 	},
 	mounted() {
-		this.$nextTick(function() {
 			this.checkSessionData();
 			this.onClickOutsideModal();
-		});
 	},
 	computed: {
 		...mapGetters([
@@ -239,11 +237,10 @@ export default {
 			if (sessionData === null) {
 				this.showModal = true;
 				this.aCampusIsSelected = false;
-			} else if(sessionData !== this.selectedUniversity ){
+			} 
+			if(sessionData !== this.selectedUniversity ){
 				this.$store.dispatch("setUniversity", sessionData);
 				this.aCampusIsSelected = true;
-			} else{
-				 console.log('poop')
 			}
 		}
 	}
