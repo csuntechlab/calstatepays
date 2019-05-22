@@ -20,18 +20,18 @@
 				<label
 					class="font-weight-bold"
 					for="Major"
-					v-bind:style="[this.submitted && !this.form.majorId ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.major ? errorLabel : '']"
 				>Select a Major</label>
 				<v-select
 					label="major"
 					aria-label="Select a Major"
 					v-model="selected.majorName"
 					:options="this.form.fieldOfStudyId == null ? majors : pfreMajorsByField"
-					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					@input="updateGrandfatherSelect('major', 'major', $event)"
+					@change="updateGrandfatherSelect('major', 'major', $event)"
 					class="csu-form-input"
 					:loading="pfreDisciplineLoad"
-					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.major}"
 				></v-select>
 			</div>
 			<div class="form-group">
@@ -123,7 +123,7 @@ export default {
 			},
 			form: {
 				fieldOfStudyId: null,
-				majorId: null,
+				major: null,
 				education: null,
 				earnings: null,
 				financialAid: null
@@ -222,7 +222,7 @@ export default {
 	},
 	validations: {
 		form: {
-			majorId: { required },
+			major: { required },
 			education: { required },
 			earnings: { required },
 			financialAid: { required }
