@@ -11,7 +11,7 @@ export default {
     pfreIsLoading: false,
 	pfreSelected: {},
 	pfreData: {
-		percentage:'',
+		returnOnInvestment: ''
 	}
 };
 

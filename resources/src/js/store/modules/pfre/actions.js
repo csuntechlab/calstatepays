@@ -10,7 +10,6 @@ export default {
     fetchMockData({commit, dispatch}) {
         commit(_pfre.FETCH_MOCK_DATA);
     },
-
     fetchFreData({commit, dispatch}, payload){
         commit(_pfre.TRIGGER_IS_LOADING);
         Pfre.fetchFreDataAPI(

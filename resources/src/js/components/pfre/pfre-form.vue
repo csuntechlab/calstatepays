@@ -61,7 +61,7 @@
 				<label
 					class="font-weight-bold"
 					for="earnings"
-					v-bind:style="[this.submitted && !this.form.earnings ? errorLabel : '']"
+					v-bind:style="[this.submitted && this.form.earnings === null ? errorLabel : '']"
 				>Estimated Annual Earnings In School</label>
 				<v-select
 					label="earn"
@@ -71,13 +71,13 @@
 					@input="updateSelect('earnings', $event)"
 					@change="updateSelect('earnings', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.earnings}"
+					v-bind:class="{'border-danger': this.submitted && this.form.earnings === null }"
 				></v-select>
 			</div>
 			<div class="form-group">
 				<label
 					for="financialAid"
-					v-bind:style="[this.submitted && !this.form.financialAid ? errorLabel : '']"
+					v-bind:style="[this.submitted && this.form.financialAid === null ? errorLabel : '']"
 					class="font-weight-bold"
 				>Estimated Annual Financial Aid</label>
 				<v-select
@@ -88,7 +88,7 @@
 					@input="updateSelect('financialAid', $event)"
 					@change="updateSelect('financialAid', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.financialAid}"
+					v-bind:class="{'border-danger': this.submitted && this.form.financialAid === null}"
 				></v-select>
 			</div>
 			<div class="row row--condensed" id="submit-btn-container">

@@ -22,7 +22,7 @@ export default {
         state.pfreDisciplineLoad = payload
     },
 	[_pfre.FETCH_FRE_DATA](state, payload) {
-        state.pfreData.percentage = payload
+        state.pfreData.returnOnInvestment = payload
     },
     
     [_pfre.TRIGGER_IS_LOADING](state) {
@@ -51,10 +51,7 @@ export default {
     },
     
 	[_pfre.RESET_FRE_STATE](state, payload) {
-		state.pfreData.percentage = ''
-		state.pfreData.years.actual = 0;
-		state.pfreData.earnings.actual = 0;
-		state.pfreData.returnOnInvestment.actual = 0;
+		state.pfreData.returnOnInvestment = '';
     },
     
     [_pfre.SET_PFRE](state, payload){
