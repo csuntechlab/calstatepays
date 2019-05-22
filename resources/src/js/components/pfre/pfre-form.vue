@@ -36,22 +36,6 @@
 			</div>
 			<div class="form-group">
 				<label
-					class="font-weight-bold"
-					for="age"
-					v-bind:style="[this.submitted && !this.form.age ? errorLabel : '']"
-				>Select an Age Range</label>
-				<v-select
-					label="age"
-					aria-label="Select an Age Range"
-					v-model="selected.ageRange"
-					:options="ageRanges"
-					@input="updateSelect('age', $event)"
-					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.age}"
-				></v-select>
-			</div>
-			<div class="form-group">
-				<label
 					class="form-group font-weight-bold"
 					for="education"
 					v-bind:style="[this.submitted && !this.form.education ? errorLabel : '']"
@@ -254,7 +238,6 @@ export default {
 	validations: {
 		form: {
 			majorId: { required },
-			age: { required },
 			education: { required },
 			earnings: { required },
 			financialAid: { required }

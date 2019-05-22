@@ -103,58 +103,53 @@
 	}
 }
 
-.pfre-bar {
-	border-radius: 50px;
-	margin-bottom: 0.5rem;
-	margin: 0 !important;
-	background-color: $light-gray !important;
-	&__years-text {
-		color: $CSP-Dark-Gold;
-		font-weight: 600;
+.pfre-info {
+	&__majorTitle{
+		font-size: 1.75rem;
+		font-weight: 700;
 	}
-	&__earnings-text {
-		font-weight: 600;
-		color: $dark-green;
-	}
-	&__return-investment-text {
-		font-weight: 600;
-		color: $oxford;
-	}
-	&__background {
-		border-radius: 50px;
-		background-color: $light-gray;
-	}
-	&__wrapper {
-		padding: 1.42rem 0.71rem;
-		border-top: 1px solid $light-gray;
-		@media only screen and (max-width: $break-small) {
-			padding: 0.1rem 2rem 0 0;
-			margin: 1rem 0 0 0;
+	&__title{
+		text-align: center;
+		font-weight: bold;
+		font-size: 3.5rem;
+		@media screen and (max-width: $break-small) {
+			font-size: 1.6rem;
 		}
 	}
-}
-
-.pfre-year {
-	background-color: $gold !important;
-	border-radius: 50px;
-}
-
-.pfre-earnings {
-	background-color: $dark-green !important;
-	border-radius: 50px;
-}
-
-.pfre-fre {
-	background-color: $oxford !important;
-	border-radius: 50px;
-}
-
-.progress-footer {
-	display: flex;
-}
-
-.progress-linear__bar__determinate {
-	border-radius: 50px;
+	&__percentage{
+		text-align: center;
+		font-size: 4.3rem;
+		font-weight: bolder;
+	}
+	&__infoCopy{
+		text-align: left;
+		font-size: 1rem;
+	}
+	&__listGroup{
+		padding: 0;
+		margin: 0;
+	}
+	&__listElement{
+		list-style-type: none;
+		float: left;
+		font-size: 1rem;
+		&:before{
+			content: '●';
+			margin-left: .35rem;
+			margin-right: .35rem;
+		}
+		@media screen and (max-width: $break-small) {
+			display: list-item;
+			list-style-type: disc;
+			margin-left: 1.25rem;
+			float: none;
+			&:before{
+				content: '';
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
 }
 
 $colorList: (

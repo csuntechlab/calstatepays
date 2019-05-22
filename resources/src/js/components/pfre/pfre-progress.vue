@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-if="pfreIsLoading" class="form-group row">
+		<div v-if="pfreIsLoading" class="row">
 			<v-progress-circular class="loading-icon" :size="100" :width="10" indeterminate></v-progress-circular>
 		</div>
 		<div v-else>
@@ -21,29 +21,39 @@
 			<div v-else id="progress-bars">
 				<div class="row">
 					<div class="col-12">
-						<h3 class="csu-card__title">{{this.pfreSelected.majorName}}</h3>
-					</div>
-					<div class="col-12">
-						<span class="h6 pfre__sub-header">
-							<b class="csu-card__tags">Education Level:</b>
-							{{this.pfreSelected.education}} &bull;
-						</span>
-						<span class="h6 pfre__sub-header">
-							<b class="csu-card__tags">Earnings:</b>
-							{{this.pfreSelected.earnings}} &bull;
-						</span>
-						<span class="h6 pfre__sub-header">
-							<b class="csu-card__tags">Financial Aid:</b>
-							{{this.pfreSelected.financialAid}}
-						</span>
-						<hr>
+						<h3 class="pfre-info__majorTitle">
+							{{this.pfreSelected.majorName}}
+						</h3>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
-						<h4>Annual Finacial Return on Your Education</h4>
-						<p>{{pfreData.returnOnInvestment.actual/100 | percentage}}</p>
-						<p>
+						<ul class="pfre-info__listGroup">
+							<li class="pfre-info__listElement">
+								<b class="csu-card__tags">Education Level:</b>
+								<!-- {{this.pfreSelected.education}} -->
+								First Time Freshmen
+							</li>
+							<li class="pfre-info__listElement">
+								<b class="csu-card__tags">Earnings:</b>
+								{{this.pfreSelected.earnings}}
+							</li>
+							<li class="pfre-info__listElement">
+								<b class="csu-card__tags">Financial Aid:</b>
+								{{this.pfreSelected.financialAid}}
+							</li>
+						</ul>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-12">
+						<h4 class="pfre-info__title">Annual Finacial Return on Your Education</h4>
+						<p class="pfre-info__percentage">
+							<!-- {{pfreData.returnOnInvestment.actual/100 | percentage}} -->
+							7.5%
+						</p>
+						<p class="pfre-info__infoCopy">
 							This percentage reflects a return on the investment you make on a bachelor’s education. This calculated by accounting for your earnings potential and your cost of getting that education. Over your professional career, you will get and annual return on your education. You can compare this return with other investment you make.
 						</p>
 					</div>
