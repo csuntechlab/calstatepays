@@ -1,9 +1,11 @@
 const fetchFreDataAPI = (payload, success, error) => {
-    window.axios.get(`api/major/${payload.form.majorId}/${payload.school}/${payload.form.age}/${payload.form.education}/${payload.form.earnings}/${payload.form.financialAid}`)
+    window.axios.get(`api/pfre/${payload.education}/${payload.major}/${payload.earnings}/${payload.financialAid}`)
     .then(
-        response => success(response.data),
+        response => success(response.data.pfre),
     ).catch(
-        failure=>{ error(failure.response.data)}
+        failure=>{
+            error(failure)
+        }
     );
 }
 

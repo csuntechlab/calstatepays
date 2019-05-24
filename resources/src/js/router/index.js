@@ -28,14 +28,14 @@ const router = new VueRouter({
 				title: 'Home | CalStatePays'
 			}
 		},
-		// { 
-		// 	path: '/data/pfre',
-		// 	component: splashPage,
-		// 	name: 'pfre',
-		// 	meta: {
-		// 		title: 'FRE | CalStatePays'
-		// 	}
-		// },
+		{ 
+			path: '/data/pfre',
+			component: pfre,
+			name: 'pfre',
+			meta: {
+				title: 'Data - FRE | CalStatePays'
+			}
+		},
 		{ 
 			path: '/data/pfre',
 			component: pfre,

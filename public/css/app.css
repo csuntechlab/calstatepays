@@ -22018,9 +22018,20 @@ input[type="radio"] {
 
 .pfre-info__percentage {
   text-align: center;
-  font-size: 5.3rem;
   font-weight: 600;
   line-height: 1;
+  font-size: 9rem;
+}
+
+@media screen and (max-width: 767px) {
+  .pfre-info__percentage {
+    font-size: 5.3rem;
+  }
+}
+
+.pfre-info__noPercentage {
+  font-size: 3rem;
+  text-align: center;
 }
 
 .pfre-info__infoCopy {

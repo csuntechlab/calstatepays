@@ -31,13 +31,12 @@
 						<ul class="pfre-info__listGroup">
 							<li class="pfre-info__listElement">
 								<strong class="csu-card__tags">Education Level:</strong>
-								<span v-if="this.pfreSelected.education == 'FTF'">
+								<span v-if="this.pfreSelected.education == 'Freshman'">
 									First Time Freshman
 								</span>
-								<span v-else-if="this.pfreSelected.education == 'FTT'">
+								<span v-else-if="this.pfreSelected.education == 'Transfer'">
 									First Time Transfer
 								</span>
-								{{this.pfreSelected.education}}
 							</li>
 							<li class="pfre-info__listElement">
 								<strong class="csu-card__tags">Earnings:</strong>
@@ -54,11 +53,10 @@
 				<div class="row">
 					<div class="col-12">
 						<h4 class="pfre-info__title">Annual Finacial Return on Your Education</h4>
-						<p v-if="percentage != '0%'" class="pfre-info__percentage">
-							{{pfreData.returnOnInvestment.actual/100 | percentage}}
-							7.5%
+						<p v-if="pfreData.returnOnInvestment != '0%'" class="pfre-info__percentage">
+							{{pfreData.returnOnInvestment}}
 						</p>
-						<p v-else class="pfre-info__percentage">
+						<p v-else class="pfre-info__noPercentage">
 							No Data
 						</p>
 						<p class="pfre-info__infoCopy">
