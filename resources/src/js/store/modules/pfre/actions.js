@@ -10,18 +10,18 @@ export default {
     fetchMockData({commit, dispatch}) {
         commit(_pfre.FETCH_MOCK_DATA);
     },
-
     fetchFreData({commit, dispatch}, payload){
         commit(_pfre.TRIGGER_IS_LOADING);
         Pfre.fetchFreDataAPI(
             payload,
 			success => {
+                console.log(success)
 				commit(_pfre.FETCH_FRE_DATA, success);
 				commit(_pfre.TRIGGER_IS_LOADING);
 			},
 			error => {
                 commit(_global.ERROR_ALERT, {message: 'Oops! Major data unavailable'});
-                commit(_pfre.FETCH_FRE_DATA, { majorId: '', fre: { timeToDegree: '', earningsYearFive: '', returnOnInvestment: ''}});
+                commit(_pfre.FETCH_FRE_DATA, '');
 				commit(_pfre.TRIGGER_IS_LOADING);
 			}
         );

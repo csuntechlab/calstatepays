@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div v-if="pfreIsLoading" class="form-group row">
-			<v-progress-circular class="loading-icon" :size="100" :width="10" indeterminate></v-progress-circular>
+			<v-progress-circular class="loading-icon" :size="100" :width="10" indeterminate></v-progress-circular>	
 		</div>
 		<div v-else>
 			<div v-if="!this.pfreFormWasSubmitted">
@@ -24,10 +24,6 @@
 						<h3 class="csu-card__title">{{this.pfreSelected.majorName}}</h3>
 					</div>
 					<div class="col-12">
-						<span class="h6 pfre__sub-header">
-							<b class="csu-card__tags">Age:</b>
-							{{this.pfreSelected.ageRange}} &bull;
-						</span>
 						<span class="h6 pfre__sub-header">
 							<b class="csu-card__tags">Education Level:</b>
 							{{this.pfreSelected.education}} &bull;
@@ -66,7 +62,7 @@
 									<div class="col-sm-12">
 										<v-progress-linear
 											class="pfre-bar progress-median"
-											:value="(pfreData.years.actual/ pfreData.years.end) * 100"
+											:value=" 100"
 											height="35"
 											color="pfre-year"
 											background-color="pfre-bar__background"
@@ -75,18 +71,18 @@
 								</div>
 								<div class="progress-footer">
 									<span class="col-4">
-										<p class="float-left pfre__chart-text mb-0">{{pfreData.years.start}}</p>
+										<p class="float-left pfre__chart-text mb-0">{{0}}</p>
 									</span>
 									<span class="col-4">
-										<p class="text-center pfre__chart-text mb-0">{{pfreData.years.middle}}</p>
+										<p class="text-center pfre__chart-text mb-0">{{0}}</p>
 									</span>
 									<span class="col-4">
-										<p class="float-right pfre__chart-text mb-0">{{pfreData.years.end}}</p>
+										<p class="float-right pfre__chart-text mb-0">{{0}}</p>
 									</span>
 								</div>
 							</div>
 							<div class="col-3 col-sm-2 col-lg-1 px-0 py-2">
-								<p class="mb-0 pfre__chart-actual pfre-bar__years-text">{{pfreData.years.actual}} yrs</p>
+								<p class="mb-0 pfre__chart-actual pfre-bar__years-text">{{0}} yrs</p>
 							</div>
 						</div>
 					</div>
@@ -115,7 +111,7 @@
 									<div class="col-sm-12">
 										<v-progress-linear
 											class="pfre-bar progress-median"
-											:value="(pfreData.earnings.actual/pfreData.earnings.maximum) * 100"
+											:value="100"
 											height="35"
 											color="pfre-earnings"
 											background-color="pfre-bar__background"
@@ -127,38 +123,38 @@
 										<p
 											v-show="smallestScreen"
 											class="float-left pfre__chart-text mb-0"
-										>{{pfreData.earnings.minimum | currency}}</p>
+										>{{0}}</p>
 										<p
 											v-show="!smallestScreen"
 											class="float-left pfre__chart-text mb-0"
-										>{{pfreData.earnings.minimum/1000 | currency}}k</p>
+										>{{0}}k</p>
 									</span>
 									<span class="col-4">
 										<p
 											v-show="smallestScreen"
 											class="text-center pfre__chart-text mb-0"
-										>{{pfreData.earnings.average | currency}}</p>
+										>{{0}}</p>
 										<p
 											v-show="!smallestScreen"
 											class="text-center pfre__chart-text mb-0"
-										>{{pfreData.earnings.average/1000 | currency}}k</p>
+										>{{0}}k</p>
 									</span>
 									<span class="col-4">
 										<p
 											v-show="smallestScreen"
 											class="float-right pfre__chart-text mb-0"
-										>{{pfreData.earnings.maximum | currency}}</p>
+										>{{0}}</p>
 										<p
 											v-show="!smallestScreen"
 											class="float-right pfre__chart-text mb-0"
-										>{{pfreData.earnings.maximum/1000 | currency}}k</p>
+										>{{0}}k</p>
 									</span>
 								</div>
 							</div>
 							<div class="col-3 col-sm-2 col-lg-1 px-0 py-2">
 								<p
 									class="mb-0 pfre__chart-actual pfre-bar__earnings-text"
-								>{{pfreData.earnings.actual | currency}}</p>
+								>{{0}}</p>
 							</div>
 						</div>
 					</div>
@@ -183,7 +179,7 @@
 									<div class="col-sm-12">
 										<v-progress-linear
 											class="pfre-bar progress-median"
-											:value="((pfreData.returnOnInvestment.actual * 100) / (pfreData.returnOnInvestment.maximum * 100))"
+											:value="100"
 											height="35"
 											color="pfre-fre"
 											background-color="pfre-bar__background"

@@ -34,7 +34,7 @@ export default {
             var currentName = "";
             this.universities.forEach(university => {
                 if(selectedUniversity===(university.short_name)) {
-                    currentName = university.name;
+                    currentName = university.university_name;
                 }
             });
             return currentName;

@@ -30,20 +30,12 @@ const router = new VueRouter({
 		},
 		{ 
 			path: '/data/pfre',
-			component: splashPage,
+			component: pfre,
 			name: 'pfre',
 			meta: {
-				title: 'FRE | CalStatePays'
+				title: 'Data - FRE | CalStatePays'
 			}
 		},
-		// { 
-		// 	path: '/data/pfre',
-		// 	component: pfre,
-		// 	name: 'pfre',
-		// 	meta: {
-		// 		title: 'Data - FRE | CalStatePays'
-		// 	}
-		// },
 		{ 
 			path: '/data/industries', 
 			component: industries, 

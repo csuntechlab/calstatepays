@@ -20,34 +20,18 @@
 				<label
 					class="font-weight-bold"
 					for="Major"
-					v-bind:style="[this.submitted && !this.form.majorId ? errorLabel : '']"
+					v-bind:style="[this.submitted && !this.form.major ? errorLabel : '']"
 				>Select a Major</label>
 				<v-select
 					label="major"
 					aria-label="Select a Major"
 					v-model="selected.majorName"
 					:options="this.form.fieldOfStudyId == null ? majors : pfreMajorsByField"
-					@input="updateGrandfatherSelect('majorId', 'majorId', $event)"
-					@change="updateGrandfatherSelect('majorId', 'majorId', $event)"
+					@input="updateGrandfatherSelect('major', 'major', $event)"
+					@change="updateGrandfatherSelect('major', 'major', $event)"
 					class="csu-form-input"
 					:loading="pfreDisciplineLoad"
-					v-bind:class="{'border-danger': this.submitted && !this.form.majorId}"
-				></v-select>
-			</div>
-			<div class="form-group">
-				<label
-					class="font-weight-bold"
-					for="age"
-					v-bind:style="[this.submitted && !this.form.age ? errorLabel : '']"
-				>Select an Age Range</label>
-				<v-select
-					label="age"
-					aria-label="Select an Age Range"
-					v-model="selected.ageRange"
-					:options="ageRanges"
-					@input="updateSelect('age', $event)"
-					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.age}"
+					v-bind:class="{'border-danger': this.submitted && !this.form.major}"
 				></v-select>
 			</div>
 			<div class="form-group">
@@ -77,7 +61,7 @@
 				<label
 					class="font-weight-bold"
 					for="earnings"
-					v-bind:style="[this.submitted && !this.form.earnings ? errorLabel : '']"
+					v-bind:style="[this.submitted && this.form.earnings === null ? errorLabel : '']"
 				>Estimated Annual Earnings In School</label>
 				<v-select
 					label="earn"
@@ -87,13 +71,13 @@
 					@input="updateSelect('earnings', $event)"
 					@change="updateSelect('earnings', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.earnings}"
+					v-bind:class="{'border-danger': this.submitted && this.form.earnings === null }"
 				></v-select>
 			</div>
 			<div class="form-group">
 				<label
 					for="financialAid"
-					v-bind:style="[this.submitted && !this.form.financialAid ? errorLabel : '']"
+					v-bind:style="[this.submitted && this.form.financialAid === null ? errorLabel : '']"
 					class="font-weight-bold"
 				>Estimated Annual Financial Aid</label>
 				<v-select
@@ -104,7 +88,7 @@
 					@input="updateSelect('financialAid', $event)"
 					@change="updateSelect('financialAid', $event)"
 					class="csu-form-input"
-					v-bind:class="{'border-danger': this.submitted && !this.form.financialAid}"
+					v-bind:class="{'border-danger': this.submitted && this.form.financialAid === null}"
 				></v-select>
 			</div>
 			<div class="row row--condensed" id="submit-btn-container">
@@ -133,15 +117,13 @@ export default {
 			submitted: false,
 			selected: {
 				majorName: null,
-				ageRange: null,
 				education: null,
 				earnings: null,
 				financialAid: null
 			},
 			form: {
 				fieldOfStudyId: null,
-				majorId: null,
-				age: null,
+				major: null,
 				education: null,
 				earnings: null,
 				financialAid: null
@@ -152,25 +134,16 @@ export default {
 				fontWeight: "bold"
 			},
 
-			ageRanges: [
-				{ age: "18-19", value: 1 },
-				{ age: "20-24", value: 2 },
-				{ age: "24-26", value: 3 },
-				{ age: "26 +", value: 4 }
-			],
 			earningRanges: [
-				{ earn: "$0", value: 1 },
-				{ earn: "$0 - $20,000", value: 2 },
-				{ earn: "$30,000 - $45,000", value: 3 },
-				{ earn: "$45,000 - $60,000", value: 4 },
-				{ earn: "$60,000 +", value: 5 }
+				{ earn: "$0", value: 0 },
+				{ earn: "$4,500", value: 4500},
+				{ earn: "$10,000", value: 10000 }
 			],
 			financialAidRanges: [
-				{ finAid: "$0", value: 1 },
-				{ finAid: "$0 - $5,000", value: 2 },
-				{ finAid: "$5,000 - $15,000", value: 3 },
-				{ finAid: "$15,000 +", value: 4 }
-			]
+				{ finAid: "$0", value: 0 },
+				{ finAid: "$3,000", value: 3000 },
+				{ finAid: "$10,000", value: 10000 },
+				]
 		};
 	},
 	methods: {
@@ -225,7 +198,7 @@ export default {
 				this.$store.dispatch("submitPfreForm");
 				this.$store.dispatch("setPfreSelections", this.selected);
 				this.fetchFreData({
-					form: this.form,
+					...this.form,
 					school: this.selectedUniversity
 				});
 			}
@@ -246,15 +219,10 @@ export default {
 			"pfreMajorsByField",
 			"pfreDisciplineLoad"
 		]),
-
-		selectedMajorsByField() {
-			return this.industryMajorsByField;
-		}
 	},
 	validations: {
 		form: {
-			majorId: { required },
-			age: { required },
+			major: { required },
 			education: { required },
 			earnings: { required },
 			financialAid: { required }
