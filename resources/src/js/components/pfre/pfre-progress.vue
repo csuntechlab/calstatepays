@@ -31,6 +31,12 @@
 						<ul class="pfre-info__listGroup">
 							<li class="pfre-info__listElement">
 								<strong class="csu-card__tags">Education Level:</strong>
+								<span v-if="this.pfreSelected.education == 'FTF'">
+									First Time Freshman
+								</span>
+								<span v-else-if="this.pfreSelected.education == 'FTT'">
+									First Time Transfer
+								</span>
 								{{this.pfreSelected.education}}
 							</li>
 							<li class="pfre-info__listElement">
@@ -48,9 +54,12 @@
 				<div class="row">
 					<div class="col-12">
 						<h4 class="pfre-info__title">Annual Finacial Return on Your Education</h4>
-						<p class="pfre-info__percentage">
+						<p v-if="percentage != '0%'" class="pfre-info__percentage">
 							{{pfreData.returnOnInvestment.actual/100 | percentage}}
 							7.5%
+						</p>
+						<p v-else class="pfre-info__percentage">
+							No Data
 						</p>
 						<p class="pfre-info__infoCopy">
 							This percentage reflects a return on the investment you make on a bachelor’s education. This calculated by accounting for your earnings potential and your cost of getting that education. Over your professional career, you will get and annual return on your education. You can compare this return with other investment you make.

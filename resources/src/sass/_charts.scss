@@ -118,9 +118,12 @@
 	}
 	&__percentage{
 		text-align: center;
-		font-size: 5.3rem;
 		font-weight: 600;
 		line-height: 1;
+		font-size: 9rem;
+		@media screen and (max-width: $break-small) {
+			font-size: 5.3rem;
+		}
 	}
 	&__infoCopy{
 		text-align: left;
