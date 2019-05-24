@@ -30,16 +30,15 @@
 					<div class="col-12">
 						<ul class="pfre-info__listGroup">
 							<li class="pfre-info__listElement">
-								<b class="csu-card__tags">Education Level:</b>
-								<!-- {{this.pfreSelected.education}} -->
-								First Time Freshmen
+								<strong class="csu-card__tags">Education Level:</strong>
+								{{this.pfreSelected.education}}
 							</li>
 							<li class="pfre-info__listElement">
-								<b class="csu-card__tags">Earnings:</b>
+								<strong class="csu-card__tags">Earnings:</strong>
 								{{this.pfreSelected.earnings}}
 							</li>
 							<li class="pfre-info__listElement">
-								<b class="csu-card__tags">Financial Aid:</b>
+								<strong class="csu-card__tags">Financial Aid:</strong>
 								{{this.pfreSelected.financialAid}}
 							</li>
 						</ul>
@@ -50,7 +49,7 @@
 					<div class="col-12">
 						<h4 class="pfre-info__title">Annual Finacial Return on Your Education</h4>
 						<p class="pfre-info__percentage">
-							<!-- {{pfreData.returnOnInvestment.actual/100 | percentage}} -->
+							{{pfreData.returnOnInvestment.actual/100 | percentage}}
 							7.5%
 						</p>
 						<p class="pfre-info__infoCopy">
