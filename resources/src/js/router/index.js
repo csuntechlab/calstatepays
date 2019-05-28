@@ -37,6 +37,14 @@ const router = new VueRouter({
 			}
 		},
 		{ 
+			path: '/data/pfre',
+			component: pfre,
+			name: 'pfre',
+			meta: {
+				title: 'Data - FRE | CalStatePays'
+			}
+		},
+		{ 
 			path: '/data/industries', 
 			component: industries, 
 			name: 'industries',

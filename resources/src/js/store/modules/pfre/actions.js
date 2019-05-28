@@ -15,7 +15,6 @@ export default {
         Pfre.fetchFreDataAPI(
             payload,
 			success => {
-                console.log(success)
 				commit(_pfre.FETCH_FRE_DATA, success);
 				commit(_pfre.TRIGGER_IS_LOADING);
 			},
