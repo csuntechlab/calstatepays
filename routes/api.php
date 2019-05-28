@@ -46,7 +46,7 @@ Route::get('/power', 'PowerUsersController@getTableauOptInUniversityData');
 Route::post('/feedback/post', 'FeedBackController@postFeedBack');
 
 // pfre
-Route::get(
-    '/pfre/{entry_status}/{major}/{in_school_earning}/{financial_aid}',
+Route::post(
+    '/pfre/{entry_status}/{in_school_earning}/{financial_aid}',
     'PfreController@getFREData'
 );

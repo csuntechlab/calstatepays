@@ -44,7 +44,6 @@ class FREFormRequest extends FormRequest
         // Include the next line if you need form data, too.
         $request = Input::all();
         $request['entry_status'] = $this->route('entry_status');
-        $request['major'] = $this->route('major');
         $request['in_school_earning'] = $this->route('in_school_earning');
         $request['financial_aid'] = $this->route('financial_aid');
         return $request;

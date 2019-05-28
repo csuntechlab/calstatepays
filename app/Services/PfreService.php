@@ -14,7 +14,7 @@ class PfreService implements PfreContract
     public function getFREData($request)
     {
         $data = Pfre::where('entry_status', $request->entry_status)
-            ->where('major', $request->major)
+            ->where('major', urldecode($request->major))
             ->where('in_school_earning', $request->in_school_earning)
             ->first();
 

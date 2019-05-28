@@ -57,11 +57,11 @@ class PfreControllerTest extends TestCase
     public function test_getFreData_Success_Contract_Call()
     {
         $entry_status       =   "FTT";
-        $major              =   "Computer Engineering";
+        $major              =   urlencode("Computer Engineering");
         $in_school_earning  =   0;
         $financial_aid      =   1;
 
-        $response = $this->json('GET', "/api/pfre/$entry_status/$major/$in_school_earning/$financial_aid");
+        $response = $this->json('POST', "/api/pfre/$entry_status/$in_school_earning/$financial_aid", ['major' => $major]);
         $response = $response->getOriginalContent();
         $response = json_encode($response);
 
@@ -79,11 +79,11 @@ class PfreControllerTest extends TestCase
     public function test_getFREData_returns_time_to_degree_and_estimated_5_year_earnings_and_roi()
     {
         $entry_status       =   "FTT";
-        $major              =   "Computer Engineering";
+        $major              =   urlencode("Computer Engineering");
         $in_school_earning  =   0;
         $financial_aid      =   1;
 
-        $response = $this->json('GET', "/api/pfre/$entry_status/$major/$in_school_earning/$financial_aid");
+        $response = $this->json('POST', "/api/pfre/$entry_status/$in_school_earning/$financial_aid", ['major' => $major]);
 
         $response->assertJsonStructure([
             'pfre'

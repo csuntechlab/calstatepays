@@ -1,5 +1,6 @@
 const fetchFreDataAPI = (payload, success, error) => {
-    window.axios.get(`api/pfre/${payload.education}/${payload.major}/${payload.earnings}/${payload.financialAid}`)
+    let encodedMajor = encodeURIComponent(payload.major)
+    window.axios.post(`api/pfre/${payload.education}/${payload.earnings}/${payload.financialAid}`, {'major': encodedMajor })
     .then(
         response => success(response.data.pfre),
     ).catch(
