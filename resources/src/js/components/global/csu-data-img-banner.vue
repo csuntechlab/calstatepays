@@ -5,7 +5,7 @@
                 <div class="CSUDataImgBanner__campusInfoWrapper col-12">
                     <h1 class="CSUDataImgBanner__campusTitle"> {{getCampusName}}</h1>
                     <div data-app>
-                        <campus-modal>
+                        <campus-modal v-if="selectedDataPage !== 'pfre'">
                             <span slot="change button" class="CSUDataImgBanner__changeCampus font-weight-bold" href="#">Change Campus</span>
                         </campus-modal>
                     </div>
@@ -26,7 +26,8 @@ export default {
     computed: {
         ...mapGetters([
             'selectedUniversity',
-            'universities'
+            'universities',
+            'selectedDataPage'
             ]),
         getCampusName() {
             var selectedUniversity = this.selectedUniversity;

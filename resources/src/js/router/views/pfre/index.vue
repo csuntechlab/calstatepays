@@ -45,7 +45,7 @@ export default {
 		...mapActions(['setUniversity'])
 	},
 	mounted() {
-		this.setUniversity('all')
+		this.setUniversity('all');
 	},
 };
 </script>

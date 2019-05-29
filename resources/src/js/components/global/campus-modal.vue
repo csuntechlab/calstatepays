@@ -16,7 +16,7 @@
 						>
 							<template v-for="(universitySeal, index2) in universitySeals">
 								<template v-if="universitySeal.short_name == item.short_name">
-									<template v-if="item.opt_in === 1">
+									<template v-if="item.opt_in === '1'">
 										<!-- if a campus is selected, make the corresponding radio button checked -->
 										<template v-if="aCampusIsSelected && selectedUniversity == item.short_name">
 											<input
@@ -162,6 +162,10 @@ export default {
 	},
 	created() {
 		document.addEventListener("keyup", this.onEscKey);
+		if (this.selectedDataPage === 'pfre') {
+			this.aCampusIsSelected = true;
+			this.showModal = false;
+		}
 	},
 	mounted() {
 			this.checkSessionData();
