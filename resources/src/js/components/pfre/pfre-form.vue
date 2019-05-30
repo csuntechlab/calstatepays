@@ -135,14 +135,14 @@ export default {
 			},
 
 			earningRanges: [
-				{ earn: "$0", value: 0 },
-				{ earn: "$4,500", value: 4500},
-				{ earn: "$10,000", value: 10000 }
+				{ earn: "$0 - $2,250", value: 0 },
+				{ earn: "$2,251 - $7,750", value: 4500},
+				{ earn: "$7,751+", value: 10000 }
 			],
 			financialAidRanges: [
-				{ finAid: "$0", value: 0 },
-				{ finAid: "$3,000", value: 3000 },
-				{ finAid: "$10,000", value: 10000 },
+				{ finAid: "$0 - $1,500", value: 0 },
+				{ finAid: "$1,501 - $6,500", value: 3000 },
+				{ finAid: "$6,501+", value: 10000 },
 				]
 		};
 	},
