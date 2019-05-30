@@ -59,7 +59,7 @@ class PfreControllerTest extends TestCase
         $entry_status       =   "FTT";
         $major              =   urlencode("Computer Engineering");
         $in_school_earning  =   0;
-        $financial_aid      =   1;
+        $financial_aid      =   'fin_aid_0';
 
         $response = $this->json('POST', "/api/pfre/$entry_status/$in_school_earning/$financial_aid", ['major' => $major]);
         $response = $response->getOriginalContent();
@@ -81,7 +81,7 @@ class PfreControllerTest extends TestCase
         $entry_status       =   "FTT";
         $major              =   urlencode("Computer Engineering");
         $in_school_earning  =   0;
-        $financial_aid      =   1;
+        $financial_aid      =   'fin_aid_0';
 
         $response = $this->json('POST', "/api/pfre/$entry_status/$in_school_earning/$financial_aid", ['major' => $major]);
 

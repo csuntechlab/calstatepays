@@ -21,25 +21,11 @@ class PfreService implements PfreContract
         if (empty($data)) {
             return ['pfre' => 'No data.'];
         }
-
-        $data = $this->selectDataWithFinancialAid($data, $request->financial_aid);
-        $data = number_format((float)$data, 0, '.', '') . "%";
+        $data = number_format((float)$data[$request->financial_aid], 0, '.', '') . "%";
         $data = [
             'pfre' => $data
         ];
 
         return $data;
-    }
-
-    private function selectDataWithFinancialAid($data, $fin_aid)
-    {
-        switch ($fin_aid) {
-            case 1:
-                return $data['fin_aid_0'];
-            case 2:
-                return $data['fin_aid_3000'];
-            default:
-                return $data['fin_aid_10000'];
-        }
     }
 }
