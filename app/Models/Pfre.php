@@ -19,13 +19,4 @@ class Pfre extends Model
     ];
 
     public $incrementing = false;
-
-    // protected $hidden = [
-    //     'guid',
-    //     'entry_status',
-    //     'major',
-    //     'in_school_earning',
-    //     'created_at',
-    //     'updated_at'
-    // ];
 }

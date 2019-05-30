@@ -22,7 +22,7 @@ class PfreController extends Controller
             return response()->json($request->validator->messages(), 400);
         }
 
-        $key = "getFreData:" . ":" . $request->major . ":" . $request->entry_status . ":" . $request->financial_aid . ":" . $request->in_school_earnings;
+        $key = "getFreData:" . $request->id . ":" . $request->in_school_earning;
 
         if (Cache::has($key)) {
             $data = Cache::get($key);
