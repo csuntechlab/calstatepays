@@ -237,7 +237,7 @@ export default {
 					}
 				},
 				yAxis: {
-					name: 'Salary',
+					name: 'Annual Salary',
 					nameLocation: 'middle',
 					nameTextStyle: {
 						fontSize: 14,
@@ -282,7 +282,7 @@ export default {
 					{
 						type: "line",
 						symbol: 'square',
-						symbolSize: 13,
+						symbolSize: 11,
 						name: this.toolTipTitles2,
 						data: this.bachelorsEarnings,
 						lineStyle: {

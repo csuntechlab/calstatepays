@@ -76,7 +76,7 @@
 					<div class="row">
 						<i class="col fa fa-times fa-2x btn-remove text-right pull-right" @click.prevent="removeCurrentCard" v-show="isNotFirstCard" title="Close"></i>
 					</div>
-					<h2 class="industry-title text-center p-md-3">Please make your selection</h2>
+					<h3 class="industry-title text-center p-md-3">Please make your selection</h3>
 					<p class="lead pl-md-5 pr-md-5">
 						You have the option of either filtering out majors by <strong class="font-weight-bold">discipline</strong> or choosing the <strong class="font-weight-bold">major</strong>
 						which resonates the most with you.

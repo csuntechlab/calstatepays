@@ -23,10 +23,4 @@ export default {
     ])
   }
 }
- </script> 
-
-</script>
-
-
-     
-</template>
+ </script>

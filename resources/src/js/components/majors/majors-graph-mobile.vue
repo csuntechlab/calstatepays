@@ -191,11 +191,11 @@ export default {
 					data: ["line"]
 				},
 				yAxis: {
-					name: 'Salary',
+					name: 'Annual Salary',
 					nameLocation: 'middle',
 					nameTextStyle: {
 						fontSize: 14,
-						padding: [0, 0, 20, 0]
+						padding: [0, 0, 25, 0]
 					},
 					axisLabel: {
 						rotate: 90,
@@ -269,7 +269,7 @@ export default {
 					{
 						type: "line",
 						symbol: 'square',
-						symbolSize: 14,
+						symbolSize: 11,
 						name: this.toolTipTitles2,
 						data: this.bachelorsEarnings,
 						lineStyle: {

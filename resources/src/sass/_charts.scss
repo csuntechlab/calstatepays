@@ -215,7 +215,7 @@ $colorList: (
 	@each $color, $value in $colorList {
 		.legend-#{$color} {
 			@extend %legend;
-			background-color: $value;
+			color: $value;
 		}
 	}
 }
