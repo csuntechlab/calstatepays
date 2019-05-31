@@ -83,6 +83,21 @@
 						<div class="p-sm-4 faq-panel">Earnings are reported for California workers whose earnings are covered by Unemployment Insurance at 2, 5, and 10 years after education exit. As a result, students who have moved out of state or are out of the labor market are excluded, as are those in the military, federal employment, or self-employed.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
+				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
+					<v-expansion-panel-content>
+						<div slot="header">What factors affect your personal financial return?</div>
+						<div class="p-sm-4 faq-panel">Your PFRE changes when:
+							<ul class="pt-4">
+								<li>The younger you start, the longer you get higher post-graduation earnings--increasing PFRE.</li>
+								<li>The more you could earn without a Bachelor's Degree, the more post-graduation income you give up to get it--decreasing PFRE.</li>
+								<li>The more you earn while obtaining a Bachelor's Degree, the less income you give up to get it--increasing PFRE.</li>
+								<li>The more financial aid money you receive (excluding loans), the less you pay to get a Bachelor's Degree--increasing PFRE.</li>
+								<li>The longer it takes you to graduate, the higher your education costs--decreasing PFRE.</li>
+								<li>Majors that produce higher post-graduation earnings will get a higher PFRE.</li>
+							</ul>
+						</div>
+					</v-expansion-panel-content>
+				</v-expansion-panel>
 			</div>
 		</div>
 	</div>

@@ -60,7 +60,9 @@
 							No Data
 						</p>
 						<p class="pfre-info__infoCopy">
-							This percentage reflects a return on the investment you make on a bachelor’s education. This calculated by accounting for your earnings potential and your cost of getting that education. Over your professional career, you will get and annual return on your education. You can compare this return with other investment you make.
+							The PFRE is your Personal Financial Return on Education for completing a Bachelor's
+							Degree from CSUs in the major you chose. This number is like interest rate, so a higher
+							PFRE means you are getting a better deal.
 						</p>
 					</div>
 				</div>
