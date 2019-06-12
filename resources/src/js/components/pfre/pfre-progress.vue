@@ -52,7 +52,7 @@
 				<hr>
 				<div class="row">
 					<div class="col-12">
-						<h4 class="pfre-info__title">Annual Finacial Return on Your Education</h4>
+						<h4 class="pfre-info__title">Annual Financial Return on Your Education</h4>
 						<p v-if="pfreData.returnOnInvestment != 'No data.'" class="pfre-info__percentage">
 							{{pfreData.returnOnInvestment}}
 						</p>
