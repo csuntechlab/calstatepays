@@ -1,32 +1,32 @@
 [
   {
     "university_id": "10",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 1,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CalPolyPomona-ByMajor/POMONAbyMajor?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "10",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 2,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CalPolyPomona-ByAge/CalPolyPomonaByAge?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "10",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 3,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CalPolyPomona-ByRace/CalPolyPOMONAByRace?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "10",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 4,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CalPolyPomona-ByGender/PomonaByGender?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "10",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 5,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CalPolyPomona-ByPellGrant/CalPolyPomonabyPell?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   }
 ]

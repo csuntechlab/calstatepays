@@ -1,32 +1,32 @@
 [
   {
     "university_id": "73",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 1,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSUChannelIslands-ByMajor/ChannelIslands?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "73",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 2,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSUChannelIslands-ByAge/ChannelIslandsbyAge?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "73",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 3,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSUChannelIslands-ByRace/ChannelIslandsbyRace?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "73",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 4,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSUCHANNELISLANDS-ByGender/ChannelIslandsbyGender?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "73",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 5,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSUChannelIslands-ByPellGrant/CHANNELISLANDSByPell?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   }
 ]

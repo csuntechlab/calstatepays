@@ -3,30 +3,30 @@
     "university_id": "0",
     "opt_in": 1,
     "path_id": 1,
-    "iframe_string": "https://counts.csun.edu/t/IR/views/CSU7byMajor/CSU7AggregareEarningsData?:isGuestRedirectFromVizportal=y&:embed=y"
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSU7byMajor/CSU7AggregareEarningsData?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "0",
     "opt_in": 1,
     "path_id": 2,
-    "iframe_string": "https://counts.csun.edu/t/IR/views/CSU7byAge/CSU7byAge?:isGuestRedirectFromVizportal=y&:embed=y"
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSU7byAge/CSU7byAge?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "0",
     "opt_in": 1,
     "path_id": 3,
-    "iframe_string": "https://counts.csun.edu/t/IR/views/CSU7byRace/CSU7byRace?:isGuestRedirectFromVizportal=y&:embed=y"
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSU7byRace/CSU7byRace?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "0",
     "opt_in": 1,
     "path_id": 4,
-    "iframe_string": "https://counts.csun.edu/t/IR/views/CSU7byGender/CSU7byGender?:isGuestRedirectFromVizportal=y&:embed=y"
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSU7byGender/CSU7byGender?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "0",
     "opt_in": 1,
     "path_id": 5,
-    "iframe_string": "https://counts.csun.edu/t/IR/views/CSU7byPell/CSU7byPell?:isGuestRedirectFromVizportal=y&:embed=y"
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSU7byPell/CSU7byPell?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   }
 ]

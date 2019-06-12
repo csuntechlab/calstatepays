@@ -1,32 +1,32 @@
 [
   {
     "university_id": "40",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 1,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSULongBeachbyMajor/LONGBEACHbyMajor?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "40",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 2,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSULongBeach-ByAge/LongBeachbyAge?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "40",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 3,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSULONGBEACH-ByRace/LongBeachbyRace?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "40",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 4,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSULONGBEACH-ByGender/LongBeachbyGender?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   },
   {
     "university_id": "40",
-    "opt_in": 0,
+    "opt_in": 1,
     "path_id": 5,
-    "iframe_string": null
+    "iframe_string": "https://counts.csun.edu/t/CalStatePays/views/CSULongBeach-ByPellGrant/LONGBEACHbyPell?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
   }
 ]
