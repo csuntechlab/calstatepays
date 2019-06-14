@@ -10,6 +10,7 @@
 								<i class="fa fa-arrow-left"></i> Return to CSU Campus Selection
 							</h2>
 						</router-link>
+						<div class="mt-3 mb-5 pl-4 ml-3 font-weight-bold">Note: If prompted to log-in please contact Institutional Research at your University to obtain User and Password for your campus data.</div>
 					</div>
 				</div>
 				<div class="row">

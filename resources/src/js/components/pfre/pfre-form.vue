@@ -79,10 +79,10 @@
 					for="financialAid"
 					v-bind:style="[this.submitted && this.form.financialAid === null ? errorLabel : '']"
 					class="font-weight-bold"
-				>Estimated Annual Financial Aid</label>
+				>Estimated Annual Financial Aid (Excluding Loans)</label>
 				<v-select
 					label="finAid"
-					aria-label="Estimated Annual Financial Aid"
+					aria-label="Estimated Annual Financial Aid Excluding Loans"
 					:options="financialAidRanges"
 					v-model="selected.financialAid"
 					@input="updateSelect('financialAid', $event)"

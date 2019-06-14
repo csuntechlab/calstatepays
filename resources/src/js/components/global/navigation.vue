@@ -8,11 +8,9 @@
                         <img :src="this.url + '/img/cspLogos/logo-mini.svg'" class="float-md-left nav-logo--small mx-auto d-inline-block" alt="Cal State Pays logo">
 
                     </router-link>
-                    <template v-if="!this.desktopView">
-                        <router-link to="/research">
-                            <img :src="this.url + '/img/otherLogos/strada-logo.png'" class="nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
-                        </router-link>
-                    </template>
+                    <router-link to="/research">
+                        <img :src="this.url + '/img/otherLogos/strada-logo.png'" class="nav-logo-secondary d-inline-block d-sm-none" alt="Strada Logo">
+                    </router-link>
                 </div>
                 <div class="col-4 d-sm-none order-3 align-self-center hamburger-btn-position">
                     <button @click="toggleShowNav()" type="button" role="button">
@@ -44,7 +42,7 @@
                         </div>
                     </nav>
                 </div>
-                <div v-if="desktopView" id="strada-logo-desktop" class="d-none d-sm-block col-3 col-md-3  order-3 align-self-center">
+                <div class="d-none d-sm-block col-3 col-md-3 order-3 align-self-center">
                     <div class="navbar-text small w-100">
                         <router-link to="/research">
                             <img :src="this.url + '/img/otherLogos/strada-logo.png'" class="float-right nav-logo-secondary mx-auto d-sm-block" alt="Strada Logo">
@@ -62,7 +60,6 @@ export default {
 	data() {
 		return {
 			url: "",
-			desktopView: true,
 		};
 	},
 	methods: {
@@ -90,9 +87,6 @@ export default {
     },
 	created() {
 		this.url = window.baseUrl;
-	},
-    mounted() {
-        this.desktopView = document.getElementById('strada-logo-desktop').classList.contains('d-sm-block');
-    }
+	}
 };
 </script>
