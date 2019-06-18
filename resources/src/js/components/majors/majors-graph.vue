@@ -155,9 +155,6 @@ export default {
 			return {
 				tooltip: {
 					trigger: "axis",
-					axisPointer: {
-						type: "cross"
-					},
 					formatter: function(params) {
 						var colorSpan = color =>
 							'<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' +

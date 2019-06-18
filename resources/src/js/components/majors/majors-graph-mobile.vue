@@ -125,9 +125,6 @@ export default {
 			return {
 				tooltip: {
 					trigger: "axis",
-					axisPointer: {
-						type: "cross"
-					},
 					position: function(pos, params, dom, rect, size) {
 						// tooltip will be fixed on the right if mouse hovering on the left,
 						// and on the left if hovering on the right.
