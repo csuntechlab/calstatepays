@@ -98,11 +98,24 @@
 						</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
+				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
+					<v-expansion-panel-content>
+						<div slot="header">How are industries defined?</div>
+						<div class="p-sm-4 faq-panel">
+							Industries are defined using the North American Industrial Classification System (NAICS).  Industries are based on the two-digit level of the taxonomy. On the attachment provided <a :href="this.url + '/NAICS.Codes.With.Majors.xlsx'" title="NAICS Codes with Majors file download.">here</a> we list each industry with its number, definition, and bachelors degrees commonly found in the industry.
+						</div>
+					</v-expansion-panel-content>
+				</v-expansion-panel>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
 	export default {
+		data() {
+			return {
+				url: window.baseUrl
+			}
+		}
 	}
 </script>
