@@ -91,7 +91,7 @@ export default {
 				color = "#F2C55C";
 			}
 			if (this.educationLevel === "postBacc") {
-				color = "#3EFA94";
+				color = "#55BE85";
 			}
 			return color;
 		},
@@ -104,12 +104,12 @@ export default {
 				color = "#ECA400";
 			}
 			if (this.educationLevel === "postBacc") {
-				color = "#2BAE67";
+				color = "#208062";
 			}
 			return color;
 		},
 		toolColors3() {
-			let color = "#279D5D";
+			let color = "#208062";
 			if (this.educationLevel === "someCollege") {
 				color = "#2c4144";
 			}
@@ -124,6 +124,10 @@ export default {
 		polar() {
 			return {
 				tooltip: {
+					backgroundColor: 'rgba(235,235,235,1)',
+					textStyle: {
+						color: '#000'
+					},
 					trigger: "axis",
 					position: function(pos, params, dom, rect, size) {
 						// tooltip will be fixed on the right if mouse hovering on the left,
@@ -134,11 +138,19 @@ export default {
 						] = 5;
 						return obj;
 					},
-					formatter: function(params) {
-						var colorSpan = color =>
-							'<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' +
-							color +
-							'"></span>';
+					formatter: (params) => {
+							var vm = this;
+							var colorSpan = (color) => {
+								let fontAwesome = "";
+								if (vm.toolColors1 === color) {
+									fontAwesome = '<i class="fa fa-circle" aria-hidden="true"></i>';
+								} else if (vm.toolColors2 === color) {
+									fontAwesome = '<i class="fa fa-stop" aria-hidden="true"></i>';
+								} else {
+									fontAwesome = '<i class="fa fa-star" aria-hidden="true"></i>';
+								}
+								return `<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;color:${color}">${fontAwesome}</span>`;
+						};
 						let rez =
 							"<h6>" + params[0].axisValue + " Years Out</h6>";
 						params.forEach(item => {
