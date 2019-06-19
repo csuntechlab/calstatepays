@@ -81,7 +81,7 @@
 						class="campus-modal__error"
 						id="campus-modal__error"
 					>* Select a campus to proceed</div>
-					<div>
+					<div class="mb-md-4 mb-sm-2">
 						<span
 							v-if="aCampusIsSelected"
 							class="btn btn-secondary campus-modal__btn"
