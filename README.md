@@ -1,6 +1,6 @@
 # CalStatePays
 
-[![Build Status](https://travis-ci.com/csun-metalab/CSU-Metro-LA.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=dev)](https://travis-ci.com/csun-metalab/CSU-Metro-LA) [![Build Status](https://travis-ci.com/csun-metalab/CSU-Metro-LA.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=demo)](https://travis-ci.com/csun-metalab/CSU-Metro-LA) 
+[![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=dev)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=demo)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=master)](https://travis-ci.com/csun-metalab/calstatepays)
 
 
 > A data visualization application for discovering, exploring, and analyzing your potential financial earnings after graduation from 7 different Cal State Universities. 
@@ -38,6 +38,7 @@ Make sure you meet the necessary [Prerequisites](#prerequisites) in order to sta
 - [Docker](https://docs.docker.com/install/)
 - [Docker-Compose](https://docs.docker.com/compose/install/)
 - Favorite Text Editor or IDE
+- Meet [Laravel 5.4 requirements](https://laravel.com/docs/5.4)
 
 ## Serving the application
 
