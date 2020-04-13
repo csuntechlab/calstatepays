@@ -39,6 +39,29 @@ body {
 	overflow-x: hidden;
 }
 
+
+@media print {
+	body {
+		position:absolute;
+		margin:-100px 0 0 -100px;
+		zoom: 0.73;
+		-moz-transform: scale(0.73);
+		-webkit-transform: scale(0.73);
+		transform: scale(0.73);
+		width: 120%;
+	}
+	.nav-item{
+		display: none !important;
+	}
+	.hr-nav{
+		display: none !important;
+
+	}
+	.collapse{
+		display: none !important;
+	}
+ }
+
 .lead {
 	color: $text-gray;
 }
