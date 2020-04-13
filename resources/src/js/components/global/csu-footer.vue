@@ -19,9 +19,9 @@
                     </a>
                 </div>
                 <div class="col-md-9 col-12 text-md-right">
-                    <a href="//www.csun.edu/academic-affairs/meta-lab" target="csun">
+                    <router-link class="footer__link text-white" :to="`/credits`" >
                         Built by students at California State University Northridge META+LAB 
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
