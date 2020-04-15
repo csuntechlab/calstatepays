@@ -50,15 +50,11 @@ body {
 		transform: scale(0.73);
 		width: 120%;
 	}
-	.nav-item{
+	.nav-item, .hr-nav, .collapse {
 		display: none !important;
 	}
-	.hr-nav{
-		display: none !important;
-
-	}
-	.collapse{
-		display: none !important;
+	div.echarts * {
+		min-width:1200px !important;
 	}
  }
 
