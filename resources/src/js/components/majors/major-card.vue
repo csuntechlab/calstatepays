@@ -148,6 +148,7 @@ export default {
 			return this.educationLevel(this.index);
 		},
 		selectedFormWasSubmitted() {
+			console.log("major card form was submitted")
 			return this.formWasSubmitted(this.index);
 		},
 		selectedFormWasSubmittedOnce(){

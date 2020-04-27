@@ -2,6 +2,7 @@ import _industries from "../../mutation-types/industries";
 
 export default {
 	[_industries.FETCH_INDUSTRIES](state, payload) {
+		console.log("fetch industry - mutation", payload)
 		state.allLevelIndustries = payload;
 		state.industries = payload[state.industryEducationLevel];
 	},
@@ -28,6 +29,7 @@ export default {
 		}
 	},
 	[_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED](state, payload) {
+		console.log("industy form was submitted - mutation", payload)
 		state.industryFormWasSubmitted = true;
 		state.industryFormWasSubmittedOnce = true;
 	},

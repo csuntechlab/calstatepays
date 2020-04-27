@@ -1,6 +1,7 @@
 //MAJORS ACTIONS
 import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
+import _industries from "../../mutation-types/industries"
 import _global from '../../mutation-types/global-form';
 export default {
     majorNameById: (state, getters) => id => {
@@ -12,6 +13,7 @@ export default {
         commit(_majors.RESET_MAJOR_SELECTIONS);
     },
     fetchUpdatedMajorsByField({ commit, dispatch }, payload) {
+        console.log("fetch updated majors by field payload - cardindex", payload.form.cardIndex )
         commit(_majors.SET_DISCIPLINE_LOAD, {status: true, cardIndex: payload.form.cardIndex});
         Major.fetchUpdatedMajorsByFieldAPI(
             payload,
@@ -24,6 +26,8 @@ export default {
         );
     },
     fetchMajorData({ commit, dispatch }, payload) {
+        console.log("fetch major data commit", commit)
+        console.log("fetch major data payload", payload)
         commit(_majors.TRIGGER_MAJOR_IS_LOADING, payload);
         Major.fetchMajorDataAPI(
             payload,
@@ -51,7 +55,9 @@ export default {
     },
 
     toggleFormWasSubmitted({commit}, payload){
+        console.log("toggle form was submitted - major action - payload", payload)
         commit(_majors.TOGGLE_FORM_WAS_SUBMITTED, payload)
+        commit(_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED)
     },
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);

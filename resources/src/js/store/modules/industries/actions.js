@@ -1,8 +1,11 @@
 import Industries from "../../../api/industries";
 import _industries from "../../mutation-types/industries"
+import _majors from "../../mutation-types/majors"
 import _global from '../../mutation-types/global-form';
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
+		console.log("fetch industries - action - commit", commit)
+		console.log("fetch industries - action - payload", payload)
 		commit(_industries.TRIGGER_IS_LOADING, payload);
 		Industries.fetchIndustriesAPI(
 			payload,
@@ -33,12 +36,17 @@ export default {
 		commit(_industries.RESET_INDUSTRY_STATE);
 	},
 	toggleIndustryFormWasSubmitted({commit}){
+		console.log("industy form was submitted - action")
 		commit(_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED);
+		commit(_majors.TOGGLE_FORM_WAS_SUBMITTED);
 	},
 	toggleIndustryEducationLevel({commit}, payload){
+		if(payload == null) payload = "bachelors"
+		console.log("toggle education levele - action", payload)
 		commit(_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL, payload);
 	},
 	setIndustryMajor({commit}, payload) {
+		console.log("set industry major - action", payload)
 		commit(_industries.SET_INDUSTRY_MAJOR, payload);
 	}
 
