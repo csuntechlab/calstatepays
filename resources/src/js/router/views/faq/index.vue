@@ -113,7 +113,7 @@
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header">What is the Power Users Page?</div>
-						<div class="p-sm-4 faq-panel">This page is an extension of CalStatePays. Here users are able to see more detailed views of reported earnings, view multiple earnings of different majors, and view comparisons based on people's backgrounds.</div>
+						<div class="p-sm-4 faq-panel">This page is an extension of CalStatePays. Here users are able to see a more detailed views of reported earnings, view multiple earnings of different majors, and view comparisons based on people's backgrounds.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
