@@ -11,9 +11,11 @@
                     </h2>
                 </div>
                 <div class="row no-gutters">
-                    <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3 homepageUniversities__svg" @click="handleUniversitySealClick(item.admission)">
-                        <img :src="item.url" :alt="item.alt">
-                        <figcaption class="text-center" >{{item.name}}</figcaption>
+                    <figure  v-for="(item, index) in universitySeals" :key="index" class="col-md col-sm-3 col-3 homepageUniversities__svg">
+                        <a :href="item.admission" target="_blank">
+                            <img :src="item.url" :alt="item.alt">
+                            <figcaption class="text-center" >{{item.name}}</figcaption>
+                        </a>
                     </figure>
                 </div>  
             </div>
@@ -39,11 +41,6 @@ export default {
                 {url: window.baseUrl + '/img/csuseals/channel_islands_seal.svg',name:'Channel Islands',alt:'',admission:'https://www.csuci.edu/admissions/'},                
             ]
         };
-    },
-    methods: {
-        handleUniversitySealClick(admission){
-            window.open(admission, '_blank')
-        }
     }
 }
 </script>
