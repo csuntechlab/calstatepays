@@ -8,8 +8,6 @@ export default {
         state.selectedDataPage = payload;
     },
     [_global.ERROR_ALERT](state,payload){
-        console.log("ERROR ALERT - payload ", payload)
-        console.log("ERROR ALERT - state ", state)
         state.errorMessage = payload;
     },
     [_global.FETCH_MAJORS](state, payload) {

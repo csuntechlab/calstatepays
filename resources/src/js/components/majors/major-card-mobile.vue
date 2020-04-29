@@ -160,7 +160,6 @@
 				return this.educationLevel(this.index);
 			},
 			selectedFormWasSubmitted() {
-				console.log("test")
 				return this.formWasSubmitted(this.index);
 			},
 			selectedFormWasSubmittedOnce() {

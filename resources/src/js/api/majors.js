@@ -2,19 +2,15 @@ const fetchUpdatedMajorsByFieldAPI = (payload, success, error) => {
     window.axios.get(`api/major/hegis-codes/${payload.school}/${payload.form.fieldOfStudyId}`).then(
         response => success(response.data),    
     ).catch(
-        console.log("fail api call - majors api"),
         failure=>{ error(failure.response.data.message)}
     );
 };
 
 const fetchMajorDataAPI = (payload, success, error) => {
-    console.log("fetch major data api - payload", payload)
-    console.log("fetch major data api -  success", success)
     window.axios.get(`api/major/${payload.form.majorId}/${payload.school}`).then(
         response => success(response.data),
     ).catch(
         failure=>{
-            console.log("status error - majors", failure)
             if(failure.response.status == 400){
                 error(failure.response.data.major[0])
             }else{
