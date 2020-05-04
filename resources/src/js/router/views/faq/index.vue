@@ -4,11 +4,11 @@
 			<h1 class="home__heading faq-header">Frequently Asked Questions</h1>
 		</div>
 		<div class="container">
-			<div class="row justify-content-start align-items-center">		
+			<div class="row justify-content-start align-items-center">
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header" >I can not find my CSU.</div>
-						<div class="p-sm-4 faq-panel">The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for an additional six CSU campuses in the Greater Los Angeles Area.</div>
+						<div class="p-sm-4 faq-panel">The initial study relies on students enrolled at California State University, Northridge. We are currently working on collecting data for one additional CSU campus in the Greater Los Angeles Area.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
@@ -85,7 +85,13 @@
 				</v-expansion-panel>
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
-						<div slot="header">What factors affect your personal financial return?</div>
+						<div slot="header">What is Finacial Return on Education?</div>
+						<div class="p-sm-4 faq-panel">Financial Return on Education (FRE) is your expected Personal Financial Return on Education, or your Expected Rate of Return for pursuing a specific bachelor's degree.  The FRE calculator is compiled based on the available CSU campuses data. Note this calculator is only meant for undergraduate degrees.</div>
+					</v-expansion-panel-content>
+				</v-expansion-panel>
+				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
+					<v-expansion-panel-content>
+						<div slot="header">What factors affect your Personal Financial Return on Education?</div>
 						<div class="p-sm-4 faq-panel">Your PFRE changes when:
 							<ul class="pt-4">
 								<li>The younger you start, the longer you get higher post-graduation earnings--increasing PFRE.</li>
@@ -101,9 +107,19 @@
 				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
 					<v-expansion-panel-content>
 						<div slot="header">How are industries defined?</div>
-						<div class="p-sm-4 faq-panel">
-							Industries are defined using the North American Industrial Classification System (NAICS).  Industries are based on the two-digit level of the taxonomy. On the attachment provided <a :href="this.url + '/NAICS.Codes.With.Majors.xlsx'" title="NAICS Codes with Majors file download.">here</a> we list each industry with its number, definition, and bachelors degrees commonly found in the industry.
-						</div>
+						<div class="p-sm-4 faq-panel">Industries are defined using the North American Industrial Classification System (NAICS).  Industries are based on the two-digit level of the taxonomy. On the attachment provided <a :href="this.url + '/NAICS.Codes.With.Majors.xlsx'" title="NAICS Codes with Majors file download.">here</a> we list each industry with its number, definition, and bachelors degrees commonly found in the industry. For example, the industry construction is associated with the NAICS code 23 and is often employed by Civil Engineering majors. <a href="https://www.naics.com/search/" target="_blank">Learn more NAICS here.</a></div>
+					</v-expansion-panel-content>
+				</v-expansion-panel>
+				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
+					<v-expansion-panel-content>
+						<div slot="header">What is the Power Users Page?</div>
+						<div class="p-sm-4 faq-panel">This page is an extension of CalStatePays. Here users are able to see a more detailed views of reported earnings, view multiple earnings of different majors, and view comparisons based on people's backgrounds.</div>
+					</v-expansion-panel-content>
+				</v-expansion-panel>
+				<v-expansion-panel popout class="col-12 col-lg-6 px-3">
+					<v-expansion-panel-content>
+						<div slot="header">Who are Power Users?</div>
+						<div class="p-sm-4 faq-panel">Researchers that want to learn more about industrial pay, and college advisors. If prompted to log into the Tableau Server, please contact your University's Institutional Research.</div>
 					</v-expansion-panel-content>
 				</v-expansion-panel>
 			</div>
