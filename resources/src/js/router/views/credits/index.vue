@@ -8,20 +8,23 @@
 
     <div class="row">
       <div class="col-xs-6 col-sm-8 col-md-4">
-        <a href="https://www.csun.edu/management/richard-moore" target="_blank">
+        <a href="https://academics.csun.edu/faculty/richard.moore" target="_blank">
           <img
             class="clients"
-            :src="this.url + '/img/otherLogos/richard-moore.jpg'"
+            src="https://csun-metalab-clouddrive.s3-us-west-2.amazonaws.com/media/faculty/richard.moore/avatar.jpg?2020101345"
             alt="Richard Moore"
           />
-          <p class="col-xs-6  text-center">Richard Moore - Co-Founder of CalStatePays</p>
+          <p class="col-xs-6 text-center">Richard Moore <br /> Co-Founder of CalStatePays</p>
         </a>
         <br />
       </div>
       <div class="col-xs-6 col-sm-8 col-md-4">
         <a href="https://academics.csun.edu/faculty/kenneth.chapman" target="_blank">
-          <img class="clients" :src="this.url + '/img/otherLogos/kenneth-chapman.jpg'" />
-          <p class="col-xs-6  text-center client-text">Kenneth Champman - Co-Founder of CalStatePays</p>
+          <img
+            class="clients"
+            src="https://csun-metalab-clouddrive.s3-us-west-2.amazonaws.com/media/faculty/kenneth.chapman/avatar.jpg?2020101432"
+          />
+          <p class="col-xs-6 text-center client-text">Kenneth Champman <br /> Co-Founder of CalStatePays</p>
         </a>
       </div>
     </div>

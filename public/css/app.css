@@ -22508,6 +22508,8 @@ a.faq-card__button:hover {
   margin-right: auto;
   text-decoration: none;
   display: block;
+  max-width: 350px;
+  max-height: 350px;
 }
 
 .clients:hover {
