@@ -30,7 +30,7 @@
 						<div class="g-recaptcha" id="feedback-recaptcha" :data-sitekey="this.site_key"></div>
 					</div>
 					<div class="form-group row">
-						<button type="button" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
+						<button type="button" :disabled="this.buttonDisabled" @click.prevent="submitForm" class="btn btn-success btn-submit">Submit</button>
 					</div>
 				</fieldset>
 			</form>
@@ -52,7 +52,8 @@ export default {
 			},
 			submitted: false,
 			site_key: process.env.MIX_RE_CAP_SITE_KEY,
-			showError: false
+			showError: false,
+			buttonDisabled: false
 		};
 	},
 	beforeCreate() {
@@ -75,6 +76,7 @@ export default {
 			this.$v.$touch();
 			if (!this.$v.$invalid && (this.recaptcha !== undefined)) {
 				this.postNow();
+				this.buttonDisabled = true
 			}
 		},
 		postNow() {
@@ -92,6 +94,7 @@ export default {
 				} else {
 					this.showError = true;
 				}
+				this.buttonDisabled = false
 			});
 		},
 		clearPost() {
