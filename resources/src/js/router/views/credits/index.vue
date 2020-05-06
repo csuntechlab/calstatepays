@@ -1,11 +1,5 @@
 <template>
   <div class="container">
-    <!-- <div class="row">
-      <div class="col">
-        <img :src="this.url + '/img/otherLogos/strada-logo.png'" alt="Strada Logo" />
-      </div>
-    </div>-->
-
     <div class="row">
       <div class="col-xs-6 col-sm-8 col-md-4">
         <a href="https://academics.csun.edu/faculty/richard.moore" target="_blank">
@@ -36,14 +30,16 @@
         </a>
       </div>
       <p class="col-xs-6 col-sm-4 col-md-4 text-center">
-        Yazmin Peebles - Director
+        Steve Fitzgerald - Director
+        <br />Yazmin Peebles - Assistant Director
         <br />Luis J. G - Project Manager
-        <br />Alec N. Marcum - Techlead
-        <br />Jaime G^2 - UI/UX
+        <br />Alec N. Marcum - Scrum Master
+        <br />Mikkal McNulty - Full Stack Developer
+        <br />Jaime Garcia - UI/UX
         <br />Zane Ervin - Front End Developer
         <br />Edge A. Cano - Front End Developer
         <br />Carlos Benavides - Back End Developer
-        <br />Michael Chan - Front End Developer
+        <br />Michael Chan - Back End Developer
         <br />Jorge A. Ruiz - DevOps
         <br />Ekene Akpati - Marketing
       </p>
