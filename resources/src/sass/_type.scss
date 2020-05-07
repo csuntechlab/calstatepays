@@ -204,6 +204,10 @@ figcaption {
 	width: fit-content;
 }
 
+.homepageUniversities__svg {
+	cursor: pointer;
+}
+
 .homepageUniversities__headline {
 	white-space: nowrap;
 	@media screen and (max-width: $break-medium) {
