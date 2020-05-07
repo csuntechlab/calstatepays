@@ -5,7 +5,7 @@
         <a href="https://academics.csun.edu/faculty/richard.moore" target="_blank">
           <img
             class="clients"
-            src="https://csun-metalab-clouddrive.s3-us-west-2.amazonaws.com/media/faculty/richard.moore/avatar.jpg?2020101345"
+            src="https://csun-metalab-clouddrive.s3.us-west-2.amazonaws.com/media/faculty/richard.moore/avatar.jpg"
             alt="Richard Moore"
           />
           <p class="col-xs-6 text-center">Richard Moore <br /> Co-Founder of CalStatePays</p>
@@ -16,7 +16,7 @@
         <a href="https://academics.csun.edu/faculty/kenneth.chapman" target="_blank">
           <img
             class="clients"
-            src="https://csun-metalab-clouddrive.s3-us-west-2.amazonaws.com/media/faculty/kenneth.chapman/avatar.jpg?2020101432"
+            src="https://csun-metalab-clouddrive.s3.us-west-2.amazonaws.com/media/faculty/kenneth.chapman/avatar.jpg"
           />
           <p class="col-xs-6 text-center client-text">Kenneth Champman <br /> Co-Founder of CalStatePays</p>
         </a>
