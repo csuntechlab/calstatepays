@@ -12,7 +12,7 @@ import faq from './views/faq/index.vue';
 import research from './views/research/index.vue';
 import tableauHolder from './views/tableauHolder/index.vue';
 import feedback from './views/feedback/index.vue'
-
+import credits from './views/credits/index.vue';
 import about from './views/about/index.vue';
 import splashPage from './views/splashPage/index.vue';
 
@@ -91,7 +91,15 @@ const router = new VueRouter({
 			meta: {
 				title: 'Feedback | CalStatePays'
 			}
-		}
+		},
+		{
+			path: '/credits',
+			component: credits,
+			name: 'credits',
+			meta: {
+				title: 'Credits | CalStatePays'
+			}
+		},
 	]
 });
 
