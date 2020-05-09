@@ -8,6 +8,7 @@ export default {
     },
 
     [_majors.FETCH_MAJOR_DATA](state, payload) {
+        if(payload.cardIndex===undefined)payload.cardIndex =0
         let index = payload.cardIndex;
         state.majorCards[index].majorData = payload;
     },
@@ -33,9 +34,13 @@ export default {
     },
 
     [_majors.TOGGLE_FORM_WAS_SUBMITTED](state, payload) {
+        if (payload == undefined) payload = 0
+
         let index = payload;
         state.majorCards[index].formWasSubmitted = true;
         state.majorCards[index].submittedOnce = true;
+        state.industryFormWasSubmitted = true;
+		state.industryFormWasSubmittedOnce = true;
     },
     [_majors.ADD_MAJOR_CARD](state) {
         state.majorCards.push({
@@ -78,11 +83,13 @@ export default {
     [_majors.TRIGGER_MAJOR_IS_LOADING](state, payload) {
         var index;
         if(payload.cardIndex ===undefined) {
+            if(payload.form.cardIndex===undefined) payload.form.cardIndex = 0
             index = payload.form.cardIndex
         }
         else {
             index = payload.cardIndex;
         }
+
         if (!state.majorCards[index].majorIsLoading) {
             state.majorCards[index].majorIsLoading = true;
         } else if (state.majorCards[index].majorIsLoading) {

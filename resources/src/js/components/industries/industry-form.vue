@@ -118,7 +118,9 @@ export default {
 			"fetchUpdatedMajorsByField",
 			"fetchIndustries",
 			"toggleIndustryEducationLevel",
-			"setIndustryMajor"
+			"setIndustryMajor",
+			"fetchMajorData",
+			"fetchIndustryImages"
 			]),
 		submitForm() {
 			this.formNotFilled = false;
@@ -127,7 +129,15 @@ export default {
 				this.toggleIndustryFormWasSubmitted();
                 this.fetchIndustries({form: this.form, school: this.selectedUniversity});
                 this.$store.dispatch("setIndustryMajor", this.selected);
-                this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+				this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
+				this.fetchIndustryImages({
+					form: this.form,
+					school: this.selectedUniversity
+				});
+				this.fetchMajorData({
+					form: this.form,
+					school: this.selectedUniversity
+				});
                 this.selected = null;
                 this.submittedOnce = false;
                 this.form.majorId = null;

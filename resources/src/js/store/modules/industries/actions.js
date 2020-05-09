@@ -1,5 +1,6 @@
 import Industries from "../../../api/industries";
 import _industries from "../../mutation-types/industries"
+import _majors from "../../mutation-types/majors"
 import _global from '../../mutation-types/global-form';
 export default {
 	fetchIndustries({ commit, dispatch }, payload) {
@@ -34,8 +35,10 @@ export default {
 	},
 	toggleIndustryFormWasSubmitted({commit}){
 		commit(_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED);
+		commit(_majors.TOGGLE_FORM_WAS_SUBMITTED);
 	},
 	toggleIndustryEducationLevel({commit}, payload){
+		if(payload == null) payload = "bachelors"
 		commit(_industries.TOGGLE_INDUSTRY_EDUCATION_LEVEL, payload);
 	},
 	setIndustryMajor({commit}, payload) {

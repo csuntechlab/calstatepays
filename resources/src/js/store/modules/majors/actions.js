@@ -1,6 +1,7 @@
 //MAJORS ACTIONS
 import Major from '../../../api/majors';
 import _majors from '../../mutation-types/majors';
+import _industries from "../../mutation-types/industries"
 import _global from '../../mutation-types/global-form';
 export default {
     majorNameById: (state, getters) => id => {
@@ -52,6 +53,7 @@ export default {
 
     toggleFormWasSubmitted({commit}, payload){
         commit(_majors.TOGGLE_FORM_WAS_SUBMITTED, payload)
+        commit(_industries.TOGGLE_INDUSTRY_FORM_WAS_SUBMITTED)
     },
     addMajorCard({commit}) {
         commit(_majors.ADD_MAJOR_CARD);

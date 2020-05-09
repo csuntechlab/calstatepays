@@ -158,6 +158,7 @@ export default {
 	methods: {
 		...mapActions([
 			"fetchIndustryImages",
+			"fetchIndustries",
 			"toggleFormWasSubmitted",
 			"fetchUpdatedMajorsByField",
 			"fetchMajorData",
@@ -174,6 +175,9 @@ export default {
 			this.submittedOnce = true;
 
 			if (this.checkForm()) {
+				this.fetchIndustries({form: this.form, school: this.selectedUniversity});
+                this.$store.dispatch("setIndustryMajor", this.selected);
+                this.$store.dispatch("toggleIndustryEducationLevel", this.industryEducationLevel);
 				this.selected = null;
 				this.submittedOnce = false;
 				this.toggleFormWasSubmitted(this.form.cardIndex);
