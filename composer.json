@@ -39,18 +39,26 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@copy-env-file"
         ],
         "post-create-project-cmd": [
-            "php artisan key:generate"
+            "@generate-security-key"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "@copy-env-file"
+            "@generate-security-key"
             "php artisan optimize"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
+        ],
+        "copy-env-file": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "generate-security-key": [
+            "php artisan key:generate"
         ]
     },
     "config": {
