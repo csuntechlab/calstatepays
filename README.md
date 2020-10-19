@@ -36,33 +36,28 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 
 ## Installation
 
- To begin, navigate to the project root on your favorite terminal and run the following:
+There are several different installation options for the CalStatePays software.  The only option that is provided by these instructions is the development option.
 
+
+### Development Installation
+As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applicattions also mounts the current working directory.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
+
+The steps you need to perform to install this sofware are as follows:
 ```
-$ docker-compose up -d
-```
-
-This will build and run the following containers:
-
-- The Laravel web service, named **csumetro**
-- Composer service, which installs composer and runs `$ composer install`
-- A database administration GUI - Adminer, named **csumetro_adminer**
-- MySQL service, named **csumetro_db**
-
-⚠️ **Important** Inside the `docker-compose.yml` file, you will find the database configuration that needs to be included in the project's `.env` file. After you have done this you should be able to type `localhost:8080` on your favorite browser and see the application's landing page.
-
-### Seeding the application
-
-Once you have successfully served the application, you will need to seed the database. In order to do that you need to navigate to the project root on your favorite terminal and run the following:
-
-```
-$ docker exec -it csumetro /bin/bash 
+  $ git clone https://github.com/csuntechlab/calstatepays.git
+  $ cd calstatepays
+  $ docker-compose --env-file .env.dev  up --detach
+  $ docker exec -it csumetro php artisan key:generate
+  $ docker exec -it csumetro php artisan migrate --seed  
 ```
 
-This will drop you into the `csumetro` container which allows you to run any commands inside the web server. Since we are seeding the database for the very first time, we want to run the following command:
+⚠️ This process is driven by the .env.dev file.  You may want to review the contents of this file prior to running the docker-compose command referenced above.
 
+You may may launch your favorite web browser and access your version of the calstatepays application via the following URL: http://localhost:8080/calstatepays.
+
+You can remove your docker enviornment via the following command:
 ```
-$ php artisan migrate --seed
+docker-compose down
 ```
 
 ## Development cycle commands
