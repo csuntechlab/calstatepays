@@ -8,10 +8,8 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 * Our sandbox website for CalStatePays is located at: https://www.sandbox.csun.edu/calstatepays
 
 
-## Table of Contents
-
+## [Table of Contents](#table-of-contents)
 <!-- TOC -->
-[Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
     - [Additional project set-up](#additional-project-set-up)
