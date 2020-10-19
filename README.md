@@ -8,21 +8,21 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 * Our sandbox website for CalStatePays is located at: https://www.sandbox.csun.edu/calstatepays
 
 
-## [Table of Contents](#table-of-contents)
+## Table of Contents
 <!-- TOC -->
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
     - [Additional project set-up](#additional-project-set-up)
         - [Seeding the application](#seeding-the-application)
-    - [Development cycle commands](#development-cycle-commands)
-        - [Back end](#back-end)
-            - [Running the python script](#running-the-python-script)
-            - [Seeding or Re-seeding the application,](#seeding-or-re-seeding-the-application)
-        - [Front end](#front-end)
-            - [Building UI changes](#building-ui-changes)
-            - [Watching UI changes](#watching-ui-changes)
-    - [Bugs and issues:](#bugs-and-issues)
-    - [License](#license)
+  - [Development cycle commands](#development-cycle-commands)
+       - [Back end](#back-end)
+          - [Running the python script](#running-the-python-script)
+          - [Seeding or Re-seeding the application,](#seeding-or-re-seeding-the-application)
+       - [Front end](#front-end)
+          - [Building UI changes](#building-ui-changes)
+          - [Watching UI changes](#watching-ui-changes)
+  - [Bugs and issues:](#bugs-and-issues)
+  - [License](#license)
 
 <!-- /TOC -->
 
