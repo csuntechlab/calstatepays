@@ -2,18 +2,18 @@
 
 [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=dev)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=demo)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=master)](https://travis-ci.com/csun-metalab/calstatepays)
 
+CalStatePays is a visualization application for discovering, exploring, and analyzing your potential financial earnings after graduation from 7 different Cal State Universities.  Californiate State employment records associated with the alumini from these CSU campus is the used as the bases for the information that is presented.
 
-> A data visualization application for discovering, exploring, and analyzing your potential financial earnings after graduation from 7 different Cal State Universities. 
+* Our production website for CalStatePays is located at: https://calstatepays.org
+* Our sandbox website for CalStatePays is located at: https://www.sandbox.csun.edu/calstatepays
+
 
 ## Table of Contents
 
 <!-- TOC -->
-
-- [CalStatePays](#calstatepays)
-    - [Table of Contents](#table-of-contents)
-    - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Serving the application](#serving-the-application)
+[Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
     - [Additional project set-up](#additional-project-set-up)
         - [Seeding the application](#seeding-the-application)
     - [Development cycle commands](#development-cycle-commands)
@@ -28,10 +28,6 @@
 
 <!-- /TOC -->
 
-## Getting Started
-
-Make sure you meet the necessary [Prerequisites](#prerequisites) in order to start developing on your machine.
-
 ## Prerequisites
 
 - [Git](https://git-scm.com/downloads)
@@ -40,7 +36,7 @@ Make sure you meet the necessary [Prerequisites](#prerequisites) in order to sta
 - Favorite Text Editor or IDE
 - Meet [Laravel 5.4 requirements](https://laravel.com/docs/5.4)
 
-## Serving the application
+## Installation
 
  To begin, navigate to the project root on your favorite terminal and run the following:
 
@@ -56,8 +52,6 @@ This will build and run the following containers:
 - MySQL service, named **csumetro_db**
 
 ⚠️ **Important** Inside the `docker-compose.yml` file, you will find the database configuration that needs to be included in the project's `.env` file. After you have done this you should be able to type `localhost:8080` on your favorite browser and see the application's landing page.
-
-## Additional project set-up
 
 ### Seeding the application
 
