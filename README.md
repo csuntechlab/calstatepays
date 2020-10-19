@@ -47,8 +47,8 @@ The steps you need to perform to install this sofware are as follows:
   $ git clone https://github.com/csuntechlab/calstatepays.git
   $ cd calstatepays
   $ docker-compose --env-file .env.dev  up --detach
-  $ docker exec -it csumetro php artisan key:generate
-  $ docker exec -it csumetro php artisan migrate --seed  
+  $ docker exec -it csp_app php artisan key:generate
+  $ docker exec -it csp_app php artisan migrate --seed  
 ```
 
 ⚠️ This process is driven by the .env.dev file.  You may want to review the contents of this file prior to running the docker-compose command referenced above.
