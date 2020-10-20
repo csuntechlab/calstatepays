@@ -12,8 +12,6 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 <!-- TOC -->
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-    - [Additional project set-up](#additional-project-set-up)
-        - [Seeding the application](#seeding-the-application)
   - [Development cycle commands](#development-cycle-commands)
        - [Back end](#back-end)
           - [Running the python script](#running-the-python-script)
