@@ -38,7 +38,7 @@ There are several different installation options for the CalStatePays software. 
 
 
 ### Development Installation
-As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applications also mounts the current working directory, which contains a cloned copy of the CalStatePays project.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
+As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains a webserver, a database, and two supporting containers.  The webserver mounts the home directory of your cloned project. This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
 
 The steps you need to perform to install this sofware are as follows:
 ```
