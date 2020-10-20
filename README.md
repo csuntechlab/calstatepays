@@ -53,8 +53,8 @@ The steps you need to perform to install this sofware are as follows:
 ⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
 
 You may may launch your favorite web browser and access your version of the calstatepays application:
-  * The application is reachable at: http://localhost:8080/
-  * The database GUI is reachable at: http://localhost:8081/
+  * The application is reachable at: http://localhost:8080/    # The port number can be changed via the WEB_PORT environment variable
+  * The database GUI is reachable at: http://localhost:8081/   # The port number can be changed via the ADMIR_PORT environment variable
 
 You can reset your docker environment via the following command:
 ```
