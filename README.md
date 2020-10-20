@@ -12,8 +12,6 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 <!-- TOC -->
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-    - [Additional project set-up](#additional-project-set-up)
-        - [Seeding the application](#seeding-the-application)
   - [Development cycle commands](#development-cycle-commands)
        - [Back end](#back-end)
           - [Running the python script](#running-the-python-script)
@@ -40,7 +38,7 @@ There are several different installation options for the CalStatePays software. 
 
 
 ### Development Installation
-As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applications also mounts the current working directory, which contains a cloned copy of the CalStatePays project.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
+As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains a webserver, a database, and two supporting containers.  The webserver mounts the home directory of your cloned project. This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
 
 The steps you need to perform to install this sofware are as follows:
 ```
@@ -55,11 +53,10 @@ The steps you need to perform to install this sofware are as follows:
 ⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
 
 You may may launch your favorite web browser and access your version of the calstatepays application:
-  * The application is reachable at: http://localhost:8080/
-  * The database GUI is reachable at: http://localhost:8081/
-You 
+  * The application is reachable at: http://localhost:8080/    # The port number can be changed via the WEB_PORT environment variable
+  * The database GUI is reachable at: http://localhost:8081/   # The port number can be changed via the ADMIR_PORT environment variable
 
-You reset your docker environment via the following command:
+You can reset your docker environment via the following command:
 ```
 $ docker-compose down
 $ docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAME == calstatepays
