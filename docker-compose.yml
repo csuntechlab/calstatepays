@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webserver:
-    container_name: csumetro
+    container_name: ${COMPOSE_PROJECT_NAME}_web
     image: csunmetalab/environment:csumetro
     ports:
       - '8080:80'
@@ -14,7 +14,7 @@ services:
   # Installs composer
   composer:
     restart: 'no'
-    container_name: csumetro_composer
+    container_name: ${COMPOSE_PROJECT_NAME}_composer
     image: composer:latest
     command: install
     volumes:
@@ -22,7 +22,7 @@ services:
 
   # Adminer server
   adminer:
-    container_name: csumetro_adminer
+    container_name: ${COMPOSE_PROJECT_NAME}_adminer
     image: adminer
     restart: always
     ports:
@@ -31,15 +31,16 @@ services:
   # Database server
   db:
     image: mysql:5.6.41
-    container_name: csumetro_db
+    container_name: ${COMPOSE_PROJECT_NAME}_database
     volumes:
       - db_data:/var/lib/mysql/
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: csumetropass
-      MYSQL_DATABASE: csumetro
-      MYSQL_USER: csumetro
-      MYSQL_PASSWORD: csumetropass
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
 
 volumes:
     db_data:
+      name: ${COMPOSE_PROJECT_NAME}_volume
