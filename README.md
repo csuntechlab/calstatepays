@@ -28,11 +28,11 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 
 ## Prerequisites
 
-- [Git](https://git-scm.com/downloads)
-- [Docker](https://docs.docker.com/install/)
-- [Docker-Compose](https://docs.docker.com/compose/install/)
-- Favorite Text Editor or IDE
-- Meet [Laravel 5.4 requirements](https://laravel.com/docs/5.4)
+- Install [Git](https://git-scm.com/downloads) to access the software repository
+- Install [Docker](https://docs.docker.com/install/) desktop to run containers on your development machine
+- Install [Docker-Compose](https://docs.docker.com/compose/install/) to manage a set of containers
+- Select and Install you Favorite Text Editor or IDE
+- Ensure you meet the [Laravel 5.4 requirements](https://laravel.com/docs/5.4) to perform development work
 
 ## Installation
 
@@ -40,24 +40,30 @@ There are several different installation options for the CalStatePays software. 
 
 
 ### Development Installation
-As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applicattions also mounts the current working directory.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
+As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applications also mounts the current working directory, which contains a cloned copy of the CalStatePays project.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
 
 The steps you need to perform to install this sofware are as follows:
 ```
   $ git clone https://github.com/csuntechlab/calstatepays.git
   $ cd calstatepays
-  $ docker-compose --env-file .env.dev  up --detach
-  $ docker exec -it csp_app php artisan key:generate
-  $ docker exec -it csp_app php artisan migrate --seed  
+  $ cp .env.dev .env
+  $ docker-compose up --detach
+  $ docker-compose exec webserver php artisan key:generate
+  $ docker-compose exec webserver php artisan migrate --seed
 ```
 
-⚠️ This process is driven by the .env.dev file.  You may want to review the contents of this file prior to running the docker-compose command referenced above.
+⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
 
-You may may launch your favorite web browser and access your version of the calstatepays application via the following URL: http://localhost:8080/calstatepays.
+You may may launch your favorite web browser and access your version of the calstatepays application:
+  * The application is reachable at: http://localhost:8080/
+  * The database GUI is reachable at: http://localhost:8081/
+You 
 
-You can remove your docker enviornment via the following command:
+You reset your docker environment via the following command:
 ```
 docker-compose down
+docker volume rm calstatepays_volume           # If you change the value of $COMPOSE_PROJECT_NAME, you need to modify this line
+docker-compose up --detach --force-recreate
 ```
 
 ## Development cycle commands
