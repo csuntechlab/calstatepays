@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  webserver:
+  web:
     image: csunmetalab/environment:csumetro
     container_name: ${COMPOSE_PROJECT_NAME}_web
     restart: always
