@@ -2,75 +2,68 @@
 
 [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=dev)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=demo)](https://travis-ci.com/csun-metalab/calstatepays) [![Build Status](https://travis-ci.com/csun-metalab/calstatepays.svg?token=e9qZAYzzq9K9MQ8bgdpF&branch=master)](https://travis-ci.com/csun-metalab/calstatepays)
 
+CalStatePays is a visualization application for discovering, exploring, and analyzing your potential financial earnings after graduation from 7 different Cal State Universities.  Californiate State employment records associated with the alumini from these CSU campus is the used as the bases for the information that is presented.
 
-> A data visualization application for discovering, exploring, and analyzing your potential financial earnings after graduation from 7 different Cal State Universities. 
+* Our production website for CalStatePays is located at: https://calstatepays.org
+* Our sandbox website for CalStatePays is located at: https://www.sandbox.csun.edu/calstatepays
+
 
 ## Table of Contents
-
 <!-- TOC -->
-
-- [CalStatePays](#calstatepays)
-    - [Table of Contents](#table-of-contents)
-    - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Serving the application](#serving-the-application)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
     - [Additional project set-up](#additional-project-set-up)
         - [Seeding the application](#seeding-the-application)
-    - [Development cycle commands](#development-cycle-commands)
-        - [Back end](#back-end)
-            - [Running the python script](#running-the-python-script)
-            - [Seeding or Re-seeding the application,](#seeding-or-re-seeding-the-application)
-        - [Front end](#front-end)
-            - [Building UI changes](#building-ui-changes)
-            - [Watching UI changes](#watching-ui-changes)
-    - [Bugs and issues:](#bugs-and-issues)
-    - [License](#license)
+  - [Development cycle commands](#development-cycle-commands)
+       - [Back end](#back-end)
+          - [Running the python script](#running-the-python-script)
+          - [Seeding or Re-seeding the application,](#seeding-or-re-seeding-the-application)
+       - [Front end](#front-end)
+          - [Building UI changes](#building-ui-changes)
+          - [Watching UI changes](#watching-ui-changes)
+  - [Bugs and issues:](#bugs-and-issues)
+  - [License](#license)
 
 <!-- /TOC -->
 
-## Getting Started
-
-Make sure you meet the necessary [Prerequisites](#prerequisites) in order to start developing on your machine.
-
 ## Prerequisites
 
-- [Git](https://git-scm.com/downloads)
-- [Docker](https://docs.docker.com/install/)
-- [Docker-Compose](https://docs.docker.com/compose/install/)
-- Favorite Text Editor or IDE
-- Meet [Laravel 5.4 requirements](https://laravel.com/docs/5.4)
+- Install [Git](https://git-scm.com/downloads) to access the software repository
+- Install [Docker](https://docs.docker.com/install/) desktop to run containers on your development machine
+- Install [Docker-Compose](https://docs.docker.com/compose/install/) to manage a set of containers
+- Select and Install you Favorite Text Editor or IDE
+- Ensure you meet the [Laravel 5.4 requirements](https://laravel.com/docs/5.4) to perform development work
 
-## Serving the application
+## Installation
 
- To begin, navigate to the project root on your favorite terminal and run the following:
+There are several different installation options for the CalStatePays software.  The only option that is provided by these instructions is the development option.
 
+
+### Development Installation
+As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains the CalStatePays Application, the CalStatePays Database, and two supporting containers.  The CalStatePays Applications also mounts the current working directory, which contains a cloned copy of the CalStatePays project.  This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
+
+The steps you need to perform to install this sofware are as follows:
 ```
-$ docker-compose up -d
-```
-
-This will build and run the following containers:
-
-- The Laravel web service, named **csumetro**
-- Composer service, which installs composer and runs `$ composer install`
-- A database administration GUI - Adminer, named **csumetro_adminer**
-- MySQL service, named **csumetro_db**
-
-⚠️ **Important** Inside the `docker-compose.yml` file, you will find the database configuration that needs to be included in the project's `.env` file. After you have done this you should be able to type `localhost:8080` on your favorite browser and see the application's landing page.
-
-## Additional project set-up
-
-### Seeding the application
-
-Once you have successfully served the application, you will need to seed the database. In order to do that you need to navigate to the project root on your favorite terminal and run the following:
-
-```
-$ docker exec -it csumetro /bin/bash 
+  $ git clone https://github.com/csuntechlab/calstatepays.git
+  $ cd calstatepays
+  $ cp .env.dev .env
+  $ docker-compose up --detach
+  $ docker-compose exec webserver php artisan key:generate
+  $ docker-compose exec webserver php artisan migrate --seed
 ```
 
-This will drop you into the `csumetro` container which allows you to run any commands inside the web server. Since we are seeding the database for the very first time, we want to run the following command:
+⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
 
+You may may launch your favorite web browser and access your version of the calstatepays application:
+  * The application is reachable at: http://localhost:8080/
+  * The database GUI is reachable at: http://localhost:8081/
+You 
+
+You reset your docker environment via the following command:
 ```
-$ php artisan migrate --seed
+$ docker-compose down
+$ docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAME == calstatepays
+$ docker-compose up --detach --force-recreate
 ```
 
 ## Development cycle commands
