@@ -6,7 +6,7 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_web
     restart: always
     ports:
-      - '8080:80'
+      - '${WEB_PORT}:80'
     volumes:
       - .:/var/www/
     links:
@@ -27,7 +27,7 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_adminer
     restart: always
     ports:
-      - 8081:8080
+      - ${ADMIR_PORT}:8080
 
   # Database server
   db:
