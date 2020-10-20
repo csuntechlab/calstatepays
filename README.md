@@ -61,9 +61,9 @@ You
 
 You reset your docker environment via the following command:
 ```
-docker-compose down
-docker volume rm calstatepays_volume           # If you change the value of $COMPOSE_PROJECT_NAME, you need to modify this line
-docker-compose up --detach --force-recreate
+$ docker-compose down
+$ docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAME == calstatepays
+$ docker-compose up --detach --force-recreate
 ```
 
 ## Development cycle commands
