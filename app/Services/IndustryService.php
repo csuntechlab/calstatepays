@@ -23,7 +23,7 @@ class IndustryService implements IndustryContract
             return [
                 'naics_code' => $item['naics_code'],
                 'title' => $item['naics_title'],
-                'image' => asset($item['image'])
+                'image' => '.'.$industry->naicsTitle->image
             ];
         });
         return $allNaicsTitles;
@@ -143,7 +143,7 @@ class IndustryService implements IndustryContract
                     'title' => $industry->naicsTitle->naics_title,
                     'percentage' => $percentage,
                     'rank' => $index,
-                    'image' => asset($industry->naicsTitle->image),
+                    'image' => '.'.$industry->naicsTitle->image,
                     'industryWage' => $industry->industryWage->avg_annual_wage_5
                 ];
             });
