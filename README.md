@@ -65,62 +65,48 @@ $ docker-compose up --detach --force-recreate
 
 ## Development cycle commands
 
-### Back end
+During development, there are two major components that involve
+additional processing to ensure the code/data base is setup correctly.
+One component is related to the front-end, where Yarn is used to
+pre-process the javascript code.  The other componet is related to the
+database, were raw CSV files need to be converted to appropriate .json
+data for the Laravel database component.
 
-#### Running the python script
-After accessing the `csumetro` container run commands:
+A developer needs to take the following additional steps, during the
+development cycle if they make any changes to the javascript (which
+includes the Vue components) components or the database seed values.
 
-```
-$ cd python_parser/python_parser_work_in_progress/
-$ python python_parser_main.py
-```
+### Javascript update
 
-Note:
-- Python script will change the structure of the JSON but the data values will be consistent.  
-
-
-#### Seeding or Re-seeding the application,
-
-After entering the Laravel web service shell run this command if you want to drop all of the current tables and re-seed:
+The Yarn Package manager is used to compile all of the front-end resources. Execute the following command to bring the compiled resources
+up-to-date.
 
 ```
-$ php artisan migrate:refresh --seed
+$ docker-compose exec web yarn run dev
 ```
 
-or run this command if you are seeding for the very first time
+Alternatively, you can setup a 'watch' to perform incrementaly compile front-end resources as you develop. Open a secondary terminal, and execute the following command:
 
 ```
-$ php artisan migrate --seed
-```
-
-### Front end
-
-Drop inside the docker container by running the following command on your favorite terminal on the root of this project.
-
-```
-$ docker exec -it csumetro /bin/bash 
-```
-and run either of the two following commands.
-
-#### Building UI changes
-
-If you want yarn to re-compile all of the front end resources then run the following:
-
-```
-$ yarn run dev
-```
-
-**Note:** Any changes after you run the command have to be re-compiled. In order to not have to constantly re-compile all of the front end resources you should run the following command instead:
-
-#### Watching UI changes
-
-```
-$ yarn run watch
+$ docker-compose exec web yarn run watch
 ```
 
 **Note:** When you run this command on the terminal it starts a process that will continuously watch for front end resource changes. If you want to stop the process then simply issue `Ctrl+C`.
 
 ⚠️ **Important:** Make sure you terminate the watch process before you start switching into different branches!
+
+
+### Database
+
+The raw CSV files are provided by the CalStatePays data team, which differs from the development team.
+These CSV files need to be converted to appropriate .json files so that the a seed operation can load the database. 
+When we received update CSV files, which is very infrequent, the following steps need to be perform.
+
+```
+$ git submodule add https://github.com/csuntechlab/calstatepays_data.git csv_data
+$ docker-compose exec web python3.6 csv_data/build_json -o database/data
+$ docker-compose exec web php artisan migrate:refresh --seed
+```
 
 ## Bugs and issues:
 
@@ -129,4 +115,3 @@ If you discover a bug and or issue within the application, please create a JIRA 
 ## License
 CalStatePays is open-sourced software licensed under the GNU General Public License v3+. A copy can be found in the `COPYING` file.
 
-The [Laravel](https://laravel.com/) framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
