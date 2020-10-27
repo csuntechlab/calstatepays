@@ -104,9 +104,20 @@ When we received update CSV files, which is very infrequent, the following steps
 
 ```
 $ git submodule add https://github.com/csuntechlab/calstatepays_data.git csv_data
-$ docker-compose exec web python3.6 csv_data/build_json -o database/data
+$ # Place the input files from the data team into csv_data/input
+$ docker-compose exec web python3.6 csv_data/build_json
+$ docker-compose exec web cp -r csv_data/output database/data
 $ docker-compose exec web php artisan migrate:refresh --seed
 ```
+
+If all works as it purports to, you can commit (etc) the changes to the database/data subdirectory.
+
+```
+$ git commit -m 'Updated CSP data from the data team' csv_data database/data
+```
+
+For additional information on the conversion process, etc., see the (calstatepays_data)[https://github.com/csuntechlab/calstatepays_data] project.
+
 
 ## Bugs and issues:
 
