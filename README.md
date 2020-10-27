@@ -105,7 +105,7 @@ When we received update CSV files, which is very infrequent, the following steps
 ```
 $ git submodule add https://github.com/csuntechlab/calstatepays_data.git csv_data
 $ # Place the input files from the data team into csv_data/input
-$ docker-compose exec web python3.6 csv_data/build_json
+$ docker-compose exec web csv_data/build_json
 $ docker-compose exec web cp -r csv_data/output database/data
 $ docker-compose exec web php artisan migrate:refresh --seed
 ```
