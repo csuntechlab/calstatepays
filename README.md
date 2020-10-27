@@ -116,7 +116,7 @@ If all works as it purports to, you can commit (etc) the changes to the database
 $ git commit -m 'Updated CSP data from the data team' csv_data database/data
 ```
 
-For additional information on the conversion process, etc., see the (calstatepays_data)[https://github.com/csuntechlab/calstatepays_data] project.
+For additional information on the conversion process, etc., see the [calstatepays_data](https://github.com/csuntechlab/calstatepays_data) project.
 
 
 ## Bugs and issues:
