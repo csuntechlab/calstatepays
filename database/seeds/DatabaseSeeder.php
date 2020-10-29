@@ -76,12 +76,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Pomona_University_Majors_TableSeeder::class);
 
         /** Investment Data Seeders */
-        $this->call(Investments_Template_Northridge_TableSeeder::class);
-        $this->call(Investments_Template_All_TableSeeder::class);
+        // $this->call(Investments_Template_Northridge_TableSeeder::class);
+        // $this->call(Investments_Template_All_TableSeeder::class);
 
         /** Student Backgrounds */
-        $this->call(Student_Backgrounds_Template_Northridge_TableSeeder::class);
-        $this->call(Student_Backgrounds_Template_All_TableSeeder::class);
+        // $this->call(Student_Backgrounds_Template_Northridge_TableSeeder::class);
+        // $this->call(Student_Backgrounds_Template_All_TableSeeder::class);
 
         // $this->call(Industry_Different_Hegis_Same_Majors_Table_Seeder::class);
         // $this->call(Industry_Same_Hegis_Different_Majors_Table_Seeder::class);
