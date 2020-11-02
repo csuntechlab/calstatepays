@@ -1,112 +1,112 @@
 [
     {
-        "image": "/img/industries/transportation_warehousing.png",
-        "naics_code": 4849,
-        "naics_title": "Transportation & Warehousing"
+        "industry": "Agriculture, Forestry, Fishing, & Hunting",
+        "id": 1,
+        "image": "/img/industries/agriculture_forestry_fishing_hunting.png"
     },
     {
-        "image": "/img/industries/utilities.png",
-        "naics_code": 22,
-        "naics_title": "Utilities"
+        "industry": "Utilities",
+        "id": 2,
+        "image": "/img/industries/utilities.png"
     },
     {
-        "image": "/img/industries/admin_support_waste_mgmt_remediation.png",
-        "naics_code": 56,
-        "naics_title": "Admin & Support & Waste Mgmt & Remediation"
+        "industry": "Construction",
+        "id": 3,
+        "image": "/img/industries/construction.png"
     },
     {
-        "image": "/img/industries/agriculture_forestry_fishing_hunting.png",
-        "naics_code": 11,
-        "naics_title": "Agriculture, Forestry, Fishing, & Hunting"
+        "industry": "Manufacturing",
+        "id": 4,
+        "image": "/img/industries/manufacturing.png"
     },
     {
-        "image": "/img/industries/wages_-_no_naics_code.png",
-        "naics_code": null,
-        "naics_title": "Wages - No NAICS Code"
+        "industry": "Wholesale Trade",
+        "id": 5,
+        "image": "/img/industries/wholesale_trade.png"
     },
     {
-        "image": "/img/industries/manufacturing.png",
-        "naics_code": 3133,
-        "naics_title": "Manufacturing"
+        "industry": "Retail Trade",
+        "id": 6,
+        "image": "/img/industries/retail_trade.png"
     },
     {
-        "image": "/img/industries/educational_services.png",
-        "naics_code": 61,
-        "naics_title": "Educational Services"
+        "industry": "Transportation & Warehousing",
+        "id": 7,
+        "image": "/img/industries/transportation_warehousing.png"
     },
     {
-        "image": "/img/industries/non-classified.png",
-        "naics_code": 99,
-        "naics_title": "Non-Classified"
+        "industry": "Information",
+        "id": 8,
+        "image": "/img/industries/information.png"
     },
     {
-        "image": "/img/industries/accommodation_food_services.png",
-        "naics_code": 72,
-        "naics_title": "Accommodation & Food Services"
+        "industry": "Finance & Insurance",
+        "id": 9,
+        "image": "/img/industries/finance_insurance.png"
     },
     {
-        "image": "/img/industries/management_of_companies_enterprises.png",
-        "naics_code": 55,
-        "naics_title": "Management of Companies & Enterprises"
+        "industry": "Real Estate & Rental & Leasing",
+        "id": 10,
+        "image": "/img/industries/real_estate_rental_leasing.png"
     },
     {
-        "image": "/img/industries/wholesale_trade.png",
-        "naics_code": 42,
-        "naics_title": "Wholesale Trade"
+        "industry": "Professional, Scientific, & Technical Skills",
+        "id": 11,
+        "image": "/img/industries/professional_scientific_technical_skills.png"
     },
     {
-        "image": "/img/industries/construction.png",
-        "naics_code": 23,
-        "naics_title": "Construction"
+        "industry": "Management of Companies & Enterprises",
+        "id": 12,
+        "image": "/img/industries/management_of_companies_enterprises.png"
     },
     {
-        "image": "/img/industries/retail_trade.png",
-        "naics_code": 4445,
-        "naics_title": "Retail Trade"
+        "industry": "Admin & Support & Waste Mgmt & Remediation",
+        "id": 13,
+        "image": "/img/industries/admin_support_waste_mgmt_remediation.png"
     },
     {
-        "image": "/img/industries/professional_scientific_technical_skills.png",
-        "naics_code": 54,
-        "naics_title": "Professional, Scientific, & Technical Skills"
+        "industry": "Educational Services",
+        "id": 14,
+        "image": "/img/industries/educational_services.png"
     },
     {
-        "image": "/img/industries/other_services.png",
-        "naics_code": 81,
-        "naics_title": "Other Services"
+        "industry": "Health Care & Social Assistance",
+        "id": 15,
+        "image": "/img/industries/health_care_social_assistance.png"
     },
     {
-        "image": "/img/industries/arts_entertainment_recreation.png",
-        "naics_code": 71,
-        "naics_title": "Arts, Entertainment, & Recreation"
+        "industry": "Arts, Entertainment, & Recreation",
+        "id": 16,
+        "image": "/img/industries/arts_entertainment_recreation.png"
     },
     {
-        "image": "/img/industries/health_care_social_assistance.png",
-        "naics_code": 62,
-        "naics_title": "Health Care & Social Assistance"
+        "industry": "Accommodation & Food Services",
+        "id": 17,
+        "image": "/img/industries/accommodation_food_services.png"
     },
     {
-        "image": "/img/industries/government.png",
-        "naics_code": 92,
-        "naics_title": "Government"
+        "industry": "Other Services",
+        "id": 18,
+        "image": "/img/industries/other_services.png"
     },
     {
-        "image": "/img/industries/finance_insurance.png",
-        "naics_code": 52,
-        "naics_title": "Finance & Insurance"
+        "industry": "Government",
+        "id": 19,
+        "image": "/img/industries/government.png"
     },
     {
-        "image": "/img/industries/information.png",
-        "naics_code": 51,
-        "naics_title": "Information"
+        "industry": "Wages - No NAICS Code",
+        "id": 20,
+        "image": "/img/industries/wages_-_no_naics_code.png"
     },
     {
-        "image": "/img/industries/mining.png",
-        "naics_code": 21,
-        "naics_title": "Mining"
+        "industry": "Non-Classified",
+        "id": 21,
+        "image": "/img/industries/non-classified.png"
     },
     {
-        "image": "/img/industries/real_estate_rental_leasing.png",
-        "naics_code": 53,
-        "naics_title": "Real Estate & Rental & Leasing"
+        "industry": "Mining",
+        "id": 22,
+        "image": "/img/industries/mining.png"
     }
 ]
