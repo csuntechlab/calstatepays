@@ -12,7 +12,7 @@ class Naics_Titles_TableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/master_naics_titles.json");
+        $json = File::get("database/data/naics_titles.json");
         $data = json_decode($json);
         foreach($data as $row){
             if($row->id !=null){
