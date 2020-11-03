@@ -23,5 +23,6 @@ class Universities_TableSeeder extends Seeder
                 'opt_in' => $row->opt_in
             ]);
         };
+
     }
 }
