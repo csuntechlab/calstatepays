@@ -34,6 +34,9 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 
 There are several different installation options for the CalStatePays software.  The only option that is provided by these instructions is the development option.
 
+### Production Installation
+To be revised!
+
 
 ### Development Installation
 As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains a webserver, a database, and two supporting containers.  The webserver mounts the home directory of your cloned project. This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
@@ -93,7 +96,7 @@ $ docker-compose exec web yarn run watch
 
 ⚠️ **Important:** Make sure you terminate the watch process before you start switching into different branches!
 
-Prior any pull requests to merg in new front-end changes, make sure you run the following commands to prepare your environment correctly.
+Prior any pull requests to merge in new front-end changes, make sure you run the following commands to prepare your environment correctly.
 
 ```
 $ docker-compose exec web yarn run prod
