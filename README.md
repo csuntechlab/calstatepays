@@ -76,7 +76,7 @@ A developer needs to take the following additional steps, during the
 development cycle if they make any changes to the javascript (which
 includes the Vue components) components or the database seed values.
 
-### Javascript update
+### Javascript updates
 
 The Yarn Package manager is used to compile all of the front-end resources. Execute the following command to bring the compiled resources
 up-to-date.
@@ -95,6 +95,16 @@ $ docker-compose exec web yarn run watch
 
 ⚠️ **Important:** Make sure you terminate the watch process before you start switching into different branches!
 
+Prior any pull requests to merg in new front-end changes, make sure you run the following commands to prepare your environment correctly.
+
+```
+$ docker-compose exec web yarn run prod
+$ docker-compose exec web npm run prod
+```
+⚠️ **Important:** If the above step is not followed debug flags and other secrets might get left in for people to see through their browsers console.
+
+
+### Javascript 
 
 ### Database
 
