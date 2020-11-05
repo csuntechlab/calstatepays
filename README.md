@@ -12,13 +12,11 @@ CalStatePays is a visualization application for discovering, exploring, and anal
 <!-- TOC -->
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Development cycle commands](#development-cycle-commands)
-       - [Back end](#back-end)
-          - [Running the python script](#running-the-python-script)
-          - [Seeding or Re-seeding the application,](#seeding-or-re-seeding-the-application)
-       - [Front end](#front-end)
-          - [Building UI changes](#building-ui-changes)
-          - [Watching UI changes](#watching-ui-changes)
+     - [Production Installation](#production-installation)
+     - [Development Installation](#development-installation)
+  - [Developement Cycle](#development-cycle)
+     - [Front end](#front-end)
+     - [Database](#database)
   - [Bugs and issues:](#bugs-and-issues)
   - [License](#license)
 
@@ -63,7 +61,7 @@ $ docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAM
 $ docker-compose up --detach --force-recreate
 ```
 
-## Development cycle commands
+## Development cycle
 
 During development, there are two major components that involve
 additional processing to ensure the code/data base is setup correctly.
@@ -76,7 +74,7 @@ A developer needs to take the following additional steps, during the
 development cycle if they make any changes to the javascript (which
 includes the Vue components) components or the database seed values.
 
-### Javascript updates
+### Front End
 
 The Yarn Package manager is used to compile all of the front-end resources. Execute the following command to bring the compiled resources
 up-to-date.
@@ -104,8 +102,6 @@ $ docker-compose exec web npm run prod
 ⚠️ **Important:** If the above step is not followed debug flags and other secrets might get left in for people to see through their browsers console.
 
 
-### Javascript 
-
 ### Database
 
 The raw CSV files are provided by the CalStatePays data team, which differs from the development team.
@@ -123,8 +119,16 @@ $ docker-compose exec web php artisan migrate:refresh --seed
 If all works as it purports to, you can commit (etc) the changes to the database/data subdirectory.
 
 ```
-$ git commit -m 'Updated CSP data from the data team' csv_data database/data
+$ git commit -m 'Updated CSP data from the data team' database/data
 ```
+
+You may also want to consider committing the new, raw CSV files as part of the calstatepays_data.git project
+
+```
+$ cd csv_data/input
+$ git commit -m 'Updated CSP data from the data team' .
+```
+
 
 For additional information on the conversion process, etc., see the [calstatepays_data](https://github.com/csuntechlab/calstatepays_data) project.
 
