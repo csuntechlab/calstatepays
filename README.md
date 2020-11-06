@@ -96,10 +96,13 @@ $ docker-compose exec web yarn run watch
 
 ⚠️ **Important:** Make sure you terminate the watch process before you start switching into different branches!
 
-Prior any pull requests to merge in new front-end changes, make sure you run the following commands to prepare your environment correctly.
+Prior any pull requests to merge in new front-end changes, make sure you run one of the following commands to prepare your environment correctly.
 
 ```
 $ docker-compose exec web yarn run prod
+```
+or
+```
 $ docker-compose exec web npm run prod
 ```
 ⚠️ **Important:** If the above step is not followed debug flags and other secrets might get left in for people to see through their browsers console.
