@@ -55,7 +55,7 @@ The steps you need to perform to install this sofware are as follows:
 
 You may may launch your favorite web browser and access your version of the calstatepays application:
   * The application is reachable at: http://localhost:8080/    # The port number can be changed via the WEB_PORT environment variable
-  * The database GUI is reachable at: http://localhost:8081/   # The port number can be changed via the ADMIR_PORT environment variable
+  * The database GUI is reachable at: http://localhost:8081/   # The port number can be changed via the ADMIN_PORT environment variable
 
 You can reset your docker environment via the following command:
 ```
