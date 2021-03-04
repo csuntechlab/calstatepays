@@ -47,8 +47,10 @@ The steps you need to perform to install this sofware are as follows:
   $ cd calstatepays
   $ cp .env.dev .env
   $ docker-compose up --detach
-  $ docker-compose exec web php artisan key:generate
-  $ docker-compose exec web php artisan migrate --seed
+```
+  ~~$ docker-compose exec web php artisan key:generate~~
+```
+   $ docker-compose exec web php artisan migrate --seed
 ```
 
 ⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
