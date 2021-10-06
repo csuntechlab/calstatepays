@@ -50,6 +50,7 @@ The steps you need to perform to install this sofware are as follows:
   ```
 
   ```
+  # you may have to wait a bit before executing the following commands to allow the containers to stablize
   docker-compose exec web php artisan key:generate
   docker-compose exec web php artisan migrate --seed
   ```
