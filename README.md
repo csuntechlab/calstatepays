@@ -42,20 +42,21 @@ To be revised!
 As a developer, you will find it useful to install the application, in total, on your local machine.  These development installation creates four containers used to setup a working environment. This environment contains a webserver, a database, and two supporting containers.  The webserver mounts the home directory of your cloned project. This allows the developer to use their favorite development tools outside of the containers, with updates to software being made directly.
 
 The steps you need to perform to install this sofware are as follows:
-```
-  $ git clone https://github.com/csuntechlab/calstatepays.git
-  $ cd calstatepays
-  $ cp .env.dev .env
-  $ docker-compose up --detach
-```
-  ~~$ docker-compose exec web php artisan key:generate~~
-```
-   $ docker-compose exec web php artisan migrate --seed
-```
+  ```
+  git clone https://github.com/csuntechlab/calstatepays.git
+  cd calstatepays
+  cp .env.dev .env
+  docker-compose up --detach
+  ```
+
+  ```
+  docker-compose exec web php artisan key:generate
+  docker-compose exec web php artisan migrate --seed
+  ```
 
 ⚠️ This process is driven by the .env.dev file.  Container names, etc, are derived from the COMPOSE_PROJECT_NAME which has been set to "calstatepays". You may want to review the contents of this file prior to running the docker-compose command referenced above, and make appropriate changes.  E.g., you might want to change the default password for the database.
 
-You may may launch your favorite web browser and access your version of the calstatepays application:
+You may launch your favorite web browser and access your version of the calstatepays application:
   * The application is reachable at: http://localhost:8080/    # The port number can be changed via the WEB_PORT environment variable
   * The database GUI is reachable at: http://localhost:8081/   # The port number can be changed via the ADMIR_PORT environment variable
 
