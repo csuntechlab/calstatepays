@@ -62,9 +62,9 @@ You may launch your favorite web browser and access your version of the calstate
 
 You can reset your docker environment via the following command:
 ```
-$ docker-compose down
-$ docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAME == calstatepays
-$ docker-compose up --detach --force-recreate
+docker-compose down
+docker volume rm calstatepays_volume           # Assuming $COMPOSE_PROJECT_NAME == calstatepays
+docker-compose up --detach --force-recreate
 ```
 
 ## Development cycle
