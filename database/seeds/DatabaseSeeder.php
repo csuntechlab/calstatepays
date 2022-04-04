@@ -61,12 +61,12 @@ class DatabaseSeeder extends Seeder
         $this->call(Long_Beach_Major_Path_Wages_TableSeeder::class);
         $this->call(Long_Beach_University_Majors_TableSeeder::class);
 
-        $this->call(Los_Angeles_Industry_Path_Types_TableSeeder::class);
-        $this->call(Los_Angeles_Industry_Path_Wages_TableSeeder::class);
-        $this->call(Los_Angeles_Industry_Population_TableSeeder::class);
-        $this->call(Los_Angeles_Major_Path_TableSeeder::class);
-        $this->call(Los_Angeles_Major_Path_Wages_TableSeeder::class);
-        $this->call(Los_Angeles_University_Majors_TableSeeder::class);
+        // $this->call(Los_Angeles_Industry_Path_Types_TableSeeder::class);
+        // $this->call(Los_Angeles_Industry_Path_Wages_TableSeeder::class);
+        // $this->call(Los_Angeles_Industry_Population_TableSeeder::class);
+        // $this->call(Los_Angeles_Major_Path_TableSeeder::class);
+        // $this->call(Los_Angeles_Major_Path_Wages_TableSeeder::class);
+        // $this->call(Los_Angeles_University_Majors_TableSeeder::class);
 
         $this->call(Pomona_Industry_Path_Types_TableSeeder::class);
         $this->call(Pomona_Industry_Path_Wages_TableSeeder::class);
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Power_User_Data_Dominguez_Hills_TableSeeder::class);
         $this->call(Power_User_Data_Fullerton_TableSeeder::class);
         $this->call(Power_User_Data_Long_Beach_TableSeeder::class);
-        $this->call(Power_User_Data_Los_Angeles_TableSeeder::class);
+        // $this->call(Power_User_Data_Los_Angeles_TableSeeder::class);
         $this->call(Power_User_Data_Pomona_TableSeeder::class);
 
         $this->call(Power_User_Card_Images_TableSeeder::class);
